@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Hashes 
+// Hashes provides operations to manage the drive singleton.
 type Hashes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewHashes()(*Hashes) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateHashesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateHashesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewHashes(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Hashes) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *Hashes) GetCrc32Hash()(*string) {
         return nil
     } else {
         return m.crc32Hash
-    }
-}
-// GetQuickXorHash gets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
-func (m *Hashes) GetQuickXorHash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quickXorHash
-    }
-}
-// GetSha1Hash gets the sha1Hash property value. SHA1 hash for the contents of the file (if available). Read-only.
-func (m *Hashes) GetSha1Hash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sha1Hash
-    }
-}
-// GetSha256Hash gets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
-func (m *Hashes) GetSha256Hash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sha256Hash
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     return res
+}
+// GetQuickXorHash gets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
+func (m *Hashes) GetQuickXorHash()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quickXorHash
+    }
+}
+// GetSha1Hash gets the sha1Hash property value. SHA1 hash for the contents of the file (if available). Read-only.
+func (m *Hashes) GetSha1Hash()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sha1Hash
+    }
+}
+// GetSha256Hash gets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
+func (m *Hashes) GetSha256Hash()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sha256Hash
+    }
 }
 func (m *Hashes) IsNil()(bool) {
     return m == nil

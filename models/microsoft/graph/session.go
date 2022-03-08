@@ -6,21 +6,21 @@ import (
     i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/callrecords"
 )
 
-// Session 
+// Session provides operations to manage the cloudCommunications singleton.
 type Session struct {
     Entity
     // Endpoint that answered the session.
-    callee *Endpoint;
+    callee Endpointable;
     // Endpoint that initiated the session.
-    caller *Endpoint;
+    caller Endpointable;
     // UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Failure information associated with the session if the session failed.
-    failureInfo *FailureInfo;
+    failureInfo FailureInfoable;
     // List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
     modalities []i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality;
     // The list of segments involved in the session. Read-only. Nullable.
-    segments []Segment;
+    segments []Segmentable;
     // UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
@@ -31,8 +31,12 @@ func NewSession()(*Session) {
     }
     return m
 }
+// CreateSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSessionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSession(), nil
+}
 // GetCallee gets the callee property value. Endpoint that answered the session.
-func (m *Session) GetCallee()(*Endpoint) {
+func (m *Session) GetCallee()(Endpointable) {
     if m == nil {
         return nil
     } else {
@@ -40,7 +44,7 @@ func (m *Session) GetCallee()(*Endpoint) {
     }
 }
 // GetCaller gets the caller property value. Endpoint that initiated the session.
-func (m *Session) GetCaller()(*Endpoint) {
+func (m *Session) GetCaller()(Endpointable) {
     if m == nil {
         return nil
     } else {
@@ -56,57 +60,33 @@ func (m *Session) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     }
 }
 // GetFailureInfo gets the failureInfo property value. Failure information associated with the session if the session failed.
-func (m *Session) GetFailureInfo()(*FailureInfo) {
+func (m *Session) GetFailureInfo()(FailureInfoable) {
     if m == nil {
         return nil
     } else {
         return m.failureInfo
     }
 }
-// GetModalities gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *Session) GetModalities()([]i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modalities
-    }
-}
-// GetSegments gets the segments property value. The list of segments involved in the session. Read-only. Nullable.
-func (m *Session) GetSegments()([]Segment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.segments
-    }
-}
-// GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Session) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["callee"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEndpoint() })
+        val, err := n.GetObjectValue(CreateEndpointFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCallee(val.(*Endpoint))
+            m.SetCallee(val.(Endpointable))
         }
         return nil
     }
     res["caller"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEndpoint() })
+        val, err := n.GetObjectValue(CreateEndpointFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCaller(val.(*Endpoint))
+            m.SetCaller(val.(Endpointable))
         }
         return nil
     }
@@ -121,12 +101,12 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["failureInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFailureInfo() })
+        val, err := n.GetObjectValue(CreateFailureInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFailureInfo(val.(*FailureInfo))
+            m.SetFailureInfo(val.(FailureInfoable))
         }
         return nil
     }
@@ -145,14 +125,14 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["segments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSegment() })
+        val, err := n.GetCollectionOfObjectValues(CreateSegmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Segment, len(val))
+            res := make([]Segmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Segment))
+                res[i] = v.(Segmentable)
             }
             m.SetSegments(res)
         }
@@ -169,6 +149,30 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetModalities gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+func (m *Session) GetModalities()([]i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modalities
+    }
+}
+// GetSegments gets the segments property value. The list of segments involved in the session. Read-only. Nullable.
+func (m *Session) GetSegments()([]Segmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.segments
+    }
+}
+// GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *Session) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
 }
 func (m *Session) IsNil()(bool) {
     return m == nil
@@ -212,8 +216,7 @@ func (m *Session) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSegments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSegments()))
         for i, v := range m.GetSegments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("segments", cast)
         if err != nil {
@@ -229,13 +232,13 @@ func (m *Session) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     return nil
 }
 // SetCallee sets the callee property value. Endpoint that answered the session.
-func (m *Session) SetCallee(value *Endpoint)() {
+func (m *Session) SetCallee(value Endpointable)() {
     if m != nil {
         m.callee = value
     }
 }
 // SetCaller sets the caller property value. Endpoint that initiated the session.
-func (m *Session) SetCaller(value *Endpoint)() {
+func (m *Session) SetCaller(value Endpointable)() {
     if m != nil {
         m.caller = value
     }
@@ -247,7 +250,7 @@ func (m *Session) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
     }
 }
 // SetFailureInfo sets the failureInfo property value. Failure information associated with the session if the session failed.
-func (m *Session) SetFailureInfo(value *FailureInfo)() {
+func (m *Session) SetFailureInfo(value FailureInfoable)() {
     if m != nil {
         m.failureInfo = value
     }
@@ -259,7 +262,7 @@ func (m *Session) SetModalities(value []i6afae973b07adf053fd7fc51b2f43be439d7fa8
     }
 }
 // SetSegments sets the segments property value. The list of segments involved in the session. Read-only. Nullable.
-func (m *Session) SetSegments(value []Segment)() {
+func (m *Session) SetSegments(value []Segmentable)() {
     if m != nil {
         m.segments = value
     }

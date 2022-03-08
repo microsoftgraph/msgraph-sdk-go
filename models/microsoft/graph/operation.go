@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Operation 
+// Operation provides operations to manage the drive singleton.
 type Operation struct {
     Entity
     // The start time of the operation.
@@ -22,28 +22,16 @@ func NewOperation()(*Operation) {
     }
     return m
 }
+// CreateOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOperation(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The start time of the operation.
 func (m *Operation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. The time of the last action of the operation.
-func (m *Operation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetStatus gets the status property value. The current status of the operation: notStarted, running, completed, failed
-func (m *Operation) GetStatus()(*OperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +68,22 @@ func (m *Operation) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. The time of the last action of the operation.
+func (m *Operation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetStatus gets the status property value. The current status of the operation: notStarted, running, completed, failed
+func (m *Operation) GetStatus()(*OperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *Operation) IsNil()(bool) {
     return m == nil

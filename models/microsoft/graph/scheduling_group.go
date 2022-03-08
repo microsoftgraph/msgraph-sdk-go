@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SchedulingGroup 
+// SchedulingGroup provides operations to manage the drive singleton.
 type SchedulingGroup struct {
     ChangeTrackedEntity
     // The display name for the schedulingGroup. Required.
@@ -21,28 +21,16 @@ func NewSchedulingGroup()(*SchedulingGroup) {
     }
     return m
 }
+// CreateSchedulingGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSchedulingGroupFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSchedulingGroup(), nil
+}
 // GetDisplayName gets the displayName property value. The display name for the schedulingGroup. Required.
 func (m *SchedulingGroup) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsActive gets the isActive property value. Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
-func (m *SchedulingGroup) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
-}
-// GetUserIds gets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.
-func (m *SchedulingGroup) GetUserIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -83,6 +71,22 @@ func (m *SchedulingGroup) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetIsActive gets the isActive property value. Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
+func (m *SchedulingGroup) GetIsActive()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isActive
+    }
+}
+// GetUserIds gets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.
+func (m *SchedulingGroup) GetUserIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userIds
+    }
 }
 func (m *SchedulingGroup) IsNil()(bool) {
     return m == nil

@@ -2,12 +2,10 @@ package termsandconditions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i9ebf8d43a1b1bfff193d66da71922792f3e44710ef79e451f68240d34e4f24a1 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/termsandconditions/item/acceptancestatuses/item/termsandconditions/ref"
 )
 
-// TermsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\acceptanceStatuses\{termsAndConditionsAcceptanceStatus-id}\termsAndConditions
+// TermsAndConditionsRequestBuilder provides operations to manage the termsAndConditions property of the microsoft.graph.termsAndConditionsAcceptanceStatus entity.
 type TermsAndConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +41,7 @@ func NewTermsAndConditionsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,17 +72,18 @@ func (m *TermsAndConditionsRequestBuilder) CreateGetRequestInformation(options *
     return requestInfo, nil
 }
 // Get navigation link to the terms and conditions that are assigned.
-func (m *TermsAndConditionsRequestBuilder) Get(options *TermsAndConditionsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsAndConditions, error) {
+func (m *TermsAndConditionsRequestBuilder) Get(options *TermsAndConditionsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsAndConditionsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewTermsAndConditions() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTermsAndConditionsFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsAndConditions), nil
-}
-func (m *TermsAndConditionsRequestBuilder) Ref()(*i9ebf8d43a1b1bfff193d66da71922792f3e44710ef79e451f68240d34e4f24a1.RefRequestBuilder) {
-    return i9ebf8d43a1b1bfff193d66da71922792f3e44710ef79e451f68240d34e4f24a1.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsAndConditionsable), nil
 }

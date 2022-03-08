@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MediaStream 
+// MediaStream provides operations to manage the cloudCommunications singleton.
 type MediaStream struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewMediaStream()(*MediaStream) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMediaStreamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMediaStreamFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMediaStream(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaStream) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *MediaStream) GetDirection()(*MediaDirection) {
         return nil
     } else {
         return m.direction
-    }
-}
-// GetLabel gets the label property value. The media stream label.
-func (m *MediaStream) GetLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
-}
-// GetMediaType gets the mediaType property value. The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
-func (m *MediaStream) GetMediaType()(*Modality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
-}
-// GetServerMuted gets the serverMuted property value. If the media is muted by the server.
-func (m *MediaStream) GetServerMuted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serverMuted
-    }
-}
-// GetSourceId gets the sourceId property value. The source ID.
-func (m *MediaStream) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetLabel gets the label property value. The media stream label.
+func (m *MediaStream) GetLabel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.label
+    }
+}
+// GetMediaType gets the mediaType property value. The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
+func (m *MediaStream) GetMediaType()(*Modality) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaType
+    }
+}
+// GetServerMuted gets the serverMuted property value. If the media is muted by the server.
+func (m *MediaStream) GetServerMuted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serverMuted
+    }
+}
+// GetSourceId gets the sourceId property value. The source ID.
+func (m *MediaStream) GetSourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceId
+    }
 }
 func (m *MediaStream) IsNil()(bool) {
     return m == nil

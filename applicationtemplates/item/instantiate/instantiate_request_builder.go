@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// InstantiateRequestBuilder builds and executes requests for operations under \applicationTemplates\{applicationTemplate-id}\microsoft.graph.instantiate
+// InstantiateRequestBuilder provides operations to call the instantiate method.
 type InstantiateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type InstantiateRequestBuilder struct {
 // InstantiateRequestBuilderPostOptions options for Post
 type InstantiateRequestBuilderPostOptions struct {
     // 
-    Body *InstantiateRequestBody;
+    Body InstantiateRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type InstantiateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type applicationServicePrincipal
-    applicationServicePrincipal *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipal;
+    applicationServicePrincipal i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipalable;
 }
 // NewInstantiateResponse instantiates a new instantiateResponse and sets the default values.
 func NewInstantiateResponse()(*InstantiateResponse) {
@@ -39,6 +39,9 @@ func NewInstantiateResponse()(*InstantiateResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateInstantiateResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInstantiateResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InstantiateResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *InstantiateResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetApplicationServicePrincipal gets the applicationServicePrincipal property value. Union type representation for type applicationServicePrincipal
-func (m *InstantiateResponse) GetApplicationServicePrincipal()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipal) {
+func (m *InstantiateResponse) GetApplicationServicePrincipal()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipalable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *InstantiateResponse) GetApplicationServicePrincipal()(*i4a838ef194e4c99
 func (m *InstantiateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["applicationServicePrincipal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewApplicationServicePrincipal() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateApplicationServicePrincipalFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicationServicePrincipal(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipal))
+            m.SetApplicationServicePrincipal(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipalable))
         }
         return nil
     }
@@ -97,7 +100,7 @@ func (m *InstantiateResponse) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetApplicationServicePrincipal sets the applicationServicePrincipal property value. Union type representation for type applicationServicePrincipal
-func (m *InstantiateResponse) SetApplicationServicePrincipal(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipal)() {
+func (m *InstantiateResponse) SetApplicationServicePrincipal(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipalable)() {
     if m != nil {
         m.applicationServicePrincipal = value
     }
@@ -111,7 +114,7 @@ func NewInstantiateRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *InstantiateRequestBuilder) CreatePostRequestInformation(options *Instan
     return requestInfo, nil
 }
 // Post invoke action instantiate
-func (m *InstantiateRequestBuilder) Post(options *InstantiateRequestBuilderPostOptions)(*InstantiateResponse, error) {
+func (m *InstantiateRequestBuilder) Post(options *InstantiateRequestBuilderPostOptions)(InstantiateResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInstantiateResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateInstantiateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*InstantiateResponse), nil
+    return res.(InstantiateResponseable), nil
 }

@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchRequest 
+// SearchRequest provides operations to call the query method.
 type SearchRequest struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
     aggregationFilters []string;
     // Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
-    aggregations []AggregationOption;
+    aggregations []AggregationOptionable;
     // Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
     contentSources []string;
     // This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
@@ -23,15 +23,15 @@ type SearchRequest struct {
     // Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
     from *int32;
     // 
-    query *SearchQuery;
+    query SearchQueryable;
     // Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
-    queryAlterationOptions *SearchAlterationOptions;
+    queryAlterationOptions SearchAlterationOptionsable;
     // Provides the search result templates options for rendering connectors search results.
-    resultTemplateOptions *ResultTemplateOption;
+    resultTemplateOptions ResultTemplateOptionable;
     // The size of the page to be retrieved. Optional.
     size *int32;
     // Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
-    sortProperties []SortProperty;
+    sortProperties []SortPropertyable;
 }
 // NewSearchRequest instantiates a new searchRequest and sets the default values.
 func NewSearchRequest()(*SearchRequest) {
@@ -39,6 +39,10 @@ func NewSearchRequest()(*SearchRequest) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSearchRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchRequest(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchRequest) GetAdditionalData()(map[string]interface{}) {
@@ -57,7 +61,7 @@ func (m *SearchRequest) GetAggregationFilters()([]string) {
     }
 }
 // GetAggregations gets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
-func (m *SearchRequest) GetAggregations()([]AggregationOption) {
+func (m *SearchRequest) GetAggregations()([]AggregationOptionable) {
     if m == nil {
         return nil
     } else {
@@ -88,62 +92,6 @@ func (m *SearchRequest) GetEntityTypes()([]EntityType) {
         return m.entityTypes
     }
 }
-// GetFields gets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
-func (m *SearchRequest) GetFields()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fields
-    }
-}
-// GetFrom gets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
-func (m *SearchRequest) GetFrom()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.from
-    }
-}
-// GetQuery gets the query property value. 
-func (m *SearchRequest) GetQuery()(*SearchQuery) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query
-    }
-}
-// GetQueryAlterationOptions gets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
-func (m *SearchRequest) GetQueryAlterationOptions()(*SearchAlterationOptions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryAlterationOptions
-    }
-}
-// GetResultTemplateOptions gets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
-func (m *SearchRequest) GetResultTemplateOptions()(*ResultTemplateOption) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultTemplateOptions
-    }
-}
-// GetSize gets the size property value. The size of the page to be retrieved. Optional.
-func (m *SearchRequest) GetSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
-}
-// GetSortProperties gets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
-func (m *SearchRequest) GetSortProperties()([]SortProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sortProperties
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -162,14 +110,14 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["aggregations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAggregationOption() })
+        val, err := n.GetCollectionOfObjectValues(CreateAggregationOptionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AggregationOption, len(val))
+            res := make([]AggregationOptionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AggregationOption))
+                res[i] = v.(AggregationOptionable)
             }
             m.SetAggregations(res)
         }
@@ -238,32 +186,32 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["query"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSearchQuery() })
+        val, err := n.GetObjectValue(CreateSearchQueryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQuery(val.(*SearchQuery))
+            m.SetQuery(val.(SearchQueryable))
         }
         return nil
     }
     res["queryAlterationOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSearchAlterationOptions() })
+        val, err := n.GetObjectValue(CreateSearchAlterationOptionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQueryAlterationOptions(val.(*SearchAlterationOptions))
+            m.SetQueryAlterationOptions(val.(SearchAlterationOptionsable))
         }
         return nil
     }
     res["resultTemplateOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResultTemplateOption() })
+        val, err := n.GetObjectValue(CreateResultTemplateOptionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResultTemplateOptions(val.(*ResultTemplateOption))
+            m.SetResultTemplateOptions(val.(ResultTemplateOptionable))
         }
         return nil
     }
@@ -278,20 +226,76 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["sortProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSortProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateSortPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SortProperty, len(val))
+            res := make([]SortPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SortProperty))
+                res[i] = v.(SortPropertyable)
             }
             m.SetSortProperties(res)
         }
         return nil
     }
     return res
+}
+// GetFields gets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
+func (m *SearchRequest) GetFields()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fields
+    }
+}
+// GetFrom gets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
+func (m *SearchRequest) GetFrom()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.from
+    }
+}
+// GetQuery gets the query property value. 
+func (m *SearchRequest) GetQuery()(SearchQueryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.query
+    }
+}
+// GetQueryAlterationOptions gets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
+func (m *SearchRequest) GetQueryAlterationOptions()(SearchAlterationOptionsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.queryAlterationOptions
+    }
+}
+// GetResultTemplateOptions gets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
+func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultTemplateOptions
+    }
+}
+// GetSize gets the size property value. The size of the page to be retrieved. Optional.
+func (m *SearchRequest) GetSize()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
+}
+// GetSortProperties gets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
+func (m *SearchRequest) GetSortProperties()([]SortPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sortProperties
+    }
 }
 func (m *SearchRequest) IsNil()(bool) {
     return m == nil
@@ -307,8 +311,7 @@ func (m *SearchRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetAggregations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAggregations()))
         for i, v := range m.GetAggregations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("aggregations", cast)
         if err != nil {
@@ -372,8 +375,7 @@ func (m *SearchRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetSortProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSortProperties()))
         for i, v := range m.GetSortProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("sortProperties", cast)
         if err != nil {
@@ -401,7 +403,7 @@ func (m *SearchRequest) SetAggregationFilters(value []string)() {
     }
 }
 // SetAggregations sets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
-func (m *SearchRequest) SetAggregations(value []AggregationOption)() {
+func (m *SearchRequest) SetAggregations(value []AggregationOptionable)() {
     if m != nil {
         m.aggregations = value
     }
@@ -437,19 +439,19 @@ func (m *SearchRequest) SetFrom(value *int32)() {
     }
 }
 // SetQuery sets the query property value. 
-func (m *SearchRequest) SetQuery(value *SearchQuery)() {
+func (m *SearchRequest) SetQuery(value SearchQueryable)() {
     if m != nil {
         m.query = value
     }
 }
 // SetQueryAlterationOptions sets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
-func (m *SearchRequest) SetQueryAlterationOptions(value *SearchAlterationOptions)() {
+func (m *SearchRequest) SetQueryAlterationOptions(value SearchAlterationOptionsable)() {
     if m != nil {
         m.queryAlterationOptions = value
     }
 }
 // SetResultTemplateOptions sets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
-func (m *SearchRequest) SetResultTemplateOptions(value *ResultTemplateOption)() {
+func (m *SearchRequest) SetResultTemplateOptions(value ResultTemplateOptionable)() {
     if m != nil {
         m.resultTemplateOptions = value
     }
@@ -461,7 +463,7 @@ func (m *SearchRequest) SetSize(value *int32)() {
     }
 }
 // SetSortProperties sets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
-func (m *SearchRequest) SetSortProperties(value []SortProperty)() {
+func (m *SearchRequest) SetSortProperties(value []SortPropertyable)() {
     if m != nil {
         m.sortProperties = value
     }

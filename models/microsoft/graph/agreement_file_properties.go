@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AgreementFileProperties 
+// AgreementFileProperties provides operations to manage the collection of agreement entities.
 type AgreementFileProperties struct {
     Entity
     // The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -13,7 +13,7 @@ type AgreementFileProperties struct {
     // Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
     displayName *string;
     // Data that represents the terms of use PDF document. Read-only.
-    fileData *AgreementFileData;
+    fileData AgreementFileDataable;
     // Name of the agreement file (for example, TOU.pdf). Read-only.
     fileName *string;
     // If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
@@ -30,6 +30,10 @@ func NewAgreementFileProperties()(*AgreementFileProperties) {
     }
     return m
 }
+// CreateAgreementFilePropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAgreementFilePropertiesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAgreementFileProperties(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AgreementFileProperties) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -44,46 +48,6 @@ func (m *AgreementFileProperties) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetFileData gets the fileData property value. Data that represents the terms of use PDF document. Read-only.
-func (m *AgreementFileProperties) GetFileData()(*AgreementFileData) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileData
-    }
-}
-// GetFileName gets the fileName property value. Name of the agreement file (for example, TOU.pdf). Read-only.
-func (m *AgreementFileProperties) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
-}
-// GetIsDefault gets the isDefault property value. If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
-func (m *AgreementFileProperties) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetIsMajorVersion gets the isMajorVersion property value. Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
-func (m *AgreementFileProperties) GetIsMajorVersion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMajorVersion
-    }
-}
-// GetLanguage gets the language property value. The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-func (m *AgreementFileProperties) GetLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.language
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,12 +74,12 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["fileData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAgreementFileData() })
+        val, err := n.GetObjectValue(CreateAgreementFileDataFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFileData(val.(*AgreementFileData))
+            m.SetFileData(val.(AgreementFileDataable))
         }
         return nil
     }
@@ -160,6 +124,46 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetFileData gets the fileData property value. Data that represents the terms of use PDF document. Read-only.
+func (m *AgreementFileProperties) GetFileData()(AgreementFileDataable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileData
+    }
+}
+// GetFileName gets the fileName property value. Name of the agreement file (for example, TOU.pdf). Read-only.
+func (m *AgreementFileProperties) GetFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileName
+    }
+}
+// GetIsDefault gets the isDefault property value. If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
+func (m *AgreementFileProperties) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetIsMajorVersion gets the isMajorVersion property value. Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
+func (m *AgreementFileProperties) GetIsMajorVersion()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMajorVersion
+    }
+}
+// GetLanguage gets the language property value. The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
+func (m *AgreementFileProperties) GetLanguage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.language
+    }
 }
 func (m *AgreementFileProperties) IsNil()(bool) {
     return m == nil
@@ -227,7 +231,7 @@ func (m *AgreementFileProperties) SetDisplayName(value *string)() {
     }
 }
 // SetFileData sets the fileData property value. Data that represents the terms of use PDF document. Read-only.
-func (m *AgreementFileProperties) SetFileData(value *AgreementFileData)() {
+func (m *AgreementFileProperties) SetFileData(value AgreementFileDataable)() {
     if m != nil {
         m.fileData = value
     }

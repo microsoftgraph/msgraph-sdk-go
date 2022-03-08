@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DetectedApp 
+// DetectedApp provides operations to manage the deviceManagement singleton.
 type DetectedApp struct {
     Entity
     // The number of devices that have installed this application
@@ -12,7 +12,7 @@ type DetectedApp struct {
     // Name of the discovered application. Read-only
     displayName *string;
     // The devices that have the discovered application installed
-    managedDevices []ManagedDevice;
+    managedDevices []ManagedDeviceable;
     // Discovered application size in bytes. Read-only
     sizeInByte *int64;
     // Version of the discovered application. Read-only
@@ -24,6 +24,10 @@ func NewDetectedApp()(*DetectedApp) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDetectedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDetectedAppFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDetectedApp(), nil
 }
 // GetDeviceCount gets the deviceCount property value. The number of devices that have installed this application
 func (m *DetectedApp) GetDeviceCount()(*int32) {
@@ -39,30 +43,6 @@ func (m *DetectedApp) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetManagedDevices gets the managedDevices property value. The devices that have the discovered application installed
-func (m *DetectedApp) GetManagedDevices()([]ManagedDevice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevices
-    }
-}
-// GetSizeInByte gets the sizeInByte property value. Discovered application size in bytes. Read-only
-func (m *DetectedApp) GetSizeInByte()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sizeInByte
-    }
-}
-// GetVersion gets the version property value. Version of the discovered application. Read-only
-func (m *DetectedApp) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,14 +69,14 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["managedDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDevice() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedDevice, len(val))
+            res := make([]ManagedDeviceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedDevice))
+                res[i] = v.(ManagedDeviceable)
             }
             m.SetManagedDevices(res)
         }
@@ -124,6 +104,30 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb
     }
     return res
 }
+// GetManagedDevices gets the managedDevices property value. The devices that have the discovered application installed
+func (m *DetectedApp) GetManagedDevices()([]ManagedDeviceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDevices
+    }
+}
+// GetSizeInByte gets the sizeInByte property value. Discovered application size in bytes. Read-only
+func (m *DetectedApp) GetSizeInByte()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sizeInByte
+    }
+}
+// GetVersion gets the version property value. Version of the discovered application. Read-only
+func (m *DetectedApp) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *DetectedApp) IsNil()(bool) {
     return m == nil
 }
@@ -148,8 +152,7 @@ func (m *DetectedApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetManagedDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedDevices()))
         for i, v := range m.GetManagedDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managedDevices", cast)
         if err != nil {
@@ -183,7 +186,7 @@ func (m *DetectedApp) SetDisplayName(value *string)() {
     }
 }
 // SetManagedDevices sets the managedDevices property value. The devices that have the discovered application installed
-func (m *DetectedApp) SetManagedDevices(value []ManagedDevice)() {
+func (m *DetectedApp) SetManagedDevices(value []ManagedDeviceable)() {
     if m != nil {
         m.managedDevices = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ModifiedProperty 
+// ModifiedProperty provides operations to manage the auditLogRoot singleton.
 type ModifiedProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewModifiedProperty()(*ModifiedProperty) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateModifiedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateModifiedPropertyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewModifiedProperty(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ModifiedProperty) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *ModifiedProperty) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetNewValue gets the newValue property value. Indicates the updated value for the propery.
-func (m *ModifiedProperty) GetNewValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newValue
-    }
-}
-// GetOldValue gets the oldValue property value. Indicates the previous value (before the update) for the property.
-func (m *ModifiedProperty) GetOldValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oldValue
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *ModifiedProperty) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetNewValue gets the newValue property value. Indicates the updated value for the propery.
+func (m *ModifiedProperty) GetNewValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.newValue
+    }
+}
+// GetOldValue gets the oldValue property value. Indicates the previous value (before the update) for the property.
+func (m *ModifiedProperty) GetOldValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oldValue
+    }
 }
 func (m *ModifiedProperty) IsNil()(bool) {
     return m == nil

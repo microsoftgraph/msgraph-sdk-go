@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConfirmCompromisedRequestBody 
+// ConfirmCompromisedRequestBody provides operations to call the confirmCompromised method.
 type ConfirmCompromisedRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewConfirmCompromisedRequestBody()(*ConfirmCompromisedRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateConfirmCompromisedRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConfirmCompromisedRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConfirmCompromisedRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfirmCompromisedRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetUserIds gets the userIds property value. 
-func (m *ConfirmCompromisedRequestBody) GetUserIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -52,6 +48,14 @@ func (m *ConfirmCompromisedRequestBody) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetUserIds gets the userIds property value. 
+func (m *ConfirmCompromisedRequestBody) GetUserIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userIds
+    }
 }
 func (m *ConfirmCompromisedRequestBody) IsNil()(bool) {
     return m == nil

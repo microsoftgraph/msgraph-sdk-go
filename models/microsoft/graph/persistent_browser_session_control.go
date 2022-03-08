@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersistentBrowserSessionControl 
+// PersistentBrowserSessionControl provides operations to manage the identityContainer singleton.
 type PersistentBrowserSessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: always, never.
@@ -17,13 +17,9 @@ func NewPersistentBrowserSessionControl()(*PersistentBrowserSessionControl) {
     }
     return m
 }
-// GetMode gets the mode property value. Possible values are: always, never.
-func (m *PersistentBrowserSessionControl) GetMode()(*PersistentBrowserSessionMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mode
-    }
+// CreatePersistentBrowserSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersistentBrowserSessionControlFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPersistentBrowserSessionControl(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetMode gets the mode property value. Possible values are: always, never.
+func (m *PersistentBrowserSessionControl) GetMode()(*PersistentBrowserSessionMode) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mode
+    }
 }
 func (m *PersistentBrowserSessionControl) IsNil()(bool) {
     return m == nil

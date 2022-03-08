@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Group 
+// Group provides operations to manage the collection of group entities.
 type Group struct {
     DirectoryObject
     // The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
@@ -120,7 +120,7 @@ type Group struct {
     securityEnabled *bool;
     // Security identifier of the group, used in Windows scenarios. Returned by default.
     securityIdentifier *string;
-    // Read-only. Nullable.
+    // Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
     settings []GroupSetting;
     // The list of SharePoint sites in this group. Access the default site with /sites/root.
     sites []Site;
@@ -145,6 +145,10 @@ func NewGroup()(*Group) {
         DirectoryObject: *NewDirectoryObject(),
     }
     return m
+}
+// CreateGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroup(), nil
 }
 // GetAcceptedSenders gets the acceptedSenders property value. The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
 func (m *Group) GetAcceptedSenders()([]DirectoryObject) {
@@ -297,6 +301,761 @@ func (m *Group) GetExtensions()([]Extension) {
     } else {
         return m.extensions
     }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.DirectoryObject.GetFieldDeserializers()
+    res["acceptedSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetAcceptedSenders(res)
+        }
+        return nil
+    }
+    res["allowExternalSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowExternalSenders(val)
+        }
+        return nil
+    }
+    res["appRoleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAppRoleAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AppRoleAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppRoleAssignment))
+            }
+            m.SetAppRoleAssignments(res)
+        }
+        return nil
+    }
+    res["assignedLabels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAssignedLabelFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AssignedLabel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AssignedLabel))
+            }
+            m.SetAssignedLabels(res)
+        }
+        return nil
+    }
+    res["assignedLicenses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAssignedLicenseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AssignedLicense, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AssignedLicense))
+            }
+            m.SetAssignedLicenses(res)
+        }
+        return nil
+    }
+    res["autoSubscribeNewMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutoSubscribeNewMembers(val)
+        }
+        return nil
+    }
+    res["calendar"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCalendarFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCalendar(val.(*Calendar))
+        }
+        return nil
+    }
+    res["calendarView"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Event, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Event))
+            }
+            m.SetCalendarView(res)
+        }
+        return nil
+    }
+    res["classification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClassification(val)
+        }
+        return nil
+    }
+    res["conversations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConversationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Conversation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Conversation))
+            }
+            m.SetConversations(res)
+        }
+        return nil
+    }
+    res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["createdOnBehalfOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedOnBehalfOf(val.(*DirectoryObject))
+        }
+        return nil
+    }
+    res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
+        }
+        return nil
+    }
+    res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["drive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDriveFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDrive(val.(*Drive))
+        }
+        return nil
+    }
+    res["drives"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDriveFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Drive, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Drive))
+            }
+            m.SetDrives(res)
+        }
+        return nil
+    }
+    res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Event, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Event))
+            }
+            m.SetEvents(res)
+        }
+        return nil
+    }
+    res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
+        return nil
+    }
+    res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Extension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Extension))
+            }
+            m.SetExtensions(res)
+        }
+        return nil
+    }
+    res["groupLifecyclePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGroupLifecyclePolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GroupLifecyclePolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GroupLifecyclePolicy))
+            }
+            m.SetGroupLifecyclePolicies(res)
+        }
+        return nil
+    }
+    res["groupTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetGroupTypes(res)
+        }
+        return nil
+    }
+    res["hasMembersWithLicenseErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHasMembersWithLicenseErrors(val)
+        }
+        return nil
+    }
+    res["hideFromAddressLists"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHideFromAddressLists(val)
+        }
+        return nil
+    }
+    res["hideFromOutlookClients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHideFromOutlookClients(val)
+        }
+        return nil
+    }
+    res["isArchived"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsArchived(val)
+        }
+        return nil
+    }
+    res["isAssignableToRole"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsAssignableToRole(val)
+        }
+        return nil
+    }
+    res["isSubscribedByMail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsSubscribedByMail(val)
+        }
+        return nil
+    }
+    res["licenseProcessingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateLicenseProcessingStateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLicenseProcessingState(val.(*LicenseProcessingState))
+        }
+        return nil
+    }
+    res["mail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMail(val)
+        }
+        return nil
+    }
+    res["mailEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMailEnabled(val)
+        }
+        return nil
+    }
+    res["mailNickname"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMailNickname(val)
+        }
+        return nil
+    }
+    res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetMemberOf(res)
+        }
+        return nil
+    }
+    res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetMembers(res)
+        }
+        return nil
+    }
+    res["membershipRule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipRule(val)
+        }
+        return nil
+    }
+    res["membershipRuleProcessingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipRuleProcessingState(val)
+        }
+        return nil
+    }
+    res["membersWithLicenseErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetMembersWithLicenseErrors(res)
+        }
+        return nil
+    }
+    res["onenote"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnenoteFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnenote(val.(*Onenote))
+        }
+        return nil
+    }
+    res["onPremisesDomainName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesDomainName(val)
+        }
+        return nil
+    }
+    res["onPremisesLastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesLastSyncDateTime(val)
+        }
+        return nil
+    }
+    res["onPremisesNetBiosName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesNetBiosName(val)
+        }
+        return nil
+    }
+    res["onPremisesProvisioningErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremisesProvisioningErrorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OnPremisesProvisioningError, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnPremisesProvisioningError))
+            }
+            m.SetOnPremisesProvisioningErrors(res)
+        }
+        return nil
+    }
+    res["onPremisesSamAccountName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSamAccountName(val)
+        }
+        return nil
+    }
+    res["onPremisesSecurityIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSecurityIdentifier(val)
+        }
+        return nil
+    }
+    res["onPremisesSyncEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSyncEnabled(val)
+        }
+        return nil
+    }
+    res["owners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetOwners(res)
+        }
+        return nil
+    }
+    res["permissionGrants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceSpecificPermissionGrantFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceSpecificPermissionGrant, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ResourceSpecificPermissionGrant))
+            }
+            m.SetPermissionGrants(res)
+        }
+        return nil
+    }
+    res["photo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProfilePhotoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPhoto(val.(*ProfilePhoto))
+        }
+        return nil
+    }
+    res["photos"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateProfilePhotoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ProfilePhoto, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ProfilePhoto))
+            }
+            m.SetPhotos(res)
+        }
+        return nil
+    }
+    res["planner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerGroupFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlanner(val.(*PlannerGroup))
+        }
+        return nil
+    }
+    res["preferredDataLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPreferredDataLocation(val)
+        }
+        return nil
+    }
+    res["preferredLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPreferredLanguage(val)
+        }
+        return nil
+    }
+    res["proxyAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetProxyAddresses(res)
+        }
+        return nil
+    }
+    res["rejectedSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetRejectedSenders(res)
+        }
+        return nil
+    }
+    res["renewedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRenewedDateTime(val)
+        }
+        return nil
+    }
+    res["securityEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityEnabled(val)
+        }
+        return nil
+    }
+    res["securityIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityIdentifier(val)
+        }
+        return nil
+    }
+    res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGroupSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GroupSetting, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GroupSetting))
+            }
+            m.SetSettings(res)
+        }
+        return nil
+    }
+    res["sites"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSiteFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Site, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Site))
+            }
+            m.SetSites(res)
+        }
+        return nil
+    }
+    res["team"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeam(val.(*Team))
+        }
+        return nil
+    }
+    res["theme"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTheme(val)
+        }
+        return nil
+    }
+    res["threads"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConversationThreadFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConversationThread, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConversationThread))
+            }
+            m.SetThreads(res)
+        }
+        return nil
+    }
+    res["transitiveMemberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetTransitiveMemberOf(res)
+        }
+        return nil
+    }
+    res["transitiveMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetTransitiveMembers(res)
+        }
+        return nil
+    }
+    res["unseenCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnseenCount(val)
+        }
+        return nil
+    }
+    res["visibility"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVisibility(val)
+        }
+        return nil
+    }
+    return res
 }
 // GetGroupLifecyclePolicies gets the groupLifecyclePolicies property value. The collection of lifecycle policies for this group. Read-only. Nullable.
 func (m *Group) GetGroupLifecyclePolicies()([]GroupLifecyclePolicy) {
@@ -594,7 +1353,7 @@ func (m *Group) GetSecurityIdentifier()(*string) {
         return m.securityIdentifier
     }
 }
-// GetSettings gets the settings property value. Read-only. Nullable.
+// GetSettings gets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *Group) GetSettings()([]GroupSetting) {
     if m == nil {
         return nil
@@ -665,761 +1424,6 @@ func (m *Group) GetVisibility()(*string) {
     } else {
         return m.visibility
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.DirectoryObject.GetFieldDeserializers()
-    res["acceptedSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetAcceptedSenders(res)
-        }
-        return nil
-    }
-    res["allowExternalSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowExternalSenders(val)
-        }
-        return nil
-    }
-    res["appRoleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppRoleAssignment() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AppRoleAssignment, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AppRoleAssignment))
-            }
-            m.SetAppRoleAssignments(res)
-        }
-        return nil
-    }
-    res["assignedLabels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignedLabel() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AssignedLabel, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AssignedLabel))
-            }
-            m.SetAssignedLabels(res)
-        }
-        return nil
-    }
-    res["assignedLicenses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignedLicense() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AssignedLicense, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AssignedLicense))
-            }
-            m.SetAssignedLicenses(res)
-        }
-        return nil
-    }
-    res["autoSubscribeNewMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAutoSubscribeNewMembers(val)
-        }
-        return nil
-    }
-    res["calendar"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendar() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCalendar(val.(*Calendar))
-        }
-        return nil
-    }
-    res["calendarView"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Event, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Event))
-            }
-            m.SetCalendarView(res)
-        }
-        return nil
-    }
-    res["classification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClassification(val)
-        }
-        return nil
-    }
-    res["conversations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConversation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Conversation, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Conversation))
-            }
-            m.SetConversations(res)
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["createdOnBehalfOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedOnBehalfOf(val.(*DirectoryObject))
-        }
-        return nil
-    }
-    res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["drive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDrive() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDrive(val.(*Drive))
-        }
-        return nil
-    }
-    res["drives"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDrive() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Drive, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Drive))
-            }
-            m.SetDrives(res)
-        }
-        return nil
-    }
-    res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Event, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Event))
-            }
-            m.SetEvents(res)
-        }
-        return nil
-    }
-    res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExpirationDateTime(val)
-        }
-        return nil
-    }
-    res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Extension, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Extension))
-            }
-            m.SetExtensions(res)
-        }
-        return nil
-    }
-    res["groupLifecyclePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupLifecyclePolicy() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]GroupLifecyclePolicy, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*GroupLifecyclePolicy))
-            }
-            m.SetGroupLifecyclePolicies(res)
-        }
-        return nil
-    }
-    res["groupTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetGroupTypes(res)
-        }
-        return nil
-    }
-    res["hasMembersWithLicenseErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHasMembersWithLicenseErrors(val)
-        }
-        return nil
-    }
-    res["hideFromAddressLists"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHideFromAddressLists(val)
-        }
-        return nil
-    }
-    res["hideFromOutlookClients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHideFromOutlookClients(val)
-        }
-        return nil
-    }
-    res["isArchived"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsArchived(val)
-        }
-        return nil
-    }
-    res["isAssignableToRole"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsAssignableToRole(val)
-        }
-        return nil
-    }
-    res["isSubscribedByMail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSubscribedByMail(val)
-        }
-        return nil
-    }
-    res["licenseProcessingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLicenseProcessingState() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLicenseProcessingState(val.(*LicenseProcessingState))
-        }
-        return nil
-    }
-    res["mail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMail(val)
-        }
-        return nil
-    }
-    res["mailEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMailEnabled(val)
-        }
-        return nil
-    }
-    res["mailNickname"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMailNickname(val)
-        }
-        return nil
-    }
-    res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetMemberOf(res)
-        }
-        return nil
-    }
-    res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetMembers(res)
-        }
-        return nil
-    }
-    res["membershipRule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMembershipRule(val)
-        }
-        return nil
-    }
-    res["membershipRuleProcessingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMembershipRuleProcessingState(val)
-        }
-        return nil
-    }
-    res["membersWithLicenseErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetMembersWithLicenseErrors(res)
-        }
-        return nil
-    }
-    res["onenote"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnenote() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnenote(val.(*Onenote))
-        }
-        return nil
-    }
-    res["onPremisesDomainName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnPremisesDomainName(val)
-        }
-        return nil
-    }
-    res["onPremisesLastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnPremisesLastSyncDateTime(val)
-        }
-        return nil
-    }
-    res["onPremisesNetBiosName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnPremisesNetBiosName(val)
-        }
-        return nil
-    }
-    res["onPremisesProvisioningErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesProvisioningError() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OnPremisesProvisioningError, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*OnPremisesProvisioningError))
-            }
-            m.SetOnPremisesProvisioningErrors(res)
-        }
-        return nil
-    }
-    res["onPremisesSamAccountName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnPremisesSamAccountName(val)
-        }
-        return nil
-    }
-    res["onPremisesSecurityIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnPremisesSecurityIdentifier(val)
-        }
-        return nil
-    }
-    res["onPremisesSyncEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnPremisesSyncEnabled(val)
-        }
-        return nil
-    }
-    res["owners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetOwners(res)
-        }
-        return nil
-    }
-    res["permissionGrants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResourceSpecificPermissionGrant() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ResourceSpecificPermissionGrant, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*ResourceSpecificPermissionGrant))
-            }
-            m.SetPermissionGrants(res)
-        }
-        return nil
-    }
-    res["photo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProfilePhoto() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPhoto(val.(*ProfilePhoto))
-        }
-        return nil
-    }
-    res["photos"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProfilePhoto() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ProfilePhoto, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*ProfilePhoto))
-            }
-            m.SetPhotos(res)
-        }
-        return nil
-    }
-    res["planner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlannerGroup() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPlanner(val.(*PlannerGroup))
-        }
-        return nil
-    }
-    res["preferredDataLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPreferredDataLocation(val)
-        }
-        return nil
-    }
-    res["preferredLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPreferredLanguage(val)
-        }
-        return nil
-    }
-    res["proxyAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetProxyAddresses(res)
-        }
-        return nil
-    }
-    res["rejectedSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetRejectedSenders(res)
-        }
-        return nil
-    }
-    res["renewedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRenewedDateTime(val)
-        }
-        return nil
-    }
-    res["securityEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecurityEnabled(val)
-        }
-        return nil
-    }
-    res["securityIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecurityIdentifier(val)
-        }
-        return nil
-    }
-    res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupSetting() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]GroupSetting, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*GroupSetting))
-            }
-            m.SetSettings(res)
-        }
-        return nil
-    }
-    res["sites"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSite() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Site, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Site))
-            }
-            m.SetSites(res)
-        }
-        return nil
-    }
-    res["team"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeam() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTeam(val.(*Team))
-        }
-        return nil
-    }
-    res["theme"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTheme(val)
-        }
-        return nil
-    }
-    res["threads"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConversationThread() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConversationThread, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*ConversationThread))
-            }
-            m.SetThreads(res)
-        }
-        return nil
-    }
-    res["transitiveMemberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetTransitiveMemberOf(res)
-        }
-        return nil
-    }
-    res["transitiveMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetTransitiveMembers(res)
-        }
-        return nil
-    }
-    res["unseenCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUnseenCount(val)
-        }
-        return nil
-    }
-    res["visibility"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVisibility(val)
-        }
-        return nil
-    }
-    return res
 }
 func (m *Group) IsNil()(bool) {
     return m == nil
@@ -2273,7 +2277,7 @@ func (m *Group) SetSecurityIdentifier(value *string)() {
         m.securityIdentifier = value
     }
 }
-// SetSettings sets the settings property value. Read-only. Nullable.
+// SetSettings sets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *Group) SetSettings(value []GroupSetting)() {
     if m != nil {
         m.settings = value

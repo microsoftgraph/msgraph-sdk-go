@@ -2,11 +2,11 @@ package shares
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i9b2a1592a6bdbab4a06a53c85641a15cfa8c23be8e5a8ba9ea17ff0209ac8fcf "github.com/microsoftgraph/msgraph-sdk-go/print/shares/count"
 )
 
-// SharesRequestBuilder builds and executes requests for operations under \print\shares
+// SharesRequestBuilder provides operations to manage the shares property of the microsoft.graph.print entity.
 type SharesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type SharesRequestBuilderGetQueryParameters struct {
 // SharesRequestBuilderPostOptions options for Post
 type SharesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShare;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShareable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewSharesRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewSharesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SharesRequestBuilder) Count()(*i9b2a1592a6bdbab4a06a53c85641a15cfa8c23be8e5a8ba9ea17ff0209ac8fcf.CountRequestBuilder) {
+    return i9b2a1592a6bdbab4a06a53c85641a15cfa8c23be8e5a8ba9ea17ff0209ac8fcf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of printer shares registered in the tenant.
 func (m *SharesRequestBuilder) CreateGetRequestInformation(options *SharesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *SharesRequestBuilder) CreateGetRequestInformation(options *SharesReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of printer shares registered in the tenant.
+// CreatePostRequestInformation create new navigation property to shares for print
 func (m *SharesRequestBuilder) CreatePostRequestInformation(options *SharesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *SharesRequestBuilder) CreatePostRequestInformation(options *SharesReque
     return requestInfo, nil
 }
 // Get the list of printer shares registered in the tenant.
-func (m *SharesRequestBuilder) Get(options *SharesRequestBuilderGetOptions)(*SharesResponse, error) {
+func (m *SharesRequestBuilder) Get(options *SharesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShareCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSharesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePrinterShareCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SharesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShareCollectionResponseable), nil
 }
-// Post the list of printer shares registered in the tenant.
-func (m *SharesRequestBuilder) Post(options *SharesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShare, error) {
+// Post create new navigation property to shares for print
+func (m *SharesRequestBuilder) Post(options *SharesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShareable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPrinterShare() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePrinterShareFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShare), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShareable), nil
 }

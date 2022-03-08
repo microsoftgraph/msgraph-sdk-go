@@ -5,16 +5,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Shared 
+// Shared provides operations to manage the drive singleton.
 type Shared struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The identity of the owner of the shared item. Read-only.
-    owner *IdentitySet;
+    owner IdentitySetable;
     // Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
     scope *string;
     // The identity of the user who shared the item. Read-only.
-    sharedBy *IdentitySet;
+    sharedBy IdentitySetable;
     // The UTC date and time when the item was shared. Read-only.
     sharedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
@@ -25,6 +25,10 @@ func NewShared()(*Shared) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSharedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSharedFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewShared(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Shared) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -33,8 +37,53 @@ func (m *Shared) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Shared) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["owner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwner(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["scope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScope(val)
+        }
+        return nil
+    }
+    res["sharedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["sharedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharedDateTime(val)
+        }
+        return nil
+    }
+    return res
+}
 // GetOwner gets the owner property value. The identity of the owner of the shared item. Read-only.
-func (m *Shared) GetOwner()(*IdentitySet) {
+func (m *Shared) GetOwner()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -50,7 +99,7 @@ func (m *Shared) GetScope()(*string) {
     }
 }
 // GetSharedBy gets the sharedBy property value. The identity of the user who shared the item. Read-only.
-func (m *Shared) GetSharedBy()(*IdentitySet) {
+func (m *Shared) GetSharedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -64,51 +113,6 @@ func (m *Shared) GetSharedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     } else {
         return m.sharedDateTime
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Shared) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["owner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOwner(val.(*IdentitySet))
-        }
-        return nil
-    }
-    res["scope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScope(val)
-        }
-        return nil
-    }
-    res["sharedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSharedBy(val.(*IdentitySet))
-        }
-        return nil
-    }
-    res["sharedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSharedDateTime(val)
-        }
-        return nil
-    }
-    return res
 }
 func (m *Shared) IsNil()(bool) {
     return m == nil
@@ -154,7 +158,7 @@ func (m *Shared) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetOwner sets the owner property value. The identity of the owner of the shared item. Read-only.
-func (m *Shared) SetOwner(value *IdentitySet)() {
+func (m *Shared) SetOwner(value IdentitySetable)() {
     if m != nil {
         m.owner = value
     }
@@ -166,7 +170,7 @@ func (m *Shared) SetScope(value *string)() {
     }
 }
 // SetSharedBy sets the sharedBy property value. The identity of the user who shared the item. Read-only.
-func (m *Shared) SetSharedBy(value *IdentitySet)() {
+func (m *Shared) SetSharedBy(value IdentitySetable)() {
     if m != nil {
         m.sharedBy = value
     }

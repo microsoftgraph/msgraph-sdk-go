@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetMemberGroupsRequestBody 
+// GetMemberGroupsRequestBody provides operations to call the getMemberGroups method.
 type GetMemberGroupsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewGetMemberGroupsRequestBody()(*GetMemberGroupsRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetMemberGroupsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetMemberGroupsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetMemberGroupsRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetMemberGroupsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetSecurityEnabledOnly gets the securityEnabledOnly property value. 
-func (m *GetMemberGroupsRequestBody) GetSecurityEnabledOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityEnabledOnly
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *GetMemberGroupsRequestBody) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetSecurityEnabledOnly gets the securityEnabledOnly property value. 
+func (m *GetMemberGroupsRequestBody) GetSecurityEnabledOnly()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.securityEnabledOnly
+    }
 }
 func (m *GetMemberGroupsRequestBody) IsNil()(bool) {
     return m == nil

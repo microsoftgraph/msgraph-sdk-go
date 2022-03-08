@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementExchangeConnector 
+// DeviceManagementExchangeConnector provides operations to manage the deviceManagement singleton.
 type DeviceManagementExchangeConnector struct {
     Entity
     // The name of the server hosting the Exchange Connector.
@@ -33,6 +33,10 @@ func NewDeviceManagementExchangeConnector()(*DeviceManagementExchangeConnector) 
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceManagementExchangeConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementExchangeConnectorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementExchangeConnector(), nil
 }
 // GetConnectorServerName gets the connectorServerName property value. The name of the server hosting the Exchange Connector.
 func (m *DeviceManagementExchangeConnector) GetConnectorServerName()(*string) {
@@ -64,46 +68,6 @@ func (m *DeviceManagementExchangeConnector) GetExchangeOrganization()(*string) {
         return nil
     } else {
         return m.exchangeOrganization
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync time for the Exchange Connector
-func (m *DeviceManagementExchangeConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetPrimarySmtpAddress gets the primarySmtpAddress property value. Email address used to configure the Service To Service Exchange Connector.
-func (m *DeviceManagementExchangeConnector) GetPrimarySmtpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primarySmtpAddress
-    }
-}
-// GetServerName gets the serverName property value. The name of the Exchange server.
-func (m *DeviceManagementExchangeConnector) GetServerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serverName
-    }
-}
-// GetStatus gets the status property value. Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
-func (m *DeviceManagementExchangeConnector) GetStatus()(*DeviceManagementExchangeConnectorStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetVersion gets the version property value. The version of the ExchangeConnectorAgent
-func (m *DeviceManagementExchangeConnector) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -200,6 +164,46 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync time for the Exchange Connector
+func (m *DeviceManagementExchangeConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetPrimarySmtpAddress gets the primarySmtpAddress property value. Email address used to configure the Service To Service Exchange Connector.
+func (m *DeviceManagementExchangeConnector) GetPrimarySmtpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.primarySmtpAddress
+    }
+}
+// GetServerName gets the serverName property value. The name of the Exchange server.
+func (m *DeviceManagementExchangeConnector) GetServerName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serverName
+    }
+}
+// GetStatus gets the status property value. Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
+func (m *DeviceManagementExchangeConnector) GetStatus()(*DeviceManagementExchangeConnectorStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetVersion gets the version property value. The version of the ExchangeConnectorAgent
+func (m *DeviceManagementExchangeConnector) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *DeviceManagementExchangeConnector) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChangePasswordRequestBody 
+// ChangePasswordRequestBody provides operations to call the changePassword method.
 type ChangePasswordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewChangePasswordRequestBody()(*ChangePasswordRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateChangePasswordRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChangePasswordRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChangePasswordRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangePasswordRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *ChangePasswordRequestBody) GetCurrentPassword()(*string) {
         return nil
     } else {
         return m.currentPassword
-    }
-}
-// GetNewPassword gets the newPassword property value. 
-func (m *ChangePasswordRequestBody) GetNewPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newPassword
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *ChangePasswordRequestBody) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetNewPassword gets the newPassword property value. 
+func (m *ChangePasswordRequestBody) GetNewPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.newPassword
+    }
 }
 func (m *ChangePasswordRequestBody) IsNil()(bool) {
     return m == nil

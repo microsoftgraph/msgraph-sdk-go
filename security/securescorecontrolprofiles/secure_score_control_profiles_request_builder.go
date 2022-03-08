@@ -2,11 +2,11 @@ package securescorecontrolprofiles
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i6da217f9c287c62e98e76eda4ee3e6923a69ba8b4978a63a1d243d286b7ebaea "github.com/microsoftgraph/msgraph-sdk-go/security/securescorecontrolprofiles/count"
 )
 
-// SecureScoreControlProfilesRequestBuilder builds and executes requests for operations under \security\secureScoreControlProfiles
+// SecureScoreControlProfilesRequestBuilder provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
 type SecureScoreControlProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type SecureScoreControlProfilesRequestBuilderGetQueryParameters struct {
 // SecureScoreControlProfilesRequestBuilderPostOptions options for Post
 type SecureScoreControlProfilesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewSecureScoreControlProfilesRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewSecureScoreControlProfilesRequestBuilder(rawUrl string, requestAdapter i
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecureScoreControlProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SecureScoreControlProfilesRequestBuilder) Count()(*i6da217f9c287c62e98e76eda4ee3e6923a69ba8b4978a63a1d243d286b7ebaea.CountRequestBuilder) {
+    return i6da217f9c287c62e98e76eda4ee3e6923a69ba8b4978a63a1d243d286b7ebaea.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get secureScoreControlProfiles from security
 func (m *SecureScoreControlProfilesRequestBuilder) CreateGetRequestInformation(options *SecureScoreControlProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *SecureScoreControlProfilesRequestBuilder) CreatePostRequestInformation(
     return requestInfo, nil
 }
 // Get get secureScoreControlProfiles from security
-func (m *SecureScoreControlProfilesRequestBuilder) Get(options *SecureScoreControlProfilesRequestBuilderGetOptions)(*SecureScoreControlProfilesResponse, error) {
+func (m *SecureScoreControlProfilesRequestBuilder) Get(options *SecureScoreControlProfilesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecureScoreControlProfilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSecureScoreControlProfileCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SecureScoreControlProfilesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfileCollectionResponseable), nil
 }
 // Post create new navigation property to secureScoreControlProfiles for security
-func (m *SecureScoreControlProfilesRequestBuilder) Post(options *SecureScoreControlProfilesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile, error) {
+func (m *SecureScoreControlProfilesRequestBuilder) Post(options *SecureScoreControlProfilesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSecureScoreControlProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSecureScoreControlProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfileable), nil
 }

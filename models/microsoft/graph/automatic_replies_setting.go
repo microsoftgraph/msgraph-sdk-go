@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AutomaticRepliesSetting 
+// AutomaticRepliesSetting provides operations to manage the drive singleton.
 type AutomaticRepliesSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,9 +15,9 @@ type AutomaticRepliesSetting struct {
     // The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
     internalReplyMessage *string;
     // The date and time that automatic replies are set to end, if Status is set to Scheduled.
-    scheduledEndDateTime *DateTimeTimeZone;
+    scheduledEndDateTime DateTimeTimeZoneable;
     // The date and time that automatic replies are set to begin, if Status is set to Scheduled.
-    scheduledStartDateTime *DateTimeTimeZone;
+    scheduledStartDateTime DateTimeTimeZoneable;
     // Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
     status *AutomaticRepliesStatus;
 }
@@ -27,6 +27,10 @@ func NewAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAutomaticRepliesSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAutomaticRepliesSettingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAutomaticRepliesSetting(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutomaticRepliesSetting) GetAdditionalData()(map[string]interface{}) {
@@ -50,38 +54,6 @@ func (m *AutomaticRepliesSetting) GetExternalReplyMessage()(*string) {
         return nil
     } else {
         return m.externalReplyMessage
-    }
-}
-// GetInternalReplyMessage gets the internalReplyMessage property value. The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
-func (m *AutomaticRepliesSetting) GetInternalReplyMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internalReplyMessage
-    }
-}
-// GetScheduledEndDateTime gets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
-func (m *AutomaticRepliesSetting) GetScheduledEndDateTime()(*DateTimeTimeZone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledEndDateTime
-    }
-}
-// GetScheduledStartDateTime gets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
-func (m *AutomaticRepliesSetting) GetScheduledStartDateTime()(*DateTimeTimeZone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledStartDateTime
-    }
-}
-// GetStatus gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
-func (m *AutomaticRepliesSetting) GetStatus()(*AutomaticRepliesStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -118,22 +90,22 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["scheduledEndDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScheduledEndDateTime(val.(*DateTimeTimeZone))
+            m.SetScheduledEndDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
     res["scheduledStartDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScheduledStartDateTime(val.(*DateTimeTimeZone))
+            m.SetScheduledStartDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -148,6 +120,38 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetInternalReplyMessage gets the internalReplyMessage property value. The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
+func (m *AutomaticRepliesSetting) GetInternalReplyMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.internalReplyMessage
+    }
+}
+// GetScheduledEndDateTime gets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
+func (m *AutomaticRepliesSetting) GetScheduledEndDateTime()(DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scheduledEndDateTime
+    }
+}
+// GetScheduledStartDateTime gets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
+func (m *AutomaticRepliesSetting) GetScheduledStartDateTime()(DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scheduledStartDateTime
+    }
+}
+// GetStatus gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
+func (m *AutomaticRepliesSetting) GetStatus()(*AutomaticRepliesStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *AutomaticRepliesSetting) IsNil()(bool) {
     return m == nil
@@ -225,13 +229,13 @@ func (m *AutomaticRepliesSetting) SetInternalReplyMessage(value *string)() {
     }
 }
 // SetScheduledEndDateTime sets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
-func (m *AutomaticRepliesSetting) SetScheduledEndDateTime(value *DateTimeTimeZone)() {
+func (m *AutomaticRepliesSetting) SetScheduledEndDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.scheduledEndDateTime = value
     }
 }
 // SetScheduledStartDateTime sets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
-func (m *AutomaticRepliesSetting) SetScheduledStartDateTime(value *DateTimeTimeZone)() {
+func (m *AutomaticRepliesSetting) SetScheduledStartDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.scheduledStartDateTime = value
     }

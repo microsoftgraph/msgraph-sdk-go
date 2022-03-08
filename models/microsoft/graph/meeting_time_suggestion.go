@@ -4,18 +4,18 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MeetingTimeSuggestion 
+// MeetingTimeSuggestion provides operations to call the findMeetingTimes method.
 type MeetingTimeSuggestion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // An array that shows the availability status of each attendee for this meeting suggestion.
-    attendeeAvailability []AttendeeAvailability;
+    attendeeAvailability []AttendeeAvailabilityable;
     // A percentage that represents the likelhood of all the attendees attending.
     confidence *float64;
     // An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
-    locations []Location;
+    locations []Locationable;
     // A time period suggested for the meeting.
-    meetingTimeSlot *TimeSlot;
+    meetingTimeSlot TimeSlotable;
     // Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
     order *int32;
     // Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
@@ -30,6 +30,10 @@ func NewMeetingTimeSuggestion()(*MeetingTimeSuggestion) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMeetingTimeSuggestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMeetingTimeSuggestionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMeetingTimeSuggestion(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingTimeSuggestion) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -39,7 +43,7 @@ func (m *MeetingTimeSuggestion) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAttendeeAvailability gets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.
-func (m *MeetingTimeSuggestion) GetAttendeeAvailability()([]AttendeeAvailability) {
+func (m *MeetingTimeSuggestion) GetAttendeeAvailability()([]AttendeeAvailabilityable) {
     if m == nil {
         return nil
     } else {
@@ -54,58 +58,18 @@ func (m *MeetingTimeSuggestion) GetConfidence()(*float64) {
         return m.confidence
     }
 }
-// GetLocations gets the locations property value. An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
-func (m *MeetingTimeSuggestion) GetLocations()([]Location) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locations
-    }
-}
-// GetMeetingTimeSlot gets the meetingTimeSlot property value. A time period suggested for the meeting.
-func (m *MeetingTimeSuggestion) GetMeetingTimeSlot()(*TimeSlot) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingTimeSlot
-    }
-}
-// GetOrder gets the order property value. Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
-func (m *MeetingTimeSuggestion) GetOrder()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.order
-    }
-}
-// GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-func (m *MeetingTimeSuggestion) GetOrganizerAvailability()(*FreeBusyStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizerAvailability
-    }
-}
-// GetSuggestionReason gets the suggestionReason property value. Reason for suggesting the meeting time.
-func (m *MeetingTimeSuggestion) GetSuggestionReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suggestionReason
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["attendeeAvailability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttendeeAvailability() })
+        val, err := n.GetCollectionOfObjectValues(CreateAttendeeAvailabilityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AttendeeAvailability, len(val))
+            res := make([]AttendeeAvailabilityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AttendeeAvailability))
+                res[i] = v.(AttendeeAvailabilityable)
             }
             m.SetAttendeeAvailability(res)
         }
@@ -122,26 +86,26 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["locations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocation() })
+        val, err := n.GetCollectionOfObjectValues(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Location, len(val))
+            res := make([]Locationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Location))
+                res[i] = v.(Locationable)
             }
             m.SetLocations(res)
         }
         return nil
     }
     res["meetingTimeSlot"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeSlot() })
+        val, err := n.GetObjectValue(CreateTimeSlotFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMeetingTimeSlot(val.(*TimeSlot))
+            m.SetMeetingTimeSlot(val.(TimeSlotable))
         }
         return nil
     }
@@ -177,6 +141,46 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
+// GetLocations gets the locations property value. An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
+func (m *MeetingTimeSuggestion) GetLocations()([]Locationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locations
+    }
+}
+// GetMeetingTimeSlot gets the meetingTimeSlot property value. A time period suggested for the meeting.
+func (m *MeetingTimeSuggestion) GetMeetingTimeSlot()(TimeSlotable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meetingTimeSlot
+    }
+}
+// GetOrder gets the order property value. Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
+func (m *MeetingTimeSuggestion) GetOrder()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.order
+    }
+}
+// GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+func (m *MeetingTimeSuggestion) GetOrganizerAvailability()(*FreeBusyStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizerAvailability
+    }
+}
+// GetSuggestionReason gets the suggestionReason property value. Reason for suggesting the meeting time.
+func (m *MeetingTimeSuggestion) GetSuggestionReason()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.suggestionReason
+    }
+}
 func (m *MeetingTimeSuggestion) IsNil()(bool) {
     return m == nil
 }
@@ -185,8 +189,7 @@ func (m *MeetingTimeSuggestion) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAttendeeAvailability() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttendeeAvailability()))
         for i, v := range m.GetAttendeeAvailability() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("attendeeAvailability", cast)
         if err != nil {
@@ -202,8 +205,7 @@ func (m *MeetingTimeSuggestion) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetLocations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLocations()))
         for i, v := range m.GetLocations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("locations", cast)
         if err != nil {
@@ -250,7 +252,7 @@ func (m *MeetingTimeSuggestion) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetAttendeeAvailability sets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.
-func (m *MeetingTimeSuggestion) SetAttendeeAvailability(value []AttendeeAvailability)() {
+func (m *MeetingTimeSuggestion) SetAttendeeAvailability(value []AttendeeAvailabilityable)() {
     if m != nil {
         m.attendeeAvailability = value
     }
@@ -262,13 +264,13 @@ func (m *MeetingTimeSuggestion) SetConfidence(value *float64)() {
     }
 }
 // SetLocations sets the locations property value. An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
-func (m *MeetingTimeSuggestion) SetLocations(value []Location)() {
+func (m *MeetingTimeSuggestion) SetLocations(value []Locationable)() {
     if m != nil {
         m.locations = value
     }
 }
 // SetMeetingTimeSlot sets the meetingTimeSlot property value. A time period suggested for the meeting.
-func (m *MeetingTimeSuggestion) SetMeetingTimeSlot(value *TimeSlot)() {
+func (m *MeetingTimeSuggestion) SetMeetingTimeSlot(value TimeSlotable)() {
     if m != nil {
         m.meetingTimeSlot = value
     }

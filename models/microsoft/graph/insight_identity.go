@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InsightIdentity 
+// InsightIdentity provides operations to manage the drive singleton.
 type InsightIdentity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewInsightIdentity()(*InsightIdentity) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateInsightIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInsightIdentityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInsightIdentity(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InsightIdentity) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *InsightIdentity) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetId gets the id property value. The id of the user who shared the item.
-func (m *InsightIdentity) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *InsightIdentity) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetId gets the id property value. The id of the user who shared the item.
+func (m *InsightIdentity) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
 }
 func (m *InsightIdentity) IsNil()(bool) {
     return m == nil

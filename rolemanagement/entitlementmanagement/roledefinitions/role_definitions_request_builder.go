@@ -2,11 +2,11 @@ package roledefinitions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i2f2e14ebc2896b314b6aaeb610037dfcad19d929bf162c33607554d2a10c52c7 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement/roledefinitions/count"
 )
 
-// RoleDefinitionsRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleDefinitions
+// RoleDefinitionsRequestBuilder provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
 type RoleDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type RoleDefinitionsRequestBuilderGetQueryParameters struct {
 // RoleDefinitionsRequestBuilderPostOptions options for Post
 type RoleDefinitionsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewRoleDefinitionsRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewRoleDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RoleDefinitionsRequestBuilder) Count()(*i2f2e14ebc2896b314b6aaeb610037dfcad19d929bf162c33607554d2a10c52c7.CountRequestBuilder) {
+    return i2f2e14ebc2896b314b6aaeb610037dfcad19d929bf162c33607554d2a10c52c7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *RoleDefinitionsRequestBuilder) CreateGetRequestInformation(options *RoleDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *RoleDefinitionsRequestBuilder) CreateGetRequestInformation(options *Rol
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+// CreatePostRequestInformation create new navigation property to roleDefinitions for roleManagement
 func (m *RoleDefinitionsRequestBuilder) CreatePostRequestInformation(options *RoleDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *RoleDefinitionsRequestBuilder) CreatePostRequestInformation(options *Ro
     return requestInfo, nil
 }
 // Get resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-func (m *RoleDefinitionsRequestBuilder) Get(options *RoleDefinitionsRequestBuilderGetOptions)(*RoleDefinitionsResponse, error) {
+func (m *RoleDefinitionsRequestBuilder) Get(options *RoleDefinitionsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleDefinitionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUnifiedRoleDefinitionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RoleDefinitionsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionCollectionResponseable), nil
 }
-// Post resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-func (m *RoleDefinitionsRequestBuilder) Post(options *RoleDefinitionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition, error) {
+// Post create new navigation property to roleDefinitions for roleManagement
+func (m *RoleDefinitionsRequestBuilder) Post(options *RoleDefinitionsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewUnifiedRoleDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUnifiedRoleDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable), nil
 }

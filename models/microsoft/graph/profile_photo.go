@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProfilePhoto 
+// ProfilePhoto provides operations to manage the drive singleton.
 type ProfilePhoto struct {
     Entity
     // The height of the photo. Read-only.
@@ -19,21 +19,9 @@ func NewProfilePhoto()(*ProfilePhoto) {
     }
     return m
 }
-// GetHeight gets the height property value. The height of the photo. Read-only.
-func (m *ProfilePhoto) GetHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.height
-    }
-}
-// GetWidth gets the width property value. The width of the photo. Read-only.
-func (m *ProfilePhoto) GetWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.width
-    }
+// CreateProfilePhotoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProfilePhotoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProfilePhoto(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProfilePhoto) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -59,6 +47,22 @@ func (m *ProfilePhoto) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetHeight gets the height property value. The height of the photo. Read-only.
+func (m *ProfilePhoto) GetHeight()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.height
+    }
+}
+// GetWidth gets the width property value. The width of the photo. Read-only.
+func (m *ProfilePhoto) GetWidth()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.width
+    }
 }
 func (m *ProfilePhoto) IsNil()(bool) {
     return m == nil

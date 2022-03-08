@@ -2,11 +2,11 @@ package issues
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i54e224d5adb5a86947b1c2e462e043f7ca5f803b170770448f2fe43f284637b5 "github.com/microsoftgraph/msgraph-sdk-go/admin/serviceannouncement/healthoverviews/item/issues/count"
 )
 
-// IssuesRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews\{serviceHealth-id}\issues
+// IssuesRequestBuilder provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
 type IssuesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type IssuesRequestBuilderGetQueryParameters struct {
 // IssuesRequestBuilderPostOptions options for Post
 type IssuesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssueable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewIssuesRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewIssuesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIssuesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *IssuesRequestBuilder) Count()(*i54e224d5adb5a86947b1c2e462e043f7ca5f803b170770448f2fe43f284637b5.CountRequestBuilder) {
+    return i54e224d5adb5a86947b1c2e462e043f7ca5f803b170770448f2fe43f284637b5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) CreateGetRequestInformation(options *IssuesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *IssuesRequestBuilder) CreateGetRequestInformation(options *IssuesReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
+// CreatePostRequestInformation create new navigation property to issues for admin
 func (m *IssuesRequestBuilder) CreatePostRequestInformation(options *IssuesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *IssuesRequestBuilder) CreatePostRequestInformation(options *IssuesReque
     return requestInfo, nil
 }
 // Get a collection of issues that happened on the service, with detailed information for each issue.
-func (m *IssuesRequestBuilder) Get(options *IssuesRequestBuilderGetOptions)(*IssuesResponse, error) {
+func (m *IssuesRequestBuilder) Get(options *IssuesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssueCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIssuesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateServiceHealthIssueCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*IssuesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssueCollectionResponseable), nil
 }
-// Post a collection of issues that happened on the service, with detailed information for each issue.
-func (m *IssuesRequestBuilder) Post(options *IssuesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue, error) {
+// Post create new navigation property to issues for admin
+func (m *IssuesRequestBuilder) Post(options *IssuesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssueable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewServiceHealthIssue() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateServiceHealthIssueFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssueable), nil
 }

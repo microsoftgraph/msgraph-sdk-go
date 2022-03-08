@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintUsage 
+// PrintUsage provides operations to manage the reportRoot singleton.
 type PrintUsage struct {
     Entity
     // 
@@ -23,6 +23,10 @@ func NewPrintUsage()(*PrintUsage) {
     }
     return m
 }
+// CreatePrintUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintUsageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintUsage(), nil
+}
 // GetCompletedBlackAndWhiteJobCount gets the completedBlackAndWhiteJobCount property value. 
 func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
         return nil
     } else {
         return m.completedColorJobCount
-    }
-}
-// GetIncompleteJobCount gets the incompleteJobCount property value. 
-func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.incompleteJobCount
-    }
-}
-// GetUsageDate gets the usageDate property value. 
-func (m *PrintUsage) GetUsageDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageDate
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetIncompleteJobCount gets the incompleteJobCount property value. 
+func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.incompleteJobCount
+    }
+}
+// GetUsageDate gets the usageDate property value. 
+func (m *PrintUsage) GetUsageDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usageDate
+    }
 }
 func (m *PrintUsage) IsNil()(bool) {
     return m == nil

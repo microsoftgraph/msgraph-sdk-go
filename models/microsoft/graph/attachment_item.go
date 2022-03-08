@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttachmentItem 
+// AttachmentItem provides operations to call the createUploadSession method.
 type AttachmentItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,6 +27,10 @@ func NewAttachmentItem()(*AttachmentItem) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAttachmentItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAttachmentItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAttachmentItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttachmentItem) GetAdditionalData()(map[string]interface{}) {
@@ -58,30 +62,6 @@ func (m *AttachmentItem) GetContentType()(*string) {
         return nil
     } else {
         return m.contentType
-    }
-}
-// GetIsInline gets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
-func (m *AttachmentItem) GetIsInline()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInline
-    }
-}
-// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
-func (m *AttachmentItem) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetSize gets the size property value. The length of the attachment in bytes. Required.
-func (m *AttachmentItem) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +128,30 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetIsInline gets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
+func (m *AttachmentItem) GetIsInline()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isInline
+    }
+}
+// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+func (m *AttachmentItem) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetSize gets the size property value. The length of the attachment in bytes. Required.
+func (m *AttachmentItem) GetSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
 }
 func (m *AttachmentItem) IsNil()(bool) {
     return m == nil

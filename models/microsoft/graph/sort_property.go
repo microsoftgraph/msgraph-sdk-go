@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SortProperty 
+// SortProperty provides operations to call the query method.
 type SortProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewSortProperty()(*SortProperty) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSortPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSortPropertyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSortProperty(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SortProperty) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsDescending gets the isDescending property value. True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
-func (m *SortProperty) GetIsDescending()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDescending
-    }
-}
-// GetName gets the name property value. The name of the property to sort on. Required.
-func (m *SortProperty) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *SortProperty) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetIsDescending gets the isDescending property value. True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
+func (m *SortProperty) GetIsDescending()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDescending
+    }
+}
+// GetName gets the name property value. The name of the property to sort on. Required.
+func (m *SortProperty) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
 }
 func (m *SortProperty) IsNil()(bool) {
     return m == nil

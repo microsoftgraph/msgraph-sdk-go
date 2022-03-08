@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SharingInvitation 
+// SharingInvitation provides operations to manage the drive singleton.
 type SharingInvitation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The email address provided for the recipient of the sharing invitation. Read-only.
     email *string;
     // Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
-    invitedBy *IdentitySet;
+    invitedBy IdentitySetable;
     // 
     redeemedBy *string;
     // If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
@@ -23,6 +23,10 @@ func NewSharingInvitation()(*SharingInvitation) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSharingInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSharingInvitationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSharingInvitation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingInvitation) GetAdditionalData()(map[string]interface{}) {
@@ -40,30 +44,6 @@ func (m *SharingInvitation) GetEmail()(*string) {
         return m.email
     }
 }
-// GetInvitedBy gets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
-func (m *SharingInvitation) GetInvitedBy()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitedBy
-    }
-}
-// GetRedeemedBy gets the redeemedBy property value. 
-func (m *SharingInvitation) GetRedeemedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redeemedBy
-    }
-}
-// GetSignInRequired gets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-func (m *SharingInvitation) GetSignInRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInRequired
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -78,12 +58,12 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["invitedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInvitedBy(val.(*IdentitySet))
+            m.SetInvitedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -108,6 +88,30 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetInvitedBy gets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
+func (m *SharingInvitation) GetInvitedBy()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invitedBy
+    }
+}
+// GetRedeemedBy gets the redeemedBy property value. 
+func (m *SharingInvitation) GetRedeemedBy()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.redeemedBy
+    }
+}
+// GetSignInRequired gets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
+func (m *SharingInvitation) GetSignInRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signInRequired
+    }
 }
 func (m *SharingInvitation) IsNil()(bool) {
     return m == nil
@@ -159,7 +163,7 @@ func (m *SharingInvitation) SetEmail(value *string)() {
     }
 }
 // SetInvitedBy sets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
-func (m *SharingInvitation) SetInvitedBy(value *IdentitySet)() {
+func (m *SharingInvitation) SetInvitedBy(value IdentitySetable)() {
     if m != nil {
         m.invitedBy = value
     }

@@ -3,13 +3,13 @@ package organization
 import (
     i0abaee8a058d22e1d581799c8740be61e9b6d10d3cc9df8a86b2c94d7c5d3836 "github.com/microsoftgraph/msgraph-sdk-go/organization/getavailableextensionproperties"
     i18ef64004d4e7ee2e8b15bbed5d6f937fc44f7035c463548e93e34e31361ffa4 "github.com/microsoftgraph/msgraph-sdk-go/organization/getbyids"
+    i394fe01fc6498533dec0dd5f0bdb875868a544a6bbcf9935b40656b4573d7053 "github.com/microsoftgraph/msgraph-sdk-go/organization/count"
     i9a82bd7e2eb74542be8be13d437c57a66f6f2c71a200bd1483ca2b221ae825f2 "github.com/microsoftgraph/msgraph-sdk-go/organization/validateproperties"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// OrganizationRequestBuilder builds and executes requests for operations under \organization
+// OrganizationRequestBuilder provides operations to manage the collection of organization entities.
 type OrganizationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -51,7 +51,7 @@ type OrganizationRequestBuilderGetQueryParameters struct {
 // OrganizationRequestBuilderPostOptions options for Post
 type OrganizationRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Organization;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Organizationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -68,7 +68,7 @@ func NewOrganizationRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,6 +77,9 @@ func NewOrganizationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOrganizationRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *OrganizationRequestBuilder) Count()(*i394fe01fc6498533dec0dd5f0bdb875868a544a6bbcf9935b40656b4573d7053.CountRequestBuilder) {
+    return i394fe01fc6498533dec0dd5f0bdb875868a544a6bbcf9935b40656b4573d7053.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from organization
 func (m *OrganizationRequestBuilder) CreateGetRequestInformation(options *OrganizationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -117,16 +120,20 @@ func (m *OrganizationRequestBuilder) CreatePostRequestInformation(options *Organ
     return requestInfo, nil
 }
 // Get get entities from organization
-func (m *OrganizationRequestBuilder) Get(options *OrganizationRequestBuilderGetOptions)(*OrganizationResponse, error) {
+func (m *OrganizationRequestBuilder) Get(options *OrganizationRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOrganizationResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOrganizationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*OrganizationResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationCollectionResponseable), nil
 }
 func (m *OrganizationRequestBuilder) GetAvailableExtensionProperties()(*i0abaee8a058d22e1d581799c8740be61e9b6d10d3cc9df8a86b2c94d7c5d3836.GetAvailableExtensionPropertiesRequestBuilder) {
     return i0abaee8a058d22e1d581799c8740be61e9b6d10d3cc9df8a86b2c94d7c5d3836.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -135,16 +142,20 @@ func (m *OrganizationRequestBuilder) GetByIds()(*i18ef64004d4e7ee2e8b15bbed5d6f9
     return i18ef64004d4e7ee2e8b15bbed5d6f937fc44f7035c463548e93e34e31361ffa4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to organization
-func (m *OrganizationRequestBuilder) Post(options *OrganizationRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Organization, error) {
+func (m *OrganizationRequestBuilder) Post(options *OrganizationRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Organizationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewOrganization() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOrganizationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Organization), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Organizationable), nil
 }
 func (m *OrganizationRequestBuilder) ValidateProperties()(*i9a82bd7e2eb74542be8be13d437c57a66f6f2c71a200bd1483ca2b221ae825f2.ValidatePropertiesRequestBuilder) {
     return i9a82bd7e2eb74542be8be13d437c57a66f6f2c71a200bd1483ca2b221ae825f2.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

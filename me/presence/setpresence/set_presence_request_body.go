@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SetPresenceRequestBody 
+// SetPresenceRequestBody provides operations to call the setPresence method.
 type SetPresenceRequestBody struct {
     // 
     activity *string;
@@ -23,6 +23,10 @@ func NewSetPresenceRequestBody()(*SetPresenceRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSetPresenceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSetPresenceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSetPresenceRequestBody(), nil
 }
 // GetActivity gets the activity property value. 
 func (m *SetPresenceRequestBody) GetActivity()(*string) {
@@ -54,14 +58,6 @@ func (m *SetPresenceRequestBody) GetExpirationDuration()(*i04eb5309aeaafadd28374
         return nil
     } else {
         return m.expirationDuration
-    }
-}
-// GetSessionId gets the sessionId property value. 
-func (m *SetPresenceRequestBody) GetSessionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +104,14 @@ func (m *SetPresenceRequestBody) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetSessionId gets the sessionId property value. 
+func (m *SetPresenceRequestBody) GetSessionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sessionId
+    }
 }
 func (m *SetPresenceRequestBody) IsNil()(bool) {
     return m == nil

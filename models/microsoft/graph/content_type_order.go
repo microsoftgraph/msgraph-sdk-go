@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContentTypeOrder 
+// ContentTypeOrder provides operations to manage the drive singleton.
 type ContentTypeOrder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewContentTypeOrder()(*ContentTypeOrder) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateContentTypeOrderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContentTypeOrderFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContentTypeOrder(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentTypeOrder) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *ContentTypeOrder) GetDefault()(*bool) {
         return nil
     } else {
         return m.default_escaped
-    }
-}
-// GetPosition gets the position property value. Specifies the position in which the Content Type appears in the selection UI.
-func (m *ContentTypeOrder) GetPosition()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.position
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetPosition gets the position property value. Specifies the position in which the Content Type appears in the selection UI.
+func (m *ContentTypeOrder) GetPosition()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.position
+    }
 }
 func (m *ContentTypeOrder) IsNil()(bool) {
     return m == nil

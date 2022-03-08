@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessPolicy 
+// ConditionalAccessPolicy provides operations to manage the identityContainer singleton.
 type ConditionalAccessPolicy struct {
     Entity
     // 
-    conditions *ConditionalAccessConditionSet;
+    conditions ConditionalAccessConditionSetable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Not used.
@@ -17,11 +17,11 @@ type ConditionalAccessPolicy struct {
     // Specifies a display name for the conditionalAccessPolicy object.
     displayName *string;
     // Specifies the grant controls that must be fulfilled to pass the policy.
-    grantControls *ConditionalAccessGrantControls;
+    grantControls ConditionalAccessGrantControlsable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Specifies the session controls that are enforced after sign-in.
-    sessionControls *ConditionalAccessSessionControls;
+    sessionControls ConditionalAccessSessionControlsable;
     // Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
     state *ConditionalAccessPolicyState;
 }
@@ -32,8 +32,12 @@ func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
     }
     return m
 }
+// CreateConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessPolicy(), nil
+}
 // GetConditions gets the conditions property value. 
-func (m *ConditionalAccessPolicy) GetConditions()(*ConditionalAccessConditionSet) {
+func (m *ConditionalAccessPolicy) GetConditions()(ConditionalAccessConditionSetable) {
     if m == nil {
         return nil
     } else {
@@ -64,48 +68,16 @@ func (m *ConditionalAccessPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetGrantControls gets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
-func (m *ConditionalAccessPolicy) GetGrantControls()(*ConditionalAccessGrantControls) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grantControls
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
-func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
-// GetSessionControls gets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
-func (m *ConditionalAccessPolicy) GetSessionControls()(*ConditionalAccessSessionControls) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionControls
-    }
-}
-// GetState gets the state property value. Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
-func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conditions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConditionalAccessConditionSet() })
+        val, err := n.GetObjectValue(CreateConditionalAccessConditionSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditions(val.(*ConditionalAccessConditionSet))
+            m.SetConditions(val.(ConditionalAccessConditionSetable))
         }
         return nil
     }
@@ -140,12 +112,12 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["grantControls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConditionalAccessGrantControls() })
+        val, err := n.GetObjectValue(CreateConditionalAccessGrantControlsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGrantControls(val.(*ConditionalAccessGrantControls))
+            m.SetGrantControls(val.(ConditionalAccessGrantControlsable))
         }
         return nil
     }
@@ -160,12 +132,12 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["sessionControls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConditionalAccessSessionControls() })
+        val, err := n.GetObjectValue(CreateConditionalAccessSessionControlsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSessionControls(val.(*ConditionalAccessSessionControls))
+            m.SetSessionControls(val.(ConditionalAccessSessionControlsable))
         }
         return nil
     }
@@ -180,6 +152,38 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetGrantControls gets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
+func (m *ConditionalAccessPolicy) GetGrantControls()(ConditionalAccessGrantControlsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.grantControls
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
+func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
+// GetSessionControls gets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
+func (m *ConditionalAccessPolicy) GetSessionControls()(ConditionalAccessSessionControlsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sessionControls
+    }
+}
+// GetState gets the state property value. Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
+func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *ConditionalAccessPolicy) IsNil()(bool) {
     return m == nil
@@ -242,7 +246,7 @@ func (m *ConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetConditions sets the conditions property value. 
-func (m *ConditionalAccessPolicy) SetConditions(value *ConditionalAccessConditionSet)() {
+func (m *ConditionalAccessPolicy) SetConditions(value ConditionalAccessConditionSetable)() {
     if m != nil {
         m.conditions = value
     }
@@ -266,7 +270,7 @@ func (m *ConditionalAccessPolicy) SetDisplayName(value *string)() {
     }
 }
 // SetGrantControls sets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
-func (m *ConditionalAccessPolicy) SetGrantControls(value *ConditionalAccessGrantControls)() {
+func (m *ConditionalAccessPolicy) SetGrantControls(value ConditionalAccessGrantControlsable)() {
     if m != nil {
         m.grantControls = value
     }
@@ -278,7 +282,7 @@ func (m *ConditionalAccessPolicy) SetModifiedDateTime(value *i336074805fc853987a
     }
 }
 // SetSessionControls sets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
-func (m *ConditionalAccessPolicy) SetSessionControls(value *ConditionalAccessSessionControls)() {
+func (m *ConditionalAccessPolicy) SetSessionControls(value ConditionalAccessSessionControlsable)() {
     if m != nil {
         m.sessionControls = value
     }

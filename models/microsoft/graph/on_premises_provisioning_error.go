@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnPremisesProvisioningError 
+// OnPremisesProvisioningError provides operations to manage the collection of orgContact entities.
 type OnPremisesProvisioningError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,6 +25,10 @@ func NewOnPremisesProvisioningError()(*OnPremisesProvisioningError) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateOnPremisesProvisioningErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnPremisesProvisioningErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnPremisesProvisioningError(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesProvisioningError) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -39,30 +43,6 @@ func (m *OnPremisesProvisioningError) GetCategory()(*string) {
         return nil
     } else {
         return m.category
-    }
-}
-// GetOccurredDateTime gets the occurredDateTime property value. The date and time at which the error occurred.
-func (m *OnPremisesProvisioningError) GetOccurredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.occurredDateTime
-    }
-}
-// GetPropertyCausingError gets the propertyCausingError property value. Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
-func (m *OnPremisesProvisioningError) GetPropertyCausingError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propertyCausingError
-    }
-}
-// GetValue gets the value property value. Value of the property causing the error.
-func (m *OnPremisesProvisioningError) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +89,30 @@ func (m *OnPremisesProvisioningError) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetOccurredDateTime gets the occurredDateTime property value. The date and time at which the error occurred.
+func (m *OnPremisesProvisioningError) GetOccurredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.occurredDateTime
+    }
+}
+// GetPropertyCausingError gets the propertyCausingError property value. Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
+func (m *OnPremisesProvisioningError) GetPropertyCausingError()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.propertyCausingError
+    }
+}
+// GetValue gets the value property value. Value of the property causing the error.
+func (m *OnPremisesProvisioningError) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *OnPremisesProvisioningError) IsNil()(bool) {
     return m == nil

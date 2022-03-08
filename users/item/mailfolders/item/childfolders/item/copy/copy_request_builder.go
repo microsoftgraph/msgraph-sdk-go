@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// CopyRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\childFolders\{mailFolder-id1}\microsoft.graph.copy
+// CopyRequestBuilder provides operations to call the copy method.
 type CopyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CopyRequestBuilder struct {
 // CopyRequestBuilderPostOptions options for Post
 type CopyRequestBuilderPostOptions struct {
     // 
-    Body *CopyRequestBody;
+    Body CopyRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type CopyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type mailFolder
-    mailFolder *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolder;
+    mailFolder i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderable;
 }
 // NewCopyResponse instantiates a new copyResponse and sets the default values.
 func NewCopyResponse()(*CopyResponse) {
@@ -39,6 +39,9 @@ func NewCopyResponse()(*CopyResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCopyResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCopyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *CopyResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CopyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["mailFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMailFolderFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMailFolder(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderable))
+        }
+        return nil
+    }
+    return res
+}
 // GetMailFolder gets the mailFolder property value. Union type representation for type mailFolder
-func (m *CopyResponse) GetMailFolder()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolder) {
+func (m *CopyResponse) GetMailFolder()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderable) {
     if m == nil {
         return nil
     } else {
         return m.mailFolder
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CopyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["mailFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewMailFolder() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMailFolder(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolder))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CopyResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *CopyResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetMailFolder sets the mailFolder property value. Union type representation for type mailFolder
-func (m *CopyResponse) SetMailFolder(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolder)() {
+func (m *CopyResponse) SetMailFolder(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderable)() {
     if m != nil {
         m.mailFolder = value
     }
@@ -111,7 +114,7 @@ func NewCopyRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *CopyRequestBuilder) CreatePostRequestInformation(options *CopyRequestBu
     return requestInfo, nil
 }
 // Post invoke action copy
-func (m *CopyRequestBuilder) Post(options *CopyRequestBuilderPostOptions)(*CopyResponse, error) {
+func (m *CopyRequestBuilder) Post(options *CopyRequestBuilderPostOptions)(CopyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCopyResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCopyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CopyResponse), nil
+    return res.(CopyResponseable), nil
 }

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// UpdateRecordingStatusRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.updateRecordingStatus
+// UpdateRecordingStatusRequestBuilder provides operations to call the updateRecordingStatus method.
 type UpdateRecordingStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type UpdateRecordingStatusRequestBuilder struct {
 // UpdateRecordingStatusRequestBuilderPostOptions options for Post
 type UpdateRecordingStatusRequestBuilderPostOptions struct {
     // 
-    Body *UpdateRecordingStatusRequestBody;
+    Body UpdateRecordingStatusRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type UpdateRecordingStatusResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type updateRecordingStatusOperation
-    updateRecordingStatusOperation *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UpdateRecordingStatusOperation;
+    updateRecordingStatusOperation i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UpdateRecordingStatusOperationable;
 }
 // NewUpdateRecordingStatusResponse instantiates a new updateRecordingStatusResponse and sets the default values.
 func NewUpdateRecordingStatusResponse()(*UpdateRecordingStatusResponse) {
@@ -39,6 +39,9 @@ func NewUpdateRecordingStatusResponse()(*UpdateRecordingStatusResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateUpdateRecordingStatusResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateRecordingStatusResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRecordingStatusResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *UpdateRecordingStatusResponse) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *UpdateRecordingStatusResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["updateRecordingStatusOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUpdateRecordingStatusOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUpdateRecordingStatusOperation(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UpdateRecordingStatusOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetUpdateRecordingStatusOperation gets the updateRecordingStatusOperation property value. Union type representation for type updateRecordingStatusOperation
-func (m *UpdateRecordingStatusResponse) GetUpdateRecordingStatusOperation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UpdateRecordingStatusOperation) {
+func (m *UpdateRecordingStatusResponse) GetUpdateRecordingStatusOperation()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UpdateRecordingStatusOperationable) {
     if m == nil {
         return nil
     } else {
         return m.updateRecordingStatusOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateRecordingStatusResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["updateRecordingStatusOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewUpdateRecordingStatusOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdateRecordingStatusOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UpdateRecordingStatusOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *UpdateRecordingStatusResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *UpdateRecordingStatusResponse) SetAdditionalData(value map[string]inter
     }
 }
 // SetUpdateRecordingStatusOperation sets the updateRecordingStatusOperation property value. Union type representation for type updateRecordingStatusOperation
-func (m *UpdateRecordingStatusResponse) SetUpdateRecordingStatusOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UpdateRecordingStatusOperation)() {
+func (m *UpdateRecordingStatusResponse) SetUpdateRecordingStatusOperation(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UpdateRecordingStatusOperationable)() {
     if m != nil {
         m.updateRecordingStatusOperation = value
     }
@@ -111,7 +114,7 @@ func NewUpdateRecordingStatusRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformation(optio
     return requestInfo, nil
 }
 // Post invoke action updateRecordingStatus
-func (m *UpdateRecordingStatusRequestBuilder) Post(options *UpdateRecordingStatusRequestBuilderPostOptions)(*UpdateRecordingStatusResponse, error) {
+func (m *UpdateRecordingStatusRequestBuilder) Post(options *UpdateRecordingStatusRequestBuilderPostOptions)(UpdateRecordingStatusResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUpdateRecordingStatusResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUpdateRecordingStatusResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*UpdateRecordingStatusResponse), nil
+    return res.(UpdateRecordingStatusResponseable), nil
 }

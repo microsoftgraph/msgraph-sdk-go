@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Authentication 
+// Authentication provides operations to manage the drive singleton.
 type Authentication struct {
     Entity
     // 
-    fido2Methods []Fido2AuthenticationMethod;
+    fido2Methods []Fido2AuthenticationMethodable;
     // 
-    methods []AuthenticationMethod;
+    methods []AuthenticationMethodable;
     // 
-    microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethod;
+    microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethodable;
     // 
-    windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethod;
+    windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethodable;
 }
 // NewAuthentication instantiates a new authentication and sets the default values.
 func NewAuthentication()(*Authentication) {
@@ -23,16 +23,81 @@ func NewAuthentication()(*Authentication) {
     }
     return m
 }
+// CreateAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthenticationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthentication(), nil
+}
 // GetFido2Methods gets the fido2Methods property value. 
-func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethod) {
+func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
     if m == nil {
         return nil
     } else {
         return m.fido2Methods
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["fido2Methods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateFido2AuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Fido2AuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(Fido2AuthenticationMethodable)
+            }
+            m.SetFido2Methods(res)
+        }
+        return nil
+    }
+    res["methods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(AuthenticationMethodable)
+            }
+            m.SetMethods(res)
+        }
+        return nil
+    }
+    res["microsoftAuthenticatorMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MicrosoftAuthenticatorAuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(MicrosoftAuthenticatorAuthenticationMethodable)
+            }
+            m.SetMicrosoftAuthenticatorMethods(res)
+        }
+        return nil
+    }
+    res["windowsHelloForBusinessMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsHelloForBusinessAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WindowsHelloForBusinessAuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(WindowsHelloForBusinessAuthenticationMethodable)
+            }
+            m.SetWindowsHelloForBusinessMethods(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetMethods gets the methods property value. 
-func (m *Authentication) GetMethods()([]AuthenticationMethod) {
+func (m *Authentication) GetMethods()([]AuthenticationMethodable) {
     if m == nil {
         return nil
     } else {
@@ -40,7 +105,7 @@ func (m *Authentication) GetMethods()([]AuthenticationMethod) {
     }
 }
 // GetMicrosoftAuthenticatorMethods gets the microsoftAuthenticatorMethods property value. 
-func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethod) {
+func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethodable) {
     if m == nil {
         return nil
     } else {
@@ -48,73 +113,12 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
     }
 }
 // GetWindowsHelloForBusinessMethods gets the windowsHelloForBusinessMethods property value. 
-func (m *Authentication) GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethod) {
+func (m *Authentication) GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethodable) {
     if m == nil {
         return nil
     } else {
         return m.windowsHelloForBusinessMethods
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["fido2Methods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFido2AuthenticationMethod() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Fido2AuthenticationMethod, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Fido2AuthenticationMethod))
-            }
-            m.SetFido2Methods(res)
-        }
-        return nil
-    }
-    res["methods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthenticationMethod() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationMethod, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AuthenticationMethod))
-            }
-            m.SetMethods(res)
-        }
-        return nil
-    }
-    res["microsoftAuthenticatorMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMicrosoftAuthenticatorAuthenticationMethod() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MicrosoftAuthenticatorAuthenticationMethod, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*MicrosoftAuthenticatorAuthenticationMethod))
-            }
-            m.SetMicrosoftAuthenticatorMethods(res)
-        }
-        return nil
-    }
-    res["windowsHelloForBusinessMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsHelloForBusinessAuthenticationMethod() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsHelloForBusinessAuthenticationMethod, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*WindowsHelloForBusinessAuthenticationMethod))
-            }
-            m.SetWindowsHelloForBusinessMethods(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *Authentication) IsNil()(bool) {
     return m == nil
@@ -128,8 +132,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetFido2Methods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFido2Methods()))
         for i, v := range m.GetFido2Methods() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("fido2Methods", cast)
         if err != nil {
@@ -139,8 +142,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMethods()))
         for i, v := range m.GetMethods() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("methods", cast)
         if err != nil {
@@ -150,8 +152,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetMicrosoftAuthenticatorMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMicrosoftAuthenticatorMethods()))
         for i, v := range m.GetMicrosoftAuthenticatorMethods() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("microsoftAuthenticatorMethods", cast)
         if err != nil {
@@ -161,8 +162,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetWindowsHelloForBusinessMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsHelloForBusinessMethods()))
         for i, v := range m.GetWindowsHelloForBusinessMethods() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("windowsHelloForBusinessMethods", cast)
         if err != nil {
@@ -172,25 +172,25 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     return nil
 }
 // SetFido2Methods sets the fido2Methods property value. 
-func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethod)() {
+func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethodable)() {
     if m != nil {
         m.fido2Methods = value
     }
 }
 // SetMethods sets the methods property value. 
-func (m *Authentication) SetMethods(value []AuthenticationMethod)() {
+func (m *Authentication) SetMethods(value []AuthenticationMethodable)() {
     if m != nil {
         m.methods = value
     }
 }
 // SetMicrosoftAuthenticatorMethods sets the microsoftAuthenticatorMethods property value. 
-func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethod)() {
+func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethodable)() {
     if m != nil {
         m.microsoftAuthenticatorMethods = value
     }
 }
 // SetWindowsHelloForBusinessMethods sets the windowsHelloForBusinessMethods property value. 
-func (m *Authentication) SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethod)() {
+func (m *Authentication) SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethodable)() {
     if m != nil {
         m.windowsHelloForBusinessMethods = value
     }

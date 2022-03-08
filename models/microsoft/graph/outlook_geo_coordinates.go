@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutlookGeoCoordinates 
+// OutlookGeoCoordinates provides operations to manage the drive singleton.
 type OutlookGeoCoordinates struct {
     // The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
     accuracy *float64;
@@ -25,6 +25,10 @@ func NewOutlookGeoCoordinates()(*OutlookGeoCoordinates) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateOutlookGeoCoordinatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOutlookGeoCoordinatesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOutlookGeoCoordinates(), nil
 }
 // GetAccuracy gets the accuracy property value. The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
 func (m *OutlookGeoCoordinates) GetAccuracy()(*float64) {
@@ -56,22 +60,6 @@ func (m *OutlookGeoCoordinates) GetAltitudeAccuracy()(*float64) {
         return nil
     } else {
         return m.altitudeAccuracy
-    }
-}
-// GetLatitude gets the latitude property value. The latitude of the location.
-func (m *OutlookGeoCoordinates) GetLatitude()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.latitude
-    }
-}
-// GetLongitude gets the longitude property value. The longitude of the location.
-func (m *OutlookGeoCoordinates) GetLongitude()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.longitude
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +116,22 @@ func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetLatitude gets the latitude property value. The latitude of the location.
+func (m *OutlookGeoCoordinates) GetLatitude()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.latitude
+    }
+}
+// GetLongitude gets the longitude property value. The longitude of the location.
+func (m *OutlookGeoCoordinates) GetLongitude()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.longitude
+    }
 }
 func (m *OutlookGeoCoordinates) IsNil()(bool) {
     return m == nil

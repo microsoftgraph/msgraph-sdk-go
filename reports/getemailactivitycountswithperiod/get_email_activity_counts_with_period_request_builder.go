@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetEmailActivityCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getEmailActivityCounts(period='{period}')
+// GetEmailActivityCountsWithPeriodRequestBuilder provides operations to call the getEmailActivityCounts method.
 type GetEmailActivityCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewGetEmailActivityCountsWithPeriodRequestBuilderInternal(pathParameters ma
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetEmailActivityCountsWithPeriodRequestBuilder) CreateGetRequestInforma
     return requestInfo, nil
 }
 // Get invoke function getEmailActivityCounts
-func (m *GetEmailActivityCountsWithPeriodRequestBuilder) Get(options *GetEmailActivityCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
+func (m *GetEmailActivityCountsWithPeriodRequestBuilder) Get(options *GetEmailActivityCountsWithPeriodRequestBuilderGetOptions)(GetEmailActivityCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEmailActivityCountsWithPeriodResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetEmailActivityCountsWithPeriodResponseable), nil
 }

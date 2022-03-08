@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtectionAppLockerFile 
+// WindowsInformationProtectionAppLockerFile provides operations to manage the deviceAppManagement singleton.
 type WindowsInformationProtectionAppLockerFile struct {
     Entity
     // The friendly name
@@ -23,36 +23,16 @@ func NewWindowsInformationProtectionAppLockerFile()(*WindowsInformationProtectio
     }
     return m
 }
+// CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsInformationProtectionAppLockerFile(), nil
+}
 // GetDisplayName gets the displayName property value. The friendly name
 func (m *WindowsInformationProtectionAppLockerFile) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetFile gets the file property value. File as a byte array
-func (m *WindowsInformationProtectionAppLockerFile) GetFile()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.file
-    }
-}
-// GetFileHash gets the fileHash property value. SHA256 hash of the file
-func (m *WindowsInformationProtectionAppLockerFile) GetFileHash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHash
-    }
-}
-// GetVersion gets the version property value. Version of the entity.
-func (m *WindowsInformationProtectionAppLockerFile) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +79,30 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         return nil
     }
     return res
+}
+// GetFile gets the file property value. File as a byte array
+func (m *WindowsInformationProtectionAppLockerFile) GetFile()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.file
+    }
+}
+// GetFileHash gets the fileHash property value. SHA256 hash of the file
+func (m *WindowsInformationProtectionAppLockerFile) GetFileHash()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileHash
+    }
+}
+// GetVersion gets the version property value. Version of the entity.
+func (m *WindowsInformationProtectionAppLockerFile) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *WindowsInformationProtectionAppLockerFile) IsNil()(bool) {
     return m == nil

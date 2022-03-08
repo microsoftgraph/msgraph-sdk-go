@@ -2,12 +2,12 @@ package childfolders
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i30b716213ba1bc5165f3303b79c3aa171c27e12540d39ac232ffe74bff3dd359 "github.com/microsoftgraph/msgraph-sdk-go/me/contactfolders/item/childfolders/count"
     i953b1387b191d95e3b9bf250ec61ef0049ec261a77ba3a04f8646017ac3bf740 "github.com/microsoftgraph/msgraph-sdk-go/me/contactfolders/item/childfolders/delta"
 )
 
-// ChildFoldersRequestBuilder builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\childFolders
+// ChildFoldersRequestBuilder provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.
 type ChildFoldersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type ChildFoldersRequestBuilderGetQueryParameters struct {
 // ChildFoldersRequestBuilderPostOptions options for Post
 type ChildFoldersRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolderable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +64,7 @@ func NewChildFoldersRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -73,6 +73,9 @@ func NewChildFoldersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChildFoldersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ChildFoldersRequestBuilder) Count()(*i30b716213ba1bc5165f3303b79c3aa171c27e12540d39ac232ffe74bff3dd359.CountRequestBuilder) {
+    return i30b716213ba1bc5165f3303b79c3aa171c27e12540d39ac232ffe74bff3dd359.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *ChildFoldersRequestBuilder) CreateGetRequestInformation(options *ChildFoldersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -94,7 +97,7 @@ func (m *ChildFoldersRequestBuilder) CreateGetRequestInformation(options *ChildF
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of child folders in the folder. Navigation property. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to childFolders for me
 func (m *ChildFoldersRequestBuilder) CreatePostRequestInformation(options *ChildFoldersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,31 +115,39 @@ func (m *ChildFoldersRequestBuilder) CreatePostRequestInformation(options *Child
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\childFolders\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *ChildFoldersRequestBuilder) Delta()(*i953b1387b191d95e3b9bf250ec61ef0049ec261a77ba3a04f8646017ac3bf740.DeltaRequestBuilder) {
     return i953b1387b191d95e3b9bf250ec61ef0049ec261a77ba3a04f8646017ac3bf740.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the collection of child folders in the folder. Navigation property. Read-only. Nullable.
-func (m *ChildFoldersRequestBuilder) Get(options *ChildFoldersRequestBuilderGetOptions)(*ChildFoldersResponse, error) {
+func (m *ChildFoldersRequestBuilder) Get(options *ChildFoldersRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChildFoldersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateContactFolderCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ChildFoldersResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolderCollectionResponseable), nil
 }
-// Post the collection of child folders in the folder. Navigation property. Read-only. Nullable.
-func (m *ChildFoldersRequestBuilder) Post(options *ChildFoldersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder, error) {
+// Post create new navigation property to childFolders for me
+func (m *ChildFoldersRequestBuilder) Post(options *ChildFoldersRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolderable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewContactFolder() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateContactFolderFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolderable), nil
 }

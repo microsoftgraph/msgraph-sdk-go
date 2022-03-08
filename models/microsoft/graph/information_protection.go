@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InformationProtection 
+// InformationProtection provides operations to manage the informationProtection singleton.
 type InformationProtection struct {
     Entity
     // 
-    bitlocker *Bitlocker;
+    bitlocker Bitlockerable;
     // 
-    threatAssessmentRequests []ThreatAssessmentRequest;
+    threatAssessmentRequests []ThreatAssessmentRequestable;
 }
 // NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
@@ -19,50 +19,54 @@ func NewInformationProtection()(*InformationProtection) {
     }
     return m
 }
+// CreateInformationProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInformationProtectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInformationProtection(), nil
+}
 // GetBitlocker gets the bitlocker property value. 
-func (m *InformationProtection) GetBitlocker()(*Bitlocker) {
+func (m *InformationProtection) GetBitlocker()(Bitlockerable) {
     if m == nil {
         return nil
     } else {
         return m.bitlocker
     }
 }
-// GetThreatAssessmentRequests gets the threatAssessmentRequests property value. 
-func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threatAssessmentRequests
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bitlocker"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBitlocker() })
+        val, err := n.GetObjectValue(CreateBitlockerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBitlocker(val.(*Bitlocker))
+            m.SetBitlocker(val.(Bitlockerable))
         }
         return nil
     }
     res["threatAssessmentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewThreatAssessmentRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateThreatAssessmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ThreatAssessmentRequest, len(val))
+            res := make([]ThreatAssessmentRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ThreatAssessmentRequest))
+                res[i] = v.(ThreatAssessmentRequestable)
             }
             m.SetThreatAssessmentRequests(res)
         }
         return nil
     }
     return res
+}
+// GetThreatAssessmentRequests gets the threatAssessmentRequests property value. 
+func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.threatAssessmentRequests
+    }
 }
 func (m *InformationProtection) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *InformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetThreatAssessmentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetThreatAssessmentRequests()))
         for i, v := range m.GetThreatAssessmentRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("threatAssessmentRequests", cast)
         if err != nil {
@@ -93,13 +96,13 @@ func (m *InformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     return nil
 }
 // SetBitlocker sets the bitlocker property value. 
-func (m *InformationProtection) SetBitlocker(value *Bitlocker)() {
+func (m *InformationProtection) SetBitlocker(value Bitlockerable)() {
     if m != nil {
         m.bitlocker = value
     }
 }
 // SetThreatAssessmentRequests sets the threatAssessmentRequests property value. 
-func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequest)() {
+func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequestable)() {
     if m != nil {
         m.threatAssessmentRequests = value
     }

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ShiftItem 
+// ShiftItem provides operations to manage the drive singleton.
 type ShiftItem struct {
     ScheduleEntity
     // An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
-    activities []ShiftActivity;
+    activities []ShiftActivityable;
     // The shift label of the shiftItem.
     displayName *string;
     // The shift notes for the shiftItem.
@@ -21,8 +21,12 @@ func NewShiftItem()(*ShiftItem) {
     }
     return m
 }
+// CreateShiftItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateShiftItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewShiftItem(), nil
+}
 // GetActivities gets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
-func (m *ShiftItem) GetActivities()([]ShiftActivity) {
+func (m *ShiftItem) GetActivities()([]ShiftActivityable) {
     if m == nil {
         return nil
     } else {
@@ -37,26 +41,18 @@ func (m *ShiftItem) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetNotes gets the notes property value. The shift notes for the shiftItem.
-func (m *ShiftItem) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ShiftItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ScheduleEntity.GetFieldDeserializers()
     res["activities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShiftActivity() })
+        val, err := n.GetCollectionOfObjectValues(CreateShiftActivityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ShiftActivity, len(val))
+            res := make([]ShiftActivityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ShiftActivity))
+                res[i] = v.(ShiftActivityable)
             }
             m.SetActivities(res)
         }
@@ -84,6 +80,14 @@ func (m *ShiftItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
     }
     return res
 }
+// GetNotes gets the notes property value. The shift notes for the shiftItem.
+func (m *ShiftItem) GetNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
 func (m *ShiftItem) IsNil()(bool) {
     return m == nil
 }
@@ -96,8 +100,7 @@ func (m *ShiftItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetActivities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("activities", cast)
         if err != nil {
@@ -119,7 +122,7 @@ func (m *ShiftItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     return nil
 }
 // SetActivities sets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
-func (m *ShiftItem) SetActivities(value []ShiftActivity)() {
+func (m *ShiftItem) SetActivities(value []ShiftActivityable)() {
     if m != nil {
         m.activities = value
     }

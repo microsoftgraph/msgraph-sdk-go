@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceDetail 
+// DeviceDetail provides operations to manage the auditLogRoot singleton.
 type DeviceDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,6 +29,10 @@ func NewDeviceDetail()(*DeviceDetail) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceDetail) GetAdditionalData()(map[string]interface{}) {
@@ -60,38 +64,6 @@ func (m *DeviceDetail) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsCompliant gets the isCompliant property value. Indicates whether the device is compliant.
-func (m *DeviceDetail) GetIsCompliant()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCompliant
-    }
-}
-// GetIsManaged gets the isManaged property value. Indicates whether the device is managed.
-func (m *DeviceDetail) GetIsManaged()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isManaged
-    }
-}
-// GetOperatingSystem gets the operatingSystem property value. Indicates the operating system name and version used for signing in.
-func (m *DeviceDetail) GetOperatingSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystem
-    }
-}
-// GetTrustType gets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
-func (m *DeviceDetail) GetTrustType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -168,6 +140,38 @@ func (m *DeviceDetail) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetIsCompliant gets the isCompliant property value. Indicates whether the device is compliant.
+func (m *DeviceDetail) GetIsCompliant()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCompliant
+    }
+}
+// GetIsManaged gets the isManaged property value. Indicates whether the device is managed.
+func (m *DeviceDetail) GetIsManaged()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isManaged
+    }
+}
+// GetOperatingSystem gets the operatingSystem property value. Indicates the operating system name and version used for signing in.
+func (m *DeviceDetail) GetOperatingSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystem
+    }
+}
+// GetTrustType gets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
+func (m *DeviceDetail) GetTrustType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.trustType
+    }
 }
 func (m *DeviceDetail) IsNil()(bool) {
     return m == nil

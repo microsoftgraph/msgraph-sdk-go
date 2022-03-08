@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecureScoreControlProfile 
+// SecureScoreControlProfile provides operations to manage the security singleton.
 type SecureScoreControlProfile struct {
     Entity
     // Control action type (Config, Review, Behavior).
@@ -15,11 +15,11 @@ type SecureScoreControlProfile struct {
     // GUID string for tenant ID.
     azureTenantId *string;
     // The collection of compliance information associated with secure score control
-    complianceInformation []ComplianceInformation;
+    complianceInformation []ComplianceInformationable;
     // Control action category (Identity, Data, Device, Apps, Infrastructure).
     controlCategory *string;
     // Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
-    controlStateUpdates []SecureScoreControlStateUpdate;
+    controlStateUpdates []SecureScoreControlStateUpdateable;
     // Flag to indicate if a control is depreciated.
     deprecated *bool;
     // Resource cost of implemmentating control (low, moderate, high).
@@ -45,7 +45,7 @@ type SecureScoreControlProfile struct {
     // User impact of implementing control (low, moderate, high).
     userImpact *string;
     // 
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
 }
 // NewSecureScoreControlProfile instantiates a new secureScoreControlProfile and sets the default values.
 func NewSecureScoreControlProfile()(*SecureScoreControlProfile) {
@@ -53,6 +53,10 @@ func NewSecureScoreControlProfile()(*SecureScoreControlProfile) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSecureScoreControlProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecureScoreControlProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecureScoreControlProfile(), nil
 }
 // GetActionType gets the actionType property value. Control action type (Config, Review, Behavior).
 func (m *SecureScoreControlProfile) GetActionType()(*string) {
@@ -79,7 +83,7 @@ func (m *SecureScoreControlProfile) GetAzureTenantId()(*string) {
     }
 }
 // GetComplianceInformation gets the complianceInformation property value. The collection of compliance information associated with secure score control
-func (m *SecureScoreControlProfile) GetComplianceInformation()([]ComplianceInformation) {
+func (m *SecureScoreControlProfile) GetComplianceInformation()([]ComplianceInformationable) {
     if m == nil {
         return nil
     } else {
@@ -95,7 +99,7 @@ func (m *SecureScoreControlProfile) GetControlCategory()(*string) {
     }
 }
 // GetControlStateUpdates gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
-func (m *SecureScoreControlProfile) GetControlStateUpdates()([]SecureScoreControlStateUpdate) {
+func (m *SecureScoreControlProfile) GetControlStateUpdates()([]SecureScoreControlStateUpdateable) {
     if m == nil {
         return nil
     } else {
@@ -108,102 +112,6 @@ func (m *SecureScoreControlProfile) GetDeprecated()(*bool) {
         return nil
     } else {
         return m.deprecated
-    }
-}
-// GetImplementationCost gets the implementationCost property value. Resource cost of implemmentating control (low, moderate, high).
-func (m *SecureScoreControlProfile) GetImplementationCost()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.implementationCost
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
-func (m *SecureScoreControlProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetMaxScore gets the maxScore property value. max attainable score for the control.
-func (m *SecureScoreControlProfile) GetMaxScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxScore
-    }
-}
-// GetRank gets the rank property value. Microsoft's stack ranking of control.
-func (m *SecureScoreControlProfile) GetRank()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rank
-    }
-}
-// GetRemediation gets the remediation property value. Description of what the control will help remediate.
-func (m *SecureScoreControlProfile) GetRemediation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediation
-    }
-}
-// GetRemediationImpact gets the remediationImpact property value. Description of the impact on users of the remediation.
-func (m *SecureScoreControlProfile) GetRemediationImpact()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationImpact
-    }
-}
-// GetService gets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
-func (m *SecureScoreControlProfile) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
-}
-// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
-func (m *SecureScoreControlProfile) GetThreats()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threats
-    }
-}
-// GetTier gets the tier property value. Control tier (Core, Defense in Depth, Advanced.)
-func (m *SecureScoreControlProfile) GetTier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tier
-    }
-}
-// GetTitle gets the title property value. Title of the control.
-func (m *SecureScoreControlProfile) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
-}
-// GetUserImpact gets the userImpact property value. User impact of implementing control (low, moderate, high).
-func (m *SecureScoreControlProfile) GetUserImpact()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userImpact
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. 
-func (m *SecureScoreControlProfile) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -240,14 +148,14 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["complianceInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewComplianceInformation() })
+        val, err := n.GetCollectionOfObjectValues(CreateComplianceInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ComplianceInformation, len(val))
+            res := make([]ComplianceInformationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ComplianceInformation))
+                res[i] = v.(ComplianceInformationable)
             }
             m.SetComplianceInformation(res)
         }
@@ -264,14 +172,14 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["controlStateUpdates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecureScoreControlStateUpdate() })
+        val, err := n.GetCollectionOfObjectValues(CreateSecureScoreControlStateUpdateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SecureScoreControlStateUpdate, len(val))
+            res := make([]SecureScoreControlStateUpdateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SecureScoreControlStateUpdate))
+                res[i] = v.(SecureScoreControlStateUpdateable)
             }
             m.SetControlStateUpdates(res)
         }
@@ -402,16 +310,112 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     return res
+}
+// GetImplementationCost gets the implementationCost property value. Resource cost of implemmentating control (low, moderate, high).
+func (m *SecureScoreControlProfile) GetImplementationCost()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.implementationCost
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
+func (m *SecureScoreControlProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetMaxScore gets the maxScore property value. max attainable score for the control.
+func (m *SecureScoreControlProfile) GetMaxScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maxScore
+    }
+}
+// GetRank gets the rank property value. Microsoft's stack ranking of control.
+func (m *SecureScoreControlProfile) GetRank()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rank
+    }
+}
+// GetRemediation gets the remediation property value. Description of what the control will help remediate.
+func (m *SecureScoreControlProfile) GetRemediation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediation
+    }
+}
+// GetRemediationImpact gets the remediationImpact property value. Description of the impact on users of the remediation.
+func (m *SecureScoreControlProfile) GetRemediationImpact()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediationImpact
+    }
+}
+// GetService gets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+func (m *SecureScoreControlProfile) GetService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.service
+    }
+}
+// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+func (m *SecureScoreControlProfile) GetThreats()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.threats
+    }
+}
+// GetTier gets the tier property value. Control tier (Core, Defense in Depth, Advanced.)
+func (m *SecureScoreControlProfile) GetTier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tier
+    }
+}
+// GetTitle gets the title property value. Title of the control.
+func (m *SecureScoreControlProfile) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
+}
+// GetUserImpact gets the userImpact property value. User impact of implementing control (low, moderate, high).
+func (m *SecureScoreControlProfile) GetUserImpact()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userImpact
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. 
+func (m *SecureScoreControlProfile) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
 }
 func (m *SecureScoreControlProfile) IsNil()(bool) {
     return m == nil
@@ -443,8 +447,7 @@ func (m *SecureScoreControlProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetComplianceInformation() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetComplianceInformation()))
         for i, v := range m.GetComplianceInformation() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("complianceInformation", cast)
         if err != nil {
@@ -460,8 +463,7 @@ func (m *SecureScoreControlProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetControlStateUpdates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetControlStateUpdates()))
         for i, v := range m.GetControlStateUpdates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("controlStateUpdates", cast)
         if err != nil {
@@ -567,7 +569,7 @@ func (m *SecureScoreControlProfile) SetAzureTenantId(value *string)() {
     }
 }
 // SetComplianceInformation sets the complianceInformation property value. The collection of compliance information associated with secure score control
-func (m *SecureScoreControlProfile) SetComplianceInformation(value []ComplianceInformation)() {
+func (m *SecureScoreControlProfile) SetComplianceInformation(value []ComplianceInformationable)() {
     if m != nil {
         m.complianceInformation = value
     }
@@ -579,7 +581,7 @@ func (m *SecureScoreControlProfile) SetControlCategory(value *string)() {
     }
 }
 // SetControlStateUpdates sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
-func (m *SecureScoreControlProfile) SetControlStateUpdates(value []SecureScoreControlStateUpdate)() {
+func (m *SecureScoreControlProfile) SetControlStateUpdates(value []SecureScoreControlStateUpdateable)() {
     if m != nil {
         m.controlStateUpdates = value
     }
@@ -657,7 +659,7 @@ func (m *SecureScoreControlProfile) SetUserImpact(value *string)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. 
-func (m *SecureScoreControlProfile) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *SecureScoreControlProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }

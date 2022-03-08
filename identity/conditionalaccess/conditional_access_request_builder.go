@@ -2,7 +2,6 @@ package conditionalaccess
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i27d3a1bae6f4577a4de2876ba58fad41be78be972958441916bfc0b15d805933 "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/policies"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     ie167212f1f78fb7bf5e6a91e4a3df660b8a5499daeed0e885580a0dde04d710e "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/namedlocations"
@@ -10,7 +9,7 @@ import (
     i91801d979eb0028b76d066e7195d63b5ed00d456ccdceaa9f6bb9a091401a467 "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/policies/item"
 )
 
-// ConditionalAccessRequestBuilder builds and executes requests for operations under \identity\conditionalAccess
+// ConditionalAccessRequestBuilder provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
 type ConditionalAccessRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +48,7 @@ type ConditionalAccessRequestBuilderGetQueryParameters struct {
 // ConditionalAccessRequestBuilderPatchOptions options for Patch
 type ConditionalAccessRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessRoot;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessRootable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +65,7 @@ func NewConditionalAccessRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +75,7 @@ func NewConditionalAccessRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the entry point for the Conditional Access (CA) object model.
+// CreateDeleteRequestInformation delete navigation property conditionalAccess for identity
 func (m *ConditionalAccessRequestBuilder) CreateDeleteRequestInformation(options *ConditionalAccessRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +112,7 @@ func (m *ConditionalAccessRequestBuilder) CreateGetRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the entry point for the Conditional Access (CA) object model.
+// CreatePatchRequestInformation update the navigation property conditionalAccess in identity
 func (m *ConditionalAccessRequestBuilder) CreatePatchRequestInformation(options *ConditionalAccessRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,29 +130,37 @@ func (m *ConditionalAccessRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Delete the entry point for the Conditional Access (CA) object model.
+// Delete delete navigation property conditionalAccess for identity
 func (m *ConditionalAccessRequestBuilder) Delete(options *ConditionalAccessRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the entry point for the Conditional Access (CA) object model.
-func (m *ConditionalAccessRequestBuilder) Get(options *ConditionalAccessRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessRoot, error) {
+func (m *ConditionalAccessRequestBuilder) Get(options *ConditionalAccessRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessRootable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewConditionalAccessRoot() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateConditionalAccessRootFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessRoot), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessRootable), nil
 }
 func (m *ConditionalAccessRequestBuilder) NamedLocations()(*ie167212f1f78fb7bf5e6a91e4a3df660b8a5499daeed0e885580a0dde04d710e.NamedLocationsRequestBuilder) {
     return ie167212f1f78fb7bf5e6a91e4a3df660b8a5499daeed0e885580a0dde04d710e.NewNamedLocationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -169,13 +176,17 @@ func (m *ConditionalAccessRequestBuilder) NamedLocationsById(id string)(*i652ce6
     }
     return i652ce65e13fdceb3d1ed10efc4a8f6c0d893a47d549accb475d48e05eedf3251.NewNamedLocationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the entry point for the Conditional Access (CA) object model.
+// Patch update the navigation property conditionalAccess in identity
 func (m *ConditionalAccessRequestBuilder) Patch(options *ConditionalAccessRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

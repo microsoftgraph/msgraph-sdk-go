@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChatMessageMentionedIdentitySet 
+// ChatMessageMentionedIdentitySet provides operations to manage the collection of chat entities.
 type ChatMessageMentionedIdentitySet struct {
     IdentitySet
     // If present, represents a conversation (for example, team or channel) @mentioned in a message.
-    conversation *TeamworkConversationIdentity;
+    conversation TeamworkConversationIdentityable;
 }
 // NewChatMessageMentionedIdentitySet instantiates a new chatMessageMentionedIdentitySet and sets the default values.
 func NewChatMessageMentionedIdentitySet()(*ChatMessageMentionedIdentitySet) {
@@ -17,8 +17,12 @@ func NewChatMessageMentionedIdentitySet()(*ChatMessageMentionedIdentitySet) {
     }
     return m
 }
+// CreateChatMessageMentionedIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChatMessageMentionedIdentitySetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChatMessageMentionedIdentitySet(), nil
+}
 // GetConversation gets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
-func (m *ChatMessageMentionedIdentitySet) GetConversation()(*TeamworkConversationIdentity) {
+func (m *ChatMessageMentionedIdentitySet) GetConversation()(TeamworkConversationIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -29,12 +33,12 @@ func (m *ChatMessageMentionedIdentitySet) GetConversation()(*TeamworkConversatio
 func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.IdentitySet.GetFieldDeserializers()
     res["conversation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkConversationIdentity() })
+        val, err := n.GetObjectValue(CreateTeamworkConversationIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConversation(val.(*TeamworkConversationIdentity))
+            m.SetConversation(val.(TeamworkConversationIdentityable))
         }
         return nil
     }
@@ -58,7 +62,7 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i04eb5309aeaafadd2837
     return nil
 }
 // SetConversation sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
-func (m *ChatMessageMentionedIdentitySet) SetConversation(value *TeamworkConversationIdentity)() {
+func (m *ChatMessageMentionedIdentitySet) SetConversation(value TeamworkConversationIdentityable)() {
     if m != nil {
         m.conversation = value
     }

@@ -5,7 +5,7 @@ import (
     i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// Acl 
+// Acl provides operations to manage the collection of externalConnection entities.
 type Acl struct {
     // The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
     accessType *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.AccessType;
@@ -23,6 +23,10 @@ func NewAcl()(*Acl) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAclFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAclFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAcl(), nil
+}
 // GetAccessType gets the accessType property value. The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
 func (m *Acl) GetAccessType()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.AccessType) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *Acl) GetAdditionalData()(map[string]interface{}) {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetType gets the type property value. The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests, externalGroup, unknownFutureValue.
-func (m *Acl) GetType()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.AclType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetValue gets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
-func (m *Acl) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +77,22 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests, externalGroup, unknownFutureValue.
+func (m *Acl) GetType()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.AclType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetValue gets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
+func (m *Acl) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *Acl) IsNil()(bool) {
     return m == nil

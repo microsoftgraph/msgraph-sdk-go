@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EBookInstallSummary 
+// EBookInstallSummary provides operations to manage the deviceAppManagement singleton.
 type EBookInstallSummary struct {
     Entity
     // Number of Devices that have failed to install this book.
@@ -27,6 +27,10 @@ func NewEBookInstallSummary()(*EBookInstallSummary) {
     }
     return m
 }
+// CreateEBookInstallSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEBookInstallSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEBookInstallSummary(), nil
+}
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to install this book.
 func (m *EBookInstallSummary) GetFailedDeviceCount()(*int32) {
     if m == nil {
@@ -41,38 +45,6 @@ func (m *EBookInstallSummary) GetFailedUserCount()(*int32) {
         return nil
     } else {
         return m.failedUserCount
-    }
-}
-// GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this book.
-func (m *EBookInstallSummary) GetInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedDeviceCount
-    }
-}
-// GetInstalledUserCount gets the installedUserCount property value. Number of Users whose devices have all succeeded to install this book.
-func (m *EBookInstallSummary) GetInstalledUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedUserCount
-    }
-}
-// GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Number of Devices that does not have this book installed.
-func (m *EBookInstallSummary) GetNotInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notInstalledDeviceCount
-    }
-}
-// GetNotInstalledUserCount gets the notInstalledUserCount property value. Number of Users that did not install this book.
-func (m *EBookInstallSummary) GetNotInstalledUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notInstalledUserCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +111,38 @@ func (m *EBookInstallSummary) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this book.
+func (m *EBookInstallSummary) GetInstalledDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedDeviceCount
+    }
+}
+// GetInstalledUserCount gets the installedUserCount property value. Number of Users whose devices have all succeeded to install this book.
+func (m *EBookInstallSummary) GetInstalledUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedUserCount
+    }
+}
+// GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Number of Devices that does not have this book installed.
+func (m *EBookInstallSummary) GetNotInstalledDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notInstalledDeviceCount
+    }
+}
+// GetNotInstalledUserCount gets the notInstalledUserCount property value. Number of Users that did not install this book.
+func (m *EBookInstallSummary) GetNotInstalledUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notInstalledUserCount
+    }
 }
 func (m *EBookInstallSummary) IsNil()(bool) {
     return m == nil

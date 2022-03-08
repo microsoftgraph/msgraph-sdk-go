@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookComment 
+// WorkbookComment provides operations to manage the drive singleton.
 type WorkbookComment struct {
     Entity
     // The content of comment.
@@ -12,7 +12,7 @@ type WorkbookComment struct {
     // Indicates the type for the comment.
     contentType *string;
     // Read-only. Nullable.
-    replies []WorkbookCommentReply;
+    replies []WorkbookCommentReplyable;
 }
 // NewWorkbookComment instantiates a new workbookComment and sets the default values.
 func NewWorkbookComment()(*WorkbookComment) {
@@ -20,6 +20,10 @@ func NewWorkbookComment()(*WorkbookComment) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateWorkbookCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookCommentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookComment(), nil
 }
 // GetContent gets the content property value. The content of comment.
 func (m *WorkbookComment) GetContent()(*string) {
@@ -35,14 +39,6 @@ func (m *WorkbookComment) GetContentType()(*string) {
         return nil
     } else {
         return m.contentType
-    }
-}
-// GetReplies gets the replies property value. Read-only. Nullable.
-func (m *WorkbookComment) GetReplies()([]WorkbookCommentReply) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replies
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,20 +65,28 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["replies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookCommentReply() })
+        val, err := n.GetCollectionOfObjectValues(CreateWorkbookCommentReplyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WorkbookCommentReply, len(val))
+            res := make([]WorkbookCommentReplyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WorkbookCommentReply))
+                res[i] = v.(WorkbookCommentReplyable)
             }
             m.SetReplies(res)
         }
         return nil
     }
     return res
+}
+// GetReplies gets the replies property value. Read-only. Nullable.
+func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.replies
+    }
 }
 func (m *WorkbookComment) IsNil()(bool) {
     return m == nil
@@ -108,8 +112,7 @@ func (m *WorkbookComment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetReplies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReplies()))
         for i, v := range m.GetReplies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("replies", cast)
         if err != nil {
@@ -131,7 +134,7 @@ func (m *WorkbookComment) SetContentType(value *string)() {
     }
 }
 // SetReplies sets the replies property value. Read-only. Nullable.
-func (m *WorkbookComment) SetReplies(value []WorkbookCommentReply)() {
+func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
     if m != nil {
         m.replies = value
     }

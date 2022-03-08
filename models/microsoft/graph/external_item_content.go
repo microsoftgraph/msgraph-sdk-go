@@ -5,7 +5,7 @@ import (
     i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// ExternalItemContent 
+// ExternalItemContent provides operations to manage the collection of externalConnection entities.
 type ExternalItemContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,28 +21,16 @@ func NewExternalItemContent()(*ExternalItemContent) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateExternalItemContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExternalItemContentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExternalItemContent(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExternalItemContent) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetType gets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue.
-func (m *ExternalItemContent) GetType()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ExternalItemContentType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetValue gets the value property value. The content for the externalItem. Required.
-func (m *ExternalItemContent) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +57,22 @@ func (m *ExternalItemContent) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue.
+func (m *ExternalItemContent) GetType()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ExternalItemContentType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetValue gets the value property value. The content for the externalItem. Required.
+func (m *ExternalItemContent) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *ExternalItemContent) IsNil()(bool) {
     return m == nil

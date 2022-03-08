@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ListInfo 
+// ListInfo provides operations to manage the drive singleton.
 type ListInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewListInfo()(*ListInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateListInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateListInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewListInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ListInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *ListInfo) GetContentTypesEnabled()(*bool) {
         return nil
     } else {
         return m.contentTypesEnabled
-    }
-}
-// GetHidden gets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
-func (m *ListInfo) GetHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hidden
-    }
-}
-// GetTemplate gets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
-func (m *ListInfo) GetTemplate()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.template
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetHidden gets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
+func (m *ListInfo) GetHidden()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hidden
+    }
+}
+// GetTemplate gets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
+func (m *ListInfo) GetTemplate()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.template
+    }
 }
 func (m *ListInfo) IsNil()(bool) {
     return m == nil

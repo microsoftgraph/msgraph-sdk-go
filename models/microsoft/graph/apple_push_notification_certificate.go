@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApplePushNotificationCertificate 
+// ApplePushNotificationCertificate provides operations to manage the deviceManagement singleton.
 type ApplePushNotificationCertificate struct {
     Entity
     // Apple Id of the account used to create the MDM push certificate.
@@ -27,6 +27,10 @@ func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateApplePushNotificationCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApplePushNotificationCertificateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApplePushNotificationCertificate(), nil
 }
 // GetAppleIdentifier gets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
 func (m *ApplePushNotificationCertificate) GetAppleIdentifier()(*string) {
@@ -58,22 +62,6 @@ func (m *ApplePushNotificationCertificate) GetExpirationDateTime()(*i336074805fc
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
-func (m *ApplePushNotificationCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetTopicIdentifier gets the topicIdentifier property value. Topic Id.
-func (m *ApplePushNotificationCertificate) GetTopicIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topicIdentifier
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,6 +128,22 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
+func (m *ApplePushNotificationCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetTopicIdentifier gets the topicIdentifier property value. Topic Id.
+func (m *ApplePushNotificationCertificate) GetTopicIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.topicIdentifier
+    }
 }
 func (m *ApplePushNotificationCertificate) IsNil()(bool) {
     return m == nil

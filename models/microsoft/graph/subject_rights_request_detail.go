@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SubjectRightsRequestDetail 
+// SubjectRightsRequestDetail provides operations to manage the privacy singleton.
 type SubjectRightsRequestDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Count of items that are excluded from the request.
     excludedItemCount *int64;
     // Count of items per insight.
-    insightCounts []KeyValuePair;
+    insightCounts []KeyValuePairable;
     // Count of items found.
     itemCount *int64;
     // Count of item that need review.
     itemNeedReview *int64;
     // Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
-    productItemCounts []KeyValuePair;
+    productItemCounts []KeyValuePairable;
     // Count of items signed off by the administrator.
     signedOffItemCount *int64;
     // Total item size in bytes.
@@ -29,6 +29,10 @@ func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSubjectRightsRequestDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSubjectRightsRequestDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSubjectRightsRequestDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestDetail) GetAdditionalData()(map[string]interface{}) {
@@ -46,54 +50,6 @@ func (m *SubjectRightsRequestDetail) GetExcludedItemCount()(*int64) {
         return m.excludedItemCount
     }
 }
-// GetInsightCounts gets the insightCounts property value. Count of items per insight.
-func (m *SubjectRightsRequestDetail) GetInsightCounts()([]KeyValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insightCounts
-    }
-}
-// GetItemCount gets the itemCount property value. Count of items found.
-func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCount
-    }
-}
-// GetItemNeedReview gets the itemNeedReview property value. Count of item that need review.
-func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemNeedReview
-    }
-}
-// GetProductItemCounts gets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
-func (m *SubjectRightsRequestDetail) GetProductItemCounts()([]KeyValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productItemCounts
-    }
-}
-// GetSignedOffItemCount gets the signedOffItemCount property value. Count of items signed off by the administrator.
-func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signedOffItemCount
-    }
-}
-// GetTotalItemSize gets the totalItemSize property value. Total item size in bytes.
-func (m *SubjectRightsRequestDetail) GetTotalItemSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalItemSize
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -108,14 +64,14 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["insightCounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetInsightCounts(res)
         }
@@ -142,14 +98,14 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["productItemCounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetProductItemCounts(res)
         }
@@ -177,6 +133,54 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
     }
     return res
 }
+// GetInsightCounts gets the insightCounts property value. Count of items per insight.
+func (m *SubjectRightsRequestDetail) GetInsightCounts()([]KeyValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.insightCounts
+    }
+}
+// GetItemCount gets the itemCount property value. Count of items found.
+func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemCount
+    }
+}
+// GetItemNeedReview gets the itemNeedReview property value. Count of item that need review.
+func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemNeedReview
+    }
+}
+// GetProductItemCounts gets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
+func (m *SubjectRightsRequestDetail) GetProductItemCounts()([]KeyValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.productItemCounts
+    }
+}
+// GetSignedOffItemCount gets the signedOffItemCount property value. Count of items signed off by the administrator.
+func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signedOffItemCount
+    }
+}
+// GetTotalItemSize gets the totalItemSize property value. Total item size in bytes.
+func (m *SubjectRightsRequestDetail) GetTotalItemSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalItemSize
+    }
+}
 func (m *SubjectRightsRequestDetail) IsNil()(bool) {
     return m == nil
 }
@@ -191,8 +195,7 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c
     if m.GetInsightCounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInsightCounts()))
         for i, v := range m.GetInsightCounts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("insightCounts", cast)
         if err != nil {
@@ -214,8 +217,7 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c
     if m.GetProductItemCounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProductItemCounts()))
         for i, v := range m.GetProductItemCounts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("productItemCounts", cast)
         if err != nil {
@@ -255,7 +257,7 @@ func (m *SubjectRightsRequestDetail) SetExcludedItemCount(value *int64)() {
     }
 }
 // SetInsightCounts sets the insightCounts property value. Count of items per insight.
-func (m *SubjectRightsRequestDetail) SetInsightCounts(value []KeyValuePair)() {
+func (m *SubjectRightsRequestDetail) SetInsightCounts(value []KeyValuePairable)() {
     if m != nil {
         m.insightCounts = value
     }
@@ -273,7 +275,7 @@ func (m *SubjectRightsRequestDetail) SetItemNeedReview(value *int64)() {
     }
 }
 // SetProductItemCounts sets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
-func (m *SubjectRightsRequestDetail) SetProductItemCounts(value []KeyValuePair)() {
+func (m *SubjectRightsRequestDetail) SetProductItemCounts(value []KeyValuePairable)() {
     if m != nil {
         m.productItemCounts = value
     }

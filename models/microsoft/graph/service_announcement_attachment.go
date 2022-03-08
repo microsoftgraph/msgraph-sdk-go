@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceAnnouncementAttachment 
+// ServiceAnnouncementAttachment provides operations to manage the admin singleton.
 type ServiceAnnouncementAttachment struct {
     Entity
     // The attachment content.
@@ -26,6 +26,10 @@ func NewServiceAnnouncementAttachment()(*ServiceAnnouncementAttachment) {
     }
     return m
 }
+// CreateServiceAnnouncementAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateServiceAnnouncementAttachmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewServiceAnnouncementAttachment(), nil
+}
 // GetContent gets the content property value. The attachment content.
 func (m *ServiceAnnouncementAttachment) GetContent()([]byte) {
     if m == nil {
@@ -40,30 +44,6 @@ func (m *ServiceAnnouncementAttachment) GetContentType()(*string) {
         return nil
     } else {
         return m.contentType
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *ServiceAnnouncementAttachment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetName gets the name property value. 
-func (m *ServiceAnnouncementAttachment) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetSize gets the size property value. 
-func (m *ServiceAnnouncementAttachment) GetSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +100,30 @@ func (m *ServiceAnnouncementAttachment) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *ServiceAnnouncementAttachment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetName gets the name property value. 
+func (m *ServiceAnnouncementAttachment) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetSize gets the size property value. 
+func (m *ServiceAnnouncementAttachment) GetSize()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
 }
 func (m *ServiceAnnouncementAttachment) IsNil()(bool) {
     return m == nil

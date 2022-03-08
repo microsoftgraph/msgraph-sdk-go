@@ -2,11 +2,11 @@ package signins
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i58d269ed60fb21b00fe0c1437b746e8bfa3cee74d58a9636fa22d4d8770e4534 "github.com/microsoftgraph/msgraph-sdk-go/auditlogs/signins/count"
 )
 
-// SignInsRequestBuilder builds and executes requests for operations under \auditLogs\signIns
+// SignInsRequestBuilder provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
 type SignInsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type SignInsRequestBuilderGetQueryParameters struct {
 // SignInsRequestBuilderPostOptions options for Post
 type SignInsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SignIn;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SignInable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewSignInsRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewSignInsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSignInsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SignInsRequestBuilder) Count()(*i58d269ed60fb21b00fe0c1437b746e8bfa3cee74d58a9636fa22d4d8770e4534.CountRequestBuilder) {
+    return i58d269ed60fb21b00fe0c1437b746e8bfa3cee74d58a9636fa22d4d8770e4534.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Nullable.
 func (m *SignInsRequestBuilder) CreateGetRequestInformation(options *SignInsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *SignInsRequestBuilder) CreateGetRequestInformation(options *SignInsRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to signIns for auditLogs
 func (m *SignInsRequestBuilder) CreatePostRequestInformation(options *SignInsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *SignInsRequestBuilder) CreatePostRequestInformation(options *SignInsReq
     return requestInfo, nil
 }
 // Get read-only. Nullable.
-func (m *SignInsRequestBuilder) Get(options *SignInsRequestBuilderGetOptions)(*SignInsResponse, error) {
+func (m *SignInsRequestBuilder) Get(options *SignInsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SignInCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSignInsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSignInCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SignInsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SignInCollectionResponseable), nil
 }
-// Post read-only. Nullable.
-func (m *SignInsRequestBuilder) Post(options *SignInsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SignIn, error) {
+// Post create new navigation property to signIns for auditLogs
+func (m *SignInsRequestBuilder) Post(options *SignInsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SignInable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSignIn() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSignInFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SignIn), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SignInable), nil
 }

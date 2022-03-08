@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExtensionProperty 
+// ExtensionProperty provides operations to manage the collection of application entities.
 type ExtensionProperty struct {
     DirectoryObject
     // Display name of the application object on which this extension property is defined. Read-only.
@@ -25,6 +25,10 @@ func NewExtensionProperty()(*ExtensionProperty) {
     }
     return m
 }
+// CreateExtensionPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExtensionPropertyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExtensionProperty(), nil
+}
 // GetAppDisplayName gets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
 func (m *ExtensionProperty) GetAppDisplayName()(*string) {
     if m == nil {
@@ -39,30 +43,6 @@ func (m *ExtensionProperty) GetDataType()(*string) {
         return nil
     } else {
         return m.dataType
-    }
-}
-// GetIsSyncedFromOnPremises gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
-func (m *ExtensionProperty) GetIsSyncedFromOnPremises()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSyncedFromOnPremises
-    }
-}
-// GetName gets the name property value. Name of the extension property. Not nullable.
-func (m *ExtensionProperty) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetTargetObjects gets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
-func (m *ExtensionProperty) GetTargetObjects()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetObjects
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -123,6 +103,30 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetIsSyncedFromOnPremises gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+func (m *ExtensionProperty) GetIsSyncedFromOnPremises()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSyncedFromOnPremises
+    }
+}
+// GetName gets the name property value. Name of the extension property. Not nullable.
+func (m *ExtensionProperty) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetTargetObjects gets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+func (m *ExtensionProperty) GetTargetObjects()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetObjects
+    }
 }
 func (m *ExtensionProperty) IsNil()(bool) {
     return m == nil

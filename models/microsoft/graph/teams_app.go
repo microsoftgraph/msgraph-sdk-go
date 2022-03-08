@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamsApp 
+// TeamsApp provides operations to manage the appCatalogs singleton.
 type TeamsApp struct {
     Entity
     // The details for each version of the app.
-    appDefinitions []TeamsAppDefinition;
+    appDefinitions []TeamsAppDefinitionable;
     // The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
     displayName *string;
     // The method of distribution for the app. Read-only.
@@ -23,8 +23,12 @@ func NewTeamsApp()(*TeamsApp) {
     }
     return m
 }
+// CreateTeamsAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamsAppFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamsApp(), nil
+}
 // GetAppDefinitions gets the appDefinitions property value. The details for each version of the app.
-func (m *TeamsApp) GetAppDefinitions()([]TeamsAppDefinition) {
+func (m *TeamsApp) GetAppDefinitions()([]TeamsAppDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -59,14 +63,14 @@ func (m *TeamsApp) GetExternalId()(*string) {
 func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsAppDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAppDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamsAppDefinition, len(val))
+            res := make([]TeamsAppDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamsAppDefinition))
+                res[i] = v.(TeamsAppDefinitionable)
             }
             m.SetAppDefinitions(res)
         }
@@ -116,8 +120,7 @@ func (m *TeamsApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetAppDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppDefinitions()))
         for i, v := range m.GetAppDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appDefinitions", cast)
         if err != nil {
@@ -146,7 +149,7 @@ func (m *TeamsApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetAppDefinitions sets the appDefinitions property value. The details for each version of the app.
-func (m *TeamsApp) SetAppDefinitions(value []TeamsAppDefinition)() {
+func (m *TeamsApp) SetAppDefinitions(value []TeamsAppDefinitionable)() {
     if m != nil {
         m.appDefinitions = value
     }

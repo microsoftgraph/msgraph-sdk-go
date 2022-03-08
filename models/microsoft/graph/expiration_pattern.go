@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExpirationPattern 
+// ExpirationPattern provides operations to manage the identityGovernance singleton.
 type ExpirationPattern struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewExpirationPattern()(*ExpirationPattern) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateExpirationPatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExpirationPatternFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExpirationPattern(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpirationPattern) GetAdditionalData()(map[string]interface{}) {
@@ -45,14 +49,6 @@ func (m *ExpirationPattern) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetType gets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
-func (m *ExpirationPattern) GetType()(*ExpirationPatternType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +85,14 @@ func (m *ExpirationPattern) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetType gets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
+func (m *ExpirationPattern) GetType()(*ExpirationPatternType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *ExpirationPattern) IsNil()(bool) {
     return m == nil

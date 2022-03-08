@@ -2,12 +2,10 @@ package teamsappdefinition
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i58a4ac81387bc43a305a6822dc9f3aa1f2cfea2fd0f07230760b31665f6b5d69 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/installedapps/item/teamsappdefinition/ref"
 )
 
-// TeamsAppDefinitionRequestBuilder builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}\teamsAppDefinition
+// TeamsAppDefinitionRequestBuilder provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
 type TeamsAppDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +41,7 @@ func NewTeamsAppDefinitionRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,17 +72,18 @@ func (m *TeamsAppDefinitionRequestBuilder) CreateGetRequestInformation(options *
     return requestInfo, nil
 }
 // Get the details of this version of the app.
-func (m *TeamsAppDefinitionRequestBuilder) Get(options *TeamsAppDefinitionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition, error) {
+func (m *TeamsAppDefinitionRequestBuilder) Get(options *TeamsAppDefinitionRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewTeamsAppDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTeamsAppDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition), nil
-}
-func (m *TeamsAppDefinitionRequestBuilder) Ref()(*i58a4ac81387bc43a305a6822dc9f3aa1f2cfea2fd0f07230760b31665f6b5d69.RefRequestBuilder) {
-    return i58a4ac81387bc43a305a6822dc9f3aa1f2cfea2fd0f07230760b31665f6b5d69.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinitionable), nil
 }

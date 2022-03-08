@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartAxisFormat 
+// WorkbookChartAxisFormat provides operations to manage the drive singleton.
 type WorkbookChartAxisFormat struct {
     Entity
     // Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
-    font *WorkbookChartFont;
+    font WorkbookChartFontable;
     // Represents chart line formatting. Read-only.
-    line *WorkbookChartLineFormat;
+    line WorkbookChartLineFormatable;
 }
 // NewWorkbookChartAxisFormat instantiates a new workbookChartAxisFormat and sets the default values.
 func NewWorkbookChartAxisFormat()(*WorkbookChartAxisFormat) {
@@ -19,8 +19,37 @@ func NewWorkbookChartAxisFormat()(*WorkbookChartAxisFormat) {
     }
     return m
 }
+// CreateWorkbookChartAxisFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookChartAxisFormatFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookChartAxisFormat(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *WorkbookChartAxisFormat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["font"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkbookChartFontFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFont(val.(WorkbookChartFontable))
+        }
+        return nil
+    }
+    res["line"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkbookChartLineFormatFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLine(val.(WorkbookChartLineFormatable))
+        }
+        return nil
+    }
+    return res
+}
 // GetFont gets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
-func (m *WorkbookChartAxisFormat) GetFont()(*WorkbookChartFont) {
+func (m *WorkbookChartAxisFormat) GetFont()(WorkbookChartFontable) {
     if m == nil {
         return nil
     } else {
@@ -28,37 +57,12 @@ func (m *WorkbookChartAxisFormat) GetFont()(*WorkbookChartFont) {
     }
 }
 // GetLine gets the line property value. Represents chart line formatting. Read-only.
-func (m *WorkbookChartAxisFormat) GetLine()(*WorkbookChartLineFormat) {
+func (m *WorkbookChartAxisFormat) GetLine()(WorkbookChartLineFormatable) {
     if m == nil {
         return nil
     } else {
         return m.line
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookChartAxisFormat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["font"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookChartFont() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFont(val.(*WorkbookChartFont))
-        }
-        return nil
-    }
-    res["line"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookChartLineFormat() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLine(val.(*WorkbookChartLineFormat))
-        }
-        return nil
-    }
-    return res
 }
 func (m *WorkbookChartAxisFormat) IsNil()(bool) {
     return m == nil
@@ -84,13 +88,13 @@ func (m *WorkbookChartAxisFormat) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetFont sets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
-func (m *WorkbookChartAxisFormat) SetFont(value *WorkbookChartFont)() {
+func (m *WorkbookChartAxisFormat) SetFont(value WorkbookChartFontable)() {
     if m != nil {
         m.font = value
     }
 }
 // SetLine sets the line property value. Represents chart line formatting. Read-only.
-func (m *WorkbookChartAxisFormat) SetLine(value *WorkbookChartLineFormat)() {
+func (m *WorkbookChartAxisFormat) SetLine(value WorkbookChartLineFormatable)() {
     if m != nil {
         m.line = value
     }

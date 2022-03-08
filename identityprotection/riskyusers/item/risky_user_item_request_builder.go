@@ -2,13 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i3a3e8e75f2c335a1ade1f4b7244f0e83a16d386f968a09c4fdbe0552226fd238 "github.com/microsoftgraph/msgraph-sdk-go/identityprotection/riskyusers/item/history"
     ibab4d69cc173d2d5537e2f7f752b3b1830737eb656e2025616be95afe72a46f1 "github.com/microsoftgraph/msgraph-sdk-go/identityprotection/riskyusers/item/history/item"
 )
 
-// RiskyUserItemRequestBuilder builds and executes requests for operations under \identityProtection\riskyUsers\{riskyUser-id}
+// RiskyUserItemRequestBuilder provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
 type RiskyUserItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +46,7 @@ type RiskyUserItemRequestBuilderGetQueryParameters struct {
 // RiskyUserItemRequestBuilderPatchOptions options for Patch
 type RiskyUserItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskyUser;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskyUserable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +63,7 @@ func NewRiskyUserItemRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +73,7 @@ func NewRiskyUserItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation users that are flagged as at-risk by Azure AD Identity Protection.
+// CreateDeleteRequestInformation delete navigation property riskyUsers for identityProtection
 func (m *RiskyUserItemRequestBuilder) CreateDeleteRequestInformation(options *RiskyUserItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +110,7 @@ func (m *RiskyUserItemRequestBuilder) CreateGetRequestInformation(options *Risky
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation users that are flagged as at-risk by Azure AD Identity Protection.
+// CreatePatchRequestInformation update the navigation property riskyUsers in identityProtection
 func (m *RiskyUserItemRequestBuilder) CreatePatchRequestInformation(options *RiskyUserItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,29 +128,37 @@ func (m *RiskyUserItemRequestBuilder) CreatePatchRequestInformation(options *Ris
     }
     return requestInfo, nil
 }
-// Delete users that are flagged as at-risk by Azure AD Identity Protection.
+// Delete delete navigation property riskyUsers for identityProtection
 func (m *RiskyUserItemRequestBuilder) Delete(options *RiskyUserItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get users that are flagged as at-risk by Azure AD Identity Protection.
-func (m *RiskyUserItemRequestBuilder) Get(options *RiskyUserItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskyUser, error) {
+func (m *RiskyUserItemRequestBuilder) Get(options *RiskyUserItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskyUserable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewRiskyUser() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateRiskyUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskyUser), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskyUserable), nil
 }
 func (m *RiskyUserItemRequestBuilder) History()(*i3a3e8e75f2c335a1ade1f4b7244f0e83a16d386f968a09c4fdbe0552226fd238.HistoryRequestBuilder) {
     return i3a3e8e75f2c335a1ade1f4b7244f0e83a16d386f968a09c4fdbe0552226fd238.NewHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -167,13 +174,17 @@ func (m *RiskyUserItemRequestBuilder) HistoryById(id string)(*ibab4d69cc173d2d55
     }
     return ibab4d69cc173d2d5537e2f7f752b3b1830737eb656e2025616be95afe72a46f1.NewRiskyUserHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch users that are flagged as at-risk by Azure AD Identity Protection.
+// Patch update the navigation property riskyUsers in identityProtection
 func (m *RiskyUserItemRequestBuilder) Patch(options *RiskyUserItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

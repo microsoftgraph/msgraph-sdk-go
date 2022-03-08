@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CalculatedColumn 
+// CalculatedColumn provides operations to manage the drive singleton.
 type CalculatedColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewCalculatedColumn()(*CalculatedColumn) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCalculatedColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCalculatedColumnFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCalculatedColumn(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CalculatedColumn) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFormat gets the format property value. For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
-func (m *CalculatedColumn) GetFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
-}
-// GetFormula gets the formula property value. The formula used to compute the value for this column.
-func (m *CalculatedColumn) GetFormula()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.formula
-    }
-}
-// GetOutputType gets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
-func (m *CalculatedColumn) GetOutputType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *CalculatedColumn) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetFormat gets the format property value. For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+func (m *CalculatedColumn) GetFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.format
+    }
+}
+// GetFormula gets the formula property value. The formula used to compute the value for this column.
+func (m *CalculatedColumn) GetFormula()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.formula
+    }
+}
+// GetOutputType gets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+func (m *CalculatedColumn) GetOutputType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outputType
+    }
 }
 func (m *CalculatedColumn) IsNil()(bool) {
     return m == nil

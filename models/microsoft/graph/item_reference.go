@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemReference 
+// ItemReference provides operations to manage the drive singleton.
 type ItemReference struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,7 +21,7 @@ type ItemReference struct {
     // A unique identifier for a shared resource that can be accessed via the [Shares][] API.
     shareId *string;
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds *SharepointIds;
+    sharepointIds SharepointIdsable;
     // For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
     siteId *string;
 }
@@ -31,6 +31,10 @@ func NewItemReference()(*ItemReference) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateItemReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemReferenceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemReference(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemReference) GetAdditionalData()(map[string]interface{}) {
@@ -54,54 +58,6 @@ func (m *ItemReference) GetDriveType()(*string) {
         return nil
     } else {
         return m.driveType
-    }
-}
-// GetId gets the id property value. Unique identifier of the item in the drive. Read-only.
-func (m *ItemReference) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetName gets the name property value. The name of the item being referenced. Read-only.
-func (m *ItemReference) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPath gets the path property value. Path that can be used to navigate to the item. Read-only.
-func (m *ItemReference) GetPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.path
-    }
-}
-// GetShareId gets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
-func (m *ItemReference) GetShareId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shareId
-    }
-}
-// GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-func (m *ItemReference) GetSharepointIds()(*SharepointIds) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
-}
-// GetSiteId gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
-func (m *ItemReference) GetSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -168,12 +124,12 @@ func (m *ItemReference) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["sharepointIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSharepointIds() })
+        val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSharepointIds(val.(*SharepointIds))
+            m.SetSharepointIds(val.(SharepointIdsable))
         }
         return nil
     }
@@ -188,6 +144,54 @@ func (m *ItemReference) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetId gets the id property value. Unique identifier of the item in the drive. Read-only.
+func (m *ItemReference) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetName gets the name property value. The name of the item being referenced. Read-only.
+func (m *ItemReference) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPath gets the path property value. Path that can be used to navigate to the item. Read-only.
+func (m *ItemReference) GetPath()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.path
+    }
+}
+// GetShareId gets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
+func (m *ItemReference) GetShareId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shareId
+    }
+}
+// GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+func (m *ItemReference) GetSharepointIds()(SharepointIdsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharepointIds
+    }
+}
+// GetSiteId gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+func (m *ItemReference) GetSiteId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteId
+    }
 }
 func (m *ItemReference) IsNil()(bool) {
     return m == nil
@@ -293,7 +297,7 @@ func (m *ItemReference) SetShareId(value *string)() {
     }
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-func (m *ItemReference) SetSharepointIds(value *SharepointIds)() {
+func (m *ItemReference) SetSharepointIds(value SharepointIdsable)() {
     if m != nil {
         m.sharepointIds = value
     }

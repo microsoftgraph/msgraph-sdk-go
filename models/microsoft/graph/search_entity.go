@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchEntity 
+// SearchEntity provides operations to manage the searchEntity singleton.
 type SearchEntity struct {
     Entity
 }
@@ -14,6 +14,10 @@ func NewSearchEntity()(*SearchEntity) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSearchEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchEntityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchEntity(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchEntity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {

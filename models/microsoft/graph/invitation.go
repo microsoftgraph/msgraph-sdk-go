@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Invitation 
+// Invitation provides operations to manage the collection of invitation entities.
 type Invitation struct {
     Entity
     // The user created as part of the invitation creation. Read-Only
-    invitedUser *User;
+    invitedUser Userable;
     // The display name of the user being invited.
     invitedUserDisplayName *string;
     // The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (< >)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
     invitedUserEmailAddress *string;
     // Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.
-    invitedUserMessageInfo *InvitedUserMessageInfo;
+    invitedUserMessageInfo InvitedUserMessageInfoable;
     // The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
     invitedUserType *string;
     // The URL the user can use to redeem their invitation. Read-only.
@@ -33,88 +33,20 @@ func NewInvitation()(*Invitation) {
     }
     return m
 }
-// GetInvitedUser gets the invitedUser property value. The user created as part of the invitation creation. Read-Only
-func (m *Invitation) GetInvitedUser()(*User) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitedUser
-    }
-}
-// GetInvitedUserDisplayName gets the invitedUserDisplayName property value. The display name of the user being invited.
-func (m *Invitation) GetInvitedUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitedUserDisplayName
-    }
-}
-// GetInvitedUserEmailAddress gets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (< >)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
-func (m *Invitation) GetInvitedUserEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitedUserEmailAddress
-    }
-}
-// GetInvitedUserMessageInfo gets the invitedUserMessageInfo property value. Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.
-func (m *Invitation) GetInvitedUserMessageInfo()(*InvitedUserMessageInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitedUserMessageInfo
-    }
-}
-// GetInvitedUserType gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
-func (m *Invitation) GetInvitedUserType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitedUserType
-    }
-}
-// GetInviteRedeemUrl gets the inviteRedeemUrl property value. The URL the user can use to redeem their invitation. Read-only.
-func (m *Invitation) GetInviteRedeemUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inviteRedeemUrl
-    }
-}
-// GetInviteRedirectUrl gets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
-func (m *Invitation) GetInviteRedirectUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inviteRedirectUrl
-    }
-}
-// GetSendInvitationMessage gets the sendInvitationMessage property value. Indicates whether an email should be sent to the user being invited. The default is false.
-func (m *Invitation) GetSendInvitationMessage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendInvitationMessage
-    }
-}
-// GetStatus gets the status property value. The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
-func (m *Invitation) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+// CreateInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInvitationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInvitation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["invitedUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUser() })
+        val, err := n.GetObjectValue(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInvitedUser(val.(*User))
+            m.SetInvitedUser(val.(Userable))
         }
         return nil
     }
@@ -139,12 +71,12 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["invitedUserMessageInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInvitedUserMessageInfo() })
+        val, err := n.GetObjectValue(CreateInvitedUserMessageInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInvitedUserMessageInfo(val.(*InvitedUserMessageInfo))
+            m.SetInvitedUserMessageInfo(val.(InvitedUserMessageInfoable))
         }
         return nil
     }
@@ -199,6 +131,78 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetInvitedUser gets the invitedUser property value. The user created as part of the invitation creation. Read-Only
+func (m *Invitation) GetInvitedUser()(Userable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invitedUser
+    }
+}
+// GetInvitedUserDisplayName gets the invitedUserDisplayName property value. The display name of the user being invited.
+func (m *Invitation) GetInvitedUserDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invitedUserDisplayName
+    }
+}
+// GetInvitedUserEmailAddress gets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (< >)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
+func (m *Invitation) GetInvitedUserEmailAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invitedUserEmailAddress
+    }
+}
+// GetInvitedUserMessageInfo gets the invitedUserMessageInfo property value. Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.
+func (m *Invitation) GetInvitedUserMessageInfo()(InvitedUserMessageInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invitedUserMessageInfo
+    }
+}
+// GetInvitedUserType gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
+func (m *Invitation) GetInvitedUserType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invitedUserType
+    }
+}
+// GetInviteRedeemUrl gets the inviteRedeemUrl property value. The URL the user can use to redeem their invitation. Read-only.
+func (m *Invitation) GetInviteRedeemUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inviteRedeemUrl
+    }
+}
+// GetInviteRedirectUrl gets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
+func (m *Invitation) GetInviteRedirectUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inviteRedirectUrl
+    }
+}
+// GetSendInvitationMessage gets the sendInvitationMessage property value. Indicates whether an email should be sent to the user being invited. The default is false.
+func (m *Invitation) GetSendInvitationMessage()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sendInvitationMessage
+    }
+}
+// GetStatus gets the status property value. The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
+func (m *Invitation) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *Invitation) IsNil()(bool) {
     return m == nil
@@ -266,7 +270,7 @@ func (m *Invitation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     return nil
 }
 // SetInvitedUser sets the invitedUser property value. The user created as part of the invitation creation. Read-Only
-func (m *Invitation) SetInvitedUser(value *User)() {
+func (m *Invitation) SetInvitedUser(value Userable)() {
     if m != nil {
         m.invitedUser = value
     }
@@ -284,7 +288,7 @@ func (m *Invitation) SetInvitedUserEmailAddress(value *string)() {
     }
 }
 // SetInvitedUserMessageInfo sets the invitedUserMessageInfo property value. Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.
-func (m *Invitation) SetInvitedUserMessageInfo(value *InvitedUserMessageInfo)() {
+func (m *Invitation) SetInvitedUserMessageInfo(value InvitedUserMessageInfoable)() {
     if m != nil {
         m.invitedUserMessageInfo = value
     }

@@ -4,19 +4,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IosManagedAppProtection 
+// IosManagedAppProtection provides operations to manage the deviceAppManagement singleton.
 type IosManagedAppProtection struct {
     TargetedManagedAppProtection
     // Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
     appDataEncryptionType *ManagedAppDataEncryptionType;
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileApp;
+    apps []ManagedMobileAppable;
     // A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
     customBrowserProtocol *string;
     // Count of apps to which the current policy is deployed.
     deployedAppCount *int32;
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary *ManagedAppPolicyDeploymentSummary;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
     // Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
     faceIdBlocked *bool;
     // Versions less than the specified version will block the managed app from accessing company data.
@@ -29,6 +29,10 @@ func NewIosManagedAppProtection()(*IosManagedAppProtection) {
     }
     return m
 }
+// CreateIosManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIosManagedAppProtectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIosManagedAppProtection(), nil
+}
 // GetAppDataEncryptionType gets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
 func (m *IosManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncryptionType) {
     if m == nil {
@@ -38,7 +42,7 @@ func (m *IosManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncr
     }
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
-func (m *IosManagedAppProtection) GetApps()([]ManagedMobileApp) {
+func (m *IosManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     if m == nil {
         return nil
     } else {
@@ -62,7 +66,7 @@ func (m *IosManagedAppProtection) GetDeployedAppCount()(*int32) {
     }
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-func (m *IosManagedAppProtection) GetDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {
+func (m *IosManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -75,14 +79,6 @@ func (m *IosManagedAppProtection) GetFaceIdBlocked()(*bool) {
         return nil
     } else {
         return m.faceIdBlocked
-    }
-}
-// GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-func (m *IosManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredSdkVersion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,14 +95,14 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["apps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedMobileApp() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedMobileApp, len(val))
+            res := make([]ManagedMobileAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedMobileApp))
+                res[i] = v.(ManagedMobileAppable)
             }
             m.SetApps(res)
         }
@@ -133,12 +129,12 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["deploymentSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedAppPolicyDeploymentSummary() })
+        val, err := n.GetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+            m.SetDeploymentSummary(val.(ManagedAppPolicyDeploymentSummaryable))
         }
         return nil
     }
@@ -164,6 +160,14 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
     }
     return res
 }
+// GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+func (m *IosManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumRequiredSdkVersion
+    }
+}
 func (m *IosManagedAppProtection) IsNil()(bool) {
     return m == nil
 }
@@ -183,8 +187,7 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("apps", cast)
         if err != nil {
@@ -230,7 +233,7 @@ func (m *IosManagedAppProtection) SetAppDataEncryptionType(value *ManagedAppData
     }
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
-func (m *IosManagedAppProtection) SetApps(value []ManagedMobileApp)() {
+func (m *IosManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
     if m != nil {
         m.apps = value
     }
@@ -248,7 +251,7 @@ func (m *IosManagedAppProtection) SetDeployedAppCount(value *int32)() {
     }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-func (m *IosManagedAppProtection) SetDeploymentSummary(value *ManagedAppPolicyDeploymentSummary)() {
+func (m *IosManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
     if m != nil {
         m.deploymentSummary = value
     }

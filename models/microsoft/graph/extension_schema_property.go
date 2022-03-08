@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExtensionSchemaProperty 
+// ExtensionSchemaProperty provides operations to manage the collection of schemaExtension entities.
 type ExtensionSchemaProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewExtensionSchemaProperty()(*ExtensionSchemaProperty) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateExtensionSchemaPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExtensionSchemaPropertyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExtensionSchemaProperty(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExtensionSchemaProperty) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetName gets the name property value. The name of the strongly-typed property defined as part of a schema extension.
-func (m *ExtensionSchemaProperty) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetType gets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
-func (m *ExtensionSchemaProperty) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *ExtensionSchemaProperty) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetName gets the name property value. The name of the strongly-typed property defined as part of a schema extension.
+func (m *ExtensionSchemaProperty) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetType gets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
+func (m *ExtensionSchemaProperty) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *ExtensionSchemaProperty) IsNil()(bool) {
     return m == nil

@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtectionIPRangeCollection 
+// WindowsInformationProtectionIPRangeCollection provides operations to manage the deviceAppManagement singleton.
 type WindowsInformationProtectionIPRangeCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Display name
     displayName *string;
     // Collection of ip ranges
-    ranges []IpRange;
+    ranges []IpRangeable;
 }
 // NewWindowsInformationProtectionIPRangeCollection instantiates a new windowsInformationProtectionIPRangeCollection and sets the default values.
 func NewWindowsInformationProtectionIPRangeCollection()(*WindowsInformationProtectionIPRangeCollection) {
@@ -19,6 +19,10 @@ func NewWindowsInformationProtectionIPRangeCollection()(*WindowsInformationProte
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWindowsInformationProtectionIPRangeCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsInformationProtectionIPRangeCollectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsInformationProtectionIPRangeCollection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionIPRangeCollection) GetAdditionalData()(map[string]interface{}) {
@@ -36,14 +40,6 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetDisplayName()(*string
         return m.displayName
     }
 }
-// GetRanges gets the ranges property value. Collection of ip ranges
-func (m *WindowsInformationProtectionIPRangeCollection) GetRanges()([]IpRange) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ranges
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -58,20 +54,28 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(
         return nil
     }
     res["ranges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIpRange() })
+        val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IpRange, len(val))
+            res := make([]IpRangeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IpRange))
+                res[i] = v.(IpRangeable)
             }
             m.SetRanges(res)
         }
         return nil
     }
     return res
+}
+// GetRanges gets the ranges property value. Collection of ip ranges
+func (m *WindowsInformationProtectionIPRangeCollection) GetRanges()([]IpRangeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ranges
+    }
 }
 func (m *WindowsInformationProtectionIPRangeCollection) IsNil()(bool) {
     return m == nil
@@ -87,8 +91,7 @@ func (m *WindowsInformationProtectionIPRangeCollection) Serialize(writer i04eb53
     if m.GetRanges() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRanges()))
         for i, v := range m.GetRanges() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("ranges", cast)
         if err != nil {
@@ -116,7 +119,7 @@ func (m *WindowsInformationProtectionIPRangeCollection) SetDisplayName(value *st
     }
 }
 // SetRanges sets the ranges property value. Collection of ip ranges
-func (m *WindowsInformationProtectionIPRangeCollection) SetRanges(value []IpRange)() {
+func (m *WindowsInformationProtectionIPRangeCollection) SetRanges(value []IpRangeable)() {
     if m != nil {
         m.ranges = value
     }

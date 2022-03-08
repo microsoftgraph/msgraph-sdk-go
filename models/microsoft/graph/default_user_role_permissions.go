@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DefaultUserRolePermissions 
+// DefaultUserRolePermissions provides operations to manage the policyRoot singleton.
 type DefaultUserRolePermissions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewDefaultUserRolePermissions()(*DefaultUserRolePermissions) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDefaultUserRolePermissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDefaultUserRolePermissionsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDefaultUserRolePermissions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultUserRolePermissions) GetAdditionalData()(map[string]interface{}) {
@@ -54,14 +58,6 @@ func (m *DefaultUserRolePermissions) GetAllowedToReadOtherUsers()(*bool) {
         return nil
     } else {
         return m.allowedToReadOtherUsers
-    }
-}
-// GetPermissionGrantPoliciesAssigned gets the permissionGrantPoliciesAssigned property value. Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
-func (m *DefaultUserRolePermissions) GetPermissionGrantPoliciesAssigned()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionGrantPoliciesAssigned
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -112,6 +108,14 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetPermissionGrantPoliciesAssigned gets the permissionGrantPoliciesAssigned property value. Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
+func (m *DefaultUserRolePermissions) GetPermissionGrantPoliciesAssigned()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.permissionGrantPoliciesAssigned
+    }
 }
 func (m *DefaultUserRolePermissions) IsNil()(bool) {
     return m == nil

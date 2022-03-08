@@ -4,23 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingService 
+// BookingService provides operations to manage the solutionsRoot singleton.
 type BookingService struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
     additionalInformation *string;
     // Contains the set of custom questions associated with a particular service.
-    customQuestions []BookingQuestionAssignment;
+    customQuestions []BookingQuestionAssignmentable;
     // The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
     defaultDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The default physical location for the service.
-    defaultLocation *Location;
+    defaultLocation Locationable;
     // The default monetary price for the service.
     defaultPrice *float64;
     // The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
     defaultPriceType *BookingPriceType;
     // The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
-    defaultReminders []BookingReminder;
+    defaultReminders []BookingReminderable;
     // A text description for the service.
     description *string;
     // A service name.
@@ -29,7 +29,7 @@ type BookingService struct {
     isHiddenFromCustomers *bool;
     // True indicates that the appointments for the service will be held online. Default value is false.
     isLocationOnline *bool;
-    // The maximum number of customers allowed in a service.
+    // The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
     maximumAttendeesCount *int32;
     // Additional information about this service.
     notes *string;
@@ -38,7 +38,7 @@ type BookingService struct {
     // The time to buffer before an appointment for this service can start.
     preBuffer *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The set of policies that determine how appointments for this type of service should be created and managed.
-    schedulingPolicy *BookingSchedulingPolicy;
+    schedulingPolicy BookingSchedulingPolicyable;
     // True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
     smsNotificationsEnabled *bool;
     // Represents those staff members who provide this service.
@@ -53,6 +53,10 @@ func NewBookingService()(*BookingService) {
     }
     return m
 }
+// CreateBookingServiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBookingServiceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBookingService(), nil
+}
 // GetAdditionalInformation gets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingService) GetAdditionalInformation()(*string) {
     if m == nil {
@@ -62,7 +66,7 @@ func (m *BookingService) GetAdditionalInformation()(*string) {
     }
 }
 // GetCustomQuestions gets the customQuestions property value. Contains the set of custom questions associated with a particular service.
-func (m *BookingService) GetCustomQuestions()([]BookingQuestionAssignment) {
+func (m *BookingService) GetCustomQuestions()([]BookingQuestionAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -78,7 +82,7 @@ func (m *BookingService) GetDefaultDuration()(*i04eb5309aeaafadd28374d79c8471df9
     }
 }
 // GetDefaultLocation gets the defaultLocation property value. The default physical location for the service.
-func (m *BookingService) GetDefaultLocation()(*Location) {
+func (m *BookingService) GetDefaultLocation()(Locationable) {
     if m == nil {
         return nil
     } else {
@@ -102,7 +106,7 @@ func (m *BookingService) GetDefaultPriceType()(*BookingPriceType) {
     }
 }
 // GetDefaultReminders gets the defaultReminders property value. The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
-func (m *BookingService) GetDefaultReminders()([]BookingReminder) {
+func (m *BookingService) GetDefaultReminders()([]BookingReminderable) {
     if m == nil {
         return nil
     } else {
@@ -125,86 +129,6 @@ func (m *BookingService) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
-func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHiddenFromCustomers
-    }
-}
-// GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
-func (m *BookingService) GetIsLocationOnline()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isLocationOnline
-    }
-}
-// GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in a service.
-func (m *BookingService) GetMaximumAttendeesCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumAttendeesCount
-    }
-}
-// GetNotes gets the notes property value. Additional information about this service.
-func (m *BookingService) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
-// GetPostBuffer gets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
-func (m *BookingService) GetPostBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postBuffer
-    }
-}
-// GetPreBuffer gets the preBuffer property value. The time to buffer before an appointment for this service can start.
-func (m *BookingService) GetPreBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preBuffer
-    }
-}
-// GetSchedulingPolicy gets the schedulingPolicy property value. The set of policies that determine how appointments for this type of service should be created and managed.
-func (m *BookingService) GetSchedulingPolicy()(*BookingSchedulingPolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedulingPolicy
-    }
-}
-// GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
-func (m *BookingService) GetSmsNotificationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smsNotificationsEnabled
-    }
-}
-// GetStaffMemberIds gets the staffMemberIds property value. Represents those staff members who provide this service.
-func (m *BookingService) GetStaffMemberIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.staffMemberIds
-    }
-}
-// GetWebUrl gets the webUrl property value. The URL a customer uses to access the service.
-func (m *BookingService) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -219,14 +143,14 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["customQuestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingQuestionAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingQuestionAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingQuestionAssignment, len(val))
+            res := make([]BookingQuestionAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingQuestionAssignment))
+                res[i] = v.(BookingQuestionAssignmentable)
             }
             m.SetCustomQuestions(res)
         }
@@ -243,12 +167,12 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["defaultLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocation() })
+        val, err := n.GetObjectValue(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultLocation(val.(*Location))
+            m.SetDefaultLocation(val.(Locationable))
         }
         return nil
     }
@@ -273,14 +197,14 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["defaultReminders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingReminder() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingReminderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingReminder, len(val))
+            res := make([]BookingReminderable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingReminder))
+                res[i] = v.(BookingReminderable)
             }
             m.SetDefaultReminders(res)
         }
@@ -367,12 +291,12 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["schedulingPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingSchedulingPolicy() })
+        val, err := n.GetObjectValue(CreateBookingSchedulingPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedulingPolicy(val.(*BookingSchedulingPolicy))
+            m.SetSchedulingPolicy(val.(BookingSchedulingPolicyable))
         }
         return nil
     }
@@ -412,6 +336,86 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
     }
     return res
 }
+// GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHiddenFromCustomers
+    }
+}
+// GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
+func (m *BookingService) GetIsLocationOnline()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isLocationOnline
+    }
+}
+// GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
+func (m *BookingService) GetMaximumAttendeesCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumAttendeesCount
+    }
+}
+// GetNotes gets the notes property value. Additional information about this service.
+func (m *BookingService) GetNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
+// GetPostBuffer gets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
+func (m *BookingService) GetPostBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postBuffer
+    }
+}
+// GetPreBuffer gets the preBuffer property value. The time to buffer before an appointment for this service can start.
+func (m *BookingService) GetPreBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preBuffer
+    }
+}
+// GetSchedulingPolicy gets the schedulingPolicy property value. The set of policies that determine how appointments for this type of service should be created and managed.
+func (m *BookingService) GetSchedulingPolicy()(BookingSchedulingPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedulingPolicy
+    }
+}
+// GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
+func (m *BookingService) GetSmsNotificationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.smsNotificationsEnabled
+    }
+}
+// GetStaffMemberIds gets the staffMemberIds property value. Represents those staff members who provide this service.
+func (m *BookingService) GetStaffMemberIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.staffMemberIds
+    }
+}
+// GetWebUrl gets the webUrl property value. The URL a customer uses to access the service.
+func (m *BookingService) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
+}
 func (m *BookingService) IsNil()(bool) {
     return m == nil
 }
@@ -430,8 +434,7 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetCustomQuestions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomQuestions()))
         for i, v := range m.GetCustomQuestions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customQuestions", cast)
         if err != nil {
@@ -466,8 +469,7 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetDefaultReminders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefaultReminders()))
         for i, v := range m.GetDefaultReminders() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("defaultReminders", cast)
         if err != nil {
@@ -555,7 +557,7 @@ func (m *BookingService) SetAdditionalInformation(value *string)() {
     }
 }
 // SetCustomQuestions sets the customQuestions property value. Contains the set of custom questions associated with a particular service.
-func (m *BookingService) SetCustomQuestions(value []BookingQuestionAssignment)() {
+func (m *BookingService) SetCustomQuestions(value []BookingQuestionAssignmentable)() {
     if m != nil {
         m.customQuestions = value
     }
@@ -567,7 +569,7 @@ func (m *BookingService) SetDefaultDuration(value *i04eb5309aeaafadd28374d79c847
     }
 }
 // SetDefaultLocation sets the defaultLocation property value. The default physical location for the service.
-func (m *BookingService) SetDefaultLocation(value *Location)() {
+func (m *BookingService) SetDefaultLocation(value Locationable)() {
     if m != nil {
         m.defaultLocation = value
     }
@@ -585,7 +587,7 @@ func (m *BookingService) SetDefaultPriceType(value *BookingPriceType)() {
     }
 }
 // SetDefaultReminders sets the defaultReminders property value. The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
-func (m *BookingService) SetDefaultReminders(value []BookingReminder)() {
+func (m *BookingService) SetDefaultReminders(value []BookingReminderable)() {
     if m != nil {
         m.defaultReminders = value
     }
@@ -614,7 +616,7 @@ func (m *BookingService) SetIsLocationOnline(value *bool)() {
         m.isLocationOnline = value
     }
 }
-// SetMaximumAttendeesCount sets the maximumAttendeesCount property value. The maximum number of customers allowed in a service.
+// SetMaximumAttendeesCount sets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
 func (m *BookingService) SetMaximumAttendeesCount(value *int32)() {
     if m != nil {
         m.maximumAttendeesCount = value
@@ -639,7 +641,7 @@ func (m *BookingService) SetPreBuffer(value *i04eb5309aeaafadd28374d79c8471df9b2
     }
 }
 // SetSchedulingPolicy sets the schedulingPolicy property value. The set of policies that determine how appointments for this type of service should be created and managed.
-func (m *BookingService) SetSchedulingPolicy(value *BookingSchedulingPolicy)() {
+func (m *BookingService) SetSchedulingPolicy(value BookingSchedulingPolicyable)() {
     if m != nil {
         m.schedulingPolicy = value
     }

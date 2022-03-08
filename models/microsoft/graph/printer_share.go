@@ -5,19 +5,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrinterShare 
+// PrinterShare provides operations to manage the print singleton.
 type PrinterShare struct {
     PrinterBase
     // If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
     allowAllUsers *bool;
     // The groups whose users have access to print using the printer.
-    allowedGroups []Group;
+    allowedGroups []Groupable;
     // The users who have access to print using the printer.
-    allowedUsers []User;
+    allowedUsers []Userable;
     // The DateTimeOffset when the printer share was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The printer that this printer share is related to.
-    printer *Printer;
+    printer Printerable;
 }
 // NewPrinterShare instantiates a new printerShare and sets the default values.
 func NewPrinterShare()(*PrinterShare) {
@@ -25,6 +25,10 @@ func NewPrinterShare()(*PrinterShare) {
         PrinterBase: *NewPrinterBase(),
     }
     return m
+}
+// CreatePrinterShareFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrinterShareFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrinterShare(), nil
 }
 // GetAllowAllUsers gets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
 func (m *PrinterShare) GetAllowAllUsers()(*bool) {
@@ -35,7 +39,7 @@ func (m *PrinterShare) GetAllowAllUsers()(*bool) {
     }
 }
 // GetAllowedGroups gets the allowedGroups property value. The groups whose users have access to print using the printer.
-func (m *PrinterShare) GetAllowedGroups()([]Group) {
+func (m *PrinterShare) GetAllowedGroups()([]Groupable) {
     if m == nil {
         return nil
     } else {
@@ -43,7 +47,7 @@ func (m *PrinterShare) GetAllowedGroups()([]Group) {
     }
 }
 // GetAllowedUsers gets the allowedUsers property value. The users who have access to print using the printer.
-func (m *PrinterShare) GetAllowedUsers()([]User) {
+func (m *PrinterShare) GetAllowedUsers()([]Userable) {
     if m == nil {
         return nil
     } else {
@@ -56,14 +60,6 @@ func (m *PrinterShare) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetPrinter gets the printer property value. The printer that this printer share is related to.
-func (m *PrinterShare) GetPrinter()(*Printer) {
-    if m == nil {
-        return nil
-    } else {
-        return m.printer
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,28 +76,28 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["allowedGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Group, len(val))
+            res := make([]Groupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Group))
+                res[i] = v.(Groupable)
             }
             m.SetAllowedGroups(res)
         }
         return nil
     }
     res["allowedUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUser() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]User, len(val))
+            res := make([]Userable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*User))
+                res[i] = v.(Userable)
             }
             m.SetAllowedUsers(res)
         }
@@ -118,16 +114,24 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["printer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrinter() })
+        val, err := n.GetObjectValue(CreatePrinterFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPrinter(val.(*Printer))
+            m.SetPrinter(val.(Printerable))
         }
         return nil
     }
     return res
+}
+// GetPrinter gets the printer property value. The printer that this printer share is related to.
+func (m *PrinterShare) GetPrinter()(Printerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.printer
+    }
 }
 func (m *PrinterShare) IsNil()(bool) {
     return m == nil
@@ -147,8 +151,7 @@ func (m *PrinterShare) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetAllowedGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllowedGroups()))
         for i, v := range m.GetAllowedGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("allowedGroups", cast)
         if err != nil {
@@ -158,8 +161,7 @@ func (m *PrinterShare) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetAllowedUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllowedUsers()))
         for i, v := range m.GetAllowedUsers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("allowedUsers", cast)
         if err != nil {
@@ -187,13 +189,13 @@ func (m *PrinterShare) SetAllowAllUsers(value *bool)() {
     }
 }
 // SetAllowedGroups sets the allowedGroups property value. The groups whose users have access to print using the printer.
-func (m *PrinterShare) SetAllowedGroups(value []Group)() {
+func (m *PrinterShare) SetAllowedGroups(value []Groupable)() {
     if m != nil {
         m.allowedGroups = value
     }
 }
 // SetAllowedUsers sets the allowedUsers property value. The users who have access to print using the printer.
-func (m *PrinterShare) SetAllowedUsers(value []User)() {
+func (m *PrinterShare) SetAllowedUsers(value []Userable)() {
     if m != nil {
         m.allowedUsers = value
     }
@@ -205,7 +207,7 @@ func (m *PrinterShare) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97
     }
 }
 // SetPrinter sets the printer property value. The printer that this printer share is related to.
-func (m *PrinterShare) SetPrinter(value *Printer)() {
+func (m *PrinterShare) SetPrinter(value Printerable)() {
     if m != nil {
         m.printer = value
     }

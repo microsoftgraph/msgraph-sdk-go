@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationFlowsPolicy 
+// AuthenticationFlowsPolicy provides operations to manage the policyRoot singleton.
 type AuthenticationFlowsPolicy struct {
     Entity
     // Inherited property. A description of the policy. Optional. Read-only.
@@ -12,7 +12,7 @@ type AuthenticationFlowsPolicy struct {
     // Inherited property. The human-readable name of the policy. Optional. Read-only.
     displayName *string;
     // Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
-    selfServiceSignUp *SelfServiceSignUpAuthenticationFlowConfiguration;
+    selfServiceSignUp SelfServiceSignUpAuthenticationFlowConfigurationable;
 }
 // NewAuthenticationFlowsPolicy instantiates a new authenticationFlowsPolicy and sets the default values.
 func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {
@@ -20,6 +20,10 @@ func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAuthenticationFlowsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthenticationFlowsPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthenticationFlowsPolicy(), nil
 }
 // GetDescription gets the description property value. Inherited property. A description of the policy. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) GetDescription()(*string) {
@@ -35,14 +39,6 @@ func (m *AuthenticationFlowsPolicy) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetSelfServiceSignUp gets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
-func (m *AuthenticationFlowsPolicy) GetSelfServiceSignUp()(*SelfServiceSignUpAuthenticationFlowConfiguration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selfServiceSignUp
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,16 +65,24 @@ func (m *AuthenticationFlowsPolicy) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["selfServiceSignUp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSelfServiceSignUpAuthenticationFlowConfiguration() })
+        val, err := n.GetObjectValue(CreateSelfServiceSignUpAuthenticationFlowConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSelfServiceSignUp(val.(*SelfServiceSignUpAuthenticationFlowConfiguration))
+            m.SetSelfServiceSignUp(val.(SelfServiceSignUpAuthenticationFlowConfigurationable))
         }
         return nil
     }
     return res
+}
+// GetSelfServiceSignUp gets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
+func (m *AuthenticationFlowsPolicy) GetSelfServiceSignUp()(SelfServiceSignUpAuthenticationFlowConfigurationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.selfServiceSignUp
+    }
 }
 func (m *AuthenticationFlowsPolicy) IsNil()(bool) {
     return m == nil
@@ -122,7 +126,7 @@ func (m *AuthenticationFlowsPolicy) SetDisplayName(value *string)() {
     }
 }
 // SetSelfServiceSignUp sets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
-func (m *AuthenticationFlowsPolicy) SetSelfServiceSignUp(value *SelfServiceSignUpAuthenticationFlowConfiguration)() {
+func (m *AuthenticationFlowsPolicy) SetSelfServiceSignUp(value SelfServiceSignUpAuthenticationFlowConfigurationable)() {
     if m != nil {
         m.selfServiceSignUp = value
     }

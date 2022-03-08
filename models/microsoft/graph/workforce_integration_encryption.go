@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkforceIntegrationEncryption 
+// WorkforceIntegrationEncryption provides operations to manage the teamwork singleton.
 type WorkforceIntegrationEncryption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewWorkforceIntegrationEncryption()(*WorkforceIntegrationEncryption) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateWorkforceIntegrationEncryptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkforceIntegrationEncryptionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkforceIntegrationEncryption(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkforceIntegrationEncryption) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetProtocol gets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
-func (m *WorkforceIntegrationEncryption) GetProtocol()(*WorkforceIntegrationEncryptionProtocol) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protocol
-    }
-}
-// GetSecret gets the secret property value. Encryption shared secret.
-func (m *WorkforceIntegrationEncryption) GetSecret()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secret
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetProtocol gets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
+func (m *WorkforceIntegrationEncryption) GetProtocol()(*WorkforceIntegrationEncryptionProtocol) {
+    if m == nil {
+        return nil
+    } else {
+        return m.protocol
+    }
+}
+// GetSecret gets the secret property value. Encryption shared secret.
+func (m *WorkforceIntegrationEncryption) GetSecret()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.secret
+    }
 }
 func (m *WorkforceIntegrationEncryption) IsNil()(bool) {
     return m == nil

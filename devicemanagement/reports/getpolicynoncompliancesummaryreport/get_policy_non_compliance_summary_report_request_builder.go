@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetPolicyNonComplianceSummaryReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getPolicyNonComplianceSummaryReport
+// GetPolicyNonComplianceSummaryReportRequestBuilder provides operations to call the getPolicyNonComplianceSummaryReport method.
 type GetPolicyNonComplianceSummaryReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetPolicyNonComplianceSummaryReportRequestBuilder struct {
 // GetPolicyNonComplianceSummaryReportRequestBuilderPostOptions options for Post
 type GetPolicyNonComplianceSummaryReportRequestBuilderPostOptions struct {
     // 
-    Body *GetPolicyNonComplianceSummaryReportRequestBody;
+    Body GetPolicyNonComplianceSummaryReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetPolicyNonComplianceSummaryReportRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInf
     return requestInfo, nil
 }
 // Post invoke action getPolicyNonComplianceSummaryReport
-func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) Post(options *GetPolicyNonComplianceSummaryReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) Post(options *GetPolicyNonComplianceSummaryReportRequestBuilderPostOptions)(GetPolicyNonComplianceSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetPolicyNonComplianceSummaryReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetPolicyNonComplianceSummaryReportResponseable), nil
 }

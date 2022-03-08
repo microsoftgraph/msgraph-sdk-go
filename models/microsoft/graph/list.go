@@ -4,27 +4,27 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// List 
+// List provides operations to manage the drive singleton.
 type List struct {
     BaseItem
     // The collection of field definitions for this list.
-    columns []ColumnDefinition;
+    columns []ColumnDefinitionable;
     // The collection of content types present in this list.
-    contentTypes []ContentType;
+    contentTypes []ContentTypeable;
     // The displayable title of the list.
     displayName *string;
     // Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
-    drive *Drive;
+    drive Driveable;
     // All items contained in the list.
-    items []ListItem;
+    items []ListItemable;
     // Provides additional details about the list.
-    list *ListInfo;
+    list ListInfoable;
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds *SharepointIds;
+    sharepointIds SharepointIdsable;
     // The set of subscriptions on the list.
-    subscriptions []Subscription;
+    subscriptions []Subscriptionable;
     // If present, indicates that this is a system-managed list. Read-only.
-    system *SystemFacet;
+    system SystemFacetable;
 }
 // NewList instantiates a new list and sets the default values.
 func NewList()(*List) {
@@ -33,8 +33,12 @@ func NewList()(*List) {
     }
     return m
 }
+// CreateListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateListFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewList(), nil
+}
 // GetColumns gets the columns property value. The collection of field definitions for this list.
-func (m *List) GetColumns()([]ColumnDefinition) {
+func (m *List) GetColumns()([]ColumnDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -42,7 +46,7 @@ func (m *List) GetColumns()([]ColumnDefinition) {
     }
 }
 // GetContentTypes gets the contentTypes property value. The collection of content types present in this list.
-func (m *List) GetContentTypes()([]ContentType) {
+func (m *List) GetContentTypes()([]ContentTypeable) {
     if m == nil {
         return nil
     } else {
@@ -58,79 +62,39 @@ func (m *List) GetDisplayName()(*string) {
     }
 }
 // GetDrive gets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
-func (m *List) GetDrive()(*Drive) {
+func (m *List) GetDrive()(Driveable) {
     if m == nil {
         return nil
     } else {
         return m.drive
     }
 }
-// GetItems gets the items property value. All items contained in the list.
-func (m *List) GetItems()([]ListItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
-}
-// GetList gets the list property value. Provides additional details about the list.
-func (m *List) GetList()(*ListInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.list
-    }
-}
-// GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-func (m *List) GetSharepointIds()(*SharepointIds) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
-}
-// GetSubscriptions gets the subscriptions property value. The set of subscriptions on the list.
-func (m *List) GetSubscriptions()([]Subscription) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptions
-    }
-}
-// GetSystem gets the system property value. If present, indicates that this is a system-managed list. Read-only.
-func (m *List) GetSystem()(*SystemFacet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.system
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *List) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["columns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewColumnDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateColumnDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ColumnDefinition, len(val))
+            res := make([]ColumnDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ColumnDefinition))
+                res[i] = v.(ColumnDefinitionable)
             }
             m.SetColumns(res)
         }
         return nil
     }
     res["contentTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContentType() })
+        val, err := n.GetCollectionOfObjectValues(CreateContentTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ContentType, len(val))
+            res := make([]ContentTypeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ContentType))
+                res[i] = v.(ContentTypeable)
             }
             m.SetContentTypes(res)
         }
@@ -147,74 +111,114 @@ func (m *List) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["drive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDrive() })
+        val, err := n.GetObjectValue(CreateDriveFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDrive(val.(*Drive))
+            m.SetDrive(val.(Driveable))
         }
         return nil
     }
     res["items"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewListItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateListItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ListItem, len(val))
+            res := make([]ListItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ListItem))
+                res[i] = v.(ListItemable)
             }
             m.SetItems(res)
         }
         return nil
     }
     res["list"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewListInfo() })
+        val, err := n.GetObjectValue(CreateListInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetList(val.(*ListInfo))
+            m.SetList(val.(ListInfoable))
         }
         return nil
     }
     res["sharepointIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSharepointIds() })
+        val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSharepointIds(val.(*SharepointIds))
+            m.SetSharepointIds(val.(SharepointIdsable))
         }
         return nil
     }
     res["subscriptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSubscription() })
+        val, err := n.GetCollectionOfObjectValues(CreateSubscriptionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Subscription, len(val))
+            res := make([]Subscriptionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Subscription))
+                res[i] = v.(Subscriptionable)
             }
             m.SetSubscriptions(res)
         }
         return nil
     }
     res["system"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSystemFacet() })
+        val, err := n.GetObjectValue(CreateSystemFacetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSystem(val.(*SystemFacet))
+            m.SetSystem(val.(SystemFacetable))
         }
         return nil
     }
     return res
+}
+// GetItems gets the items property value. All items contained in the list.
+func (m *List) GetItems()([]ListItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.items
+    }
+}
+// GetList gets the list property value. Provides additional details about the list.
+func (m *List) GetList()(ListInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.list
+    }
+}
+// GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+func (m *List) GetSharepointIds()(SharepointIdsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharepointIds
+    }
+}
+// GetSubscriptions gets the subscriptions property value. The set of subscriptions on the list.
+func (m *List) GetSubscriptions()([]Subscriptionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subscriptions
+    }
+}
+// GetSystem gets the system property value. If present, indicates that this is a system-managed list. Read-only.
+func (m *List) GetSystem()(SystemFacetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.system
+    }
 }
 func (m *List) IsNil()(bool) {
     return m == nil
@@ -228,8 +232,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetColumns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetColumns()))
         for i, v := range m.GetColumns() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("columns", cast)
         if err != nil {
@@ -239,8 +242,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetContentTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContentTypes()))
         for i, v := range m.GetContentTypes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("contentTypes", cast)
         if err != nil {
@@ -262,8 +264,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {
@@ -285,8 +286,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetSubscriptions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSubscriptions()))
         for i, v := range m.GetSubscriptions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("subscriptions", cast)
         if err != nil {
@@ -302,13 +302,13 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     return nil
 }
 // SetColumns sets the columns property value. The collection of field definitions for this list.
-func (m *List) SetColumns(value []ColumnDefinition)() {
+func (m *List) SetColumns(value []ColumnDefinitionable)() {
     if m != nil {
         m.columns = value
     }
 }
 // SetContentTypes sets the contentTypes property value. The collection of content types present in this list.
-func (m *List) SetContentTypes(value []ContentType)() {
+func (m *List) SetContentTypes(value []ContentTypeable)() {
     if m != nil {
         m.contentTypes = value
     }
@@ -320,37 +320,37 @@ func (m *List) SetDisplayName(value *string)() {
     }
 }
 // SetDrive sets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
-func (m *List) SetDrive(value *Drive)() {
+func (m *List) SetDrive(value Driveable)() {
     if m != nil {
         m.drive = value
     }
 }
 // SetItems sets the items property value. All items contained in the list.
-func (m *List) SetItems(value []ListItem)() {
+func (m *List) SetItems(value []ListItemable)() {
     if m != nil {
         m.items = value
     }
 }
 // SetList sets the list property value. Provides additional details about the list.
-func (m *List) SetList(value *ListInfo)() {
+func (m *List) SetList(value ListInfoable)() {
     if m != nil {
         m.list = value
     }
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-func (m *List) SetSharepointIds(value *SharepointIds)() {
+func (m *List) SetSharepointIds(value SharepointIdsable)() {
     if m != nil {
         m.sharepointIds = value
     }
 }
 // SetSubscriptions sets the subscriptions property value. The set of subscriptions on the list.
-func (m *List) SetSubscriptions(value []Subscription)() {
+func (m *List) SetSubscriptions(value []Subscriptionable)() {
     if m != nil {
         m.subscriptions = value
     }
 }
 // SetSystem sets the system property value. If present, indicates that this is a system-managed list. Read-only.
-func (m *List) SetSystem(value *SystemFacet)() {
+func (m *List) SetSystem(value SystemFacetable)() {
     if m != nil {
         m.system = value
     }

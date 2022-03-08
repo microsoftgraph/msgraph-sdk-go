@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the targetApps method.
 type TargetedManagedAppGroupType int
 
 const (

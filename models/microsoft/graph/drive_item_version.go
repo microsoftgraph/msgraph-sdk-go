@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DriveItemVersion 
+// DriveItemVersion provides operations to manage the drive singleton.
 type DriveItemVersion struct {
     BaseItemVersion
     // The content stream for this version of the item.
@@ -19,20 +19,16 @@ func NewDriveItemVersion()(*DriveItemVersion) {
     }
     return m
 }
+// CreateDriveItemVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDriveItemVersionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDriveItemVersion(), nil
+}
 // GetContent gets the content property value. The content stream for this version of the item.
 func (m *DriveItemVersion) GetContent()([]byte) {
     if m == nil {
         return nil
     } else {
         return m.content
-    }
-}
-// GetSize gets the size property value. Indicates the size of the content stream for this version of the item.
-func (m *DriveItemVersion) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,6 +55,14 @@ func (m *DriveItemVersion) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetSize gets the size property value. Indicates the size of the content stream for this version of the item.
+func (m *DriveItemVersion) GetSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
 }
 func (m *DriveItemVersion) IsNil()(bool) {
     return m == nil

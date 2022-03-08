@@ -4,23 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookWorksheet 
+// WorkbookWorksheet provides operations to manage the drive singleton.
 type WorkbookWorksheet struct {
     Entity
     // Returns collection of charts that are part of the worksheet. Read-only.
-    charts []WorkbookChart;
+    charts []WorkbookChartable;
     // The display name of the worksheet.
     name *string;
     // Returns collection of names that are associated with the worksheet. Read-only.
-    names []WorkbookNamedItem;
+    names []WorkbookNamedItemable;
     // Collection of PivotTables that are part of the worksheet.
-    pivotTables []WorkbookPivotTable;
+    pivotTables []WorkbookPivotTableable;
     // The zero-based position of the worksheet within the workbook.
     position *int32;
     // Returns sheet protection object for a worksheet. Read-only.
-    protection *WorkbookWorksheetProtection;
+    protection WorkbookWorksheetProtectionable;
     // Collection of tables that are part of the worksheet. Read-only.
-    tables []WorkbookTable;
+    tables []WorkbookTableable;
     // The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
     visibility *string;
 }
@@ -31,82 +31,30 @@ func NewWorkbookWorksheet()(*WorkbookWorksheet) {
     }
     return m
 }
+// CreateWorkbookWorksheetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookWorksheetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookWorksheet(), nil
+}
 // GetCharts gets the charts property value. Returns collection of charts that are part of the worksheet. Read-only.
-func (m *WorkbookWorksheet) GetCharts()([]WorkbookChart) {
+func (m *WorkbookWorksheet) GetCharts()([]WorkbookChartable) {
     if m == nil {
         return nil
     } else {
         return m.charts
     }
 }
-// GetName gets the name property value. The display name of the worksheet.
-func (m *WorkbookWorksheet) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetNames gets the names property value. Returns collection of names that are associated with the worksheet. Read-only.
-func (m *WorkbookWorksheet) GetNames()([]WorkbookNamedItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.names
-    }
-}
-// GetPivotTables gets the pivotTables property value. Collection of PivotTables that are part of the worksheet.
-func (m *WorkbookWorksheet) GetPivotTables()([]WorkbookPivotTable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pivotTables
-    }
-}
-// GetPosition gets the position property value. The zero-based position of the worksheet within the workbook.
-func (m *WorkbookWorksheet) GetPosition()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.position
-    }
-}
-// GetProtection gets the protection property value. Returns sheet protection object for a worksheet. Read-only.
-func (m *WorkbookWorksheet) GetProtection()(*WorkbookWorksheetProtection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protection
-    }
-}
-// GetTables gets the tables property value. Collection of tables that are part of the worksheet. Read-only.
-func (m *WorkbookWorksheet) GetTables()([]WorkbookTable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tables
-    }
-}
-// GetVisibility gets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
-func (m *WorkbookWorksheet) GetVisibility()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visibility
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["charts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookChart() })
+        val, err := n.GetCollectionOfObjectValues(CreateWorkbookChartFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WorkbookChart, len(val))
+            res := make([]WorkbookChartable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WorkbookChart))
+                res[i] = v.(WorkbookChartable)
             }
             m.SetCharts(res)
         }
@@ -123,28 +71,28 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["names"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookNamedItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateWorkbookNamedItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WorkbookNamedItem, len(val))
+            res := make([]WorkbookNamedItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WorkbookNamedItem))
+                res[i] = v.(WorkbookNamedItemable)
             }
             m.SetNames(res)
         }
         return nil
     }
     res["pivotTables"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookPivotTable() })
+        val, err := n.GetCollectionOfObjectValues(CreateWorkbookPivotTableFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WorkbookPivotTable, len(val))
+            res := make([]WorkbookPivotTableable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WorkbookPivotTable))
+                res[i] = v.(WorkbookPivotTableable)
             }
             m.SetPivotTables(res)
         }
@@ -161,24 +109,24 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["protection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookWorksheetProtection() })
+        val, err := n.GetObjectValue(CreateWorkbookWorksheetProtectionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProtection(val.(*WorkbookWorksheetProtection))
+            m.SetProtection(val.(WorkbookWorksheetProtectionable))
         }
         return nil
     }
     res["tables"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookTable() })
+        val, err := n.GetCollectionOfObjectValues(CreateWorkbookTableFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WorkbookTable, len(val))
+            res := make([]WorkbookTableable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WorkbookTable))
+                res[i] = v.(WorkbookTableable)
             }
             m.SetTables(res)
         }
@@ -196,6 +144,62 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
+// GetName gets the name property value. The display name of the worksheet.
+func (m *WorkbookWorksheet) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetNames gets the names property value. Returns collection of names that are associated with the worksheet. Read-only.
+func (m *WorkbookWorksheet) GetNames()([]WorkbookNamedItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.names
+    }
+}
+// GetPivotTables gets the pivotTables property value. Collection of PivotTables that are part of the worksheet.
+func (m *WorkbookWorksheet) GetPivotTables()([]WorkbookPivotTableable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pivotTables
+    }
+}
+// GetPosition gets the position property value. The zero-based position of the worksheet within the workbook.
+func (m *WorkbookWorksheet) GetPosition()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.position
+    }
+}
+// GetProtection gets the protection property value. Returns sheet protection object for a worksheet. Read-only.
+func (m *WorkbookWorksheet) GetProtection()(WorkbookWorksheetProtectionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.protection
+    }
+}
+// GetTables gets the tables property value. Collection of tables that are part of the worksheet. Read-only.
+func (m *WorkbookWorksheet) GetTables()([]WorkbookTableable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tables
+    }
+}
+// GetVisibility gets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+func (m *WorkbookWorksheet) GetVisibility()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visibility
+    }
+}
 func (m *WorkbookWorksheet) IsNil()(bool) {
     return m == nil
 }
@@ -208,8 +212,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetCharts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCharts()))
         for i, v := range m.GetCharts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("charts", cast)
         if err != nil {
@@ -225,8 +228,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetNames() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNames()))
         for i, v := range m.GetNames() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("names", cast)
         if err != nil {
@@ -236,8 +238,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetPivotTables() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPivotTables()))
         for i, v := range m.GetPivotTables() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("pivotTables", cast)
         if err != nil {
@@ -259,8 +260,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetTables() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTables()))
         for i, v := range m.GetTables() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tables", cast)
         if err != nil {
@@ -276,7 +276,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     return nil
 }
 // SetCharts sets the charts property value. Returns collection of charts that are part of the worksheet. Read-only.
-func (m *WorkbookWorksheet) SetCharts(value []WorkbookChart)() {
+func (m *WorkbookWorksheet) SetCharts(value []WorkbookChartable)() {
     if m != nil {
         m.charts = value
     }
@@ -288,13 +288,13 @@ func (m *WorkbookWorksheet) SetName(value *string)() {
     }
 }
 // SetNames sets the names property value. Returns collection of names that are associated with the worksheet. Read-only.
-func (m *WorkbookWorksheet) SetNames(value []WorkbookNamedItem)() {
+func (m *WorkbookWorksheet) SetNames(value []WorkbookNamedItemable)() {
     if m != nil {
         m.names = value
     }
 }
 // SetPivotTables sets the pivotTables property value. Collection of PivotTables that are part of the worksheet.
-func (m *WorkbookWorksheet) SetPivotTables(value []WorkbookPivotTable)() {
+func (m *WorkbookWorksheet) SetPivotTables(value []WorkbookPivotTableable)() {
     if m != nil {
         m.pivotTables = value
     }
@@ -306,13 +306,13 @@ func (m *WorkbookWorksheet) SetPosition(value *int32)() {
     }
 }
 // SetProtection sets the protection property value. Returns sheet protection object for a worksheet. Read-only.
-func (m *WorkbookWorksheet) SetProtection(value *WorkbookWorksheetProtection)() {
+func (m *WorkbookWorksheet) SetProtection(value WorkbookWorksheetProtectionable)() {
     if m != nil {
         m.protection = value
     }
 }
 // SetTables sets the tables property value. Collection of tables that are part of the worksheet. Read-only.
-func (m *WorkbookWorksheet) SetTables(value []WorkbookTable)() {
+func (m *WorkbookWorksheet) SetTables(value []WorkbookTableable)() {
     if m != nil {
         m.tables = value
     }

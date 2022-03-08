@@ -2,11 +2,11 @@ package subscriptions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    iee9cc8d291905cc66df21b0b6ef90902f36f53f901cb5c86f79fe088b32f8a49 "github.com/microsoftgraph/msgraph-sdk-go/drives/item/list/subscriptions/count"
 )
 
-// SubscriptionsRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\subscriptions
+// SubscriptionsRequestBuilder provides operations to manage the subscriptions property of the microsoft.graph.list entity.
 type SubscriptionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type SubscriptionsRequestBuilderGetQueryParameters struct {
 // SubscriptionsRequestBuilderPostOptions options for Post
 type SubscriptionsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscription;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscriptionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewSubscriptionsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewSubscriptionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubscriptionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SubscriptionsRequestBuilder) Count()(*iee9cc8d291905cc66df21b0b6ef90902f36f53f901cb5c86f79fe088b32f8a49.CountRequestBuilder) {
+    return iee9cc8d291905cc66df21b0b6ef90902f36f53f901cb5c86f79fe088b32f8a49.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the set of subscriptions on the list.
 func (m *SubscriptionsRequestBuilder) CreateGetRequestInformation(options *SubscriptionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *SubscriptionsRequestBuilder) CreateGetRequestInformation(options *Subsc
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the set of subscriptions on the list.
+// CreatePostRequestInformation create new navigation property to subscriptions for drives
 func (m *SubscriptionsRequestBuilder) CreatePostRequestInformation(options *SubscriptionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *SubscriptionsRequestBuilder) CreatePostRequestInformation(options *Subs
     return requestInfo, nil
 }
 // Get the set of subscriptions on the list.
-func (m *SubscriptionsRequestBuilder) Get(options *SubscriptionsRequestBuilderGetOptions)(*SubscriptionsResponse, error) {
+func (m *SubscriptionsRequestBuilder) Get(options *SubscriptionsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscriptionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSubscriptionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSubscriptionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SubscriptionsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscriptionCollectionResponseable), nil
 }
-// Post the set of subscriptions on the list.
-func (m *SubscriptionsRequestBuilder) Post(options *SubscriptionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscription, error) {
+// Post create new navigation property to subscriptions for drives
+func (m *SubscriptionsRequestBuilder) Post(options *SubscriptionsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscriptionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSubscription() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSubscriptionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscription), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscriptionable), nil
 }

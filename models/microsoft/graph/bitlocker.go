@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Bitlocker 
+// Bitlocker provides operations to manage the informationProtection singleton.
 type Bitlocker struct {
     Entity
     // The recovery keys associated with the bitlocker entity.
-    recoveryKeys []BitlockerRecoveryKey;
+    recoveryKeys []BitlockerRecoveryKeyable;
 }
 // NewBitlocker instantiates a new bitlocker and sets the default values.
 func NewBitlocker()(*Bitlocker) {
@@ -17,32 +17,36 @@ func NewBitlocker()(*Bitlocker) {
     }
     return m
 }
-// GetRecoveryKeys gets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
-func (m *Bitlocker) GetRecoveryKeys()([]BitlockerRecoveryKey) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recoveryKeys
-    }
+// CreateBitlockerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBitlockerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBitlocker(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Bitlocker) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["recoveryKeys"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBitlockerRecoveryKey() })
+        val, err := n.GetCollectionOfObjectValues(CreateBitlockerRecoveryKeyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BitlockerRecoveryKey, len(val))
+            res := make([]BitlockerRecoveryKeyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BitlockerRecoveryKey))
+                res[i] = v.(BitlockerRecoveryKeyable)
             }
             m.SetRecoveryKeys(res)
         }
         return nil
     }
     return res
+}
+// GetRecoveryKeys gets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
+func (m *Bitlocker) GetRecoveryKeys()([]BitlockerRecoveryKeyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recoveryKeys
+    }
 }
 func (m *Bitlocker) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *Bitlocker) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetRecoveryKeys() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecoveryKeys()))
         for i, v := range m.GetRecoveryKeys() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("recoveryKeys", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *Bitlocker) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     return nil
 }
 // SetRecoveryKeys sets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
-func (m *Bitlocker) SetRecoveryKeys(value []BitlockerRecoveryKey)() {
+func (m *Bitlocker) SetRecoveryKeys(value []BitlockerRecoveryKeyable)() {
     if m != nil {
         m.recoveryKeys = value
     }

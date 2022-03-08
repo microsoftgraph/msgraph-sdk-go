@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DriveRecipient 
+// DriveRecipient provides operations to call the grant method.
 type DriveRecipient struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewDriveRecipient()(*DriveRecipient) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDriveRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDriveRecipientFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDriveRecipient(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DriveRecipient) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *DriveRecipient) GetEmail()(*string) {
         return nil
     } else {
         return m.email
-    }
-}
-// GetObjectId gets the objectId property value. The unique identifier for the recipient in the directory.
-func (m *DriveRecipient) GetObjectId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.objectId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *DriveRecipient) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetObjectId gets the objectId property value. The unique identifier for the recipient in the directory.
+func (m *DriveRecipient) GetObjectId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.objectId
+    }
 }
 func (m *DriveRecipient) IsNil()(bool) {
     return m == nil

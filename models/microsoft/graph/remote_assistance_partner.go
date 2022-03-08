@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RemoteAssistancePartner 
+// RemoteAssistancePartner provides operations to manage the deviceManagement singleton.
 type RemoteAssistancePartner struct {
     Entity
     // Display name of the partner.
@@ -24,36 +24,16 @@ func NewRemoteAssistancePartner()(*RemoteAssistancePartner) {
     }
     return m
 }
+// CreateRemoteAssistancePartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRemoteAssistancePartnerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRemoteAssistancePartner(), nil
+}
 // GetDisplayName gets the displayName property value. Display name of the partner.
 func (m *RemoteAssistancePartner) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
-func (m *RemoteAssistancePartner) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConnectionDateTime
-    }
-}
-// GetOnboardingStatus gets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
-func (m *RemoteAssistancePartner) GetOnboardingStatus()(*RemoteAssistanceOnboardingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardingStatus
-    }
-}
-// GetOnboardingUrl gets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
-func (m *RemoteAssistancePartner) GetOnboardingUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardingUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +80,30 @@ func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
+func (m *RemoteAssistancePartner) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastConnectionDateTime
+    }
+}
+// GetOnboardingStatus gets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+func (m *RemoteAssistancePartner) GetOnboardingStatus()(*RemoteAssistanceOnboardingStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onboardingStatus
+    }
+}
+// GetOnboardingUrl gets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
+func (m *RemoteAssistancePartner) GetOnboardingUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onboardingUrl
+    }
 }
 func (m *RemoteAssistancePartner) IsNil()(bool) {
     return m == nil

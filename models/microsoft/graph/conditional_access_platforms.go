@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessPlatforms 
+// ConditionalAccessPlatforms provides operations to manage the identityContainer singleton.
 type ConditionalAccessPlatforms struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewConditionalAccessPlatforms()(*ConditionalAccessPlatforms) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateConditionalAccessPlatformsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessPlatformsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessPlatforms(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessPlatforms) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *ConditionalAccessPlatforms) GetExcludePlatforms()([]ConditionalAccessDe
         return nil
     } else {
         return m.excludePlatforms
-    }
-}
-// GetIncludePlatforms gets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
-func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]ConditionalAccessDevicePlatform) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includePlatforms
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -76,6 +72,14 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetIncludePlatforms gets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
+func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]ConditionalAccessDevicePlatform) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includePlatforms
+    }
 }
 func (m *ConditionalAccessPlatforms) IsNil()(bool) {
     return m == nil

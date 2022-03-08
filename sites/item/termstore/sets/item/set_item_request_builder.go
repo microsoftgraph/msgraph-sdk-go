@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     ib50fe719b41297b226c038c3403f9fc36fc99fbb9cd41b4ffb1c75c3c3e244e0 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item/parentgroup"
     ib67061c9a5ec7f54c1fceca2aa7982053498cb3be7809cad62a033dc35b973c3 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item/terms"
@@ -13,7 +12,7 @@ import (
     i6bbacacf32786b9a7dc430d497d260fe18ca363ecc82921008d5fdc715d0d70d "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item/relations/item"
 )
 
-// SetItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\sets\{set-id}
+// SetItemRequestBuilder provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 type SetItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +51,7 @@ type SetItemRequestBuilderGetQueryParameters struct {
 // SetItemRequestBuilderPatchOptions options for Patch
 type SetItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Set;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Setable;
     // Request headers
     H map[string]string;
     // Request options
@@ -83,7 +82,7 @@ func NewSetItemRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -93,7 +92,7 @@ func NewSetItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewSetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation collection of all sets available in the term store.
+// CreateDeleteRequestInformation delete navigation property sets for sites
 func (m *SetItemRequestBuilder) CreateDeleteRequestInformation(options *SetItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,7 +129,7 @@ func (m *SetItemRequestBuilder) CreateGetRequestInformation(options *SetItemRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation collection of all sets available in the term store.
+// CreatePatchRequestInformation update the navigation property sets in sites
 func (m *SetItemRequestBuilder) CreatePatchRequestInformation(options *SetItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,40 +147,52 @@ func (m *SetItemRequestBuilder) CreatePatchRequestInformation(options *SetItemRe
     }
     return requestInfo, nil
 }
-// Delete collection of all sets available in the term store.
+// Delete delete navigation property sets for sites
 func (m *SetItemRequestBuilder) Delete(options *SetItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get collection of all sets available in the term store.
-func (m *SetItemRequestBuilder) Get(options *SetItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Set, error) {
+func (m *SetItemRequestBuilder) Get(options *SetItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Setable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSet() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSetFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Set), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Setable), nil
 }
 func (m *SetItemRequestBuilder) ParentGroup()(*ib50fe719b41297b226c038c3403f9fc36fc99fbb9cd41b4ffb1c75c3c3e244e0.ParentGroupRequestBuilder) {
     return ib50fe719b41297b226c038c3403f9fc36fc99fbb9cd41b4ffb1c75c3c3e244e0.NewParentGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch collection of all sets available in the term store.
+// Patch update the navigation property sets in sites
 func (m *SetItemRequestBuilder) Patch(options *SetItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

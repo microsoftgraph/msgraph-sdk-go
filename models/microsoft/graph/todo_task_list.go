@@ -4,19 +4,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TodoTaskList 
+// TodoTaskList provides operations to manage the drive singleton.
 type TodoTaskList struct {
     Entity
     // The name of the task list.
     displayName *string;
     // The collection of open extensions defined for the task list. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // True if the user is owner of the given task list.
     isOwner *bool;
     // True if the task list is shared with other users
     isShared *bool;
     // The tasks in this task list. Read-only. Nullable.
-    tasks []TodoTask;
+    tasks []TodoTaskable;
     // Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
     wellknownListName *WellknownListName;
 }
@@ -27,6 +27,10 @@ func NewTodoTaskList()(*TodoTaskList) {
     }
     return m
 }
+// CreateTodoTaskListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTodoTaskListFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTodoTaskList(), nil
+}
 // GetDisplayName gets the displayName property value. The name of the task list.
 func (m *TodoTaskList) GetDisplayName()(*string) {
     if m == nil {
@@ -36,43 +40,11 @@ func (m *TodoTaskList) GetDisplayName()(*string) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task list. Nullable.
-func (m *TodoTaskList) GetExtensions()([]Extension) {
+func (m *TodoTaskList) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
-    }
-}
-// GetIsOwner gets the isOwner property value. True if the user is owner of the given task list.
-func (m *TodoTaskList) GetIsOwner()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOwner
-    }
-}
-// GetIsShared gets the isShared property value. True if the task list is shared with other users
-func (m *TodoTaskList) GetIsShared()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isShared
-    }
-}
-// GetTasks gets the tasks property value. The tasks in this task list. Read-only. Nullable.
-func (m *TodoTaskList) GetTasks()([]TodoTask) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
-}
-// GetWellknownListName gets the wellknownListName property value. Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
-func (m *TodoTaskList) GetWellknownListName()(*WellknownListName) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wellknownListName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,14 +61,14 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
@@ -123,14 +95,14 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTodoTask() })
+        val, err := n.GetCollectionOfObjectValues(CreateTodoTaskFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TodoTask, len(val))
+            res := make([]TodoTaskable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TodoTask))
+                res[i] = v.(TodoTaskable)
             }
             m.SetTasks(res)
         }
@@ -147,6 +119,38 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetIsOwner gets the isOwner property value. True if the user is owner of the given task list.
+func (m *TodoTaskList) GetIsOwner()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isOwner
+    }
+}
+// GetIsShared gets the isShared property value. True if the task list is shared with other users
+func (m *TodoTaskList) GetIsShared()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isShared
+    }
+}
+// GetTasks gets the tasks property value. The tasks in this task list. Read-only. Nullable.
+func (m *TodoTaskList) GetTasks()([]TodoTaskable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tasks
+    }
+}
+// GetWellknownListName gets the wellknownListName property value. Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
+func (m *TodoTaskList) GetWellknownListName()(*WellknownListName) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wellknownListName
+    }
 }
 func (m *TodoTaskList) IsNil()(bool) {
     return m == nil
@@ -166,8 +170,7 @@ func (m *TodoTaskList) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -189,8 +192,7 @@ func (m *TodoTaskList) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {
@@ -213,7 +215,7 @@ func (m *TodoTaskList) SetDisplayName(value *string)() {
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task list. Nullable.
-func (m *TodoTaskList) SetExtensions(value []Extension)() {
+func (m *TodoTaskList) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
@@ -231,7 +233,7 @@ func (m *TodoTaskList) SetIsShared(value *bool)() {
     }
 }
 // SetTasks sets the tasks property value. The tasks in this task list. Read-only. Nullable.
-func (m *TodoTaskList) SetTasks(value []TodoTask)() {
+func (m *TodoTaskList) SetTasks(value []TodoTaskable)() {
     if m != nil {
         m.tasks = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// KeyValue 
+// KeyValue provides operations to manage the collection of application entities.
 type KeyValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewKeyValue()(*KeyValue) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateKeyValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateKeyValueFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewKeyValue(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KeyValue) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetKey gets the key property value. Key for the key-value pair.
-func (m *KeyValue) GetKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
-}
-// GetValue gets the value property value. Value for the key-value pair.
-func (m *KeyValue) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *KeyValue) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetKey gets the key property value. Key for the key-value pair.
+func (m *KeyValue) GetKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
+}
+// GetValue gets the value property value. Value for the key-value pair.
+func (m *KeyValue) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *KeyValue) IsNil()(bool) {
     return m == nil

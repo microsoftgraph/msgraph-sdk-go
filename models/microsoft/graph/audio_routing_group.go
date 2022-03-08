@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AudioRoutingGroup 
+// AudioRoutingGroup provides operations to manage the cloudCommunications singleton.
 type AudioRoutingGroup struct {
     Entity
     // List of receiving participant ids.
@@ -21,29 +21,9 @@ func NewAudioRoutingGroup()(*AudioRoutingGroup) {
     }
     return m
 }
-// GetReceivers gets the receivers property value. List of receiving participant ids.
-func (m *AudioRoutingGroup) GetReceivers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivers
-    }
-}
-// GetRoutingMode gets the routingMode property value. Routing group mode.  Possible values are: oneToOne, multicast.
-func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.routingMode
-    }
-}
-// GetSources gets the sources property value. List of source participant ids.
-func (m *AudioRoutingGroup) GetSources()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sources
-    }
+// CreateAudioRoutingGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAudioRoutingGroupFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAudioRoutingGroup(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -87,6 +67,30 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetReceivers gets the receivers property value. List of receiving participant ids.
+func (m *AudioRoutingGroup) GetReceivers()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.receivers
+    }
+}
+// GetRoutingMode gets the routingMode property value. Routing group mode.  Possible values are: oneToOne, multicast.
+func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
+    if m == nil {
+        return nil
+    } else {
+        return m.routingMode
+    }
+}
+// GetSources gets the sources property value. List of source participant ids.
+func (m *AudioRoutingGroup) GetSources()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sources
+    }
 }
 func (m *AudioRoutingGroup) IsNil()(bool) {
     return m == nil

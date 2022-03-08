@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ComplianceInformation 
+// ComplianceInformation provides operations to manage the security singleton.
 type ComplianceInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Collection of the certification controls associated with certification
-    certificationControls []CertificationControl;
+    certificationControls []CertificationControlable;
     // Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
     certificationName *string;
 }
@@ -20,6 +20,10 @@ func NewComplianceInformation()(*ComplianceInformation) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateComplianceInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateComplianceInformationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewComplianceInformation(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComplianceInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -29,7 +33,7 @@ func (m *ComplianceInformation) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetCertificationControls gets the certificationControls property value. Collection of the certification controls associated with certification
-func (m *ComplianceInformation) GetCertificationControls()([]CertificationControl) {
+func (m *ComplianceInformation) GetCertificationControls()([]CertificationControlable) {
     if m == nil {
         return nil
     } else {
@@ -48,14 +52,14 @@ func (m *ComplianceInformation) GetCertificationName()(*string) {
 func (m *ComplianceInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["certificationControls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCertificationControl() })
+        val, err := n.GetCollectionOfObjectValues(CreateCertificationControlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CertificationControl, len(val))
+            res := make([]CertificationControlable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CertificationControl))
+                res[i] = v.(CertificationControlable)
             }
             m.SetCertificationControls(res)
         }
@@ -81,8 +85,7 @@ func (m *ComplianceInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetCertificationControls() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCertificationControls()))
         for i, v := range m.GetCertificationControls() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("certificationControls", cast)
         if err != nil {
@@ -110,7 +113,7 @@ func (m *ComplianceInformation) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetCertificationControls sets the certificationControls property value. Collection of the certification controls associated with certification
-func (m *ComplianceInformation) SetCertificationControls(value []CertificationControl)() {
+func (m *ComplianceInformation) SetCertificationControls(value []CertificationControlable)() {
     if m != nil {
         m.certificationControls = value
     }

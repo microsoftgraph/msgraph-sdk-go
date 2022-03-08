@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InvitedUserMessageInfo 
+// InvitedUserMessageInfo provides operations to manage the collection of invitation entities.
 type InvitedUserMessageInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
-    ccRecipients []Recipient;
+    ccRecipients []Recipientable;
     // Customized message body you want to send if you don't want the default message.
     customizedMessageBody *string;
     // The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
@@ -22,6 +22,10 @@ func NewInvitedUserMessageInfo()(*InvitedUserMessageInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateInvitedUserMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInvitedUserMessageInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInvitedUserMessageInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitedUserMessageInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -31,7 +35,7 @@ func (m *InvitedUserMessageInfo) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetCcRecipients gets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
-func (m *InvitedUserMessageInfo) GetCcRecipients()([]Recipient) {
+func (m *InvitedUserMessageInfo) GetCcRecipients()([]Recipientable) {
     if m == nil {
         return nil
     } else {
@@ -46,26 +50,18 @@ func (m *InvitedUserMessageInfo) GetCustomizedMessageBody()(*string) {
         return m.customizedMessageBody
     }
 }
-// GetMessageLanguage gets the messageLanguage property value. The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
-func (m *InvitedUserMessageInfo) GetMessageLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageLanguage
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["ccRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetCcRecipients(res)
         }
@@ -93,6 +89,14 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
+// GetMessageLanguage gets the messageLanguage property value. The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
+func (m *InvitedUserMessageInfo) GetMessageLanguage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageLanguage
+    }
+}
 func (m *InvitedUserMessageInfo) IsNil()(bool) {
     return m == nil
 }
@@ -101,8 +105,7 @@ func (m *InvitedUserMessageInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetCcRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCcRecipients()))
         for i, v := range m.GetCcRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("ccRecipients", cast)
         if err != nil {
@@ -136,7 +139,7 @@ func (m *InvitedUserMessageInfo) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetCcRecipients sets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
-func (m *InvitedUserMessageInfo) SetCcRecipients(value []Recipient)() {
+func (m *InvitedUserMessageInfo) SetCcRecipients(value []Recipientable)() {
     if m != nil {
         m.ccRecipients = value
     }

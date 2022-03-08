@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartDataLabels 
+// WorkbookChartDataLabels provides operations to manage the drive singleton.
 type WorkbookChartDataLabels struct {
     Entity
     // Represents the format of chart data labels, which includes fill and font formatting. Read-only.
-    format *WorkbookChartDataLabelFormat;
+    format WorkbookChartDataLabelFormatable;
     // DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
     position *string;
     // String representing the separator used for the data labels on a chart.
@@ -33,88 +33,20 @@ func NewWorkbookChartDataLabels()(*WorkbookChartDataLabels) {
     }
     return m
 }
-// GetFormat gets the format property value. Represents the format of chart data labels, which includes fill and font formatting. Read-only.
-func (m *WorkbookChartDataLabels) GetFormat()(*WorkbookChartDataLabelFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
-}
-// GetPosition gets the position property value. DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
-func (m *WorkbookChartDataLabels) GetPosition()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.position
-    }
-}
-// GetSeparator gets the separator property value. String representing the separator used for the data labels on a chart.
-func (m *WorkbookChartDataLabels) GetSeparator()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.separator
-    }
-}
-// GetShowBubbleSize gets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
-func (m *WorkbookChartDataLabels) GetShowBubbleSize()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showBubbleSize
-    }
-}
-// GetShowCategoryName gets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
-func (m *WorkbookChartDataLabels) GetShowCategoryName()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showCategoryName
-    }
-}
-// GetShowLegendKey gets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
-func (m *WorkbookChartDataLabels) GetShowLegendKey()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showLegendKey
-    }
-}
-// GetShowPercentage gets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
-func (m *WorkbookChartDataLabels) GetShowPercentage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showPercentage
-    }
-}
-// GetShowSeriesName gets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
-func (m *WorkbookChartDataLabels) GetShowSeriesName()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showSeriesName
-    }
-}
-// GetShowValue gets the showValue property value. Boolean value representing if the data label value is visible or not.
-func (m *WorkbookChartDataLabels) GetShowValue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showValue
-    }
+// CreateWorkbookChartDataLabelsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookChartDataLabelsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookChartDataLabels(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["format"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookChartDataLabelFormat() })
+        val, err := n.GetObjectValue(CreateWorkbookChartDataLabelFormatFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFormat(val.(*WorkbookChartDataLabelFormat))
+            m.SetFormat(val.(WorkbookChartDataLabelFormatable))
         }
         return nil
     }
@@ -200,6 +132,78 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
     }
     return res
 }
+// GetFormat gets the format property value. Represents the format of chart data labels, which includes fill and font formatting. Read-only.
+func (m *WorkbookChartDataLabels) GetFormat()(WorkbookChartDataLabelFormatable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.format
+    }
+}
+// GetPosition gets the position property value. DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
+func (m *WorkbookChartDataLabels) GetPosition()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.position
+    }
+}
+// GetSeparator gets the separator property value. String representing the separator used for the data labels on a chart.
+func (m *WorkbookChartDataLabels) GetSeparator()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.separator
+    }
+}
+// GetShowBubbleSize gets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
+func (m *WorkbookChartDataLabels) GetShowBubbleSize()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showBubbleSize
+    }
+}
+// GetShowCategoryName gets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
+func (m *WorkbookChartDataLabels) GetShowCategoryName()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showCategoryName
+    }
+}
+// GetShowLegendKey gets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
+func (m *WorkbookChartDataLabels) GetShowLegendKey()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showLegendKey
+    }
+}
+// GetShowPercentage gets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
+func (m *WorkbookChartDataLabels) GetShowPercentage()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showPercentage
+    }
+}
+// GetShowSeriesName gets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
+func (m *WorkbookChartDataLabels) GetShowSeriesName()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showSeriesName
+    }
+}
+// GetShowValue gets the showValue property value. Boolean value representing if the data label value is visible or not.
+func (m *WorkbookChartDataLabels) GetShowValue()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showValue
+    }
+}
 func (m *WorkbookChartDataLabels) IsNil()(bool) {
     return m == nil
 }
@@ -266,7 +270,7 @@ func (m *WorkbookChartDataLabels) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetFormat sets the format property value. Represents the format of chart data labels, which includes fill and font formatting. Read-only.
-func (m *WorkbookChartDataLabels) SetFormat(value *WorkbookChartDataLabelFormat)() {
+func (m *WorkbookChartDataLabels) SetFormat(value WorkbookChartDataLabelFormatable)() {
     if m != nil {
         m.format = value
     }

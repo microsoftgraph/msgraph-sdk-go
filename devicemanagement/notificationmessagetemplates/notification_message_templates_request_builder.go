@@ -2,11 +2,11 @@ package notificationmessagetemplates
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    ibd7c627941ec2c64f52ad2f04a9e65cd8d537fb741d436ebd2edc33dbcf13570 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/notificationmessagetemplates/count"
 )
 
-// NotificationMessageTemplatesRequestBuilder builds and executes requests for operations under \deviceManagement\notificationMessageTemplates
+// NotificationMessageTemplatesRequestBuilder provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
 type NotificationMessageTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type NotificationMessageTemplatesRequestBuilderGetQueryParameters struct {
 // NotificationMessageTemplatesRequestBuilderPostOptions options for Post
 type NotificationMessageTemplatesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplate;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplateable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewNotificationMessageTemplatesRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewNotificationMessageTemplatesRequestBuilder(rawUrl string, requestAdapter
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNotificationMessageTemplatesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *NotificationMessageTemplatesRequestBuilder) Count()(*ibd7c627941ec2c64f52ad2f04a9e65cd8d537fb741d436ebd2edc33dbcf13570.CountRequestBuilder) {
+    return ibd7c627941ec2c64f52ad2f04a9e65cd8d537fb741d436ebd2edc33dbcf13570.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the Notification Message Templates.
 func (m *NotificationMessageTemplatesRequestBuilder) CreateGetRequestInformation(options *NotificationMessageTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *NotificationMessageTemplatesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the Notification Message Templates.
+// CreatePostRequestInformation create new navigation property to notificationMessageTemplates for deviceManagement
 func (m *NotificationMessageTemplatesRequestBuilder) CreatePostRequestInformation(options *NotificationMessageTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *NotificationMessageTemplatesRequestBuilder) CreatePostRequestInformatio
     return requestInfo, nil
 }
 // Get the Notification Message Templates.
-func (m *NotificationMessageTemplatesRequestBuilder) Get(options *NotificationMessageTemplatesRequestBuilderGetOptions)(*NotificationMessageTemplatesResponse, error) {
+func (m *NotificationMessageTemplatesRequestBuilder) Get(options *NotificationMessageTemplatesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNotificationMessageTemplatesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateNotificationMessageTemplateCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*NotificationMessageTemplatesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplateCollectionResponseable), nil
 }
-// Post the Notification Message Templates.
-func (m *NotificationMessageTemplatesRequestBuilder) Post(options *NotificationMessageTemplatesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplate, error) {
+// Post create new navigation property to notificationMessageTemplates for deviceManagement
+func (m *NotificationMessageTemplatesRequestBuilder) Post(options *NotificationMessageTemplatesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplateable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewNotificationMessageTemplate() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateNotificationMessageTemplateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplate), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplateable), nil
 }

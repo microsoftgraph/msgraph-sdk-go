@@ -2,11 +2,11 @@ package services
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i6ceb676a4e89b0e4b243210be79f28c3dfb357c2bf98958e16a1f879234282de "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item/services/count"
 )
 
-// ServicesRequestBuilder builds and executes requests for operations under \solutions\bookingBusinesses\{bookingBusiness-id}\services
+// ServicesRequestBuilder provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
 type ServicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ServicesRequestBuilderGetQueryParameters struct {
 // ServicesRequestBuilderPostOptions options for Post
 type ServicesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BookingService;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BookingServiceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewServicesRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewServicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServicesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ServicesRequestBuilder) Count()(*i6ceb676a4e89b0e4b243210be79f28c3dfb357c2bf98958e16a1f879234282de.CountRequestBuilder) {
+    return i6ceb676a4e89b0e4b243210be79f28c3dfb357c2bf98958e16a1f879234282de.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation all the services offered by this business. Read-only. Nullable.
 func (m *ServicesRequestBuilder) CreateGetRequestInformation(options *ServicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ServicesRequestBuilder) CreateGetRequestInformation(options *ServicesRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation all the services offered by this business. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to services for solutions
 func (m *ServicesRequestBuilder) CreatePostRequestInformation(options *ServicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ServicesRequestBuilder) CreatePostRequestInformation(options *ServicesR
     return requestInfo, nil
 }
 // Get all the services offered by this business. Read-only. Nullable.
-func (m *ServicesRequestBuilder) Get(options *ServicesRequestBuilderGetOptions)(*ServicesResponse, error) {
+func (m *ServicesRequestBuilder) Get(options *ServicesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BookingServiceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewServicesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateBookingServiceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ServicesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BookingServiceCollectionResponseable), nil
 }
-// Post all the services offered by this business. Read-only. Nullable.
-func (m *ServicesRequestBuilder) Post(options *ServicesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BookingService, error) {
+// Post create new navigation property to services for solutions
+func (m *ServicesRequestBuilder) Post(options *ServicesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BookingServiceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewBookingService() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateBookingServiceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BookingService), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BookingServiceable), nil
 }

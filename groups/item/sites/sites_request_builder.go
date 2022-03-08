@@ -2,11 +2,11 @@ package sites
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    if6cf0b03baaff43a8e3f983a475e7700e1332b3538b3528a74e87950a79a1280 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/sites/count"
 )
 
-// SitesRequestBuilder builds and executes requests for operations under \groups\{group-id}\sites
+// SitesRequestBuilder provides operations to manage the sites property of the microsoft.graph.group entity.
 type SitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type SitesRequestBuilderGetQueryParameters struct {
 // SitesRequestBuilderPostOptions options for Post
 type SitesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSitesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SitesRequestBuilder) Count()(*if6cf0b03baaff43a8e3f983a475e7700e1332b3538b3528a74e87950a79a1280.CountRequestBuilder) {
+    return if6cf0b03baaff43a8e3f983a475e7700e1332b3538b3528a74e87950a79a1280.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *SitesRequestBuilder) CreateGetRequestInformation(options *SitesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *SitesRequestBuilder) CreateGetRequestInformation(options *SitesRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of SharePoint sites in this group. Access the default site with /sites/root.
+// CreatePostRequestInformation create new navigation property to sites for groups
 func (m *SitesRequestBuilder) CreatePostRequestInformation(options *SitesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *SitesRequestBuilder) CreatePostRequestInformation(options *SitesRequest
     return requestInfo, nil
 }
 // Get the list of SharePoint sites in this group. Access the default site with /sites/root.
-func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(*SitesResponse, error) {
+func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSitesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSiteCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SitesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SiteCollectionResponseable), nil
 }
-// Post the list of SharePoint sites in this group. Access the default site with /sites/root.
-func (m *SitesRequestBuilder) Post(options *SitesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site, error) {
+// Post create new navigation property to sites for groups
+func (m *SitesRequestBuilder) Post(options *SitesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSite() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSiteFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable), nil
 }

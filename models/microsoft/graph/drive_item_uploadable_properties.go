@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DriveItemUploadableProperties 
+// DriveItemUploadableProperties provides operations to call the createUploadSession method.
 type DriveItemUploadableProperties struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type DriveItemUploadableProperties struct {
     // Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
     fileSize *int64;
     // File system information on client. Read-write.
-    fileSystemInfo *FileSystemInfo;
+    fileSystemInfo FileSystemInfoable;
     // The name of the item (filename and extension). Read-write.
     name *string;
 }
@@ -23,6 +23,10 @@ func NewDriveItemUploadableProperties()(*DriveItemUploadableProperties) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDriveItemUploadablePropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDriveItemUploadablePropertiesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDriveItemUploadableProperties(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DriveItemUploadableProperties) GetAdditionalData()(map[string]interface{}) {
@@ -38,30 +42,6 @@ func (m *DriveItemUploadableProperties) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetFileSize gets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
-func (m *DriveItemUploadableProperties) GetFileSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileSize
-    }
-}
-// GetFileSystemInfo gets the fileSystemInfo property value. File system information on client. Read-write.
-func (m *DriveItemUploadableProperties) GetFileSystemInfo()(*FileSystemInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileSystemInfo
-    }
-}
-// GetName gets the name property value. The name of the item (filename and extension). Read-write.
-func (m *DriveItemUploadableProperties) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,12 +68,12 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["fileSystemInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFileSystemInfo() })
+        val, err := n.GetObjectValue(CreateFileSystemInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFileSystemInfo(val.(*FileSystemInfo))
+            m.SetFileSystemInfo(val.(FileSystemInfoable))
         }
         return nil
     }
@@ -108,6 +88,30 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetFileSize gets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+func (m *DriveItemUploadableProperties) GetFileSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileSize
+    }
+}
+// GetFileSystemInfo gets the fileSystemInfo property value. File system information on client. Read-write.
+func (m *DriveItemUploadableProperties) GetFileSystemInfo()(FileSystemInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileSystemInfo
+    }
+}
+// GetName gets the name property value. The name of the item (filename and extension). Read-write.
+func (m *DriveItemUploadableProperties) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
 }
 func (m *DriveItemUploadableProperties) IsNil()(bool) {
     return m == nil
@@ -165,7 +169,7 @@ func (m *DriveItemUploadableProperties) SetFileSize(value *int64)() {
     }
 }
 // SetFileSystemInfo sets the fileSystemInfo property value. File system information on client. Read-write.
-func (m *DriveItemUploadableProperties) SetFileSystemInfo(value *FileSystemInfo)() {
+func (m *DriveItemUploadableProperties) SetFileSystemInfo(value FileSystemInfoable)() {
     if m != nil {
         m.fileSystemInfo = value
     }

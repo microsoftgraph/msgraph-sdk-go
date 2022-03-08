@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MeetingAttendanceReport 
+// MeetingAttendanceReport provides operations to manage the cloudCommunications singleton.
 type MeetingAttendanceReport struct {
     Entity
     // List of attendance records of an attendance report. Read-only.
-    attendanceRecords []AttendanceRecord;
+    attendanceRecords []AttendanceRecordable;
     // UTC time when the meeting ended. Read-only.
     meetingEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // UTC time when the meeting started. Read-only.
@@ -24,50 +24,30 @@ func NewMeetingAttendanceReport()(*MeetingAttendanceReport) {
     }
     return m
 }
+// CreateMeetingAttendanceReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMeetingAttendanceReportFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMeetingAttendanceReport(), nil
+}
 // GetAttendanceRecords gets the attendanceRecords property value. List of attendance records of an attendance report. Read-only.
-func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecord) {
+func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecordable) {
     if m == nil {
         return nil
     } else {
         return m.attendanceRecords
     }
 }
-// GetMeetingEndDateTime gets the meetingEndDateTime property value. UTC time when the meeting ended. Read-only.
-func (m *MeetingAttendanceReport) GetMeetingEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingEndDateTime
-    }
-}
-// GetMeetingStartDateTime gets the meetingStartDateTime property value. UTC time when the meeting started. Read-only.
-func (m *MeetingAttendanceReport) GetMeetingStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingStartDateTime
-    }
-}
-// GetTotalParticipantCount gets the totalParticipantCount property value. Total number of participants. Read-only.
-func (m *MeetingAttendanceReport) GetTotalParticipantCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalParticipantCount
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["attendanceRecords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttendanceRecord() })
+        val, err := n.GetCollectionOfObjectValues(CreateAttendanceRecordFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AttendanceRecord, len(val))
+            res := make([]AttendanceRecordable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AttendanceRecord))
+                res[i] = v.(AttendanceRecordable)
             }
             m.SetAttendanceRecords(res)
         }
@@ -105,6 +85,30 @@ func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(interf
     }
     return res
 }
+// GetMeetingEndDateTime gets the meetingEndDateTime property value. UTC time when the meeting ended. Read-only.
+func (m *MeetingAttendanceReport) GetMeetingEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meetingEndDateTime
+    }
+}
+// GetMeetingStartDateTime gets the meetingStartDateTime property value. UTC time when the meeting started. Read-only.
+func (m *MeetingAttendanceReport) GetMeetingStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meetingStartDateTime
+    }
+}
+// GetTotalParticipantCount gets the totalParticipantCount property value. Total number of participants. Read-only.
+func (m *MeetingAttendanceReport) GetTotalParticipantCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalParticipantCount
+    }
+}
 func (m *MeetingAttendanceReport) IsNil()(bool) {
     return m == nil
 }
@@ -117,8 +121,7 @@ func (m *MeetingAttendanceReport) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetAttendanceRecords() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttendanceRecords()))
         for i, v := range m.GetAttendanceRecords() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("attendanceRecords", cast)
         if err != nil {
@@ -146,7 +149,7 @@ func (m *MeetingAttendanceReport) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetAttendanceRecords sets the attendanceRecords property value. List of attendance records of an attendance report. Read-only.
-func (m *MeetingAttendanceReport) SetAttendanceRecords(value []AttendanceRecord)() {
+func (m *MeetingAttendanceReport) SetAttendanceRecords(value []AttendanceRecordable)() {
     if m != nil {
         m.attendanceRecords = value
     }

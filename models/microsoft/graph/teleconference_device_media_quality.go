@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeleconferenceDeviceMediaQuality 
+// TeleconferenceDeviceMediaQuality provides operations to call the logTeleconferenceDeviceQuality method.
 type TeleconferenceDeviceMediaQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -57,6 +57,10 @@ func NewTeleconferenceDeviceMediaQuality()(*TeleconferenceDeviceMediaQuality) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeleconferenceDeviceMediaQuality(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeleconferenceDeviceMediaQuality) GetAdditionalData()(map[string]interface{}) {
@@ -120,118 +124,6 @@ func (m *TeleconferenceDeviceMediaQuality) GetChannelIndex()(*int32) {
         return nil
     } else {
         return m.channelIndex
-    }
-}
-// GetInboundPackets gets the inboundPackets property value. The total number of the inbound packets.
-func (m *TeleconferenceDeviceMediaQuality) GetInboundPackets()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inboundPackets
-    }
-}
-// GetLocalIPAddress gets the localIPAddress property value. the local IP address for the media session.
-func (m *TeleconferenceDeviceMediaQuality) GetLocalIPAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localIPAddress
-    }
-}
-// GetLocalPort gets the localPort property value. The local media port.
-func (m *TeleconferenceDeviceMediaQuality) GetLocalPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localPort
-    }
-}
-// GetMaximumInboundJitter gets the maximumInboundJitter property value. The maximum inbound stream network jitter.
-func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundJitter()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumInboundJitter
-    }
-}
-// GetMaximumInboundPacketLossRateInPercentage gets the maximumInboundPacketLossRateInPercentage property value. The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundPacketLossRateInPercentage()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumInboundPacketLossRateInPercentage
-    }
-}
-// GetMaximumInboundRoundTripDelay gets the maximumInboundRoundTripDelay property value. The maximum inbound stream network round trip delay.
-func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundRoundTripDelay()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumInboundRoundTripDelay
-    }
-}
-// GetMaximumOutboundJitter gets the maximumOutboundJitter property value. The maximum outbound stream network jitter.
-func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundJitter()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumOutboundJitter
-    }
-}
-// GetMaximumOutboundPacketLossRateInPercentage gets the maximumOutboundPacketLossRateInPercentage property value. The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundPacketLossRateInPercentage()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumOutboundPacketLossRateInPercentage
-    }
-}
-// GetMaximumOutboundRoundTripDelay gets the maximumOutboundRoundTripDelay property value. The maximum outbound stream network round trip delay.
-func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundRoundTripDelay()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumOutboundRoundTripDelay
-    }
-}
-// GetMediaDuration gets the mediaDuration property value. The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.
-func (m *TeleconferenceDeviceMediaQuality) GetMediaDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaDuration
-    }
-}
-// GetNetworkLinkSpeedInBytes gets the networkLinkSpeedInBytes property value. The network link speed in bytes
-func (m *TeleconferenceDeviceMediaQuality) GetNetworkLinkSpeedInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkLinkSpeedInBytes
-    }
-}
-// GetOutboundPackets gets the outboundPackets property value. The total number of the outbound packets.
-func (m *TeleconferenceDeviceMediaQuality) GetOutboundPackets()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outboundPackets
-    }
-}
-// GetRemoteIPAddress gets the remoteIPAddress property value. The remote IP address for the media session.
-func (m *TeleconferenceDeviceMediaQuality) GetRemoteIPAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteIPAddress
-    }
-}
-// GetRemotePort gets the remotePort property value. The remote media port.
-func (m *TeleconferenceDeviceMediaQuality) GetRemotePort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remotePort
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -448,6 +340,118 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetInboundPackets gets the inboundPackets property value. The total number of the inbound packets.
+func (m *TeleconferenceDeviceMediaQuality) GetInboundPackets()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inboundPackets
+    }
+}
+// GetLocalIPAddress gets the localIPAddress property value. the local IP address for the media session.
+func (m *TeleconferenceDeviceMediaQuality) GetLocalIPAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.localIPAddress
+    }
+}
+// GetLocalPort gets the localPort property value. The local media port.
+func (m *TeleconferenceDeviceMediaQuality) GetLocalPort()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.localPort
+    }
+}
+// GetMaximumInboundJitter gets the maximumInboundJitter property value. The maximum inbound stream network jitter.
+func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundJitter()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumInboundJitter
+    }
+}
+// GetMaximumInboundPacketLossRateInPercentage gets the maximumInboundPacketLossRateInPercentage property value. The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
+func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundPacketLossRateInPercentage()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumInboundPacketLossRateInPercentage
+    }
+}
+// GetMaximumInboundRoundTripDelay gets the maximumInboundRoundTripDelay property value. The maximum inbound stream network round trip delay.
+func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundRoundTripDelay()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumInboundRoundTripDelay
+    }
+}
+// GetMaximumOutboundJitter gets the maximumOutboundJitter property value. The maximum outbound stream network jitter.
+func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundJitter()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumOutboundJitter
+    }
+}
+// GetMaximumOutboundPacketLossRateInPercentage gets the maximumOutboundPacketLossRateInPercentage property value. The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
+func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundPacketLossRateInPercentage()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumOutboundPacketLossRateInPercentage
+    }
+}
+// GetMaximumOutboundRoundTripDelay gets the maximumOutboundRoundTripDelay property value. The maximum outbound stream network round trip delay.
+func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundRoundTripDelay()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumOutboundRoundTripDelay
+    }
+}
+// GetMediaDuration gets the mediaDuration property value. The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.
+func (m *TeleconferenceDeviceMediaQuality) GetMediaDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaDuration
+    }
+}
+// GetNetworkLinkSpeedInBytes gets the networkLinkSpeedInBytes property value. The network link speed in bytes
+func (m *TeleconferenceDeviceMediaQuality) GetNetworkLinkSpeedInBytes()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkLinkSpeedInBytes
+    }
+}
+// GetOutboundPackets gets the outboundPackets property value. The total number of the outbound packets.
+func (m *TeleconferenceDeviceMediaQuality) GetOutboundPackets()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outboundPackets
+    }
+}
+// GetRemoteIPAddress gets the remoteIPAddress property value. The remote IP address for the media session.
+func (m *TeleconferenceDeviceMediaQuality) GetRemoteIPAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remoteIPAddress
+    }
+}
+// GetRemotePort gets the remotePort property value. The remote media port.
+func (m *TeleconferenceDeviceMediaQuality) GetRemotePort()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remotePort
+    }
 }
 func (m *TeleconferenceDeviceMediaQuality) IsNil()(bool) {
     return m == nil

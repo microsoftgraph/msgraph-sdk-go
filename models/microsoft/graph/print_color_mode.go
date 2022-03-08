@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the print singleton.
 type PrintColorMode int
 
 const (

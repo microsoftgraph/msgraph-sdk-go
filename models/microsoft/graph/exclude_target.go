@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExcludeTarget 
+// ExcludeTarget provides operations to manage the authenticationMethodsPolicy singleton.
 type ExcludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewExcludeTarget()(*ExcludeTarget) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateExcludeTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExcludeTargetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExcludeTarget(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExcludeTarget) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetId gets the id property value. The object identifier of an Azure Active Directory user or group.
-func (m *ExcludeTarget) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetTargetType gets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
-func (m *ExcludeTarget) GetTargetType()(*AuthenticationMethodTargetType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *ExcludeTarget) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetId gets the id property value. The object identifier of an Azure Active Directory user or group.
+func (m *ExcludeTarget) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetTargetType gets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+func (m *ExcludeTarget) GetTargetType()(*AuthenticationMethodTargetType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetType
+    }
 }
 func (m *ExcludeTarget) IsNil()(bool) {
     return m == nil

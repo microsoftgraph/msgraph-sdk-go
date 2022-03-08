@@ -2,12 +2,12 @@ package replies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i5b32cfd5acc1556b0931d9cbe7d57a9918a3e9e2c0c23de83a82d647b87311c2 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/messages/item/replies/delta"
+    ic1ad3af747f54c54205b59be9f11d2d48951e3fc7592a032a2bd658d45361b70 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/messages/item/replies/count"
 )
 
-// RepliesRequestBuilder builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}\replies
+// RepliesRequestBuilder provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 type RepliesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type RepliesRequestBuilderGetQueryParameters struct {
 // RepliesRequestBuilderPostOptions options for Post
 type RepliesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewRepliesRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewRepliesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRepliesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RepliesRequestBuilder) Count()(*ic1ad3af747f54c54205b59be9f11d2d48951e3fc7592a032a2bd658d45361b70.CountRequestBuilder) {
+    return ic1ad3af747f54c54205b59be9f11d2d48951e3fc7592a032a2bd658d45361b70.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation replies for a specified message.
 func (m *RepliesRequestBuilder) CreateGetRequestInformation(options *RepliesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *RepliesRequestBuilder) CreateGetRequestInformation(options *RepliesRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation replies for a specified message.
+// CreatePostRequestInformation create new navigation property to replies for chats
 func (m *RepliesRequestBuilder) CreatePostRequestInformation(options *RepliesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +117,39 @@ func (m *RepliesRequestBuilder) CreatePostRequestInformation(options *RepliesReq
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}\replies\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *RepliesRequestBuilder) Delta()(*i5b32cfd5acc1556b0931d9cbe7d57a9918a3e9e2c0c23de83a82d647b87311c2.DeltaRequestBuilder) {
     return i5b32cfd5acc1556b0931d9cbe7d57a9918a3e9e2c0c23de83a82d647b87311c2.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get replies for a specified message.
-func (m *RepliesRequestBuilder) Get(options *RepliesRequestBuilderGetOptions)(*RepliesResponse, error) {
+func (m *RepliesRequestBuilder) Get(options *RepliesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRepliesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChatMessageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RepliesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageCollectionResponseable), nil
 }
-// Post replies for a specified message.
-func (m *RepliesRequestBuilder) Post(options *RepliesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage, error) {
+// Post create new navigation property to replies for chats
+func (m *RepliesRequestBuilder) Post(options *RepliesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewChatMessage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChatMessageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageable), nil
 }

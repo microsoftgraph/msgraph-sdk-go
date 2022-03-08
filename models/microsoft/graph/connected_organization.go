@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConnectedOrganization 
+// ConnectedOrganization provides operations to manage the identityGovernance singleton.
 type ConnectedOrganization struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -15,11 +15,11 @@ type ConnectedOrganization struct {
     // The display name of the connected organization. Supports $filter (eq).
     displayName *string;
     // Nullable.
-    externalSponsors []DirectoryObject;
+    externalSponsors []DirectoryObjectable;
     // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
-    identitySources []IdentitySource;
+    identitySources []IdentitySourceable;
     // Nullable.
-    internalSponsors []DirectoryObject;
+    internalSponsors []DirectoryObjectable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
@@ -31,6 +31,10 @@ func NewConnectedOrganization()(*ConnectedOrganization) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateConnectedOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConnectedOrganizationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConnectedOrganization(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -57,43 +61,11 @@ func (m *ConnectedOrganization) GetDisplayName()(*string) {
     }
 }
 // GetExternalSponsors gets the externalSponsors property value. Nullable.
-func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObject) {
+func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
         return m.externalSponsors
-    }
-}
-// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
-func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identitySources
-    }
-}
-// GetInternalSponsors gets the internalSponsors property value. Nullable.
-func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internalSponsors
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
-// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
-func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,42 +102,42 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["externalSponsors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetExternalSponsors(res)
         }
         return nil
     }
     res["identitySources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySource() })
+        val, err := n.GetCollectionOfObjectValues(CreateIdentitySourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IdentitySource, len(val))
+            res := make([]IdentitySourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IdentitySource))
+                res[i] = v.(IdentitySourceable)
             }
             m.SetIdentitySources(res)
         }
         return nil
     }
     res["internalSponsors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetInternalSponsors(res)
         }
@@ -192,6 +164,38 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.identitySources
+    }
+}
+// GetInternalSponsors gets the internalSponsors property value. Nullable.
+func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.internalSponsors
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
+// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
+func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *ConnectedOrganization) IsNil()(bool) {
     return m == nil
@@ -223,8 +227,7 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetExternalSponsors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExternalSponsors()))
         for i, v := range m.GetExternalSponsors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("externalSponsors", cast)
         if err != nil {
@@ -234,8 +237,7 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetIdentitySources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIdentitySources()))
         for i, v := range m.GetIdentitySources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("identitySources", cast)
         if err != nil {
@@ -245,8 +247,7 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetInternalSponsors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInternalSponsors()))
         for i, v := range m.GetInternalSponsors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("internalSponsors", cast)
         if err != nil {
@@ -287,19 +288,19 @@ func (m *ConnectedOrganization) SetDisplayName(value *string)() {
     }
 }
 // SetExternalSponsors sets the externalSponsors property value. Nullable.
-func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObject)() {
+func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObjectable)() {
     if m != nil {
         m.externalSponsors = value
     }
 }
 // SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
-func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySource)() {
+func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySourceable)() {
     if m != nil {
         m.identitySources = value
     }
 }
 // SetInternalSponsors sets the internalSponsors property value. Nullable.
-func (m *ConnectedOrganization) SetInternalSponsors(value []DirectoryObject)() {
+func (m *ConnectedOrganization) SetInternalSponsors(value []DirectoryObjectable)() {
     if m != nil {
         m.internalSponsors = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PermissionScope 
+// PermissionScope provides operations to manage the collection of application entities.
 type PermissionScope struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,6 +34,10 @@ func NewPermissionScope()(*PermissionScope) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePermissionScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePermissionScopeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPermissionScope(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PermissionScope) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -56,62 +60,6 @@ func (m *PermissionScope) GetAdminConsentDisplayName()(*string) {
         return nil
     } else {
         return m.adminConsentDisplayName
-    }
-}
-// GetId gets the id property value. Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
-func (m *PermissionScope) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetIsEnabled gets the isEnabled property value. When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
-func (m *PermissionScope) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
-}
-// GetOrigin gets the origin property value. 
-func (m *PermissionScope) GetOrigin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.origin
-    }
-}
-// GetType gets the type property value. The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
-func (m *PermissionScope) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUserConsentDescription gets the userConsentDescription property value. A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
-func (m *PermissionScope) GetUserConsentDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userConsentDescription
-    }
-}
-// GetUserConsentDisplayName gets the userConsentDisplayName property value. A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
-func (m *PermissionScope) GetUserConsentDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userConsentDisplayName
-    }
-}
-// GetValue gets the value property value. Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
-func (m *PermissionScope) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -208,6 +156,62 @@ func (m *PermissionScope) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetId gets the id property value. Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
+func (m *PermissionScope) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetIsEnabled gets the isEnabled property value. When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
+func (m *PermissionScope) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
+}
+// GetOrigin gets the origin property value. 
+func (m *PermissionScope) GetOrigin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.origin
+    }
+}
+// GetType gets the type property value. The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
+func (m *PermissionScope) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUserConsentDescription gets the userConsentDescription property value. A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
+func (m *PermissionScope) GetUserConsentDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userConsentDescription
+    }
+}
+// GetUserConsentDisplayName gets the userConsentDisplayName property value. A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
+func (m *PermissionScope) GetUserConsentDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userConsentDisplayName
+    }
+}
+// GetValue gets the value property value. Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
+func (m *PermissionScope) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *PermissionScope) IsNil()(bool) {
     return m == nil

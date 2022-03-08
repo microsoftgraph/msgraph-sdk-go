@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintTaskTrigger 
+// PrintTaskTrigger provides operations to manage the print singleton.
 type PrintTaskTrigger struct {
     Entity
     // 
-    definition *PrintTaskDefinition;
+    definition PrintTaskDefinitionable;
     // The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
     event *PrintEvent;
 }
@@ -19,8 +19,12 @@ func NewPrintTaskTrigger()(*PrintTaskTrigger) {
     }
     return m
 }
+// CreatePrintTaskTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintTaskTriggerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintTaskTrigger(), nil
+}
 // GetDefinition gets the definition property value. 
-func (m *PrintTaskTrigger) GetDefinition()(*PrintTaskDefinition) {
+func (m *PrintTaskTrigger) GetDefinition()(PrintTaskDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -39,12 +43,12 @@ func (m *PrintTaskTrigger) GetEvent()(*PrintEvent) {
 func (m *PrintTaskTrigger) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["definition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintTaskDefinition() })
+        val, err := n.GetObjectValue(CreatePrintTaskDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefinition(val.(*PrintTaskDefinition))
+            m.SetDefinition(val.(PrintTaskDefinitionable))
         }
         return nil
     }
@@ -85,7 +89,7 @@ func (m *PrintTaskTrigger) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     return nil
 }
 // SetDefinition sets the definition property value. 
-func (m *PrintTaskTrigger) SetDefinition(value *PrintTaskDefinition)() {
+func (m *PrintTaskTrigger) SetDefinition(value PrintTaskDefinitionable)() {
     if m != nil {
         m.definition = value
     }

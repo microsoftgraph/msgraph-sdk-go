@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicyBase 
+// PolicyBase provides operations to manage the collection of application entities.
 type PolicyBase struct {
     DirectoryObject
     // Description for this policy. Required.
@@ -18,6 +18,10 @@ func NewPolicyBase()(*PolicyBase) {
         DirectoryObject: *NewDirectoryObject(),
     }
     return m
+}
+// CreatePolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePolicyBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPolicyBase(), nil
 }
 // GetDescription gets the description property value. Description for this policy. Required.
 func (m *PolicyBase) GetDescription()(*string) {

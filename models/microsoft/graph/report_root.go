@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ReportRoot 
+// ReportRoot provides operations to manage the reportRoot singleton.
 type ReportRoot struct {
     Entity
     // 
-    dailyPrintUsageByPrinter []PrintUsageByPrinter;
+    dailyPrintUsageByPrinter []PrintUsageByPrinterable;
     // 
-    dailyPrintUsageByUser []PrintUsageByUser;
+    dailyPrintUsageByUser []PrintUsageByUserable;
     // 
-    monthlyPrintUsageByPrinter []PrintUsageByPrinter;
+    monthlyPrintUsageByPrinter []PrintUsageByPrinterable;
     // 
-    monthlyPrintUsageByUser []PrintUsageByUser;
+    monthlyPrintUsageByUser []PrintUsageByUserable;
 }
 // NewReportRoot instantiates a new reportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
@@ -23,8 +23,12 @@ func NewReportRoot()(*ReportRoot) {
     }
     return m
 }
+// CreateReportRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReportRootFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReportRoot(), nil
+}
 // GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. 
-func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinter) {
+func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     if m == nil {
         return nil
     } else {
@@ -32,15 +36,76 @@ func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinter) {
     }
 }
 // GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. 
-func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUser) {
+func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
     if m == nil {
         return nil
     } else {
         return m.dailyPrintUsageByUser
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["dailyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByPrinterable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByPrinterable)
+            }
+            m.SetDailyPrintUsageByPrinter(res)
+        }
+        return nil
+    }
+    res["dailyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByUserable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByUserable)
+            }
+            m.SetDailyPrintUsageByUser(res)
+        }
+        return nil
+    }
+    res["monthlyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByPrinterable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByPrinterable)
+            }
+            m.SetMonthlyPrintUsageByPrinter(res)
+        }
+        return nil
+    }
+    res["monthlyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByUserable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByUserable)
+            }
+            m.SetMonthlyPrintUsageByUser(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. 
-func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinter) {
+func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     if m == nil {
         return nil
     } else {
@@ -48,73 +113,12 @@ func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinter) {
     }
 }
 // GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. 
-func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUser) {
+func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     if m == nil {
         return nil
     } else {
         return m.monthlyPrintUsageByUser
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["dailyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByPrinter() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByPrinter, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByPrinter))
-            }
-            m.SetDailyPrintUsageByPrinter(res)
-        }
-        return nil
-    }
-    res["dailyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByUser, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByUser))
-            }
-            m.SetDailyPrintUsageByUser(res)
-        }
-        return nil
-    }
-    res["monthlyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByPrinter() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByPrinter, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByPrinter))
-            }
-            m.SetMonthlyPrintUsageByPrinter(res)
-        }
-        return nil
-    }
-    res["monthlyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByUser, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByUser))
-            }
-            m.SetMonthlyPrintUsageByUser(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *ReportRoot) IsNil()(bool) {
     return m == nil
@@ -128,8 +132,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetDailyPrintUsageByPrinter() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDailyPrintUsageByPrinter()))
         for i, v := range m.GetDailyPrintUsageByPrinter() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dailyPrintUsageByPrinter", cast)
         if err != nil {
@@ -139,8 +142,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetDailyPrintUsageByUser() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDailyPrintUsageByUser()))
         for i, v := range m.GetDailyPrintUsageByUser() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dailyPrintUsageByUser", cast)
         if err != nil {
@@ -150,8 +152,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetMonthlyPrintUsageByPrinter() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMonthlyPrintUsageByPrinter()))
         for i, v := range m.GetMonthlyPrintUsageByPrinter() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("monthlyPrintUsageByPrinter", cast)
         if err != nil {
@@ -161,8 +162,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetMonthlyPrintUsageByUser() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMonthlyPrintUsageByUser()))
         for i, v := range m.GetMonthlyPrintUsageByUser() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("monthlyPrintUsageByUser", cast)
         if err != nil {
@@ -172,25 +172,25 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     return nil
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. 
-func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
+func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     if m != nil {
         m.dailyPrintUsageByPrinter = value
     }
 }
 // SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. 
-func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUser)() {
+func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUserable)() {
     if m != nil {
         m.dailyPrintUsageByUser = value
     }
 }
 // SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. 
-func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
+func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     if m != nil {
         m.monthlyPrintUsageByPrinter = value
     }
 }
 // SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. 
-func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUser)() {
+func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
     if m != nil {
         m.monthlyPrintUsageByUser = value
     }

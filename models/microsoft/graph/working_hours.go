@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkingHours 
+// WorkingHours provides operations to manage the drive singleton.
 type WorkingHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,7 +15,7 @@ type WorkingHours struct {
     // The time of the day that the user starts working.
     startTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // The time zone to which the working hours apply.
-    timeZone *TimeZoneBase;
+    timeZone TimeZoneBaseable;
 }
 // NewWorkingHours instantiates a new workingHours and sets the default values.
 func NewWorkingHours()(*WorkingHours) {
@@ -23,6 +23,10 @@ func NewWorkingHours()(*WorkingHours) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWorkingHoursFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkingHoursFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkingHours(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkingHours) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *WorkingHours) GetEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4d
         return nil
     } else {
         return m.endTime
-    }
-}
-// GetStartTime gets the startTime property value. The time of the day that the user starts working.
-func (m *WorkingHours) GetStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startTime
-    }
-}
-// GetTimeZone gets the timeZone property value. The time zone to which the working hours apply.
-func (m *WorkingHours) GetTimeZone()(*TimeZoneBase) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -102,16 +90,32 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["timeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeZoneBase() })
+        val, err := n.GetObjectValue(CreateTimeZoneBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTimeZone(val.(*TimeZoneBase))
+            m.SetTimeZone(val.(TimeZoneBaseable))
         }
         return nil
     }
     return res
+}
+// GetStartTime gets the startTime property value. The time of the day that the user starts working.
+func (m *WorkingHours) GetStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startTime
+    }
+}
+// GetTimeZone gets the timeZone property value. The time zone to which the working hours apply.
+func (m *WorkingHours) GetTimeZone()(TimeZoneBaseable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
 }
 func (m *WorkingHours) IsNil()(bool) {
     return m == nil
@@ -175,7 +179,7 @@ func (m *WorkingHours) SetStartTime(value *i04eb5309aeaafadd28374d79c8471df9b267
     }
 }
 // SetTimeZone sets the timeZone property value. The time zone to which the working hours apply.
-func (m *WorkingHours) SetTimeZone(value *TimeZoneBase)() {
+func (m *WorkingHours) SetTimeZone(value TimeZoneBaseable)() {
     if m != nil {
         m.timeZone = value
     }

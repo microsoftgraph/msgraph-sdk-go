@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookFilterCriteria 
+// WorkbookFilterCriteria provides operations to manage the drive singleton.
 type WorkbookFilterCriteria struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,11 +19,11 @@ type WorkbookFilterCriteria struct {
     // 
     filterOn *string;
     // 
-    icon *WorkbookIcon;
+    icon WorkbookIconable;
     // 
     operator *string;
     // 
-    values *Json;
+    values Jsonable;
 }
 // NewWorkbookFilterCriteria instantiates a new workbookFilterCriteria and sets the default values.
 func NewWorkbookFilterCriteria()(*WorkbookFilterCriteria) {
@@ -31,6 +31,10 @@ func NewWorkbookFilterCriteria()(*WorkbookFilterCriteria) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWorkbookFilterCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookFilterCriteriaFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookFilterCriteria(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookFilterCriteria) GetAdditionalData()(map[string]interface{}) {
@@ -70,38 +74,6 @@ func (m *WorkbookFilterCriteria) GetDynamicCriteria()(*string) {
         return nil
     } else {
         return m.dynamicCriteria
-    }
-}
-// GetFilterOn gets the filterOn property value. 
-func (m *WorkbookFilterCriteria) GetFilterOn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filterOn
-    }
-}
-// GetIcon gets the icon property value. 
-func (m *WorkbookFilterCriteria) GetIcon()(*WorkbookIcon) {
-    if m == nil {
-        return nil
-    } else {
-        return m.icon
-    }
-}
-// GetOperator gets the operator property value. 
-func (m *WorkbookFilterCriteria) GetOperator()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operator
-    }
-}
-// GetValues gets the values property value. 
-func (m *WorkbookFilterCriteria) GetValues()(*Json) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -158,12 +130,12 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["icon"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookIcon() })
+        val, err := n.GetObjectValue(CreateWorkbookIconFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIcon(val.(*WorkbookIcon))
+            m.SetIcon(val.(WorkbookIconable))
         }
         return nil
     }
@@ -178,16 +150,48 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJson() })
+        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValues(val.(*Json))
+            m.SetValues(val.(Jsonable))
         }
         return nil
     }
     return res
+}
+// GetFilterOn gets the filterOn property value. 
+func (m *WorkbookFilterCriteria) GetFilterOn()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.filterOn
+    }
+}
+// GetIcon gets the icon property value. 
+func (m *WorkbookFilterCriteria) GetIcon()(WorkbookIconable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.icon
+    }
+}
+// GetOperator gets the operator property value. 
+func (m *WorkbookFilterCriteria) GetOperator()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operator
+    }
+}
+// GetValues gets the values property value. 
+func (m *WorkbookFilterCriteria) GetValues()(Jsonable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.values
+    }
 }
 func (m *WorkbookFilterCriteria) IsNil()(bool) {
     return m == nil
@@ -287,7 +291,7 @@ func (m *WorkbookFilterCriteria) SetFilterOn(value *string)() {
     }
 }
 // SetIcon sets the icon property value. 
-func (m *WorkbookFilterCriteria) SetIcon(value *WorkbookIcon)() {
+func (m *WorkbookFilterCriteria) SetIcon(value WorkbookIconable)() {
     if m != nil {
         m.icon = value
     }
@@ -299,7 +303,7 @@ func (m *WorkbookFilterCriteria) SetOperator(value *string)() {
     }
 }
 // SetValues sets the values property value. 
-func (m *WorkbookFilterCriteria) SetValues(value *Json)() {
+func (m *WorkbookFilterCriteria) SetValues(value Jsonable)() {
     if m != nil {
         m.values = value
     }

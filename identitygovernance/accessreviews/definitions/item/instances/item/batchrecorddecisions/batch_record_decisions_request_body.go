@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BatchRecordDecisionsRequestBody 
+// BatchRecordDecisionsRequestBody provides operations to call the batchRecordDecisions method.
 type BatchRecordDecisionsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewBatchRecordDecisionsRequestBody()(*BatchRecordDecisionsRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBatchRecordDecisionsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBatchRecordDecisionsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBatchRecordDecisionsRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BatchRecordDecisionsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *BatchRecordDecisionsRequestBody) GetDecision()(*string) {
         return nil
     } else {
         return m.decision
-    }
-}
-// GetJustification gets the justification property value. 
-func (m *BatchRecordDecisionsRequestBody) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
-}
-// GetPrincipalId gets the principalId property value. 
-func (m *BatchRecordDecisionsRequestBody) GetPrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalId
-    }
-}
-// GetResourceId gets the resourceId property value. 
-func (m *BatchRecordDecisionsRequestBody) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *BatchRecordDecisionsRequestBody) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetJustification gets the justification property value. 
+func (m *BatchRecordDecisionsRequestBody) GetJustification()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.justification
+    }
+}
+// GetPrincipalId gets the principalId property value. 
+func (m *BatchRecordDecisionsRequestBody) GetPrincipalId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principalId
+    }
+}
+// GetResourceId gets the resourceId property value. 
+func (m *BatchRecordDecisionsRequestBody) GetResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceId
+    }
 }
 func (m *BatchRecordDecisionsRequestBody) IsNil()(bool) {
     return m == nil

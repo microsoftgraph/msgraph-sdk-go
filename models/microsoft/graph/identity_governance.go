@@ -4,18 +4,18 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentityGovernance 
+// IdentityGovernance provides operations to manage the identityGovernance singleton.
 type IdentityGovernance struct {
     // 
-    accessReviews *AccessReviewSet;
+    accessReviews AccessReviewSetable;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    appConsent *AppConsentApprovalRoute;
+    appConsent AppConsentApprovalRouteable;
     // 
-    entitlementManagement *EntitlementManagement;
+    entitlementManagement EntitlementManagementable;
     // 
-    termsOfUse *TermsOfUseContainer;
+    termsOfUse TermsOfUseContainerable;
 }
 // NewIdentityGovernance instantiates a new IdentityGovernance and sets the default values.
 func NewIdentityGovernance()(*IdentityGovernance) {
@@ -24,8 +24,12 @@ func NewIdentityGovernance()(*IdentityGovernance) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateIdentityGovernanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIdentityGovernanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIdentityGovernance(), nil
+}
 // GetAccessReviews gets the accessReviews property value. 
-func (m *IdentityGovernance) GetAccessReviews()(*AccessReviewSet) {
+func (m *IdentityGovernance) GetAccessReviews()(AccessReviewSetable) {
     if m == nil {
         return nil
     } else {
@@ -41,7 +45,7 @@ func (m *IdentityGovernance) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAppConsent gets the appConsent property value. 
-func (m *IdentityGovernance) GetAppConsent()(*AppConsentApprovalRoute) {
+func (m *IdentityGovernance) GetAppConsent()(AppConsentApprovalRouteable) {
     if m == nil {
         return nil
     } else {
@@ -49,65 +53,65 @@ func (m *IdentityGovernance) GetAppConsent()(*AppConsentApprovalRoute) {
     }
 }
 // GetEntitlementManagement gets the entitlementManagement property value. 
-func (m *IdentityGovernance) GetEntitlementManagement()(*EntitlementManagement) {
+func (m *IdentityGovernance) GetEntitlementManagement()(EntitlementManagementable) {
     if m == nil {
         return nil
     } else {
         return m.entitlementManagement
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["accessReviews"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAccessReviewSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccessReviews(val.(AccessReviewSetable))
+        }
+        return nil
+    }
+    res["appConsent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAppConsentApprovalRouteFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppConsent(val.(AppConsentApprovalRouteable))
+        }
+        return nil
+    }
+    res["entitlementManagement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEntitlementManagementFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEntitlementManagement(val.(EntitlementManagementable))
+        }
+        return nil
+    }
+    res["termsOfUse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTermsOfUseContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTermsOfUse(val.(TermsOfUseContainerable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTermsOfUse gets the termsOfUse property value. 
-func (m *IdentityGovernance) GetTermsOfUse()(*TermsOfUseContainer) {
+func (m *IdentityGovernance) GetTermsOfUse()(TermsOfUseContainerable) {
     if m == nil {
         return nil
     } else {
         return m.termsOfUse
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["accessReviews"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewSet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAccessReviews(val.(*AccessReviewSet))
-        }
-        return nil
-    }
-    res["appConsent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppConsentApprovalRoute() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppConsent(val.(*AppConsentApprovalRoute))
-        }
-        return nil
-    }
-    res["entitlementManagement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEntitlementManagement() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEntitlementManagement(val.(*EntitlementManagement))
-        }
-        return nil
-    }
-    res["termsOfUse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTermsOfUseContainer() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTermsOfUse(val.(*TermsOfUseContainer))
-        }
-        return nil
-    }
-    return res
 }
 func (m *IdentityGovernance) IsNil()(bool) {
     return m == nil
@@ -147,7 +151,7 @@ func (m *IdentityGovernance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     return nil
 }
 // SetAccessReviews sets the accessReviews property value. 
-func (m *IdentityGovernance) SetAccessReviews(value *AccessReviewSet)() {
+func (m *IdentityGovernance) SetAccessReviews(value AccessReviewSetable)() {
     if m != nil {
         m.accessReviews = value
     }
@@ -159,19 +163,19 @@ func (m *IdentityGovernance) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAppConsent sets the appConsent property value. 
-func (m *IdentityGovernance) SetAppConsent(value *AppConsentApprovalRoute)() {
+func (m *IdentityGovernance) SetAppConsent(value AppConsentApprovalRouteable)() {
     if m != nil {
         m.appConsent = value
     }
 }
 // SetEntitlementManagement sets the entitlementManagement property value. 
-func (m *IdentityGovernance) SetEntitlementManagement(value *EntitlementManagement)() {
+func (m *IdentityGovernance) SetEntitlementManagement(value EntitlementManagementable)() {
     if m != nil {
         m.entitlementManagement = value
     }
 }
 // SetTermsOfUse sets the termsOfUse property value. 
-func (m *IdentityGovernance) SetTermsOfUse(value *TermsOfUseContainer)() {
+func (m *IdentityGovernance) SetTermsOfUse(value TermsOfUseContainerable)() {
     if m != nil {
         m.termsOfUse = value
     }

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookFilter 
+// WorkbookFilter provides operations to manage the drive singleton.
 type WorkbookFilter struct {
     Entity
     // The currently applied filter on the given column. Read-only.
-    criteria *WorkbookFilterCriteria;
+    criteria WorkbookFilterCriteriaable;
 }
 // NewWorkbookFilter instantiates a new workbookFilter and sets the default values.
 func NewWorkbookFilter()(*WorkbookFilter) {
@@ -17,8 +17,12 @@ func NewWorkbookFilter()(*WorkbookFilter) {
     }
     return m
 }
+// CreateWorkbookFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookFilterFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookFilter(), nil
+}
 // GetCriteria gets the criteria property value. The currently applied filter on the given column. Read-only.
-func (m *WorkbookFilter) GetCriteria()(*WorkbookFilterCriteria) {
+func (m *WorkbookFilter) GetCriteria()(WorkbookFilterCriteriaable) {
     if m == nil {
         return nil
     } else {
@@ -29,12 +33,12 @@ func (m *WorkbookFilter) GetCriteria()(*WorkbookFilterCriteria) {
 func (m *WorkbookFilter) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["criteria"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookFilterCriteria() })
+        val, err := n.GetObjectValue(CreateWorkbookFilterCriteriaFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCriteria(val.(*WorkbookFilterCriteria))
+            m.SetCriteria(val.(WorkbookFilterCriteriaable))
         }
         return nil
     }
@@ -58,7 +62,7 @@ func (m *WorkbookFilter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     return nil
 }
 // SetCriteria sets the criteria property value. The currently applied filter on the given column. Read-only.
-func (m *WorkbookFilter) SetCriteria(value *WorkbookFilterCriteria)() {
+func (m *WorkbookFilter) SetCriteria(value WorkbookFilterCriteriaable)() {
     if m != nil {
         m.criteria = value
     }

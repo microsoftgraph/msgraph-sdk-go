@@ -5,14 +5,14 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// ReplyAllRequestBody 
+// ReplyAllRequestBody provides operations to call the replyAll method.
 type ReplyAllRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     comment *string;
     // 
-    message *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message;
+    message i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Messageable;
 }
 // NewReplyAllRequestBody instantiates a new replyAllRequestBody and sets the default values.
 func NewReplyAllRequestBody()(*ReplyAllRequestBody) {
@@ -20,6 +20,10 @@ func NewReplyAllRequestBody()(*ReplyAllRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateReplyAllRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReplyAllRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReplyAllRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReplyAllRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -37,14 +41,6 @@ func (m *ReplyAllRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// GetMessage gets the message property value. 
-func (m *ReplyAllRequestBody) GetMessage()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReplyAllRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -59,16 +55,24 @@ func (m *ReplyAllRequestBody) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewMessage() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMessageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMessage(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message))
+            m.SetMessage(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Messageable))
         }
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. 
+func (m *ReplyAllRequestBody) GetMessage()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Messageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
 }
 func (m *ReplyAllRequestBody) IsNil()(bool) {
     return m == nil
@@ -108,7 +112,7 @@ func (m *ReplyAllRequestBody) SetComment(value *string)() {
     }
 }
 // SetMessage sets the message property value. 
-func (m *ReplyAllRequestBody) SetMessage(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message)() {
+func (m *ReplyAllRequestBody) SetMessage(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Messageable)() {
     if m != nil {
         m.message = value
     }

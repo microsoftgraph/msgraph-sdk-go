@@ -2,11 +2,11 @@ package shifts
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i1cf92806d4aa9baeef2b8ddc5c5aa5b47071398b335de44f402dcc262c226253 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/schedule/shifts/count"
 )
 
-// ShiftsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\shifts
+// ShiftsRequestBuilder provides operations to manage the shifts property of the microsoft.graph.schedule entity.
 type ShiftsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type ShiftsRequestBuilderGetQueryParameters struct {
 // ShiftsRequestBuilderPostOptions options for Post
 type ShiftsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Shift;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Shiftable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +63,7 @@ func NewShiftsRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,6 +72,9 @@ func NewShiftsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewShiftsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ShiftsRequestBuilder) Count()(*i1cf92806d4aa9baeef2b8ddc5c5aa5b47071398b335de44f402dcc262c226253.CountRequestBuilder) {
+    return i1cf92806d4aa9baeef2b8ddc5c5aa5b47071398b335de44f402dcc262c226253.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the shifts in the schedule.
 func (m *ShiftsRequestBuilder) CreateGetRequestInformation(options *ShiftsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -93,7 +96,7 @@ func (m *ShiftsRequestBuilder) CreateGetRequestInformation(options *ShiftsReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the shifts in the schedule.
+// CreatePostRequestInformation create new navigation property to shifts for teams
 func (m *ShiftsRequestBuilder) CreatePostRequestInformation(options *ShiftsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,26 +115,34 @@ func (m *ShiftsRequestBuilder) CreatePostRequestInformation(options *ShiftsReque
     return requestInfo, nil
 }
 // Get the shifts in the schedule.
-func (m *ShiftsRequestBuilder) Get(options *ShiftsRequestBuilderGetOptions)(*ShiftsResponse, error) {
+func (m *ShiftsRequestBuilder) Get(options *ShiftsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ShiftCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShiftsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateShiftCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ShiftsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ShiftCollectionResponseable), nil
 }
-// Post the shifts in the schedule.
-func (m *ShiftsRequestBuilder) Post(options *ShiftsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Shift, error) {
+// Post create new navigation property to shifts for teams
+func (m *ShiftsRequestBuilder) Post(options *ShiftsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Shiftable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewShift() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateShiftFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Shift), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Shiftable), nil
 }

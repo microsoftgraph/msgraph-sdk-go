@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookWorksheetProtection 
+// WorkbookWorksheetProtection provides operations to manage the drive singleton.
 type WorkbookWorksheetProtection struct {
     Entity
     // Sheet protection options. Read-only.
-    options *WorkbookWorksheetProtectionOptions;
+    options WorkbookWorksheetProtectionOptionsable;
     // Indicates if the worksheet is protected.  Read-only.
     protected *bool;
 }
@@ -19,32 +19,20 @@ func NewWorkbookWorksheetProtection()(*WorkbookWorksheetProtection) {
     }
     return m
 }
-// GetOptions gets the options property value. Sheet protection options. Read-only.
-func (m *WorkbookWorksheetProtection) GetOptions()(*WorkbookWorksheetProtectionOptions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.options
-    }
-}
-// GetProtected gets the protected property value. Indicates if the worksheet is protected.  Read-only.
-func (m *WorkbookWorksheetProtection) GetProtected()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protected
-    }
+// CreateWorkbookWorksheetProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookWorksheetProtectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookWorksheetProtection(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["options"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookWorksheetProtectionOptions() })
+        val, err := n.GetObjectValue(CreateWorkbookWorksheetProtectionOptionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOptions(val.(*WorkbookWorksheetProtectionOptions))
+            m.SetOptions(val.(WorkbookWorksheetProtectionOptionsable))
         }
         return nil
     }
@@ -59,6 +47,22 @@ func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetOptions gets the options property value. Sheet protection options. Read-only.
+func (m *WorkbookWorksheetProtection) GetOptions()(WorkbookWorksheetProtectionOptionsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.options
+    }
+}
+// GetProtected gets the protected property value. Indicates if the worksheet is protected.  Read-only.
+func (m *WorkbookWorksheetProtection) GetProtected()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.protected
+    }
 }
 func (m *WorkbookWorksheetProtection) IsNil()(bool) {
     return m == nil
@@ -84,7 +88,7 @@ func (m *WorkbookWorksheetProtection) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetOptions sets the options property value. Sheet protection options. Read-only.
-func (m *WorkbookWorksheetProtection) SetOptions(value *WorkbookWorksheetProtectionOptions)() {
+func (m *WorkbookWorksheetProtection) SetOptions(value WorkbookWorksheetProtectionOptionsable)() {
     if m != nil {
         m.options = value
     }

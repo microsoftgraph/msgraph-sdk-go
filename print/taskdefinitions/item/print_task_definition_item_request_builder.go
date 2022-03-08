@@ -2,13 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     ia17e90b868e2477ae400798399ce90e12c84b05266b802ea329cdb41683f368a "github.com/microsoftgraph/msgraph-sdk-go/print/taskdefinitions/item/tasks"
     i0d5f8f6b05ef36affaa4705ed7f63280fb98114a2a0c815ba833448eb3b3afa4 "github.com/microsoftgraph/msgraph-sdk-go/print/taskdefinitions/item/tasks/item"
 )
 
-// PrintTaskDefinitionItemRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}
+// PrintTaskDefinitionItemRequestBuilder provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
 type PrintTaskDefinitionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +46,7 @@ type PrintTaskDefinitionItemRequestBuilderGetQueryParameters struct {
 // PrintTaskDefinitionItemRequestBuilderPatchOptions options for Patch
 type PrintTaskDefinitionItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskDefinition;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +63,7 @@ func NewPrintTaskDefinitionItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +73,7 @@ func NewPrintTaskDefinitionItemRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewPrintTaskDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation list of abstract definition for a task that can be triggered when various events occur within Universal Print.
+// CreateDeleteRequestInformation delete navigation property taskDefinitions for print
 func (m *PrintTaskDefinitionItemRequestBuilder) CreateDeleteRequestInformation(options *PrintTaskDefinitionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +110,7 @@ func (m *PrintTaskDefinitionItemRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation list of abstract definition for a task that can be triggered when various events occur within Universal Print.
+// CreatePatchRequestInformation update the navigation property taskDefinitions in print
 func (m *PrintTaskDefinitionItemRequestBuilder) CreatePatchRequestInformation(options *PrintTaskDefinitionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,37 +128,49 @@ func (m *PrintTaskDefinitionItemRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Delete list of abstract definition for a task that can be triggered when various events occur within Universal Print.
+// Delete delete navigation property taskDefinitions for print
 func (m *PrintTaskDefinitionItemRequestBuilder) Delete(options *PrintTaskDefinitionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get list of abstract definition for a task that can be triggered when various events occur within Universal Print.
-func (m *PrintTaskDefinitionItemRequestBuilder) Get(options *PrintTaskDefinitionItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskDefinition, error) {
+func (m *PrintTaskDefinitionItemRequestBuilder) Get(options *PrintTaskDefinitionItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPrintTaskDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePrintTaskDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskDefinition), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskDefinitionable), nil
 }
-// Patch list of abstract definition for a task that can be triggered when various events occur within Universal Print.
+// Patch update the navigation property taskDefinitions in print
 func (m *PrintTaskDefinitionItemRequestBuilder) Patch(options *PrintTaskDefinitionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

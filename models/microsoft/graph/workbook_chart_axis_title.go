@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartAxisTitle 
+// WorkbookChartAxisTitle provides operations to manage the drive singleton.
 type WorkbookChartAxisTitle struct {
     Entity
     // Represents the formatting of chart axis title. Read-only.
-    format *WorkbookChartAxisTitleFormat;
+    format WorkbookChartAxisTitleFormatable;
     // Represents the axis title.
     text *string;
     // A boolean that specifies the visibility of an axis title.
@@ -21,40 +21,20 @@ func NewWorkbookChartAxisTitle()(*WorkbookChartAxisTitle) {
     }
     return m
 }
-// GetFormat gets the format property value. Represents the formatting of chart axis title. Read-only.
-func (m *WorkbookChartAxisTitle) GetFormat()(*WorkbookChartAxisTitleFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
-}
-// GetText gets the text property value. Represents the axis title.
-func (m *WorkbookChartAxisTitle) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
-}
-// GetVisible gets the visible property value. A boolean that specifies the visibility of an axis title.
-func (m *WorkbookChartAxisTitle) GetVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visible
-    }
+// CreateWorkbookChartAxisTitleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookChartAxisTitleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookChartAxisTitle(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartAxisTitle) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["format"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookChartAxisTitleFormat() })
+        val, err := n.GetObjectValue(CreateWorkbookChartAxisTitleFormatFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFormat(val.(*WorkbookChartAxisTitleFormat))
+            m.SetFormat(val.(WorkbookChartAxisTitleFormatable))
         }
         return nil
     }
@@ -79,6 +59,30 @@ func (m *WorkbookChartAxisTitle) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetFormat gets the format property value. Represents the formatting of chart axis title. Read-only.
+func (m *WorkbookChartAxisTitle) GetFormat()(WorkbookChartAxisTitleFormatable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.format
+    }
+}
+// GetText gets the text property value. Represents the axis title.
+func (m *WorkbookChartAxisTitle) GetText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.text
+    }
+}
+// GetVisible gets the visible property value. A boolean that specifies the visibility of an axis title.
+func (m *WorkbookChartAxisTitle) GetVisible()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visible
+    }
 }
 func (m *WorkbookChartAxisTitle) IsNil()(bool) {
     return m == nil
@@ -110,7 +114,7 @@ func (m *WorkbookChartAxisTitle) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetFormat sets the format property value. Represents the formatting of chart axis title. Read-only.
-func (m *WorkbookChartAxisTitle) SetFormat(value *WorkbookChartAxisTitleFormat)() {
+func (m *WorkbookChartAxisTitle) SetFormat(value WorkbookChartAxisTitleFormatable)() {
     if m != nil {
         m.format = value
     }

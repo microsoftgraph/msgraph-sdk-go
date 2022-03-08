@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OptionalClaim 
+// OptionalClaim provides operations to manage the collection of application entities.
 type OptionalClaim struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewOptionalClaim()(*OptionalClaim) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateOptionalClaimFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOptionalClaimFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOptionalClaim(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OptionalClaim) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *OptionalClaim) GetEssential()(*bool) {
         return nil
     } else {
         return m.essential
-    }
-}
-// GetName gets the name property value. The name of the optional claim.
-func (m *OptionalClaim) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetSource gets the source property value. The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
-func (m *OptionalClaim) GetSource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -112,6 +100,22 @@ func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetName gets the name property value. The name of the optional claim.
+func (m *OptionalClaim) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetSource gets the source property value. The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
+func (m *OptionalClaim) GetSource()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.source
+    }
 }
 func (m *OptionalClaim) IsNil()(bool) {
     return m == nil

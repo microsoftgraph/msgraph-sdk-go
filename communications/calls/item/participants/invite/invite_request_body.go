@@ -5,14 +5,14 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// InviteRequestBody 
+// InviteRequestBody provides operations to call the invite method.
 type InviteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     clientContext *string;
     // 
-    participants []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo;
+    participants []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable;
 }
 // NewInviteRequestBody instantiates a new inviteRequestBody and sets the default values.
 func NewInviteRequestBody()(*InviteRequestBody) {
@@ -20,6 +20,10 @@ func NewInviteRequestBody()(*InviteRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateInviteRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInviteRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInviteRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InviteRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -37,14 +41,6 @@ func (m *InviteRequestBody) GetClientContext()(*string) {
         return m.clientContext
     }
 }
-// GetParticipants gets the participants property value. 
-func (m *InviteRequestBody) GetParticipants()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InviteRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -59,20 +55,28 @@ func (m *InviteRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["participants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewInvitationParticipantInfo() })
+        val, err := n.GetCollectionOfObjectValues(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateInvitationParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo, len(val))
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo))
+                res[i] = v.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable)
             }
             m.SetParticipants(res)
         }
         return nil
     }
     return res
+}
+// GetParticipants gets the participants property value. 
+func (m *InviteRequestBody) GetParticipants()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.participants
+    }
 }
 func (m *InviteRequestBody) IsNil()(bool) {
     return m == nil
@@ -88,8 +92,7 @@ func (m *InviteRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetParticipants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("participants", cast)
         if err != nil {
@@ -117,7 +120,7 @@ func (m *InviteRequestBody) SetClientContext(value *string)() {
     }
 }
 // SetParticipants sets the participants property value. 
-func (m *InviteRequestBody) SetParticipants(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo)() {
+func (m *InviteRequestBody) SetParticipants(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable)() {
     if m != nil {
         m.participants = value
     }

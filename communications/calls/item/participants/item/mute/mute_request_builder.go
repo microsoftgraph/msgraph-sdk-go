@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// MuteRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants\{participant-id}\microsoft.graph.mute
+// MuteRequestBuilder provides operations to call the mute method.
 type MuteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type MuteRequestBuilder struct {
 // MuteRequestBuilderPostOptions options for Post
 type MuteRequestBuilderPostOptions struct {
     // 
-    Body *MuteRequestBody;
+    Body MuteRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type MuteResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type muteParticipantOperation
-    muteParticipantOperation *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MuteParticipantOperation;
+    muteParticipantOperation i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MuteParticipantOperationable;
 }
 // NewMuteResponse instantiates a new muteResponse and sets the default values.
 func NewMuteResponse()(*MuteResponse) {
@@ -39,6 +39,9 @@ func NewMuteResponse()(*MuteResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateMuteResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMuteResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MuteResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *MuteResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *MuteResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["muteParticipantOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMuteParticipantOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMuteParticipantOperation(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MuteParticipantOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetMuteParticipantOperation gets the muteParticipantOperation property value. Union type representation for type muteParticipantOperation
-func (m *MuteResponse) GetMuteParticipantOperation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MuteParticipantOperation) {
+func (m *MuteResponse) GetMuteParticipantOperation()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MuteParticipantOperationable) {
     if m == nil {
         return nil
     } else {
         return m.muteParticipantOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *MuteResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["muteParticipantOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewMuteParticipantOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMuteParticipantOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MuteParticipantOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *MuteResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *MuteResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetMuteParticipantOperation sets the muteParticipantOperation property value. Union type representation for type muteParticipantOperation
-func (m *MuteResponse) SetMuteParticipantOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MuteParticipantOperation)() {
+func (m *MuteResponse) SetMuteParticipantOperation(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MuteParticipantOperationable)() {
     if m != nil {
         m.muteParticipantOperation = value
     }
@@ -111,7 +114,7 @@ func NewMuteRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *MuteRequestBuilder) CreatePostRequestInformation(options *MuteRequestBu
     return requestInfo, nil
 }
 // Post invoke action mute
-func (m *MuteRequestBuilder) Post(options *MuteRequestBuilderPostOptions)(*MuteResponse, error) {
+func (m *MuteRequestBuilder) Post(options *MuteRequestBuilderPostOptions)(MuteResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMuteResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateMuteResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*MuteResponse), nil
+    return res.(MuteResponseable), nil
 }

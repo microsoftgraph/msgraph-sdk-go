@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MimeContent 
+// MimeContent provides operations to manage the deviceAppManagement singleton.
 type MimeContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewMimeContent()(*MimeContent) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMimeContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMimeContentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMimeContent(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MimeContent) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetType gets the type property value. Indicates the content mime type.
-func (m *MimeContent) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetValue gets the value property value. The byte array that contains the actual content.
-func (m *MimeContent) GetValue()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *MimeContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetType gets the type property value. Indicates the content mime type.
+func (m *MimeContent) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetValue gets the value property value. The byte array that contains the actual content.
+func (m *MimeContent) GetValue()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *MimeContent) IsNil()(bool) {
     return m == nil

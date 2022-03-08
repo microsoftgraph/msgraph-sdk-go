@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TermsAndConditionsAcceptanceStatus 
+// TermsAndConditionsAcceptanceStatus provides operations to manage the deviceManagement singleton.
 type TermsAndConditionsAcceptanceStatus struct {
     Entity
     // DateTime when the terms were last accepted by the user.
@@ -13,7 +13,7 @@ type TermsAndConditionsAcceptanceStatus struct {
     // Most recent version number of the T&C accepted by the user.
     acceptedVersion *int32;
     // Navigation link to the terms and conditions that are assigned.
-    termsAndConditions *TermsAndConditions;
+    termsAndConditions TermsAndConditionsable;
     // Display name of the user whose acceptance the entity represents.
     userDisplayName *string;
     // The userPrincipalName of the User that accepted the term.
@@ -25,6 +25,10 @@ func NewTermsAndConditionsAcceptanceStatus()(*TermsAndConditionsAcceptanceStatus
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateTermsAndConditionsAcceptanceStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTermsAndConditionsAcceptanceStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTermsAndConditionsAcceptanceStatus(), nil
 }
 // GetAcceptedDateTime gets the acceptedDateTime property value. DateTime when the terms were last accepted by the user.
 func (m *TermsAndConditionsAcceptanceStatus) GetAcceptedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -40,30 +44,6 @@ func (m *TermsAndConditionsAcceptanceStatus) GetAcceptedVersion()(*int32) {
         return nil
     } else {
         return m.acceptedVersion
-    }
-}
-// GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
-func (m *TermsAndConditionsAcceptanceStatus) GetTermsAndConditions()(*TermsAndConditions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsAndConditions
-    }
-}
-// GetUserDisplayName gets the userDisplayName property value. Display name of the user whose acceptance the entity represents.
-func (m *TermsAndConditionsAcceptanceStatus) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName of the User that accepted the term.
-func (m *TermsAndConditionsAcceptanceStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -90,12 +70,12 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         return nil
     }
     res["termsAndConditions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTermsAndConditions() })
+        val, err := n.GetObjectValue(CreateTermsAndConditionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTermsAndConditions(val.(*TermsAndConditions))
+            m.SetTermsAndConditions(val.(TermsAndConditionsable))
         }
         return nil
     }
@@ -120,6 +100,30 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
+func (m *TermsAndConditionsAcceptanceStatus) GetTermsAndConditions()(TermsAndConditionsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.termsAndConditions
+    }
+}
+// GetUserDisplayName gets the userDisplayName property value. Display name of the user whose acceptance the entity represents.
+func (m *TermsAndConditionsAcceptanceStatus) GetUserDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userDisplayName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName of the User that accepted the term.
+func (m *TermsAndConditionsAcceptanceStatus) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *TermsAndConditionsAcceptanceStatus) IsNil()(bool) {
     return m == nil
@@ -175,7 +179,7 @@ func (m *TermsAndConditionsAcceptanceStatus) SetAcceptedVersion(value *int32)() 
     }
 }
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
-func (m *TermsAndConditionsAcceptanceStatus) SetTermsAndConditions(value *TermsAndConditions)() {
+func (m *TermsAndConditionsAcceptanceStatus) SetTermsAndConditions(value TermsAndConditionsable)() {
     if m != nil {
         m.termsAndConditions = value
     }

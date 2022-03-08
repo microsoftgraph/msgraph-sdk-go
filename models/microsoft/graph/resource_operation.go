@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResourceOperation 
+// ResourceOperation provides operations to manage the deviceManagement singleton.
 type ResourceOperation struct {
     Entity
     // Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
@@ -21,6 +21,10 @@ func NewResourceOperation()(*ResourceOperation) {
     }
     return m
 }
+// CreateResourceOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateResourceOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewResourceOperation(), nil
+}
 // GetActionName gets the actionName property value. Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
 func (m *ResourceOperation) GetActionName()(*string) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *ResourceOperation) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetResourceName gets the resourceName property value. Name of the Resource this operation is performed on.
-func (m *ResourceOperation) GetResourceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +75,14 @@ func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetResourceName gets the resourceName property value. Name of the Resource this operation is performed on.
+func (m *ResourceOperation) GetResourceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceName
+    }
 }
 func (m *ResourceOperation) IsNil()(bool) {
     return m == nil

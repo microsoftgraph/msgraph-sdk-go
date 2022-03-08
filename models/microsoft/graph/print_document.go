@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintDocument 
+// PrintDocument provides operations to manage the print singleton.
 type PrintDocument struct {
     Entity
     // The document's content (MIME) type. Read-only.
@@ -21,6 +21,10 @@ func NewPrintDocument()(*PrintDocument) {
     }
     return m
 }
+// CreatePrintDocumentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintDocumentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintDocument(), nil
+}
 // GetContentType gets the contentType property value. The document's content (MIME) type. Read-only.
 func (m *PrintDocument) GetContentType()(*string) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *PrintDocument) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetSize gets the size property value. The document's size in bytes. Read-only.
-func (m *PrintDocument) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +75,14 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetSize gets the size property value. The document's size in bytes. Read-only.
+func (m *PrintDocument) GetSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
 }
 func (m *PrintDocument) IsNil()(bool) {
     return m == nil

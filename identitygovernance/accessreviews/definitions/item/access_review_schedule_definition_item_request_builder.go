@@ -2,14 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i56a19c97d1f16985e6e55d23611e43b43dcd3d1e1219b3b9b4daca885026b37b "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/stop"
     ibba6c7035a718e15d1f7f5bbf8521a48e25e6129a3ea1dd9ccde10f862176373 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances"
     i430970eb1b4b4a416077e3b11ecb887cbb1a66d9913c998c9991f0044691886d "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item"
 )
 
-// AccessReviewScheduleDefinitionItemRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}
+// AccessReviewScheduleDefinitionItemRequestBuilder provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
 type AccessReviewScheduleDefinitionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +47,7 @@ type AccessReviewScheduleDefinitionItemRequestBuilderGetQueryParameters struct {
 // AccessReviewScheduleDefinitionItemRequestBuilderPatchOptions options for Patch
 type AccessReviewScheduleDefinitionItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinition;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +64,7 @@ func NewAccessReviewScheduleDefinitionItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,7 +74,7 @@ func NewAccessReviewScheduleDefinitionItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewScheduleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation represents the template and scheduling for an access review.
+// CreateDeleteRequestInformation delete navigation property definitions for identityGovernance
 func (m *AccessReviewScheduleDefinitionItemRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewScheduleDefinitionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +111,7 @@ func (m *AccessReviewScheduleDefinitionItemRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation represents the template and scheduling for an access review.
+// CreatePatchRequestInformation update the navigation property definitions in identityGovernance
 func (m *AccessReviewScheduleDefinitionItemRequestBuilder) CreatePatchRequestInformation(options *AccessReviewScheduleDefinitionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,29 +129,37 @@ func (m *AccessReviewScheduleDefinitionItemRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// Delete represents the template and scheduling for an access review.
+// Delete delete navigation property definitions for identityGovernance
 func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Delete(options *AccessReviewScheduleDefinitionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get represents the template and scheduling for an access review.
-func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Get(options *AccessReviewScheduleDefinitionItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinition, error) {
+func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Get(options *AccessReviewScheduleDefinitionItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewAccessReviewScheduleDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAccessReviewScheduleDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinition), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinitionable), nil
 }
 func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Instances()(*ibba6c7035a718e15d1f7f5bbf8521a48e25e6129a3ea1dd9ccde10f862176373.InstancesRequestBuilder) {
     return ibba6c7035a718e15d1f7f5bbf8521a48e25e6129a3ea1dd9ccde10f862176373.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -168,13 +175,17 @@ func (m *AccessReviewScheduleDefinitionItemRequestBuilder) InstancesById(id stri
     }
     return i430970eb1b4b4a416077e3b11ecb887cbb1a66d9913c998c9991f0044691886d.NewAccessReviewInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch represents the template and scheduling for an access review.
+// Patch update the navigation property definitions in identityGovernance
 func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Patch(options *AccessReviewScheduleDefinitionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

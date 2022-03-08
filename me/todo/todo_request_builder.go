@@ -2,13 +2,12 @@ package todo
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     ib56dd0f9c451869472bf1e5a03c87fe5a05a98acf987ea18cca0d818a02b6900 "github.com/microsoftgraph/msgraph-sdk-go/me/todo/lists"
     ic40b721db1060f5bfe853d11fb54d33fa8d9efc3683cc62a1c55d3239b2b3282 "github.com/microsoftgraph/msgraph-sdk-go/me/todo/lists/item"
 )
 
-// TodoRequestBuilder builds and executes requests for operations under \me\todo
+// TodoRequestBuilder provides operations to manage the todo property of the microsoft.graph.user entity.
 type TodoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +46,7 @@ type TodoRequestBuilderGetQueryParameters struct {
 // TodoRequestBuilderPatchOptions options for Patch
 type TodoRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Todo;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Todoable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +63,7 @@ func NewTodoRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +73,7 @@ func NewTodoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
     urlParams["request-raw-url"] = rawUrl
     return NewTodoRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation represents the To Do services available to a user.
+// CreateDeleteRequestInformation delete navigation property todo for me
 func (m *TodoRequestBuilder) CreateDeleteRequestInformation(options *TodoRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +110,7 @@ func (m *TodoRequestBuilder) CreateGetRequestInformation(options *TodoRequestBui
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation represents the To Do services available to a user.
+// CreatePatchRequestInformation update the navigation property todo in me
 func (m *TodoRequestBuilder) CreatePatchRequestInformation(options *TodoRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,29 +128,37 @@ func (m *TodoRequestBuilder) CreatePatchRequestInformation(options *TodoRequestB
     }
     return requestInfo, nil
 }
-// Delete represents the To Do services available to a user.
+// Delete delete navigation property todo for me
 func (m *TodoRequestBuilder) Delete(options *TodoRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get represents the To Do services available to a user.
-func (m *TodoRequestBuilder) Get(options *TodoRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Todo, error) {
+func (m *TodoRequestBuilder) Get(options *TodoRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Todoable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewTodo() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTodoFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Todo), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Todoable), nil
 }
 func (m *TodoRequestBuilder) Lists()(*ib56dd0f9c451869472bf1e5a03c87fe5a05a98acf987ea18cca0d818a02b6900.ListsRequestBuilder) {
     return ib56dd0f9c451869472bf1e5a03c87fe5a05a98acf987ea18cca0d818a02b6900.NewListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -167,13 +174,17 @@ func (m *TodoRequestBuilder) ListsById(id string)(*ic40b721db1060f5bfe853d11fb54
     }
     return ic40b721db1060f5bfe853d11fb54d33fa8d9efc3683cc62a1c55d3239b2b3282.NewTodoTaskListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch represents the To Do services available to a user.
+// Patch update the navigation property todo in me
 func (m *TodoRequestBuilder) Patch(options *TodoRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

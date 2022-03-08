@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IntuneBrand 
+// IntuneBrand provides operations to manage the deviceManagement singleton.
 type IntuneBrand struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,11 +17,11 @@ type IntuneBrand struct {
     // Phone number of the person/organization responsible for IT support.
     contactITPhoneNumber *string;
     // Logo image displayed in Company Portal apps which have a dark background behind the logo.
-    darkBackgroundLogo *MimeContent;
+    darkBackgroundLogo MimeContentable;
     // Company/organization name that is displayed to end users.
     displayName *string;
     // Logo image displayed in Company Portal apps which have a light background behind the logo.
-    lightBackgroundLogo *MimeContent;
+    lightBackgroundLogo MimeContentable;
     // Display name of the company/organization’s IT helpdesk site.
     onlineSupportSiteName *string;
     // URL to the company/organization’s IT helpdesk site.
@@ -35,7 +35,7 @@ type IntuneBrand struct {
     // Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
     showNameNextToLogo *bool;
     // Primary theme color used in the Company Portal applications and web portal.
-    themeColor *RgbColor;
+    themeColor RgbColorable;
 }
 // NewIntuneBrand instantiates a new intuneBrand and sets the default values.
 func NewIntuneBrand()(*IntuneBrand) {
@@ -43,6 +43,10 @@ func NewIntuneBrand()(*IntuneBrand) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateIntuneBrandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIntuneBrandFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIntuneBrand(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntuneBrand) GetAdditionalData()(map[string]interface{}) {
@@ -85,7 +89,7 @@ func (m *IntuneBrand) GetContactITPhoneNumber()(*string) {
     }
 }
 // GetDarkBackgroundLogo gets the darkBackgroundLogo property value. Logo image displayed in Company Portal apps which have a dark background behind the logo.
-func (m *IntuneBrand) GetDarkBackgroundLogo()(*MimeContent) {
+func (m *IntuneBrand) GetDarkBackgroundLogo()(MimeContentable) {
     if m == nil {
         return nil
     } else {
@@ -98,70 +102,6 @@ func (m *IntuneBrand) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLightBackgroundLogo gets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
-func (m *IntuneBrand) GetLightBackgroundLogo()(*MimeContent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lightBackgroundLogo
-    }
-}
-// GetOnlineSupportSiteName gets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
-func (m *IntuneBrand) GetOnlineSupportSiteName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineSupportSiteName
-    }
-}
-// GetOnlineSupportSiteUrl gets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site.
-func (m *IntuneBrand) GetOnlineSupportSiteUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineSupportSiteUrl
-    }
-}
-// GetPrivacyUrl gets the privacyUrl property value. URL to the company/organization’s privacy policy.
-func (m *IntuneBrand) GetPrivacyUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privacyUrl
-    }
-}
-// GetShowDisplayNameNextToLogo gets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-func (m *IntuneBrand) GetShowDisplayNameNextToLogo()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showDisplayNameNextToLogo
-    }
-}
-// GetShowLogo gets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not shown.
-func (m *IntuneBrand) GetShowLogo()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showLogo
-    }
-}
-// GetShowNameNextToLogo gets the showNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-func (m *IntuneBrand) GetShowNameNextToLogo()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showNameNextToLogo
-    }
-}
-// GetThemeColor gets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
-func (m *IntuneBrand) GetThemeColor()(*RgbColor) {
-    if m == nil {
-        return nil
-    } else {
-        return m.themeColor
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -208,12 +148,12 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["darkBackgroundLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMimeContent() })
+        val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDarkBackgroundLogo(val.(*MimeContent))
+            m.SetDarkBackgroundLogo(val.(MimeContentable))
         }
         return nil
     }
@@ -228,12 +168,12 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["lightBackgroundLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMimeContent() })
+        val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLightBackgroundLogo(val.(*MimeContent))
+            m.SetLightBackgroundLogo(val.(MimeContentable))
         }
         return nil
     }
@@ -298,16 +238,80 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["themeColor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRgbColor() })
+        val, err := n.GetObjectValue(CreateRgbColorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetThemeColor(val.(*RgbColor))
+            m.SetThemeColor(val.(RgbColorable))
         }
         return nil
     }
     return res
+}
+// GetLightBackgroundLogo gets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
+func (m *IntuneBrand) GetLightBackgroundLogo()(MimeContentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lightBackgroundLogo
+    }
+}
+// GetOnlineSupportSiteName gets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
+func (m *IntuneBrand) GetOnlineSupportSiteName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineSupportSiteName
+    }
+}
+// GetOnlineSupportSiteUrl gets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site.
+func (m *IntuneBrand) GetOnlineSupportSiteUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineSupportSiteUrl
+    }
+}
+// GetPrivacyUrl gets the privacyUrl property value. URL to the company/organization’s privacy policy.
+func (m *IntuneBrand) GetPrivacyUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.privacyUrl
+    }
+}
+// GetShowDisplayNameNextToLogo gets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
+func (m *IntuneBrand) GetShowDisplayNameNextToLogo()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showDisplayNameNextToLogo
+    }
+}
+// GetShowLogo gets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not shown.
+func (m *IntuneBrand) GetShowLogo()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showLogo
+    }
+}
+// GetShowNameNextToLogo gets the showNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
+func (m *IntuneBrand) GetShowNameNextToLogo()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showNameNextToLogo
+    }
+}
+// GetThemeColor gets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
+func (m *IntuneBrand) GetThemeColor()(RgbColorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.themeColor
+    }
 }
 func (m *IntuneBrand) IsNil()(bool) {
     return m == nil
@@ -437,7 +441,7 @@ func (m *IntuneBrand) SetContactITPhoneNumber(value *string)() {
     }
 }
 // SetDarkBackgroundLogo sets the darkBackgroundLogo property value. Logo image displayed in Company Portal apps which have a dark background behind the logo.
-func (m *IntuneBrand) SetDarkBackgroundLogo(value *MimeContent)() {
+func (m *IntuneBrand) SetDarkBackgroundLogo(value MimeContentable)() {
     if m != nil {
         m.darkBackgroundLogo = value
     }
@@ -449,7 +453,7 @@ func (m *IntuneBrand) SetDisplayName(value *string)() {
     }
 }
 // SetLightBackgroundLogo sets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
-func (m *IntuneBrand) SetLightBackgroundLogo(value *MimeContent)() {
+func (m *IntuneBrand) SetLightBackgroundLogo(value MimeContentable)() {
     if m != nil {
         m.lightBackgroundLogo = value
     }
@@ -491,7 +495,7 @@ func (m *IntuneBrand) SetShowNameNextToLogo(value *bool)() {
     }
 }
 // SetThemeColor sets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
-func (m *IntuneBrand) SetThemeColor(value *RgbColor)() {
+func (m *IntuneBrand) SetThemeColor(value RgbColorable)() {
     if m != nil {
         m.themeColor = value
     }

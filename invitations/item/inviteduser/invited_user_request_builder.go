@@ -2,12 +2,10 @@ package inviteduser
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i89266147459be47604a3bc71c8b8a481a9f0e411a5aa2e53b24d4a9ffdea1e5d "github.com/microsoftgraph/msgraph-sdk-go/invitations/item/inviteduser/ref"
 )
 
-// InvitedUserRequestBuilder builds and executes requests for operations under \invitations\{invitation-id}\invitedUser
+// InvitedUserRequestBuilder provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
 type InvitedUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +41,7 @@ func NewInvitedUserRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,17 +72,18 @@ func (m *InvitedUserRequestBuilder) CreateGetRequestInformation(options *Invited
     return requestInfo, nil
 }
 // Get the user created as part of the invitation creation. Read-Only
-func (m *InvitedUserRequestBuilder) Get(options *InvitedUserRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.User, error) {
+func (m *InvitedUserRequestBuilder) Get(options *InvitedUserRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewUser() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.User), nil
-}
-func (m *InvitedUserRequestBuilder) Ref()(*i89266147459be47604a3bc71c8b8a481a9f0e411a5aa2e53b24d4a9ffdea1e5d.RefRequestBuilder) {
-    return i89266147459be47604a3bc71c8b8a481a9f0e411a5aa2e53b24d4a9ffdea1e5d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Userable), nil
 }

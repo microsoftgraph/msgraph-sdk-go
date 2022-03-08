@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the createUploadSession method.
 type AttachmentType int
 
 const (

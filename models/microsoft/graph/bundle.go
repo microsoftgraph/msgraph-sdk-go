@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Bundle 
+// Bundle provides operations to manage the drive singleton.
 type Bundle struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // If the bundle is an [album][], then the album property is included
-    album *Album;
+    album Albumable;
     // Number of children contained immediately within this container.
     childCount *int32;
 }
@@ -20,6 +20,10 @@ func NewBundle()(*Bundle) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBundleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBundleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBundle(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Bundle) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -29,7 +33,7 @@ func (m *Bundle) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAlbum gets the album property value. If the bundle is an [album][], then the album property is included
-func (m *Bundle) GetAlbum()(*Album) {
+func (m *Bundle) GetAlbum()(Albumable) {
     if m == nil {
         return nil
     } else {
@@ -48,12 +52,12 @@ func (m *Bundle) GetChildCount()(*int32) {
 func (m *Bundle) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["album"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlbum() })
+        val, err := n.GetObjectValue(CreateAlbumFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAlbum(val.(*Album))
+            m.SetAlbum(val.(Albumable))
         }
         return nil
     }
@@ -101,7 +105,7 @@ func (m *Bundle) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAlbum sets the album property value. If the bundle is an [album][], then the album property is included
-func (m *Bundle) SetAlbum(value *Album)() {
+func (m *Bundle) SetAlbum(value Albumable)() {
     if m != nil {
         m.album = value
     }

@@ -2,13 +2,12 @@ package file
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     ic78f888972339bcf34b80d7c4800ddb974b3f0f20a8f7c321cf41909a56f17d1 "github.com/microsoftgraph/msgraph-sdk-go/agreements/item/file/localizations"
     i2d4b6344639678e1dd779cb456a26ba4351c3e4a09c717bf205c3c77beff31a5 "github.com/microsoftgraph/msgraph-sdk-go/agreements/item/file/localizations/item"
 )
 
-// FileRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}\file
+// FileRequestBuilder provides operations to manage the file property of the microsoft.graph.agreement entity.
 type FileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +46,7 @@ type FileRequestBuilderGetQueryParameters struct {
 // FileRequestBuilderPatchOptions options for Patch
 type FileRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFile;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +63,7 @@ func NewFileRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +73,7 @@ func NewFileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
     urlParams["request-raw-url"] = rawUrl
     return NewFileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation default PDF linked to this agreement.
+// CreateDeleteRequestInformation delete navigation property file for agreements
 func (m *FileRequestBuilder) CreateDeleteRequestInformation(options *FileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +110,7 @@ func (m *FileRequestBuilder) CreateGetRequestInformation(options *FileRequestBui
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation default PDF linked to this agreement.
+// CreatePatchRequestInformation update the navigation property file in agreements
 func (m *FileRequestBuilder) CreatePatchRequestInformation(options *FileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,29 +128,37 @@ func (m *FileRequestBuilder) CreatePatchRequestInformation(options *FileRequestB
     }
     return requestInfo, nil
 }
-// Delete default PDF linked to this agreement.
+// Delete delete navigation property file for agreements
 func (m *FileRequestBuilder) Delete(options *FileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get default PDF linked to this agreement.
-func (m *FileRequestBuilder) Get(options *FileRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFile, error) {
+func (m *FileRequestBuilder) Get(options *FileRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewAgreementFile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAgreementFileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFile), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileable), nil
 }
 func (m *FileRequestBuilder) Localizations()(*ic78f888972339bcf34b80d7c4800ddb974b3f0f20a8f7c321cf41909a56f17d1.LocalizationsRequestBuilder) {
     return ic78f888972339bcf34b80d7c4800ddb974b3f0f20a8f7c321cf41909a56f17d1.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -167,13 +174,17 @@ func (m *FileRequestBuilder) LocalizationsById(id string)(*i2d4b6344639678e1dd77
     }
     return i2d4b6344639678e1dd779cb456a26ba4351c3e4a09c717bf205c3c77beff31a5.NewAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch default PDF linked to this agreement.
+// Patch update the navigation property file in agreements
 func (m *FileRequestBuilder) Patch(options *FileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

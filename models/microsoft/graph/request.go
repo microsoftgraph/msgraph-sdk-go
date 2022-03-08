@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Request 
+// Request provides operations to manage the identityGovernance singleton.
 type Request struct {
     Entity
     // The identifier of the approval of the request.
@@ -13,7 +13,7 @@ type Request struct {
     // The request completion date time.
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The user who created this request.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // The request creation date time.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Free text field to define any custom data for the request. Not used.
@@ -27,6 +27,10 @@ func NewRequest()(*Request) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRequest(), nil
 }
 // GetApprovalId gets the approvalId property value. The identifier of the approval of the request.
 func (m *Request) GetApprovalId()(*string) {
@@ -45,7 +49,7 @@ func (m *Request) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     }
 }
 // GetCreatedBy gets the createdBy property value. The user who created this request.
-func (m *Request) GetCreatedBy()(*IdentitySet) {
+func (m *Request) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -66,14 +70,6 @@ func (m *Request) GetCustomData()(*string) {
         return nil
     } else {
         return m.customData
-    }
-}
-// GetStatus gets the status property value. The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
-func (m *Request) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,12 +96,12 @@ func (m *Request) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -140,6 +136,14 @@ func (m *Request) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetStatus gets the status property value. The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
+func (m *Request) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *Request) IsNil()(bool) {
     return m == nil
@@ -201,7 +205,7 @@ func (m *Request) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
     }
 }
 // SetCreatedBy sets the createdBy property value. The user who created this request.
-func (m *Request) SetCreatedBy(value *IdentitySet)() {
+func (m *Request) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }

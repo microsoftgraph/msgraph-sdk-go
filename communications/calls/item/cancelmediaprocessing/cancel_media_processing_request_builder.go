@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// CancelMediaProcessingRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.cancelMediaProcessing
+// CancelMediaProcessingRequestBuilder provides operations to call the cancelMediaProcessing method.
 type CancelMediaProcessingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CancelMediaProcessingRequestBuilder struct {
 // CancelMediaProcessingRequestBuilderPostOptions options for Post
 type CancelMediaProcessingRequestBuilderPostOptions struct {
     // 
-    Body *CancelMediaProcessingRequestBody;
+    Body CancelMediaProcessingRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type CancelMediaProcessingResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type cancelMediaProcessingOperation
-    cancelMediaProcessingOperation *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CancelMediaProcessingOperation;
+    cancelMediaProcessingOperation i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CancelMediaProcessingOperationable;
 }
 // NewCancelMediaProcessingResponse instantiates a new cancelMediaProcessingResponse and sets the default values.
 func NewCancelMediaProcessingResponse()(*CancelMediaProcessingResponse) {
@@ -39,6 +39,9 @@ func NewCancelMediaProcessingResponse()(*CancelMediaProcessingResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCancelMediaProcessingResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCancelMediaProcessingResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CancelMediaProcessingResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *CancelMediaProcessingResponse) GetAdditionalData()(map[string]interface
     }
 }
 // GetCancelMediaProcessingOperation gets the cancelMediaProcessingOperation property value. Union type representation for type cancelMediaProcessingOperation
-func (m *CancelMediaProcessingResponse) GetCancelMediaProcessingOperation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CancelMediaProcessingOperation) {
+func (m *CancelMediaProcessingResponse) GetCancelMediaProcessingOperation()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CancelMediaProcessingOperationable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *CancelMediaProcessingResponse) GetCancelMediaProcessingOperation()(*i4a
 func (m *CancelMediaProcessingResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cancelMediaProcessingOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewCancelMediaProcessingOperation() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateCancelMediaProcessingOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCancelMediaProcessingOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CancelMediaProcessingOperation))
+            m.SetCancelMediaProcessingOperation(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CancelMediaProcessingOperationable))
         }
         return nil
     }
@@ -97,7 +100,7 @@ func (m *CancelMediaProcessingResponse) SetAdditionalData(value map[string]inter
     }
 }
 // SetCancelMediaProcessingOperation sets the cancelMediaProcessingOperation property value. Union type representation for type cancelMediaProcessingOperation
-func (m *CancelMediaProcessingResponse) SetCancelMediaProcessingOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CancelMediaProcessingOperation)() {
+func (m *CancelMediaProcessingResponse) SetCancelMediaProcessingOperation(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CancelMediaProcessingOperationable)() {
     if m != nil {
         m.cancelMediaProcessingOperation = value
     }
@@ -111,7 +114,7 @@ func NewCancelMediaProcessingRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *CancelMediaProcessingRequestBuilder) CreatePostRequestInformation(optio
     return requestInfo, nil
 }
 // Post invoke action cancelMediaProcessing
-func (m *CancelMediaProcessingRequestBuilder) Post(options *CancelMediaProcessingRequestBuilderPostOptions)(*CancelMediaProcessingResponse, error) {
+func (m *CancelMediaProcessingRequestBuilder) Post(options *CancelMediaProcessingRequestBuilderPostOptions)(CancelMediaProcessingResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCancelMediaProcessingResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCancelMediaProcessingResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CancelMediaProcessingResponse), nil
+    return res.(CancelMediaProcessingResponseable), nil
 }

@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// TranslateExchangeIdsRequestBody 
+// TranslateExchangeIdsRequestBody provides operations to call the translateExchangeIds method.
 type TranslateExchangeIdsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,36 +23,16 @@ func NewTranslateExchangeIdsRequestBody()(*TranslateExchangeIdsRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTranslateExchangeIdsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTranslateExchangeIdsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTranslateExchangeIdsRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslateExchangeIdsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetInputIds gets the inputIds property value. 
-func (m *TranslateExchangeIdsRequestBody) GetInputIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputIds
-    }
-}
-// GetSourceIdType gets the sourceIdType property value. 
-func (m *TranslateExchangeIdsRequestBody) GetSourceIdType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceIdType
-    }
-}
-// GetTargetIdType gets the targetIdType property value. 
-func (m *TranslateExchangeIdsRequestBody) GetTargetIdType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetIdType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -93,6 +73,30 @@ func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetInputIds gets the inputIds property value. 
+func (m *TranslateExchangeIdsRequestBody) GetInputIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inputIds
+    }
+}
+// GetSourceIdType gets the sourceIdType property value. 
+func (m *TranslateExchangeIdsRequestBody) GetSourceIdType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceIdType
+    }
+}
+// GetTargetIdType gets the targetIdType property value. 
+func (m *TranslateExchangeIdsRequestBody) GetTargetIdType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetIdType
+    }
 }
 func (m *TranslateExchangeIdsRequestBody) IsNil()(bool) {
     return m == nil

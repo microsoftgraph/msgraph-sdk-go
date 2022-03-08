@@ -2,11 +2,15 @@ package branding
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i168a39de35c654bc800a560a691ded9b9c750f40b34eec6803bc74bb436de321 "github.com/microsoftgraph/msgraph-sdk-go/organization/item/branding/backgroundimage"
+    i625149746d2173c240cdb5ccf6f96a6418bef81b4c1b56347b906ab9e5a35569 "github.com/microsoftgraph/msgraph-sdk-go/organization/item/branding/localizations"
+    i99cc01794de417fcebb218075f4694c6c04ca1c01d4b513172621735e6470943 "github.com/microsoftgraph/msgraph-sdk-go/organization/item/branding/squarelogo"
+    id703e605b9325dc66d0eac6d124ef1ade600a85c00e43c39b3c42c5bedc67103 "github.com/microsoftgraph/msgraph-sdk-go/organization/item/branding/bannerlogo"
+    i4f28ff23f1aea33f43fbf35caa93933fb6afdd9a10a1843f53217eda149d6725 "github.com/microsoftgraph/msgraph-sdk-go/organization/item/branding/localizations/item"
 )
 
-// BrandingRequestBuilder builds and executes requests for operations under \organization\{organization-id}\branding
+// BrandingRequestBuilder provides operations to manage the branding property of the microsoft.graph.organization entity.
 type BrandingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,13 +49,19 @@ type BrandingRequestBuilderGetQueryParameters struct {
 // BrandingRequestBuilderPatchOptions options for Patch
 type BrandingRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBranding;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBrandingable;
     // Request headers
     H map[string]string;
     // Request options
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *BrandingRequestBuilder) BackgroundImage()(*i168a39de35c654bc800a560a691ded9b9c750f40b34eec6803bc74bb436de321.BackgroundImageRequestBuilder) {
+    return i168a39de35c654bc800a560a691ded9b9c750f40b34eec6803bc74bb436de321.NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *BrandingRequestBuilder) BannerLogo()(*id703e605b9325dc66d0eac6d124ef1ade600a85c00e43c39b3c42c5bedc67103.BannerLogoRequestBuilder) {
+    return id703e605b9325dc66d0eac6d124ef1ade600a85c00e43c39b3c42c5bedc67103.NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewBrandingRequestBuilderInternal instantiates a new BrandingRequestBuilder and sets the default values.
 func NewBrandingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BrandingRequestBuilder) {
@@ -62,7 +72,7 @@ func NewBrandingRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -133,23 +143,45 @@ func (m *BrandingRequestBuilder) Delete(options *BrandingRequestBuilderDeleteOpt
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get get branding from organization
-func (m *BrandingRequestBuilder) Get(options *BrandingRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBranding, error) {
+func (m *BrandingRequestBuilder) Get(options *BrandingRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBrandingable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewOrganizationalBranding() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOrganizationalBrandingFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBranding), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBrandingable), nil
+}
+func (m *BrandingRequestBuilder) Localizations()(*i625149746d2173c240cdb5ccf6f96a6418bef81b4c1b56347b906ab9e5a35569.LocalizationsRequestBuilder) {
+    return i625149746d2173c240cdb5ccf6f96a6418bef81b4c1b56347b906ab9e5a35569.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// LocalizationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.organization.item.branding.localizations.item collection
+func (m *BrandingRequestBuilder) LocalizationsById(id string)(*i4f28ff23f1aea33f43fbf35caa93933fb6afdd9a10a1843f53217eda149d6725.OrganizationalBrandingLocalizationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["organizationalBrandingLocalization_id"] = id
+    }
+    return i4f28ff23f1aea33f43fbf35caa93933fb6afdd9a10a1843f53217eda149d6725.NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property branding in organization
 func (m *BrandingRequestBuilder) Patch(options *BrandingRequestBuilderPatchOptions)(error) {
@@ -157,9 +189,16 @@ func (m *BrandingRequestBuilder) Patch(options *BrandingRequestBuilderPatchOptio
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
+}
+func (m *BrandingRequestBuilder) SquareLogo()(*i99cc01794de417fcebb218075f4694c6c04ca1c01d4b513172621735e6470943.SquareLogoRequestBuilder) {
+    return i99cc01794de417fcebb218075f4694c6c04ca1c01d4b513172621735e6470943.NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

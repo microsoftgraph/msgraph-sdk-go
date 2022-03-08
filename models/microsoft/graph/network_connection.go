@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// NetworkConnection 
+// NetworkConnection provides operations to manage the security singleton.
 type NetworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -56,6 +56,10 @@ func NewNetworkConnection()(*NetworkConnection) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateNetworkConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNetworkConnectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNetworkConnection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkConnection) GetAdditionalData()(map[string]interface{}) {
@@ -127,102 +131,6 @@ func (m *NetworkConnection) GetDomainRegisteredDateTime()(*i336074805fc853987abe
         return nil
     } else {
         return m.domainRegisteredDateTime
-    }
-}
-// GetLocalDnsName gets the localDnsName property value. The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
-func (m *NetworkConnection) GetLocalDnsName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localDnsName
-    }
-}
-// GetNatDestinationAddress gets the natDestinationAddress property value. Network Address Translation destination IP address.
-func (m *NetworkConnection) GetNatDestinationAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natDestinationAddress
-    }
-}
-// GetNatDestinationPort gets the natDestinationPort property value. Network Address Translation destination port.
-func (m *NetworkConnection) GetNatDestinationPort()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natDestinationPort
-    }
-}
-// GetNatSourceAddress gets the natSourceAddress property value. Network Address Translation source IP address.
-func (m *NetworkConnection) GetNatSourceAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natSourceAddress
-    }
-}
-// GetNatSourcePort gets the natSourcePort property value. Network Address Translation source port.
-func (m *NetworkConnection) GetNatSourcePort()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natSourcePort
-    }
-}
-// GetProtocol gets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
-func (m *NetworkConnection) GetProtocol()(*SecurityNetworkProtocol) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protocol
-    }
-}
-// GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.
-func (m *NetworkConnection) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetSourceAddress gets the sourceAddress property value. Source (i.e. origin) IP address (of the network connection).
-func (m *NetworkConnection) GetSourceAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceAddress
-    }
-}
-// GetSourceLocation gets the sourceLocation property value. Location (by IP address mapping) associated with the source of a network connection.
-func (m *NetworkConnection) GetSourceLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceLocation
-    }
-}
-// GetSourcePort gets the sourcePort property value. Source (i.e. origin) IP port (of the network connection).
-func (m *NetworkConnection) GetSourcePort()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourcePort
-    }
-}
-// GetStatus gets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
-func (m *NetworkConnection) GetStatus()(*ConnectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUrlParameters gets the urlParameters property value. Parameters (suffix) of the destination URL.
-func (m *NetworkConnection) GetUrlParameters()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urlParameters
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -429,6 +337,102 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetLocalDnsName gets the localDnsName property value. The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
+func (m *NetworkConnection) GetLocalDnsName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.localDnsName
+    }
+}
+// GetNatDestinationAddress gets the natDestinationAddress property value. Network Address Translation destination IP address.
+func (m *NetworkConnection) GetNatDestinationAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.natDestinationAddress
+    }
+}
+// GetNatDestinationPort gets the natDestinationPort property value. Network Address Translation destination port.
+func (m *NetworkConnection) GetNatDestinationPort()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.natDestinationPort
+    }
+}
+// GetNatSourceAddress gets the natSourceAddress property value. Network Address Translation source IP address.
+func (m *NetworkConnection) GetNatSourceAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.natSourceAddress
+    }
+}
+// GetNatSourcePort gets the natSourcePort property value. Network Address Translation source port.
+func (m *NetworkConnection) GetNatSourcePort()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.natSourcePort
+    }
+}
+// GetProtocol gets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
+func (m *NetworkConnection) GetProtocol()(*SecurityNetworkProtocol) {
+    if m == nil {
+        return nil
+    } else {
+        return m.protocol
+    }
+}
+// GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.
+func (m *NetworkConnection) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetSourceAddress gets the sourceAddress property value. Source (i.e. origin) IP address (of the network connection).
+func (m *NetworkConnection) GetSourceAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceAddress
+    }
+}
+// GetSourceLocation gets the sourceLocation property value. Location (by IP address mapping) associated with the source of a network connection.
+func (m *NetworkConnection) GetSourceLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceLocation
+    }
+}
+// GetSourcePort gets the sourcePort property value. Source (i.e. origin) IP port (of the network connection).
+func (m *NetworkConnection) GetSourcePort()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourcePort
+    }
+}
+// GetStatus gets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
+func (m *NetworkConnection) GetStatus()(*ConnectionStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUrlParameters gets the urlParameters property value. Parameters (suffix) of the destination URL.
+func (m *NetworkConnection) GetUrlParameters()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.urlParameters
+    }
 }
 func (m *NetworkConnection) IsNil()(bool) {
     return m == nil

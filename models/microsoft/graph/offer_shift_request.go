@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OfferShiftRequest 
+// OfferShiftRequest provides operations to manage the drive singleton.
 type OfferShiftRequest struct {
     ScheduleChangeRequest
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -24,37 +24,9 @@ func NewOfferShiftRequest()(*OfferShiftRequest) {
     }
     return m
 }
-// GetRecipientActionDateTime gets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *OfferShiftRequest) GetRecipientActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientActionDateTime
-    }
-}
-// GetRecipientActionMessage gets the recipientActionMessage property value. Custom message sent by recipient of the offer shift request.
-func (m *OfferShiftRequest) GetRecipientActionMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientActionMessage
-    }
-}
-// GetRecipientUserId gets the recipientUserId property value. User ID of the recipient of the offer shift request.
-func (m *OfferShiftRequest) GetRecipientUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientUserId
-    }
-}
-// GetSenderShiftId gets the senderShiftId property value. User ID of the sender of the offer shift request.
-func (m *OfferShiftRequest) GetSenderShiftId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderShiftId
-    }
+// CreateOfferShiftRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOfferShiftRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOfferShiftRequest(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -100,6 +72,38 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetRecipientActionDateTime gets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *OfferShiftRequest) GetRecipientActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recipientActionDateTime
+    }
+}
+// GetRecipientActionMessage gets the recipientActionMessage property value. Custom message sent by recipient of the offer shift request.
+func (m *OfferShiftRequest) GetRecipientActionMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recipientActionMessage
+    }
+}
+// GetRecipientUserId gets the recipientUserId property value. User ID of the recipient of the offer shift request.
+func (m *OfferShiftRequest) GetRecipientUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recipientUserId
+    }
+}
+// GetSenderShiftId gets the senderShiftId property value. User ID of the sender of the offer shift request.
+func (m *OfferShiftRequest) GetSenderShiftId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.senderShiftId
+    }
 }
 func (m *OfferShiftRequest) IsNil()(bool) {
     return m == nil

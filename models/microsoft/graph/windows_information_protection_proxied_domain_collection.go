@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtectionProxiedDomainCollection 
+// WindowsInformationProtectionProxiedDomainCollection provides operations to manage the deviceAppManagement singleton.
 type WindowsInformationProtectionProxiedDomainCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Display name
     displayName *string;
     // Collection of proxied domains
-    proxiedDomains []ProxiedDomain;
+    proxiedDomains []ProxiedDomainable;
 }
 // NewWindowsInformationProtectionProxiedDomainCollection instantiates a new windowsInformationProtectionProxiedDomainCollection and sets the default values.
 func NewWindowsInformationProtectionProxiedDomainCollection()(*WindowsInformationProtectionProxiedDomainCollection) {
@@ -19,6 +19,10 @@ func NewWindowsInformationProtectionProxiedDomainCollection()(*WindowsInformatio
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsInformationProtectionProxiedDomainCollection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionProxiedDomainCollection) GetAdditionalData()(map[string]interface{}) {
@@ -36,14 +40,6 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetDisplayName()(*
         return m.displayName
     }
 }
-// GetProxiedDomains gets the proxiedDomains property value. Collection of proxied domains
-func (m *WindowsInformationProtectionProxiedDomainCollection) GetProxiedDomains()([]ProxiedDomain) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxiedDomains
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionProxiedDomainCollection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -58,20 +54,28 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetFieldDeserializ
         return nil
     }
     res["proxiedDomains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProxiedDomain() })
+        val, err := n.GetCollectionOfObjectValues(CreateProxiedDomainFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ProxiedDomain, len(val))
+            res := make([]ProxiedDomainable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ProxiedDomain))
+                res[i] = v.(ProxiedDomainable)
             }
             m.SetProxiedDomains(res)
         }
         return nil
     }
     return res
+}
+// GetProxiedDomains gets the proxiedDomains property value. Collection of proxied domains
+func (m *WindowsInformationProtectionProxiedDomainCollection) GetProxiedDomains()([]ProxiedDomainable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.proxiedDomains
+    }
 }
 func (m *WindowsInformationProtectionProxiedDomainCollection) IsNil()(bool) {
     return m == nil
@@ -87,8 +91,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) Serialize(writer i
     if m.GetProxiedDomains() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProxiedDomains()))
         for i, v := range m.GetProxiedDomains() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("proxiedDomains", cast)
         if err != nil {
@@ -116,7 +119,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) SetDisplayName(val
     }
 }
 // SetProxiedDomains sets the proxiedDomains property value. Collection of proxied domains
-func (m *WindowsInformationProtectionProxiedDomainCollection) SetProxiedDomains(value []ProxiedDomain)() {
+func (m *WindowsInformationProtectionProxiedDomainCollection) SetProxiedDomains(value []ProxiedDomainable)() {
     if m != nil {
         m.proxiedDomains = value
     }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ThreatAssessmentRequest 
+// ThreatAssessmentRequest provides operations to manage the informationProtection singleton.
 type ThreatAssessmentRequest struct {
     Entity
     // The threat category. Possible values are: spam, phishing, malware.
@@ -13,7 +13,7 @@ type ThreatAssessmentRequest struct {
     // The content type of threat assessment. Possible values are: mail, url, file.
     contentType *ThreatAssessmentContentType;
     // The threat assessment request creator.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The expected assessment from submitter. Possible values are: block, unblock.
@@ -21,7 +21,7 @@ type ThreatAssessmentRequest struct {
     // The source of the threat assessment request. Possible values are: administrator.
     requestSource *ThreatAssessmentRequestSource;
     // A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-    results []ThreatAssessmentResult;
+    results []ThreatAssessmentResultable;
     // The assessment process status. Possible values are: pending, completed.
     status *ThreatAssessmentStatus;
 }
@@ -31,6 +31,10 @@ func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateThreatAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateThreatAssessmentRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewThreatAssessmentRequest(), nil
 }
 // GetCategory gets the category property value. The threat category. Possible values are: spam, phishing, malware.
 func (m *ThreatAssessmentRequest) GetCategory()(*ThreatCategory) {
@@ -49,7 +53,7 @@ func (m *ThreatAssessmentRequest) GetContentType()(*ThreatAssessmentContentType)
     }
 }
 // GetCreatedBy gets the createdBy property value. The threat assessment request creator.
-func (m *ThreatAssessmentRequest) GetCreatedBy()(*IdentitySet) {
+func (m *ThreatAssessmentRequest) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -70,30 +74,6 @@ func (m *ThreatAssessmentRequest) GetExpectedAssessment()(*ThreatExpectedAssessm
         return nil
     } else {
         return m.expectedAssessment
-    }
-}
-// GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
-func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestSource
-    }
-}
-// GetResults gets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-func (m *ThreatAssessmentRequest) GetResults()([]ThreatAssessmentResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.results
-    }
-}
-// GetStatus gets the status property value. The assessment process status. Possible values are: pending, completed.
-func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,12 +100,12 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -160,14 +140,14 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["results"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewThreatAssessmentResult() })
+        val, err := n.GetCollectionOfObjectValues(CreateThreatAssessmentResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ThreatAssessmentResult, len(val))
+            res := make([]ThreatAssessmentResultable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ThreatAssessmentResult))
+                res[i] = v.(ThreatAssessmentResultable)
             }
             m.SetResults(res)
         }
@@ -184,6 +164,30 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
+func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestSource
+    }
+}
+// GetResults gets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
+func (m *ThreatAssessmentRequest) GetResults()([]ThreatAssessmentResultable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.results
+    }
+}
+// GetStatus gets the status property value. The assessment process status. Possible values are: pending, completed.
+func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *ThreatAssessmentRequest) IsNil()(bool) {
     return m == nil
@@ -237,8 +241,7 @@ func (m *ThreatAssessmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetResults() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResults()))
         for i, v := range m.GetResults() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("results", cast)
         if err != nil {
@@ -267,7 +270,7 @@ func (m *ThreatAssessmentRequest) SetContentType(value *ThreatAssessmentContentT
     }
 }
 // SetCreatedBy sets the createdBy property value. The threat assessment request creator.
-func (m *ThreatAssessmentRequest) SetCreatedBy(value *IdentitySet)() {
+func (m *ThreatAssessmentRequest) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -291,7 +294,7 @@ func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentReques
     }
 }
 // SetResults sets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-func (m *ThreatAssessmentRequest) SetResults(value []ThreatAssessmentResult)() {
+func (m *ThreatAssessmentRequest) SetResults(value []ThreatAssessmentResultable)() {
     if m != nil {
         m.results = value
     }

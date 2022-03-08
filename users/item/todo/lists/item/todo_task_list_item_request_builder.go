@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     if45dc72f3e02b5fd2949bbcfca9e82c09320d6e4ce0c6aa6f9c3507c3d63c1fa "github.com/microsoftgraph/msgraph-sdk-go/users/item/todo/lists/item/extensions"
     ifa2e26d54424700e30d71b507b8ffed3e154c962f224a028c2f02c3d9e3bef39 "github.com/microsoftgraph/msgraph-sdk-go/users/item/todo/lists/item/tasks"
@@ -10,7 +9,7 @@ import (
     i9f2e822407f0ce614d4bbd55f26b0c76dd2025c6ab5f67b5d2567ed17bbee91c "github.com/microsoftgraph/msgraph-sdk-go/users/item/todo/lists/item/tasks/item"
 )
 
-// TodoTaskListItemRequestBuilder builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}
+// TodoTaskListItemRequestBuilder provides operations to manage the lists property of the microsoft.graph.todo entity.
 type TodoTaskListItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +48,7 @@ type TodoTaskListItemRequestBuilderGetQueryParameters struct {
 // TodoTaskListItemRequestBuilderPatchOptions options for Patch
 type TodoTaskListItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTaskList;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTaskListable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +65,7 @@ func NewTodoTaskListItemRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +75,7 @@ func NewTodoTaskListItemRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams["request-raw-url"] = rawUrl
     return NewTodoTaskListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the task lists in the users mailbox.
+// CreateDeleteRequestInformation delete navigation property lists for users
 func (m *TodoTaskListItemRequestBuilder) CreateDeleteRequestInformation(options *TodoTaskListItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +112,7 @@ func (m *TodoTaskListItemRequestBuilder) CreateGetRequestInformation(options *To
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the task lists in the users mailbox.
+// CreatePatchRequestInformation update the navigation property lists in users
 func (m *TodoTaskListItemRequestBuilder) CreatePatchRequestInformation(options *TodoTaskListItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,13 +130,17 @@ func (m *TodoTaskListItemRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete the task lists in the users mailbox.
+// Delete delete navigation property lists for users
 func (m *TodoTaskListItemRequestBuilder) Delete(options *TodoTaskListItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -158,24 +161,32 @@ func (m *TodoTaskListItemRequestBuilder) ExtensionsById(id string)(*i2a8ddcb9d28
     return i2a8ddcb9d28855cae25ca9abfc54cecc8c5aa2d65e13c350c7a83dee4748b97c.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the task lists in the users mailbox.
-func (m *TodoTaskListItemRequestBuilder) Get(options *TodoTaskListItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTaskList, error) {
+func (m *TodoTaskListItemRequestBuilder) Get(options *TodoTaskListItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTaskListable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewTodoTaskList() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTodoTaskListFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTaskList), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTaskListable), nil
 }
-// Patch the task lists in the users mailbox.
+// Patch update the navigation property lists in users
 func (m *TodoTaskListItemRequestBuilder) Patch(options *TodoTaskListItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -2,13 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i713364bc58182315d78e707b6ab95f7accc225f8745c703797a0109bdee3c372 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/directory/roledefinitions/item/inheritspermissionsfrom"
     i5260f641e8a00ffa3f24794950dce3f61dd8e898bce562d50df416785f9e7e21 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/directory/roledefinitions/item/inheritspermissionsfrom/item"
 )
 
-// UnifiedRoleDefinitionItemRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleDefinitions\{unifiedRoleDefinition-id}
+// UnifiedRoleDefinitionItemRequestBuilder provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
 type UnifiedRoleDefinitionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +46,7 @@ type UnifiedRoleDefinitionItemRequestBuilderGetQueryParameters struct {
 // UnifiedRoleDefinitionItemRequestBuilderPatchOptions options for Patch
 type UnifiedRoleDefinitionItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +63,7 @@ func NewUnifiedRoleDefinitionItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +73,7 @@ func NewUnifiedRoleDefinitionItemRequestBuilder(rawUrl string, requestAdapter id
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+// CreateDeleteRequestInformation delete navigation property roleDefinitions for roleManagement
 func (m *UnifiedRoleDefinitionItemRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleDefinitionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +110,7 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+// CreatePatchRequestInformation update the navigation property roleDefinitions in roleManagement
 func (m *UnifiedRoleDefinitionItemRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleDefinitionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,29 +128,37 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+// Delete delete navigation property roleDefinitions for roleManagement
 func (m *UnifiedRoleDefinitionItemRequestBuilder) Delete(options *UnifiedRoleDefinitionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-func (m *UnifiedRoleDefinitionItemRequestBuilder) Get(options *UnifiedRoleDefinitionItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition, error) {
+func (m *UnifiedRoleDefinitionItemRequestBuilder) Get(options *UnifiedRoleDefinitionItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewUnifiedRoleDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUnifiedRoleDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable), nil
 }
 func (m *UnifiedRoleDefinitionItemRequestBuilder) InheritsPermissionsFrom()(*i713364bc58182315d78e707b6ab95f7accc225f8745c703797a0109bdee3c372.InheritsPermissionsFromRequestBuilder) {
     return i713364bc58182315d78e707b6ab95f7accc225f8745c703797a0109bdee3c372.NewInheritsPermissionsFromRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -167,13 +174,17 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) InheritsPermissionsFromById(id
     }
     return i5260f641e8a00ffa3f24794950dce3f61dd8e898bce562d50df416785f9e7e21.NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+// Patch update the navigation property roleDefinitions in roleManagement
 func (m *UnifiedRoleDefinitionItemRequestBuilder) Patch(options *UnifiedRoleDefinitionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

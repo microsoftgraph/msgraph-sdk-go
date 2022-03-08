@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageCatalog 
+// AccessPackageCatalog provides operations to manage the identityGovernance singleton.
 type AccessPackageCatalog struct {
     Entity
     // The access packages in this catalog. Read-only. Nullable.
-    accessPackages []AccessPackage;
+    accessPackages []AccessPackageable;
     // Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
     catalogType *AccessPackageCatalogType;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -32,8 +32,12 @@ func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     }
     return m
 }
+// CreateAccessPackageCatalogFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageCatalogFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageCatalog(), nil
+}
 // GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
-func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackage) {
+func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackageable) {
     if m == nil {
         return nil
     } else {
@@ -72,42 +76,18 @@ func (m *AccessPackageCatalog) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsExternallyVisible gets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
-func (m *AccessPackageCatalog) GetIsExternallyVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isExternallyVisible
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
-// GetState gets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
-func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalogState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackage() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackage, len(val))
+            res := make([]AccessPackageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackage))
+                res[i] = v.(AccessPackageable)
             }
             m.SetAccessPackages(res)
         }
@@ -185,6 +165,30 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(interface
     }
     return res
 }
+// GetIsExternallyVisible gets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
+func (m *AccessPackageCatalog) GetIsExternallyVisible()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isExternallyVisible
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
+// GetState gets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
+func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalogState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
 func (m *AccessPackageCatalog) IsNil()(bool) {
     return m == nil
 }
@@ -197,8 +201,7 @@ func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetAccessPackages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackages()))
         for i, v := range m.GetAccessPackages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackages", cast)
         if err != nil {
@@ -252,7 +255,7 @@ func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     return nil
 }
 // SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
-func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackage)() {
+func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackageable)() {
     if m != nil {
         m.accessPackages = value
     }

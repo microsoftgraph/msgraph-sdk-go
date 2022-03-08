@@ -2,11 +2,11 @@ package appdefinitions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i5b1858828d138beaaa38fa342cfdc7e6706aa05ff037a12803fd15f913858514 "github.com/microsoftgraph/msgraph-sdk-go/appcatalogs/teamsapps/item/appdefinitions/count"
 )
 
-// AppDefinitionsRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions
+// AppDefinitionsRequestBuilder provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
 type AppDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AppDefinitionsRequestBuilderGetQueryParameters struct {
 // AppDefinitionsRequestBuilderPostOptions options for Post
 type AppDefinitionsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAppDefinitionsRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAppDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AppDefinitionsRequestBuilder) Count()(*i5b1858828d138beaaa38fa342cfdc7e6706aa05ff037a12803fd15f913858514.CountRequestBuilder) {
+    return i5b1858828d138beaaa38fa342cfdc7e6706aa05ff037a12803fd15f913858514.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the details for each version of the app.
 func (m *AppDefinitionsRequestBuilder) CreateGetRequestInformation(options *AppDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AppDefinitionsRequestBuilder) CreateGetRequestInformation(options *AppD
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the details for each version of the app.
+// CreatePostRequestInformation create new navigation property to appDefinitions for appCatalogs
 func (m *AppDefinitionsRequestBuilder) CreatePostRequestInformation(options *AppDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AppDefinitionsRequestBuilder) CreatePostRequestInformation(options *App
     return requestInfo, nil
 }
 // Get the details for each version of the app.
-func (m *AppDefinitionsRequestBuilder) Get(options *AppDefinitionsRequestBuilderGetOptions)(*AppDefinitionsResponse, error) {
+func (m *AppDefinitionsRequestBuilder) Get(options *AppDefinitionsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppDefinitionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTeamsAppDefinitionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AppDefinitionsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinitionCollectionResponseable), nil
 }
-// Post the details for each version of the app.
-func (m *AppDefinitionsRequestBuilder) Post(options *AppDefinitionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition, error) {
+// Post create new navigation property to appDefinitions for appCatalogs
+func (m *AppDefinitionsRequestBuilder) Post(options *AppDefinitionsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewTeamsAppDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTeamsAppDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinitionable), nil
 }

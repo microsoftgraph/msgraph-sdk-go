@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppRole 
+// AppRole provides operations to manage the collection of application entities.
 type AppRole struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,6 +29,10 @@ func NewAppRole()(*AppRole) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAppRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAppRoleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAppRole(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppRole) GetAdditionalData()(map[string]interface{}) {
@@ -60,38 +64,6 @@ func (m *AppRole) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetId gets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
-func (m *AppRole) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetIsEnabled gets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
-func (m *AppRole) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
-}
-// GetOrigin gets the origin property value. Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
-func (m *AppRole) GetOrigin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.origin
-    }
-}
-// GetValue gets the value property value. Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
-func (m *AppRole) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -172,6 +144,38 @@ func (m *AppRole) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetId gets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
+func (m *AppRole) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetIsEnabled gets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
+func (m *AppRole) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
+}
+// GetOrigin gets the origin property value. Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
+func (m *AppRole) GetOrigin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.origin
+    }
+}
+// GetValue gets the value property value. Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
+func (m *AppRole) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *AppRole) IsNil()(bool) {
     return m == nil

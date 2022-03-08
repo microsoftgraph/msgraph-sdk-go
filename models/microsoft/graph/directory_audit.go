@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DirectoryAudit 
+// DirectoryAudit provides operations to manage the auditLogRoot singleton.
 type DirectoryAudit struct {
     Entity
     // Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -13,13 +13,13 @@ type DirectoryAudit struct {
     // Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
     activityDisplayName *string;
     // Indicates additional details on the activity.
-    additionalDetails []KeyValue;
+    additionalDetails []KeyValueable;
     // Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
     category *string;
     // Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
     correlationId *string;
     // 
-    initiatedBy *AuditActivityInitiator;
+    initiatedBy AuditActivityInitiatorable;
     // Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
     loggedByService *string;
     // 
@@ -29,7 +29,7 @@ type DirectoryAudit struct {
     // Indicates the reason for failure if the result is failure or timeout.
     resultReason *string;
     // Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
-    targetResources []TargetResource;
+    targetResources []TargetResourceable;
 }
 // NewDirectoryAudit instantiates a new directoryAudit and sets the default values.
 func NewDirectoryAudit()(*DirectoryAudit) {
@@ -37,6 +37,10 @@ func NewDirectoryAudit()(*DirectoryAudit) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDirectoryAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDirectoryAuditFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDirectoryAudit(), nil
 }
 // GetActivityDateTime gets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *DirectoryAudit) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -55,7 +59,7 @@ func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
     }
 }
 // GetAdditionalDetails gets the additionalDetails property value. Indicates additional details on the activity.
-func (m *DirectoryAudit) GetAdditionalDetails()([]KeyValue) {
+func (m *DirectoryAudit) GetAdditionalDetails()([]KeyValueable) {
     if m == nil {
         return nil
     } else {
@@ -76,54 +80,6 @@ func (m *DirectoryAudit) GetCorrelationId()(*string) {
         return nil
     } else {
         return m.correlationId
-    }
-}
-// GetInitiatedBy gets the initiatedBy property value. 
-func (m *DirectoryAudit) GetInitiatedBy()(*AuditActivityInitiator) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedBy
-    }
-}
-// GetLoggedByService gets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
-func (m *DirectoryAudit) GetLoggedByService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.loggedByService
-    }
-}
-// GetOperationType gets the operationType property value. 
-func (m *DirectoryAudit) GetOperationType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationType
-    }
-}
-// GetResult gets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
-func (m *DirectoryAudit) GetResult()(*OperationResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.result
-    }
-}
-// GetResultReason gets the resultReason property value. Indicates the reason for failure if the result is failure or timeout.
-func (m *DirectoryAudit) GetResultReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultReason
-    }
-}
-// GetTargetResources gets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
-func (m *DirectoryAudit) GetTargetResources()([]TargetResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetResources
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,14 +106,14 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["additionalDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValue, len(val))
+            res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValue))
+                res[i] = v.(KeyValueable)
             }
             m.SetAdditionalDetails(res)
         }
@@ -184,12 +140,12 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["initiatedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuditActivityInitiator() })
+        val, err := n.GetObjectValue(CreateAuditActivityInitiatorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInitiatedBy(val.(*AuditActivityInitiator))
+            m.SetInitiatedBy(val.(AuditActivityInitiatorable))
         }
         return nil
     }
@@ -234,20 +190,68 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["targetResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTargetResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateTargetResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TargetResource, len(val))
+            res := make([]TargetResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TargetResource))
+                res[i] = v.(TargetResourceable)
             }
             m.SetTargetResources(res)
         }
         return nil
     }
     return res
+}
+// GetInitiatedBy gets the initiatedBy property value. 
+func (m *DirectoryAudit) GetInitiatedBy()(AuditActivityInitiatorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.initiatedBy
+    }
+}
+// GetLoggedByService gets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
+func (m *DirectoryAudit) GetLoggedByService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.loggedByService
+    }
+}
+// GetOperationType gets the operationType property value. 
+func (m *DirectoryAudit) GetOperationType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operationType
+    }
+}
+// GetResult gets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
+func (m *DirectoryAudit) GetResult()(*OperationResult) {
+    if m == nil {
+        return nil
+    } else {
+        return m.result
+    }
+}
+// GetResultReason gets the resultReason property value. Indicates the reason for failure if the result is failure or timeout.
+func (m *DirectoryAudit) GetResultReason()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultReason
+    }
+}
+// GetTargetResources gets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
+func (m *DirectoryAudit) GetTargetResources()([]TargetResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetResources
+    }
 }
 func (m *DirectoryAudit) IsNil()(bool) {
     return m == nil
@@ -273,8 +277,7 @@ func (m *DirectoryAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetAdditionalDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalDetails()))
         for i, v := range m.GetAdditionalDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("additionalDetails", cast)
         if err != nil {
@@ -327,8 +330,7 @@ func (m *DirectoryAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetTargetResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTargetResources()))
         for i, v := range m.GetTargetResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("targetResources", cast)
         if err != nil {
@@ -350,7 +352,7 @@ func (m *DirectoryAudit) SetActivityDisplayName(value *string)() {
     }
 }
 // SetAdditionalDetails sets the additionalDetails property value. Indicates additional details on the activity.
-func (m *DirectoryAudit) SetAdditionalDetails(value []KeyValue)() {
+func (m *DirectoryAudit) SetAdditionalDetails(value []KeyValueable)() {
     if m != nil {
         m.additionalDetails = value
     }
@@ -368,7 +370,7 @@ func (m *DirectoryAudit) SetCorrelationId(value *string)() {
     }
 }
 // SetInitiatedBy sets the initiatedBy property value. 
-func (m *DirectoryAudit) SetInitiatedBy(value *AuditActivityInitiator)() {
+func (m *DirectoryAudit) SetInitiatedBy(value AuditActivityInitiatorable)() {
     if m != nil {
         m.initiatedBy = value
     }
@@ -398,7 +400,7 @@ func (m *DirectoryAudit) SetResultReason(value *string)() {
     }
 }
 // SetTargetResources sets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
-func (m *DirectoryAudit) SetTargetResources(value []TargetResource)() {
+func (m *DirectoryAudit) SetTargetResources(value []TargetResourceable)() {
     if m != nil {
         m.targetResources = value
     }

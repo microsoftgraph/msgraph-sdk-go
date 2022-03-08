@@ -2,11 +2,11 @@ package offershiftrequests
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i12a804a71cfa9c7ef74539ef9045f395820b21de615b2b4a2920f349ad1053b3 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/schedule/offershiftrequests/count"
 )
 
-// OfferShiftRequestsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\offerShiftRequests
+// OfferShiftRequestsRequestBuilder provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
 type OfferShiftRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type OfferShiftRequestsRequestBuilderGetQueryParameters struct {
 // OfferShiftRequestsRequestBuilderPostOptions options for Post
 type OfferShiftRequestsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OfferShiftRequest;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OfferShiftRequestable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewOfferShiftRequestsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewOfferShiftRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOfferShiftRequestsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *OfferShiftRequestsRequestBuilder) Count()(*i12a804a71cfa9c7ef74539ef9045f395820b21de615b2b4a2920f349ad1053b3.CountRequestBuilder) {
+    return i12a804a71cfa9c7ef74539ef9045f395820b21de615b2b4a2920f349ad1053b3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get offerShiftRequests from teams
 func (m *OfferShiftRequestsRequestBuilder) CreateGetRequestInformation(options *OfferShiftRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *OfferShiftRequestsRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get get offerShiftRequests from teams
-func (m *OfferShiftRequestsRequestBuilder) Get(options *OfferShiftRequestsRequestBuilderGetOptions)(*OfferShiftRequestsResponse, error) {
+func (m *OfferShiftRequestsRequestBuilder) Get(options *OfferShiftRequestsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OfferShiftRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOfferShiftRequestsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOfferShiftRequestCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*OfferShiftRequestsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OfferShiftRequestCollectionResponseable), nil
 }
 // Post create new navigation property to offerShiftRequests for teams
-func (m *OfferShiftRequestsRequestBuilder) Post(options *OfferShiftRequestsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OfferShiftRequest, error) {
+func (m *OfferShiftRequestsRequestBuilder) Post(options *OfferShiftRequestsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OfferShiftRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewOfferShiftRequest() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOfferShiftRequestFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OfferShiftRequest), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OfferShiftRequestable), nil
 }

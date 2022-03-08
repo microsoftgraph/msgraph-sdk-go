@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AlternativeSecurityId 
+// AlternativeSecurityId provides operations to manage the drive singleton.
 type AlternativeSecurityId struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewAlternativeSecurityId()(*AlternativeSecurityId) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAlternativeSecurityIdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAlternativeSecurityIdFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAlternativeSecurityId(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlternativeSecurityId) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIdentityProvider gets the identityProvider property value. For internal use only
-func (m *AlternativeSecurityId) GetIdentityProvider()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityProvider
-    }
-}
-// GetKey gets the key property value. For internal use only
-func (m *AlternativeSecurityId) GetKey()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
-}
-// GetType gets the type property value. For internal use only
-func (m *AlternativeSecurityId) GetType()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetIdentityProvider gets the identityProvider property value. For internal use only
+func (m *AlternativeSecurityId) GetIdentityProvider()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.identityProvider
+    }
+}
+// GetKey gets the key property value. For internal use only
+func (m *AlternativeSecurityId) GetKey()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
+}
+// GetType gets the type property value. For internal use only
+func (m *AlternativeSecurityId) GetType()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *AlternativeSecurityId) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtectionNetworkLearningSummary 
+// WindowsInformationProtectionNetworkLearningSummary provides operations to manage the deviceManagement singleton.
 type WindowsInformationProtectionNetworkLearningSummary struct {
     Entity
     // Device Count
@@ -19,20 +19,16 @@ func NewWindowsInformationProtectionNetworkLearningSummary()(*WindowsInformation
     }
     return m
 }
+// CreateWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsInformationProtectionNetworkLearningSummary(), nil
+}
 // GetDeviceCount gets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetDeviceCount()(*int32) {
     if m == nil {
         return nil
     } else {
         return m.deviceCount
-    }
-}
-// GetUrl gets the url property value. Website url
-func (m *WindowsInformationProtectionNetworkLearningSummary) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,6 +55,14 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserialize
         return nil
     }
     return res
+}
+// GetUrl gets the url property value. Website url
+func (m *WindowsInformationProtectionNetworkLearningSummary) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
 }
 func (m *WindowsInformationProtectionNetworkLearningSummary) IsNil()(bool) {
     return m == nil

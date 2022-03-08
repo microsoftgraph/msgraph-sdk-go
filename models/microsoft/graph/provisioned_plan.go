@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProvisionedPlan 
+// ProvisionedPlan provides operations to manage the drive singleton.
 type ProvisionedPlan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewProvisionedPlan()(*ProvisionedPlan) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateProvisionedPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProvisionedPlanFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProvisionedPlan(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisionedPlan) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *ProvisionedPlan) GetCapabilityStatus()(*string) {
         return nil
     } else {
         return m.capabilityStatus
-    }
-}
-// GetProvisioningStatus gets the provisioningStatus property value. For example, 'Success'.
-func (m *ProvisionedPlan) GetProvisioningStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningStatus
-    }
-}
-// GetService gets the service property value. The name of the service; for example, 'AccessControlS2S'
-func (m *ProvisionedPlan) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *ProvisionedPlan) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetProvisioningStatus gets the provisioningStatus property value. For example, 'Success'.
+func (m *ProvisionedPlan) GetProvisioningStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisioningStatus
+    }
+}
+// GetService gets the service property value. The name of the service; for example, 'AccessControlS2S'
+func (m *ProvisionedPlan) GetService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.service
+    }
 }
 func (m *ProvisionedPlan) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// IncidentReportRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\issues\{serviceHealthIssue-id}\microsoft.graph.incidentReport()
+// IncidentReportRequestBuilder provides operations to call the incidentReport method.
 type IncidentReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewIncidentReportRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *IncidentReportRequestBuilder) CreateGetRequestInformation(options *Inci
     return requestInfo, nil
 }
 // Get invoke function incidentReport
-func (m *IncidentReportRequestBuilder) Get(options *IncidentReportRequestBuilderGetOptions)([]byte, error) {
+func (m *IncidentReportRequestBuilder) Get(options *IncidentReportRequestBuilderGetOptions)(IncidentReportResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateIncidentReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(IncidentReportResponseable), nil
 }

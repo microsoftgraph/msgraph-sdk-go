@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UpdateWindowsDeviceAccountActionParameter 
+// UpdateWindowsDeviceAccountActionParameter provides operations to call the updateWindowsDeviceAccount method.
 type UpdateWindowsDeviceAccountActionParameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Not yet documented
     calendarSyncEnabled *bool;
     // Not yet documented
-    deviceAccount *WindowsDeviceAccount;
+    deviceAccount WindowsDeviceAccountable;
     // Not yet documented
     deviceAccountEmail *string;
     // Not yet documented
@@ -27,6 +27,10 @@ func NewUpdateWindowsDeviceAccountActionParameter()(*UpdateWindowsDeviceAccountA
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateWindowsDeviceAccountActionParameter(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindowsDeviceAccountActionParameter) GetAdditionalData()(map[string]interface{}) {
@@ -45,7 +49,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetCalendarSyncEnabled()(*bo
     }
 }
 // GetDeviceAccount gets the deviceAccount property value. Not yet documented
-func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccount()(*WindowsDeviceAccount) {
+func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccount()(WindowsDeviceAccountable) {
     if m == nil {
         return nil
     } else {
@@ -68,22 +72,6 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetExchangeServer()(*string)
         return m.exchangeServer
     }
 }
-// GetPasswordRotationEnabled gets the passwordRotationEnabled property value. Not yet documented
-func (m *UpdateWindowsDeviceAccountActionParameter) GetPasswordRotationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRotationEnabled
-    }
-}
-// GetSessionInitiationProtocalAddress gets the sessionInitiationProtocalAddress property value. Not yet documented
-func (m *UpdateWindowsDeviceAccountActionParameter) GetSessionInitiationProtocalAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionInitiationProtocalAddress
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -98,12 +86,12 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         return nil
     }
     res["deviceAccount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsDeviceAccount() })
+        val, err := n.GetObjectValue(CreateWindowsDeviceAccountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceAccount(val.(*WindowsDeviceAccount))
+            m.SetDeviceAccount(val.(WindowsDeviceAccountable))
         }
         return nil
     }
@@ -148,6 +136,22 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         return nil
     }
     return res
+}
+// GetPasswordRotationEnabled gets the passwordRotationEnabled property value. Not yet documented
+func (m *UpdateWindowsDeviceAccountActionParameter) GetPasswordRotationEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passwordRotationEnabled
+    }
+}
+// GetSessionInitiationProtocalAddress gets the sessionInitiationProtocalAddress property value. Not yet documented
+func (m *UpdateWindowsDeviceAccountActionParameter) GetSessionInitiationProtocalAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sessionInitiationProtocalAddress
+    }
 }
 func (m *UpdateWindowsDeviceAccountActionParameter) IsNil()(bool) {
     return m == nil
@@ -211,7 +215,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) SetCalendarSyncEnabled(value
     }
 }
 // SetDeviceAccount sets the deviceAccount property value. Not yet documented
-func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccount(value *WindowsDeviceAccount)() {
+func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccount(value WindowsDeviceAccountable)() {
     if m != nil {
         m.deviceAccount = value
     }

@@ -2,11 +2,11 @@ package files
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    id3c46667e45113503457e4073e76118d97a07b8c0010b567eee8efa8a8ba9b84 "github.com/microsoftgraph/msgraph-sdk-go/agreements/item/files/count"
 )
 
-// FilesRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}\files
+// FilesRequestBuilder provides operations to manage the files property of the microsoft.graph.agreement entity.
 type FilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type FilesRequestBuilderGetQueryParameters struct {
 // FilesRequestBuilderPostOptions options for Post
 type FilesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalization;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalizationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewFilesRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewFilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *FilesRequestBuilder) Count()(*id3c46667e45113503457e4073e76118d97a07b8c0010b567eee8efa8a8ba9b84.CountRequestBuilder) {
+    return id3c46667e45113503457e4073e76118d97a07b8c0010b567eee8efa8a8ba9b84.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
 func (m *FilesRequestBuilder) CreateGetRequestInformation(options *FilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *FilesRequestBuilder) CreateGetRequestInformation(options *FilesRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// CreatePostRequestInformation create new navigation property to files for agreements
 func (m *FilesRequestBuilder) CreatePostRequestInformation(options *FilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *FilesRequestBuilder) CreatePostRequestInformation(options *FilesRequest
     return requestInfo, nil
 }
 // Get pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
-func (m *FilesRequestBuilder) Get(options *FilesRequestBuilderGetOptions)(*FilesResponse, error) {
+func (m *FilesRequestBuilder) Get(options *FilesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalizationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAgreementFileLocalizationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*FilesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalizationCollectionResponseable), nil
 }
-// Post pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
-func (m *FilesRequestBuilder) Post(options *FilesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalization, error) {
+// Post create new navigation property to files for agreements
+func (m *FilesRequestBuilder) Post(options *FilesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalizationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewAgreementFileLocalization() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAgreementFileLocalizationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalization), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalizationable), nil
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedAppPolicy 
+// ManagedAppPolicy provides operations to manage the deviceAppManagement singleton.
 type ManagedAppPolicy struct {
     Entity
     // The date and time the policy was created.
@@ -25,6 +25,10 @@ func NewManagedAppPolicy()(*ManagedAppPolicy) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateManagedAppPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedAppPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedAppPolicy(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the policy was created.
 func (m *ManagedAppPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -48,22 +52,6 @@ func (m *ManagedAppPolicy) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last time the policy was modified.
-func (m *ManagedAppPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetVersion gets the version property value. Version of the entity.
-func (m *ManagedAppPolicy) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +108,22 @@ func (m *ManagedAppPolicy) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last time the policy was modified.
+func (m *ManagedAppPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetVersion gets the version property value. Version of the entity.
+func (m *ManagedAppPolicy) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *ManagedAppPolicy) IsNil()(bool) {
     return m == nil

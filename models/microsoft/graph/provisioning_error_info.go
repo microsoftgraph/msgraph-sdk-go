@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProvisioningErrorInfo 
+// ProvisioningErrorInfo provides operations to manage the auditLogRoot singleton.
 type ProvisioningErrorInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,6 +25,10 @@ func NewProvisioningErrorInfo()(*ProvisioningErrorInfo) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateProvisioningErrorInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProvisioningErrorInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProvisioningErrorInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningErrorInfo) GetAdditionalData()(map[string]interface{}) {
@@ -56,22 +60,6 @@ func (m *ProvisioningErrorInfo) GetErrorCode()(*string) {
         return nil
     } else {
         return m.errorCode
-    }
-}
-// GetReason gets the reason property value. Summarizes the status and describes why the status happened.
-func (m *ProvisioningErrorInfo) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
-}
-// GetRecommendedAction gets the recommendedAction property value. Provides the resolution for the corresponding error.
-func (m *ProvisioningErrorInfo) GetRecommendedAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedAction
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +116,22 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetReason gets the reason property value. Summarizes the status and describes why the status happened.
+func (m *ProvisioningErrorInfo) GetReason()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reason
+    }
+}
+// GetRecommendedAction gets the recommendedAction property value. Provides the resolution for the corresponding error.
+func (m *ProvisioningErrorInfo) GetRecommendedAction()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendedAction
+    }
 }
 func (m *ProvisioningErrorInfo) IsNil()(bool) {
     return m == nil

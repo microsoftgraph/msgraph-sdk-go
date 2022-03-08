@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// AddGroupRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}\microsoft.graph.addGroup
+// AddGroupRequestBuilder provides operations to call the addGroup method.
 type AddGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AddGroupRequestBuilder struct {
 // AddGroupRequestBuilderPostOptions options for Post
 type AddGroupRequestBuilderPostOptions struct {
     // 
-    Body *AddGroupRequestBody;
+    Body AddGroupRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewAddGroupRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *AddGroupRequestBuilder) CreatePostRequestInformation(options *AddGroupR
     return requestInfo, nil
 }
 // Post invoke action addGroup
-func (m *AddGroupRequestBuilder) Post(options *AddGroupRequestBuilderPostOptions)(*bool, error) {
+func (m *AddGroupRequestBuilder) Post(options *AddGroupRequestBuilderPostOptions)(AddGroupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAddGroupResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(AddGroupResponseable), nil
 }

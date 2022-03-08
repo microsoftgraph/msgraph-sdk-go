@@ -2,12 +2,11 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i6cd25a834a6842f0c9cdba7f1e661c88c86a29b8b8c3d1a5c533ed7a405d8d07 "github.com/microsoftgraph/msgraph-sdk-go/admin/serviceannouncement/issues/item/incidentreport"
 )
 
-// ServiceHealthIssueItemRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\issues\{serviceHealthIssue-id}
+// ServiceHealthIssueItemRequestBuilder provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
 type ServiceHealthIssueItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +45,7 @@ type ServiceHealthIssueItemRequestBuilderGetQueryParameters struct {
 // ServiceHealthIssueItemRequestBuilderPatchOptions options for Patch
 type ServiceHealthIssueItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssueable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +62,7 @@ func NewServiceHealthIssueItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -73,7 +72,7 @@ func NewServiceHealthIssueItemRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams["request-raw-url"] = rawUrl
     return NewServiceHealthIssueItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// CreateDeleteRequestInformation delete navigation property issues for admin
 func (m *ServiceHealthIssueItemRequestBuilder) CreateDeleteRequestInformation(options *ServiceHealthIssueItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +109,7 @@ func (m *ServiceHealthIssueItemRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// CreatePatchRequestInformation update the navigation property issues in admin
 func (m *ServiceHealthIssueItemRequestBuilder) CreatePatchRequestInformation(options *ServiceHealthIssueItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,41 +127,53 @@ func (m *ServiceHealthIssueItemRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Delete a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// Delete delete navigation property issues for admin
 func (m *ServiceHealthIssueItemRequestBuilder) Delete(options *ServiceHealthIssueItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
-func (m *ServiceHealthIssueItemRequestBuilder) Get(options *ServiceHealthIssueItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue, error) {
+func (m *ServiceHealthIssueItemRequestBuilder) Get(options *ServiceHealthIssueItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssueable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewServiceHealthIssue() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateServiceHealthIssueFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssueable), nil
 }
-// IncidentReport builds and executes requests for operations under \admin\serviceAnnouncement\issues\{serviceHealthIssue-id}\microsoft.graph.incidentReport()
+// IncidentReport provides operations to call the incidentReport method.
 func (m *ServiceHealthIssueItemRequestBuilder) IncidentReport()(*i6cd25a834a6842f0c9cdba7f1e661c88c86a29b8b8c3d1a5c533ed7a405d8d07.IncidentReportRequestBuilder) {
     return i6cd25a834a6842f0c9cdba7f1e661c88c86a29b8b8c3d1a5c533ed7a405d8d07.NewIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// Patch update the navigation property issues in admin
 func (m *ServiceHealthIssueItemRequestBuilder) Patch(options *ServiceHealthIssueItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

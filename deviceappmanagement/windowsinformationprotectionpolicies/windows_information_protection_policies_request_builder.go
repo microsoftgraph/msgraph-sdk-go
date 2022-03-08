@@ -2,11 +2,11 @@ package windowsinformationprotectionpolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    ibc58830da98c47af6682206a063fa0f0272c69b0fdff3cf16e488ad89f591a40 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/windowsinformationprotectionpolicies/count"
 )
 
-// WindowsInformationProtectionPoliciesRequestBuilder builds and executes requests for operations under \deviceAppManagement\windowsInformationProtectionPolicies
+// WindowsInformationProtectionPoliciesRequestBuilder provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
 type WindowsInformationProtectionPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type WindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters struct
 // WindowsInformationProtectionPoliciesRequestBuilderPostOptions options for Post
 type WindowsInformationProtectionPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionPolicy;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewWindowsInformationProtectionPoliciesRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewWindowsInformationProtectionPoliciesRequestBuilder(rawUrl string, reques
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *WindowsInformationProtectionPoliciesRequestBuilder) Count()(*ibc58830da98c47af6682206a063fa0f0272c69b0fdff3cf16e488ad89f591a40.CountRequestBuilder) {
+    return ibc58830da98c47af6682206a063fa0f0272c69b0fdff3cf16e488ad89f591a40.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation windows information protection for apps running on devices which are not MDM enrolled.
 func (m *WindowsInformationProtectionPoliciesRequestBuilder) CreateGetRequestInformation(options *WindowsInformationProtectionPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *WindowsInformationProtectionPoliciesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation windows information protection for apps running on devices which are not MDM enrolled.
+// CreatePostRequestInformation create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
 func (m *WindowsInformationProtectionPoliciesRequestBuilder) CreatePostRequestInformation(options *WindowsInformationProtectionPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *WindowsInformationProtectionPoliciesRequestBuilder) CreatePostRequestIn
     return requestInfo, nil
 }
 // Get windows information protection for apps running on devices which are not MDM enrolled.
-func (m *WindowsInformationProtectionPoliciesRequestBuilder) Get(options *WindowsInformationProtectionPoliciesRequestBuilderGetOptions)(*WindowsInformationProtectionPoliciesResponse, error) {
+func (m *WindowsInformationProtectionPoliciesRequestBuilder) Get(options *WindowsInformationProtectionPoliciesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsInformationProtectionPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateWindowsInformationProtectionPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*WindowsInformationProtectionPoliciesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionPolicyCollectionResponseable), nil
 }
-// Post windows information protection for apps running on devices which are not MDM enrolled.
-func (m *WindowsInformationProtectionPoliciesRequestBuilder) Post(options *WindowsInformationProtectionPoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionPolicy, error) {
+// Post create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+func (m *WindowsInformationProtectionPoliciesRequestBuilder) Post(options *WindowsInformationProtectionPoliciesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewWindowsInformationProtectionPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateWindowsInformationProtectionPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionPolicy), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionPolicyable), nil
 }

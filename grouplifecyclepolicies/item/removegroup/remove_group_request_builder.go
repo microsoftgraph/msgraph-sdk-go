@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// RemoveGroupRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}\microsoft.graph.removeGroup
+// RemoveGroupRequestBuilder provides operations to call the removeGroup method.
 type RemoveGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RemoveGroupRequestBuilder struct {
 // RemoveGroupRequestBuilderPostOptions options for Post
 type RemoveGroupRequestBuilderPostOptions struct {
     // 
-    Body *RemoveGroupRequestBody;
+    Body RemoveGroupRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewRemoveGroupRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *RemoveGroupRequestBuilder) CreatePostRequestInformation(options *Remove
     return requestInfo, nil
 }
 // Post invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) Post(options *RemoveGroupRequestBuilderPostOptions)(*bool, error) {
+func (m *RemoveGroupRequestBuilder) Post(options *RemoveGroupRequestBuilderPostOptions)(RemoveGroupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRemoveGroupResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(RemoveGroupResponseable), nil
 }

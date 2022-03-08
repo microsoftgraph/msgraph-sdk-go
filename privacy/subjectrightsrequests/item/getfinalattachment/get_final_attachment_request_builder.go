@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetFinalAttachmentRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\microsoft.graph.getFinalAttachment()
+// GetFinalAttachmentRequestBuilder provides operations to call the getFinalAttachment method.
 type GetFinalAttachmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewGetFinalAttachmentRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *GetFinalAttachmentRequestBuilder) CreateGetRequestInformation(options *
     return requestInfo, nil
 }
 // Get invoke function getFinalAttachment
-func (m *GetFinalAttachmentRequestBuilder) Get(options *GetFinalAttachmentRequestBuilderGetOptions)([]byte, error) {
+func (m *GetFinalAttachmentRequestBuilder) Get(options *GetFinalAttachmentRequestBuilderGetOptions)(GetFinalAttachmentResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetFinalAttachmentResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetFinalAttachmentResponseable), nil
 }

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceHealth 
+// ServiceHealth provides operations to manage the admin singleton.
 type ServiceHealth struct {
     Entity
     // A collection of issues that happened on the service, with detailed information for each issue.
-    issues []ServiceHealthIssue;
+    issues []ServiceHealthIssueable;
     // The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
     service *string;
     // Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
@@ -21,42 +21,22 @@ func NewServiceHealth()(*ServiceHealth) {
     }
     return m
 }
-// GetIssues gets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
-func (m *ServiceHealth) GetIssues()([]ServiceHealthIssue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issues
-    }
-}
-// GetService gets the service property value. The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
-func (m *ServiceHealth) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
-}
-// GetStatus gets the status property value. Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
-func (m *ServiceHealth) GetStatus()(*ServiceHealthStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+// CreateServiceHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateServiceHealthFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewServiceHealth(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["issues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewServiceHealthIssue() })
+        val, err := n.GetCollectionOfObjectValues(CreateServiceHealthIssueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ServiceHealthIssue, len(val))
+            res := make([]ServiceHealthIssueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ServiceHealthIssue))
+                res[i] = v.(ServiceHealthIssueable)
             }
             m.SetIssues(res)
         }
@@ -84,6 +64,30 @@ func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04
     }
     return res
 }
+// GetIssues gets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
+func (m *ServiceHealth) GetIssues()([]ServiceHealthIssueable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issues
+    }
+}
+// GetService gets the service property value. The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
+func (m *ServiceHealth) GetService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.service
+    }
+}
+// GetStatus gets the status property value. Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+func (m *ServiceHealth) GetStatus()(*ServiceHealthStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
 func (m *ServiceHealth) IsNil()(bool) {
     return m == nil
 }
@@ -96,8 +100,7 @@ func (m *ServiceHealth) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetIssues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIssues()))
         for i, v := range m.GetIssues() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("issues", cast)
         if err != nil {
@@ -120,7 +123,7 @@ func (m *ServiceHealth) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     return nil
 }
 // SetIssues sets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
-func (m *ServiceHealth) SetIssues(value []ServiceHealthIssue)() {
+func (m *ServiceHealth) SetIssues(value []ServiceHealthIssueable)() {
     if m != nil {
         m.issues = value
     }

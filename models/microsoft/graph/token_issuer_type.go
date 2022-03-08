@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the identityProtectionRoot singleton.
 type TokenIssuerType int
 
 const (

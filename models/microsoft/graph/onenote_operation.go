@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnenoteOperation 
+// OnenoteOperation provides operations to manage the drive singleton.
 type OnenoteOperation struct {
     Operation
     // The error returned by the operation.
-    error *OnenoteOperationError;
+    error OnenoteOperationErrorable;
     // The operation percent complete if the operation is still in running status.
     percentComplete *string;
     // The resource id.
@@ -23,48 +23,28 @@ func NewOnenoteOperation()(*OnenoteOperation) {
     }
     return m
 }
+// CreateOnenoteOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnenoteOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnenoteOperation(), nil
+}
 // GetError gets the error property value. The error returned by the operation.
-func (m *OnenoteOperation) GetError()(*OnenoteOperationError) {
+func (m *OnenoteOperation) GetError()(OnenoteOperationErrorable) {
     if m == nil {
         return nil
     } else {
         return m.error
     }
 }
-// GetPercentComplete gets the percentComplete property value. The operation percent complete if the operation is still in running status.
-func (m *OnenoteOperation) GetPercentComplete()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.percentComplete
-    }
-}
-// GetResourceId gets the resourceId property value. The resource id.
-func (m *OnenoteOperation) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
-}
-// GetResourceLocation gets the resourceLocation property value. The resource URI for the object. For example, the resource URI for a copied page or section.
-func (m *OnenoteOperation) GetResourceLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceLocation
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Operation.GetFieldDeserializers()
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnenoteOperationError() })
+        val, err := n.GetObjectValue(CreateOnenoteOperationErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetError(val.(*OnenoteOperationError))
+            m.SetError(val.(OnenoteOperationErrorable))
         }
         return nil
     }
@@ -99,6 +79,30 @@ func (m *OnenoteOperation) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetPercentComplete gets the percentComplete property value. The operation percent complete if the operation is still in running status.
+func (m *OnenoteOperation) GetPercentComplete()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.percentComplete
+    }
+}
+// GetResourceId gets the resourceId property value. The resource id.
+func (m *OnenoteOperation) GetResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceId
+    }
+}
+// GetResourceLocation gets the resourceLocation property value. The resource URI for the object. For example, the resource URI for a copied page or section.
+func (m *OnenoteOperation) GetResourceLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceLocation
+    }
 }
 func (m *OnenoteOperation) IsNil()(bool) {
     return m == nil
@@ -136,7 +140,7 @@ func (m *OnenoteOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     return nil
 }
 // SetError sets the error property value. The error returned by the operation.
-func (m *OnenoteOperation) SetError(value *OnenoteOperationError)() {
+func (m *OnenoteOperation) SetError(value OnenoteOperationErrorable)() {
     if m != nil {
         m.error = value
     }

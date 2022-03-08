@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the identityGovernance singleton.
 type AccessPackageCatalogType int
 
 const (

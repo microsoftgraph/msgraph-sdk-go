@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BaseItem 
+// BaseItem provides operations to manage the drive singleton.
 type BaseItem struct {
     Entity
     // Identity of the user, device, or application which created the item. Read-only.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // Identity of the user who created the item. Read-only.
-    createdByUser *User;
+    createdByUser Userable;
     // Date and time of item creation. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Provides a user-visible description of the item. Optional.
@@ -19,15 +19,15 @@ type BaseItem struct {
     // ETag for the item. Read-only.
     eTag *string;
     // Identity of the user, device, and application which last modified the item. Read-only.
-    lastModifiedBy *IdentitySet;
+    lastModifiedBy IdentitySetable;
     // Identity of the user who last modified the item. Read-only.
-    lastModifiedByUser *User;
+    lastModifiedByUser Userable;
     // Date and time the item was last modified. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The name of the item. Read-write.
     name *string;
     // Parent information, if the item has a parent. Read-write.
-    parentReference *ItemReference;
+    parentReference ItemReferenceable;
     // URL that displays the resource in the browser. Read-only.
     webUrl *string;
 }
@@ -38,8 +38,12 @@ func NewBaseItem()(*BaseItem) {
     }
     return m
 }
+// CreateBaseItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBaseItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBaseItem(), nil
+}
 // GetCreatedBy gets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
-func (m *BaseItem) GetCreatedBy()(*IdentitySet) {
+func (m *BaseItem) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +51,7 @@ func (m *BaseItem) GetCreatedBy()(*IdentitySet) {
     }
 }
 // GetCreatedByUser gets the createdByUser property value. Identity of the user who created the item. Read-only.
-func (m *BaseItem) GetCreatedByUser()(*User) {
+func (m *BaseItem) GetCreatedByUser()(Userable) {
     if m == nil {
         return nil
     } else {
@@ -78,74 +82,26 @@ func (m *BaseItem) GetETag()(*string) {
         return m.eTag
     }
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
-func (m *BaseItem) GetLastModifiedBy()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedByUser gets the lastModifiedByUser property value. Identity of the user who last modified the item. Read-only.
-func (m *BaseItem) GetLastModifiedByUser()(*User) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedByUser
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
-func (m *BaseItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetName gets the name property value. The name of the item. Read-write.
-func (m *BaseItem) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetParentReference gets the parentReference property value. Parent information, if the item has a parent. Read-write.
-func (m *BaseItem) GetParentReference()(*ItemReference) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentReference
-    }
-}
-// GetWebUrl gets the webUrl property value. URL that displays the resource in the browser. Read-only.
-func (m *BaseItem) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
     res["createdByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUser() })
+        val, err := n.GetObjectValue(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedByUser(val.(*User))
+            m.SetCreatedByUser(val.(Userable))
         }
         return nil
     }
@@ -180,22 +136,22 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*IdentitySet))
+            m.SetLastModifiedBy(val.(IdentitySetable))
         }
         return nil
     }
     res["lastModifiedByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUser() })
+        val, err := n.GetObjectValue(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedByUser(val.(*User))
+            m.SetLastModifiedByUser(val.(Userable))
         }
         return nil
     }
@@ -220,12 +176,12 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["parentReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemReference() })
+        val, err := n.GetObjectValue(CreateItemReferenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentReference(val.(*ItemReference))
+            m.SetParentReference(val.(ItemReferenceable))
         }
         return nil
     }
@@ -240,6 +196,54 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+func (m *BaseItem) GetLastModifiedBy()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedByUser gets the lastModifiedByUser property value. Identity of the user who last modified the item. Read-only.
+func (m *BaseItem) GetLastModifiedByUser()(Userable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedByUser
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
+func (m *BaseItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetName gets the name property value. The name of the item. Read-write.
+func (m *BaseItem) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetParentReference gets the parentReference property value. Parent information, if the item has a parent. Read-write.
+func (m *BaseItem) GetParentReference()(ItemReferenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentReference
+    }
+}
+// GetWebUrl gets the webUrl property value. URL that displays the resource in the browser. Read-only.
+func (m *BaseItem) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *BaseItem) IsNil()(bool) {
     return m == nil
@@ -319,13 +323,13 @@ func (m *BaseItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
-func (m *BaseItem) SetCreatedBy(value *IdentitySet)() {
+func (m *BaseItem) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
 }
 // SetCreatedByUser sets the createdByUser property value. Identity of the user who created the item. Read-only.
-func (m *BaseItem) SetCreatedByUser(value *User)() {
+func (m *BaseItem) SetCreatedByUser(value Userable)() {
     if m != nil {
         m.createdByUser = value
     }
@@ -349,13 +353,13 @@ func (m *BaseItem) SetETag(value *string)() {
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
-func (m *BaseItem) SetLastModifiedBy(value *IdentitySet)() {
+func (m *BaseItem) SetLastModifiedBy(value IdentitySetable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
 }
 // SetLastModifiedByUser sets the lastModifiedByUser property value. Identity of the user who last modified the item. Read-only.
-func (m *BaseItem) SetLastModifiedByUser(value *User)() {
+func (m *BaseItem) SetLastModifiedByUser(value Userable)() {
     if m != nil {
         m.lastModifiedByUser = value
     }
@@ -373,7 +377,7 @@ func (m *BaseItem) SetName(value *string)() {
     }
 }
 // SetParentReference sets the parentReference property value. Parent information, if the item has a parent. Read-write.
-func (m *BaseItem) SetParentReference(value *ItemReference)() {
+func (m *BaseItem) SetParentReference(value ItemReferenceable)() {
     if m != nil {
         m.parentReference = value
     }

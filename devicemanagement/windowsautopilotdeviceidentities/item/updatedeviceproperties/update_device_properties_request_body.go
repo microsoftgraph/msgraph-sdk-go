@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UpdateDevicePropertiesRequestBody 
+// UpdateDevicePropertiesRequestBody provides operations to call the updateDeviceProperties method.
 type UpdateDevicePropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewUpdateDevicePropertiesRequestBody()(*UpdateDevicePropertiesRequestBody) 
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUpdateDevicePropertiesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdateDevicePropertiesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateDevicePropertiesRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDevicePropertiesRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *UpdateDevicePropertiesRequestBody) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetGroupTag gets the groupTag property value. 
-func (m *UpdateDevicePropertiesRequestBody) GetGroupTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupTag
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. 
-func (m *UpdateDevicePropertiesRequestBody) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +96,22 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetGroupTag gets the groupTag property value. 
+func (m *UpdateDevicePropertiesRequestBody) GetGroupTag()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupTag
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. 
+func (m *UpdateDevicePropertiesRequestBody) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *UpdateDevicePropertiesRequestBody) IsNil()(bool) {
     return m == nil

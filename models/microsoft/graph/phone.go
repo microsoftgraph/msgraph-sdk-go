@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Phone 
+// Phone provides operations to manage the collection of orgContact entities.
 type Phone struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,44 +24,16 @@ func NewPhone()(*Phone) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePhoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePhoneFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPhone(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Phone) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLanguage gets the language property value. 
-func (m *Phone) GetLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.language
-    }
-}
-// GetNumber gets the number property value. The phone number.
-func (m *Phone) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
-}
-// GetRegion gets the region property value. 
-func (m *Phone) GetRegion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.region
-    }
-}
-// GetType gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *Phone) GetType()(*PhoneType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +80,38 @@ func (m *Phone) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     return res
+}
+// GetLanguage gets the language property value. 
+func (m *Phone) GetLanguage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.language
+    }
+}
+// GetNumber gets the number property value. The phone number.
+func (m *Phone) GetNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.number
+    }
+}
+// GetRegion gets the region property value. 
+func (m *Phone) GetRegion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.region
+    }
+}
+// GetType gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+func (m *Phone) GetType()(*PhoneType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *Phone) IsNil()(bool) {
     return m == nil

@@ -1,13 +1,13 @@
 package oauth2permissiongrants
 
 import (
+    i0bcf9220e6936a6837e0b6c651cb627f833c3a377293d4b256f64402d4c61ea1 "github.com/microsoftgraph/msgraph-sdk-go/oauth2permissiongrants/count"
     id70fcb07167e43609e5e3e97414842aa6abab48a5deb7b682bf9fbce71fcd500 "github.com/microsoftgraph/msgraph-sdk-go/oauth2permissiongrants/delta"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Oauth2PermissionGrantsRequestBuilder builds and executes requests for operations under \oauth2PermissionGrants
+// Oauth2PermissionGrantsRequestBuilder provides operations to manage the collection of oAuth2PermissionGrant entities.
 type Oauth2PermissionGrantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type Oauth2PermissionGrantsRequestBuilderGetQueryParameters struct {
 // Oauth2PermissionGrantsRequestBuilderPostOptions options for Post
 type Oauth2PermissionGrantsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrant;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrantable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewOauth2PermissionGrantsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOauth2PermissionGrantsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*i0bcf9220e6936a6837e0b6c651cb627f833c3a377293d4b256f64402d4c61ea1.CountRequestBuilder) {
+    return i0bcf9220e6936a6837e0b6c651cb627f833c3a377293d4b256f64402d4c61ea1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from oauth2PermissionGrants
 func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation(options *Oauth2PermissionGrantsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,31 +117,39 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \oauth2PermissionGrants\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *Oauth2PermissionGrantsRequestBuilder) Delta()(*id70fcb07167e43609e5e3e97414842aa6abab48a5deb7b682bf9fbce71fcd500.DeltaRequestBuilder) {
     return id70fcb07167e43609e5e3e97414842aa6abab48a5deb7b682bf9fbce71fcd500.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get entities from oauth2PermissionGrants
-func (m *Oauth2PermissionGrantsRequestBuilder) Get(options *Oauth2PermissionGrantsRequestBuilderGetOptions)(*Oauth2PermissionGrantsResponse, error) {
+func (m *Oauth2PermissionGrantsRequestBuilder) Get(options *Oauth2PermissionGrantsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOauth2PermissionGrantsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOAuth2PermissionGrantCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*Oauth2PermissionGrantsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrantCollectionResponseable), nil
 }
 // Post add new entity to oauth2PermissionGrants
-func (m *Oauth2PermissionGrantsRequestBuilder) Post(options *Oauth2PermissionGrantsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrant, error) {
+func (m *Oauth2PermissionGrantsRequestBuilder) Post(options *Oauth2PermissionGrantsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrantable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewOAuth2PermissionGrant() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOAuth2PermissionGrantFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrant), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrantable), nil
 }

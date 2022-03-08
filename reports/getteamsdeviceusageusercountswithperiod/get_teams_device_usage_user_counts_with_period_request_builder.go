@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsDeviceUsageUserCounts(period='{period}')
+// GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder provides operations to call the getTeamsDeviceUsageUserCounts method.
 type GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewGetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderInternal(pathParame
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) CreateGetRequest
     return requestInfo, nil
 }
 // Get invoke function getTeamsDeviceUsageUserCounts
-func (m *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) Get(options *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
+func (m *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) Get(options *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderGetOptions)(GetTeamsDeviceUsageUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetTeamsDeviceUsageUserCountsWithPeriodResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetTeamsDeviceUsageUserCountsWithPeriodResponseable), nil
 }

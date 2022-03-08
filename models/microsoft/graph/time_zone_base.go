@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeZoneBase 
+// TimeZoneBase provides operations to manage the drive singleton.
 type TimeZoneBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewTimeZoneBase()(*TimeZoneBase) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTimeZoneBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTimeZoneBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTimeZoneBase(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeZoneBase) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetName gets the name property value. The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-func (m *TimeZoneBase) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *TimeZoneBase) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetName gets the name property value. The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
+func (m *TimeZoneBase) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
 }
 func (m *TimeZoneBase) IsNil()(bool) {
     return m == nil

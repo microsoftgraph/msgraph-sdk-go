@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UploadSession 
+// UploadSession provides operations to call the createUploadSession method.
 type UploadSession struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewUploadSession()(*UploadSession) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUploadSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUploadSessionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUploadSession(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadSession) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *UploadSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetNextExpectedRanges gets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
-func (m *UploadSession) GetNextExpectedRanges()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nextExpectedRanges
-    }
-}
-// GetUploadUrl gets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.
-func (m *UploadSession) GetUploadUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -93,6 +81,22 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetNextExpectedRanges gets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
+func (m *UploadSession) GetNextExpectedRanges()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nextExpectedRanges
+    }
+}
+// GetUploadUrl gets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.
+func (m *UploadSession) GetUploadUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uploadUrl
+    }
 }
 func (m *UploadSession) IsNil()(bool) {
     return m == nil

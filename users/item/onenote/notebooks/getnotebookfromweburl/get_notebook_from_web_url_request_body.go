@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetNotebookFromWebUrlRequestBody 
+// GetNotebookFromWebUrlRequestBody provides operations to call the getNotebookFromWebUrl method.
 type GetNotebookFromWebUrlRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewGetNotebookFromWebUrlRequestBody()(*GetNotebookFromWebUrlRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetNotebookFromWebUrlRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetNotebookFromWebUrlRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetNotebookFromWebUrlRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetNotebookFromWebUrlRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetWebUrl gets the webUrl property value. 
-func (m *GetNotebookFromWebUrlRequestBody) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *GetNotebookFromWebUrlRequestBody) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetWebUrl gets the webUrl property value. 
+func (m *GetNotebookFromWebUrlRequestBody) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *GetNotebookFromWebUrlRequestBody) IsNil()(bool) {
     return m == nil

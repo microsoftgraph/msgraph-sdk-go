@@ -5,21 +5,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageAssignment 
+// AccessPackageAssignment provides operations to manage the identityGovernance singleton.
 type AccessPackageAssignment struct {
     Entity
     // Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-    accessPackage *AccessPackage;
+    accessPackage AccessPackageable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     expiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // When the access assignment is to be in place. Read-only.
-    schedule *EntitlementManagementSchedule;
+    schedule EntitlementManagementScheduleable;
     // The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).
     state *AccessPackageAssignmentState;
     // More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
     status *string;
     // The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-    target *AccessPackageSubject;
+    target AccessPackageSubjectable;
 }
 // NewAccessPackageAssignment instantiates a new accessPackageAssignment and sets the default values.
 func NewAccessPackageAssignment()(*AccessPackageAssignment) {
@@ -28,8 +28,12 @@ func NewAccessPackageAssignment()(*AccessPackageAssignment) {
     }
     return m
 }
+// CreateAccessPackageAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageAssignment(), nil
+}
 // GetAccessPackage gets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-func (m *AccessPackageAssignment) GetAccessPackage()(*AccessPackage) {
+func (m *AccessPackageAssignment) GetAccessPackage()(AccessPackageable) {
     if m == nil {
         return nil
     } else {
@@ -44,48 +48,16 @@ func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7
         return m.expiredDateTime
     }
 }
-// GetSchedule gets the schedule property value. When the access assignment is to be in place. Read-only.
-func (m *AccessPackageAssignment) GetSchedule()(*EntitlementManagementSchedule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
-}
-// GetState gets the state property value. The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).
-func (m *AccessPackageAssignment) GetState()(*AccessPackageAssignmentState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetStatus gets the status property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
-func (m *AccessPackageAssignment) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTarget gets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-func (m *AccessPackageAssignment) GetTarget()(*AccessPackageSubject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackage() })
+        val, err := n.GetObjectValue(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackage(val.(*AccessPackage))
+            m.SetAccessPackage(val.(AccessPackageable))
         }
         return nil
     }
@@ -100,12 +72,12 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["schedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEntitlementManagementSchedule() })
+        val, err := n.GetObjectValue(CreateEntitlementManagementScheduleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedule(val.(*EntitlementManagementSchedule))
+            m.SetSchedule(val.(EntitlementManagementScheduleable))
         }
         return nil
     }
@@ -130,16 +102,48 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageSubject() })
+        val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTarget(val.(*AccessPackageSubject))
+            m.SetTarget(val.(AccessPackageSubjectable))
         }
         return nil
     }
     return res
+}
+// GetSchedule gets the schedule property value. When the access assignment is to be in place. Read-only.
+func (m *AccessPackageAssignment) GetSchedule()(EntitlementManagementScheduleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedule
+    }
+}
+// GetState gets the state property value. The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).
+func (m *AccessPackageAssignment) GetState()(*AccessPackageAssignmentState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetStatus gets the status property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+func (m *AccessPackageAssignment) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTarget gets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
+func (m *AccessPackageAssignment) GetTarget()(AccessPackageSubjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *AccessPackageAssignment) IsNil()(bool) {
     return m == nil
@@ -190,7 +194,7 @@ func (m *AccessPackageAssignment) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetAccessPackage sets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-func (m *AccessPackageAssignment) SetAccessPackage(value *AccessPackage)() {
+func (m *AccessPackageAssignment) SetAccessPackage(value AccessPackageable)() {
     if m != nil {
         m.accessPackage = value
     }
@@ -202,7 +206,7 @@ func (m *AccessPackageAssignment) SetExpiredDateTime(value *i336074805fc853987ab
     }
 }
 // SetSchedule sets the schedule property value. When the access assignment is to be in place. Read-only.
-func (m *AccessPackageAssignment) SetSchedule(value *EntitlementManagementSchedule)() {
+func (m *AccessPackageAssignment) SetSchedule(value EntitlementManagementScheduleable)() {
     if m != nil {
         m.schedule = value
     }
@@ -220,7 +224,7 @@ func (m *AccessPackageAssignment) SetStatus(value *string)() {
     }
 }
 // SetTarget sets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-func (m *AccessPackageAssignment) SetTarget(value *AccessPackageSubject)() {
+func (m *AccessPackageAssignment) SetTarget(value AccessPackageSubjectable)() {
     if m != nil {
         m.target = value
     }

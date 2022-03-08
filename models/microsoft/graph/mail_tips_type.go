@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the getMailTips method.
 type MailTipsType int
 
 const (

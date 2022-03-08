@@ -456,7 +456,7 @@ func (m *GraphServiceClient) Get(options *GraphServiceClientGetOptions)(error) {
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

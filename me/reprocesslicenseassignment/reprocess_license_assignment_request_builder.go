@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// ReprocessLicenseAssignmentRequestBuilder builds and executes requests for operations under \me\microsoft.graph.reprocessLicenseAssignment
+// ReprocessLicenseAssignmentRequestBuilder provides operations to call the reprocessLicenseAssignment method.
 type ReprocessLicenseAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ReprocessLicenseAssignmentResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type user
-    user *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.User;
+    user i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Userable;
 }
 // NewReprocessLicenseAssignmentResponse instantiates a new reprocessLicenseAssignmentResponse and sets the default values.
 func NewReprocessLicenseAssignmentResponse()(*ReprocessLicenseAssignmentResponse) {
@@ -37,6 +37,9 @@ func NewReprocessLicenseAssignmentResponse()(*ReprocessLicenseAssignmentResponse
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateReprocessLicenseAssignmentResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReprocessLicenseAssignmentResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReprocessLicenseAssignmentResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *ReprocessLicenseAssignmentResponse) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ReprocessLicenseAssignmentResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["user"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUser(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Userable))
+        }
+        return nil
+    }
+    return res
+}
 // GetUser gets the user property value. Union type representation for type user
-func (m *ReprocessLicenseAssignmentResponse) GetUser()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.User) {
+func (m *ReprocessLicenseAssignmentResponse) GetUser()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Userable) {
     if m == nil {
         return nil
     } else {
         return m.user
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ReprocessLicenseAssignmentResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["user"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUser(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.User))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ReprocessLicenseAssignmentResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +98,7 @@ func (m *ReprocessLicenseAssignmentResponse) SetAdditionalData(value map[string]
     }
 }
 // SetUser sets the user property value. Union type representation for type user
-func (m *ReprocessLicenseAssignmentResponse) SetUser(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.User)() {
+func (m *ReprocessLicenseAssignmentResponse) SetUser(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Userable)() {
     if m != nil {
         m.user = value
     }
@@ -109,7 +112,7 @@ func NewReprocessLicenseAssignmentRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *ReprocessLicenseAssignmentRequestBuilder) CreatePostRequestInformation(
     return requestInfo, nil
 }
 // Post invoke action reprocessLicenseAssignment
-func (m *ReprocessLicenseAssignmentRequestBuilder) Post(options *ReprocessLicenseAssignmentRequestBuilderPostOptions)(*ReprocessLicenseAssignmentResponse, error) {
+func (m *ReprocessLicenseAssignmentRequestBuilder) Post(options *ReprocessLicenseAssignmentRequestBuilderPostOptions)(ReprocessLicenseAssignmentResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReprocessLicenseAssignmentResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateReprocessLicenseAssignmentResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ReprocessLicenseAssignmentResponse), nil
+    return res.(ReprocessLicenseAssignmentResponseable), nil
 }

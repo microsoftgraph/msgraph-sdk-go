@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookOperationError 
+// WorkbookOperationError provides operations to manage the drive singleton.
 type WorkbookOperationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The error code.
     code *string;
     // 
-    innerError *WorkbookOperationError;
+    innerError WorkbookOperationErrorable;
     // The error message.
     message *string;
 }
@@ -21,6 +21,10 @@ func NewWorkbookOperationError()(*WorkbookOperationError) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWorkbookOperationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookOperationErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookOperationError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookOperationError) GetAdditionalData()(map[string]interface{}) {
@@ -38,22 +42,6 @@ func (m *WorkbookOperationError) GetCode()(*string) {
         return m.code
     }
 }
-// GetInnerError gets the innerError property value. 
-func (m *WorkbookOperationError) GetInnerError()(*WorkbookOperationError) {
-    if m == nil {
-        return nil
-    } else {
-        return m.innerError
-    }
-}
-// GetMessage gets the message property value. The error message.
-func (m *WorkbookOperationError) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookOperationError) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -68,12 +56,12 @@ func (m *WorkbookOperationError) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["innerError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookOperationError() })
+        val, err := n.GetObjectValue(CreateWorkbookOperationErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnerError(val.(*WorkbookOperationError))
+            m.SetInnerError(val.(WorkbookOperationErrorable))
         }
         return nil
     }
@@ -88,6 +76,22 @@ func (m *WorkbookOperationError) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetInnerError gets the innerError property value. 
+func (m *WorkbookOperationError) GetInnerError()(WorkbookOperationErrorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.innerError
+    }
+}
+// GetMessage gets the message property value. The error message.
+func (m *WorkbookOperationError) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
 }
 func (m *WorkbookOperationError) IsNil()(bool) {
     return m == nil
@@ -133,7 +137,7 @@ func (m *WorkbookOperationError) SetCode(value *string)() {
     }
 }
 // SetInnerError sets the innerError property value. 
-func (m *WorkbookOperationError) SetInnerError(value *WorkbookOperationError)() {
+func (m *WorkbookOperationError) SetInnerError(value WorkbookOperationErrorable)() {
     if m != nil {
         m.innerError = value
     }

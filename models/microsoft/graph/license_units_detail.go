@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LicenseUnitsDetail 
+// LicenseUnitsDetail provides operations to manage the collection of subscribedSku entities.
 type LicenseUnitsDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewLicenseUnitsDetail()(*LicenseUnitsDetail) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateLicenseUnitsDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLicenseUnitsDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLicenseUnitsDetail(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseUnitsDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *LicenseUnitsDetail) GetEnabled()(*int32) {
         return nil
     } else {
         return m.enabled
-    }
-}
-// GetSuspended gets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
-func (m *LicenseUnitsDetail) GetSuspended()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suspended
-    }
-}
-// GetWarning gets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
-func (m *LicenseUnitsDetail) GetWarning()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.warning
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetSuspended gets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
+func (m *LicenseUnitsDetail) GetSuspended()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.suspended
+    }
+}
+// GetWarning gets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
+func (m *LicenseUnitsDetail) GetWarning()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.warning
+    }
 }
 func (m *LicenseUnitsDetail) IsNil()(bool) {
     return m == nil

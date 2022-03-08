@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignUserToDeviceRequestBody 
+// AssignUserToDeviceRequestBody provides operations to call the assignUserToDevice method.
 type AssignUserToDeviceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewAssignUserToDeviceRequestBody()(*AssignUserToDeviceRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAssignUserToDeviceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignUserToDeviceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignUserToDeviceRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignUserToDeviceRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *AssignUserToDeviceRequestBody) GetAddressableUserName()(*string) {
         return nil
     } else {
         return m.addressableUserName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. 
-func (m *AssignUserToDeviceRequestBody) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *AssignUserToDeviceRequestBody) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetUserPrincipalName gets the userPrincipalName property value. 
+func (m *AssignUserToDeviceRequestBody) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *AssignUserToDeviceRequestBody) IsNil()(bool) {
     return m == nil

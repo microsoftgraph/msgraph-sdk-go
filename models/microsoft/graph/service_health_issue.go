@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceHealthIssue 
+// ServiceHealthIssue provides operations to manage the admin singleton.
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
     // The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
@@ -20,7 +20,7 @@ type ServiceHealthIssue struct {
     // Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
     origin *ServiceHealthOrigin;
     // Collection of historical posts for the service issue.
-    posts []ServiceHealthIssuePost;
+    posts []ServiceHealthIssuePostable;
     // Indicates the service affected by the issue.
     service *string;
     // The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. See more in the table below.
@@ -32,6 +32,10 @@ func NewServiceHealthIssue()(*ServiceHealthIssue) {
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),
     }
     return m
+}
+// CreateServiceHealthIssueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateServiceHealthIssueFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewServiceHealthIssue(), nil
 }
 // GetClassification gets the classification property value. The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
 func (m *ServiceHealthIssue) GetClassification()(*ServiceHealthClassificationType) {
@@ -55,54 +59,6 @@ func (m *ServiceHealthIssue) GetFeatureGroup()(*string) {
         return nil
     } else {
         return m.featureGroup
-    }
-}
-// GetImpactDescription gets the impactDescription property value. The description of the service issue impact.
-func (m *ServiceHealthIssue) GetImpactDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactDescription
-    }
-}
-// GetIsResolved gets the isResolved property value. Indicates whether the issue is resolved.
-func (m *ServiceHealthIssue) GetIsResolved()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isResolved
-    }
-}
-// GetOrigin gets the origin property value. Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
-func (m *ServiceHealthIssue) GetOrigin()(*ServiceHealthOrigin) {
-    if m == nil {
-        return nil
-    } else {
-        return m.origin
-    }
-}
-// GetPosts gets the posts property value. Collection of historical posts for the service issue.
-func (m *ServiceHealthIssue) GetPosts()([]ServiceHealthIssuePost) {
-    if m == nil {
-        return nil
-    } else {
-        return m.posts
-    }
-}
-// GetService gets the service property value. Indicates the service affected by the issue.
-func (m *ServiceHealthIssue) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
-}
-// GetStatus gets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. See more in the table below.
-func (m *ServiceHealthIssue) GetStatus()(*ServiceHealthStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -169,14 +125,14 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["posts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewServiceHealthIssuePost() })
+        val, err := n.GetCollectionOfObjectValues(CreateServiceHealthIssuePostFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ServiceHealthIssuePost, len(val))
+            res := make([]ServiceHealthIssuePostable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ServiceHealthIssuePost))
+                res[i] = v.(ServiceHealthIssuePostable)
             }
             m.SetPosts(res)
         }
@@ -203,6 +159,54 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetImpactDescription gets the impactDescription property value. The description of the service issue impact.
+func (m *ServiceHealthIssue) GetImpactDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.impactDescription
+    }
+}
+// GetIsResolved gets the isResolved property value. Indicates whether the issue is resolved.
+func (m *ServiceHealthIssue) GetIsResolved()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isResolved
+    }
+}
+// GetOrigin gets the origin property value. Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
+func (m *ServiceHealthIssue) GetOrigin()(*ServiceHealthOrigin) {
+    if m == nil {
+        return nil
+    } else {
+        return m.origin
+    }
+}
+// GetPosts gets the posts property value. Collection of historical posts for the service issue.
+func (m *ServiceHealthIssue) GetPosts()([]ServiceHealthIssuePostable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.posts
+    }
+}
+// GetService gets the service property value. Indicates the service affected by the issue.
+func (m *ServiceHealthIssue) GetService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.service
+    }
+}
+// GetStatus gets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. See more in the table below.
+func (m *ServiceHealthIssue) GetStatus()(*ServiceHealthStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *ServiceHealthIssue) IsNil()(bool) {
     return m == nil
@@ -254,8 +258,7 @@ func (m *ServiceHealthIssue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetPosts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPosts()))
         for i, v := range m.GetPosts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("posts", cast)
         if err != nil {
@@ -314,7 +317,7 @@ func (m *ServiceHealthIssue) SetOrigin(value *ServiceHealthOrigin)() {
     }
 }
 // SetPosts sets the posts property value. Collection of historical posts for the service issue.
-func (m *ServiceHealthIssue) SetPosts(value []ServiceHealthIssuePost)() {
+func (m *ServiceHealthIssue) SetPosts(value []ServiceHealthIssuePostable)() {
     if m != nil {
         m.posts = value
     }

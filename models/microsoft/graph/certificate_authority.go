@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CertificateAuthority 
+// CertificateAuthority provides operations to manage the collection of certificateBasedAuthConfiguration entities.
 type CertificateAuthority struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,6 +27,10 @@ func NewCertificateAuthority()(*CertificateAuthority) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCertificateAuthorityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCertificateAuthorityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCertificateAuthority(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateAuthority) GetAdditionalData()(map[string]interface{}) {
@@ -58,30 +62,6 @@ func (m *CertificateAuthority) GetDeltaCertificateRevocationListUrl()(*string) {
         return nil
     } else {
         return m.deltaCertificateRevocationListUrl
-    }
-}
-// GetIsRootAuthority gets the isRootAuthority property value. Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
-func (m *CertificateAuthority) GetIsRootAuthority()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRootAuthority
-    }
-}
-// GetIssuer gets the issuer property value. The issuer of the certificate, calculated from the certificate value. Read-only.
-func (m *CertificateAuthority) GetIssuer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuer
-    }
-}
-// GetIssuerSki gets the issuerSki property value. The subject key identifier of the certificate, calculated from the certificate value. Read-only.
-func (m *CertificateAuthority) GetIssuerSki()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerSki
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +128,30 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetIsRootAuthority gets the isRootAuthority property value. Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
+func (m *CertificateAuthority) GetIsRootAuthority()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRootAuthority
+    }
+}
+// GetIssuer gets the issuer property value. The issuer of the certificate, calculated from the certificate value. Read-only.
+func (m *CertificateAuthority) GetIssuer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuer
+    }
+}
+// GetIssuerSki gets the issuerSki property value. The subject key identifier of the certificate, calculated from the certificate value. Read-only.
+func (m *CertificateAuthority) GetIssuerSki()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuerSki
+    }
 }
 func (m *CertificateAuthority) IsNil()(bool) {
     return m == nil

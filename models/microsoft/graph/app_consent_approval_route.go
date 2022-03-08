@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppConsentApprovalRoute 
+// AppConsentApprovalRoute provides operations to manage the identityGovernance singleton.
 type AppConsentApprovalRoute struct {
     Entity
     // A collection of userConsentRequest objects for a specific application.
-    appConsentRequests []AppConsentRequest;
+    appConsentRequests []AppConsentRequestable;
 }
 // NewAppConsentApprovalRoute instantiates a new appConsentApprovalRoute and sets the default values.
 func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
@@ -17,8 +17,12 @@ func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
     }
     return m
 }
+// CreateAppConsentApprovalRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAppConsentApprovalRouteFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAppConsentApprovalRoute(), nil
+}
 // GetAppConsentRequests gets the appConsentRequests property value. A collection of userConsentRequest objects for a specific application.
-func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequest) {
+func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequestable) {
     if m == nil {
         return nil
     } else {
@@ -29,14 +33,14 @@ func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequest) {
 func (m *AppConsentApprovalRoute) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appConsentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppConsentRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppConsentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppConsentRequest, len(val))
+            res := make([]AppConsentRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppConsentRequest))
+                res[i] = v.(AppConsentRequestable)
             }
             m.SetAppConsentRequests(res)
         }
@@ -56,8 +60,7 @@ func (m *AppConsentApprovalRoute) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetAppConsentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppConsentRequests()))
         for i, v := range m.GetAppConsentRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appConsentRequests", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *AppConsentApprovalRoute) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetAppConsentRequests sets the appConsentRequests property value. A collection of userConsentRequest objects for a specific application.
-func (m *AppConsentApprovalRoute) SetAppConsentRequests(value []AppConsentRequest)() {
+func (m *AppConsentApprovalRoute) SetAppConsentRequests(value []AppConsentRequestable)() {
     if m != nil {
         m.appConsentRequests = value
     }

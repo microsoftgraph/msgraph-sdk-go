@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')
+// GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder provides operations to call the getOmaSettingPlainTextValue method.
 type GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderInter
     if secretReferenceValueId != nil {
         urlTplParams["secretReferenceValueId"] = *secretReferenceValueId
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) Cr
     return requestInfo, nil
 }
 // Get invoke function getOmaSettingPlainTextValue
-func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) Get(options *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderGetOptions)(*string, error) {
+func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) Get(options *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderGetOptions)(GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetOmaSettingPlainTextValueWithSecretReferenceValueIdResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponseable), nil
 }

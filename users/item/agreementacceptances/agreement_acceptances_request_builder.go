@@ -2,11 +2,11 @@ package agreementacceptances
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    id508aed1ab7c980ed580bf99b69aef8964ea148ff131e5b958fc36229d9e624e "github.com/microsoftgraph/msgraph-sdk-go/users/item/agreementacceptances/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i7bfa2402778a77d393f148ea7a5d58c70c9c42b65ef05109283bdbb90d6cac7c "github.com/microsoftgraph/msgraph-sdk-go/users/item/agreementacceptances/count"
 )
 
-// AgreementAcceptancesRequestBuilder builds and executes requests for operations under \users\{user-id}\agreementAcceptances
+// AgreementAcceptancesRequestBuilder provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
 type AgreementAcceptancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewAgreementAcceptancesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewAgreementAcceptancesRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementAcceptancesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AgreementAcceptancesRequestBuilder) Count()(*i7bfa2402778a77d393f148ea7a5d58c70c9c42b65ef05109283bdbb90d6cac7c.CountRequestBuilder) {
+    return i7bfa2402778a77d393f148ea7a5d58c70c9c42b65ef05109283bdbb90d6cac7c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the user's terms of use acceptance statuses. Read-only. Nullable.
 func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation(options *AgreementAcceptancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation(options
     return requestInfo, nil
 }
 // Get the user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *AgreementAcceptancesRequestBuilder) Get(options *AgreementAcceptancesRequestBuilderGetOptions)(*AgreementAcceptancesResponse, error) {
+func (m *AgreementAcceptancesRequestBuilder) Get(options *AgreementAcceptancesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementAcceptanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAgreementAcceptancesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAgreementAcceptanceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AgreementAcceptancesResponse), nil
-}
-func (m *AgreementAcceptancesRequestBuilder) Ref()(*id508aed1ab7c980ed580bf99b69aef8964ea148ff131e5b958fc36229d9e624e.RefRequestBuilder) {
-    return id508aed1ab7c980ed580bf99b69aef8964ea148ff131e5b958fc36229d9e624e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementAcceptanceCollectionResponseable), nil
 }

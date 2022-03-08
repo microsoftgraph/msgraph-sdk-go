@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetUserIdsWithFlaggedAppRegistrationRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\microsoft.graph.getUserIdsWithFlaggedAppRegistration()
+// GetUserIdsWithFlaggedAppRegistrationRequestBuilder provides operations to call the getUserIdsWithFlaggedAppRegistration method.
 type GetUserIdsWithFlaggedAppRegistrationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,18 +59,14 @@ func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) CreateGetRequestInf
     return requestInfo, nil
 }
 // Get invoke function getUserIdsWithFlaggedAppRegistration
-func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) Get(options *GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetOptions)([]string, error) {
+func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) Get(options *GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetOptions)(GetUserIdsWithFlaggedAppRegistrationResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveCollectionAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetUserIdsWithFlaggedAppRegistrationResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]string, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*string))
-    }
-    return val, nil
+    return res.(GetUserIdsWithFlaggedAppRegistrationResponseable), nil
 }

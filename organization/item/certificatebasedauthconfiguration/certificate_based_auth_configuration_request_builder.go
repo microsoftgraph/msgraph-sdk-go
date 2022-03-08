@@ -2,11 +2,11 @@ package certificatebasedauthconfiguration
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i78ac51bd565d56e41e6f1f7c9b588c407a8318e465ab50c8d961a3c476f23845 "github.com/microsoftgraph/msgraph-sdk-go/organization/item/certificatebasedauthconfiguration/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i5fc9993fc05157534f755ca06d3c0f6634a004777128fb0c3428649a7377e0b4 "github.com/microsoftgraph/msgraph-sdk-go/organization/item/certificatebasedauthconfiguration/count"
 )
 
-// CertificateBasedAuthConfigurationRequestBuilder builds and executes requests for operations under \organization\{organization-id}\certificateBasedAuthConfiguration
+// CertificateBasedAuthConfigurationRequestBuilder provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
 type CertificateBasedAuthConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewCertificateBasedAuthConfigurationRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewCertificateBasedAuthConfigurationRequestBuilder(rawUrl string, requestAd
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCertificateBasedAuthConfigurationRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CertificateBasedAuthConfigurationRequestBuilder) Count()(*i5fc9993fc05157534f755ca06d3c0f6634a004777128fb0c3428649a7377e0b4.CountRequestBuilder) {
+    return i5fc9993fc05157534f755ca06d3c0f6634a004777128fb0c3428649a7377e0b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
 func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformation(options *CertificateBasedAuthConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInform
     return requestInfo, nil
 }
 // Get navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *CertificateBasedAuthConfigurationRequestBuilder) Get(options *CertificateBasedAuthConfigurationRequestBuilderGetOptions)(*CertificateBasedAuthConfigurationResponse, error) {
+func (m *CertificateBasedAuthConfigurationRequestBuilder) Get(options *CertificateBasedAuthConfigurationRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CertificateBasedAuthConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCertificateBasedAuthConfigurationResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateCertificateBasedAuthConfigurationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CertificateBasedAuthConfigurationResponse), nil
-}
-func (m *CertificateBasedAuthConfigurationRequestBuilder) Ref()(*i78ac51bd565d56e41e6f1f7c9b588c407a8318e465ab50c8d961a3c476f23845.RefRequestBuilder) {
-    return i78ac51bd565d56e41e6f1f7c9b588c407a8318e465ab50c8d961a3c476f23845.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CertificateBasedAuthConfigurationCollectionResponseable), nil
 }

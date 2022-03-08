@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ToneInfo 
+// ToneInfo provides operations to manage the cloudCommunications singleton.
 type ToneInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewToneInfo()(*ToneInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateToneInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateToneInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewToneInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ToneInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetSequenceId gets the sequenceId property value. An incremental identifier used for ordering DTMF events.
-func (m *ToneInfo) GetSequenceId()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sequenceId
-    }
-}
-// GetTone gets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
-func (m *ToneInfo) GetTone()(*Tone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tone
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetSequenceId gets the sequenceId property value. An incremental identifier used for ordering DTMF events.
+func (m *ToneInfo) GetSequenceId()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sequenceId
+    }
+}
+// GetTone gets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
+func (m *ToneInfo) GetTone()(*Tone) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tone
+    }
 }
 func (m *ToneInfo) IsNil()(bool) {
     return m == nil

@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProvisioningStep 
+// ProvisioningStep provides operations to manage the auditLogRoot singleton.
 type ProvisioningStep struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Summary of what occurred during the step.
     description *string;
     // Details of what occurred during the step.
-    details *DetailsInfo;
+    details DetailsInfoable;
     // Name of the step.
     name *string;
     // Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
@@ -25,6 +25,10 @@ func NewProvisioningStep()(*ProvisioningStep) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateProvisioningStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProvisioningStepFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProvisioningStep(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningStep) GetAdditionalData()(map[string]interface{}) {
@@ -43,35 +47,11 @@ func (m *ProvisioningStep) GetDescription()(*string) {
     }
 }
 // GetDetails gets the details property value. Details of what occurred during the step.
-func (m *ProvisioningStep) GetDetails()(*DetailsInfo) {
+func (m *ProvisioningStep) GetDetails()(DetailsInfoable) {
     if m == nil {
         return nil
     } else {
         return m.details
-    }
-}
-// GetName gets the name property value. Name of the step.
-func (m *ProvisioningStep) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetProvisioningStepType gets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
-func (m *ProvisioningStep) GetProvisioningStepType()(*ProvisioningStepType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningStepType
-    }
-}
-// GetStatus gets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
-func (m *ProvisioningStep) GetStatus()(*ProvisioningResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,12 +68,12 @@ func (m *ProvisioningStep) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDetailsInfo() })
+        val, err := n.GetObjectValue(CreateDetailsInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetails(val.(*DetailsInfo))
+            m.SetDetails(val.(DetailsInfoable))
         }
         return nil
     }
@@ -128,6 +108,30 @@ func (m *ProvisioningStep) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name of the step.
+func (m *ProvisioningStep) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetProvisioningStepType gets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
+func (m *ProvisioningStep) GetProvisioningStepType()(*ProvisioningStepType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisioningStepType
+    }
+}
+// GetStatus gets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
+func (m *ProvisioningStep) GetStatus()(*ProvisioningResult) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *ProvisioningStep) IsNil()(bool) {
     return m == nil
@@ -187,7 +191,7 @@ func (m *ProvisioningStep) SetDescription(value *string)() {
     }
 }
 // SetDetails sets the details property value. Details of what occurred during the step.
-func (m *ProvisioningStep) SetDetails(value *DetailsInfo)() {
+func (m *ProvisioningStep) SetDetails(value DetailsInfoable)() {
     if m != nil {
         m.details = value
     }

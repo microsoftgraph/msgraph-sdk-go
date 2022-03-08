@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AlertDetection 
+// AlertDetection provides operations to manage the security singleton.
 type AlertDetection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewAlertDetection()(*AlertDetection) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAlertDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAlertDetectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAlertDetection(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertDetection) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *AlertDetection) GetDetectionType()(*string) {
         return nil
     } else {
         return m.detectionType
-    }
-}
-// GetMethod gets the method property value. 
-func (m *AlertDetection) GetMethod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.method
-    }
-}
-// GetName gets the name property value. 
-func (m *AlertDetection) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *AlertDetection) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetMethod gets the method property value. 
+func (m *AlertDetection) GetMethod()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.method
+    }
+}
+// GetName gets the name property value. 
+func (m *AlertDetection) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
 }
 func (m *AlertDetection) IsNil()(bool) {
     return m == nil

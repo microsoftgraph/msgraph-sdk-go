@@ -2,13 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i2bdc6a5962ee28fb97f1491f8e86888f0e14ac969ab466c2933ee12ebd59b0d7 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/versions/item/restoreversion"
     id981ee64657be3af79e7c7dfe58c56bcf87ddcf180c5d2e9f52c4d57ea184479 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/versions/item/content"
 )
 
-// DriveItemVersionItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\versions\{driveItemVersion-id}
+// DriveItemVersionItemRequestBuilder provides operations to manage the versions property of the microsoft.graph.driveItem entity.
 type DriveItemVersionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +46,7 @@ type DriveItemVersionItemRequestBuilderGetQueryParameters struct {
 // DriveItemVersionItemRequestBuilderPatchOptions options for Patch
 type DriveItemVersionItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersion;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +63,7 @@ func NewDriveItemVersionItemRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,7 +76,7 @@ func NewDriveItemVersionItemRequestBuilder(rawUrl string, requestAdapter ida96af
 func (m *DriveItemVersionItemRequestBuilder) Content()(*id981ee64657be3af79e7c7dfe58c56bcf87ddcf180c5d2e9f52c4d57ea184479.ContentRequestBuilder) {
     return id981ee64657be3af79e7c7dfe58c56bcf87ddcf180c5d2e9f52c4d57ea184479.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property versions for workbooks
 func (m *DriveItemVersionItemRequestBuilder) CreateDeleteRequestInformation(options *DriveItemVersionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +113,7 @@ func (m *DriveItemVersionItemRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property versions in workbooks
 func (m *DriveItemVersionItemRequestBuilder) CreatePatchRequestInformation(options *DriveItemVersionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,37 +131,49 @@ func (m *DriveItemVersionItemRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// Delete delete navigation property versions for workbooks
 func (m *DriveItemVersionItemRequestBuilder) Delete(options *DriveItemVersionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-func (m *DriveItemVersionItemRequestBuilder) Get(options *DriveItemVersionItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersion, error) {
+func (m *DriveItemVersionItemRequestBuilder) Get(options *DriveItemVersionItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDriveItemVersion() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDriveItemVersionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersion), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersionable), nil
 }
-// Patch the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// Patch update the navigation property versions in workbooks
 func (m *DriveItemVersionItemRequestBuilder) Patch(options *DriveItemVersionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -2,12 +2,12 @@ package messages
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i17838b5def125148d5f84dace1b394beda1dc4d0256ba17db91ca69eae093c72 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/messages/count"
     i4461915ea762d47e34c6845e61a25a9fca9dd3039732803b3506921d5cbabb25 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/messages/delta"
 )
 
-// MessagesRequestBuilder builds and executes requests for operations under \chats\{chat-id}\messages
+// MessagesRequestBuilder provides operations to manage the messages property of the microsoft.graph.chat entity.
 type MessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type MessagesRequestBuilderGetQueryParameters struct {
 // MessagesRequestBuilderPostOptions options for Post
 type MessagesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewMessagesRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessagesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MessagesRequestBuilder) Count()(*i17838b5def125148d5f84dace1b394beda1dc4d0256ba17db91ca69eae093c72.CountRequestBuilder) {
+    return i17838b5def125148d5f84dace1b394beda1dc4d0256ba17db91ca69eae093c72.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a collection of all the messages in the chat. Nullable.
 func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a collection of all the messages in the chat. Nullable.
+// CreatePostRequestInformation create new navigation property to messages for chats
 func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +117,39 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesR
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \chats\{chat-id}\messages\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *MessagesRequestBuilder) Delta()(*i4461915ea762d47e34c6845e61a25a9fca9dd3039732803b3506921d5cbabb25.DeltaRequestBuilder) {
     return i4461915ea762d47e34c6845e61a25a9fca9dd3039732803b3506921d5cbabb25.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get a collection of all the messages in the chat. Nullable.
-func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(*MessagesResponse, error) {
+func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMessagesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChatMessageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MessagesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageCollectionResponseable), nil
 }
-// Post a collection of all the messages in the chat. Nullable.
-func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage, error) {
+// Post create new navigation property to messages for chats
+func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewChatMessage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChatMessageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageable), nil
 }

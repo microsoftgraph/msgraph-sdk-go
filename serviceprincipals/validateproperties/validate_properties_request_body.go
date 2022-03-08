@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ValidatePropertiesRequestBody 
+// ValidatePropertiesRequestBody provides operations to call the validateProperties method.
 type ValidatePropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewValidatePropertiesRequestBody()(*ValidatePropertiesRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateValidatePropertiesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateValidatePropertiesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewValidatePropertiesRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePropertiesRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *ValidatePropertiesRequestBody) GetEntityType()(*string) {
         return nil
     } else {
         return m.entityType
-    }
-}
-// GetMailNickname gets the mailNickname property value. 
-func (m *ValidatePropertiesRequestBody) GetMailNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNickname
-    }
-}
-// GetOnBehalfOfUserId gets the onBehalfOfUserId property value. 
-func (m *ValidatePropertiesRequestBody) GetOnBehalfOfUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onBehalfOfUserId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +96,22 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetMailNickname gets the mailNickname property value. 
+func (m *ValidatePropertiesRequestBody) GetMailNickname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailNickname
+    }
+}
+// GetOnBehalfOfUserId gets the onBehalfOfUserId property value. 
+func (m *ValidatePropertiesRequestBody) GetOnBehalfOfUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onBehalfOfUserId
+    }
 }
 func (m *ValidatePropertiesRequestBody) IsNil()(bool) {
     return m == nil

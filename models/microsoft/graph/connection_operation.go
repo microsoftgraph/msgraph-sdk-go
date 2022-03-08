@@ -5,11 +5,11 @@ import (
     i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// ConnectionOperation 
+// ConnectionOperation provides operations to manage the collection of externalConnection entities.
 type ConnectionOperation struct {
     Entity
     // If status is failed, provides more information about the error that caused the failure.
-    error *PublicError;
+    error PublicErrorable;
     // Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
     status *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionOperationStatus;
 }
@@ -20,32 +20,28 @@ func NewConnectionOperation()(*ConnectionOperation) {
     }
     return m
 }
+// CreateConnectionOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConnectionOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConnectionOperation(), nil
+}
 // GetError gets the error property value. If status is failed, provides more information about the error that caused the failure.
-func (m *ConnectionOperation) GetError()(*PublicError) {
+func (m *ConnectionOperation) GetError()(PublicErrorable) {
     if m == nil {
         return nil
     } else {
         return m.error
     }
 }
-// GetStatus gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
-func (m *ConnectionOperation) GetStatus()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPublicError() })
+        val, err := n.GetObjectValue(CreatePublicErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetError(val.(*PublicError))
+            m.SetError(val.(PublicErrorable))
         }
         return nil
     }
@@ -60,6 +56,14 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetStatus gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
+func (m *ConnectionOperation) GetStatus()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionOperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *ConnectionOperation) IsNil()(bool) {
     return m == nil
@@ -86,7 +90,7 @@ func (m *ConnectionOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetError sets the error property value. If status is failed, provides more information about the error that caused the failure.
-func (m *ConnectionOperation) SetError(value *PublicError)() {
+func (m *ConnectionOperation) SetError(value PublicErrorable)() {
     if m != nil {
         m.error = value
     }

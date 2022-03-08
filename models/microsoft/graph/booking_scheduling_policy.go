@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingSchedulingPolicy 
+// BookingSchedulingPolicy provides operations to manage the solutionsRoot singleton.
 type BookingSchedulingPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewBookingSchedulingPolicy()(*BookingSchedulingPolicy) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBookingSchedulingPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBookingSchedulingPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBookingSchedulingPolicy(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingSchedulingPolicy) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *BookingSchedulingPolicy) GetAllowStaffSelection()(*bool) {
         return nil
     } else {
         return m.allowStaffSelection
-    }
-}
-// GetMaximumAdvance gets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
-func (m *BookingSchedulingPolicy) GetMaximumAdvance()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumAdvance
-    }
-}
-// GetMinimumLeadTime gets the minimumLeadTime property value. The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
-func (m *BookingSchedulingPolicy) GetMinimumLeadTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumLeadTime
-    }
-}
-// GetSendConfirmationsToOwner gets the sendConfirmationsToOwner property value. True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
-func (m *BookingSchedulingPolicy) GetSendConfirmationsToOwner()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendConfirmationsToOwner
-    }
-}
-// GetTimeSlotInterval gets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.
-func (m *BookingSchedulingPolicy) GetTimeSlotInterval()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeSlotInterval
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetMaximumAdvance gets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
+func (m *BookingSchedulingPolicy) GetMaximumAdvance()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumAdvance
+    }
+}
+// GetMinimumLeadTime gets the minimumLeadTime property value. The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
+func (m *BookingSchedulingPolicy) GetMinimumLeadTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumLeadTime
+    }
+}
+// GetSendConfirmationsToOwner gets the sendConfirmationsToOwner property value. True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
+func (m *BookingSchedulingPolicy) GetSendConfirmationsToOwner()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sendConfirmationsToOwner
+    }
+}
+// GetTimeSlotInterval gets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.
+func (m *BookingSchedulingPolicy) GetTimeSlotInterval()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeSlotInterval
+    }
 }
 func (m *BookingSchedulingPolicy) IsNil()(bool) {
     return m == nil

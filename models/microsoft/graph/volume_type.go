@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the informationProtection singleton.
 type VolumeType int
 
 const (

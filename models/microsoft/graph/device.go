@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Device 
+// Device provides operations to manage the drive singleton.
 type Device struct {
     DirectoryObject
     // true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
     accountEnabled *bool;
     // For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-    alternativeSecurityIds []AlternativeSecurityId;
+    alternativeSecurityIds []AlternativeSecurityIdable;
     // The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
     approximateLastSignInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -25,7 +25,7 @@ type Device struct {
     // The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // The collection of open extensions defined for the device. Read-only. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
     isCompliant *bool;
     // true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
@@ -33,7 +33,7 @@ type Device struct {
     // Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
     mdmAppId *string;
     // Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-    memberOf []DirectoryObject;
+    memberOf []DirectoryObjectable;
     // The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
@@ -47,13 +47,13 @@ type Device struct {
     // The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
     profileType *string;
     // The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
-    registeredOwners []DirectoryObject;
+    registeredOwners []DirectoryObjectable;
     // Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-    registeredUsers []DirectoryObject;
+    registeredUsers []DirectoryObjectable;
     // List of labels applied to the device by the system.
     systemLabels []string;
     // Groups that the device is a member of. This operation is transitive. Supports $expand.
-    transitiveMemberOf []DirectoryObject;
+    transitiveMemberOf []DirectoryObjectable;
     // Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
     trustType *string;
 }
@@ -64,6 +64,10 @@ func NewDevice()(*Device) {
     }
     return m
 }
+// CreateDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDevice(), nil
+}
 // GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
 func (m *Device) GetAccountEnabled()(*bool) {
     if m == nil {
@@ -73,7 +77,7 @@ func (m *Device) GetAccountEnabled()(*bool) {
     }
 }
 // GetAlternativeSecurityIds gets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-func (m *Device) GetAlternativeSecurityIds()([]AlternativeSecurityId) {
+func (m *Device) GetAlternativeSecurityIds()([]AlternativeSecurityIdable) {
     if m == nil {
         return nil
     } else {
@@ -129,131 +133,11 @@ func (m *Device) GetDisplayName()(*string) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the device. Read-only. Nullable.
-func (m *Device) GetExtensions()([]Extension) {
+func (m *Device) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
-    }
-}
-// GetIsCompliant gets the isCompliant property value. true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-func (m *Device) GetIsCompliant()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCompliant
-    }
-}
-// GetIsManaged gets the isManaged property value. true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-func (m *Device) GetIsManaged()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isManaged
-    }
-}
-// GetMdmAppId gets the mdmAppId property value. Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
-func (m *Device) GetMdmAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmAppId
-    }
-}
-// GetMemberOf gets the memberOf property value. Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-func (m *Device) GetMemberOf()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberOf
-    }
-}
-// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-func (m *Device) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesLastSyncDateTime
-    }
-}
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-func (m *Device) GetOnPremisesSyncEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSyncEnabled
-    }
-}
-// GetOperatingSystem gets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
-func (m *Device) GetOperatingSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystem
-    }
-}
-// GetOperatingSystemVersion gets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
-func (m *Device) GetOperatingSystemVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemVersion
-    }
-}
-// GetPhysicalIds gets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
-func (m *Device) GetPhysicalIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.physicalIds
-    }
-}
-// GetProfileType gets the profileType property value. The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
-func (m *Device) GetProfileType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileType
-    }
-}
-// GetRegisteredOwners gets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
-func (m *Device) GetRegisteredOwners()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredOwners
-    }
-}
-// GetRegisteredUsers gets the registeredUsers property value. Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-func (m *Device) GetRegisteredUsers()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredUsers
-    }
-}
-// GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system.
-func (m *Device) GetSystemLabels()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemLabels
-    }
-}
-// GetTransitiveMemberOf gets the transitiveMemberOf property value. Groups that the device is a member of. This operation is transitive. Supports $expand.
-func (m *Device) GetTransitiveMemberOf()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transitiveMemberOf
-    }
-}
-// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
-func (m *Device) GetTrustType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -270,14 +154,14 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["alternativeSecurityIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlternativeSecurityId() })
+        val, err := n.GetCollectionOfObjectValues(CreateAlternativeSecurityIdFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AlternativeSecurityId, len(val))
+            res := make([]AlternativeSecurityIdable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AlternativeSecurityId))
+                res[i] = v.(AlternativeSecurityIdable)
             }
             m.SetAlternativeSecurityIds(res)
         }
@@ -344,14 +228,14 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
@@ -388,14 +272,14 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetMemberOf(res)
         }
@@ -466,28 +350,28 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["registeredOwners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetRegisteredOwners(res)
         }
         return nil
     }
     res["registeredUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetRegisteredUsers(res)
         }
@@ -508,14 +392,14 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["transitiveMemberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetTransitiveMemberOf(res)
         }
@@ -532,6 +416,126 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     return res
+}
+// GetIsCompliant gets the isCompliant property value. true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
+func (m *Device) GetIsCompliant()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCompliant
+    }
+}
+// GetIsManaged gets the isManaged property value. true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
+func (m *Device) GetIsManaged()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isManaged
+    }
+}
+// GetMdmAppId gets the mdmAppId property value. Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
+func (m *Device) GetMdmAppId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mdmAppId
+    }
+}
+// GetMemberOf gets the memberOf property value. Groups that this device is a member of. Read-only. Nullable. Supports $expand.
+func (m *Device) GetMemberOf()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberOf
+    }
+}
+// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
+func (m *Device) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesLastSyncDateTime
+    }
+}
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+func (m *Device) GetOnPremisesSyncEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesSyncEnabled
+    }
+}
+// GetOperatingSystem gets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
+func (m *Device) GetOperatingSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystem
+    }
+}
+// GetOperatingSystemVersion gets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
+func (m *Device) GetOperatingSystemVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystemVersion
+    }
+}
+// GetPhysicalIds gets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+func (m *Device) GetPhysicalIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.physicalIds
+    }
+}
+// GetProfileType gets the profileType property value. The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
+func (m *Device) GetProfileType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.profileType
+    }
+}
+// GetRegisteredOwners gets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+func (m *Device) GetRegisteredOwners()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registeredOwners
+    }
+}
+// GetRegisteredUsers gets the registeredUsers property value. Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
+func (m *Device) GetRegisteredUsers()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registeredUsers
+    }
+}
+// GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system.
+func (m *Device) GetSystemLabels()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.systemLabels
+    }
+}
+// GetTransitiveMemberOf gets the transitiveMemberOf property value. Groups that the device is a member of. This operation is transitive. Supports $expand.
+func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.transitiveMemberOf
+    }
+}
+// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+func (m *Device) GetTrustType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.trustType
+    }
 }
 func (m *Device) IsNil()(bool) {
     return m == nil
@@ -551,8 +555,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetAlternativeSecurityIds() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlternativeSecurityIds()))
         for i, v := range m.GetAlternativeSecurityIds() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("alternativeSecurityIds", cast)
         if err != nil {
@@ -598,8 +601,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -627,8 +629,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("memberOf", cast)
         if err != nil {
@@ -674,8 +675,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetRegisteredOwners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRegisteredOwners()))
         for i, v := range m.GetRegisteredOwners() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("registeredOwners", cast)
         if err != nil {
@@ -685,8 +685,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetRegisteredUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRegisteredUsers()))
         for i, v := range m.GetRegisteredUsers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("registeredUsers", cast)
         if err != nil {
@@ -702,8 +701,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetTransitiveMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveMemberOf()))
         for i, v := range m.GetTransitiveMemberOf() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("transitiveMemberOf", cast)
         if err != nil {
@@ -725,7 +723,7 @@ func (m *Device) SetAccountEnabled(value *bool)() {
     }
 }
 // SetAlternativeSecurityIds sets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-func (m *Device) SetAlternativeSecurityIds(value []AlternativeSecurityId)() {
+func (m *Device) SetAlternativeSecurityIds(value []AlternativeSecurityIdable)() {
     if m != nil {
         m.alternativeSecurityIds = value
     }
@@ -767,7 +765,7 @@ func (m *Device) SetDisplayName(value *string)() {
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the device. Read-only. Nullable.
-func (m *Device) SetExtensions(value []Extension)() {
+func (m *Device) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
@@ -791,7 +789,7 @@ func (m *Device) SetMdmAppId(value *string)() {
     }
 }
 // SetMemberOf sets the memberOf property value. Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-func (m *Device) SetMemberOf(value []DirectoryObject)() {
+func (m *Device) SetMemberOf(value []DirectoryObjectable)() {
     if m != nil {
         m.memberOf = value
     }
@@ -833,13 +831,13 @@ func (m *Device) SetProfileType(value *string)() {
     }
 }
 // SetRegisteredOwners sets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
-func (m *Device) SetRegisteredOwners(value []DirectoryObject)() {
+func (m *Device) SetRegisteredOwners(value []DirectoryObjectable)() {
     if m != nil {
         m.registeredOwners = value
     }
 }
 // SetRegisteredUsers sets the registeredUsers property value. Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-func (m *Device) SetRegisteredUsers(value []DirectoryObject)() {
+func (m *Device) SetRegisteredUsers(value []DirectoryObjectable)() {
     if m != nil {
         m.registeredUsers = value
     }
@@ -851,7 +849,7 @@ func (m *Device) SetSystemLabels(value []string)() {
     }
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. Groups that the device is a member of. This operation is transitive. Supports $expand.
-func (m *Device) SetTransitiveMemberOf(value []DirectoryObject)() {
+func (m *Device) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     if m != nil {
         m.transitiveMemberOf = value
     }

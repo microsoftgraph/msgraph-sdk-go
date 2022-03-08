@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DocumentSetContent 
+// DocumentSetContent provides operations to manage the drive singleton.
 type DocumentSetContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Content type information of the file.
-    contentType *ContentTypeInfo;
+    contentType ContentTypeInfoable;
     // Name of the file in resource folder that should be added as a default content or a template in the document set.
     fileName *string;
     // Folder name in which the file will be placed when a new document set is created in the library.
@@ -22,6 +22,10 @@ func NewDocumentSetContent()(*DocumentSetContent) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDocumentSetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDocumentSetContentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDocumentSetContent(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSetContent) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -31,39 +35,23 @@ func (m *DocumentSetContent) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetContentType gets the contentType property value. Content type information of the file.
-func (m *DocumentSetContent) GetContentType()(*ContentTypeInfo) {
+func (m *DocumentSetContent) GetContentType()(ContentTypeInfoable) {
     if m == nil {
         return nil
     } else {
         return m.contentType
     }
 }
-// GetFileName gets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
-func (m *DocumentSetContent) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
-}
-// GetFolderName gets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
-func (m *DocumentSetContent) GetFolderName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.folderName
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContentTypeInfo() })
+        val, err := n.GetObjectValue(CreateContentTypeInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentType(val.(*ContentTypeInfo))
+            m.SetContentType(val.(ContentTypeInfoable))
         }
         return nil
     }
@@ -88,6 +76,22 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetFileName gets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
+func (m *DocumentSetContent) GetFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileName
+    }
+}
+// GetFolderName gets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
+func (m *DocumentSetContent) GetFolderName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.folderName
+    }
 }
 func (m *DocumentSetContent) IsNil()(bool) {
     return m == nil
@@ -127,7 +131,7 @@ func (m *DocumentSetContent) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetContentType sets the contentType property value. Content type information of the file.
-func (m *DocumentSetContent) SetContentType(value *ContentTypeInfo)() {
+func (m *DocumentSetContent) SetContentType(value ContentTypeInfoable)() {
     if m != nil {
         m.contentType = value
     }

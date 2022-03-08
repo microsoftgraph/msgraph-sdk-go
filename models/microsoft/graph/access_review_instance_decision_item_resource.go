@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewInstanceDecisionItemResource 
+// AccessReviewInstanceDecisionItemResource provides operations to manage the identityGovernance singleton.
 type AccessReviewInstanceDecisionItemResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewAccessReviewInstanceDecisionItemResource()(*AccessReviewInstanceDecision
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewInstanceDecisionItemResource(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewInstanceDecisionItemResource) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *AccessReviewInstanceDecisionItemResource) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetId gets the id property value. Identifier of the resource
-func (m *AccessReviewInstanceDecisionItemResource) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetType gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
-func (m *AccessReviewInstanceDecisionItemResource) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *AccessReviewInstanceDecisionItemResource) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetId gets the id property value. Identifier of the resource
+func (m *AccessReviewInstanceDecisionItemResource) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetType gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
+func (m *AccessReviewInstanceDecisionItemResource) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *AccessReviewInstanceDecisionItemResource) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DomainState 
+// DomainState provides operations to manage the collection of domain entities.
 type DomainState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,36 +23,16 @@ func NewDomainState()(*DomainState) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDomainStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDomainStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDomainState(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DomainState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.
-func (m *DomainState) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetOperation gets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification
-func (m *DomainState) GetOperation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operation
-    }
-}
-// GetStatus gets the status property value. Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
-func (m *DomainState) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +69,30 @@ func (m *DomainState) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.
+func (m *DomainState) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetOperation gets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification
+func (m *DomainState) GetOperation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operation
+    }
+}
+// GetStatus gets the status property value. Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
+func (m *DomainState) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *DomainState) IsNil()(bool) {
     return m == nil

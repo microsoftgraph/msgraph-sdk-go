@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchAlteration 
+// SearchAlteration provides operations to call the query method.
 type SearchAlteration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type SearchAlteration struct {
     // Defines the altered query string with spelling correction.
     alteredQueryString *string;
     // Represents changed segments related to an original user query.
-    alteredQueryTokens []AlteredQueryToken;
+    alteredQueryTokens []AlteredQueryTokenable;
 }
 // NewSearchAlteration instantiates a new searchAlteration and sets the default values.
 func NewSearchAlteration()(*SearchAlteration) {
@@ -21,6 +21,10 @@ func NewSearchAlteration()(*SearchAlteration) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSearchAlterationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchAlterationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchAlteration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAlteration) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +51,7 @@ func (m *SearchAlteration) GetAlteredQueryString()(*string) {
     }
 }
 // GetAlteredQueryTokens gets the alteredQueryTokens property value. Represents changed segments related to an original user query.
-func (m *SearchAlteration) GetAlteredQueryTokens()([]AlteredQueryToken) {
+func (m *SearchAlteration) GetAlteredQueryTokens()([]AlteredQueryTokenable) {
     if m == nil {
         return nil
     } else {
@@ -78,14 +82,14 @@ func (m *SearchAlteration) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["alteredQueryTokens"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlteredQueryToken() })
+        val, err := n.GetCollectionOfObjectValues(CreateAlteredQueryTokenFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AlteredQueryToken, len(val))
+            res := make([]AlteredQueryTokenable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AlteredQueryToken))
+                res[i] = v.(AlteredQueryTokenable)
             }
             m.SetAlteredQueryTokens(res)
         }
@@ -113,8 +117,7 @@ func (m *SearchAlteration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetAlteredQueryTokens() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlteredQueryTokens()))
         for i, v := range m.GetAlteredQueryTokens() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("alteredQueryTokens", cast)
         if err != nil {
@@ -148,7 +151,7 @@ func (m *SearchAlteration) SetAlteredQueryString(value *string)() {
     }
 }
 // SetAlteredQueryTokens sets the alteredQueryTokens property value. Represents changed segments related to an original user query.
-func (m *SearchAlteration) SetAlteredQueryTokens(value []AlteredQueryToken)() {
+func (m *SearchAlteration) SetAlteredQueryTokens(value []AlteredQueryTokenable)() {
     if m != nil {
         m.alteredQueryTokens = value
     }
