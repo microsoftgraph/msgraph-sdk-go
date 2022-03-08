@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResultInfo 
+// ResultInfo provides operations to manage the cloudCommunications singleton.
 type ResultInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewResultInfo()(*ResultInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateResultInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateResultInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewResultInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResultInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *ResultInfo) GetCode()(*int32) {
         return nil
     } else {
         return m.code
-    }
-}
-// GetMessage gets the message property value. The message.
-func (m *ResultInfo) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetSubcode gets the subcode property value. The result sub-code.
-func (m *ResultInfo) GetSubcode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subcode
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *ResultInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. The message.
+func (m *ResultInfo) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetSubcode gets the subcode property value. The result sub-code.
+func (m *ResultInfo) GetSubcode()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subcode
+    }
 }
 func (m *ResultInfo) IsNil()(bool) {
     return m == nil

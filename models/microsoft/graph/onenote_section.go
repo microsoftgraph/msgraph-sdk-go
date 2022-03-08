@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnenoteSection 
+// OnenoteSection provides operations to manage the drive singleton.
 type OnenoteSection struct {
     OnenoteEntityHierarchyModel
     // Indicates whether this is the user's default section. Read-only.
     isDefault *bool;
     // Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it's installed. The oneNoteWebURL link opens the section in OneNote on the web.
-    links *SectionLinks;
+    links SectionLinksable;
     // The collection of pages in the section.  Read-only. Nullable.
-    pages []OnenotePage;
+    pages []OnenotePageable;
     // The pages endpoint where you can get details for all the pages in the section. Read-only.
     pagesUrl *string;
     // The notebook that contains the section.  Read-only.
-    parentNotebook *Notebook;
+    parentNotebook Notebookable;
     // The section group that contains the section.  Read-only.
-    parentSectionGroup *SectionGroup;
+    parentSectionGroup SectionGroupable;
 }
 // NewOnenoteSection instantiates a new onenoteSection and sets the default values.
 func NewOnenoteSection()(*OnenoteSection) {
@@ -27,53 +27,9 @@ func NewOnenoteSection()(*OnenoteSection) {
     }
     return m
 }
-// GetIsDefault gets the isDefault property value. Indicates whether this is the user's default section. Read-only.
-func (m *OnenoteSection) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetLinks gets the links property value. Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it's installed. The oneNoteWebURL link opens the section in OneNote on the web.
-func (m *OnenoteSection) GetLinks()(*SectionLinks) {
-    if m == nil {
-        return nil
-    } else {
-        return m.links
-    }
-}
-// GetPages gets the pages property value. The collection of pages in the section.  Read-only. Nullable.
-func (m *OnenoteSection) GetPages()([]OnenotePage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pages
-    }
-}
-// GetPagesUrl gets the pagesUrl property value. The pages endpoint where you can get details for all the pages in the section. Read-only.
-func (m *OnenoteSection) GetPagesUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pagesUrl
-    }
-}
-// GetParentNotebook gets the parentNotebook property value. The notebook that contains the section.  Read-only.
-func (m *OnenoteSection) GetParentNotebook()(*Notebook) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentNotebook
-    }
-}
-// GetParentSectionGroup gets the parentSectionGroup property value. The section group that contains the section.  Read-only.
-func (m *OnenoteSection) GetParentSectionGroup()(*SectionGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentSectionGroup
-    }
+// CreateOnenoteSectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnenoteSectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnenoteSection(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -89,24 +45,24 @@ func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["links"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSectionLinks() })
+        val, err := n.GetObjectValue(CreateSectionLinksFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLinks(val.(*SectionLinks))
+            m.SetLinks(val.(SectionLinksable))
         }
         return nil
     }
     res["pages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnenotePage() })
+        val, err := n.GetCollectionOfObjectValues(CreateOnenotePageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnenotePage, len(val))
+            res := make([]OnenotePageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnenotePage))
+                res[i] = v.(OnenotePageable)
             }
             m.SetPages(res)
         }
@@ -123,26 +79,74 @@ func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["parentNotebook"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNotebook() })
+        val, err := n.GetObjectValue(CreateNotebookFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentNotebook(val.(*Notebook))
+            m.SetParentNotebook(val.(Notebookable))
         }
         return nil
     }
     res["parentSectionGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSectionGroup() })
+        val, err := n.GetObjectValue(CreateSectionGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentSectionGroup(val.(*SectionGroup))
+            m.SetParentSectionGroup(val.(SectionGroupable))
         }
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. Indicates whether this is the user's default section. Read-only.
+func (m *OnenoteSection) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetLinks gets the links property value. Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it's installed. The oneNoteWebURL link opens the section in OneNote on the web.
+func (m *OnenoteSection) GetLinks()(SectionLinksable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.links
+    }
+}
+// GetPages gets the pages property value. The collection of pages in the section.  Read-only. Nullable.
+func (m *OnenoteSection) GetPages()([]OnenotePageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pages
+    }
+}
+// GetPagesUrl gets the pagesUrl property value. The pages endpoint where you can get details for all the pages in the section. Read-only.
+func (m *OnenoteSection) GetPagesUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pagesUrl
+    }
+}
+// GetParentNotebook gets the parentNotebook property value. The notebook that contains the section.  Read-only.
+func (m *OnenoteSection) GetParentNotebook()(Notebookable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentNotebook
+    }
+}
+// GetParentSectionGroup gets the parentSectionGroup property value. The section group that contains the section.  Read-only.
+func (m *OnenoteSection) GetParentSectionGroup()(SectionGroupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentSectionGroup
+    }
 }
 func (m *OnenoteSection) IsNil()(bool) {
     return m == nil
@@ -168,8 +172,7 @@ func (m *OnenoteSection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetPages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPages()))
         for i, v := range m.GetPages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("pages", cast)
         if err != nil {
@@ -203,13 +206,13 @@ func (m *OnenoteSection) SetIsDefault(value *bool)() {
     }
 }
 // SetLinks sets the links property value. Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it's installed. The oneNoteWebURL link opens the section in OneNote on the web.
-func (m *OnenoteSection) SetLinks(value *SectionLinks)() {
+func (m *OnenoteSection) SetLinks(value SectionLinksable)() {
     if m != nil {
         m.links = value
     }
 }
 // SetPages sets the pages property value. The collection of pages in the section.  Read-only. Nullable.
-func (m *OnenoteSection) SetPages(value []OnenotePage)() {
+func (m *OnenoteSection) SetPages(value []OnenotePageable)() {
     if m != nil {
         m.pages = value
     }
@@ -221,13 +224,13 @@ func (m *OnenoteSection) SetPagesUrl(value *string)() {
     }
 }
 // SetParentNotebook sets the parentNotebook property value. The notebook that contains the section.  Read-only.
-func (m *OnenoteSection) SetParentNotebook(value *Notebook)() {
+func (m *OnenoteSection) SetParentNotebook(value Notebookable)() {
     if m != nil {
         m.parentNotebook = value
     }
 }
 // SetParentSectionGroup sets the parentSectionGroup property value. The section group that contains the section.  Read-only.
-func (m *OnenoteSection) SetParentSectionGroup(value *SectionGroup)() {
+func (m *OnenoteSection) SetParentSectionGroup(value SectionGroupable)() {
     if m != nil {
         m.parentSectionGroup = value
     }

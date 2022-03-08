@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Process 
+// Process provides operations to manage the security singleton.
 type Process struct {
     // User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
     accountName *string;
@@ -16,7 +16,7 @@ type Process struct {
     // Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Complex type containing file hashes (cryptographic and location-sensitive).
-    fileHash *FileHash;
+    fileHash FileHashable;
     // The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
     integrityLevel *ProcessIntegrityLevel;
     // True if the process is elevated.
@@ -40,6 +40,10 @@ func NewProcess()(*Process) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProcessFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProcess(), nil
 }
 // GetAccountName gets the accountName property value. User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
 func (m *Process) GetAccountName()(*string) {
@@ -71,78 +75,6 @@ func (m *Process) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
-func (m *Process) GetFileHash()(*FileHash) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHash
-    }
-}
-// GetIntegrityLevel gets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
-func (m *Process) GetIntegrityLevel()(*ProcessIntegrityLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.integrityLevel
-    }
-}
-// GetIsElevated gets the isElevated property value. True if the process is elevated.
-func (m *Process) GetIsElevated()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isElevated
-    }
-}
-// GetName gets the name property value. The name of the process' Image file.
-func (m *Process) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetParentProcessCreatedDateTime gets the parentProcessCreatedDateTime property value. DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *Process) GetParentProcessCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessCreatedDateTime
-    }
-}
-// GetParentProcessId gets the parentProcessId property value. The Process ID (PID) of the parent process.
-func (m *Process) GetParentProcessId()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessId
-    }
-}
-// GetParentProcessName gets the parentProcessName property value. The name of the image file of the parent process.
-func (m *Process) GetParentProcessName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessName
-    }
-}
-// GetPath gets the path property value. Full path, including filename.
-func (m *Process) GetPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.path
-    }
-}
-// GetProcessId gets the processId property value. The Process ID (PID) of the process.
-func (m *Process) GetProcessId()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,12 +111,12 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["fileHash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFileHash() })
+        val, err := n.GetObjectValue(CreateFileHashFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFileHash(val.(*FileHash))
+            m.SetFileHash(val.(FileHashable))
         }
         return nil
     }
@@ -269,6 +201,78 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
+func (m *Process) GetFileHash()(FileHashable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileHash
+    }
+}
+// GetIntegrityLevel gets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
+func (m *Process) GetIntegrityLevel()(*ProcessIntegrityLevel) {
+    if m == nil {
+        return nil
+    } else {
+        return m.integrityLevel
+    }
+}
+// GetIsElevated gets the isElevated property value. True if the process is elevated.
+func (m *Process) GetIsElevated()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isElevated
+    }
+}
+// GetName gets the name property value. The name of the process' Image file.
+func (m *Process) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetParentProcessCreatedDateTime gets the parentProcessCreatedDateTime property value. DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *Process) GetParentProcessCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentProcessCreatedDateTime
+    }
+}
+// GetParentProcessId gets the parentProcessId property value. The Process ID (PID) of the parent process.
+func (m *Process) GetParentProcessId()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentProcessId
+    }
+}
+// GetParentProcessName gets the parentProcessName property value. The name of the image file of the parent process.
+func (m *Process) GetParentProcessName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentProcessName
+    }
+}
+// GetPath gets the path property value. Full path, including filename.
+func (m *Process) GetPath()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.path
+    }
+}
+// GetProcessId gets the processId property value. The Process ID (PID) of the process.
+func (m *Process) GetProcessId()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processId
+    }
 }
 func (m *Process) IsNil()(bool) {
     return m == nil
@@ -381,7 +385,7 @@ func (m *Process) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
     }
 }
 // SetFileHash sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
-func (m *Process) SetFileHash(value *FileHash)() {
+func (m *Process) SetFileHash(value FileHashable)() {
     if m != nil {
         m.fileHash = value
     }

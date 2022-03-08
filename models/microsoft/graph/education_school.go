@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationSchool 
+// EducationSchool provides operations to manage the educationRoot singleton.
 type EducationSchool struct {
     EducationOrganization
     // Address of the school.
-    address *PhysicalAddress;
+    address PhysicalAddressable;
     // The underlying administrativeUnit for this school.
-    administrativeUnit *AdministrativeUnit;
+    administrativeUnit AdministrativeUnitable;
     // Classes taught at the school. Nullable.
-    classes []EducationClass;
+    classes []EducationClassable;
     // Entity who created the school.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // ID of school in syncing system.
     externalId *string;
     // ID of principal in syncing system.
@@ -34,7 +34,7 @@ type EducationSchool struct {
     // School Number.
     schoolNumber *string;
     // Users in the school. Nullable.
-    users []EducationUser;
+    users []EducationUserable;
 }
 // NewEducationSchool instantiates a new educationSchool and sets the default values.
 func NewEducationSchool()(*EducationSchool) {
@@ -43,8 +43,12 @@ func NewEducationSchool()(*EducationSchool) {
     }
     return m
 }
+// CreateEducationSchoolFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationSchoolFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationSchool(), nil
+}
 // GetAddress gets the address property value. Address of the school.
-func (m *EducationSchool) GetAddress()(*PhysicalAddress) {
+func (m *EducationSchool) GetAddress()(PhysicalAddressable) {
     if m == nil {
         return nil
     } else {
@@ -52,7 +56,7 @@ func (m *EducationSchool) GetAddress()(*PhysicalAddress) {
     }
 }
 // GetAdministrativeUnit gets the administrativeUnit property value. The underlying administrativeUnit for this school.
-func (m *EducationSchool) GetAdministrativeUnit()(*AdministrativeUnit) {
+func (m *EducationSchool) GetAdministrativeUnit()(AdministrativeUnitable) {
     if m == nil {
         return nil
     } else {
@@ -60,7 +64,7 @@ func (m *EducationSchool) GetAdministrativeUnit()(*AdministrativeUnit) {
     }
 }
 // GetClasses gets the classes property value. Classes taught at the school. Nullable.
-func (m *EducationSchool) GetClasses()([]EducationClass) {
+func (m *EducationSchool) GetClasses()([]EducationClassable) {
     if m == nil {
         return nil
     } else {
@@ -68,7 +72,7 @@ func (m *EducationSchool) GetClasses()([]EducationClass) {
     }
 }
 // GetCreatedBy gets the createdBy property value. Entity who created the school.
-func (m *EducationSchool) GetCreatedBy()(*IdentitySet) {
+func (m *EducationSchool) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -99,106 +103,50 @@ func (m *EducationSchool) GetFax()(*string) {
         return m.fax
     }
 }
-// GetHighestGrade gets the highestGrade property value. Highest grade taught.
-func (m *EducationSchool) GetHighestGrade()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.highestGrade
-    }
-}
-// GetLowestGrade gets the lowestGrade property value. Lowest grade taught.
-func (m *EducationSchool) GetLowestGrade()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lowestGrade
-    }
-}
-// GetPhone gets the phone property value. Phone number of school.
-func (m *EducationSchool) GetPhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phone
-    }
-}
-// GetPrincipalEmail gets the principalEmail property value. Email address of the principal.
-func (m *EducationSchool) GetPrincipalEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalEmail
-    }
-}
-// GetPrincipalName gets the principalName property value. Name of the principal.
-func (m *EducationSchool) GetPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalName
-    }
-}
-// GetSchoolNumber gets the schoolNumber property value. School Number.
-func (m *EducationSchool) GetSchoolNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schoolNumber
-    }
-}
-// GetUsers gets the users property value. Users in the school. Nullable.
-func (m *EducationSchool) GetUsers()([]EducationUser) {
-    if m == nil {
-        return nil
-    } else {
-        return m.users
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSchool) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.EducationOrganization.GetFieldDeserializers()
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
+        val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddress(val.(*PhysicalAddress))
+            m.SetAddress(val.(PhysicalAddressable))
         }
         return nil
     }
     res["administrativeUnit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAdministrativeUnit() })
+        val, err := n.GetObjectValue(CreateAdministrativeUnitFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAdministrativeUnit(val.(*AdministrativeUnit))
+            m.SetAdministrativeUnit(val.(AdministrativeUnitable))
         }
         return nil
     }
     res["classes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationClass() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationClassFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationClass, len(val))
+            res := make([]EducationClassable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationClass))
+                res[i] = v.(EducationClassable)
             }
             m.SetClasses(res)
         }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -293,20 +241,76 @@ func (m *EducationSchool) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["users"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationUser() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationUser, len(val))
+            res := make([]EducationUserable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationUser))
+                res[i] = v.(EducationUserable)
             }
             m.SetUsers(res)
         }
         return nil
     }
     return res
+}
+// GetHighestGrade gets the highestGrade property value. Highest grade taught.
+func (m *EducationSchool) GetHighestGrade()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.highestGrade
+    }
+}
+// GetLowestGrade gets the lowestGrade property value. Lowest grade taught.
+func (m *EducationSchool) GetLowestGrade()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lowestGrade
+    }
+}
+// GetPhone gets the phone property value. Phone number of school.
+func (m *EducationSchool) GetPhone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phone
+    }
+}
+// GetPrincipalEmail gets the principalEmail property value. Email address of the principal.
+func (m *EducationSchool) GetPrincipalEmail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principalEmail
+    }
+}
+// GetPrincipalName gets the principalName property value. Name of the principal.
+func (m *EducationSchool) GetPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principalName
+    }
+}
+// GetSchoolNumber gets the schoolNumber property value. School Number.
+func (m *EducationSchool) GetSchoolNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schoolNumber
+    }
+}
+// GetUsers gets the users property value. Users in the school. Nullable.
+func (m *EducationSchool) GetUsers()([]EducationUserable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.users
+    }
 }
 func (m *EducationSchool) IsNil()(bool) {
     return m == nil
@@ -332,8 +336,7 @@ func (m *EducationSchool) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetClasses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClasses()))
         for i, v := range m.GetClasses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("classes", cast)
         if err != nil {
@@ -403,8 +406,7 @@ func (m *EducationSchool) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUsers()))
         for i, v := range m.GetUsers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("users", cast)
         if err != nil {
@@ -414,25 +416,25 @@ func (m *EducationSchool) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     return nil
 }
 // SetAddress sets the address property value. Address of the school.
-func (m *EducationSchool) SetAddress(value *PhysicalAddress)() {
+func (m *EducationSchool) SetAddress(value PhysicalAddressable)() {
     if m != nil {
         m.address = value
     }
 }
 // SetAdministrativeUnit sets the administrativeUnit property value. The underlying administrativeUnit for this school.
-func (m *EducationSchool) SetAdministrativeUnit(value *AdministrativeUnit)() {
+func (m *EducationSchool) SetAdministrativeUnit(value AdministrativeUnitable)() {
     if m != nil {
         m.administrativeUnit = value
     }
 }
 // SetClasses sets the classes property value. Classes taught at the school. Nullable.
-func (m *EducationSchool) SetClasses(value []EducationClass)() {
+func (m *EducationSchool) SetClasses(value []EducationClassable)() {
     if m != nil {
         m.classes = value
     }
 }
 // SetCreatedBy sets the createdBy property value. Entity who created the school.
-func (m *EducationSchool) SetCreatedBy(value *IdentitySet)() {
+func (m *EducationSchool) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -492,7 +494,7 @@ func (m *EducationSchool) SetSchoolNumber(value *string)() {
     }
 }
 // SetUsers sets the users property value. Users in the school. Nullable.
-func (m *EducationSchool) SetUsers(value []EducationUser)() {
+func (m *EducationSchool) SetUsers(value []EducationUserable)() {
     if m != nil {
         m.users = value
     }

@@ -2,12 +2,11 @@ package users
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ic327da12e449e718a7f8621c6bbb8e4a73d11e9a5e8cffa482f6b87f54be6370 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/users/ref"
-    id2327c59614da7a3caadc55e580046c40a3c76546b3dc64af5d98b2b084cf929 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/users/delta"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i7cde53fdd27d3c52de1397fbf09d573d2a212c717c2f77a0375b017610e29055 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/users/count"
 )
 
-// UsersRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}\users
+// UsersRequestBuilder provides operations to manage the users property of the microsoft.graph.educationSchool entity.
 type UsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -55,7 +54,7 @@ func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,6 +63,9 @@ func NewUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UsersRequestBuilder) Count()(*i7cde53fdd27d3c52de1397fbf09d573d2a212c717c2f77a0375b017610e29055.CountRequestBuilder) {
+    return i7cde53fdd27d3c52de1397fbf09d573d2a212c717c2f77a0375b017610e29055.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation users in the school. Nullable.
 func (m *UsersRequestBuilder) CreateGetRequestInformation(options *UsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,22 +87,19 @@ func (m *UsersRequestBuilder) CreateGetRequestInformation(options *UsersRequestB
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \education\schools\{educationSchool-id}\users\microsoft.graph.delta()
-func (m *UsersRequestBuilder) Delta()(*id2327c59614da7a3caadc55e580046c40a3c76546b3dc64af5d98b2b084cf929.DeltaRequestBuilder) {
-    return id2327c59614da7a3caadc55e580046c40a3c76546b3dc64af5d98b2b084cf929.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get users in the school. Nullable.
-func (m *UsersRequestBuilder) Get(options *UsersRequestBuilderGetOptions)(*UsersResponse, error) {
+func (m *UsersRequestBuilder) Get(options *UsersRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUsersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEducationUserCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UsersResponse), nil
-}
-func (m *UsersRequestBuilder) Ref()(*ic327da12e449e718a7f8621c6bbb8e4a73d11e9a5e8cffa482f6b87f54be6370.RefRequestBuilder) {
-    return ic327da12e449e718a7f8621c6bbb8e4a73d11e9a5e8cffa482f6b87f54be6370.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationUserCollectionResponseable), nil
 }

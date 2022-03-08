@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// CopyRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.copy
+// CopyRequestBuilder provides operations to call the copy method.
 type CopyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CopyRequestBuilder struct {
 // CopyRequestBuilderPostOptions options for Post
 type CopyRequestBuilderPostOptions struct {
     // 
-    Body *CopyRequestBody;
+    Body CopyRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type CopyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type driveItem
-    driveItem *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem;
+    driveItem i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable;
 }
 // NewCopyResponse instantiates a new copyResponse and sets the default values.
 func NewCopyResponse()(*CopyResponse) {
@@ -39,6 +39,9 @@ func NewCopyResponse()(*CopyResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCopyResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCopyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *CopyResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDriveItem gets the driveItem property value. Union type representation for type driveItem
-func (m *CopyResponse) GetDriveItem()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem) {
+func (m *CopyResponse) GetDriveItem()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *CopyResponse) GetDriveItem()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a8936
 func (m *CopyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDriveItem() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDriveItem(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem))
+            m.SetDriveItem(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable))
         }
         return nil
     }
@@ -97,7 +100,7 @@ func (m *CopyResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDriveItem sets the driveItem property value. Union type representation for type driveItem
-func (m *CopyResponse) SetDriveItem(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem)() {
+func (m *CopyResponse) SetDriveItem(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable)() {
     if m != nil {
         m.driveItem = value
     }
@@ -111,7 +114,7 @@ func NewCopyRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *CopyRequestBuilder) CreatePostRequestInformation(options *CopyRequestBu
     return requestInfo, nil
 }
 // Post invoke action copy
-func (m *CopyRequestBuilder) Post(options *CopyRequestBuilderPostOptions)(*CopyResponse, error) {
+func (m *CopyRequestBuilder) Post(options *CopyRequestBuilderPostOptions)(CopyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCopyResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCopyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CopyResponse), nil
+    return res.(CopyResponseable), nil
 }

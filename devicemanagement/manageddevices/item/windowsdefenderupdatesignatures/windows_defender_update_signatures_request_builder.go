@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// WindowsDefenderUpdateSignaturesRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.windowsDefenderUpdateSignatures
+// WindowsDefenderUpdateSignaturesRequestBuilder provides operations to call the windowsDefenderUpdateSignatures method.
 type WindowsDefenderUpdateSignaturesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewWindowsDefenderUpdateSignaturesRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,7 +64,7 @@ func (m *WindowsDefenderUpdateSignaturesRequestBuilder) Post(options *WindowsDef
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

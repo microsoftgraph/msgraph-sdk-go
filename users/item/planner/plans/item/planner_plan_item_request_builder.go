@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i54570d9240890977cd3f742b36536d9ea7a110765b9ea8c304fee2498e164cfe "github.com/microsoftgraph/msgraph-sdk-go/users/item/planner/plans/item/buckets"
     ibd3758881825c22814646957708afd354ad93d0c67fabd4843c777f7baa9a284 "github.com/microsoftgraph/msgraph-sdk-go/users/item/planner/plans/item/details"
@@ -11,7 +10,7 @@ import (
     ia581a9b27cd4374cce0a0625e03607ce2a89bd6e51951355affd445058d4fdff "github.com/microsoftgraph/msgraph-sdk-go/users/item/planner/plans/item/buckets/item"
 )
 
-// PlannerPlanItemRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\plans\{plannerPlan-id}
+// PlannerPlanItemRequestBuilder provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 type PlannerPlanItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +49,7 @@ type PlannerPlanItemRequestBuilderGetQueryParameters struct {
 // PlannerPlanItemRequestBuilderPatchOptions options for Patch
 type PlannerPlanItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlan;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlanable;
     // Request headers
     H map[string]string;
     // Request options
@@ -81,7 +80,7 @@ func NewPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -91,7 +90,7 @@ func NewPlannerPlanItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. Nullable. Returns the plannerTasks assigned to the user.
+// CreateDeleteRequestInformation delete navigation property plans for users
 func (m *PlannerPlanItemRequestBuilder) CreateDeleteRequestInformation(options *PlannerPlanItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,7 +127,7 @@ func (m *PlannerPlanItemRequestBuilder) CreateGetRequestInformation(options *Pla
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable. Returns the plannerTasks assigned to the user.
+// CreatePatchRequestInformation update the navigation property plans in users
 func (m *PlannerPlanItemRequestBuilder) CreatePatchRequestInformation(options *PlannerPlanItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,13 +145,17 @@ func (m *PlannerPlanItemRequestBuilder) CreatePatchRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable. Returns the plannerTasks assigned to the user.
+// Delete delete navigation property plans for users
 func (m *PlannerPlanItemRequestBuilder) Delete(options *PlannerPlanItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -162,24 +165,32 @@ func (m *PlannerPlanItemRequestBuilder) Details()(*ibd3758881825c22814646957708a
     return ibd3758881825c22814646957708afd354ad93d0c67fabd4843c777f7baa9a284.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get read-only. Nullable. Returns the plannerTasks assigned to the user.
-func (m *PlannerPlanItemRequestBuilder) Get(options *PlannerPlanItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlan, error) {
+func (m *PlannerPlanItemRequestBuilder) Get(options *PlannerPlanItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlanable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPlannerPlan() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePlannerPlanFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlan), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlanable), nil
 }
-// Patch read-only. Nullable. Returns the plannerTasks assigned to the user.
+// Patch update the navigation property plans in users
 func (m *PlannerPlanItemRequestBuilder) Patch(options *PlannerPlanItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i93d6ed019a5688a4e8e0075b0389cf2e1ef569a5a88c931a9822c1aad16943ed "github.com/microsoftgraph/msgraph-sdk-go/policies/permissiongrantpolicies/item/includes"
     icde6cf197f013af55fc32ae765cd6718c8283b86b87581a48e55e766347fa252 "github.com/microsoftgraph/msgraph-sdk-go/policies/permissiongrantpolicies/item/excludes"
@@ -10,7 +9,7 @@ import (
     ia8e0f04a057817a8b64c99bfcfceca507e3ffc64a0ce4ab2cfcd9fc69349259f "github.com/microsoftgraph/msgraph-sdk-go/policies/permissiongrantpolicies/item/includes/item"
 )
 
-// PermissionGrantPolicyItemRequestBuilder builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}
+// PermissionGrantPolicyItemRequestBuilder provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
 type PermissionGrantPolicyItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +48,7 @@ type PermissionGrantPolicyItemRequestBuilderGetQueryParameters struct {
 // PermissionGrantPolicyItemRequestBuilderPatchOptions options for Patch
 type PermissionGrantPolicyItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicy;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +65,7 @@ func NewPermissionGrantPolicyItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +75,7 @@ func NewPermissionGrantPolicyItemRequestBuilder(rawUrl string, requestAdapter id
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the policy that specifies the conditions under which consent can be granted.
+// CreateDeleteRequestInformation delete navigation property permissionGrantPolicies for policies
 func (m *PermissionGrantPolicyItemRequestBuilder) CreateDeleteRequestInformation(options *PermissionGrantPolicyItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +112,7 @@ func (m *PermissionGrantPolicyItemRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the policy that specifies the conditions under which consent can be granted.
+// CreatePatchRequestInformation update the navigation property permissionGrantPolicies in policies
 func (m *PermissionGrantPolicyItemRequestBuilder) CreatePatchRequestInformation(options *PermissionGrantPolicyItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,13 +130,17 @@ func (m *PermissionGrantPolicyItemRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete the policy that specifies the conditions under which consent can be granted.
+// Delete delete navigation property permissionGrantPolicies for policies
 func (m *PermissionGrantPolicyItemRequestBuilder) Delete(options *PermissionGrantPolicyItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -158,16 +161,20 @@ func (m *PermissionGrantPolicyItemRequestBuilder) ExcludesById(id string)(*i02a3
     return i02a33916c6ad92e2af8e1a1c3c5bb0b0e4ed56d4de269096ae95977b3c84a597.NewPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the policy that specifies the conditions under which consent can be granted.
-func (m *PermissionGrantPolicyItemRequestBuilder) Get(options *PermissionGrantPolicyItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicy, error) {
+func (m *PermissionGrantPolicyItemRequestBuilder) Get(options *PermissionGrantPolicyItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPermissionGrantPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePermissionGrantPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicy), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicyable), nil
 }
 func (m *PermissionGrantPolicyItemRequestBuilder) Includes()(*i93d6ed019a5688a4e8e0075b0389cf2e1ef569a5a88c931a9822c1aad16943ed.IncludesRequestBuilder) {
     return i93d6ed019a5688a4e8e0075b0389cf2e1ef569a5a88c931a9822c1aad16943ed.NewIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -183,13 +190,17 @@ func (m *PermissionGrantPolicyItemRequestBuilder) IncludesById(id string)(*ia8e0
     }
     return ia8e0f04a057817a8b64c99bfcfceca507e3ffc64a0ce4ab2cfcd9fc69349259f.NewPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the policy that specifies the conditions under which consent can be granted.
+// Patch update the navigation property permissionGrantPolicies in policies
 func (m *PermissionGrantPolicyItemRequestBuilder) Patch(options *PermissionGrantPolicyItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

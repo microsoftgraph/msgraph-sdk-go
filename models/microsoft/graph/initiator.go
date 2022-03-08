@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Initiator 
+// Initiator provides operations to manage the auditLogRoot singleton.
 type Initiator struct {
     Identity
     // Type of initiator. Possible values are: user, application, system, unknownFutureValue.
@@ -17,13 +17,9 @@ func NewInitiator()(*Initiator) {
     }
     return m
 }
-// GetInitiatorType gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
-func (m *Initiator) GetInitiatorType()(*InitiatorType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatorType
-    }
+// CreateInitiatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInitiatorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInitiator(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Initiator) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *Initiator) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetInitiatorType gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
+func (m *Initiator) GetInitiatorType()(*InitiatorType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.initiatorType
+    }
 }
 func (m *Initiator) IsNil()(bool) {
     return m == nil

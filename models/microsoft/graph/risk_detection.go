@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RiskDetection 
+// RiskDetection provides operations to manage the identityProtectionRoot singleton.
 type RiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.
@@ -25,7 +25,7 @@ type RiskDetection struct {
     // Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Location of the sign-in.
-    location *SignInLocation;
+    location SignInLocationable;
     // Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
     requestId *string;
     // Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
@@ -53,6 +53,10 @@ func NewRiskDetection()(*RiskDetection) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateRiskDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRiskDetectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRiskDetection(), nil
 }
 // GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.
 func (m *RiskDetection) GetActivity()(*ActivityType) {
@@ -100,110 +104,6 @@ func (m *RiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
         return nil
     } else {
         return m.detectionTimingType
-    }
-}
-// GetIpAddress gets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
-func (m *RiskDetection) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
-func (m *RiskDetection) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetLocation gets the location property value. Location of the sign-in.
-func (m *RiskDetection) GetLocation()(*SignInLocation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
-}
-// GetRequestId gets the requestId property value. Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
-func (m *RiskDetection) GetRequestId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestId
-    }
-}
-// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-func (m *RiskDetection) GetRiskDetail()(*RiskDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskDetail
-    }
-}
-// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, passwordSpray, impossibleTravel, newCountry, anomalousToken, tokenIssuerAnomaly,suspiciousBrowser, riskyIPAddress, mcasSuspiciousInboxManipulationRules, suspiciousInboxForwarding, and unknownFutureValue. If the risk detection is a premium detection, will show generic. For more information about each value, see riskEventType values.
-func (m *RiskDetection) GetRiskEventType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskEventType
-    }
-}
-// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskLevel
-    }
-}
-// GetRiskState gets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-func (m *RiskDetection) GetRiskState()(*RiskState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskState
-    }
-}
-// GetSource gets the source property value. Source of the risk detection. For example, activeDirectory.
-func (m *RiskDetection) GetSource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
-}
-// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
-func (m *RiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenIssuerType
-    }
-}
-// GetUserDisplayName gets the userDisplayName property value. The user principal name (UPN) of the user.
-func (m *RiskDetection) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
-}
-// GetUserId gets the userId property value. Unique ID of the user.
-func (m *RiskDetection) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user.
-func (m *RiskDetection) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -290,12 +190,12 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSignInLocation() })
+        val, err := n.GetObjectValue(CreateSignInLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLocation(val.(*SignInLocation))
+            m.SetLocation(val.(SignInLocationable))
         }
         return nil
     }
@@ -400,6 +300,110 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetIpAddress gets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
+func (m *RiskDetection) GetIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipAddress
+    }
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+func (m *RiskDetection) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetLocation gets the location property value. Location of the sign-in.
+func (m *RiskDetection) GetLocation()(SignInLocationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.location
+    }
+}
+// GetRequestId gets the requestId property value. Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
+func (m *RiskDetection) GetRequestId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestId
+    }
+}
+// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+func (m *RiskDetection) GetRiskDetail()(*RiskDetail) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskDetail
+    }
+}
+// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, passwordSpray, impossibleTravel, newCountry, anomalousToken, tokenIssuerAnomaly,suspiciousBrowser, riskyIPAddress, mcasSuspiciousInboxManipulationRules, suspiciousInboxForwarding, and unknownFutureValue. If the risk detection is a premium detection, will show generic. For more information about each value, see riskEventType values.
+func (m *RiskDetection) GetRiskEventType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskEventType
+    }
+}
+// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskLevel
+    }
+}
+// GetRiskState gets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+func (m *RiskDetection) GetRiskState()(*RiskState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskState
+    }
+}
+// GetSource gets the source property value. Source of the risk detection. For example, activeDirectory.
+func (m *RiskDetection) GetSource()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.source
+    }
+}
+// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
+func (m *RiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tokenIssuerType
+    }
+}
+// GetUserDisplayName gets the userDisplayName property value. The user principal name (UPN) of the user.
+func (m *RiskDetection) GetUserDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userDisplayName
+    }
+}
+// GetUserId gets the userId property value. Unique ID of the user.
+func (m *RiskDetection) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user.
+func (m *RiskDetection) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *RiskDetection) IsNil()(bool) {
     return m == nil
@@ -581,7 +585,7 @@ func (m *RiskDetection) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe
     }
 }
 // SetLocation sets the location property value. Location of the sign-in.
-func (m *RiskDetection) SetLocation(value *SignInLocation)() {
+func (m *RiskDetection) SetLocation(value SignInLocationable)() {
     if m != nil {
         m.location = value
     }

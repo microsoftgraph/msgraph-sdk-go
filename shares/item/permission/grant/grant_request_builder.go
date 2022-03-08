@@ -2,10 +2,9 @@ package grant
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GrantRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\permission\microsoft.graph.grant
+// GrantRequestBuilder provides operations to call the grant method.
 type GrantRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +16,7 @@ type GrantRequestBuilder struct {
 // GrantRequestBuilderPostOptions options for Post
 type GrantRequestBuilderPostOptions struct {
     // 
-    Body *GrantRequestBody;
+    Body GrantRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -34,7 +33,7 @@ func NewGrantRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *GrantRequestBuilder) CreatePostRequestInformation(options *GrantRequest
     return requestInfo, nil
 }
 // Post invoke action grant
-func (m *GrantRequestBuilder) Post(options *GrantRequestBuilderPostOptions)([]Grant, error) {
+func (m *GrantRequestBuilder) Post(options *GrantRequestBuilderPostOptions)(GrantResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGrant() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGrantResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]Grant, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*Grant))
-    }
-    return val, nil
+    return res.(GrantResponseable), nil
 }

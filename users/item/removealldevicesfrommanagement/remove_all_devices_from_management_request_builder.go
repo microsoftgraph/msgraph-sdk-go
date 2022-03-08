@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// RemoveAllDevicesFromManagementRequestBuilder builds and executes requests for operations under \users\{user-id}\microsoft.graph.removeAllDevicesFromManagement
+// RemoveAllDevicesFromManagementRequestBuilder provides operations to call the removeAllDevicesFromManagement method.
 type RemoveAllDevicesFromManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewRemoveAllDevicesFromManagementRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,7 +64,7 @@ func (m *RemoveAllDevicesFromManagementRequestBuilder) Post(options *RemoveAllDe
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

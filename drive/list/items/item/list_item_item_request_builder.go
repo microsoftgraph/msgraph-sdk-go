@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i8e568168614054d992bd2e3c6dc4070f603d07587a748038712c68673ec9fcfb "github.com/microsoftgraph/msgraph-sdk-go/drive/list/items/item/getactivitiesbyintervalwithstartdatetimewithenddatetimewithinterval"
     ia10ea61655f8ad45623fc2b1a0c3088baf399fb22e97e2473385d2954c3373a3 "github.com/microsoftgraph/msgraph-sdk-go/drive/list/items/item/versions"
@@ -13,7 +12,7 @@ import (
     i44a3a29013a87665948b1066cf6f8773748b7ac1401379c01fb28e5463d27f7b "github.com/microsoftgraph/msgraph-sdk-go/drive/list/items/item/versions/item"
 )
 
-// ListItemItemRequestBuilder builds and executes requests for operations under \drive\list\items\{listItem-id}
+// ListItemItemRequestBuilder provides operations to manage the items property of the microsoft.graph.list entity.
 type ListItemItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +51,7 @@ type ListItemItemRequestBuilderGetQueryParameters struct {
 // ListItemItemRequestBuilderPatchOptions options for Patch
 type ListItemItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemable;
     // Request headers
     H map[string]string;
     // Request options
@@ -72,7 +71,7 @@ func NewListItemItemRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -82,7 +81,7 @@ func NewListItemItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams["request-raw-url"] = rawUrl
     return NewListItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation all items contained in the list.
+// CreateDeleteRequestInformation delete navigation property items for drive
 func (m *ListItemItemRequestBuilder) CreateDeleteRequestInformation(options *ListItemItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +118,7 @@ func (m *ListItemItemRequestBuilder) CreateGetRequestInformation(options *ListIt
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation all items contained in the list.
+// CreatePatchRequestInformation update the navigation property items in drive
 func (m *ListItemItemRequestBuilder) CreatePatchRequestInformation(options *ListItemItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,13 +136,17 @@ func (m *ListItemItemRequestBuilder) CreatePatchRequestInformation(options *List
     }
     return requestInfo, nil
 }
-// Delete all items contained in the list.
+// Delete delete navigation property items for drive
 func (m *ListItemItemRequestBuilder) Delete(options *ListItemItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -156,32 +159,40 @@ func (m *ListItemItemRequestBuilder) Fields()(*icfa93af295e2c3ed949602f12965514f
     return icfa93af295e2c3ed949602f12965514f4c154c6202f64ad3b063ee330e4477a3.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get all items contained in the list.
-func (m *ListItemItemRequestBuilder) Get(options *ListItemItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem, error) {
+func (m *ListItemItemRequestBuilder) Get(options *ListItemItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewListItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateListItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemable), nil
 }
-// GetActivitiesByInterval builds and executes requests for operations under \drive\list\items\{listItem-id}\microsoft.graph.getActivitiesByInterval()
+// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
 func (m *ListItemItemRequestBuilder) GetActivitiesByInterval()(*icad8e414e13ad7445f378a90dceced431e87f28b9b2bdab5bd01fab73e0836b7.GetActivitiesByIntervalRequestBuilder) {
     return icad8e414e13ad7445f378a90dceced431e87f28b9b2bdab5bd01fab73e0836b7.NewGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval builds and executes requests for operations under \drive\list\items\{listItem-id}\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
 func (m *ListItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(startDateTime *string, endDateTime *string, interval *string)(*i8e568168614054d992bd2e3c6dc4070f603d07587a748038712c68673ec9fcfb.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     return i8e568168614054d992bd2e3c6dc4070f603d07587a748038712c68673ec9fcfb.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime, interval);
 }
-// Patch all items contained in the list.
+// Patch update the navigation property items in drive
 func (m *ListItemItemRequestBuilder) Patch(options *ListItemItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

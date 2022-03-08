@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResponseStatus 
+// ResponseStatus provides operations to manage the drive singleton.
 type ResponseStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,28 +21,16 @@ func NewResponseStatus()(*ResponseStatus) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateResponseStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateResponseStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewResponseStatus(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResponseStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetResponse gets the response property value. The response type. Possible values are: none, organizer, tentativelyAccepted, accepted, declined, notResponded.To differentiate between none and notResponded:  none – from organizer's perspective. This value is used when the status of an attendee/participant is reported to the organizer of a meeting.  notResponded – from attendde's perspective. Indicates the attendee has not responded to the meeting request.  Clients can treat notResponded == none.  As an example, if attendee Alex hasn't responded to a meeting request, getting Alex' response status for that event in Alex' calendar returns notResponded. Getting Alex' response from the calendar of any other attendee or the organizer's returns none. Getting the organizer's response for the event in anybody's calendar also returns none.
-func (m *ResponseStatus) GetResponse()(*ResponseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.response
-    }
-}
-// GetTime gets the time property value. The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *ResponseStatus) GetTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.time
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +57,22 @@ func (m *ResponseStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetResponse gets the response property value. The response type. Possible values are: none, organizer, tentativelyAccepted, accepted, declined, notResponded.To differentiate between none and notResponded:  none – from organizer's perspective. This value is used when the status of an attendee/participant is reported to the organizer of a meeting.  notResponded – from attendde's perspective. Indicates the attendee has not responded to the meeting request.  Clients can treat notResponded == none.  As an example, if attendee Alex hasn't responded to a meeting request, getting Alex' response status for that event in Alex' calendar returns notResponded. Getting Alex' response from the calendar of any other attendee or the organizer's returns none. Getting the organizer's response for the event in anybody's calendar also returns none.
+func (m *ResponseStatus) GetResponse()(*ResponseType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.response
+    }
+}
+// GetTime gets the time property value. The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *ResponseStatus) GetTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.time
+    }
 }
 func (m *ResponseStatus) IsNil()(bool) {
     return m == nil

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the drive singleton.
 type DayOfWeek int
 
 const (

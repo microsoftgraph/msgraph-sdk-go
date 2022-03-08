@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerBucketTaskBoardTaskFormat 
+// PlannerBucketTaskBoardTaskFormat provides operations to manage the drive singleton.
 type PlannerBucketTaskBoardTaskFormat struct {
     Entity
     // Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
@@ -17,13 +17,9 @@ func NewPlannerBucketTaskBoardTaskFormat()(*PlannerBucketTaskBoardTaskFormat) {
     }
     return m
 }
-// GetOrderHint gets the orderHint property value. Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
-func (m *PlannerBucketTaskBoardTaskFormat) GetOrderHint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderHint
-    }
+// CreatePlannerBucketTaskBoardTaskFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePlannerBucketTaskBoardTaskFormatFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPlannerBucketTaskBoardTaskFormat(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerBucketTaskBoardTaskFormat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *PlannerBucketTaskBoardTaskFormat) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOrderHint gets the orderHint property value. Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+func (m *PlannerBucketTaskBoardTaskFormat) GetOrderHint()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orderHint
+    }
 }
 func (m *PlannerBucketTaskBoardTaskFormat) IsNil()(bool) {
     return m == nil

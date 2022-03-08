@@ -2,11 +2,11 @@ package directreports
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ie36f73e391e747beaee3f6b19f9c87afbed15c9196dd51984a8591b42fbbc2e1 "github.com/microsoftgraph/msgraph-sdk-go/users/item/directreports/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    id0460423c7c7c26de43679373f101419acf61800ef3065047991a45c948dc7f7 "github.com/microsoftgraph/msgraph-sdk-go/users/item/directreports/count"
 )
 
-// DirectReportsRequestBuilder builds and executes requests for operations under \users\{user-id}\directReports
+// DirectReportsRequestBuilder provides operations to manage the directReports property of the microsoft.graph.user entity.
 type DirectReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewDirectReportsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewDirectReportsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectReportsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DirectReportsRequestBuilder) Count()(*id0460423c7c7c26de43679373f101419acf61800ef3065047991a45c948dc7f7.CountRequestBuilder) {
+    return id0460423c7c7c26de43679373f101419acf61800ef3065047991a45c948dc7f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
 func (m *DirectReportsRequestBuilder) CreateGetRequestInformation(options *DirectReportsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *DirectReportsRequestBuilder) CreateGetRequestInformation(options *Direc
     return requestInfo, nil
 }
 // Get the users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-func (m *DirectReportsRequestBuilder) Get(options *DirectReportsRequestBuilderGetOptions)(*DirectReportsResponse, error) {
+func (m *DirectReportsRequestBuilder) Get(options *DirectReportsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectReportsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DirectReportsResponse), nil
-}
-func (m *DirectReportsRequestBuilder) Ref()(*ie36f73e391e747beaee3f6b19f9c87afbed15c9196dd51984a8591b42fbbc2e1.RefRequestBuilder) {
-    return ie36f73e391e747beaee3f6b19f9c87afbed15c9196dd51984a8591b42fbbc2e1.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable), nil
 }

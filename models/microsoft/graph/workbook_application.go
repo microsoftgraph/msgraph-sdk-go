@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookApplication 
+// WorkbookApplication provides operations to manage the drive singleton.
 type WorkbookApplication struct {
     Entity
     // Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
@@ -16,6 +16,10 @@ func NewWorkbookApplication()(*WorkbookApplication) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateWorkbookApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookApplicationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookApplication(), nil
 }
 // GetCalculationMode gets the calculationMode property value. Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
 func (m *WorkbookApplication) GetCalculationMode()(*string) {

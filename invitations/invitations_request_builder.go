@@ -1,12 +1,12 @@
 package invitations
 
 import (
+    i9488cf0adde24be20a54d541a1380cc60be0fc8282e9c60e9a6347f3a30d7c44 "github.com/microsoftgraph/msgraph-sdk-go/invitations/count"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// InvitationsRequestBuilder builds and executes requests for operations under \invitations
+// InvitationsRequestBuilder provides operations to manage the collection of invitation entities.
 type InvitationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type InvitationsRequestBuilderGetQueryParameters struct {
 // InvitationsRequestBuilderPostOptions options for Post
 type InvitationsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitation;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewInvitationsRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewInvitationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInvitationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *InvitationsRequestBuilder) Count()(*i9488cf0adde24be20a54d541a1380cc60be0fc8282e9c60e9a6347f3a30d7c44.CountRequestBuilder) {
+    return i9488cf0adde24be20a54d541a1380cc60be0fc8282e9c60e9a6347f3a30d7c44.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from invitations
 func (m *InvitationsRequestBuilder) CreateGetRequestInformation(options *InvitationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *InvitationsRequestBuilder) CreatePostRequestInformation(options *Invita
     return requestInfo, nil
 }
 // Get get entities from invitations
-func (m *InvitationsRequestBuilder) Get(options *InvitationsRequestBuilderGetOptions)(*InvitationsResponse, error) {
+func (m *InvitationsRequestBuilder) Get(options *InvitationsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInvitationsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateInvitationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*InvitationsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationCollectionResponseable), nil
 }
 // Post add new entity to invitations
-func (m *InvitationsRequestBuilder) Post(options *InvitationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitation, error) {
+func (m *InvitationsRequestBuilder) Post(options *InvitationsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewInvitation() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateInvitationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitation), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitationable), nil
 }

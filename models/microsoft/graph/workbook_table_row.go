@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookTableRow 
+// WorkbookTableRow provides operations to manage the drive singleton.
 type WorkbookTableRow struct {
     Entity
     // Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
     index *int32;
     // Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-    values *Json;
+    values Jsonable;
 }
 // NewWorkbookTableRow instantiates a new workbookTableRow and sets the default values.
 func NewWorkbookTableRow()(*WorkbookTableRow) {
@@ -19,21 +19,9 @@ func NewWorkbookTableRow()(*WorkbookTableRow) {
     }
     return m
 }
-// GetIndex gets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
-func (m *WorkbookTableRow) GetIndex()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.index
-    }
-}
-// GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-func (m *WorkbookTableRow) GetValues()(*Json) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+// CreateWorkbookTableRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookTableRowFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookTableRow(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookTableRow) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -49,16 +37,32 @@ func (m *WorkbookTableRow) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJson() })
+        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValues(val.(*Json))
+            m.SetValues(val.(Jsonable))
         }
         return nil
     }
     return res
+}
+// GetIndex gets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
+func (m *WorkbookTableRow) GetIndex()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.index
+    }
+}
+// GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+func (m *WorkbookTableRow) GetValues()(Jsonable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.values
+    }
 }
 func (m *WorkbookTableRow) IsNil()(bool) {
     return m == nil
@@ -90,7 +94,7 @@ func (m *WorkbookTableRow) SetIndex(value *int32)() {
     }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-func (m *WorkbookTableRow) SetValues(value *Json)() {
+func (m *WorkbookTableRow) SetValues(value Jsonable)() {
     if m != nil {
         m.values = value
     }

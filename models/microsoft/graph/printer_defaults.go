@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrinterDefaults 
+// PrinterDefaults provides operations to manage the print singleton.
 type PrinterDefaults struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -49,6 +49,10 @@ func NewPrinterDefaults()(*PrinterDefaults) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePrinterDefaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrinterDefaultsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrinterDefaults(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterDefaults) GetAdditionalData()(map[string]interface{}) {
@@ -96,102 +100,6 @@ func (m *PrinterDefaults) GetDuplexMode()(*PrintDuplexMode) {
         return nil
     } else {
         return m.duplexMode
-    }
-}
-// GetFinishings gets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
-func (m *PrinterDefaults) GetFinishings()([]PrintFinishing) {
-    if m == nil {
-        return nil
-    } else {
-        return m.finishings
-    }
-}
-// GetFitPdfToPage gets the fitPdfToPage property value. The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
-func (m *PrinterDefaults) GetFitPdfToPage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fitPdfToPage
-    }
-}
-// GetInputBin gets the inputBin property value. The default input bin that serves as the paper source.
-func (m *PrinterDefaults) GetInputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputBin
-    }
-}
-// GetMediaColor gets the mediaColor property value. The default media (such as paper) color to print the document on.
-func (m *PrinterDefaults) GetMediaColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaColor
-    }
-}
-// GetMediaSize gets the mediaSize property value. The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
-func (m *PrinterDefaults) GetMediaSize()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaSize
-    }
-}
-// GetMediaType gets the mediaType property value. The default media (such as paper) type to print the document on.
-func (m *PrinterDefaults) GetMediaType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
-}
-// GetMultipageLayout gets the multipageLayout property value. The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
-func (m *PrinterDefaults) GetMultipageLayout()(*PrintMultipageLayout) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multipageLayout
-    }
-}
-// GetOrientation gets the orientation property value. The default orientation to use when printing the document. Valid values are described in the following table.
-func (m *PrinterDefaults) GetOrientation()(*PrintOrientation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orientation
-    }
-}
-// GetOutputBin gets the outputBin property value. The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
-func (m *PrinterDefaults) GetOutputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputBin
-    }
-}
-// GetPagesPerSheet gets the pagesPerSheet property value. The default number of document pages to print on each sheet.
-func (m *PrinterDefaults) GetPagesPerSheet()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pagesPerSheet
-    }
-}
-// GetQuality gets the quality property value. The default quality to use when printing the document. Valid values are described in the following table.
-func (m *PrinterDefaults) GetQuality()(*PrintQuality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quality
-    }
-}
-// GetScaling gets the scaling property value. Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.
-func (m *PrinterDefaults) GetScaling()(*PrintScaling) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scaling
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -372,6 +280,102 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetFinishings gets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
+func (m *PrinterDefaults) GetFinishings()([]PrintFinishing) {
+    if m == nil {
+        return nil
+    } else {
+        return m.finishings
+    }
+}
+// GetFitPdfToPage gets the fitPdfToPage property value. The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
+func (m *PrinterDefaults) GetFitPdfToPage()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fitPdfToPage
+    }
+}
+// GetInputBin gets the inputBin property value. The default input bin that serves as the paper source.
+func (m *PrinterDefaults) GetInputBin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inputBin
+    }
+}
+// GetMediaColor gets the mediaColor property value. The default media (such as paper) color to print the document on.
+func (m *PrinterDefaults) GetMediaColor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaColor
+    }
+}
+// GetMediaSize gets the mediaSize property value. The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+func (m *PrinterDefaults) GetMediaSize()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaSize
+    }
+}
+// GetMediaType gets the mediaType property value. The default media (such as paper) type to print the document on.
+func (m *PrinterDefaults) GetMediaType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaType
+    }
+}
+// GetMultipageLayout gets the multipageLayout property value. The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
+func (m *PrinterDefaults) GetMultipageLayout()(*PrintMultipageLayout) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multipageLayout
+    }
+}
+// GetOrientation gets the orientation property value. The default orientation to use when printing the document. Valid values are described in the following table.
+func (m *PrinterDefaults) GetOrientation()(*PrintOrientation) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orientation
+    }
+}
+// GetOutputBin gets the outputBin property value. The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+func (m *PrinterDefaults) GetOutputBin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outputBin
+    }
+}
+// GetPagesPerSheet gets the pagesPerSheet property value. The default number of document pages to print on each sheet.
+func (m *PrinterDefaults) GetPagesPerSheet()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pagesPerSheet
+    }
+}
+// GetQuality gets the quality property value. The default quality to use when printing the document. Valid values are described in the following table.
+func (m *PrinterDefaults) GetQuality()(*PrintQuality) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quality
+    }
+}
+// GetScaling gets the scaling property value. Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.
+func (m *PrinterDefaults) GetScaling()(*PrintScaling) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scaling
+    }
 }
 func (m *PrinterDefaults) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Photo 
+// Photo provides operations to manage the drive singleton.
 type Photo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,6 +34,10 @@ func NewPhoto()(*Photo) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePhotoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePhotoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPhoto(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Photo) GetAdditionalData()(map[string]interface{}) {
@@ -73,46 +77,6 @@ func (m *Photo) GetExposureNumerator()(*float64) {
         return nil
     } else {
         return m.exposureNumerator
-    }
-}
-// GetFNumber gets the fNumber property value. The F-stop value from the camera. Read-only.
-func (m *Photo) GetFNumber()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fNumber
-    }
-}
-// GetFocalLength gets the focalLength property value. The focal length from the camera. Read-only.
-func (m *Photo) GetFocalLength()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.focalLength
-    }
-}
-// GetIso gets the iso property value. The ISO value from the camera. Read-only.
-func (m *Photo) GetIso()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iso
-    }
-}
-// GetOrientation gets the orientation property value. The orientation value from the camera. Writable on OneDrive Personal.
-func (m *Photo) GetOrientation()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orientation
-    }
-}
-// GetTakenDateTime gets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.
-func (m *Photo) GetTakenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.takenDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -209,6 +173,46 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     return res
+}
+// GetFNumber gets the fNumber property value. The F-stop value from the camera. Read-only.
+func (m *Photo) GetFNumber()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fNumber
+    }
+}
+// GetFocalLength gets the focalLength property value. The focal length from the camera. Read-only.
+func (m *Photo) GetFocalLength()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.focalLength
+    }
+}
+// GetIso gets the iso property value. The ISO value from the camera. Read-only.
+func (m *Photo) GetIso()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iso
+    }
+}
+// GetOrientation gets the orientation property value. The orientation value from the camera. Writable on OneDrive Personal.
+func (m *Photo) GetOrientation()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orientation
+    }
+}
+// GetTakenDateTime gets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.
+func (m *Photo) GetTakenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.takenDateTime
+    }
 }
 func (m *Photo) IsNil()(bool) {
     return m == nil

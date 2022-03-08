@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// AvailableProviderTypesRequestBuilder builds and executes requests for operations under \identityProviders\microsoft.graph.availableProviderTypes()
+// AvailableProviderTypesRequestBuilder provides operations to call the availableProviderTypes method.
 type AvailableProviderTypesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewAvailableProviderTypesRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,18 +59,14 @@ func (m *AvailableProviderTypesRequestBuilder) CreateGetRequestInformation(optio
     return requestInfo, nil
 }
 // Get invoke function availableProviderTypes
-func (m *AvailableProviderTypesRequestBuilder) Get(options *AvailableProviderTypesRequestBuilderGetOptions)([]string, error) {
+func (m *AvailableProviderTypesRequestBuilder) Get(options *AvailableProviderTypesRequestBuilderGetOptions)(AvailableProviderTypesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveCollectionAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAvailableProviderTypesResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]string, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*string))
-    }
-    return val, nil
+    return res.(AvailableProviderTypesResponseable), nil
 }

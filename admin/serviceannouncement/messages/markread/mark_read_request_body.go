@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MarkReadRequestBody 
+// MarkReadRequestBody provides operations to call the markRead method.
 type MarkReadRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewMarkReadRequestBody()(*MarkReadRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMarkReadRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMarkReadRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMarkReadRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MarkReadRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMessageIds gets the messageIds property value. 
-func (m *MarkReadRequestBody) GetMessageIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -52,6 +48,14 @@ func (m *MarkReadRequestBody) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetMessageIds gets the messageIds property value. 
+func (m *MarkReadRequestBody) GetMessageIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageIds
+    }
 }
 func (m *MarkReadRequestBody) IsNil()(bool) {
     return m == nil

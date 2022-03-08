@@ -2,11 +2,11 @@ package assignments
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i301aa6e8cb5a56c5ad55b041f6a9794ab9400150a0d809d3dca1470e600fcda2 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileappconfigurations/item/assignments/count"
 )
 
-// AssignmentsRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\assignments
+// AssignmentsRequestBuilder provides operations to manage the assignments property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
 type AssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AssignmentsRequestBuilderGetQueryParameters struct {
 // AssignmentsRequestBuilderPostOptions options for Post
 type AssignmentsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationAssignment;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAssignmentsRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAssignmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AssignmentsRequestBuilder) Count()(*i301aa6e8cb5a56c5ad55b041f6a9794ab9400150a0d809d3dca1470e600fcda2.CountRequestBuilder) {
+    return i301aa6e8cb5a56c5ad55b041f6a9794ab9400150a0d809d3dca1470e600fcda2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of group assignemenets for app configration.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *AssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *Assignm
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of group assignemenets for app configration.
+// CreatePostRequestInformation create new navigation property to assignments for deviceAppManagement
 func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *AssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *Assign
     return requestInfo, nil
 }
 // Get the list of group assignemenets for app configration.
-func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOptions)(*AssignmentsResponse, error) {
+func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignmentsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateManagedDeviceMobileAppConfigurationAssignmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AssignmentsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationAssignmentCollectionResponseable), nil
 }
-// Post the list of group assignemenets for app configration.
-func (m *AssignmentsRequestBuilder) Post(options *AssignmentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationAssignment, error) {
+// Post create new navigation property to assignments for deviceAppManagement
+func (m *AssignmentsRequestBuilder) Post(options *AssignmentsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewManagedDeviceMobileAppConfigurationAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateManagedDeviceMobileAppConfigurationAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationAssignment), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationAssignmentable), nil
 }

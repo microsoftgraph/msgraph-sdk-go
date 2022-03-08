@@ -5,14 +5,14 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// DeclineRequestBody 
+// DeclineRequestBody provides operations to call the decline method.
 type DeclineRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     comment *string;
     // 
-    proposedNewTime *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlot;
+    proposedNewTime i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlotable;
     // 
     sendResponse *bool;
 }
@@ -22,6 +22,10 @@ func NewDeclineRequestBody()(*DeclineRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeclineRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeclineRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeclineRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeclineRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -39,22 +43,6 @@ func (m *DeclineRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// GetProposedNewTime gets the proposedNewTime property value. 
-func (m *DeclineRequestBody) GetProposedNewTime()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlot) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proposedNewTime
-    }
-}
-// GetSendResponse gets the sendResponse property value. 
-func (m *DeclineRequestBody) GetSendResponse()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendResponse
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeclineRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -69,12 +57,12 @@ func (m *DeclineRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["proposedNewTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewTimeSlot() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTimeSlotFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProposedNewTime(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlot))
+            m.SetProposedNewTime(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlotable))
         }
         return nil
     }
@@ -89,6 +77,22 @@ func (m *DeclineRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetProposedNewTime gets the proposedNewTime property value. 
+func (m *DeclineRequestBody) GetProposedNewTime()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlotable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.proposedNewTime
+    }
+}
+// GetSendResponse gets the sendResponse property value. 
+func (m *DeclineRequestBody) GetSendResponse()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sendResponse
+    }
 }
 func (m *DeclineRequestBody) IsNil()(bool) {
     return m == nil
@@ -134,7 +138,7 @@ func (m *DeclineRequestBody) SetComment(value *string)() {
     }
 }
 // SetProposedNewTime sets the proposedNewTime property value. 
-func (m *DeclineRequestBody) SetProposedNewTime(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlot)() {
+func (m *DeclineRequestBody) SetProposedNewTime(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlotable)() {
     if m != nil {
         m.proposedNewTime = value
     }

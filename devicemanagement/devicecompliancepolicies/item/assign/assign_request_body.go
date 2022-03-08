@@ -5,12 +5,12 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// AssignRequestBody 
+// AssignRequestBody provides operations to call the assign method.
 type AssignRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    assignments []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignment;
+    assignments []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignmentable;
 }
 // NewAssignRequestBody instantiates a new assignRequestBody and sets the default values.
 func NewAssignRequestBody()(*AssignRequestBody) {
@@ -18,6 +18,10 @@ func NewAssignRequestBody()(*AssignRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAssignRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -28,7 +32,7 @@ func (m *AssignRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAssignments gets the assignments property value. 
-func (m *AssignRequestBody) GetAssignments()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignment) {
+func (m *AssignRequestBody) GetAssignments()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -39,14 +43,14 @@ func (m *AssignRequestBody) GetAssignments()([]i4a838ef194e4c99e9f2c63ba10dab9cb
 func (m *AssignRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDeviceCompliancePolicyAssignment() })
+        val, err := n.GetCollectionOfObjectValues(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDeviceCompliancePolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignment, len(val))
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignment))
+                res[i] = v.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -62,8 +66,7 @@ func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -85,7 +88,7 @@ func (m *AssignRequestBody) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAssignments sets the assignments property value. 
-func (m *AssignRequestBody) SetAssignments(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignment)() {
+func (m *AssignRequestBody) SetAssignments(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignmentable)() {
     if m != nil {
         m.assignments = value
     }

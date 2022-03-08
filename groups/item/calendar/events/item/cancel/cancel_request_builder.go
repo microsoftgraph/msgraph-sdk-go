@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// CancelRequestBuilder builds and executes requests for operations under \groups\{group-id}\calendar\events\{event-id}\microsoft.graph.cancel
+// CancelRequestBuilder provides operations to call the cancel method.
 type CancelRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type CancelRequestBuilder struct {
 // CancelRequestBuilderPostOptions options for Post
 type CancelRequestBuilderPostOptions struct {
     // 
-    Body *CancelRequestBody;
+    Body CancelRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewCancelRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *CancelRequestBuilder) Post(options *CancelRequestBuilderPostOptions)(er
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

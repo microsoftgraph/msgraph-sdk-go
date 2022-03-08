@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchAggregation 
+// SearchAggregation provides operations to call the query method.
 type SearchAggregation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Defines the actual buckets of the computed aggregation.
-    buckets []SearchBucket;
+    buckets []SearchBucketable;
     // Defines on which field the aggregation was computed on.
     field *string;
 }
@@ -20,6 +20,10 @@ func NewSearchAggregation()(*SearchAggregation) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSearchAggregationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchAggregationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchAggregation(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAggregation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -29,7 +33,7 @@ func (m *SearchAggregation) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetBuckets gets the buckets property value. Defines the actual buckets of the computed aggregation.
-func (m *SearchAggregation) GetBuckets()([]SearchBucket) {
+func (m *SearchAggregation) GetBuckets()([]SearchBucketable) {
     if m == nil {
         return nil
     } else {
@@ -48,14 +52,14 @@ func (m *SearchAggregation) GetField()(*string) {
 func (m *SearchAggregation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["buckets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSearchBucket() })
+        val, err := n.GetCollectionOfObjectValues(CreateSearchBucketFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SearchBucket, len(val))
+            res := make([]SearchBucketable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SearchBucket))
+                res[i] = v.(SearchBucketable)
             }
             m.SetBuckets(res)
         }
@@ -81,8 +85,7 @@ func (m *SearchAggregation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetBuckets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBuckets()))
         for i, v := range m.GetBuckets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("buckets", cast)
         if err != nil {
@@ -110,7 +113,7 @@ func (m *SearchAggregation) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetBuckets sets the buckets property value. Defines the actual buckets of the computed aggregation.
-func (m *SearchAggregation) SetBuckets(value []SearchBucket)() {
+func (m *SearchAggregation) SetBuckets(value []SearchBucketable)() {
     if m != nil {
         m.buckets = value
     }

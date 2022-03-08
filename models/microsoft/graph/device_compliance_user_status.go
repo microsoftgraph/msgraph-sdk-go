@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceUserStatus 
+// DeviceComplianceUserStatus provides operations to manage the deviceManagement singleton.
 type DeviceComplianceUserStatus struct {
     Entity
     // Devices count for that user.
@@ -26,44 +26,16 @@ func NewDeviceComplianceUserStatus()(*DeviceComplianceUserStatus) {
     }
     return m
 }
+// CreateDeviceComplianceUserStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceComplianceUserStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceComplianceUserStatus(), nil
+}
 // GetDevicesCount gets the devicesCount property value. Devices count for that user.
 func (m *DeviceComplianceUserStatus) GetDevicesCount()(*int32) {
     if m == nil {
         return nil
     } else {
         return m.devicesCount
-    }
-}
-// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
-func (m *DeviceComplianceUserStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
-}
-// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-func (m *DeviceComplianceUserStatus) GetStatus()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUserDisplayName gets the userDisplayName property value. User name of the DevicePolicyStatus.
-func (m *DeviceComplianceUserStatus) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
-func (m *DeviceComplianceUserStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +92,38 @@ func (m *DeviceComplianceUserStatus) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
+func (m *DeviceComplianceUserStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastReportedDateTime
+    }
+}
+// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+func (m *DeviceComplianceUserStatus) GetStatus()(*ComplianceStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUserDisplayName gets the userDisplayName property value. User name of the DevicePolicyStatus.
+func (m *DeviceComplianceUserStatus) GetUserDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userDisplayName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
+func (m *DeviceComplianceUserStatus) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *DeviceComplianceUserStatus) IsNil()(bool) {
     return m == nil

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the collection of orgContact entities.
 type PhoneType int
 
 const (

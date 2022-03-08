@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// UnfavoriteRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.unfavorite
+// UnfavoriteRequestBuilder provides operations to call the unfavorite method.
 type UnfavoriteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UnfavoriteRequestBuilder struct {
 // UnfavoriteRequestBuilderPostOptions options for Post
 type UnfavoriteRequestBuilderPostOptions struct {
     // 
-    Body *UnfavoriteRequestBody;
+    Body UnfavoriteRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewUnfavoriteRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *UnfavoriteRequestBuilder) CreatePostRequestInformation(options *Unfavor
     return requestInfo, nil
 }
 // Post invoke action unfavorite
-func (m *UnfavoriteRequestBuilder) Post(options *UnfavoriteRequestBuilderPostOptions)(*bool, error) {
+func (m *UnfavoriteRequestBuilder) Post(options *UnfavoriteRequestBuilderPostOptions)(UnfavoriteResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUnfavoriteResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(UnfavoriteResponseable), nil
 }

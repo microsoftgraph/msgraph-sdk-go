@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ThreatAssessmentResult 
+// ThreatAssessmentResult provides operations to manage the informationProtection singleton.
 type ThreatAssessmentResult struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -22,28 +22,16 @@ func NewThreatAssessmentResult()(*ThreatAssessmentResult) {
     }
     return m
 }
+// CreateThreatAssessmentResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateThreatAssessmentResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewThreatAssessmentResult(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ThreatAssessmentResult) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetMessage gets the message property value. The result message for each threat assessment.
-func (m *ThreatAssessmentResult) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
-func (m *ThreatAssessmentResult) GetResultType()(*ThreatAssessmentResultType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +68,22 @@ func (m *ThreatAssessmentResult) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. The result message for each threat assessment.
+func (m *ThreatAssessmentResult) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
+func (m *ThreatAssessmentResult) GetResultType()(*ThreatAssessmentResultType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultType
+    }
 }
 func (m *ThreatAssessmentResult) IsNil()(bool) {
     return m == nil

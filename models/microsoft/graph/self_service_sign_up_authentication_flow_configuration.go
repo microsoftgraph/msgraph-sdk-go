@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SelfServiceSignUpAuthenticationFlowConfiguration 
+// SelfServiceSignUpAuthenticationFlowConfiguration provides operations to manage the policyRoot singleton.
 type SelfServiceSignUpAuthenticationFlowConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewSelfServiceSignUpAuthenticationFlowConfiguration()(*SelfServiceSignUpAut
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSelfServiceSignUpAuthenticationFlowConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSelfServiceSignUpAuthenticationFlowConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSelfServiceSignUpAuthenticationFlowConfiguration(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SelfServiceSignUpAuthenticationFlowConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsEnabled gets the isEnabled property value. Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
-func (m *SelfServiceSignUpAuthenticationFlowConfiguration) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *SelfServiceSignUpAuthenticationFlowConfiguration) GetFieldDeserializers
         return nil
     }
     return res
+}
+// GetIsEnabled gets the isEnabled property value. Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
+func (m *SelfServiceSignUpAuthenticationFlowConfiguration) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
 }
 func (m *SelfServiceSignUpAuthenticationFlowConfiguration) IsNil()(bool) {
     return m == nil

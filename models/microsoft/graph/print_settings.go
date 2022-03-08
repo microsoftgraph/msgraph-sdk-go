@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintSettings 
+// PrintSettings provides operations to manage the print singleton.
 type PrintSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,6 +17,10 @@ func NewPrintSettings()(*PrintSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePrintSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintSettings) GetAdditionalData()(map[string]interface{}) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealthAttestationState 
+// DeviceHealthAttestationState provides operations to manage the drive singleton.
 type DeviceHealthAttestationState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -80,6 +80,10 @@ func NewDeviceHealthAttestationState()(*DeviceHealthAttestationState) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceHealthAttestationStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceHealthAttestationStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceHealthAttestationState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthAttestationState) GetAdditionalData()(map[string]interface{}) {
@@ -207,142 +211,6 @@ func (m *DeviceHealthAttestationState) GetEarlyLaunchAntiMalwareDriverProtection
         return nil
     } else {
         return m.earlyLaunchAntiMalwareDriverProtection
-    }
-}
-// GetHealthAttestationSupportedStatus gets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
-func (m *DeviceHealthAttestationState) GetHealthAttestationSupportedStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthAttestationSupportedStatus
-    }
-}
-// GetHealthStatusMismatchInfo gets the healthStatusMismatchInfo property value. This attribute appears if DHA-Service detects an integrity issue
-func (m *DeviceHealthAttestationState) GetHealthStatusMismatchInfo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatusMismatchInfo
-    }
-}
-// GetIssuedDateTime gets the issuedDateTime property value. The DateTime when device was evaluated or issued to MDM
-func (m *DeviceHealthAttestationState) GetIssuedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuedDateTime
-    }
-}
-// GetLastUpdateDateTime gets the lastUpdateDateTime property value. The Timestamp of the last update.
-func (m *DeviceHealthAttestationState) GetLastUpdateDateTime()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdateDateTime
-    }
-}
-// GetOperatingSystemKernelDebugging gets the operatingSystemKernelDebugging property value. When operatingSystemKernelDebugging is enabled, the device is used in development and testing
-func (m *DeviceHealthAttestationState) GetOperatingSystemKernelDebugging()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemKernelDebugging
-    }
-}
-// GetOperatingSystemRevListInfo gets the operatingSystemRevListInfo property value. The Operating System Revision List that was loaded during initial boot on the attested device
-func (m *DeviceHealthAttestationState) GetOperatingSystemRevListInfo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemRevListInfo
-    }
-}
-// GetPcr0 gets the pcr0 property value. The measurement that is captured in PCR[0]
-func (m *DeviceHealthAttestationState) GetPcr0()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pcr0
-    }
-}
-// GetPcrHashAlgorithm gets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
-func (m *DeviceHealthAttestationState) GetPcrHashAlgorithm()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pcrHashAlgorithm
-    }
-}
-// GetResetCount gets the resetCount property value. The number of times a PC device has hibernated or resumed
-func (m *DeviceHealthAttestationState) GetResetCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resetCount
-    }
-}
-// GetRestartCount gets the restartCount property value. The number of times a PC device has rebooted
-func (m *DeviceHealthAttestationState) GetRestartCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartCount
-    }
-}
-// GetSafeMode gets the safeMode property value. Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
-func (m *DeviceHealthAttestationState) GetSafeMode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safeMode
-    }
-}
-// GetSecureBoot gets the secureBoot property value. When Secure Boot is enabled, the core components must have the correct cryptographic signatures
-func (m *DeviceHealthAttestationState) GetSecureBoot()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureBoot
-    }
-}
-// GetSecureBootConfigurationPolicyFingerPrint gets the secureBootConfigurationPolicyFingerPrint property value. Fingerprint of the Custom Secure Boot Configuration Policy
-func (m *DeviceHealthAttestationState) GetSecureBootConfigurationPolicyFingerPrint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureBootConfigurationPolicyFingerPrint
-    }
-}
-// GetTestSigning gets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
-func (m *DeviceHealthAttestationState) GetTestSigning()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.testSigning
-    }
-}
-// GetTpmVersion gets the tpmVersion property value. The security version number of the Boot Application
-func (m *DeviceHealthAttestationState) GetTpmVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tpmVersion
-    }
-}
-// GetVirtualSecureMode gets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
-func (m *DeviceHealthAttestationState) GetVirtualSecureMode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.virtualSecureMode
-    }
-}
-// GetWindowsPE gets the windowsPE property value. Operating system running with limited services that is used to prepare a computer for Windows
-func (m *DeviceHealthAttestationState) GetWindowsPE()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsPE
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -669,6 +537,142 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetHealthAttestationSupportedStatus gets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
+func (m *DeviceHealthAttestationState) GetHealthAttestationSupportedStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthAttestationSupportedStatus
+    }
+}
+// GetHealthStatusMismatchInfo gets the healthStatusMismatchInfo property value. This attribute appears if DHA-Service detects an integrity issue
+func (m *DeviceHealthAttestationState) GetHealthStatusMismatchInfo()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthStatusMismatchInfo
+    }
+}
+// GetIssuedDateTime gets the issuedDateTime property value. The DateTime when device was evaluated or issued to MDM
+func (m *DeviceHealthAttestationState) GetIssuedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuedDateTime
+    }
+}
+// GetLastUpdateDateTime gets the lastUpdateDateTime property value. The Timestamp of the last update.
+func (m *DeviceHealthAttestationState) GetLastUpdateDateTime()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdateDateTime
+    }
+}
+// GetOperatingSystemKernelDebugging gets the operatingSystemKernelDebugging property value. When operatingSystemKernelDebugging is enabled, the device is used in development and testing
+func (m *DeviceHealthAttestationState) GetOperatingSystemKernelDebugging()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystemKernelDebugging
+    }
+}
+// GetOperatingSystemRevListInfo gets the operatingSystemRevListInfo property value. The Operating System Revision List that was loaded during initial boot on the attested device
+func (m *DeviceHealthAttestationState) GetOperatingSystemRevListInfo()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystemRevListInfo
+    }
+}
+// GetPcr0 gets the pcr0 property value. The measurement that is captured in PCR[0]
+func (m *DeviceHealthAttestationState) GetPcr0()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pcr0
+    }
+}
+// GetPcrHashAlgorithm gets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
+func (m *DeviceHealthAttestationState) GetPcrHashAlgorithm()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pcrHashAlgorithm
+    }
+}
+// GetResetCount gets the resetCount property value. The number of times a PC device has hibernated or resumed
+func (m *DeviceHealthAttestationState) GetResetCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resetCount
+    }
+}
+// GetRestartCount gets the restartCount property value. The number of times a PC device has rebooted
+func (m *DeviceHealthAttestationState) GetRestartCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restartCount
+    }
+}
+// GetSafeMode gets the safeMode property value. Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
+func (m *DeviceHealthAttestationState) GetSafeMode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.safeMode
+    }
+}
+// GetSecureBoot gets the secureBoot property value. When Secure Boot is enabled, the core components must have the correct cryptographic signatures
+func (m *DeviceHealthAttestationState) GetSecureBoot()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.secureBoot
+    }
+}
+// GetSecureBootConfigurationPolicyFingerPrint gets the secureBootConfigurationPolicyFingerPrint property value. Fingerprint of the Custom Secure Boot Configuration Policy
+func (m *DeviceHealthAttestationState) GetSecureBootConfigurationPolicyFingerPrint()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.secureBootConfigurationPolicyFingerPrint
+    }
+}
+// GetTestSigning gets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
+func (m *DeviceHealthAttestationState) GetTestSigning()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.testSigning
+    }
+}
+// GetTpmVersion gets the tpmVersion property value. The security version number of the Boot Application
+func (m *DeviceHealthAttestationState) GetTpmVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tpmVersion
+    }
+}
+// GetVirtualSecureMode gets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
+func (m *DeviceHealthAttestationState) GetVirtualSecureMode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.virtualSecureMode
+    }
+}
+// GetWindowsPE gets the windowsPE property value. Operating system running with limited services that is used to prepare a computer for Windows
+func (m *DeviceHealthAttestationState) GetWindowsPE()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsPE
+    }
 }
 func (m *DeviceHealthAttestationState) IsNil()(bool) {
     return m == nil

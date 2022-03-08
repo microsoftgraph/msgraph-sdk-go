@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Notebook 
+// Notebook provides operations to manage the drive singleton.
 type Notebook struct {
     OnenoteEntityHierarchyModel
     // Indicates whether this is the user's default notebook. Read-only.
@@ -12,13 +12,13 @@ type Notebook struct {
     // Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
     isShared *bool;
     // Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
-    links *NotebookLinks;
+    links NotebookLinksable;
     // The section groups in the notebook. Read-only. Nullable.
-    sectionGroups []SectionGroup;
+    sectionGroups []SectionGroupable;
     // The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
     sectionGroupsUrl *string;
     // The sections in the notebook. Read-only. Nullable.
-    sections []OnenoteSection;
+    sections []OnenoteSectionable;
     // The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
     sectionsUrl *string;
     // Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
@@ -31,69 +31,9 @@ func NewNotebook()(*Notebook) {
     }
     return m
 }
-// GetIsDefault gets the isDefault property value. Indicates whether this is the user's default notebook. Read-only.
-func (m *Notebook) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetIsShared gets the isShared property value. Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
-func (m *Notebook) GetIsShared()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isShared
-    }
-}
-// GetLinks gets the links property value. Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
-func (m *Notebook) GetLinks()(*NotebookLinks) {
-    if m == nil {
-        return nil
-    } else {
-        return m.links
-    }
-}
-// GetSectionGroups gets the sectionGroups property value. The section groups in the notebook. Read-only. Nullable.
-func (m *Notebook) GetSectionGroups()([]SectionGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sectionGroups
-    }
-}
-// GetSectionGroupsUrl gets the sectionGroupsUrl property value. The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
-func (m *Notebook) GetSectionGroupsUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sectionGroupsUrl
-    }
-}
-// GetSections gets the sections property value. The sections in the notebook. Read-only. Nullable.
-func (m *Notebook) GetSections()([]OnenoteSection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sections
-    }
-}
-// GetSectionsUrl gets the sectionsUrl property value. The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
-func (m *Notebook) GetSectionsUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sectionsUrl
-    }
-}
-// GetUserRole gets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
-func (m *Notebook) GetUserRole()(*OnenoteUserRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRole
-    }
+// CreateNotebookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNotebookFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNotebook(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -119,24 +59,24 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["links"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNotebookLinks() })
+        val, err := n.GetObjectValue(CreateNotebookLinksFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLinks(val.(*NotebookLinks))
+            m.SetLinks(val.(NotebookLinksable))
         }
         return nil
     }
     res["sectionGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSectionGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateSectionGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SectionGroup, len(val))
+            res := make([]SectionGroupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SectionGroup))
+                res[i] = v.(SectionGroupable)
             }
             m.SetSectionGroups(res)
         }
@@ -153,14 +93,14 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["sections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnenoteSection() })
+        val, err := n.GetCollectionOfObjectValues(CreateOnenoteSectionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnenoteSection, len(val))
+            res := make([]OnenoteSectionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnenoteSection))
+                res[i] = v.(OnenoteSectionable)
             }
             m.SetSections(res)
         }
@@ -187,6 +127,70 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. Indicates whether this is the user's default notebook. Read-only.
+func (m *Notebook) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetIsShared gets the isShared property value. Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
+func (m *Notebook) GetIsShared()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isShared
+    }
+}
+// GetLinks gets the links property value. Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
+func (m *Notebook) GetLinks()(NotebookLinksable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.links
+    }
+}
+// GetSectionGroups gets the sectionGroups property value. The section groups in the notebook. Read-only. Nullable.
+func (m *Notebook) GetSectionGroups()([]SectionGroupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sectionGroups
+    }
+}
+// GetSectionGroupsUrl gets the sectionGroupsUrl property value. The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
+func (m *Notebook) GetSectionGroupsUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sectionGroupsUrl
+    }
+}
+// GetSections gets the sections property value. The sections in the notebook. Read-only. Nullable.
+func (m *Notebook) GetSections()([]OnenoteSectionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sections
+    }
+}
+// GetSectionsUrl gets the sectionsUrl property value. The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
+func (m *Notebook) GetSectionsUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sectionsUrl
+    }
+}
+// GetUserRole gets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
+func (m *Notebook) GetUserRole()(*OnenoteUserRole) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userRole
+    }
 }
 func (m *Notebook) IsNil()(bool) {
     return m == nil
@@ -218,8 +222,7 @@ func (m *Notebook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetSectionGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSectionGroups()))
         for i, v := range m.GetSectionGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("sectionGroups", cast)
         if err != nil {
@@ -235,8 +238,7 @@ func (m *Notebook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetSections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSections()))
         for i, v := range m.GetSections() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("sections", cast)
         if err != nil {
@@ -271,13 +273,13 @@ func (m *Notebook) SetIsShared(value *bool)() {
     }
 }
 // SetLinks sets the links property value. Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
-func (m *Notebook) SetLinks(value *NotebookLinks)() {
+func (m *Notebook) SetLinks(value NotebookLinksable)() {
     if m != nil {
         m.links = value
     }
 }
 // SetSectionGroups sets the sectionGroups property value. The section groups in the notebook. Read-only. Nullable.
-func (m *Notebook) SetSectionGroups(value []SectionGroup)() {
+func (m *Notebook) SetSectionGroups(value []SectionGroupable)() {
     if m != nil {
         m.sectionGroups = value
     }
@@ -289,7 +291,7 @@ func (m *Notebook) SetSectionGroupsUrl(value *string)() {
     }
 }
 // SetSections sets the sections property value. The sections in the notebook. Read-only. Nullable.
-func (m *Notebook) SetSections(value []OnenoteSection)() {
+func (m *Notebook) SetSections(value []OnenoteSectionable)() {
     if m != nil {
         m.sections = value
     }

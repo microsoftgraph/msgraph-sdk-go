@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttendanceInterval 
+// AttendanceInterval provides operations to manage the cloudCommunications singleton.
 type AttendanceInterval struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewAttendanceInterval()(*AttendanceInterval) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAttendanceIntervalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAttendanceIntervalFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAttendanceInterval(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttendanceInterval) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *AttendanceInterval) GetDurationInSeconds()(*int32) {
         return nil
     } else {
         return m.durationInSeconds
-    }
-}
-// GetJoinDateTime gets the joinDateTime property value. The time the attendee joined in UTC.
-func (m *AttendanceInterval) GetJoinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinDateTime
-    }
-}
-// GetLeaveDateTime gets the leaveDateTime property value. The time the attendee left in UTC.
-func (m *AttendanceInterval) GetLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.leaveDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +77,22 @@ func (m *AttendanceInterval) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetJoinDateTime gets the joinDateTime property value. The time the attendee joined in UTC.
+func (m *AttendanceInterval) GetJoinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinDateTime
+    }
+}
+// GetLeaveDateTime gets the leaveDateTime property value. The time the attendee left in UTC.
+func (m *AttendanceInterval) GetLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.leaveDateTime
+    }
 }
 func (m *AttendanceInterval) IsNil()(bool) {
     return m == nil

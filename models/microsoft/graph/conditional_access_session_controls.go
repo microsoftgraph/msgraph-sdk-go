@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessSessionControls 
+// ConditionalAccessSessionControls provides operations to manage the identityContainer singleton.
 type ConditionalAccessSessionControls struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
-    applicationEnforcedRestrictions *ApplicationEnforcedRestrictionsSessionControl;
+    applicationEnforcedRestrictions ApplicationEnforcedRestrictionsSessionControlable;
     // Session control to apply cloud app security.
-    cloudAppSecurity *CloudAppSecuritySessionControl;
+    cloudAppSecurity CloudAppSecuritySessionControlable;
     // Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
     disableResilienceDefaults *bool;
     // Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
-    persistentBrowser *PersistentBrowserSessionControl;
+    persistentBrowser PersistentBrowserSessionControlable;
     // Session control to enforce signin frequency.
-    signInFrequency *SignInFrequencySessionControl;
+    signInFrequency SignInFrequencySessionControlable;
 }
 // NewConditionalAccessSessionControls instantiates a new conditionalAccessSessionControls and sets the default values.
 func NewConditionalAccessSessionControls()(*ConditionalAccessSessionControls) {
@@ -25,6 +25,10 @@ func NewConditionalAccessSessionControls()(*ConditionalAccessSessionControls) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateConditionalAccessSessionControlsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessSessionControlsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessSessionControls(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessSessionControls) GetAdditionalData()(map[string]interface{}) {
@@ -35,7 +39,7 @@ func (m *ConditionalAccessSessionControls) GetAdditionalData()(map[string]interf
     }
 }
 // GetApplicationEnforcedRestrictions gets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
-func (m *ConditionalAccessSessionControls) GetApplicationEnforcedRestrictions()(*ApplicationEnforcedRestrictionsSessionControl) {
+func (m *ConditionalAccessSessionControls) GetApplicationEnforcedRestrictions()(ApplicationEnforcedRestrictionsSessionControlable) {
     if m == nil {
         return nil
     } else {
@@ -43,7 +47,7 @@ func (m *ConditionalAccessSessionControls) GetApplicationEnforcedRestrictions()(
     }
 }
 // GetCloudAppSecurity gets the cloudAppSecurity property value. Session control to apply cloud app security.
-func (m *ConditionalAccessSessionControls) GetCloudAppSecurity()(*CloudAppSecuritySessionControl) {
+func (m *ConditionalAccessSessionControls) GetCloudAppSecurity()(CloudAppSecuritySessionControlable) {
     if m == nil {
         return nil
     } else {
@@ -58,42 +62,26 @@ func (m *ConditionalAccessSessionControls) GetDisableResilienceDefaults()(*bool)
         return m.disableResilienceDefaults
     }
 }
-// GetPersistentBrowser gets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
-func (m *ConditionalAccessSessionControls) GetPersistentBrowser()(*PersistentBrowserSessionControl) {
-    if m == nil {
-        return nil
-    } else {
-        return m.persistentBrowser
-    }
-}
-// GetSignInFrequency gets the signInFrequency property value. Session control to enforce signin frequency.
-func (m *ConditionalAccessSessionControls) GetSignInFrequency()(*SignInFrequencySessionControl) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInFrequency
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["applicationEnforcedRestrictions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApplicationEnforcedRestrictionsSessionControl() })
+        val, err := n.GetObjectValue(CreateApplicationEnforcedRestrictionsSessionControlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicationEnforcedRestrictions(val.(*ApplicationEnforcedRestrictionsSessionControl))
+            m.SetApplicationEnforcedRestrictions(val.(ApplicationEnforcedRestrictionsSessionControlable))
         }
         return nil
     }
     res["cloudAppSecurity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudAppSecuritySessionControl() })
+        val, err := n.GetObjectValue(CreateCloudAppSecuritySessionControlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudAppSecurity(val.(*CloudAppSecuritySessionControl))
+            m.SetCloudAppSecurity(val.(CloudAppSecuritySessionControlable))
         }
         return nil
     }
@@ -108,26 +96,42 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["persistentBrowser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPersistentBrowserSessionControl() })
+        val, err := n.GetObjectValue(CreatePersistentBrowserSessionControlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPersistentBrowser(val.(*PersistentBrowserSessionControl))
+            m.SetPersistentBrowser(val.(PersistentBrowserSessionControlable))
         }
         return nil
     }
     res["signInFrequency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSignInFrequencySessionControl() })
+        val, err := n.GetObjectValue(CreateSignInFrequencySessionControlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSignInFrequency(val.(*SignInFrequencySessionControl))
+            m.SetSignInFrequency(val.(SignInFrequencySessionControlable))
         }
         return nil
     }
     return res
+}
+// GetPersistentBrowser gets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
+func (m *ConditionalAccessSessionControls) GetPersistentBrowser()(PersistentBrowserSessionControlable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.persistentBrowser
+    }
+}
+// GetSignInFrequency gets the signInFrequency property value. Session control to enforce signin frequency.
+func (m *ConditionalAccessSessionControls) GetSignInFrequency()(SignInFrequencySessionControlable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signInFrequency
+    }
 }
 func (m *ConditionalAccessSessionControls) IsNil()(bool) {
     return m == nil
@@ -179,13 +183,13 @@ func (m *ConditionalAccessSessionControls) SetAdditionalData(value map[string]in
     }
 }
 // SetApplicationEnforcedRestrictions sets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
-func (m *ConditionalAccessSessionControls) SetApplicationEnforcedRestrictions(value *ApplicationEnforcedRestrictionsSessionControl)() {
+func (m *ConditionalAccessSessionControls) SetApplicationEnforcedRestrictions(value ApplicationEnforcedRestrictionsSessionControlable)() {
     if m != nil {
         m.applicationEnforcedRestrictions = value
     }
 }
 // SetCloudAppSecurity sets the cloudAppSecurity property value. Session control to apply cloud app security.
-func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value *CloudAppSecuritySessionControl)() {
+func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value CloudAppSecuritySessionControlable)() {
     if m != nil {
         m.cloudAppSecurity = value
     }
@@ -197,13 +201,13 @@ func (m *ConditionalAccessSessionControls) SetDisableResilienceDefaults(value *b
     }
 }
 // SetPersistentBrowser sets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
-func (m *ConditionalAccessSessionControls) SetPersistentBrowser(value *PersistentBrowserSessionControl)() {
+func (m *ConditionalAccessSessionControls) SetPersistentBrowser(value PersistentBrowserSessionControlable)() {
     if m != nil {
         m.persistentBrowser = value
     }
 }
 // SetSignInFrequency sets the signInFrequency property value. Session control to enforce signin frequency.
-func (m *ConditionalAccessSessionControls) SetSignInFrequency(value *SignInFrequencySessionControl)() {
+func (m *ConditionalAccessSessionControls) SetSignInFrequency(value SignInFrequencySessionControlable)() {
     if m != nil {
         m.signInFrequency = value
     }

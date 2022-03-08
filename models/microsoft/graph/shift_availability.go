@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ShiftAvailability 
+// ShiftAvailability provides operations to manage the drive singleton.
 type ShiftAvailability struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Specifies the pattern for recurrence
-    recurrence *PatternedRecurrence;
+    recurrence PatternedRecurrenceable;
     // The time slot(s) preferred by the user.
-    timeSlots []TimeRange;
+    timeSlots []TimeRangeable;
     // Specifies the time zone for the indicated time.
     timeZone *string;
 }
@@ -22,6 +22,10 @@ func NewShiftAvailability()(*ShiftAvailability) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateShiftAvailabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateShiftAvailabilityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewShiftAvailability(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShiftAvailability) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -30,52 +34,28 @@ func (m *ShiftAvailability) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetRecurrence gets the recurrence property value. Specifies the pattern for recurrence
-func (m *ShiftAvailability) GetRecurrence()(*PatternedRecurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
-}
-// GetTimeSlots gets the timeSlots property value. The time slot(s) preferred by the user.
-func (m *ShiftAvailability) GetTimeSlots()([]TimeRange) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeSlots
-    }
-}
-// GetTimeZone gets the timeZone property value. Specifies the time zone for the indicated time.
-func (m *ShiftAvailability) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ShiftAvailability) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPatternedRecurrence() })
+        val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecurrence(val.(*PatternedRecurrence))
+            m.SetRecurrence(val.(PatternedRecurrenceable))
         }
         return nil
     }
     res["timeSlots"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeRange() })
+        val, err := n.GetCollectionOfObjectValues(CreateTimeRangeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TimeRange, len(val))
+            res := make([]TimeRangeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TimeRange))
+                res[i] = v.(TimeRangeable)
             }
             m.SetTimeSlots(res)
         }
@@ -93,6 +73,30 @@ func (m *ShiftAvailability) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
+// GetRecurrence gets the recurrence property value. Specifies the pattern for recurrence
+func (m *ShiftAvailability) GetRecurrence()(PatternedRecurrenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrence
+    }
+}
+// GetTimeSlots gets the timeSlots property value. The time slot(s) preferred by the user.
+func (m *ShiftAvailability) GetTimeSlots()([]TimeRangeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeSlots
+    }
+}
+// GetTimeZone gets the timeZone property value. Specifies the time zone for the indicated time.
+func (m *ShiftAvailability) GetTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
+}
 func (m *ShiftAvailability) IsNil()(bool) {
     return m == nil
 }
@@ -107,8 +111,7 @@ func (m *ShiftAvailability) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetTimeSlots() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTimeSlots()))
         for i, v := range m.GetTimeSlots() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("timeSlots", cast)
         if err != nil {
@@ -136,13 +139,13 @@ func (m *ShiftAvailability) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetRecurrence sets the recurrence property value. Specifies the pattern for recurrence
-func (m *ShiftAvailability) SetRecurrence(value *PatternedRecurrence)() {
+func (m *ShiftAvailability) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value
     }
 }
 // SetTimeSlots sets the timeSlots property value. The time slot(s) preferred by the user.
-func (m *ShiftAvailability) SetTimeSlots(value []TimeRange)() {
+func (m *ShiftAvailability) SetTimeSlots(value []TimeRangeable)() {
     if m != nil {
         m.timeSlots = value
     }

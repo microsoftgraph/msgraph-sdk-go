@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i0adbaf2bb9aa63a5e604a5fa371b072519032b803f737301b0b52921cc1d3a35 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/unpublish"
     i1a7695ad2fabf538093408204c95d6189330219c052c9f612b44a85734601b1c "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/ispublished"
@@ -15,10 +14,12 @@ import (
     ida9964b630004248401c792f6f5212cb1ddb19922f1fb202be62edb471410340 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/basetypes"
     iff966f1c31329b7dc1c1986153d73717d35370de251cc9894dff12910c064f2a "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/columns"
     i2150d109d18cf045a75c8d5444fead62bb38570ae3bd07afea3c979c0b6f7858 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/columns/item"
+    i2cf1a02d48d3a21ccb17cada00470bc9d1fabf5dcd49a56a9761d5192beebeb4 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/columnpositions/item"
+    i541fa36eb7a1b1f0420e9bae56b716dee553af507c47eb7a9eef7659f1cef097 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/basetypes/item"
     ia4e76c4ea17d224738d3bd333eae6742adbcd53e331ba5959a9aed631af5d7c2 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/columnlinks/item"
 )
 
-// ContentTypeItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}
+// ContentTypeItemRequestBuilder provides operations to manage the contentTypes property of the microsoft.graph.list entity.
 type ContentTypeItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -57,7 +58,7 @@ type ContentTypeItemRequestBuilderGetQueryParameters struct {
 // ContentTypeItemRequestBuilderPatchOptions options for Patch
 type ContentTypeItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentTypeable;
     // Request headers
     H map[string]string;
     // Request options
@@ -73,6 +74,17 @@ func (m *ContentTypeItemRequestBuilder) Base()(*i6e3f707a321441169d0528a8f9d4e00
 }
 func (m *ContentTypeItemRequestBuilder) BaseTypes()(*ida9964b630004248401c792f6f5212cb1ddb19922f1fb202be62edb471410340.BaseTypesRequestBuilder) {
     return ida9964b630004248401c792f6f5212cb1ddb19922f1fb202be62edb471410340.NewBaseTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// BaseTypesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.lists.item.contentTypes.item.baseTypes.item collection
+func (m *ContentTypeItemRequestBuilder) BaseTypesById(id string)(*i541fa36eb7a1b1f0420e9bae56b716dee553af507c47eb7a9eef7659f1cef097.ContentTypeItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["contentType_id1"] = id
+    }
+    return i541fa36eb7a1b1f0420e9bae56b716dee553af507c47eb7a9eef7659f1cef097.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ContentTypeItemRequestBuilder) ColumnLinks()(*i278379c29b4a8817ca06b917afe4d8c15eeafd2fd0f5640b5269d826d7333584.ColumnLinksRequestBuilder) {
     return i278379c29b4a8817ca06b917afe4d8c15eeafd2fd0f5640b5269d826d7333584.NewColumnLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -90,6 +102,17 @@ func (m *ContentTypeItemRequestBuilder) ColumnLinksById(id string)(*ia4e76c4ea17
 }
 func (m *ContentTypeItemRequestBuilder) ColumnPositions()(*ib477091a8a0eb17f6038d6809d39677533b56c9feeae3f59b9fc6af836d4766e.ColumnPositionsRequestBuilder) {
     return ib477091a8a0eb17f6038d6809d39677533b56c9feeae3f59b9fc6af836d4766e.NewColumnPositionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ColumnPositionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.lists.item.contentTypes.item.columnPositions.item collection
+func (m *ContentTypeItemRequestBuilder) ColumnPositionsById(id string)(*i2cf1a02d48d3a21ccb17cada00470bc9d1fabf5dcd49a56a9761d5192beebeb4.ColumnDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["columnDefinition_id"] = id
+    }
+    return i2cf1a02d48d3a21ccb17cada00470bc9d1fabf5dcd49a56a9761d5192beebeb4.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ContentTypeItemRequestBuilder) Columns()(*iff966f1c31329b7dc1c1986153d73717d35370de251cc9894dff12910c064f2a.ColumnsRequestBuilder) {
     return iff966f1c31329b7dc1c1986153d73717d35370de251cc9894dff12910c064f2a.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -114,7 +137,7 @@ func NewContentTypeItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -127,7 +150,7 @@ func NewContentTypeItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171
 func (m *ContentTypeItemRequestBuilder) CopyToDefaultContentLocation()(*iba33625fbf7112f94866f86d5bf89ec9e16e3e3d0e4f825b748afa7b67c6fb15.CopyToDefaultContentLocationRequestBuilder) {
     return iba33625fbf7112f94866f86d5bf89ec9e16e3e3d0e4f825b748afa7b67c6fb15.NewCopyToDefaultContentLocationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the collection of content types present in this list.
+// CreateDeleteRequestInformation delete navigation property contentTypes for sites
 func (m *ContentTypeItemRequestBuilder) CreateDeleteRequestInformation(options *ContentTypeItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -164,7 +187,7 @@ func (m *ContentTypeItemRequestBuilder) CreateGetRequestInformation(options *Con
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the collection of content types present in this list.
+// CreatePatchRequestInformation update the navigation property contentTypes in sites
 func (m *ContentTypeItemRequestBuilder) CreatePatchRequestInformation(options *ContentTypeItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -182,41 +205,53 @@ func (m *ContentTypeItemRequestBuilder) CreatePatchRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Delete the collection of content types present in this list.
+// Delete delete navigation property contentTypes for sites
 func (m *ContentTypeItemRequestBuilder) Delete(options *ContentTypeItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the collection of content types present in this list.
-func (m *ContentTypeItemRequestBuilder) Get(options *ContentTypeItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType, error) {
+func (m *ContentTypeItemRequestBuilder) Get(options *ContentTypeItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentTypeable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewContentType() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateContentTypeFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentTypeable), nil
 }
-// IsPublished builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\microsoft.graph.isPublished()
+// IsPublished provides operations to call the isPublished method.
 func (m *ContentTypeItemRequestBuilder) IsPublished()(*i1a7695ad2fabf538093408204c95d6189330219c052c9f612b44a85734601b1c.IsPublishedRequestBuilder) {
     return i1a7695ad2fabf538093408204c95d6189330219c052c9f612b44a85734601b1c.NewIsPublishedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch the collection of content types present in this list.
+// Patch update the navigation property contentTypes in sites
 func (m *ContentTypeItemRequestBuilder) Patch(options *ContentTypeItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

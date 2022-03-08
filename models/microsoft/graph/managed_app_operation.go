@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedAppOperation 
+// ManagedAppOperation provides operations to manage the deviceAppManagement singleton.
 type ManagedAppOperation struct {
     Entity
     // The operation name.
@@ -24,36 +24,16 @@ func NewManagedAppOperation()(*ManagedAppOperation) {
     }
     return m
 }
+// CreateManagedAppOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedAppOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedAppOperation(), nil
+}
 // GetDisplayName gets the displayName property value. The operation name.
 func (m *ManagedAppOperation) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last time the app operation was modified.
-func (m *ManagedAppOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetState gets the state property value. The current state of the operation
-func (m *ManagedAppOperation) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetVersion gets the version property value. Version of the entity.
-func (m *ManagedAppOperation) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +80,30 @@ func (m *ManagedAppOperation) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last time the app operation was modified.
+func (m *ManagedAppOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetState gets the state property value. The current state of the operation
+func (m *ManagedAppOperation) GetState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetVersion gets the version property value. Version of the entity.
+func (m *ManagedAppOperation) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *ManagedAppOperation) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// ArchiveRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.archive
+// ArchiveRequestBuilder provides operations to call the archive method.
 type ArchiveRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ArchiveRequestBuilder struct {
 // ArchiveRequestBuilderPostOptions options for Post
 type ArchiveRequestBuilderPostOptions struct {
     // 
-    Body *ArchiveRequestBody;
+    Body ArchiveRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewArchiveRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *ArchiveRequestBuilder) CreatePostRequestInformation(options *ArchiveReq
     return requestInfo, nil
 }
 // Post invoke action archive
-func (m *ArchiveRequestBuilder) Post(options *ArchiveRequestBuilderPostOptions)(*bool, error) {
+func (m *ArchiveRequestBuilder) Post(options *ArchiveRequestBuilderPostOptions)(ArchiveResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateArchiveResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(ArchiveResponseable), nil
 }

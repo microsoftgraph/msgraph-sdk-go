@@ -2,11 +2,11 @@ package windowsinformationprotectionnetworklearningsummaries
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i57a865aa134e7925595a5ab81f1d4b6021c416a5b529e7a8ee1bdc7a02984e24 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/windowsinformationprotectionnetworklearningsummaries/count"
 )
 
-// WindowsInformationProtectionNetworkLearningSummariesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsInformationProtectionNetworkLearningSummaries
+// WindowsInformationProtectionNetworkLearningSummariesRequestBuilder provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
 type WindowsInformationProtectionNetworkLearningSummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetQueryP
 // WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostOptions options for Post
 type WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionNetworkLearningSummary;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionNetworkLearningSummaryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilder(rawUr
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Count()(*i57a865aa134e7925595a5ab81f1d4b6021c416a5b529e7a8ee1bdc7a02984e24.CountRequestBuilder) {
+    return i57a865aa134e7925595a5ab81f1d4b6021c416a5b529e7a8ee1bdc7a02984e24.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the windows information protection network learning summaries.
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) CreateGetRequestInformation(options *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Cre
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the windows information protection network learning summaries.
+// CreatePostRequestInformation create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) CreatePostRequestInformation(options *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Cre
     return requestInfo, nil
 }
 // Get the windows information protection network learning summaries.
-func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Get(options *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetOptions)(*WindowsInformationProtectionNetworkLearningSummariesResponse, error) {
+func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Get(options *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionNetworkLearningSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsInformationProtectionNetworkLearningSummariesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateWindowsInformationProtectionNetworkLearningSummaryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*WindowsInformationProtectionNetworkLearningSummariesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionNetworkLearningSummaryCollectionResponseable), nil
 }
-// Post the windows information protection network learning summaries.
-func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Post(options *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionNetworkLearningSummary, error) {
+// Post create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Post(options *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionNetworkLearningSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewWindowsInformationProtectionNetworkLearningSummary() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionNetworkLearningSummary), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionNetworkLearningSummaryable), nil
 }

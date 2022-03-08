@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DataPolicyOperation 
+// DataPolicyOperation provides operations to manage the collection of dataPolicyOperation entities.
 type DataPolicyOperation struct {
     Entity
     // Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
@@ -28,52 +28,16 @@ func NewDataPolicyOperation()(*DataPolicyOperation) {
     }
     return m
 }
+// CreateDataPolicyOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDataPolicyOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDataPolicyOperation(), nil
+}
 // GetCompletedDateTime gets the completedDateTime property value. Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
 func (m *DataPolicyOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.completedDateTime
-    }
-}
-// GetProgress gets the progress property value. Specifies the progress of an operation.
-func (m *DataPolicyOperation) GetProgress()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.progress
-    }
-}
-// GetStatus gets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
-func (m *DataPolicyOperation) GetStatus()(*DataPolicyOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetStorageLocation gets the storageLocation property value. The URL location to where data is being exported for export requests.
-func (m *DataPolicyOperation) GetStorageLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageLocation
-    }
-}
-// GetSubmittedDateTime gets the submittedDateTime property value. Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *DataPolicyOperation) GetSubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.submittedDateTime
-    }
-}
-// GetUserId gets the userId property value. The id for the user on whom the operation is performed.
-func (m *DataPolicyOperation) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,6 +104,46 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetProgress gets the progress property value. Specifies the progress of an operation.
+func (m *DataPolicyOperation) GetProgress()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.progress
+    }
+}
+// GetStatus gets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
+func (m *DataPolicyOperation) GetStatus()(*DataPolicyOperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetStorageLocation gets the storageLocation property value. The URL location to where data is being exported for export requests.
+func (m *DataPolicyOperation) GetStorageLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.storageLocation
+    }
+}
+// GetSubmittedDateTime gets the submittedDateTime property value. Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *DataPolicyOperation) GetSubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.submittedDateTime
+    }
+}
+// GetUserId gets the userId property value. The id for the user on whom the operation is performed.
+func (m *DataPolicyOperation) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *DataPolicyOperation) IsNil()(bool) {
     return m == nil

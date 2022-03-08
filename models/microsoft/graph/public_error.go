@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PublicError 
+// PublicError provides operations to manage the collection of externalConnection entities.
 type PublicError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Represents the error code.
     code *string;
     // Details of the error.
-    details []PublicErrorDetail;
+    details []PublicErrorDetailable;
     // Details of the inner error.
-    innerError *PublicInnerError;
+    innerError PublicInnerErrorable;
     // A non-localized message for the developer.
     message *string;
     // The target of the error.
@@ -25,6 +25,10 @@ func NewPublicError()(*PublicError) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePublicErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePublicErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPublicError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicError) GetAdditionalData()(map[string]interface{}) {
@@ -43,35 +47,11 @@ func (m *PublicError) GetCode()(*string) {
     }
 }
 // GetDetails gets the details property value. Details of the error.
-func (m *PublicError) GetDetails()([]PublicErrorDetail) {
+func (m *PublicError) GetDetails()([]PublicErrorDetailable) {
     if m == nil {
         return nil
     } else {
         return m.details
-    }
-}
-// GetInnerError gets the innerError property value. Details of the inner error.
-func (m *PublicError) GetInnerError()(*PublicInnerError) {
-    if m == nil {
-        return nil
-    } else {
-        return m.innerError
-    }
-}
-// GetMessage gets the message property value. A non-localized message for the developer.
-func (m *PublicError) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetTarget gets the target property value. The target of the error.
-func (m *PublicError) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,26 +68,26 @@ func (m *PublicError) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPublicErrorDetail() })
+        val, err := n.GetCollectionOfObjectValues(CreatePublicErrorDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PublicErrorDetail, len(val))
+            res := make([]PublicErrorDetailable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PublicErrorDetail))
+                res[i] = v.(PublicErrorDetailable)
             }
             m.SetDetails(res)
         }
         return nil
     }
     res["innerError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPublicInnerError() })
+        val, err := n.GetObjectValue(CreatePublicInnerErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnerError(val.(*PublicInnerError))
+            m.SetInnerError(val.(PublicInnerErrorable))
         }
         return nil
     }
@@ -133,6 +113,30 @@ func (m *PublicError) GetFieldDeserializers()(map[string]func(interface{}, i04eb
     }
     return res
 }
+// GetInnerError gets the innerError property value. Details of the inner error.
+func (m *PublicError) GetInnerError()(PublicInnerErrorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.innerError
+    }
+}
+// GetMessage gets the message property value. A non-localized message for the developer.
+func (m *PublicError) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetTarget gets the target property value. The target of the error.
+func (m *PublicError) GetTarget()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
+}
 func (m *PublicError) IsNil()(bool) {
     return m == nil
 }
@@ -147,8 +151,7 @@ func (m *PublicError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDetails()))
         for i, v := range m.GetDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("details", cast)
         if err != nil {
@@ -194,13 +197,13 @@ func (m *PublicError) SetCode(value *string)() {
     }
 }
 // SetDetails sets the details property value. Details of the error.
-func (m *PublicError) SetDetails(value []PublicErrorDetail)() {
+func (m *PublicError) SetDetails(value []PublicErrorDetailable)() {
     if m != nil {
         m.details = value
     }
 }
 // SetInnerError sets the innerError property value. Details of the inner error.
-func (m *PublicError) SetInnerError(value *PublicInnerError)() {
+func (m *PublicError) SetInnerError(value PublicInnerErrorable)() {
     if m != nil {
         m.innerError = value
     }

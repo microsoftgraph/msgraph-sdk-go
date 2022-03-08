@@ -2,11 +2,11 @@ package tokenissuancepolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i76eae71f1d2dfce714e601f9c9310637a9b224b3dac53190f11a4812b4c6e5e2 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenissuancepolicies/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i0a7527c31d3fe38436ca4070a7467620ae738b216ecf91deddc0faf2a5967298 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenissuancepolicies/count"
 )
 
-// TokenIssuancePoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\tokenIssuancePolicies
+// TokenIssuancePoliciesRequestBuilder provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.application entity.
 type TokenIssuancePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewTokenIssuancePoliciesRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TokenIssuancePoliciesRequestBuilder) Count()(*i0a7527c31d3fe38436ca4070a7467620ae738b216ecf91deddc0faf2a5967298.CountRequestBuilder) {
+    return i0a7527c31d3fe38436ca4070a7467620ae738b216ecf91deddc0faf2a5967298.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get tokenIssuancePolicies from applications
 func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformation(options *TokenIssuancePoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformation(option
     return requestInfo, nil
 }
 // Get get tokenIssuancePolicies from applications
-func (m *TokenIssuancePoliciesRequestBuilder) Get(options *TokenIssuancePoliciesRequestBuilderGetOptions)(*TokenIssuancePoliciesResponse, error) {
+func (m *TokenIssuancePoliciesRequestBuilder) Get(options *TokenIssuancePoliciesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TokenIssuancePolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTokenIssuancePoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTokenIssuancePolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TokenIssuancePoliciesResponse), nil
-}
-func (m *TokenIssuancePoliciesRequestBuilder) Ref()(*i76eae71f1d2dfce714e601f9c9310637a9b224b3dac53190f11a4812b4c6e5e2.RefRequestBuilder) {
-    return i76eae71f1d2dfce714e601f9c9310637a9b224b3dac53190f11a4812b4c6e5e2.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TokenIssuancePolicyCollectionResponseable), nil
 }

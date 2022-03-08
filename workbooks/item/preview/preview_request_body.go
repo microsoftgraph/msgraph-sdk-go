@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PreviewRequestBody 
+// PreviewRequestBody provides operations to call the preview method.
 type PreviewRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewPreviewRequestBody()(*PreviewRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePreviewRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePreviewRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPreviewRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreviewRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetPage gets the page property value. 
-func (m *PreviewRequestBody) GetPage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.page
-    }
-}
-// GetZoom gets the zoom property value. 
-func (m *PreviewRequestBody) GetZoom()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.zoom
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetPage gets the page property value. 
+func (m *PreviewRequestBody) GetPage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.page
+    }
+}
+// GetZoom gets the zoom property value. 
+func (m *PreviewRequestBody) GetZoom()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.zoom
+    }
 }
 func (m *PreviewRequestBody) IsNil()(bool) {
     return m == nil

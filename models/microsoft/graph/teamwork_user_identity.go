@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkUserIdentity 
+// TeamworkUserIdentity provides operations to manage the collection of chat entities.
 type TeamworkUserIdentity struct {
     Identity
     // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
@@ -17,13 +17,9 @@ func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {
     }
     return m
 }
-// GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
-func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userIdentityType
-    }
+// CreateTeamworkUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkUserIdentityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkUserIdentity(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkUserIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *TeamworkUserIdentity) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
+func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userIdentityType
+    }
 }
 func (m *TeamworkUserIdentity) IsNil()(bool) {
     return m == nil

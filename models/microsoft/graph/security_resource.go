@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityResource 
+// SecurityResource provides operations to manage the security singleton.
 type SecurityResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewSecurityResource()(*SecurityResource) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSecurityResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecurityResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecurityResource(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityResource) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetResource gets the resource property value. Name of the resource that is related to current alert. Required.
-func (m *SecurityResource) GetResource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
-}
-// GetResourceType gets the resourceType property value. Represents type of security resources related to an alert. Possible values are: attacked, related.
-func (m *SecurityResource) GetResourceType()(*SecurityResourceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *SecurityResource) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetResource gets the resource property value. Name of the resource that is related to current alert. Required.
+func (m *SecurityResource) GetResource()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resource
+    }
+}
+// GetResourceType gets the resourceType property value. Represents type of security resources related to an alert. Possible values are: attacked, related.
+func (m *SecurityResource) GetResourceType()(*SecurityResourceType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceType
+    }
 }
 func (m *SecurityResource) IsNil()(bool) {
     return m == nil

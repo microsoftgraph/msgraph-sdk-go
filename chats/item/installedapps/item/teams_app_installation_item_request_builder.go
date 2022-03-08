@@ -2,14 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i35ad4495bd8fba4273f7824b74ad010646602ceb162a7ff8bf77ddc51b7fcc0d "github.com/microsoftgraph/msgraph-sdk-go/chats/item/installedapps/item/teamsappdefinition"
     ia746748f624c7fd88e59d5553c3ef6fa70382acf2b670e75d11ef27cff15bfc4 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/installedapps/item/upgrade"
     ia96b6fb366243413b3c64f01d0b11020e423792cf3dd3d1045d1fd9067c440d3 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/installedapps/item/teamsapp"
 )
 
-// TeamsAppInstallationItemRequestBuilder builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}
+// TeamsAppInstallationItemRequestBuilder provides operations to manage the installedApps property of the microsoft.graph.chat entity.
 type TeamsAppInstallationItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +47,7 @@ type TeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
 // TeamsAppInstallationItemRequestBuilderPatchOptions options for Patch
 type TeamsAppInstallationItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallation;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +64,7 @@ func NewTeamsAppInstallationItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,7 +74,7 @@ func NewTeamsAppInstallationItemRequestBuilder(rawUrl string, requestAdapter ida
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation a collection of all the apps in the chat. Nullable.
+// CreateDeleteRequestInformation delete navigation property installedApps for chats
 func (m *TeamsAppInstallationItemRequestBuilder) CreateDeleteRequestInformation(options *TeamsAppInstallationItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +111,7 @@ func (m *TeamsAppInstallationItemRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a collection of all the apps in the chat. Nullable.
+// CreatePatchRequestInformation update the navigation property installedApps in chats
 func (m *TeamsAppInstallationItemRequestBuilder) CreatePatchRequestInformation(options *TeamsAppInstallationItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,37 +129,49 @@ func (m *TeamsAppInstallationItemRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// Delete a collection of all the apps in the chat. Nullable.
+// Delete delete navigation property installedApps for chats
 func (m *TeamsAppInstallationItemRequestBuilder) Delete(options *TeamsAppInstallationItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get a collection of all the apps in the chat. Nullable.
-func (m *TeamsAppInstallationItemRequestBuilder) Get(options *TeamsAppInstallationItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallation, error) {
+func (m *TeamsAppInstallationItemRequestBuilder) Get(options *TeamsAppInstallationItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewTeamsAppInstallation() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTeamsAppInstallationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallation), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallationable), nil
 }
-// Patch a collection of all the apps in the chat. Nullable.
+// Patch update the navigation property installedApps in chats
 func (m *TeamsAppInstallationItemRequestBuilder) Patch(options *TeamsAppInstallationItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

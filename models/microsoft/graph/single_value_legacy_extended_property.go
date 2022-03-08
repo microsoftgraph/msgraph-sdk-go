@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SingleValueLegacyExtendedProperty 
+// SingleValueLegacyExtendedProperty provides operations to manage the drive singleton.
 type SingleValueLegacyExtendedProperty struct {
     Entity
     // A property value.
@@ -17,13 +17,9 @@ func NewSingleValueLegacyExtendedProperty()(*SingleValueLegacyExtendedProperty) 
     }
     return m
 }
-// GetValue gets the value property value. A property value.
-func (m *SingleValueLegacyExtendedProperty) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+// CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSingleValueLegacyExtendedProperty(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SingleValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *SingleValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetValue gets the value property value. A property value.
+func (m *SingleValueLegacyExtendedProperty) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *SingleValueLegacyExtendedProperty) IsNil()(bool) {
     return m == nil

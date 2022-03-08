@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i0b84a273ded1e6669385f95709d9a7cf84a87df5fd73dc8c7af3710571de2128 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/unsetverifiedpublisher"
     i1a8360833e23698ad94af084d2df35cce4a1972916936379ed6648bfa6ba57ec "github.com/microsoftgraph/msgraph-sdk-go/applications/item/logo"
     i1afcec2f462ce9653f6d9c178d0d0542f5684412e62323ab5a3f979e1b79b5b8 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenissuancepolicies"
@@ -22,10 +21,14 @@ import (
     ib5b5951df8af6837ed6ea3344f5688d5f2483d29ea1c165d2d219ec5edf941da "github.com/microsoftgraph/msgraph-sdk-go/applications/item/restore"
     id3ff5385c48c1f8ddd4e5f53452e89d8e30d638f1b87dc3265bf1f8adb5d3078 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/addpassword"
     ida306ab63547733b6e18148e7f72a169be3442196d415312a52cbd9978ab6961 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/extensionproperties"
+    i2af67e5b951d866dcb390e8cdd53a703b8d1613ab54b5b0b111652d63e7426e3 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/homerealmdiscoverypolicies/item"
+    i97c12a9c6c5e3dabf4cee7a203250908050ed917a949921ccf7e4f24cf095d25 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenlifetimepolicies/item"
+    id5f0be733c94801a6e075b5b4e84614f608f9c7a8ece0f49a59084244eff9f56 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/item"
+    id868d42838b59366f189543d6b65b78e527af17acc61cbc962cae87c3c961e40 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenissuancepolicies/item"
     ie9db136445b8a8e3d0b048cc9910b564635f65b63edab67c97c083c411010b77 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/extensionproperties/item"
 )
 
-// ApplicationItemRequestBuilder builds and executes requests for operations under \applications\{application-id}
+// ApplicationItemRequestBuilder provides operations to manage the collection of application entities.
 type ApplicationItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -64,7 +67,7 @@ type ApplicationItemRequestBuilderGetQueryParameters struct {
 // ApplicationItemRequestBuilderPatchOptions options for Patch
 type ApplicationItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Application;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Applicationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -93,7 +96,7 @@ func NewApplicationItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -167,7 +170,11 @@ func (m *ApplicationItemRequestBuilder) Delete(options *ApplicationItemRequestBu
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -188,16 +195,20 @@ func (m *ApplicationItemRequestBuilder) ExtensionPropertiesById(id string)(*ie9d
     return ie9db136445b8a8e3d0b048cc9910b564635f65b63edab67c97c083c411010b77.NewExtensionPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get entity from applications by key
-func (m *ApplicationItemRequestBuilder) Get(options *ApplicationItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Application, error) {
+func (m *ApplicationItemRequestBuilder) Get(options *ApplicationItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Applicationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewApplication() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateApplicationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Application), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Applicationable), nil
 }
 func (m *ApplicationItemRequestBuilder) GetMemberGroups()(*i8f079434e6086cc56be6ed0afce670e9aa0f7ff3ac0107e2f5d9ac8d358fe2dc.GetMemberGroupsRequestBuilder) {
     return i8f079434e6086cc56be6ed0afce670e9aa0f7ff3ac0107e2f5d9ac8d358fe2dc.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -208,11 +219,33 @@ func (m *ApplicationItemRequestBuilder) GetMemberObjects()(*iafba803a7908a654425
 func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPolicies()(*i9dc2689198e150b8c4d03044f025827c3242c48569acd497be6fec72d51f6797.HomeRealmDiscoveryPoliciesRequestBuilder) {
     return i9dc2689198e150b8c4d03044f025827c3242c48569acd497be6fec72d51f6797.NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// HomeRealmDiscoveryPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.homeRealmDiscoveryPolicies.item collection
+func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*i2af67e5b951d866dcb390e8cdd53a703b8d1613ab54b5b0b111652d63e7426e3.HomeRealmDiscoveryPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["homeRealmDiscoveryPolicy_id"] = id
+    }
+    return i2af67e5b951d866dcb390e8cdd53a703b8d1613ab54b5b0b111652d63e7426e3.NewHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *ApplicationItemRequestBuilder) Logo()(*i1a8360833e23698ad94af084d2df35cce4a1972916936379ed6648bfa6ba57ec.LogoRequestBuilder) {
     return i1a8360833e23698ad94af084d2df35cce4a1972916936379ed6648bfa6ba57ec.NewLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ApplicationItemRequestBuilder) Owners()(*i9565e5e51a86644270ab0a3f267a0bbce14c338625e43342715917d0c6d5eec7.OwnersRequestBuilder) {
     return i9565e5e51a86644270ab0a3f267a0bbce14c338625e43342715917d0c6d5eec7.NewOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OwnersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.owners.item collection
+func (m *ApplicationItemRequestBuilder) OwnersById(id string)(*id5f0be733c94801a6e075b5b4e84614f608f9c7a8ece0f49a59084244eff9f56.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return id5f0be733c94801a6e075b5b4e84614f608f9c7a8ece0f49a59084244eff9f56.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update entity in applications
 func (m *ApplicationItemRequestBuilder) Patch(options *ApplicationItemRequestBuilderPatchOptions)(error) {
@@ -220,7 +253,11 @@ func (m *ApplicationItemRequestBuilder) Patch(options *ApplicationItemRequestBui
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -241,8 +278,30 @@ func (m *ApplicationItemRequestBuilder) SetVerifiedPublisher()(*i6f17a12e2de6cae
 func (m *ApplicationItemRequestBuilder) TokenIssuancePolicies()(*i1afcec2f462ce9653f6d9c178d0d0542f5684412e62323ab5a3f979e1b79b5b8.TokenIssuancePoliciesRequestBuilder) {
     return i1afcec2f462ce9653f6d9c178d0d0542f5684412e62323ab5a3f979e1b79b5b8.NewTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// TokenIssuancePoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenIssuancePolicies.item collection
+func (m *ApplicationItemRequestBuilder) TokenIssuancePoliciesById(id string)(*id868d42838b59366f189543d6b65b78e527af17acc61cbc962cae87c3c961e40.TokenIssuancePolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["tokenIssuancePolicy_id"] = id
+    }
+    return id868d42838b59366f189543d6b65b78e527af17acc61cbc962cae87c3c961e40.NewTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *ApplicationItemRequestBuilder) TokenLifetimePolicies()(*i486b52d4dad87ceeac08bd843c5504a58e010e9931346242f546e8106ff87250.TokenLifetimePoliciesRequestBuilder) {
     return i486b52d4dad87ceeac08bd843c5504a58e010e9931346242f546e8106ff87250.NewTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TokenLifetimePoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenLifetimePolicies.item collection
+func (m *ApplicationItemRequestBuilder) TokenLifetimePoliciesById(id string)(*i97c12a9c6c5e3dabf4cee7a203250908050ed917a949921ccf7e4f24cf095d25.TokenLifetimePolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["tokenLifetimePolicy_id"] = id
+    }
+    return i97c12a9c6c5e3dabf4cee7a203250908050ed917a949921ccf7e4f24cf095d25.NewTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ApplicationItemRequestBuilder) UnsetVerifiedPublisher()(*i0b84a273ded1e6669385f95709d9a7cf84a87df5fd73dc8c7af3710571de2128.UnsetVerifiedPublisherRequestBuilder) {
     return i0b84a273ded1e6669385f95709d9a7cf84a87df5fd73dc8c7af3710571de2128.NewUnsetVerifiedPublisherRequestBuilderInternal(m.pathParameters, m.requestAdapter);

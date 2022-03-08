@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemAnalytics 
+// ItemAnalytics provides operations to manage the drive singleton.
 type ItemAnalytics struct {
     Entity
     // 
-    allTime *ItemActivityStat;
+    allTime ItemActivityStatable;
     // 
-    itemActivityStats []ItemActivityStat;
+    itemActivityStats []ItemActivityStatable;
     // 
-    lastSevenDays *ItemActivityStat;
+    lastSevenDays ItemActivityStatable;
 }
 // NewItemAnalytics instantiates a new itemAnalytics and sets the default values.
 func NewItemAnalytics()(*ItemAnalytics) {
@@ -21,16 +21,59 @@ func NewItemAnalytics()(*ItemAnalytics) {
     }
     return m
 }
+// CreateItemAnalyticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemAnalyticsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemAnalytics(), nil
+}
 // GetAllTime gets the allTime property value. 
-func (m *ItemAnalytics) GetAllTime()(*ItemActivityStat) {
+func (m *ItemAnalytics) GetAllTime()(ItemActivityStatable) {
     if m == nil {
         return nil
     } else {
         return m.allTime
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["allTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateItemActivityStatFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllTime(val.(ItemActivityStatable))
+        }
+        return nil
+    }
+    res["itemActivityStats"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateItemActivityStatFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ItemActivityStatable, len(val))
+            for i, v := range val {
+                res[i] = v.(ItemActivityStatable)
+            }
+            m.SetItemActivityStats(res)
+        }
+        return nil
+    }
+    res["lastSevenDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateItemActivityStatFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastSevenDays(val.(ItemActivityStatable))
+        }
+        return nil
+    }
+    return res
+}
 // GetItemActivityStats gets the itemActivityStats property value. 
-func (m *ItemAnalytics) GetItemActivityStats()([]ItemActivityStat) {
+func (m *ItemAnalytics) GetItemActivityStats()([]ItemActivityStatable) {
     if m == nil {
         return nil
     } else {
@@ -38,51 +81,12 @@ func (m *ItemAnalytics) GetItemActivityStats()([]ItemActivityStat) {
     }
 }
 // GetLastSevenDays gets the lastSevenDays property value. 
-func (m *ItemAnalytics) GetLastSevenDays()(*ItemActivityStat) {
+func (m *ItemAnalytics) GetLastSevenDays()(ItemActivityStatable) {
     if m == nil {
         return nil
     } else {
         return m.lastSevenDays
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["allTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemActivityStat() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllTime(val.(*ItemActivityStat))
-        }
-        return nil
-    }
-    res["itemActivityStats"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemActivityStat() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ItemActivityStat, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*ItemActivityStat))
-            }
-            m.SetItemActivityStats(res)
-        }
-        return nil
-    }
-    res["lastSevenDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemActivityStat() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastSevenDays(val.(*ItemActivityStat))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ItemAnalytics) IsNil()(bool) {
     return m == nil
@@ -102,8 +106,7 @@ func (m *ItemAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetItemActivityStats() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItemActivityStats()))
         for i, v := range m.GetItemActivityStats() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("itemActivityStats", cast)
         if err != nil {
@@ -119,19 +122,19 @@ func (m *ItemAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     return nil
 }
 // SetAllTime sets the allTime property value. 
-func (m *ItemAnalytics) SetAllTime(value *ItemActivityStat)() {
+func (m *ItemAnalytics) SetAllTime(value ItemActivityStatable)() {
     if m != nil {
         m.allTime = value
     }
 }
 // SetItemActivityStats sets the itemActivityStats property value. 
-func (m *ItemAnalytics) SetItemActivityStats(value []ItemActivityStat)() {
+func (m *ItemAnalytics) SetItemActivityStats(value []ItemActivityStatable)() {
     if m != nil {
         m.itemActivityStats = value
     }
 }
 // SetLastSevenDays sets the lastSevenDays property value. 
-func (m *ItemAnalytics) SetLastSevenDays(value *ItemActivityStat)() {
+func (m *ItemAnalytics) SetLastSevenDays(value ItemActivityStatable)() {
     if m != nil {
         m.lastSevenDays = value
     }

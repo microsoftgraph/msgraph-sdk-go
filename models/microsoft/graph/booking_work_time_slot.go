@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingWorkTimeSlot 
+// BookingWorkTimeSlot provides operations to manage the solutionsRoot singleton.
 type BookingWorkTimeSlot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewBookingWorkTimeSlot()(*BookingWorkTimeSlot) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBookingWorkTimeSlotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBookingWorkTimeSlotFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBookingWorkTimeSlot(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingWorkTimeSlot) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *BookingWorkTimeSlot) GetEndTime()(*i04eb5309aeaafadd28374d79c8471df9b26
         return nil
     } else {
         return m.endTime
-    }
-}
-// GetStartTime gets the startTime property value. The time of the day when work starts. For example, 08:00:00.0000000.
-func (m *BookingWorkTimeSlot) GetStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetStartTime gets the startTime property value. The time of the day when work starts. For example, 08:00:00.0000000.
+func (m *BookingWorkTimeSlot) GetStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startTime
+    }
 }
 func (m *BookingWorkTimeSlot) IsNil()(bool) {
     return m == nil

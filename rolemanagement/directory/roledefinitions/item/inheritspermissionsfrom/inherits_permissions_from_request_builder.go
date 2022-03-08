@@ -2,11 +2,11 @@ package inheritspermissionsfrom
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i32755bbec1c53eecb46e129b2c3f7f307d9a71584006de15e5ad90a5c0d2cd13 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/directory/roledefinitions/item/inheritspermissionsfrom/count"
 )
 
-// InheritsPermissionsFromRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleDefinitions\{unifiedRoleDefinition-id}\inheritsPermissionsFrom
+// InheritsPermissionsFromRequestBuilder provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
 type InheritsPermissionsFromRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type InheritsPermissionsFromRequestBuilderGetQueryParameters struct {
 // InheritsPermissionsFromRequestBuilderPostOptions options for Post
 type InheritsPermissionsFromRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewInheritsPermissionsFromRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewInheritsPermissionsFromRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInheritsPermissionsFromRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *InheritsPermissionsFromRequestBuilder) Count()(*i32755bbec1c53eecb46e129b2c3f7f307d9a71584006de15e5ad90a5c0d2cd13.CountRequestBuilder) {
+    return i32755bbec1c53eecb46e129b2c3f7f307d9a71584006de15e5ad90a5c0d2cd13.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
 func (m *InheritsPermissionsFromRequestBuilder) CreateGetRequestInformation(options *InheritsPermissionsFromRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *InheritsPermissionsFromRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// CreatePostRequestInformation create new navigation property to inheritsPermissionsFrom for roleManagement
 func (m *InheritsPermissionsFromRequestBuilder) CreatePostRequestInformation(options *InheritsPermissionsFromRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *InheritsPermissionsFromRequestBuilder) CreatePostRequestInformation(opt
     return requestInfo, nil
 }
 // Get read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-func (m *InheritsPermissionsFromRequestBuilder) Get(options *InheritsPermissionsFromRequestBuilderGetOptions)(*InheritsPermissionsFromResponse, error) {
+func (m *InheritsPermissionsFromRequestBuilder) Get(options *InheritsPermissionsFromRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInheritsPermissionsFromResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUnifiedRoleDefinitionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*InheritsPermissionsFromResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionCollectionResponseable), nil
 }
-// Post read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-func (m *InheritsPermissionsFromRequestBuilder) Post(options *InheritsPermissionsFromRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition, error) {
+// Post create new navigation property to inheritsPermissionsFrom for roleManagement
+func (m *InheritsPermissionsFromRequestBuilder) Post(options *InheritsPermissionsFromRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewUnifiedRoleDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUnifiedRoleDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinitionable), nil
 }

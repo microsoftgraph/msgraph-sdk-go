@@ -2,11 +2,11 @@ package historydefinitions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i1e70940247c0ea191672d2d53c5d2424ad21e19a57469543db4cee1bd5ee6191 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/historydefinitions/count"
 )
 
-// HistoryDefinitionsRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions
+// HistoryDefinitionsRequestBuilder provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
 type HistoryDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type HistoryDefinitionsRequestBuilderGetQueryParameters struct {
 // HistoryDefinitionsRequestBuilderPostOptions options for Post
 type HistoryDefinitionsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewHistoryDefinition;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewHistoryDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewHistoryDefinitionsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewHistoryDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHistoryDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *HistoryDefinitionsRequestBuilder) Count()(*i1e70940247c0ea191672d2d53c5d2424ad21e19a57469543db4cee1bd5ee6191.CountRequestBuilder) {
+    return i1e70940247c0ea191672d2d53c5d2424ad21e19a57469543db4cee1bd5ee6191.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation represents a collection of access review history data and the scopes used to collect that data.
 func (m *HistoryDefinitionsRequestBuilder) CreateGetRequestInformation(options *HistoryDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *HistoryDefinitionsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents a collection of access review history data and the scopes used to collect that data.
+// CreatePostRequestInformation create new navigation property to historyDefinitions for identityGovernance
 func (m *HistoryDefinitionsRequestBuilder) CreatePostRequestInformation(options *HistoryDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *HistoryDefinitionsRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get represents a collection of access review history data and the scopes used to collect that data.
-func (m *HistoryDefinitionsRequestBuilder) Get(options *HistoryDefinitionsRequestBuilderGetOptions)(*HistoryDefinitionsResponse, error) {
+func (m *HistoryDefinitionsRequestBuilder) Get(options *HistoryDefinitionsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewHistoryDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewHistoryDefinitionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAccessReviewHistoryDefinitionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*HistoryDefinitionsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewHistoryDefinitionCollectionResponseable), nil
 }
-// Post represents a collection of access review history data and the scopes used to collect that data.
-func (m *HistoryDefinitionsRequestBuilder) Post(options *HistoryDefinitionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewHistoryDefinition, error) {
+// Post create new navigation property to historyDefinitions for identityGovernance
+func (m *HistoryDefinitionsRequestBuilder) Post(options *HistoryDefinitionsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewHistoryDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewAccessReviewHistoryDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAccessReviewHistoryDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewHistoryDefinition), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewHistoryDefinitionable), nil
 }

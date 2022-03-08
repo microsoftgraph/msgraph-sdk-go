@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookIcon 
+// WorkbookIcon provides operations to manage the drive singleton.
 type WorkbookIcon struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewWorkbookIcon()(*WorkbookIcon) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateWorkbookIconFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookIconFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookIcon(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookIcon) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIndex gets the index property value. Represents the index of the icon in the given set.
-func (m *WorkbookIcon) GetIndex()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.index
-    }
-}
-// GetSet gets the set property value. Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
-func (m *WorkbookIcon) GetSet()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.set
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *WorkbookIcon) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetIndex gets the index property value. Represents the index of the icon in the given set.
+func (m *WorkbookIcon) GetIndex()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.index
+    }
+}
+// GetSet gets the set property value. Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
+func (m *WorkbookIcon) GetSet()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.set
+    }
 }
 func (m *WorkbookIcon) IsNil()(bool) {
     return m == nil

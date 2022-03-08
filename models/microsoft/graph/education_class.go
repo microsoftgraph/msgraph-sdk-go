@@ -4,23 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationClass 
+// EducationClass provides operations to manage the educationRoot singleton.
 type EducationClass struct {
     Entity
     // 
-    assignmentCategories []EducationCategory;
+    assignmentCategories []EducationCategoryable;
     // 
-    assignmentDefaults *EducationAssignmentDefaults;
+    assignmentDefaults EducationAssignmentDefaultsable;
     // All assignments associated with this class. Nullable.
-    assignments []EducationAssignment;
+    assignments []EducationAssignmentable;
     // 
-    assignmentSettings *EducationAssignmentSettings;
+    assignmentSettings EducationAssignmentSettingsable;
     // Class code used by the school to identify the class.
     classCode *string;
     // Course information for the class.
-    course *EducationCourse;
+    course EducationCourseable;
     // Entity who created the class
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // Description of the class.
     description *string;
     // Name of the class.
@@ -36,17 +36,17 @@ type EducationClass struct {
     // Grade level of the class.
     grade *string;
     // The underlying Microsoft 365 group object.
-    group *Group;
+    group Groupable;
     // Mail name for sending email to all members, if this is enabled.
     mailNickname *string;
     // All users in the class. Nullable.
-    members []EducationUser;
+    members []EducationUserable;
     // All schools that this class is associated with. Nullable.
-    schools []EducationSchool;
+    schools []EducationSchoolable;
     // All teachers in the class. Nullable.
-    teachers []EducationUser;
+    teachers []EducationUserable;
     // Term for this class.
-    term *EducationTerm;
+    term EducationTermable;
 }
 // NewEducationClass instantiates a new educationClass and sets the default values.
 func NewEducationClass()(*EducationClass) {
@@ -55,8 +55,12 @@ func NewEducationClass()(*EducationClass) {
     }
     return m
 }
+// CreateEducationClassFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationClassFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationClass(), nil
+}
 // GetAssignmentCategories gets the assignmentCategories property value. 
-func (m *EducationClass) GetAssignmentCategories()([]EducationCategory) {
+func (m *EducationClass) GetAssignmentCategories()([]EducationCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -64,7 +68,7 @@ func (m *EducationClass) GetAssignmentCategories()([]EducationCategory) {
     }
 }
 // GetAssignmentDefaults gets the assignmentDefaults property value. 
-func (m *EducationClass) GetAssignmentDefaults()(*EducationAssignmentDefaults) {
+func (m *EducationClass) GetAssignmentDefaults()(EducationAssignmentDefaultsable) {
     if m == nil {
         return nil
     } else {
@@ -72,7 +76,7 @@ func (m *EducationClass) GetAssignmentDefaults()(*EducationAssignmentDefaults) {
     }
 }
 // GetAssignments gets the assignments property value. All assignments associated with this class. Nullable.
-func (m *EducationClass) GetAssignments()([]EducationAssignment) {
+func (m *EducationClass) GetAssignments()([]EducationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +84,7 @@ func (m *EducationClass) GetAssignments()([]EducationAssignment) {
     }
 }
 // GetAssignmentSettings gets the assignmentSettings property value. 
-func (m *EducationClass) GetAssignmentSettings()(*EducationAssignmentSettings) {
+func (m *EducationClass) GetAssignmentSettings()(EducationAssignmentSettingsable) {
     if m == nil {
         return nil
     } else {
@@ -96,7 +100,7 @@ func (m *EducationClass) GetClassCode()(*string) {
     }
 }
 // GetCourse gets the course property value. Course information for the class.
-func (m *EducationClass) GetCourse()(*EducationCourse) {
+func (m *EducationClass) GetCourse()(EducationCourseable) {
     if m == nil {
         return nil
     } else {
@@ -104,7 +108,7 @@ func (m *EducationClass) GetCourse()(*EducationCourse) {
     }
 }
 // GetCreatedBy gets the createdBy property value. Entity who created the class
-func (m *EducationClass) GetCreatedBy()(*IdentitySet) {
+func (m *EducationClass) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -159,110 +163,54 @@ func (m *EducationClass) GetExternalSourceDetail()(*string) {
         return m.externalSourceDetail
     }
 }
-// GetGrade gets the grade property value. Grade level of the class.
-func (m *EducationClass) GetGrade()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grade
-    }
-}
-// GetGroup gets the group property value. The underlying Microsoft 365 group object.
-func (m *EducationClass) GetGroup()(*Group) {
-    if m == nil {
-        return nil
-    } else {
-        return m.group
-    }
-}
-// GetMailNickname gets the mailNickname property value. Mail name for sending email to all members, if this is enabled.
-func (m *EducationClass) GetMailNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNickname
-    }
-}
-// GetMembers gets the members property value. All users in the class. Nullable.
-func (m *EducationClass) GetMembers()([]EducationUser) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
-}
-// GetSchools gets the schools property value. All schools that this class is associated with. Nullable.
-func (m *EducationClass) GetSchools()([]EducationSchool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schools
-    }
-}
-// GetTeachers gets the teachers property value. All teachers in the class. Nullable.
-func (m *EducationClass) GetTeachers()([]EducationUser) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teachers
-    }
-}
-// GetTerm gets the term property value. Term for this class.
-func (m *EducationClass) GetTerm()(*EducationTerm) {
-    if m == nil {
-        return nil
-    } else {
-        return m.term
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignmentCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationCategory, len(val))
+            res := make([]EducationCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationCategory))
+                res[i] = v.(EducationCategoryable)
             }
             m.SetAssignmentCategories(res)
         }
         return nil
     }
     res["assignmentDefaults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationAssignmentDefaults() })
+        val, err := n.GetObjectValue(CreateEducationAssignmentDefaultsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignmentDefaults(val.(*EducationAssignmentDefaults))
+            m.SetAssignmentDefaults(val.(EducationAssignmentDefaultsable))
         }
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationAssignment, len(val))
+            res := make([]EducationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationAssignment))
+                res[i] = v.(EducationAssignmentable)
             }
             m.SetAssignments(res)
         }
         return nil
     }
     res["assignmentSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationAssignmentSettings() })
+        val, err := n.GetObjectValue(CreateEducationAssignmentSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignmentSettings(val.(*EducationAssignmentSettings))
+            m.SetAssignmentSettings(val.(EducationAssignmentSettingsable))
         }
         return nil
     }
@@ -277,22 +225,22 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["course"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationCourse() })
+        val, err := n.GetObjectValue(CreateEducationCourseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCourse(val.(*EducationCourse))
+            m.SetCourse(val.(EducationCourseable))
         }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -367,12 +315,12 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["group"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroup() })
+        val, err := n.GetObjectValue(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGroup(val.(*Group))
+            m.SetGroup(val.(Groupable))
         }
         return nil
     }
@@ -387,58 +335,114 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationUser() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationUser, len(val))
+            res := make([]EducationUserable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationUser))
+                res[i] = v.(EducationUserable)
             }
             m.SetMembers(res)
         }
         return nil
     }
     res["schools"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationSchool() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationSchool, len(val))
+            res := make([]EducationSchoolable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationSchool))
+                res[i] = v.(EducationSchoolable)
             }
             m.SetSchools(res)
         }
         return nil
     }
     res["teachers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationUser() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationUser, len(val))
+            res := make([]EducationUserable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationUser))
+                res[i] = v.(EducationUserable)
             }
             m.SetTeachers(res)
         }
         return nil
     }
     res["term"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationTerm() })
+        val, err := n.GetObjectValue(CreateEducationTermFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTerm(val.(*EducationTerm))
+            m.SetTerm(val.(EducationTermable))
         }
         return nil
     }
     return res
+}
+// GetGrade gets the grade property value. Grade level of the class.
+func (m *EducationClass) GetGrade()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.grade
+    }
+}
+// GetGroup gets the group property value. The underlying Microsoft 365 group object.
+func (m *EducationClass) GetGroup()(Groupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.group
+    }
+}
+// GetMailNickname gets the mailNickname property value. Mail name for sending email to all members, if this is enabled.
+func (m *EducationClass) GetMailNickname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailNickname
+    }
+}
+// GetMembers gets the members property value. All users in the class. Nullable.
+func (m *EducationClass) GetMembers()([]EducationUserable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.members
+    }
+}
+// GetSchools gets the schools property value. All schools that this class is associated with. Nullable.
+func (m *EducationClass) GetSchools()([]EducationSchoolable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schools
+    }
+}
+// GetTeachers gets the teachers property value. All teachers in the class. Nullable.
+func (m *EducationClass) GetTeachers()([]EducationUserable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teachers
+    }
+}
+// GetTerm gets the term property value. Term for this class.
+func (m *EducationClass) GetTerm()(EducationTermable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.term
+    }
 }
 func (m *EducationClass) IsNil()(bool) {
     return m == nil
@@ -452,8 +456,7 @@ func (m *EducationClass) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetAssignmentCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignmentCategories()))
         for i, v := range m.GetAssignmentCategories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignmentCategories", cast)
         if err != nil {
@@ -469,8 +472,7 @@ func (m *EducationClass) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -559,8 +561,7 @@ func (m *EducationClass) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {
@@ -570,8 +571,7 @@ func (m *EducationClass) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetSchools() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSchools()))
         for i, v := range m.GetSchools() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("schools", cast)
         if err != nil {
@@ -581,8 +581,7 @@ func (m *EducationClass) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetTeachers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTeachers()))
         for i, v := range m.GetTeachers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("teachers", cast)
         if err != nil {
@@ -598,25 +597,25 @@ func (m *EducationClass) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     return nil
 }
 // SetAssignmentCategories sets the assignmentCategories property value. 
-func (m *EducationClass) SetAssignmentCategories(value []EducationCategory)() {
+func (m *EducationClass) SetAssignmentCategories(value []EducationCategoryable)() {
     if m != nil {
         m.assignmentCategories = value
     }
 }
 // SetAssignmentDefaults sets the assignmentDefaults property value. 
-func (m *EducationClass) SetAssignmentDefaults(value *EducationAssignmentDefaults)() {
+func (m *EducationClass) SetAssignmentDefaults(value EducationAssignmentDefaultsable)() {
     if m != nil {
         m.assignmentDefaults = value
     }
 }
 // SetAssignments sets the assignments property value. All assignments associated with this class. Nullable.
-func (m *EducationClass) SetAssignments(value []EducationAssignment)() {
+func (m *EducationClass) SetAssignments(value []EducationAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
 }
 // SetAssignmentSettings sets the assignmentSettings property value. 
-func (m *EducationClass) SetAssignmentSettings(value *EducationAssignmentSettings)() {
+func (m *EducationClass) SetAssignmentSettings(value EducationAssignmentSettingsable)() {
     if m != nil {
         m.assignmentSettings = value
     }
@@ -628,13 +627,13 @@ func (m *EducationClass) SetClassCode(value *string)() {
     }
 }
 // SetCourse sets the course property value. Course information for the class.
-func (m *EducationClass) SetCourse(value *EducationCourse)() {
+func (m *EducationClass) SetCourse(value EducationCourseable)() {
     if m != nil {
         m.course = value
     }
 }
 // SetCreatedBy sets the createdBy property value. Entity who created the class
-func (m *EducationClass) SetCreatedBy(value *IdentitySet)() {
+func (m *EducationClass) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -682,7 +681,7 @@ func (m *EducationClass) SetGrade(value *string)() {
     }
 }
 // SetGroup sets the group property value. The underlying Microsoft 365 group object.
-func (m *EducationClass) SetGroup(value *Group)() {
+func (m *EducationClass) SetGroup(value Groupable)() {
     if m != nil {
         m.group = value
     }
@@ -694,25 +693,25 @@ func (m *EducationClass) SetMailNickname(value *string)() {
     }
 }
 // SetMembers sets the members property value. All users in the class. Nullable.
-func (m *EducationClass) SetMembers(value []EducationUser)() {
+func (m *EducationClass) SetMembers(value []EducationUserable)() {
     if m != nil {
         m.members = value
     }
 }
 // SetSchools sets the schools property value. All schools that this class is associated with. Nullable.
-func (m *EducationClass) SetSchools(value []EducationSchool)() {
+func (m *EducationClass) SetSchools(value []EducationSchoolable)() {
     if m != nil {
         m.schools = value
     }
 }
 // SetTeachers sets the teachers property value. All teachers in the class. Nullable.
-func (m *EducationClass) SetTeachers(value []EducationUser)() {
+func (m *EducationClass) SetTeachers(value []EducationUserable)() {
     if m != nil {
         m.teachers = value
     }
 }
 // SetTerm sets the term property value. Term for this class.
-func (m *EducationClass) SetTerm(value *EducationTerm)() {
+func (m *EducationClass) SetTerm(value EducationTermable)() {
     if m != nil {
         m.term = value
     }

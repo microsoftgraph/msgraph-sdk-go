@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Schema 
+// Schema provides operations to manage the collection of externalConnection entities.
 type Schema struct {
     Entity
     // Must be set to microsoft.graph.externalConnector.externalItem. Required.
     baseType *string;
     // The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
-    properties []Property;
+    properties []Propertyable;
 }
 // NewSchema instantiates a new schema and sets the default values.
 func NewSchema()(*Schema) {
@@ -19,20 +19,16 @@ func NewSchema()(*Schema) {
     }
     return m
 }
+// CreateSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSchemaFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSchema(), nil
+}
 // GetBaseType gets the baseType property value. Must be set to microsoft.graph.externalConnector.externalItem. Required.
 func (m *Schema) GetBaseType()(*string) {
     if m == nil {
         return nil
     } else {
         return m.baseType
-    }
-}
-// GetProperties gets the properties property value. The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
-func (m *Schema) GetProperties()([]Property) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -49,20 +45,28 @@ func (m *Schema) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreatePropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Property, len(val))
+            res := make([]Propertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Property))
+                res[i] = v.(Propertyable)
             }
             m.SetProperties(res)
         }
         return nil
     }
     return res
+}
+// GetProperties gets the properties property value. The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
+func (m *Schema) GetProperties()([]Propertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.properties
+    }
 }
 func (m *Schema) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *Schema) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("properties", cast)
         if err != nil {
@@ -99,7 +102,7 @@ func (m *Schema) SetBaseType(value *string)() {
     }
 }
 // SetProperties sets the properties property value. The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
-func (m *Schema) SetProperties(value []Property)() {
+func (m *Schema) SetProperties(value []Propertyable)() {
     if m != nil {
         m.properties = value
     }

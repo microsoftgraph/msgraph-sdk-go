@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// VerifyRequestBuilder builds and executes requests for operations under \domains\{domain-id}\microsoft.graph.verify
+// VerifyRequestBuilder provides operations to call the verify method.
 type VerifyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type VerifyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type domain
-    domain *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domain;
+    domain i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domainable;
 }
 // NewVerifyResponse instantiates a new verifyResponse and sets the default values.
 func NewVerifyResponse()(*VerifyResponse) {
@@ -37,6 +37,9 @@ func NewVerifyResponse()(*VerifyResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateVerifyResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVerifyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifyResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *VerifyResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDomain gets the domain property value. Union type representation for type domain
-func (m *VerifyResponse) GetDomain()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domain) {
+func (m *VerifyResponse) GetDomain()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domainable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *VerifyResponse) GetDomain()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
 func (m *VerifyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["domain"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDomain() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDomainFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDomain(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domain))
+            m.SetDomain(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domainable))
         }
         return nil
     }
@@ -95,7 +98,7 @@ func (m *VerifyResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDomain sets the domain property value. Union type representation for type domain
-func (m *VerifyResponse) SetDomain(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domain)() {
+func (m *VerifyResponse) SetDomain(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domainable)() {
     if m != nil {
         m.domain = value
     }
@@ -109,7 +112,7 @@ func NewVerifyRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *VerifyRequestBuilder) CreatePostRequestInformation(options *VerifyReque
     return requestInfo, nil
 }
 // Post invoke action verify
-func (m *VerifyRequestBuilder) Post(options *VerifyRequestBuilderPostOptions)(*VerifyResponse, error) {
+func (m *VerifyRequestBuilder) Post(options *VerifyRequestBuilderPostOptions)(VerifyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVerifyResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateVerifyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*VerifyResponse), nil
+    return res.(VerifyResponseable), nil
 }

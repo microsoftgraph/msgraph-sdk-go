@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SoftwareUpdateStatusSummary 
+// SoftwareUpdateStatusSummary provides operations to manage the deviceManagement singleton.
 type SoftwareUpdateStatusSummary struct {
     Entity
     // Number of compliant devices.
@@ -44,6 +44,10 @@ func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSoftwareUpdateStatusSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSoftwareUpdateStatusSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSoftwareUpdateStatusSummary(), nil
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices.
 func (m *SoftwareUpdateStatusSummary) GetCompliantDeviceCount()(*int32) {
@@ -99,70 +103,6 @@ func (m *SoftwareUpdateStatusSummary) GetErrorUserCount()(*int32) {
         return nil
     } else {
         return m.errorUserCount
-    }
-}
-// GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of non compliant devices.
-func (m *SoftwareUpdateStatusSummary) GetNonCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantDeviceCount
-    }
-}
-// GetNonCompliantUserCount gets the nonCompliantUserCount property value. Number of non compliant users.
-func (m *SoftwareUpdateStatusSummary) GetNonCompliantUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantUserCount
-    }
-}
-// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices.
-func (m *SoftwareUpdateStatusSummary) GetNotApplicableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableDeviceCount
-    }
-}
-// GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of not applicable users.
-func (m *SoftwareUpdateStatusSummary) GetNotApplicableUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableUserCount
-    }
-}
-// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices.
-func (m *SoftwareUpdateStatusSummary) GetRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedDeviceCount
-    }
-}
-// GetRemediatedUserCount gets the remediatedUserCount property value. Number of remediated users.
-func (m *SoftwareUpdateStatusSummary) GetRemediatedUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedUserCount
-    }
-}
-// GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices.
-func (m *SoftwareUpdateStatusSummary) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
-    }
-}
-// GetUnknownUserCount gets the unknownUserCount property value. Number of unknown users.
-func (m *SoftwareUpdateStatusSummary) GetUnknownUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownUserCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -319,6 +259,70 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of non compliant devices.
+func (m *SoftwareUpdateStatusSummary) GetNonCompliantDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nonCompliantDeviceCount
+    }
+}
+// GetNonCompliantUserCount gets the nonCompliantUserCount property value. Number of non compliant users.
+func (m *SoftwareUpdateStatusSummary) GetNonCompliantUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nonCompliantUserCount
+    }
+}
+// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices.
+func (m *SoftwareUpdateStatusSummary) GetNotApplicableDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableDeviceCount
+    }
+}
+// GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of not applicable users.
+func (m *SoftwareUpdateStatusSummary) GetNotApplicableUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableUserCount
+    }
+}
+// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices.
+func (m *SoftwareUpdateStatusSummary) GetRemediatedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediatedDeviceCount
+    }
+}
+// GetRemediatedUserCount gets the remediatedUserCount property value. Number of remediated users.
+func (m *SoftwareUpdateStatusSummary) GetRemediatedUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediatedUserCount
+    }
+}
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices.
+func (m *SoftwareUpdateStatusSummary) GetUnknownDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unknownDeviceCount
+    }
+}
+// GetUnknownUserCount gets the unknownUserCount property value. Number of unknown users.
+func (m *SoftwareUpdateStatusSummary) GetUnknownUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unknownUserCount
+    }
 }
 func (m *SoftwareUpdateStatusSummary) IsNil()(bool) {
     return m == nil

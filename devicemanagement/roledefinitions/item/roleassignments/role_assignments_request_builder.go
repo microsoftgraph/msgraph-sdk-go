@@ -2,11 +2,11 @@ package roleassignments
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i5e90802a2d6eb35c27f0a7c6ec33523b9fa0edccd926881ac9b52d14976e6b49 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/roledefinitions/item/roleassignments/count"
 )
 
-// RoleAssignmentsRequestBuilder builds and executes requests for operations under \deviceManagement\roleDefinitions\{roleDefinition-id}\roleAssignments
+// RoleAssignmentsRequestBuilder provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
 type RoleAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type RoleAssignmentsRequestBuilderGetQueryParameters struct {
 // RoleAssignmentsRequestBuilderPostOptions options for Post
 type RoleAssignmentsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignment;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RoleAssignmentsRequestBuilder) Count()(*i5e90802a2d6eb35c27f0a7c6ec33523b9fa0edccd926881ac9b52d14976e6b49.CountRequestBuilder) {
+    return i5e90802a2d6eb35c27f0a7c6ec33523b9fa0edccd926881ac9b52d14976e6b49.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list of Role assignments for this role definition.
 func (m *RoleAssignmentsRequestBuilder) CreateGetRequestInformation(options *RoleAssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *RoleAssignmentsRequestBuilder) CreateGetRequestInformation(options *Rol
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation list of Role assignments for this role definition.
+// CreatePostRequestInformation create new navigation property to roleAssignments for deviceManagement
 func (m *RoleAssignmentsRequestBuilder) CreatePostRequestInformation(options *RoleAssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *RoleAssignmentsRequestBuilder) CreatePostRequestInformation(options *Ro
     return requestInfo, nil
 }
 // Get list of Role assignments for this role definition.
-func (m *RoleAssignmentsRequestBuilder) Get(options *RoleAssignmentsRequestBuilderGetOptions)(*RoleAssignmentsResponse, error) {
+func (m *RoleAssignmentsRequestBuilder) Get(options *RoleAssignmentsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleAssignmentsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateRoleAssignmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RoleAssignmentsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignmentCollectionResponseable), nil
 }
-// Post list of Role assignments for this role definition.
-func (m *RoleAssignmentsRequestBuilder) Post(options *RoleAssignmentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignment, error) {
+// Post create new navigation property to roleAssignments for deviceManagement
+func (m *RoleAssignmentsRequestBuilder) Post(options *RoleAssignmentsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewRoleAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateRoleAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignment), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignmentable), nil
 }

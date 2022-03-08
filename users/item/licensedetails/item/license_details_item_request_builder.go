@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// LicenseDetailsItemRequestBuilder builds and executes requests for operations under \users\{user-id}\licenseDetails\{licenseDetails-id}
+// LicenseDetailsItemRequestBuilder provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
 type LicenseDetailsItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type LicenseDetailsItemRequestBuilderGetQueryParameters struct {
 // LicenseDetailsItemRequestBuilderPatchOptions options for Patch
 type LicenseDetailsItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LicenseDetails;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LicenseDetailsable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewLicenseDetailsItemRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewLicenseDetailsItemRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams["request-raw-url"] = rawUrl
     return NewLicenseDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation a collection of this user's license details. Read-only.
+// CreateDeleteRequestInformation delete navigation property licenseDetails for users
 func (m *LicenseDetailsItemRequestBuilder) CreateDeleteRequestInformation(options *LicenseDetailsItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *LicenseDetailsItemRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a collection of this user's license details. Read-only.
+// CreatePatchRequestInformation update the navigation property licenseDetails in users
 func (m *LicenseDetailsItemRequestBuilder) CreatePatchRequestInformation(options *LicenseDetailsItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *LicenseDetailsItemRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete a collection of this user's license details. Read-only.
+// Delete delete navigation property licenseDetails for users
 func (m *LicenseDetailsItemRequestBuilder) Delete(options *LicenseDetailsItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get a collection of this user's license details. Read-only.
-func (m *LicenseDetailsItemRequestBuilder) Get(options *LicenseDetailsItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LicenseDetails, error) {
+func (m *LicenseDetailsItemRequestBuilder) Get(options *LicenseDetailsItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LicenseDetailsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewLicenseDetails() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateLicenseDetailsFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LicenseDetails), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LicenseDetailsable), nil
 }
-// Patch a collection of this user's license details. Read-only.
+// Patch update the navigation property licenseDetails in users
 func (m *LicenseDetailsItemRequestBuilder) Patch(options *LicenseDetailsItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

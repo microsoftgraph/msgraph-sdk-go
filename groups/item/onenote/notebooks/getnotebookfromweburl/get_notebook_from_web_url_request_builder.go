@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// GetNotebookFromWebUrlRequestBuilder builds and executes requests for operations under \groups\{group-id}\onenote\notebooks\microsoft.graph.getNotebookFromWebUrl
+// GetNotebookFromWebUrlRequestBuilder provides operations to call the getNotebookFromWebUrl method.
 type GetNotebookFromWebUrlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type GetNotebookFromWebUrlRequestBuilder struct {
 // GetNotebookFromWebUrlRequestBuilderPostOptions options for Post
 type GetNotebookFromWebUrlRequestBuilderPostOptions struct {
     // 
-    Body *GetNotebookFromWebUrlRequestBody;
+    Body GetNotebookFromWebUrlRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type GetNotebookFromWebUrlResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type CopyNotebookModel
-    copyNotebookModel *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CopyNotebookModel;
+    copyNotebookModel i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CopyNotebookModelable;
 }
 // NewGetNotebookFromWebUrlResponse instantiates a new getNotebookFromWebUrlResponse and sets the default values.
 func NewGetNotebookFromWebUrlResponse()(*GetNotebookFromWebUrlResponse) {
@@ -39,6 +39,9 @@ func NewGetNotebookFromWebUrlResponse()(*GetNotebookFromWebUrlResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetNotebookFromWebUrlResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetNotebookFromWebUrlResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetNotebookFromWebUrlResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *GetNotebookFromWebUrlResponse) GetAdditionalData()(map[string]interface
     }
 }
 // GetCopyNotebookModel gets the copyNotebookModel property value. Union type representation for type CopyNotebookModel
-func (m *GetNotebookFromWebUrlResponse) GetCopyNotebookModel()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CopyNotebookModel) {
+func (m *GetNotebookFromWebUrlResponse) GetCopyNotebookModel()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CopyNotebookModelable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *GetNotebookFromWebUrlResponse) GetCopyNotebookModel()(*i4a838ef194e4c99
 func (m *GetNotebookFromWebUrlResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["copyNotebookModel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewCopyNotebookModel() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateCopyNotebookModelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCopyNotebookModel(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CopyNotebookModel))
+            m.SetCopyNotebookModel(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CopyNotebookModelable))
         }
         return nil
     }
@@ -97,7 +100,7 @@ func (m *GetNotebookFromWebUrlResponse) SetAdditionalData(value map[string]inter
     }
 }
 // SetCopyNotebookModel sets the copyNotebookModel property value. Union type representation for type CopyNotebookModel
-func (m *GetNotebookFromWebUrlResponse) SetCopyNotebookModel(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CopyNotebookModel)() {
+func (m *GetNotebookFromWebUrlResponse) SetCopyNotebookModel(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CopyNotebookModelable)() {
     if m != nil {
         m.copyNotebookModel = value
     }
@@ -111,7 +114,7 @@ func NewGetNotebookFromWebUrlRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *GetNotebookFromWebUrlRequestBuilder) CreatePostRequestInformation(optio
     return requestInfo, nil
 }
 // Post invoke action getNotebookFromWebUrl
-func (m *GetNotebookFromWebUrlRequestBuilder) Post(options *GetNotebookFromWebUrlRequestBuilderPostOptions)(*GetNotebookFromWebUrlResponse, error) {
+func (m *GetNotebookFromWebUrlRequestBuilder) Post(options *GetNotebookFromWebUrlRequestBuilderPostOptions)(GetNotebookFromWebUrlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetNotebookFromWebUrlResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetNotebookFromWebUrlResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetNotebookFromWebUrlResponse), nil
+    return res.(GetNotebookFromWebUrlResponseable), nil
 }

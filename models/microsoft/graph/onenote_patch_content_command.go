@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnenotePatchContentCommand 
+// OnenotePatchContentCommand provides operations to call the onenotePatchContent method.
 type OnenotePatchContentCommand struct {
     // The action to perform on the target element. The possible values are: replace, append, delete, insert, or prepend.
     action *OnenotePatchActionType;
@@ -23,6 +23,10 @@ func NewOnenotePatchContentCommand()(*OnenotePatchContentCommand) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateOnenotePatchContentCommandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnenotePatchContentCommandFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnenotePatchContentCommand(), nil
 }
 // GetAction gets the action property value. The action to perform on the target element. The possible values are: replace, append, delete, insert, or prepend.
 func (m *OnenotePatchContentCommand) GetAction()(*OnenotePatchActionType) {
@@ -46,22 +50,6 @@ func (m *OnenotePatchContentCommand) GetContent()(*string) {
         return nil
     } else {
         return m.content
-    }
-}
-// GetPosition gets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
-func (m *OnenotePatchContentCommand) GetPosition()(*OnenotePatchInsertPosition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.position
-    }
-}
-// GetTarget gets the target property value. The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
-func (m *OnenotePatchContentCommand) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +96,22 @@ func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetPosition gets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
+func (m *OnenotePatchContentCommand) GetPosition()(*OnenotePatchInsertPosition) {
+    if m == nil {
+        return nil
+    } else {
+        return m.position
+    }
+}
+// GetTarget gets the target property value. The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
+func (m *OnenotePatchContentCommand) GetTarget()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *OnenotePatchContentCommand) IsNil()(bool) {
     return m == nil

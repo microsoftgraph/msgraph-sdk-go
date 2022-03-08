@@ -5,25 +5,25 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Term 
+// Term provides operations to manage the drive singleton.
 type Term struct {
     Entity
     // Children of current term.
-    children []Term;
+    children []Termable;
     // Date and time of term creation. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Description about term that is dependent on the languageTag.
-    descriptions []LocalizedDescription;
+    descriptions []LocalizedDescriptionable;
     // Label metadata for a term.
-    labels []LocalizedLabel;
+    labels []LocalizedLabelable;
     // Last date and time of term modification. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Collection of properties on the term.
-    properties []KeyValue;
+    properties []KeyValueable;
     // To indicate which terms are related to the current term as either pinned or reused.
-    relations []Relation;
+    relations []Relationable;
     // The [set] in which the term is created.
-    set *Set;
+    set Setable;
 }
 // NewTerm instantiates a new term and sets the default values.
 func NewTerm()(*Term) {
@@ -32,8 +32,12 @@ func NewTerm()(*Term) {
     }
     return m
 }
+// CreateTermFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTermFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTerm(), nil
+}
 // GetChildren gets the children property value. Children of current term.
-func (m *Term) GetChildren()([]Term) {
+func (m *Term) GetChildren()([]Termable) {
     if m == nil {
         return nil
     } else {
@@ -49,65 +53,25 @@ func (m *Term) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     }
 }
 // GetDescriptions gets the descriptions property value. Description about term that is dependent on the languageTag.
-func (m *Term) GetDescriptions()([]LocalizedDescription) {
+func (m *Term) GetDescriptions()([]LocalizedDescriptionable) {
     if m == nil {
         return nil
     } else {
         return m.descriptions
     }
 }
-// GetLabels gets the labels property value. Label metadata for a term.
-func (m *Term) GetLabels()([]LocalizedLabel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labels
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
-func (m *Term) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetProperties gets the properties property value. Collection of properties on the term.
-func (m *Term) GetProperties()([]KeyValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
-}
-// GetRelations gets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
-func (m *Term) GetRelations()([]Relation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relations
-    }
-}
-// GetSet gets the set property value. The [set] in which the term is created.
-func (m *Term) GetSet()(*Set) {
-    if m == nil {
-        return nil
-    } else {
-        return m.set
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["children"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTerm() })
+        val, err := n.GetCollectionOfObjectValues(CreateTermFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Term, len(val))
+            res := make([]Termable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Term))
+                res[i] = v.(Termable)
             }
             m.SetChildren(res)
         }
@@ -124,28 +88,28 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["descriptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocalizedDescription() })
+        val, err := n.GetCollectionOfObjectValues(CreateLocalizedDescriptionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LocalizedDescription, len(val))
+            res := make([]LocalizedDescriptionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LocalizedDescription))
+                res[i] = v.(LocalizedDescriptionable)
             }
             m.SetDescriptions(res)
         }
         return nil
     }
     res["labels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocalizedLabel() })
+        val, err := n.GetCollectionOfObjectValues(CreateLocalizedLabelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LocalizedLabel, len(val))
+            res := make([]LocalizedLabelable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LocalizedLabel))
+                res[i] = v.(LocalizedLabelable)
             }
             m.SetLabels(res)
         }
@@ -162,44 +126,84 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValue, len(val))
+            res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValue))
+                res[i] = v.(KeyValueable)
             }
             m.SetProperties(res)
         }
         return nil
     }
     res["relations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRelation() })
+        val, err := n.GetCollectionOfObjectValues(CreateRelationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Relation, len(val))
+            res := make([]Relationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Relation))
+                res[i] = v.(Relationable)
             }
             m.SetRelations(res)
         }
         return nil
     }
     res["set"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSet() })
+        val, err := n.GetObjectValue(CreateSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSet(val.(*Set))
+            m.SetSet(val.(Setable))
         }
         return nil
     }
     return res
+}
+// GetLabels gets the labels property value. Label metadata for a term.
+func (m *Term) GetLabels()([]LocalizedLabelable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.labels
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
+func (m *Term) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetProperties gets the properties property value. Collection of properties on the term.
+func (m *Term) GetProperties()([]KeyValueable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.properties
+    }
+}
+// GetRelations gets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
+func (m *Term) GetRelations()([]Relationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relations
+    }
+}
+// GetSet gets the set property value. The [set] in which the term is created.
+func (m *Term) GetSet()(Setable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.set
+    }
 }
 func (m *Term) IsNil()(bool) {
     return m == nil
@@ -213,8 +217,7 @@ func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetChildren() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("children", cast)
         if err != nil {
@@ -230,8 +233,7 @@ func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetDescriptions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDescriptions()))
         for i, v := range m.GetDescriptions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("descriptions", cast)
         if err != nil {
@@ -241,8 +243,7 @@ func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetLabels() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLabels()))
         for i, v := range m.GetLabels() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("labels", cast)
         if err != nil {
@@ -258,8 +259,7 @@ func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("properties", cast)
         if err != nil {
@@ -269,8 +269,7 @@ func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetRelations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRelations()))
         for i, v := range m.GetRelations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("relations", cast)
         if err != nil {
@@ -286,7 +285,7 @@ func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     return nil
 }
 // SetChildren sets the children property value. Children of current term.
-func (m *Term) SetChildren(value []Term)() {
+func (m *Term) SetChildren(value []Termable)() {
     if m != nil {
         m.children = value
     }
@@ -298,13 +297,13 @@ func (m *Term) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
     }
 }
 // SetDescriptions sets the descriptions property value. Description about term that is dependent on the languageTag.
-func (m *Term) SetDescriptions(value []LocalizedDescription)() {
+func (m *Term) SetDescriptions(value []LocalizedDescriptionable)() {
     if m != nil {
         m.descriptions = value
     }
 }
 // SetLabels sets the labels property value. Label metadata for a term.
-func (m *Term) SetLabels(value []LocalizedLabel)() {
+func (m *Term) SetLabels(value []LocalizedLabelable)() {
     if m != nil {
         m.labels = value
     }
@@ -316,19 +315,19 @@ func (m *Term) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
     }
 }
 // SetProperties sets the properties property value. Collection of properties on the term.
-func (m *Term) SetProperties(value []KeyValue)() {
+func (m *Term) SetProperties(value []KeyValueable)() {
     if m != nil {
         m.properties = value
     }
 }
 // SetRelations sets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
-func (m *Term) SetRelations(value []Relation)() {
+func (m *Term) SetRelations(value []Relationable)() {
     if m != nil {
         m.relations = value
     }
 }
 // SetSet sets the set property value. The [set] in which the term is created.
-func (m *Term) SetSet(value *Set)() {
+func (m *Term) SetSet(value Setable)() {
     if m != nil {
         m.set = value
     }

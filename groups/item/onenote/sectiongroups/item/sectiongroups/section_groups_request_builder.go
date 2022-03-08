@@ -2,11 +2,11 @@ package sectiongroups
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ie0613860bff5147c2099502fe19d402e6ceb03931217cfac979b1b6bd1b0eb35 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/onenote/sectiongroups/item/sectiongroups/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i38f3bb1680a6d8d41ac484bfae4b8e746d2d426cd63521f1f2febb8dc8dc2cf9 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/onenote/sectiongroups/item/sectiongroups/count"
 )
 
-// SectionGroupsRequestBuilder builds and executes requests for operations under \groups\{group-id}\onenote\sectionGroups\{sectionGroup-id}\sectionGroups
+// SectionGroupsRequestBuilder provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
 type SectionGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewSectionGroupsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewSectionGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSectionGroupsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SectionGroupsRequestBuilder) Count()(*i38f3bb1680a6d8d41ac484bfae4b8e746d2d426cd63521f1f2febb8dc8dc2cf9.CountRequestBuilder) {
+    return i38f3bb1680a6d8d41ac484bfae4b8e746d2d426cd63521f1f2febb8dc8dc2cf9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the section groups in the section. Read-only. Nullable.
 func (m *SectionGroupsRequestBuilder) CreateGetRequestInformation(options *SectionGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *SectionGroupsRequestBuilder) CreateGetRequestInformation(options *Secti
     return requestInfo, nil
 }
 // Get the section groups in the section. Read-only. Nullable.
-func (m *SectionGroupsRequestBuilder) Get(options *SectionGroupsRequestBuilderGetOptions)(*SectionGroupsResponse, error) {
+func (m *SectionGroupsRequestBuilder) Get(options *SectionGroupsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSectionGroupsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSectionGroupCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SectionGroupsResponse), nil
-}
-func (m *SectionGroupsRequestBuilder) Ref()(*ie0613860bff5147c2099502fe19d402e6ceb03931217cfac979b1b6bd1b0eb35.RefRequestBuilder) {
-    return ie0613860bff5147c2099502fe19d402e6ceb03931217cfac979b1b6bd1b0eb35.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroupCollectionResponseable), nil
 }

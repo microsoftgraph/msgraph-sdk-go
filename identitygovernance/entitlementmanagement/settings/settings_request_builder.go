@@ -2,11 +2,10 @@ package settings
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// SettingsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\settings
+// SettingsRequestBuilder provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.
 type SettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type SettingsRequestBuilderGetQueryParameters struct {
 // SettingsRequestBuilderPatchOptions options for Patch
 type SettingsRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagementSettings;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagementSettingsable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewSettingsRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation represents the settings that control the behavior of Azure AD entitlement management.
+// CreateDeleteRequestInformation delete navigation property settings for identityGovernance
 func (m *SettingsRequestBuilder) CreateDeleteRequestInformation(options *SettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *SettingsRequestBuilder) CreateGetRequestInformation(options *SettingsRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation represents the settings that control the behavior of Azure AD entitlement management.
+// CreatePatchRequestInformation update the navigation property settings in identityGovernance
 func (m *SettingsRequestBuilder) CreatePatchRequestInformation(options *SettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *SettingsRequestBuilder) CreatePatchRequestInformation(options *Settings
     }
     return requestInfo, nil
 }
-// Delete represents the settings that control the behavior of Azure AD entitlement management.
+// Delete delete navigation property settings for identityGovernance
 func (m *SettingsRequestBuilder) Delete(options *SettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get represents the settings that control the behavior of Azure AD entitlement management.
-func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagementSettings, error) {
+func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagementSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEntitlementManagementSettings() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEntitlementManagementSettingsFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagementSettings), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagementSettingsable), nil
 }
-// Patch represents the settings that control the behavior of Azure AD entitlement management.
+// Patch update the navigation property settings in identityGovernance
 func (m *SettingsRequestBuilder) Patch(options *SettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LocalizedName 
+// LocalizedName provides operations to manage the drive singleton.
 type LocalizedName struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewLocalizedName()(*LocalizedName) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateLocalizedNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLocalizedNameFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLocalizedName(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocalizedName) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLanguageTag gets the languageTag property value. The language tag for the label.
-func (m *LocalizedName) GetLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTag
-    }
-}
-// GetName gets the name property value. The name in the localized language.
-func (m *LocalizedName) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *LocalizedName) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetLanguageTag gets the languageTag property value. The language tag for the label.
+func (m *LocalizedName) GetLanguageTag()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageTag
+    }
+}
+// GetName gets the name property value. The name in the localized language.
+func (m *LocalizedName) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
 }
 func (m *LocalizedName) IsNil()(bool) {
     return m == nil

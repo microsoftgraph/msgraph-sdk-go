@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the teamwork singleton.
 type WorkforceIntegrationEncryptionProtocol int
 
 const (

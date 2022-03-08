@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DateTimeTimeZone 
+// DateTimeTimeZone provides operations to manage the drive singleton.
 type DateTimeTimeZone struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewDateTimeTimeZone()(*DateTimeTimeZone) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDateTimeTimeZoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDateTimeTimeZoneFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDateTimeTimeZone(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DateTimeTimeZone) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *DateTimeTimeZone) GetDateTime()(*string) {
         return nil
     } else {
         return m.dateTime
-    }
-}
-// GetTimeZone gets the timeZone property value. Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
-func (m *DateTimeTimeZone) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *DateTimeTimeZone) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetTimeZone gets the timeZone property value. Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+func (m *DateTimeTimeZone) GetTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
 }
 func (m *DateTimeTimeZone) IsNil()(bool) {
     return m == nil

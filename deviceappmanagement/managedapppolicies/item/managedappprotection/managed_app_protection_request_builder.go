@@ -23,7 +23,7 @@ func NewManagedAppProtectionRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }

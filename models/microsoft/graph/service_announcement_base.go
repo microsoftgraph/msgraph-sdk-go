@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceAnnouncementBase 
+// ServiceAnnouncementBase provides operations to manage the admin singleton.
 type ServiceAnnouncementBase struct {
     Entity
     // Additional details about service event. This property doesn't support filters.
-    details []KeyValuePair;
+    details []KeyValuePairable;
     // The end time of the service event.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The last modified time of the service event.
@@ -26,8 +26,12 @@ func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {
     }
     return m
 }
+// CreateServiceAnnouncementBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateServiceAnnouncementBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewServiceAnnouncementBase(), nil
+}
 // GetDetails gets the details property value. Additional details about service event. This property doesn't support filters.
-func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePair) {
+func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -42,42 +46,18 @@ func (m *ServiceAnnouncementBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3a
         return m.endDateTime
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified time of the service event.
-func (m *ServiceAnnouncementBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The start time of the service event.
-func (m *ServiceAnnouncementBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetTitle gets the title property value. The title of the service event.
-func (m *ServiceAnnouncementBase) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetDetails(res)
         }
@@ -125,6 +105,30 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interf
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified time of the service event.
+func (m *ServiceAnnouncementBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The start time of the service event.
+func (m *ServiceAnnouncementBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetTitle gets the title property value. The title of the service event.
+func (m *ServiceAnnouncementBase) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
+}
 func (m *ServiceAnnouncementBase) IsNil()(bool) {
     return m == nil
 }
@@ -137,8 +141,7 @@ func (m *ServiceAnnouncementBase) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDetails()))
         for i, v := range m.GetDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("details", cast)
         if err != nil {
@@ -172,7 +175,7 @@ func (m *ServiceAnnouncementBase) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetDetails sets the details property value. Additional details about service event. This property doesn't support filters.
-func (m *ServiceAnnouncementBase) SetDetails(value []KeyValuePair)() {
+func (m *ServiceAnnouncementBase) SetDetails(value []KeyValuePairable)() {
     if m != nil {
         m.details = value
     }

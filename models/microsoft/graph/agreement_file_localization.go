@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AgreementFileLocalization 
+// AgreementFileLocalization provides operations to manage the collection of agreement entities.
 type AgreementFileLocalization struct {
     AgreementFileProperties
     // Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-    versions []AgreementFileVersion;
+    versions []AgreementFileVersionable;
 }
 // NewAgreementFileLocalization instantiates a new agreementFileLocalization and sets the default values.
 func NewAgreementFileLocalization()(*AgreementFileLocalization) {
@@ -17,32 +17,36 @@ func NewAgreementFileLocalization()(*AgreementFileLocalization) {
     }
     return m
 }
-// GetVersions gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-func (m *AgreementFileLocalization) GetVersions()([]AgreementFileVersion) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versions
-    }
+// CreateAgreementFileLocalizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAgreementFileLocalizationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAgreementFileLocalization(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AgreementFileLocalization) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.AgreementFileProperties.GetFieldDeserializers()
     res["versions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAgreementFileVersion() })
+        val, err := n.GetCollectionOfObjectValues(CreateAgreementFileVersionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AgreementFileVersion, len(val))
+            res := make([]AgreementFileVersionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AgreementFileVersion))
+                res[i] = v.(AgreementFileVersionable)
             }
             m.SetVersions(res)
         }
         return nil
     }
     return res
+}
+// GetVersions gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+func (m *AgreementFileLocalization) GetVersions()([]AgreementFileVersionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.versions
+    }
 }
 func (m *AgreementFileLocalization) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *AgreementFileLocalization) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetVersions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVersions()))
         for i, v := range m.GetVersions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("versions", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *AgreementFileLocalization) Serialize(writer i04eb5309aeaafadd28374d79c8
     return nil
 }
 // SetVersions sets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-func (m *AgreementFileLocalization) SetVersions(value []AgreementFileVersion)() {
+func (m *AgreementFileLocalization) SetVersions(value []AgreementFileVersionable)() {
     if m != nil {
         m.versions = value
     }

@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedAppPolicyDeploymentSummary 
+// ManagedAppPolicyDeploymentSummary provides operations to manage the deviceAppManagement singleton.
 type ManagedAppPolicyDeploymentSummary struct {
     Entity
     // Not yet documented
     configurationDeployedUserCount *int32;
     // Not yet documented
-    configurationDeploymentSummaryPerApp []ManagedAppPolicyDeploymentSummaryPerApp;
+    configurationDeploymentSummaryPerApp []ManagedAppPolicyDeploymentSummaryPerAppable;
     // Not yet documented
     displayName *string;
     // Not yet documented
@@ -26,6 +26,10 @@ func NewManagedAppPolicyDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) 
     }
     return m
 }
+// CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedAppPolicyDeploymentSummary(), nil
+}
 // GetConfigurationDeployedUserCount gets the configurationDeployedUserCount property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeployedUserCount()(*int32) {
     if m == nil {
@@ -35,7 +39,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeployedUserCount()(
     }
 }
 // GetConfigurationDeploymentSummaryPerApp gets the configurationDeploymentSummaryPerApp property value. Not yet documented
-func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeploymentSummaryPerApp()([]ManagedAppPolicyDeploymentSummaryPerApp) {
+func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeploymentSummaryPerApp()([]ManagedAppPolicyDeploymentSummaryPerAppable) {
     if m == nil {
         return nil
     } else {
@@ -48,22 +52,6 @@ func (m *ManagedAppPolicyDeploymentSummary) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastRefreshTime gets the lastRefreshTime property value. Not yet documented
-func (m *ManagedAppPolicyDeploymentSummary) GetLastRefreshTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshTime
-    }
-}
-// GetVersion gets the version property value. Version of the entity.
-func (m *ManagedAppPolicyDeploymentSummary) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,14 +68,14 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["configurationDeploymentSummaryPerApp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedAppPolicyDeploymentSummaryPerApp() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedAppPolicyDeploymentSummaryPerAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedAppPolicyDeploymentSummaryPerApp, len(val))
+            res := make([]ManagedAppPolicyDeploymentSummaryPerAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedAppPolicyDeploymentSummaryPerApp))
+                res[i] = v.(ManagedAppPolicyDeploymentSummaryPerAppable)
             }
             m.SetConfigurationDeploymentSummaryPerApp(res)
         }
@@ -125,6 +113,22 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
     }
     return res
 }
+// GetLastRefreshTime gets the lastRefreshTime property value. Not yet documented
+func (m *ManagedAppPolicyDeploymentSummary) GetLastRefreshTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshTime
+    }
+}
+// GetVersion gets the version property value. Version of the entity.
+func (m *ManagedAppPolicyDeploymentSummary) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *ManagedAppPolicyDeploymentSummary) IsNil()(bool) {
     return m == nil
 }
@@ -143,8 +147,7 @@ func (m *ManagedAppPolicyDeploymentSummary) Serialize(writer i04eb5309aeaafadd28
     if m.GetConfigurationDeploymentSummaryPerApp() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConfigurationDeploymentSummaryPerApp()))
         for i, v := range m.GetConfigurationDeploymentSummaryPerApp() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("configurationDeploymentSummaryPerApp", cast)
         if err != nil {
@@ -178,7 +181,7 @@ func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeployedUserCount(va
     }
 }
 // SetConfigurationDeploymentSummaryPerApp sets the configurationDeploymentSummaryPerApp property value. Not yet documented
-func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeploymentSummaryPerApp(value []ManagedAppPolicyDeploymentSummaryPerApp)() {
+func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeploymentSummaryPerApp(value []ManagedAppPolicyDeploymentSummaryPerAppable)() {
     if m != nil {
         m.configurationDeploymentSummaryPerApp = value
     }

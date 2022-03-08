@@ -2,11 +2,11 @@ package createdobjects
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i6f42bc516a096b55e74a963f59b1f3896b161e60c5cf202a3b22cd998284d1e5 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/createdobjects/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    ifac3282a3c50d49f76c442db5baecb5369ae48cc5038c1cfcd168b04a998796e "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/createdobjects/count"
 )
 
-// CreatedObjectsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\createdObjects
+// CreatedObjectsRequestBuilder provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
 type CreatedObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewCreatedObjectsRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewCreatedObjectsRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreatedObjectsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CreatedObjectsRequestBuilder) Count()(*ifac3282a3c50d49f76c442db5baecb5369ae48cc5038c1cfcd168b04a998796e.CountRequestBuilder) {
+    return ifac3282a3c50d49f76c442db5baecb5369ae48cc5038c1cfcd168b04a998796e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation directory objects created by this service principal. Read-only. Nullable.
 func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformation(options *CreatedObjectsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformation(options *Crea
     return requestInfo, nil
 }
 // Get directory objects created by this service principal. Read-only. Nullable.
-func (m *CreatedObjectsRequestBuilder) Get(options *CreatedObjectsRequestBuilderGetOptions)(*CreatedObjectsResponse, error) {
+func (m *CreatedObjectsRequestBuilder) Get(options *CreatedObjectsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCreatedObjectsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CreatedObjectsResponse), nil
-}
-func (m *CreatedObjectsRequestBuilder) Ref()(*i6f42bc516a096b55e74a963f59b1f3896b161e60c5cf202a3b22cd998284d1e5.RefRequestBuilder) {
-    return i6f42bc516a096b55e74a963f59b1f3896b161e60c5cf202a3b22cd998284d1e5.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable), nil
 }

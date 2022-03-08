@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentityProvider 
+// IdentityProvider provides operations to manage the identityContainer singleton.
 type IdentityProvider struct {
     Entity
     // The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
@@ -23,6 +23,10 @@ func NewIdentityProvider()(*IdentityProvider) {
     }
     return m
 }
+// CreateIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIdentityProviderFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIdentityProvider(), nil
+}
 // GetClientId gets the clientId property value. The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
 func (m *IdentityProvider) GetClientId()(*string) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *IdentityProvider) GetClientSecret()(*string) {
         return nil
     } else {
         return m.clientSecret
-    }
-}
-// GetName gets the name property value. The display name of the identity provider. Not nullable.
-func (m *IdentityProvider) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetType gets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
-func (m *IdentityProvider) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetName gets the name property value. The display name of the identity provider. Not nullable.
+func (m *IdentityProvider) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetType gets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
+func (m *IdentityProvider) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *IdentityProvider) IsNil()(bool) {
     return m == nil

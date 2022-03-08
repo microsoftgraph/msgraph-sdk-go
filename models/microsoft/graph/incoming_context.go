@@ -4,18 +4,18 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IncomingContext 
+// IncomingContext provides operations to manage the cloudCommunications singleton.
 type IncomingContext struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The ID of the participant that is under observation. Read-only.
     observedParticipantId *string;
     // The identity that the call is happening on behalf of.
-    onBehalfOf *IdentitySet;
+    onBehalfOf IdentitySetable;
     // The ID of the participant that triggered the incoming call. Read-only.
     sourceParticipantId *string;
     // The identity that transferred the call.
-    transferor *IdentitySet;
+    transferor IdentitySetable;
 }
 // NewIncomingContext instantiates a new incomingContext and sets the default values.
 func NewIncomingContext()(*IncomingContext) {
@@ -24,44 +24,16 @@ func NewIncomingContext()(*IncomingContext) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateIncomingContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIncomingContextFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIncomingContext(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncomingContext) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetObservedParticipantId gets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
-func (m *IncomingContext) GetObservedParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.observedParticipantId
-    }
-}
-// GetOnBehalfOf gets the onBehalfOf property value. The identity that the call is happening on behalf of.
-func (m *IncomingContext) GetOnBehalfOf()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onBehalfOf
-    }
-}
-// GetSourceParticipantId gets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
-func (m *IncomingContext) GetSourceParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceParticipantId
-    }
-}
-// GetTransferor gets the transferor property value. The identity that transferred the call.
-func (m *IncomingContext) GetTransferor()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transferor
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -78,12 +50,12 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["onBehalfOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnBehalfOf(val.(*IdentitySet))
+            m.SetOnBehalfOf(val.(IdentitySetable))
         }
         return nil
     }
@@ -98,16 +70,48 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["transferor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTransferor(val.(*IdentitySet))
+            m.SetTransferor(val.(IdentitySetable))
         }
         return nil
     }
     return res
+}
+// GetObservedParticipantId gets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
+func (m *IncomingContext) GetObservedParticipantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.observedParticipantId
+    }
+}
+// GetOnBehalfOf gets the onBehalfOf property value. The identity that the call is happening on behalf of.
+func (m *IncomingContext) GetOnBehalfOf()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onBehalfOf
+    }
+}
+// GetSourceParticipantId gets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
+func (m *IncomingContext) GetSourceParticipantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceParticipantId
+    }
+}
+// GetTransferor gets the transferor property value. The identity that transferred the call.
+func (m *IncomingContext) GetTransferor()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.transferor
+    }
 }
 func (m *IncomingContext) IsNil()(bool) {
     return m == nil
@@ -159,7 +163,7 @@ func (m *IncomingContext) SetObservedParticipantId(value *string)() {
     }
 }
 // SetOnBehalfOf sets the onBehalfOf property value. The identity that the call is happening on behalf of.
-func (m *IncomingContext) SetOnBehalfOf(value *IdentitySet)() {
+func (m *IncomingContext) SetOnBehalfOf(value IdentitySetable)() {
     if m != nil {
         m.onBehalfOf = value
     }
@@ -171,7 +175,7 @@ func (m *IncomingContext) SetSourceParticipantId(value *string)() {
     }
 }
 // SetTransferor sets the transferor property value. The identity that transferred the call.
-func (m *IncomingContext) SetTransferor(value *IdentitySet)() {
+func (m *IncomingContext) SetTransferor(value IdentitySetable)() {
     if m != nil {
         m.transferor = value
     }

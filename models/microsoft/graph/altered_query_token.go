@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AlteredQueryToken 
+// AlteredQueryToken provides operations to call the query method.
 type AlteredQueryToken struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewAlteredQueryToken()(*AlteredQueryToken) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAlteredQueryTokenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAlteredQueryTokenFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAlteredQueryToken(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlteredQueryToken) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLength gets the length property value. Defines the length of a changed segment.
-func (m *AlteredQueryToken) GetLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.length
-    }
-}
-// GetOffset gets the offset property value. Defines the offset of a changed segment.
-func (m *AlteredQueryToken) GetOffset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offset
-    }
-}
-// GetSuggestion gets the suggestion property value. Represents the corrected segment string.
-func (m *AlteredQueryToken) GetSuggestion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suggestion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *AlteredQueryToken) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetLength gets the length property value. Defines the length of a changed segment.
+func (m *AlteredQueryToken) GetLength()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.length
+    }
+}
+// GetOffset gets the offset property value. Defines the offset of a changed segment.
+func (m *AlteredQueryToken) GetOffset()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.offset
+    }
+}
+// GetSuggestion gets the suggestion property value. Represents the corrected segment string.
+func (m *AlteredQueryToken) GetSuggestion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.suggestion
+    }
 }
 func (m *AlteredQueryToken) IsNil()(bool) {
     return m == nil

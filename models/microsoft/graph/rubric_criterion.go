@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RubricCriterion 
+// RubricCriterion provides operations to manage the educationRoot singleton.
 type RubricCriterion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The description of this criterion.
-    description *EducationItemBody;
+    description EducationItemBodyable;
 }
 // NewRubricCriterion instantiates a new rubricCriterion and sets the default values.
 func NewRubricCriterion()(*RubricCriterion) {
@@ -17,6 +17,10 @@ func NewRubricCriterion()(*RubricCriterion) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateRubricCriterionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRubricCriterionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRubricCriterion(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricCriterion) GetAdditionalData()(map[string]interface{}) {
@@ -27,7 +31,7 @@ func (m *RubricCriterion) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDescription gets the description property value. The description of this criterion.
-func (m *RubricCriterion) GetDescription()(*EducationItemBody) {
+func (m *RubricCriterion) GetDescription()(EducationItemBodyable) {
     if m == nil {
         return nil
     } else {
@@ -38,12 +42,12 @@ func (m *RubricCriterion) GetDescription()(*EducationItemBody) {
 func (m *RubricCriterion) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationItemBody() })
+        val, err := n.GetObjectValue(CreateEducationItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDescription(val.(*EducationItemBody))
+            m.SetDescription(val.(EducationItemBodyable))
         }
         return nil
     }
@@ -75,7 +79,7 @@ func (m *RubricCriterion) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDescription sets the description property value. The description of this criterion.
-func (m *RubricCriterion) SetDescription(value *EducationItemBody)() {
+func (m *RubricCriterion) SetDescription(value EducationItemBodyable)() {
     if m != nil {
         m.description = value
     }

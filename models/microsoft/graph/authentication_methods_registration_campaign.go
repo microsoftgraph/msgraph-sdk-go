@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationMethodsRegistrationCampaign 
+// AuthenticationMethodsRegistrationCampaign provides operations to manage the authenticationMethodsPolicy singleton.
 type AuthenticationMethodsRegistrationCampaign struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Users and groups of users that are excluded from being prompted to set up the authentication method.
-    excludeTargets []ExcludeTarget;
+    excludeTargets []ExcludeTargetable;
     // Users and groups of users that are prompted to set up the authentication method.
-    includeTargets []AuthenticationMethodsRegistrationCampaignIncludeTarget;
+    includeTargets []AuthenticationMethodsRegistrationCampaignIncludeTargetable;
     // Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
     snoozeDurationInDays *int32;
     // Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure Active Directory for the setting. The default value is disabled.
@@ -24,6 +24,10 @@ func NewAuthenticationMethodsRegistrationCampaign()(*AuthenticationMethodsRegist
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAuthenticationMethodsRegistrationCampaignFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthenticationMethodsRegistrationCampaignFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthenticationMethodsRegistrationCampaign(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -33,63 +37,39 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[stri
     }
 }
 // GetExcludeTargets gets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
-func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]ExcludeTarget) {
+func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]ExcludeTargetable) {
     if m == nil {
         return nil
     } else {
         return m.excludeTargets
     }
 }
-// GetIncludeTargets gets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
-func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]AuthenticationMethodsRegistrationCampaignIncludeTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeTargets
-    }
-}
-// GetSnoozeDurationInDays gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
-func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.snoozeDurationInDays
-    }
-}
-// GetState gets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure Active Directory for the setting. The default value is disabled.
-func (m *AuthenticationMethodsRegistrationCampaign) GetState()(*AdvancedConfigState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["excludeTargets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExcludeTarget() })
+        val, err := n.GetCollectionOfObjectValues(CreateExcludeTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ExcludeTarget, len(val))
+            res := make([]ExcludeTargetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ExcludeTarget))
+                res[i] = v.(ExcludeTargetable)
             }
             m.SetExcludeTargets(res)
         }
         return nil
     }
     res["includeTargets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthenticationMethodsRegistrationCampaignIncludeTarget() })
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodsRegistrationCampaignIncludeTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AuthenticationMethodsRegistrationCampaignIncludeTarget, len(val))
+            res := make([]AuthenticationMethodsRegistrationCampaignIncludeTargetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AuthenticationMethodsRegistrationCampaignIncludeTarget))
+                res[i] = v.(AuthenticationMethodsRegistrationCampaignIncludeTargetable)
             }
             m.SetIncludeTargets(res)
         }
@@ -117,6 +97,30 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
     }
     return res
 }
+// GetIncludeTargets gets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
+func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]AuthenticationMethodsRegistrationCampaignIncludeTargetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeTargets
+    }
+}
+// GetSnoozeDurationInDays gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
+func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.snoozeDurationInDays
+    }
+}
+// GetState gets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure Active Directory for the setting. The default value is disabled.
+func (m *AuthenticationMethodsRegistrationCampaign) GetState()(*AdvancedConfigState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
 func (m *AuthenticationMethodsRegistrationCampaign) IsNil()(bool) {
     return m == nil
 }
@@ -125,8 +129,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i04eb5309ae
     if m.GetExcludeTargets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExcludeTargets()))
         for i, v := range m.GetExcludeTargets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("excludeTargets", cast)
         if err != nil {
@@ -136,8 +139,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i04eb5309ae
     if m.GetIncludeTargets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncludeTargets()))
         for i, v := range m.GetIncludeTargets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("includeTargets", cast)
         if err != nil {
@@ -172,13 +174,13 @@ func (m *AuthenticationMethodsRegistrationCampaign) SetAdditionalData(value map[
     }
 }
 // SetExcludeTargets sets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
-func (m *AuthenticationMethodsRegistrationCampaign) SetExcludeTargets(value []ExcludeTarget)() {
+func (m *AuthenticationMethodsRegistrationCampaign) SetExcludeTargets(value []ExcludeTargetable)() {
     if m != nil {
         m.excludeTargets = value
     }
 }
 // SetIncludeTargets sets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
-func (m *AuthenticationMethodsRegistrationCampaign) SetIncludeTargets(value []AuthenticationMethodsRegistrationCampaignIncludeTarget)() {
+func (m *AuthenticationMethodsRegistrationCampaign) SetIncludeTargets(value []AuthenticationMethodsRegistrationCampaignIncludeTargetable)() {
     if m != nil {
         m.includeTargets = value
     }

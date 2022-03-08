@@ -2,11 +2,11 @@ package monthlyprintusagebyprinter
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i959b642cb38d15cce8e4f0801b90c06d5b792fdb4d8afd3c46061189c7814901 "github.com/microsoftgraph/msgraph-sdk-go/reports/monthlyprintusagebyprinter/count"
 )
 
-// MonthlyPrintUsageByPrinterRequestBuilder builds and executes requests for operations under \reports\monthlyPrintUsageByPrinter
+// MonthlyPrintUsageByPrinterRequestBuilder provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 type MonthlyPrintUsageByPrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters struct {
 // MonthlyPrintUsageByPrinterRequestBuilderPostOptions options for Post
 type MonthlyPrintUsageByPrinterRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinter;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinterable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewMonthlyPrintUsageByPrinterRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewMonthlyPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter i
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMonthlyPrintUsageByPrinterRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) Count()(*i959b642cb38d15cce8e4f0801b90c06d5b792fdb4d8afd3c46061189c7814901.CountRequestBuilder) {
+    return i959b642cb38d15cce8e4f0801b90c06d5b792fdb4d8afd3c46061189c7814901.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get monthlyPrintUsageByPrinter from reports
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformation(options *MonthlyPrintUsageByPrinterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreatePostRequestInformation(
     return requestInfo, nil
 }
 // Get get monthlyPrintUsageByPrinter from reports
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) Get(options *MonthlyPrintUsageByPrinterRequestBuilderGetOptions)(*MonthlyPrintUsageByPrinterResponse, error) {
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) Get(options *MonthlyPrintUsageByPrinterRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMonthlyPrintUsageByPrinterResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePrintUsageByPrinterCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MonthlyPrintUsageByPrinterResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinterCollectionResponseable), nil
 }
 // Post create new navigation property to monthlyPrintUsageByPrinter for reports
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) Post(options *MonthlyPrintUsageByPrinterRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinter, error) {
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) Post(options *MonthlyPrintUsageByPrinterRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinterable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPrintUsageByPrinter() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePrintUsageByPrinterFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinter), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinterable), nil
 }

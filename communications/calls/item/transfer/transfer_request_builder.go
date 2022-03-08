@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// TransferRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.transfer
+// TransferRequestBuilder provides operations to call the transfer method.
 type TransferRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TransferRequestBuilder struct {
 // TransferRequestBuilderPostOptions options for Post
 type TransferRequestBuilderPostOptions struct {
     // 
-    Body *TransferRequestBody;
+    Body TransferRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewTransferRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *TransferRequestBuilder) Post(options *TransferRequestBuilderPostOptions
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

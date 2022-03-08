@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Video 
+// Video provides operations to manage the drive singleton.
 type Video struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -35,6 +35,10 @@ func NewVideo()(*Video) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateVideoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVideoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVideo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Video) GetAdditionalData()(map[string]interface{}) {
@@ -90,38 +94,6 @@ func (m *Video) GetDuration()(*int64) {
         return nil
     } else {
         return m.duration
-    }
-}
-// GetFourCC gets the fourCC property value. 'Four character code' name of the video format.
-func (m *Video) GetFourCC()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fourCC
-    }
-}
-// GetFrameRate gets the frameRate property value. Frame rate of the video.
-func (m *Video) GetFrameRate()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.frameRate
-    }
-}
-// GetHeight gets the height property value. Height of the video, in pixels.
-func (m *Video) GetHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.height
-    }
-}
-// GetWidth gets the width property value. Width of the video, in pixels.
-func (m *Video) GetWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.width
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -228,6 +200,38 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     return res
+}
+// GetFourCC gets the fourCC property value. 'Four character code' name of the video format.
+func (m *Video) GetFourCC()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fourCC
+    }
+}
+// GetFrameRate gets the frameRate property value. Frame rate of the video.
+func (m *Video) GetFrameRate()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.frameRate
+    }
+}
+// GetHeight gets the height property value. Height of the video, in pixels.
+func (m *Video) GetHeight()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.height
+    }
+}
+// GetWidth gets the width property value. Width of the video, in pixels.
+func (m *Video) GetWidth()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.width
+    }
 }
 func (m *Video) IsNil()(bool) {
     return m == nil

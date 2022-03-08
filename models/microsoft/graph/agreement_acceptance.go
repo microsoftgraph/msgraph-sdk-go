@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AgreementAcceptance 
+// AgreementAcceptance provides operations to manage the collection of agreement entities.
 type AgreementAcceptance struct {
     Entity
     // The identifier of the agreement file accepted by the user.
@@ -41,6 +41,10 @@ func NewAgreementAcceptance()(*AgreementAcceptance) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAgreementAcceptanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAgreementAcceptanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAgreementAcceptance(), nil
 }
 // GetAgreementFileId gets the agreementFileId property value. The identifier of the agreement file accepted by the user.
 func (m *AgreementAcceptance) GetAgreementFileId()(*string) {
@@ -96,54 +100,6 @@ func (m *AgreementAcceptance) GetExpirationDateTime()(*i336074805fc853987abe6f7f
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetRecordedDateTime gets the recordedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *AgreementAcceptance) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordedDateTime
-    }
-}
-// GetState gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined.
-func (m *AgreementAcceptance) GetState()(*AgreementAcceptanceState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetUserDisplayName gets the userDisplayName property value. Display name of the user when the acceptance was recorded.
-func (m *AgreementAcceptance) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
-}
-// GetUserEmail gets the userEmail property value. Email of the user when the acceptance was recorded.
-func (m *AgreementAcceptance) GetUserEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEmail
-    }
-}
-// GetUserId gets the userId property value. The identifier of the user who accepted the agreement.
-func (m *AgreementAcceptance) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. UPN of the user when the acceptance was recorded.
-func (m *AgreementAcceptance) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -280,6 +236,54 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetRecordedDateTime gets the recordedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *AgreementAcceptance) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recordedDateTime
+    }
+}
+// GetState gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined.
+func (m *AgreementAcceptance) GetState()(*AgreementAcceptanceState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetUserDisplayName gets the userDisplayName property value. Display name of the user when the acceptance was recorded.
+func (m *AgreementAcceptance) GetUserDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userDisplayName
+    }
+}
+// GetUserEmail gets the userEmail property value. Email of the user when the acceptance was recorded.
+func (m *AgreementAcceptance) GetUserEmail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userEmail
+    }
+}
+// GetUserId gets the userId property value. The identifier of the user who accepted the agreement.
+func (m *AgreementAcceptance) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. UPN of the user when the acceptance was recorded.
+func (m *AgreementAcceptance) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *AgreementAcceptance) IsNil()(bool) {
     return m == nil

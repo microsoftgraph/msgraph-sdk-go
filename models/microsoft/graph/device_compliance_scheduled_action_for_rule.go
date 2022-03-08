@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceScheduledActionForRule 
+// DeviceComplianceScheduledActionForRule provides operations to manage the deviceManagement singleton.
 type DeviceComplianceScheduledActionForRule struct {
     Entity
     // Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
     ruleName *string;
     // The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-    scheduledActionConfigurations []DeviceComplianceActionItem;
+    scheduledActionConfigurations []DeviceComplianceActionItemable;
 }
 // NewDeviceComplianceScheduledActionForRule instantiates a new deviceComplianceScheduledActionForRule and sets the default values.
 func NewDeviceComplianceScheduledActionForRule()(*DeviceComplianceScheduledActionForRule) {
@@ -19,21 +19,9 @@ func NewDeviceComplianceScheduledActionForRule()(*DeviceComplianceScheduledActio
     }
     return m
 }
-// GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
-func (m *DeviceComplianceScheduledActionForRule) GetRuleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleName
-    }
-}
-// GetScheduledActionConfigurations gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-func (m *DeviceComplianceScheduledActionForRule) GetScheduledActionConfigurations()([]DeviceComplianceActionItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledActionConfigurations
-    }
+// CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceComplianceScheduledActionForRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -49,20 +37,36 @@ func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[str
         return nil
     }
     res["scheduledActionConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceComplianceActionItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceActionItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceComplianceActionItem, len(val))
+            res := make([]DeviceComplianceActionItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceComplianceActionItem))
+                res[i] = v.(DeviceComplianceActionItemable)
             }
             m.SetScheduledActionConfigurations(res)
         }
         return nil
     }
     return res
+}
+// GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
+func (m *DeviceComplianceScheduledActionForRule) GetRuleName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ruleName
+    }
+}
+// GetScheduledActionConfigurations gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+func (m *DeviceComplianceScheduledActionForRule) GetScheduledActionConfigurations()([]DeviceComplianceActionItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scheduledActionConfigurations
+    }
 }
 func (m *DeviceComplianceScheduledActionForRule) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *DeviceComplianceScheduledActionForRule) Serialize(writer i04eb5309aeaaf
     if m.GetScheduledActionConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScheduledActionConfigurations()))
         for i, v := range m.GetScheduledActionConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("scheduledActionConfigurations", cast)
         if err != nil {
@@ -99,7 +102,7 @@ func (m *DeviceComplianceScheduledActionForRule) SetRuleName(value *string)() {
     }
 }
 // SetScheduledActionConfigurations sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-func (m *DeviceComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceComplianceActionItem)() {
+func (m *DeviceComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceComplianceActionItemable)() {
     if m != nil {
         m.scheduledActionConfigurations = value
     }

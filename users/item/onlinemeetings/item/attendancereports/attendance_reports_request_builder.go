@@ -2,11 +2,11 @@ package attendancereports
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    ifdce6e700468fd2882472676c39b5edb3b7d5213baaa6711b8711550277e0ca3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/onlinemeetings/item/attendancereports/count"
 )
 
-// AttendanceReportsRequestBuilder builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\attendanceReports
+// AttendanceReportsRequestBuilder provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 type AttendanceReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AttendanceReportsRequestBuilderGetQueryParameters struct {
 // AttendanceReportsRequestBuilderPostOptions options for Post
 type AttendanceReportsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingAttendanceReport;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingAttendanceReportable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAttendanceReportsRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAttendanceReportsRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttendanceReportsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AttendanceReportsRequestBuilder) Count()(*ifdce6e700468fd2882472676c39b5edb3b7d5213baaa6711b8711550277e0ca3.CountRequestBuilder) {
+    return ifdce6e700468fd2882472676c39b5edb3b7d5213baaa6711b8711550277e0ca3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the attendance reports of an online meeting. Read-only.
 func (m *AttendanceReportsRequestBuilder) CreateGetRequestInformation(options *AttendanceReportsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AttendanceReportsRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the attendance reports of an online meeting. Read-only.
+// CreatePostRequestInformation create new navigation property to attendanceReports for users
 func (m *AttendanceReportsRequestBuilder) CreatePostRequestInformation(options *AttendanceReportsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AttendanceReportsRequestBuilder) CreatePostRequestInformation(options *
     return requestInfo, nil
 }
 // Get the attendance reports of an online meeting. Read-only.
-func (m *AttendanceReportsRequestBuilder) Get(options *AttendanceReportsRequestBuilderGetOptions)(*AttendanceReportsResponse, error) {
+func (m *AttendanceReportsRequestBuilder) Get(options *AttendanceReportsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttendanceReportsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMeetingAttendanceReportCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AttendanceReportsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingAttendanceReportCollectionResponseable), nil
 }
-// Post the attendance reports of an online meeting. Read-only.
-func (m *AttendanceReportsRequestBuilder) Post(options *AttendanceReportsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingAttendanceReport, error) {
+// Post create new navigation property to attendanceReports for users
+func (m *AttendanceReportsRequestBuilder) Post(options *AttendanceReportsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingAttendanceReportable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewMeetingAttendanceReport() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMeetingAttendanceReportFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingAttendanceReport), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingAttendanceReportable), nil
 }

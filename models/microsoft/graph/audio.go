@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Audio 
+// Audio provides operations to manage the drive singleton.
 type Audio struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -47,6 +47,10 @@ func NewAudio()(*Audio) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAudioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAudioFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAudio(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Audio) GetAdditionalData()(map[string]interface{}) {
@@ -126,62 +130,6 @@ func (m *Audio) GetDuration()(*int64) {
         return nil
     } else {
         return m.duration
-    }
-}
-// GetGenre gets the genre property value. The genre of this audio file.
-func (m *Audio) GetGenre()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.genre
-    }
-}
-// GetHasDrm gets the hasDrm property value. Indicates if the file is protected with digital rights management.
-func (m *Audio) GetHasDrm()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasDrm
-    }
-}
-// GetIsVariableBitrate gets the isVariableBitrate property value. Indicates if the file is encoded with a variable bitrate.
-func (m *Audio) GetIsVariableBitrate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isVariableBitrate
-    }
-}
-// GetTitle gets the title property value. The title of the audio file.
-func (m *Audio) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
-}
-// GetTrack gets the track property value. The number of the track on the original disc for this audio file.
-func (m *Audio) GetTrack()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.track
-    }
-}
-// GetTrackCount gets the trackCount property value. The total number of tracks on the original disc for this audio file.
-func (m *Audio) GetTrackCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trackCount
-    }
-}
-// GetYear gets the year property value. The year the audio file was recorded.
-func (m *Audio) GetYear()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.year
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -348,6 +296,62 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     return res
+}
+// GetGenre gets the genre property value. The genre of this audio file.
+func (m *Audio) GetGenre()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.genre
+    }
+}
+// GetHasDrm gets the hasDrm property value. Indicates if the file is protected with digital rights management.
+func (m *Audio) GetHasDrm()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasDrm
+    }
+}
+// GetIsVariableBitrate gets the isVariableBitrate property value. Indicates if the file is encoded with a variable bitrate.
+func (m *Audio) GetIsVariableBitrate()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isVariableBitrate
+    }
+}
+// GetTitle gets the title property value. The title of the audio file.
+func (m *Audio) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
+}
+// GetTrack gets the track property value. The number of the track on the original disc for this audio file.
+func (m *Audio) GetTrack()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.track
+    }
+}
+// GetTrackCount gets the trackCount property value. The total number of tracks on the original disc for this audio file.
+func (m *Audio) GetTrackCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.trackCount
+    }
+}
+// GetYear gets the year property value. The year the audio file was recorded.
+func (m *Audio) GetYear()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.year
+    }
 }
 func (m *Audio) IsNil()(bool) {
     return m == nil

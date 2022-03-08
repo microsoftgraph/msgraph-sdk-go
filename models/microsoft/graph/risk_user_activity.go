@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RiskUserActivity 
+// RiskUserActivity provides operations to manage the identityProtectionRoot singleton.
 type RiskUserActivity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewRiskUserActivity()(*RiskUserActivity) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRiskUserActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRiskUserActivityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRiskUserActivity(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RiskUserActivity) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *RiskUserActivity) GetDetail()(*RiskDetail) {
         return nil
     } else {
         return m.detail
-    }
-}
-// GetRiskEventTypes gets the riskEventTypes property value. The type of risk event detected.
-func (m *RiskUserActivity) GetRiskEventTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskEventTypes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +68,14 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetRiskEventTypes gets the riskEventTypes property value. The type of risk event detected.
+func (m *RiskUserActivity) GetRiskEventTypes()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskEventTypes
+    }
 }
 func (m *RiskUserActivity) IsNil()(bool) {
     return m == nil

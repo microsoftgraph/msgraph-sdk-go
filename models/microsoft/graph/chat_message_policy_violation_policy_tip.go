@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChatMessagePolicyViolationPolicyTip 
+// ChatMessagePolicyViolationPolicyTip provides operations to manage the collection of chat entities.
 type ChatMessagePolicyViolationPolicyTip struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewChatMessagePolicyViolationPolicyTip()(*ChatMessagePolicyViolationPolicyT
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChatMessagePolicyViolationPolicyTip(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessagePolicyViolationPolicyTip) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetComplianceUrl()(*string) {
         return nil
     } else {
         return m.complianceUrl
-    }
-}
-// GetGeneralText gets the generalText property value. Explanatory text shown to the sender of the message.
-func (m *ChatMessagePolicyViolationPolicyTip) GetGeneralText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.generalText
-    }
-}
-// GetMatchedConditionDescriptions gets the matchedConditionDescriptions property value. The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
-func (m *ChatMessagePolicyViolationPolicyTip) GetMatchedConditionDescriptions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchedConditionDescriptions
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -92,6 +80,22 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetGeneralText gets the generalText property value. Explanatory text shown to the sender of the message.
+func (m *ChatMessagePolicyViolationPolicyTip) GetGeneralText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.generalText
+    }
+}
+// GetMatchedConditionDescriptions gets the matchedConditionDescriptions property value. The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
+func (m *ChatMessagePolicyViolationPolicyTip) GetMatchedConditionDescriptions()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matchedConditionDescriptions
+    }
 }
 func (m *ChatMessagePolicyViolationPolicyTip) IsNil()(bool) {
     return m == nil

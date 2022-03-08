@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// RevokeSignInSessionsRequestBuilder builds and executes requests for operations under \users\{user-id}\microsoft.graph.revokeSignInSessions
+// RevokeSignInSessionsRequestBuilder provides operations to call the revokeSignInSessions method.
 type RevokeSignInSessionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewRevokeSignInSessionsRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *RevokeSignInSessionsRequestBuilder) CreatePostRequestInformation(option
     return requestInfo, nil
 }
 // Post invoke action revokeSignInSessions
-func (m *RevokeSignInSessionsRequestBuilder) Post(options *RevokeSignInSessionsRequestBuilderPostOptions)(*bool, error) {
+func (m *RevokeSignInSessionsRequestBuilder) Post(options *RevokeSignInSessionsRequestBuilderPostOptions)(RevokeSignInSessionsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRevokeSignInSessionsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(RevokeSignInSessionsResponseable), nil
 }

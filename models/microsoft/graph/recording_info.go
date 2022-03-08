@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RecordingInfo 
+// RecordingInfo provides operations to manage the cloudCommunications singleton.
 type RecordingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The identities of the recording initiator.
-    initiator *IdentitySet;
+    initiator IdentitySetable;
     // Possible values are: unknown, notRecording, recording, or failed.
     recordingStatus *RecordingStatus;
 }
@@ -20,6 +20,10 @@ func NewRecordingInfo()(*RecordingInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRecordingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRecordingInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecordingInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordingInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -28,32 +32,16 @@ func (m *RecordingInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetInitiator gets the initiator property value. The identities of the recording initiator.
-func (m *RecordingInfo) GetInitiator()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
-}
-// GetRecordingStatus gets the recordingStatus property value. Possible values are: unknown, notRecording, recording, or failed.
-func (m *RecordingInfo) GetRecordingStatus()(*RecordingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordingStatus
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["initiator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInitiator(val.(*IdentitySet))
+            m.SetInitiator(val.(IdentitySetable))
         }
         return nil
     }
@@ -68,6 +56,22 @@ func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetInitiator gets the initiator property value. The identities of the recording initiator.
+func (m *RecordingInfo) GetInitiator()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.initiator
+    }
+}
+// GetRecordingStatus gets the recordingStatus property value. Possible values are: unknown, notRecording, recording, or failed.
+func (m *RecordingInfo) GetRecordingStatus()(*RecordingStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recordingStatus
+    }
 }
 func (m *RecordingInfo) IsNil()(bool) {
     return m == nil
@@ -102,7 +106,7 @@ func (m *RecordingInfo) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetInitiator sets the initiator property value. The identities of the recording initiator.
-func (m *RecordingInfo) SetInitiator(value *IdentitySet)() {
+func (m *RecordingInfo) SetInitiator(value IdentitySetable)() {
     if m != nil {
         m.initiator = value
     }

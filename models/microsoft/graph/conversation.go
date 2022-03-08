@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Conversation 
+// Conversation provides operations to manage the drive singleton.
 type Conversation struct {
     Entity
     // Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
@@ -15,7 +15,7 @@ type Conversation struct {
     // A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
     preview *string;
     // A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-    threads []ConversationThread;
+    threads []ConversationThreadable;
     // The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
     topic *string;
     // All the users that sent a message to this Conversation.
@@ -28,53 +28,9 @@ func NewConversation()(*Conversation) {
     }
     return m
 }
-// GetHasAttachments gets the hasAttachments property value. Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
-func (m *Conversation) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
-}
-// GetLastDeliveredDateTime gets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Conversation) GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastDeliveredDateTime
-    }
-}
-// GetPreview gets the preview property value. A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
-func (m *Conversation) GetPreview()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preview
-    }
-}
-// GetThreads gets the threads property value. A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-func (m *Conversation) GetThreads()([]ConversationThread) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threads
-    }
-}
-// GetTopic gets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
-func (m *Conversation) GetTopic()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topic
-    }
-}
-// GetUniqueSenders gets the uniqueSenders property value. All the users that sent a message to this Conversation.
-func (m *Conversation) GetUniqueSenders()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueSenders
-    }
+// CreateConversationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConversationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConversation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -110,14 +66,14 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["threads"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConversationThread() })
+        val, err := n.GetCollectionOfObjectValues(CreateConversationThreadFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConversationThread, len(val))
+            res := make([]ConversationThreadable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConversationThread))
+                res[i] = v.(ConversationThreadable)
             }
             m.SetThreads(res)
         }
@@ -149,6 +105,54 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i04e
     }
     return res
 }
+// GetHasAttachments gets the hasAttachments property value. Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
+func (m *Conversation) GetHasAttachments()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasAttachments
+    }
+}
+// GetLastDeliveredDateTime gets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *Conversation) GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastDeliveredDateTime
+    }
+}
+// GetPreview gets the preview property value. A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
+func (m *Conversation) GetPreview()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preview
+    }
+}
+// GetThreads gets the threads property value. A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+func (m *Conversation) GetThreads()([]ConversationThreadable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.threads
+    }
+}
+// GetTopic gets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
+func (m *Conversation) GetTopic()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.topic
+    }
+}
+// GetUniqueSenders gets the uniqueSenders property value. All the users that sent a message to this Conversation.
+func (m *Conversation) GetUniqueSenders()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueSenders
+    }
+}
 func (m *Conversation) IsNil()(bool) {
     return m == nil
 }
@@ -179,8 +183,7 @@ func (m *Conversation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetThreads() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetThreads()))
         for i, v := range m.GetThreads() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("threads", cast)
         if err != nil {
@@ -220,7 +223,7 @@ func (m *Conversation) SetPreview(value *string)() {
     }
 }
 // SetThreads sets the threads property value. A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-func (m *Conversation) SetThreads(value []ConversationThread)() {
+func (m *Conversation) SetThreads(value []ConversationThreadable)() {
     if m != nil {
         m.threads = value
     }

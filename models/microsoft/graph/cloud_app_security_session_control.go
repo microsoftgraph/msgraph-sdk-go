@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudAppSecuritySessionControl 
+// CloudAppSecuritySessionControl provides operations to manage the identityContainer singleton.
 type CloudAppSecuritySessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
@@ -16,6 +16,10 @@ func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
     }
     return m
+}
+// CreateCloudAppSecuritySessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudAppSecuritySessionControlFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudAppSecuritySessionControl(), nil
 }
 // GetCloudAppSecurityType gets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
 func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecuritySessionControlType) {

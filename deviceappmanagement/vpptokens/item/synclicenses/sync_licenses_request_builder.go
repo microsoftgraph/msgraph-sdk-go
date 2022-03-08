@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// SyncLicensesRequestBuilder builds and executes requests for operations under \deviceAppManagement\vppTokens\{vppToken-id}\microsoft.graph.syncLicenses
+// SyncLicensesRequestBuilder provides operations to call the syncLicenses method.
 type SyncLicensesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type SyncLicensesResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type vppToken
-    vppToken *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppToken;
+    vppToken i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppTokenable;
 }
 // NewSyncLicensesResponse instantiates a new syncLicensesResponse and sets the default values.
 func NewSyncLicensesResponse()(*SyncLicensesResponse) {
@@ -37,6 +37,9 @@ func NewSyncLicensesResponse()(*SyncLicensesResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateSyncLicensesResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSyncLicensesResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SyncLicensesResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *SyncLicensesResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *SyncLicensesResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["vppToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateVppTokenFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVppToken(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppTokenable))
+        }
+        return nil
+    }
+    return res
+}
 // GetVppToken gets the vppToken property value. Union type representation for type vppToken
-func (m *SyncLicensesResponse) GetVppToken()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppToken) {
+func (m *SyncLicensesResponse) GetVppToken()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppTokenable) {
     if m == nil {
         return nil
     } else {
         return m.vppToken
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *SyncLicensesResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["vppToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewVppToken() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVppToken(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppToken))
-        }
-        return nil
-    }
-    return res
 }
 func (m *SyncLicensesResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +98,7 @@ func (m *SyncLicensesResponse) SetAdditionalData(value map[string]interface{})()
     }
 }
 // SetVppToken sets the vppToken property value. Union type representation for type vppToken
-func (m *SyncLicensesResponse) SetVppToken(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppToken)() {
+func (m *SyncLicensesResponse) SetVppToken(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppTokenable)() {
     if m != nil {
         m.vppToken = value
     }
@@ -109,7 +112,7 @@ func NewSyncLicensesRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *SyncLicensesRequestBuilder) CreatePostRequestInformation(options *SyncL
     return requestInfo, nil
 }
 // Post syncs licenses associated with a specific appleVolumePurchaseProgramToken
-func (m *SyncLicensesRequestBuilder) Post(options *SyncLicensesRequestBuilderPostOptions)(*SyncLicensesResponse, error) {
+func (m *SyncLicensesRequestBuilder) Post(options *SyncLicensesRequestBuilderPostOptions)(SyncLicensesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSyncLicensesResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSyncLicensesResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*SyncLicensesResponse), nil
+    return res.(SyncLicensesResponseable), nil
 }

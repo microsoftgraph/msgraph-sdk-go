@@ -2,12 +2,11 @@ package photo
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     icc5a0ad8f08ee5e84e646aee242f74452466f74e4dafdd0c34ae3ced97fff639 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/photo/value"
 )
 
-// PhotoRequestBuilder builds and executes requests for operations under \groups\{group-id}\photo
+// PhotoRequestBuilder provides operations to manage the photo property of the microsoft.graph.group entity.
 type PhotoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +43,7 @@ type PhotoRequestBuilderGetQueryParameters struct {
 // PhotoRequestBuilderPatchOptions options for Patch
 type PhotoRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhotoable;
     // Request headers
     H map[string]string;
     // Request options
@@ -61,7 +60,7 @@ func NewPhotoRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +73,7 @@ func NewPhotoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
 func (m *PhotoRequestBuilder) Content()(*icc5a0ad8f08ee5e84e646aee242f74452466f74e4dafdd0c34ae3ced97fff639.ContentRequestBuilder) {
     return icc5a0ad8f08ee5e84e646aee242f74452466f74e4dafdd0c34ae3ced97fff639.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the group's profile photo
+// CreateDeleteRequestInformation delete navigation property photo for groups
 func (m *PhotoRequestBuilder) CreateDeleteRequestInformation(options *PhotoRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +110,7 @@ func (m *PhotoRequestBuilder) CreateGetRequestInformation(options *PhotoRequestB
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the group's profile photo
+// CreatePatchRequestInformation update the navigation property photo in groups
 func (m *PhotoRequestBuilder) CreatePatchRequestInformation(options *PhotoRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,37 +128,49 @@ func (m *PhotoRequestBuilder) CreatePatchRequestInformation(options *PhotoReques
     }
     return requestInfo, nil
 }
-// Delete the group's profile photo
+// Delete delete navigation property photo for groups
 func (m *PhotoRequestBuilder) Delete(options *PhotoRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the group's profile photo
-func (m *PhotoRequestBuilder) Get(options *PhotoRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto, error) {
+func (m *PhotoRequestBuilder) Get(options *PhotoRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhotoable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewProfilePhoto() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateProfilePhotoFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhotoable), nil
 }
-// Patch the group's profile photo
+// Patch update the navigation property photo in groups
 func (m *PhotoRequestBuilder) Patch(options *PhotoRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

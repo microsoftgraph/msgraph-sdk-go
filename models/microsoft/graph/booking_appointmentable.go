@@ -1,0 +1,57 @@
+package graph
+
+import (
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+)
+
+// BookingAppointmentable 
+type BookingAppointmentable interface {
+    Entityable
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetAdditionalInformation()(*string)
+    GetCustomers()([]BookingCustomerInformationBaseable)
+    GetCustomerTimeZone()(*string)
+    GetDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)
+    GetEndDateTime()(DateTimeTimeZoneable)
+    GetFilledAttendeesCount()(*int32)
+    GetIsLocationOnline()(*bool)
+    GetJoinWebUrl()(*string)
+    GetMaximumAttendeesCount()(*int32)
+    GetOptOutOfCustomerEmail()(*bool)
+    GetPostBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)
+    GetPreBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)
+    GetPrice()(*float64)
+    GetPriceType()(*BookingPriceType)
+    GetReminders()([]BookingReminderable)
+    GetSelfServiceAppointmentId()(*string)
+    GetServiceId()(*string)
+    GetServiceLocation()(Locationable)
+    GetServiceName()(*string)
+    GetServiceNotes()(*string)
+    GetSmsNotificationsEnabled()(*bool)
+    GetStaffMemberIds()([]string)
+    GetStartDateTime()(DateTimeTimeZoneable)
+    SetAdditionalInformation(value *string)()
+    SetCustomers(value []BookingCustomerInformationBaseable)()
+    SetCustomerTimeZone(value *string)()
+    SetDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)()
+    SetEndDateTime(value DateTimeTimeZoneable)()
+    SetFilledAttendeesCount(value *int32)()
+    SetIsLocationOnline(value *bool)()
+    SetJoinWebUrl(value *string)()
+    SetMaximumAttendeesCount(value *int32)()
+    SetOptOutOfCustomerEmail(value *bool)()
+    SetPostBuffer(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)()
+    SetPreBuffer(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)()
+    SetPrice(value *float64)()
+    SetPriceType(value *BookingPriceType)()
+    SetReminders(value []BookingReminderable)()
+    SetSelfServiceAppointmentId(value *string)()
+    SetServiceId(value *string)()
+    SetServiceLocation(value Locationable)()
+    SetServiceName(value *string)()
+    SetServiceNotes(value *string)()
+    SetSmsNotificationsEnabled(value *bool)()
+    SetStaffMemberIds(value []string)()
+    SetStartDateTime(value DateTimeTimeZoneable)()
+}

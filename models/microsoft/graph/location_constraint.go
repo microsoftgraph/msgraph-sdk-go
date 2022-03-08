@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LocationConstraint 
+// LocationConstraint provides operations to call the findMeetingTimes method.
 type LocationConstraint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
     isRequired *bool;
     // Constraint information for one or more locations that the client requests for the meeting.
-    locations []LocationConstraintItem;
+    locations []LocationConstraintItemable;
     // The client requests the service to suggest one or more meeting locations.
     suggestLocation *bool;
 }
@@ -22,36 +22,16 @@ func NewLocationConstraint()(*LocationConstraint) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateLocationConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLocationConstraintFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLocationConstraint(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocationConstraint) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsRequired gets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-func (m *LocationConstraint) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
-}
-// GetLocations gets the locations property value. Constraint information for one or more locations that the client requests for the meeting.
-func (m *LocationConstraint) GetLocations()([]LocationConstraintItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locations
-    }
-}
-// GetSuggestLocation gets the suggestLocation property value. The client requests the service to suggest one or more meeting locations.
-func (m *LocationConstraint) GetSuggestLocation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suggestLocation
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,14 +48,14 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["locations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocationConstraintItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateLocationConstraintItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LocationConstraintItem, len(val))
+            res := make([]LocationConstraintItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LocationConstraintItem))
+                res[i] = v.(LocationConstraintItemable)
             }
             m.SetLocations(res)
         }
@@ -93,6 +73,30 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(interface{}
     }
     return res
 }
+// GetIsRequired gets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
+func (m *LocationConstraint) GetIsRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRequired
+    }
+}
+// GetLocations gets the locations property value. Constraint information for one or more locations that the client requests for the meeting.
+func (m *LocationConstraint) GetLocations()([]LocationConstraintItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locations
+    }
+}
+// GetSuggestLocation gets the suggestLocation property value. The client requests the service to suggest one or more meeting locations.
+func (m *LocationConstraint) GetSuggestLocation()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.suggestLocation
+    }
+}
 func (m *LocationConstraint) IsNil()(bool) {
     return m == nil
 }
@@ -107,8 +111,7 @@ func (m *LocationConstraint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetLocations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLocations()))
         for i, v := range m.GetLocations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("locations", cast)
         if err != nil {
@@ -142,7 +145,7 @@ func (m *LocationConstraint) SetIsRequired(value *bool)() {
     }
 }
 // SetLocations sets the locations property value. Constraint information for one or more locations that the client requests for the meeting.
-func (m *LocationConstraint) SetLocations(value []LocationConstraintItem)() {
+func (m *LocationConstraint) SetLocations(value []LocationConstraintItemable)() {
     if m != nil {
         m.locations = value
     }

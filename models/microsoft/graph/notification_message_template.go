@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// NotificationMessageTemplate 
+// NotificationMessageTemplate provides operations to manage the deviceManagement singleton.
 type NotificationMessageTemplate struct {
     Entity
     // The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
@@ -17,7 +17,7 @@ type NotificationMessageTemplate struct {
     // DateTime the object was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The list of localized messages for this Notification Message Template.
-    localizedNotificationMessages []LocalizedNotificationMessage;
+    localizedNotificationMessages []LocalizedNotificationMessageable;
 }
 // NewNotificationMessageTemplate instantiates a new notificationMessageTemplate and sets the default values.
 func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
@@ -25,6 +25,10 @@ func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateNotificationMessageTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNotificationMessageTemplateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNotificationMessageTemplate(), nil
 }
 // GetBrandingOptions gets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
 func (m *NotificationMessageTemplate) GetBrandingOptions()(*NotificationTemplateBrandingOptions) {
@@ -48,22 +52,6 @@ func (m *NotificationMessageTemplate) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
-func (m *NotificationMessageTemplate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLocalizedNotificationMessages gets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
-func (m *NotificationMessageTemplate) GetLocalizedNotificationMessages()([]LocalizedNotificationMessage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizedNotificationMessages
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,20 +98,36 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["localizedNotificationMessages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocalizedNotificationMessage() })
+        val, err := n.GetCollectionOfObjectValues(CreateLocalizedNotificationMessageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LocalizedNotificationMessage, len(val))
+            res := make([]LocalizedNotificationMessageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LocalizedNotificationMessage))
+                res[i] = v.(LocalizedNotificationMessageable)
             }
             m.SetLocalizedNotificationMessages(res)
         }
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+func (m *NotificationMessageTemplate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLocalizedNotificationMessages gets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
+func (m *NotificationMessageTemplate) GetLocalizedNotificationMessages()([]LocalizedNotificationMessageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.localizedNotificationMessages
+    }
 }
 func (m *NotificationMessageTemplate) IsNil()(bool) {
     return m == nil
@@ -162,8 +166,7 @@ func (m *NotificationMessageTemplate) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetLocalizedNotificationMessages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLocalizedNotificationMessages()))
         for i, v := range m.GetLocalizedNotificationMessages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("localizedNotificationMessages", cast)
         if err != nil {
@@ -197,7 +200,7 @@ func (m *NotificationMessageTemplate) SetLastModifiedDateTime(value *i336074805f
     }
 }
 // SetLocalizedNotificationMessages sets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
-func (m *NotificationMessageTemplate) SetLocalizedNotificationMessages(value []LocalizedNotificationMessage)() {
+func (m *NotificationMessageTemplate) SetLocalizedNotificationMessages(value []LocalizedNotificationMessageable)() {
     if m != nil {
         m.localizedNotificationMessages = value
     }

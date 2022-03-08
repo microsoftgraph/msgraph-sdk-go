@@ -2,11 +2,11 @@ package claimsmappingpolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    ia857f0850c2006fd6e5016a79f869e38336cc51c8e09257b403bb36242e4bac5 "github.com/microsoftgraph/msgraph-sdk-go/policies/claimsmappingpolicies/count"
 )
 
-// ClaimsMappingPoliciesRequestBuilder builds and executes requests for operations under \policies\claimsMappingPolicies
+// ClaimsMappingPoliciesRequestBuilder provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.
 type ClaimsMappingPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ClaimsMappingPoliciesRequestBuilderGetQueryParameters struct {
 // ClaimsMappingPoliciesRequestBuilderPostOptions options for Post
 type ClaimsMappingPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClaimsMappingPolicy;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClaimsMappingPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewClaimsMappingPoliciesRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewClaimsMappingPoliciesRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClaimsMappingPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ClaimsMappingPoliciesRequestBuilder) Count()(*ia857f0850c2006fd6e5016a79f869e38336cc51c8e09257b403bb36242e4bac5.CountRequestBuilder) {
+    return ia857f0850c2006fd6e5016a79f869e38336cc51c8e09257b403bb36242e4bac5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformation(options *ClaimsMappingPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+// CreatePostRequestInformation create new navigation property to claimsMappingPolicies for policies
 func (m *ClaimsMappingPoliciesRequestBuilder) CreatePostRequestInformation(options *ClaimsMappingPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ClaimsMappingPoliciesRequestBuilder) CreatePostRequestInformation(optio
     return requestInfo, nil
 }
 // Get the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
-func (m *ClaimsMappingPoliciesRequestBuilder) Get(options *ClaimsMappingPoliciesRequestBuilderGetOptions)(*ClaimsMappingPoliciesResponse, error) {
+func (m *ClaimsMappingPoliciesRequestBuilder) Get(options *ClaimsMappingPoliciesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClaimsMappingPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClaimsMappingPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateClaimsMappingPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ClaimsMappingPoliciesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClaimsMappingPolicyCollectionResponseable), nil
 }
-// Post the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
-func (m *ClaimsMappingPoliciesRequestBuilder) Post(options *ClaimsMappingPoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClaimsMappingPolicy, error) {
+// Post create new navigation property to claimsMappingPolicies for policies
+func (m *ClaimsMappingPoliciesRequestBuilder) Post(options *ClaimsMappingPoliciesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClaimsMappingPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewClaimsMappingPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateClaimsMappingPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClaimsMappingPolicy), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClaimsMappingPolicyable), nil
 }

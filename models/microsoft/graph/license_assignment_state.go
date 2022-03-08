@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LicenseAssignmentState 
+// LicenseAssignmentState provides operations to manage the drive singleton.
 type LicenseAssignmentState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewLicenseAssignmentState()(*LicenseAssignmentState) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateLicenseAssignmentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLicenseAssignmentStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLicenseAssignmentState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseAssignmentState) GetAdditionalData()(map[string]interface{}) {
@@ -59,30 +63,6 @@ func (m *LicenseAssignmentState) GetError()(*string) {
         return nil
     } else {
         return m.error
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The timestamp when the state of the license assignment was last updated.
-func (m *LicenseAssignmentState) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetSkuId gets the skuId property value. The unique identifier for the SKU. Read-Only.
-func (m *LicenseAssignmentState) GetSkuId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuId
-    }
-}
-// GetState gets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
-func (m *LicenseAssignmentState) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -153,6 +133,30 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The timestamp when the state of the license assignment was last updated.
+func (m *LicenseAssignmentState) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetSkuId gets the skuId property value. The unique identifier for the SKU. Read-Only.
+func (m *LicenseAssignmentState) GetSkuId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skuId
+    }
+}
+// GetState gets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
+func (m *LicenseAssignmentState) GetState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *LicenseAssignmentState) IsNil()(bool) {
     return m == nil

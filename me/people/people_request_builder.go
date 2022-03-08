@@ -2,11 +2,11 @@ package people
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i83684efb7d29636f148203af4bd6d21df197b70e00ee941b88ebaa55cf691b2d "github.com/microsoftgraph/msgraph-sdk-go/me/people/count"
 )
 
-// PeopleRequestBuilder builds and executes requests for operations under \me\people
+// PeopleRequestBuilder provides operations to manage the people property of the microsoft.graph.user entity.
 type PeopleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type PeopleRequestBuilderGetQueryParameters struct {
 // PeopleRequestBuilderPostOptions options for Post
 type PeopleRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Personable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +63,7 @@ func NewPeopleRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,6 +72,9 @@ func NewPeopleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPeopleRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PeopleRequestBuilder) Count()(*i83684efb7d29636f148203af4bd6d21df197b70e00ee941b88ebaa55cf691b2d.CountRequestBuilder) {
+    return i83684efb7d29636f148203af4bd6d21df197b70e00ee941b88ebaa55cf691b2d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) CreateGetRequestInformation(options *PeopleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -93,7 +96,7 @@ func (m *PeopleRequestBuilder) CreateGetRequestInformation(options *PeopleReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation people that are relevant to the user. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to people for me
 func (m *PeopleRequestBuilder) CreatePostRequestInformation(options *PeopleRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,26 +115,34 @@ func (m *PeopleRequestBuilder) CreatePostRequestInformation(options *PeopleReque
     return requestInfo, nil
 }
 // Get people that are relevant to the user. Read-only. Nullable.
-func (m *PeopleRequestBuilder) Get(options *PeopleRequestBuilderGetOptions)(*PeopleResponse, error) {
+func (m *PeopleRequestBuilder) Get(options *PeopleRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PersonCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPeopleResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePersonCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PeopleResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PersonCollectionResponseable), nil
 }
-// Post people that are relevant to the user. Read-only. Nullable.
-func (m *PeopleRequestBuilder) Post(options *PeopleRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person, error) {
+// Post create new navigation property to people for me
+func (m *PeopleRequestBuilder) Post(options *PeopleRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Personable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPerson() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePersonFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Personable), nil
 }

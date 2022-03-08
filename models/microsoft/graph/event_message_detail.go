@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EventMessageDetail 
+// EventMessageDetail provides operations to manage the collection of chat entities.
 type EventMessageDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,6 +15,10 @@ func NewEventMessageDetail()(*EventMessageDetail) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEventMessageDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEventMessageDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EventMessageDetail) GetAdditionalData()(map[string]interface{}) {

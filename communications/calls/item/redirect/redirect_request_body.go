@@ -5,14 +5,14 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// RedirectRequestBody 
+// RedirectRequestBody provides operations to call the redirect method.
 type RedirectRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     callbackUri *string;
     // 
-    targets []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo;
+    targets []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable;
     // 
     timeout *int32;
 }
@@ -22,6 +22,10 @@ func NewRedirectRequestBody()(*RedirectRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateRedirectRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRedirectRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRedirectRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -39,22 +43,6 @@ func (m *RedirectRequestBody) GetCallbackUri()(*string) {
         return m.callbackUri
     }
 }
-// GetTargets gets the targets property value. 
-func (m *RedirectRequestBody) GetTargets()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targets
-    }
-}
-// GetTimeout gets the timeout property value. 
-func (m *RedirectRequestBody) GetTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeout
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -69,14 +57,14 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["targets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewInvitationParticipantInfo() })
+        val, err := n.GetCollectionOfObjectValues(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateInvitationParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo, len(val))
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo))
+                res[i] = v.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable)
             }
             m.SetTargets(res)
         }
@@ -94,6 +82,22 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
+// GetTargets gets the targets property value. 
+func (m *RedirectRequestBody) GetTargets()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targets
+    }
+}
+// GetTimeout gets the timeout property value. 
+func (m *RedirectRequestBody) GetTimeout()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeout
+    }
+}
 func (m *RedirectRequestBody) IsNil()(bool) {
     return m == nil
 }
@@ -108,8 +112,7 @@ func (m *RedirectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetTargets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTargets()))
         for i, v := range m.GetTargets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("targets", cast)
         if err != nil {
@@ -143,7 +146,7 @@ func (m *RedirectRequestBody) SetCallbackUri(value *string)() {
     }
 }
 // SetTargets sets the targets property value. 
-func (m *RedirectRequestBody) SetTargets(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo)() {
+func (m *RedirectRequestBody) SetTargets(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfoable)() {
     if m != nil {
         m.targets = value
     }

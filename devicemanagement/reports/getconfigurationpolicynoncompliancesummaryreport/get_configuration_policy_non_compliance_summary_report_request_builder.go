@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigurationPolicyNonComplianceSummaryReport
+// GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder provides operations to call the getConfigurationPolicyNonComplianceSummaryReport method.
 type GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder struct {
 // GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostOptions options for Post
 type GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostOptions struct {
     // 
-    Body *GetConfigurationPolicyNonComplianceSummaryReportRequestBody;
+    Body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetConfigurationPolicyNonComplianceSummaryReportRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreateP
     return requestInfo, nil
 }
 // Post invoke action getConfigurationPolicyNonComplianceSummaryReport
-func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) Post(options *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) Post(options *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostOptions)(GetConfigurationPolicyNonComplianceSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigurationPolicyNonComplianceSummaryReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetConfigurationPolicyNonComplianceSummaryReportResponseable), nil
 }

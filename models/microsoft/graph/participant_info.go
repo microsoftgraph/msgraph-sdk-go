@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ParticipantInfo 
+// ParticipantInfo provides operations to manage the cloudCommunications singleton.
 type ParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type ParticipantInfo struct {
     // The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
     endpointType *EndpointType;
     // 
-    identity *IdentitySet;
+    identity IdentitySetable;
     // The language culture string. Read-only.
     languageId *string;
     // The participant ID of the participant. Read-only.
@@ -27,6 +27,10 @@ func NewParticipantInfo()(*ParticipantInfo) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateParticipantInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewParticipantInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParticipantInfo) GetAdditionalData()(map[string]interface{}) {
@@ -50,38 +54,6 @@ func (m *ParticipantInfo) GetEndpointType()(*EndpointType) {
         return nil
     } else {
         return m.endpointType
-    }
-}
-// GetIdentity gets the identity property value. 
-func (m *ParticipantInfo) GetIdentity()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identity
-    }
-}
-// GetLanguageId gets the languageId property value. The language culture string. Read-only.
-func (m *ParticipantInfo) GetLanguageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageId
-    }
-}
-// GetParticipantId gets the participantId property value. The participant ID of the participant. Read-only.
-func (m *ParticipantInfo) GetParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participantId
-    }
-}
-// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
-func (m *ParticipantInfo) GetRegion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.region
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,12 +80,12 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["identity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIdentity(val.(*IdentitySet))
+            m.SetIdentity(val.(IdentitySetable))
         }
         return nil
     }
@@ -148,6 +120,38 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetIdentity gets the identity property value. 
+func (m *ParticipantInfo) GetIdentity()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.identity
+    }
+}
+// GetLanguageId gets the languageId property value. The language culture string. Read-only.
+func (m *ParticipantInfo) GetLanguageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageId
+    }
+}
+// GetParticipantId gets the participantId property value. The participant ID of the participant. Read-only.
+func (m *ParticipantInfo) GetParticipantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.participantId
+    }
+}
+// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+func (m *ParticipantInfo) GetRegion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.region
+    }
 }
 func (m *ParticipantInfo) IsNil()(bool) {
     return m == nil
@@ -218,7 +222,7 @@ func (m *ParticipantInfo) SetEndpointType(value *EndpointType)() {
     }
 }
 // SetIdentity sets the identity property value. 
-func (m *ParticipantInfo) SetIdentity(value *IdentitySet)() {
+func (m *ParticipantInfo) SetIdentity(value IdentitySetable)() {
     if m != nil {
         m.identity = value
     }

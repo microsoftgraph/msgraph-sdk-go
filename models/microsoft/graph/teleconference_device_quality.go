@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeleconferenceDeviceQuality 
+// TeleconferenceDeviceQuality provides operations to call the logTeleconferenceDeviceQuality method.
 type TeleconferenceDeviceQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,7 +25,7 @@ type TeleconferenceDeviceQuality struct {
     // A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
     mediaLegId *string;
     // The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
-    mediaQualityList []TeleconferenceDeviceMediaQuality;
+    mediaQualityList []TeleconferenceDeviceMediaQualityable;
     // A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
     participantId *string;
 }
@@ -35,6 +35,10 @@ func NewTeleconferenceDeviceQuality()(*TeleconferenceDeviceQuality) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeleconferenceDeviceQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeleconferenceDeviceQualityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeleconferenceDeviceQuality(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeleconferenceDeviceQuality) GetAdditionalData()(map[string]interface{}) {
@@ -98,30 +102,6 @@ func (m *TeleconferenceDeviceQuality) GetDeviceName()(*string) {
         return nil
     } else {
         return m.deviceName
-    }
-}
-// GetMediaLegId gets the mediaLegId property value. A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
-func (m *TeleconferenceDeviceQuality) GetMediaLegId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaLegId
-    }
-}
-// GetMediaQualityList gets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
-func (m *TeleconferenceDeviceQuality) GetMediaQualityList()([]TeleconferenceDeviceMediaQuality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaQualityList
-    }
-}
-// GetParticipantId gets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
-func (m *TeleconferenceDeviceQuality) GetParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -208,14 +188,14 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["mediaQualityList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeleconferenceDeviceMediaQuality() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeleconferenceDeviceMediaQuality, len(val))
+            res := make([]TeleconferenceDeviceMediaQualityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeleconferenceDeviceMediaQuality))
+                res[i] = v.(TeleconferenceDeviceMediaQualityable)
             }
             m.SetMediaQualityList(res)
         }
@@ -232,6 +212,30 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetMediaLegId gets the mediaLegId property value. A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
+func (m *TeleconferenceDeviceQuality) GetMediaLegId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaLegId
+    }
+}
+// GetMediaQualityList gets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
+func (m *TeleconferenceDeviceQuality) GetMediaQualityList()([]TeleconferenceDeviceMediaQualityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaQualityList
+    }
+}
+// GetParticipantId gets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
+func (m *TeleconferenceDeviceQuality) GetParticipantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.participantId
+    }
 }
 func (m *TeleconferenceDeviceQuality) IsNil()(bool) {
     return m == nil
@@ -289,8 +293,7 @@ func (m *TeleconferenceDeviceQuality) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetMediaQualityList() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMediaQualityList()))
         for i, v := range m.GetMediaQualityList() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("mediaQualityList", cast)
         if err != nil {
@@ -366,7 +369,7 @@ func (m *TeleconferenceDeviceQuality) SetMediaLegId(value *string)() {
     }
 }
 // SetMediaQualityList sets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
-func (m *TeleconferenceDeviceQuality) SetMediaQualityList(value []TeleconferenceDeviceMediaQuality)() {
+func (m *TeleconferenceDeviceQuality) SetMediaQualityList(value []TeleconferenceDeviceMediaQualityable)() {
     if m != nil {
         m.mediaQualityList = value
     }

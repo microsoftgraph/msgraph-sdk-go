@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the changeScreenSharingRole method.
 type ScreenSharingRole int
 
 const (

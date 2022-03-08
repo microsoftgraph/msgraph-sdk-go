@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i46b288d9d8f774d7fa38d373a828c5bc7cf81c90735be3014be7f4d14860c0a6 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/externalsponsors"
     i6f5b9f8ecd653f7004e3a87b6fd9f1edd541123ee01576fc601583fd7a8ee2f8 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/internalsponsors"
@@ -10,7 +9,7 @@ import (
     i6a8a0317ba69a6948d7f14baa6206d53d8ce7fc2cbce939e0ac4ece8b4a838aa "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/internalsponsors/item"
 )
 
-// ConnectedOrganizationItemRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations\{connectedOrganization-id}
+// ConnectedOrganizationItemRequestBuilder provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
 type ConnectedOrganizationItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +48,7 @@ type ConnectedOrganizationItemRequestBuilderGetQueryParameters struct {
 // ConnectedOrganizationItemRequestBuilderPatchOptions options for Patch
 type ConnectedOrganizationItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganization;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganizationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +65,7 @@ func NewConnectedOrganizationItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +75,7 @@ func NewConnectedOrganizationItemRequestBuilder(rawUrl string, requestAdapter id
     urlParams["request-raw-url"] = rawUrl
     return NewConnectedOrganizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation represents references to a directory or domain of another organization whose users can request access.
+// CreateDeleteRequestInformation delete navigation property connectedOrganizations for identityGovernance
 func (m *ConnectedOrganizationItemRequestBuilder) CreateDeleteRequestInformation(options *ConnectedOrganizationItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +112,7 @@ func (m *ConnectedOrganizationItemRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation represents references to a directory or domain of another organization whose users can request access.
+// CreatePatchRequestInformation update the navigation property connectedOrganizations in identityGovernance
 func (m *ConnectedOrganizationItemRequestBuilder) CreatePatchRequestInformation(options *ConnectedOrganizationItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,13 +130,17 @@ func (m *ConnectedOrganizationItemRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete represents references to a directory or domain of another organization whose users can request access.
+// Delete delete navigation property connectedOrganizations for identityGovernance
 func (m *ConnectedOrganizationItemRequestBuilder) Delete(options *ConnectedOrganizationItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -158,16 +161,20 @@ func (m *ConnectedOrganizationItemRequestBuilder) ExternalSponsorsById(id string
     return i38c48f98eb917d486190d72c8f1c4ae0a96a04a29df568065e9cdfbc7a1bcc7a.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get represents references to a directory or domain of another organization whose users can request access.
-func (m *ConnectedOrganizationItemRequestBuilder) Get(options *ConnectedOrganizationItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganization, error) {
+func (m *ConnectedOrganizationItemRequestBuilder) Get(options *ConnectedOrganizationItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganizationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewConnectedOrganization() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateConnectedOrganizationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganization), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganizationable), nil
 }
 func (m *ConnectedOrganizationItemRequestBuilder) InternalSponsors()(*i6f5b9f8ecd653f7004e3a87b6fd9f1edd541123ee01576fc601583fd7a8ee2f8.InternalSponsorsRequestBuilder) {
     return i6f5b9f8ecd653f7004e3a87b6fd9f1edd541123ee01576fc601583fd7a8ee2f8.NewInternalSponsorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -183,13 +190,17 @@ func (m *ConnectedOrganizationItemRequestBuilder) InternalSponsorsById(id string
     }
     return i6a8a0317ba69a6948d7f14baa6206d53d8ce7fc2cbce939e0ac4ece8b4a838aa.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch represents references to a directory or domain of another organization whose users can request access.
+// Patch update the navigation property connectedOrganizations in identityGovernance
 func (m *ConnectedOrganizationItemRequestBuilder) Patch(options *ConnectedOrganizationItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

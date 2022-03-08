@@ -5,17 +5,17 @@ import (
     id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/termstore"
 )
 
-// Relation 
+// Relation provides operations to manage the drive singleton.
 type Relation struct {
     Entity
     // The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-    fromTerm *Term;
+    fromTerm Termable;
     // The type of relation. Possible values are: pin, reuse.
     relationship *id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.RelationType;
     // The [set] in which the relation is relevant.
-    set *Set;
+    set Setable;
     // The to [term] of the relation. The term to which the relationship is defined.
-    toTerm *Term;
+    toTerm Termable;
 }
 // NewRelation instantiates a new relation and sets the default values.
 func NewRelation()(*Relation) {
@@ -24,8 +24,57 @@ func NewRelation()(*Relation) {
     }
     return m
 }
+// CreateRelationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRelationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRelation(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Relation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["fromTerm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTermFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFromTerm(val.(Termable))
+        }
+        return nil
+    }
+    res["relationship"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.ParseRelationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRelationship(val.(*id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.RelationType))
+        }
+        return nil
+    }
+    res["set"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSet(val.(Setable))
+        }
+        return nil
+    }
+    res["toTerm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTermFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetToTerm(val.(Termable))
+        }
+        return nil
+    }
+    return res
+}
 // GetFromTerm gets the fromTerm property value. The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-func (m *Relation) GetFromTerm()(*Term) {
+func (m *Relation) GetFromTerm()(Termable) {
     if m == nil {
         return nil
     } else {
@@ -41,7 +90,7 @@ func (m *Relation) GetRelationship()(*id62b8df0892707d421d6e0a5aefa589248c11f957
     }
 }
 // GetSet gets the set property value. The [set] in which the relation is relevant.
-func (m *Relation) GetSet()(*Set) {
+func (m *Relation) GetSet()(Setable) {
     if m == nil {
         return nil
     } else {
@@ -49,57 +98,12 @@ func (m *Relation) GetSet()(*Set) {
     }
 }
 // GetToTerm gets the toTerm property value. The to [term] of the relation. The term to which the relationship is defined.
-func (m *Relation) GetToTerm()(*Term) {
+func (m *Relation) GetToTerm()(Termable) {
     if m == nil {
         return nil
     } else {
         return m.toTerm
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Relation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["fromTerm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTerm() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFromTerm(val.(*Term))
-        }
-        return nil
-    }
-    res["relationship"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.ParseRelationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRelationship(val.(*id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.RelationType))
-        }
-        return nil
-    }
-    res["set"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSet(val.(*Set))
-        }
-        return nil
-    }
-    res["toTerm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTerm() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetToTerm(val.(*Term))
-        }
-        return nil
-    }
-    return res
 }
 func (m *Relation) IsNil()(bool) {
     return m == nil
@@ -138,7 +142,7 @@ func (m *Relation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetFromTerm sets the fromTerm property value. The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-func (m *Relation) SetFromTerm(value *Term)() {
+func (m *Relation) SetFromTerm(value Termable)() {
     if m != nil {
         m.fromTerm = value
     }
@@ -150,13 +154,13 @@ func (m *Relation) SetRelationship(value *id62b8df0892707d421d6e0a5aefa589248c11
     }
 }
 // SetSet sets the set property value. The [set] in which the relation is relevant.
-func (m *Relation) SetSet(value *Set)() {
+func (m *Relation) SetSet(value Setable)() {
     if m != nil {
         m.set = value
     }
 }
 // SetToTerm sets the toTerm property value. The to [term] of the relation. The term to which the relationship is defined.
-func (m *Relation) SetToTerm(value *Term)() {
+func (m *Relation) SetToTerm(value Termable)() {
     if m != nil {
         m.toTerm = value
     }

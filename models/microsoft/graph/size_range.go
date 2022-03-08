@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SizeRange 
+// SizeRange provides operations to manage the drive singleton.
 type SizeRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewSizeRange()(*SizeRange) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSizeRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSizeRangeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSizeRange(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SizeRange) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMaximumSize gets the maximumSize property value. The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
-func (m *SizeRange) GetMaximumSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumSize
-    }
-}
-// GetMinimumSize gets the minimumSize property value. The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
-func (m *SizeRange) GetMinimumSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSize
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *SizeRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetMaximumSize gets the maximumSize property value. The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
+func (m *SizeRange) GetMaximumSize()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumSize
+    }
+}
+// GetMinimumSize gets the minimumSize property value. The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
+func (m *SizeRange) GetMinimumSize()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumSize
+    }
 }
 func (m *SizeRange) IsNil()(bool) {
     return m == nil

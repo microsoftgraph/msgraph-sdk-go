@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDevice 
+// ManagedDevice provides operations to manage the drive singleton.
 type ManagedDevice struct {
     Entity
     // Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
@@ -21,21 +21,21 @@ type ManagedDevice struct {
     // Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.
     complianceState *ComplianceState;
     // ConfigrMgr client enabled features. This property is read-only.
-    configurationManagerClientEnabledFeatures *ConfigurationManagerClientEnabledFeatures;
+    configurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeaturesable;
     // List of ComplexType deviceActionResult objects. This property is read-only.
-    deviceActionResults []DeviceActionResult;
+    deviceActionResults []DeviceActionResultable;
     // Device category
-    deviceCategory *DeviceCategory;
+    deviceCategory DeviceCategoryable;
     // Device category display name. This property is read-only.
     deviceCategoryDisplayName *string;
     // Device compliance policy states for this device.
-    deviceCompliancePolicyStates []DeviceCompliancePolicyState;
+    deviceCompliancePolicyStates []DeviceCompliancePolicyStateable;
     // Device configuration states for this device.
-    deviceConfigurationStates []DeviceConfigurationState;
+    deviceConfigurationStates []DeviceConfigurationStateable;
     // Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount.
     deviceEnrollmentType *DeviceEnrollmentType;
     // The device health attestation state. This property is read-only.
-    deviceHealthAttestationState *DeviceHealthAttestationState;
+    deviceHealthAttestationState DeviceHealthAttestationStateable;
     // Name of the device. This property is read-only.
     deviceName *string;
     // Device registration state. This property is read-only. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
@@ -124,6 +124,10 @@ func NewManagedDevice()(*ManagedDevice) {
     }
     return m
 }
+// CreateManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedDeviceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedDevice(), nil
+}
 // GetActivationLockBypassCode gets the activationLockBypassCode property value. Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
 func (m *ManagedDevice) GetActivationLockBypassCode()(*string) {
     if m == nil {
@@ -173,7 +177,7 @@ func (m *ManagedDevice) GetComplianceState()(*ComplianceState) {
     }
 }
 // GetConfigurationManagerClientEnabledFeatures gets the configurationManagerClientEnabledFeatures property value. ConfigrMgr client enabled features. This property is read-only.
-func (m *ManagedDevice) GetConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientEnabledFeatures) {
+func (m *ManagedDevice) GetConfigurationManagerClientEnabledFeatures()(ConfigurationManagerClientEnabledFeaturesable) {
     if m == nil {
         return nil
     } else {
@@ -181,7 +185,7 @@ func (m *ManagedDevice) GetConfigurationManagerClientEnabledFeatures()(*Configur
     }
 }
 // GetDeviceActionResults gets the deviceActionResults property value. List of ComplexType deviceActionResult objects. This property is read-only.
-func (m *ManagedDevice) GetDeviceActionResults()([]DeviceActionResult) {
+func (m *ManagedDevice) GetDeviceActionResults()([]DeviceActionResultable) {
     if m == nil {
         return nil
     } else {
@@ -189,7 +193,7 @@ func (m *ManagedDevice) GetDeviceActionResults()([]DeviceActionResult) {
     }
 }
 // GetDeviceCategory gets the deviceCategory property value. Device category
-func (m *ManagedDevice) GetDeviceCategory()(*DeviceCategory) {
+func (m *ManagedDevice) GetDeviceCategory()(DeviceCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -205,7 +209,7 @@ func (m *ManagedDevice) GetDeviceCategoryDisplayName()(*string) {
     }
 }
 // GetDeviceCompliancePolicyStates gets the deviceCompliancePolicyStates property value. Device compliance policy states for this device.
-func (m *ManagedDevice) GetDeviceCompliancePolicyStates()([]DeviceCompliancePolicyState) {
+func (m *ManagedDevice) GetDeviceCompliancePolicyStates()([]DeviceCompliancePolicyStateable) {
     if m == nil {
         return nil
     } else {
@@ -213,7 +217,7 @@ func (m *ManagedDevice) GetDeviceCompliancePolicyStates()([]DeviceCompliancePoli
     }
 }
 // GetDeviceConfigurationStates gets the deviceConfigurationStates property value. Device configuration states for this device.
-func (m *ManagedDevice) GetDeviceConfigurationStates()([]DeviceConfigurationState) {
+func (m *ManagedDevice) GetDeviceConfigurationStates()([]DeviceConfigurationStateable) {
     if m == nil {
         return nil
     } else {
@@ -229,7 +233,7 @@ func (m *ManagedDevice) GetDeviceEnrollmentType()(*DeviceEnrollmentType) {
     }
 }
 // GetDeviceHealthAttestationState gets the deviceHealthAttestationState property value. The device health attestation state. This property is read-only.
-func (m *ManagedDevice) GetDeviceHealthAttestationState()(*DeviceHealthAttestationState) {
+func (m *ManagedDevice) GetDeviceHealthAttestationState()(DeviceHealthAttestationStateable) {
     if m == nil {
         return nil
     } else {
@@ -324,238 +328,6 @@ func (m *ManagedDevice) GetExchangeLastSuccessfulSyncDateTime()(*i336074805fc853
         return m.exchangeLastSuccessfulSyncDateTime
     }
 }
-// GetFreeStorageSpaceInBytes gets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
-func (m *ManagedDevice) GetFreeStorageSpaceInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.freeStorageSpaceInBytes
-    }
-}
-// GetIccid gets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
-func (m *ManagedDevice) GetIccid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iccid
-    }
-}
-// GetImei gets the imei property value. IMEI. This property is read-only.
-func (m *ManagedDevice) GetImei()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imei
-    }
-}
-// GetIsEncrypted gets the isEncrypted property value. Device encryption status. This property is read-only.
-func (m *ManagedDevice) GetIsEncrypted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEncrypted
-    }
-}
-// GetIsSupervised gets the isSupervised property value. Device supervised status. This property is read-only.
-func (m *ManagedDevice) GetIsSupervised()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSupervised
-    }
-}
-// GetJailBroken gets the jailBroken property value. whether the device is jail broken or rooted. This property is read-only.
-func (m *ManagedDevice) GetJailBroken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jailBroken
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. This property is read-only.
-func (m *ManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetManagedDeviceName gets the managedDeviceName property value. Automatically generated name to identify a device. Can be overwritten to a user friendly name.
-func (m *ManagedDevice) GetManagedDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceName
-    }
-}
-// GetManagedDeviceOwnerType gets the managedDeviceOwnerType property value. Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
-func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceOwnerType
-    }
-}
-// GetManagementAgent gets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-func (m *ManagedDevice) GetManagementAgent()(*ManagementAgentType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementAgent
-    }
-}
-// GetManufacturer gets the manufacturer property value. Manufacturer of the device. This property is read-only.
-func (m *ManagedDevice) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetMeid gets the meid property value. MEID. This property is read-only.
-func (m *ManagedDevice) GetMeid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meid
-    }
-}
-// GetModel gets the model property value. Model of the device. This property is read-only.
-func (m *ManagedDevice) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetNotes gets the notes property value. Notes on the device created by IT Admin
-func (m *ManagedDevice) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
-// GetOperatingSystem gets the operatingSystem property value. Operating system of the device. Windows, iOS, etc. This property is read-only.
-func (m *ManagedDevice) GetOperatingSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystem
-    }
-}
-// GetOsVersion gets the osVersion property value. Operating system version of the device. This property is read-only.
-func (m *ManagedDevice) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetPartnerReportedThreatState gets the partnerReportedThreatState property value. Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.
-func (m *ManagedDevice) GetPartnerReportedThreatState()(*ManagedDevicePartnerReportedHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerReportedThreatState
-    }
-}
-// GetPhoneNumber gets the phoneNumber property value. Phone number of the device. This property is read-only.
-func (m *ManagedDevice) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
-}
-// GetPhysicalMemoryInBytes gets the physicalMemoryInBytes property value. Total Memory in Bytes. This property is read-only.
-func (m *ManagedDevice) GetPhysicalMemoryInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.physicalMemoryInBytes
-    }
-}
-// GetRemoteAssistanceSessionErrorDetails gets the remoteAssistanceSessionErrorDetails property value. An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
-func (m *ManagedDevice) GetRemoteAssistanceSessionErrorDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteAssistanceSessionErrorDetails
-    }
-}
-// GetRemoteAssistanceSessionUrl gets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. This property is read-only.
-func (m *ManagedDevice) GetRemoteAssistanceSessionUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteAssistanceSessionUrl
-    }
-}
-// GetSerialNumber gets the serialNumber property value. SerialNumber. This property is read-only.
-func (m *ManagedDevice) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
-}
-// GetSubscriberCarrier gets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.
-func (m *ManagedDevice) GetSubscriberCarrier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriberCarrier
-    }
-}
-// GetTotalStorageSpaceInBytes gets the totalStorageSpaceInBytes property value. Total Storage in Bytes. This property is read-only.
-func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalStorageSpaceInBytes
-    }
-}
-// GetUdid gets the udid property value. Unique Device Identifier for iOS and macOS devices. This property is read-only.
-func (m *ManagedDevice) GetUdid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.udid
-    }
-}
-// GetUserDisplayName gets the userDisplayName property value. User display name. This property is read-only.
-func (m *ManagedDevice) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
-}
-// GetUserId gets the userId property value. Unique Identifier for the user associated with the device. This property is read-only.
-func (m *ManagedDevice) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. Device user principal name. This property is read-only.
-func (m *ManagedDevice) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetWiFiMacAddress gets the wiFiMacAddress property value. Wi-Fi MAC. This property is read-only.
-func (m *ManagedDevice) GetWiFiMacAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wiFiMacAddress
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -620,36 +392,36 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["configurationManagerClientEnabledFeatures"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConfigurationManagerClientEnabledFeatures() })
+        val, err := n.GetObjectValue(CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfigurationManagerClientEnabledFeatures(val.(*ConfigurationManagerClientEnabledFeatures))
+            m.SetConfigurationManagerClientEnabledFeatures(val.(ConfigurationManagerClientEnabledFeaturesable))
         }
         return nil
     }
     res["deviceActionResults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceActionResult() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceActionResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceActionResult, len(val))
+            res := make([]DeviceActionResultable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceActionResult))
+                res[i] = v.(DeviceActionResultable)
             }
             m.SetDeviceActionResults(res)
         }
         return nil
     }
     res["deviceCategory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceCategory() })
+        val, err := n.GetObjectValue(CreateDeviceCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceCategory(val.(*DeviceCategory))
+            m.SetDeviceCategory(val.(DeviceCategoryable))
         }
         return nil
     }
@@ -664,28 +436,28 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["deviceCompliancePolicyStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceCompliancePolicyState() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicyStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceCompliancePolicyState, len(val))
+            res := make([]DeviceCompliancePolicyStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceCompliancePolicyState))
+                res[i] = v.(DeviceCompliancePolicyStateable)
             }
             m.SetDeviceCompliancePolicyStates(res)
         }
         return nil
     }
     res["deviceConfigurationStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationState() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfigurationState, len(val))
+            res := make([]DeviceConfigurationStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfigurationState))
+                res[i] = v.(DeviceConfigurationStateable)
             }
             m.SetDeviceConfigurationStates(res)
         }
@@ -702,12 +474,12 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["deviceHealthAttestationState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceHealthAttestationState() })
+        val, err := n.GetObjectValue(CreateDeviceHealthAttestationStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceHealthAttestationState(val.(*DeviceHealthAttestationState))
+            m.SetDeviceHealthAttestationState(val.(DeviceHealthAttestationStateable))
         }
         return nil
     }
@@ -1113,6 +885,238 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
     }
     return res
 }
+// GetFreeStorageSpaceInBytes gets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
+func (m *ManagedDevice) GetFreeStorageSpaceInBytes()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.freeStorageSpaceInBytes
+    }
+}
+// GetIccid gets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
+func (m *ManagedDevice) GetIccid()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iccid
+    }
+}
+// GetImei gets the imei property value. IMEI. This property is read-only.
+func (m *ManagedDevice) GetImei()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.imei
+    }
+}
+// GetIsEncrypted gets the isEncrypted property value. Device encryption status. This property is read-only.
+func (m *ManagedDevice) GetIsEncrypted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEncrypted
+    }
+}
+// GetIsSupervised gets the isSupervised property value. Device supervised status. This property is read-only.
+func (m *ManagedDevice) GetIsSupervised()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSupervised
+    }
+}
+// GetJailBroken gets the jailBroken property value. whether the device is jail broken or rooted. This property is read-only.
+func (m *ManagedDevice) GetJailBroken()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jailBroken
+    }
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. This property is read-only.
+func (m *ManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetManagedDeviceName gets the managedDeviceName property value. Automatically generated name to identify a device. Can be overwritten to a user friendly name.
+func (m *ManagedDevice) GetManagedDeviceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceName
+    }
+}
+// GetManagedDeviceOwnerType gets the managedDeviceOwnerType property value. Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
+func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceOwnerType
+    }
+}
+// GetManagementAgent gets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
+func (m *ManagedDevice) GetManagementAgent()(*ManagementAgentType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementAgent
+    }
+}
+// GetManufacturer gets the manufacturer property value. Manufacturer of the device. This property is read-only.
+func (m *ManagedDevice) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetMeid gets the meid property value. MEID. This property is read-only.
+func (m *ManagedDevice) GetMeid()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meid
+    }
+}
+// GetModel gets the model property value. Model of the device. This property is read-only.
+func (m *ManagedDevice) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetNotes gets the notes property value. Notes on the device created by IT Admin
+func (m *ManagedDevice) GetNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
+// GetOperatingSystem gets the operatingSystem property value. Operating system of the device. Windows, iOS, etc. This property is read-only.
+func (m *ManagedDevice) GetOperatingSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystem
+    }
+}
+// GetOsVersion gets the osVersion property value. Operating system version of the device. This property is read-only.
+func (m *ManagedDevice) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetPartnerReportedThreatState gets the partnerReportedThreatState property value. Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.
+func (m *ManagedDevice) GetPartnerReportedThreatState()(*ManagedDevicePartnerReportedHealthState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerReportedThreatState
+    }
+}
+// GetPhoneNumber gets the phoneNumber property value. Phone number of the device. This property is read-only.
+func (m *ManagedDevice) GetPhoneNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneNumber
+    }
+}
+// GetPhysicalMemoryInBytes gets the physicalMemoryInBytes property value. Total Memory in Bytes. This property is read-only.
+func (m *ManagedDevice) GetPhysicalMemoryInBytes()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.physicalMemoryInBytes
+    }
+}
+// GetRemoteAssistanceSessionErrorDetails gets the remoteAssistanceSessionErrorDetails property value. An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
+func (m *ManagedDevice) GetRemoteAssistanceSessionErrorDetails()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remoteAssistanceSessionErrorDetails
+    }
+}
+// GetRemoteAssistanceSessionUrl gets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+func (m *ManagedDevice) GetRemoteAssistanceSessionUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remoteAssistanceSessionUrl
+    }
+}
+// GetSerialNumber gets the serialNumber property value. SerialNumber. This property is read-only.
+func (m *ManagedDevice) GetSerialNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serialNumber
+    }
+}
+// GetSubscriberCarrier gets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.
+func (m *ManagedDevice) GetSubscriberCarrier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subscriberCarrier
+    }
+}
+// GetTotalStorageSpaceInBytes gets the totalStorageSpaceInBytes property value. Total Storage in Bytes. This property is read-only.
+func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalStorageSpaceInBytes
+    }
+}
+// GetUdid gets the udid property value. Unique Device Identifier for iOS and macOS devices. This property is read-only.
+func (m *ManagedDevice) GetUdid()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.udid
+    }
+}
+// GetUserDisplayName gets the userDisplayName property value. User display name. This property is read-only.
+func (m *ManagedDevice) GetUserDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userDisplayName
+    }
+}
+// GetUserId gets the userId property value. Unique Identifier for the user associated with the device. This property is read-only.
+func (m *ManagedDevice) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. Device user principal name. This property is read-only.
+func (m *ManagedDevice) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetWiFiMacAddress gets the wiFiMacAddress property value. Wi-Fi MAC. This property is read-only.
+func (m *ManagedDevice) GetWiFiMacAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wiFiMacAddress
+    }
+}
 func (m *ManagedDevice) IsNil()(bool) {
     return m == nil
 }
@@ -1168,8 +1172,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetDeviceActionResults() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceActionResults()))
         for i, v := range m.GetDeviceActionResults() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceActionResults", cast)
         if err != nil {
@@ -1191,8 +1194,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetDeviceCompliancePolicyStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCompliancePolicyStates()))
         for i, v := range m.GetDeviceCompliancePolicyStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceCompliancePolicyStates", cast)
         if err != nil {
@@ -1202,8 +1204,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetDeviceConfigurationStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceConfigurationStates()))
         for i, v := range m.GetDeviceConfigurationStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceConfigurationStates", cast)
         if err != nil {
@@ -1508,19 +1509,19 @@ func (m *ManagedDevice) SetComplianceState(value *ComplianceState)() {
     }
 }
 // SetConfigurationManagerClientEnabledFeatures sets the configurationManagerClientEnabledFeatures property value. ConfigrMgr client enabled features. This property is read-only.
-func (m *ManagedDevice) SetConfigurationManagerClientEnabledFeatures(value *ConfigurationManagerClientEnabledFeatures)() {
+func (m *ManagedDevice) SetConfigurationManagerClientEnabledFeatures(value ConfigurationManagerClientEnabledFeaturesable)() {
     if m != nil {
         m.configurationManagerClientEnabledFeatures = value
     }
 }
 // SetDeviceActionResults sets the deviceActionResults property value. List of ComplexType deviceActionResult objects. This property is read-only.
-func (m *ManagedDevice) SetDeviceActionResults(value []DeviceActionResult)() {
+func (m *ManagedDevice) SetDeviceActionResults(value []DeviceActionResultable)() {
     if m != nil {
         m.deviceActionResults = value
     }
 }
 // SetDeviceCategory sets the deviceCategory property value. Device category
-func (m *ManagedDevice) SetDeviceCategory(value *DeviceCategory)() {
+func (m *ManagedDevice) SetDeviceCategory(value DeviceCategoryable)() {
     if m != nil {
         m.deviceCategory = value
     }
@@ -1532,13 +1533,13 @@ func (m *ManagedDevice) SetDeviceCategoryDisplayName(value *string)() {
     }
 }
 // SetDeviceCompliancePolicyStates sets the deviceCompliancePolicyStates property value. Device compliance policy states for this device.
-func (m *ManagedDevice) SetDeviceCompliancePolicyStates(value []DeviceCompliancePolicyState)() {
+func (m *ManagedDevice) SetDeviceCompliancePolicyStates(value []DeviceCompliancePolicyStateable)() {
     if m != nil {
         m.deviceCompliancePolicyStates = value
     }
 }
 // SetDeviceConfigurationStates sets the deviceConfigurationStates property value. Device configuration states for this device.
-func (m *ManagedDevice) SetDeviceConfigurationStates(value []DeviceConfigurationState)() {
+func (m *ManagedDevice) SetDeviceConfigurationStates(value []DeviceConfigurationStateable)() {
     if m != nil {
         m.deviceConfigurationStates = value
     }
@@ -1550,7 +1551,7 @@ func (m *ManagedDevice) SetDeviceEnrollmentType(value *DeviceEnrollmentType)() {
     }
 }
 // SetDeviceHealthAttestationState sets the deviceHealthAttestationState property value. The device health attestation state. This property is read-only.
-func (m *ManagedDevice) SetDeviceHealthAttestationState(value *DeviceHealthAttestationState)() {
+func (m *ManagedDevice) SetDeviceHealthAttestationState(value DeviceHealthAttestationStateable)() {
     if m != nil {
         m.deviceHealthAttestationState = value
     }

@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewScheduleDefinition 
+// AccessReviewScheduleDefinition provides operations to manage the identityGovernance singleton.
 type AccessReviewScheduleDefinition struct {
     Entity
     // Defines the list of additional users or group members to be notified of the access review progress.
-    additionalNotificationRecipients []AccessReviewNotificationRecipientItem;
+    additionalNotificationRecipients []AccessReviewNotificationRecipientItemable;
     // User who created this review. Read-only.
-    createdBy *UserIdentity;
+    createdBy UserIdentityable;
     // Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Description provided by review creators to provide more context of the review to admins. Supports $select.
@@ -21,19 +21,19 @@ type AccessReviewScheduleDefinition struct {
     // Name of the access review series. Supports $select and $orderBy. Required on create.
     displayName *string;
     // This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
-    fallbackReviewers []AccessReviewReviewerScope;
+    fallbackReviewers []AccessReviewReviewerScopeable;
     // This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
-    instanceEnumerationScope *AccessReviewScope;
+    instanceEnumerationScope AccessReviewScopeable;
     // If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
-    instances []AccessReviewInstance;
+    instances []AccessReviewInstanceable;
     // Timestamp when the access review series was last modified. Supports $select. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
-    reviewers []AccessReviewReviewerScope;
+    reviewers []AccessReviewReviewerScopeable;
     // Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
-    scope *AccessReviewScope;
+    scope AccessReviewScopeable;
     // The settings for an access review series, see type definition below. Supports $select. Required on create.
-    settings *AccessReviewScheduleSettings;
+    settings AccessReviewScheduleSettingsable;
     // This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
     status *string;
 }
@@ -44,8 +44,12 @@ func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {
     }
     return m
 }
+// CreateAccessReviewScheduleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewScheduleDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewScheduleDefinition(), nil
+}
 // GetAdditionalNotificationRecipients gets the additionalNotificationRecipients property value. Defines the list of additional users or group members to be notified of the access review progress.
-func (m *AccessReviewScheduleDefinition) GetAdditionalNotificationRecipients()([]AccessReviewNotificationRecipientItem) {
+func (m *AccessReviewScheduleDefinition) GetAdditionalNotificationRecipients()([]AccessReviewNotificationRecipientItemable) {
     if m == nil {
         return nil
     } else {
@@ -53,7 +57,7 @@ func (m *AccessReviewScheduleDefinition) GetAdditionalNotificationRecipients()([
     }
 }
 // GetCreatedBy gets the createdBy property value. User who created this review. Read-only.
-func (m *AccessReviewScheduleDefinition) GetCreatedBy()(*UserIdentity) {
+func (m *AccessReviewScheduleDefinition) GetCreatedBy()(UserIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -93,93 +97,37 @@ func (m *AccessReviewScheduleDefinition) GetDisplayName()(*string) {
     }
 }
 // GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
-func (m *AccessReviewScheduleDefinition) GetFallbackReviewers()([]AccessReviewReviewerScope) {
+func (m *AccessReviewScheduleDefinition) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
     if m == nil {
         return nil
     } else {
         return m.fallbackReviewers
     }
 }
-// GetInstanceEnumerationScope gets the instanceEnumerationScope property value. This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
-func (m *AccessReviewScheduleDefinition) GetInstanceEnumerationScope()(*AccessReviewScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instanceEnumerationScope
-    }
-}
-// GetInstances gets the instances property value. If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
-func (m *AccessReviewScheduleDefinition) GetInstances()([]AccessReviewInstance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instances
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp when the access review series was last modified. Supports $select. Read-only.
-func (m *AccessReviewScheduleDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetReviewers gets the reviewers property value. This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
-func (m *AccessReviewScheduleDefinition) GetReviewers()([]AccessReviewReviewerScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewers
-    }
-}
-// GetScope gets the scope property value. Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
-func (m *AccessReviewScheduleDefinition) GetScope()(*AccessReviewScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
-}
-// GetSettings gets the settings property value. The settings for an access review series, see type definition below. Supports $select. Required on create.
-func (m *AccessReviewScheduleDefinition) GetSettings()(*AccessReviewScheduleSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
-// GetStatus gets the status property value. This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
-func (m *AccessReviewScheduleDefinition) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["additionalNotificationRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewNotificationRecipientItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewNotificationRecipientItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewNotificationRecipientItem, len(val))
+            res := make([]AccessReviewNotificationRecipientItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewNotificationRecipientItem))
+                res[i] = v.(AccessReviewNotificationRecipientItemable)
             }
             m.SetAdditionalNotificationRecipients(res)
         }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserIdentity() })
+        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*UserIdentity))
+            m.SetCreatedBy(val.(UserIdentityable))
         }
         return nil
     }
@@ -224,38 +172,38 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["fallbackReviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewReviewerScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewReviewerScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewReviewerScope, len(val))
+            res := make([]AccessReviewReviewerScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewReviewerScope))
+                res[i] = v.(AccessReviewReviewerScopeable)
             }
             m.SetFallbackReviewers(res)
         }
         return nil
     }
     res["instanceEnumerationScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewScope() })
+        val, err := n.GetObjectValue(CreateAccessReviewScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInstanceEnumerationScope(val.(*AccessReviewScope))
+            m.SetInstanceEnumerationScope(val.(AccessReviewScopeable))
         }
         return nil
     }
     res["instances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewInstance() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewInstanceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewInstance, len(val))
+            res := make([]AccessReviewInstanceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewInstance))
+                res[i] = v.(AccessReviewInstanceable)
             }
             m.SetInstances(res)
         }
@@ -272,36 +220,36 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["reviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewReviewerScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewReviewerScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewReviewerScope, len(val))
+            res := make([]AccessReviewReviewerScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewReviewerScope))
+                res[i] = v.(AccessReviewReviewerScopeable)
             }
             m.SetReviewers(res)
         }
         return nil
     }
     res["scope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewScope() })
+        val, err := n.GetObjectValue(CreateAccessReviewScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScope(val.(*AccessReviewScope))
+            m.SetScope(val.(AccessReviewScopeable))
         }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewScheduleSettings() })
+        val, err := n.GetObjectValue(CreateAccessReviewScheduleSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*AccessReviewScheduleSettings))
+            m.SetSettings(val.(AccessReviewScheduleSettingsable))
         }
         return nil
     }
@@ -317,6 +265,62 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetInstanceEnumerationScope gets the instanceEnumerationScope property value. This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
+func (m *AccessReviewScheduleDefinition) GetInstanceEnumerationScope()(AccessReviewScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instanceEnumerationScope
+    }
+}
+// GetInstances gets the instances property value. If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
+func (m *AccessReviewScheduleDefinition) GetInstances()([]AccessReviewInstanceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instances
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp when the access review series was last modified. Supports $select. Read-only.
+func (m *AccessReviewScheduleDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetReviewers gets the reviewers property value. This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+func (m *AccessReviewScheduleDefinition) GetReviewers()([]AccessReviewReviewerScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewers
+    }
+}
+// GetScope gets the scope property value. Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
+func (m *AccessReviewScheduleDefinition) GetScope()(AccessReviewScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scope
+    }
+}
+// GetSettings gets the settings property value. The settings for an access review series, see type definition below. Supports $select. Required on create.
+func (m *AccessReviewScheduleDefinition) GetSettings()(AccessReviewScheduleSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
+}
+// GetStatus gets the status property value. This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
+func (m *AccessReviewScheduleDefinition) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
 func (m *AccessReviewScheduleDefinition) IsNil()(bool) {
     return m == nil
 }
@@ -329,8 +333,7 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i04eb5309aeaafadd28374
     if m.GetAdditionalNotificationRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalNotificationRecipients()))
         for i, v := range m.GetAdditionalNotificationRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("additionalNotificationRecipients", cast)
         if err != nil {
@@ -370,8 +373,7 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i04eb5309aeaafadd28374
     if m.GetFallbackReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFallbackReviewers()))
         for i, v := range m.GetFallbackReviewers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("fallbackReviewers", cast)
         if err != nil {
@@ -387,8 +389,7 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i04eb5309aeaafadd28374
     if m.GetInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInstances()))
         for i, v := range m.GetInstances() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("instances", cast)
         if err != nil {
@@ -404,8 +405,7 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i04eb5309aeaafadd28374
     if m.GetReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("reviewers", cast)
         if err != nil {
@@ -433,13 +433,13 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i04eb5309aeaafadd28374
     return nil
 }
 // SetAdditionalNotificationRecipients sets the additionalNotificationRecipients property value. Defines the list of additional users or group members to be notified of the access review progress.
-func (m *AccessReviewScheduleDefinition) SetAdditionalNotificationRecipients(value []AccessReviewNotificationRecipientItem)() {
+func (m *AccessReviewScheduleDefinition) SetAdditionalNotificationRecipients(value []AccessReviewNotificationRecipientItemable)() {
     if m != nil {
         m.additionalNotificationRecipients = value
     }
 }
 // SetCreatedBy sets the createdBy property value. User who created this review. Read-only.
-func (m *AccessReviewScheduleDefinition) SetCreatedBy(value *UserIdentity)() {
+func (m *AccessReviewScheduleDefinition) SetCreatedBy(value UserIdentityable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -469,19 +469,19 @@ func (m *AccessReviewScheduleDefinition) SetDisplayName(value *string)() {
     }
 }
 // SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
-func (m *AccessReviewScheduleDefinition) SetFallbackReviewers(value []AccessReviewReviewerScope)() {
+func (m *AccessReviewScheduleDefinition) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
     if m != nil {
         m.fallbackReviewers = value
     }
 }
 // SetInstanceEnumerationScope sets the instanceEnumerationScope property value. This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
-func (m *AccessReviewScheduleDefinition) SetInstanceEnumerationScope(value *AccessReviewScope)() {
+func (m *AccessReviewScheduleDefinition) SetInstanceEnumerationScope(value AccessReviewScopeable)() {
     if m != nil {
         m.instanceEnumerationScope = value
     }
 }
 // SetInstances sets the instances property value. If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
-func (m *AccessReviewScheduleDefinition) SetInstances(value []AccessReviewInstance)() {
+func (m *AccessReviewScheduleDefinition) SetInstances(value []AccessReviewInstanceable)() {
     if m != nil {
         m.instances = value
     }
@@ -493,19 +493,19 @@ func (m *AccessReviewScheduleDefinition) SetLastModifiedDateTime(value *i3360748
     }
 }
 // SetReviewers sets the reviewers property value. This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
-func (m *AccessReviewScheduleDefinition) SetReviewers(value []AccessReviewReviewerScope)() {
+func (m *AccessReviewScheduleDefinition) SetReviewers(value []AccessReviewReviewerScopeable)() {
     if m != nil {
         m.reviewers = value
     }
 }
 // SetScope sets the scope property value. Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
-func (m *AccessReviewScheduleDefinition) SetScope(value *AccessReviewScope)() {
+func (m *AccessReviewScheduleDefinition) SetScope(value AccessReviewScopeable)() {
     if m != nil {
         m.scope = value
     }
 }
 // SetSettings sets the settings property value. The settings for an access review series, see type definition below. Supports $select. Required on create.
-func (m *AccessReviewScheduleDefinition) SetSettings(value *AccessReviewScheduleSettings)() {
+func (m *AccessReviewScheduleDefinition) SetSettings(value AccessReviewScheduleSettingsable)() {
     if m != nil {
         m.settings = value
     }

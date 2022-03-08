@@ -5,31 +5,31 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceCompliancePolicy 
+// DeviceCompliancePolicy provides operations to manage the deviceManagement singleton.
 type DeviceCompliancePolicy struct {
     Entity
     // The collection of assignments for this compliance policy.
-    assignments []DeviceCompliancePolicyAssignment;
+    assignments []DeviceCompliancePolicyAssignmentable;
     // DateTime the object was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Admin provided description of the Device Configuration.
     description *string;
     // Compliance Setting State Device Summary
-    deviceSettingStateSummaries []SettingStateDeviceSummary;
+    deviceSettingStateSummaries []SettingStateDeviceSummaryable;
     // List of DeviceComplianceDeviceStatus.
-    deviceStatuses []DeviceComplianceDeviceStatus;
+    deviceStatuses []DeviceComplianceDeviceStatusable;
     // Device compliance devices status overview
-    deviceStatusOverview *DeviceComplianceDeviceOverview;
+    deviceStatusOverview DeviceComplianceDeviceOverviewable;
     // Admin provided name of the device configuration.
     displayName *string;
     // DateTime the object was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-    scheduledActionsForRule []DeviceComplianceScheduledActionForRule;
+    scheduledActionsForRule []DeviceComplianceScheduledActionForRuleable;
     // List of DeviceComplianceUserStatus.
-    userStatuses []DeviceComplianceUserStatus;
+    userStatuses []DeviceComplianceUserStatusable;
     // Device compliance users status overview
-    userStatusOverview *DeviceComplianceUserOverview;
+    userStatusOverview DeviceComplianceUserOverviewable;
     // Version of the device configuration.
     version *int32;
 }
@@ -40,8 +40,12 @@ func NewDeviceCompliancePolicy()(*DeviceCompliancePolicy) {
     }
     return m
 }
+// CreateDeviceCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceCompliancePolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceCompliancePolicy(), nil
+}
 // GetAssignments gets the assignments property value. The collection of assignments for this compliance policy.
-func (m *DeviceCompliancePolicy) GetAssignments()([]DeviceCompliancePolicyAssignment) {
+func (m *DeviceCompliancePolicy) GetAssignments()([]DeviceCompliancePolicyAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -65,7 +69,7 @@ func (m *DeviceCompliancePolicy) GetDescription()(*string) {
     }
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Compliance Setting State Device Summary
-func (m *DeviceCompliancePolicy) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummary) {
+func (m *DeviceCompliancePolicy) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -73,7 +77,7 @@ func (m *DeviceCompliancePolicy) GetDeviceSettingStateSummaries()([]SettingState
     }
 }
 // GetDeviceStatuses gets the deviceStatuses property value. List of DeviceComplianceDeviceStatus.
-func (m *DeviceCompliancePolicy) GetDeviceStatuses()([]DeviceComplianceDeviceStatus) {
+func (m *DeviceCompliancePolicy) GetDeviceStatuses()([]DeviceComplianceDeviceStatusable) {
     if m == nil {
         return nil
     } else {
@@ -81,7 +85,7 @@ func (m *DeviceCompliancePolicy) GetDeviceStatuses()([]DeviceComplianceDeviceSta
     }
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device compliance devices status overview
-func (m *DeviceCompliancePolicy) GetDeviceStatusOverview()(*DeviceComplianceDeviceOverview) {
+func (m *DeviceCompliancePolicy) GetDeviceStatusOverview()(DeviceComplianceDeviceOverviewable) {
     if m == nil {
         return nil
     } else {
@@ -96,58 +100,18 @@ func (m *DeviceCompliancePolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
-func (m *DeviceCompliancePolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceComplianceScheduledActionForRule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledActionsForRule
-    }
-}
-// GetUserStatuses gets the userStatuses property value. List of DeviceComplianceUserStatus.
-func (m *DeviceCompliancePolicy) GetUserStatuses()([]DeviceComplianceUserStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatuses
-    }
-}
-// GetUserStatusOverview gets the userStatusOverview property value. Device compliance users status overview
-func (m *DeviceCompliancePolicy) GetUserStatusOverview()(*DeviceComplianceUserOverview) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatusOverview
-    }
-}
-// GetVersion gets the version property value. Version of the device configuration.
-func (m *DeviceCompliancePolicy) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceCompliancePolicyAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceCompliancePolicyAssignment, len(val))
+            res := make([]DeviceCompliancePolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceCompliancePolicyAssignment))
+                res[i] = v.(DeviceCompliancePolicyAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -174,40 +138,40 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["deviceSettingStateSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSettingStateDeviceSummary() })
+        val, err := n.GetCollectionOfObjectValues(CreateSettingStateDeviceSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SettingStateDeviceSummary, len(val))
+            res := make([]SettingStateDeviceSummaryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SettingStateDeviceSummary))
+                res[i] = v.(SettingStateDeviceSummaryable)
             }
             m.SetDeviceSettingStateSummaries(res)
         }
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceComplianceDeviceStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceDeviceStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceComplianceDeviceStatus, len(val))
+            res := make([]DeviceComplianceDeviceStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceComplianceDeviceStatus))
+                res[i] = v.(DeviceComplianceDeviceStatusable)
             }
             m.SetDeviceStatuses(res)
         }
         return nil
     }
     res["deviceStatusOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceComplianceDeviceOverview() })
+        val, err := n.GetObjectValue(CreateDeviceComplianceDeviceOverviewFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceStatusOverview(val.(*DeviceComplianceDeviceOverview))
+            m.SetDeviceStatusOverview(val.(DeviceComplianceDeviceOverviewable))
         }
         return nil
     }
@@ -232,40 +196,40 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["scheduledActionsForRule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceComplianceScheduledActionForRule() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceComplianceScheduledActionForRule, len(val))
+            res := make([]DeviceComplianceScheduledActionForRuleable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceComplianceScheduledActionForRule))
+                res[i] = v.(DeviceComplianceScheduledActionForRuleable)
             }
             m.SetScheduledActionsForRule(res)
         }
         return nil
     }
     res["userStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceComplianceUserStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceUserStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceComplianceUserStatus, len(val))
+            res := make([]DeviceComplianceUserStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceComplianceUserStatus))
+                res[i] = v.(DeviceComplianceUserStatusable)
             }
             m.SetUserStatuses(res)
         }
         return nil
     }
     res["userStatusOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceComplianceUserOverview() })
+        val, err := n.GetObjectValue(CreateDeviceComplianceUserOverviewFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserStatusOverview(val.(*DeviceComplianceUserOverview))
+            m.SetUserStatusOverview(val.(DeviceComplianceUserOverviewable))
         }
         return nil
     }
@@ -281,6 +245,46 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+func (m *DeviceCompliancePolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceComplianceScheduledActionForRuleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scheduledActionsForRule
+    }
+}
+// GetUserStatuses gets the userStatuses property value. List of DeviceComplianceUserStatus.
+func (m *DeviceCompliancePolicy) GetUserStatuses()([]DeviceComplianceUserStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userStatuses
+    }
+}
+// GetUserStatusOverview gets the userStatusOverview property value. Device compliance users status overview
+func (m *DeviceCompliancePolicy) GetUserStatusOverview()(DeviceComplianceUserOverviewable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userStatusOverview
+    }
+}
+// GetVersion gets the version property value. Version of the device configuration.
+func (m *DeviceCompliancePolicy) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *DeviceCompliancePolicy) IsNil()(bool) {
     return m == nil
 }
@@ -293,8 +297,7 @@ func (m *DeviceCompliancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -316,8 +319,7 @@ func (m *DeviceCompliancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetDeviceSettingStateSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceSettingStateSummaries()))
         for i, v := range m.GetDeviceSettingStateSummaries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceSettingStateSummaries", cast)
         if err != nil {
@@ -327,8 +329,7 @@ func (m *DeviceCompliancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetDeviceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {
@@ -356,8 +357,7 @@ func (m *DeviceCompliancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetScheduledActionsForRule() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScheduledActionsForRule()))
         for i, v := range m.GetScheduledActionsForRule() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("scheduledActionsForRule", cast)
         if err != nil {
@@ -367,8 +367,7 @@ func (m *DeviceCompliancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetUserStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userStatuses", cast)
         if err != nil {
@@ -390,7 +389,7 @@ func (m *DeviceCompliancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetAssignments sets the assignments property value. The collection of assignments for this compliance policy.
-func (m *DeviceCompliancePolicy) SetAssignments(value []DeviceCompliancePolicyAssignment)() {
+func (m *DeviceCompliancePolicy) SetAssignments(value []DeviceCompliancePolicyAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -408,19 +407,19 @@ func (m *DeviceCompliancePolicy) SetDescription(value *string)() {
     }
 }
 // SetDeviceSettingStateSummaries sets the deviceSettingStateSummaries property value. Compliance Setting State Device Summary
-func (m *DeviceCompliancePolicy) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummary)() {
+func (m *DeviceCompliancePolicy) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummaryable)() {
     if m != nil {
         m.deviceSettingStateSummaries = value
     }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. List of DeviceComplianceDeviceStatus.
-func (m *DeviceCompliancePolicy) SetDeviceStatuses(value []DeviceComplianceDeviceStatus)() {
+func (m *DeviceCompliancePolicy) SetDeviceStatuses(value []DeviceComplianceDeviceStatusable)() {
     if m != nil {
         m.deviceStatuses = value
     }
 }
 // SetDeviceStatusOverview sets the deviceStatusOverview property value. Device compliance devices status overview
-func (m *DeviceCompliancePolicy) SetDeviceStatusOverview(value *DeviceComplianceDeviceOverview)() {
+func (m *DeviceCompliancePolicy) SetDeviceStatusOverview(value DeviceComplianceDeviceOverviewable)() {
     if m != nil {
         m.deviceStatusOverview = value
     }
@@ -438,19 +437,19 @@ func (m *DeviceCompliancePolicy) SetLastModifiedDateTime(value *i336074805fc8539
     }
 }
 // SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-func (m *DeviceCompliancePolicy) SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRule)() {
+func (m *DeviceCompliancePolicy) SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRuleable)() {
     if m != nil {
         m.scheduledActionsForRule = value
     }
 }
 // SetUserStatuses sets the userStatuses property value. List of DeviceComplianceUserStatus.
-func (m *DeviceCompliancePolicy) SetUserStatuses(value []DeviceComplianceUserStatus)() {
+func (m *DeviceCompliancePolicy) SetUserStatuses(value []DeviceComplianceUserStatusable)() {
     if m != nil {
         m.userStatuses = value
     }
 }
 // SetUserStatusOverview sets the userStatusOverview property value. Device compliance users status overview
-func (m *DeviceCompliancePolicy) SetUserStatusOverview(value *DeviceComplianceUserOverview)() {
+func (m *DeviceCompliancePolicy) SetUserStatusOverview(value DeviceComplianceUserOverviewable)() {
     if m != nil {
         m.userStatusOverview = value
     }

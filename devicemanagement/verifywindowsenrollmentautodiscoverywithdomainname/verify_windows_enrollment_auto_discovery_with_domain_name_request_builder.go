@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')
+// VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
 type VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal
     if domainName != nil {
         urlTplParams["domainName"] = *domainName
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) Creat
     return requestInfo, nil
 }
 // Get invoke function verifyWindowsEnrollmentAutoDiscovery
-func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) Get(options *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderGetOptions)(*bool, error) {
+func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) Get(options *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderGetOptions)(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable), nil
 }

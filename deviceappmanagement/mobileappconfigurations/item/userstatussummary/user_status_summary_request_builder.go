@@ -2,11 +2,10 @@ package userstatussummary
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// UserStatusSummaryRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\userStatusSummary
+// UserStatusSummaryRequestBuilder provides operations to manage the userStatusSummary property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
 type UserStatusSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type UserStatusSummaryRequestBuilderGetQueryParameters struct {
 // UserStatusSummaryRequestBuilderPatchOptions options for Patch
 type UserStatusSummaryRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserSummary;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserSummaryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewUserStatusSummaryRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewUserStatusSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams["request-raw-url"] = rawUrl
     return NewUserStatusSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation app configuration user status summary.
+// CreateDeleteRequestInformation delete navigation property userStatusSummary for deviceAppManagement
 func (m *UserStatusSummaryRequestBuilder) CreateDeleteRequestInformation(options *UserStatusSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *UserStatusSummaryRequestBuilder) CreateGetRequestInformation(options *U
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation app configuration user status summary.
+// CreatePatchRequestInformation update the navigation property userStatusSummary in deviceAppManagement
 func (m *UserStatusSummaryRequestBuilder) CreatePatchRequestInformation(options *UserStatusSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *UserStatusSummaryRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Delete app configuration user status summary.
+// Delete delete navigation property userStatusSummary for deviceAppManagement
 func (m *UserStatusSummaryRequestBuilder) Delete(options *UserStatusSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get app configuration user status summary.
-func (m *UserStatusSummaryRequestBuilder) Get(options *UserStatusSummaryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserSummary, error) {
+func (m *UserStatusSummaryRequestBuilder) Get(options *UserStatusSummaryRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewManagedDeviceMobileAppConfigurationUserSummary() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateManagedDeviceMobileAppConfigurationUserSummaryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserSummary), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserSummaryable), nil
 }
-// Patch app configuration user status summary.
+// Patch update the navigation property userStatusSummary in deviceAppManagement
 func (m *UserStatusSummaryRequestBuilder) Patch(options *UserStatusSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

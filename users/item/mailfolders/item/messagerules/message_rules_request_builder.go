@@ -2,11 +2,11 @@ package messagerules
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    iab9b30ecbb971273385add5ada539a37df58ccd0d258c670eb092b1fd92f5939 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messagerules/count"
 )
 
-// MessageRulesRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messageRules
+// MessageRulesRequestBuilder provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
 type MessageRulesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type MessageRulesRequestBuilderGetQueryParameters struct {
 // MessageRulesRequestBuilderPostOptions options for Post
 type MessageRulesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRule;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRuleable;
     // Request headers
     H map[string]string;
     // Request options
@@ -61,7 +61,7 @@ func NewMessageRulesRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -70,6 +70,9 @@ func NewMessageRulesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessageRulesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MessageRulesRequestBuilder) Count()(*iab9b30ecbb971273385add5ada539a37df58ccd0d258c670eb092b1fd92f5939.CountRequestBuilder) {
+    return iab9b30ecbb971273385add5ada539a37df58ccd0d258c670eb092b1fd92f5939.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of rules that apply to the user's Inbox folder.
 func (m *MessageRulesRequestBuilder) CreateGetRequestInformation(options *MessageRulesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -91,7 +94,7 @@ func (m *MessageRulesRequestBuilder) CreateGetRequestInformation(options *Messag
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of rules that apply to the user's Inbox folder.
+// CreatePostRequestInformation create new navigation property to messageRules for users
 func (m *MessageRulesRequestBuilder) CreatePostRequestInformation(options *MessageRulesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,26 +113,34 @@ func (m *MessageRulesRequestBuilder) CreatePostRequestInformation(options *Messa
     return requestInfo, nil
 }
 // Get the collection of rules that apply to the user's Inbox folder.
-func (m *MessageRulesRequestBuilder) Get(options *MessageRulesRequestBuilderGetOptions)(*MessageRulesResponse, error) {
+func (m *MessageRulesRequestBuilder) Get(options *MessageRulesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRuleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMessageRulesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMessageRuleCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MessageRulesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRuleCollectionResponseable), nil
 }
-// Post the collection of rules that apply to the user's Inbox folder.
-func (m *MessageRulesRequestBuilder) Post(options *MessageRulesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRule, error) {
+// Post create new navigation property to messageRules for users
+func (m *MessageRulesRequestBuilder) Post(options *MessageRulesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRuleable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewMessageRule() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMessageRuleFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRule), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRuleable), nil
 }

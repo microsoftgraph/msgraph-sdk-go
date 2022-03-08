@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppConsentRequest 
+// AppConsentRequest provides operations to manage the identityGovernance singleton.
 type AppConsentRequest struct {
     Entity
     // The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
@@ -12,9 +12,9 @@ type AppConsentRequest struct {
     // The identifier of the application. Required. Supports $filter (eq only) and $orderby.
     appId *string;
     // A list of pending scopes waiting for approval. Required.
-    pendingScopes []AppConsentRequestScope;
+    pendingScopes []AppConsentRequestScopeable;
     // A list of pending user consent requests.
-    userConsentRequests []UserConsentRequest;
+    userConsentRequests []UserConsentRequestable;
 }
 // NewAppConsentRequest instantiates a new appConsentRequest and sets the default values.
 func NewAppConsentRequest()(*AppConsentRequest) {
@@ -22,6 +22,10 @@ func NewAppConsentRequest()(*AppConsentRequest) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAppConsentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAppConsentRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAppConsentRequest(), nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
 func (m *AppConsentRequest) GetAppDisplayName()(*string) {
@@ -37,22 +41,6 @@ func (m *AppConsentRequest) GetAppId()(*string) {
         return nil
     } else {
         return m.appId
-    }
-}
-// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
-func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingScopes
-    }
-}
-// GetUserConsentRequests gets the userConsentRequests property value. A list of pending user consent requests.
-func (m *AppConsentRequest) GetUserConsentRequests()([]UserConsentRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userConsentRequests
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,34 +67,50 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["pendingScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppConsentRequestScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppConsentRequestScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppConsentRequestScope, len(val))
+            res := make([]AppConsentRequestScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppConsentRequestScope))
+                res[i] = v.(AppConsentRequestScopeable)
             }
             m.SetPendingScopes(res)
         }
         return nil
     }
     res["userConsentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserConsentRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserConsentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserConsentRequest, len(val))
+            res := make([]UserConsentRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserConsentRequest))
+                res[i] = v.(UserConsentRequestable)
             }
             m.SetUserConsentRequests(res)
         }
         return nil
     }
     return res
+}
+// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
+func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingScopes
+    }
+}
+// GetUserConsentRequests gets the userConsentRequests property value. A list of pending user consent requests.
+func (m *AppConsentRequest) GetUserConsentRequests()([]UserConsentRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userConsentRequests
+    }
 }
 func (m *AppConsentRequest) IsNil()(bool) {
     return m == nil
@@ -132,8 +136,7 @@ func (m *AppConsentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetPendingScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPendingScopes()))
         for i, v := range m.GetPendingScopes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("pendingScopes", cast)
         if err != nil {
@@ -143,8 +146,7 @@ func (m *AppConsentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetUserConsentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserConsentRequests()))
         for i, v := range m.GetUserConsentRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userConsentRequests", cast)
         if err != nil {
@@ -166,13 +168,13 @@ func (m *AppConsentRequest) SetAppId(value *string)() {
     }
 }
 // SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
-func (m *AppConsentRequest) SetPendingScopes(value []AppConsentRequestScope)() {
+func (m *AppConsentRequest) SetPendingScopes(value []AppConsentRequestScopeable)() {
     if m != nil {
         m.pendingScopes = value
     }
 }
 // SetUserConsentRequests sets the userConsentRequests property value. A list of pending user consent requests.
-func (m *AppConsentRequest) SetUserConsentRequests(value []UserConsentRequest)() {
+func (m *AppConsentRequest) SetUserConsentRequests(value []UserConsentRequestable)() {
     if m != nil {
         m.userConsentRequests = value
     }

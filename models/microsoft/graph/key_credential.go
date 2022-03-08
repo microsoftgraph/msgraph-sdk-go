@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// KeyCredential 
+// KeyCredential provides operations to manage the collection of application entities.
 type KeyCredential struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -32,6 +32,10 @@ func NewKeyCredential()(*KeyCredential) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateKeyCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateKeyCredentialFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewKeyCredential(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KeyCredential) GetAdditionalData()(map[string]interface{}) {
@@ -63,46 +67,6 @@ func (m *KeyCredential) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
-func (m *KeyCredential) GetKey()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
-}
-// GetKeyId gets the keyId property value. The unique identifier (GUID) for the key.
-func (m *KeyCredential) GetKeyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyId
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetType gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-func (m *KeyCredential) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUsage gets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
-func (m *KeyCredential) GetUsage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usage
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -189,6 +153,46 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
+func (m *KeyCredential) GetKey()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
+}
+// GetKeyId gets the keyId property value. The unique identifier (GUID) for the key.
+func (m *KeyCredential) GetKeyId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keyId
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetType gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
+func (m *KeyCredential) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUsage gets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
+func (m *KeyCredential) GetUsage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usage
+    }
 }
 func (m *KeyCredential) IsNil()(bool) {
     return m == nil

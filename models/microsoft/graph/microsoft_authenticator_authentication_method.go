@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MicrosoftAuthenticatorAuthenticationMethod 
+// MicrosoftAuthenticatorAuthenticationMethod provides operations to manage the drive singleton.
 type MicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
     // The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
-    device *Device;
+    device Deviceable;
     // Tags containing app metadata.
     deviceTag *string;
     // The name of the device on which this app is registered.
@@ -26,6 +26,10 @@ func NewMicrosoftAuthenticatorAuthenticationMethod()(*MicrosoftAuthenticatorAuth
     }
     return m
 }
+// CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMicrosoftAuthenticatorAuthenticationMethod(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -35,7 +39,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateTime()(*i3360
     }
 }
 // GetDevice gets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
-func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDevice()(*Device) {
+func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDevice()(Deviceable) {
     if m == nil {
         return nil
     } else {
@@ -58,14 +62,6 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetPhoneAppVersion gets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
-func (m *MicrosoftAuthenticatorAuthenticationMethod) GetPhoneAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneAppVersion
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
@@ -80,12 +76,12 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         return nil
     }
     res["device"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDevice() })
+        val, err := n.GetObjectValue(CreateDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDevice(val.(*Device))
+            m.SetDevice(val.(Deviceable))
         }
         return nil
     }
@@ -120,6 +116,14 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         return nil
     }
     return res
+}
+// GetPhoneAppVersion gets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
+func (m *MicrosoftAuthenticatorAuthenticationMethod) GetPhoneAppVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneAppVersion
+    }
 }
 func (m *MicrosoftAuthenticatorAuthenticationMethod) IsNil()(bool) {
     return m == nil
@@ -169,7 +173,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) SetCreatedDateTime(value *i
     }
 }
 // SetDevice sets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
-func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDevice(value *Device)() {
+func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDevice(value Deviceable)() {
     if m != nil {
         m.device = value
     }

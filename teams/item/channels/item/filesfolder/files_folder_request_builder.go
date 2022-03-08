@@ -2,12 +2,11 @@ package filesfolder
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i34468a01307dbe9ca9de65c6abdd8c30d36c02fbd9c240c82ce6a276e39af4c0 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/item/filesfolder/ref"
+    i28f7391211421e9017310459402ba5e80403edeb130a5d4b9cb5104981c0e537 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/item/filesfolder/content"
 )
 
-// FilesFolderRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\filesFolder
+// FilesFolderRequestBuilder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 type FilesFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +42,7 @@ func NewFilesFolderRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -52,6 +51,9 @@ func NewFilesFolderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFilesFolderRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *FilesFolderRequestBuilder) Content()(*i28f7391211421e9017310459402ba5e80403edeb130a5d4b9cb5104981c0e537.ContentRequestBuilder) {
+    return i28f7391211421e9017310459402ba5e80403edeb130a5d4b9cb5104981c0e537.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation metadata for the location where the channel's files are stored.
 func (m *FilesFolderRequestBuilder) CreateGetRequestInformation(options *FilesFolderRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -74,17 +76,18 @@ func (m *FilesFolderRequestBuilder) CreateGetRequestInformation(options *FilesFo
     return requestInfo, nil
 }
 // Get metadata for the location where the channel's files are stored.
-func (m *FilesFolderRequestBuilder) Get(options *FilesFolderRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem, error) {
+func (m *FilesFolderRequestBuilder) Get(options *FilesFolderRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDriveItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDriveItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem), nil
-}
-func (m *FilesFolderRequestBuilder) Ref()(*i34468a01307dbe9ca9de65c6abdd8c30d36c02fbd9c240c82ce6a276e39af4c0.RefRequestBuilder) {
-    return i34468a01307dbe9ca9de65c6abdd8c30d36c02fbd9c240c82ce6a276e39af4c0.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable), nil
 }

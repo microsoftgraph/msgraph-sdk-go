@@ -2,11 +2,11 @@ package localizednotificationmessages
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    if1bf04121ebaf348fe619bfafacb64fa65f1488967ba86dbc2db44dfb29f6b16 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/notificationmessagetemplates/item/localizednotificationmessages/count"
 )
 
-// LocalizedNotificationMessagesRequestBuilder builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}\localizedNotificationMessages
+// LocalizedNotificationMessagesRequestBuilder provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
 type LocalizedNotificationMessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type LocalizedNotificationMessagesRequestBuilderGetQueryParameters struct {
 // LocalizedNotificationMessagesRequestBuilderPostOptions options for Post
 type LocalizedNotificationMessagesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessage;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewLocalizedNotificationMessagesRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewLocalizedNotificationMessagesRequestBuilder(rawUrl string, requestAdapte
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLocalizedNotificationMessagesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *LocalizedNotificationMessagesRequestBuilder) Count()(*if1bf04121ebaf348fe619bfafacb64fa65f1488967ba86dbc2db44dfb29f6b16.CountRequestBuilder) {
+    return if1bf04121ebaf348fe619bfafacb64fa65f1488967ba86dbc2db44dfb29f6b16.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of localized messages for this Notification Message Template.
 func (m *LocalizedNotificationMessagesRequestBuilder) CreateGetRequestInformation(options *LocalizedNotificationMessagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *LocalizedNotificationMessagesRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of localized messages for this Notification Message Template.
+// CreatePostRequestInformation create new navigation property to localizedNotificationMessages for deviceManagement
 func (m *LocalizedNotificationMessagesRequestBuilder) CreatePostRequestInformation(options *LocalizedNotificationMessagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *LocalizedNotificationMessagesRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Get the list of localized messages for this Notification Message Template.
-func (m *LocalizedNotificationMessagesRequestBuilder) Get(options *LocalizedNotificationMessagesRequestBuilderGetOptions)(*LocalizedNotificationMessagesResponse, error) {
+func (m *LocalizedNotificationMessagesRequestBuilder) Get(options *LocalizedNotificationMessagesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocalizedNotificationMessagesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateLocalizedNotificationMessageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*LocalizedNotificationMessagesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessageCollectionResponseable), nil
 }
-// Post the list of localized messages for this Notification Message Template.
-func (m *LocalizedNotificationMessagesRequestBuilder) Post(options *LocalizedNotificationMessagesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessage, error) {
+// Post create new navigation property to localizedNotificationMessages for deviceManagement
+func (m *LocalizedNotificationMessagesRequestBuilder) Post(options *LocalizedNotificationMessagesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessageable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewLocalizedNotificationMessage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateLocalizedNotificationMessageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessage), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessageable), nil
 }

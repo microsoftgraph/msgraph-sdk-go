@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// RestoreRequestBuilder builds and executes requests for operations under \directoryObjects\{directoryObject-id}\microsoft.graph.restore
+// RestoreRequestBuilder provides operations to call the restore method.
 type RestoreRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type RestoreResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type directoryObject
-    directoryObject *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject;
+    directoryObject i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectable;
 }
 // NewRestoreResponse instantiates a new restoreResponse and sets the default values.
 func NewRestoreResponse()(*RestoreResponse) {
@@ -37,6 +37,9 @@ func NewRestoreResponse()(*RestoreResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateRestoreResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRestoreResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RestoreResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *RestoreResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDirectoryObject gets the directoryObject property value. Union type representation for type directoryObject
-func (m *RestoreResponse) GetDirectoryObject()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject) {
+func (m *RestoreResponse) GetDirectoryObject()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *RestoreResponse) GetDirectoryObject()(*i4a838ef194e4c99e9f2c63ba10dab9c
 func (m *RestoreResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["directoryObject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDirectoryObject() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirectoryObject(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject))
+            m.SetDirectoryObject(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectable))
         }
         return nil
     }
@@ -95,7 +98,7 @@ func (m *RestoreResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDirectoryObject sets the directoryObject property value. Union type representation for type directoryObject
-func (m *RestoreResponse) SetDirectoryObject(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject)() {
+func (m *RestoreResponse) SetDirectoryObject(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectable)() {
     if m != nil {
         m.directoryObject = value
     }
@@ -109,7 +112,7 @@ func NewRestoreRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *RestoreRequestBuilder) CreatePostRequestInformation(options *RestoreReq
     return requestInfo, nil
 }
 // Post invoke action restore
-func (m *RestoreRequestBuilder) Post(options *RestoreRequestBuilderPostOptions)(*RestoreResponse, error) {
+func (m *RestoreRequestBuilder) Post(options *RestoreRequestBuilderPostOptions)(RestoreResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRestoreResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRestoreResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*RestoreResponse), nil
+    return res.(RestoreResponseable), nil
 }

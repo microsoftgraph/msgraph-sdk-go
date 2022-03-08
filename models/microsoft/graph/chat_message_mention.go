@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChatMessageMention 
+// ChatMessageMention provides operations to manage the collection of chat entities.
 type ChatMessageMention struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
     id *int32;
     // The entity (user, application, team, or channel) that was @mentioned.
-    mentioned *ChatMessageMentionedIdentitySet;
+    mentioned ChatMessageMentionedIdentitySetable;
     // String used to represent the mention. For example, a user's display name, a team name.
     mentionText *string;
 }
@@ -22,36 +22,16 @@ func NewChatMessageMention()(*ChatMessageMention) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateChatMessageMentionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChatMessageMentionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChatMessageMention(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageMention) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetId gets the id property value. Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
-func (m *ChatMessageMention) GetId()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetMentioned gets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
-func (m *ChatMessageMention) GetMentioned()(*ChatMessageMentionedIdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mentioned
-    }
-}
-// GetMentionText gets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
-func (m *ChatMessageMention) GetMentionText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mentionText
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,12 +48,12 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["mentioned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatMessageMentionedIdentitySet() })
+        val, err := n.GetObjectValue(CreateChatMessageMentionedIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMentioned(val.(*ChatMessageMentionedIdentitySet))
+            m.SetMentioned(val.(ChatMessageMentionedIdentitySetable))
         }
         return nil
     }
@@ -88,6 +68,30 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetId gets the id property value. Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
+func (m *ChatMessageMention) GetId()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetMentioned gets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
+func (m *ChatMessageMention) GetMentioned()(ChatMessageMentionedIdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mentioned
+    }
+}
+// GetMentionText gets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
+func (m *ChatMessageMention) GetMentionText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mentionText
+    }
 }
 func (m *ChatMessageMention) IsNil()(bool) {
     return m == nil
@@ -133,7 +137,7 @@ func (m *ChatMessageMention) SetId(value *int32)() {
     }
 }
 // SetMentioned sets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
-func (m *ChatMessageMention) SetMentioned(value *ChatMessageMentionedIdentitySet)() {
+func (m *ChatMessageMention) SetMentioned(value ChatMessageMentionedIdentitySetable)() {
     if m != nil {
         m.mentioned = value
     }

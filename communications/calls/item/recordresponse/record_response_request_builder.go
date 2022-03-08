@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// RecordResponseRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.recordResponse
+// RecordResponseRequestBuilder provides operations to call the recordResponse method.
 type RecordResponseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type RecordResponseRequestBuilder struct {
 // RecordResponseRequestBuilderPostOptions options for Post
 type RecordResponseRequestBuilderPostOptions struct {
     // 
-    Body *RecordResponseRequestBody;
+    Body RecordResponseRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type RecordResponseResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type recordOperation
-    recordOperation *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordOperation;
+    recordOperation i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordOperationable;
 }
 // NewRecordResponseResponse instantiates a new recordResponseResponse and sets the default values.
 func NewRecordResponseResponse()(*RecordResponseResponse) {
@@ -39,6 +39,9 @@ func NewRecordResponseResponse()(*RecordResponseResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateRecordResponseResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecordResponseResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordResponseResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *RecordResponseResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *RecordResponseResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["recordOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateRecordOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecordOperation(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetRecordOperation gets the recordOperation property value. Union type representation for type recordOperation
-func (m *RecordResponseResponse) GetRecordOperation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordOperation) {
+func (m *RecordResponseResponse) GetRecordOperation()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordOperationable) {
     if m == nil {
         return nil
     } else {
         return m.recordOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *RecordResponseResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["recordOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewRecordOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecordOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *RecordResponseResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *RecordResponseResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetRecordOperation sets the recordOperation property value. Union type representation for type recordOperation
-func (m *RecordResponseResponse) SetRecordOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordOperation)() {
+func (m *RecordResponseResponse) SetRecordOperation(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordOperationable)() {
     if m != nil {
         m.recordOperation = value
     }
@@ -111,7 +114,7 @@ func NewRecordResponseRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *RecordResponseRequestBuilder) CreatePostRequestInformation(options *Rec
     return requestInfo, nil
 }
 // Post invoke action recordResponse
-func (m *RecordResponseRequestBuilder) Post(options *RecordResponseRequestBuilderPostOptions)(*RecordResponseResponse, error) {
+func (m *RecordResponseRequestBuilder) Post(options *RecordResponseRequestBuilderPostOptions)(RecordResponseResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecordResponseResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRecordResponseResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*RecordResponseResponse), nil
+    return res.(RecordResponseResponseable), nil
 }

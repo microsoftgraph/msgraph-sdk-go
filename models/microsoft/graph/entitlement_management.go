@@ -4,23 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EntitlementManagement 
+// EntitlementManagement provides operations to manage the identityGovernance singleton.
 type EntitlementManagement struct {
     Entity
     // 
-    accessPackageAssignmentApprovals []Approval;
+    accessPackageAssignmentApprovals []Approvalable;
     // Represents access package objects.
-    accessPackages []AccessPackage;
+    accessPackages []AccessPackageable;
     // Represents access package assignment requests created by or on behalf of a user.
-    assignmentRequests []AccessPackageAssignmentRequest;
+    assignmentRequests []AccessPackageAssignmentRequestable;
     // Represents the grant of an access package to a subject (user or group).
-    assignments []AccessPackageAssignment;
+    assignments []AccessPackageAssignmentable;
     // Represents a group of access packages.
-    catalogs []AccessPackageCatalog;
+    catalogs []AccessPackageCatalogable;
     // Represents references to a directory or domain of another organization whose users can request access.
-    connectedOrganizations []ConnectedOrganization;
+    connectedOrganizations []ConnectedOrganizationable;
     // Represents the settings that control the behavior of Azure AD entitlement management.
-    settings *EntitlementManagementSettings;
+    settings EntitlementManagementSettingsable;
 }
 // NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {
@@ -29,8 +29,12 @@ func NewEntitlementManagement()(*EntitlementManagement) {
     }
     return m
 }
+// CreateEntitlementManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEntitlementManagementFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEntitlementManagement(), nil
+}
 // GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. 
-func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval) {
+func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approvalable) {
     if m == nil {
         return nil
     } else {
@@ -38,7 +42,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval
     }
 }
 // GetAccessPackages gets the accessPackages property value. Represents access package objects.
-func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
+func (m *EntitlementManagement) GetAccessPackages()([]AccessPackageable) {
     if m == nil {
         return nil
     } else {
@@ -46,7 +50,7 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
     }
 }
 // GetAssignmentRequests gets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
-func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequest) {
+func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequestable) {
     if m == nil {
         return nil
     } else {
@@ -54,7 +58,7 @@ func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmen
     }
 }
 // GetAssignments gets the assignments property value. Represents the grant of an access package to a subject (user or group).
-func (m *EntitlementManagement) GetAssignments()([]AccessPackageAssignment) {
+func (m *EntitlementManagement) GetAssignments()([]AccessPackageAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -62,7 +66,7 @@ func (m *EntitlementManagement) GetAssignments()([]AccessPackageAssignment) {
     }
 }
 // GetCatalogs gets the catalogs property value. Represents a group of access packages.
-func (m *EntitlementManagement) GetCatalogs()([]AccessPackageCatalog) {
+func (m *EntitlementManagement) GetCatalogs()([]AccessPackageCatalogable) {
     if m == nil {
         return nil
     } else {
@@ -70,119 +74,119 @@ func (m *EntitlementManagement) GetCatalogs()([]AccessPackageCatalog) {
     }
 }
 // GetConnectedOrganizations gets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
-func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganization) {
+func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizationable) {
     if m == nil {
         return nil
     } else {
         return m.connectedOrganizations
     }
 }
-// GetSettings gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
-func (m *EntitlementManagement) GetSettings()(*EntitlementManagementSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageAssignmentApprovals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApproval() })
+        val, err := n.GetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Approval, len(val))
+            res := make([]Approvalable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Approval))
+                res[i] = v.(Approvalable)
             }
             m.SetAccessPackageAssignmentApprovals(res)
         }
         return nil
     }
     res["accessPackages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackage() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackage, len(val))
+            res := make([]AccessPackageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackage))
+                res[i] = v.(AccessPackageable)
             }
             m.SetAccessPackages(res)
         }
         return nil
     }
     res["assignmentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignmentRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageAssignmentRequest, len(val))
+            res := make([]AccessPackageAssignmentRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageAssignmentRequest))
+                res[i] = v.(AccessPackageAssignmentRequestable)
             }
             m.SetAssignmentRequests(res)
         }
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageAssignment, len(val))
+            res := make([]AccessPackageAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageAssignment))
+                res[i] = v.(AccessPackageAssignmentable)
             }
             m.SetAssignments(res)
         }
         return nil
     }
     res["catalogs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageCatalog() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageCatalogFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageCatalog, len(val))
+            res := make([]AccessPackageCatalogable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageCatalog))
+                res[i] = v.(AccessPackageCatalogable)
             }
             m.SetCatalogs(res)
         }
         return nil
     }
     res["connectedOrganizations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectedOrganization() })
+        val, err := n.GetCollectionOfObjectValues(CreateConnectedOrganizationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConnectedOrganization, len(val))
+            res := make([]ConnectedOrganizationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConnectedOrganization))
+                res[i] = v.(ConnectedOrganizationable)
             }
             m.SetConnectedOrganizations(res)
         }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEntitlementManagementSettings() })
+        val, err := n.GetObjectValue(CreateEntitlementManagementSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*EntitlementManagementSettings))
+            m.SetSettings(val.(EntitlementManagementSettingsable))
         }
         return nil
     }
     return res
+}
+// GetSettings gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
+func (m *EntitlementManagement) GetSettings()(EntitlementManagementSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
 }
 func (m *EntitlementManagement) IsNil()(bool) {
     return m == nil
@@ -196,8 +200,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAccessPackageAssignmentApprovals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentApprovals()))
         for i, v := range m.GetAccessPackageAssignmentApprovals() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentApprovals", cast)
         if err != nil {
@@ -207,8 +210,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAccessPackages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackages()))
         for i, v := range m.GetAccessPackages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackages", cast)
         if err != nil {
@@ -218,8 +220,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAssignmentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignmentRequests()))
         for i, v := range m.GetAssignmentRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignmentRequests", cast)
         if err != nil {
@@ -229,8 +230,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -240,8 +240,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetCatalogs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCatalogs()))
         for i, v := range m.GetCatalogs() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("catalogs", cast)
         if err != nil {
@@ -251,8 +250,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetConnectedOrganizations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectedOrganizations()))
         for i, v := range m.GetConnectedOrganizations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("connectedOrganizations", cast)
         if err != nil {
@@ -268,43 +266,43 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     return nil
 }
 // SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. 
-func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approval)() {
+func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approvalable)() {
     if m != nil {
         m.accessPackageAssignmentApprovals = value
     }
 }
 // SetAccessPackages sets the accessPackages property value. Represents access package objects.
-func (m *EntitlementManagement) SetAccessPackages(value []AccessPackage)() {
+func (m *EntitlementManagement) SetAccessPackages(value []AccessPackageable)() {
     if m != nil {
         m.accessPackages = value
     }
 }
 // SetAssignmentRequests sets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
-func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequest)() {
+func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequestable)() {
     if m != nil {
         m.assignmentRequests = value
     }
 }
 // SetAssignments sets the assignments property value. Represents the grant of an access package to a subject (user or group).
-func (m *EntitlementManagement) SetAssignments(value []AccessPackageAssignment)() {
+func (m *EntitlementManagement) SetAssignments(value []AccessPackageAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
 }
 // SetCatalogs sets the catalogs property value. Represents a group of access packages.
-func (m *EntitlementManagement) SetCatalogs(value []AccessPackageCatalog)() {
+func (m *EntitlementManagement) SetCatalogs(value []AccessPackageCatalogable)() {
     if m != nil {
         m.catalogs = value
     }
 }
 // SetConnectedOrganizations sets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
-func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganization)() {
+func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganizationable)() {
     if m != nil {
         m.connectedOrganizations = value
     }
 }
 // SetSettings sets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
-func (m *EntitlementManagement) SetSettings(value *EntitlementManagementSettings)() {
+func (m *EntitlementManagement) SetSettings(value EntitlementManagementSettingsable)() {
     if m != nil {
         m.settings = value
     }

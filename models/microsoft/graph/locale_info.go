@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LocaleInfo 
+// LocaleInfo provides operations to manage the drive singleton.
 type LocaleInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewLocaleInfo()(*LocaleInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateLocaleInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLocaleInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLocaleInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocaleInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *LocaleInfo) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLocale gets the locale property value. A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
-func (m *LocaleInfo) GetLocale()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locale
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *LocaleInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetLocale gets the locale property value. A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+func (m *LocaleInfo) GetLocale()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locale
+    }
 }
 func (m *LocaleInfo) IsNil()(bool) {
     return m == nil

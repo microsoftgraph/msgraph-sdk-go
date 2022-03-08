@@ -2,11 +2,11 @@ package permissiongrantpolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i1380612ed677c3fa45bf18fb3af6af1efd668208c7104f54e5fd54a3c7682d57 "github.com/microsoftgraph/msgraph-sdk-go/policies/permissiongrantpolicies/count"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// PermissionGrantPoliciesRequestBuilder builds and executes requests for operations under \policies\permissionGrantPolicies
+// PermissionGrantPoliciesRequestBuilder provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
 type PermissionGrantPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type PermissionGrantPoliciesRequestBuilderGetQueryParameters struct {
 // PermissionGrantPoliciesRequestBuilderPostOptions options for Post
 type PermissionGrantPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicy;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewPermissionGrantPoliciesRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewPermissionGrantPoliciesRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PermissionGrantPoliciesRequestBuilder) Count()(*i1380612ed677c3fa45bf18fb3af6af1efd668208c7104f54e5fd54a3c7682d57.CountRequestBuilder) {
+    return i1380612ed677c3fa45bf18fb3af6af1efd668208c7104f54e5fd54a3c7682d57.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPoliciesRequestBuilder) CreateGetRequestInformation(options *PermissionGrantPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *PermissionGrantPoliciesRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the policy that specifies the conditions under which consent can be granted.
+// CreatePostRequestInformation create new navigation property to permissionGrantPolicies for policies
 func (m *PermissionGrantPoliciesRequestBuilder) CreatePostRequestInformation(options *PermissionGrantPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *PermissionGrantPoliciesRequestBuilder) CreatePostRequestInformation(opt
     return requestInfo, nil
 }
 // Get the policy that specifies the conditions under which consent can be granted.
-func (m *PermissionGrantPoliciesRequestBuilder) Get(options *PermissionGrantPoliciesRequestBuilderGetOptions)(*PermissionGrantPoliciesResponse, error) {
+func (m *PermissionGrantPoliciesRequestBuilder) Get(options *PermissionGrantPoliciesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPermissionGrantPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePermissionGrantPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PermissionGrantPoliciesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicyCollectionResponseable), nil
 }
-// Post the policy that specifies the conditions under which consent can be granted.
-func (m *PermissionGrantPoliciesRequestBuilder) Post(options *PermissionGrantPoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicy, error) {
+// Post create new navigation property to permissionGrantPolicies for policies
+func (m *PermissionGrantPoliciesRequestBuilder) Post(options *PermissionGrantPoliciesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPermissionGrantPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePermissionGrantPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicy), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicyable), nil
 }

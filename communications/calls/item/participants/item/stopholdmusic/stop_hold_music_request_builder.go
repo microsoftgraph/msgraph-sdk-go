@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// StopHoldMusicRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants\{participant-id}\microsoft.graph.stopHoldMusic
+// StopHoldMusicRequestBuilder provides operations to call the stopHoldMusic method.
 type StopHoldMusicRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type StopHoldMusicRequestBuilder struct {
 // StopHoldMusicRequestBuilderPostOptions options for Post
 type StopHoldMusicRequestBuilderPostOptions struct {
     // 
-    Body *StopHoldMusicRequestBody;
+    Body StopHoldMusicRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type StopHoldMusicResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type stopHoldMusicOperation
-    stopHoldMusicOperation *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperation;
+    stopHoldMusicOperation i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperationable;
 }
 // NewStopHoldMusicResponse instantiates a new stopHoldMusicResponse and sets the default values.
 func NewStopHoldMusicResponse()(*StopHoldMusicResponse) {
@@ -39,6 +39,9 @@ func NewStopHoldMusicResponse()(*StopHoldMusicResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateStopHoldMusicResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewStopHoldMusicResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StopHoldMusicResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *StopHoldMusicResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *StopHoldMusicResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["stopHoldMusicOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateStopHoldMusicOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStopHoldMusicOperation(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetStopHoldMusicOperation gets the stopHoldMusicOperation property value. Union type representation for type stopHoldMusicOperation
-func (m *StopHoldMusicResponse) GetStopHoldMusicOperation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperation) {
+func (m *StopHoldMusicResponse) GetStopHoldMusicOperation()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperationable) {
     if m == nil {
         return nil
     } else {
         return m.stopHoldMusicOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *StopHoldMusicResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["stopHoldMusicOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewStopHoldMusicOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStopHoldMusicOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *StopHoldMusicResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *StopHoldMusicResponse) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetStopHoldMusicOperation sets the stopHoldMusicOperation property value. Union type representation for type stopHoldMusicOperation
-func (m *StopHoldMusicResponse) SetStopHoldMusicOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperation)() {
+func (m *StopHoldMusicResponse) SetStopHoldMusicOperation(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperationable)() {
     if m != nil {
         m.stopHoldMusicOperation = value
     }
@@ -111,7 +114,7 @@ func NewStopHoldMusicRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *StopHoldMusicRequestBuilder) CreatePostRequestInformation(options *Stop
     return requestInfo, nil
 }
 // Post invoke action stopHoldMusic
-func (m *StopHoldMusicRequestBuilder) Post(options *StopHoldMusicRequestBuilderPostOptions)(*StopHoldMusicResponse, error) {
+func (m *StopHoldMusicRequestBuilder) Post(options *StopHoldMusicRequestBuilderPostOptions)(StopHoldMusicResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewStopHoldMusicResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateStopHoldMusicResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*StopHoldMusicResponse), nil
+    return res.(StopHoldMusicResponseable), nil
 }

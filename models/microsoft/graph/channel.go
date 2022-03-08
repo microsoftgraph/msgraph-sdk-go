@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Channel 
+// Channel provides operations to manage the drive singleton.
 type Channel struct {
     Entity
     // Read only. Timestamp at which the channel was created.
@@ -17,17 +17,17 @@ type Channel struct {
     // The email address for sending messages to the channel. Read-only.
     email *string;
     // Metadata for the location where the channel's files are stored.
-    filesFolder *DriveItem;
+    filesFolder DriveItemable;
     // Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
     isFavoriteByDefault *bool;
     // A collection of membership records associated with the channel.
-    members []ConversationMember;
+    members []ConversationMemberable;
     // The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
     membershipType *ChannelMembershipType;
     // A collection of all the messages in the channel. A navigation property. Nullable.
-    messages []ChatMessage;
+    messages []ChatMessageable;
     // A collection of all the tabs in the channel. A navigation property.
-    tabs []TeamsTab;
+    tabs []TeamsTabable;
     // A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
     webUrl *string;
 }
@@ -37,6 +37,10 @@ func NewChannel()(*Channel) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateChannelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChannelFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChannel(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Read only. Timestamp at which the channel was created.
 func (m *Channel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -68,62 +72,6 @@ func (m *Channel) GetEmail()(*string) {
         return nil
     } else {
         return m.email
-    }
-}
-// GetFilesFolder gets the filesFolder property value. Metadata for the location where the channel's files are stored.
-func (m *Channel) GetFilesFolder()(*DriveItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filesFolder
-    }
-}
-// GetIsFavoriteByDefault gets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
-func (m *Channel) GetIsFavoriteByDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFavoriteByDefault
-    }
-}
-// GetMembers gets the members property value. A collection of membership records associated with the channel.
-func (m *Channel) GetMembers()([]ConversationMember) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
-}
-// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
-func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.membershipType
-    }
-}
-// GetMessages gets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
-func (m *Channel) GetMessages()([]ChatMessage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messages
-    }
-}
-// GetTabs gets the tabs property value. A collection of all the tabs in the channel. A navigation property.
-func (m *Channel) GetTabs()([]TeamsTab) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tabs
-    }
-}
-// GetWebUrl gets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-func (m *Channel) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -170,12 +118,12 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["filesFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDriveItem() })
+        val, err := n.GetObjectValue(CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFilesFolder(val.(*DriveItem))
+            m.SetFilesFolder(val.(DriveItemable))
         }
         return nil
     }
@@ -190,14 +138,14 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConversationMember() })
+        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConversationMember, len(val))
+            res := make([]ConversationMemberable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConversationMember))
+                res[i] = v.(ConversationMemberable)
             }
             m.SetMembers(res)
         }
@@ -214,28 +162,28 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["messages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatMessage() })
+        val, err := n.GetCollectionOfObjectValues(CreateChatMessageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ChatMessage, len(val))
+            res := make([]ChatMessageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ChatMessage))
+                res[i] = v.(ChatMessageable)
             }
             m.SetMessages(res)
         }
         return nil
     }
     res["tabs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsTab() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamsTab, len(val))
+            res := make([]TeamsTabable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamsTab))
+                res[i] = v.(TeamsTabable)
             }
             m.SetTabs(res)
         }
@@ -252,6 +200,62 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetFilesFolder gets the filesFolder property value. Metadata for the location where the channel's files are stored.
+func (m *Channel) GetFilesFolder()(DriveItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.filesFolder
+    }
+}
+// GetIsFavoriteByDefault gets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
+func (m *Channel) GetIsFavoriteByDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFavoriteByDefault
+    }
+}
+// GetMembers gets the members property value. A collection of membership records associated with the channel.
+func (m *Channel) GetMembers()([]ConversationMemberable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.members
+    }
+}
+// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
+func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.membershipType
+    }
+}
+// GetMessages gets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
+func (m *Channel) GetMessages()([]ChatMessageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messages
+    }
+}
+// GetTabs gets the tabs property value. A collection of all the tabs in the channel. A navigation property.
+func (m *Channel) GetTabs()([]TeamsTabable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tabs
+    }
+}
+// GetWebUrl gets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+func (m *Channel) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *Channel) IsNil()(bool) {
     return m == nil
@@ -301,8 +305,7 @@ func (m *Channel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {
@@ -319,8 +322,7 @@ func (m *Channel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetMessages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMessages()))
         for i, v := range m.GetMessages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("messages", cast)
         if err != nil {
@@ -330,8 +332,7 @@ func (m *Channel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetTabs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTabs()))
         for i, v := range m.GetTabs() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tabs", cast)
         if err != nil {
@@ -371,7 +372,7 @@ func (m *Channel) SetEmail(value *string)() {
     }
 }
 // SetFilesFolder sets the filesFolder property value. Metadata for the location where the channel's files are stored.
-func (m *Channel) SetFilesFolder(value *DriveItem)() {
+func (m *Channel) SetFilesFolder(value DriveItemable)() {
     if m != nil {
         m.filesFolder = value
     }
@@ -383,7 +384,7 @@ func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
     }
 }
 // SetMembers sets the members property value. A collection of membership records associated with the channel.
-func (m *Channel) SetMembers(value []ConversationMember)() {
+func (m *Channel) SetMembers(value []ConversationMemberable)() {
     if m != nil {
         m.members = value
     }
@@ -395,13 +396,13 @@ func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
     }
 }
 // SetMessages sets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
-func (m *Channel) SetMessages(value []ChatMessage)() {
+func (m *Channel) SetMessages(value []ChatMessageable)() {
     if m != nil {
         m.messages = value
     }
 }
 // SetTabs sets the tabs property value. A collection of all the tabs in the channel. A navigation property.
-func (m *Channel) SetTabs(value []TeamsTab)() {
+func (m *Channel) SetTabs(value []TeamsTabable)() {
     if m != nil {
         m.tabs = value
     }

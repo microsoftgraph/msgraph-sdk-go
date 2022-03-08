@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// MobileAppAssignmentItemRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\assignments\{mobileAppAssignment-id}
+// MobileAppAssignmentItemRequestBuilder provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
 type MobileAppAssignmentItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type MobileAppAssignmentItemRequestBuilderGetQueryParameters struct {
 // MobileAppAssignmentItemRequestBuilderPatchOptions options for Patch
 type MobileAppAssignmentItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewMobileAppAssignmentItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewMobileAppAssignmentItemRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the list of group assignments for this mobile app.
+// CreateDeleteRequestInformation delete navigation property assignments for deviceAppManagement
 func (m *MobileAppAssignmentItemRequestBuilder) CreateDeleteRequestInformation(options *MobileAppAssignmentItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *MobileAppAssignmentItemRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the list of group assignments for this mobile app.
+// CreatePatchRequestInformation update the navigation property assignments in deviceAppManagement
 func (m *MobileAppAssignmentItemRequestBuilder) CreatePatchRequestInformation(options *MobileAppAssignmentItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *MobileAppAssignmentItemRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Delete the list of group assignments for this mobile app.
+// Delete delete navigation property assignments for deviceAppManagement
 func (m *MobileAppAssignmentItemRequestBuilder) Delete(options *MobileAppAssignmentItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the list of group assignments for this mobile app.
-func (m *MobileAppAssignmentItemRequestBuilder) Get(options *MobileAppAssignmentItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment, error) {
+func (m *MobileAppAssignmentItemRequestBuilder) Get(options *MobileAppAssignmentItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewMobileAppAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMobileAppAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignmentable), nil
 }
-// Patch the list of group assignments for this mobile app.
+// Patch update the navigation property assignments in deviceAppManagement
 func (m *MobileAppAssignmentItemRequestBuilder) Patch(options *MobileAppAssignmentItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

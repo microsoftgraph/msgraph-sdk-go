@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MessageSecurityState 
+// MessageSecurityState provides operations to manage the security singleton.
 type MessageSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,6 +34,10 @@ func NewMessageSecurityState()(*MessageSecurityState) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateMessageSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMessageSecurityStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMessageSecurityState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageSecurityState) GetAdditionalData()(map[string]interface{}) {
@@ -73,46 +77,6 @@ func (m *MessageSecurityState) GetDirectionality()(*string) {
         return nil
     } else {
         return m.directionality
-    }
-}
-// GetInternetMessageId gets the internetMessageId property value. 
-func (m *MessageSecurityState) GetInternetMessageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internetMessageId
-    }
-}
-// GetMessageFingerprint gets the messageFingerprint property value. 
-func (m *MessageSecurityState) GetMessageFingerprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageFingerprint
-    }
-}
-// GetMessageReceivedDateTime gets the messageReceivedDateTime property value. 
-func (m *MessageSecurityState) GetMessageReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageReceivedDateTime
-    }
-}
-// GetMessageSubject gets the messageSubject property value. 
-func (m *MessageSecurityState) GetMessageSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageSubject
-    }
-}
-// GetNetworkMessageId gets the networkMessageId property value. 
-func (m *MessageSecurityState) GetNetworkMessageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkMessageId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -209,6 +173,46 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetInternetMessageId gets the internetMessageId property value. 
+func (m *MessageSecurityState) GetInternetMessageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.internetMessageId
+    }
+}
+// GetMessageFingerprint gets the messageFingerprint property value. 
+func (m *MessageSecurityState) GetMessageFingerprint()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageFingerprint
+    }
+}
+// GetMessageReceivedDateTime gets the messageReceivedDateTime property value. 
+func (m *MessageSecurityState) GetMessageReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageReceivedDateTime
+    }
+}
+// GetMessageSubject gets the messageSubject property value. 
+func (m *MessageSecurityState) GetMessageSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageSubject
+    }
+}
+// GetNetworkMessageId gets the networkMessageId property value. 
+func (m *MessageSecurityState) GetNetworkMessageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkMessageId
+    }
 }
 func (m *MessageSecurityState) IsNil()(bool) {
     return m == nil

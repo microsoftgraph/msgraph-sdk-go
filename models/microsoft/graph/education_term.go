@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationTerm 
+// EducationTerm provides operations to manage the educationRoot singleton.
 type EducationTerm struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewEducationTerm()(*EducationTerm) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateEducationTermFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationTermFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationTerm(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationTerm) GetAdditionalData()(map[string]interface{}) {
@@ -54,14 +58,6 @@ func (m *EducationTerm) GetExternalId()(*string) {
         return nil
     } else {
         return m.externalId
-    }
-}
-// GetStartDate gets the startDate property value. Start of the term.
-func (m *EducationTerm) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDate
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +104,14 @@ func (m *EducationTerm) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetStartDate gets the startDate property value. Start of the term.
+func (m *EducationTerm) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDate
+    }
 }
 func (m *EducationTerm) IsNil()(bool) {
     return m == nil

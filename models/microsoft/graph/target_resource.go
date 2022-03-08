@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TargetResource 
+// TargetResource provides operations to manage the auditLogRoot singleton.
 type TargetResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,7 +15,7 @@ type TargetResource struct {
     // Indicates the unique ID of the resource.
     id *string;
     // Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
-    modifiedProperties []ModifiedProperty;
+    modifiedProperties []ModifiedPropertyable;
     // Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
     type_escaped *string;
     // When type is set to User, this includes the user name that initiated the action; null for other types.
@@ -27,6 +27,10 @@ func NewTargetResource()(*TargetResource) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTargetResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTargetResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTargetResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetResource) GetAdditionalData()(map[string]interface{}) {
@@ -42,46 +46,6 @@ func (m *TargetResource) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
-func (m *TargetResource) GetGroupType()(*GroupType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupType
-    }
-}
-// GetId gets the id property value. Indicates the unique ID of the resource.
-func (m *TargetResource) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetModifiedProperties gets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
-func (m *TargetResource) GetModifiedProperties()([]ModifiedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedProperties
-    }
-}
-// GetType gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
-func (m *TargetResource) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
-func (m *TargetResource) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -118,14 +82,14 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["modifiedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewModifiedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateModifiedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ModifiedProperty, len(val))
+            res := make([]ModifiedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ModifiedProperty))
+                res[i] = v.(ModifiedPropertyable)
             }
             m.SetModifiedProperties(res)
         }
@@ -152,6 +116,46 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
+func (m *TargetResource) GetGroupType()(*GroupType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupType
+    }
+}
+// GetId gets the id property value. Indicates the unique ID of the resource.
+func (m *TargetResource) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetModifiedProperties gets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
+func (m *TargetResource) GetModifiedProperties()([]ModifiedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedProperties
+    }
+}
+// GetType gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
+func (m *TargetResource) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
+func (m *TargetResource) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *TargetResource) IsNil()(bool) {
     return m == nil
@@ -180,8 +184,7 @@ func (m *TargetResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetModifiedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetModifiedProperties()))
         for i, v := range m.GetModifiedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
         if err != nil {
@@ -233,7 +236,7 @@ func (m *TargetResource) SetId(value *string)() {
     }
 }
 // SetModifiedProperties sets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
-func (m *TargetResource) SetModifiedProperties(value []ModifiedProperty)() {
+func (m *TargetResource) SetModifiedProperties(value []ModifiedPropertyable)() {
     if m != nil {
         m.modifiedProperties = value
     }

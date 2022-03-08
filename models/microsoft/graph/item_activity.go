@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemActivity 
+// ItemActivity provides operations to manage the drive singleton.
 type ItemActivity struct {
     Entity
     // An item was accessed.
-    access *AccessAction;
+    access AccessActionable;
     // Details about when the activity took place. Read-only.
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Identity of who performed the action. Read-only.
-    actor *IdentitySet;
+    actor IdentitySetable;
     // Exposes the driveItem that was the target of this activity.
-    driveItem *DriveItem;
+    driveItem DriveItemable;
 }
 // NewItemActivity instantiates a new itemActivity and sets the default values.
 func NewItemActivity()(*ItemActivity) {
@@ -24,8 +24,12 @@ func NewItemActivity()(*ItemActivity) {
     }
     return m
 }
+// CreateItemActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemActivityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemActivity(), nil
+}
 // GetAccess gets the access property value. An item was accessed.
-func (m *ItemActivity) GetAccess()(*AccessAction) {
+func (m *ItemActivity) GetAccess()(AccessActionable) {
     if m == nil {
         return nil
     } else {
@@ -41,7 +45,7 @@ func (m *ItemActivity) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
 }
 // GetActor gets the actor property value. Identity of who performed the action. Read-only.
-func (m *ItemActivity) GetActor()(*IdentitySet) {
+func (m *ItemActivity) GetActor()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -49,7 +53,7 @@ func (m *ItemActivity) GetActor()(*IdentitySet) {
     }
 }
 // GetDriveItem gets the driveItem property value. Exposes the driveItem that was the target of this activity.
-func (m *ItemActivity) GetDriveItem()(*DriveItem) {
+func (m *ItemActivity) GetDriveItem()(DriveItemable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +64,12 @@ func (m *ItemActivity) GetDriveItem()(*DriveItem) {
 func (m *ItemActivity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["access"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessAction() })
+        val, err := n.GetObjectValue(CreateAccessActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccess(val.(*AccessAction))
+            m.SetAccess(val.(AccessActionable))
         }
         return nil
     }
@@ -80,22 +84,22 @@ func (m *ItemActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["actor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActor(val.(*IdentitySet))
+            m.SetActor(val.(IdentitySetable))
         }
         return nil
     }
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDriveItem() })
+        val, err := n.GetObjectValue(CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDriveItem(val.(*DriveItem))
+            m.SetDriveItem(val.(DriveItemable))
         }
         return nil
     }
@@ -137,7 +141,7 @@ func (m *ItemActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetAccess sets the access property value. An item was accessed.
-func (m *ItemActivity) SetAccess(value *AccessAction)() {
+func (m *ItemActivity) SetAccess(value AccessActionable)() {
     if m != nil {
         m.access = value
     }
@@ -149,13 +153,13 @@ func (m *ItemActivity) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad9
     }
 }
 // SetActor sets the actor property value. Identity of who performed the action. Read-only.
-func (m *ItemActivity) SetActor(value *IdentitySet)() {
+func (m *ItemActivity) SetActor(value IdentitySetable)() {
     if m != nil {
         m.actor = value
     }
 }
 // SetDriveItem sets the driveItem property value. Exposes the driveItem that was the target of this activity.
-func (m *ItemActivity) SetDriveItem(value *DriveItem)() {
+func (m *ItemActivity) SetDriveItem(value DriveItemable)() {
     if m != nil {
         m.driveItem = value
     }

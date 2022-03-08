@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RgbColor 
+// RgbColor provides operations to manage the deviceManagement singleton.
 type RgbColor struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewRgbColor()(*RgbColor) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRgbColorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRgbColorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRgbColor(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RgbColor) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *RgbColor) GetB()(*int32) {
         return nil
     } else {
         return m.b
-    }
-}
-// GetG gets the g property value. Green value
-func (m *RgbColor) GetG()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.g
-    }
-}
-// GetR gets the r property value. Red value
-func (m *RgbColor) GetR()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.r
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetG gets the g property value. Green value
+func (m *RgbColor) GetG()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.g
+    }
+}
+// GetR gets the r property value. Red value
+func (m *RgbColor) GetR()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.r
+    }
 }
 func (m *RgbColor) IsNil()(bool) {
     return m == nil

@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartAxes 
+// WorkbookChartAxes provides operations to manage the drive singleton.
 type WorkbookChartAxes struct {
     Entity
     // Represents the category axis in a chart. Read-only.
-    categoryAxis *WorkbookChartAxis;
+    categoryAxis WorkbookChartAxisable;
     // Represents the series axis of a 3-dimensional chart. Read-only.
-    seriesAxis *WorkbookChartAxis;
+    seriesAxis WorkbookChartAxisable;
     // Represents the value axis in an axis. Read-only.
-    valueAxis *WorkbookChartAxis;
+    valueAxis WorkbookChartAxisable;
 }
 // NewWorkbookChartAxes instantiates a new workbookChartAxes and sets the default values.
 func NewWorkbookChartAxes()(*WorkbookChartAxes) {
@@ -21,16 +21,55 @@ func NewWorkbookChartAxes()(*WorkbookChartAxes) {
     }
     return m
 }
+// CreateWorkbookChartAxesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookChartAxesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookChartAxes(), nil
+}
 // GetCategoryAxis gets the categoryAxis property value. Represents the category axis in a chart. Read-only.
-func (m *WorkbookChartAxes) GetCategoryAxis()(*WorkbookChartAxis) {
+func (m *WorkbookChartAxes) GetCategoryAxis()(WorkbookChartAxisable) {
     if m == nil {
         return nil
     } else {
         return m.categoryAxis
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["categoryAxis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCategoryAxis(val.(WorkbookChartAxisable))
+        }
+        return nil
+    }
+    res["seriesAxis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSeriesAxis(val.(WorkbookChartAxisable))
+        }
+        return nil
+    }
+    res["valueAxis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetValueAxis(val.(WorkbookChartAxisable))
+        }
+        return nil
+    }
+    return res
+}
 // GetSeriesAxis gets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.
-func (m *WorkbookChartAxes) GetSeriesAxis()(*WorkbookChartAxis) {
+func (m *WorkbookChartAxes) GetSeriesAxis()(WorkbookChartAxisable) {
     if m == nil {
         return nil
     } else {
@@ -38,47 +77,12 @@ func (m *WorkbookChartAxes) GetSeriesAxis()(*WorkbookChartAxis) {
     }
 }
 // GetValueAxis gets the valueAxis property value. Represents the value axis in an axis. Read-only.
-func (m *WorkbookChartAxes) GetValueAxis()(*WorkbookChartAxis) {
+func (m *WorkbookChartAxes) GetValueAxis()(WorkbookChartAxisable) {
     if m == nil {
         return nil
     } else {
         return m.valueAxis
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["categoryAxis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookChartAxis() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCategoryAxis(val.(*WorkbookChartAxis))
-        }
-        return nil
-    }
-    res["seriesAxis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookChartAxis() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSeriesAxis(val.(*WorkbookChartAxis))
-        }
-        return nil
-    }
-    res["valueAxis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookChartAxis() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetValueAxis(val.(*WorkbookChartAxis))
-        }
-        return nil
-    }
-    return res
 }
 func (m *WorkbookChartAxes) IsNil()(bool) {
     return m == nil
@@ -110,19 +114,19 @@ func (m *WorkbookChartAxes) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     return nil
 }
 // SetCategoryAxis sets the categoryAxis property value. Represents the category axis in a chart. Read-only.
-func (m *WorkbookChartAxes) SetCategoryAxis(value *WorkbookChartAxis)() {
+func (m *WorkbookChartAxes) SetCategoryAxis(value WorkbookChartAxisable)() {
     if m != nil {
         m.categoryAxis = value
     }
 }
 // SetSeriesAxis sets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.
-func (m *WorkbookChartAxes) SetSeriesAxis(value *WorkbookChartAxis)() {
+func (m *WorkbookChartAxes) SetSeriesAxis(value WorkbookChartAxisable)() {
     if m != nil {
         m.seriesAxis = value
     }
 }
 // SetValueAxis sets the valueAxis property value. Represents the value axis in an axis. Read-only.
-func (m *WorkbookChartAxes) SetValueAxis(value *WorkbookChartAxis)() {
+func (m *WorkbookChartAxes) SetValueAxis(value WorkbookChartAxisable)() {
     if m != nil {
         m.valueAxis = value
     }

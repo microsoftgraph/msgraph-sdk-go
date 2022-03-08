@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the admin singleton.
 type ServiceHealthOrigin int
 
 const (

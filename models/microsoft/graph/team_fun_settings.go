@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamFunSettings 
+// TeamFunSettings provides operations to manage the drive singleton.
 type TeamFunSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewTeamFunSettings()(*TeamFunSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamFunSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamFunSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamFunSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamFunSettings) GetAdditionalData()(map[string]interface{}) {
@@ -54,14 +58,6 @@ func (m *TeamFunSettings) GetAllowStickersAndMemes()(*bool) {
         return nil
     } else {
         return m.allowStickersAndMemes
-    }
-}
-// GetGiphyContentRating gets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
-func (m *TeamFunSettings) GetGiphyContentRating()(*GiphyRatingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.giphyContentRating
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +104,14 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetGiphyContentRating gets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
+func (m *TeamFunSettings) GetGiphyContentRating()(*GiphyRatingType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.giphyContentRating
+    }
 }
 func (m *TeamFunSettings) IsNil()(bool) {
     return m == nil

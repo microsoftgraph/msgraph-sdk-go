@@ -2,11 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i615008848b850143df439fa00893fd778f928ac3c8078aec9947a95df690254f "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item/children/item/children/item/set"
+    ibd343eb488db8109afd56b161ac1b8fae54264f17580ceb45b1b07fef38da935 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item/children/item/children/item/relations"
+    ib5b1137827d23022a54cb7300fd73647cebc7e97b854307a9193b1d13ebc8b41 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item/children/item/children/item/relations/item"
 )
 
-// TermItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\sets\{set-id}\children\{term-id}\children\{term-id1}
+// TermItemRequestBuilder provides operations to manage the children property of the microsoft.graph.termStore.term entity.
 type TermItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +47,7 @@ type TermItemRequestBuilderGetQueryParameters struct {
 // TermItemRequestBuilderPatchOptions options for Patch
 type TermItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Term;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Termable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +64,7 @@ func NewTermItemRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +74,7 @@ func NewTermItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewTermItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation children of current term.
+// CreateDeleteRequestInformation delete navigation property children for sites
 func (m *TermItemRequestBuilder) CreateDeleteRequestInformation(options *TermItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +111,7 @@ func (m *TermItemRequestBuilder) CreateGetRequestInformation(options *TermItemRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation children of current term.
+// CreatePatchRequestInformation update the navigation property children in sites
 func (m *TermItemRequestBuilder) CreatePatchRequestInformation(options *TermItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,39 +129,68 @@ func (m *TermItemRequestBuilder) CreatePatchRequestInformation(options *TermItem
     }
     return requestInfo, nil
 }
-// Delete children of current term.
+// Delete delete navigation property children for sites
 func (m *TermItemRequestBuilder) Delete(options *TermItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get children of current term.
-func (m *TermItemRequestBuilder) Get(options *TermItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Term, error) {
+func (m *TermItemRequestBuilder) Get(options *TermItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Termable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewTerm() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTermFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Term), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Termable), nil
 }
-// Patch children of current term.
+// Patch update the navigation property children in sites
 func (m *TermItemRequestBuilder) Patch(options *TermItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
+}
+func (m *TermItemRequestBuilder) Relations()(*ibd343eb488db8109afd56b161ac1b8fae54264f17580ceb45b1b07fef38da935.RelationsRequestBuilder) {
+    return ibd343eb488db8109afd56b161ac1b8fae54264f17580ceb45b1b07fef38da935.NewRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// RelationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStore.sets.item.children.item.children.item.relations.item collection
+func (m *TermItemRequestBuilder) RelationsById(id string)(*ib5b1137827d23022a54cb7300fd73647cebc7e97b854307a9193b1d13ebc8b41.RelationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["relation_id"] = id
+    }
+    return ib5b1137827d23022a54cb7300fd73647cebc7e97b854307a9193b1d13ebc8b41.NewRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *TermItemRequestBuilder) Set()(*i615008848b850143df439fa00893fd778f928ac3c8078aec9947a95df690254f.SetRequestBuilder) {
+    return i615008848b850143df439fa00893fd778f928ac3c8078aec9947a95df690254f.NewSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

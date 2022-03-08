@@ -2,11 +2,11 @@ package managedapppolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    idd35731d4d3b5e8a2190eb6a743d0277cd23e1bae0dd3b064af5196b32c507ca "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedapppolicies/count"
 )
 
-// ManagedAppPoliciesRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppPolicies
+// ManagedAppPoliciesRequestBuilder provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
 type ManagedAppPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ManagedAppPoliciesRequestBuilderGetQueryParameters struct {
 // ManagedAppPoliciesRequestBuilderPostOptions options for Post
 type ManagedAppPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicy;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewManagedAppPoliciesRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagedAppPoliciesRequestBuilder) Count()(*idd35731d4d3b5e8a2190eb6a743d0277cd23e1bae0dd3b064af5196b32c507ca.CountRequestBuilder) {
+    return idd35731d4d3b5e8a2190eb6a743d0277cd23e1bae0dd3b064af5196b32c507ca.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation managed app policies.
 func (m *ManagedAppPoliciesRequestBuilder) CreateGetRequestInformation(options *ManagedAppPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ManagedAppPoliciesRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation managed app policies.
+// CreatePostRequestInformation create new navigation property to managedAppPolicies for deviceAppManagement
 func (m *ManagedAppPoliciesRequestBuilder) CreatePostRequestInformation(options *ManagedAppPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ManagedAppPoliciesRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get managed app policies.
-func (m *ManagedAppPoliciesRequestBuilder) Get(options *ManagedAppPoliciesRequestBuilderGetOptions)(*ManagedAppPoliciesResponse, error) {
+func (m *ManagedAppPoliciesRequestBuilder) Get(options *ManagedAppPoliciesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedAppPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateManagedAppPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagedAppPoliciesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicyCollectionResponseable), nil
 }
-// Post managed app policies.
-func (m *ManagedAppPoliciesRequestBuilder) Post(options *ManagedAppPoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicy, error) {
+// Post create new navigation property to managedAppPolicies for deviceAppManagement
+func (m *ManagedAppPoliciesRequestBuilder) Post(options *ManagedAppPoliciesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewManagedAppPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateManagedAppPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicy), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicyable), nil
 }

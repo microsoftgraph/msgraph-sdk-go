@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RelatedContact 
+// RelatedContact provides operations to manage the educationRoot singleton.
 type RelatedContact struct {
     // Indicates whether the user has been consented to access student data.
     accessConsent *bool;
@@ -25,6 +25,10 @@ func NewRelatedContact()(*RelatedContact) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateRelatedContactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRelatedContactFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRelatedContact(), nil
 }
 // GetAccessConsent gets the accessConsent property value. Indicates whether the user has been consented to access student data.
 func (m *RelatedContact) GetAccessConsent()(*bool) {
@@ -56,22 +60,6 @@ func (m *RelatedContact) GetEmailAddress()(*string) {
         return nil
     } else {
         return m.emailAddress
-    }
-}
-// GetMobilePhone gets the mobilePhone property value. Mobile phone number of the contact.
-func (m *RelatedContact) GetMobilePhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobilePhone
-    }
-}
-// GetRelationship gets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
-func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relationship
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +116,22 @@ func (m *RelatedContact) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetMobilePhone gets the mobilePhone property value. Mobile phone number of the contact.
+func (m *RelatedContact) GetMobilePhone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobilePhone
+    }
+}
+// GetRelationship gets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
+func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relationship
+    }
 }
 func (m *RelatedContact) IsNil()(bool) {
     return m == nil

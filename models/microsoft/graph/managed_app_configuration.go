@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedAppConfiguration 
+// ManagedAppConfiguration provides operations to manage the deviceAppManagement singleton.
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
     // A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-    customSettings []KeyValuePair;
+    customSettings []KeyValuePairable;
 }
 // NewManagedAppConfiguration instantiates a new managedAppConfiguration and sets the default values.
 func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
@@ -17,8 +17,12 @@ func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
     }
     return m
 }
+// CreateManagedAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedAppConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedAppConfiguration(), nil
+}
 // GetCustomSettings gets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePair) {
+func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -29,14 +33,14 @@ func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePair) {
 func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
     res["customSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetCustomSettings(res)
         }
@@ -56,8 +60,7 @@ func (m *ManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetCustomSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomSettings()))
         for i, v := range m.GetCustomSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customSettings", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *ManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetCustomSettings sets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePair)() {
+func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePairable)() {
     if m != nil {
         m.customSettings = value
     }

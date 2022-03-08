@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookCommentReply 
+// WorkbookCommentReply provides operations to manage the drive singleton.
 type WorkbookCommentReply struct {
     Entity
     // The content of a comment reply.
@@ -18,6 +18,10 @@ func NewWorkbookCommentReply()(*WorkbookCommentReply) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateWorkbookCommentReplyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookCommentReplyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookCommentReply(), nil
 }
 // GetContent gets the content property value. The content of a comment reply.
 func (m *WorkbookCommentReply) GetContent()(*string) {

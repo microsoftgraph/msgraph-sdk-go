@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutlookItem 
+// OutlookItem provides operations to manage the drive singleton.
 type OutlookItem struct {
     Entity
     // The categories associated with the item
@@ -23,6 +23,10 @@ func NewOutlookItem()(*OutlookItem) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateOutlookItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOutlookItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOutlookItem(), nil
 }
 // GetCategories gets the categories property value. The categories associated with the item
 func (m *OutlookItem) GetCategories()([]string) {
@@ -46,14 +50,6 @@ func (m *OutlookItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *OutlookItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -104,6 +100,14 @@ func (m *OutlookItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *OutlookItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *OutlookItem) IsNil()(bool) {
     return m == nil

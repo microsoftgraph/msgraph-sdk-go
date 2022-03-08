@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Identity 
+// Identity provides operations to manage the appCatalogs singleton.
 type Identity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewIdentity()(*Identity) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIdentityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIdentity(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Identity) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *Identity) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetId gets the id property value. Unique identifier for the identity.
-func (m *Identity) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetId gets the id property value. Unique identifier for the identity.
+func (m *Identity) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
 }
 func (m *Identity) IsNil()(bool) {
     return m == nil

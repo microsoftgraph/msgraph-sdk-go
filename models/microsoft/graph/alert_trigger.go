@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AlertTrigger 
+// AlertTrigger provides operations to manage the security singleton.
 type AlertTrigger struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewAlertTrigger()(*AlertTrigger) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAlertTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAlertTriggerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAlertTrigger(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertTrigger) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetName gets the name property value. Name of the property serving as a detection trigger.
-func (m *AlertTrigger) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetType gets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
-func (m *AlertTrigger) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetValue gets the value property value. Value of the property serving as a detection trigger.
-func (m *AlertTrigger) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *AlertTrigger) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name of the property serving as a detection trigger.
+func (m *AlertTrigger) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetType gets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
+func (m *AlertTrigger) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetValue gets the value property value. Value of the property serving as a detection trigger.
+func (m *AlertTrigger) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *AlertTrigger) IsNil()(bool) {
     return m == nil

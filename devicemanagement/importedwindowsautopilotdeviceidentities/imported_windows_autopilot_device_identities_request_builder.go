@@ -2,12 +2,12 @@ package importedwindowsautopilotdeviceidentities
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i5ec97fd59e061df65913355a6db15803dc4a5a301962b4c741f6a7499d24792c "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/importedwindowsautopilotdeviceidentities/import_escaped"
+    iaa29daa3c226776b057f1acdf0964b2ce382e6c77b1be10f0c9b676220be7b8e "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/importedwindowsautopilotdeviceidentities/count"
 )
 
-// ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder builds and executes requests for operations under \deviceManagement\importedWindowsAutopilotDeviceIdentities
+// ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 type ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters st
 // ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostOptions options for Post
 type ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ImportedWindowsAutopilotDeviceIdentity;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ImportedWindowsAutopilotDeviceIdentityable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(rawUrl string, re
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Count()(*iaa29daa3c226776b057f1acdf0964b2ce382e6c77b1be10f0c9b676220be7b8e.CountRequestBuilder) {
+    return iaa29daa3c226776b057f1acdf0964b2ce382e6c77b1be10f0c9b676220be7b8e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation collection of imported Windows autopilot devices.
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetRequestInformation(options *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation collection of imported Windows autopilot devices.
+// CreatePostRequestInformation create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostRequestInformation(options *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,29 +118,37 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostReque
     return requestInfo, nil
 }
 // Get collection of imported Windows autopilot devices.
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Get(options *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetOptions)(*ImportedWindowsAutopilotDeviceIdentitiesResponse, error) {
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Get(options *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewImportedWindowsAutopilotDeviceIdentitiesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateImportedWindowsAutopilotDeviceIdentityCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ImportedWindowsAutopilotDeviceIdentitiesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable), nil
 }
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Import_escaped()(*i5ec97fd59e061df65913355a6db15803dc4a5a301962b4c741f6a7499d24792c.ImportRequestBuilder) {
     return i5ec97fd59e061df65913355a6db15803dc4a5a301962b4c741f6a7499d24792c.NewImportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post collection of imported Windows autopilot devices.
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Post(options *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ImportedWindowsAutopilotDeviceIdentity, error) {
+// Post create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Post(options *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ImportedWindowsAutopilotDeviceIdentityable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewImportedWindowsAutopilotDeviceIdentity() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ImportedWindowsAutopilotDeviceIdentity), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ImportedWindowsAutopilotDeviceIdentityable), nil
 }

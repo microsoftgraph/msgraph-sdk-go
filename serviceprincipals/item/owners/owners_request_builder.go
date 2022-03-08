@@ -2,11 +2,11 @@ package owners
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i3fd51d7cedbd61b7eb9da3199c41a984c523da2ba70cd0061dbe5ac3af02d349 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/owners/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i93939644e4bd092f76ff55d542b68c4603adbb8079284fd4d4882297e8d691a1 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/owners/count"
 )
 
-// OwnersRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\owners
+// OwnersRequestBuilder provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.
 type OwnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewOwnersRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewOwnersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOwnersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *OwnersRequestBuilder) Count()(*i93939644e4bd092f76ff55d542b68c4603adbb8079284fd4d4882297e8d691a1.CountRequestBuilder) {
+    return i93939644e4bd092f76ff55d542b68c4603adbb8079284fd4d4882297e8d691a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
 func (m *OwnersRequestBuilder) CreateGetRequestInformation(options *OwnersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *OwnersRequestBuilder) CreateGetRequestInformation(options *OwnersReques
     return requestInfo, nil
 }
 // Get directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
-func (m *OwnersRequestBuilder) Get(options *OwnersRequestBuilderGetOptions)(*OwnersResponse, error) {
+func (m *OwnersRequestBuilder) Get(options *OwnersRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOwnersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*OwnersResponse), nil
-}
-func (m *OwnersRequestBuilder) Ref()(*i3fd51d7cedbd61b7eb9da3199c41a984c523da2ba70cd0061dbe5ac3af02d349.RefRequestBuilder) {
-    return i3fd51d7cedbd61b7eb9da3199c41a984c523da2ba70cd0061dbe5ac3af02d349.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable), nil
 }

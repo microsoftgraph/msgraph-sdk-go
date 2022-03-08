@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationAssignmentDefaults 
+// EducationAssignmentDefaults provides operations to manage the educationRoot singleton.
 type EducationAssignmentDefaults struct {
     Entity
     // Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
@@ -22,6 +22,10 @@ func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateEducationAssignmentDefaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationAssignmentDefaultsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationAssignmentDefaults(), nil
 }
 // GetAddedStudentAction gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
 func (m *EducationAssignmentDefaults) GetAddedStudentAction()(*EducationAddedStudentAction) {
@@ -45,14 +49,6 @@ func (m *EducationAssignmentDefaults) GetDueTime()(*i04eb5309aeaafadd28374d79c84
         return nil
     } else {
         return m.dueTime
-    }
-}
-// GetNotificationChannelUrl gets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
-func (m *EducationAssignmentDefaults) GetNotificationChannelUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationChannelUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +95,14 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetNotificationChannelUrl gets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
+func (m *EducationAssignmentDefaults) GetNotificationChannelUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationChannelUrl
+    }
 }
 func (m *EducationAssignmentDefaults) IsNil()(bool) {
     return m == nil

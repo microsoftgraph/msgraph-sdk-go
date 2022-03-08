@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// ScopedRoleMembershipItemRequestBuilder builds and executes requests for operations under \directory\administrativeUnits\{administrativeUnit-id}\scopedRoleMembers\{scopedRoleMembership-id}
+// ScopedRoleMembershipItemRequestBuilder provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
 type ScopedRoleMembershipItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type ScopedRoleMembershipItemRequestBuilderGetQueryParameters struct {
 // ScopedRoleMembershipItemRequestBuilderPatchOptions options for Patch
 type ScopedRoleMembershipItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembership;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembershipable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewScopedRoleMembershipItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewScopedRoleMembershipItemRequestBuilder(rawUrl string, requestAdapter ida
     urlParams["request-raw-url"] = rawUrl
     return NewScopedRoleMembershipItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation scoped-role members of this administrative unit.
+// CreateDeleteRequestInformation delete navigation property scopedRoleMembers for directory
 func (m *ScopedRoleMembershipItemRequestBuilder) CreateDeleteRequestInformation(options *ScopedRoleMembershipItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *ScopedRoleMembershipItemRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation scoped-role members of this administrative unit.
+// CreatePatchRequestInformation update the navigation property scopedRoleMembers in directory
 func (m *ScopedRoleMembershipItemRequestBuilder) CreatePatchRequestInformation(options *ScopedRoleMembershipItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *ScopedRoleMembershipItemRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// Delete scoped-role members of this administrative unit.
+// Delete delete navigation property scopedRoleMembers for directory
 func (m *ScopedRoleMembershipItemRequestBuilder) Delete(options *ScopedRoleMembershipItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get scoped-role members of this administrative unit.
-func (m *ScopedRoleMembershipItemRequestBuilder) Get(options *ScopedRoleMembershipItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembership, error) {
+func (m *ScopedRoleMembershipItemRequestBuilder) Get(options *ScopedRoleMembershipItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembershipable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewScopedRoleMembership() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateScopedRoleMembershipFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembership), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembershipable), nil
 }
-// Patch scoped-role members of this administrative unit.
+// Patch update the navigation property scopedRoleMembers in directory
 func (m *ScopedRoleMembershipItemRequestBuilder) Patch(options *ScopedRoleMembershipItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Package_escaped 
+// Package_escaped provides operations to manage the drive singleton.
 type Package_escaped struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewPackage_escaped()(*Package_escaped) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePackage_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePackage_escapedFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPackage_escaped(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Package_escaped) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetType gets the type property value. A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
-func (m *Package_escaped) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *Package_escaped) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetType gets the type property value. A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+func (m *Package_escaped) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *Package_escaped) IsNil()(bool) {
     return m == nil

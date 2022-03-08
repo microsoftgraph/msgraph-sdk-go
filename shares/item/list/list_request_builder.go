@@ -2,7 +2,6 @@ package list
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i6cc54c104a1f556165cc44589ee14207379ed8c37fa85729d5c314e13f2214d7 "github.com/microsoftgraph/msgraph-sdk-go/shares/item/list/columns"
     i7a0c6962c8b1589339031c077d13646778071c443927dc1046bc04df31627bf6 "github.com/microsoftgraph/msgraph-sdk-go/shares/item/list/items"
@@ -15,7 +14,7 @@ import (
     ifd1fbca74ca99c59f8151a23008189eb5fa814dfb2bdb94e0592368b94d84ebe "github.com/microsoftgraph/msgraph-sdk-go/shares/item/list/columns/item"
 )
 
-// ListRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list
+// ListRequestBuilder provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.
 type ListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +53,7 @@ type ListRequestBuilderGetQueryParameters struct {
 // ListRequestBuilderPatchOptions options for Patch
 type ListRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.List;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Listable;
     // Request headers
     H map[string]string;
     // Request options
@@ -85,7 +84,7 @@ func NewListRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -109,7 +108,7 @@ func (m *ListRequestBuilder) ContentTypesById(id string)(*i6f7c6ed0403d181f0f9df
     }
     return i6f7c6ed0403d181f0f9df70f035fc911fc0235b004fca66648da29a67534a2e2.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformation used to access the underlying list
+// CreateDeleteRequestInformation delete navigation property list for shares
 func (m *ListRequestBuilder) CreateDeleteRequestInformation(options *ListRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,7 +145,7 @@ func (m *ListRequestBuilder) CreateGetRequestInformation(options *ListRequestBui
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation used to access the underlying list
+// CreatePatchRequestInformation update the navigation property list in shares
 func (m *ListRequestBuilder) CreatePatchRequestInformation(options *ListRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -164,13 +163,17 @@ func (m *ListRequestBuilder) CreatePatchRequestInformation(options *ListRequestB
     }
     return requestInfo, nil
 }
-// Delete used to access the underlying list
+// Delete delete navigation property list for shares
 func (m *ListRequestBuilder) Delete(options *ListRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -180,16 +183,20 @@ func (m *ListRequestBuilder) Drive()(*id412f117e08220004924a69577571fc52ee563dcb
     return id412f117e08220004924a69577571fc52ee563dcb4aa3bb6992790f4a56a8672.NewDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get used to access the underlying list
-func (m *ListRequestBuilder) Get(options *ListRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.List, error) {
+func (m *ListRequestBuilder) Get(options *ListRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Listable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewList() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateListFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.List), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Listable), nil
 }
 func (m *ListRequestBuilder) Items()(*i7a0c6962c8b1589339031c077d13646778071c443927dc1046bc04df31627bf6.ItemsRequestBuilder) {
     return i7a0c6962c8b1589339031c077d13646778071c443927dc1046bc04df31627bf6.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -205,13 +212,17 @@ func (m *ListRequestBuilder) ItemsById(id string)(*ia5941405950ea17199c6d656adb7
     }
     return ia5941405950ea17199c6d656adb76e8bf88f3f605415a64747a31ce95e0c07b7.NewListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch used to access the underlying list
+// Patch update the navigation property list in shares
 func (m *ListRequestBuilder) Patch(options *ListRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

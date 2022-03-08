@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationTeacher 
+// EducationTeacher provides operations to manage the educationRoot singleton.
 type EducationTeacher struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewEducationTeacher()(*EducationTeacher) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateEducationTeacherFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationTeacherFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationTeacher(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationTeacher) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *EducationTeacher) GetExternalId()(*string) {
         return nil
     } else {
         return m.externalId
-    }
-}
-// GetTeacherNumber gets the teacherNumber property value. Teacher number.
-func (m *EducationTeacher) GetTeacherNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teacherNumber
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *EducationTeacher) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetTeacherNumber gets the teacherNumber property value. Teacher number.
+func (m *EducationTeacher) GetTeacherNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teacherNumber
+    }
 }
 func (m *EducationTeacher) IsNil()(bool) {
     return m == nil

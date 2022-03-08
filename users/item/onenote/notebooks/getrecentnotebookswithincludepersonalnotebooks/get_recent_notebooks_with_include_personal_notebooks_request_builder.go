@@ -3,10 +3,9 @@ package getrecentnotebookswithincludepersonalnotebooks
 import (
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\notebooks\microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})
+// GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder provides operations to call the getRecentNotebooks method.
 type GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +35,7 @@ func NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(pat
     if includePersonalNotebooks != nil {
         urlTplParams["includePersonalNotebooks"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatBool(*includePersonalNotebooks)
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,18 +63,14 @@ func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) CreateGet
     return requestInfo, nil
 }
 // Get invoke function getRecentNotebooks
-func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) Get(options *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetOptions)([]GetRecentNotebooksWithIncludePersonalNotebooks, error) {
+func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) Get(options *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetOptions)(GetRecentNotebooksWithIncludePersonalNotebooksResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetRecentNotebooksWithIncludePersonalNotebooks() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetRecentNotebooksWithIncludePersonalNotebooksResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetRecentNotebooksWithIncludePersonalNotebooks, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetRecentNotebooksWithIncludePersonalNotebooks))
-    }
-    return val, nil
+    return res.(GetRecentNotebooksWithIncludePersonalNotebooksResponseable), nil
 }

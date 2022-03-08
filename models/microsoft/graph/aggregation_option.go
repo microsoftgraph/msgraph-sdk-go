@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AggregationOption 
+// AggregationOption provides operations to call the query method.
 type AggregationOption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    bucketDefinition *BucketAggregationDefinition;
+    bucketDefinition BucketAggregationDefinitionable;
     // Computes aggregation on the field while the field exists in current entity type. Required.
     field *string;
     // The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
@@ -22,6 +22,10 @@ func NewAggregationOption()(*AggregationOption) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAggregationOptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAggregationOptionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAggregationOption(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AggregationOption) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -31,7 +35,7 @@ func (m *AggregationOption) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetBucketDefinition gets the bucketDefinition property value. 
-func (m *AggregationOption) GetBucketDefinition()(*BucketAggregationDefinition) {
+func (m *AggregationOption) GetBucketDefinition()(BucketAggregationDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -46,24 +50,16 @@ func (m *AggregationOption) GetField()(*string) {
         return m.field
     }
 }
-// GetSize gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
-func (m *AggregationOption) GetSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AggregationOption) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bucketDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBucketAggregationDefinition() })
+        val, err := n.GetObjectValue(CreateBucketAggregationDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBucketDefinition(val.(*BucketAggregationDefinition))
+            m.SetBucketDefinition(val.(BucketAggregationDefinitionable))
         }
         return nil
     }
@@ -88,6 +84,14 @@ func (m *AggregationOption) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetSize gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+func (m *AggregationOption) GetSize()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
 }
 func (m *AggregationOption) IsNil()(bool) {
     return m == nil
@@ -127,7 +131,7 @@ func (m *AggregationOption) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetBucketDefinition sets the bucketDefinition property value. 
-func (m *AggregationOption) SetBucketDefinition(value *BucketAggregationDefinition)() {
+func (m *AggregationOption) SetBucketDefinition(value BucketAggregationDefinitionable)() {
     if m != nil {
         m.bucketDefinition = value
     }

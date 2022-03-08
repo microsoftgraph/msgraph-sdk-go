@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceExchangeAccessStateSummary 
+// DeviceExchangeAccessStateSummary provides operations to manage the deviceManagement singleton.
 type DeviceExchangeAccessStateSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,6 +25,10 @@ func NewDeviceExchangeAccessStateSummary()(*DeviceExchangeAccessStateSummary) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceExchangeAccessStateSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceExchangeAccessStateSummary) GetAdditionalData()(map[string]interface{}) {
@@ -48,30 +52,6 @@ func (m *DeviceExchangeAccessStateSummary) GetBlockedDeviceCount()(*int32) {
         return nil
     } else {
         return m.blockedDeviceCount
-    }
-}
-// GetQuarantinedDeviceCount gets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
-func (m *DeviceExchangeAccessStateSummary) GetQuarantinedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quarantinedDeviceCount
-    }
-}
-// GetUnavailableDeviceCount gets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
-func (m *DeviceExchangeAccessStateSummary) GetUnavailableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unavailableDeviceCount
-    }
-}
-// GetUnknownDeviceCount gets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
-func (m *DeviceExchangeAccessStateSummary) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +108,30 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetQuarantinedDeviceCount gets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
+func (m *DeviceExchangeAccessStateSummary) GetQuarantinedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quarantinedDeviceCount
+    }
+}
+// GetUnavailableDeviceCount gets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
+func (m *DeviceExchangeAccessStateSummary) GetUnavailableDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unavailableDeviceCount
+    }
+}
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
+func (m *DeviceExchangeAccessStateSummary) GetUnknownDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unknownDeviceCount
+    }
 }
 func (m *DeviceExchangeAccessStateSummary) IsNil()(bool) {
     return m == nil

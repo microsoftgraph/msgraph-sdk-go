@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i1d0689ad330d2744c1fb18da8874f5ab0d3d9f9e089b981c1847e0732b28d4b6 "github.com/microsoftgraph/msgraph-sdk-go/me/calendarview/item/tentativelyaccept"
     i465e55e32341d082edd97b4cbbe30b74404cd0753d5a94c441f6e442632d344d "github.com/microsoftgraph/msgraph-sdk-go/me/calendarview/item/cancel"
@@ -24,7 +23,7 @@ import (
     icbdb2876a9fc3cde1981cefae88c00544c63c09c8176a43b5750b723fee1cfa3 "github.com/microsoftgraph/msgraph-sdk-go/me/calendarview/item/multivalueextendedproperties/item"
 )
 
-// EventItemRequestBuilder builds and executes requests for operations under \me\calendarView\{event-id}
+// EventItemRequestBuilder provides operations to manage the calendarView property of the microsoft.graph.user entity.
 type EventItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -65,7 +64,7 @@ type EventItemRequestBuilderGetQueryParameters struct {
 // EventItemRequestBuilderPatchOptions options for Patch
 type EventItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Eventable;
     // Request headers
     H map[string]string;
     // Request options
@@ -105,7 +104,7 @@ func NewEventItemRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -115,7 +114,7 @@ func NewEventItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the calendar view for the calendar. Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property calendarView for me
 func (m *EventItemRequestBuilder) CreateDeleteRequestInformation(options *EventItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -152,7 +151,7 @@ func (m *EventItemRequestBuilder) CreateGetRequestInformation(options *EventItem
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the calendar view for the calendar. Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property calendarView in me
 func (m *EventItemRequestBuilder) CreatePatchRequestInformation(options *EventItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -173,13 +172,17 @@ func (m *EventItemRequestBuilder) CreatePatchRequestInformation(options *EventIt
 func (m *EventItemRequestBuilder) Decline()(*i53f43a3531f80c6e0571cd6533e13dfb0a9bec5d78a4451ab57d06d69569e313.DeclineRequestBuilder) {
     return i53f43a3531f80c6e0571cd6533e13dfb0a9bec5d78a4451ab57d06d69569e313.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete the calendar view for the calendar. Read-only. Nullable.
+// Delete delete navigation property calendarView for me
 func (m *EventItemRequestBuilder) Delete(options *EventItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -206,16 +209,20 @@ func (m *EventItemRequestBuilder) Forward()(*ibd0b52fb44db2ad950860bec1e2b4ed68c
     return ibd0b52fb44db2ad950860bec1e2b4ed68ce5d6349861ec6e194d282bde7bcc51.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the calendar view for the calendar. Read-only. Nullable.
-func (m *EventItemRequestBuilder) Get(options *EventItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, error) {
+func (m *EventItemRequestBuilder) Get(options *EventItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Eventable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEvent() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEventFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Eventable), nil
 }
 func (m *EventItemRequestBuilder) Instances()(*ib37f35045d733a190b9416b6893f854438f6a18b0b560d7fd6225d7b528fc019.InstancesRequestBuilder) {
     return ib37f35045d733a190b9416b6893f854438f6a18b0b560d7fd6225d7b528fc019.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -245,13 +252,17 @@ func (m *EventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i
     }
     return icbdb2876a9fc3cde1981cefae88c00544c63c09c8176a43b5750b723fee1cfa3.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the calendar view for the calendar. Read-only. Nullable.
+// Patch update the navigation property calendarView in me
 func (m *EventItemRequestBuilder) Patch(options *EventItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

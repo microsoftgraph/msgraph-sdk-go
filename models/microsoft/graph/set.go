@@ -5,25 +5,25 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Set 
+// Set provides operations to manage the drive singleton.
 type Set struct {
     Entity
     // Children terms of set in term [store].
-    children []Term;
+    children []Termable;
     // Date and time of set creation. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Description that gives details on the term usage.
     description *string;
     // Name of the set for each languageTag.
-    localizedNames []LocalizedName;
+    localizedNames []LocalizedNameable;
     // 
-    parentGroup *Group;
+    parentGroup Groupable;
     // Custom properties for the set.
-    properties []KeyValue;
+    properties []KeyValueable;
     // Indicates which terms have been pinned or reused directly under the set.
-    relations []Relation;
+    relations []Relationable;
     // All the terms under the set.
-    terms []Term;
+    terms []Termable;
 }
 // NewSet instantiates a new set and sets the default values.
 func NewSet()(*Set) {
@@ -32,8 +32,12 @@ func NewSet()(*Set) {
     }
     return m
 }
+// CreateSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSet(), nil
+}
 // GetChildren gets the children property value. Children terms of set in term [store].
-func (m *Set) GetChildren()([]Term) {
+func (m *Set) GetChildren()([]Termable) {
     if m == nil {
         return nil
     } else {
@@ -56,58 +60,18 @@ func (m *Set) GetDescription()(*string) {
         return m.description
     }
 }
-// GetLocalizedNames gets the localizedNames property value. Name of the set for each languageTag.
-func (m *Set) GetLocalizedNames()([]LocalizedName) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizedNames
-    }
-}
-// GetParentGroup gets the parentGroup property value. 
-func (m *Set) GetParentGroup()(*Group) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentGroup
-    }
-}
-// GetProperties gets the properties property value. Custom properties for the set.
-func (m *Set) GetProperties()([]KeyValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
-}
-// GetRelations gets the relations property value. Indicates which terms have been pinned or reused directly under the set.
-func (m *Set) GetRelations()([]Relation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relations
-    }
-}
-// GetTerms gets the terms property value. All the terms under the set.
-func (m *Set) GetTerms()([]Term) {
-    if m == nil {
-        return nil
-    } else {
-        return m.terms
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["children"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTerm() })
+        val, err := n.GetCollectionOfObjectValues(CreateTermFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Term, len(val))
+            res := make([]Termable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Term))
+                res[i] = v.(Termable)
             }
             m.SetChildren(res)
         }
@@ -134,72 +98,112 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         return nil
     }
     res["localizedNames"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocalizedName() })
+        val, err := n.GetCollectionOfObjectValues(CreateLocalizedNameFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LocalizedName, len(val))
+            res := make([]LocalizedNameable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LocalizedName))
+                res[i] = v.(LocalizedNameable)
             }
             m.SetLocalizedNames(res)
         }
         return nil
     }
     res["parentGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroup() })
+        val, err := n.GetObjectValue(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentGroup(val.(*Group))
+            m.SetParentGroup(val.(Groupable))
         }
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValue, len(val))
+            res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValue))
+                res[i] = v.(KeyValueable)
             }
             m.SetProperties(res)
         }
         return nil
     }
     res["relations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRelation() })
+        val, err := n.GetCollectionOfObjectValues(CreateRelationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Relation, len(val))
+            res := make([]Relationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Relation))
+                res[i] = v.(Relationable)
             }
             m.SetRelations(res)
         }
         return nil
     }
     res["terms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTerm() })
+        val, err := n.GetCollectionOfObjectValues(CreateTermFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Term, len(val))
+            res := make([]Termable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Term))
+                res[i] = v.(Termable)
             }
             m.SetTerms(res)
         }
         return nil
     }
     return res
+}
+// GetLocalizedNames gets the localizedNames property value. Name of the set for each languageTag.
+func (m *Set) GetLocalizedNames()([]LocalizedNameable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.localizedNames
+    }
+}
+// GetParentGroup gets the parentGroup property value. 
+func (m *Set) GetParentGroup()(Groupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentGroup
+    }
+}
+// GetProperties gets the properties property value. Custom properties for the set.
+func (m *Set) GetProperties()([]KeyValueable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.properties
+    }
+}
+// GetRelations gets the relations property value. Indicates which terms have been pinned or reused directly under the set.
+func (m *Set) GetRelations()([]Relationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relations
+    }
+}
+// GetTerms gets the terms property value. All the terms under the set.
+func (m *Set) GetTerms()([]Termable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.terms
+    }
 }
 func (m *Set) IsNil()(bool) {
     return m == nil
@@ -213,8 +217,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     if m.GetChildren() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("children", cast)
         if err != nil {
@@ -236,8 +239,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     if m.GetLocalizedNames() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLocalizedNames()))
         for i, v := range m.GetLocalizedNames() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("localizedNames", cast)
         if err != nil {
@@ -253,8 +255,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     if m.GetProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("properties", cast)
         if err != nil {
@@ -264,8 +265,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     if m.GetRelations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRelations()))
         for i, v := range m.GetRelations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("relations", cast)
         if err != nil {
@@ -275,8 +275,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     if m.GetTerms() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTerms()))
         for i, v := range m.GetTerms() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("terms", cast)
         if err != nil {
@@ -286,7 +285,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     return nil
 }
 // SetChildren sets the children property value. Children terms of set in term [store].
-func (m *Set) SetChildren(value []Term)() {
+func (m *Set) SetChildren(value []Termable)() {
     if m != nil {
         m.children = value
     }
@@ -304,31 +303,31 @@ func (m *Set) SetDescription(value *string)() {
     }
 }
 // SetLocalizedNames sets the localizedNames property value. Name of the set for each languageTag.
-func (m *Set) SetLocalizedNames(value []LocalizedName)() {
+func (m *Set) SetLocalizedNames(value []LocalizedNameable)() {
     if m != nil {
         m.localizedNames = value
     }
 }
 // SetParentGroup sets the parentGroup property value. 
-func (m *Set) SetParentGroup(value *Group)() {
+func (m *Set) SetParentGroup(value Groupable)() {
     if m != nil {
         m.parentGroup = value
     }
 }
 // SetProperties sets the properties property value. Custom properties for the set.
-func (m *Set) SetProperties(value []KeyValue)() {
+func (m *Set) SetProperties(value []KeyValueable)() {
     if m != nil {
         m.properties = value
     }
 }
 // SetRelations sets the relations property value. Indicates which terms have been pinned or reused directly under the set.
-func (m *Set) SetRelations(value []Relation)() {
+func (m *Set) SetRelations(value []Relationable)() {
     if m != nil {
         m.relations = value
     }
 }
 // SetTerms sets the terms property value. All the terms under the set.
-func (m *Set) SetTerms(value []Term)() {
+func (m *Set) SetTerms(value []Termable)() {
     if m != nil {
         m.terms = value
     }

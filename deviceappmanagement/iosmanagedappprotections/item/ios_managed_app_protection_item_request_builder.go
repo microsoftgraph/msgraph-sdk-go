@@ -2,14 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i0527cdc9fd204c09fc094d9f1e7b55f4ccd84d958a7e0489f836475992dd87bb "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/iosmanagedappprotections/item/apps"
     i6ae3cac28f103d10b9e38003e0d0f3659395bfb3860d2aa342dff5dcd0e09b03 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/iosmanagedappprotections/item/deploymentsummary"
     i55f341823424fe64c759539b60c8dd7b2233b0db784b5c0c209dbdcc827b89fc "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/iosmanagedappprotections/item/apps/item"
 )
 
-// IosManagedAppProtectionItemRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections\{iosManagedAppProtection-id}
+// IosManagedAppProtectionItemRequestBuilder provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
 type IosManagedAppProtectionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +47,7 @@ type IosManagedAppProtectionItemRequestBuilderGetQueryParameters struct {
 // IosManagedAppProtectionItemRequestBuilderPatchOptions options for Patch
 type IosManagedAppProtectionItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtection;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtectionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -79,7 +78,7 @@ func NewIosManagedAppProtectionItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -89,7 +88,7 @@ func NewIosManagedAppProtectionItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation iOS managed app policies.
+// CreateDeleteRequestInformation delete navigation property iosManagedAppProtections for deviceAppManagement
 func (m *IosManagedAppProtectionItemRequestBuilder) CreateDeleteRequestInformation(options *IosManagedAppProtectionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,7 +125,7 @@ func (m *IosManagedAppProtectionItemRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation iOS managed app policies.
+// CreatePatchRequestInformation update the navigation property iosManagedAppProtections in deviceAppManagement
 func (m *IosManagedAppProtectionItemRequestBuilder) CreatePatchRequestInformation(options *IosManagedAppProtectionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,13 +143,17 @@ func (m *IosManagedAppProtectionItemRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Delete iOS managed app policies.
+// Delete delete navigation property iosManagedAppProtections for deviceAppManagement
 func (m *IosManagedAppProtectionItemRequestBuilder) Delete(options *IosManagedAppProtectionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -160,24 +163,32 @@ func (m *IosManagedAppProtectionItemRequestBuilder) DeploymentSummary()(*i6ae3ca
     return i6ae3cac28f103d10b9e38003e0d0f3659395bfb3860d2aa342dff5dcd0e09b03.NewDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get iOS managed app policies.
-func (m *IosManagedAppProtectionItemRequestBuilder) Get(options *IosManagedAppProtectionItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtection, error) {
+func (m *IosManagedAppProtectionItemRequestBuilder) Get(options *IosManagedAppProtectionItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtectionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewIosManagedAppProtection() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateIosManagedAppProtectionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtection), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtectionable), nil
 }
-// Patch iOS managed app policies.
+// Patch update the navigation property iosManagedAppProtections in deviceAppManagement
 func (m *IosManagedAppProtectionItemRequestBuilder) Patch(options *IosManagedAppProtectionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApprovalStage 
+// ApprovalStage provides operations to manage the identityGovernance singleton.
 type ApprovalStage struct {
     Entity
     // Indicates whether the stage is assigned to the calling user to review. Read-only.
@@ -15,7 +15,7 @@ type ApprovalStage struct {
     // The justification associated with the approval stage decision.
     justification *string;
     // The identifier of the reviewer. Read-only.
-    reviewedBy *Identity;
+    reviewedBy Identityable;
     // The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     reviewedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
@@ -29,6 +29,10 @@ func NewApprovalStage()(*ApprovalStage) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApprovalStageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApprovalStage(), nil
 }
 // GetAssignedToMe gets the assignedToMe property value. Indicates whether the stage is assigned to the calling user to review. Read-only.
 func (m *ApprovalStage) GetAssignedToMe()(*bool) {
@@ -44,46 +48,6 @@ func (m *ApprovalStage) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetJustification gets the justification property value. The justification associated with the approval stage decision.
-func (m *ApprovalStage) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
-}
-// GetReviewedBy gets the reviewedBy property value. The identifier of the reviewer. Read-only.
-func (m *ApprovalStage) GetReviewedBy()(*Identity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedBy
-    }
-}
-// GetReviewedDateTime gets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-func (m *ApprovalStage) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedDateTime
-    }
-}
-// GetReviewResult gets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
-func (m *ApprovalStage) GetReviewResult()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewResult
-    }
-}
-// GetStatus gets the status property value. The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
-func (m *ApprovalStage) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,12 +84,12 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["reviewedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentity() })
+        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReviewedBy(val.(*Identity))
+            m.SetReviewedBy(val.(Identityable))
         }
         return nil
     }
@@ -160,6 +124,46 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetJustification gets the justification property value. The justification associated with the approval stage decision.
+func (m *ApprovalStage) GetJustification()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.justification
+    }
+}
+// GetReviewedBy gets the reviewedBy property value. The identifier of the reviewer. Read-only.
+func (m *ApprovalStage) GetReviewedBy()(Identityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewedBy
+    }
+}
+// GetReviewedDateTime gets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *ApprovalStage) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewedDateTime
+    }
+}
+// GetReviewResult gets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
+func (m *ApprovalStage) GetReviewResult()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewResult
+    }
+}
+// GetStatus gets the status property value. The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
+func (m *ApprovalStage) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *ApprovalStage) IsNil()(bool) {
     return m == nil
@@ -233,7 +237,7 @@ func (m *ApprovalStage) SetJustification(value *string)() {
     }
 }
 // SetReviewedBy sets the reviewedBy property value. The identifier of the reviewer. Read-only.
-func (m *ApprovalStage) SetReviewedBy(value *Identity)() {
+func (m *ApprovalStage) SetReviewedBy(value Identityable)() {
     if m != nil {
         m.reviewedBy = value
     }

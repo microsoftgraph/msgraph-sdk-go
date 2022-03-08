@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamsAppDefinition 
+// TeamsAppDefinition provides operations to manage the appCatalogs singleton.
 type TeamsAppDefinition struct {
     Entity
     // The details of the bot specified in the Teams app manifest.
-    bot *TeamworkBot;
+    bot TeamworkBotable;
     // 
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // Verbose description of the application.
     description *string;
     // The name of the app provided by the app developer.
@@ -34,8 +34,12 @@ func NewTeamsAppDefinition()(*TeamsAppDefinition) {
     }
     return m
 }
+// CreateTeamsAppDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamsAppDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamsAppDefinition(), nil
+}
 // GetBot gets the bot property value. The details of the bot specified in the Teams app manifest.
-func (m *TeamsAppDefinition) GetBot()(*TeamworkBot) {
+func (m *TeamsAppDefinition) GetBot()(TeamworkBotable) {
     if m == nil {
         return nil
     } else {
@@ -43,7 +47,7 @@ func (m *TeamsAppDefinition) GetBot()(*TeamworkBot) {
     }
 }
 // GetCreatedBy gets the createdBy property value. 
-func (m *TeamsAppDefinition) GetCreatedBy()(*IdentitySet) {
+func (m *TeamsAppDefinition) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -66,66 +70,26 @@ func (m *TeamsAppDefinition) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *TeamsAppDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
-func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingState
-    }
-}
-// GetShortDescription gets the shortDescription property value. Short description of the application.
-func (m *TeamsAppDefinition) GetShortDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shortDescription
-    }
-}
-// GetTeamsAppId gets the teamsAppId property value. The ID from the Teams app manifest.
-func (m *TeamsAppDefinition) GetTeamsAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsAppId
-    }
-}
-// GetVersion gets the version property value. The version number of the application.
-func (m *TeamsAppDefinition) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bot"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkBot() })
+        val, err := n.GetObjectValue(CreateTeamworkBotFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBot(val.(*TeamworkBot))
+            m.SetBot(val.(TeamworkBotable))
         }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -201,6 +165,46 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *TeamsAppDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publishingState
+    }
+}
+// GetShortDescription gets the shortDescription property value. Short description of the application.
+func (m *TeamsAppDefinition) GetShortDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shortDescription
+    }
+}
+// GetTeamsAppId gets the teamsAppId property value. The ID from the Teams app manifest.
+func (m *TeamsAppDefinition) GetTeamsAppId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsAppId
+    }
+}
+// GetVersion gets the version property value. The version number of the application.
+func (m *TeamsAppDefinition) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *TeamsAppDefinition) IsNil()(bool) {
     return m == nil
 }
@@ -268,13 +272,13 @@ func (m *TeamsAppDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     return nil
 }
 // SetBot sets the bot property value. The details of the bot specified in the Teams app manifest.
-func (m *TeamsAppDefinition) SetBot(value *TeamworkBot)() {
+func (m *TeamsAppDefinition) SetBot(value TeamworkBotable)() {
     if m != nil {
         m.bot = value
     }
 }
 // SetCreatedBy sets the createdBy property value. 
-func (m *TeamsAppDefinition) SetCreatedBy(value *IdentitySet)() {
+func (m *TeamsAppDefinition) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }

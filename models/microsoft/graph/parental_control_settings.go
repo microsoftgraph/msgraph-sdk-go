@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ParentalControlSettings 
+// ParentalControlSettings provides operations to manage the collection of application entities.
 type ParentalControlSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewParentalControlSettings()(*ParentalControlSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateParentalControlSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateParentalControlSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewParentalControlSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParentalControlSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *ParentalControlSettings) GetCountriesBlockedForMinors()([]string) {
         return nil
     } else {
         return m.countriesBlockedForMinors
-    }
-}
-// GetLegalAgeGroupRule gets the legalAgeGroupRule property value. Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.
-func (m *ParentalControlSettings) GetLegalAgeGroupRule()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.legalAgeGroupRule
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +68,14 @@ func (m *ParentalControlSettings) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetLegalAgeGroupRule gets the legalAgeGroupRule property value. Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.
+func (m *ParentalControlSettings) GetLegalAgeGroupRule()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.legalAgeGroupRule
+    }
 }
 func (m *ParentalControlSettings) IsNil()(bool) {
     return m == nil

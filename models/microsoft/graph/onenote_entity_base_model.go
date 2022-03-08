@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnenoteEntityBaseModel 
+// OnenoteEntityBaseModel provides operations to manage the drive singleton.
 type OnenoteEntityBaseModel struct {
     Entity
     // The endpoint where you can get details about the page. Read-only.
@@ -17,13 +17,9 @@ func NewOnenoteEntityBaseModel()(*OnenoteEntityBaseModel) {
     }
     return m
 }
-// GetSelf gets the self property value. The endpoint where you can get details about the page. Read-only.
-func (m *OnenoteEntityBaseModel) GetSelf()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.self
-    }
+// CreateOnenoteEntityBaseModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnenoteEntityBaseModelFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnenoteEntityBaseModel(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteEntityBaseModel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *OnenoteEntityBaseModel) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetSelf gets the self property value. The endpoint where you can get details about the page. Read-only.
+func (m *OnenoteEntityBaseModel) GetSelf()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.self
+    }
 }
 func (m *OnenoteEntityBaseModel) IsNil()(bool) {
     return m == nil

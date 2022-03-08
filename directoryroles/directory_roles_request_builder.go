@@ -1,16 +1,16 @@
 package directoryroles
 
 import (
+    i2a93ad836768ad49d953d9dfcefa9cac543730d20058b421e20bc27251dc8156 "github.com/microsoftgraph/msgraph-sdk-go/directoryroles/count"
     ia4917d7d2d6bbb2d83014b7111cd4d79a23adb1d36bc4e4126b6166e1d29afa8 "github.com/microsoftgraph/msgraph-sdk-go/directoryroles/getavailableextensionproperties"
     ia87332b05b41e0506ca217464387e3ed5c7d91dea72449a3a8af52c972c79b03 "github.com/microsoftgraph/msgraph-sdk-go/directoryroles/getbyids"
     id178ea9892b7517ea8099dc2841e11c78f3dfdc11a8a6c2abd1433ac224172e1 "github.com/microsoftgraph/msgraph-sdk-go/directoryroles/delta"
     ida2bdcfe4d6bf2bb544752c17e1ca5059ff3edc052c3080051a9c874aeb8aa1a "github.com/microsoftgraph/msgraph-sdk-go/directoryroles/validateproperties"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// DirectoryRolesRequestBuilder builds and executes requests for operations under \directoryRoles
+// DirectoryRolesRequestBuilder provides operations to manage the collection of directoryRole entities.
 type DirectoryRolesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +50,7 @@ type DirectoryRolesRequestBuilderGetQueryParameters struct {
 // DirectoryRolesRequestBuilderPostOptions options for Post
 type DirectoryRolesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRole;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleable;
     // Request headers
     H map[string]string;
     // Request options
@@ -67,7 +67,7 @@ func NewDirectoryRolesRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,6 +76,9 @@ func NewDirectoryRolesRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRolesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DirectoryRolesRequestBuilder) Count()(*i2a93ad836768ad49d953d9dfcefa9cac543730d20058b421e20bc27251dc8156.CountRequestBuilder) {
+    return i2a93ad836768ad49d953d9dfcefa9cac543730d20058b421e20bc27251dc8156.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from directoryRoles
 func (m *DirectoryRolesRequestBuilder) CreateGetRequestInformation(options *DirectoryRolesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -115,21 +118,25 @@ func (m *DirectoryRolesRequestBuilder) CreatePostRequestInformation(options *Dir
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \directoryRoles\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *DirectoryRolesRequestBuilder) Delta()(*id178ea9892b7517ea8099dc2841e11c78f3dfdc11a8a6c2abd1433ac224172e1.DeltaRequestBuilder) {
     return id178ea9892b7517ea8099dc2841e11c78f3dfdc11a8a6c2abd1433ac224172e1.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get entities from directoryRoles
-func (m *DirectoryRolesRequestBuilder) Get(options *DirectoryRolesRequestBuilderGetOptions)(*DirectoryRolesResponse, error) {
+func (m *DirectoryRolesRequestBuilder) Get(options *DirectoryRolesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryRolesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryRoleCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DirectoryRolesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleCollectionResponseable), nil
 }
 func (m *DirectoryRolesRequestBuilder) GetAvailableExtensionProperties()(*ia4917d7d2d6bbb2d83014b7111cd4d79a23adb1d36bc4e4126b6166e1d29afa8.GetAvailableExtensionPropertiesRequestBuilder) {
     return ia4917d7d2d6bbb2d83014b7111cd4d79a23adb1d36bc4e4126b6166e1d29afa8.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -138,16 +145,20 @@ func (m *DirectoryRolesRequestBuilder) GetByIds()(*ia87332b05b41e0506ca217464387
     return ia87332b05b41e0506ca217464387e3ed5c7d91dea72449a3a8af52c972c79b03.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to directoryRoles
-func (m *DirectoryRolesRequestBuilder) Post(options *DirectoryRolesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRole, error) {
+func (m *DirectoryRolesRequestBuilder) Post(options *DirectoryRolesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDirectoryRole() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryRoleFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRole), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleable), nil
 }
 func (m *DirectoryRolesRequestBuilder) ValidateProperties()(*ida2bdcfe4d6bf2bb544752c17e1ca5059ff3edc052c3080051a9c874aeb8aa1a.ValidatePropertiesRequestBuilder) {
     return ida2bdcfe4d6bf2bb544752c17e1ca5059ff3edc052c3080051a9c874aeb8aa1a.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -2,11 +2,11 @@ package columnpositions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i462eab672a5629731ad55973425310c30cf62a34c8ff8a0f4a4d3907affe6970 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/columnpositions/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    ia6cbd321e4f438b5d4cc777fab5a5ca27663d85a7327b5940c54b63d03858287 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/columnpositions/count"
 )
 
-// ColumnPositionsRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\columnPositions
+// ColumnPositionsRequestBuilder provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
 type ColumnPositionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewColumnPositionsRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewColumnPositionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewColumnPositionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ColumnPositionsRequestBuilder) Count()(*ia6cbd321e4f438b5d4cc777fab5a5ca27663d85a7327b5940c54b63d03858287.CountRequestBuilder) {
+    return ia6cbd321e4f438b5d4cc777fab5a5ca27663d85a7327b5940c54b63d03858287.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation column order information in a content type.
 func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformation(options *ColumnPositionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformation(options *Col
     return requestInfo, nil
 }
 // Get column order information in a content type.
-func (m *ColumnPositionsRequestBuilder) Get(options *ColumnPositionsRequestBuilderGetOptions)(*ColumnPositionsResponse, error) {
+func (m *ColumnPositionsRequestBuilder) Get(options *ColumnPositionsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewColumnPositionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateColumnDefinitionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ColumnPositionsResponse), nil
-}
-func (m *ColumnPositionsRequestBuilder) Ref()(*i462eab672a5629731ad55973425310c30cf62a34c8ff8a0f4a4d3907affe6970.RefRequestBuilder) {
-    return i462eab672a5629731ad55973425310c30cf62a34c8ff8a0f4a4d3907affe6970.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ColumnDefinitionCollectionResponseable), nil
 }

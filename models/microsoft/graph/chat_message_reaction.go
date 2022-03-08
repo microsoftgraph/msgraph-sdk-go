@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChatMessageReaction 
+// ChatMessageReaction provides operations to manage the collection of chat entities.
 type ChatMessageReaction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,7 +14,7 @@ type ChatMessageReaction struct {
     // Supported values are like, angry, sad, laugh, heart, surprised.
     reactionType *string;
     // 
-    user *ChatMessageReactionIdentitySet;
+    user ChatMessageReactionIdentitySetable;
 }
 // NewChatMessageReaction instantiates a new chatMessageReaction and sets the default values.
 func NewChatMessageReaction()(*ChatMessageReaction) {
@@ -22,6 +22,10 @@ func NewChatMessageReaction()(*ChatMessageReaction) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateChatMessageReactionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChatMessageReactionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChatMessageReaction(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageReaction) GetAdditionalData()(map[string]interface{}) {
@@ -37,22 +41,6 @@ func (m *ChatMessageReaction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetReactionType gets the reactionType property value. Supported values are like, angry, sad, laugh, heart, surprised.
-func (m *ChatMessageReaction) GetReactionType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reactionType
-    }
-}
-// GetUser gets the user property value. 
-func (m *ChatMessageReaction) GetUser()(*ChatMessageReactionIdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,16 +67,32 @@ func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["user"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatMessageReactionIdentitySet() })
+        val, err := n.GetObjectValue(CreateChatMessageReactionIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUser(val.(*ChatMessageReactionIdentitySet))
+            m.SetUser(val.(ChatMessageReactionIdentitySetable))
         }
         return nil
     }
     return res
+}
+// GetReactionType gets the reactionType property value. Supported values are like, angry, sad, laugh, heart, surprised.
+func (m *ChatMessageReaction) GetReactionType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reactionType
+    }
+}
+// GetUser gets the user property value. 
+func (m *ChatMessageReaction) GetUser()(ChatMessageReactionIdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.user
+    }
 }
 func (m *ChatMessageReaction) IsNil()(bool) {
     return m == nil
@@ -140,7 +144,7 @@ func (m *ChatMessageReaction) SetReactionType(value *string)() {
     }
 }
 // SetUser sets the user property value. 
-func (m *ChatMessageReaction) SetUser(value *ChatMessageReactionIdentitySet)() {
+func (m *ChatMessageReaction) SetUser(value ChatMessageReactionIdentitySetable)() {
     if m != nil {
         m.user = value
     }

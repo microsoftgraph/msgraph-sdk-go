@@ -2,11 +2,11 @@ package registeredusers
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i31b110b87a150128d0be2fb38c3d1a41d8789a05c1bdb153ed1383f78798d28a "github.com/microsoftgraph/msgraph-sdk-go/devices/item/registeredusers/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i8e6952138a2ae0dd20203739fccf22542ccdbd0ed375d95c6c9f44045fe78c30 "github.com/microsoftgraph/msgraph-sdk-go/devices/item/registeredusers/count"
 )
 
-// RegisteredUsersRequestBuilder builds and executes requests for operations under \devices\{device-id}\registeredUsers
+// RegisteredUsersRequestBuilder provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 type RegisteredUsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewRegisteredUsersRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewRegisteredUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRegisteredUsersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RegisteredUsersRequestBuilder) Count()(*i8e6952138a2ae0dd20203739fccf22542ccdbd0ed375d95c6c9f44045fe78c30.CountRequestBuilder) {
+    return i8e6952138a2ae0dd20203739fccf22542ccdbd0ed375d95c6c9f44045fe78c30.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *RegisteredUsersRequestBuilder) CreateGetRequestInformation(options *RegisteredUsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *RegisteredUsersRequestBuilder) CreateGetRequestInformation(options *Reg
     return requestInfo, nil
 }
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-func (m *RegisteredUsersRequestBuilder) Get(options *RegisteredUsersRequestBuilderGetOptions)(*RegisteredUsersResponse, error) {
+func (m *RegisteredUsersRequestBuilder) Get(options *RegisteredUsersRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRegisteredUsersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RegisteredUsersResponse), nil
-}
-func (m *RegisteredUsersRequestBuilder) Ref()(*i31b110b87a150128d0be2fb38c3d1a41d8789a05c1bdb153ed1383f78798d28a.RefRequestBuilder) {
-    return i31b110b87a150128d0be2fb38c3d1a41d8789a05c1bdb153ed1383f78798d28a.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable), nil
 }

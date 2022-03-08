@@ -4,33 +4,37 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Reminder 
+// Reminder provides operations to call the reminderView method.
 type Reminder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
     changeKey *string;
     // The date, time and time zone that the event ends.
-    eventEndTime *DateTimeTimeZone;
+    eventEndTime DateTimeTimeZoneable;
     // The unique ID of the event. Read only.
     eventId *string;
     // The location of the event.
-    eventLocation *Location;
+    eventLocation Locationable;
     // The date, time, and time zone that the event starts.
-    eventStartTime *DateTimeTimeZone;
+    eventStartTime DateTimeTimeZoneable;
     // The text of the event's subject line.
     eventSubject *string;
     // The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
     eventWebLink *string;
     // The date, time, and time zone that the reminder is set to occur.
-    reminderFireTime *DateTimeTimeZone;
+    reminderFireTime DateTimeTimeZoneable;
 }
-// NewReminder instantiates a new Reminder and sets the default values.
+// NewReminder instantiates a new reminder and sets the default values.
 func NewReminder()(*Reminder) {
     m := &Reminder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateReminderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReminderFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReminder(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Reminder) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +53,7 @@ func (m *Reminder) GetChangeKey()(*string) {
     }
 }
 // GetEventEndTime gets the eventEndTime property value. The date, time and time zone that the event ends.
-func (m *Reminder) GetEventEndTime()(*DateTimeTimeZone) {
+func (m *Reminder) GetEventEndTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
@@ -65,7 +69,7 @@ func (m *Reminder) GetEventId()(*string) {
     }
 }
 // GetEventLocation gets the eventLocation property value. The location of the event.
-func (m *Reminder) GetEventLocation()(*Location) {
+func (m *Reminder) GetEventLocation()(Locationable) {
     if m == nil {
         return nil
     } else {
@@ -73,7 +77,7 @@ func (m *Reminder) GetEventLocation()(*Location) {
     }
 }
 // GetEventStartTime gets the eventStartTime property value. The date, time, and time zone that the event starts.
-func (m *Reminder) GetEventStartTime()(*DateTimeTimeZone) {
+func (m *Reminder) GetEventStartTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
@@ -96,14 +100,6 @@ func (m *Reminder) GetEventWebLink()(*string) {
         return m.eventWebLink
     }
 }
-// GetReminderFireTime gets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
-func (m *Reminder) GetReminderFireTime()(*DateTimeTimeZone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminderFireTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Reminder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -118,12 +114,12 @@ func (m *Reminder) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["eventEndTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEventEndTime(val.(*DateTimeTimeZone))
+            m.SetEventEndTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -138,22 +134,22 @@ func (m *Reminder) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["eventLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocation() })
+        val, err := n.GetObjectValue(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEventLocation(val.(*Location))
+            m.SetEventLocation(val.(Locationable))
         }
         return nil
     }
     res["eventStartTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEventStartTime(val.(*DateTimeTimeZone))
+            m.SetEventStartTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -178,16 +174,24 @@ func (m *Reminder) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["reminderFireTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReminderFireTime(val.(*DateTimeTimeZone))
+            m.SetReminderFireTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
     return res
+}
+// GetReminderFireTime gets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
+func (m *Reminder) GetReminderFireTime()(DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reminderFireTime
+    }
 }
 func (m *Reminder) IsNil()(bool) {
     return m == nil
@@ -263,7 +267,7 @@ func (m *Reminder) SetChangeKey(value *string)() {
     }
 }
 // SetEventEndTime sets the eventEndTime property value. The date, time and time zone that the event ends.
-func (m *Reminder) SetEventEndTime(value *DateTimeTimeZone)() {
+func (m *Reminder) SetEventEndTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.eventEndTime = value
     }
@@ -275,13 +279,13 @@ func (m *Reminder) SetEventId(value *string)() {
     }
 }
 // SetEventLocation sets the eventLocation property value. The location of the event.
-func (m *Reminder) SetEventLocation(value *Location)() {
+func (m *Reminder) SetEventLocation(value Locationable)() {
     if m != nil {
         m.eventLocation = value
     }
 }
 // SetEventStartTime sets the eventStartTime property value. The date, time, and time zone that the event starts.
-func (m *Reminder) SetEventStartTime(value *DateTimeTimeZone)() {
+func (m *Reminder) SetEventStartTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.eventStartTime = value
     }
@@ -299,7 +303,7 @@ func (m *Reminder) SetEventWebLink(value *string)() {
     }
 }
 // SetReminderFireTime sets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
-func (m *Reminder) SetReminderFireTime(value *DateTimeTimeZone)() {
+func (m *Reminder) SetReminderFireTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.reminderFireTime = value
     }

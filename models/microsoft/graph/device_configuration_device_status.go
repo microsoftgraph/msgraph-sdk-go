@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationDeviceStatus 
+// DeviceConfigurationDeviceStatus provides operations to manage the deviceManagement singleton.
 type DeviceConfigurationDeviceStatus struct {
     Entity
     // The DateTime when device compliance grace period expires
@@ -30,6 +30,10 @@ func NewDeviceConfigurationDeviceStatus()(*DeviceConfigurationDeviceStatus) {
     }
     return m
 }
+// CreateDeviceConfigurationDeviceStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceConfigurationDeviceStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceConfigurationDeviceStatus(), nil
+}
 // GetComplianceGracePeriodExpirationDateTime gets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *DeviceConfigurationDeviceStatus) GetComplianceGracePeriodExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -52,38 +56,6 @@ func (m *DeviceConfigurationDeviceStatus) GetDeviceModel()(*string) {
         return nil
     } else {
         return m.deviceModel
-    }
-}
-// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
-func (m *DeviceConfigurationDeviceStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
-}
-// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-func (m *DeviceConfigurationDeviceStatus) GetStatus()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUserName gets the userName property value. The User Name that is being reported
-func (m *DeviceConfigurationDeviceStatus) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
-func (m *DeviceConfigurationDeviceStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,6 +132,38 @@ func (m *DeviceConfigurationDeviceStatus) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
+func (m *DeviceConfigurationDeviceStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastReportedDateTime
+    }
+}
+// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+func (m *DeviceConfigurationDeviceStatus) GetStatus()(*ComplianceStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUserName gets the userName property value. The User Name that is being reported
+func (m *DeviceConfigurationDeviceStatus) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
+func (m *DeviceConfigurationDeviceStatus) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *DeviceConfigurationDeviceStatus) IsNil()(bool) {
     return m == nil

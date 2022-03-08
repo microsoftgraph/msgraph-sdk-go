@@ -2,11 +2,11 @@ package defaultpages
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i69b021632e73ef199af3aeb2edffe6f90ff23e7bdf95eff3f44670dd08f7062c "github.com/microsoftgraph/msgraph-sdk-go/identity/b2xuserflows/item/languages/item/defaultpages/count"
 )
 
-// DefaultPagesRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}\defaultPages
+// DefaultPagesRequestBuilder provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
 type DefaultPagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type DefaultPagesRequestBuilderGetQueryParameters struct {
 // DefaultPagesRequestBuilderPostOptions options for Post
 type DefaultPagesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePage;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewDefaultPagesRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewDefaultPagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDefaultPagesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DefaultPagesRequestBuilder) Count()(*i69b021632e73ef199af3aeb2edffe6f90ff23e7bdf95eff3f44670dd08f7062c.CountRequestBuilder) {
+    return i69b021632e73ef199af3aeb2edffe6f90ff23e7bdf95eff3f44670dd08f7062c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *DefaultPagesRequestBuilder) CreateGetRequestInformation(options *DefaultPagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *DefaultPagesRequestBuilder) CreateGetRequestInformation(options *Defaul
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+// CreatePostRequestInformation create new navigation property to defaultPages for identity
 func (m *DefaultPagesRequestBuilder) CreatePostRequestInformation(options *DefaultPagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *DefaultPagesRequestBuilder) CreatePostRequestInformation(options *Defau
     return requestInfo, nil
 }
 // Get collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-func (m *DefaultPagesRequestBuilder) Get(options *DefaultPagesRequestBuilderGetOptions)(*DefaultPagesResponse, error) {
+func (m *DefaultPagesRequestBuilder) Get(options *DefaultPagesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDefaultPagesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUserFlowLanguagePageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DefaultPagesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePageCollectionResponseable), nil
 }
-// Post collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-func (m *DefaultPagesRequestBuilder) Post(options *DefaultPagesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePage, error) {
+// Post create new navigation property to defaultPages for identity
+func (m *DefaultPagesRequestBuilder) Post(options *DefaultPagesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePageable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewUserFlowLanguagePage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateUserFlowLanguagePageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePage), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePageable), nil
 }

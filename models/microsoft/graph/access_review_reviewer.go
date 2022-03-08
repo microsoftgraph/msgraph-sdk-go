@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewReviewer 
+// AccessReviewReviewer provides operations to manage the identityGovernance singleton.
 type AccessReviewReviewer struct {
     Entity
     // The date when the reviewer was added for the access review.
@@ -22,6 +22,10 @@ func NewAccessReviewReviewer()(*AccessReviewReviewer) {
     }
     return m
 }
+// CreateAccessReviewReviewerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewReviewerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewReviewer(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date when the reviewer was added for the access review.
 func (m *AccessReviewReviewer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -36,14 +40,6 @@ func (m *AccessReviewReviewer) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User principal name of the reviewer.
-func (m *AccessReviewReviewer) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +76,14 @@ func (m *AccessReviewReviewer) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User principal name of the reviewer.
+func (m *AccessReviewReviewer) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *AccessReviewReviewer) IsNil()(bool) {
     return m == nil

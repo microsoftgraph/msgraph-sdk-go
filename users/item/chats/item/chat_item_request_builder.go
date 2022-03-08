@@ -2,11 +2,18 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i161ad19b0c7a99cae8a80283db44d458d311ea7ea0fda7b7bee6231e5a71bf34 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/installedapps"
+    i29250e65d3047fac7086c3da168f1dc97b716e57040772b108c92eb7e41e5082 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/members"
+    i747f2653d0182726c4364050b88c4c017361f81ae437c821457319c34de8bbe4 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/messages"
+    ic797b970aa8f13def47c8a9daa30e882f6b3ffba8f376b46454ecdca4bbfff2a "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/tabs"
+    i03a5d9d6f43c34754e384f5d06895085102259e8c0fd8d72b735c4f7e27e19e3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/members/item"
+    i89204df365cb0b4df35e680ee9e843167bce6597538b2e059b21aa0890ed91ae "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/tabs/item"
+    ia5fe7898b11b622f06cabbbf98b672db477f4cd5aa1bdc1f1091441663a7ac94 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/messages/item"
+    ice5d918650d80a2fd00a96c09c41f928c4c75fc531425a6ae4f4cc396b70c4f2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/installedapps/item"
 )
 
-// ChatItemRequestBuilder builds and executes requests for operations under \users\{user-id}\chats\{chat-id}
+// ChatItemRequestBuilder provides operations to manage the chats property of the microsoft.graph.user entity.
 type ChatItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +52,7 @@ type ChatItemRequestBuilderGetQueryParameters struct {
 // ChatItemRequestBuilderPatchOptions options for Patch
 type ChatItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chatable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +69,7 @@ func NewChatItemRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -133,23 +140,73 @@ func (m *ChatItemRequestBuilder) Delete(options *ChatItemRequestBuilderDeleteOpt
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get get chats from users
-func (m *ChatItemRequestBuilder) Get(options *ChatItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat, error) {
+func (m *ChatItemRequestBuilder) Get(options *ChatItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chatable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewChat() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChatFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chatable), nil
+}
+func (m *ChatItemRequestBuilder) InstalledApps()(*i161ad19b0c7a99cae8a80283db44d458d311ea7ea0fda7b7bee6231e5a71bf34.InstalledAppsRequestBuilder) {
+    return i161ad19b0c7a99cae8a80283db44d458d311ea7ea0fda7b7bee6231e5a71bf34.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// InstalledAppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.installedApps.item collection
+func (m *ChatItemRequestBuilder) InstalledAppsById(id string)(*ice5d918650d80a2fd00a96c09c41f928c4c75fc531425a6ae4f4cc396b70c4f2.TeamsAppInstallationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["teamsAppInstallation_id"] = id
+    }
+    return ice5d918650d80a2fd00a96c09c41f928c4c75fc531425a6ae4f4cc396b70c4f2.NewTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *ChatItemRequestBuilder) Members()(*i29250e65d3047fac7086c3da168f1dc97b716e57040772b108c92eb7e41e5082.MembersRequestBuilder) {
+    return i29250e65d3047fac7086c3da168f1dc97b716e57040772b108c92eb7e41e5082.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.members.item collection
+func (m *ChatItemRequestBuilder) MembersById(id string)(*i03a5d9d6f43c34754e384f5d06895085102259e8c0fd8d72b735c4f7e27e19e3.ConversationMemberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["conversationMember_id"] = id
+    }
+    return i03a5d9d6f43c34754e384f5d06895085102259e8c0fd8d72b735c4f7e27e19e3.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *ChatItemRequestBuilder) Messages()(*i747f2653d0182726c4364050b88c4c017361f81ae437c821457319c34de8bbe4.MessagesRequestBuilder) {
+    return i747f2653d0182726c4364050b88c4c017361f81ae437c821457319c34de8bbe4.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.messages.item collection
+func (m *ChatItemRequestBuilder) MessagesById(id string)(*ia5fe7898b11b622f06cabbbf98b672db477f4cd5aa1bdc1f1091441663a7ac94.ChatMessageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["chatMessage_id"] = id
+    }
+    return ia5fe7898b11b622f06cabbbf98b672db477f4cd5aa1bdc1f1091441663a7ac94.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property chats in users
 func (m *ChatItemRequestBuilder) Patch(options *ChatItemRequestBuilderPatchOptions)(error) {
@@ -157,9 +214,27 @@ func (m *ChatItemRequestBuilder) Patch(options *ChatItemRequestBuilderPatchOptio
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
+}
+func (m *ChatItemRequestBuilder) Tabs()(*ic797b970aa8f13def47c8a9daa30e882f6b3ffba8f376b46454ecdca4bbfff2a.TabsRequestBuilder) {
+    return ic797b970aa8f13def47c8a9daa30e882f6b3ffba8f376b46454ecdca4bbfff2a.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TabsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.tabs.item collection
+func (m *ChatItemRequestBuilder) TabsById(id string)(*i89204df365cb0b4df35e680ee9e843167bce6597538b2e059b21aa0890ed91ae.TeamsTabItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["teamsTab_id"] = id
+    }
+    return i89204df365cb0b4df35e680ee9e843167bce6597538b2e059b21aa0890ed91ae.NewTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

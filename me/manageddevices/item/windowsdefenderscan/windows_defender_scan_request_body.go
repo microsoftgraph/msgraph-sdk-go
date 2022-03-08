@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDefenderScanRequestBody 
+// WindowsDefenderScanRequestBody provides operations to call the windowsDefenderScan method.
 type WindowsDefenderScanRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewWindowsDefenderScanRequestBody()(*WindowsDefenderScanRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateWindowsDefenderScanRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsDefenderScanRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsDefenderScanRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsDefenderScanRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetQuickScan gets the quickScan property value. 
-func (m *WindowsDefenderScanRequestBody) GetQuickScan()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quickScan
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *WindowsDefenderScanRequestBody) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetQuickScan gets the quickScan property value. 
+func (m *WindowsDefenderScanRequestBody) GetQuickScan()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quickScan
+    }
 }
 func (m *WindowsDefenderScanRequestBody) IsNil()(bool) {
     return m == nil

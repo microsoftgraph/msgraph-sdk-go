@@ -2,11 +2,11 @@ package linkedresources
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    iedd7acdedbb5f1ccbc3647c3a45a23363dcc1adec5ba3f4a886d19812f5e9098 "github.com/microsoftgraph/msgraph-sdk-go/me/todo/lists/item/tasks/item/linkedresources/count"
 )
 
-// LinkedResourcesRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}\linkedResources
+// LinkedResourcesRequestBuilder provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
 type LinkedResourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type LinkedResourcesRequestBuilderGetQueryParameters struct {
 // LinkedResourcesRequestBuilderPostOptions options for Post
 type LinkedResourcesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResource;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResourceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewLinkedResourcesRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewLinkedResourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLinkedResourcesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *LinkedResourcesRequestBuilder) Count()(*iedd7acdedbb5f1ccbc3647c3a45a23363dcc1adec5ba3f4a886d19812f5e9098.CountRequestBuilder) {
+    return iedd7acdedbb5f1ccbc3647c3a45a23363dcc1adec5ba3f4a886d19812f5e9098.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a collection of resources linked to the task.
 func (m *LinkedResourcesRequestBuilder) CreateGetRequestInformation(options *LinkedResourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *LinkedResourcesRequestBuilder) CreateGetRequestInformation(options *Lin
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a collection of resources linked to the task.
+// CreatePostRequestInformation create new navigation property to linkedResources for me
 func (m *LinkedResourcesRequestBuilder) CreatePostRequestInformation(options *LinkedResourcesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *LinkedResourcesRequestBuilder) CreatePostRequestInformation(options *Li
     return requestInfo, nil
 }
 // Get a collection of resources linked to the task.
-func (m *LinkedResourcesRequestBuilder) Get(options *LinkedResourcesRequestBuilderGetOptions)(*LinkedResourcesResponse, error) {
+func (m *LinkedResourcesRequestBuilder) Get(options *LinkedResourcesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLinkedResourcesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateLinkedResourceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*LinkedResourcesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResourceCollectionResponseable), nil
 }
-// Post a collection of resources linked to the task.
-func (m *LinkedResourcesRequestBuilder) Post(options *LinkedResourcesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResource, error) {
+// Post create new navigation property to linkedResources for me
+func (m *LinkedResourcesRequestBuilder) Post(options *LinkedResourcesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResourceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewLinkedResource() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateLinkedResourceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResource), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResourceable), nil
 }

@@ -5,44 +5,44 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RemoteItem 
+// RemoteItem provides operations to manage the drive singleton.
 type RemoteItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Identity of the user, device, and application which created the item. Read-only.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // Date and time of item creation. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Indicates that the remote item is a file. Read-only.
-    file *File;
+    file Fileable;
     // Information about the remote item from the local file system. Read-only.
-    fileSystemInfo *FileSystemInfo;
+    fileSystemInfo FileSystemInfoable;
     // Indicates that the remote item is a folder. Read-only.
-    folder *Folder;
+    folder Folderable;
     // Unique identifier for the remote item in its drive. Read-only.
     id *string;
     // Image metadata, if the item is an image. Read-only.
-    image *Image;
+    image Imageable;
     // Identity of the user, device, and application which last modified the item. Read-only.
-    lastModifiedBy *IdentitySet;
+    lastModifiedBy IdentitySetable;
     // Date and time the item was last modified. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Optional. Filename of the remote item. Read-only.
     name *string;
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    package_escaped *Package_escaped;
+    package_escaped Package_escapedable;
     // Properties of the parent of the remote item. Read-only.
-    parentReference *ItemReference;
+    parentReference ItemReferenceable;
     // Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
-    shared *Shared;
+    shared Sharedable;
     // Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
-    sharepointIds *SharepointIds;
+    sharepointIds SharepointIdsable;
     // Size of the remote item. Read-only.
     size *int64;
     // If the current item is also available as a special folder, this facet is returned. Read-only.
-    specialFolder *SpecialFolder;
+    specialFolder SpecialFolderable;
     // Video metadata, if the item is a video. Read-only.
-    video *Video;
+    video Videoable;
     // DAV compatible URL for the item.
     webDavUrl *string;
     // URL that displays the resource in the browser. Read-only.
@@ -55,6 +55,10 @@ func NewRemoteItem()(*RemoteItem) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRemoteItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRemoteItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRemoteItem(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoteItem) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -64,7 +68,7 @@ func (m *RemoteItem) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
-func (m *RemoteItem) GetCreatedBy()(*IdentitySet) {
+func (m *RemoteItem) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -79,152 +83,16 @@ func (m *RemoteItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
         return m.createdDateTime
     }
 }
-// GetFile gets the file property value. Indicates that the remote item is a file. Read-only.
-func (m *RemoteItem) GetFile()(*File) {
-    if m == nil {
-        return nil
-    } else {
-        return m.file
-    }
-}
-// GetFileSystemInfo gets the fileSystemInfo property value. Information about the remote item from the local file system. Read-only.
-func (m *RemoteItem) GetFileSystemInfo()(*FileSystemInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileSystemInfo
-    }
-}
-// GetFolder gets the folder property value. Indicates that the remote item is a folder. Read-only.
-func (m *RemoteItem) GetFolder()(*Folder) {
-    if m == nil {
-        return nil
-    } else {
-        return m.folder
-    }
-}
-// GetId gets the id property value. Unique identifier for the remote item in its drive. Read-only.
-func (m *RemoteItem) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetImage gets the image property value. Image metadata, if the item is an image. Read-only.
-func (m *RemoteItem) GetImage()(*Image) {
-    if m == nil {
-        return nil
-    } else {
-        return m.image
-    }
-}
-// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
-func (m *RemoteItem) GetLastModifiedBy()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
-func (m *RemoteItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetName gets the name property value. Optional. Filename of the remote item. Read-only.
-func (m *RemoteItem) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *RemoteItem) GetPackage()(*Package_escaped) {
-    if m == nil {
-        return nil
-    } else {
-        return m.package_escaped
-    }
-}
-// GetParentReference gets the parentReference property value. Properties of the parent of the remote item. Read-only.
-func (m *RemoteItem) GetParentReference()(*ItemReference) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentReference
-    }
-}
-// GetShared gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
-func (m *RemoteItem) GetShared()(*Shared) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shared
-    }
-}
-// GetSharepointIds gets the sharepointIds property value. Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
-func (m *RemoteItem) GetSharepointIds()(*SharepointIds) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
-}
-// GetSize gets the size property value. Size of the remote item. Read-only.
-func (m *RemoteItem) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
-}
-// GetSpecialFolder gets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
-func (m *RemoteItem) GetSpecialFolder()(*SpecialFolder) {
-    if m == nil {
-        return nil
-    } else {
-        return m.specialFolder
-    }
-}
-// GetVideo gets the video property value. Video metadata, if the item is a video. Read-only.
-func (m *RemoteItem) GetVideo()(*Video) {
-    if m == nil {
-        return nil
-    } else {
-        return m.video
-    }
-}
-// GetWebDavUrl gets the webDavUrl property value. DAV compatible URL for the item.
-func (m *RemoteItem) GetWebDavUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webDavUrl
-    }
-}
-// GetWebUrl gets the webUrl property value. URL that displays the resource in the browser. Read-only.
-func (m *RemoteItem) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -239,32 +107,32 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["file"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFile() })
+        val, err := n.GetObjectValue(CreateFileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFile(val.(*File))
+            m.SetFile(val.(Fileable))
         }
         return nil
     }
     res["fileSystemInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFileSystemInfo() })
+        val, err := n.GetObjectValue(CreateFileSystemInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFileSystemInfo(val.(*FileSystemInfo))
+            m.SetFileSystemInfo(val.(FileSystemInfoable))
         }
         return nil
     }
     res["folder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFolder() })
+        val, err := n.GetObjectValue(CreateFolderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFolder(val.(*Folder))
+            m.SetFolder(val.(Folderable))
         }
         return nil
     }
@@ -279,22 +147,22 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["image"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewImage() })
+        val, err := n.GetObjectValue(CreateImageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetImage(val.(*Image))
+            m.SetImage(val.(Imageable))
         }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*IdentitySet))
+            m.SetLastModifiedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -319,42 +187,42 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["package"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPackage_escaped() })
+        val, err := n.GetObjectValue(CreatePackage_escapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPackage(val.(*Package_escaped))
+            m.SetPackage(val.(Package_escapedable))
         }
         return nil
     }
     res["parentReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemReference() })
+        val, err := n.GetObjectValue(CreateItemReferenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentReference(val.(*ItemReference))
+            m.SetParentReference(val.(ItemReferenceable))
         }
         return nil
     }
     res["shared"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShared() })
+        val, err := n.GetObjectValue(CreateSharedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetShared(val.(*Shared))
+            m.SetShared(val.(Sharedable))
         }
         return nil
     }
     res["sharepointIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSharepointIds() })
+        val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSharepointIds(val.(*SharepointIds))
+            m.SetSharepointIds(val.(SharepointIdsable))
         }
         return nil
     }
@@ -369,22 +237,22 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["specialFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSpecialFolder() })
+        val, err := n.GetObjectValue(CreateSpecialFolderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSpecialFolder(val.(*SpecialFolder))
+            m.SetSpecialFolder(val.(SpecialFolderable))
         }
         return nil
     }
     res["video"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVideo() })
+        val, err := n.GetObjectValue(CreateVideoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVideo(val.(*Video))
+            m.SetVideo(val.(Videoable))
         }
         return nil
     }
@@ -409,6 +277,142 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetFile gets the file property value. Indicates that the remote item is a file. Read-only.
+func (m *RemoteItem) GetFile()(Fileable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.file
+    }
+}
+// GetFileSystemInfo gets the fileSystemInfo property value. Information about the remote item from the local file system. Read-only.
+func (m *RemoteItem) GetFileSystemInfo()(FileSystemInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileSystemInfo
+    }
+}
+// GetFolder gets the folder property value. Indicates that the remote item is a folder. Read-only.
+func (m *RemoteItem) GetFolder()(Folderable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.folder
+    }
+}
+// GetId gets the id property value. Unique identifier for the remote item in its drive. Read-only.
+func (m *RemoteItem) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetImage gets the image property value. Image metadata, if the item is an image. Read-only.
+func (m *RemoteItem) GetImage()(Imageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.image
+    }
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+func (m *RemoteItem) GetLastModifiedBy()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
+func (m *RemoteItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetName gets the name property value. Optional. Filename of the remote item. Read-only.
+func (m *RemoteItem) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *RemoteItem) GetPackage()(Package_escapedable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.package_escaped
+    }
+}
+// GetParentReference gets the parentReference property value. Properties of the parent of the remote item. Read-only.
+func (m *RemoteItem) GetParentReference()(ItemReferenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentReference
+    }
+}
+// GetShared gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+func (m *RemoteItem) GetShared()(Sharedable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shared
+    }
+}
+// GetSharepointIds gets the sharepointIds property value. Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
+func (m *RemoteItem) GetSharepointIds()(SharepointIdsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharepointIds
+    }
+}
+// GetSize gets the size property value. Size of the remote item. Read-only.
+func (m *RemoteItem) GetSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
+}
+// GetSpecialFolder gets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
+func (m *RemoteItem) GetSpecialFolder()(SpecialFolderable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.specialFolder
+    }
+}
+// GetVideo gets the video property value. Video metadata, if the item is a video. Read-only.
+func (m *RemoteItem) GetVideo()(Videoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.video
+    }
+}
+// GetWebDavUrl gets the webDavUrl property value. DAV compatible URL for the item.
+func (m *RemoteItem) GetWebDavUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webDavUrl
+    }
+}
+// GetWebUrl gets the webUrl property value. URL that displays the resource in the browser. Read-only.
+func (m *RemoteItem) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *RemoteItem) IsNil()(bool) {
     return m == nil
@@ -544,7 +548,7 @@ func (m *RemoteItem) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
-func (m *RemoteItem) SetCreatedBy(value *IdentitySet)() {
+func (m *RemoteItem) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -556,19 +560,19 @@ func (m *RemoteItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6
     }
 }
 // SetFile sets the file property value. Indicates that the remote item is a file. Read-only.
-func (m *RemoteItem) SetFile(value *File)() {
+func (m *RemoteItem) SetFile(value Fileable)() {
     if m != nil {
         m.file = value
     }
 }
 // SetFileSystemInfo sets the fileSystemInfo property value. Information about the remote item from the local file system. Read-only.
-func (m *RemoteItem) SetFileSystemInfo(value *FileSystemInfo)() {
+func (m *RemoteItem) SetFileSystemInfo(value FileSystemInfoable)() {
     if m != nil {
         m.fileSystemInfo = value
     }
 }
 // SetFolder sets the folder property value. Indicates that the remote item is a folder. Read-only.
-func (m *RemoteItem) SetFolder(value *Folder)() {
+func (m *RemoteItem) SetFolder(value Folderable)() {
     if m != nil {
         m.folder = value
     }
@@ -580,13 +584,13 @@ func (m *RemoteItem) SetId(value *string)() {
     }
 }
 // SetImage sets the image property value. Image metadata, if the item is an image. Read-only.
-func (m *RemoteItem) SetImage(value *Image)() {
+func (m *RemoteItem) SetImage(value Imageable)() {
     if m != nil {
         m.image = value
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
-func (m *RemoteItem) SetLastModifiedBy(value *IdentitySet)() {
+func (m *RemoteItem) SetLastModifiedBy(value IdentitySetable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -604,25 +608,25 @@ func (m *RemoteItem) SetName(value *string)() {
     }
 }
 // SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *RemoteItem) SetPackage(value *Package_escaped)() {
+func (m *RemoteItem) SetPackage(value Package_escapedable)() {
     if m != nil {
         m.package_escaped = value
     }
 }
 // SetParentReference sets the parentReference property value. Properties of the parent of the remote item. Read-only.
-func (m *RemoteItem) SetParentReference(value *ItemReference)() {
+func (m *RemoteItem) SetParentReference(value ItemReferenceable)() {
     if m != nil {
         m.parentReference = value
     }
 }
 // SetShared sets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
-func (m *RemoteItem) SetShared(value *Shared)() {
+func (m *RemoteItem) SetShared(value Sharedable)() {
     if m != nil {
         m.shared = value
     }
 }
 // SetSharepointIds sets the sharepointIds property value. Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
-func (m *RemoteItem) SetSharepointIds(value *SharepointIds)() {
+func (m *RemoteItem) SetSharepointIds(value SharepointIdsable)() {
     if m != nil {
         m.sharepointIds = value
     }
@@ -634,13 +638,13 @@ func (m *RemoteItem) SetSize(value *int64)() {
     }
 }
 // SetSpecialFolder sets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
-func (m *RemoteItem) SetSpecialFolder(value *SpecialFolder)() {
+func (m *RemoteItem) SetSpecialFolder(value SpecialFolderable)() {
     if m != nil {
         m.specialFolder = value
     }
 }
 // SetVideo sets the video property value. Video metadata, if the item is a video. Read-only.
-func (m *RemoteItem) SetVideo(value *Video)() {
+func (m *RemoteItem) SetVideo(value Videoable)() {
     if m != nil {
         m.video = value
     }

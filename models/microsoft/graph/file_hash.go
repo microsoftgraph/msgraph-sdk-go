@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FileHash 
+// FileHash provides operations to manage the security singleton.
 type FileHash struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewFileHash()(*FileHash) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateFileHashFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFileHashFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFileHash(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileHash) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetHashType gets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
-func (m *FileHash) GetHashType()(*FileHashType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashType
-    }
-}
-// GetHashValue gets the hashValue property value. Value of the file hash.
-func (m *FileHash) GetHashValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashValue
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *FileHash) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetHashType gets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
+func (m *FileHash) GetHashType()(*FileHashType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hashType
+    }
+}
+// GetHashValue gets the hashValue property value. Value of the file hash.
+func (m *FileHash) GetHashValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hashValue
+    }
 }
 func (m *FileHash) IsNil()(bool) {
     return m == nil

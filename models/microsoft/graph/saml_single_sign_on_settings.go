@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SamlSingleSignOnSettings 
+// SamlSingleSignOnSettings provides operations to call the instantiate method.
 type SamlSingleSignOnSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewSamlSingleSignOnSettings()(*SamlSingleSignOnSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSamlSingleSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSamlSingleSignOnSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSamlSingleSignOnSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SamlSingleSignOnSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetRelayState gets the relayState property value. The relative URI the service provider would redirect to after completion of the single sign-on flow.
-func (m *SamlSingleSignOnSettings) GetRelayState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relayState
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *SamlSingleSignOnSettings) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetRelayState gets the relayState property value. The relative URI the service provider would redirect to after completion of the single sign-on flow.
+func (m *SamlSingleSignOnSettings) GetRelayState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relayState
+    }
 }
 func (m *SamlSingleSignOnSettings) IsNil()(bool) {
     return m == nil

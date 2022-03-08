@@ -5,7 +5,7 @@ import (
     i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/callrecords"
 )
 
-// NetworkInfo 
+// NetworkInfo provides operations to manage the cloudCommunications singleton.
 type NetworkInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -65,6 +65,10 @@ func NewNetworkInfo()(*NetworkInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateNetworkInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNetworkInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNetworkInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -111,158 +115,6 @@ func (m *NetworkInfo) GetDnsSuffix()(*string) {
         return nil
     } else {
         return m.dnsSuffix
-    }
-}
-// GetIpAddress gets the ipAddress property value. IP address of the media endpoint.
-func (m *NetworkInfo) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
-}
-// GetLinkSpeed gets the linkSpeed property value. Link speed in bits per second reported by the network adapter used by the media endpoint.
-func (m *NetworkInfo) GetLinkSpeed()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.linkSpeed
-    }
-}
-// GetMacAddress gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
-func (m *NetworkInfo) GetMacAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macAddress
-    }
-}
-// GetPort gets the port property value. Network port number used by media endpoint.
-func (m *NetworkInfo) GetPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.port
-    }
-}
-// GetReceivedQualityEventRatio gets the receivedQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
-func (m *NetworkInfo) GetReceivedQualityEventRatio()(*float32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivedQualityEventRatio
-    }
-}
-// GetReflexiveIPAddress gets the reflexiveIPAddress property value. IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.
-func (m *NetworkInfo) GetReflexiveIPAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reflexiveIPAddress
-    }
-}
-// GetRelayIPAddress gets the relayIPAddress property value. IP address of the media relay server allocated by the media endpoint.
-func (m *NetworkInfo) GetRelayIPAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relayIPAddress
-    }
-}
-// GetRelayPort gets the relayPort property value. Network port number allocated on the media relay server by the media endpoint.
-func (m *NetworkInfo) GetRelayPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relayPort
-    }
-}
-// GetSentQualityEventRatio gets the sentQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
-func (m *NetworkInfo) GetSentQualityEventRatio()(*float32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sentQualityEventRatio
-    }
-}
-// GetSubnet gets the subnet property value. Subnet used for media stream by the media endpoint.
-func (m *NetworkInfo) GetSubnet()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subnet
-    }
-}
-// GetWifiBand gets the wifiBand property value. WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
-func (m *NetworkInfo) GetWifiBand()(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiBand) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiBand
-    }
-}
-// GetWifiBatteryCharge gets the wifiBatteryCharge property value. Estimated remaining battery charge in percentage reported by the media endpoint.
-func (m *NetworkInfo) GetWifiBatteryCharge()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiBatteryCharge
-    }
-}
-// GetWifiChannel gets the wifiChannel property value. WiFi channel used by the media endpoint.
-func (m *NetworkInfo) GetWifiChannel()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiChannel
-    }
-}
-// GetWifiMicrosoftDriver gets the wifiMicrosoftDriver property value. Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
-func (m *NetworkInfo) GetWifiMicrosoftDriver()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiMicrosoftDriver
-    }
-}
-// GetWifiMicrosoftDriverVersion gets the wifiMicrosoftDriverVersion property value. Version of the Microsoft WiFi driver used by the media endpoint.
-func (m *NetworkInfo) GetWifiMicrosoftDriverVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiMicrosoftDriverVersion
-    }
-}
-// GetWifiRadioType gets the wifiRadioType property value. Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.
-func (m *NetworkInfo) GetWifiRadioType()(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiRadioType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiRadioType
-    }
-}
-// GetWifiSignalStrength gets the wifiSignalStrength property value. WiFi signal strength in percentage reported by the media endpoint.
-func (m *NetworkInfo) GetWifiSignalStrength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiSignalStrength
-    }
-}
-// GetWifiVendorDriver gets the wifiVendorDriver property value. Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
-func (m *NetworkInfo) GetWifiVendorDriver()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiVendorDriver
-    }
-}
-// GetWifiVendorDriverVersion gets the wifiVendorDriverVersion property value. Version of the WiFi driver used by the media endpoint.
-func (m *NetworkInfo) GetWifiVendorDriverVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiVendorDriverVersion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -509,6 +361,158 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetIpAddress gets the ipAddress property value. IP address of the media endpoint.
+func (m *NetworkInfo) GetIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipAddress
+    }
+}
+// GetLinkSpeed gets the linkSpeed property value. Link speed in bits per second reported by the network adapter used by the media endpoint.
+func (m *NetworkInfo) GetLinkSpeed()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.linkSpeed
+    }
+}
+// GetMacAddress gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
+func (m *NetworkInfo) GetMacAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.macAddress
+    }
+}
+// GetPort gets the port property value. Network port number used by media endpoint.
+func (m *NetworkInfo) GetPort()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.port
+    }
+}
+// GetReceivedQualityEventRatio gets the receivedQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
+func (m *NetworkInfo) GetReceivedQualityEventRatio()(*float32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.receivedQualityEventRatio
+    }
+}
+// GetReflexiveIPAddress gets the reflexiveIPAddress property value. IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.
+func (m *NetworkInfo) GetReflexiveIPAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reflexiveIPAddress
+    }
+}
+// GetRelayIPAddress gets the relayIPAddress property value. IP address of the media relay server allocated by the media endpoint.
+func (m *NetworkInfo) GetRelayIPAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relayIPAddress
+    }
+}
+// GetRelayPort gets the relayPort property value. Network port number allocated on the media relay server by the media endpoint.
+func (m *NetworkInfo) GetRelayPort()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relayPort
+    }
+}
+// GetSentQualityEventRatio gets the sentQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
+func (m *NetworkInfo) GetSentQualityEventRatio()(*float32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sentQualityEventRatio
+    }
+}
+// GetSubnet gets the subnet property value. Subnet used for media stream by the media endpoint.
+func (m *NetworkInfo) GetSubnet()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subnet
+    }
+}
+// GetWifiBand gets the wifiBand property value. WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
+func (m *NetworkInfo) GetWifiBand()(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiBand) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiBand
+    }
+}
+// GetWifiBatteryCharge gets the wifiBatteryCharge property value. Estimated remaining battery charge in percentage reported by the media endpoint.
+func (m *NetworkInfo) GetWifiBatteryCharge()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiBatteryCharge
+    }
+}
+// GetWifiChannel gets the wifiChannel property value. WiFi channel used by the media endpoint.
+func (m *NetworkInfo) GetWifiChannel()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiChannel
+    }
+}
+// GetWifiMicrosoftDriver gets the wifiMicrosoftDriver property value. Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
+func (m *NetworkInfo) GetWifiMicrosoftDriver()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiMicrosoftDriver
+    }
+}
+// GetWifiMicrosoftDriverVersion gets the wifiMicrosoftDriverVersion property value. Version of the Microsoft WiFi driver used by the media endpoint.
+func (m *NetworkInfo) GetWifiMicrosoftDriverVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiMicrosoftDriverVersion
+    }
+}
+// GetWifiRadioType gets the wifiRadioType property value. Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.
+func (m *NetworkInfo) GetWifiRadioType()(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiRadioType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiRadioType
+    }
+}
+// GetWifiSignalStrength gets the wifiSignalStrength property value. WiFi signal strength in percentage reported by the media endpoint.
+func (m *NetworkInfo) GetWifiSignalStrength()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiSignalStrength
+    }
+}
+// GetWifiVendorDriver gets the wifiVendorDriver property value. Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
+func (m *NetworkInfo) GetWifiVendorDriver()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiVendorDriver
+    }
+}
+// GetWifiVendorDriverVersion gets the wifiVendorDriverVersion property value. Version of the WiFi driver used by the media endpoint.
+func (m *NetworkInfo) GetWifiVendorDriverVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiVendorDriverVersion
+    }
 }
 func (m *NetworkInfo) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchAlterationOptions 
+// SearchAlterationOptions provides operations to call the query method.
 type SearchAlterationOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,6 +19,10 @@ func NewSearchAlterationOptions()(*SearchAlterationOptions) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSearchAlterationOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchAlterationOptionsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchAlterationOptions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAlterationOptions) GetAdditionalData()(map[string]interface{}) {

@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewScheduleSettings 
+// AccessReviewScheduleSettings provides operations to manage the identityGovernance singleton.
 type AccessReviewScheduleSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-    applyActions []AccessReviewApplyAction;
+    applyActions []AccessReviewApplyActionable;
     // Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
     autoApplyDecisionsEnabled *bool;
     // Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
@@ -25,7 +25,7 @@ type AccessReviewScheduleSettings struct {
     // Indicates whether decision recommendations are enabled or disabled.
     recommendationsEnabled *bool;
     // Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
-    recurrence *PatternedRecurrence;
+    recurrence PatternedRecurrenceable;
     // Indicates whether reminders are enabled or disabled. Default value is false.
     reminderNotificationsEnabled *bool;
 }
@@ -36,6 +36,10 @@ func NewAccessReviewScheduleSettings()(*AccessReviewScheduleSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAccessReviewScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewScheduleSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewScheduleSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewScheduleSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -45,7 +49,7 @@ func (m *AccessReviewScheduleSettings) GetAdditionalData()(map[string]interface{
     }
 }
 // GetApplyActions gets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-func (m *AccessReviewScheduleSettings) GetApplyActions()([]AccessReviewApplyAction) {
+func (m *AccessReviewScheduleSettings) GetApplyActions()([]AccessReviewApplyActionable) {
     if m == nil {
         return nil
     } else {
@@ -76,66 +80,18 @@ func (m *AccessReviewScheduleSettings) GetDefaultDecisionEnabled()(*bool) {
         return m.defaultDecisionEnabled
     }
 }
-// GetInstanceDurationInDays gets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days.
-func (m *AccessReviewScheduleSettings) GetInstanceDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instanceDurationInDays
-    }
-}
-// GetJustificationRequiredOnApproval gets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide justification with their decision. Default value is false.
-func (m *AccessReviewScheduleSettings) GetJustificationRequiredOnApproval()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justificationRequiredOnApproval
-    }
-}
-// GetMailNotificationsEnabled gets the mailNotificationsEnabled property value. Indicates whether emails are enabled or disabled. Default value is false.
-func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNotificationsEnabled
-    }
-}
-// GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled.
-func (m *AccessReviewScheduleSettings) GetRecommendationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationsEnabled
-    }
-}
-// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
-func (m *AccessReviewScheduleSettings) GetRecurrence()(*PatternedRecurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
-}
-// GetReminderNotificationsEnabled gets the reminderNotificationsEnabled property value. Indicates whether reminders are enabled or disabled. Default value is false.
-func (m *AccessReviewScheduleSettings) GetReminderNotificationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminderNotificationsEnabled
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["applyActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewApplyAction() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewApplyActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewApplyAction, len(val))
+            res := make([]AccessReviewApplyActionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewApplyAction))
+                res[i] = v.(AccessReviewApplyActionable)
             }
             m.SetApplyActions(res)
         }
@@ -212,12 +168,12 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPatternedRecurrence() })
+        val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecurrence(val.(*PatternedRecurrence))
+            m.SetRecurrence(val.(PatternedRecurrenceable))
         }
         return nil
     }
@@ -233,6 +189,54 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetInstanceDurationInDays gets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days.
+func (m *AccessReviewScheduleSettings) GetInstanceDurationInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instanceDurationInDays
+    }
+}
+// GetJustificationRequiredOnApproval gets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide justification with their decision. Default value is false.
+func (m *AccessReviewScheduleSettings) GetJustificationRequiredOnApproval()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.justificationRequiredOnApproval
+    }
+}
+// GetMailNotificationsEnabled gets the mailNotificationsEnabled property value. Indicates whether emails are enabled or disabled. Default value is false.
+func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailNotificationsEnabled
+    }
+}
+// GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled.
+func (m *AccessReviewScheduleSettings) GetRecommendationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationsEnabled
+    }
+}
+// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+func (m *AccessReviewScheduleSettings) GetRecurrence()(PatternedRecurrenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrence
+    }
+}
+// GetReminderNotificationsEnabled gets the reminderNotificationsEnabled property value. Indicates whether reminders are enabled or disabled. Default value is false.
+func (m *AccessReviewScheduleSettings) GetReminderNotificationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reminderNotificationsEnabled
+    }
+}
 func (m *AccessReviewScheduleSettings) IsNil()(bool) {
     return m == nil
 }
@@ -241,8 +245,7 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetApplyActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApplyActions()))
         for i, v := range m.GetApplyActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("applyActions", cast)
         if err != nil {
@@ -318,7 +321,7 @@ func (m *AccessReviewScheduleSettings) SetAdditionalData(value map[string]interf
     }
 }
 // SetApplyActions sets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-func (m *AccessReviewScheduleSettings) SetApplyActions(value []AccessReviewApplyAction)() {
+func (m *AccessReviewScheduleSettings) SetApplyActions(value []AccessReviewApplyActionable)() {
     if m != nil {
         m.applyActions = value
     }
@@ -366,7 +369,7 @@ func (m *AccessReviewScheduleSettings) SetRecommendationsEnabled(value *bool)() 
     }
 }
 // SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
-func (m *AccessReviewScheduleSettings) SetRecurrence(value *PatternedRecurrence)() {
+func (m *AccessReviewScheduleSettings) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value
     }

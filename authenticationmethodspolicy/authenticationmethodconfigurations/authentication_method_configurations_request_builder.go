@@ -2,11 +2,11 @@ package authenticationmethodconfigurations
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i66b2495385cea7fabbcfee4bb0894d0607689b634ce73165e076cf92b5e55d33 "github.com/microsoftgraph/msgraph-sdk-go/authenticationmethodspolicy/authenticationmethodconfigurations/count"
 )
 
-// AuthenticationMethodConfigurationsRequestBuilder builds and executes requests for operations under \authenticationMethodsPolicy\authenticationMethodConfigurations
+// AuthenticationMethodConfigurationsRequestBuilder provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
 type AuthenticationMethodConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters struct {
 // AuthenticationMethodConfigurationsRequestBuilderPostOptions options for Post
 type AuthenticationMethodConfigurationsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfiguration;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfigurationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAuthenticationMethodConfigurationsRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAuthenticationMethodConfigurationsRequestBuilder(rawUrl string, requestA
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AuthenticationMethodConfigurationsRequestBuilder) Count()(*i66b2495385cea7fabbcfee4bb0894d0607689b634ce73165e076cf92b5e55d33.CountRequestBuilder) {
+    return i66b2495385cea7fabbcfee4bb0894d0607689b634ce73165e076cf92b5e55d33.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInformation(options *AuthenticationMethodConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+// CreatePostRequestInformation create new navigation property to authenticationMethodConfigurations for authenticationMethodsPolicy
 func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInformation(options *AuthenticationMethodConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInfo
     return requestInfo, nil
 }
 // Get represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-func (m *AuthenticationMethodConfigurationsRequestBuilder) Get(options *AuthenticationMethodConfigurationsRequestBuilderGetOptions)(*AuthenticationMethodConfigurationsResponse, error) {
+func (m *AuthenticationMethodConfigurationsRequestBuilder) Get(options *AuthenticationMethodConfigurationsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthenticationMethodConfigurationsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAuthenticationMethodConfigurationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AuthenticationMethodConfigurationsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfigurationCollectionResponseable), nil
 }
-// Post represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-func (m *AuthenticationMethodConfigurationsRequestBuilder) Post(options *AuthenticationMethodConfigurationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfiguration, error) {
+// Post create new navigation property to authenticationMethodConfigurations for authenticationMethodsPolicy
+func (m *AuthenticationMethodConfigurationsRequestBuilder) Post(options *AuthenticationMethodConfigurationsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewAuthenticationMethodConfiguration() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAuthenticationMethodConfigurationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfiguration), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfigurationable), nil
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AlertHistoryState 
+// AlertHistoryState provides operations to manage the security singleton.
 type AlertHistoryState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -30,6 +30,10 @@ func NewAlertHistoryState()(*AlertHistoryState) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAlertHistoryStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAlertHistoryStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAlertHistoryState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertHistoryState) GetAdditionalData()(map[string]interface{}) {
@@ -69,30 +73,6 @@ func (m *AlertHistoryState) GetFeedback()(*AlertFeedback) {
         return nil
     } else {
         return m.feedback
-    }
-}
-// GetStatus gets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
-func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUpdatedDateTime gets the updatedDateTime property value. Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *AlertHistoryState) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatedDateTime
-    }
-}
-// GetUser gets the user property value. UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
-func (m *AlertHistoryState) GetUser()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -173,6 +153,30 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetStatus gets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
+func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUpdatedDateTime gets the updatedDateTime property value. Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *AlertHistoryState) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updatedDateTime
+    }
+}
+// GetUser gets the user property value. UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
+func (m *AlertHistoryState) GetUser()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.user
+    }
 }
 func (m *AlertHistoryState) IsNil()(bool) {
     return m == nil

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// PreviewRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.preview
+// PreviewRequestBuilder provides operations to call the preview method.
 type PreviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type PreviewRequestBuilder struct {
 // PreviewRequestBuilderPostOptions options for Post
 type PreviewRequestBuilderPostOptions struct {
     // 
-    Body *PreviewRequestBody;
+    Body PreviewRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type PreviewResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type itemPreviewInfo
-    itemPreviewInfo *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfo;
+    itemPreviewInfo i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfoable;
 }
 // NewPreviewResponse instantiates a new previewResponse and sets the default values.
 func NewPreviewResponse()(*PreviewResponse) {
@@ -39,6 +39,9 @@ func NewPreviewResponse()(*PreviewResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreatePreviewResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPreviewResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreviewResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *PreviewResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *PreviewResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["itemPreviewInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateItemPreviewInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetItemPreviewInfo(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfoable))
+        }
+        return nil
+    }
+    return res
+}
 // GetItemPreviewInfo gets the itemPreviewInfo property value. Union type representation for type itemPreviewInfo
-func (m *PreviewResponse) GetItemPreviewInfo()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfo) {
+func (m *PreviewResponse) GetItemPreviewInfo()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfoable) {
     if m == nil {
         return nil
     } else {
         return m.itemPreviewInfo
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *PreviewResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["itemPreviewInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewItemPreviewInfo() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetItemPreviewInfo(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfo))
-        }
-        return nil
-    }
-    return res
 }
 func (m *PreviewResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *PreviewResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetItemPreviewInfo sets the itemPreviewInfo property value. Union type representation for type itemPreviewInfo
-func (m *PreviewResponse) SetItemPreviewInfo(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfo)() {
+func (m *PreviewResponse) SetItemPreviewInfo(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfoable)() {
     if m != nil {
         m.itemPreviewInfo = value
     }
@@ -111,7 +114,7 @@ func NewPreviewRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *PreviewRequestBuilder) CreatePostRequestInformation(options *PreviewReq
     return requestInfo, nil
 }
 // Post invoke action preview
-func (m *PreviewRequestBuilder) Post(options *PreviewRequestBuilderPostOptions)(*PreviewResponse, error) {
+func (m *PreviewRequestBuilder) Post(options *PreviewRequestBuilderPostOptions)(PreviewResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPreviewResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreatePreviewResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*PreviewResponse), nil
+    return res.(PreviewResponseable), nil
 }

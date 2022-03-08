@@ -2,15 +2,15 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i41e6a4f5d8af8cbec70d9d8c4f48278ff47465e70b23d4ee2bbdcafa93bae975 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/assignments"
     i52247cde4874402d4eaf161fa2c9ec2cc4a9257f52df96b9bbbcdf47e1f167f9 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/categories"
     ia9cfc52616110c9bb721b0f95f47d861e5afa2655ecff28a0fc66beb7ba78fe2 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/assign"
     i1de44916490eb612ae701336a2eae5f89d836e0eaae6829aa711a57c559453e1 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/assignments/item"
+    i2d1f6abd3c9d6201219162619b1ea91782688f08584c687565b81c2be79dadc0 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/categories/item"
 )
 
-// MobileAppItemRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}
+// MobileAppItemRequestBuilder provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
 type MobileAppItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type MobileAppItemRequestBuilderGetQueryParameters struct {
 // MobileAppItemRequestBuilderPatchOptions options for Patch
 type MobileAppItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileApp;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppable;
     // Request headers
     H map[string]string;
     // Request options
@@ -77,6 +77,17 @@ func (m *MobileAppItemRequestBuilder) AssignmentsById(id string)(*i1de44916490eb
 func (m *MobileAppItemRequestBuilder) Categories()(*i52247cde4874402d4eaf161fa2c9ec2cc4a9257f52df96b9bbbcdf47e1f167f9.CategoriesRequestBuilder) {
     return i52247cde4874402d4eaf161fa2c9ec2cc4a9257f52df96b9bbbcdf47e1f167f9.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// CategoriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.mobileApps.item.categories.item collection
+func (m *MobileAppItemRequestBuilder) CategoriesById(id string)(*i2d1f6abd3c9d6201219162619b1ea91782688f08584c687565b81c2be79dadc0.MobileAppCategoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["mobileAppCategory_id"] = id
+    }
+    return i2d1f6abd3c9d6201219162619b1ea91782688f08584c687565b81c2be79dadc0.NewMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // NewMobileAppItemRequestBuilderInternal instantiates a new MobileAppItemRequestBuilder and sets the default values.
 func NewMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppItemRequestBuilder) {
     m := &MobileAppItemRequestBuilder{
@@ -86,7 +97,7 @@ func NewMobileAppItemRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -96,7 +107,7 @@ func NewMobileAppItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the mobile apps.
+// CreateDeleteRequestInformation delete navigation property mobileApps for deviceAppManagement
 func (m *MobileAppItemRequestBuilder) CreateDeleteRequestInformation(options *MobileAppItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,7 +144,7 @@ func (m *MobileAppItemRequestBuilder) CreateGetRequestInformation(options *Mobil
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the mobile apps.
+// CreatePatchRequestInformation update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppItemRequestBuilder) CreatePatchRequestInformation(options *MobileAppItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,37 +162,49 @@ func (m *MobileAppItemRequestBuilder) CreatePatchRequestInformation(options *Mob
     }
     return requestInfo, nil
 }
-// Delete the mobile apps.
+// Delete delete navigation property mobileApps for deviceAppManagement
 func (m *MobileAppItemRequestBuilder) Delete(options *MobileAppItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the mobile apps.
-func (m *MobileAppItemRequestBuilder) Get(options *MobileAppItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileApp, error) {
+func (m *MobileAppItemRequestBuilder) Get(options *MobileAppItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewMobileApp() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMobileAppFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileApp), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppable), nil
 }
-// Patch the mobile apps.
+// Patch update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppItemRequestBuilder) Patch(options *MobileAppItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

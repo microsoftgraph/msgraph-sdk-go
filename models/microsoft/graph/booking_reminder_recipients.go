@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the solutionsRoot singleton.
 type BookingReminderRecipients int
 
 const (

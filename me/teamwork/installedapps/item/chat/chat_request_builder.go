@@ -2,12 +2,10 @@ package chat
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    iad8506f0826a1681bf45485d46c016c05d851fb1e072a38d999729963d28ef6d "github.com/microsoftgraph/msgraph-sdk-go/me/teamwork/installedapps/item/chat/ref"
 )
 
-// ChatRequestBuilder builds and executes requests for operations under \me\teamwork\installedApps\{userScopeTeamsAppInstallation-id}\chat
+// ChatRequestBuilder provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.
 type ChatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +41,7 @@ func NewChatRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,17 +72,18 @@ func (m *ChatRequestBuilder) CreateGetRequestInformation(options *ChatRequestBui
     return requestInfo, nil
 }
 // Get the chat between the user and Teams app.
-func (m *ChatRequestBuilder) Get(options *ChatRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat, error) {
+func (m *ChatRequestBuilder) Get(options *ChatRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chatable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewChat() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChatFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat), nil
-}
-func (m *ChatRequestBuilder) Ref()(*iad8506f0826a1681bf45485d46c016c05d851fb1e072a38d999729963d28ef6d.RefRequestBuilder) {
-    return iad8506f0826a1681bf45485d46c016c05d851fb1e072a38d999729963d28ef6d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chatable), nil
 }

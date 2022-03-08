@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnPremisesConditionalAccessSettings 
+// OnPremisesConditionalAccessSettings provides operations to manage the deviceManagement singleton.
 type OnPremisesConditionalAccessSettings struct {
     Entity
     // Indicates if on premises conditional access is enabled for this organization
@@ -23,6 +23,10 @@ func NewOnPremisesConditionalAccessSettings()(*OnPremisesConditionalAccessSettin
     }
     return m
 }
+// CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnPremisesConditionalAccessSettings(), nil
+}
 // GetEnabled gets the enabled property value. Indicates if on premises conditional access is enabled for this organization
 func (m *OnPremisesConditionalAccessSettings) GetEnabled()(*bool) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *OnPremisesConditionalAccessSettings) GetExcludedGroups()([]string) {
         return nil
     } else {
         return m.excludedGroups
-    }
-}
-// GetIncludedGroups gets the includedGroups property value. User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
-func (m *OnPremisesConditionalAccessSettings) GetIncludedGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includedGroups
-    }
-}
-// GetOverrideDefaultRule gets the overrideDefaultRule property value. Override the default access rule when allowing a device to ensure access is granted.
-func (m *OnPremisesConditionalAccessSettings) GetOverrideDefaultRule()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overrideDefaultRule
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,6 +95,22 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetIncludedGroups gets the includedGroups property value. User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
+func (m *OnPremisesConditionalAccessSettings) GetIncludedGroups()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includedGroups
+    }
+}
+// GetOverrideDefaultRule gets the overrideDefaultRule property value. Override the default access rule when allowing a device to ensure access is granted.
+func (m *OnPremisesConditionalAccessSettings) GetOverrideDefaultRule()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.overrideDefaultRule
+    }
 }
 func (m *OnPremisesConditionalAccessSettings) IsNil()(bool) {
     return m == nil

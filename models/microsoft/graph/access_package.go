@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackage 
+// AccessPackage provides operations to manage the identityGovernance singleton.
 type AccessPackage struct {
     Entity
     // Read-only. Nullable.
-    catalog *AccessPackageCatalog;
+    catalog AccessPackageCatalogable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The description of the access package.
@@ -28,8 +28,12 @@ func NewAccessPackage()(*AccessPackage) {
     }
     return m
 }
+// CreateAccessPackageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackage(), nil
+}
 // GetCatalog gets the catalog property value. Read-only. Nullable.
-func (m *AccessPackage) GetCatalog()(*AccessPackageCatalog) {
+func (m *AccessPackage) GetCatalog()(AccessPackageCatalogable) {
     if m == nil {
         return nil
     } else {
@@ -60,32 +64,16 @@ func (m *AccessPackage) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsHidden gets the isHidden property value. Whether the access package is hidden from the requestor.
-func (m *AccessPackage) GetIsHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHidden
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-func (m *AccessPackage) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["catalog"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageCatalog() })
+        val, err := n.GetObjectValue(CreateAccessPackageCatalogFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCatalog(val.(*AccessPackageCatalog))
+            m.SetCatalog(val.(AccessPackageCatalogable))
         }
         return nil
     }
@@ -141,6 +129,22 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i04
     }
     return res
 }
+// GetIsHidden gets the isHidden property value. Whether the access package is hidden from the requestor.
+func (m *AccessPackage) GetIsHidden()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHidden
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *AccessPackage) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
 func (m *AccessPackage) IsNil()(bool) {
     return m == nil
 }
@@ -189,7 +193,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     return nil
 }
 // SetCatalog sets the catalog property value. Read-only. Nullable.
-func (m *AccessPackage) SetCatalog(value *AccessPackageCatalog)() {
+func (m *AccessPackage) SetCatalog(value AccessPackageCatalogable)() {
     if m != nil {
         m.catalog = value
     }

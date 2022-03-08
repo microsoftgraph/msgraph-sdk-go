@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i2d8b711130e3cf48a824445fba301d8fb72d808ea437b3e9b37f25a227ae32fa "github.com/microsoftgraph/msgraph-sdk-go/me/onenote/notebooks/item/sections"
     i4cabe2ebb5ea5f5266c9311c0dc0794643fd05eb73b68a9bfa1767279db606b8 "github.com/microsoftgraph/msgraph-sdk-go/me/onenote/notebooks/item/sectiongroups"
@@ -11,7 +10,7 @@ import (
     i220628206f1cf28dc596e2d15fa952ff6edf88fb9a5d5b0680f4a8a80c7b69f9 "github.com/microsoftgraph/msgraph-sdk-go/me/onenote/notebooks/item/sectiongroups/item"
 )
 
-// NotebookItemRequestBuilder builds and executes requests for operations under \me\onenote\notebooks\{notebook-id}
+// NotebookItemRequestBuilder provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
 type NotebookItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +49,7 @@ type NotebookItemRequestBuilderGetQueryParameters struct {
 // NotebookItemRequestBuilderPatchOptions options for Patch
 type NotebookItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Notebook;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Notebookable;
     // Request headers
     H map[string]string;
     // Request options
@@ -67,7 +66,7 @@ func NewNotebookItemRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -80,7 +79,7 @@ func NewNotebookItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
 func (m *NotebookItemRequestBuilder) CopyNotebook()(*i59c62293c60d05bbffe30d895d282410f38095ffe3c2e07f22647e140fe72724.CopyNotebookRequestBuilder) {
     return i59c62293c60d05bbffe30d895d282410f38095ffe3c2e07f22647e140fe72724.NewCopyNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property notebooks for me
 func (m *NotebookItemRequestBuilder) CreateDeleteRequestInformation(options *NotebookItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +116,7 @@ func (m *NotebookItemRequestBuilder) CreateGetRequestInformation(options *Notebo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property notebooks in me
 func (m *NotebookItemRequestBuilder) CreatePatchRequestInformation(options *NotebookItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,37 +134,49 @@ func (m *NotebookItemRequestBuilder) CreatePatchRequestInformation(options *Note
     }
     return requestInfo, nil
 }
-// Delete the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// Delete delete navigation property notebooks for me
 func (m *NotebookItemRequestBuilder) Delete(options *NotebookItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-func (m *NotebookItemRequestBuilder) Get(options *NotebookItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Notebook, error) {
+func (m *NotebookItemRequestBuilder) Get(options *NotebookItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Notebookable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewNotebook() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateNotebookFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Notebook), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Notebookable), nil
 }
-// Patch the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// Patch update the navigation property notebooks in me
 func (m *NotebookItemRequestBuilder) Patch(options *NotebookItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

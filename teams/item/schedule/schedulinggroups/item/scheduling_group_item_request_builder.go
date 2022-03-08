@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// SchedulingGroupItemRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\schedulingGroups\{schedulingGroup-id}
+// SchedulingGroupItemRequestBuilder provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
 type SchedulingGroupItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +42,7 @@ type SchedulingGroupItemRequestBuilderGetQueryParameters struct {
 // SchedulingGroupItemRequestBuilderPatchOptions options for Patch
 type SchedulingGroupItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchedulingGroup;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchedulingGroupable;
     // Request headers
     H map[string]string;
     // Request options
@@ -60,7 +59,7 @@ func NewSchedulingGroupItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -70,7 +69,7 @@ func NewSchedulingGroupItemRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams["request-raw-url"] = rawUrl
     return NewSchedulingGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the logical grouping of users in the schedule (usually by role).
+// CreateDeleteRequestInformation delete navigation property schedulingGroups for teams
 func (m *SchedulingGroupItemRequestBuilder) CreateDeleteRequestInformation(options *SchedulingGroupItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,7 +106,7 @@ func (m *SchedulingGroupItemRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the logical grouping of users in the schedule (usually by role).
+// CreatePatchRequestInformation update the navigation property schedulingGroups in teams
 func (m *SchedulingGroupItemRequestBuilder) CreatePatchRequestInformation(options *SchedulingGroupItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,37 +124,49 @@ func (m *SchedulingGroupItemRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete the logical grouping of users in the schedule (usually by role).
+// Delete delete navigation property schedulingGroups for teams
 func (m *SchedulingGroupItemRequestBuilder) Delete(options *SchedulingGroupItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the logical grouping of users in the schedule (usually by role).
-func (m *SchedulingGroupItemRequestBuilder) Get(options *SchedulingGroupItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchedulingGroup, error) {
+func (m *SchedulingGroupItemRequestBuilder) Get(options *SchedulingGroupItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchedulingGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSchedulingGroup() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSchedulingGroupFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchedulingGroup), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchedulingGroupable), nil
 }
-// Patch the logical grouping of users in the schedule (usually by role).
+// Patch update the navigation property schedulingGroups in teams
 func (m *SchedulingGroupItemRequestBuilder) Patch(options *SchedulingGroupItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

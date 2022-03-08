@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// DeviceConfigurationDeviceActivityRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.deviceConfigurationDeviceActivity()
+// DeviceConfigurationDeviceActivityRequestBuilder provides operations to call the deviceConfigurationDeviceActivity method.
 type DeviceConfigurationDeviceActivityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type DeviceConfigurationDeviceActivityResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type report
-    report *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report;
+    report i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Reportable;
 }
 // NewDeviceConfigurationDeviceActivityResponse instantiates a new deviceConfigurationDeviceActivityResponse and sets the default values.
 func NewDeviceConfigurationDeviceActivityResponse()(*DeviceConfigurationDeviceActivityResponse) {
@@ -37,6 +37,9 @@ func NewDeviceConfigurationDeviceActivityResponse()(*DeviceConfigurationDeviceAc
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateDeviceConfigurationDeviceActivityResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceConfigurationDeviceActivityResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceConfigurationDeviceActivityResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *DeviceConfigurationDeviceActivityResponse) GetAdditionalData()(map[stri
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *DeviceConfigurationDeviceActivityResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["report"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateReportFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReport(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Reportable))
+        }
+        return nil
+    }
+    return res
+}
 // GetReport gets the report property value. Union type representation for type report
-func (m *DeviceConfigurationDeviceActivityResponse) GetReport()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report) {
+func (m *DeviceConfigurationDeviceActivityResponse) GetReport()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Reportable) {
     if m == nil {
         return nil
     } else {
         return m.report
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceConfigurationDeviceActivityResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["report"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewReport() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReport(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report))
-        }
-        return nil
-    }
-    return res
 }
 func (m *DeviceConfigurationDeviceActivityResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +98,7 @@ func (m *DeviceConfigurationDeviceActivityResponse) SetAdditionalData(value map[
     }
 }
 // SetReport sets the report property value. Union type representation for type report
-func (m *DeviceConfigurationDeviceActivityResponse) SetReport(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report)() {
+func (m *DeviceConfigurationDeviceActivityResponse) SetReport(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Reportable)() {
     if m != nil {
         m.report = value
     }
@@ -109,7 +112,7 @@ func NewDeviceConfigurationDeviceActivityRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *DeviceConfigurationDeviceActivityRequestBuilder) CreateGetRequestInform
     return requestInfo, nil
 }
 // Get metadata for the device configuration device activity report
-func (m *DeviceConfigurationDeviceActivityRequestBuilder) Get(options *DeviceConfigurationDeviceActivityRequestBuilderGetOptions)(*DeviceConfigurationDeviceActivityResponse, error) {
+func (m *DeviceConfigurationDeviceActivityRequestBuilder) Get(options *DeviceConfigurationDeviceActivityRequestBuilderGetOptions)(DeviceConfigurationDeviceActivityResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationDeviceActivityResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateDeviceConfigurationDeviceActivityResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*DeviceConfigurationDeviceActivityResponse), nil
+    return res.(DeviceConfigurationDeviceActivityResponseable), nil
 }

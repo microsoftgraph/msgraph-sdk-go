@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the educationRoot singleton.
 type EducationExternalSource int
 
 const (

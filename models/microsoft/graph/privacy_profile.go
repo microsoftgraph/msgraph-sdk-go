@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivacyProfile 
+// PrivacyProfile provides operations to manage the collection of organization entities.
 type PrivacyProfile struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewPrivacyProfile()(*PrivacyProfile) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePrivacyProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivacyProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivacyProfile(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivacyProfile) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *PrivacyProfile) GetContactEmail()(*string) {
         return nil
     } else {
         return m.contactEmail
-    }
-}
-// GetStatementUrl gets the statementUrl property value. A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
-func (m *PrivacyProfile) GetStatementUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statementUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *PrivacyProfile) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetStatementUrl gets the statementUrl property value. A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
+func (m *PrivacyProfile) GetStatementUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statementUrl
+    }
 }
 func (m *PrivacyProfile) IsNil()(bool) {
     return m == nil

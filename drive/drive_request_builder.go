@@ -11,7 +11,6 @@ import (
     ie13063c1cadad44d23aa1c8d0fa86d8d1520f918579ef541dec1ccdb6ed9a220 "github.com/microsoftgraph/msgraph-sdk-go/drive/searchwithq"
     ie72d87938961cb52922de029a87b3e51e1f879639a8ade8b937c65900a85220c "github.com/microsoftgraph/msgraph-sdk-go/drive/recent"
     ie85bb22170659be58e3c60d2b8b86f9a5d711197d7702af8a50ef22c9883d76a "github.com/microsoftgraph/msgraph-sdk-go/drive/root"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i196a6eae213268ad21678594954acf3ccd7f039d9e67578273af389beab82ac2 "github.com/microsoftgraph/msgraph-sdk-go/drive/bundles/item"
     i3087ffea8c433c599359b8347be323c02e65364584d9de678689a61cc31d9d68 "github.com/microsoftgraph/msgraph-sdk-go/drive/special/item"
     i442efb2ad5fc2ef8bc831b0f78ab7125b2330176f4baf9ac638a842e8b683dc9 "github.com/microsoftgraph/msgraph-sdk-go/drive/following/item"
@@ -19,7 +18,7 @@ import (
     ibd7a7a1ce01856c78689c5524ff307585d4847757b7dc445f97bff4e3fdb5a1b "github.com/microsoftgraph/msgraph-sdk-go/drive/items/item"
 )
 
-// DriveRequestBuilder builds and executes requests for operations under \drive
+// DriveRequestBuilder provides operations to manage the drive singleton.
 type DriveRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +48,7 @@ type DriveRequestBuilderGetQueryParameters struct {
 // DriveRequestBuilderPatchOptions options for Patch
 type DriveRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Drive;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Driveable;
     // Request headers
     H map[string]string;
     // Request options
@@ -80,7 +79,7 @@ func NewDriveRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -143,16 +142,20 @@ func (m *DriveRequestBuilder) FollowingById(id string)(*i442efb2ad5fc2ef8bc831b0
     return i442efb2ad5fc2ef8bc831b0f78ab7125b2330176f4baf9ac638a842e8b683dc9.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get drive
-func (m *DriveRequestBuilder) Get(options *DriveRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Drive, error) {
+func (m *DriveRequestBuilder) Get(options *DriveRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Driveable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDrive() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDriveFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Drive), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Driveable), nil
 }
 func (m *DriveRequestBuilder) Items()(*i33074db2b8fa9be0b6a9d94cf471e252f008c27ab9bb5a8e0ca53ac0f0210cf7.ItemsRequestBuilder) {
     return i33074db2b8fa9be0b6a9d94cf471e252f008c27ab9bb5a8e0ca53ac0f0210cf7.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -177,24 +180,28 @@ func (m *DriveRequestBuilder) Patch(options *DriveRequestBuilderPatchOptions)(er
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
-// Recent builds and executes requests for operations under \drive\microsoft.graph.recent()
+// Recent provides operations to call the recent method.
 func (m *DriveRequestBuilder) Recent()(*ie72d87938961cb52922de029a87b3e51e1f879639a8ade8b937c65900a85220c.RecentRequestBuilder) {
     return ie72d87938961cb52922de029a87b3e51e1f879639a8ade8b937c65900a85220c.NewRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *DriveRequestBuilder) Root()(*ie85bb22170659be58e3c60d2b8b86f9a5d711197d7702af8a50ef22c9883d76a.RootRequestBuilder) {
     return ie85bb22170659be58e3c60d2b8b86f9a5d711197d7702af8a50ef22c9883d76a.NewRootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SearchWithQ builds and executes requests for operations under \drive\microsoft.graph.search(q='{q}')
+// SearchWithQ provides operations to call the search method.
 func (m *DriveRequestBuilder) SearchWithQ(q *string)(*ie13063c1cadad44d23aa1c8d0fa86d8d1520f918579ef541dec1ccdb6ed9a220.SearchWithQRequestBuilder) {
     return ie13063c1cadad44d23aa1c8d0fa86d8d1520f918579ef541dec1ccdb6ed9a220.NewSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
 }
-// SharedWithMe builds and executes requests for operations under \drive\microsoft.graph.sharedWithMe()
+// SharedWithMe provides operations to call the sharedWithMe method.
 func (m *DriveRequestBuilder) SharedWithMe()(*i56f7e69bbb7d6f10a3721658326d4d734b2ed1edb084522652d8117a07ccaaff.SharedWithMeRequestBuilder) {
     return i56f7e69bbb7d6f10a3721658326d4d734b2ed1edb084522652d8117a07ccaaff.NewSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

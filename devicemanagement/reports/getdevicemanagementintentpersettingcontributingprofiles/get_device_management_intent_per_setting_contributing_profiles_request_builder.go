@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getDeviceManagementIntentPerSettingContributingProfiles
+// GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.
 type GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder struc
 // GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOptions options for Post
 type GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOptions struct {
     // 
-    Body *GetDeviceManagementIntentPerSettingContributingProfilesRequestBody;
+    Body GetDeviceManagementIntentPerSettingContributingProfilesRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) 
     return requestInfo, nil
 }
 // Post invoke action getDeviceManagementIntentPerSettingContributingProfiles
-func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) Post(options *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOptions)([]byte, error) {
+func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) Post(options *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOptions)(GetDeviceManagementIntentPerSettingContributingProfilesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetDeviceManagementIntentPerSettingContributingProfilesResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetDeviceManagementIntentPerSettingContributingProfilesResponseable), nil
 }

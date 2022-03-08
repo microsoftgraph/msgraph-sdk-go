@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// SetMobileDeviceManagementAuthorityRequestBuilder builds and executes requests for operations under \organization\{organization-id}\microsoft.graph.setMobileDeviceManagementAuthority
+// SetMobileDeviceManagementAuthorityRequestBuilder provides operations to call the setMobileDeviceManagementAuthority method.
 type SetMobileDeviceManagementAuthorityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewSetMobileDeviceManagementAuthorityRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *SetMobileDeviceManagementAuthorityRequestBuilder) CreatePostRequestInfo
     return requestInfo, nil
 }
 // Post set mobile device management authority
-func (m *SetMobileDeviceManagementAuthorityRequestBuilder) Post(options *SetMobileDeviceManagementAuthorityRequestBuilderPostOptions)(*int32, error) {
+func (m *SetMobileDeviceManagementAuthorityRequestBuilder) Post(options *SetMobileDeviceManagementAuthorityRequestBuilderPostOptions)(SetMobileDeviceManagementAuthorityResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "int32", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSetMobileDeviceManagementAuthorityResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*int32), nil
+    return res.(SetMobileDeviceManagementAuthorityResponseable), nil
 }

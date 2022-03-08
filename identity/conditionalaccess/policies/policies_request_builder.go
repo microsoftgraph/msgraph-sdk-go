@@ -2,11 +2,11 @@ package policies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    iaf7412b3f6c7b8ff77f7a8fee2e755f1479b221adf5840605191dddb9bb3ec0b "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/policies/count"
 )
 
-// PoliciesRequestBuilder builds and executes requests for operations under \identity\conditionalAccess\policies
+// PoliciesRequestBuilder provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
 type PoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type PoliciesRequestBuilderGetQueryParameters struct {
 // PoliciesRequestBuilderPostOptions options for Post
 type PoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PoliciesRequestBuilder) Count()(*iaf7412b3f6c7b8ff77f7a8fee2e755f1479b221adf5840605191dddb9bb3ec0b.CountRequestBuilder) {
+    return iaf7412b3f6c7b8ff77f7a8fee2e755f1479b221adf5840605191dddb9bb3ec0b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 func (m *PoliciesRequestBuilder) CreateGetRequestInformation(options *PoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *PoliciesRequestBuilder) CreateGetRequestInformation(options *PoliciesRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// CreatePostRequestInformation create new navigation property to policies for identity
 func (m *PoliciesRequestBuilder) CreatePostRequestInformation(options *PoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *PoliciesRequestBuilder) CreatePostRequestInformation(options *PoliciesR
     return requestInfo, nil
 }
 // Get read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
-func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(*PoliciesResponse, error) {
+func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateConditionalAccessPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PoliciesResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicyCollectionResponseable), nil
 }
-// Post read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
-func (m *PoliciesRequestBuilder) Post(options *PoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy, error) {
+// Post create new navigation property to policies for identity
+func (m *PoliciesRequestBuilder) Post(options *PoliciesRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewConditionalAccessPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateConditionalAccessPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicyable), nil
 }

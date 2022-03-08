@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// VerifiedDomain 
+// VerifiedDomain provides operations to manage the collection of organization entities.
 type VerifiedDomain struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewVerifiedDomain()(*VerifiedDomain) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateVerifiedDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVerifiedDomainFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVerifiedDomain(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedDomain) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *VerifiedDomain) GetCapabilities()(*string) {
         return nil
     } else {
         return m.capabilities
-    }
-}
-// GetIsDefault gets the isDefault property value. true if this is the default domain associated with the tenant; otherwise, false.
-func (m *VerifiedDomain) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetIsInitial gets the isInitial property value. true if this is the initial domain associated with the tenant; otherwise, false
-func (m *VerifiedDomain) GetIsInitial()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInitial
-    }
-}
-// GetName gets the name property value. The domain name; for example, 'contoso.onmicrosoft.com'
-func (m *VerifiedDomain) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetType gets the type property value. For example, 'Managed'.
-func (m *VerifiedDomain) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. true if this is the default domain associated with the tenant; otherwise, false.
+func (m *VerifiedDomain) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetIsInitial gets the isInitial property value. true if this is the initial domain associated with the tenant; otherwise, false
+func (m *VerifiedDomain) GetIsInitial()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isInitial
+    }
+}
+// GetName gets the name property value. The domain name; for example, 'contoso.onmicrosoft.com'
+func (m *VerifiedDomain) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetType gets the type property value. For example, 'Managed'.
+func (m *VerifiedDomain) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *VerifiedDomain) IsNil()(bool) {
     return m == nil

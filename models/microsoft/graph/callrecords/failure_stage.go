@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the cloudCommunications singleton.
 type FailureStage int
 
 const (

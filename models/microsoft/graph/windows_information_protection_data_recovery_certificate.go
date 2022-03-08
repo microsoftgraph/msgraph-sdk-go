@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtectionDataRecoveryCertificate 
+// WindowsInformationProtectionDataRecoveryCertificate provides operations to manage the deviceAppManagement singleton.
 type WindowsInformationProtectionDataRecoveryCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewWindowsInformationProtectionDataRecoveryCertificate()(*WindowsInformatio
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsInformationProtectionDataRecoveryCertificate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetAdditionalData()(map[string]interface{}) {
@@ -55,14 +59,6 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetExpirationDateT
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetSubjectName gets the subjectName property value. Data recovery Certificate subject name
-func (m *WindowsInformationProtectionDataRecoveryCertificate) GetSubjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +105,14 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetFieldDeserializ
         return nil
     }
     return res
+}
+// GetSubjectName gets the subjectName property value. Data recovery Certificate subject name
+func (m *WindowsInformationProtectionDataRecoveryCertificate) GetSubjectName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subjectName
+    }
 }
 func (m *WindowsInformationProtectionDataRecoveryCertificate) IsNil()(bool) {
     return m == nil

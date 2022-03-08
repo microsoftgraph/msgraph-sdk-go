@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintServiceEndpoint 
+// PrintServiceEndpoint provides operations to manage the print singleton.
 type PrintServiceEndpoint struct {
     Entity
     // A human-readable display name for the endpoint.
@@ -19,20 +19,16 @@ func NewPrintServiceEndpoint()(*PrintServiceEndpoint) {
     }
     return m
 }
+// CreatePrintServiceEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintServiceEndpointFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintServiceEndpoint(), nil
+}
 // GetDisplayName gets the displayName property value. A human-readable display name for the endpoint.
 func (m *PrintServiceEndpoint) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetUri gets the uri property value. The URI that can be used to access the service.
-func (m *PrintServiceEndpoint) GetUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uri
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,6 +55,14 @@ func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetUri gets the uri property value. The URI that can be used to access the service.
+func (m *PrintServiceEndpoint) GetUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uri
+    }
 }
 func (m *PrintServiceEndpoint) IsNil()(bool) {
     return m == nil

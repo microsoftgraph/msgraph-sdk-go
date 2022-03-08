@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecureScore 
+// SecureScore provides operations to manage the security singleton.
 type SecureScore struct {
     Entity
     // Active user count of the given tenant.
     activeUserCount *int32;
     // Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
-    averageComparativeScores []AverageComparativeScore;
+    averageComparativeScores []AverageComparativeScoreable;
     // GUID string for tenant ID.
     azureTenantId *string;
     // Contains tenant scores for a set of controls.
-    controlScores []ControlScore;
+    controlScores []ControlScoreable;
     // The date when the entity is created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Tenant current attained score on specified date.
@@ -27,7 +27,7 @@ type SecureScore struct {
     // Tenant maximum possible score on specified date.
     maxScore *float64;
     // Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
 }
 // NewSecureScore instantiates a new secureScore and sets the default values.
 func NewSecureScore()(*SecureScore) {
@@ -35,6 +35,10 @@ func NewSecureScore()(*SecureScore) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSecureScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecureScoreFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecureScore(), nil
 }
 // GetActiveUserCount gets the activeUserCount property value. Active user count of the given tenant.
 func (m *SecureScore) GetActiveUserCount()(*int32) {
@@ -45,7 +49,7 @@ func (m *SecureScore) GetActiveUserCount()(*int32) {
     }
 }
 // GetAverageComparativeScores gets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
-func (m *SecureScore) GetAverageComparativeScores()([]AverageComparativeScore) {
+func (m *SecureScore) GetAverageComparativeScores()([]AverageComparativeScoreable) {
     if m == nil {
         return nil
     } else {
@@ -61,7 +65,7 @@ func (m *SecureScore) GetAzureTenantId()(*string) {
     }
 }
 // GetControlScores gets the controlScores property value. Contains tenant scores for a set of controls.
-func (m *SecureScore) GetControlScores()([]ControlScore) {
+func (m *SecureScore) GetControlScores()([]ControlScoreable) {
     if m == nil {
         return nil
     } else {
@@ -92,30 +96,6 @@ func (m *SecureScore) GetEnabledServices()([]string) {
         return m.enabledServices
     }
 }
-// GetLicensedUserCount gets the licensedUserCount property value. Licensed user count of the given tenant.
-func (m *SecureScore) GetLicensedUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licensedUserCount
-    }
-}
-// GetMaxScore gets the maxScore property value. Tenant maximum possible score on specified date.
-func (m *SecureScore) GetMaxScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxScore
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
-func (m *SecureScore) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -130,14 +110,14 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["averageComparativeScores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAverageComparativeScore() })
+        val, err := n.GetCollectionOfObjectValues(CreateAverageComparativeScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AverageComparativeScore, len(val))
+            res := make([]AverageComparativeScoreable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AverageComparativeScore))
+                res[i] = v.(AverageComparativeScoreable)
             }
             m.SetAverageComparativeScores(res)
         }
@@ -154,14 +134,14 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["controlScores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewControlScore() })
+        val, err := n.GetCollectionOfObjectValues(CreateControlScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ControlScore, len(val))
+            res := make([]ControlScoreable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ControlScore))
+                res[i] = v.(ControlScoreable)
             }
             m.SetControlScores(res)
         }
@@ -222,16 +202,40 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     return res
+}
+// GetLicensedUserCount gets the licensedUserCount property value. Licensed user count of the given tenant.
+func (m *SecureScore) GetLicensedUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.licensedUserCount
+    }
+}
+// GetMaxScore gets the maxScore property value. Tenant maximum possible score on specified date.
+func (m *SecureScore) GetMaxScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maxScore
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
+func (m *SecureScore) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
 }
 func (m *SecureScore) IsNil()(bool) {
     return m == nil
@@ -251,8 +255,7 @@ func (m *SecureScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetAverageComparativeScores() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAverageComparativeScores()))
         for i, v := range m.GetAverageComparativeScores() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("averageComparativeScores", cast)
         if err != nil {
@@ -268,8 +271,7 @@ func (m *SecureScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetControlScores() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetControlScores()))
         for i, v := range m.GetControlScores() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("controlScores", cast)
         if err != nil {
@@ -321,7 +323,7 @@ func (m *SecureScore) SetActiveUserCount(value *int32)() {
     }
 }
 // SetAverageComparativeScores sets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
-func (m *SecureScore) SetAverageComparativeScores(value []AverageComparativeScore)() {
+func (m *SecureScore) SetAverageComparativeScores(value []AverageComparativeScoreable)() {
     if m != nil {
         m.averageComparativeScores = value
     }
@@ -333,7 +335,7 @@ func (m *SecureScore) SetAzureTenantId(value *string)() {
     }
 }
 // SetControlScores sets the controlScores property value. Contains tenant scores for a set of controls.
-func (m *SecureScore) SetControlScores(value []ControlScore)() {
+func (m *SecureScore) SetControlScores(value []ControlScoreable)() {
     if m != nil {
         m.controlScores = value
     }
@@ -369,7 +371,7 @@ func (m *SecureScore) SetMaxScore(value *float64)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
-func (m *SecureScore) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *SecureScore) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }

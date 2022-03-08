@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChatMessageAttachment 
+// ChatMessageAttachment provides operations to manage the collection of chat entities.
 type ChatMessageAttachment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,6 +27,10 @@ func NewChatMessageAttachment()(*ChatMessageAttachment) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateChatMessageAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChatMessageAttachmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChatMessageAttachment(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageAttachment) GetAdditionalData()(map[string]interface{}) {
@@ -58,30 +62,6 @@ func (m *ChatMessageAttachment) GetContentUrl()(*string) {
         return nil
     } else {
         return m.contentUrl
-    }
-}
-// GetId gets the id property value. Read-only. Unique id of the attachment.
-func (m *ChatMessageAttachment) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetName gets the name property value. Name of the attachment.
-func (m *ChatMessageAttachment) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetThumbnailUrl gets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
-func (m *ChatMessageAttachment) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +128,30 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetId gets the id property value. Read-only. Unique id of the attachment.
+func (m *ChatMessageAttachment) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetName gets the name property value. Name of the attachment.
+func (m *ChatMessageAttachment) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetThumbnailUrl gets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+func (m *ChatMessageAttachment) GetThumbnailUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbnailUrl
+    }
 }
 func (m *ChatMessageAttachment) IsNil()(bool) {
     return m == nil

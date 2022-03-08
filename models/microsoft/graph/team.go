@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Team 
+// Team provides operations to manage the drive singleton.
 type Team struct {
     Entity
     // The collection of channels and messages associated with the team.
-    channels []Channel;
+    channels []Channelable;
     // An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
     classification *string;
     // Timestamp at which the team was created.
@@ -19,33 +19,33 @@ type Team struct {
     // The name of the team.
     displayName *string;
     // Settings to configure use of Giphy, memes, and stickers in the team.
-    funSettings *TeamFunSettings;
+    funSettings TeamFunSettingsable;
     // 
-    group *Group;
+    group Groupable;
     // Settings to configure whether guests can create, update, or delete channels in the team.
-    guestSettings *TeamGuestSettings;
+    guestSettings TeamGuestSettingsable;
     // The apps installed in this team.
-    installedApps []TeamsAppInstallation;
+    installedApps []TeamsAppInstallationable;
     // A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
     internalId *string;
     // Whether this team is in read-only mode.
     isArchived *bool;
     // Members and owners of the team.
-    members []ConversationMember;
+    members []ConversationMemberable;
     // Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
-    memberSettings *TeamMemberSettings;
+    memberSettings TeamMemberSettingsable;
     // Settings to configure messaging and mentions in the team.
-    messagingSettings *TeamMessagingSettings;
+    messagingSettings TeamMessagingSettingsable;
     // The async operations that ran or are running on this team.
-    operations []TeamsAsyncOperation;
+    operations []TeamsAsyncOperationable;
     // The general channel for the team.
-    primaryChannel *Channel;
+    primaryChannel Channelable;
     // The schedule of shifts for this team.
-    schedule *Schedule;
+    schedule Scheduleable;
     // Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
     specialization *TeamSpecialization;
     // The template this team was created from. See available templates.
-    template *TeamsTemplate;
+    template TeamsTemplateable;
     // The visibility of the group and team. Defaults to Public.
     visibility *TeamVisibilityType;
     // A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
@@ -58,8 +58,12 @@ func NewTeam()(*Team) {
     }
     return m
 }
+// CreateTeamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeam(), nil
+}
 // GetChannels gets the channels property value. The collection of channels and messages associated with the team.
-func (m *Team) GetChannels()([]Channel) {
+func (m *Team) GetChannels()([]Channelable) {
     if m == nil {
         return nil
     } else {
@@ -98,146 +102,18 @@ func (m *Team) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetFunSettings gets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
-func (m *Team) GetFunSettings()(*TeamFunSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.funSettings
-    }
-}
-// GetGroup gets the group property value. 
-func (m *Team) GetGroup()(*Group) {
-    if m == nil {
-        return nil
-    } else {
-        return m.group
-    }
-}
-// GetGuestSettings gets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
-func (m *Team) GetGuestSettings()(*TeamGuestSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.guestSettings
-    }
-}
-// GetInstalledApps gets the installedApps property value. The apps installed in this team.
-func (m *Team) GetInstalledApps()([]TeamsAppInstallation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedApps
-    }
-}
-// GetInternalId gets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
-func (m *Team) GetInternalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internalId
-    }
-}
-// GetIsArchived gets the isArchived property value. Whether this team is in read-only mode.
-func (m *Team) GetIsArchived()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isArchived
-    }
-}
-// GetMembers gets the members property value. Members and owners of the team.
-func (m *Team) GetMembers()([]ConversationMember) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
-}
-// GetMemberSettings gets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
-func (m *Team) GetMemberSettings()(*TeamMemberSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberSettings
-    }
-}
-// GetMessagingSettings gets the messagingSettings property value. Settings to configure messaging and mentions in the team.
-func (m *Team) GetMessagingSettings()(*TeamMessagingSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messagingSettings
-    }
-}
-// GetOperations gets the operations property value. The async operations that ran or are running on this team.
-func (m *Team) GetOperations()([]TeamsAsyncOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
-}
-// GetPrimaryChannel gets the primaryChannel property value. The general channel for the team.
-func (m *Team) GetPrimaryChannel()(*Channel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryChannel
-    }
-}
-// GetSchedule gets the schedule property value. The schedule of shifts for this team.
-func (m *Team) GetSchedule()(*Schedule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
-}
-// GetSpecialization gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
-func (m *Team) GetSpecialization()(*TeamSpecialization) {
-    if m == nil {
-        return nil
-    } else {
-        return m.specialization
-    }
-}
-// GetTemplate gets the template property value. The template this team was created from. See available templates.
-func (m *Team) GetTemplate()(*TeamsTemplate) {
-    if m == nil {
-        return nil
-    } else {
-        return m.template
-    }
-}
-// GetVisibility gets the visibility property value. The visibility of the group and team. Defaults to Public.
-func (m *Team) GetVisibility()(*TeamVisibilityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visibility
-    }
-}
-// GetWebUrl gets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
-func (m *Team) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["channels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChannel() })
+        val, err := n.GetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Channel, len(val))
+            res := make([]Channelable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Channel))
+                res[i] = v.(Channelable)
             }
             m.SetChannels(res)
         }
@@ -284,44 +160,44 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["funSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamFunSettings() })
+        val, err := n.GetObjectValue(CreateTeamFunSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFunSettings(val.(*TeamFunSettings))
+            m.SetFunSettings(val.(TeamFunSettingsable))
         }
         return nil
     }
     res["group"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroup() })
+        val, err := n.GetObjectValue(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGroup(val.(*Group))
+            m.SetGroup(val.(Groupable))
         }
         return nil
     }
     res["guestSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamGuestSettings() })
+        val, err := n.GetObjectValue(CreateTeamGuestSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGuestSettings(val.(*TeamGuestSettings))
+            m.SetGuestSettings(val.(TeamGuestSettingsable))
         }
         return nil
     }
     res["installedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsAppInstallation() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAppInstallationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamsAppInstallation, len(val))
+            res := make([]TeamsAppInstallationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamsAppInstallation))
+                res[i] = v.(TeamsAppInstallationable)
             }
             m.SetInstalledApps(res)
         }
@@ -348,70 +224,70 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConversationMember() })
+        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConversationMember, len(val))
+            res := make([]ConversationMemberable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConversationMember))
+                res[i] = v.(ConversationMemberable)
             }
             m.SetMembers(res)
         }
         return nil
     }
     res["memberSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamMemberSettings() })
+        val, err := n.GetObjectValue(CreateTeamMemberSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMemberSettings(val.(*TeamMemberSettings))
+            m.SetMemberSettings(val.(TeamMemberSettingsable))
         }
         return nil
     }
     res["messagingSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamMessagingSettings() })
+        val, err := n.GetObjectValue(CreateTeamMessagingSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMessagingSettings(val.(*TeamMessagingSettings))
+            m.SetMessagingSettings(val.(TeamMessagingSettingsable))
         }
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsAsyncOperation() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAsyncOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamsAsyncOperation, len(val))
+            res := make([]TeamsAsyncOperationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamsAsyncOperation))
+                res[i] = v.(TeamsAsyncOperationable)
             }
             m.SetOperations(res)
         }
         return nil
     }
     res["primaryChannel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChannel() })
+        val, err := n.GetObjectValue(CreateChannelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPrimaryChannel(val.(*Channel))
+            m.SetPrimaryChannel(val.(Channelable))
         }
         return nil
     }
     res["schedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSchedule() })
+        val, err := n.GetObjectValue(CreateScheduleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedule(val.(*Schedule))
+            m.SetSchedule(val.(Scheduleable))
         }
         return nil
     }
@@ -426,12 +302,12 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["template"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsTemplate() })
+        val, err := n.GetObjectValue(CreateTeamsTemplateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTemplate(val.(*TeamsTemplate))
+            m.SetTemplate(val.(TeamsTemplateable))
         }
         return nil
     }
@@ -457,6 +333,134 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
     }
     return res
 }
+// GetFunSettings gets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
+func (m *Team) GetFunSettings()(TeamFunSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.funSettings
+    }
+}
+// GetGroup gets the group property value. 
+func (m *Team) GetGroup()(Groupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.group
+    }
+}
+// GetGuestSettings gets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
+func (m *Team) GetGuestSettings()(TeamGuestSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.guestSettings
+    }
+}
+// GetInstalledApps gets the installedApps property value. The apps installed in this team.
+func (m *Team) GetInstalledApps()([]TeamsAppInstallationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedApps
+    }
+}
+// GetInternalId gets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+func (m *Team) GetInternalId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.internalId
+    }
+}
+// GetIsArchived gets the isArchived property value. Whether this team is in read-only mode.
+func (m *Team) GetIsArchived()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isArchived
+    }
+}
+// GetMembers gets the members property value. Members and owners of the team.
+func (m *Team) GetMembers()([]ConversationMemberable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.members
+    }
+}
+// GetMemberSettings gets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
+func (m *Team) GetMemberSettings()(TeamMemberSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberSettings
+    }
+}
+// GetMessagingSettings gets the messagingSettings property value. Settings to configure messaging and mentions in the team.
+func (m *Team) GetMessagingSettings()(TeamMessagingSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messagingSettings
+    }
+}
+// GetOperations gets the operations property value. The async operations that ran or are running on this team.
+func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
+    }
+}
+// GetPrimaryChannel gets the primaryChannel property value. The general channel for the team.
+func (m *Team) GetPrimaryChannel()(Channelable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.primaryChannel
+    }
+}
+// GetSchedule gets the schedule property value. The schedule of shifts for this team.
+func (m *Team) GetSchedule()(Scheduleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedule
+    }
+}
+// GetSpecialization gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
+func (m *Team) GetSpecialization()(*TeamSpecialization) {
+    if m == nil {
+        return nil
+    } else {
+        return m.specialization
+    }
+}
+// GetTemplate gets the template property value. The template this team was created from. See available templates.
+func (m *Team) GetTemplate()(TeamsTemplateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.template
+    }
+}
+// GetVisibility gets the visibility property value. The visibility of the group and team. Defaults to Public.
+func (m *Team) GetVisibility()(*TeamVisibilityType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visibility
+    }
+}
+// GetWebUrl gets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+func (m *Team) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
+}
 func (m *Team) IsNil()(bool) {
     return m == nil
 }
@@ -469,8 +473,7 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetChannels() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChannels()))
         for i, v := range m.GetChannels() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("channels", cast)
         if err != nil {
@@ -522,8 +525,7 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetInstalledApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInstalledApps()))
         for i, v := range m.GetInstalledApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("installedApps", cast)
         if err != nil {
@@ -545,8 +547,7 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {
@@ -568,8 +569,7 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -617,7 +617,7 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     return nil
 }
 // SetChannels sets the channels property value. The collection of channels and messages associated with the team.
-func (m *Team) SetChannels(value []Channel)() {
+func (m *Team) SetChannels(value []Channelable)() {
     if m != nil {
         m.channels = value
     }
@@ -647,25 +647,25 @@ func (m *Team) SetDisplayName(value *string)() {
     }
 }
 // SetFunSettings sets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
-func (m *Team) SetFunSettings(value *TeamFunSettings)() {
+func (m *Team) SetFunSettings(value TeamFunSettingsable)() {
     if m != nil {
         m.funSettings = value
     }
 }
 // SetGroup sets the group property value. 
-func (m *Team) SetGroup(value *Group)() {
+func (m *Team) SetGroup(value Groupable)() {
     if m != nil {
         m.group = value
     }
 }
 // SetGuestSettings sets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
-func (m *Team) SetGuestSettings(value *TeamGuestSettings)() {
+func (m *Team) SetGuestSettings(value TeamGuestSettingsable)() {
     if m != nil {
         m.guestSettings = value
     }
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in this team.
-func (m *Team) SetInstalledApps(value []TeamsAppInstallation)() {
+func (m *Team) SetInstalledApps(value []TeamsAppInstallationable)() {
     if m != nil {
         m.installedApps = value
     }
@@ -683,37 +683,37 @@ func (m *Team) SetIsArchived(value *bool)() {
     }
 }
 // SetMembers sets the members property value. Members and owners of the team.
-func (m *Team) SetMembers(value []ConversationMember)() {
+func (m *Team) SetMembers(value []ConversationMemberable)() {
     if m != nil {
         m.members = value
     }
 }
 // SetMemberSettings sets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
-func (m *Team) SetMemberSettings(value *TeamMemberSettings)() {
+func (m *Team) SetMemberSettings(value TeamMemberSettingsable)() {
     if m != nil {
         m.memberSettings = value
     }
 }
 // SetMessagingSettings sets the messagingSettings property value. Settings to configure messaging and mentions in the team.
-func (m *Team) SetMessagingSettings(value *TeamMessagingSettings)() {
+func (m *Team) SetMessagingSettings(value TeamMessagingSettingsable)() {
     if m != nil {
         m.messagingSettings = value
     }
 }
 // SetOperations sets the operations property value. The async operations that ran or are running on this team.
-func (m *Team) SetOperations(value []TeamsAsyncOperation)() {
+func (m *Team) SetOperations(value []TeamsAsyncOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
 // SetPrimaryChannel sets the primaryChannel property value. The general channel for the team.
-func (m *Team) SetPrimaryChannel(value *Channel)() {
+func (m *Team) SetPrimaryChannel(value Channelable)() {
     if m != nil {
         m.primaryChannel = value
     }
 }
 // SetSchedule sets the schedule property value. The schedule of shifts for this team.
-func (m *Team) SetSchedule(value *Schedule)() {
+func (m *Team) SetSchedule(value Scheduleable)() {
     if m != nil {
         m.schedule = value
     }
@@ -725,7 +725,7 @@ func (m *Team) SetSpecialization(value *TeamSpecialization)() {
     }
 }
 // SetTemplate sets the template property value. The template this team was created from. See available templates.
-func (m *Team) SetTemplate(value *TeamsTemplate)() {
+func (m *Team) SetTemplate(value TeamsTemplateable)() {
     if m != nil {
         m.template = value
     }

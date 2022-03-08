@@ -2,7 +2,6 @@ package listitem
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i0371d38a1fd3bd34b2867ec96e0b4b86b8c159c3303fb600473ca25116c85da0 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/listitem/getactivitiesbyinterval"
     i23928885e968269c974925e6845e4eeda1eabcba9ed90e8a19cbe4956c6bd0c4 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/listitem/versions"
@@ -13,7 +12,7 @@ import (
     ib939ff408fde6d3763a478a2106c5bbbd3445e21dc809ff36372b9df300dd03d "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/listitem/versions/item"
 )
 
-// ListItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\listItem
+// ListItemRequestBuilder provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
 type ListItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +51,7 @@ type ListItemRequestBuilderGetQueryParameters struct {
 // ListItemRequestBuilderPatchOptions options for Patch
 type ListItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemable;
     // Request headers
     H map[string]string;
     // Request options
@@ -72,7 +71,7 @@ func NewListItemRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -82,7 +81,7 @@ func NewListItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation for drives in SharePoint, the associated document library list item. Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property listItem for workbooks
 func (m *ListItemRequestBuilder) CreateDeleteRequestInformation(options *ListItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +118,7 @@ func (m *ListItemRequestBuilder) CreateGetRequestInformation(options *ListItemRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation for drives in SharePoint, the associated document library list item. Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property listItem in workbooks
 func (m *ListItemRequestBuilder) CreatePatchRequestInformation(options *ListItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,13 +136,17 @@ func (m *ListItemRequestBuilder) CreatePatchRequestInformation(options *ListItem
     }
     return requestInfo, nil
 }
-// Delete for drives in SharePoint, the associated document library list item. Read-only. Nullable.
+// Delete delete navigation property listItem for workbooks
 func (m *ListItemRequestBuilder) Delete(options *ListItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -156,32 +159,40 @@ func (m *ListItemRequestBuilder) Fields()(*i2fb5546ca17f8b962eaef51796646865b6b3
     return i2fb5546ca17f8b962eaef51796646865b6b37e92921dd8ab687d83947c66ed67.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get for drives in SharePoint, the associated document library list item. Read-only. Nullable.
-func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem, error) {
+func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewListItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateListItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemable), nil
 }
-// GetActivitiesByInterval builds and executes requests for operations under \workbooks\{driveItem-id}\listItem\microsoft.graph.getActivitiesByInterval()
+// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
 func (m *ListItemRequestBuilder) GetActivitiesByInterval()(*i0371d38a1fd3bd34b2867ec96e0b4b86b8c159c3303fb600473ca25116c85da0.GetActivitiesByIntervalRequestBuilder) {
     return i0371d38a1fd3bd34b2867ec96e0b4b86b8c159c3303fb600473ca25116c85da0.NewGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval builds and executes requests for operations under \workbooks\{driveItem-id}\listItem\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
 func (m *ListItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(startDateTime *string, endDateTime *string, interval *string)(*i6849bf9ff081bc87e108f89ba3e2dbab1b6f319e1323680a18d8542d4dbe0bd5.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     return i6849bf9ff081bc87e108f89ba3e2dbab1b6f319e1323680a18d8542d4dbe0bd5.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime, interval);
 }
-// Patch for drives in SharePoint, the associated document library list item. Read-only. Nullable.
+// Patch update the navigation property listItem in workbooks
 func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

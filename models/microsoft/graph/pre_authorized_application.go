@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PreAuthorizedApplication 
+// PreAuthorizedApplication provides operations to manage the collection of application entities.
 type PreAuthorizedApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The unique identifier for the application.
     appId *string;
-    // 
+    // The unique identifier for the oauth2PermissionScopes the application requires.
     delegatedPermissionIds []string;
 }
 // NewPreAuthorizedApplication instantiates a new preAuthorizedApplication and sets the default values.
@@ -19,6 +19,10 @@ func NewPreAuthorizedApplication()(*PreAuthorizedApplication) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePreAuthorizedApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePreAuthorizedApplicationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPreAuthorizedApplication(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreAuthorizedApplication) GetAdditionalData()(map[string]interface{}) {
@@ -36,7 +40,7 @@ func (m *PreAuthorizedApplication) GetAppId()(*string) {
         return m.appId
     }
 }
-// GetDelegatedPermissionIds gets the delegatedPermissionIds property value. 
+// GetDelegatedPermissionIds gets the delegatedPermissionIds property value. The unique identifier for the oauth2PermissionScopes the application requires.
 func (m *PreAuthorizedApplication) GetDelegatedPermissionIds()([]string) {
     if m == nil {
         return nil
@@ -110,7 +114,7 @@ func (m *PreAuthorizedApplication) SetAppId(value *string)() {
         m.appId = value
     }
 }
-// SetDelegatedPermissionIds sets the delegatedPermissionIds property value. 
+// SetDelegatedPermissionIds sets the delegatedPermissionIds property value. The unique identifier for the oauth2PermissionScopes the application requires.
 func (m *PreAuthorizedApplication) SetDelegatedPermissionIds(value []string)() {
     if m != nil {
         m.delegatedPermissionIds = value

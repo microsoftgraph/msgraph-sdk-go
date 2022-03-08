@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LocationConstraintItem 
+// LocationConstraintItem provides operations to call the findMeetingTimes method.
 type LocationConstraintItem struct {
     Location
     // If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
@@ -17,13 +17,9 @@ func NewLocationConstraintItem()(*LocationConstraintItem) {
     }
     return m
 }
-// GetResolveAvailability gets the resolveAvailability property value. If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
-func (m *LocationConstraintItem) GetResolveAvailability()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resolveAvailability
-    }
+// CreateLocationConstraintItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLocationConstraintItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLocationConstraintItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LocationConstraintItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *LocationConstraintItem) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetResolveAvailability gets the resolveAvailability property value. If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
+func (m *LocationConstraintItem) GetResolveAvailability()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resolveAvailability
+    }
 }
 func (m *LocationConstraintItem) IsNil()(bool) {
     return m == nil

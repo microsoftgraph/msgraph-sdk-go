@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContactFolder 
+// ContactFolder provides operations to manage the drive singleton.
 type ContactFolder struct {
     Entity
     // The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-    childFolders []ContactFolder;
+    childFolders []ContactFolderable;
     // The contacts in the folder. Navigation property. Read-only. Nullable.
-    contacts []Contact;
+    contacts []Contactable;
     // The folder's display name.
     displayName *string;
     // The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
     // The ID of the folder's parent folder.
     parentFolderId *string;
     // The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
 }
 // NewContactFolder instantiates a new contactFolder and sets the default values.
 func NewContactFolder()(*ContactFolder) {
@@ -27,8 +27,12 @@ func NewContactFolder()(*ContactFolder) {
     }
     return m
 }
+// CreateContactFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContactFolderFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContactFolder(), nil
+}
 // GetChildFolders gets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-func (m *ContactFolder) GetChildFolders()([]ContactFolder) {
+func (m *ContactFolder) GetChildFolders()([]ContactFolderable) {
     if m == nil {
         return nil
     } else {
@@ -36,7 +40,7 @@ func (m *ContactFolder) GetChildFolders()([]ContactFolder) {
     }
 }
 // GetContacts gets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
-func (m *ContactFolder) GetContacts()([]Contact) {
+func (m *ContactFolder) GetContacts()([]Contactable) {
     if m == nil {
         return nil
     } else {
@@ -51,56 +55,32 @@ func (m *ContactFolder) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-func (m *ContactFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
-}
-// GetParentFolderId gets the parentFolderId property value. The ID of the folder's parent folder.
-func (m *ContactFolder) GetParentFolderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentFolderId
-    }
-}
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-func (m *ContactFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContactFolder() })
+        val, err := n.GetCollectionOfObjectValues(CreateContactFolderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ContactFolder, len(val))
+            res := make([]ContactFolderable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ContactFolder))
+                res[i] = v.(ContactFolderable)
             }
             m.SetChildFolders(res)
         }
         return nil
     }
     res["contacts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContact() })
+        val, err := n.GetCollectionOfObjectValues(CreateContactFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Contact, len(val))
+            res := make([]Contactable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Contact))
+                res[i] = v.(Contactable)
             }
             m.SetContacts(res)
         }
@@ -117,14 +97,14 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMultiValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+                res[i] = v.(MultiValueLegacyExtendedPropertyable)
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -141,20 +121,44 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSingleValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+                res[i] = v.(SingleValueLegacyExtendedPropertyable)
             }
             m.SetSingleValueExtendedProperties(res)
         }
         return nil
     }
     return res
+}
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+func (m *ContactFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multiValueExtendedProperties
+    }
+}
+// GetParentFolderId gets the parentFolderId property value. The ID of the folder's parent folder.
+func (m *ContactFolder) GetParentFolderId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentFolderId
+    }
+}
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+func (m *ContactFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleValueExtendedProperties
+    }
 }
 func (m *ContactFolder) IsNil()(bool) {
     return m == nil
@@ -168,8 +172,7 @@ func (m *ContactFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetChildFolders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChildFolders()))
         for i, v := range m.GetChildFolders() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("childFolders", cast)
         if err != nil {
@@ -179,8 +182,7 @@ func (m *ContactFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetContacts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContacts()))
         for i, v := range m.GetContacts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("contacts", cast)
         if err != nil {
@@ -196,8 +198,7 @@ func (m *ContactFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -213,8 +214,7 @@ func (m *ContactFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {
@@ -224,13 +224,13 @@ func (m *ContactFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     return nil
 }
 // SetChildFolders sets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-func (m *ContactFolder) SetChildFolders(value []ContactFolder)() {
+func (m *ContactFolder) SetChildFolders(value []ContactFolderable)() {
     if m != nil {
         m.childFolders = value
     }
 }
 // SetContacts sets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
-func (m *ContactFolder) SetContacts(value []Contact)() {
+func (m *ContactFolder) SetContacts(value []Contactable)() {
     if m != nil {
         m.contacts = value
     }
@@ -242,7 +242,7 @@ func (m *ContactFolder) SetDisplayName(value *string)() {
     }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-func (m *ContactFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
+func (m *ContactFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.multiValueExtendedProperties = value
     }
@@ -254,7 +254,7 @@ func (m *ContactFolder) SetParentFolderId(value *string)() {
     }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-func (m *ContactFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
+func (m *ContactFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.singleValueExtendedProperties = value
     }

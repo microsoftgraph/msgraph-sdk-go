@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// CopyNotebookRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\notebooks\{notebook-id}\microsoft.graph.copyNotebook
+// CopyNotebookRequestBuilder provides operations to call the copyNotebook method.
 type CopyNotebookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CopyNotebookRequestBuilder struct {
 // CopyNotebookRequestBuilderPostOptions options for Post
 type CopyNotebookRequestBuilderPostOptions struct {
     // 
-    Body *CopyNotebookRequestBody;
+    Body CopyNotebookRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type CopyNotebookResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type onenoteOperation
-    onenoteOperation *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperation;
+    onenoteOperation i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperationable;
 }
 // NewCopyNotebookResponse instantiates a new copyNotebookResponse and sets the default values.
 func NewCopyNotebookResponse()(*CopyNotebookResponse) {
@@ -39,6 +39,9 @@ func NewCopyNotebookResponse()(*CopyNotebookResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCopyNotebookResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCopyNotebookResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyNotebookResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *CopyNotebookResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CopyNotebookResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["onenoteOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOnenoteOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnenoteOperation(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetOnenoteOperation gets the onenoteOperation property value. Union type representation for type onenoteOperation
-func (m *CopyNotebookResponse) GetOnenoteOperation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperation) {
+func (m *CopyNotebookResponse) GetOnenoteOperation()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperationable) {
     if m == nil {
         return nil
     } else {
         return m.onenoteOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CopyNotebookResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["onenoteOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewOnenoteOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnenoteOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CopyNotebookResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *CopyNotebookResponse) SetAdditionalData(value map[string]interface{})()
     }
 }
 // SetOnenoteOperation sets the onenoteOperation property value. Union type representation for type onenoteOperation
-func (m *CopyNotebookResponse) SetOnenoteOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperation)() {
+func (m *CopyNotebookResponse) SetOnenoteOperation(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperationable)() {
     if m != nil {
         m.onenoteOperation = value
     }
@@ -111,7 +114,7 @@ func NewCopyNotebookRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *CopyNotebookRequestBuilder) CreatePostRequestInformation(options *CopyN
     return requestInfo, nil
 }
 // Post invoke action copyNotebook
-func (m *CopyNotebookRequestBuilder) Post(options *CopyNotebookRequestBuilderPostOptions)(*CopyNotebookResponse, error) {
+func (m *CopyNotebookRequestBuilder) Post(options *CopyNotebookRequestBuilderPostOptions)(CopyNotebookResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCopyNotebookResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCopyNotebookResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CopyNotebookResponse), nil
+    return res.(CopyNotebookResponseable), nil
 }

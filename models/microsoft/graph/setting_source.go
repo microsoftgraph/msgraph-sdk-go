@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SettingSource 
+// SettingSource provides operations to manage the drive singleton.
 type SettingSource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewSettingSource()(*SettingSource) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSettingSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSettingSourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSettingSource(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SettingSource) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *SettingSource) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetId gets the id property value. Not yet documented
-func (m *SettingSource) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetSourceType gets the sourceType property value. Not yet documented. Possible values are: deviceConfiguration, deviceIntent.
-func (m *SettingSource) GetSourceType()(*SettingSourceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *SettingSource) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetId gets the id property value. Not yet documented
+func (m *SettingSource) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetSourceType gets the sourceType property value. Not yet documented. Possible values are: deviceConfiguration, deviceIntent.
+func (m *SettingSource) GetSourceType()(*SettingSourceType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceType
+    }
 }
 func (m *SettingSource) IsNil()(bool) {
     return m == nil

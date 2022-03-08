@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DefaultColumnValue 
+// DefaultColumnValue provides operations to manage the drive singleton.
 type DefaultColumnValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewDefaultColumnValue()(*DefaultColumnValue) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDefaultColumnValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDefaultColumnValueFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDefaultColumnValue(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultColumnValue) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFormula gets the formula property value. The formula used to compute the default value for this column.
-func (m *DefaultColumnValue) GetFormula()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.formula
-    }
-}
-// GetValue gets the value property value. The direct value to use as the default value for this column.
-func (m *DefaultColumnValue) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *DefaultColumnValue) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetFormula gets the formula property value. The formula used to compute the default value for this column.
+func (m *DefaultColumnValue) GetFormula()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.formula
+    }
+}
+// GetValue gets the value property value. The direct value to use as the default value for this column.
+func (m *DefaultColumnValue) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *DefaultColumnValue) IsNil()(bool) {
     return m == nil

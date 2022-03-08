@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AdministrativeUnit 
+// AdministrativeUnit provides operations to manage the directory singleton.
 type AdministrativeUnit struct {
     DirectoryObject
     // An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
@@ -12,11 +12,11 @@ type AdministrativeUnit struct {
     // Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // The collection of open extensions defined for this administrative unit. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // Users and groups that are members of this administrative unit. Supports $expand.
-    members []DirectoryObject;
+    members []DirectoryObjectable;
     // Scoped-role members of this administrative unit.
-    scopedRoleMembers []ScopedRoleMembership;
+    scopedRoleMembers []ScopedRoleMembershipable;
     // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
     visibility *string;
 }
@@ -26,6 +26,10 @@ func NewAdministrativeUnit()(*AdministrativeUnit) {
         DirectoryObject: *NewDirectoryObject(),
     }
     return m
+}
+// CreateAdministrativeUnitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAdministrativeUnitFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAdministrativeUnit(), nil
 }
 // GetDescription gets the description property value. An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
 func (m *AdministrativeUnit) GetDescription()(*string) {
@@ -44,35 +48,11 @@ func (m *AdministrativeUnit) GetDisplayName()(*string) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for this administrative unit. Nullable.
-func (m *AdministrativeUnit) GetExtensions()([]Extension) {
+func (m *AdministrativeUnit) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
-    }
-}
-// GetMembers gets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
-func (m *AdministrativeUnit) GetMembers()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
-}
-// GetScopedRoleMembers gets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
-func (m *AdministrativeUnit) GetScopedRoleMembers()([]ScopedRoleMembership) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopedRoleMembers
-    }
-}
-// GetVisibility gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
-func (m *AdministrativeUnit) GetVisibility()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visibility
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,42 +79,42 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetMembers(res)
         }
         return nil
     }
     res["scopedRoleMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewScopedRoleMembership() })
+        val, err := n.GetCollectionOfObjectValues(CreateScopedRoleMembershipFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ScopedRoleMembership, len(val))
+            res := make([]ScopedRoleMembershipable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ScopedRoleMembership))
+                res[i] = v.(ScopedRoleMembershipable)
             }
             m.SetScopedRoleMembers(res)
         }
@@ -151,6 +131,30 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetMembers gets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
+func (m *AdministrativeUnit) GetMembers()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.members
+    }
+}
+// GetScopedRoleMembers gets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
+func (m *AdministrativeUnit) GetScopedRoleMembers()([]ScopedRoleMembershipable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopedRoleMembers
+    }
+}
+// GetVisibility gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+func (m *AdministrativeUnit) GetVisibility()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visibility
+    }
 }
 func (m *AdministrativeUnit) IsNil()(bool) {
     return m == nil
@@ -176,8 +180,7 @@ func (m *AdministrativeUnit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -187,8 +190,7 @@ func (m *AdministrativeUnit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {
@@ -198,8 +200,7 @@ func (m *AdministrativeUnit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetScopedRoleMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScopedRoleMembers()))
         for i, v := range m.GetScopedRoleMembers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("scopedRoleMembers", cast)
         if err != nil {
@@ -227,19 +228,19 @@ func (m *AdministrativeUnit) SetDisplayName(value *string)() {
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for this administrative unit. Nullable.
-func (m *AdministrativeUnit) SetExtensions(value []Extension)() {
+func (m *AdministrativeUnit) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
 }
 // SetMembers sets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
-func (m *AdministrativeUnit) SetMembers(value []DirectoryObject)() {
+func (m *AdministrativeUnit) SetMembers(value []DirectoryObjectable)() {
     if m != nil {
         m.members = value
     }
 }
 // SetScopedRoleMembers sets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
-func (m *AdministrativeUnit) SetScopedRoleMembers(value []ScopedRoleMembership)() {
+func (m *AdministrativeUnit) SetScopedRoleMembers(value []ScopedRoleMembershipable)() {
     if m != nil {
         m.scopedRoleMembers = value
     }

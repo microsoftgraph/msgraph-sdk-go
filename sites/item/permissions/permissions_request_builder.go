@@ -2,11 +2,11 @@ package permissions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i14e740aa22d295ae84022adc2c7396ac62e0625a57061903942a9a3c8ebe4fde "github.com/microsoftgraph/msgraph-sdk-go/sites/item/permissions/count"
 )
 
-// PermissionsRequestBuilder builds and executes requests for operations under \sites\{site-id}\permissions
+// PermissionsRequestBuilder provides operations to manage the permissions property of the microsoft.graph.site entity.
 type PermissionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type PermissionsRequestBuilderGetQueryParameters struct {
 // PermissionsRequestBuilderPostOptions options for Post
 type PermissionsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewPermissionsRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewPermissionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PermissionsRequestBuilder) Count()(*i14e740aa22d295ae84022adc2c7396ac62e0625a57061903942a9a3c8ebe4fde.CountRequestBuilder) {
+    return i14e740aa22d295ae84022adc2c7396ac62e0625a57061903942a9a3c8ebe4fde.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the permissions associated with the site. Nullable.
 func (m *PermissionsRequestBuilder) CreateGetRequestInformation(options *PermissionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *PermissionsRequestBuilder) CreateGetRequestInformation(options *Permiss
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the permissions associated with the site. Nullable.
+// CreatePostRequestInformation create new navigation property to permissions for sites
 func (m *PermissionsRequestBuilder) CreatePostRequestInformation(options *PermissionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *PermissionsRequestBuilder) CreatePostRequestInformation(options *Permis
     return requestInfo, nil
 }
 // Get the permissions associated with the site. Nullable.
-func (m *PermissionsRequestBuilder) Get(options *PermissionsRequestBuilderGetOptions)(*PermissionsResponse, error) {
+func (m *PermissionsRequestBuilder) Get(options *PermissionsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPermissionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePermissionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PermissionsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionCollectionResponseable), nil
 }
-// Post the permissions associated with the site. Nullable.
-func (m *PermissionsRequestBuilder) Post(options *PermissionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission, error) {
+// Post create new navigation property to permissions for sites
+func (m *PermissionsRequestBuilder) Post(options *PermissionsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPermission() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePermissionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable), nil
 }
