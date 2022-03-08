@@ -23,7 +23,7 @@ type ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetOptions struct
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal instantiates a new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
-func NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, startDateTime *string, endDateTime *string)(*ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) {
+func NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, endDateTime *string, startDateTime *string)(*ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) {
     m := &ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')";
@@ -31,11 +31,11 @@ func NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    if startDateTime != nil {
-        urlTplParams["StartDateTime"] = *startDateTime
-    }
     if endDateTime != nil {
         urlTplParams["EndDateTime"] = *endDateTime
+    }
+    if startDateTime != nil {
+        urlTplParams["StartDateTime"] = *startDateTime
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -6,8 +6,8 @@ import (
 
 // WindowsInformationProtectionPolicyable 
 type WindowsInformationProtectionPolicyable interface {
-    WindowsInformationProtectionable
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    WindowsInformationProtectionable
     GetDaysWithoutContactBeforeUnenroll()(*int32)
     GetMdmEnrollmentUrl()(*string)
     GetMinutesOfInactivityBeforeDeviceLock()(*int32)

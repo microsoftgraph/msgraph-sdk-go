@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the activities property of the microsoft.graph.user entity.
 type Status int
 
 const (

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SectionGroup provides operations to manage the drive singleton.
+// SectionGroup provides operations to manage the collection of group entities.
 type SectionGroup struct {
     OnenoteEntityHierarchyModel
     // The notebook that contains the section group. Read-only.

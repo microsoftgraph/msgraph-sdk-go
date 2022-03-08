@@ -11,7 +11,7 @@ type GroupCollectionResponse struct {
     // 
     nextLink *string;
     // 
-    value []Group;
+    value []Groupable;
 }
 // NewGroupCollectionResponse instantiates a new GroupCollectionResponse and sets the default values.
 func NewGroupCollectionResponse()(*GroupCollectionResponse) {
@@ -51,9 +51,9 @@ func (m *GroupCollectionResponse) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            res := make([]Group, len(val))
+            res := make([]Groupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Group))
+                res[i] = v.(Groupable)
             }
             m.SetValue(res)
         }
@@ -70,7 +70,7 @@ func (m *GroupCollectionResponse) GetNextLink()(*string) {
     }
 }
 // GetValue gets the value property value. 
-func (m *GroupCollectionResponse) GetValue()([]Group) {
+func (m *GroupCollectionResponse) GetValue()([]Groupable) {
     if m == nil {
         return nil
     } else {
@@ -91,8 +91,7 @@ func (m *GroupCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetValue() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {
@@ -120,7 +119,7 @@ func (m *GroupCollectionResponse) SetNextLink(value *string)() {
     }
 }
 // SetValue sets the value property value. 
-func (m *GroupCollectionResponse) SetValue(value []Group)() {
+func (m *GroupCollectionResponse) SetValue(value []Groupable)() {
     if m != nil {
         m.value = value
     }

@@ -245,8 +245,8 @@ func (m *ReportsRequestBuilder) Get(options *ReportsRequestBuilderGetOptions)(i4
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
         "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateReportRootFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -291,8 +291,8 @@ func (m *ReportsRequestBuilder) GetEmailAppUsageVersionsUserCountsWithPeriod(per
     return i4ea8142505b6b02804cdd135578592c59e1ebd8c244878c8a27bac9df783863b.NewGetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime provides operations to call the getGroupArchivedPrintJobs method.
-func (m *ReportsRequestBuilder) GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(groupId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*i39400581189e192e8c3927b2ac378c799b30d5cb2c7a932a3e2f9802d2a2f95d.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return i39400581189e192e8c3927b2ac378c799b30d5cb2c7a932a3e2f9802d2a2f95d.NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, groupId, startDateTime, endDateTime);
+func (m *ReportsRequestBuilder) GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, groupId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*i39400581189e192e8c3927b2ac378c799b30d5cb2c7a932a3e2f9802d2a2f95d.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return i39400581189e192e8c3927b2ac378c799b30d5cb2c7a932a3e2f9802d2a2f95d.NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, groupId, startDateTime);
 }
 // GetMailboxUsageDetailWithPeriod provides operations to call the getMailboxUsageDetail method.
 func (m *ReportsRequestBuilder) GetMailboxUsageDetailWithPeriod(period *string)(*i61a78ce1e0b6e2e60e6d50fe39c731a201868c12c59871387bf62c67fa03cc24.GetMailboxUsageDetailWithPeriodRequestBuilder) {
@@ -399,8 +399,8 @@ func (m *ReportsRequestBuilder) GetOneDriveUsageStorageWithPeriod(period *string
     return if97af71691601e0f0046051c8e82fb71f8db2f1d3b5f8e7e40346d3fa47b196f.NewGetOneDriveUsageStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime provides operations to call the getPrinterArchivedPrintJobs method.
-func (m *ReportsRequestBuilder) GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(printerId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*i3ed9439789e0857666ebca3cd16359b4745ffe979a682ea73e6cd26f8054ae21.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return i3ed9439789e0857666ebca3cd16359b4745ffe979a682ea73e6cd26f8054ae21.NewGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, printerId, startDateTime, endDateTime);
+func (m *ReportsRequestBuilder) GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, printerId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*i3ed9439789e0857666ebca3cd16359b4745ffe979a682ea73e6cd26f8054ae21.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return i3ed9439789e0857666ebca3cd16359b4745ffe979a682ea73e6cd26f8054ae21.NewGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, printerId, startDateTime);
 }
 // GetSharePointActivityFileCountsWithPeriod provides operations to call the getSharePointActivityFileCounts method.
 func (m *ReportsRequestBuilder) GetSharePointActivityFileCountsWithPeriod(period *string)(*i1bfeeda14fdcd3c4bc1c9b02a4d925837c77654498184deaffbfeb8f496c10c5.GetSharePointActivityFileCountsWithPeriodRequestBuilder) {
@@ -547,8 +547,8 @@ func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithPeriod(period 
     return ibfd05176830665cf1dae7366e8b491572f134d04e12120a5499c283d6c8ae062.NewGetTeamsUserActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime provides operations to call the getUserArchivedPrintJobs method.
-func (m *ReportsRequestBuilder) GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, userId *string)(*iafadefc9c12601a3611573bb976b73b251f9ea476a68e3bdc9ceab9e0d5cc308.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return iafadefc9c12601a3611573bb976b73b251f9ea476a68e3bdc9ceab9e0d5cc308.NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime, userId);
+func (m *ReportsRequestBuilder) GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, userId *string)(*iafadefc9c12601a3611573bb976b73b251f9ea476a68e3bdc9ceab9e0d5cc308.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return iafadefc9c12601a3611573bb976b73b251f9ea476a68e3bdc9ceab9e0d5cc308.NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime, userId);
 }
 // GetYammerActivityCountsWithPeriod provides operations to call the getYammerActivityCounts method.
 func (m *ReportsRequestBuilder) GetYammerActivityCountsWithPeriod(period *string)(*ifd45221e0ff465bb6f37fa740578c697634181cf333e3c01e4db49019e2ba5eb.GetYammerActivityCountsWithPeriodRequestBuilder) {
@@ -603,8 +603,8 @@ func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentFailureDetails()(*i0e6a5a
     return i0e6a5a79552b1c4826c9418d405e7420746bbd08e606bfd5c84ba1ad674aed8f.NewManagedDeviceEnrollmentFailureDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken provides operations to call the managedDeviceEnrollmentFailureDetails method.
-func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(top *int32, skipToken *string, skip *int32, filter *string)(*i374eb5f5ea7befd0f519a8a1c2886282c8ae9910332bd6b507ad8b29eddfdf2d.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder) {
-    return i374eb5f5ea7befd0f519a8a1c2886282c8ae9910332bd6b507ad8b29eddfdf2d.NewManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, top, skipToken, skip, filter);
+func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(filter *string, top *int32, skip *int32, skipToken *string)(*i374eb5f5ea7befd0f519a8a1c2886282c8ae9910332bd6b507ad8b29eddfdf2d.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder) {
+    return i374eb5f5ea7befd0f519a8a1c2886282c8ae9910332bd6b507ad8b29eddfdf2d.NewManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, filter, top, skip, skipToken);
 }
 // ManagedDeviceEnrollmentTopFailures provides operations to call the managedDeviceEnrollmentTopFailures method.
 func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailures()(*i9d1992f642df096181dd0b243f5639c29682f838689705077b65251f267d222f.ManagedDeviceEnrollmentTopFailuresRequestBuilder) {
@@ -649,8 +649,8 @@ func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
         "5XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

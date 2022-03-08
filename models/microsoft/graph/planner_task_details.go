@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerTaskDetails provides operations to manage the drive singleton.
+// PlannerTaskDetails provides operations to manage the collection of drive entities.
 type PlannerTaskDetails struct {
     Entity
     // The collection of checklist items on the task.
