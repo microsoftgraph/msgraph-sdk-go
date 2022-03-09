@@ -23,7 +23,7 @@ type GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestB
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal instantiates a new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder and sets the default values.
-func NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, interval *string, startDateTime *string, endDateTime *string)(*GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+func NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, endDateTime *string, interval *string, startDateTime *string)(*GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     m := &GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/drives/{drive_id}/items/{driveItem_id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
@@ -31,14 +31,14 @@ func NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
+    if endDateTime != nil {
+        urlTplParams["endDateTime"] = *endDateTime
+    }
     if interval != nil {
         urlTplParams["interval"] = *interval
     }
     if startDateTime != nil {
         urlTplParams["startDateTime"] = *startDateTime
-    }
-    if endDateTime != nil {
-        urlTplParams["endDateTime"] = *endDateTime
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

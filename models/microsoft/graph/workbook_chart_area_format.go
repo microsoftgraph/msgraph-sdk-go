@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartAreaFormat provides operations to manage the drive singleton.
+// WorkbookChartAreaFormat provides operations to manage the collection of drive entities.
 type WorkbookChartAreaFormat struct {
     Entity
     // Represents the fill format of an object, which includes background formatting information. Read-only.

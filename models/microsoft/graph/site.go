@@ -2,9 +2,10 @@ package graph
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/termstore"
 )
 
-// Site provides operations to manage the collection of group entities.
+// Site provides operations to manage the educationRoot singleton.
 type Site struct {
     BaseItem
     // Analytics about the view activities that took place in this site.
@@ -40,9 +41,9 @@ type Site struct {
     // The collection of the sub-sites under this site.
     sites []Siteable;
     // The default termStore under this site.
-    termStore Storeable;
+    termStore id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable;
     // The collection of termStores under this site.
-    termStores []Storeable;
+    termStores []id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable;
 }
 // NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
@@ -315,24 +316,24 @@ func (m *Site) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["termStore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(CreateStoreFromDiscriminatorValue)
+        val, err := n.GetObjectValue(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.CreateStoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTermStore(val.(Storeable))
+            m.SetTermStore(val.(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable))
         }
         return nil
     }
     res["termStores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateStoreFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.CreateStoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Storeable, len(val))
+            res := make([]id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable, len(val))
             for i, v := range val {
-                res[i] = v.(Storeable)
+                res[i] = v.(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable)
             }
             m.SetTermStores(res)
         }
@@ -405,7 +406,7 @@ func (m *Site) GetSites()([]Siteable) {
     }
 }
 // GetTermStore gets the termStore property value. The default termStore under this site.
-func (m *Site) GetTermStore()(Storeable) {
+func (m *Site) GetTermStore()(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable) {
     if m == nil {
         return nil
     } else {
@@ -413,7 +414,7 @@ func (m *Site) GetTermStore()(Storeable) {
     }
 }
 // GetTermStores gets the termStores property value. The collection of termStores under this site.
-func (m *Site) GetTermStores()([]Storeable) {
+func (m *Site) GetTermStores()([]id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable) {
     if m == nil {
         return nil
     } else {
@@ -672,13 +673,13 @@ func (m *Site) SetSites(value []Siteable)() {
     }
 }
 // SetTermStore sets the termStore property value. The default termStore under this site.
-func (m *Site) SetTermStore(value Storeable)() {
+func (m *Site) SetTermStore(value id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable)() {
     if m != nil {
         m.termStore = value
     }
 }
 // SetTermStores sets the termStores property value. The collection of termStores under this site.
-func (m *Site) SetTermStores(value []Storeable)() {
+func (m *Site) SetTermStores(value []id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable)() {
     if m != nil {
         m.termStores = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserScopeTeamsAppInstallation provides operations to manage the collection of drive entities.
+// UserScopeTeamsAppInstallation provides operations to manage the drive singleton.
 type UserScopeTeamsAppInstallation struct {
     TeamsAppInstallation
     // The chat between the user and Teams app.

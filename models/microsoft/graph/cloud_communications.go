@@ -2,13 +2,14 @@ package graph
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/callrecords"
 )
 
 // CloudCommunications provides operations to manage the cloudCommunications singleton.
 type CloudCommunications struct {
     Entity
     // 
-    callRecords []CallRecordable;
+    callRecords []i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallRecordable;
     // 
     calls []Callable;
     // 
@@ -28,7 +29,7 @@ func CreateCloudCommunicationsFromDiscriminatorValue(parseNode i04eb5309aeaafadd
     return NewCloudCommunications(), nil
 }
 // GetCallRecords gets the callRecords property value. 
-func (m *CloudCommunications) GetCallRecords()([]CallRecordable) {
+func (m *CloudCommunications) GetCallRecords()([]i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallRecordable) {
     if m == nil {
         return nil
     } else {
@@ -47,14 +48,14 @@ func (m *CloudCommunications) GetCalls()([]Callable) {
 func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["callRecords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCallRecordFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CreateCallRecordFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CallRecordable, len(val))
+            res := make([]i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallRecordable, len(val))
             for i, v := range val {
-                res[i] = v.(CallRecordable)
+                res[i] = v.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallRecordable)
             }
             m.SetCallRecords(res)
         }
@@ -172,7 +173,7 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetCallRecords sets the callRecords property value. 
-func (m *CloudCommunications) SetCallRecords(value []CallRecordable)() {
+func (m *CloudCommunications) SetCallRecords(value []i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallRecordable)() {
     if m != nil {
         m.callRecords = value
     }

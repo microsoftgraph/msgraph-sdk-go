@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the collection of group entities.
+// Provides operations to manage the educationRoot singleton.
 type ColumnTypes int
 
 const (

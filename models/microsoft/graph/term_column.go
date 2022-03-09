@@ -2,20 +2,21 @@ package graph
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/termstore"
 )
 
-// TermColumn provides operations to manage the collection of group entities.
+// TermColumn provides operations to manage the educationRoot singleton.
 type TermColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Specifies whether the column will allow more than one value.
     allowMultipleValues *bool;
     // 
-    parentTerm Termable;
+    parentTerm id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Termable;
     // Specifies whether to display the entire term path or only the term label.
     showFullyQualifiedName *bool;
     // 
-    termSet Setable;
+    termSet id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Setable;
 }
 // NewTermColumn instantiates a new termColumn and sets the default values.
 func NewTermColumn()(*TermColumn) {
@@ -58,12 +59,12 @@ func (m *TermColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["parentTerm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTermFromDiscriminatorValue)
+        val, err := n.GetObjectValue(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.CreateTermFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentTerm(val.(Termable))
+            m.SetParentTerm(val.(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Termable))
         }
         return nil
     }
@@ -78,19 +79,19 @@ func (m *TermColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["termSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSetFromDiscriminatorValue)
+        val, err := n.GetObjectValue(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.CreateSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTermSet(val.(Setable))
+            m.SetTermSet(val.(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Setable))
         }
         return nil
     }
     return res
 }
 // GetParentTerm gets the parentTerm property value. 
-func (m *TermColumn) GetParentTerm()(Termable) {
+func (m *TermColumn) GetParentTerm()(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Termable) {
     if m == nil {
         return nil
     } else {
@@ -106,7 +107,7 @@ func (m *TermColumn) GetShowFullyQualifiedName()(*bool) {
     }
 }
 // GetTermSet gets the termSet property value. 
-func (m *TermColumn) GetTermSet()(Setable) {
+func (m *TermColumn) GetTermSet()(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Setable) {
     if m == nil {
         return nil
     } else {
@@ -163,7 +164,7 @@ func (m *TermColumn) SetAllowMultipleValues(value *bool)() {
     }
 }
 // SetParentTerm sets the parentTerm property value. 
-func (m *TermColumn) SetParentTerm(value Termable)() {
+func (m *TermColumn) SetParentTerm(value id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Termable)() {
     if m != nil {
         m.parentTerm = value
     }
@@ -175,7 +176,7 @@ func (m *TermColumn) SetShowFullyQualifiedName(value *bool)() {
     }
 }
 // SetTermSet sets the termSet property value. 
-func (m *TermColumn) SetTermSet(value Setable)() {
+func (m *TermColumn) SetTermSet(value id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Setable)() {
     if m != nil {
         m.termSet = value
     }
