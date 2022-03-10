@@ -105,6 +105,14 @@ func (m *RestoreResponse) SetDriveItem(value i4a838ef194e4c99e9f2c63ba10dab9cb12
         m.driveItem = value
     }
 }
+// RestoreResponseable 
+type RestoreResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    RestoreResponseable
+    GetDriveItem()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable)
+    SetDriveItem(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable)()
+}
 // NewRestoreRequestBuilderInternal instantiates a new RestoreRequestBuilder and sets the default values.
 func NewRestoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RestoreRequestBuilder) {
     m := &RestoreRequestBuilder{

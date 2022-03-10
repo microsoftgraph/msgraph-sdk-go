@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DomainDnsRecord provides operations to manage the collection of domainDnsRecord entities.
+// DomainDnsRecord provides operations to manage the collection of domain entities.
 type DomainDnsRecord struct {
     Entity
     // If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.

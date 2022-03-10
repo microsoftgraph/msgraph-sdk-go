@@ -103,6 +103,14 @@ func (m *SyncLicensesResponse) SetVppToken(value i4a838ef194e4c99e9f2c63ba10dab9
         m.vppToken = value
     }
 }
+// SyncLicensesResponseable 
+type SyncLicensesResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    SyncLicensesResponseable
+    GetVppToken()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppTokenable)
+    SetVppToken(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.VppTokenable)()
+}
 // NewSyncLicensesRequestBuilderInternal instantiates a new SyncLicensesRequestBuilder and sets the default values.
 func NewSyncLicensesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SyncLicensesRequestBuilder) {
     m := &SyncLicensesRequestBuilder{

@@ -103,6 +103,14 @@ func (m *PreviewResponse) SetOnenotePagePreview(value i4a838ef194e4c99e9f2c63ba1
         m.onenotePagePreview = value
     }
 }
+// PreviewResponseable 
+type PreviewResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    PreviewResponseable
+    GetOnenotePagePreview()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePagePreviewable)
+    SetOnenotePagePreview(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePagePreviewable)()
+}
 // NewPreviewRequestBuilderInternal instantiates a new PreviewRequestBuilder and sets the default values.
 func NewPreviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PreviewRequestBuilder) {
     m := &PreviewRequestBuilder{
