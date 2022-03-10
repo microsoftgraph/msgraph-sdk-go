@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// UpdateRecordingStatusRequestBody 
+// UpdateRecordingStatusRequestBody provides operations to call the updateRecordingStatus method.
 type UpdateRecordingStatusRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewUpdateRecordingStatusRequestBody()(*UpdateRecordingStatusRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUpdateRecordingStatusRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdateRecordingStatusRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateRecordingStatusRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRecordingStatusRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *UpdateRecordingStatusRequestBody) GetClientContext()(*string) {
         return nil
     } else {
         return m.clientContext
-    }
-}
-// GetStatus gets the status property value. 
-func (m *UpdateRecordingStatusRequestBody) GetStatus()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +65,14 @@ func (m *UpdateRecordingStatusRequestBody) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetStatus gets the status property value. 
+func (m *UpdateRecordingStatusRequestBody) GetStatus()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordingStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *UpdateRecordingStatusRequestBody) IsNil()(bool) {
     return m == nil

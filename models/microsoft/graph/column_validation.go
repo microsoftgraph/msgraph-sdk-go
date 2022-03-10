@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ColumnValidation 
+// ColumnValidation provides operations to manage the educationRoot singleton.
 type ColumnValidation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Default BCP 47 language tag for the description.
     defaultLanguage *string;
     // Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
-    descriptions []DisplayNameLocalization;
+    descriptions []DisplayNameLocalizationable;
     // The formula to validate column value. For examples, see Examples of common formulas in lists.
     formula *string;
 }
@@ -21,6 +21,10 @@ func NewColumnValidation()(*ColumnValidation) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateColumnValidationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateColumnValidationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewColumnValidation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ColumnValidation) GetAdditionalData()(map[string]interface{}) {
@@ -39,19 +43,11 @@ func (m *ColumnValidation) GetDefaultLanguage()(*string) {
     }
 }
 // GetDescriptions gets the descriptions property value. Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
-func (m *ColumnValidation) GetDescriptions()([]DisplayNameLocalization) {
+func (m *ColumnValidation) GetDescriptions()([]DisplayNameLocalizationable) {
     if m == nil {
         return nil
     } else {
         return m.descriptions
-    }
-}
-// GetFormula gets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
-func (m *ColumnValidation) GetFormula()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.formula
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,14 +64,14 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["descriptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDisplayNameLocalization() })
+        val, err := n.GetCollectionOfObjectValues(CreateDisplayNameLocalizationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DisplayNameLocalization, len(val))
+            res := make([]DisplayNameLocalizationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DisplayNameLocalization))
+                res[i] = v.(DisplayNameLocalizationable)
             }
             m.SetDescriptions(res)
         }
@@ -93,6 +89,14 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, 
     }
     return res
 }
+// GetFormula gets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
+func (m *ColumnValidation) GetFormula()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.formula
+    }
+}
 func (m *ColumnValidation) IsNil()(bool) {
     return m == nil
 }
@@ -107,8 +111,7 @@ func (m *ColumnValidation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetDescriptions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDescriptions()))
         for i, v := range m.GetDescriptions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("descriptions", cast)
         if err != nil {
@@ -142,7 +145,7 @@ func (m *ColumnValidation) SetDefaultLanguage(value *string)() {
     }
 }
 // SetDescriptions sets the descriptions property value. Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
-func (m *ColumnValidation) SetDescriptions(value []DisplayNameLocalization)() {
+func (m *ColumnValidation) SetDescriptions(value []DisplayNameLocalizationable)() {
     if m != nil {
         m.descriptions = value
     }

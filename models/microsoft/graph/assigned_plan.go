@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignedPlan 
+// AssignedPlan provides operations to manage the collection of drive entities.
 type AssignedPlan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,9 +13,9 @@ type AssignedPlan struct {
     assignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
     capabilityStatus *string;
-    // The name of the service; for example, 'Exchange'.
+    // The name of the service; for example, exchange.
     service *string;
-    // A GUID that identifies the service plan.
+    // A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
     servicePlanId *string;
 }
 // NewAssignedPlan instantiates a new assignedPlan and sets the default values.
@@ -24,6 +24,10 @@ func NewAssignedPlan()(*AssignedPlan) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAssignedPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignedPlanFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignedPlan(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedPlan) GetAdditionalData()(map[string]interface{}) {
@@ -47,22 +51,6 @@ func (m *AssignedPlan) GetCapabilityStatus()(*string) {
         return nil
     } else {
         return m.capabilityStatus
-    }
-}
-// GetService gets the service property value. The name of the service; for example, 'Exchange'.
-func (m *AssignedPlan) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
-}
-// GetServicePlanId gets the servicePlanId property value. A GUID that identifies the service plan.
-func (m *AssignedPlan) GetServicePlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlanId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +97,22 @@ func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetService gets the service property value. The name of the service; for example, exchange.
+func (m *AssignedPlan) GetService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.service
+    }
+}
+// GetServicePlanId gets the servicePlanId property value. A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
+func (m *AssignedPlan) GetServicePlanId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePlanId
+    }
 }
 func (m *AssignedPlan) IsNil()(bool) {
     return m == nil
@@ -165,13 +169,13 @@ func (m *AssignedPlan) SetCapabilityStatus(value *string)() {
         m.capabilityStatus = value
     }
 }
-// SetService sets the service property value. The name of the service; for example, 'Exchange'.
+// SetService sets the service property value. The name of the service; for example, exchange.
 func (m *AssignedPlan) SetService(value *string)() {
     if m != nil {
         m.service = value
     }
 }
-// SetServicePlanId sets the servicePlanId property value. A GUID that identifies the service plan.
+// SetServicePlanId sets the servicePlanId property value. A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
 func (m *AssignedPlan) SetServicePlanId(value *string)() {
     if m != nil {
         m.servicePlanId = value

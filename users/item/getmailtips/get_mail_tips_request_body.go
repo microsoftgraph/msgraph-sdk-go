@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// GetMailTipsRequestBody 
+// GetMailTipsRequestBody provides operations to call the getMailTips method.
 type GetMailTipsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewGetMailTipsRequestBody()(*GetMailTipsRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetMailTipsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetMailTipsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetMailTipsRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetMailTipsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *GetMailTipsRequestBody) GetEmailAddresses()([]string) {
         return nil
     } else {
         return m.emailAddresses
-    }
-}
-// GetMailTipsOptions gets the mailTipsOptions property value. 
-func (m *GetMailTipsRequestBody) GetMailTipsOptions()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailTipsType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailTipsOptions
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -73,6 +69,14 @@ func (m *GetMailTipsRequestBody) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetMailTipsOptions gets the mailTipsOptions property value. 
+func (m *GetMailTipsRequestBody) GetMailTipsOptions()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailTipsType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailTipsOptions
+    }
 }
 func (m *GetMailTipsRequestBody) IsNil()(bool) {
     return m == nil

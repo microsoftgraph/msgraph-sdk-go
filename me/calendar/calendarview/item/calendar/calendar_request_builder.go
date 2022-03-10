@@ -2,14 +2,11 @@ package calendar
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i376b89536fa285e9353a10f06e4b9d522688cb45534414d51e3ebe29db25f8c0 "github.com/microsoftgraph/msgraph-sdk-go/me/calendar/calendarview/item/calendar/allowedcalendarsharingroleswithuser"
-    i65bf0e16b00f6c78aa3f29f577af5e90c3ae164a165382fd04935ceedd09bbb2 "github.com/microsoftgraph/msgraph-sdk-go/me/calendar/calendarview/item/calendar/ref"
-    i6a7ce60a3c87bdc421a8a577e4b9d74d1baf69b380f5158fb63dbc5bde80cacd "github.com/microsoftgraph/msgraph-sdk-go/me/calendar/calendarview/item/calendar/getschedule"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// CalendarRequestBuilder builds and executes requests for operations under \me\calendar\calendarView\{event-id}\calendar
+// CalendarRequestBuilder provides operations to manage the calendar property of the microsoft.graph.event entity.
 type CalendarRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,10 +31,6 @@ type CalendarRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
 }
-// AllowedCalendarSharingRolesWithUser builds and executes requests for operations under \me\calendar\calendarView\{event-id}\calendar\microsoft.graph.allowedCalendarSharingRoles(User='{User}')
-func (m *CalendarRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*i376b89536fa285e9353a10f06e4b9d522688cb45534414d51e3ebe29db25f8c0.AllowedCalendarSharingRolesWithUserRequestBuilder) {
-    return i376b89536fa285e9353a10f06e4b9d522688cb45534414d51e3ebe29db25f8c0.NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.pathParameters, m.requestAdapter, user);
-}
 // NewCalendarRequestBuilderInternal instantiates a new CalendarRequestBuilder and sets the default values.
 func NewCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarRequestBuilder) {
     m := &CalendarRequestBuilder{
@@ -47,7 +40,7 @@ func NewCalendarRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -78,20 +71,18 @@ func (m *CalendarRequestBuilder) CreateGetRequestInformation(options *CalendarRe
     return requestInfo, nil
 }
 // Get the calendar that contains the event. Navigation property. Read-only.
-func (m *CalendarRequestBuilder) Get(options *CalendarRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Calendar, error) {
+func (m *CalendarRequestBuilder) Get(options *CalendarRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Calendarable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewCalendar() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateCalendarFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Calendar), nil
-}
-func (m *CalendarRequestBuilder) GetSchedule()(*i6a7ce60a3c87bdc421a8a577e4b9d74d1baf69b380f5158fb63dbc5bde80cacd.GetScheduleRequestBuilder) {
-    return i6a7ce60a3c87bdc421a8a577e4b9d74d1baf69b380f5158fb63dbc5bde80cacd.NewGetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *CalendarRequestBuilder) Ref()(*i65bf0e16b00f6c78aa3f29f577af5e90c3ae164a165382fd04935ceedd09bbb2.RefRequestBuilder) {
-    return i65bf0e16b00f6c78aa3f29f577af5e90c3ae164a165382fd04935ceedd09bbb2.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Calendarable), nil
 }

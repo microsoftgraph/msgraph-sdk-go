@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchBucket 
+// SearchBucket provides operations to call the query method.
 type SearchBucket struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewSearchBucket()(*SearchBucket) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSearchBucketFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchBucketFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchBucket(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchBucket) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *SearchBucket) GetCount()(*int32) {
         return nil
     } else {
         return m.count
-    }
-}
-// GetKey gets the key property value. The discrete value of the field that an aggregation was computed on.
-func (m *SearchBucket) GetKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *SearchBucket) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetKey gets the key property value. The discrete value of the field that an aggregation was computed on.
+func (m *SearchBucket) GetKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
 }
 func (m *SearchBucket) IsNil()(bool) {
     return m == nil

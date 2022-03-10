@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PublicationFacet 
+// PublicationFacet provides operations to manage the drive singleton.
 type PublicationFacet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewPublicationFacet()(*PublicationFacet) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePublicationFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePublicationFacetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPublicationFacet(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicationFacet) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLevel gets the level property value. The state of publication for this document. Either published or checkout. Read-only.
-func (m *PublicationFacet) GetLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.level
-    }
-}
-// GetVersionId gets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.
-func (m *PublicationFacet) GetVersionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *PublicationFacet) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetLevel gets the level property value. The state of publication for this document. Either published or checkout. Read-only.
+func (m *PublicationFacet) GetLevel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.level
+    }
+}
+// GetVersionId gets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.
+func (m *PublicationFacet) GetVersionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.versionId
+    }
 }
 func (m *PublicationFacet) IsNil()(bool) {
     return m == nil

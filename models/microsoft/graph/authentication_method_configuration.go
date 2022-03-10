@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationMethodConfiguration 
+// AuthenticationMethodConfiguration provides operations to manage the collection of authenticationMethodConfiguration entities.
 type AuthenticationMethodConfiguration struct {
     Entity
     // The state of the policy. Possible values are: enabled, disabled.
@@ -17,13 +17,9 @@ func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) 
     }
     return m
 }
-// GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
-func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+// CreateAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthenticationMethodConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
+func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *AuthenticationMethodConfiguration) IsNil()(bool) {
     return m == nil

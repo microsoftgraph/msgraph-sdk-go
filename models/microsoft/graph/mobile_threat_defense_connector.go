@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileThreatDefenseConnector 
+// MobileThreatDefenseConnector provides operations to manage the deviceManagement singleton.
 type MobileThreatDefenseConnector struct {
     Entity
     // For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
@@ -32,6 +32,10 @@ func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     }
     return m
 }
+// CreateMobileThreatDefenseConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileThreatDefenseConnectorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileThreatDefenseConnector(), nil
+}
 // GetAndroidDeviceBlockedOnMissingPartnerData gets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) GetAndroidDeviceBlockedOnMissingPartnerData()(*bool) {
     if m == nil {
@@ -46,54 +50,6 @@ func (m *MobileThreatDefenseConnector) GetAndroidEnabled()(*bool) {
         return nil
     } else {
         return m.androidEnabled
-    }
-}
-// GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosDeviceBlockedOnMissingPartnerData
-    }
-}
-// GetIosEnabled gets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
-func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosEnabled
-    }
-}
-// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
-func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastHeartbeatDateTime
-    }
-}
-// GetPartnerState gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
-func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerState
-    }
-}
-// GetPartnerUnresponsivenessThresholdInDays gets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
-func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerUnresponsivenessThresholdInDays
-    }
-}
-// GetPartnerUnsupportedOsVersionBlocked gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
-func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerUnsupportedOsVersionBlocked
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,6 +136,54 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosDeviceBlockedOnMissingPartnerData
+    }
+}
+// GetIosEnabled gets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosEnabled
+    }
+}
+// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
+func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastHeartbeatDateTime
+    }
+}
+// GetPartnerState gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerState
+    }
+}
+// GetPartnerUnresponsivenessThresholdInDays gets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
+func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerUnresponsivenessThresholdInDays
+    }
+}
+// GetPartnerUnsupportedOsVersionBlocked gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerUnsupportedOsVersionBlocked
+    }
 }
 func (m *MobileThreatDefenseConnector) IsNil()(bool) {
     return m == nil

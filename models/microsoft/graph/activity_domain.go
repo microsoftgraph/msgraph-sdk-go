@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the findMeetingTimes method.
 type ActivityDomain int
 
 const (

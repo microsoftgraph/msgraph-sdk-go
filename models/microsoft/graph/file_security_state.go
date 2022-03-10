@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FileSecurityState 
+// FileSecurityState provides operations to manage the security singleton.
 type FileSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Complex type containing file hashes (cryptographic and location-sensitive).
-    fileHash *FileHash;
+    fileHash FileHashable;
     // File name (without path).
     name *string;
     // Full file path of the file/imageFile.
@@ -24,6 +24,10 @@ func NewFileSecurityState()(*FileSecurityState) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateFileSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFileSecurityStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFileSecurityState(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileSecurityState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -32,48 +36,16 @@ func (m *FileSecurityState) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
-func (m *FileSecurityState) GetFileHash()(*FileHash) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHash
-    }
-}
-// GetName gets the name property value. File name (without path).
-func (m *FileSecurityState) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPath gets the path property value. Full file path of the file/imageFile.
-func (m *FileSecurityState) GetPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.path
-    }
-}
-// GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
-func (m *FileSecurityState) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["fileHash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFileHash() })
+        val, err := n.GetObjectValue(CreateFileHashFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFileHash(val.(*FileHash))
+            m.SetFileHash(val.(FileHashable))
         }
         return nil
     }
@@ -108,6 +80,38 @@ func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
+func (m *FileSecurityState) GetFileHash()(FileHashable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileHash
+    }
+}
+// GetName gets the name property value. File name (without path).
+func (m *FileSecurityState) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPath gets the path property value. Full file path of the file/imageFile.
+func (m *FileSecurityState) GetPath()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.path
+    }
+}
+// GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
+func (m *FileSecurityState) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
 }
 func (m *FileSecurityState) IsNil()(bool) {
     return m == nil
@@ -153,7 +157,7 @@ func (m *FileSecurityState) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetFileHash sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
-func (m *FileSecurityState) SetFileHash(value *FileHash)() {
+func (m *FileSecurityState) SetFileHash(value FileHashable)() {
     if m != nil {
         m.fileHash = value
     }

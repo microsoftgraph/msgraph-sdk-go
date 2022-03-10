@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the identityContainer singleton.
 type ConditionalAccessDevicePlatform int
 
 const (

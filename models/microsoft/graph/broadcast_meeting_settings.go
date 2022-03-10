@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BroadcastMeetingSettings 
+// BroadcastMeetingSettings provides operations to manage the cloudCommunications singleton.
 type BroadcastMeetingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewBroadcastMeetingSettings()(*BroadcastMeetingSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBroadcastMeetingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBroadcastMeetingSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBroadcastMeetingSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BroadcastMeetingSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *BroadcastMeetingSettings) GetAllowedAudience()(*BroadcastMeetingAudienc
         return nil
     } else {
         return m.allowedAudience
-    }
-}
-// GetIsAttendeeReportEnabled gets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.
-func (m *BroadcastMeetingSettings) GetIsAttendeeReportEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAttendeeReportEnabled
-    }
-}
-// GetIsQuestionAndAnswerEnabled gets the isQuestionAndAnswerEnabled property value. Indicates whether Q&A is enabled for this Teams live event. Default value is false.
-func (m *BroadcastMeetingSettings) GetIsQuestionAndAnswerEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isQuestionAndAnswerEnabled
-    }
-}
-// GetIsRecordingEnabled gets the isRecordingEnabled property value. Indicates whether recording is enabled for this Teams live event. Default value is false.
-func (m *BroadcastMeetingSettings) GetIsRecordingEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRecordingEnabled
-    }
-}
-// GetIsVideoOnDemandEnabled gets the isVideoOnDemandEnabled property value. Indicates whether video on demand is enabled for this Teams live event. Default value is false.
-func (m *BroadcastMeetingSettings) GetIsVideoOnDemandEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isVideoOnDemandEnabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetIsAttendeeReportEnabled gets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.
+func (m *BroadcastMeetingSettings) GetIsAttendeeReportEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAttendeeReportEnabled
+    }
+}
+// GetIsQuestionAndAnswerEnabled gets the isQuestionAndAnswerEnabled property value. Indicates whether Q&A is enabled for this Teams live event. Default value is false.
+func (m *BroadcastMeetingSettings) GetIsQuestionAndAnswerEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isQuestionAndAnswerEnabled
+    }
+}
+// GetIsRecordingEnabled gets the isRecordingEnabled property value. Indicates whether recording is enabled for this Teams live event. Default value is false.
+func (m *BroadcastMeetingSettings) GetIsRecordingEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRecordingEnabled
+    }
+}
+// GetIsVideoOnDemandEnabled gets the isVideoOnDemandEnabled property value. Indicates whether video on demand is enabled for this Teams live event. Default value is false.
+func (m *BroadcastMeetingSettings) GetIsVideoOnDemandEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isVideoOnDemandEnabled
+    }
 }
 func (m *BroadcastMeetingSettings) IsNil()(bool) {
     return m == nil

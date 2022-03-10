@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentitySecurityDefaultsEnforcementPolicy 
+// IdentitySecurityDefaultsEnforcementPolicy provides operations to manage the policyRoot singleton.
 type IdentitySecurityDefaultsEnforcementPolicy struct {
     PolicyBase
     // If set to true, Azure Active Directory security defaults is enabled for the tenant.
@@ -17,13 +17,9 @@ func NewIdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnf
     }
     return m
 }
-// GetIsEnabled gets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
-func (m *IdentitySecurityDefaultsEnforcementPolicy) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+// CreateIdentitySecurityDefaultsEnforcementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIdentitySecurityDefaultsEnforcementPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIdentitySecurityDefaultsEnforcementPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentitySecurityDefaultsEnforcementPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) GetFieldDeserializers()(map[
         return nil
     }
     return res
+}
+// GetIsEnabled gets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
+func (m *IdentitySecurityDefaultsEnforcementPolicy) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
 }
 func (m *IdentitySecurityDefaultsEnforcementPolicy) IsNil()(bool) {
     return m == nil

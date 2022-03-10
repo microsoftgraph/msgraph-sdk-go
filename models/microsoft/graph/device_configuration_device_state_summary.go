@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationDeviceStateSummary 
+// DeviceConfigurationDeviceStateSummary provides operations to manage the deviceManagement singleton.
 type DeviceConfigurationDeviceStateSummary struct {
     Entity
     // Number of compliant devices
@@ -29,6 +29,10 @@ func NewDeviceConfigurationDeviceStateSummary()(*DeviceConfigurationDeviceStateS
     }
     return m
 }
+// CreateDeviceConfigurationDeviceStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceConfigurationDeviceStateSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceConfigurationDeviceStateSummary(), nil
+}
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceConfigurationDeviceStateSummary) GetCompliantDeviceCount()(*int32) {
     if m == nil {
@@ -51,38 +55,6 @@ func (m *DeviceConfigurationDeviceStateSummary) GetErrorDeviceCount()(*int32) {
         return nil
     } else {
         return m.errorDeviceCount
-    }
-}
-// GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
-func (m *DeviceConfigurationDeviceStateSummary) GetNonCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantDeviceCount
-    }
-}
-// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
-func (m *DeviceConfigurationDeviceStateSummary) GetNotApplicableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableDeviceCount
-    }
-}
-// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
-func (m *DeviceConfigurationDeviceStateSummary) GetRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedDeviceCount
-    }
-}
-// GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
-func (m *DeviceConfigurationDeviceStateSummary) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,6 +131,38 @@ func (m *DeviceConfigurationDeviceStateSummary) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
+func (m *DeviceConfigurationDeviceStateSummary) GetNonCompliantDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nonCompliantDeviceCount
+    }
+}
+// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
+func (m *DeviceConfigurationDeviceStateSummary) GetNotApplicableDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableDeviceCount
+    }
+}
+// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
+func (m *DeviceConfigurationDeviceStateSummary) GetRemediatedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediatedDeviceCount
+    }
+}
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
+func (m *DeviceConfigurationDeviceStateSummary) GetUnknownDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unknownDeviceCount
+    }
 }
 func (m *DeviceConfigurationDeviceStateSummary) IsNil()(bool) {
     return m == nil

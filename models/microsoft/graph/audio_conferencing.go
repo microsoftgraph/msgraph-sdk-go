@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AudioConferencing 
+// AudioConferencing provides operations to manage the cloudCommunications singleton.
 type AudioConferencing struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewAudioConferencing()(*AudioConferencing) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAudioConferencingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAudioConferencingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAudioConferencing(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AudioConferencing) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -50,38 +54,6 @@ func (m *AudioConferencing) GetDialinUrl()(*string) {
         return nil
     } else {
         return m.dialinUrl
-    }
-}
-// GetTollFreeNumber gets the tollFreeNumber property value. 
-func (m *AudioConferencing) GetTollFreeNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollFreeNumber
-    }
-}
-// GetTollFreeNumbers gets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
-func (m *AudioConferencing) GetTollFreeNumbers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollFreeNumbers
-    }
-}
-// GetTollNumber gets the tollNumber property value. 
-func (m *AudioConferencing) GetTollNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollNumber
-    }
-}
-// GetTollNumbers gets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
-func (m *AudioConferencing) GetTollNumbers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollNumbers
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -156,6 +128,38 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetTollFreeNumber gets the tollFreeNumber property value. 
+func (m *AudioConferencing) GetTollFreeNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tollFreeNumber
+    }
+}
+// GetTollFreeNumbers gets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
+func (m *AudioConferencing) GetTollFreeNumbers()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tollFreeNumbers
+    }
+}
+// GetTollNumber gets the tollNumber property value. 
+func (m *AudioConferencing) GetTollNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tollNumber
+    }
+}
+// GetTollNumbers gets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
+func (m *AudioConferencing) GetTollNumbers()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tollNumbers
+    }
 }
 func (m *AudioConferencing) IsNil()(bool) {
     return m == nil

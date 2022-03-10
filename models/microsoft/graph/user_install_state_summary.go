@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserInstallStateSummary 
+// UserInstallStateSummary provides operations to manage the deviceAppManagement singleton.
 type UserInstallStateSummary struct {
     Entity
     // The install state of the eBook.
-    deviceStates []DeviceInstallState;
+    deviceStates []DeviceInstallStateable;
     // Failed Device Count.
     failedDeviceCount *int32;
     // Installed Device Count.
@@ -25,8 +25,12 @@ func NewUserInstallStateSummary()(*UserInstallStateSummary) {
     }
     return m
 }
+// CreateUserInstallStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserInstallStateSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserInstallStateSummary(), nil
+}
 // GetDeviceStates gets the deviceStates property value. The install state of the eBook.
-func (m *UserInstallStateSummary) GetDeviceStates()([]DeviceInstallState) {
+func (m *UserInstallStateSummary) GetDeviceStates()([]DeviceInstallStateable) {
     if m == nil {
         return nil
     } else {
@@ -41,42 +45,18 @@ func (m *UserInstallStateSummary) GetFailedDeviceCount()(*int32) {
         return m.failedDeviceCount
     }
 }
-// GetInstalledDeviceCount gets the installedDeviceCount property value. Installed Device Count.
-func (m *UserInstallStateSummary) GetInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedDeviceCount
-    }
-}
-// GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Not installed device count.
-func (m *UserInstallStateSummary) GetNotInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notInstalledDeviceCount
-    }
-}
-// GetUserName gets the userName property value. User name.
-func (m *UserInstallStateSummary) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserInstallStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceInstallState() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceInstallStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceInstallState, len(val))
+            res := make([]DeviceInstallStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceInstallState))
+                res[i] = v.(DeviceInstallStateable)
             }
             m.SetDeviceStates(res)
         }
@@ -124,6 +104,30 @@ func (m *UserInstallStateSummary) GetFieldDeserializers()(map[string]func(interf
     }
     return res
 }
+// GetInstalledDeviceCount gets the installedDeviceCount property value. Installed Device Count.
+func (m *UserInstallStateSummary) GetInstalledDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedDeviceCount
+    }
+}
+// GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Not installed device count.
+func (m *UserInstallStateSummary) GetNotInstalledDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notInstalledDeviceCount
+    }
+}
+// GetUserName gets the userName property value. User name.
+func (m *UserInstallStateSummary) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
+}
 func (m *UserInstallStateSummary) IsNil()(bool) {
     return m == nil
 }
@@ -136,8 +140,7 @@ func (m *UserInstallStateSummary) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetDeviceStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStates()))
         for i, v := range m.GetDeviceStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStates", cast)
         if err != nil {
@@ -171,7 +174,7 @@ func (m *UserInstallStateSummary) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetDeviceStates sets the deviceStates property value. The install state of the eBook.
-func (m *UserInstallStateSummary) SetDeviceStates(value []DeviceInstallState)() {
+func (m *UserInstallStateSummary) SetDeviceStates(value []DeviceInstallStateable)() {
     if m != nil {
         m.deviceStates = value
     }

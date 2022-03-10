@@ -2,14 +2,16 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     ia70f653993cbe8ba50d07297124b6fccc016858daaec3d574aff57f6dd413715 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/users"
     iaa1b72b2e917a242ccb04624a7df0510273ede01d0eb20e634f0ce118cbe44d1 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/classes"
     id764fdef7d1fc1e96b7dd96ba4ca2de348edde4d6b8c59eb7bc5df6cfdbe1fa3 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/administrativeunit"
+    i410e950d0e7e1732c6613b5e229d432d16a6b98c7937bf13ea765450eb216fc9 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/users/item"
+    i86542833251cc9d20683beeed83578dc1c733b42152adb9e290928af411e99e5 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/classes/item"
 )
 
-// EducationSchoolItemRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}
+// EducationSchoolItemRequestBuilder provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
 type EducationSchoolItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +50,7 @@ type EducationSchoolItemRequestBuilderGetQueryParameters struct {
 // EducationSchoolItemRequestBuilderPatchOptions options for Patch
 type EducationSchoolItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchool;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchoolable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,6 +64,17 @@ func (m *EducationSchoolItemRequestBuilder) AdministrativeUnit()(*id764fdef7d1fc
 func (m *EducationSchoolItemRequestBuilder) Classes()(*iaa1b72b2e917a242ccb04624a7df0510273ede01d0eb20e634f0ce118cbe44d1.ClassesRequestBuilder) {
     return iaa1b72b2e917a242ccb04624a7df0510273ede01d0eb20e634f0ce118cbe44d1.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ClassesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.classes.item collection
+func (m *EducationSchoolItemRequestBuilder) ClassesById(id string)(*i86542833251cc9d20683beeed83578dc1c733b42152adb9e290928af411e99e5.EducationClassItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["educationClass_id"] = id
+    }
+    return i86542833251cc9d20683beeed83578dc1c733b42152adb9e290928af411e99e5.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // NewEducationSchoolItemRequestBuilderInternal instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
 func NewEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSchoolItemRequestBuilder) {
     m := &EducationSchoolItemRequestBuilder{
@@ -71,7 +84,7 @@ func NewEducationSchoolItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -142,23 +155,31 @@ func (m *EducationSchoolItemRequestBuilder) Delete(options *EducationSchoolItemR
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get get schools from education
-func (m *EducationSchoolItemRequestBuilder) Get(options *EducationSchoolItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchool, error) {
+func (m *EducationSchoolItemRequestBuilder) Get(options *EducationSchoolItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchoolable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEducationSchool() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEducationSchoolFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchool), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchoolable), nil
 }
 // Patch update the navigation property schools in education
 func (m *EducationSchoolItemRequestBuilder) Patch(options *EducationSchoolItemRequestBuilderPatchOptions)(error) {
@@ -166,7 +187,11 @@ func (m *EducationSchoolItemRequestBuilder) Patch(options *EducationSchoolItemRe
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -174,4 +199,15 @@ func (m *EducationSchoolItemRequestBuilder) Patch(options *EducationSchoolItemRe
 }
 func (m *EducationSchoolItemRequestBuilder) Users()(*ia70f653993cbe8ba50d07297124b6fccc016858daaec3d574aff57f6dd413715.UsersRequestBuilder) {
     return ia70f653993cbe8ba50d07297124b6fccc016858daaec3d574aff57f6dd413715.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.users.item collection
+func (m *EducationSchoolItemRequestBuilder) UsersById(id string)(*i410e950d0e7e1732c6613b5e229d432d16a6b98c7937bf13ea765450eb216fc9.EducationUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["educationUser_id"] = id
+    }
+    return i410e950d0e7e1732c6613b5e229d432d16a6b98c7937bf13ea765450eb216fc9.NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityVendorInformation 
+// SecurityVendorInformation provides operations to manage the security singleton.
 type SecurityVendorInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,44 +24,16 @@ func NewSecurityVendorInformation()(*SecurityVendorInformation) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSecurityVendorInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecurityVendorInformationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecurityVendorInformation(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityVendorInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetProvider gets the provider property value. Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-func (m *SecurityVendorInformation) GetProvider()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provider
-    }
-}
-// GetProviderVersion gets the providerVersion property value. Version of the provider or subprovider, if it exists, that generated the alert. Required
-func (m *SecurityVendorInformation) GetProviderVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerVersion
-    }
-}
-// GetSubProvider gets the subProvider property value. Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-func (m *SecurityVendorInformation) GetSubProvider()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subProvider
-    }
-}
-// GetVendor gets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
-func (m *SecurityVendorInformation) GetVendor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendor_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +80,38 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetProvider gets the provider property value. Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+func (m *SecurityVendorInformation) GetProvider()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provider
+    }
+}
+// GetProviderVersion gets the providerVersion property value. Version of the provider or subprovider, if it exists, that generated the alert. Required
+func (m *SecurityVendorInformation) GetProviderVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.providerVersion
+    }
+}
+// GetSubProvider gets the subProvider property value. Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+func (m *SecurityVendorInformation) GetSubProvider()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subProvider
+    }
+}
+// GetVendor gets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+func (m *SecurityVendorInformation) GetVendor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendor_escaped
+    }
 }
 func (m *SecurityVendorInformation) IsNil()(bool) {
     return m == nil

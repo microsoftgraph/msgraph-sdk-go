@@ -5,12 +5,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SubjectRightsRequestHistory 
+// SubjectRightsRequestHistory provides operations to manage the privacy singleton.
 type SubjectRightsRequestHistory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Identity of the user who changed the  subject rights request.
-    changedBy *IdentitySet;
+    changedBy IdentitySetable;
     // Data and time when the entity was changed.
     eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
@@ -27,6 +27,10 @@ func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSubjectRightsRequestHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSubjectRightsRequestHistoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSubjectRightsRequestHistory(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,7 +40,7 @@ func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]interface{}
     }
 }
 // GetChangedBy gets the changedBy property value. Identity of the user who changed the  subject rights request.
-func (m *SubjectRightsRequestHistory) GetChangedBy()(*IdentitySet) {
+func (m *SubjectRightsRequestHistory) GetChangedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -51,40 +55,16 @@ func (m *SubjectRightsRequestHistory) GetEventDateTime()(*i336074805fc853987abe6
         return m.eventDateTime
     }
 }
-// GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
-func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stage
-    }
-}
-// GetStageStatus gets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStageStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stageStatus
-    }
-}
-// GetType gets the type property value. Type of history.
-func (m *SubjectRightsRequestHistory) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["changedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetChangedBy(val.(*IdentitySet))
+            m.SetChangedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -129,6 +109,30 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
+func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stage
+    }
+}
+// GetStageStatus gets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
+func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStageStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stageStatus
+    }
+}
+// GetType gets the type property value. Type of history.
+func (m *SubjectRightsRequestHistory) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *SubjectRightsRequestHistory) IsNil()(bool) {
     return m == nil
@@ -182,7 +186,7 @@ func (m *SubjectRightsRequestHistory) SetAdditionalData(value map[string]interfa
     }
 }
 // SetChangedBy sets the changedBy property value. Identity of the user who changed the  subject rights request.
-func (m *SubjectRightsRequestHistory) SetChangedBy(value *IdentitySet)() {
+func (m *SubjectRightsRequestHistory) SetChangedBy(value IdentitySetable)() {
     if m != nil {
         m.changedBy = value
     }

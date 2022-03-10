@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationAssignment 
+// EducationAssignment provides operations to manage the educationRoot singleton.
 type EducationAssignment struct {
     Entity
     // Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
@@ -21,15 +21,15 @@ type EducationAssignment struct {
     // The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     assignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Which users, or whole class should receive a submission object once the assignment is published.
-    assignTo *EducationAssignmentRecipient;
+    assignTo EducationAssignmentRecipientable;
     // When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-    categories []EducationCategory;
+    categories []EducationCategoryable;
     // Class which this assignment belongs.
     classId *string;
     // Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     closeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Who created the assignment.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Name of the assignment.
@@ -37,25 +37,25 @@ type EducationAssignment struct {
     // Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // How the assignment will be graded.
-    grading *EducationAssignmentGradeType;
+    grading EducationAssignmentGradeTypeable;
     // Instructions for the assignment.  This along with the display name tell the student what to do.
-    instructions *EducationItemBody;
+    instructions EducationItemBodyable;
     // Who last modified the assignment.
-    lastModifiedBy *IdentitySet;
+    lastModifiedBy IdentitySetable;
     // Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
     notificationChannelUrl *string;
     // Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-    resources []EducationAssignmentResource;
+    resources []EducationAssignmentResourceable;
     // Folder URL where all the file resources for this assignment are stored.
     resourcesFolderUrl *string;
     // When set, the grading rubric attached to this assignment.
-    rubric *EducationRubric;
+    rubric EducationRubricable;
     // Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
     status *EducationAssignmentStatus;
     // Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-    submissions []EducationSubmission;
+    submissions []EducationSubmissionable;
     // The deep link URL for the given assignment.
     webUrl *string;
 }
@@ -65,6 +65,10 @@ func NewEducationAssignment()(*EducationAssignment) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateEducationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationAssignment(), nil
 }
 // GetAddedStudentAction gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
 func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentAction) {
@@ -115,7 +119,7 @@ func (m *EducationAssignment) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3
     }
 }
 // GetAssignTo gets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
-func (m *EducationAssignment) GetAssignTo()(*EducationAssignmentRecipient) {
+func (m *EducationAssignment) GetAssignTo()(EducationAssignmentRecipientable) {
     if m == nil {
         return nil
     } else {
@@ -123,7 +127,7 @@ func (m *EducationAssignment) GetAssignTo()(*EducationAssignmentRecipient) {
     }
 }
 // GetCategories gets the categories property value. When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-func (m *EducationAssignment) GetCategories()([]EducationCategory) {
+func (m *EducationAssignment) GetCategories()([]EducationCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -147,7 +151,7 @@ func (m *EducationAssignment) GetCloseDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
 }
 // GetCreatedBy gets the createdBy property value. Who created the assignment.
-func (m *EducationAssignment) GetCreatedBy()(*IdentitySet) {
+func (m *EducationAssignment) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -176,94 +180,6 @@ func (m *EducationAssignment) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return nil
     } else {
         return m.dueDateTime
-    }
-}
-// GetGrading gets the grading property value. How the assignment will be graded.
-func (m *EducationAssignment) GetGrading()(*EducationAssignmentGradeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grading
-    }
-}
-// GetInstructions gets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
-func (m *EducationAssignment) GetInstructions()(*EducationItemBody) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instructions
-    }
-}
-// GetLastModifiedBy gets the lastModifiedBy property value. Who last modified the assignment.
-func (m *EducationAssignment) GetLastModifiedBy()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *EducationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetNotificationChannelUrl gets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
-func (m *EducationAssignment) GetNotificationChannelUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationChannelUrl
-    }
-}
-// GetResources gets the resources property value. Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-func (m *EducationAssignment) GetResources()([]EducationAssignmentResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resources
-    }
-}
-// GetResourcesFolderUrl gets the resourcesFolderUrl property value. Folder URL where all the file resources for this assignment are stored.
-func (m *EducationAssignment) GetResourcesFolderUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourcesFolderUrl
-    }
-}
-// GetRubric gets the rubric property value. When set, the grading rubric attached to this assignment.
-func (m *EducationAssignment) GetRubric()(*EducationRubric) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rubric
-    }
-}
-// GetStatus gets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
-func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetSubmissions gets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-func (m *EducationAssignment) GetSubmissions()([]EducationSubmission) {
-    if m == nil {
-        return nil
-    } else {
-        return m.submissions
-    }
-}
-// GetWebUrl gets the webUrl property value. The deep link URL for the given assignment.
-func (m *EducationAssignment) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -330,24 +246,24 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["assignTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationAssignmentRecipient() })
+        val, err := n.GetObjectValue(CreateEducationAssignmentRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignTo(val.(*EducationAssignmentRecipient))
+            m.SetAssignTo(val.(EducationAssignmentRecipientable))
         }
         return nil
     }
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationCategory, len(val))
+            res := make([]EducationCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationCategory))
+                res[i] = v.(EducationCategoryable)
             }
             m.SetCategories(res)
         }
@@ -374,12 +290,12 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -414,32 +330,32 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["grading"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationAssignmentGradeType() })
+        val, err := n.GetObjectValue(CreateEducationAssignmentGradeTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGrading(val.(*EducationAssignmentGradeType))
+            m.SetGrading(val.(EducationAssignmentGradeTypeable))
         }
         return nil
     }
     res["instructions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationItemBody() })
+        val, err := n.GetObjectValue(CreateEducationItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInstructions(val.(*EducationItemBody))
+            m.SetInstructions(val.(EducationItemBodyable))
         }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*IdentitySet))
+            m.SetLastModifiedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -464,14 +380,14 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationAssignmentResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationAssignmentResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationAssignmentResource, len(val))
+            res := make([]EducationAssignmentResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationAssignmentResource))
+                res[i] = v.(EducationAssignmentResourceable)
             }
             m.SetResources(res)
         }
@@ -488,12 +404,12 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["rubric"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationRubric() })
+        val, err := n.GetObjectValue(CreateEducationRubricFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRubric(val.(*EducationRubric))
+            m.SetRubric(val.(EducationRubricable))
         }
         return nil
     }
@@ -508,14 +424,14 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["submissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationSubmission() })
+        val, err := n.GetCollectionOfObjectValues(CreateEducationSubmissionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EducationSubmission, len(val))
+            res := make([]EducationSubmissionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EducationSubmission))
+                res[i] = v.(EducationSubmissionable)
             }
             m.SetSubmissions(res)
         }
@@ -532,6 +448,94 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetGrading gets the grading property value. How the assignment will be graded.
+func (m *EducationAssignment) GetGrading()(EducationAssignmentGradeTypeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.grading
+    }
+}
+// GetInstructions gets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
+func (m *EducationAssignment) GetInstructions()(EducationItemBodyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instructions
+    }
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. Who last modified the assignment.
+func (m *EducationAssignment) GetLastModifiedBy()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *EducationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetNotificationChannelUrl gets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
+func (m *EducationAssignment) GetNotificationChannelUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationChannelUrl
+    }
+}
+// GetResources gets the resources property value. Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
+func (m *EducationAssignment) GetResources()([]EducationAssignmentResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resources
+    }
+}
+// GetResourcesFolderUrl gets the resourcesFolderUrl property value. Folder URL where all the file resources for this assignment are stored.
+func (m *EducationAssignment) GetResourcesFolderUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourcesFolderUrl
+    }
+}
+// GetRubric gets the rubric property value. When set, the grading rubric attached to this assignment.
+func (m *EducationAssignment) GetRubric()(EducationRubricable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rubric
+    }
+}
+// GetStatus gets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
+func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetSubmissions gets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+func (m *EducationAssignment) GetSubmissions()([]EducationSubmissionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.submissions
+    }
+}
+// GetWebUrl gets the webUrl property value. The deep link URL for the given assignment.
+func (m *EducationAssignment) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *EducationAssignment) IsNil()(bool) {
     return m == nil
@@ -589,8 +593,7 @@ func (m *EducationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCategories()))
         for i, v := range m.GetCategories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("categories", cast)
         if err != nil {
@@ -666,8 +669,7 @@ func (m *EducationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {
@@ -696,8 +698,7 @@ func (m *EducationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetSubmissions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSubmissions()))
         for i, v := range m.GetSubmissions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("submissions", cast)
         if err != nil {
@@ -749,13 +750,13 @@ func (m *EducationAssignment) SetAssignedDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetAssignTo sets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
-func (m *EducationAssignment) SetAssignTo(value *EducationAssignmentRecipient)() {
+func (m *EducationAssignment) SetAssignTo(value EducationAssignmentRecipientable)() {
     if m != nil {
         m.assignTo = value
     }
 }
 // SetCategories sets the categories property value. When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-func (m *EducationAssignment) SetCategories(value []EducationCategory)() {
+func (m *EducationAssignment) SetCategories(value []EducationCategoryable)() {
     if m != nil {
         m.categories = value
     }
@@ -773,7 +774,7 @@ func (m *EducationAssignment) SetCloseDateTime(value *i336074805fc853987abe6f7fe
     }
 }
 // SetCreatedBy sets the createdBy property value. Who created the assignment.
-func (m *EducationAssignment) SetCreatedBy(value *IdentitySet)() {
+func (m *EducationAssignment) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -797,19 +798,19 @@ func (m *EducationAssignment) SetDueDateTime(value *i336074805fc853987abe6f7fe3a
     }
 }
 // SetGrading sets the grading property value. How the assignment will be graded.
-func (m *EducationAssignment) SetGrading(value *EducationAssignmentGradeType)() {
+func (m *EducationAssignment) SetGrading(value EducationAssignmentGradeTypeable)() {
     if m != nil {
         m.grading = value
     }
 }
 // SetInstructions sets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
-func (m *EducationAssignment) SetInstructions(value *EducationItemBody)() {
+func (m *EducationAssignment) SetInstructions(value EducationItemBodyable)() {
     if m != nil {
         m.instructions = value
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Who last modified the assignment.
-func (m *EducationAssignment) SetLastModifiedBy(value *IdentitySet)() {
+func (m *EducationAssignment) SetLastModifiedBy(value IdentitySetable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -827,7 +828,7 @@ func (m *EducationAssignment) SetNotificationChannelUrl(value *string)() {
     }
 }
 // SetResources sets the resources property value. Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-func (m *EducationAssignment) SetResources(value []EducationAssignmentResource)() {
+func (m *EducationAssignment) SetResources(value []EducationAssignmentResourceable)() {
     if m != nil {
         m.resources = value
     }
@@ -839,7 +840,7 @@ func (m *EducationAssignment) SetResourcesFolderUrl(value *string)() {
     }
 }
 // SetRubric sets the rubric property value. When set, the grading rubric attached to this assignment.
-func (m *EducationAssignment) SetRubric(value *EducationRubric)() {
+func (m *EducationAssignment) SetRubric(value EducationRubricable)() {
     if m != nil {
         m.rubric = value
     }
@@ -851,7 +852,7 @@ func (m *EducationAssignment) SetStatus(value *EducationAssignmentStatus)() {
     }
 }
 // SetSubmissions sets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-func (m *EducationAssignment) SetSubmissions(value []EducationSubmission)() {
+func (m *EducationAssignment) SetSubmissions(value []EducationSubmissionable)() {
     if m != nil {
         m.submissions = value
     }

@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Location 
+// Location provides operations to manage the collection of drive entities.
 type Location struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The street address of the location.
-    address *PhysicalAddress;
+    address PhysicalAddressable;
     // The geographic coordinates and elevation of the location.
-    coordinates *OutlookGeoCoordinates;
+    coordinates OutlookGeoCoordinatesable;
     // The name associated with the location.
     displayName *string;
     // Optional email address of the location.
@@ -32,6 +32,10 @@ func NewLocation()(*Location) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLocationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLocation(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Location) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -41,7 +45,7 @@ func (m *Location) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAddress gets the address property value. The street address of the location.
-func (m *Location) GetAddress()(*PhysicalAddress) {
+func (m *Location) GetAddress()(PhysicalAddressable) {
     if m == nil {
         return nil
     } else {
@@ -49,7 +53,7 @@ func (m *Location) GetAddress()(*PhysicalAddress) {
     }
 }
 // GetCoordinates gets the coordinates property value. The geographic coordinates and elevation of the location.
-func (m *Location) GetCoordinates()(*OutlookGeoCoordinates) {
+func (m *Location) GetCoordinates()(OutlookGeoCoordinatesable) {
     if m == nil {
         return nil
     } else {
@@ -64,66 +68,26 @@ func (m *Location) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLocationEmailAddress gets the locationEmailAddress property value. Optional email address of the location.
-func (m *Location) GetLocationEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationEmailAddress
-    }
-}
-// GetLocationType gets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
-func (m *Location) GetLocationType()(*LocationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationType
-    }
-}
-// GetLocationUri gets the locationUri property value. Optional URI representing the location.
-func (m *Location) GetLocationUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationUri
-    }
-}
-// GetUniqueId gets the uniqueId property value. For internal use only.
-func (m *Location) GetUniqueId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueId
-    }
-}
-// GetUniqueIdType gets the uniqueIdType property value. For internal use only.
-func (m *Location) GetUniqueIdType()(*LocationUniqueIdType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueIdType
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
+        val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddress(val.(*PhysicalAddress))
+            m.SetAddress(val.(PhysicalAddressable))
         }
         return nil
     }
     res["coordinates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOutlookGeoCoordinates() })
+        val, err := n.GetObjectValue(CreateOutlookGeoCoordinatesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCoordinates(val.(*OutlookGeoCoordinates))
+            m.SetCoordinates(val.(OutlookGeoCoordinatesable))
         }
         return nil
     }
@@ -188,6 +152,46 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetLocationEmailAddress gets the locationEmailAddress property value. Optional email address of the location.
+func (m *Location) GetLocationEmailAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locationEmailAddress
+    }
+}
+// GetLocationType gets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+func (m *Location) GetLocationType()(*LocationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locationType
+    }
+}
+// GetLocationUri gets the locationUri property value. Optional URI representing the location.
+func (m *Location) GetLocationUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locationUri
+    }
+}
+// GetUniqueId gets the uniqueId property value. For internal use only.
+func (m *Location) GetUniqueId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueId
+    }
+}
+// GetUniqueIdType gets the uniqueIdType property value. For internal use only.
+func (m *Location) GetUniqueIdType()(*LocationUniqueIdType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueIdType
+    }
 }
 func (m *Location) IsNil()(bool) {
     return m == nil
@@ -259,13 +263,13 @@ func (m *Location) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAddress sets the address property value. The street address of the location.
-func (m *Location) SetAddress(value *PhysicalAddress)() {
+func (m *Location) SetAddress(value PhysicalAddressable)() {
     if m != nil {
         m.address = value
     }
 }
 // SetCoordinates sets the coordinates property value. The geographic coordinates and elevation of the location.
-func (m *Location) SetCoordinates(value *OutlookGeoCoordinates)() {
+func (m *Location) SetCoordinates(value OutlookGeoCoordinatesable)() {
     if m != nil {
         m.coordinates = value
     }

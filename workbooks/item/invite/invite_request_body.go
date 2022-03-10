@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// InviteRequestBody 
+// InviteRequestBody provides operations to call the invite method.
 type InviteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,7 +16,7 @@ type InviteRequestBody struct {
     // 
     password *string;
     // 
-    recipients []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipient;
+    recipients []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipientable;
     // 
     requireSignIn *bool;
     // 
@@ -33,6 +33,10 @@ func NewInviteRequestBody()(*InviteRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateInviteRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInviteRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInviteRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InviteRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -47,62 +51,6 @@ func (m *InviteRequestBody) GetExpirationDateTime()(*string) {
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetMessage gets the message property value. 
-func (m *InviteRequestBody) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetPassword gets the password property value. 
-func (m *InviteRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
-}
-// GetRecipients gets the recipients property value. 
-func (m *InviteRequestBody) GetRecipients()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipients
-    }
-}
-// GetRequireSignIn gets the requireSignIn property value. 
-func (m *InviteRequestBody) GetRequireSignIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireSignIn
-    }
-}
-// GetRetainInheritedPermissions gets the retainInheritedPermissions property value. 
-func (m *InviteRequestBody) GetRetainInheritedPermissions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retainInheritedPermissions
-    }
-}
-// GetRoles gets the roles property value. 
-func (m *InviteRequestBody) GetRoles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roles
-    }
-}
-// GetSendInvitation gets the sendInvitation property value. 
-func (m *InviteRequestBody) GetSendInvitation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendInvitation
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,14 +87,14 @@ func (m *InviteRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["recipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDriveRecipient() })
+        val, err := n.GetCollectionOfObjectValues(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDriveRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipient, len(val))
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipient))
+                res[i] = v.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipientable)
             }
             m.SetRecipients(res)
         }
@@ -198,6 +146,62 @@ func (m *InviteRequestBody) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
+// GetMessage gets the message property value. 
+func (m *InviteRequestBody) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetPassword gets the password property value. 
+func (m *InviteRequestBody) GetPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.password
+    }
+}
+// GetRecipients gets the recipients property value. 
+func (m *InviteRequestBody) GetRecipients()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recipients
+    }
+}
+// GetRequireSignIn gets the requireSignIn property value. 
+func (m *InviteRequestBody) GetRequireSignIn()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requireSignIn
+    }
+}
+// GetRetainInheritedPermissions gets the retainInheritedPermissions property value. 
+func (m *InviteRequestBody) GetRetainInheritedPermissions()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.retainInheritedPermissions
+    }
+}
+// GetRoles gets the roles property value. 
+func (m *InviteRequestBody) GetRoles()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roles
+    }
+}
+// GetSendInvitation gets the sendInvitation property value. 
+func (m *InviteRequestBody) GetSendInvitation()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sendInvitation
+    }
+}
 func (m *InviteRequestBody) IsNil()(bool) {
     return m == nil
 }
@@ -224,8 +228,7 @@ func (m *InviteRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecipients()))
         for i, v := range m.GetRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("recipients", cast)
         if err != nil {
@@ -289,7 +292,7 @@ func (m *InviteRequestBody) SetPassword(value *string)() {
     }
 }
 // SetRecipients sets the recipients property value. 
-func (m *InviteRequestBody) SetRecipients(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipient)() {
+func (m *InviteRequestBody) SetRecipients(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipientable)() {
     if m != nil {
         m.recipients = value
     }

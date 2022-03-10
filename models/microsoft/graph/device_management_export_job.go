@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementExportJob 
+// DeviceManagementExportJob provides operations to manage the deviceManagement singleton.
 type DeviceManagementExportJob struct {
     Entity
     // Time that the exported report expires
@@ -36,84 +36,16 @@ func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {
     }
     return m
 }
+// CreateDeviceManagementExportJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementExportJobFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementExportJob(), nil
+}
 // GetExpirationDateTime gets the expirationDateTime property value. Time that the exported report expires
 func (m *DeviceManagementExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetFilter gets the filter property value. Filters applied on the report
-func (m *DeviceManagementExportJob) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
-}
-// GetFormat gets the format property value. Format of the exported report. Possible values are: csv, pdf.
-func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
-}
-// GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.
-func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExportJobLocalizationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizationType
-    }
-}
-// GetReportName gets the reportName property value. Name of the report
-func (m *DeviceManagementExportJob) GetReportName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportName
-    }
-}
-// GetRequestDateTime gets the requestDateTime property value. Time that the exported report was requested
-func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestDateTime
-    }
-}
-// GetSelect gets the select property value. Columns selected from the report
-func (m *DeviceManagementExportJob) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
-}
-// GetSnapshotId gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
-func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.snapshotId
-    }
-}
-// GetStatus gets the status property value. Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.
-func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUrl gets the url property value. Temporary location of the exported report
-func (m *DeviceManagementExportJob) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -224,6 +156,78 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetFilter gets the filter property value. Filters applied on the report
+func (m *DeviceManagementExportJob) GetFilter()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.filter
+    }
+}
+// GetFormat gets the format property value. Format of the exported report. Possible values are: csv, pdf.
+func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileFormat) {
+    if m == nil {
+        return nil
+    } else {
+        return m.format
+    }
+}
+// GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.
+func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExportJobLocalizationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.localizationType
+    }
+}
+// GetReportName gets the reportName property value. Name of the report
+func (m *DeviceManagementExportJob) GetReportName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportName
+    }
+}
+// GetRequestDateTime gets the requestDateTime property value. Time that the exported report was requested
+func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestDateTime
+    }
+}
+// GetSelect gets the select property value. Columns selected from the report
+func (m *DeviceManagementExportJob) GetSelect()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.select_escaped
+    }
+}
+// GetSnapshotId gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
+func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.snapshotId
+    }
+}
+// GetStatus gets the status property value. Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.
+func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUrl gets the url property value. Temporary location of the exported report
+func (m *DeviceManagementExportJob) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
 }
 func (m *DeviceManagementExportJob) IsNil()(bool) {
     return m == nil

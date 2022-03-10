@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookPivotTable 
+// WorkbookPivotTable provides operations to manage the drive singleton.
 type WorkbookPivotTable struct {
     Entity
     // Name of the PivotTable.
     name *string;
     // The worksheet containing the current PivotTable. Read-only.
-    worksheet *WorkbookWorksheet;
+    worksheet WorkbookWorksheetable;
 }
 // NewWorkbookPivotTable instantiates a new workbookPivotTable and sets the default values.
 func NewWorkbookPivotTable()(*WorkbookPivotTable) {
@@ -19,21 +19,9 @@ func NewWorkbookPivotTable()(*WorkbookPivotTable) {
     }
     return m
 }
-// GetName gets the name property value. Name of the PivotTable.
-func (m *WorkbookPivotTable) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetWorksheet gets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
-func (m *WorkbookPivotTable) GetWorksheet()(*WorkbookWorksheet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.worksheet
-    }
+// CreateWorkbookPivotTableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookPivotTableFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookPivotTable(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookPivotTable) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -49,16 +37,32 @@ func (m *WorkbookPivotTable) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["worksheet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookWorksheet() })
+        val, err := n.GetObjectValue(CreateWorkbookWorksheetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWorksheet(val.(*WorkbookWorksheet))
+            m.SetWorksheet(val.(WorkbookWorksheetable))
         }
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name of the PivotTable.
+func (m *WorkbookPivotTable) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetWorksheet gets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
+func (m *WorkbookPivotTable) GetWorksheet()(WorkbookWorksheetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.worksheet
+    }
 }
 func (m *WorkbookPivotTable) IsNil()(bool) {
     return m == nil
@@ -90,7 +94,7 @@ func (m *WorkbookPivotTable) SetName(value *string)() {
     }
 }
 // SetWorksheet sets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
-func (m *WorkbookPivotTable) SetWorksheet(value *WorkbookWorksheet)() {
+func (m *WorkbookPivotTable) SetWorksheet(value WorkbookWorksheetable)() {
     if m != nil {
         m.worksheet = value
     }

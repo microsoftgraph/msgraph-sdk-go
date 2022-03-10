@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SiteCollection 
+// SiteCollection provides operations to manage the educationRoot singleton.
 type SiteCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type SiteCollection struct {
     // The hostname for the site collection. Read-only.
     hostname *string;
     // If present, indicates that this is a root site collection in SharePoint. Read-only.
-    root *Root;
+    root Rootable;
 }
 // NewSiteCollection instantiates a new siteCollection and sets the default values.
 func NewSiteCollection()(*SiteCollection) {
@@ -21,6 +21,10 @@ func NewSiteCollection()(*SiteCollection) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSiteCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSiteCollectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSiteCollection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SiteCollection) GetAdditionalData()(map[string]interface{}) {
@@ -36,22 +40,6 @@ func (m *SiteCollection) GetDataLocationCode()(*string) {
         return nil
     } else {
         return m.dataLocationCode
-    }
-}
-// GetHostname gets the hostname property value. The hostname for the site collection. Read-only.
-func (m *SiteCollection) GetHostname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostname
-    }
-}
-// GetRoot gets the root property value. If present, indicates that this is a root site collection in SharePoint. Read-only.
-func (m *SiteCollection) GetRoot()(*Root) {
-    if m == nil {
-        return nil
-    } else {
-        return m.root
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -78,16 +66,32 @@ func (m *SiteCollection) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["root"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoot() })
+        val, err := n.GetObjectValue(CreateRootFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRoot(val.(*Root))
+            m.SetRoot(val.(Rootable))
         }
         return nil
     }
     return res
+}
+// GetHostname gets the hostname property value. The hostname for the site collection. Read-only.
+func (m *SiteCollection) GetHostname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hostname
+    }
+}
+// GetRoot gets the root property value. If present, indicates that this is a root site collection in SharePoint. Read-only.
+func (m *SiteCollection) GetRoot()(Rootable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.root
+    }
 }
 func (m *SiteCollection) IsNil()(bool) {
     return m == nil
@@ -139,7 +143,7 @@ func (m *SiteCollection) SetHostname(value *string)() {
     }
 }
 // SetRoot sets the root property value. If present, indicates that this is a root site collection in SharePoint. Read-only.
-func (m *SiteCollection) SetRoot(value *Root)() {
+func (m *SiteCollection) SetRoot(value Rootable)() {
     if m != nil {
         m.root = value
     }

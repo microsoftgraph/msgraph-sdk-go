@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FeatureRolloutPolicy 
+// FeatureRolloutPolicy provides operations to manage the policyRoot singleton.
 type FeatureRolloutPolicy struct {
     Entity
     // Nullable. Specifies a list of directoryObjects that feature is enabled for.
-    appliesTo []DirectoryObject;
+    appliesTo []DirectoryObjectable;
     // A description for this feature rollout policy.
     description *string;
     // The display name for this  feature rollout policy.
@@ -27,8 +27,12 @@ func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {
     }
     return m
 }
+// CreateFeatureRolloutPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFeatureRolloutPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFeatureRolloutPolicy(), nil
+}
 // GetAppliesTo gets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
-func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObject) {
+func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -59,34 +63,18 @@ func (m *FeatureRolloutPolicy) GetFeature()(*StagedFeatureName) {
         return m.feature
     }
 }
-// GetIsAppliedToOrganization gets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
-func (m *FeatureRolloutPolicy) GetIsAppliedToOrganization()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAppliedToOrganization
-    }
-}
-// GetIsEnabled gets the isEnabled property value. Indicates whether the feature rollout is enabled.
-func (m *FeatureRolloutPolicy) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appliesTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetAppliesTo(res)
         }
@@ -144,6 +132,22 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
     }
     return res
 }
+// GetIsAppliedToOrganization gets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
+func (m *FeatureRolloutPolicy) GetIsAppliedToOrganization()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAppliedToOrganization
+    }
+}
+// GetIsEnabled gets the isEnabled property value. Indicates whether the feature rollout is enabled.
+func (m *FeatureRolloutPolicy) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
+}
 func (m *FeatureRolloutPolicy) IsNil()(bool) {
     return m == nil
 }
@@ -156,8 +160,7 @@ func (m *FeatureRolloutPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetAppliesTo() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppliesTo()))
         for i, v := range m.GetAppliesTo() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appliesTo", cast)
         if err != nil {
@@ -198,7 +201,7 @@ func (m *FeatureRolloutPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     return nil
 }
 // SetAppliesTo sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
-func (m *FeatureRolloutPolicy) SetAppliesTo(value []DirectoryObject)() {
+func (m *FeatureRolloutPolicy) SetAppliesTo(value []DirectoryObjectable)() {
     if m != nil {
         m.appliesTo = value
     }

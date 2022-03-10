@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintJob 
+// PrintJob provides operations to manage the print singleton.
 type PrintJob struct {
     Entity
     // 
-    configuration *PrintJobConfiguration;
+    configuration PrintJobConfigurationable;
     // Read-only. Nullable.
-    createdBy *UserIdentity;
+    createdBy UserIdentityable;
     // The DateTimeOffset when the job was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only.
-    documents []PrintDocument;
+    documents []PrintDocumentable;
     // If true, document can be fetched by printer.
     isFetchable *bool;
     // Contains the source job URL, if the job has been redirected from another printer.
@@ -23,9 +23,9 @@ type PrintJob struct {
     // Contains the destination job URL, if the job has been redirected to another printer.
     redirectedTo *string;
     // 
-    status *PrintJobStatus;
+    status PrintJobStatusable;
     // A list of printTasks that were triggered by this print job.
-    tasks []PrintTask;
+    tasks []PrintTaskable;
 }
 // NewPrintJob instantiates a new printJob and sets the default values.
 func NewPrintJob()(*PrintJob) {
@@ -34,8 +34,12 @@ func NewPrintJob()(*PrintJob) {
     }
     return m
 }
+// CreatePrintJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintJobFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintJob(), nil
+}
 // GetConfiguration gets the configuration property value. 
-func (m *PrintJob) GetConfiguration()(*PrintJobConfiguration) {
+func (m *PrintJob) GetConfiguration()(PrintJobConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -43,7 +47,7 @@ func (m *PrintJob) GetConfiguration()(*PrintJobConfiguration) {
     }
 }
 // GetCreatedBy gets the createdBy property value. Read-only. Nullable.
-func (m *PrintJob) GetCreatedBy()(*UserIdentity) {
+func (m *PrintJob) GetCreatedBy()(UserIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -59,73 +63,33 @@ func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
 }
 // GetDocuments gets the documents property value. Read-only.
-func (m *PrintJob) GetDocuments()([]PrintDocument) {
+func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
     if m == nil {
         return nil
     } else {
         return m.documents
     }
 }
-// GetIsFetchable gets the isFetchable property value. If true, document can be fetched by printer.
-func (m *PrintJob) GetIsFetchable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFetchable
-    }
-}
-// GetRedirectedFrom gets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
-func (m *PrintJob) GetRedirectedFrom()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redirectedFrom
-    }
-}
-// GetRedirectedTo gets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
-func (m *PrintJob) GetRedirectedTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redirectedTo
-    }
-}
-// GetStatus gets the status property value. 
-func (m *PrintJob) GetStatus()(*PrintJobStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTasks gets the tasks property value. A list of printTasks that were triggered by this print job.
-func (m *PrintJob) GetTasks()([]PrintTask) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintJobConfiguration() })
+        val, err := n.GetObjectValue(CreatePrintJobConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfiguration(val.(*PrintJobConfiguration))
+            m.SetConfiguration(val.(PrintJobConfigurationable))
         }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserIdentity() })
+        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*UserIdentity))
+            m.SetCreatedBy(val.(UserIdentityable))
         }
         return nil
     }
@@ -140,14 +104,14 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["documents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintDocument() })
+        val, err := n.GetCollectionOfObjectValues(CreatePrintDocumentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrintDocument, len(val))
+            res := make([]PrintDocumentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintDocument))
+                res[i] = v.(PrintDocumentable)
             }
             m.SetDocuments(res)
         }
@@ -184,30 +148,70 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintJobStatus() })
+        val, err := n.GetObjectValue(CreatePrintJobStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*PrintJobStatus))
+            m.SetStatus(val.(PrintJobStatusable))
         }
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintTask() })
+        val, err := n.GetCollectionOfObjectValues(CreatePrintTaskFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrintTask, len(val))
+            res := make([]PrintTaskable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintTask))
+                res[i] = v.(PrintTaskable)
             }
             m.SetTasks(res)
         }
         return nil
     }
     return res
+}
+// GetIsFetchable gets the isFetchable property value. If true, document can be fetched by printer.
+func (m *PrintJob) GetIsFetchable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFetchable
+    }
+}
+// GetRedirectedFrom gets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
+func (m *PrintJob) GetRedirectedFrom()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.redirectedFrom
+    }
+}
+// GetRedirectedTo gets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
+func (m *PrintJob) GetRedirectedTo()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.redirectedTo
+    }
+}
+// GetStatus gets the status property value. 
+func (m *PrintJob) GetStatus()(PrintJobStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTasks gets the tasks property value. A list of printTasks that were triggered by this print job.
+func (m *PrintJob) GetTasks()([]PrintTaskable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tasks
+    }
 }
 func (m *PrintJob) IsNil()(bool) {
     return m == nil
@@ -239,8 +243,7 @@ func (m *PrintJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetDocuments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDocuments()))
         for i, v := range m.GetDocuments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("documents", cast)
         if err != nil {
@@ -274,8 +277,7 @@ func (m *PrintJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {
@@ -285,13 +287,13 @@ func (m *PrintJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetConfiguration sets the configuration property value. 
-func (m *PrintJob) SetConfiguration(value *PrintJobConfiguration)() {
+func (m *PrintJob) SetConfiguration(value PrintJobConfigurationable)() {
     if m != nil {
         m.configuration = value
     }
 }
 // SetCreatedBy sets the createdBy property value. Read-only. Nullable.
-func (m *PrintJob) SetCreatedBy(value *UserIdentity)() {
+func (m *PrintJob) SetCreatedBy(value UserIdentityable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -303,7 +305,7 @@ func (m *PrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // SetDocuments sets the documents property value. Read-only.
-func (m *PrintJob) SetDocuments(value []PrintDocument)() {
+func (m *PrintJob) SetDocuments(value []PrintDocumentable)() {
     if m != nil {
         m.documents = value
     }
@@ -327,13 +329,13 @@ func (m *PrintJob) SetRedirectedTo(value *string)() {
     }
 }
 // SetStatus sets the status property value. 
-func (m *PrintJob) SetStatus(value *PrintJobStatus)() {
+func (m *PrintJob) SetStatus(value PrintJobStatusable)() {
     if m != nil {
         m.status = value
     }
 }
 // SetTasks sets the tasks property value. A list of printTasks that were triggered by this print job.
-func (m *PrintJob) SetTasks(value []PrintTask)() {
+func (m *PrintJob) SetTasks(value []PrintTaskable)() {
     if m != nil {
         m.tasks = value
     }

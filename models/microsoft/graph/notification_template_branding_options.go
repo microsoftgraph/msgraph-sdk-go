@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the deviceManagement singleton.
 type NotificationTemplateBrandingOptions int
 
 const (

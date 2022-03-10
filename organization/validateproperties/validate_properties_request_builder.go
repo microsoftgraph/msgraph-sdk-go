@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// ValidatePropertiesRequestBuilder builds and executes requests for operations under \organization\microsoft.graph.validateProperties
+// ValidatePropertiesRequestBuilder provides operations to call the validateProperties method.
 type ValidatePropertiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ValidatePropertiesRequestBuilder struct {
 // ValidatePropertiesRequestBuilderPostOptions options for Post
 type ValidatePropertiesRequestBuilderPostOptions struct {
     // 
-    Body *ValidatePropertiesRequestBody;
+    Body ValidatePropertiesRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewValidatePropertiesRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *ValidatePropertiesRequestBuilder) Post(options *ValidatePropertiesReque
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

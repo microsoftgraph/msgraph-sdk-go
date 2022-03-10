@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the onenotePatchContent method.
 type OnenotePatchActionType int
 
 const (

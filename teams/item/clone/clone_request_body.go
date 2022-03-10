@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// CloneRequestBody 
+// CloneRequestBody provides operations to call the clone method.
 type CloneRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewCloneRequestBody()(*CloneRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCloneRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloneRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloneRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloneRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -59,30 +63,6 @@ func (m *CloneRequestBody) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetMailNickname gets the mailNickname property value. 
-func (m *CloneRequestBody) GetMailNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNickname
-    }
-}
-// GetPartsToClone gets the partsToClone property value. 
-func (m *CloneRequestBody) GetPartsToClone()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClonableTeamParts) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partsToClone
-    }
-}
-// GetVisibility gets the visibility property value. 
-func (m *CloneRequestBody) GetVisibility()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamVisibilityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visibility
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,6 +129,30 @@ func (m *CloneRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetMailNickname gets the mailNickname property value. 
+func (m *CloneRequestBody) GetMailNickname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailNickname
+    }
+}
+// GetPartsToClone gets the partsToClone property value. 
+func (m *CloneRequestBody) GetPartsToClone()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ClonableTeamParts) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partsToClone
+    }
+}
+// GetVisibility gets the visibility property value. 
+func (m *CloneRequestBody) GetVisibility()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamVisibilityType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visibility
+    }
 }
 func (m *CloneRequestBody) IsNil()(bool) {
     return m == nil

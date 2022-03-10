@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsAutopilotDeviceIdentity 
+// WindowsAutopilotDeviceIdentity provides operations to manage the deviceManagement singleton.
 type WindowsAutopilotDeviceIdentity struct {
     Entity
     // Addressable user name.
@@ -48,6 +48,10 @@ func NewWindowsAutopilotDeviceIdentity()(*WindowsAutopilotDeviceIdentity) {
     }
     return m
 }
+// CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsAutopilotDeviceIdentity(), nil
+}
 // GetAddressableUserName gets the addressableUserName property value. Addressable user name.
 func (m *WindowsAutopilotDeviceIdentity) GetAddressableUserName()(*string) {
     if m == nil {
@@ -78,102 +82,6 @@ func (m *WindowsAutopilotDeviceIdentity) GetEnrollmentState()(*EnrollmentState) 
         return nil
     } else {
         return m.enrollmentState
-    }
-}
-// GetGroupTag gets the groupTag property value. Group Tag of the Windows autopilot device.
-func (m *WindowsAutopilotDeviceIdentity) GetGroupTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupTag
-    }
-}
-// GetLastContactedDateTime gets the lastContactedDateTime property value. Intune Last Contacted Date Time of the Windows autopilot device.
-func (m *WindowsAutopilotDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastContactedDateTime
-    }
-}
-// GetManagedDeviceId gets the managedDeviceId property value. Managed Device ID
-func (m *WindowsAutopilotDeviceIdentity) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetManufacturer gets the manufacturer property value. Oem manufacturer of the Windows autopilot device.
-func (m *WindowsAutopilotDeviceIdentity) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetModel gets the model property value. Model name of the Windows autopilot device.
-func (m *WindowsAutopilotDeviceIdentity) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetProductKey gets the productKey property value. Product Key of the Windows autopilot device.
-func (m *WindowsAutopilotDeviceIdentity) GetProductKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productKey
-    }
-}
-// GetPurchaseOrderIdentifier gets the purchaseOrderIdentifier property value. Purchase Order Identifier of the Windows autopilot device.
-func (m *WindowsAutopilotDeviceIdentity) GetPurchaseOrderIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.purchaseOrderIdentifier
-    }
-}
-// GetResourceName gets the resourceName property value. Resource Name.
-func (m *WindowsAutopilotDeviceIdentity) GetResourceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceName
-    }
-}
-// GetSerialNumber gets the serialNumber property value. Serial number of the Windows autopilot device.
-func (m *WindowsAutopilotDeviceIdentity) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
-}
-// GetSkuNumber gets the skuNumber property value. SKU Number
-func (m *WindowsAutopilotDeviceIdentity) GetSkuNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuNumber
-    }
-}
-// GetSystemFamily gets the systemFamily property value. System Family
-func (m *WindowsAutopilotDeviceIdentity) GetSystemFamily()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemFamily
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
-func (m *WindowsAutopilotDeviceIdentity) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -340,6 +248,102 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetGroupTag gets the groupTag property value. Group Tag of the Windows autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) GetGroupTag()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupTag
+    }
+}
+// GetLastContactedDateTime gets the lastContactedDateTime property value. Intune Last Contacted Date Time of the Windows autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastContactedDateTime
+    }
+}
+// GetManagedDeviceId gets the managedDeviceId property value. Managed Device ID
+func (m *WindowsAutopilotDeviceIdentity) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetManufacturer gets the manufacturer property value. Oem manufacturer of the Windows autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetModel gets the model property value. Model name of the Windows autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetProductKey gets the productKey property value. Product Key of the Windows autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) GetProductKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.productKey
+    }
+}
+// GetPurchaseOrderIdentifier gets the purchaseOrderIdentifier property value. Purchase Order Identifier of the Windows autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) GetPurchaseOrderIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.purchaseOrderIdentifier
+    }
+}
+// GetResourceName gets the resourceName property value. Resource Name.
+func (m *WindowsAutopilotDeviceIdentity) GetResourceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceName
+    }
+}
+// GetSerialNumber gets the serialNumber property value. Serial number of the Windows autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) GetSerialNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serialNumber
+    }
+}
+// GetSkuNumber gets the skuNumber property value. SKU Number
+func (m *WindowsAutopilotDeviceIdentity) GetSkuNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skuNumber
+    }
+}
+// GetSystemFamily gets the systemFamily property value. System Family
+func (m *WindowsAutopilotDeviceIdentity) GetSystemFamily()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.systemFamily
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
+func (m *WindowsAutopilotDeviceIdentity) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *WindowsAutopilotDeviceIdentity) IsNil()(bool) {
     return m == nil

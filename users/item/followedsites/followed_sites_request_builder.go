@@ -2,11 +2,12 @@ package followedsites
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i6679b1724d9da04ca2cfb8a7899bbc65aae875e9d06f5baa6e12c779636563db "github.com/microsoftgraph/msgraph-sdk-go/users/item/followedsites/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i6345be524c50e5455d253d62c0cb4b9d671b0b5d5b63684ad4a0376c043b07e6 "github.com/microsoftgraph/msgraph-sdk-go/users/item/followedsites/count"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// FollowedSitesRequestBuilder builds and executes requests for operations under \users\{user-id}\followedSites
+// FollowedSitesRequestBuilder provides operations to manage the followedSites property of the microsoft.graph.user entity.
 type FollowedSitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewFollowedSitesRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewFollowedSitesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFollowedSitesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *FollowedSitesRequestBuilder) Count()(*i6345be524c50e5455d253d62c0cb4b9d671b0b5d5b63684ad4a0376c043b07e6.CountRequestBuilder) {
+    return i6345be524c50e5455d253d62c0cb4b9d671b0b5d5b63684ad4a0376c043b07e6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get followedSites from users
 func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation(options *FollowedSitesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation(options *Follo
     return requestInfo, nil
 }
 // Get get followedSites from users
-func (m *FollowedSitesRequestBuilder) Get(options *FollowedSitesRequestBuilderGetOptions)(*FollowedSitesResponse, error) {
+func (m *FollowedSitesRequestBuilder) Get(options *FollowedSitesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFollowedSitesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSiteCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*FollowedSitesResponse), nil
-}
-func (m *FollowedSitesRequestBuilder) Ref()(*i6679b1724d9da04ca2cfb8a7899bbc65aae875e9d06f5baa6e12c779636563db.RefRequestBuilder) {
-    return i6679b1724d9da04ca2cfb8a7899bbc65aae875e9d06f5baa6e12c779636563db.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SiteCollectionResponseable), nil
 }

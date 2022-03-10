@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DateTimeColumn 
+// DateTimeColumn provides operations to manage the educationRoot singleton.
 type DateTimeColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewDateTimeColumn()(*DateTimeColumn) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDateTimeColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDateTimeColumnFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDateTimeColumn(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DateTimeColumn) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *DateTimeColumn) GetDisplayAs()(*string) {
         return nil
     } else {
         return m.displayAs
-    }
-}
-// GetFormat gets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
-func (m *DateTimeColumn) GetFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetFormat gets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
+func (m *DateTimeColumn) GetFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.format
+    }
 }
 func (m *DateTimeColumn) IsNil()(bool) {
     return m == nil

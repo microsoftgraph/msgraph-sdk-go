@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ScoredEmailAddress 
+// ScoredEmailAddress provides operations to manage the collection of drive entities.
 type ScoredEmailAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewScoredEmailAddress()(*ScoredEmailAddress) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateScoredEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateScoredEmailAddressFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewScoredEmailAddress(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScoredEmailAddress) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *ScoredEmailAddress) GetAddress()(*string) {
         return nil
     } else {
         return m.address
-    }
-}
-// GetItemId gets the itemId property value. 
-func (m *ScoredEmailAddress) GetItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemId
-    }
-}
-// GetRelevanceScore gets the relevanceScore property value. The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
-func (m *ScoredEmailAddress) GetRelevanceScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relevanceScore
-    }
-}
-// GetSelectionLikelihood gets the selectionLikelihood property value. 
-func (m *ScoredEmailAddress) GetSelectionLikelihood()(*SelectionLikelihoodInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selectionLikelihood
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetItemId gets the itemId property value. 
+func (m *ScoredEmailAddress) GetItemId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemId
+    }
+}
+// GetRelevanceScore gets the relevanceScore property value. The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
+func (m *ScoredEmailAddress) GetRelevanceScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relevanceScore
+    }
+}
+// GetSelectionLikelihood gets the selectionLikelihood property value. 
+func (m *ScoredEmailAddress) GetSelectionLikelihood()(*SelectionLikelihoodInfo) {
+    if m == nil {
+        return nil
+    } else {
+        return m.selectionLikelihood
+    }
 }
 func (m *ScoredEmailAddress) IsNil()(bool) {
     return m == nil

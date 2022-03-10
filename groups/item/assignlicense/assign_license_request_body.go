@@ -5,12 +5,12 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// AssignLicenseRequestBody 
+// AssignLicenseRequestBody provides operations to call the assignLicense method.
 type AssignLicenseRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    addLicenses []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicense;
+    addLicenses []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicenseable;
     // 
     removeLicenses []string;
 }
@@ -21,6 +21,10 @@ func NewAssignLicenseRequestBody()(*AssignLicenseRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAssignLicenseRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignLicenseRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignLicenseRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignLicenseRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -30,33 +34,25 @@ func (m *AssignLicenseRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAddLicenses gets the addLicenses property value. 
-func (m *AssignLicenseRequestBody) GetAddLicenses()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicense) {
+func (m *AssignLicenseRequestBody) GetAddLicenses()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicenseable) {
     if m == nil {
         return nil
     } else {
         return m.addLicenses
     }
 }
-// GetRemoveLicenses gets the removeLicenses property value. 
-func (m *AssignLicenseRequestBody) GetRemoveLicenses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeLicenses
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignLicenseRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["addLicenses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewAssignedLicense() })
+        val, err := n.GetCollectionOfObjectValues(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAssignedLicenseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicense, len(val))
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicenseable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicense))
+                res[i] = v.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicenseable)
             }
             m.SetAddLicenses(res)
         }
@@ -78,6 +74,14 @@ func (m *AssignLicenseRequestBody) GetFieldDeserializers()(map[string]func(inter
     }
     return res
 }
+// GetRemoveLicenses gets the removeLicenses property value. 
+func (m *AssignLicenseRequestBody) GetRemoveLicenses()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.removeLicenses
+    }
+}
 func (m *AssignLicenseRequestBody) IsNil()(bool) {
     return m == nil
 }
@@ -86,8 +90,7 @@ func (m *AssignLicenseRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetAddLicenses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAddLicenses()))
         for i, v := range m.GetAddLicenses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("addLicenses", cast)
         if err != nil {
@@ -115,7 +118,7 @@ func (m *AssignLicenseRequestBody) SetAdditionalData(value map[string]interface{
     }
 }
 // SetAddLicenses sets the addLicenses property value. 
-func (m *AssignLicenseRequestBody) SetAddLicenses(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicense)() {
+func (m *AssignLicenseRequestBody) SetAddLicenses(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AssignedLicenseable)() {
     if m != nil {
         m.addLicenses = value
     }

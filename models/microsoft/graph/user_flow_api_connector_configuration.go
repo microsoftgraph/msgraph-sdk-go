@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserFlowApiConnectorConfiguration 
+// UserFlowApiConnectorConfiguration provides operations to manage the identityContainer singleton.
 type UserFlowApiConnectorConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    postAttributeCollection *IdentityApiConnector;
+    postAttributeCollection IdentityApiConnectorable;
     // 
-    postFederationSignup *IdentityApiConnector;
+    postFederationSignup IdentityApiConnectorable;
 }
 // NewUserFlowApiConnectorConfiguration instantiates a new userFlowApiConnectorConfiguration and sets the default values.
 func NewUserFlowApiConnectorConfiguration()(*UserFlowApiConnectorConfiguration) {
@@ -19,6 +19,10 @@ func NewUserFlowApiConnectorConfiguration()(*UserFlowApiConnectorConfiguration) 
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUserFlowApiConnectorConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserFlowApiConnectorConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserFlowApiConnectorConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserFlowApiConnectorConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -28,8 +32,33 @@ func (m *UserFlowApiConnectorConfiguration) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["postAttributeCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentityApiConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPostAttributeCollection(val.(IdentityApiConnectorable))
+        }
+        return nil
+    }
+    res["postFederationSignup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentityApiConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPostFederationSignup(val.(IdentityApiConnectorable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPostAttributeCollection gets the postAttributeCollection property value. 
-func (m *UserFlowApiConnectorConfiguration) GetPostAttributeCollection()(*IdentityApiConnector) {
+func (m *UserFlowApiConnectorConfiguration) GetPostAttributeCollection()(IdentityApiConnectorable) {
     if m == nil {
         return nil
     } else {
@@ -37,37 +66,12 @@ func (m *UserFlowApiConnectorConfiguration) GetPostAttributeCollection()(*Identi
     }
 }
 // GetPostFederationSignup gets the postFederationSignup property value. 
-func (m *UserFlowApiConnectorConfiguration) GetPostFederationSignup()(*IdentityApiConnector) {
+func (m *UserFlowApiConnectorConfiguration) GetPostFederationSignup()(IdentityApiConnectorable) {
     if m == nil {
         return nil
     } else {
         return m.postFederationSignup
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["postAttributeCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentityApiConnector() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPostAttributeCollection(val.(*IdentityApiConnector))
-        }
-        return nil
-    }
-    res["postFederationSignup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentityApiConnector() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPostFederationSignup(val.(*IdentityApiConnector))
-        }
-        return nil
-    }
-    return res
 }
 func (m *UserFlowApiConnectorConfiguration) IsNil()(bool) {
     return m == nil
@@ -101,13 +105,13 @@ func (m *UserFlowApiConnectorConfiguration) SetAdditionalData(value map[string]i
     }
 }
 // SetPostAttributeCollection sets the postAttributeCollection property value. 
-func (m *UserFlowApiConnectorConfiguration) SetPostAttributeCollection(value *IdentityApiConnector)() {
+func (m *UserFlowApiConnectorConfiguration) SetPostAttributeCollection(value IdentityApiConnectorable)() {
     if m != nil {
         m.postAttributeCollection = value
     }
 }
 // SetPostFederationSignup sets the postFederationSignup property value. 
-func (m *UserFlowApiConnectorConfiguration) SetPostFederationSignup(value *IdentityApiConnector)() {
+func (m *UserFlowApiConnectorConfiguration) SetPostFederationSignup(value IdentityApiConnectorable)() {
     if m != nil {
         m.postFederationSignup = value
     }

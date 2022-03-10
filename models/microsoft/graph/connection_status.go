@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the security singleton.
 type ConnectionStatus int
 
 const (

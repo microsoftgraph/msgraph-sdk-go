@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MeetingTimeSuggestionsResult 
+// MeetingTimeSuggestionsResult provides operations to call the findMeetingTimes method.
 type MeetingTimeSuggestionsResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.
     emptySuggestionsReason *string;
     // An array of meeting suggestions.
-    meetingTimeSuggestions []MeetingTimeSuggestion;
+    meetingTimeSuggestions []MeetingTimeSuggestionable;
 }
 // NewMeetingTimeSuggestionsResult instantiates a new meetingTimeSuggestionsResult and sets the default values.
 func NewMeetingTimeSuggestionsResult()(*MeetingTimeSuggestionsResult) {
@@ -19,6 +19,10 @@ func NewMeetingTimeSuggestionsResult()(*MeetingTimeSuggestionsResult) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateMeetingTimeSuggestionsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMeetingTimeSuggestionsResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMeetingTimeSuggestionsResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingTimeSuggestionsResult) GetAdditionalData()(map[string]interface{}) {
@@ -36,14 +40,6 @@ func (m *MeetingTimeSuggestionsResult) GetEmptySuggestionsReason()(*string) {
         return m.emptySuggestionsReason
     }
 }
-// GetMeetingTimeSuggestions gets the meetingTimeSuggestions property value. An array of meeting suggestions.
-func (m *MeetingTimeSuggestionsResult) GetMeetingTimeSuggestions()([]MeetingTimeSuggestion) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingTimeSuggestions
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingTimeSuggestionsResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -58,20 +54,28 @@ func (m *MeetingTimeSuggestionsResult) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["meetingTimeSuggestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMeetingTimeSuggestion() })
+        val, err := n.GetCollectionOfObjectValues(CreateMeetingTimeSuggestionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MeetingTimeSuggestion, len(val))
+            res := make([]MeetingTimeSuggestionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MeetingTimeSuggestion))
+                res[i] = v.(MeetingTimeSuggestionable)
             }
             m.SetMeetingTimeSuggestions(res)
         }
         return nil
     }
     return res
+}
+// GetMeetingTimeSuggestions gets the meetingTimeSuggestions property value. An array of meeting suggestions.
+func (m *MeetingTimeSuggestionsResult) GetMeetingTimeSuggestions()([]MeetingTimeSuggestionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meetingTimeSuggestions
+    }
 }
 func (m *MeetingTimeSuggestionsResult) IsNil()(bool) {
     return m == nil
@@ -87,8 +91,7 @@ func (m *MeetingTimeSuggestionsResult) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetMeetingTimeSuggestions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMeetingTimeSuggestions()))
         for i, v := range m.GetMeetingTimeSuggestions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("meetingTimeSuggestions", cast)
         if err != nil {
@@ -116,7 +119,7 @@ func (m *MeetingTimeSuggestionsResult) SetEmptySuggestionsReason(value *string)(
     }
 }
 // SetMeetingTimeSuggestions sets the meetingTimeSuggestions property value. An array of meeting suggestions.
-func (m *MeetingTimeSuggestionsResult) SetMeetingTimeSuggestions(value []MeetingTimeSuggestion)() {
+func (m *MeetingTimeSuggestionsResult) SetMeetingTimeSuggestions(value []MeetingTimeSuggestionable)() {
     if m != nil {
         m.meetingTimeSuggestions = value
     }

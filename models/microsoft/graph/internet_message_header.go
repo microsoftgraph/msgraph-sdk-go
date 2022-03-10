@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InternetMessageHeader 
+// InternetMessageHeader provides operations to manage the collection of drive entities.
 type InternetMessageHeader struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewInternetMessageHeader()(*InternetMessageHeader) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateInternetMessageHeaderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInternetMessageHeaderFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInternetMessageHeader(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InternetMessageHeader) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetName gets the name property value. Represents the key in a key-value pair.
-func (m *InternetMessageHeader) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetValue gets the value property value. The value in a key-value pair.
-func (m *InternetMessageHeader) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *InternetMessageHeader) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetName gets the name property value. Represents the key in a key-value pair.
+func (m *InternetMessageHeader) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetValue gets the value property value. The value in a key-value pair.
+func (m *InternetMessageHeader) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *InternetMessageHeader) IsNil()(bool) {
     return m == nil

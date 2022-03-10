@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Security 
+// Security provides operations to manage the security singleton.
 type Security struct {
     Entity
     // Read-only. Nullable.
-    alerts []Alert;
+    alerts []Alertable;
     // 
-    secureScoreControlProfiles []SecureScoreControlProfile;
+    secureScoreControlProfiles []SecureScoreControlProfileable;
     // 
-    secureScores []SecureScore;
+    secureScores []SecureScoreable;
 }
 // NewSecurity instantiates a new security and sets the default values.
 func NewSecurity()(*Security) {
@@ -21,16 +21,67 @@ func NewSecurity()(*Security) {
     }
     return m
 }
+// CreateSecurityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecurityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecurity(), nil
+}
 // GetAlerts gets the alerts property value. Read-only. Nullable.
-func (m *Security) GetAlerts()([]Alert) {
+func (m *Security) GetAlerts()([]Alertable) {
     if m == nil {
         return nil
     } else {
         return m.alerts
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["alerts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAlertFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Alertable, len(val))
+            for i, v := range val {
+                res[i] = v.(Alertable)
+            }
+            m.SetAlerts(res)
+        }
+        return nil
+    }
+    res["secureScoreControlProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSecureScoreControlProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SecureScoreControlProfileable, len(val))
+            for i, v := range val {
+                res[i] = v.(SecureScoreControlProfileable)
+            }
+            m.SetSecureScoreControlProfiles(res)
+        }
+        return nil
+    }
+    res["secureScores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSecureScoreFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SecureScoreable, len(val))
+            for i, v := range val {
+                res[i] = v.(SecureScoreable)
+            }
+            m.SetSecureScores(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. 
-func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfile) {
+func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileable) {
     if m == nil {
         return nil
     } else {
@@ -38,59 +89,12 @@ func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfile) 
     }
 }
 // GetSecureScores gets the secureScores property value. 
-func (m *Security) GetSecureScores()([]SecureScore) {
+func (m *Security) GetSecureScores()([]SecureScoreable) {
     if m == nil {
         return nil
     } else {
         return m.secureScores
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["alerts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlert() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Alert, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Alert))
-            }
-            m.SetAlerts(res)
-        }
-        return nil
-    }
-    res["secureScoreControlProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecureScoreControlProfile() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SecureScoreControlProfile, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*SecureScoreControlProfile))
-            }
-            m.SetSecureScoreControlProfiles(res)
-        }
-        return nil
-    }
-    res["secureScores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecureScore() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SecureScore, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*SecureScore))
-            }
-            m.SetSecureScores(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *Security) IsNil()(bool) {
     return m == nil
@@ -104,8 +108,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetAlerts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlerts()))
         for i, v := range m.GetAlerts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("alerts", cast)
         if err != nil {
@@ -115,8 +118,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetSecureScoreControlProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecureScoreControlProfiles()))
         for i, v := range m.GetSecureScoreControlProfiles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("secureScoreControlProfiles", cast)
         if err != nil {
@@ -126,8 +128,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetSecureScores() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecureScores()))
         for i, v := range m.GetSecureScores() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("secureScores", cast)
         if err != nil {
@@ -137,19 +138,19 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetAlerts sets the alerts property value. Read-only. Nullable.
-func (m *Security) SetAlerts(value []Alert)() {
+func (m *Security) SetAlerts(value []Alertable)() {
     if m != nil {
         m.alerts = value
     }
 }
 // SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. 
-func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfile)() {
+func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)() {
     if m != nil {
         m.secureScoreControlProfiles = value
     }
 }
 // SetSecureScores sets the secureScores property value. 
-func (m *Security) SetSecureScores(value []SecureScore)() {
+func (m *Security) SetSecureScores(value []SecureScoreable)() {
     if m != nil {
         m.secureScores = value
     }

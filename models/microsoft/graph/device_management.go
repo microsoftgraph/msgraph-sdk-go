@@ -4,79 +4,79 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagement 
+// DeviceManagement provides operations to manage the deviceManagement singleton.
 type DeviceManagement struct {
     Entity
     // Apple push notification certificate.
-    applePushNotificationCertificate *ApplePushNotificationCertificate;
+    applePushNotificationCertificate ApplePushNotificationCertificateable;
     // The list of Compliance Management Partners configured by the tenant.
-    complianceManagementPartners []ComplianceManagementPartner;
+    complianceManagementPartners []ComplianceManagementPartnerable;
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-    conditionalAccessSettings *OnPremisesConditionalAccessSettings;
+    conditionalAccessSettings OnPremisesConditionalAccessSettingsable;
     // The list of detected apps associated with a device.
-    detectedApps []DetectedApp;
+    detectedApps []DetectedAppable;
     // The list of device categories with the tenant.
-    deviceCategories []DeviceCategory;
+    deviceCategories []DeviceCategoryable;
     // The device compliance policies.
-    deviceCompliancePolicies []DeviceCompliancePolicy;
+    deviceCompliancePolicies []DeviceCompliancePolicyable;
     // The device compliance state summary for this account.
-    deviceCompliancePolicyDeviceStateSummary *DeviceCompliancePolicyDeviceStateSummary;
+    deviceCompliancePolicyDeviceStateSummary DeviceCompliancePolicyDeviceStateSummaryable;
     // The summary states of compliance policy settings for this account.
-    deviceCompliancePolicySettingStateSummaries []DeviceCompliancePolicySettingStateSummary;
+    deviceCompliancePolicySettingStateSummaries []DeviceCompliancePolicySettingStateSummaryable;
     // The device configuration device state summary for this account.
-    deviceConfigurationDeviceStateSummaries *DeviceConfigurationDeviceStateSummary;
+    deviceConfigurationDeviceStateSummaries DeviceConfigurationDeviceStateSummaryable;
     // The device configurations.
-    deviceConfigurations []DeviceConfiguration;
+    deviceConfigurations []DeviceConfigurationable;
     // The list of device enrollment configurations
-    deviceEnrollmentConfigurations []DeviceEnrollmentConfiguration;
+    deviceEnrollmentConfigurations []DeviceEnrollmentConfigurationable;
     // The list of Device Management Partners configured by the tenant.
-    deviceManagementPartners []DeviceManagementPartner;
+    deviceManagementPartners []DeviceManagementPartnerable;
     // The list of Exchange Connectors configured by the tenant.
-    exchangeConnectors []DeviceManagementExchangeConnector;
+    exchangeConnectors []DeviceManagementExchangeConnectorable;
     // Collection of imported Windows autopilot devices.
-    importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentity;
+    importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentityable;
     // Intune Account Id for given tenant
     intuneAccountId *string;
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
-    intuneBrand *IntuneBrand;
+    intuneBrand IntuneBrandable;
     // The IOS software update installation statuses for this account.
-    iosUpdateStatuses []IosUpdateDeviceStatus;
+    iosUpdateStatuses []IosUpdateDeviceStatusable;
     // Device overview
-    managedDeviceOverview *ManagedDeviceOverview;
+    managedDeviceOverview ManagedDeviceOverviewable;
     // The list of managed devices.
-    managedDevices []ManagedDevice;
+    managedDevices []ManagedDeviceable;
     // The list of Mobile threat Defense connectors configured by the tenant.
-    mobileThreatDefenseConnectors []MobileThreatDefenseConnector;
+    mobileThreatDefenseConnectors []MobileThreatDefenseConnectorable;
     // The Notification Message Templates.
-    notificationMessageTemplates []NotificationMessageTemplate;
+    notificationMessageTemplates []NotificationMessageTemplateable;
     // The remote assist partners.
-    remoteAssistancePartners []RemoteAssistancePartner;
+    remoteAssistancePartners []RemoteAssistancePartnerable;
     // Reports singleton
-    reports *DeviceManagementReports;
+    reports DeviceManagementReportsable;
     // The Resource Operations.
-    resourceOperations []ResourceOperation;
+    resourceOperations []ResourceOperationable;
     // The Role Assignments.
-    roleAssignments []DeviceAndAppManagementRoleAssignment;
+    roleAssignments []DeviceAndAppManagementRoleAssignmentable;
     // The Role Definitions.
-    roleDefinitions []RoleDefinition;
+    roleDefinitions []RoleDefinitionable;
     // Account level settings.
-    settings *DeviceManagementSettings;
+    settings DeviceManagementSettingsable;
     // The software update status summary.
-    softwareUpdateStatusSummary *SoftwareUpdateStatusSummary;
+    softwareUpdateStatusSummary SoftwareUpdateStatusSummaryable;
     // Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
     subscriptionState *DeviceManagementSubscriptionState;
     // The telecom expense management partners.
-    telecomExpenseManagementPartners []TelecomExpenseManagementPartner;
+    telecomExpenseManagementPartners []TelecomExpenseManagementPartnerable;
     // The terms and conditions associated with device management of the company.
-    termsAndConditions []TermsAndConditions;
+    termsAndConditions []TermsAndConditionsable;
     // The list of troubleshooting events for the tenant.
-    troubleshootingEvents []DeviceManagementTroubleshootingEvent;
+    troubleshootingEvents []DeviceManagementTroubleshootingEventable;
     // The Windows autopilot device identities contained collection.
-    windowsAutopilotDeviceIdentities []WindowsAutopilotDeviceIdentity;
+    windowsAutopilotDeviceIdentities []WindowsAutopilotDeviceIdentityable;
     // The windows information protection app learning summaries.
-    windowsInformationProtectionAppLearningSummaries []WindowsInformationProtectionAppLearningSummary;
+    windowsInformationProtectionAppLearningSummaries []WindowsInformationProtectionAppLearningSummaryable;
     // The windows information protection network learning summaries.
-    windowsInformationProtectionNetworkLearningSummaries []WindowsInformationProtectionNetworkLearningSummary;
+    windowsInformationProtectionNetworkLearningSummaries []WindowsInformationProtectionNetworkLearningSummaryable;
 }
 // NewDeviceManagement instantiates a new deviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
@@ -85,8 +85,12 @@ func NewDeviceManagement()(*DeviceManagement) {
     }
     return m
 }
+// CreateDeviceManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagement(), nil
+}
 // GetApplePushNotificationCertificate gets the applePushNotificationCertificate property value. Apple push notification certificate.
-func (m *DeviceManagement) GetApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
+func (m *DeviceManagement) GetApplePushNotificationCertificate()(ApplePushNotificationCertificateable) {
     if m == nil {
         return nil
     } else {
@@ -94,7 +98,7 @@ func (m *DeviceManagement) GetApplePushNotificationCertificate()(*ApplePushNotif
     }
 }
 // GetComplianceManagementPartners gets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
-func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagementPartner) {
+func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagementPartnerable) {
     if m == nil {
         return nil
     } else {
@@ -102,7 +106,7 @@ func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagem
     }
 }
 // GetConditionalAccessSettings gets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-func (m *DeviceManagement) GetConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {
+func (m *DeviceManagement) GetConditionalAccessSettings()(OnPremisesConditionalAccessSettingsable) {
     if m == nil {
         return nil
     } else {
@@ -110,7 +114,7 @@ func (m *DeviceManagement) GetConditionalAccessSettings()(*OnPremisesConditional
     }
 }
 // GetDetectedApps gets the detectedApps property value. The list of detected apps associated with a device.
-func (m *DeviceManagement) GetDetectedApps()([]DetectedApp) {
+func (m *DeviceManagement) GetDetectedApps()([]DetectedAppable) {
     if m == nil {
         return nil
     } else {
@@ -118,7 +122,7 @@ func (m *DeviceManagement) GetDetectedApps()([]DetectedApp) {
     }
 }
 // GetDeviceCategories gets the deviceCategories property value. The list of device categories with the tenant.
-func (m *DeviceManagement) GetDeviceCategories()([]DeviceCategory) {
+func (m *DeviceManagement) GetDeviceCategories()([]DeviceCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -126,7 +130,7 @@ func (m *DeviceManagement) GetDeviceCategories()([]DeviceCategory) {
     }
 }
 // GetDeviceCompliancePolicies gets the deviceCompliancePolicies property value. The device compliance policies.
-func (m *DeviceManagement) GetDeviceCompliancePolicies()([]DeviceCompliancePolicy) {
+func (m *DeviceManagement) GetDeviceCompliancePolicies()([]DeviceCompliancePolicyable) {
     if m == nil {
         return nil
     } else {
@@ -134,7 +138,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicies()([]DeviceCompliancePolic
     }
 }
 // GetDeviceCompliancePolicyDeviceStateSummary gets the deviceCompliancePolicyDeviceStateSummary property value. The device compliance state summary for this account.
-func (m *DeviceManagement) GetDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummary) {
+func (m *DeviceManagement) GetDeviceCompliancePolicyDeviceStateSummary()(DeviceCompliancePolicyDeviceStateSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -142,7 +146,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicyDeviceStateSummary()(*Device
     }
 }
 // GetDeviceCompliancePolicySettingStateSummaries gets the deviceCompliancePolicySettingStateSummaries property value. The summary states of compliance policy settings for this account.
-func (m *DeviceManagement) GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummary) {
+func (m *DeviceManagement) GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +154,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicySettingStateSummaries()([]De
     }
 }
 // GetDeviceConfigurationDeviceStateSummaries gets the deviceConfigurationDeviceStateSummaries property value. The device configuration device state summary for this account.
-func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(*DeviceConfigurationDeviceStateSummary) {
+func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(DeviceConfigurationDeviceStateSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -158,7 +162,7 @@ func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(*DeviceC
     }
 }
 // GetDeviceConfigurations gets the deviceConfigurations property value. The device configurations.
-func (m *DeviceManagement) GetDeviceConfigurations()([]DeviceConfiguration) {
+func (m *DeviceManagement) GetDeviceConfigurations()([]DeviceConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -166,7 +170,7 @@ func (m *DeviceManagement) GetDeviceConfigurations()([]DeviceConfiguration) {
     }
 }
 // GetDeviceEnrollmentConfigurations gets the deviceEnrollmentConfigurations property value. The list of device enrollment configurations
-func (m *DeviceManagement) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfiguration) {
+func (m *DeviceManagement) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -174,7 +178,7 @@ func (m *DeviceManagement) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmen
     }
 }
 // GetDeviceManagementPartners gets the deviceManagementPartners property value. The list of Device Management Partners configured by the tenant.
-func (m *DeviceManagement) GetDeviceManagementPartners()([]DeviceManagementPartner) {
+func (m *DeviceManagement) GetDeviceManagementPartners()([]DeviceManagementPartnerable) {
     if m == nil {
         return nil
     } else {
@@ -182,367 +186,191 @@ func (m *DeviceManagement) GetDeviceManagementPartners()([]DeviceManagementPartn
     }
 }
 // GetExchangeConnectors gets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
-func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeConnector) {
+func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeConnectorable) {
     if m == nil {
         return nil
     } else {
         return m.exchangeConnectors
     }
 }
-// GetImportedWindowsAutopilotDeviceIdentities gets the importedWindowsAutopilotDeviceIdentities property value. Collection of imported Windows autopilot devices.
-func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importedWindowsAutopilotDeviceIdentities
-    }
-}
-// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
-func (m *DeviceManagement) GetIntuneAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intuneAccountId
-    }
-}
-// GetIntuneBrand gets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
-func (m *DeviceManagement) GetIntuneBrand()(*IntuneBrand) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intuneBrand
-    }
-}
-// GetIosUpdateStatuses gets the iosUpdateStatuses property value. The IOS software update installation statuses for this account.
-func (m *DeviceManagement) GetIosUpdateStatuses()([]IosUpdateDeviceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosUpdateStatuses
-    }
-}
-// GetManagedDeviceOverview gets the managedDeviceOverview property value. Device overview
-func (m *DeviceManagement) GetManagedDeviceOverview()(*ManagedDeviceOverview) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceOverview
-    }
-}
-// GetManagedDevices gets the managedDevices property value. The list of managed devices.
-func (m *DeviceManagement) GetManagedDevices()([]ManagedDevice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevices
-    }
-}
-// GetMobileThreatDefenseConnectors gets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
-func (m *DeviceManagement) GetMobileThreatDefenseConnectors()([]MobileThreatDefenseConnector) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileThreatDefenseConnectors
-    }
-}
-// GetNotificationMessageTemplates gets the notificationMessageTemplates property value. The Notification Message Templates.
-func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessageTemplate) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationMessageTemplates
-    }
-}
-// GetRemoteAssistancePartners gets the remoteAssistancePartners property value. The remote assist partners.
-func (m *DeviceManagement) GetRemoteAssistancePartners()([]RemoteAssistancePartner) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteAssistancePartners
-    }
-}
-// GetReports gets the reports property value. Reports singleton
-func (m *DeviceManagement) GetReports()(*DeviceManagementReports) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reports
-    }
-}
-// GetResourceOperations gets the resourceOperations property value. The Resource Operations.
-func (m *DeviceManagement) GetResourceOperations()([]ResourceOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceOperations
-    }
-}
-// GetRoleAssignments gets the roleAssignments property value. The Role Assignments.
-func (m *DeviceManagement) GetRoleAssignments()([]DeviceAndAppManagementRoleAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignments
-    }
-}
-// GetRoleDefinitions gets the roleDefinitions property value. The Role Definitions.
-func (m *DeviceManagement) GetRoleDefinitions()([]RoleDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitions
-    }
-}
-// GetSettings gets the settings property value. Account level settings.
-func (m *DeviceManagement) GetSettings()(*DeviceManagementSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
-// GetSoftwareUpdateStatusSummary gets the softwareUpdateStatusSummary property value. The software update status summary.
-func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
-    if m == nil {
-        return nil
-    } else {
-        return m.softwareUpdateStatusSummary
-    }
-}
-// GetSubscriptionState gets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
-func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionState
-    }
-}
-// GetTelecomExpenseManagementPartners gets the telecomExpenseManagementPartners property value. The telecom expense management partners.
-func (m *DeviceManagement) GetTelecomExpenseManagementPartners()([]TelecomExpenseManagementPartner) {
-    if m == nil {
-        return nil
-    } else {
-        return m.telecomExpenseManagementPartners
-    }
-}
-// GetTermsAndConditions gets the termsAndConditions property value. The terms and conditions associated with device management of the company.
-func (m *DeviceManagement) GetTermsAndConditions()([]TermsAndConditions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsAndConditions
-    }
-}
-// GetTroubleshootingEvents gets the troubleshootingEvents property value. The list of troubleshooting events for the tenant.
-func (m *DeviceManagement) GetTroubleshootingEvents()([]DeviceManagementTroubleshootingEvent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.troubleshootingEvents
-    }
-}
-// GetWindowsAutopilotDeviceIdentities gets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
-func (m *DeviceManagement) GetWindowsAutopilotDeviceIdentities()([]WindowsAutopilotDeviceIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsAutopilotDeviceIdentities
-    }
-}
-// GetWindowsInformationProtectionAppLearningSummaries gets the windowsInformationProtectionAppLearningSummaries property value. The windows information protection app learning summaries.
-func (m *DeviceManagement) GetWindowsInformationProtectionAppLearningSummaries()([]WindowsInformationProtectionAppLearningSummary) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsInformationProtectionAppLearningSummaries
-    }
-}
-// GetWindowsInformationProtectionNetworkLearningSummaries gets the windowsInformationProtectionNetworkLearningSummaries property value. The windows information protection network learning summaries.
-func (m *DeviceManagement) GetWindowsInformationProtectionNetworkLearningSummaries()([]WindowsInformationProtectionNetworkLearningSummary) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsInformationProtectionNetworkLearningSummaries
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applePushNotificationCertificate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApplePushNotificationCertificate() })
+        val, err := n.GetObjectValue(CreateApplePushNotificationCertificateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplePushNotificationCertificate(val.(*ApplePushNotificationCertificate))
+            m.SetApplePushNotificationCertificate(val.(ApplePushNotificationCertificateable))
         }
         return nil
     }
     res["complianceManagementPartners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewComplianceManagementPartner() })
+        val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ComplianceManagementPartner, len(val))
+            res := make([]ComplianceManagementPartnerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ComplianceManagementPartner))
+                res[i] = v.(ComplianceManagementPartnerable)
             }
             m.SetComplianceManagementPartners(res)
         }
         return nil
     }
     res["conditionalAccessSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesConditionalAccessSettings() })
+        val, err := n.GetObjectValue(CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionalAccessSettings(val.(*OnPremisesConditionalAccessSettings))
+            m.SetConditionalAccessSettings(val.(OnPremisesConditionalAccessSettingsable))
         }
         return nil
     }
     res["detectedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDetectedApp() })
+        val, err := n.GetCollectionOfObjectValues(CreateDetectedAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DetectedApp, len(val))
+            res := make([]DetectedAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DetectedApp))
+                res[i] = v.(DetectedAppable)
             }
             m.SetDetectedApps(res)
         }
         return nil
     }
     res["deviceCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceCategory, len(val))
+            res := make([]DeviceCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceCategory))
+                res[i] = v.(DeviceCategoryable)
             }
             m.SetDeviceCategories(res)
         }
         return nil
     }
     res["deviceCompliancePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceCompliancePolicy() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceCompliancePolicy, len(val))
+            res := make([]DeviceCompliancePolicyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceCompliancePolicy))
+                res[i] = v.(DeviceCompliancePolicyable)
             }
             m.SetDeviceCompliancePolicies(res)
         }
         return nil
     }
     res["deviceCompliancePolicyDeviceStateSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceCompliancePolicyDeviceStateSummary() })
+        val, err := n.GetObjectValue(CreateDeviceCompliancePolicyDeviceStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceCompliancePolicyDeviceStateSummary(val.(*DeviceCompliancePolicyDeviceStateSummary))
+            m.SetDeviceCompliancePolicyDeviceStateSummary(val.(DeviceCompliancePolicyDeviceStateSummaryable))
         }
         return nil
     }
     res["deviceCompliancePolicySettingStateSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceCompliancePolicySettingStateSummary() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceCompliancePolicySettingStateSummary, len(val))
+            res := make([]DeviceCompliancePolicySettingStateSummaryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceCompliancePolicySettingStateSummary))
+                res[i] = v.(DeviceCompliancePolicySettingStateSummaryable)
             }
             m.SetDeviceCompliancePolicySettingStateSummaries(res)
         }
         return nil
     }
     res["deviceConfigurationDeviceStateSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationDeviceStateSummary() })
+        val, err := n.GetObjectValue(CreateDeviceConfigurationDeviceStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceConfigurationDeviceStateSummaries(val.(*DeviceConfigurationDeviceStateSummary))
+            m.SetDeviceConfigurationDeviceStateSummaries(val.(DeviceConfigurationDeviceStateSummaryable))
         }
         return nil
     }
     res["deviceConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfiguration() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfiguration, len(val))
+            res := make([]DeviceConfigurationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfiguration))
+                res[i] = v.(DeviceConfigurationable)
             }
             m.SetDeviceConfigurations(res)
         }
         return nil
     }
     res["deviceEnrollmentConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceEnrollmentConfiguration() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceEnrollmentConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceEnrollmentConfiguration, len(val))
+            res := make([]DeviceEnrollmentConfigurationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceEnrollmentConfiguration))
+                res[i] = v.(DeviceEnrollmentConfigurationable)
             }
             m.SetDeviceEnrollmentConfigurations(res)
         }
         return nil
     }
     res["deviceManagementPartners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementPartner() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementPartnerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementPartner, len(val))
+            res := make([]DeviceManagementPartnerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementPartner))
+                res[i] = v.(DeviceManagementPartnerable)
             }
             m.SetDeviceManagementPartners(res)
         }
         return nil
     }
     res["exchangeConnectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementExchangeConnector() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeConnectorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementExchangeConnector, len(val))
+            res := make([]DeviceManagementExchangeConnectorable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementExchangeConnector))
+                res[i] = v.(DeviceManagementExchangeConnectorable)
             }
             m.SetExchangeConnectors(res)
         }
         return nil
     }
     res["importedWindowsAutopilotDeviceIdentities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewImportedWindowsAutopilotDeviceIdentity() })
+        val, err := n.GetCollectionOfObjectValues(CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ImportedWindowsAutopilotDeviceIdentity, len(val))
+            res := make([]ImportedWindowsAutopilotDeviceIdentityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ImportedWindowsAutopilotDeviceIdentity))
+                res[i] = v.(ImportedWindowsAutopilotDeviceIdentityable)
             }
             m.SetImportedWindowsAutopilotDeviceIdentities(res)
         }
@@ -559,164 +387,164 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["intuneBrand"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIntuneBrand() })
+        val, err := n.GetObjectValue(CreateIntuneBrandFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIntuneBrand(val.(*IntuneBrand))
+            m.SetIntuneBrand(val.(IntuneBrandable))
         }
         return nil
     }
     res["iosUpdateStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIosUpdateDeviceStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateIosUpdateDeviceStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IosUpdateDeviceStatus, len(val))
+            res := make([]IosUpdateDeviceStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IosUpdateDeviceStatus))
+                res[i] = v.(IosUpdateDeviceStatusable)
             }
             m.SetIosUpdateStatuses(res)
         }
         return nil
     }
     res["managedDeviceOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDeviceOverview() })
+        val, err := n.GetObjectValue(CreateManagedDeviceOverviewFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetManagedDeviceOverview(val.(*ManagedDeviceOverview))
+            m.SetManagedDeviceOverview(val.(ManagedDeviceOverviewable))
         }
         return nil
     }
     res["managedDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDevice() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedDevice, len(val))
+            res := make([]ManagedDeviceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedDevice))
+                res[i] = v.(ManagedDeviceable)
             }
             m.SetManagedDevices(res)
         }
         return nil
     }
     res["mobileThreatDefenseConnectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileThreatDefenseConnector() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileThreatDefenseConnectorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileThreatDefenseConnector, len(val))
+            res := make([]MobileThreatDefenseConnectorable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileThreatDefenseConnector))
+                res[i] = v.(MobileThreatDefenseConnectorable)
             }
             m.SetMobileThreatDefenseConnectors(res)
         }
         return nil
     }
     res["notificationMessageTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNotificationMessageTemplate() })
+        val, err := n.GetCollectionOfObjectValues(CreateNotificationMessageTemplateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]NotificationMessageTemplate, len(val))
+            res := make([]NotificationMessageTemplateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*NotificationMessageTemplate))
+                res[i] = v.(NotificationMessageTemplateable)
             }
             m.SetNotificationMessageTemplates(res)
         }
         return nil
     }
     res["remoteAssistancePartners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRemoteAssistancePartner() })
+        val, err := n.GetCollectionOfObjectValues(CreateRemoteAssistancePartnerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RemoteAssistancePartner, len(val))
+            res := make([]RemoteAssistancePartnerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RemoteAssistancePartner))
+                res[i] = v.(RemoteAssistancePartnerable)
             }
             m.SetRemoteAssistancePartners(res)
         }
         return nil
     }
     res["reports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementReports() })
+        val, err := n.GetObjectValue(CreateDeviceManagementReportsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReports(val.(*DeviceManagementReports))
+            m.SetReports(val.(DeviceManagementReportsable))
         }
         return nil
     }
     res["resourceOperations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResourceOperation() })
+        val, err := n.GetCollectionOfObjectValues(CreateResourceOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ResourceOperation, len(val))
+            res := make([]ResourceOperationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ResourceOperation))
+                res[i] = v.(ResourceOperationable)
             }
             m.SetResourceOperations(res)
         }
         return nil
     }
     res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceAndAppManagementRoleAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceAndAppManagementRoleAssignment, len(val))
+            res := make([]DeviceAndAppManagementRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceAndAppManagementRoleAssignment))
+                res[i] = v.(DeviceAndAppManagementRoleAssignmentable)
             }
             m.SetRoleAssignments(res)
         }
         return nil
     }
     res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RoleDefinition, len(val))
+            res := make([]RoleDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RoleDefinition))
+                res[i] = v.(RoleDefinitionable)
             }
             m.SetRoleDefinitions(res)
         }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementSettings() })
+        val, err := n.GetObjectValue(CreateDeviceManagementSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*DeviceManagementSettings))
+            m.SetSettings(val.(DeviceManagementSettingsable))
         }
         return nil
     }
     res["softwareUpdateStatusSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSoftwareUpdateStatusSummary() })
+        val, err := n.GetObjectValue(CreateSoftwareUpdateStatusSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSoftwareUpdateStatusSummary(val.(*SoftwareUpdateStatusSummary))
+            m.SetSoftwareUpdateStatusSummary(val.(SoftwareUpdateStatusSummaryable))
         }
         return nil
     }
@@ -731,90 +559,266 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["telecomExpenseManagementPartners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTelecomExpenseManagementPartner() })
+        val, err := n.GetCollectionOfObjectValues(CreateTelecomExpenseManagementPartnerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TelecomExpenseManagementPartner, len(val))
+            res := make([]TelecomExpenseManagementPartnerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TelecomExpenseManagementPartner))
+                res[i] = v.(TelecomExpenseManagementPartnerable)
             }
             m.SetTelecomExpenseManagementPartners(res)
         }
         return nil
     }
     res["termsAndConditions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTermsAndConditions() })
+        val, err := n.GetCollectionOfObjectValues(CreateTermsAndConditionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TermsAndConditions, len(val))
+            res := make([]TermsAndConditionsable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TermsAndConditions))
+                res[i] = v.(TermsAndConditionsable)
             }
             m.SetTermsAndConditions(res)
         }
         return nil
     }
     res["troubleshootingEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementTroubleshootingEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementTroubleshootingEvent, len(val))
+            res := make([]DeviceManagementTroubleshootingEventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementTroubleshootingEvent))
+                res[i] = v.(DeviceManagementTroubleshootingEventable)
             }
             m.SetTroubleshootingEvents(res)
         }
         return nil
     }
     res["windowsAutopilotDeviceIdentities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsAutopilotDeviceIdentity() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsAutopilotDeviceIdentity, len(val))
+            res := make([]WindowsAutopilotDeviceIdentityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsAutopilotDeviceIdentity))
+                res[i] = v.(WindowsAutopilotDeviceIdentityable)
             }
             m.SetWindowsAutopilotDeviceIdentities(res)
         }
         return nil
     }
     res["windowsInformationProtectionAppLearningSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsInformationProtectionAppLearningSummary() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsInformationProtectionAppLearningSummary, len(val))
+            res := make([]WindowsInformationProtectionAppLearningSummaryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsInformationProtectionAppLearningSummary))
+                res[i] = v.(WindowsInformationProtectionAppLearningSummaryable)
             }
             m.SetWindowsInformationProtectionAppLearningSummaries(res)
         }
         return nil
     }
     res["windowsInformationProtectionNetworkLearningSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsInformationProtectionNetworkLearningSummary() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsInformationProtectionNetworkLearningSummary, len(val))
+            res := make([]WindowsInformationProtectionNetworkLearningSummaryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsInformationProtectionNetworkLearningSummary))
+                res[i] = v.(WindowsInformationProtectionNetworkLearningSummaryable)
             }
             m.SetWindowsInformationProtectionNetworkLearningSummaries(res)
         }
         return nil
     }
     return res
+}
+// GetImportedWindowsAutopilotDeviceIdentities gets the importedWindowsAutopilotDeviceIdentities property value. Collection of imported Windows autopilot devices.
+func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importedWindowsAutopilotDeviceIdentities
+    }
+}
+// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
+func (m *DeviceManagement) GetIntuneAccountId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intuneAccountId
+    }
+}
+// GetIntuneBrand gets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
+func (m *DeviceManagement) GetIntuneBrand()(IntuneBrandable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intuneBrand
+    }
+}
+// GetIosUpdateStatuses gets the iosUpdateStatuses property value. The IOS software update installation statuses for this account.
+func (m *DeviceManagement) GetIosUpdateStatuses()([]IosUpdateDeviceStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosUpdateStatuses
+    }
+}
+// GetManagedDeviceOverview gets the managedDeviceOverview property value. Device overview
+func (m *DeviceManagement) GetManagedDeviceOverview()(ManagedDeviceOverviewable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceOverview
+    }
+}
+// GetManagedDevices gets the managedDevices property value. The list of managed devices.
+func (m *DeviceManagement) GetManagedDevices()([]ManagedDeviceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDevices
+    }
+}
+// GetMobileThreatDefenseConnectors gets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
+func (m *DeviceManagement) GetMobileThreatDefenseConnectors()([]MobileThreatDefenseConnectorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileThreatDefenseConnectors
+    }
+}
+// GetNotificationMessageTemplates gets the notificationMessageTemplates property value. The Notification Message Templates.
+func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessageTemplateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationMessageTemplates
+    }
+}
+// GetRemoteAssistancePartners gets the remoteAssistancePartners property value. The remote assist partners.
+func (m *DeviceManagement) GetRemoteAssistancePartners()([]RemoteAssistancePartnerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remoteAssistancePartners
+    }
+}
+// GetReports gets the reports property value. Reports singleton
+func (m *DeviceManagement) GetReports()(DeviceManagementReportsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reports
+    }
+}
+// GetResourceOperations gets the resourceOperations property value. The Resource Operations.
+func (m *DeviceManagement) GetResourceOperations()([]ResourceOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceOperations
+    }
+}
+// GetRoleAssignments gets the roleAssignments property value. The Role Assignments.
+func (m *DeviceManagement) GetRoleAssignments()([]DeviceAndAppManagementRoleAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleAssignments
+    }
+}
+// GetRoleDefinitions gets the roleDefinitions property value. The Role Definitions.
+func (m *DeviceManagement) GetRoleDefinitions()([]RoleDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinitions
+    }
+}
+// GetSettings gets the settings property value. Account level settings.
+func (m *DeviceManagement) GetSettings()(DeviceManagementSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
+}
+// GetSoftwareUpdateStatusSummary gets the softwareUpdateStatusSummary property value. The software update status summary.
+func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(SoftwareUpdateStatusSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.softwareUpdateStatusSummary
+    }
+}
+// GetSubscriptionState gets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subscriptionState
+    }
+}
+// GetTelecomExpenseManagementPartners gets the telecomExpenseManagementPartners property value. The telecom expense management partners.
+func (m *DeviceManagement) GetTelecomExpenseManagementPartners()([]TelecomExpenseManagementPartnerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.telecomExpenseManagementPartners
+    }
+}
+// GetTermsAndConditions gets the termsAndConditions property value. The terms and conditions associated with device management of the company.
+func (m *DeviceManagement) GetTermsAndConditions()([]TermsAndConditionsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.termsAndConditions
+    }
+}
+// GetTroubleshootingEvents gets the troubleshootingEvents property value. The list of troubleshooting events for the tenant.
+func (m *DeviceManagement) GetTroubleshootingEvents()([]DeviceManagementTroubleshootingEventable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.troubleshootingEvents
+    }
+}
+// GetWindowsAutopilotDeviceIdentities gets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
+func (m *DeviceManagement) GetWindowsAutopilotDeviceIdentities()([]WindowsAutopilotDeviceIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsAutopilotDeviceIdentities
+    }
+}
+// GetWindowsInformationProtectionAppLearningSummaries gets the windowsInformationProtectionAppLearningSummaries property value. The windows information protection app learning summaries.
+func (m *DeviceManagement) GetWindowsInformationProtectionAppLearningSummaries()([]WindowsInformationProtectionAppLearningSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsInformationProtectionAppLearningSummaries
+    }
+}
+// GetWindowsInformationProtectionNetworkLearningSummaries gets the windowsInformationProtectionNetworkLearningSummaries property value. The windows information protection network learning summaries.
+func (m *DeviceManagement) GetWindowsInformationProtectionNetworkLearningSummaries()([]WindowsInformationProtectionNetworkLearningSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsInformationProtectionNetworkLearningSummaries
+    }
 }
 func (m *DeviceManagement) IsNil()(bool) {
     return m == nil
@@ -834,8 +838,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetComplianceManagementPartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetComplianceManagementPartners()))
         for i, v := range m.GetComplianceManagementPartners() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("complianceManagementPartners", cast)
         if err != nil {
@@ -851,8 +854,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetDetectedApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDetectedApps()))
         for i, v := range m.GetDetectedApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("detectedApps", cast)
         if err != nil {
@@ -862,8 +864,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetDeviceCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCategories()))
         for i, v := range m.GetDeviceCategories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceCategories", cast)
         if err != nil {
@@ -873,8 +874,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetDeviceCompliancePolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCompliancePolicies()))
         for i, v := range m.GetDeviceCompliancePolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceCompliancePolicies", cast)
         if err != nil {
@@ -890,8 +890,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetDeviceCompliancePolicySettingStateSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCompliancePolicySettingStateSummaries()))
         for i, v := range m.GetDeviceCompliancePolicySettingStateSummaries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceCompliancePolicySettingStateSummaries", cast)
         if err != nil {
@@ -907,8 +906,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetDeviceConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceConfigurations()))
         for i, v := range m.GetDeviceConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceConfigurations", cast)
         if err != nil {
@@ -918,8 +916,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetDeviceEnrollmentConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceEnrollmentConfigurations()))
         for i, v := range m.GetDeviceEnrollmentConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceEnrollmentConfigurations", cast)
         if err != nil {
@@ -929,8 +926,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetDeviceManagementPartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceManagementPartners()))
         for i, v := range m.GetDeviceManagementPartners() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceManagementPartners", cast)
         if err != nil {
@@ -940,8 +936,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetExchangeConnectors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExchangeConnectors()))
         for i, v := range m.GetExchangeConnectors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("exchangeConnectors", cast)
         if err != nil {
@@ -951,8 +946,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetImportedWindowsAutopilotDeviceIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImportedWindowsAutopilotDeviceIdentities()))
         for i, v := range m.GetImportedWindowsAutopilotDeviceIdentities() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("importedWindowsAutopilotDeviceIdentities", cast)
         if err != nil {
@@ -974,8 +968,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetIosUpdateStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIosUpdateStatuses()))
         for i, v := range m.GetIosUpdateStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("iosUpdateStatuses", cast)
         if err != nil {
@@ -991,8 +984,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetManagedDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedDevices()))
         for i, v := range m.GetManagedDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managedDevices", cast)
         if err != nil {
@@ -1002,8 +994,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetMobileThreatDefenseConnectors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMobileThreatDefenseConnectors()))
         for i, v := range m.GetMobileThreatDefenseConnectors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("mobileThreatDefenseConnectors", cast)
         if err != nil {
@@ -1013,8 +1004,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetNotificationMessageTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNotificationMessageTemplates()))
         for i, v := range m.GetNotificationMessageTemplates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("notificationMessageTemplates", cast)
         if err != nil {
@@ -1024,8 +1014,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetRemoteAssistancePartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRemoteAssistancePartners()))
         for i, v := range m.GetRemoteAssistancePartners() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("remoteAssistancePartners", cast)
         if err != nil {
@@ -1041,8 +1030,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetResourceOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResourceOperations()))
         for i, v := range m.GetResourceOperations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("resourceOperations", cast)
         if err != nil {
@@ -1052,8 +1040,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
@@ -1063,8 +1050,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetRoleDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleDefinitions", cast)
         if err != nil {
@@ -1093,8 +1079,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetTelecomExpenseManagementPartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTelecomExpenseManagementPartners()))
         for i, v := range m.GetTelecomExpenseManagementPartners() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("telecomExpenseManagementPartners", cast)
         if err != nil {
@@ -1104,8 +1089,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetTermsAndConditions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTermsAndConditions()))
         for i, v := range m.GetTermsAndConditions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("termsAndConditions", cast)
         if err != nil {
@@ -1115,8 +1099,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetTroubleshootingEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTroubleshootingEvents()))
         for i, v := range m.GetTroubleshootingEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("troubleshootingEvents", cast)
         if err != nil {
@@ -1126,8 +1109,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetWindowsAutopilotDeviceIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsAutopilotDeviceIdentities()))
         for i, v := range m.GetWindowsAutopilotDeviceIdentities() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("windowsAutopilotDeviceIdentities", cast)
         if err != nil {
@@ -1137,8 +1119,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetWindowsInformationProtectionAppLearningSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsInformationProtectionAppLearningSummaries()))
         for i, v := range m.GetWindowsInformationProtectionAppLearningSummaries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionAppLearningSummaries", cast)
         if err != nil {
@@ -1148,8 +1129,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetWindowsInformationProtectionNetworkLearningSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsInformationProtectionNetworkLearningSummaries()))
         for i, v := range m.GetWindowsInformationProtectionNetworkLearningSummaries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionNetworkLearningSummaries", cast)
         if err != nil {
@@ -1159,85 +1139,85 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     return nil
 }
 // SetApplePushNotificationCertificate sets the applePushNotificationCertificate property value. Apple push notification certificate.
-func (m *DeviceManagement) SetApplePushNotificationCertificate(value *ApplePushNotificationCertificate)() {
+func (m *DeviceManagement) SetApplePushNotificationCertificate(value ApplePushNotificationCertificateable)() {
     if m != nil {
         m.applePushNotificationCertificate = value
     }
 }
 // SetComplianceManagementPartners sets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
-func (m *DeviceManagement) SetComplianceManagementPartners(value []ComplianceManagementPartner)() {
+func (m *DeviceManagement) SetComplianceManagementPartners(value []ComplianceManagementPartnerable)() {
     if m != nil {
         m.complianceManagementPartners = value
     }
 }
 // SetConditionalAccessSettings sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-func (m *DeviceManagement) SetConditionalAccessSettings(value *OnPremisesConditionalAccessSettings)() {
+func (m *DeviceManagement) SetConditionalAccessSettings(value OnPremisesConditionalAccessSettingsable)() {
     if m != nil {
         m.conditionalAccessSettings = value
     }
 }
 // SetDetectedApps sets the detectedApps property value. The list of detected apps associated with a device.
-func (m *DeviceManagement) SetDetectedApps(value []DetectedApp)() {
+func (m *DeviceManagement) SetDetectedApps(value []DetectedAppable)() {
     if m != nil {
         m.detectedApps = value
     }
 }
 // SetDeviceCategories sets the deviceCategories property value. The list of device categories with the tenant.
-func (m *DeviceManagement) SetDeviceCategories(value []DeviceCategory)() {
+func (m *DeviceManagement) SetDeviceCategories(value []DeviceCategoryable)() {
     if m != nil {
         m.deviceCategories = value
     }
 }
 // SetDeviceCompliancePolicies sets the deviceCompliancePolicies property value. The device compliance policies.
-func (m *DeviceManagement) SetDeviceCompliancePolicies(value []DeviceCompliancePolicy)() {
+func (m *DeviceManagement) SetDeviceCompliancePolicies(value []DeviceCompliancePolicyable)() {
     if m != nil {
         m.deviceCompliancePolicies = value
     }
 }
 // SetDeviceCompliancePolicyDeviceStateSummary sets the deviceCompliancePolicyDeviceStateSummary property value. The device compliance state summary for this account.
-func (m *DeviceManagement) SetDeviceCompliancePolicyDeviceStateSummary(value *DeviceCompliancePolicyDeviceStateSummary)() {
+func (m *DeviceManagement) SetDeviceCompliancePolicyDeviceStateSummary(value DeviceCompliancePolicyDeviceStateSummaryable)() {
     if m != nil {
         m.deviceCompliancePolicyDeviceStateSummary = value
     }
 }
 // SetDeviceCompliancePolicySettingStateSummaries sets the deviceCompliancePolicySettingStateSummaries property value. The summary states of compliance policy settings for this account.
-func (m *DeviceManagement) SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummary)() {
+func (m *DeviceManagement) SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummaryable)() {
     if m != nil {
         m.deviceCompliancePolicySettingStateSummaries = value
     }
 }
 // SetDeviceConfigurationDeviceStateSummaries sets the deviceConfigurationDeviceStateSummaries property value. The device configuration device state summary for this account.
-func (m *DeviceManagement) SetDeviceConfigurationDeviceStateSummaries(value *DeviceConfigurationDeviceStateSummary)() {
+func (m *DeviceManagement) SetDeviceConfigurationDeviceStateSummaries(value DeviceConfigurationDeviceStateSummaryable)() {
     if m != nil {
         m.deviceConfigurationDeviceStateSummaries = value
     }
 }
 // SetDeviceConfigurations sets the deviceConfigurations property value. The device configurations.
-func (m *DeviceManagement) SetDeviceConfigurations(value []DeviceConfiguration)() {
+func (m *DeviceManagement) SetDeviceConfigurations(value []DeviceConfigurationable)() {
     if m != nil {
         m.deviceConfigurations = value
     }
 }
 // SetDeviceEnrollmentConfigurations sets the deviceEnrollmentConfigurations property value. The list of device enrollment configurations
-func (m *DeviceManagement) SetDeviceEnrollmentConfigurations(value []DeviceEnrollmentConfiguration)() {
+func (m *DeviceManagement) SetDeviceEnrollmentConfigurations(value []DeviceEnrollmentConfigurationable)() {
     if m != nil {
         m.deviceEnrollmentConfigurations = value
     }
 }
 // SetDeviceManagementPartners sets the deviceManagementPartners property value. The list of Device Management Partners configured by the tenant.
-func (m *DeviceManagement) SetDeviceManagementPartners(value []DeviceManagementPartner)() {
+func (m *DeviceManagement) SetDeviceManagementPartners(value []DeviceManagementPartnerable)() {
     if m != nil {
         m.deviceManagementPartners = value
     }
 }
 // SetExchangeConnectors sets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
-func (m *DeviceManagement) SetExchangeConnectors(value []DeviceManagementExchangeConnector)() {
+func (m *DeviceManagement) SetExchangeConnectors(value []DeviceManagementExchangeConnectorable)() {
     if m != nil {
         m.exchangeConnectors = value
     }
 }
 // SetImportedWindowsAutopilotDeviceIdentities sets the importedWindowsAutopilotDeviceIdentities property value. Collection of imported Windows autopilot devices.
-func (m *DeviceManagement) SetImportedWindowsAutopilotDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentity)() {
+func (m *DeviceManagement) SetImportedWindowsAutopilotDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentityable)() {
     if m != nil {
         m.importedWindowsAutopilotDeviceIdentities = value
     }
@@ -1249,79 +1229,79 @@ func (m *DeviceManagement) SetIntuneAccountId(value *string)() {
     }
 }
 // SetIntuneBrand sets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
-func (m *DeviceManagement) SetIntuneBrand(value *IntuneBrand)() {
+func (m *DeviceManagement) SetIntuneBrand(value IntuneBrandable)() {
     if m != nil {
         m.intuneBrand = value
     }
 }
 // SetIosUpdateStatuses sets the iosUpdateStatuses property value. The IOS software update installation statuses for this account.
-func (m *DeviceManagement) SetIosUpdateStatuses(value []IosUpdateDeviceStatus)() {
+func (m *DeviceManagement) SetIosUpdateStatuses(value []IosUpdateDeviceStatusable)() {
     if m != nil {
         m.iosUpdateStatuses = value
     }
 }
 // SetManagedDeviceOverview sets the managedDeviceOverview property value. Device overview
-func (m *DeviceManagement) SetManagedDeviceOverview(value *ManagedDeviceOverview)() {
+func (m *DeviceManagement) SetManagedDeviceOverview(value ManagedDeviceOverviewable)() {
     if m != nil {
         m.managedDeviceOverview = value
     }
 }
 // SetManagedDevices sets the managedDevices property value. The list of managed devices.
-func (m *DeviceManagement) SetManagedDevices(value []ManagedDevice)() {
+func (m *DeviceManagement) SetManagedDevices(value []ManagedDeviceable)() {
     if m != nil {
         m.managedDevices = value
     }
 }
 // SetMobileThreatDefenseConnectors sets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
-func (m *DeviceManagement) SetMobileThreatDefenseConnectors(value []MobileThreatDefenseConnector)() {
+func (m *DeviceManagement) SetMobileThreatDefenseConnectors(value []MobileThreatDefenseConnectorable)() {
     if m != nil {
         m.mobileThreatDefenseConnectors = value
     }
 }
 // SetNotificationMessageTemplates sets the notificationMessageTemplates property value. The Notification Message Templates.
-func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationMessageTemplate)() {
+func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationMessageTemplateable)() {
     if m != nil {
         m.notificationMessageTemplates = value
     }
 }
 // SetRemoteAssistancePartners sets the remoteAssistancePartners property value. The remote assist partners.
-func (m *DeviceManagement) SetRemoteAssistancePartners(value []RemoteAssistancePartner)() {
+func (m *DeviceManagement) SetRemoteAssistancePartners(value []RemoteAssistancePartnerable)() {
     if m != nil {
         m.remoteAssistancePartners = value
     }
 }
 // SetReports sets the reports property value. Reports singleton
-func (m *DeviceManagement) SetReports(value *DeviceManagementReports)() {
+func (m *DeviceManagement) SetReports(value DeviceManagementReportsable)() {
     if m != nil {
         m.reports = value
     }
 }
 // SetResourceOperations sets the resourceOperations property value. The Resource Operations.
-func (m *DeviceManagement) SetResourceOperations(value []ResourceOperation)() {
+func (m *DeviceManagement) SetResourceOperations(value []ResourceOperationable)() {
     if m != nil {
         m.resourceOperations = value
     }
 }
 // SetRoleAssignments sets the roleAssignments property value. The Role Assignments.
-func (m *DeviceManagement) SetRoleAssignments(value []DeviceAndAppManagementRoleAssignment)() {
+func (m *DeviceManagement) SetRoleAssignments(value []DeviceAndAppManagementRoleAssignmentable)() {
     if m != nil {
         m.roleAssignments = value
     }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. The Role Definitions.
-func (m *DeviceManagement) SetRoleDefinitions(value []RoleDefinition)() {
+func (m *DeviceManagement) SetRoleDefinitions(value []RoleDefinitionable)() {
     if m != nil {
         m.roleDefinitions = value
     }
 }
 // SetSettings sets the settings property value. Account level settings.
-func (m *DeviceManagement) SetSettings(value *DeviceManagementSettings)() {
+func (m *DeviceManagement) SetSettings(value DeviceManagementSettingsable)() {
     if m != nil {
         m.settings = value
     }
 }
 // SetSoftwareUpdateStatusSummary sets the softwareUpdateStatusSummary property value. The software update status summary.
-func (m *DeviceManagement) SetSoftwareUpdateStatusSummary(value *SoftwareUpdateStatusSummary)() {
+func (m *DeviceManagement) SetSoftwareUpdateStatusSummary(value SoftwareUpdateStatusSummaryable)() {
     if m != nil {
         m.softwareUpdateStatusSummary = value
     }
@@ -1333,37 +1313,37 @@ func (m *DeviceManagement) SetSubscriptionState(value *DeviceManagementSubscript
     }
 }
 // SetTelecomExpenseManagementPartners sets the telecomExpenseManagementPartners property value. The telecom expense management partners.
-func (m *DeviceManagement) SetTelecomExpenseManagementPartners(value []TelecomExpenseManagementPartner)() {
+func (m *DeviceManagement) SetTelecomExpenseManagementPartners(value []TelecomExpenseManagementPartnerable)() {
     if m != nil {
         m.telecomExpenseManagementPartners = value
     }
 }
 // SetTermsAndConditions sets the termsAndConditions property value. The terms and conditions associated with device management of the company.
-func (m *DeviceManagement) SetTermsAndConditions(value []TermsAndConditions)() {
+func (m *DeviceManagement) SetTermsAndConditions(value []TermsAndConditionsable)() {
     if m != nil {
         m.termsAndConditions = value
     }
 }
 // SetTroubleshootingEvents sets the troubleshootingEvents property value. The list of troubleshooting events for the tenant.
-func (m *DeviceManagement) SetTroubleshootingEvents(value []DeviceManagementTroubleshootingEvent)() {
+func (m *DeviceManagement) SetTroubleshootingEvents(value []DeviceManagementTroubleshootingEventable)() {
     if m != nil {
         m.troubleshootingEvents = value
     }
 }
 // SetWindowsAutopilotDeviceIdentities sets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
-func (m *DeviceManagement) SetWindowsAutopilotDeviceIdentities(value []WindowsAutopilotDeviceIdentity)() {
+func (m *DeviceManagement) SetWindowsAutopilotDeviceIdentities(value []WindowsAutopilotDeviceIdentityable)() {
     if m != nil {
         m.windowsAutopilotDeviceIdentities = value
     }
 }
 // SetWindowsInformationProtectionAppLearningSummaries sets the windowsInformationProtectionAppLearningSummaries property value. The windows information protection app learning summaries.
-func (m *DeviceManagement) SetWindowsInformationProtectionAppLearningSummaries(value []WindowsInformationProtectionAppLearningSummary)() {
+func (m *DeviceManagement) SetWindowsInformationProtectionAppLearningSummaries(value []WindowsInformationProtectionAppLearningSummaryable)() {
     if m != nil {
         m.windowsInformationProtectionAppLearningSummaries = value
     }
 }
 // SetWindowsInformationProtectionNetworkLearningSummaries sets the windowsInformationProtectionNetworkLearningSummaries property value. The windows information protection network learning summaries.
-func (m *DeviceManagement) SetWindowsInformationProtectionNetworkLearningSummaries(value []WindowsInformationProtectionNetworkLearningSummary)() {
+func (m *DeviceManagement) SetWindowsInformationProtectionNetworkLearningSummaries(value []WindowsInformationProtectionNetworkLearningSummaryable)() {
     if m != nil {
         m.windowsInformationProtectionNetworkLearningSummaries = value
     }

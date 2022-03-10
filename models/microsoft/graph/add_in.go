@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AddIn 
+// AddIn provides operations to manage the collection of application entities.
 type AddIn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     id *string;
     // 
-    properties []KeyValue;
+    properties []KeyValueable;
     // 
     type_escaped *string;
 }
@@ -22,36 +22,16 @@ func NewAddIn()(*AddIn) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAddInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAddInFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAddIn(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddIn) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetId gets the id property value. 
-func (m *AddIn) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetProperties gets the properties property value. 
-func (m *AddIn) GetProperties()([]KeyValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
-}
-// GetType gets the type property value. 
-func (m *AddIn) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,14 +48,14 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValue, len(val))
+            res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValue))
+                res[i] = v.(KeyValueable)
             }
             m.SetProperties(res)
         }
@@ -93,6 +73,30 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
     }
     return res
 }
+// GetId gets the id property value. 
+func (m *AddIn) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetProperties gets the properties property value. 
+func (m *AddIn) GetProperties()([]KeyValueable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.properties
+    }
+}
+// GetType gets the type property value. 
+func (m *AddIn) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 func (m *AddIn) IsNil()(bool) {
     return m == nil
 }
@@ -107,8 +111,7 @@ func (m *AddIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("properties", cast)
         if err != nil {
@@ -142,7 +145,7 @@ func (m *AddIn) SetId(value *string)() {
     }
 }
 // SetProperties sets the properties property value. 
-func (m *AddIn) SetProperties(value []KeyValue)() {
+func (m *AddIn) SetProperties(value []KeyValueable)() {
     if m != nil {
         m.properties = value
     }

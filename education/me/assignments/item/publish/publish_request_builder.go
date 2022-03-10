@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// PublishRequestBuilder builds and executes requests for operations under \education\me\assignments\{educationAssignment-id}\microsoft.graph.publish
+// PublishRequestBuilder provides operations to call the publish method.
 type PublishRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type PublishResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type educationAssignment
-    educationAssignment *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment;
+    educationAssignment i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentable;
 }
 // NewPublishResponse instantiates a new publishResponse and sets the default values.
 func NewPublishResponse()(*PublishResponse) {
@@ -37,6 +37,9 @@ func NewPublishResponse()(*PublishResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreatePublishResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPublishResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublishResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *PublishResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEducationAssignment gets the educationAssignment property value. Union type representation for type educationAssignment
-func (m *PublishResponse) GetEducationAssignment()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment) {
+func (m *PublishResponse) GetEducationAssignment()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *PublishResponse) GetEducationAssignment()(*i4a838ef194e4c99e9f2c63ba10d
 func (m *PublishResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["educationAssignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEducationAssignment() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEducationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEducationAssignment(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment))
+            m.SetEducationAssignment(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentable))
         }
         return nil
     }
@@ -95,10 +98,17 @@ func (m *PublishResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetEducationAssignment sets the educationAssignment property value. Union type representation for type educationAssignment
-func (m *PublishResponse) SetEducationAssignment(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment)() {
+func (m *PublishResponse) SetEducationAssignment(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentable)() {
     if m != nil {
         m.educationAssignment = value
     }
+}
+// PublishResponseable 
+type PublishResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetEducationAssignment()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentable)
+    SetEducationAssignment(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentable)()
 }
 // NewPublishRequestBuilderInternal instantiates a new PublishRequestBuilder and sets the default values.
 func NewPublishRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PublishRequestBuilder) {
@@ -109,7 +119,7 @@ func NewPublishRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *PublishRequestBuilder) CreatePostRequestInformation(options *PublishReq
     return requestInfo, nil
 }
 // Post invoke action publish
-func (m *PublishRequestBuilder) Post(options *PublishRequestBuilderPostOptions)(*PublishResponse, error) {
+func (m *PublishRequestBuilder) Post(options *PublishRequestBuilderPostOptions)(PublishResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPublishResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreatePublishResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*PublishResponse), nil
+    return res.(PublishResponseable), nil
 }

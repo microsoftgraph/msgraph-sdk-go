@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Fido2AuthenticationMethod 
+// Fido2AuthenticationMethod provides operations to manage the collection of drive entities.
 type Fido2AuthenticationMethod struct {
     AuthenticationMethod
     // Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
@@ -27,6 +27,10 @@ func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
     return m
+}
+// CreateFido2AuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFido2AuthenticationMethodFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFido2AuthenticationMethod(), nil
 }
 // GetAaGuid gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
 func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
@@ -66,14 +70,6 @@ func (m *Fido2AuthenticationMethod) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetModel gets the model property value. The manufacturer-assigned model of the FIDO2 security key.
-func (m *Fido2AuthenticationMethod) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -144,6 +140,14 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetModel gets the model property value. The manufacturer-assigned model of the FIDO2 security key.
+func (m *Fido2AuthenticationMethod) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
 }
 func (m *Fido2AuthenticationMethod) IsNil()(bool) {
     return m == nil

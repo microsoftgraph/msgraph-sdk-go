@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RecordOperation 
+// RecordOperation provides operations to call the recordResponse method.
 type RecordOperation struct {
     CommsOperation
     // The access token required to retrieve the recording.
@@ -19,21 +19,9 @@ func NewRecordOperation()(*RecordOperation) {
     }
     return m
 }
-// GetRecordingAccessToken gets the recordingAccessToken property value. The access token required to retrieve the recording.
-func (m *RecordOperation) GetRecordingAccessToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordingAccessToken
-    }
-}
-// GetRecordingLocation gets the recordingLocation property value. The location where the recording is located.
-func (m *RecordOperation) GetRecordingLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordingLocation
-    }
+// CreateRecordOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRecordOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecordOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -59,6 +47,22 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetRecordingAccessToken gets the recordingAccessToken property value. The access token required to retrieve the recording.
+func (m *RecordOperation) GetRecordingAccessToken()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recordingAccessToken
+    }
+}
+// GetRecordingLocation gets the recordingLocation property value. The location where the recording is located.
+func (m *RecordOperation) GetRecordingLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recordingLocation
+    }
 }
 func (m *RecordOperation) IsNil()(bool) {
     return m == nil

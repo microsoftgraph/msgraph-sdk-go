@@ -5,29 +5,29 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfiguration 
+// DeviceConfiguration provides operations to manage the deviceManagement singleton.
 type DeviceConfiguration struct {
     Entity
     // The list of assignments for the device configuration profile.
-    assignments []DeviceConfigurationAssignment;
+    assignments []DeviceConfigurationAssignmentable;
     // DateTime the object was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Admin provided description of the Device Configuration.
     description *string;
     // Device Configuration Setting State Device Summary
-    deviceSettingStateSummaries []SettingStateDeviceSummary;
+    deviceSettingStateSummaries []SettingStateDeviceSummaryable;
     // Device configuration installation status by device.
-    deviceStatuses []DeviceConfigurationDeviceStatus;
+    deviceStatuses []DeviceConfigurationDeviceStatusable;
     // Device Configuration devices status overview
-    deviceStatusOverview *DeviceConfigurationDeviceOverview;
+    deviceStatusOverview DeviceConfigurationDeviceOverviewable;
     // Admin provided name of the device configuration.
     displayName *string;
     // DateTime the object was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Device configuration installation status by user.
-    userStatuses []DeviceConfigurationUserStatus;
+    userStatuses []DeviceConfigurationUserStatusable;
     // Device Configuration users status overview
-    userStatusOverview *DeviceConfigurationUserOverview;
+    userStatusOverview DeviceConfigurationUserOverviewable;
     // Version of the device configuration.
     version *int32;
 }
@@ -38,8 +38,12 @@ func NewDeviceConfiguration()(*DeviceConfiguration) {
     }
     return m
 }
+// CreateDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceConfiguration(), nil
+}
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
-func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignment) {
+func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -63,7 +67,7 @@ func (m *DeviceConfiguration) GetDescription()(*string) {
     }
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
-func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummary) {
+func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -71,7 +75,7 @@ func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDev
     }
 }
 // GetDeviceStatuses gets the deviceStatuses property value. Device configuration installation status by device.
-func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatus) {
+func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatusable) {
     if m == nil {
         return nil
     } else {
@@ -79,7 +83,7 @@ func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceSta
     }
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device Configuration devices status overview
-func (m *DeviceConfiguration) GetDeviceStatusOverview()(*DeviceConfigurationDeviceOverview) {
+func (m *DeviceConfiguration) GetDeviceStatusOverview()(DeviceConfigurationDeviceOverviewable) {
     if m == nil {
         return nil
     } else {
@@ -94,50 +98,18 @@ func (m *DeviceConfiguration) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
-func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
-func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatuses
-    }
-}
-// GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
-func (m *DeviceConfiguration) GetUserStatusOverview()(*DeviceConfigurationUserOverview) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatusOverview
-    }
-}
-// GetVersion gets the version property value. Version of the device configuration.
-func (m *DeviceConfiguration) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfigurationAssignment, len(val))
+            res := make([]DeviceConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfigurationAssignment))
+                res[i] = v.(DeviceConfigurationAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -164,40 +136,40 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["deviceSettingStateSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSettingStateDeviceSummary() })
+        val, err := n.GetCollectionOfObjectValues(CreateSettingStateDeviceSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SettingStateDeviceSummary, len(val))
+            res := make([]SettingStateDeviceSummaryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SettingStateDeviceSummary))
+                res[i] = v.(SettingStateDeviceSummaryable)
             }
             m.SetDeviceSettingStateSummaries(res)
         }
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationDeviceStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationDeviceStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfigurationDeviceStatus, len(val))
+            res := make([]DeviceConfigurationDeviceStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfigurationDeviceStatus))
+                res[i] = v.(DeviceConfigurationDeviceStatusable)
             }
             m.SetDeviceStatuses(res)
         }
         return nil
     }
     res["deviceStatusOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationDeviceOverview() })
+        val, err := n.GetObjectValue(CreateDeviceConfigurationDeviceOverviewFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceStatusOverview(val.(*DeviceConfigurationDeviceOverview))
+            m.SetDeviceStatusOverview(val.(DeviceConfigurationDeviceOverviewable))
         }
         return nil
     }
@@ -222,26 +194,26 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["userStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationUserStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationUserStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfigurationUserStatus, len(val))
+            res := make([]DeviceConfigurationUserStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfigurationUserStatus))
+                res[i] = v.(DeviceConfigurationUserStatusable)
             }
             m.SetUserStatuses(res)
         }
         return nil
     }
     res["userStatusOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationUserOverview() })
+        val, err := n.GetObjectValue(CreateDeviceConfigurationUserOverviewFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserStatusOverview(val.(*DeviceConfigurationUserOverview))
+            m.SetUserStatusOverview(val.(DeviceConfigurationUserOverviewable))
         }
         return nil
     }
@@ -257,6 +229,38 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
+func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userStatuses
+    }
+}
+// GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
+func (m *DeviceConfiguration) GetUserStatusOverview()(DeviceConfigurationUserOverviewable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userStatusOverview
+    }
+}
+// GetVersion gets the version property value. Version of the device configuration.
+func (m *DeviceConfiguration) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *DeviceConfiguration) IsNil()(bool) {
     return m == nil
 }
@@ -269,8 +273,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -292,8 +295,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetDeviceSettingStateSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceSettingStateSummaries()))
         for i, v := range m.GetDeviceSettingStateSummaries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceSettingStateSummaries", cast)
         if err != nil {
@@ -303,8 +305,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetDeviceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {
@@ -332,8 +333,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetUserStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userStatuses", cast)
         if err != nil {
@@ -355,7 +355,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
-func (m *DeviceConfiguration) SetAssignments(value []DeviceConfigurationAssignment)() {
+func (m *DeviceConfiguration) SetAssignments(value []DeviceConfigurationAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -373,19 +373,19 @@ func (m *DeviceConfiguration) SetDescription(value *string)() {
     }
 }
 // SetDeviceSettingStateSummaries sets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
-func (m *DeviceConfiguration) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummary)() {
+func (m *DeviceConfiguration) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummaryable)() {
     if m != nil {
         m.deviceSettingStateSummaries = value
     }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. Device configuration installation status by device.
-func (m *DeviceConfiguration) SetDeviceStatuses(value []DeviceConfigurationDeviceStatus)() {
+func (m *DeviceConfiguration) SetDeviceStatuses(value []DeviceConfigurationDeviceStatusable)() {
     if m != nil {
         m.deviceStatuses = value
     }
 }
 // SetDeviceStatusOverview sets the deviceStatusOverview property value. Device Configuration devices status overview
-func (m *DeviceConfiguration) SetDeviceStatusOverview(value *DeviceConfigurationDeviceOverview)() {
+func (m *DeviceConfiguration) SetDeviceStatusOverview(value DeviceConfigurationDeviceOverviewable)() {
     if m != nil {
         m.deviceStatusOverview = value
     }
@@ -403,13 +403,13 @@ func (m *DeviceConfiguration) SetLastModifiedDateTime(value *i336074805fc853987a
     }
 }
 // SetUserStatuses sets the userStatuses property value. Device configuration installation status by user.
-func (m *DeviceConfiguration) SetUserStatuses(value []DeviceConfigurationUserStatus)() {
+func (m *DeviceConfiguration) SetUserStatuses(value []DeviceConfigurationUserStatusable)() {
     if m != nil {
         m.userStatuses = value
     }
 }
 // SetUserStatusOverview sets the userStatusOverview property value. Device Configuration users status overview
-func (m *DeviceConfiguration) SetUserStatusOverview(value *DeviceConfigurationUserOverview)() {
+func (m *DeviceConfiguration) SetUserStatusOverview(value DeviceConfigurationUserOverviewable)() {
     if m != nil {
         m.userStatusOverview = value
     }

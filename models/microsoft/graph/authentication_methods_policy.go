@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationMethodsPolicy 
+// AuthenticationMethodsPolicy provides operations to manage the authenticationMethodsPolicy singleton.
 type AuthenticationMethodsPolicy struct {
     Entity
     // Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-    authenticationMethodConfigurations []AuthenticationMethodConfiguration;
+    authenticationMethodConfigurations []AuthenticationMethodConfigurationable;
     // A description of the policy. Read-only.
     description *string;
     // The name of the policy. Read-only.
@@ -21,7 +21,7 @@ type AuthenticationMethodsPolicy struct {
     // 
     reconfirmationInDays *int32;
     // Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
-    registrationEnforcement *RegistrationEnforcement;
+    registrationEnforcement RegistrationEnforcementable;
 }
 // NewAuthenticationMethodsPolicy instantiates a new authenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
@@ -30,8 +30,12 @@ func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
     }
     return m
 }
+// CreateAuthenticationMethodsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthenticationMethodsPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthenticationMethodsPolicy(), nil
+}
 // GetAuthenticationMethodConfigurations gets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-func (m *AuthenticationMethodsPolicy) GetAuthenticationMethodConfigurations()([]AuthenticationMethodConfiguration) {
+func (m *AuthenticationMethodsPolicy) GetAuthenticationMethodConfigurations()([]AuthenticationMethodConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -54,50 +58,18 @@ func (m *AuthenticationMethodsPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
-func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPolicyVersion gets the policyVersion property value. The version of the policy in use. Read-only.
-func (m *AuthenticationMethodsPolicy) GetPolicyVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyVersion
-    }
-}
-// GetReconfirmationInDays gets the reconfirmationInDays property value. 
-func (m *AuthenticationMethodsPolicy) GetReconfirmationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reconfirmationInDays
-    }
-}
-// GetRegistrationEnforcement gets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
-func (m *AuthenticationMethodsPolicy) GetRegistrationEnforcement()(*RegistrationEnforcement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationEnforcement
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationMethodConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthenticationMethodConfiguration() })
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AuthenticationMethodConfiguration, len(val))
+            res := make([]AuthenticationMethodConfigurationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AuthenticationMethodConfiguration))
+                res[i] = v.(AuthenticationMethodConfigurationable)
             }
             m.SetAuthenticationMethodConfigurations(res)
         }
@@ -154,16 +126,48 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["registrationEnforcement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRegistrationEnforcement() })
+        val, err := n.GetObjectValue(CreateRegistrationEnforcementFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRegistrationEnforcement(val.(*RegistrationEnforcement))
+            m.SetRegistrationEnforcement(val.(RegistrationEnforcementable))
         }
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
+func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPolicyVersion gets the policyVersion property value. The version of the policy in use. Read-only.
+func (m *AuthenticationMethodsPolicy) GetPolicyVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyVersion
+    }
+}
+// GetReconfirmationInDays gets the reconfirmationInDays property value. 
+func (m *AuthenticationMethodsPolicy) GetReconfirmationInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reconfirmationInDays
+    }
+}
+// GetRegistrationEnforcement gets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
+func (m *AuthenticationMethodsPolicy) GetRegistrationEnforcement()(RegistrationEnforcementable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrationEnforcement
+    }
 }
 func (m *AuthenticationMethodsPolicy) IsNil()(bool) {
     return m == nil
@@ -177,8 +181,7 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetAuthenticationMethodConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAuthenticationMethodConfigurations()))
         for i, v := range m.GetAuthenticationMethodConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("authenticationMethodConfigurations", cast)
         if err != nil {
@@ -224,7 +227,7 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetAuthenticationMethodConfigurations sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-func (m *AuthenticationMethodsPolicy) SetAuthenticationMethodConfigurations(value []AuthenticationMethodConfiguration)() {
+func (m *AuthenticationMethodsPolicy) SetAuthenticationMethodConfigurations(value []AuthenticationMethodConfigurationable)() {
     if m != nil {
         m.authenticationMethodConfigurations = value
     }
@@ -260,7 +263,7 @@ func (m *AuthenticationMethodsPolicy) SetReconfirmationInDays(value *int32)() {
     }
 }
 // SetRegistrationEnforcement sets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
-func (m *AuthenticationMethodsPolicy) SetRegistrationEnforcement(value *RegistrationEnforcement)() {
+func (m *AuthenticationMethodsPolicy) SetRegistrationEnforcement(value RegistrationEnforcementable)() {
     if m != nil {
         m.registrationEnforcement = value
     }

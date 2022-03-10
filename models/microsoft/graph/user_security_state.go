@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserSecurityState 
+// UserSecurityState provides operations to manage the security singleton.
 type UserSecurityState struct {
     // AAD User object identifier (GUID) - represents the physical/multi-account user entity.
     aadUserId *string;
@@ -45,6 +45,10 @@ func NewUserSecurityState()(*UserSecurityState) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUserSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserSecurityStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserSecurityState(), nil
+}
 // GetAadUserId gets the aadUserId property value. AAD User object identifier (GUID) - represents the physical/multi-account user entity.
 func (m *UserSecurityState) GetAadUserId()(*string) {
     if m == nil {
@@ -83,86 +87,6 @@ func (m *UserSecurityState) GetEmailRole()(*EmailRole) {
         return nil
     } else {
         return m.emailRole
-    }
-}
-// GetIsVpn gets the isVpn property value. Indicates whether the user logged on through a VPN.
-func (m *UserSecurityState) GetIsVpn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isVpn
-    }
-}
-// GetLogonDateTime gets the logonDateTime property value. Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *UserSecurityState) GetLogonDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonDateTime
-    }
-}
-// GetLogonId gets the logonId property value. User sign-in ID.
-func (m *UserSecurityState) GetLogonId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonId
-    }
-}
-// GetLogonIp gets the logonIp property value. IP Address the sign-in request originated from.
-func (m *UserSecurityState) GetLogonIp()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonIp
-    }
-}
-// GetLogonLocation gets the logonLocation property value. Location (by IP address mapping) associated with a user sign-in event by this user.
-func (m *UserSecurityState) GetLogonLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonLocation
-    }
-}
-// GetLogonType gets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-func (m *UserSecurityState) GetLogonType()(*LogonType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonType
-    }
-}
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Active Directory (on-premises) Security Identifier (SID) of the user.
-func (m *UserSecurityState) GetOnPremisesSecurityIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSecurityIdentifier
-    }
-}
-// GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
-func (m *UserSecurityState) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetUserAccountType gets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
-func (m *UserSecurityState) GetUserAccountType()(*UserAccountSecurityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccountType
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User sign-in name - internet format: (user account name)@(user account DNS domain name).
-func (m *UserSecurityState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -309,6 +233,86 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetIsVpn gets the isVpn property value. Indicates whether the user logged on through a VPN.
+func (m *UserSecurityState) GetIsVpn()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isVpn
+    }
+}
+// GetLogonDateTime gets the logonDateTime property value. Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *UserSecurityState) GetLogonDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logonDateTime
+    }
+}
+// GetLogonId gets the logonId property value. User sign-in ID.
+func (m *UserSecurityState) GetLogonId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logonId
+    }
+}
+// GetLogonIp gets the logonIp property value. IP Address the sign-in request originated from.
+func (m *UserSecurityState) GetLogonIp()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logonIp
+    }
+}
+// GetLogonLocation gets the logonLocation property value. Location (by IP address mapping) associated with a user sign-in event by this user.
+func (m *UserSecurityState) GetLogonLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logonLocation
+    }
+}
+// GetLogonType gets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
+func (m *UserSecurityState) GetLogonType()(*LogonType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logonType
+    }
+}
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Active Directory (on-premises) Security Identifier (SID) of the user.
+func (m *UserSecurityState) GetOnPremisesSecurityIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesSecurityIdentifier
+    }
+}
+// GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
+func (m *UserSecurityState) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetUserAccountType gets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
+func (m *UserSecurityState) GetUserAccountType()(*UserAccountSecurityType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userAccountType
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User sign-in name - internet format: (user account name)@(user account DNS domain name).
+func (m *UserSecurityState) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *UserSecurityState) IsNil()(bool) {
     return m == nil

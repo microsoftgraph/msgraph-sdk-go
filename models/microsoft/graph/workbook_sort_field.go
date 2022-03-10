@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookSortField 
+// WorkbookSortField provides operations to manage the drive singleton.
 type WorkbookSortField struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,7 +15,7 @@ type WorkbookSortField struct {
     // Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
     dataOption *string;
     // Represents the icon that is the target of the condition if the sorting is on the cell's icon.
-    icon *WorkbookIcon;
+    icon WorkbookIconable;
     // Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
     key *int32;
     // Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
@@ -27,6 +27,10 @@ func NewWorkbookSortField()(*WorkbookSortField) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWorkbookSortFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookSortFieldFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookSortField(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookSortField) GetAdditionalData()(map[string]interface{}) {
@@ -58,30 +62,6 @@ func (m *WorkbookSortField) GetDataOption()(*string) {
         return nil
     } else {
         return m.dataOption
-    }
-}
-// GetIcon gets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
-func (m *WorkbookSortField) GetIcon()(*WorkbookIcon) {
-    if m == nil {
-        return nil
-    } else {
-        return m.icon
-    }
-}
-// GetKey gets the key property value. Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
-func (m *WorkbookSortField) GetKey()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
-}
-// GetSortOn gets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
-func (m *WorkbookSortField) GetSortOn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sortOn
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -118,12 +98,12 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["icon"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkbookIcon() })
+        val, err := n.GetObjectValue(CreateWorkbookIconFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIcon(val.(*WorkbookIcon))
+            m.SetIcon(val.(WorkbookIconable))
         }
         return nil
     }
@@ -148,6 +128,30 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetIcon gets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
+func (m *WorkbookSortField) GetIcon()(WorkbookIconable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.icon
+    }
+}
+// GetKey gets the key property value. Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
+func (m *WorkbookSortField) GetKey()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
+}
+// GetSortOn gets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
+func (m *WorkbookSortField) GetSortOn()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sortOn
+    }
 }
 func (m *WorkbookSortField) IsNil()(bool) {
     return m == nil
@@ -223,7 +227,7 @@ func (m *WorkbookSortField) SetDataOption(value *string)() {
     }
 }
 // SetIcon sets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
-func (m *WorkbookSortField) SetIcon(value *WorkbookIcon)() {
+func (m *WorkbookSortField) SetIcon(value WorkbookIconable)() {
     if m != nil {
         m.icon = value
     }

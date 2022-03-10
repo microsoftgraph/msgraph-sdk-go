@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FileSystemInfo 
+// FileSystemInfo provides operations to manage the drive singleton.
 type FileSystemInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewFileSystemInfo()(*FileSystemInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateFileSystemInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFileSystemInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFileSystemInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileSystemInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *FileSystemInfo) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetLastAccessedDateTime gets the lastAccessedDateTime property value. The UTC date and time the file was last accessed. Available for the recent file list only.
-func (m *FileSystemInfo) GetLastAccessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAccessedDateTime
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time the file was last modified on a client.
-func (m *FileSystemInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +77,22 @@ func (m *FileSystemInfo) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetLastAccessedDateTime gets the lastAccessedDateTime property value. The UTC date and time the file was last accessed. Available for the recent file list only.
+func (m *FileSystemInfo) GetLastAccessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastAccessedDateTime
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time the file was last modified on a client.
+func (m *FileSystemInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *FileSystemInfo) IsNil()(bool) {
     return m == nil

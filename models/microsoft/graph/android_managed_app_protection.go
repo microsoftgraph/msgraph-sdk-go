@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidManagedAppProtection 
+// AndroidManagedAppProtection provides operations to manage the deviceAppManagement singleton.
 type AndroidManagedAppProtection struct {
     TargetedManagedAppProtection
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileApp;
+    apps []ManagedMobileAppable;
     // Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
     customBrowserDisplayName *string;
     // Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
@@ -16,7 +16,7 @@ type AndroidManagedAppProtection struct {
     // Count of apps to which the current policy is deployed.
     deployedAppCount *int32;
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary *ManagedAppPolicyDeploymentSummary;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
     // When this setting is enabled, app level encryption is disabled if device level encryption is enabled
     disableAppEncryptionIfDeviceEncryptionIsEnabled *bool;
     // Indicates whether application data for managed apps should be encrypted
@@ -35,8 +35,12 @@ func NewAndroidManagedAppProtection()(*AndroidManagedAppProtection) {
     }
     return m
 }
+// CreateAndroidManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidManagedAppProtectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAndroidManagedAppProtection(), nil
+}
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
-func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileApp) {
+func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     if m == nil {
         return nil
     } else {
@@ -68,7 +72,7 @@ func (m *AndroidManagedAppProtection) GetDeployedAppCount()(*int32) {
     }
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-func (m *AndroidManagedAppProtection) GetDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {
+func (m *AndroidManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -91,42 +95,18 @@ func (m *AndroidManagedAppProtection) GetEncryptAppData()(*bool) {
         return m.encryptAppData
     }
 }
-// GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
-func (m *AndroidManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredPatchVersion
-    }
-}
-// GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
-func (m *AndroidManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWarningPatchVersion
-    }
-}
-// GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
-func (m *AndroidManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenCaptureBlocked
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.TargetedManagedAppProtection.GetFieldDeserializers()
     res["apps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedMobileApp() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedMobileApp, len(val))
+            res := make([]ManagedMobileAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedMobileApp))
+                res[i] = v.(ManagedMobileAppable)
             }
             m.SetApps(res)
         }
@@ -163,12 +143,12 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["deploymentSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedAppPolicyDeploymentSummary() })
+        val, err := n.GetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+            m.SetDeploymentSummary(val.(ManagedAppPolicyDeploymentSummaryable))
         }
         return nil
     }
@@ -224,6 +204,30 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
     }
     return res
 }
+// GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
+func (m *AndroidManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumRequiredPatchVersion
+    }
+}
+// GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
+func (m *AndroidManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWarningPatchVersion
+    }
+}
+// GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
+func (m *AndroidManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.screenCaptureBlocked
+    }
+}
 func (m *AndroidManagedAppProtection) IsNil()(bool) {
     return m == nil
 }
@@ -236,8 +240,7 @@ func (m *AndroidManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("apps", cast)
         if err != nil {
@@ -301,7 +304,7 @@ func (m *AndroidManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
-func (m *AndroidManagedAppProtection) SetApps(value []ManagedMobileApp)() {
+func (m *AndroidManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
     if m != nil {
         m.apps = value
     }
@@ -325,7 +328,7 @@ func (m *AndroidManagedAppProtection) SetDeployedAppCount(value *int32)() {
     }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-func (m *AndroidManagedAppProtection) SetDeploymentSummary(value *ManagedAppPolicyDeploymentSummary)() {
+func (m *AndroidManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
     if m != nil {
         m.deploymentSummary = value
     }

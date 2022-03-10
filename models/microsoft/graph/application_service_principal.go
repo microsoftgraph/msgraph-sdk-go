@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApplicationServicePrincipal 
+// ApplicationServicePrincipal provides operations to call the instantiate method.
 type ApplicationServicePrincipal struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    application *Application;
+    application Applicationable;
     // 
-    servicePrincipal *ServicePrincipal;
+    servicePrincipal ServicePrincipalable;
 }
 // NewApplicationServicePrincipal instantiates a new applicationServicePrincipal and sets the default values.
 func NewApplicationServicePrincipal()(*ApplicationServicePrincipal) {
@@ -19,6 +19,10 @@ func NewApplicationServicePrincipal()(*ApplicationServicePrincipal) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateApplicationServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApplicationServicePrincipalFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApplicationServicePrincipal(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplicationServicePrincipal) GetAdditionalData()(map[string]interface{}) {
@@ -29,45 +33,45 @@ func (m *ApplicationServicePrincipal) GetAdditionalData()(map[string]interface{}
     }
 }
 // GetApplication gets the application property value. 
-func (m *ApplicationServicePrincipal) GetApplication()(*Application) {
+func (m *ApplicationServicePrincipal) GetApplication()(Applicationable) {
     if m == nil {
         return nil
     } else {
         return m.application
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["application"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateApplicationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApplication(val.(Applicationable))
+        }
+        return nil
+    }
+    res["servicePrincipal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateServicePrincipalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServicePrincipal(val.(ServicePrincipalable))
+        }
+        return nil
+    }
+    return res
+}
 // GetServicePrincipal gets the servicePrincipal property value. 
-func (m *ApplicationServicePrincipal) GetServicePrincipal()(*ServicePrincipal) {
+func (m *ApplicationServicePrincipal) GetServicePrincipal()(ServicePrincipalable) {
     if m == nil {
         return nil
     } else {
         return m.servicePrincipal
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["application"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApplication() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplication(val.(*Application))
-        }
-        return nil
-    }
-    res["servicePrincipal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewServicePrincipal() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetServicePrincipal(val.(*ServicePrincipal))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ApplicationServicePrincipal) IsNil()(bool) {
     return m == nil
@@ -101,13 +105,13 @@ func (m *ApplicationServicePrincipal) SetAdditionalData(value map[string]interfa
     }
 }
 // SetApplication sets the application property value. 
-func (m *ApplicationServicePrincipal) SetApplication(value *Application)() {
+func (m *ApplicationServicePrincipal) SetApplication(value Applicationable)() {
     if m != nil {
         m.application = value
     }
 }
 // SetServicePrincipal sets the servicePrincipal property value. 
-func (m *ApplicationServicePrincipal) SetServicePrincipal(value *ServicePrincipal)() {
+func (m *ApplicationServicePrincipal) SetServicePrincipal(value ServicePrincipalable)() {
     if m != nil {
         m.servicePrincipal = value
     }

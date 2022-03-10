@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessDevices 
+// ConditionalAccessDevices provides operations to manage the identityContainer singleton.
 type ConditionalAccessDevices struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
-    deviceFilter *ConditionalAccessFilter;
+    deviceFilter ConditionalAccessFilterable;
 }
 // NewConditionalAccessDevices instantiates a new conditionalAccessDevices and sets the default values.
 func NewConditionalAccessDevices()(*ConditionalAccessDevices) {
@@ -17,6 +17,10 @@ func NewConditionalAccessDevices()(*ConditionalAccessDevices) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateConditionalAccessDevicesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessDevicesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessDevices(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessDevices) GetAdditionalData()(map[string]interface{}) {
@@ -27,7 +31,7 @@ func (m *ConditionalAccessDevices) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDeviceFilter gets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
-func (m *ConditionalAccessDevices) GetDeviceFilter()(*ConditionalAccessFilter) {
+func (m *ConditionalAccessDevices) GetDeviceFilter()(ConditionalAccessFilterable) {
     if m == nil {
         return nil
     } else {
@@ -38,12 +42,12 @@ func (m *ConditionalAccessDevices) GetDeviceFilter()(*ConditionalAccessFilter) {
 func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceFilter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConditionalAccessFilter() })
+        val, err := n.GetObjectValue(CreateConditionalAccessFilterFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceFilter(val.(*ConditionalAccessFilter))
+            m.SetDeviceFilter(val.(ConditionalAccessFilterable))
         }
         return nil
     }
@@ -75,7 +79,7 @@ func (m *ConditionalAccessDevices) SetAdditionalData(value map[string]interface{
     }
 }
 // SetDeviceFilter sets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
-func (m *ConditionalAccessDevices) SetDeviceFilter(value *ConditionalAccessFilter)() {
+func (m *ConditionalAccessDevices) SetDeviceFilter(value ConditionalAccessFilterable)() {
     if m != nil {
         m.deviceFilter = value
     }

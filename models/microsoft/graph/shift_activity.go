@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ShiftActivity 
+// ShiftActivity provides operations to manage the educationRoot singleton.
 type ShiftActivity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewShiftActivity()(*ShiftActivity) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateShiftActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateShiftActivityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewShiftActivity(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShiftActivity) GetAdditionalData()(map[string]interface{}) {
@@ -59,30 +63,6 @@ func (m *ShiftActivity) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetIsPaid gets the isPaid property value. Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
-func (m *ShiftActivity) GetIsPaid()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPaid
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
-func (m *ShiftActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetTheme gets the theme property value. 
-func (m *ShiftActivity) GetTheme()(*ScheduleEntityTheme) {
-    if m == nil {
-        return nil
-    } else {
-        return m.theme
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,6 +129,30 @@ func (m *ShiftActivity) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetIsPaid gets the isPaid property value. Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
+func (m *ShiftActivity) GetIsPaid()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPaid
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
+func (m *ShiftActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetTheme gets the theme property value. 
+func (m *ShiftActivity) GetTheme()(*ScheduleEntityTheme) {
+    if m == nil {
+        return nil
+    } else {
+        return m.theme
+    }
 }
 func (m *ShiftActivity) IsNil()(bool) {
     return m == nil

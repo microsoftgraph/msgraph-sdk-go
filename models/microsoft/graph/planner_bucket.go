@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerBucket 
+// PlannerBucket provides operations to manage the collection of drive entities.
 type PlannerBucket struct {
     Entity
     // Name of the bucket.
@@ -14,7 +14,7 @@ type PlannerBucket struct {
     // Plan ID to which the bucket belongs.
     planId *string;
     // Read-only. Nullable. The collection of tasks in the bucket.
-    tasks []PlannerTask;
+    tasks []PlannerTaskable;
 }
 // NewPlannerBucket instantiates a new plannerBucket and sets the default values.
 func NewPlannerBucket()(*PlannerBucket) {
@@ -23,37 +23,9 @@ func NewPlannerBucket()(*PlannerBucket) {
     }
     return m
 }
-// GetName gets the name property value. Name of the bucket.
-func (m *PlannerBucket) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
-func (m *PlannerBucket) GetOrderHint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderHint
-    }
-}
-// GetPlanId gets the planId property value. Plan ID to which the bucket belongs.
-func (m *PlannerBucket) GetPlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.planId
-    }
-}
-// GetTasks gets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
-func (m *PlannerBucket) GetTasks()([]PlannerTask) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+// CreatePlannerBucketFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePlannerBucketFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPlannerBucket(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -89,20 +61,52 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlannerTask() })
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PlannerTask, len(val))
+            res := make([]PlannerTaskable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PlannerTask))
+                res[i] = v.(PlannerTaskable)
             }
             m.SetTasks(res)
         }
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name of the bucket.
+func (m *PlannerBucket) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+func (m *PlannerBucket) GetOrderHint()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orderHint
+    }
+}
+// GetPlanId gets the planId property value. Plan ID to which the bucket belongs.
+func (m *PlannerBucket) GetPlanId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.planId
+    }
+}
+// GetTasks gets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
+func (m *PlannerBucket) GetTasks()([]PlannerTaskable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tasks
+    }
 }
 func (m *PlannerBucket) IsNil()(bool) {
     return m == nil
@@ -134,8 +138,7 @@ func (m *PlannerBucket) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {
@@ -163,7 +166,7 @@ func (m *PlannerBucket) SetPlanId(value *string)() {
     }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
-func (m *PlannerBucket) SetTasks(value []PlannerTask)() {
+func (m *PlannerBucket) SetTasks(value []PlannerTaskable)() {
     if m != nil {
         m.tasks = value
     }

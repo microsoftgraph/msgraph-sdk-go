@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UploadClientCertificateRequestBody 
+// UploadClientCertificateRequestBody provides operations to call the uploadClientCertificate method.
 type UploadClientCertificateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewUploadClientCertificateRequestBody()(*UploadClientCertificateRequestBody
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUploadClientCertificateRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUploadClientCertificateRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUploadClientCertificateRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadClientCertificateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetPassword gets the password property value. 
-func (m *UploadClientCertificateRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
-}
-// GetPkcs12Value gets the pkcs12Value property value. 
-func (m *UploadClientCertificateRequestBody) GetPkcs12Value()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pkcs12Value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *UploadClientCertificateRequestBody) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetPassword gets the password property value. 
+func (m *UploadClientCertificateRequestBody) GetPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.password
+    }
+}
+// GetPkcs12Value gets the pkcs12Value property value. 
+func (m *UploadClientCertificateRequestBody) GetPkcs12Value()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pkcs12Value
+    }
 }
 func (m *UploadClientCertificateRequestBody) IsNil()(bool) {
     return m == nil

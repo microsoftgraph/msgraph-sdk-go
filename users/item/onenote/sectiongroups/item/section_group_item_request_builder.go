@@ -2,16 +2,17 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     i813985c5579f3b340bcce198acc5d40fe44ae89e37b7a8d94e34f54e01f5cf07 "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/sectiongroups/item/parentnotebook"
     icff5276970a4976f925f707ac11a352175baa8ffb188a947710ac5e27fdbf2fd "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/sectiongroups/item/parentsectiongroup"
     id4839f8e065d54efe12123547eb16a5eae714356d61fdd08eb992eea89510cce "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/sectiongroups/item/sectiongroups"
     idf7e1d39c3241dcda54a3d6427bec02bb023d7ca31d2ec7fab81374e5fe95fbb "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/sectiongroups/item/sections"
     i3501c0ee08eac2cc5cf934df51b2d3e08fcf2fc39b0ad9c915cdcc5329d34feb "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/sectiongroups/item/sections/item"
+    i73f7b60361fab3a72e6d3720bf0c8154a2f1611899e3855b5e15189e9a6f94c3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/sectiongroups/item/sectiongroups/item"
 )
 
-// SectionGroupItemRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\sectionGroups\{sectionGroup-id}
+// SectionGroupItemRequestBuilder provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
 type SectionGroupItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +51,7 @@ type SectionGroupItemRequestBuilderGetQueryParameters struct {
 // SectionGroupItemRequestBuilderPatchOptions options for Patch
 type SectionGroupItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroup;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroupable;
     // Request headers
     H map[string]string;
     // Request options
@@ -67,7 +68,7 @@ func NewSectionGroupItemRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,7 +78,7 @@ func NewSectionGroupItemRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams["request-raw-url"] = rawUrl
     return NewSectionGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property sectionGroups for users
 func (m *SectionGroupItemRequestBuilder) CreateDeleteRequestInformation(options *SectionGroupItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +115,7 @@ func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformation(options *Se
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property sectionGroups in users
 func (m *SectionGroupItemRequestBuilder) CreatePatchRequestInformation(options *SectionGroupItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,29 +133,37 @@ func (m *SectionGroupItemRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// Delete delete navigation property sectionGroups for users
 func (m *SectionGroupItemRequestBuilder) Delete(options *SectionGroupItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-func (m *SectionGroupItemRequestBuilder) Get(options *SectionGroupItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroup, error) {
+func (m *SectionGroupItemRequestBuilder) Get(options *SectionGroupItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSectionGroup() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSectionGroupFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroup), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroupable), nil
 }
 func (m *SectionGroupItemRequestBuilder) ParentNotebook()(*i813985c5579f3b340bcce198acc5d40fe44ae89e37b7a8d94e34f54e01f5cf07.ParentNotebookRequestBuilder) {
     return i813985c5579f3b340bcce198acc5d40fe44ae89e37b7a8d94e34f54e01f5cf07.NewParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -162,13 +171,17 @@ func (m *SectionGroupItemRequestBuilder) ParentNotebook()(*i813985c5579f3b340bcc
 func (m *SectionGroupItemRequestBuilder) ParentSectionGroup()(*icff5276970a4976f925f707ac11a352175baa8ffb188a947710ac5e27fdbf2fd.ParentSectionGroupRequestBuilder) {
     return icff5276970a4976f925f707ac11a352175baa8ffb188a947710ac5e27fdbf2fd.NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// Patch update the navigation property sectionGroups in users
 func (m *SectionGroupItemRequestBuilder) Patch(options *SectionGroupItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -176,6 +189,17 @@ func (m *SectionGroupItemRequestBuilder) Patch(options *SectionGroupItemRequestB
 }
 func (m *SectionGroupItemRequestBuilder) SectionGroups()(*id4839f8e065d54efe12123547eb16a5eae714356d61fdd08eb992eea89510cce.SectionGroupsRequestBuilder) {
     return id4839f8e065d54efe12123547eb16a5eae714356d61fdd08eb992eea89510cce.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SectionGroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.onenote.sectionGroups.item.sectionGroups.item collection
+func (m *SectionGroupItemRequestBuilder) SectionGroupsById(id string)(*i73f7b60361fab3a72e6d3720bf0c8154a2f1611899e3855b5e15189e9a6f94c3.SectionGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["sectionGroup_id1"] = id
+    }
+    return i73f7b60361fab3a72e6d3720bf0c8154a2f1611899e3855b5e15189e9a6f94c3.NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *SectionGroupItemRequestBuilder) Sections()(*idf7e1d39c3241dcda54a3d6427bec02bb023d7ca31d2ec7fab81374e5fe95fbb.SectionsRequestBuilder) {
     return idf7e1d39c3241dcda54a3d6427bec02bb023d7ca31d2ec7fab81374e5fe95fbb.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

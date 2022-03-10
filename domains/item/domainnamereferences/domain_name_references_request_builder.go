@@ -2,11 +2,12 @@ package domainnamereferences
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i1a99eed9eab3742238c6d4144f66fc101a6663f7151094145daf3b3416ed8753 "github.com/microsoftgraph/msgraph-sdk-go/domains/item/domainnamereferences/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i1920ecb2aeba8dd27b7f3431dfba4f3c44ae1de0f9ff7511f49d1e3ae0eb7952 "github.com/microsoftgraph/msgraph-sdk-go/domains/item/domainnamereferences/count"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DomainNameReferencesRequestBuilder builds and executes requests for operations under \domains\{domain-id}\domainNameReferences
+// DomainNameReferencesRequestBuilder provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
 type DomainNameReferencesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewDomainNameReferencesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewDomainNameReferencesRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDomainNameReferencesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DomainNameReferencesRequestBuilder) Count()(*i1920ecb2aeba8dd27b7f3431dfba4f3c44ae1de0f9ff7511f49d1e3ae0eb7952.CountRequestBuilder) {
+    return i1920ecb2aeba8dd27b7f3431dfba4f3c44ae1de0f9ff7511f49d1e3ae0eb7952.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only, Nullable
 func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformation(options *DomainNameReferencesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformation(options
     return requestInfo, nil
 }
 // Get read-only, Nullable
-func (m *DomainNameReferencesRequestBuilder) Get(options *DomainNameReferencesRequestBuilderGetOptions)(*DomainNameReferencesResponse, error) {
+func (m *DomainNameReferencesRequestBuilder) Get(options *DomainNameReferencesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDomainNameReferencesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DomainNameReferencesResponse), nil
-}
-func (m *DomainNameReferencesRequestBuilder) Ref()(*i1a99eed9eab3742238c6d4144f66fc101a6663f7151094145daf3b3416ed8753.RefRequestBuilder) {
-    return i1a99eed9eab3742238c6d4144f66fc101a6663f7151094145daf3b3416ed8753.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable), nil
 }

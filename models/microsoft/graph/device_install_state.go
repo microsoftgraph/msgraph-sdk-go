@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceInstallState 
+// DeviceInstallState provides operations to manage the deviceAppManagement singleton.
 type DeviceInstallState struct {
     Entity
     // Device Id.
@@ -32,6 +32,10 @@ func NewDeviceInstallState()(*DeviceInstallState) {
     }
     return m
 }
+// CreateDeviceInstallStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceInstallStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceInstallState(), nil
+}
 // GetDeviceId gets the deviceId property value. Device Id.
 func (m *DeviceInstallState) GetDeviceId()(*string) {
     if m == nil {
@@ -54,46 +58,6 @@ func (m *DeviceInstallState) GetErrorCode()(*string) {
         return nil
     } else {
         return m.errorCode
-    }
-}
-// GetInstallState gets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
-func (m *DeviceInstallState) GetInstallState()(*InstallState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installState
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date and time.
-func (m *DeviceInstallState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetOsDescription gets the osDescription property value. OS Description.
-func (m *DeviceInstallState) GetOsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osDescription
-    }
-}
-// GetOsVersion gets the osVersion property value. OS Version.
-func (m *DeviceInstallState) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetUserName gets the userName property value. Device User Name.
-func (m *DeviceInstallState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,6 +144,46 @@ func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetInstallState gets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
+func (m *DeviceInstallState) GetInstallState()(*InstallState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installState
+    }
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date and time.
+func (m *DeviceInstallState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetOsDescription gets the osDescription property value. OS Description.
+func (m *DeviceInstallState) GetOsDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osDescription
+    }
+}
+// GetOsVersion gets the osVersion property value. OS Version.
+func (m *DeviceInstallState) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetUserName gets the userName property value. Device User Name.
+func (m *DeviceInstallState) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
 }
 func (m *DeviceInstallState) IsNil()(bool) {
     return m == nil

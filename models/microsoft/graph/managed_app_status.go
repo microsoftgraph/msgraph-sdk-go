@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedAppStatus 
+// ManagedAppStatus provides operations to manage the deviceAppManagement singleton.
 type ManagedAppStatus struct {
     Entity
     // Friendly name of the status report.
@@ -19,20 +19,16 @@ func NewManagedAppStatus()(*ManagedAppStatus) {
     }
     return m
 }
+// CreateManagedAppStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedAppStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedAppStatus(), nil
+}
 // GetDisplayName gets the displayName property value. Friendly name of the status report.
 func (m *ManagedAppStatus) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetVersion gets the version property value. Version of the entity.
-func (m *ManagedAppStatus) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,6 +55,14 @@ func (m *ManagedAppStatus) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetVersion gets the version property value. Version of the entity.
+func (m *ManagedAppStatus) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *ManagedAppStatus) IsNil()(bool) {
     return m == nil

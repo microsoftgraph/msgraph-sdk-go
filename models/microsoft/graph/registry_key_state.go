@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RegistryKeyState 
+// RegistryKeyState provides operations to manage the security singleton.
 type RegistryKeyState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -36,92 +36,16 @@ func NewRegistryKeyState()(*RegistryKeyState) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRegistryKeyStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRegistryKeyStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRegistryKeyState(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RegistryKeyState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetHive gets the hive property value. A Windows registry hive : HKEY_CURRENT_CONFIG HKEY_CURRENT_USER HKEY_LOCAL_MACHINE/SAM HKEY_LOCAL_MACHINE/Security HKEY_LOCAL_MACHINE/Software HKEY_LOCAL_MACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
-func (m *RegistryKeyState) GetHive()(*RegistryHive) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hive
-    }
-}
-// GetKey gets the key property value. Current (i.e. changed) registry key (excludes HIVE).
-func (m *RegistryKeyState) GetKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
-}
-// GetOldKey gets the oldKey property value. Previous (i.e. before changed) registry key (excludes HIVE).
-func (m *RegistryKeyState) GetOldKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oldKey
-    }
-}
-// GetOldValueData gets the oldValueData property value. Previous (i.e. before changed) registry key value data (contents).
-func (m *RegistryKeyState) GetOldValueData()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oldValueData
-    }
-}
-// GetOldValueName gets the oldValueName property value. Previous (i.e. before changed) registry key value name.
-func (m *RegistryKeyState) GetOldValueName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oldValueName
-    }
-}
-// GetOperation gets the operation property value. Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.
-func (m *RegistryKeyState) GetOperation()(*RegistryOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operation
-    }
-}
-// GetProcessId gets the processId property value. Process ID (PID) of the process that modified the registry key (process details will appear in the alert 'processes' collection).
-func (m *RegistryKeyState) GetProcessId()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processId
-    }
-}
-// GetValueData gets the valueData property value. Current (i.e. changed) registry key value data (contents).
-func (m *RegistryKeyState) GetValueData()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueData
-    }
-}
-// GetValueName gets the valueName property value. Current (i.e. changed) registry key value name
-func (m *RegistryKeyState) GetValueName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueName
-    }
-}
-// GetValueType gets the valueType property value. Registry key value type REG_BINARY REG_DWORD REG_DWORD_LITTLE_ENDIAN REG_DWORD_BIG_ENDIANREG_EXPAND_SZ REG_LINK REG_MULTI_SZ REG_NONE REG_QWORD REG_QWORD_LITTLE_ENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
-func (m *RegistryKeyState) GetValueType()(*RegistryValueType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -228,6 +152,86 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetHive gets the hive property value. A Windows registry hive : HKEY_CURRENT_CONFIG HKEY_CURRENT_USER HKEY_LOCAL_MACHINE/SAM HKEY_LOCAL_MACHINE/Security HKEY_LOCAL_MACHINE/Software HKEY_LOCAL_MACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
+func (m *RegistryKeyState) GetHive()(*RegistryHive) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hive
+    }
+}
+// GetKey gets the key property value. Current (i.e. changed) registry key (excludes HIVE).
+func (m *RegistryKeyState) GetKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
+}
+// GetOldKey gets the oldKey property value. Previous (i.e. before changed) registry key (excludes HIVE).
+func (m *RegistryKeyState) GetOldKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oldKey
+    }
+}
+// GetOldValueData gets the oldValueData property value. Previous (i.e. before changed) registry key value data (contents).
+func (m *RegistryKeyState) GetOldValueData()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oldValueData
+    }
+}
+// GetOldValueName gets the oldValueName property value. Previous (i.e. before changed) registry key value name.
+func (m *RegistryKeyState) GetOldValueName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oldValueName
+    }
+}
+// GetOperation gets the operation property value. Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.
+func (m *RegistryKeyState) GetOperation()(*RegistryOperation) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operation
+    }
+}
+// GetProcessId gets the processId property value. Process ID (PID) of the process that modified the registry key (process details will appear in the alert 'processes' collection).
+func (m *RegistryKeyState) GetProcessId()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processId
+    }
+}
+// GetValueData gets the valueData property value. Current (i.e. changed) registry key value data (contents).
+func (m *RegistryKeyState) GetValueData()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.valueData
+    }
+}
+// GetValueName gets the valueName property value. Current (i.e. changed) registry key value name
+func (m *RegistryKeyState) GetValueName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.valueName
+    }
+}
+// GetValueType gets the valueType property value. Registry key value type REG_BINARY REG_DWORD REG_DWORD_LITTLE_ENDIAN REG_DWORD_BIG_ENDIANREG_EXPAND_SZ REG_LINK REG_MULTI_SZ REG_NONE REG_QWORD REG_QWORD_LITTLE_ENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
+func (m *RegistryKeyState) GetValueType()(*RegistryValueType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.valueType
+    }
 }
 func (m *RegistryKeyState) IsNil()(bool) {
     return m == nil

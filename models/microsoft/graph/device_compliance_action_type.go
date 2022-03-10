@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the deviceManagement singleton.
 type DeviceComplianceActionType int
 
 const (

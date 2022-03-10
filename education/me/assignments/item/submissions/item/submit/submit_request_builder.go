@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// SubmitRequestBuilder builds and executes requests for operations under \education\me\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\microsoft.graph.submit
+// SubmitRequestBuilder provides operations to call the submit method.
 type SubmitRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type SubmitResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type educationSubmission
-    educationSubmission *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission;
+    educationSubmission i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable;
 }
 // NewSubmitResponse instantiates a new submitResponse and sets the default values.
 func NewSubmitResponse()(*SubmitResponse) {
@@ -37,6 +37,9 @@ func NewSubmitResponse()(*SubmitResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateSubmitResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSubmitResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubmitResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *SubmitResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEducationSubmission gets the educationSubmission property value. Union type representation for type educationSubmission
-func (m *SubmitResponse) GetEducationSubmission()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission) {
+func (m *SubmitResponse) GetEducationSubmission()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *SubmitResponse) GetEducationSubmission()(*i4a838ef194e4c99e9f2c63ba10da
 func (m *SubmitResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["educationSubmission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEducationSubmission() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEducationSubmissionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEducationSubmission(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission))
+            m.SetEducationSubmission(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable))
         }
         return nil
     }
@@ -95,10 +98,17 @@ func (m *SubmitResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetEducationSubmission sets the educationSubmission property value. Union type representation for type educationSubmission
-func (m *SubmitResponse) SetEducationSubmission(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission)() {
+func (m *SubmitResponse) SetEducationSubmission(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable)() {
     if m != nil {
         m.educationSubmission = value
     }
+}
+// SubmitResponseable 
+type SubmitResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetEducationSubmission()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable)
+    SetEducationSubmission(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable)()
 }
 // NewSubmitRequestBuilderInternal instantiates a new SubmitRequestBuilder and sets the default values.
 func NewSubmitRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubmitRequestBuilder) {
@@ -109,7 +119,7 @@ func NewSubmitRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *SubmitRequestBuilder) CreatePostRequestInformation(options *SubmitReque
     return requestInfo, nil
 }
 // Post invoke action submit
-func (m *SubmitRequestBuilder) Post(options *SubmitRequestBuilderPostOptions)(*SubmitResponse, error) {
+func (m *SubmitRequestBuilder) Post(options *SubmitRequestBuilderPostOptions)(SubmitResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSubmitResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSubmitResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*SubmitResponse), nil
+    return res.(SubmitResponseable), nil
 }

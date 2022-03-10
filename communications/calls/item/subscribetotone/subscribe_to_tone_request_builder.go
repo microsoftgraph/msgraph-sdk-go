@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// SubscribeToToneRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.subscribeToTone
+// SubscribeToToneRequestBuilder provides operations to call the subscribeToTone method.
 type SubscribeToToneRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type SubscribeToToneRequestBuilder struct {
 // SubscribeToToneRequestBuilderPostOptions options for Post
 type SubscribeToToneRequestBuilderPostOptions struct {
     // 
-    Body *SubscribeToToneRequestBody;
+    Body SubscribeToToneRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type SubscribeToToneResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type subscribeToToneOperation
-    subscribeToToneOperation *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperation;
+    subscribeToToneOperation i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperationable;
 }
 // NewSubscribeToToneResponse instantiates a new subscribeToToneResponse and sets the default values.
 func NewSubscribeToToneResponse()(*SubscribeToToneResponse) {
@@ -39,6 +39,9 @@ func NewSubscribeToToneResponse()(*SubscribeToToneResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateSubscribeToToneResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSubscribeToToneResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubscribeToToneResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *SubscribeToToneResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *SubscribeToToneResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["subscribeToToneOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSubscribeToToneOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubscribeToToneOperation(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetSubscribeToToneOperation gets the subscribeToToneOperation property value. Union type representation for type subscribeToToneOperation
-func (m *SubscribeToToneResponse) GetSubscribeToToneOperation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperation) {
+func (m *SubscribeToToneResponse) GetSubscribeToToneOperation()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperationable) {
     if m == nil {
         return nil
     } else {
         return m.subscribeToToneOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *SubscribeToToneResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["subscribeToToneOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSubscribeToToneOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSubscribeToToneOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *SubscribeToToneResponse) IsNil()(bool) {
     return m == nil
@@ -97,10 +100,17 @@ func (m *SubscribeToToneResponse) SetAdditionalData(value map[string]interface{}
     }
 }
 // SetSubscribeToToneOperation sets the subscribeToToneOperation property value. Union type representation for type subscribeToToneOperation
-func (m *SubscribeToToneResponse) SetSubscribeToToneOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperation)() {
+func (m *SubscribeToToneResponse) SetSubscribeToToneOperation(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperationable)() {
     if m != nil {
         m.subscribeToToneOperation = value
     }
+}
+// SubscribeToToneResponseable 
+type SubscribeToToneResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetSubscribeToToneOperation()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperationable)
+    SetSubscribeToToneOperation(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribeToToneOperationable)()
 }
 // NewSubscribeToToneRequestBuilderInternal instantiates a new SubscribeToToneRequestBuilder and sets the default values.
 func NewSubscribeToToneRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubscribeToToneRequestBuilder) {
@@ -111,7 +121,7 @@ func NewSubscribeToToneRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformation(options *Su
     return requestInfo, nil
 }
 // Post invoke action subscribeToTone
-func (m *SubscribeToToneRequestBuilder) Post(options *SubscribeToToneRequestBuilderPostOptions)(*SubscribeToToneResponse, error) {
+func (m *SubscribeToToneRequestBuilder) Post(options *SubscribeToToneRequestBuilderPostOptions)(SubscribeToToneResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSubscribeToToneResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSubscribeToToneResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*SubscribeToToneResponse), nil
+    return res.(SubscribeToToneResponseable), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintJobConfiguration 
+// PrintJobConfiguration provides operations to manage the print singleton.
 type PrintJobConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,7 +27,7 @@ type PrintJobConfiguration struct {
     // The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
     inputBin *string;
     // The margin settings to use when printing.
-    margin *PrintMargin;
+    margin PrintMarginable;
     // The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
     mediaSize *string;
     // The default media (such as paper) type to print the document on.
@@ -39,7 +39,7 @@ type PrintJobConfiguration struct {
     // The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
     outputBin *string;
     // The page ranges to print. Read-only.
-    pageRanges []IntegerRange;
+    pageRanges []IntegerRangeable;
     // The number of document pages to print on each sheet.
     pagesPerSheet *int32;
     // The print quality to use when printing the job. Valid values are described in the table below. Read-only.
@@ -53,6 +53,10 @@ func NewPrintJobConfiguration()(*PrintJobConfiguration) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePrintJobConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintJobConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintJobConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintJobConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -108,110 +112,6 @@ func (m *PrintJobConfiguration) GetFeedOrientation()(*PrinterFeedOrientation) {
         return nil
     } else {
         return m.feedOrientation
-    }
-}
-// GetFinishings gets the finishings property value. Finishing processes to use when printing.
-func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
-    if m == nil {
-        return nil
-    } else {
-        return m.finishings
-    }
-}
-// GetFitPdfToPage gets the fitPdfToPage property value. 
-func (m *PrintJobConfiguration) GetFitPdfToPage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fitPdfToPage
-    }
-}
-// GetInputBin gets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
-func (m *PrintJobConfiguration) GetInputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputBin
-    }
-}
-// GetMargin gets the margin property value. The margin settings to use when printing.
-func (m *PrintJobConfiguration) GetMargin()(*PrintMargin) {
-    if m == nil {
-        return nil
-    } else {
-        return m.margin
-    }
-}
-// GetMediaSize gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
-func (m *PrintJobConfiguration) GetMediaSize()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaSize
-    }
-}
-// GetMediaType gets the mediaType property value. The default media (such as paper) type to print the document on.
-func (m *PrintJobConfiguration) GetMediaType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
-}
-// GetMultipageLayout gets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
-func (m *PrintJobConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multipageLayout
-    }
-}
-// GetOrientation gets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
-func (m *PrintJobConfiguration) GetOrientation()(*PrintOrientation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orientation
-    }
-}
-// GetOutputBin gets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
-func (m *PrintJobConfiguration) GetOutputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputBin
-    }
-}
-// GetPageRanges gets the pageRanges property value. The page ranges to print. Read-only.
-func (m *PrintJobConfiguration) GetPageRanges()([]IntegerRange) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pageRanges
-    }
-}
-// GetPagesPerSheet gets the pagesPerSheet property value. The number of document pages to print on each sheet.
-func (m *PrintJobConfiguration) GetPagesPerSheet()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pagesPerSheet
-    }
-}
-// GetQuality gets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
-func (m *PrintJobConfiguration) GetQuality()(*PrintQuality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quality
-    }
-}
-// GetScaling gets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
-func (m *PrintJobConfiguration) GetScaling()(*PrintScaling) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scaling
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -312,12 +212,12 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["margin"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintMargin() })
+        val, err := n.GetObjectValue(CreatePrintMarginFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMargin(val.(*PrintMargin))
+            m.SetMargin(val.(PrintMarginable))
         }
         return nil
     }
@@ -372,14 +272,14 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["pageRanges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIntegerRange() })
+        val, err := n.GetCollectionOfObjectValues(CreateIntegerRangeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IntegerRange, len(val))
+            res := make([]IntegerRangeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IntegerRange))
+                res[i] = v.(IntegerRangeable)
             }
             m.SetPageRanges(res)
         }
@@ -416,6 +316,110 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetFinishings gets the finishings property value. Finishing processes to use when printing.
+func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
+    if m == nil {
+        return nil
+    } else {
+        return m.finishings
+    }
+}
+// GetFitPdfToPage gets the fitPdfToPage property value. 
+func (m *PrintJobConfiguration) GetFitPdfToPage()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fitPdfToPage
+    }
+}
+// GetInputBin gets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+func (m *PrintJobConfiguration) GetInputBin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inputBin
+    }
+}
+// GetMargin gets the margin property value. The margin settings to use when printing.
+func (m *PrintJobConfiguration) GetMargin()(PrintMarginable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.margin
+    }
+}
+// GetMediaSize gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
+func (m *PrintJobConfiguration) GetMediaSize()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaSize
+    }
+}
+// GetMediaType gets the mediaType property value. The default media (such as paper) type to print the document on.
+func (m *PrintJobConfiguration) GetMediaType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaType
+    }
+}
+// GetMultipageLayout gets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
+func (m *PrintJobConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multipageLayout
+    }
+}
+// GetOrientation gets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
+func (m *PrintJobConfiguration) GetOrientation()(*PrintOrientation) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orientation
+    }
+}
+// GetOutputBin gets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+func (m *PrintJobConfiguration) GetOutputBin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outputBin
+    }
+}
+// GetPageRanges gets the pageRanges property value. The page ranges to print. Read-only.
+func (m *PrintJobConfiguration) GetPageRanges()([]IntegerRangeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pageRanges
+    }
+}
+// GetPagesPerSheet gets the pagesPerSheet property value. The number of document pages to print on each sheet.
+func (m *PrintJobConfiguration) GetPagesPerSheet()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pagesPerSheet
+    }
+}
+// GetQuality gets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
+func (m *PrintJobConfiguration) GetQuality()(*PrintQuality) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quality
+    }
+}
+// GetScaling gets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
+func (m *PrintJobConfiguration) GetScaling()(*PrintScaling) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scaling
+    }
 }
 func (m *PrintJobConfiguration) IsNil()(bool) {
     return m == nil
@@ -520,8 +524,7 @@ func (m *PrintJobConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetPageRanges() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPageRanges()))
         for i, v := range m.GetPageRanges() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("pageRanges", cast)
         if err != nil {
@@ -617,7 +620,7 @@ func (m *PrintJobConfiguration) SetInputBin(value *string)() {
     }
 }
 // SetMargin sets the margin property value. The margin settings to use when printing.
-func (m *PrintJobConfiguration) SetMargin(value *PrintMargin)() {
+func (m *PrintJobConfiguration) SetMargin(value PrintMarginable)() {
     if m != nil {
         m.margin = value
     }
@@ -653,7 +656,7 @@ func (m *PrintJobConfiguration) SetOutputBin(value *string)() {
     }
 }
 // SetPageRanges sets the pageRanges property value. The page ranges to print. Read-only.
-func (m *PrintJobConfiguration) SetPageRanges(value []IntegerRange)() {
+func (m *PrintJobConfiguration) SetPageRanges(value []IntegerRangeable)() {
     if m != nil {
         m.pageRanges = value
     }

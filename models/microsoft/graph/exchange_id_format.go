@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the translateExchangeIds method.
 type ExchangeIdFormat int
 
 const (

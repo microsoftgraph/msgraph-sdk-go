@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LocalizedNotificationMessage 
+// LocalizedNotificationMessage provides operations to manage the deviceManagement singleton.
 type LocalizedNotificationMessage struct {
     Entity
     // Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
@@ -26,45 +26,9 @@ func NewLocalizedNotificationMessage()(*LocalizedNotificationMessage) {
     }
     return m
 }
-// GetIsDefault gets the isDefault property value. Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
-func (m *LocalizedNotificationMessage) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
-func (m *LocalizedNotificationMessage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLocale gets the locale property value. The Locale for which this message is destined.
-func (m *LocalizedNotificationMessage) GetLocale()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locale
-    }
-}
-// GetMessageTemplate gets the messageTemplate property value. The Message Template content.
-func (m *LocalizedNotificationMessage) GetMessageTemplate()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageTemplate
-    }
-}
-// GetSubject gets the subject property value. The Message Template Subject.
-func (m *LocalizedNotificationMessage) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+// CreateLocalizedNotificationMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLocalizedNotificationMessageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLocalizedNotificationMessage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -120,6 +84,46 @@ func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
+func (m *LocalizedNotificationMessage) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+func (m *LocalizedNotificationMessage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLocale gets the locale property value. The Locale for which this message is destined.
+func (m *LocalizedNotificationMessage) GetLocale()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locale
+    }
+}
+// GetMessageTemplate gets the messageTemplate property value. The Message Template content.
+func (m *LocalizedNotificationMessage) GetMessageTemplate()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageTemplate
+    }
+}
+// GetSubject gets the subject property value. The Message Template Subject.
+func (m *LocalizedNotificationMessage) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
 }
 func (m *LocalizedNotificationMessage) IsNil()(bool) {
     return m == nil

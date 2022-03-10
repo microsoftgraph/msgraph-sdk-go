@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// GetByPathWithPathRequestBuilder builds and executes requests for operations under \sites\{site-id}\microsoft.graph.getByPath(path='{path}')
+// GetByPathWithPathRequestBuilder provides operations to call the getByPath method.
 type GetByPathWithPathRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type GetByPathWithPathResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type site
-    site *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site;
+    site i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable;
 }
 // NewGetByPathWithPathResponse instantiates a new getByPathWithPathResponse and sets the default values.
 func NewGetByPathWithPathResponse()(*GetByPathWithPathResponse) {
@@ -37,6 +37,9 @@ func NewGetByPathWithPathResponse()(*GetByPathWithPathResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetByPathWithPathResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetByPathWithPathResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetByPathWithPathResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *GetByPathWithPathResponse) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *GetByPathWithPathResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["site"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSiteFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSite(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable))
+        }
+        return nil
+    }
+    return res
+}
 // GetSite gets the site property value. Union type representation for type site
-func (m *GetByPathWithPathResponse) GetSite()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site) {
+func (m *GetByPathWithPathResponse) GetSite()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable) {
     if m == nil {
         return nil
     } else {
         return m.site
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *GetByPathWithPathResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["site"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSite() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSite(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site))
-        }
-        return nil
-    }
-    return res
 }
 func (m *GetByPathWithPathResponse) IsNil()(bool) {
     return m == nil
@@ -95,10 +98,17 @@ func (m *GetByPathWithPathResponse) SetAdditionalData(value map[string]interface
     }
 }
 // SetSite sets the site property value. Union type representation for type site
-func (m *GetByPathWithPathResponse) SetSite(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site)() {
+func (m *GetByPathWithPathResponse) SetSite(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable)() {
     if m != nil {
         m.site = value
     }
+}
+// GetByPathWithPathResponseable 
+type GetByPathWithPathResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetSite()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable)
+    SetSite(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Siteable)()
 }
 // NewGetByPathWithPathRequestBuilderInternal instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
 func NewGetByPathWithPathRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, path *string)(*GetByPathWithPathRequestBuilder) {
@@ -112,7 +122,7 @@ func NewGetByPathWithPathRequestBuilderInternal(pathParameters map[string]string
     if path != nil {
         urlTplParams["path"] = *path
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *GetByPathWithPathRequestBuilder) CreateGetRequestInformation(options *G
     return requestInfo, nil
 }
 // Get invoke function getByPath
-func (m *GetByPathWithPathRequestBuilder) Get(options *GetByPathWithPathRequestBuilderGetOptions)(*GetByPathWithPathResponse, error) {
+func (m *GetByPathWithPathRequestBuilder) Get(options *GetByPathWithPathRequestBuilderGetOptions)(GetByPathWithPathResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetByPathWithPathResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetByPathWithPathResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetByPathWithPathResponse), nil
+    return res.(GetByPathWithPathResponseable), nil
 }

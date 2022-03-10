@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AdminConsentRequestPolicy 
+// AdminConsentRequestPolicy provides operations to manage the policyRoot singleton.
 type AdminConsentRequestPolicy struct {
     Entity
     // Specifies whether the admin consent request feature is enabled or disabled. Required.
@@ -16,7 +16,7 @@ type AdminConsentRequestPolicy struct {
     // Specifies the duration the request is active before it automatically expires if no decision is applied.
     requestDurationInDays *int32;
     // The list of reviewers for the admin consent. Required.
-    reviewers []AccessReviewReviewerScope;
+    reviewers []AccessReviewReviewerScopeable;
     // Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
     version *int32;
 }
@@ -27,53 +27,9 @@ func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {
     }
     return m
 }
-// GetIsEnabled gets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
-func (m *AdminConsentRequestPolicy) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
-}
-// GetNotifyReviewers gets the notifyReviewers property value. Specifies whether reviewers will receive notifications. Required.
-func (m *AdminConsentRequestPolicy) GetNotifyReviewers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notifyReviewers
-    }
-}
-// GetRemindersEnabled gets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
-func (m *AdminConsentRequestPolicy) GetRemindersEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remindersEnabled
-    }
-}
-// GetRequestDurationInDays gets the requestDurationInDays property value. Specifies the duration the request is active before it automatically expires if no decision is applied.
-func (m *AdminConsentRequestPolicy) GetRequestDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestDurationInDays
-    }
-}
-// GetReviewers gets the reviewers property value. The list of reviewers for the admin consent. Required.
-func (m *AdminConsentRequestPolicy) GetReviewers()([]AccessReviewReviewerScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewers
-    }
-}
-// GetVersion gets the version property value. Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
-func (m *AdminConsentRequestPolicy) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+// CreateAdminConsentRequestPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAdminConsentRequestPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAdminConsentRequestPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -119,14 +75,14 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["reviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewReviewerScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewReviewerScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewReviewerScope, len(val))
+            res := make([]AccessReviewReviewerScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewReviewerScope))
+                res[i] = v.(AccessReviewReviewerScopeable)
             }
             m.SetReviewers(res)
         }
@@ -143,6 +99,54 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetIsEnabled gets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
+func (m *AdminConsentRequestPolicy) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
+}
+// GetNotifyReviewers gets the notifyReviewers property value. Specifies whether reviewers will receive notifications. Required.
+func (m *AdminConsentRequestPolicy) GetNotifyReviewers()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notifyReviewers
+    }
+}
+// GetRemindersEnabled gets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
+func (m *AdminConsentRequestPolicy) GetRemindersEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remindersEnabled
+    }
+}
+// GetRequestDurationInDays gets the requestDurationInDays property value. Specifies the duration the request is active before it automatically expires if no decision is applied.
+func (m *AdminConsentRequestPolicy) GetRequestDurationInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestDurationInDays
+    }
+}
+// GetReviewers gets the reviewers property value. The list of reviewers for the admin consent. Required.
+func (m *AdminConsentRequestPolicy) GetReviewers()([]AccessReviewReviewerScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewers
+    }
+}
+// GetVersion gets the version property value. Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
+func (m *AdminConsentRequestPolicy) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *AdminConsentRequestPolicy) IsNil()(bool) {
     return m == nil
@@ -180,8 +184,7 @@ func (m *AdminConsentRequestPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("reviewers", cast)
         if err != nil {
@@ -221,7 +224,7 @@ func (m *AdminConsentRequestPolicy) SetRequestDurationInDays(value *int32)() {
     }
 }
 // SetReviewers sets the reviewers property value. The list of reviewers for the admin consent. Required.
-func (m *AdminConsentRequestPolicy) SetReviewers(value []AccessReviewReviewerScope)() {
+func (m *AdminConsentRequestPolicy) SetReviewers(value []AccessReviewReviewerScopeable)() {
     if m != nil {
         m.reviewers = value
     }

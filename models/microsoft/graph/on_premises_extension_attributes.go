@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnPremisesExtensionAttributes 
+// OnPremisesExtensionAttributes provides operations to manage the collection of drive entities.
 type OnPremisesExtensionAttributes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -45,6 +45,10 @@ func NewOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateOnPremisesExtensionAttributesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnPremisesExtensionAttributesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnPremisesExtensionAttributes(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesExtensionAttributes) GetAdditionalData()(map[string]interface{}) {

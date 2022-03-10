@@ -2,12 +2,13 @@ package mailfolders
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i5d63e7a3c426f5bec855f9ff376e56291fa6ff95fd3b1e71b3f3fe8315f50655 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/count"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     ief2b6d7818fabe76df0ac26790dd66b887e36ddd206ff4e3be0f2bdfcd122f07 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/delta"
 )
 
-// MailFoldersRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders
+// MailFoldersRequestBuilder provides operations to manage the mailFolders property of the microsoft.graph.user entity.
 type MailFoldersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +46,7 @@ type MailFoldersRequestBuilderGetQueryParameters struct {
 // MailFoldersRequestBuilderPostOptions options for Post
 type MailFoldersRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolder;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +63,7 @@ func NewMailFoldersRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -71,6 +72,9 @@ func NewMailFoldersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMailFoldersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MailFoldersRequestBuilder) Count()(*i5d63e7a3c426f5bec855f9ff376e56291fa6ff95fd3b1e71b3f3fe8315f50655.CountRequestBuilder) {
+    return i5d63e7a3c426f5bec855f9ff376e56291fa6ff95fd3b1e71b3f3fe8315f50655.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the user's mail folders. Read-only. Nullable.
 func (m *MailFoldersRequestBuilder) CreateGetRequestInformation(options *MailFoldersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -92,7 +96,7 @@ func (m *MailFoldersRequestBuilder) CreateGetRequestInformation(options *MailFol
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the user's mail folders. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to mailFolders for users
 func (m *MailFoldersRequestBuilder) CreatePostRequestInformation(options *MailFoldersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,31 +114,39 @@ func (m *MailFoldersRequestBuilder) CreatePostRequestInformation(options *MailFo
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \users\{user-id}\mailFolders\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *MailFoldersRequestBuilder) Delta()(*ief2b6d7818fabe76df0ac26790dd66b887e36ddd206ff4e3be0f2bdfcd122f07.DeltaRequestBuilder) {
     return ief2b6d7818fabe76df0ac26790dd66b887e36ddd206ff4e3be0f2bdfcd122f07.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the user's mail folders. Read-only. Nullable.
-func (m *MailFoldersRequestBuilder) Get(options *MailFoldersRequestBuilderGetOptions)(*MailFoldersResponse, error) {
+func (m *MailFoldersRequestBuilder) Get(options *MailFoldersRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMailFoldersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMailFolderCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MailFoldersResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderCollectionResponseable), nil
 }
-// Post the user's mail folders. Read-only. Nullable.
-func (m *MailFoldersRequestBuilder) Post(options *MailFoldersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolder, error) {
+// Post create new navigation property to mailFolders for users
+func (m *MailFoldersRequestBuilder) Post(options *MailFoldersRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewMailFolder() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMailFolderFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolder), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolderable), nil
 }

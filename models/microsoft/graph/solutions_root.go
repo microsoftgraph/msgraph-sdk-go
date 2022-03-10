@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SolutionsRoot 
+// SolutionsRoot provides operations to manage the solutionsRoot singleton.
 type SolutionsRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    bookingBusinesses []BookingBusiness;
+    bookingBusinesses []BookingBusinessable;
     // 
-    bookingCurrencies []BookingCurrency;
+    bookingCurrencies []BookingCurrencyable;
 }
 // NewSolutionsRoot instantiates a new SolutionsRoot and sets the default values.
 func NewSolutionsRoot()(*SolutionsRoot) {
@@ -19,6 +19,10 @@ func NewSolutionsRoot()(*SolutionsRoot) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSolutionsRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSolutionsRootFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSolutionsRoot(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SolutionsRoot) GetAdditionalData()(map[string]interface{}) {
@@ -29,7 +33,7 @@ func (m *SolutionsRoot) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetBookingBusinesses gets the bookingBusinesses property value. 
-func (m *SolutionsRoot) GetBookingBusinesses()([]BookingBusiness) {
+func (m *SolutionsRoot) GetBookingBusinesses()([]BookingBusinessable) {
     if m == nil {
         return nil
     } else {
@@ -37,7 +41,7 @@ func (m *SolutionsRoot) GetBookingBusinesses()([]BookingBusiness) {
     }
 }
 // GetBookingCurrencies gets the bookingCurrencies property value. 
-func (m *SolutionsRoot) GetBookingCurrencies()([]BookingCurrency) {
+func (m *SolutionsRoot) GetBookingCurrencies()([]BookingCurrencyable) {
     if m == nil {
         return nil
     } else {
@@ -48,28 +52,28 @@ func (m *SolutionsRoot) GetBookingCurrencies()([]BookingCurrency) {
 func (m *SolutionsRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bookingBusinesses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingBusiness() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingBusinessFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingBusiness, len(val))
+            res := make([]BookingBusinessable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingBusiness))
+                res[i] = v.(BookingBusinessable)
             }
             m.SetBookingBusinesses(res)
         }
         return nil
     }
     res["bookingCurrencies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingCurrency() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingCurrencyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingCurrency, len(val))
+            res := make([]BookingCurrencyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingCurrency))
+                res[i] = v.(BookingCurrencyable)
             }
             m.SetBookingCurrencies(res)
         }
@@ -85,8 +89,7 @@ func (m *SolutionsRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetBookingBusinesses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBookingBusinesses()))
         for i, v := range m.GetBookingBusinesses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("bookingBusinesses", cast)
         if err != nil {
@@ -96,8 +99,7 @@ func (m *SolutionsRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetBookingCurrencies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBookingCurrencies()))
         for i, v := range m.GetBookingCurrencies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("bookingCurrencies", cast)
         if err != nil {
@@ -119,13 +121,13 @@ func (m *SolutionsRoot) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetBookingBusinesses sets the bookingBusinesses property value. 
-func (m *SolutionsRoot) SetBookingBusinesses(value []BookingBusiness)() {
+func (m *SolutionsRoot) SetBookingBusinesses(value []BookingBusinessable)() {
     if m != nil {
         m.bookingBusinesses = value
     }
 }
 // SetBookingCurrencies sets the bookingCurrencies property value. 
-func (m *SolutionsRoot) SetBookingCurrencies(value []BookingCurrency)() {
+func (m *SolutionsRoot) SetBookingCurrencies(value []BookingCurrencyable)() {
     if m != nil {
         m.bookingCurrencies = value
     }

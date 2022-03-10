@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OAuth2PermissionGrant 
+// OAuth2PermissionGrant provides operations to call the instantiate method.
 type OAuth2PermissionGrant struct {
     Entity
     // The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
@@ -25,6 +25,10 @@ func NewOAuth2PermissionGrant()(*OAuth2PermissionGrant) {
     }
     return m
 }
+// CreateOAuth2PermissionGrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOAuth2PermissionGrantFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOAuth2PermissionGrant(), nil
+}
 // GetClientId gets the clientId property value. The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) GetClientId()(*string) {
     if m == nil {
@@ -39,30 +43,6 @@ func (m *OAuth2PermissionGrant) GetConsentType()(*string) {
         return nil
     } else {
         return m.consentType
-    }
-}
-// GetPrincipalId gets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
-func (m *OAuth2PermissionGrant) GetPrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalId
-    }
-}
-// GetResourceId gets the resourceId property value. The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-func (m *OAuth2PermissionGrant) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
-}
-// GetScope gets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
-func (m *OAuth2PermissionGrant) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -119,6 +99,30 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetPrincipalId gets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+func (m *OAuth2PermissionGrant) GetPrincipalId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principalId
+    }
+}
+// GetResourceId gets the resourceId property value. The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+func (m *OAuth2PermissionGrant) GetResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceId
+    }
+}
+// GetScope gets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+func (m *OAuth2PermissionGrant) GetScope()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scope
+    }
 }
 func (m *OAuth2PermissionGrant) IsNil()(bool) {
     return m == nil

@@ -2,11 +2,12 @@ package transitivememberof
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i2e1d40c06cad65f600e4396d8ceb020153b53fcd8034b27b3aee9d08592af844 "github.com/microsoftgraph/msgraph-sdk-go/me/transitivememberof/ref"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    icb9716a67683385703764d49f2b2ee7a872082397a36ebefe294533f7c880d2d "github.com/microsoftgraph/msgraph-sdk-go/me/transitivememberof/count"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// TransitiveMemberOfRequestBuilder builds and executes requests for operations under \me\transitiveMemberOf
+// TransitiveMemberOfRequestBuilder provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.
 type TransitiveMemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewTransitiveMemberOfRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTransitiveMemberOfRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TransitiveMemberOfRequestBuilder) Count()(*icb9716a67683385703764d49f2b2ee7a872082397a36ebefe294533f7c880d2d.CountRequestBuilder) {
+    return icb9716a67683385703764d49f2b2ee7a872082397a36ebefe294533f7c880d2d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get transitiveMemberOf from me
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation(options *TransitiveMemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation(options *
     return requestInfo, nil
 }
 // Get get transitiveMemberOf from me
-func (m *TransitiveMemberOfRequestBuilder) Get(options *TransitiveMemberOfRequestBuilderGetOptions)(*TransitiveMemberOfResponse, error) {
+func (m *TransitiveMemberOfRequestBuilder) Get(options *TransitiveMemberOfRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTransitiveMemberOfResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TransitiveMemberOfResponse), nil
-}
-func (m *TransitiveMemberOfRequestBuilder) Ref()(*i2e1d40c06cad65f600e4396d8ceb020153b53fcd8034b27b3aee9d08592af844.RefRequestBuilder) {
-    return i2e1d40c06cad65f600e4396d8ceb020153b53fcd8034b27b3aee9d08592af844.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObjectCollectionResponseable), nil
 }

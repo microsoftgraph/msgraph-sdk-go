@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceCompliancePolicyState 
+// DeviceCompliancePolicyState provides operations to manage the collection of drive entities.
 type DeviceCompliancePolicyState struct {
     Entity
     // The name of the policy for this policyBase
@@ -14,7 +14,7 @@ type DeviceCompliancePolicyState struct {
     // Count of how many setting a policy holds
     settingCount *int32;
     // 
-    settingStates []DeviceCompliancePolicySettingState;
+    settingStates []DeviceCompliancePolicySettingStateable;
     // The compliance state of the policy
     state *ComplianceStatus;
     // The version of the policy
@@ -27,52 +27,16 @@ func NewDeviceCompliancePolicyState()(*DeviceCompliancePolicyState) {
     }
     return m
 }
+// CreateDeviceCompliancePolicyStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceCompliancePolicyStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceCompliancePolicyState(), nil
+}
 // GetDisplayName gets the displayName property value. The name of the policy for this policyBase
 func (m *DeviceCompliancePolicyState) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetPlatformType gets the platformType property value. Platform type that the policy applies to
-func (m *DeviceCompliancePolicyState) GetPlatformType()(*PolicyPlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
-}
-// GetSettingCount gets the settingCount property value. Count of how many setting a policy holds
-func (m *DeviceCompliancePolicyState) GetSettingCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingCount
-    }
-}
-// GetSettingStates gets the settingStates property value. 
-func (m *DeviceCompliancePolicyState) GetSettingStates()([]DeviceCompliancePolicySettingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingStates
-    }
-}
-// GetState gets the state property value. The compliance state of the policy
-func (m *DeviceCompliancePolicyState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetVersion gets the version property value. The version of the policy
-func (m *DeviceCompliancePolicyState) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,14 +73,14 @@ func (m *DeviceCompliancePolicyState) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["settingStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceCompliancePolicySettingState() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicySettingStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceCompliancePolicySettingState, len(val))
+            res := make([]DeviceCompliancePolicySettingStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceCompliancePolicySettingState))
+                res[i] = v.(DeviceCompliancePolicySettingStateable)
             }
             m.SetSettingStates(res)
         }
@@ -143,6 +107,46 @@ func (m *DeviceCompliancePolicyState) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetPlatformType gets the platformType property value. Platform type that the policy applies to
+func (m *DeviceCompliancePolicyState) GetPlatformType()(*PolicyPlatformType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platformType
+    }
+}
+// GetSettingCount gets the settingCount property value. Count of how many setting a policy holds
+func (m *DeviceCompliancePolicyState) GetSettingCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingCount
+    }
+}
+// GetSettingStates gets the settingStates property value. 
+func (m *DeviceCompliancePolicyState) GetSettingStates()([]DeviceCompliancePolicySettingStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingStates
+    }
+}
+// GetState gets the state property value. The compliance state of the policy
+func (m *DeviceCompliancePolicyState) GetState()(*ComplianceStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetVersion gets the version property value. The version of the policy
+func (m *DeviceCompliancePolicyState) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *DeviceCompliancePolicyState) IsNil()(bool) {
     return m == nil
@@ -175,8 +179,7 @@ func (m *DeviceCompliancePolicyState) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetSettingStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettingStates()))
         for i, v := range m.GetSettingStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("settingStates", cast)
         if err != nil {
@@ -217,7 +220,7 @@ func (m *DeviceCompliancePolicyState) SetSettingCount(value *int32)() {
     }
 }
 // SetSettingStates sets the settingStates property value. 
-func (m *DeviceCompliancePolicyState) SetSettingStates(value []DeviceCompliancePolicySettingState)() {
+func (m *DeviceCompliancePolicyState) SetSettingStates(value []DeviceCompliancePolicySettingStateable)() {
     if m != nil {
         m.settingStates = value
     }

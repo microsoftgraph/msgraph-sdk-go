@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SharepointIds 
+// SharepointIds provides operations to manage the collection of drive entities.
 type SharepointIds struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -30,68 +30,16 @@ func NewSharepointIds()(*SharepointIds) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSharepointIdsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSharepointIdsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSharepointIds(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharepointIds) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetListId gets the listId property value. The unique identifier (guid) for the item's list in SharePoint.
-func (m *SharepointIds) GetListId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listId
-    }
-}
-// GetListItemId gets the listItemId property value. An integer identifier for the item within the containing list.
-func (m *SharepointIds) GetListItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listItemId
-    }
-}
-// GetListItemUniqueId gets the listItemUniqueId property value. The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
-func (m *SharepointIds) GetListItemUniqueId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listItemUniqueId
-    }
-}
-// GetSiteId gets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
-func (m *SharepointIds) GetSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteId
-    }
-}
-// GetSiteUrl gets the siteUrl property value. The SharePoint URL for the site that contains the item.
-func (m *SharepointIds) GetSiteUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteUrl
-    }
-}
-// GetTenantId gets the tenantId property value. The unique identifier (guid) for the tenancy.
-func (m *SharepointIds) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetWebId gets the webId property value. The unique identifier (guid) for the item's site (SPWeb).
-func (m *SharepointIds) GetWebId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -168,6 +116,62 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetListId gets the listId property value. The unique identifier (guid) for the item's list in SharePoint.
+func (m *SharepointIds) GetListId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.listId
+    }
+}
+// GetListItemId gets the listItemId property value. An integer identifier for the item within the containing list.
+func (m *SharepointIds) GetListItemId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.listItemId
+    }
+}
+// GetListItemUniqueId gets the listItemUniqueId property value. The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
+func (m *SharepointIds) GetListItemUniqueId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.listItemUniqueId
+    }
+}
+// GetSiteId gets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
+func (m *SharepointIds) GetSiteId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteId
+    }
+}
+// GetSiteUrl gets the siteUrl property value. The SharePoint URL for the site that contains the item.
+func (m *SharepointIds) GetSiteUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteUrl
+    }
+}
+// GetTenantId gets the tenantId property value. The unique identifier (guid) for the tenancy.
+func (m *SharepointIds) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetWebId gets the webId property value. The unique identifier (guid) for the item's site (SPWeb).
+func (m *SharepointIds) GetWebId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webId
+    }
 }
 func (m *SharepointIds) IsNil()(bool) {
     return m == nil

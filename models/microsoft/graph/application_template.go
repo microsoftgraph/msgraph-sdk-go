@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApplicationTemplate 
+// ApplicationTemplate provides operations to manage the collection of applicationTemplate entities.
 type ApplicationTemplate struct {
     Entity
     // The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
@@ -31,6 +31,10 @@ func NewApplicationTemplate()(*ApplicationTemplate) {
     }
     return m
 }
+// CreateApplicationTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApplicationTemplateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApplicationTemplate(), nil
+}
 // GetCategories gets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
 func (m *ApplicationTemplate) GetCategories()([]string) {
     if m == nil {
@@ -53,46 +57,6 @@ func (m *ApplicationTemplate) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetHomePageUrl gets the homePageUrl property value. The home page URL of the application.
-func (m *ApplicationTemplate) GetHomePageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homePageUrl
-    }
-}
-// GetLogoUrl gets the logoUrl property value. The URL to get the logo for this application.
-func (m *ApplicationTemplate) GetLogoUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logoUrl
-    }
-}
-// GetPublisher gets the publisher property value. The name of the publisher for this application.
-func (m *ApplicationTemplate) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
-}
-// GetSupportedProvisioningTypes gets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.
-func (m *ApplicationTemplate) GetSupportedProvisioningTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedProvisioningTypes
-    }
-}
-// GetSupportedSingleSignOnModes gets the supportedSingleSignOnModes property value. The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
-func (m *ApplicationTemplate) GetSupportedSingleSignOnModes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedSingleSignOnModes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -191,6 +155,46 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetHomePageUrl gets the homePageUrl property value. The home page URL of the application.
+func (m *ApplicationTemplate) GetHomePageUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.homePageUrl
+    }
+}
+// GetLogoUrl gets the logoUrl property value. The URL to get the logo for this application.
+func (m *ApplicationTemplate) GetLogoUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logoUrl
+    }
+}
+// GetPublisher gets the publisher property value. The name of the publisher for this application.
+func (m *ApplicationTemplate) GetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisher
+    }
+}
+// GetSupportedProvisioningTypes gets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.
+func (m *ApplicationTemplate) GetSupportedProvisioningTypes()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportedProvisioningTypes
+    }
+}
+// GetSupportedSingleSignOnModes gets the supportedSingleSignOnModes property value. The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
+func (m *ApplicationTemplate) GetSupportedSingleSignOnModes()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportedSingleSignOnModes
+    }
 }
 func (m *ApplicationTemplate) IsNil()(bool) {
     return m == nil

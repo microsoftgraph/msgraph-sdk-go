@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the informationProtection singleton.
 type ThreatCategory int
 
 const (

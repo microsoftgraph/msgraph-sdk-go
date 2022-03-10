@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementSettings 
+// DeviceManagementSettings provides operations to manage the deviceManagement singleton.
 type DeviceManagementSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewDeviceManagementSettings()(*DeviceManagementSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceManagementSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *DeviceManagementSettings) GetDeviceComplianceCheckinThresholdDays()(*in
         return nil
     } else {
         return m.deviceComplianceCheckinThresholdDays
-    }
-}
-// GetIsScheduledActionEnabled gets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
-func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isScheduledActionEnabled
-    }
-}
-// GetSecureByDefault gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
-func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureByDefault
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetIsScheduledActionEnabled gets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
+func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isScheduledActionEnabled
+    }
+}
+// GetSecureByDefault gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
+func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.secureByDefault
+    }
 }
 func (m *DeviceManagementSettings) IsNil()(bool) {
     return m == nil

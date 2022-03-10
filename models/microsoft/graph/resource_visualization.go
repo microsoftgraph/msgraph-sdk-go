@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResourceVisualization 
+// ResourceVisualization provides operations to manage the collection of drive entities.
 type ResourceVisualization struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -31,6 +31,10 @@ func NewResourceVisualization()(*ResourceVisualization) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateResourceVisualizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateResourceVisualizationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewResourceVisualization(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceVisualization) GetAdditionalData()(map[string]interface{}) {
@@ -62,46 +66,6 @@ func (m *ResourceVisualization) GetContainerWebUrl()(*string) {
         return nil
     } else {
         return m.containerWebUrl
-    }
-}
-// GetMediaType gets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
-func (m *ResourceVisualization) GetMediaType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
-}
-// GetPreviewImageUrl gets the previewImageUrl property value. A URL leading to the preview image for the item.
-func (m *ResourceVisualization) GetPreviewImageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previewImageUrl
-    }
-}
-// GetPreviewText gets the previewText property value. A preview text for the item.
-func (m *ResourceVisualization) GetPreviewText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previewText
-    }
-}
-// GetTitle gets the title property value. The item's title text.
-func (m *ResourceVisualization) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
-}
-// GetType gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-func (m *ResourceVisualization) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -188,6 +152,46 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetMediaType gets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+func (m *ResourceVisualization) GetMediaType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaType
+    }
+}
+// GetPreviewImageUrl gets the previewImageUrl property value. A URL leading to the preview image for the item.
+func (m *ResourceVisualization) GetPreviewImageUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.previewImageUrl
+    }
+}
+// GetPreviewText gets the previewText property value. A preview text for the item.
+func (m *ResourceVisualization) GetPreviewText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.previewText
+    }
+}
+// GetTitle gets the title property value. The item's title text.
+func (m *ResourceVisualization) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
+}
+// GetType gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+func (m *ResourceVisualization) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *ResourceVisualization) IsNil()(bool) {
     return m == nil

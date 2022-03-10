@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationMethod 
+// AuthenticationMethod provides operations to manage the collection of drive entities.
 type AuthenticationMethod struct {
     Entity
 }
@@ -14,6 +14,10 @@ func NewAuthenticationMethod()(*AuthenticationMethod) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthenticationMethodFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthenticationMethod(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {

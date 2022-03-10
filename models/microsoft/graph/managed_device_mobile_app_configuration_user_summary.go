@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDeviceMobileAppConfigurationUserSummary 
+// ManagedDeviceMobileAppConfigurationUserSummary provides operations to manage the deviceAppManagement singleton.
 type ManagedDeviceMobileAppConfigurationUserSummary struct {
     Entity
     // Version of the policy for that overview
@@ -30,6 +30,10 @@ func NewManagedDeviceMobileAppConfigurationUserSummary()(*ManagedDeviceMobileApp
     }
     return m
 }
+// CreateManagedDeviceMobileAppConfigurationUserSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedDeviceMobileAppConfigurationUserSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedDeviceMobileAppConfigurationUserSummary(), nil
+}
 // GetConfigurationVersion gets the configurationVersion property value. Version of the policy for that overview
 func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetConfigurationVersion()(*int32) {
     if m == nil {
@@ -52,38 +56,6 @@ func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetFailedCount()(*int32
         return nil
     } else {
         return m.failedCount
-    }
-}
-// GetLastUpdateDateTime gets the lastUpdateDateTime property value. Last update time
-func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdateDateTime
-    }
-}
-// GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable users
-func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetNotApplicableCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableCount
-    }
-}
-// GetPendingCount gets the pendingCount property value. Number of pending Users
-func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetPendingCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingCount
-    }
-}
-// GetSuccessCount gets the successCount property value. Number of succeeded Users
-func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetSuccessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,6 +132,38 @@ func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetLastUpdateDateTime gets the lastUpdateDateTime property value. Last update time
+func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdateDateTime
+    }
+}
+// GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable users
+func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetNotApplicableCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableCount
+    }
+}
+// GetPendingCount gets the pendingCount property value. Number of pending Users
+func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetPendingCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingCount
+    }
+}
+// GetSuccessCount gets the successCount property value. Number of succeeded Users
+func (m *ManagedDeviceMobileAppConfigurationUserSummary) GetSuccessCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successCount
+    }
 }
 func (m *ManagedDeviceMobileAppConfigurationUserSummary) IsNil()(bool) {
     return m == nil

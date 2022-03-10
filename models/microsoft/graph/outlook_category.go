@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutlookCategory 
+// OutlookCategory provides operations to manage the collection of drive entities.
 type OutlookCategory struct {
     Entity
     // A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
@@ -18,6 +18,10 @@ func NewOutlookCategory()(*OutlookCategory) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateOutlookCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOutlookCategoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOutlookCategory(), nil
 }
 // GetColor gets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
 func (m *OutlookCategory) GetColor()(*CategoryColor) {

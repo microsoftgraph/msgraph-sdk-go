@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintTaskStatus 
+// PrintTaskStatus provides operations to manage the print singleton.
 type PrintTaskStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewPrintTaskStatus()(*PrintTaskStatus) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePrintTaskStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintTaskStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintTaskStatus(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintTaskStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *PrintTaskStatus) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetState gets the state property value. The current processing state of the printTask. Valid values are described in the following table.
-func (m *PrintTaskStatus) GetState()(*PrintTaskProcessingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *PrintTaskStatus) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetState gets the state property value. The current processing state of the printTask. Valid values are described in the following table.
+func (m *PrintTaskStatus) GetState()(*PrintTaskProcessingState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *PrintTaskStatus) IsNil()(bool) {
     return m == nil

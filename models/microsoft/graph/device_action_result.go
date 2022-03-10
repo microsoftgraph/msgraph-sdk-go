@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceActionResult 
+// DeviceActionResult provides operations to manage the collection of drive entities.
 type DeviceActionResult struct {
     // Action name
     actionName *string;
@@ -24,6 +24,10 @@ func NewDeviceActionResult()(*DeviceActionResult) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceActionResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceActionResult(), nil
 }
 // GetActionName gets the actionName property value. Action name
 func (m *DeviceActionResult) GetActionName()(*string) {
@@ -47,22 +51,6 @@ func (m *DeviceActionResult) GetAdditionalData()(map[string]interface{}) {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the action state was last updated
-func (m *DeviceActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetStartDateTime gets the startDateTime property value. Time the action was initiated
-func (m *DeviceActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +97,22 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the action state was last updated
+func (m *DeviceActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetStartDateTime gets the startDateTime property value. Time the action was initiated
+func (m *DeviceActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
 }
 func (m *DeviceActionResult) IsNil()(bool) {
     return m == nil

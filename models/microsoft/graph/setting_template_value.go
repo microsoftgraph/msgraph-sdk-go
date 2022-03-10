@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SettingTemplateValue 
+// SettingTemplateValue provides operations to manage the collection of groupSettingTemplate entities.
 type SettingTemplateValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewSettingTemplateValue()(*SettingTemplateValue) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSettingTemplateValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSettingTemplateValueFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSettingTemplateValue(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SettingTemplateValue) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *SettingTemplateValue) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetName gets the name property value. Name of the setting.
-func (m *SettingTemplateValue) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetType gets the type property value. Type of the setting.
-func (m *SettingTemplateValue) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +96,22 @@ func (m *SettingTemplateValue) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name of the setting.
+func (m *SettingTemplateValue) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetType gets the type property value. Type of the setting.
+func (m *SettingTemplateValue) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *SettingTemplateValue) IsNil()(bool) {
     return m == nil

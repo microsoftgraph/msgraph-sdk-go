@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IosUpdateDeviceStatus 
+// IosUpdateDeviceStatus provides operations to manage the deviceManagement singleton.
 type IosUpdateDeviceStatus struct {
     Entity
     // The DateTime when device compliance grace period expires
@@ -38,6 +38,10 @@ func NewIosUpdateDeviceStatus()(*IosUpdateDeviceStatus) {
     }
     return m
 }
+// CreateIosUpdateDeviceStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIosUpdateDeviceStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIosUpdateDeviceStatus(), nil
+}
 // GetComplianceGracePeriodExpirationDateTime gets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *IosUpdateDeviceStatus) GetComplianceGracePeriodExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -68,62 +72,6 @@ func (m *IosUpdateDeviceStatus) GetDeviceModel()(*string) {
         return nil
     } else {
         return m.deviceModel
-    }
-}
-// GetInstallStatus gets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, deviceOsHigherThanDesiredOsVersion.
-func (m *IosUpdateDeviceStatus) GetInstallStatus()(*IosUpdatesInstallStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installStatus
-    }
-}
-// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
-func (m *IosUpdateDeviceStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
-}
-// GetOsVersion gets the osVersion property value. The device version that is being reported.
-func (m *IosUpdateDeviceStatus) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-func (m *IosUpdateDeviceStatus) GetStatus()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUserId gets the userId property value. The User id that is being reported.
-func (m *IosUpdateDeviceStatus) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserName gets the userName property value. The User Name that is being reported
-func (m *IosUpdateDeviceStatus) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
-func (m *IosUpdateDeviceStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -240,6 +188,62 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetInstallStatus gets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, deviceOsHigherThanDesiredOsVersion.
+func (m *IosUpdateDeviceStatus) GetInstallStatus()(*IosUpdatesInstallStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installStatus
+    }
+}
+// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
+func (m *IosUpdateDeviceStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastReportedDateTime
+    }
+}
+// GetOsVersion gets the osVersion property value. The device version that is being reported.
+func (m *IosUpdateDeviceStatus) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+func (m *IosUpdateDeviceStatus) GetStatus()(*ComplianceStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUserId gets the userId property value. The User id that is being reported.
+func (m *IosUpdateDeviceStatus) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserName gets the userName property value. The User Name that is being reported
+func (m *IosUpdateDeviceStatus) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
+func (m *IosUpdateDeviceStatus) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *IosUpdateDeviceStatus) IsNil()(bool) {
     return m == nil

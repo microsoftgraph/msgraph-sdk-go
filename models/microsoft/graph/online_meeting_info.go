@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnlineMeetingInfo 
+// OnlineMeetingInfo provides operations to manage the collection of drive entities.
 type OnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type OnlineMeetingInfo struct {
     // The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
     joinUrl *string;
     // All of the phone numbers associated with this conference.
-    phones []Phone;
+    phones []Phoneable;
     // The pre-formatted quickdial for this call.
     quickDial *string;
     // The toll free numbers that can be used to join the conference.
@@ -27,6 +27,10 @@ func NewOnlineMeetingInfo()(*OnlineMeetingInfo) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateOnlineMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnlineMeetingInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnlineMeetingInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnlineMeetingInfo) GetAdditionalData()(map[string]interface{}) {
@@ -42,46 +46,6 @@ func (m *OnlineMeetingInfo) GetConferenceId()(*string) {
         return nil
     } else {
         return m.conferenceId
-    }
-}
-// GetJoinUrl gets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-func (m *OnlineMeetingInfo) GetJoinUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinUrl
-    }
-}
-// GetPhones gets the phones property value. All of the phone numbers associated with this conference.
-func (m *OnlineMeetingInfo) GetPhones()([]Phone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phones
-    }
-}
-// GetQuickDial gets the quickDial property value. The pre-formatted quickdial for this call.
-func (m *OnlineMeetingInfo) GetQuickDial()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quickDial
-    }
-}
-// GetTollFreeNumbers gets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
-func (m *OnlineMeetingInfo) GetTollFreeNumbers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollFreeNumbers
-    }
-}
-// GetTollNumber gets the tollNumber property value. The toll number that can be used to join the conference.
-func (m *OnlineMeetingInfo) GetTollNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollNumber
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,14 +72,14 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["phones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhone() })
+        val, err := n.GetCollectionOfObjectValues(CreatePhoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Phone, len(val))
+            res := make([]Phoneable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Phone))
+                res[i] = v.(Phoneable)
             }
             m.SetPhones(res)
         }
@@ -157,6 +121,46 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
+// GetJoinUrl gets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+func (m *OnlineMeetingInfo) GetJoinUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinUrl
+    }
+}
+// GetPhones gets the phones property value. All of the phone numbers associated with this conference.
+func (m *OnlineMeetingInfo) GetPhones()([]Phoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phones
+    }
+}
+// GetQuickDial gets the quickDial property value. The pre-formatted quickdial for this call.
+func (m *OnlineMeetingInfo) GetQuickDial()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quickDial
+    }
+}
+// GetTollFreeNumbers gets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
+func (m *OnlineMeetingInfo) GetTollFreeNumbers()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tollFreeNumbers
+    }
+}
+// GetTollNumber gets the tollNumber property value. The toll number that can be used to join the conference.
+func (m *OnlineMeetingInfo) GetTollNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tollNumber
+    }
+}
 func (m *OnlineMeetingInfo) IsNil()(bool) {
     return m == nil
 }
@@ -177,8 +181,7 @@ func (m *OnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetPhones() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("phones", cast)
         if err != nil {
@@ -230,7 +233,7 @@ func (m *OnlineMeetingInfo) SetJoinUrl(value *string)() {
     }
 }
 // SetPhones sets the phones property value. All of the phone numbers associated with this conference.
-func (m *OnlineMeetingInfo) SetPhones(value []Phone)() {
+func (m *OnlineMeetingInfo) SetPhones(value []Phoneable)() {
     if m != nil {
         m.phones = value
     }

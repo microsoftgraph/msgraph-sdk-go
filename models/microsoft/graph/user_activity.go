@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserActivity 
+// UserActivity provides operations to manage the collection of drive entities.
 type UserActivity struct {
     Entity
     // Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
@@ -17,7 +17,7 @@ type UserActivity struct {
     // Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
     appDisplayName *string;
     // Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-    contentInfo *Json;
+    contentInfo Jsonable;
     // Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).
     contentUrl *string;
     // Set by the server. DateTime in UTC when the object was created on the server.
@@ -27,7 +27,7 @@ type UserActivity struct {
     // Optional. URL used to launch the activity in a web-based app, if available.
     fallbackUrl *string;
     // Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-    historyItems []ActivityHistoryItem;
+    historyItems []ActivityHistoryItemable;
     // Set by the server. DateTime in UTC when the object was modified on the server.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
@@ -35,7 +35,7 @@ type UserActivity struct {
     // Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
     userTimezone *string;
     // 
-    visualElements *VisualInfo;
+    visualElements VisualInfoable;
 }
 // NewUserActivity instantiates a new userActivity and sets the default values.
 func NewUserActivity()(*UserActivity) {
@@ -43,6 +43,10 @@ func NewUserActivity()(*UserActivity) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserActivityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserActivity(), nil
 }
 // GetActivationUrl gets the activationUrl property value. Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
 func (m *UserActivity) GetActivationUrl()(*string) {
@@ -77,7 +81,7 @@ func (m *UserActivity) GetAppDisplayName()(*string) {
     }
 }
 // GetContentInfo gets the contentInfo property value. Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-func (m *UserActivity) GetContentInfo()(*Json) {
+func (m *UserActivity) GetContentInfo()(Jsonable) {
     if m == nil {
         return nil
     } else {
@@ -114,46 +118,6 @@ func (m *UserActivity) GetFallbackUrl()(*string) {
         return nil
     } else {
         return m.fallbackUrl
-    }
-}
-// GetHistoryItems gets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-func (m *UserActivity) GetHistoryItems()([]ActivityHistoryItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.historyItems
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
-func (m *UserActivity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetStatus gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-func (m *UserActivity) GetStatus()(*Status) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUserTimezone gets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
-func (m *UserActivity) GetUserTimezone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userTimezone
-    }
-}
-// GetVisualElements gets the visualElements property value. 
-func (m *UserActivity) GetVisualElements()(*VisualInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visualElements
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -200,12 +164,12 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["contentInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJson() })
+        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentInfo(val.(*Json))
+            m.SetContentInfo(val.(Jsonable))
         }
         return nil
     }
@@ -250,14 +214,14 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["historyItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewActivityHistoryItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateActivityHistoryItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ActivityHistoryItem, len(val))
+            res := make([]ActivityHistoryItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ActivityHistoryItem))
+                res[i] = v.(ActivityHistoryItemable)
             }
             m.SetHistoryItems(res)
         }
@@ -294,16 +258,56 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["visualElements"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVisualInfo() })
+        val, err := n.GetObjectValue(CreateVisualInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVisualElements(val.(*VisualInfo))
+            m.SetVisualElements(val.(VisualInfoable))
         }
         return nil
     }
     return res
+}
+// GetHistoryItems gets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+func (m *UserActivity) GetHistoryItems()([]ActivityHistoryItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.historyItems
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
+func (m *UserActivity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetStatus gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
+func (m *UserActivity) GetStatus()(*Status) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUserTimezone gets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
+func (m *UserActivity) GetUserTimezone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userTimezone
+    }
+}
+// GetVisualElements gets the visualElements property value. 
+func (m *UserActivity) GetVisualElements()(VisualInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visualElements
+    }
 }
 func (m *UserActivity) IsNil()(bool) {
     return m == nil
@@ -371,8 +375,7 @@ func (m *UserActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetHistoryItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHistoryItems()))
         for i, v := range m.GetHistoryItems() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("historyItems", cast)
         if err != nil {
@@ -431,7 +434,7 @@ func (m *UserActivity) SetAppDisplayName(value *string)() {
     }
 }
 // SetContentInfo sets the contentInfo property value. Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-func (m *UserActivity) SetContentInfo(value *Json)() {
+func (m *UserActivity) SetContentInfo(value Jsonable)() {
     if m != nil {
         m.contentInfo = value
     }
@@ -461,7 +464,7 @@ func (m *UserActivity) SetFallbackUrl(value *string)() {
     }
 }
 // SetHistoryItems sets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-func (m *UserActivity) SetHistoryItems(value []ActivityHistoryItem)() {
+func (m *UserActivity) SetHistoryItems(value []ActivityHistoryItemable)() {
     if m != nil {
         m.historyItems = value
     }
@@ -485,7 +488,7 @@ func (m *UserActivity) SetUserTimezone(value *string)() {
     }
 }
 // SetVisualElements sets the visualElements property value. 
-func (m *UserActivity) SetVisualElements(value *VisualInfo)() {
+func (m *UserActivity) SetVisualElements(value VisualInfoable)() {
     if m != nil {
         m.visualElements = value
     }

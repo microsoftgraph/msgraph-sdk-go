@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProvisioningObjectSummary 
+// ProvisioningObjectSummary provides operations to manage the auditLogRoot singleton.
 type ProvisioningObjectSummary struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -17,27 +17,27 @@ type ProvisioningObjectSummary struct {
     // Indicates how long this provisioning action took to finish. Measured in milliseconds.
     durationInMilliseconds *int32;
     // Details of who initiated this provisioning.
-    initiatedBy *Initiator;
+    initiatedBy Initiatorable;
     // The unique ID for the whole provisioning job.
     jobId *string;
     // Details of each property that was modified in this provisioning action on this object.
-    modifiedProperties []ModifiedProperty;
+    modifiedProperties []ModifiedPropertyable;
     // Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
     provisioningAction *ProvisioningAction;
     // Details of provisioning status.
-    provisioningStatusInfo *ProvisioningStatusInfo;
+    provisioningStatusInfo ProvisioningStatusInfoable;
     // Details of each step in provisioning.
-    provisioningSteps []ProvisioningStep;
+    provisioningSteps []ProvisioningStepable;
     // Represents the service principal used for provisioning.
-    servicePrincipal *ProvisioningServicePrincipal;
+    servicePrincipal ProvisioningServicePrincipalable;
     // Details of source object being provisioned.
-    sourceIdentity *ProvisionedIdentity;
+    sourceIdentity ProvisionedIdentityable;
     // Details of source system of the object being provisioned.
-    sourceSystem *ProvisioningSystem;
+    sourceSystem ProvisioningSystemable;
     // Details of target object being provisioned.
-    targetIdentity *ProvisionedIdentity;
+    targetIdentity ProvisionedIdentityable;
     // Details of target system of the object being provisioned.
-    targetSystem *ProvisioningSystem;
+    targetSystem ProvisioningSystemable;
     // Unique Azure AD tenant ID.
     tenantId *string;
 }
@@ -47,6 +47,10 @@ func NewProvisioningObjectSummary()(*ProvisioningObjectSummary) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateProvisioningObjectSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProvisioningObjectSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProvisioningObjectSummary(), nil
 }
 // GetActivityDateTime gets the activityDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ProvisioningObjectSummary) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -78,102 +82,6 @@ func (m *ProvisioningObjectSummary) GetDurationInMilliseconds()(*int32) {
         return nil
     } else {
         return m.durationInMilliseconds
-    }
-}
-// GetInitiatedBy gets the initiatedBy property value. Details of who initiated this provisioning.
-func (m *ProvisioningObjectSummary) GetInitiatedBy()(*Initiator) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedBy
-    }
-}
-// GetJobId gets the jobId property value. The unique ID for the whole provisioning job.
-func (m *ProvisioningObjectSummary) GetJobId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobId
-    }
-}
-// GetModifiedProperties gets the modifiedProperties property value. Details of each property that was modified in this provisioning action on this object.
-func (m *ProvisioningObjectSummary) GetModifiedProperties()([]ModifiedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedProperties
-    }
-}
-// GetProvisioningAction gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
-func (m *ProvisioningObjectSummary) GetProvisioningAction()(*ProvisioningAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningAction
-    }
-}
-// GetProvisioningStatusInfo gets the provisioningStatusInfo property value. Details of provisioning status.
-func (m *ProvisioningObjectSummary) GetProvisioningStatusInfo()(*ProvisioningStatusInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningStatusInfo
-    }
-}
-// GetProvisioningSteps gets the provisioningSteps property value. Details of each step in provisioning.
-func (m *ProvisioningObjectSummary) GetProvisioningSteps()([]ProvisioningStep) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningSteps
-    }
-}
-// GetServicePrincipal gets the servicePrincipal property value. Represents the service principal used for provisioning.
-func (m *ProvisioningObjectSummary) GetServicePrincipal()(*ProvisioningServicePrincipal) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipal
-    }
-}
-// GetSourceIdentity gets the sourceIdentity property value. Details of source object being provisioned.
-func (m *ProvisioningObjectSummary) GetSourceIdentity()(*ProvisionedIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceIdentity
-    }
-}
-// GetSourceSystem gets the sourceSystem property value. Details of source system of the object being provisioned.
-func (m *ProvisioningObjectSummary) GetSourceSystem()(*ProvisioningSystem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceSystem
-    }
-}
-// GetTargetIdentity gets the targetIdentity property value. Details of target object being provisioned.
-func (m *ProvisioningObjectSummary) GetTargetIdentity()(*ProvisionedIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetIdentity
-    }
-}
-// GetTargetSystem gets the targetSystem property value. Details of target system of the object being provisioned.
-func (m *ProvisioningObjectSummary) GetTargetSystem()(*ProvisioningSystem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetSystem
-    }
-}
-// GetTenantId gets the tenantId property value. Unique Azure AD tenant ID.
-func (m *ProvisioningObjectSummary) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,12 +128,12 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["initiatedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInitiator() })
+        val, err := n.GetObjectValue(CreateInitiatorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInitiatedBy(val.(*Initiator))
+            m.SetInitiatedBy(val.(Initiatorable))
         }
         return nil
     }
@@ -240,14 +148,14 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["modifiedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewModifiedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateModifiedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ModifiedProperty, len(val))
+            res := make([]ModifiedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ModifiedProperty))
+                res[i] = v.(ModifiedPropertyable)
             }
             m.SetModifiedProperties(res)
         }
@@ -264,76 +172,76 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["provisioningStatusInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisioningStatusInfo() })
+        val, err := n.GetObjectValue(CreateProvisioningStatusInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProvisioningStatusInfo(val.(*ProvisioningStatusInfo))
+            m.SetProvisioningStatusInfo(val.(ProvisioningStatusInfoable))
         }
         return nil
     }
     res["provisioningSteps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisioningStep() })
+        val, err := n.GetCollectionOfObjectValues(CreateProvisioningStepFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ProvisioningStep, len(val))
+            res := make([]ProvisioningStepable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ProvisioningStep))
+                res[i] = v.(ProvisioningStepable)
             }
             m.SetProvisioningSteps(res)
         }
         return nil
     }
     res["servicePrincipal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisioningServicePrincipal() })
+        val, err := n.GetObjectValue(CreateProvisioningServicePrincipalFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetServicePrincipal(val.(*ProvisioningServicePrincipal))
+            m.SetServicePrincipal(val.(ProvisioningServicePrincipalable))
         }
         return nil
     }
     res["sourceIdentity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisionedIdentity() })
+        val, err := n.GetObjectValue(CreateProvisionedIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceIdentity(val.(*ProvisionedIdentity))
+            m.SetSourceIdentity(val.(ProvisionedIdentityable))
         }
         return nil
     }
     res["sourceSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisioningSystem() })
+        val, err := n.GetObjectValue(CreateProvisioningSystemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceSystem(val.(*ProvisioningSystem))
+            m.SetSourceSystem(val.(ProvisioningSystemable))
         }
         return nil
     }
     res["targetIdentity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisionedIdentity() })
+        val, err := n.GetObjectValue(CreateProvisionedIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTargetIdentity(val.(*ProvisionedIdentity))
+            m.SetTargetIdentity(val.(ProvisionedIdentityable))
         }
         return nil
     }
     res["targetSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisioningSystem() })
+        val, err := n.GetObjectValue(CreateProvisioningSystemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTargetSystem(val.(*ProvisioningSystem))
+            m.SetTargetSystem(val.(ProvisioningSystemable))
         }
         return nil
     }
@@ -348,6 +256,102 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetInitiatedBy gets the initiatedBy property value. Details of who initiated this provisioning.
+func (m *ProvisioningObjectSummary) GetInitiatedBy()(Initiatorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.initiatedBy
+    }
+}
+// GetJobId gets the jobId property value. The unique ID for the whole provisioning job.
+func (m *ProvisioningObjectSummary) GetJobId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jobId
+    }
+}
+// GetModifiedProperties gets the modifiedProperties property value. Details of each property that was modified in this provisioning action on this object.
+func (m *ProvisioningObjectSummary) GetModifiedProperties()([]ModifiedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedProperties
+    }
+}
+// GetProvisioningAction gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
+func (m *ProvisioningObjectSummary) GetProvisioningAction()(*ProvisioningAction) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisioningAction
+    }
+}
+// GetProvisioningStatusInfo gets the provisioningStatusInfo property value. Details of provisioning status.
+func (m *ProvisioningObjectSummary) GetProvisioningStatusInfo()(ProvisioningStatusInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisioningStatusInfo
+    }
+}
+// GetProvisioningSteps gets the provisioningSteps property value. Details of each step in provisioning.
+func (m *ProvisioningObjectSummary) GetProvisioningSteps()([]ProvisioningStepable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisioningSteps
+    }
+}
+// GetServicePrincipal gets the servicePrincipal property value. Represents the service principal used for provisioning.
+func (m *ProvisioningObjectSummary) GetServicePrincipal()(ProvisioningServicePrincipalable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePrincipal
+    }
+}
+// GetSourceIdentity gets the sourceIdentity property value. Details of source object being provisioned.
+func (m *ProvisioningObjectSummary) GetSourceIdentity()(ProvisionedIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceIdentity
+    }
+}
+// GetSourceSystem gets the sourceSystem property value. Details of source system of the object being provisioned.
+func (m *ProvisioningObjectSummary) GetSourceSystem()(ProvisioningSystemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceSystem
+    }
+}
+// GetTargetIdentity gets the targetIdentity property value. Details of target object being provisioned.
+func (m *ProvisioningObjectSummary) GetTargetIdentity()(ProvisionedIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetIdentity
+    }
+}
+// GetTargetSystem gets the targetSystem property value. Details of target system of the object being provisioned.
+func (m *ProvisioningObjectSummary) GetTargetSystem()(ProvisioningSystemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetSystem
+    }
+}
+// GetTenantId gets the tenantId property value. Unique Azure AD tenant ID.
+func (m *ProvisioningObjectSummary) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *ProvisioningObjectSummary) IsNil()(bool) {
     return m == nil
@@ -397,8 +401,7 @@ func (m *ProvisioningObjectSummary) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetModifiedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetModifiedProperties()))
         for i, v := range m.GetModifiedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
         if err != nil {
@@ -421,8 +424,7 @@ func (m *ProvisioningObjectSummary) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetProvisioningSteps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisioningSteps()))
         for i, v := range m.GetProvisioningSteps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("provisioningSteps", cast)
         if err != nil {
@@ -492,7 +494,7 @@ func (m *ProvisioningObjectSummary) SetDurationInMilliseconds(value *int32)() {
     }
 }
 // SetInitiatedBy sets the initiatedBy property value. Details of who initiated this provisioning.
-func (m *ProvisioningObjectSummary) SetInitiatedBy(value *Initiator)() {
+func (m *ProvisioningObjectSummary) SetInitiatedBy(value Initiatorable)() {
     if m != nil {
         m.initiatedBy = value
     }
@@ -504,7 +506,7 @@ func (m *ProvisioningObjectSummary) SetJobId(value *string)() {
     }
 }
 // SetModifiedProperties sets the modifiedProperties property value. Details of each property that was modified in this provisioning action on this object.
-func (m *ProvisioningObjectSummary) SetModifiedProperties(value []ModifiedProperty)() {
+func (m *ProvisioningObjectSummary) SetModifiedProperties(value []ModifiedPropertyable)() {
     if m != nil {
         m.modifiedProperties = value
     }
@@ -516,43 +518,43 @@ func (m *ProvisioningObjectSummary) SetProvisioningAction(value *ProvisioningAct
     }
 }
 // SetProvisioningStatusInfo sets the provisioningStatusInfo property value. Details of provisioning status.
-func (m *ProvisioningObjectSummary) SetProvisioningStatusInfo(value *ProvisioningStatusInfo)() {
+func (m *ProvisioningObjectSummary) SetProvisioningStatusInfo(value ProvisioningStatusInfoable)() {
     if m != nil {
         m.provisioningStatusInfo = value
     }
 }
 // SetProvisioningSteps sets the provisioningSteps property value. Details of each step in provisioning.
-func (m *ProvisioningObjectSummary) SetProvisioningSteps(value []ProvisioningStep)() {
+func (m *ProvisioningObjectSummary) SetProvisioningSteps(value []ProvisioningStepable)() {
     if m != nil {
         m.provisioningSteps = value
     }
 }
 // SetServicePrincipal sets the servicePrincipal property value. Represents the service principal used for provisioning.
-func (m *ProvisioningObjectSummary) SetServicePrincipal(value *ProvisioningServicePrincipal)() {
+func (m *ProvisioningObjectSummary) SetServicePrincipal(value ProvisioningServicePrincipalable)() {
     if m != nil {
         m.servicePrincipal = value
     }
 }
 // SetSourceIdentity sets the sourceIdentity property value. Details of source object being provisioned.
-func (m *ProvisioningObjectSummary) SetSourceIdentity(value *ProvisionedIdentity)() {
+func (m *ProvisioningObjectSummary) SetSourceIdentity(value ProvisionedIdentityable)() {
     if m != nil {
         m.sourceIdentity = value
     }
 }
 // SetSourceSystem sets the sourceSystem property value. Details of source system of the object being provisioned.
-func (m *ProvisioningObjectSummary) SetSourceSystem(value *ProvisioningSystem)() {
+func (m *ProvisioningObjectSummary) SetSourceSystem(value ProvisioningSystemable)() {
     if m != nil {
         m.sourceSystem = value
     }
 }
 // SetTargetIdentity sets the targetIdentity property value. Details of target object being provisioned.
-func (m *ProvisioningObjectSummary) SetTargetIdentity(value *ProvisionedIdentity)() {
+func (m *ProvisioningObjectSummary) SetTargetIdentity(value ProvisionedIdentityable)() {
     if m != nil {
         m.targetIdentity = value
     }
 }
 // SetTargetSystem sets the targetSystem property value. Details of target system of the object being provisioned.
-func (m *ProvisioningObjectSummary) SetTargetSystem(value *ProvisioningSystem)() {
+func (m *ProvisioningObjectSummary) SetTargetSystem(value ProvisioningSystemable)() {
     if m != nil {
         m.targetSystem = value
     }

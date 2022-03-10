@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetMemberGroupsRequestBuilder builds and executes requests for operations under \organization\{organization-id}\microsoft.graph.getMemberGroups
+// GetMemberGroupsRequestBuilder provides operations to call the getMemberGroups method.
 type GetMemberGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetMemberGroupsRequestBuilder struct {
 // GetMemberGroupsRequestBuilderPostOptions options for Post
 type GetMemberGroupsRequestBuilderPostOptions struct {
     // 
-    Body *GetMemberGroupsRequestBody;
+    Body GetMemberGroupsRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetMemberGroupsRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,18 +62,14 @@ func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformation(options *Ge
     return requestInfo, nil
 }
 // Post invoke action getMemberGroups
-func (m *GetMemberGroupsRequestBuilder) Post(options *GetMemberGroupsRequestBuilderPostOptions)([]string, error) {
+func (m *GetMemberGroupsRequestBuilder) Post(options *GetMemberGroupsRequestBuilderPostOptions)(GetMemberGroupsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveCollectionAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetMemberGroupsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]string, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*string))
-    }
-    return val, nil
+    return res.(GetMemberGroupsResponseable), nil
 }

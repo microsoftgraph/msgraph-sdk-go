@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationCategory 
+// EducationCategory provides operations to manage the educationRoot singleton.
 type EducationCategory struct {
     Entity
     // Unique identifier for the category.
@@ -16,6 +16,10 @@ func NewEducationCategory()(*EducationCategory) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateEducationCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationCategoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationCategory(), nil
 }
 // GetDisplayName gets the displayName property value. Unique identifier for the category.
 func (m *EducationCategory) GetDisplayName()(*string) {

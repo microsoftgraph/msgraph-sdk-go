@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MeetingParticipants 
+// MeetingParticipants provides operations to manage the cloudCommunications singleton.
 type MeetingParticipants struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Information of the meeting attendees.
-    attendees []MeetingParticipantInfo;
+    attendees []MeetingParticipantInfoable;
     // Information of the meeting organizer.
-    organizer *MeetingParticipantInfo;
+    organizer MeetingParticipantInfoable;
 }
 // NewMeetingParticipants instantiates a new meetingParticipants and sets the default values.
 func NewMeetingParticipants()(*MeetingParticipants) {
@@ -19,6 +19,10 @@ func NewMeetingParticipants()(*MeetingParticipants) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateMeetingParticipantsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMeetingParticipantsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMeetingParticipants(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipants) GetAdditionalData()(map[string]interface{}) {
@@ -29,49 +33,49 @@ func (m *MeetingParticipants) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAttendees gets the attendees property value. Information of the meeting attendees.
-func (m *MeetingParticipants) GetAttendees()([]MeetingParticipantInfo) {
+func (m *MeetingParticipants) GetAttendees()([]MeetingParticipantInfoable) {
     if m == nil {
         return nil
     } else {
         return m.attendees
     }
 }
-// GetOrganizer gets the organizer property value. Information of the meeting organizer.
-func (m *MeetingParticipants) GetOrganizer()(*MeetingParticipantInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizer
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["attendees"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMeetingParticipantInfo() })
+        val, err := n.GetCollectionOfObjectValues(CreateMeetingParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MeetingParticipantInfo, len(val))
+            res := make([]MeetingParticipantInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MeetingParticipantInfo))
+                res[i] = v.(MeetingParticipantInfoable)
             }
             m.SetAttendees(res)
         }
         return nil
     }
     res["organizer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMeetingParticipantInfo() })
+        val, err := n.GetObjectValue(CreateMeetingParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOrganizer(val.(*MeetingParticipantInfo))
+            m.SetOrganizer(val.(MeetingParticipantInfoable))
         }
         return nil
     }
     return res
+}
+// GetOrganizer gets the organizer property value. Information of the meeting organizer.
+func (m *MeetingParticipants) GetOrganizer()(MeetingParticipantInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizer
+    }
 }
 func (m *MeetingParticipants) IsNil()(bool) {
     return m == nil
@@ -81,8 +85,7 @@ func (m *MeetingParticipants) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetAttendees() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttendees()))
         for i, v := range m.GetAttendees() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("attendees", cast)
         if err != nil {
@@ -110,13 +113,13 @@ func (m *MeetingParticipants) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetAttendees sets the attendees property value. Information of the meeting attendees.
-func (m *MeetingParticipants) SetAttendees(value []MeetingParticipantInfo)() {
+func (m *MeetingParticipants) SetAttendees(value []MeetingParticipantInfoable)() {
     if m != nil {
         m.attendees = value
     }
 }
 // SetOrganizer sets the organizer property value. Information of the meeting organizer.
-func (m *MeetingParticipants) SetOrganizer(value *MeetingParticipantInfo)() {
+func (m *MeetingParticipants) SetOrganizer(value MeetingParticipantInfoable)() {
     if m != nil {
         m.organizer = value
     }

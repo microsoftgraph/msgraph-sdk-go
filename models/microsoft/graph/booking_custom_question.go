@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingCustomQuestion 
+// BookingCustomQuestion provides operations to manage the solutionsRoot singleton.
 type BookingCustomQuestion struct {
     Entity
     // The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
@@ -20,6 +20,10 @@ func NewBookingCustomQuestion()(*BookingCustomQuestion) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateBookingCustomQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBookingCustomQuestionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBookingCustomQuestion(), nil
 }
 // GetAnswerInputType gets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
 func (m *BookingCustomQuestion) GetAnswerInputType()(*AnswerInputType) {

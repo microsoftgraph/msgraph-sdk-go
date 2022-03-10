@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintMargin 
+// PrintMargin provides operations to manage the print singleton.
 type PrintMargin struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewPrintMargin()(*PrintMargin) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePrintMarginFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintMarginFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintMargin(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintMargin) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *PrintMargin) GetBottom()(*int32) {
         return nil
     } else {
         return m.bottom
-    }
-}
-// GetLeft gets the left property value. The margin in microns from the left edge.
-func (m *PrintMargin) GetLeft()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.left
-    }
-}
-// GetRight gets the right property value. The margin in microns from the right edge.
-func (m *PrintMargin) GetRight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.right
-    }
-}
-// GetTop gets the top property value. The margin in microns from the top edge.
-func (m *PrintMargin) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *PrintMargin) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetLeft gets the left property value. The margin in microns from the left edge.
+func (m *PrintMargin) GetLeft()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.left
+    }
+}
+// GetRight gets the right property value. The margin in microns from the right edge.
+func (m *PrintMargin) GetRight()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.right
+    }
+}
+// GetTop gets the top property value. The margin in microns from the top edge.
+func (m *PrintMargin) GetTop()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.top
+    }
 }
 func (m *PrintMargin) IsNil()(bool) {
     return m == nil

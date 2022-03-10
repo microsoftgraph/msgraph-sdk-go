@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Place 
+// Place provides operations to manage the collection of place entities.
 type Place struct {
     Entity
     // The street address of the place.
-    address *PhysicalAddress;
+    address PhysicalAddressable;
     // The name associated with the place.
     displayName *string;
     // Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
-    geoCoordinates *OutlookGeoCoordinates;
+    geoCoordinates OutlookGeoCoordinatesable;
     // The phone number of the place.
     phone *string;
 }
@@ -23,8 +23,12 @@ func NewPlace()(*Place) {
     }
     return m
 }
+// CreatePlaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePlaceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPlace(), nil
+}
 // GetAddress gets the address property value. The street address of the place.
-func (m *Place) GetAddress()(*PhysicalAddress) {
+func (m *Place) GetAddress()(PhysicalAddressable) {
     if m == nil {
         return nil
     } else {
@@ -39,32 +43,16 @@ func (m *Place) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
-func (m *Place) GetGeoCoordinates()(*OutlookGeoCoordinates) {
-    if m == nil {
-        return nil
-    } else {
-        return m.geoCoordinates
-    }
-}
-// GetPhone gets the phone property value. The phone number of the place.
-func (m *Place) GetPhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phone
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Place) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
+        val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddress(val.(*PhysicalAddress))
+            m.SetAddress(val.(PhysicalAddressable))
         }
         return nil
     }
@@ -79,12 +67,12 @@ func (m *Place) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["geoCoordinates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOutlookGeoCoordinates() })
+        val, err := n.GetObjectValue(CreateOutlookGeoCoordinatesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGeoCoordinates(val.(*OutlookGeoCoordinates))
+            m.SetGeoCoordinates(val.(OutlookGeoCoordinatesable))
         }
         return nil
     }
@@ -99,6 +87,22 @@ func (m *Place) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     return res
+}
+// GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.geoCoordinates
+    }
+}
+// GetPhone gets the phone property value. The phone number of the place.
+func (m *Place) GetPhone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phone
+    }
 }
 func (m *Place) IsNil()(bool) {
     return m == nil
@@ -136,7 +140,7 @@ func (m *Place) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     return nil
 }
 // SetAddress sets the address property value. The street address of the place.
-func (m *Place) SetAddress(value *PhysicalAddress)() {
+func (m *Place) SetAddress(value PhysicalAddressable)() {
     if m != nil {
         m.address = value
     }
@@ -148,7 +152,7 @@ func (m *Place) SetDisplayName(value *string)() {
     }
 }
 // SetGeoCoordinates sets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
-func (m *Place) SetGeoCoordinates(value *OutlookGeoCoordinates)() {
+func (m *Place) SetGeoCoordinates(value OutlookGeoCoordinatesable)() {
     if m != nil {
         m.geoCoordinates = value
     }

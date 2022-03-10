@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewHistoryDefinition 
+// AccessReviewHistoryDefinition provides operations to manage the identityGovernance singleton.
 type AccessReviewHistoryDefinition struct {
     Entity
     // 
-    createdBy *UserIdentity;
+    createdBy UserIdentityable;
     // Timestamp when the access review definition was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
@@ -17,15 +17,15 @@ type AccessReviewHistoryDefinition struct {
     // Name for the access review history data collection. Required.
     displayName *string;
     // If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
-    instances []AccessReviewHistoryInstance;
+    instances []AccessReviewHistoryInstanceable;
     // A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
     reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
     reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
-    scheduleSettings *AccessReviewHistoryScheduleSettings;
+    scheduleSettings AccessReviewHistoryScheduleSettingsable;
     // Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
-    scopes []AccessReviewScope;
+    scopes []AccessReviewScopeable;
     // Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
     status *AccessReviewHistoryStatus;
 }
@@ -36,8 +36,12 @@ func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
     }
     return m
 }
+// CreateAccessReviewHistoryDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewHistoryDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewHistoryDefinition(), nil
+}
 // GetCreatedBy gets the createdBy property value. 
-func (m *AccessReviewHistoryDefinition) GetCreatedBy()(*UserIdentity) {
+func (m *AccessReviewHistoryDefinition) GetCreatedBy()(UserIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -68,64 +72,16 @@ func (m *AccessReviewHistoryDefinition) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetInstances gets the instances property value. If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
-func (m *AccessReviewHistoryDefinition) GetInstances()([]AccessReviewHistoryInstance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instances
-    }
-}
-// GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewHistoryPeriodEndDateTime
-    }
-}
-// GetReviewHistoryPeriodStartDateTime gets the reviewHistoryPeriodStartDateTime property value. A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewHistoryPeriodStartDateTime
-    }
-}
-// GetScheduleSettings gets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
-func (m *AccessReviewHistoryDefinition) GetScheduleSettings()(*AccessReviewHistoryScheduleSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleSettings
-    }
-}
-// GetScopes gets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
-func (m *AccessReviewHistoryDefinition) GetScopes()([]AccessReviewScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopes
-    }
-}
-// GetStatus gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
-func (m *AccessReviewHistoryDefinition) GetStatus()(*AccessReviewHistoryStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserIdentity() })
+        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*UserIdentity))
+            m.SetCreatedBy(val.(UserIdentityable))
         }
         return nil
     }
@@ -164,14 +120,14 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["instances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewHistoryInstance() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewHistoryInstanceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewHistoryInstance, len(val))
+            res := make([]AccessReviewHistoryInstanceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewHistoryInstance))
+                res[i] = v.(AccessReviewHistoryInstanceable)
             }
             m.SetInstances(res)
         }
@@ -198,24 +154,24 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["scheduleSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewHistoryScheduleSettings() })
+        val, err := n.GetObjectValue(CreateAccessReviewHistoryScheduleSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScheduleSettings(val.(*AccessReviewHistoryScheduleSettings))
+            m.SetScheduleSettings(val.(AccessReviewHistoryScheduleSettingsable))
         }
         return nil
     }
     res["scopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewScope, len(val))
+            res := make([]AccessReviewScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewScope))
+                res[i] = v.(AccessReviewScopeable)
             }
             m.SetScopes(res)
         }
@@ -232,6 +188,54 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetInstances gets the instances property value. If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
+func (m *AccessReviewHistoryDefinition) GetInstances()([]AccessReviewHistoryInstanceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instances
+    }
+}
+// GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewHistoryPeriodEndDateTime
+    }
+}
+// GetReviewHistoryPeriodStartDateTime gets the reviewHistoryPeriodStartDateTime property value. A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewHistoryPeriodStartDateTime
+    }
+}
+// GetScheduleSettings gets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
+func (m *AccessReviewHistoryDefinition) GetScheduleSettings()(AccessReviewHistoryScheduleSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scheduleSettings
+    }
+}
+// GetScopes gets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
+func (m *AccessReviewHistoryDefinition) GetScopes()([]AccessReviewScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopes
+    }
+}
+// GetStatus gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
+func (m *AccessReviewHistoryDefinition) GetStatus()(*AccessReviewHistoryStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *AccessReviewHistoryDefinition) IsNil()(bool) {
     return m == nil
@@ -269,8 +273,7 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInstances()))
         for i, v := range m.GetInstances() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("instances", cast)
         if err != nil {
@@ -298,8 +301,7 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScopes()))
         for i, v := range m.GetScopes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("scopes", cast)
         if err != nil {
@@ -316,7 +318,7 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i04eb5309aeaafadd28374d
     return nil
 }
 // SetCreatedBy sets the createdBy property value. 
-func (m *AccessReviewHistoryDefinition) SetCreatedBy(value *UserIdentity)() {
+func (m *AccessReviewHistoryDefinition) SetCreatedBy(value UserIdentityable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -340,7 +342,7 @@ func (m *AccessReviewHistoryDefinition) SetDisplayName(value *string)() {
     }
 }
 // SetInstances sets the instances property value. If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
-func (m *AccessReviewHistoryDefinition) SetInstances(value []AccessReviewHistoryInstance)() {
+func (m *AccessReviewHistoryDefinition) SetInstances(value []AccessReviewHistoryInstanceable)() {
     if m != nil {
         m.instances = value
     }
@@ -358,13 +360,13 @@ func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodStartDateTime(valu
     }
 }
 // SetScheduleSettings sets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
-func (m *AccessReviewHistoryDefinition) SetScheduleSettings(value *AccessReviewHistoryScheduleSettings)() {
+func (m *AccessReviewHistoryDefinition) SetScheduleSettings(value AccessReviewHistoryScheduleSettingsable)() {
     if m != nil {
         m.scheduleSettings = value
     }
 }
 // SetScopes sets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
-func (m *AccessReviewHistoryDefinition) SetScopes(value []AccessReviewScope)() {
+func (m *AccessReviewHistoryDefinition) SetScopes(value []AccessReviewScopeable)() {
     if m != nil {
         m.scopes = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchResult 
+// SearchResult provides operations to manage the drive singleton.
 type SearchResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewSearchResult()(*SearchResult) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSearchResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchResult(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetOnClickTelemetryUrl gets the onClickTelemetryUrl property value. A callback URL that can be used to record telemetry information. The application should issue a GET on this URL if the user interacts with this item to improve the quality of results.
-func (m *SearchResult) GetOnClickTelemetryUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onClickTelemetryUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *SearchResult) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetOnClickTelemetryUrl gets the onClickTelemetryUrl property value. A callback URL that can be used to record telemetry information. The application should issue a GET on this URL if the user interacts with this item to improve the quality of results.
+func (m *SearchResult) GetOnClickTelemetryUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onClickTelemetryUrl
+    }
 }
 func (m *SearchResult) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConversationMember 
+// ConversationMember provides operations to manage the collection of chat entities.
 type ConversationMember struct {
     Entity
     // The display name of the user.
@@ -22,28 +22,16 @@ func NewConversationMember()(*ConversationMember) {
     }
     return m
 }
+// CreateConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConversationMemberFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConversationMember(), nil
+}
 // GetDisplayName gets the displayName property value. The display name of the user.
 func (m *ConversationMember) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetRoles gets the roles property value. The roles for that user.
-func (m *ConversationMember) GetRoles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roles
-    }
-}
-// GetVisibleHistoryStartDateTime gets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-func (m *ConversationMember) GetVisibleHistoryStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visibleHistoryStartDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,6 +72,22 @@ func (m *ConversationMember) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetRoles gets the roles property value. The roles for that user.
+func (m *ConversationMember) GetRoles()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roles
+    }
+}
+// GetVisibleHistoryStartDateTime gets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
+func (m *ConversationMember) GetVisibleHistoryStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visibleHistoryStartDateTime
+    }
 }
 func (m *ConversationMember) IsNil()(bool) {
     return m == nil

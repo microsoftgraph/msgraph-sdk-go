@@ -4,19 +4,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Schedule 
+// Schedule provides operations to manage the educationRoot singleton.
 type Schedule struct {
     Entity
     // Indicates whether the schedule is enabled for the team. Required.
     enabled *bool;
     // 
-    offerShiftRequests []OfferShiftRequest;
+    offerShiftRequests []OfferShiftRequestable;
     // Indicates whether offer shift requests are enabled for the schedule.
     offerShiftRequestsEnabled *bool;
     // 
-    openShiftChangeRequests []OpenShiftChangeRequest;
+    openShiftChangeRequests []OpenShiftChangeRequestable;
     // 
-    openShifts []OpenShift;
+    openShifts []OpenShiftable;
     // Indicates whether open shifts are enabled for the schedule.
     openShiftsEnabled *bool;
     // The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
@@ -24,23 +24,23 @@ type Schedule struct {
     // Additional information about why schedule provisioning failed.
     provisionStatusCode *string;
     // The logical grouping of users in the schedule (usually by role).
-    schedulingGroups []SchedulingGroup;
+    schedulingGroups []SchedulingGroupable;
     // The shifts in the schedule.
-    shifts []Shift;
+    shifts []Shiftable;
     // 
-    swapShiftsChangeRequests []SwapShiftsChangeRequest;
+    swapShiftsChangeRequests []SwapShiftsChangeRequestable;
     // Indicates whether swap shifts requests are enabled for the schedule.
     swapShiftsRequestsEnabled *bool;
     // Indicates whether time clock is enabled for the schedule.
     timeClockEnabled *bool;
     // The set of reasons for a time off in the schedule.
-    timeOffReasons []TimeOffReason;
+    timeOffReasons []TimeOffReasonable;
     // 
-    timeOffRequests []TimeOffRequest;
+    timeOffRequests []TimeOffRequestable;
     // Indicates whether time off requests are enabled for the schedule.
     timeOffRequestsEnabled *bool;
     // The instances of times off in the schedule.
-    timesOff []TimeOff;
+    timesOff []TimeOffable;
     // Indicates the time zone of the schedule team using tz database format. Required.
     timeZone *string;
     // 
@@ -53,156 +53,16 @@ func NewSchedule()(*Schedule) {
     }
     return m
 }
+// CreateScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateScheduleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSchedule(), nil
+}
 // GetEnabled gets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
 func (m *Schedule) GetEnabled()(*bool) {
     if m == nil {
         return nil
     } else {
         return m.enabled
-    }
-}
-// GetOfferShiftRequests gets the offerShiftRequests property value. 
-func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offerShiftRequests
-    }
-}
-// GetOfferShiftRequestsEnabled gets the offerShiftRequestsEnabled property value. Indicates whether offer shift requests are enabled for the schedule.
-func (m *Schedule) GetOfferShiftRequestsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offerShiftRequestsEnabled
-    }
-}
-// GetOpenShiftChangeRequests gets the openShiftChangeRequests property value. 
-func (m *Schedule) GetOpenShiftChangeRequests()([]OpenShiftChangeRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.openShiftChangeRequests
-    }
-}
-// GetOpenShifts gets the openShifts property value. 
-func (m *Schedule) GetOpenShifts()([]OpenShift) {
-    if m == nil {
-        return nil
-    } else {
-        return m.openShifts
-    }
-}
-// GetOpenShiftsEnabled gets the openShiftsEnabled property value. Indicates whether open shifts are enabled for the schedule.
-func (m *Schedule) GetOpenShiftsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.openShiftsEnabled
-    }
-}
-// GetProvisionStatus gets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
-func (m *Schedule) GetProvisionStatus()(*OperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisionStatus
-    }
-}
-// GetProvisionStatusCode gets the provisionStatusCode property value. Additional information about why schedule provisioning failed.
-func (m *Schedule) GetProvisionStatusCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisionStatusCode
-    }
-}
-// GetSchedulingGroups gets the schedulingGroups property value. The logical grouping of users in the schedule (usually by role).
-func (m *Schedule) GetSchedulingGroups()([]SchedulingGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedulingGroups
-    }
-}
-// GetShifts gets the shifts property value. The shifts in the schedule.
-func (m *Schedule) GetShifts()([]Shift) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shifts
-    }
-}
-// GetSwapShiftsChangeRequests gets the swapShiftsChangeRequests property value. 
-func (m *Schedule) GetSwapShiftsChangeRequests()([]SwapShiftsChangeRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.swapShiftsChangeRequests
-    }
-}
-// GetSwapShiftsRequestsEnabled gets the swapShiftsRequestsEnabled property value. Indicates whether swap shifts requests are enabled for the schedule.
-func (m *Schedule) GetSwapShiftsRequestsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.swapShiftsRequestsEnabled
-    }
-}
-// GetTimeClockEnabled gets the timeClockEnabled property value. Indicates whether time clock is enabled for the schedule.
-func (m *Schedule) GetTimeClockEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeClockEnabled
-    }
-}
-// GetTimeOffReasons gets the timeOffReasons property value. The set of reasons for a time off in the schedule.
-func (m *Schedule) GetTimeOffReasons()([]TimeOffReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeOffReasons
-    }
-}
-// GetTimeOffRequests gets the timeOffRequests property value. 
-func (m *Schedule) GetTimeOffRequests()([]TimeOffRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeOffRequests
-    }
-}
-// GetTimeOffRequestsEnabled gets the timeOffRequestsEnabled property value. Indicates whether time off requests are enabled for the schedule.
-func (m *Schedule) GetTimeOffRequestsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeOffRequestsEnabled
-    }
-}
-// GetTimesOff gets the timesOff property value. The instances of times off in the schedule.
-func (m *Schedule) GetTimesOff()([]TimeOff) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timesOff
-    }
-}
-// GetTimeZone gets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
-func (m *Schedule) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
-    }
-}
-// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. 
-func (m *Schedule) GetWorkforceIntegrationIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workforceIntegrationIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -219,14 +79,14 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["offerShiftRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOfferShiftRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateOfferShiftRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OfferShiftRequest, len(val))
+            res := make([]OfferShiftRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OfferShiftRequest))
+                res[i] = v.(OfferShiftRequestable)
             }
             m.SetOfferShiftRequests(res)
         }
@@ -243,28 +103,28 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["openShiftChangeRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOpenShiftChangeRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateOpenShiftChangeRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OpenShiftChangeRequest, len(val))
+            res := make([]OpenShiftChangeRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OpenShiftChangeRequest))
+                res[i] = v.(OpenShiftChangeRequestable)
             }
             m.SetOpenShiftChangeRequests(res)
         }
         return nil
     }
     res["openShifts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOpenShift() })
+        val, err := n.GetCollectionOfObjectValues(CreateOpenShiftFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OpenShift, len(val))
+            res := make([]OpenShiftable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OpenShift))
+                res[i] = v.(OpenShiftable)
             }
             m.SetOpenShifts(res)
         }
@@ -301,42 +161,42 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["schedulingGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSchedulingGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateSchedulingGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SchedulingGroup, len(val))
+            res := make([]SchedulingGroupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SchedulingGroup))
+                res[i] = v.(SchedulingGroupable)
             }
             m.SetSchedulingGroups(res)
         }
         return nil
     }
     res["shifts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShift() })
+        val, err := n.GetCollectionOfObjectValues(CreateShiftFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Shift, len(val))
+            res := make([]Shiftable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Shift))
+                res[i] = v.(Shiftable)
             }
             m.SetShifts(res)
         }
         return nil
     }
     res["swapShiftsChangeRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSwapShiftsChangeRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateSwapShiftsChangeRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SwapShiftsChangeRequest, len(val))
+            res := make([]SwapShiftsChangeRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SwapShiftsChangeRequest))
+                res[i] = v.(SwapShiftsChangeRequestable)
             }
             m.SetSwapShiftsChangeRequests(res)
         }
@@ -363,28 +223,28 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["timeOffReasons"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeOffReason() })
+        val, err := n.GetCollectionOfObjectValues(CreateTimeOffReasonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TimeOffReason, len(val))
+            res := make([]TimeOffReasonable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TimeOffReason))
+                res[i] = v.(TimeOffReasonable)
             }
             m.SetTimeOffReasons(res)
         }
         return nil
     }
     res["timeOffRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeOffRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateTimeOffRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TimeOffRequest, len(val))
+            res := make([]TimeOffRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TimeOffRequest))
+                res[i] = v.(TimeOffRequestable)
             }
             m.SetTimeOffRequests(res)
         }
@@ -401,14 +261,14 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["timesOff"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeOff() })
+        val, err := n.GetCollectionOfObjectValues(CreateTimeOffFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TimeOff, len(val))
+            res := make([]TimeOffable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TimeOff))
+                res[i] = v.(TimeOffable)
             }
             m.SetTimesOff(res)
         }
@@ -440,6 +300,150 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
     }
     return res
 }
+// GetOfferShiftRequests gets the offerShiftRequests property value. 
+func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.offerShiftRequests
+    }
+}
+// GetOfferShiftRequestsEnabled gets the offerShiftRequestsEnabled property value. Indicates whether offer shift requests are enabled for the schedule.
+func (m *Schedule) GetOfferShiftRequestsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.offerShiftRequestsEnabled
+    }
+}
+// GetOpenShiftChangeRequests gets the openShiftChangeRequests property value. 
+func (m *Schedule) GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.openShiftChangeRequests
+    }
+}
+// GetOpenShifts gets the openShifts property value. 
+func (m *Schedule) GetOpenShifts()([]OpenShiftable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.openShifts
+    }
+}
+// GetOpenShiftsEnabled gets the openShiftsEnabled property value. Indicates whether open shifts are enabled for the schedule.
+func (m *Schedule) GetOpenShiftsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.openShiftsEnabled
+    }
+}
+// GetProvisionStatus gets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
+func (m *Schedule) GetProvisionStatus()(*OperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisionStatus
+    }
+}
+// GetProvisionStatusCode gets the provisionStatusCode property value. Additional information about why schedule provisioning failed.
+func (m *Schedule) GetProvisionStatusCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisionStatusCode
+    }
+}
+// GetSchedulingGroups gets the schedulingGroups property value. The logical grouping of users in the schedule (usually by role).
+func (m *Schedule) GetSchedulingGroups()([]SchedulingGroupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedulingGroups
+    }
+}
+// GetShifts gets the shifts property value. The shifts in the schedule.
+func (m *Schedule) GetShifts()([]Shiftable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shifts
+    }
+}
+// GetSwapShiftsChangeRequests gets the swapShiftsChangeRequests property value. 
+func (m *Schedule) GetSwapShiftsChangeRequests()([]SwapShiftsChangeRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.swapShiftsChangeRequests
+    }
+}
+// GetSwapShiftsRequestsEnabled gets the swapShiftsRequestsEnabled property value. Indicates whether swap shifts requests are enabled for the schedule.
+func (m *Schedule) GetSwapShiftsRequestsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.swapShiftsRequestsEnabled
+    }
+}
+// GetTimeClockEnabled gets the timeClockEnabled property value. Indicates whether time clock is enabled for the schedule.
+func (m *Schedule) GetTimeClockEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeClockEnabled
+    }
+}
+// GetTimeOffReasons gets the timeOffReasons property value. The set of reasons for a time off in the schedule.
+func (m *Schedule) GetTimeOffReasons()([]TimeOffReasonable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeOffReasons
+    }
+}
+// GetTimeOffRequests gets the timeOffRequests property value. 
+func (m *Schedule) GetTimeOffRequests()([]TimeOffRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeOffRequests
+    }
+}
+// GetTimeOffRequestsEnabled gets the timeOffRequestsEnabled property value. Indicates whether time off requests are enabled for the schedule.
+func (m *Schedule) GetTimeOffRequestsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeOffRequestsEnabled
+    }
+}
+// GetTimesOff gets the timesOff property value. The instances of times off in the schedule.
+func (m *Schedule) GetTimesOff()([]TimeOffable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timesOff
+    }
+}
+// GetTimeZone gets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
+func (m *Schedule) GetTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
+}
+// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. 
+func (m *Schedule) GetWorkforceIntegrationIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workforceIntegrationIds
+    }
+}
 func (m *Schedule) IsNil()(bool) {
     return m == nil
 }
@@ -458,8 +462,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetOfferShiftRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOfferShiftRequests()))
         for i, v := range m.GetOfferShiftRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("offerShiftRequests", cast)
         if err != nil {
@@ -475,8 +478,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetOpenShiftChangeRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOpenShiftChangeRequests()))
         for i, v := range m.GetOpenShiftChangeRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("openShiftChangeRequests", cast)
         if err != nil {
@@ -486,8 +488,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetOpenShifts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOpenShifts()))
         for i, v := range m.GetOpenShifts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("openShifts", cast)
         if err != nil {
@@ -516,8 +517,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetSchedulingGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSchedulingGroups()))
         for i, v := range m.GetSchedulingGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("schedulingGroups", cast)
         if err != nil {
@@ -527,8 +527,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetShifts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetShifts()))
         for i, v := range m.GetShifts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("shifts", cast)
         if err != nil {
@@ -538,8 +537,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetSwapShiftsChangeRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSwapShiftsChangeRequests()))
         for i, v := range m.GetSwapShiftsChangeRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("swapShiftsChangeRequests", cast)
         if err != nil {
@@ -561,8 +559,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetTimeOffReasons() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTimeOffReasons()))
         for i, v := range m.GetTimeOffReasons() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("timeOffReasons", cast)
         if err != nil {
@@ -572,8 +569,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetTimeOffRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTimeOffRequests()))
         for i, v := range m.GetTimeOffRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("timeOffRequests", cast)
         if err != nil {
@@ -589,8 +585,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetTimesOff() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTimesOff()))
         for i, v := range m.GetTimesOff() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("timesOff", cast)
         if err != nil {
@@ -618,7 +613,7 @@ func (m *Schedule) SetEnabled(value *bool)() {
     }
 }
 // SetOfferShiftRequests sets the offerShiftRequests property value. 
-func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequest)() {
+func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequestable)() {
     if m != nil {
         m.offerShiftRequests = value
     }
@@ -630,13 +625,13 @@ func (m *Schedule) SetOfferShiftRequestsEnabled(value *bool)() {
     }
 }
 // SetOpenShiftChangeRequests sets the openShiftChangeRequests property value. 
-func (m *Schedule) SetOpenShiftChangeRequests(value []OpenShiftChangeRequest)() {
+func (m *Schedule) SetOpenShiftChangeRequests(value []OpenShiftChangeRequestable)() {
     if m != nil {
         m.openShiftChangeRequests = value
     }
 }
 // SetOpenShifts sets the openShifts property value. 
-func (m *Schedule) SetOpenShifts(value []OpenShift)() {
+func (m *Schedule) SetOpenShifts(value []OpenShiftable)() {
     if m != nil {
         m.openShifts = value
     }
@@ -660,19 +655,19 @@ func (m *Schedule) SetProvisionStatusCode(value *string)() {
     }
 }
 // SetSchedulingGroups sets the schedulingGroups property value. The logical grouping of users in the schedule (usually by role).
-func (m *Schedule) SetSchedulingGroups(value []SchedulingGroup)() {
+func (m *Schedule) SetSchedulingGroups(value []SchedulingGroupable)() {
     if m != nil {
         m.schedulingGroups = value
     }
 }
 // SetShifts sets the shifts property value. The shifts in the schedule.
-func (m *Schedule) SetShifts(value []Shift)() {
+func (m *Schedule) SetShifts(value []Shiftable)() {
     if m != nil {
         m.shifts = value
     }
 }
 // SetSwapShiftsChangeRequests sets the swapShiftsChangeRequests property value. 
-func (m *Schedule) SetSwapShiftsChangeRequests(value []SwapShiftsChangeRequest)() {
+func (m *Schedule) SetSwapShiftsChangeRequests(value []SwapShiftsChangeRequestable)() {
     if m != nil {
         m.swapShiftsChangeRequests = value
     }
@@ -690,13 +685,13 @@ func (m *Schedule) SetTimeClockEnabled(value *bool)() {
     }
 }
 // SetTimeOffReasons sets the timeOffReasons property value. The set of reasons for a time off in the schedule.
-func (m *Schedule) SetTimeOffReasons(value []TimeOffReason)() {
+func (m *Schedule) SetTimeOffReasons(value []TimeOffReasonable)() {
     if m != nil {
         m.timeOffReasons = value
     }
 }
 // SetTimeOffRequests sets the timeOffRequests property value. 
-func (m *Schedule) SetTimeOffRequests(value []TimeOffRequest)() {
+func (m *Schedule) SetTimeOffRequests(value []TimeOffRequestable)() {
     if m != nil {
         m.timeOffRequests = value
     }
@@ -708,7 +703,7 @@ func (m *Schedule) SetTimeOffRequestsEnabled(value *bool)() {
     }
 }
 // SetTimesOff sets the timesOff property value. The instances of times off in the schedule.
-func (m *Schedule) SetTimesOff(value []TimeOff)() {
+func (m *Schedule) SetTimesOff(value []TimeOffable)() {
     if m != nil {
         m.timesOff = value
     }

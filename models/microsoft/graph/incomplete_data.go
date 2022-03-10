@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IncompleteData 
+// IncompleteData provides operations to manage the educationRoot singleton.
 type IncompleteData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,28 +21,16 @@ func NewIncompleteData()(*IncompleteData) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateIncompleteDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIncompleteDataFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIncompleteData(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncompleteData) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMissingDataBeforeDateTime gets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
-func (m *IncompleteData) GetMissingDataBeforeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.missingDataBeforeDateTime
-    }
-}
-// GetWasThrottled gets the wasThrottled property value. Some data was not recorded due to excessive activity.
-func (m *IncompleteData) GetWasThrottled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wasThrottled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +57,22 @@ func (m *IncompleteData) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetMissingDataBeforeDateTime gets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
+func (m *IncompleteData) GetMissingDataBeforeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.missingDataBeforeDateTime
+    }
+}
+// GetWasThrottled gets the wasThrottled property value. Some data was not recorded due to excessive activity.
+func (m *IncompleteData) GetWasThrottled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wasThrottled
+    }
 }
 func (m *IncompleteData) IsNil()(bool) {
     return m == nil

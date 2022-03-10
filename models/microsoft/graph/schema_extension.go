@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SchemaExtension 
+// SchemaExtension provides operations to manage the collection of schemaExtension entities.
 type SchemaExtension struct {
     Entity
     // Description for the schema extension. Supports $filter (eq).
@@ -12,7 +12,7 @@ type SchemaExtension struct {
     // The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. So, for example, if creating a new schema extension definition using Graph Explorer, you must supply the owner property. Once set, this property is read-only and cannot be changed. Supports $filter (eq).
     owner *string;
     // The collection of property names and types that make up the schema extension definition.
-    properties []ExtensionSchemaProperty;
+    properties []ExtensionSchemaPropertyable;
     // The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
     status *string;
     // Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
@@ -25,44 +25,16 @@ func NewSchemaExtension()(*SchemaExtension) {
     }
     return m
 }
+// CreateSchemaExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSchemaExtensionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSchemaExtension(), nil
+}
 // GetDescription gets the description property value. Description for the schema extension. Supports $filter (eq).
 func (m *SchemaExtension) GetDescription()(*string) {
     if m == nil {
         return nil
     } else {
         return m.description
-    }
-}
-// GetOwner gets the owner property value. The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. So, for example, if creating a new schema extension definition using Graph Explorer, you must supply the owner property. Once set, this property is read-only and cannot be changed. Supports $filter (eq).
-func (m *SchemaExtension) GetOwner()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
-}
-// GetProperties gets the properties property value. The collection of property names and types that make up the schema extension definition.
-func (m *SchemaExtension) GetProperties()([]ExtensionSchemaProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
-}
-// GetStatus gets the status property value. The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
-func (m *SchemaExtension) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTargetTypes gets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
-func (m *SchemaExtension) GetTargetTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetTypes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,14 +61,14 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtensionSchemaProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionSchemaPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ExtensionSchemaProperty, len(val))
+            res := make([]ExtensionSchemaPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ExtensionSchemaProperty))
+                res[i] = v.(ExtensionSchemaPropertyable)
             }
             m.SetProperties(res)
         }
@@ -128,6 +100,38 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(interface{}, i
     }
     return res
 }
+// GetOwner gets the owner property value. The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. So, for example, if creating a new schema extension definition using Graph Explorer, you must supply the owner property. Once set, this property is read-only and cannot be changed. Supports $filter (eq).
+func (m *SchemaExtension) GetOwner()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.owner
+    }
+}
+// GetProperties gets the properties property value. The collection of property names and types that make up the schema extension definition.
+func (m *SchemaExtension) GetProperties()([]ExtensionSchemaPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.properties
+    }
+}
+// GetStatus gets the status property value. The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
+func (m *SchemaExtension) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTargetTypes gets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
+func (m *SchemaExtension) GetTargetTypes()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetTypes
+    }
+}
 func (m *SchemaExtension) IsNil()(bool) {
     return m == nil
 }
@@ -152,8 +156,7 @@ func (m *SchemaExtension) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("properties", cast)
         if err != nil {
@@ -187,7 +190,7 @@ func (m *SchemaExtension) SetOwner(value *string)() {
     }
 }
 // SetProperties sets the properties property value. The collection of property names and types that make up the schema extension definition.
-func (m *SchemaExtension) SetProperties(value []ExtensionSchemaProperty)() {
+func (m *SchemaExtension) SetProperties(value []ExtensionSchemaPropertyable)() {
     if m != nil {
         m.properties = value
     }

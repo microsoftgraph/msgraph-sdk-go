@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkOnlineMeetingInfo 
+// TeamworkOnlineMeetingInfo provides operations to manage the collection of chat entities.
 type TeamworkOnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type TeamworkOnlineMeetingInfo struct {
     // The URL that users click to join or uniquely identify the meeting.
     joinWebUrl *string;
     // The organizer of the meeting.
-    organizer *TeamworkUserIdentity;
+    organizer TeamworkUserIdentityable;
 }
 // NewTeamworkOnlineMeetingInfo instantiates a new teamworkOnlineMeetingInfo and sets the default values.
 func NewTeamworkOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
@@ -21,6 +21,10 @@ func NewTeamworkOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkOnlineMeetingInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnlineMeetingInfo) GetAdditionalData()(map[string]interface{}) {
@@ -36,22 +40,6 @@ func (m *TeamworkOnlineMeetingInfo) GetCalendarEventId()(*string) {
         return nil
     } else {
         return m.calendarEventId
-    }
-}
-// GetJoinWebUrl gets the joinWebUrl property value. The URL that users click to join or uniquely identify the meeting.
-func (m *TeamworkOnlineMeetingInfo) GetJoinWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinWebUrl
-    }
-}
-// GetOrganizer gets the organizer property value. The organizer of the meeting.
-func (m *TeamworkOnlineMeetingInfo) GetOrganizer()(*TeamworkUserIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizer
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -78,16 +66,32 @@ func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["organizer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkUserIdentity() })
+        val, err := n.GetObjectValue(CreateTeamworkUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOrganizer(val.(*TeamworkUserIdentity))
+            m.SetOrganizer(val.(TeamworkUserIdentityable))
         }
         return nil
     }
     return res
+}
+// GetJoinWebUrl gets the joinWebUrl property value. The URL that users click to join or uniquely identify the meeting.
+func (m *TeamworkOnlineMeetingInfo) GetJoinWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinWebUrl
+    }
+}
+// GetOrganizer gets the organizer property value. The organizer of the meeting.
+func (m *TeamworkOnlineMeetingInfo) GetOrganizer()(TeamworkUserIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizer
+    }
 }
 func (m *TeamworkOnlineMeetingInfo) IsNil()(bool) {
     return m == nil
@@ -139,7 +143,7 @@ func (m *TeamworkOnlineMeetingInfo) SetJoinWebUrl(value *string)() {
     }
 }
 // SetOrganizer sets the organizer property value. The organizer of the meeting.
-func (m *TeamworkOnlineMeetingInfo) SetOrganizer(value *TeamworkUserIdentity)() {
+func (m *TeamworkOnlineMeetingInfo) SetOrganizer(value TeamworkUserIdentityable)() {
     if m != nil {
         m.organizer = value
     }

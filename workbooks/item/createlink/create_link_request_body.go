@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CreateLinkRequestBody 
+// CreateLinkRequestBody provides operations to call the createLink method.
 type CreateLinkRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,6 +29,10 @@ func NewCreateLinkRequestBody()(*CreateLinkRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCreateLinkRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCreateLinkRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateLinkRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateLinkRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -43,46 +47,6 @@ func (m *CreateLinkRequestBody) GetExpirationDateTime()(*i336074805fc853987abe6f
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetMessage gets the message property value. 
-func (m *CreateLinkRequestBody) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetPassword gets the password property value. 
-func (m *CreateLinkRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
-}
-// GetRetainInheritedPermissions gets the retainInheritedPermissions property value. 
-func (m *CreateLinkRequestBody) GetRetainInheritedPermissions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retainInheritedPermissions
-    }
-}
-// GetScope gets the scope property value. 
-func (m *CreateLinkRequestBody) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
-}
-// GetType gets the type property value. 
-func (m *CreateLinkRequestBody) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,6 +113,46 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. 
+func (m *CreateLinkRequestBody) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetPassword gets the password property value. 
+func (m *CreateLinkRequestBody) GetPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.password
+    }
+}
+// GetRetainInheritedPermissions gets the retainInheritedPermissions property value. 
+func (m *CreateLinkRequestBody) GetRetainInheritedPermissions()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.retainInheritedPermissions
+    }
+}
+// GetScope gets the scope property value. 
+func (m *CreateLinkRequestBody) GetScope()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scope
+    }
+}
+// GetType gets the type property value. 
+func (m *CreateLinkRequestBody) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *CreateLinkRequestBody) IsNil()(bool) {
     return m == nil

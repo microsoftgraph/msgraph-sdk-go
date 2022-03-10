@@ -2,10 +2,9 @@ package geteffectivepermissionswithscope
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetEffectivePermissionsWithScopeRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.getEffectivePermissions(scope='{scope}')
+// GetEffectivePermissionsWithScopeRequestBuilder provides operations to call the getEffectivePermissions method.
 type GetEffectivePermissionsWithScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +34,7 @@ func NewGetEffectivePermissionsWithScopeRequestBuilderInternal(pathParameters ma
     if scope != nil {
         urlTplParams["scope"] = *scope
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInforma
     return requestInfo, nil
 }
 // Get retrieves the effective permissions of the currently authenticated user
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(options *GetEffectivePermissionsWithScopeRequestBuilderGetOptions)([]GetEffectivePermissionsWithScope, error) {
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(options *GetEffectivePermissionsWithScopeRequestBuilderGetOptions)(GetEffectivePermissionsWithScopeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetEffectivePermissionsWithScope() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEffectivePermissionsWithScopeResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetEffectivePermissionsWithScope, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetEffectivePermissionsWithScope))
-    }
-    return val, nil
+    return res.(GetEffectivePermissionsWithScopeResponseable), nil
 }

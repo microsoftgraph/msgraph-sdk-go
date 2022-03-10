@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PhysicalOfficeAddress 
+// PhysicalOfficeAddress provides operations to manage the collection of orgContact entities.
 type PhysicalOfficeAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewPhysicalOfficeAddress()(*PhysicalOfficeAddress) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePhysicalOfficeAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePhysicalOfficeAddressFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPhysicalOfficeAddress(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalOfficeAddress) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -50,38 +54,6 @@ func (m *PhysicalOfficeAddress) GetCountryOrRegion()(*string) {
         return nil
     } else {
         return m.countryOrRegion
-    }
-}
-// GetOfficeLocation gets the officeLocation property value. Office location such as building and office number for an organizational contact.
-func (m *PhysicalOfficeAddress) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
-}
-// GetPostalCode gets the postalCode property value. The postal code.
-func (m *PhysicalOfficeAddress) GetPostalCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postalCode
-    }
-}
-// GetState gets the state property value. The state.
-func (m *PhysicalOfficeAddress) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetStreet gets the street property value. The street.
-func (m *PhysicalOfficeAddress) GetStreet()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.street
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +120,38 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetOfficeLocation gets the officeLocation property value. Office location such as building and office number for an organizational contact.
+func (m *PhysicalOfficeAddress) GetOfficeLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeLocation
+    }
+}
+// GetPostalCode gets the postalCode property value. The postal code.
+func (m *PhysicalOfficeAddress) GetPostalCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postalCode
+    }
+}
+// GetState gets the state property value. The state.
+func (m *PhysicalOfficeAddress) GetState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetStreet gets the street property value. The street.
+func (m *PhysicalOfficeAddress) GetStreet()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.street
+    }
 }
 func (m *PhysicalOfficeAddress) IsNil()(bool) {
     return m == nil

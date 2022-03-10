@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Privacy 
+// Privacy provides operations to manage the privacy singleton.
 type Privacy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    subjectRightsRequests []SubjectRightsRequest;
+    subjectRightsRequests []SubjectRightsRequestable;
 }
 // NewPrivacy instantiates a new Privacy and sets the default values.
 func NewPrivacy()(*Privacy) {
@@ -17,6 +17,10 @@ func NewPrivacy()(*Privacy) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePrivacyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivacyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivacy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Privacy) GetAdditionalData()(map[string]interface{}) {
@@ -26,32 +30,32 @@ func (m *Privacy) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetSubjectRightsRequests gets the subjectRightsRequests property value. 
-func (m *Privacy) GetSubjectRightsRequests()([]SubjectRightsRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectRightsRequests
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Privacy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["subjectRightsRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSubjectRightsRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateSubjectRightsRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SubjectRightsRequest, len(val))
+            res := make([]SubjectRightsRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SubjectRightsRequest))
+                res[i] = v.(SubjectRightsRequestable)
             }
             m.SetSubjectRightsRequests(res)
         }
         return nil
     }
     return res
+}
+// GetSubjectRightsRequests gets the subjectRightsRequests property value. 
+func (m *Privacy) GetSubjectRightsRequests()([]SubjectRightsRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subjectRightsRequests
+    }
 }
 func (m *Privacy) IsNil()(bool) {
     return m == nil
@@ -61,8 +65,7 @@ func (m *Privacy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSubjectRightsRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSubjectRightsRequests()))
         for i, v := range m.GetSubjectRightsRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("subjectRightsRequests", cast)
         if err != nil {
@@ -84,7 +87,7 @@ func (m *Privacy) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetSubjectRightsRequests sets the subjectRightsRequests property value. 
-func (m *Privacy) SetSubjectRightsRequests(value []SubjectRightsRequest)() {
+func (m *Privacy) SetSubjectRightsRequests(value []SubjectRightsRequestable)() {
     if m != nil {
         m.subjectRightsRequests = value
     }

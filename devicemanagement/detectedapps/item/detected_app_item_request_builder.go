@@ -2,12 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     i9e190cfc2be35b3956b6774ad73eb9f9e3362f078f2087cb504d236ed7b9d85c "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/detectedapps/item/manageddevices"
+    ic1519d859d73635c09bf71bf55e09802b54e37335c3c0e9eba1e107f14d07eff "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/detectedapps/item/manageddevices/item"
 )
 
-// DetectedAppItemRequestBuilder builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}
+// DetectedAppItemRequestBuilder provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
 type DetectedAppItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +47,7 @@ type DetectedAppItemRequestBuilderGetQueryParameters struct {
 // DetectedAppItemRequestBuilderPatchOptions options for Patch
 type DetectedAppItemRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DetectedApp;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DetectedAppable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +64,7 @@ func NewDetectedAppItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -73,7 +74,7 @@ func NewDetectedAppItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams["request-raw-url"] = rawUrl
     return NewDetectedAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the list of detected apps associated with a device.
+// CreateDeleteRequestInformation delete navigation property detectedApps for deviceManagement
 func (m *DetectedAppItemRequestBuilder) CreateDeleteRequestInformation(options *DetectedAppItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +111,7 @@ func (m *DetectedAppItemRequestBuilder) CreateGetRequestInformation(options *Det
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the list of detected apps associated with a device.
+// CreatePatchRequestInformation update the navigation property detectedApps in deviceManagement
 func (m *DetectedAppItemRequestBuilder) CreatePatchRequestInformation(options *DetectedAppItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,40 +129,63 @@ func (m *DetectedAppItemRequestBuilder) CreatePatchRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// Delete the list of detected apps associated with a device.
+// Delete delete navigation property detectedApps for deviceManagement
 func (m *DetectedAppItemRequestBuilder) Delete(options *DetectedAppItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the list of detected apps associated with a device.
-func (m *DetectedAppItemRequestBuilder) Get(options *DetectedAppItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DetectedApp, error) {
+func (m *DetectedAppItemRequestBuilder) Get(options *DetectedAppItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DetectedAppable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDetectedApp() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDetectedAppFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DetectedApp), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DetectedAppable), nil
 }
 func (m *DetectedAppItemRequestBuilder) ManagedDevices()(*i9e190cfc2be35b3956b6774ad73eb9f9e3362f078f2087cb504d236ed7b9d85c.ManagedDevicesRequestBuilder) {
     return i9e190cfc2be35b3956b6774ad73eb9f9e3362f078f2087cb504d236ed7b9d85c.NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch the list of detected apps associated with a device.
+// ManagedDevicesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.detectedApps.item.managedDevices.item collection
+func (m *DetectedAppItemRequestBuilder) ManagedDevicesById(id string)(*ic1519d859d73635c09bf71bf55e09802b54e37335c3c0e9eba1e107f14d07eff.ManagedDeviceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["managedDevice_id"] = id
+    }
+    return ic1519d859d73635c09bf71bf55e09802b54e37335c3c0e9eba1e107f14d07eff.NewManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Patch update the navigation property detectedApps in deviceManagement
 func (m *DetectedAppItemRequestBuilder) Patch(options *DetectedAppItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

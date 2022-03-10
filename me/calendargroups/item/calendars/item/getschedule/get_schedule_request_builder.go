@@ -2,10 +2,9 @@ package getschedule
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetScheduleRequestBuilder builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\microsoft.graph.getSchedule
+// GetScheduleRequestBuilder provides operations to call the getSchedule method.
 type GetScheduleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +16,7 @@ type GetScheduleRequestBuilder struct {
 // GetScheduleRequestBuilderPostOptions options for Post
 type GetScheduleRequestBuilderPostOptions struct {
     // 
-    Body *GetScheduleRequestBody;
+    Body GetScheduleRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -34,7 +33,7 @@ func NewGetScheduleRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *GetScheduleRequestBuilder) CreatePostRequestInformation(options *GetSch
     return requestInfo, nil
 }
 // Post invoke action getSchedule
-func (m *GetScheduleRequestBuilder) Post(options *GetScheduleRequestBuilderPostOptions)([]GetSchedule, error) {
+func (m *GetScheduleRequestBuilder) Post(options *GetScheduleRequestBuilderPostOptions)(GetScheduleResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetSchedule() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetScheduleResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetSchedule, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetSchedule))
-    }
-    return val, nil
+    return res.(GetScheduleResponseable), nil
 }

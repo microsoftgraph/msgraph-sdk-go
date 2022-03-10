@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RecurrenceRange 
+// RecurrenceRange provides operations to manage the collection of drive entities.
 type RecurrenceRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewRecurrenceRange()(*RecurrenceRange) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRecurrenceRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRecurrenceRangeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecurrenceRange(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrenceRange) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *RecurrenceRange) GetEndDate()(*i04eb5309aeaafadd28374d79c8471df9b267510
         return nil
     } else {
         return m.endDate
-    }
-}
-// GetNumberOfOccurrences gets the numberOfOccurrences property value. The number of times to repeat the event. Required and must be positive if type is numbered.
-func (m *RecurrenceRange) GetNumberOfOccurrences()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.numberOfOccurrences
-    }
-}
-// GetRecurrenceTimeZone gets the recurrenceTimeZone property value. Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
-func (m *RecurrenceRange) GetRecurrenceTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrenceTimeZone
-    }
-}
-// GetStartDate gets the startDate property value. The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
-func (m *RecurrenceRange) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDate
-    }
-}
-// GetType gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) GetType()(*RecurrenceRangeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetNumberOfOccurrences gets the numberOfOccurrences property value. The number of times to repeat the event. Required and must be positive if type is numbered.
+func (m *RecurrenceRange) GetNumberOfOccurrences()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.numberOfOccurrences
+    }
+}
+// GetRecurrenceTimeZone gets the recurrenceTimeZone property value. Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
+func (m *RecurrenceRange) GetRecurrenceTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrenceTimeZone
+    }
+}
+// GetStartDate gets the startDate property value. The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
+func (m *RecurrenceRange) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDate
+    }
+}
+// GetType gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+func (m *RecurrenceRange) GetType()(*RecurrenceRangeType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *RecurrenceRange) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemPreviewInfo 
+// ItemPreviewInfo provides operations to call the preview method.
 type ItemPreviewInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewItemPreviewInfo()(*ItemPreviewInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateItemPreviewInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemPreviewInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemPreviewInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemPreviewInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetGetUrl gets the getUrl property value. 
-func (m *ItemPreviewInfo) GetGetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.getUrl
-    }
-}
-// GetPostParameters gets the postParameters property value. 
-func (m *ItemPreviewInfo) GetPostParameters()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postParameters
-    }
-}
-// GetPostUrl gets the postUrl property value. 
-func (m *ItemPreviewInfo) GetPostUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *ItemPreviewInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetGetUrl gets the getUrl property value. 
+func (m *ItemPreviewInfo) GetGetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.getUrl
+    }
+}
+// GetPostParameters gets the postParameters property value. 
+func (m *ItemPreviewInfo) GetPostParameters()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postParameters
+    }
+}
+// GetPostUrl gets the postUrl property value. 
+func (m *ItemPreviewInfo) GetPostUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postUrl
+    }
 }
 func (m *ItemPreviewInfo) IsNil()(bool) {
     return m == nil

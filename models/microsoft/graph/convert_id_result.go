@@ -4,23 +4,27 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConvertIdResult 
+// ConvertIdResult provides operations to call the translateExchangeIds method.
 type ConvertIdResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
-    errorDetails *GenericError;
+    errorDetails GenericErrorable;
     // The identifier that was converted. This value is the original, un-converted identifier.
     sourceId *string;
     // The converted identifier. This value is not present if the conversion failed.
     targetId *string;
 }
-// NewConvertIdResult instantiates a new ConvertIdResult and sets the default values.
+// NewConvertIdResult instantiates a new convertIdResult and sets the default values.
 func NewConvertIdResult()(*ConvertIdResult) {
     m := &ConvertIdResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateConvertIdResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConvertIdResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConvertIdResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConvertIdResult) GetAdditionalData()(map[string]interface{}) {
@@ -31,39 +35,23 @@ func (m *ConvertIdResult) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetErrorDetails gets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
-func (m *ConvertIdResult) GetErrorDetails()(*GenericError) {
+func (m *ConvertIdResult) GetErrorDetails()(GenericErrorable) {
     if m == nil {
         return nil
     } else {
         return m.errorDetails
     }
 }
-// GetSourceId gets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
-func (m *ConvertIdResult) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
-}
-// GetTargetId gets the targetId property value. The converted identifier. This value is not present if the conversion failed.
-func (m *ConvertIdResult) GetTargetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConvertIdResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["errorDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGenericError() })
+        val, err := n.GetObjectValue(CreateGenericErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetErrorDetails(val.(*GenericError))
+            m.SetErrorDetails(val.(GenericErrorable))
         }
         return nil
     }
@@ -88,6 +76,22 @@ func (m *ConvertIdResult) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetSourceId gets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
+func (m *ConvertIdResult) GetSourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceId
+    }
+}
+// GetTargetId gets the targetId property value. The converted identifier. This value is not present if the conversion failed.
+func (m *ConvertIdResult) GetTargetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetId
+    }
 }
 func (m *ConvertIdResult) IsNil()(bool) {
     return m == nil
@@ -127,7 +131,7 @@ func (m *ConvertIdResult) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetErrorDetails sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
-func (m *ConvertIdResult) SetErrorDetails(value *GenericError)() {
+func (m *ConvertIdResult) SetErrorDetails(value GenericErrorable)() {
     if m != nil {
         m.errorDetails = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessGrantControls 
+// ConditionalAccessGrantControls provides operations to manage the identityContainer singleton.
 type ConditionalAccessGrantControls struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateConditionalAccessGrantControlsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessGrantControlsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessGrantControls(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessGrantControls) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *ConditionalAccessGrantControls) GetCustomAuthenticationFactors()([]stri
         return nil
     } else {
         return m.customAuthenticationFactors
-    }
-}
-// GetOperator gets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
-func (m *ConditionalAccessGrantControls) GetOperator()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operator
-    }
-}
-// GetTermsOfUse gets the termsOfUse property value. List of terms of use IDs required by the policy.
-func (m *ConditionalAccessGrantControls) GetTermsOfUse()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsOfUse
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +108,22 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetOperator gets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
+func (m *ConditionalAccessGrantControls) GetOperator()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operator
+    }
+}
+// GetTermsOfUse gets the termsOfUse property value. List of terms of use IDs required by the policy.
+func (m *ConditionalAccessGrantControls) GetTermsOfUse()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.termsOfUse
+    }
 }
 func (m *ConditionalAccessGrantControls) IsNil()(bool) {
     return m == nil

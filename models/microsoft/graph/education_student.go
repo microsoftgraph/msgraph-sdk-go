@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationStudent 
+// EducationStudent provides operations to manage the educationRoot singleton.
 type EducationStudent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewEducationStudent()(*EducationStudent) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateEducationStudentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationStudentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationStudent(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationStudent) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -50,38 +54,6 @@ func (m *EducationStudent) GetExternalId()(*string) {
         return nil
     } else {
         return m.externalId
-    }
-}
-// GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
-func (m *EducationStudent) GetGender()(*EducationGender) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gender
-    }
-}
-// GetGrade gets the grade property value. Current grade level of the student.
-func (m *EducationStudent) GetGrade()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grade
-    }
-}
-// GetGraduationYear gets the graduationYear property value. Year the student is graduating from the school.
-func (m *EducationStudent) GetGraduationYear()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.graduationYear
-    }
-}
-// GetStudentNumber gets the studentNumber property value. Student Number.
-func (m *EducationStudent) GetStudentNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.studentNumber
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +120,38 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
+func (m *EducationStudent) GetGender()(*EducationGender) {
+    if m == nil {
+        return nil
+    } else {
+        return m.gender
+    }
+}
+// GetGrade gets the grade property value. Current grade level of the student.
+func (m *EducationStudent) GetGrade()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.grade
+    }
+}
+// GetGraduationYear gets the graduationYear property value. Year the student is graduating from the school.
+func (m *EducationStudent) GetGraduationYear()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.graduationYear
+    }
+}
+// GetStudentNumber gets the studentNumber property value. Student Number.
+func (m *EducationStudent) GetStudentNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.studentNumber
+    }
 }
 func (m *EducationStudent) IsNil()(bool) {
     return m == nil

@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SharingLink 
+// SharingLink provides operations to manage the drive singleton.
 type SharingLink struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The app the link is associated with.
-    application *Identity;
+    application Identityable;
     // If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
     preventsDownload *bool;
     // The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
@@ -28,6 +28,10 @@ func NewSharingLink()(*SharingLink) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSharingLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSharingLinkFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSharingLink(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingLink) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,63 +41,23 @@ func (m *SharingLink) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetApplication gets the application property value. The app the link is associated with.
-func (m *SharingLink) GetApplication()(*Identity) {
+func (m *SharingLink) GetApplication()(Identityable) {
     if m == nil {
         return nil
     } else {
         return m.application
     }
 }
-// GetPreventsDownload gets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
-func (m *SharingLink) GetPreventsDownload()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preventsDownload
-    }
-}
-// GetScope gets the scope property value. The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
-func (m *SharingLink) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
-}
-// GetType gets the type property value. The type of the link created.
-func (m *SharingLink) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetWebHtml gets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
-func (m *SharingLink) GetWebHtml()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webHtml
-    }
-}
-// GetWebUrl gets the webUrl property value. A URL that opens the item in the browser on the OneDrive website.
-func (m *SharingLink) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharingLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["application"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentity() })
+        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplication(val.(*Identity))
+            m.SetApplication(val.(Identityable))
         }
         return nil
     }
@@ -148,6 +112,46 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetPreventsDownload gets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
+func (m *SharingLink) GetPreventsDownload()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preventsDownload
+    }
+}
+// GetScope gets the scope property value. The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
+func (m *SharingLink) GetScope()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scope
+    }
+}
+// GetType gets the type property value. The type of the link created.
+func (m *SharingLink) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetWebHtml gets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
+func (m *SharingLink) GetWebHtml()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webHtml
+    }
+}
+// GetWebUrl gets the webUrl property value. A URL that opens the item in the browser on the OneDrive website.
+func (m *SharingLink) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *SharingLink) IsNil()(bool) {
     return m == nil
@@ -205,7 +209,7 @@ func (m *SharingLink) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetApplication sets the application property value. The app the link is associated with.
-func (m *SharingLink) SetApplication(value *Identity)() {
+func (m *SharingLink) SetApplication(value Identityable)() {
     if m != nil {
         m.application = value
     }

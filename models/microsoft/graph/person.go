@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Person 
+// Person provides operations to manage the collection of drive entities.
 type Person struct {
     Entity
     // The person's birthday.
@@ -28,21 +28,21 @@ type Person struct {
     // Free-form notes that the user has taken about this person.
     personNotes *string;
     // The type of person.
-    personType *PersonType;
+    personType PersonTypeable;
     // The person's phone numbers.
-    phones []Phone;
+    phones []Phoneable;
     // The person's addresses.
-    postalAddresses []Location;
+    postalAddresses []Locationable;
     // The person's profession.
     profession *string;
     // The person's email addresses.
-    scoredEmailAddresses []ScoredEmailAddress;
+    scoredEmailAddresses []ScoredEmailAddressable;
     // The person's surname.
     surname *string;
     // The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
     userPrincipalName *string;
     // The person's websites.
-    websites []Website;
+    websites []Websiteable;
     // The phonetic Japanese name of the person's company.
     yomiCompany *string;
 }
@@ -52,6 +52,10 @@ func NewPerson()(*Person) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreatePersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersonFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPerson(), nil
 }
 // GetBirthday gets the birthday property value. The person's birthday.
 func (m *Person) GetBirthday()(*string) {
@@ -83,126 +87,6 @@ func (m *Person) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetGivenName gets the givenName property value. The person's given name.
-func (m *Person) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
-}
-// GetImAddress gets the imAddress property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-func (m *Person) GetImAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imAddress
-    }
-}
-// GetIsFavorite gets the isFavorite property value. true if the user has flagged this person as a favorite.
-func (m *Person) GetIsFavorite()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFavorite
-    }
-}
-// GetJobTitle gets the jobTitle property value. The person's job title.
-func (m *Person) GetJobTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobTitle
-    }
-}
-// GetOfficeLocation gets the officeLocation property value. The location of the person's office.
-func (m *Person) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
-}
-// GetPersonNotes gets the personNotes property value. Free-form notes that the user has taken about this person.
-func (m *Person) GetPersonNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personNotes
-    }
-}
-// GetPersonType gets the personType property value. The type of person.
-func (m *Person) GetPersonType()(*PersonType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personType
-    }
-}
-// GetPhones gets the phones property value. The person's phone numbers.
-func (m *Person) GetPhones()([]Phone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phones
-    }
-}
-// GetPostalAddresses gets the postalAddresses property value. The person's addresses.
-func (m *Person) GetPostalAddresses()([]Location) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postalAddresses
-    }
-}
-// GetProfession gets the profession property value. The person's profession.
-func (m *Person) GetProfession()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profession
-    }
-}
-// GetScoredEmailAddresses gets the scoredEmailAddresses property value. The person's email addresses.
-func (m *Person) GetScoredEmailAddresses()([]ScoredEmailAddress) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scoredEmailAddresses
-    }
-}
-// GetSurname gets the surname property value. The person's surname.
-func (m *Person) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
-func (m *Person) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetWebsites gets the websites property value. The person's websites.
-func (m *Person) GetWebsites()([]Website) {
-    if m == nil {
-        return nil
-    } else {
-        return m.websites
-    }
-}
-// GetYomiCompany gets the yomiCompany property value. The phonetic Japanese name of the person's company.
-func (m *Person) GetYomiCompany()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yomiCompany
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -309,38 +193,38 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["personType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPersonType() })
+        val, err := n.GetObjectValue(CreatePersonTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPersonType(val.(*PersonType))
+            m.SetPersonType(val.(PersonTypeable))
         }
         return nil
     }
     res["phones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhone() })
+        val, err := n.GetCollectionOfObjectValues(CreatePhoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Phone, len(val))
+            res := make([]Phoneable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Phone))
+                res[i] = v.(Phoneable)
             }
             m.SetPhones(res)
         }
         return nil
     }
     res["postalAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocation() })
+        val, err := n.GetCollectionOfObjectValues(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Location, len(val))
+            res := make([]Locationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Location))
+                res[i] = v.(Locationable)
             }
             m.SetPostalAddresses(res)
         }
@@ -357,14 +241,14 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["scoredEmailAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewScoredEmailAddress() })
+        val, err := n.GetCollectionOfObjectValues(CreateScoredEmailAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ScoredEmailAddress, len(val))
+            res := make([]ScoredEmailAddressable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ScoredEmailAddress))
+                res[i] = v.(ScoredEmailAddressable)
             }
             m.SetScoredEmailAddresses(res)
         }
@@ -391,14 +275,14 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["websites"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWebsite() })
+        val, err := n.GetCollectionOfObjectValues(CreateWebsiteFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Website, len(val))
+            res := make([]Websiteable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Website))
+                res[i] = v.(Websiteable)
             }
             m.SetWebsites(res)
         }
@@ -415,6 +299,126 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     return res
+}
+// GetGivenName gets the givenName property value. The person's given name.
+func (m *Person) GetGivenName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.givenName
+    }
+}
+// GetImAddress gets the imAddress property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
+func (m *Person) GetImAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.imAddress
+    }
+}
+// GetIsFavorite gets the isFavorite property value. true if the user has flagged this person as a favorite.
+func (m *Person) GetIsFavorite()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFavorite
+    }
+}
+// GetJobTitle gets the jobTitle property value. The person's job title.
+func (m *Person) GetJobTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jobTitle
+    }
+}
+// GetOfficeLocation gets the officeLocation property value. The location of the person's office.
+func (m *Person) GetOfficeLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeLocation
+    }
+}
+// GetPersonNotes gets the personNotes property value. Free-form notes that the user has taken about this person.
+func (m *Person) GetPersonNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.personNotes
+    }
+}
+// GetPersonType gets the personType property value. The type of person.
+func (m *Person) GetPersonType()(PersonTypeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.personType
+    }
+}
+// GetPhones gets the phones property value. The person's phone numbers.
+func (m *Person) GetPhones()([]Phoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phones
+    }
+}
+// GetPostalAddresses gets the postalAddresses property value. The person's addresses.
+func (m *Person) GetPostalAddresses()([]Locationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postalAddresses
+    }
+}
+// GetProfession gets the profession property value. The person's profession.
+func (m *Person) GetProfession()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.profession
+    }
+}
+// GetScoredEmailAddresses gets the scoredEmailAddresses property value. The person's email addresses.
+func (m *Person) GetScoredEmailAddresses()([]ScoredEmailAddressable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scoredEmailAddresses
+    }
+}
+// GetSurname gets the surname property value. The person's surname.
+func (m *Person) GetSurname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.surname
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
+func (m *Person) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetWebsites gets the websites property value. The person's websites.
+func (m *Person) GetWebsites()([]Websiteable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.websites
+    }
+}
+// GetYomiCompany gets the yomiCompany property value. The phonetic Japanese name of the person's company.
+func (m *Person) GetYomiCompany()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yomiCompany
+    }
 }
 func (m *Person) IsNil()(bool) {
     return m == nil
@@ -494,8 +498,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetPhones() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("phones", cast)
         if err != nil {
@@ -505,8 +508,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetPostalAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPostalAddresses()))
         for i, v := range m.GetPostalAddresses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("postalAddresses", cast)
         if err != nil {
@@ -522,8 +524,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetScoredEmailAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScoredEmailAddresses()))
         for i, v := range m.GetScoredEmailAddresses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("scoredEmailAddresses", cast)
         if err != nil {
@@ -545,8 +546,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     if m.GetWebsites() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWebsites()))
         for i, v := range m.GetWebsites() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("websites", cast)
         if err != nil {
@@ -622,19 +622,19 @@ func (m *Person) SetPersonNotes(value *string)() {
     }
 }
 // SetPersonType sets the personType property value. The type of person.
-func (m *Person) SetPersonType(value *PersonType)() {
+func (m *Person) SetPersonType(value PersonTypeable)() {
     if m != nil {
         m.personType = value
     }
 }
 // SetPhones sets the phones property value. The person's phone numbers.
-func (m *Person) SetPhones(value []Phone)() {
+func (m *Person) SetPhones(value []Phoneable)() {
     if m != nil {
         m.phones = value
     }
 }
 // SetPostalAddresses sets the postalAddresses property value. The person's addresses.
-func (m *Person) SetPostalAddresses(value []Location)() {
+func (m *Person) SetPostalAddresses(value []Locationable)() {
     if m != nil {
         m.postalAddresses = value
     }
@@ -646,7 +646,7 @@ func (m *Person) SetProfession(value *string)() {
     }
 }
 // SetScoredEmailAddresses sets the scoredEmailAddresses property value. The person's email addresses.
-func (m *Person) SetScoredEmailAddresses(value []ScoredEmailAddress)() {
+func (m *Person) SetScoredEmailAddresses(value []ScoredEmailAddressable)() {
     if m != nil {
         m.scoredEmailAddresses = value
     }
@@ -664,7 +664,7 @@ func (m *Person) SetUserPrincipalName(value *string)() {
     }
 }
 // SetWebsites sets the websites property value. The person's websites.
-func (m *Person) SetWebsites(value []Website)() {
+func (m *Person) SetWebsites(value []Websiteable)() {
     if m != nil {
         m.websites = value
     }

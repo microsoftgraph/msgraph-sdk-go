@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PublicErrorDetail 
+// PublicErrorDetail provides operations to manage the collection of externalConnection entities.
 type PublicErrorDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewPublicErrorDetail()(*PublicErrorDetail) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePublicErrorDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePublicErrorDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPublicErrorDetail(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicErrorDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *PublicErrorDetail) GetCode()(*string) {
         return nil
     } else {
         return m.code
-    }
-}
-// GetMessage gets the message property value. The error message.
-func (m *PublicErrorDetail) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetTarget gets the target property value. The target of the error.
-func (m *PublicErrorDetail) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *PublicErrorDetail) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. The error message.
+func (m *PublicErrorDetail) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetTarget gets the target property value. The target of the error.
+func (m *PublicErrorDetail) GetTarget()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *PublicErrorDetail) IsNil()(bool) {
     return m == nil

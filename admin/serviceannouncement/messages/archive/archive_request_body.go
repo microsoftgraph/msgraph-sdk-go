@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ArchiveRequestBody 
+// ArchiveRequestBody provides operations to call the archive method.
 type ArchiveRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewArchiveRequestBody()(*ArchiveRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateArchiveRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateArchiveRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewArchiveRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ArchiveRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMessageIds gets the messageIds property value. 
-func (m *ArchiveRequestBody) GetMessageIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -52,6 +48,14 @@ func (m *ArchiveRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetMessageIds gets the messageIds property value. 
+func (m *ArchiveRequestBody) GetMessageIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageIds
+    }
 }
 func (m *ArchiveRequestBody) IsNil()(bool) {
     return m == nil

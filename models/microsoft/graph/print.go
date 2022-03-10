@@ -4,24 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Print 
+// Print provides operations to manage the print singleton.
 type Print struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The list of available print connectors.
-    connectors []PrintConnector;
+    connectors []PrintConnectorable;
     // The list of print long running operations.
-    operations []PrintOperation;
+    operations []PrintOperationable;
     // The list of printers registered in the tenant.
-    printers []Printer;
+    printers []Printerable;
     // The list of available Universal Print service endpoints.
-    services []PrintService;
+    services []PrintServiceable;
     // Tenant-wide settings for the Universal Print service.
-    settings *PrintSettings;
+    settings PrintSettingsable;
     // The list of printer shares registered in the tenant.
-    shares []PrinterShare;
+    shares []PrinterShareable;
     // List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-    taskDefinitions []PrintTaskDefinition;
+    taskDefinitions []PrintTaskDefinitionable;
 }
 // NewPrint instantiates a new Print and sets the default values.
 func NewPrint()(*Print) {
@@ -29,6 +29,10 @@ func NewPrint()(*Print) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePrintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Print) GetAdditionalData()(map[string]interface{}) {
@@ -39,15 +43,114 @@ func (m *Print) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetConnectors gets the connectors property value. The list of available print connectors.
-func (m *Print) GetConnectors()([]PrintConnector) {
+func (m *Print) GetConnectors()([]PrintConnectorable) {
     if m == nil {
         return nil
     } else {
         return m.connectors
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["connectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintConnectorable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintConnectorable)
+            }
+            m.SetConnectors(res)
+        }
+        return nil
+    }
+    res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintOperationable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintOperationable)
+            }
+            m.SetOperations(res)
+        }
+        return nil
+    }
+    res["printers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrinterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Printerable, len(val))
+            for i, v := range val {
+                res[i] = v.(Printerable)
+            }
+            m.SetPrinters(res)
+        }
+        return nil
+    }
+    res["services"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintServiceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintServiceable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintServiceable)
+            }
+            m.SetServices(res)
+        }
+        return nil
+    }
+    res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePrintSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(PrintSettingsable))
+        }
+        return nil
+    }
+    res["shares"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrinterShareFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrinterShareable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrinterShareable)
+            }
+            m.SetShares(res)
+        }
+        return nil
+    }
+    res["taskDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintTaskDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintTaskDefinitionable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintTaskDefinitionable)
+            }
+            m.SetTaskDefinitions(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetOperations gets the operations property value. The list of print long running operations.
-func (m *Print) GetOperations()([]PrintOperation) {
+func (m *Print) GetOperations()([]PrintOperationable) {
     if m == nil {
         return nil
     } else {
@@ -55,7 +158,7 @@ func (m *Print) GetOperations()([]PrintOperation) {
     }
 }
 // GetPrinters gets the printers property value. The list of printers registered in the tenant.
-func (m *Print) GetPrinters()([]Printer) {
+func (m *Print) GetPrinters()([]Printerable) {
     if m == nil {
         return nil
     } else {
@@ -63,7 +166,7 @@ func (m *Print) GetPrinters()([]Printer) {
     }
 }
 // GetServices gets the services property value. The list of available Universal Print service endpoints.
-func (m *Print) GetServices()([]PrintService) {
+func (m *Print) GetServices()([]PrintServiceable) {
     if m == nil {
         return nil
     } else {
@@ -71,7 +174,7 @@ func (m *Print) GetServices()([]PrintService) {
     }
 }
 // GetSettings gets the settings property value. Tenant-wide settings for the Universal Print service.
-func (m *Print) GetSettings()(*PrintSettings) {
+func (m *Print) GetSettings()(PrintSettingsable) {
     if m == nil {
         return nil
     } else {
@@ -79,7 +182,7 @@ func (m *Print) GetSettings()(*PrintSettings) {
     }
 }
 // GetShares gets the shares property value. The list of printer shares registered in the tenant.
-func (m *Print) GetShares()([]PrinterShare) {
+func (m *Print) GetShares()([]PrinterShareable) {
     if m == nil {
         return nil
     } else {
@@ -87,111 +190,12 @@ func (m *Print) GetShares()([]PrinterShare) {
     }
 }
 // GetTaskDefinitions gets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-func (m *Print) GetTaskDefinitions()([]PrintTaskDefinition) {
+func (m *Print) GetTaskDefinitions()([]PrintTaskDefinitionable) {
     if m == nil {
         return nil
     } else {
         return m.taskDefinitions
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["connectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintConnector() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintConnector, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintConnector))
-            }
-            m.SetConnectors(res)
-        }
-        return nil
-    }
-    res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintOperation, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintOperation))
-            }
-            m.SetOperations(res)
-        }
-        return nil
-    }
-    res["printers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrinter() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Printer, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Printer))
-            }
-            m.SetPrinters(res)
-        }
-        return nil
-    }
-    res["services"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintService() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintService, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintService))
-            }
-            m.SetServices(res)
-        }
-        return nil
-    }
-    res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintSettings() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSettings(val.(*PrintSettings))
-        }
-        return nil
-    }
-    res["shares"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrinterShare() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrinterShare, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrinterShare))
-            }
-            m.SetShares(res)
-        }
-        return nil
-    }
-    res["taskDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintTaskDefinition() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintTaskDefinition, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintTaskDefinition))
-            }
-            m.SetTaskDefinitions(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *Print) IsNil()(bool) {
     return m == nil
@@ -201,8 +205,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetConnectors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectors()))
         for i, v := range m.GetConnectors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("connectors", cast)
         if err != nil {
@@ -212,8 +215,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -223,8 +225,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetPrinters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPrinters()))
         for i, v := range m.GetPrinters() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("printers", cast)
         if err != nil {
@@ -234,8 +235,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetServices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetServices()))
         for i, v := range m.GetServices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("services", cast)
         if err != nil {
@@ -251,8 +251,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetShares() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetShares()))
         for i, v := range m.GetShares() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("shares", cast)
         if err != nil {
@@ -262,8 +261,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetTaskDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaskDefinitions()))
         for i, v := range m.GetTaskDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("taskDefinitions", cast)
         if err != nil {
@@ -285,43 +283,43 @@ func (m *Print) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetConnectors sets the connectors property value. The list of available print connectors.
-func (m *Print) SetConnectors(value []PrintConnector)() {
+func (m *Print) SetConnectors(value []PrintConnectorable)() {
     if m != nil {
         m.connectors = value
     }
 }
 // SetOperations sets the operations property value. The list of print long running operations.
-func (m *Print) SetOperations(value []PrintOperation)() {
+func (m *Print) SetOperations(value []PrintOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
 // SetPrinters sets the printers property value. The list of printers registered in the tenant.
-func (m *Print) SetPrinters(value []Printer)() {
+func (m *Print) SetPrinters(value []Printerable)() {
     if m != nil {
         m.printers = value
     }
 }
 // SetServices sets the services property value. The list of available Universal Print service endpoints.
-func (m *Print) SetServices(value []PrintService)() {
+func (m *Print) SetServices(value []PrintServiceable)() {
     if m != nil {
         m.services = value
     }
 }
 // SetSettings sets the settings property value. Tenant-wide settings for the Universal Print service.
-func (m *Print) SetSettings(value *PrintSettings)() {
+func (m *Print) SetSettings(value PrintSettingsable)() {
     if m != nil {
         m.settings = value
     }
 }
 // SetShares sets the shares property value. The list of printer shares registered in the tenant.
-func (m *Print) SetShares(value []PrinterShare)() {
+func (m *Print) SetShares(value []PrinterShareable)() {
     if m != nil {
         m.shares = value
     }
 }
 // SetTaskDefinitions sets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-func (m *Print) SetTaskDefinitions(value []PrintTaskDefinition)() {
+func (m *Print) SetTaskDefinitions(value []PrintTaskDefinitionable)() {
     if m != nil {
         m.taskDefinitions = value
     }

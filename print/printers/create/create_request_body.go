@@ -5,12 +5,12 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// CreateRequestBody 
+// CreateRequestBody provides operations to call the create method.
 type CreateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    certificateSigningRequest *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequest;
+    certificateSigningRequest i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequestable;
     // 
     connectorId *string;
     // 
@@ -31,6 +31,10 @@ func NewCreateRequestBody()(*CreateRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCreateRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCreateRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,7 +44,7 @@ func (m *CreateRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetCertificateSigningRequest gets the certificateSigningRequest property value. 
-func (m *CreateRequestBody) GetCertificateSigningRequest()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequest) {
+func (m *CreateRequestBody) GetCertificateSigningRequest()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequestable) {
     if m == nil {
         return nil
     } else {
@@ -63,48 +67,16 @@ func (m *CreateRequestBody) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetHasPhysicalDevice gets the hasPhysicalDevice property value. 
-func (m *CreateRequestBody) GetHasPhysicalDevice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasPhysicalDevice
-    }
-}
-// GetManufacturer gets the manufacturer property value. 
-func (m *CreateRequestBody) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetModel gets the model property value. 
-func (m *CreateRequestBody) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetPhysicalDeviceId gets the physicalDeviceId property value. 
-func (m *CreateRequestBody) GetPhysicalDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.physicalDeviceId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["certificateSigningRequest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPrintCertificateSigningRequest() })
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePrintCertificateSigningRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateSigningRequest(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequest))
+            m.SetCertificateSigningRequest(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequestable))
         }
         return nil
     }
@@ -170,6 +142,38 @@ func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
+// GetHasPhysicalDevice gets the hasPhysicalDevice property value. 
+func (m *CreateRequestBody) GetHasPhysicalDevice()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasPhysicalDevice
+    }
+}
+// GetManufacturer gets the manufacturer property value. 
+func (m *CreateRequestBody) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetModel gets the model property value. 
+func (m *CreateRequestBody) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetPhysicalDeviceId gets the physicalDeviceId property value. 
+func (m *CreateRequestBody) GetPhysicalDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.physicalDeviceId
+    }
+}
 func (m *CreateRequestBody) IsNil()(bool) {
     return m == nil
 }
@@ -232,7 +236,7 @@ func (m *CreateRequestBody) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetCertificateSigningRequest sets the certificateSigningRequest property value. 
-func (m *CreateRequestBody) SetCertificateSigningRequest(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequest)() {
+func (m *CreateRequestBody) SetCertificateSigningRequest(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequestable)() {
     if m != nil {
         m.certificateSigningRequest = value
     }

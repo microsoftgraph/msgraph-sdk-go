@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartFont 
+// WorkbookChartFont provides operations to manage the drive singleton.
 type WorkbookChartFont struct {
     Entity
     // Represents the bold status of font.
@@ -27,6 +27,10 @@ func NewWorkbookChartFont()(*WorkbookChartFont) {
     }
     return m
 }
+// CreateWorkbookChartFontFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkbookChartFontFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkbookChartFont(), nil
+}
 // GetBold gets the bold property value. Represents the bold status of font.
 func (m *WorkbookChartFont) GetBold()(*bool) {
     if m == nil {
@@ -41,38 +45,6 @@ func (m *WorkbookChartFont) GetColor()(*string) {
         return nil
     } else {
         return m.color
-    }
-}
-// GetItalic gets the italic property value. Represents the italic status of the font.
-func (m *WorkbookChartFont) GetItalic()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.italic
-    }
-}
-// GetName gets the name property value. Font name (e.g. 'Calibri')
-func (m *WorkbookChartFont) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetSize gets the size property value. Size of the font (e.g. 11)
-func (m *WorkbookChartFont) GetSize()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
-}
-// GetUnderline gets the underline property value. Type of underline applied to the font. The possible values are: None, Single.
-func (m *WorkbookChartFont) GetUnderline()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.underline
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +111,38 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetItalic gets the italic property value. Represents the italic status of the font.
+func (m *WorkbookChartFont) GetItalic()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.italic
+    }
+}
+// GetName gets the name property value. Font name (e.g. 'Calibri')
+func (m *WorkbookChartFont) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetSize gets the size property value. Size of the font (e.g. 11)
+func (m *WorkbookChartFont) GetSize()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
+}
+// GetUnderline gets the underline property value. Type of underline applied to the font. The possible values are: None, Single.
+func (m *WorkbookChartFont) GetUnderline()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.underline
+    }
 }
 func (m *WorkbookChartFont) IsNil()(bool) {
     return m == nil

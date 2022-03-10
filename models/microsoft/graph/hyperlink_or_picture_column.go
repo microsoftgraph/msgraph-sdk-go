@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// HyperlinkOrPictureColumn 
+// HyperlinkOrPictureColumn provides operations to manage the educationRoot singleton.
 type HyperlinkOrPictureColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewHyperlinkOrPictureColumn()(*HyperlinkOrPictureColumn) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateHyperlinkOrPictureColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateHyperlinkOrPictureColumnFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewHyperlinkOrPictureColumn(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HyperlinkOrPictureColumn) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsPicture gets the isPicture property value. Specifies whether the display format used for URL columns is an image or a hyperlink.
-func (m *HyperlinkOrPictureColumn) GetIsPicture()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPicture
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *HyperlinkOrPictureColumn) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetIsPicture gets the isPicture property value. Specifies whether the display format used for URL columns is an image or a hyperlink.
+func (m *HyperlinkOrPictureColumn) GetIsPicture()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPicture
+    }
 }
 func (m *HyperlinkOrPictureColumn) IsNil()(bool) {
     return m == nil

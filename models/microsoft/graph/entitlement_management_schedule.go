@@ -5,14 +5,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EntitlementManagementSchedule 
+// EntitlementManagementSchedule provides operations to manage the identityGovernance singleton.
 type EntitlementManagementSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // When the access should expire.
-    expiration *ExpirationPattern;
+    expiration ExpirationPatternable;
     // For recurring access. Not used at present.
-    recurrence *PatternedRecurrence;
+    recurrence PatternedRecurrenceable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
@@ -23,6 +23,10 @@ func NewEntitlementManagementSchedule()(*EntitlementManagementSchedule) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateEntitlementManagementScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEntitlementManagementScheduleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEntitlementManagementSchedule(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EntitlementManagementSchedule) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -32,49 +36,33 @@ func (m *EntitlementManagementSchedule) GetAdditionalData()(map[string]interface
     }
 }
 // GetExpiration gets the expiration property value. When the access should expire.
-func (m *EntitlementManagementSchedule) GetExpiration()(*ExpirationPattern) {
+func (m *EntitlementManagementSchedule) GetExpiration()(ExpirationPatternable) {
     if m == nil {
         return nil
     } else {
         return m.expiration
     }
 }
-// GetRecurrence gets the recurrence property value. For recurring access. Not used at present.
-func (m *EntitlementManagementSchedule) GetRecurrence()(*PatternedRecurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *EntitlementManagementSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagementSchedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["expiration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExpirationPattern() })
+        val, err := n.GetObjectValue(CreateExpirationPatternFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExpiration(val.(*ExpirationPattern))
+            m.SetExpiration(val.(ExpirationPatternable))
         }
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPatternedRecurrence() })
+        val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecurrence(val.(*PatternedRecurrence))
+            m.SetRecurrence(val.(PatternedRecurrenceable))
         }
         return nil
     }
@@ -89,6 +77,22 @@ func (m *EntitlementManagementSchedule) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetRecurrence gets the recurrence property value. For recurring access. Not used at present.
+func (m *EntitlementManagementSchedule) GetRecurrence()(PatternedRecurrenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrence
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *EntitlementManagementSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
 }
 func (m *EntitlementManagementSchedule) IsNil()(bool) {
     return m == nil
@@ -128,13 +132,13 @@ func (m *EntitlementManagementSchedule) SetAdditionalData(value map[string]inter
     }
 }
 // SetExpiration sets the expiration property value. When the access should expire.
-func (m *EntitlementManagementSchedule) SetExpiration(value *ExpirationPattern)() {
+func (m *EntitlementManagementSchedule) SetExpiration(value ExpirationPatternable)() {
     if m != nil {
         m.expiration = value
     }
 }
 // SetRecurrence sets the recurrence property value. For recurring access. Not used at present.
-func (m *EntitlementManagementSchedule) SetRecurrence(value *PatternedRecurrence)() {
+func (m *EntitlementManagementSchedule) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value
     }

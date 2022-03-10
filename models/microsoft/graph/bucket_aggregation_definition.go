@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BucketAggregationDefinition 
+// BucketAggregationDefinition provides operations to call the query method.
 type BucketAggregationDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,7 +15,7 @@ type BucketAggregationDefinition struct {
     // A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
     prefixFilter *string;
     // Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
-    ranges []BucketAggregationRange;
+    ranges []BucketAggregationRangeable;
     // The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
     sortBy *BucketAggregationSortProperty;
 }
@@ -26,52 +26,16 @@ func NewBucketAggregationDefinition()(*BucketAggregationDefinition) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBucketAggregationDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBucketAggregationDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBucketAggregationDefinition(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BucketAggregationDefinition) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsDescending gets the isDescending property value. True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
-func (m *BucketAggregationDefinition) GetIsDescending()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDescending
-    }
-}
-// GetMinimumCount gets the minimumCount property value. The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
-func (m *BucketAggregationDefinition) GetMinimumCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumCount
-    }
-}
-// GetPrefixFilter gets the prefixFilter property value. A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
-func (m *BucketAggregationDefinition) GetPrefixFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prefixFilter
-    }
-}
-// GetRanges gets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
-func (m *BucketAggregationDefinition) GetRanges()([]BucketAggregationRange) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ranges
-    }
-}
-// GetSortBy gets the sortBy property value. The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
-func (m *BucketAggregationDefinition) GetSortBy()(*BucketAggregationSortProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sortBy
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,14 +72,14 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["ranges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBucketAggregationRange() })
+        val, err := n.GetCollectionOfObjectValues(CreateBucketAggregationRangeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BucketAggregationRange, len(val))
+            res := make([]BucketAggregationRangeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BucketAggregationRange))
+                res[i] = v.(BucketAggregationRangeable)
             }
             m.SetRanges(res)
         }
@@ -132,6 +96,46 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetIsDescending gets the isDescending property value. True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
+func (m *BucketAggregationDefinition) GetIsDescending()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDescending
+    }
+}
+// GetMinimumCount gets the minimumCount property value. The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
+func (m *BucketAggregationDefinition) GetMinimumCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumCount
+    }
+}
+// GetPrefixFilter gets the prefixFilter property value. A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
+func (m *BucketAggregationDefinition) GetPrefixFilter()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.prefixFilter
+    }
+}
+// GetRanges gets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+func (m *BucketAggregationDefinition) GetRanges()([]BucketAggregationRangeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ranges
+    }
+}
+// GetSortBy gets the sortBy property value. The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
+func (m *BucketAggregationDefinition) GetSortBy()(*BucketAggregationSortProperty) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sortBy
+    }
 }
 func (m *BucketAggregationDefinition) IsNil()(bool) {
     return m == nil
@@ -159,8 +163,7 @@ func (m *BucketAggregationDefinition) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetRanges() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRanges()))
         for i, v := range m.GetRanges() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("ranges", cast)
         if err != nil {
@@ -207,7 +210,7 @@ func (m *BucketAggregationDefinition) SetPrefixFilter(value *string)() {
     }
 }
 // SetRanges sets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
-func (m *BucketAggregationDefinition) SetRanges(value []BucketAggregationRange)() {
+func (m *BucketAggregationDefinition) SetRanges(value []BucketAggregationRangeable)() {
     if m != nil {
         m.ranges = value
     }

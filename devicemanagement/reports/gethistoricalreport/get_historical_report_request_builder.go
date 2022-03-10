@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetHistoricalReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getHistoricalReport
+// GetHistoricalReportRequestBuilder provides operations to call the getHistoricalReport method.
 type GetHistoricalReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetHistoricalReportRequestBuilder struct {
 // GetHistoricalReportRequestBuilderPostOptions options for Post
 type GetHistoricalReportRequestBuilderPostOptions struct {
     // 
-    Body *GetHistoricalReportRequestBody;
+    Body GetHistoricalReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetHistoricalReportRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformation(options
     return requestInfo, nil
 }
 // Post invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) Post(options *GetHistoricalReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetHistoricalReportRequestBuilder) Post(options *GetHistoricalReportRequestBuilderPostOptions)(GetHistoricalReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetHistoricalReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetHistoricalReportResponseable), nil
 }

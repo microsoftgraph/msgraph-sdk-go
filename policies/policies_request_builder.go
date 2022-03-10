@@ -15,7 +15,6 @@ import (
     ic72674a7b815c6dfc1c4fcd42f7ca9ca5d4b8ea0c1a65ea7317905471fa20a0f "github.com/microsoftgraph/msgraph-sdk-go/policies/adminconsentrequestpolicy"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     iebb445e03b5a1725abc955bb63d1192b435aa40b5fee4976b801435c3fc9ec06 "github.com/microsoftgraph/msgraph-sdk-go/policies/tokenlifetimepolicies"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i569717b3ca8408936df0d0a4e253024a8a7b041522350cb7c8977c2c62a9b9d6 "github.com/microsoftgraph/msgraph-sdk-go/policies/tokenlifetimepolicies/item"
     i75b801e9d4a8913922e67e9e75dd091c9280212e449c4d8e76d13ab572b48c86 "github.com/microsoftgraph/msgraph-sdk-go/policies/activitybasedtimeoutpolicies/item"
@@ -25,9 +24,10 @@ import (
     iae405fd168f9b22628a993c1d320fde787ac74895fc32dab558860d3df5e3cf7 "github.com/microsoftgraph/msgraph-sdk-go/policies/homerealmdiscoverypolicies/item"
     ifd481b5a9f37ded8a4d12f7c0db8d1e5cc30754c49b7cbbab66e580c09455018 "github.com/microsoftgraph/msgraph-sdk-go/policies/claimsmappingpolicies/item"
     iff6a6d8b424e8a919281280c87147525819afe04366318faafc92dbee9442123 "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// PoliciesRequestBuilder builds and executes requests for operations under \policies
+// PoliciesRequestBuilder provides operations to manage the policyRoot singleton.
 type PoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -57,7 +57,7 @@ type PoliciesRequestBuilderGetQueryParameters struct {
 // PoliciesRequestBuilderPatchOptions options for Patch
 type PoliciesRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PolicyRoot;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PolicyRootable;
     // Request headers
     H map[string]string;
     // Request options
@@ -128,7 +128,7 @@ func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -191,16 +191,20 @@ func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*iff6a6d8
     return iff6a6d8b424e8a919281280c87147525819afe04366318faafc92dbee9442123.NewFeatureRolloutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get policies
-func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PolicyRoot, error) {
+func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PolicyRootable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPolicyRoot() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePolicyRootFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PolicyRoot), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PolicyRootable), nil
 }
 func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPolicies()(*i6894c2598f4ac73a5643fa86cbbf110868e7746e8c9ed5da452b0170eebe03b3.HomeRealmDiscoveryPoliciesRequestBuilder) {
     return i6894c2598f4ac73a5643fa86cbbf110868e7746e8c9ed5da452b0170eebe03b3.NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -225,7 +229,11 @@ func (m *PoliciesRequestBuilder) Patch(options *PoliciesRequestBuilderPatchOptio
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

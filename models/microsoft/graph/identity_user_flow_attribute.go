@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentityUserFlowAttribute 
+// IdentityUserFlowAttribute provides operations to manage the identityContainer singleton.
 type IdentityUserFlowAttribute struct {
     Entity
     // The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
@@ -22,6 +22,10 @@ func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateIdentityUserFlowAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIdentityUserFlowAttributeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIdentityUserFlowAttribute(), nil
 }
 // GetDataType gets the dataType property value. The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
 func (m *IdentityUserFlowAttribute) GetDataType()(*IdentityUserFlowAttributeDataType) {
@@ -45,14 +49,6 @@ func (m *IdentityUserFlowAttribute) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetUserFlowAttributeType gets the userFlowAttributeType property value. The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
-func (m *IdentityUserFlowAttribute) GetUserFlowAttributeType()(*IdentityUserFlowAttributeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userFlowAttributeType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +95,14 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetUserFlowAttributeType gets the userFlowAttributeType property value. The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
+func (m *IdentityUserFlowAttribute) GetUserFlowAttributeType()(*IdentityUserFlowAttributeType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userFlowAttributeType
+    }
 }
 func (m *IdentityUserFlowAttribute) IsNil()(bool) {
     return m == nil

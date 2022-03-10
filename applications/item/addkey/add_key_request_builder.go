@@ -2,11 +2,10 @@ package addkey
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// AddKeyRequestBuilder builds and executes requests for operations under \applications\{application-id}\microsoft.graph.addKey
+// AddKeyRequestBuilder provides operations to call the addKey method.
 type AddKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +17,7 @@ type AddKeyRequestBuilder struct {
 // AddKeyRequestBuilderPostOptions options for Post
 type AddKeyRequestBuilderPostOptions struct {
     // 
-    Body *KeyCredentialRequestBody;
+    Body KeyCredentialRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -35,7 +34,7 @@ func NewAddKeyRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,14 +63,14 @@ func (m *AddKeyRequestBuilder) CreatePostRequestInformation(options *AddKeyReque
     return requestInfo, nil
 }
 // Post invoke action addKey
-func (m *AddKeyRequestBuilder) Post(options *AddKeyRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyCredential, error) {
+func (m *AddKeyRequestBuilder) Post(options *AddKeyRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyCredentialable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewKeyCredential() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateKeyCredentialFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyCredential), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyCredentialable), nil
 }

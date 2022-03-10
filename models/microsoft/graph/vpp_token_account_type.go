@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the deviceAppManagement singleton.
 type VppTokenAccountType int
 
 const (

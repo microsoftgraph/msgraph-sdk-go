@@ -4,22 +4,22 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DocumentSet 
+// DocumentSet provides operations to manage the educationRoot singleton.
 type DocumentSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Content types allowed in document set.
-    allowedContentTypes []ContentTypeInfo;
+    allowedContentTypes []ContentTypeInfoable;
     // Default contents of document set.
-    defaultContents []DocumentSetContent;
+    defaultContents []DocumentSetContentable;
     // Specifies whether to push welcome page changes to inherited content types.
     propagateWelcomePageChanges *bool;
     // 
-    sharedColumns []ColumnDefinition;
+    sharedColumns []ColumnDefinitionable;
     // Add the name of the document set to each file name.
     shouldPrefixNameToFile *bool;
     // 
-    welcomePageColumns []ColumnDefinition;
+    welcomePageColumns []ColumnDefinitionable;
     // Welcome page absolute URL.
     welcomePageUrl *string;
 }
@@ -30,6 +30,10 @@ func NewDocumentSet()(*DocumentSet) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDocumentSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDocumentSetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDocumentSet(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSet) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -39,7 +43,7 @@ func (m *DocumentSet) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAllowedContentTypes gets the allowedContentTypes property value. Content types allowed in document set.
-func (m *DocumentSet) GetAllowedContentTypes()([]ContentTypeInfo) {
+func (m *DocumentSet) GetAllowedContentTypes()([]ContentTypeInfoable) {
     if m == nil {
         return nil
     } else {
@@ -47,79 +51,39 @@ func (m *DocumentSet) GetAllowedContentTypes()([]ContentTypeInfo) {
     }
 }
 // GetDefaultContents gets the defaultContents property value. Default contents of document set.
-func (m *DocumentSet) GetDefaultContents()([]DocumentSetContent) {
+func (m *DocumentSet) GetDefaultContents()([]DocumentSetContentable) {
     if m == nil {
         return nil
     } else {
         return m.defaultContents
     }
 }
-// GetPropagateWelcomePageChanges gets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
-func (m *DocumentSet) GetPropagateWelcomePageChanges()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propagateWelcomePageChanges
-    }
-}
-// GetSharedColumns gets the sharedColumns property value. 
-func (m *DocumentSet) GetSharedColumns()([]ColumnDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedColumns
-    }
-}
-// GetShouldPrefixNameToFile gets the shouldPrefixNameToFile property value. Add the name of the document set to each file name.
-func (m *DocumentSet) GetShouldPrefixNameToFile()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shouldPrefixNameToFile
-    }
-}
-// GetWelcomePageColumns gets the welcomePageColumns property value. 
-func (m *DocumentSet) GetWelcomePageColumns()([]ColumnDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.welcomePageColumns
-    }
-}
-// GetWelcomePageUrl gets the welcomePageUrl property value. Welcome page absolute URL.
-func (m *DocumentSet) GetWelcomePageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.welcomePageUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["allowedContentTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContentTypeInfo() })
+        val, err := n.GetCollectionOfObjectValues(CreateContentTypeInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ContentTypeInfo, len(val))
+            res := make([]ContentTypeInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ContentTypeInfo))
+                res[i] = v.(ContentTypeInfoable)
             }
             m.SetAllowedContentTypes(res)
         }
         return nil
     }
     res["defaultContents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDocumentSetContent() })
+        val, err := n.GetCollectionOfObjectValues(CreateDocumentSetContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DocumentSetContent, len(val))
+            res := make([]DocumentSetContentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DocumentSetContent))
+                res[i] = v.(DocumentSetContentable)
             }
             m.SetDefaultContents(res)
         }
@@ -136,14 +100,14 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["sharedColumns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewColumnDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateColumnDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ColumnDefinition, len(val))
+            res := make([]ColumnDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ColumnDefinition))
+                res[i] = v.(ColumnDefinitionable)
             }
             m.SetSharedColumns(res)
         }
@@ -160,14 +124,14 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["welcomePageColumns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewColumnDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateColumnDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ColumnDefinition, len(val))
+            res := make([]ColumnDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ColumnDefinition))
+                res[i] = v.(ColumnDefinitionable)
             }
             m.SetWelcomePageColumns(res)
         }
@@ -185,6 +149,46 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
     }
     return res
 }
+// GetPropagateWelcomePageChanges gets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
+func (m *DocumentSet) GetPropagateWelcomePageChanges()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.propagateWelcomePageChanges
+    }
+}
+// GetSharedColumns gets the sharedColumns property value. 
+func (m *DocumentSet) GetSharedColumns()([]ColumnDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharedColumns
+    }
+}
+// GetShouldPrefixNameToFile gets the shouldPrefixNameToFile property value. Add the name of the document set to each file name.
+func (m *DocumentSet) GetShouldPrefixNameToFile()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shouldPrefixNameToFile
+    }
+}
+// GetWelcomePageColumns gets the welcomePageColumns property value. 
+func (m *DocumentSet) GetWelcomePageColumns()([]ColumnDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.welcomePageColumns
+    }
+}
+// GetWelcomePageUrl gets the welcomePageUrl property value. Welcome page absolute URL.
+func (m *DocumentSet) GetWelcomePageUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.welcomePageUrl
+    }
+}
 func (m *DocumentSet) IsNil()(bool) {
     return m == nil
 }
@@ -193,8 +197,7 @@ func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetAllowedContentTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllowedContentTypes()))
         for i, v := range m.GetAllowedContentTypes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("allowedContentTypes", cast)
         if err != nil {
@@ -204,8 +207,7 @@ func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetDefaultContents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefaultContents()))
         for i, v := range m.GetDefaultContents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("defaultContents", cast)
         if err != nil {
@@ -221,8 +223,7 @@ func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetSharedColumns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSharedColumns()))
         for i, v := range m.GetSharedColumns() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("sharedColumns", cast)
         if err != nil {
@@ -238,8 +239,7 @@ func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetWelcomePageColumns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWelcomePageColumns()))
         for i, v := range m.GetWelcomePageColumns() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("welcomePageColumns", cast)
         if err != nil {
@@ -267,13 +267,13 @@ func (m *DocumentSet) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAllowedContentTypes sets the allowedContentTypes property value. Content types allowed in document set.
-func (m *DocumentSet) SetAllowedContentTypes(value []ContentTypeInfo)() {
+func (m *DocumentSet) SetAllowedContentTypes(value []ContentTypeInfoable)() {
     if m != nil {
         m.allowedContentTypes = value
     }
 }
 // SetDefaultContents sets the defaultContents property value. Default contents of document set.
-func (m *DocumentSet) SetDefaultContents(value []DocumentSetContent)() {
+func (m *DocumentSet) SetDefaultContents(value []DocumentSetContentable)() {
     if m != nil {
         m.defaultContents = value
     }
@@ -285,7 +285,7 @@ func (m *DocumentSet) SetPropagateWelcomePageChanges(value *bool)() {
     }
 }
 // SetSharedColumns sets the sharedColumns property value. 
-func (m *DocumentSet) SetSharedColumns(value []ColumnDefinition)() {
+func (m *DocumentSet) SetSharedColumns(value []ColumnDefinitionable)() {
     if m != nil {
         m.sharedColumns = value
     }
@@ -297,7 +297,7 @@ func (m *DocumentSet) SetShouldPrefixNameToFile(value *bool)() {
     }
 }
 // SetWelcomePageColumns sets the welcomePageColumns property value. 
-func (m *DocumentSet) SetWelcomePageColumns(value []ColumnDefinition)() {
+func (m *DocumentSet) SetWelcomePageColumns(value []ColumnDefinitionable)() {
     if m != nil {
         m.welcomePageColumns = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeZoneInformation 
+// TimeZoneInformation provides operations to call the supportedTimeZones method.
 type TimeZoneInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,12 +13,16 @@ type TimeZoneInformation struct {
     // A display string that represents the time zone.
     displayName *string;
 }
-// NewTimeZoneInformation instantiates a new TimeZoneInformation and sets the default values.
+// NewTimeZoneInformation instantiates a new timeZoneInformation and sets the default values.
 func NewTimeZoneInformation()(*TimeZoneInformation) {
     m := &TimeZoneInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTimeZoneInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTimeZoneInformationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTimeZoneInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeZoneInformation) GetAdditionalData()(map[string]interface{}) {

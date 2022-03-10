@@ -2,11 +2,10 @@ package addpassword
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// AddPasswordRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.addPassword
+// AddPasswordRequestBuilder provides operations to call the addPassword method.
 type AddPasswordRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +17,7 @@ type AddPasswordRequestBuilder struct {
 // AddPasswordRequestBuilderPostOptions options for Post
 type AddPasswordRequestBuilderPostOptions struct {
     // 
-    Body *PasswordCredentialRequestBody;
+    Body PasswordCredentialRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -35,7 +34,7 @@ func NewAddPasswordRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,14 +63,14 @@ func (m *AddPasswordRequestBuilder) CreatePostRequestInformation(options *AddPas
     return requestInfo, nil
 }
 // Post invoke action addPassword
-func (m *AddPasswordRequestBuilder) Post(options *AddPasswordRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PasswordCredential, error) {
+func (m *AddPasswordRequestBuilder) Post(options *AddPasswordRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PasswordCredentialable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPasswordCredential() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePasswordCredentialFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PasswordCredential), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PasswordCredentialable), nil
 }

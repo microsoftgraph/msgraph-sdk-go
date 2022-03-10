@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the sync method.
 type DeviceManagementExchangeConnectorSyncType int
 
 const (

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedMobileApp 
+// ManagedMobileApp provides operations to manage the deviceAppManagement singleton.
 type ManagedMobileApp struct {
     Entity
     // The identifier for an app with it's operating system type.
-    mobileAppIdentifier *MobileAppIdentifier;
+    mobileAppIdentifier MobileAppIdentifierable;
     // Version of the entity.
     version *string;
 }
@@ -19,32 +19,20 @@ func NewManagedMobileApp()(*ManagedMobileApp) {
     }
     return m
 }
-// GetMobileAppIdentifier gets the mobileAppIdentifier property value. The identifier for an app with it's operating system type.
-func (m *ManagedMobileApp) GetMobileAppIdentifier()(*MobileAppIdentifier) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppIdentifier
-    }
-}
-// GetVersion gets the version property value. Version of the entity.
-func (m *ManagedMobileApp) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+// CreateManagedMobileAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedMobileAppFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedMobileApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedMobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["mobileAppIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppIdentifier() })
+        val, err := n.GetObjectValue(CreateMobileAppIdentifierFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMobileAppIdentifier(val.(*MobileAppIdentifier))
+            m.SetMobileAppIdentifier(val.(MobileAppIdentifierable))
         }
         return nil
     }
@@ -59,6 +47,22 @@ func (m *ManagedMobileApp) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetMobileAppIdentifier gets the mobileAppIdentifier property value. The identifier for an app with it's operating system type.
+func (m *ManagedMobileApp) GetMobileAppIdentifier()(MobileAppIdentifierable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileAppIdentifier
+    }
+}
+// GetVersion gets the version property value. Version of the entity.
+func (m *ManagedMobileApp) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *ManagedMobileApp) IsNil()(bool) {
     return m == nil
@@ -84,7 +88,7 @@ func (m *ManagedMobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     return nil
 }
 // SetMobileAppIdentifier sets the mobileAppIdentifier property value. The identifier for an app with it's operating system type.
-func (m *ManagedMobileApp) SetMobileAppIdentifier(value *MobileAppIdentifier)() {
+func (m *ManagedMobileApp) SetMobileAppIdentifier(value MobileAppIdentifierable)() {
     if m != nil {
         m.mobileAppIdentifier = value
     }

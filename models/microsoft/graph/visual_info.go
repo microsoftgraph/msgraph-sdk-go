@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// VisualInfo 
+// VisualInfo provides operations to manage the collection of drive entities.
 type VisualInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Optional. JSON object used to represent an icon which represents the application used to generate the activity
-    attribution *ImageInfo;
+    attribution ImageInfoable;
     // Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
     backgroundColor *string;
     // Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
-    content *Json;
+    content Jsonable;
     // Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
     description *string;
     // Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
@@ -26,6 +26,10 @@ func NewVisualInfo()(*VisualInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateVisualInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVisualInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVisualInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VisualInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,7 +39,7 @@ func (m *VisualInfo) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAttribution gets the attribution property value. Optional. JSON object used to represent an icon which represents the application used to generate the activity
-func (m *VisualInfo) GetAttribution()(*ImageInfo) {
+func (m *VisualInfo) GetAttribution()(ImageInfoable) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +55,7 @@ func (m *VisualInfo) GetBackgroundColor()(*string) {
     }
 }
 // GetContent gets the content property value. Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
-func (m *VisualInfo) GetContent()(*Json) {
+func (m *VisualInfo) GetContent()(Jsonable) {
     if m == nil {
         return nil
     } else {
@@ -78,12 +82,12 @@ func (m *VisualInfo) GetDisplayText()(*string) {
 func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["attribution"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewImageInfo() })
+        val, err := n.GetObjectValue(CreateImageInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAttribution(val.(*ImageInfo))
+            m.SetAttribution(val.(ImageInfoable))
         }
         return nil
     }
@@ -98,12 +102,12 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJson() })
+        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContent(val.(*Json))
+            m.SetContent(val.(Jsonable))
         }
         return nil
     }
@@ -179,7 +183,7 @@ func (m *VisualInfo) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAttribution sets the attribution property value. Optional. JSON object used to represent an icon which represents the application used to generate the activity
-func (m *VisualInfo) SetAttribution(value *ImageInfo)() {
+func (m *VisualInfo) SetAttribution(value ImageInfoable)() {
     if m != nil {
         m.attribution = value
     }
@@ -191,7 +195,7 @@ func (m *VisualInfo) SetBackgroundColor(value *string)() {
     }
 }
 // SetContent sets the content property value. Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
-func (m *VisualInfo) SetContent(value *Json)() {
+func (m *VisualInfo) SetContent(value Jsonable)() {
     if m != nil {
         m.content = value
     }

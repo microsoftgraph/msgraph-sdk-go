@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessApplications 
+// ConditionalAccessApplications provides operations to manage the identityContainer singleton.
 type ConditionalAccessApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewConditionalAccessApplications()(*ConditionalAccessApplications) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateConditionalAccessApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessApplicationsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessApplications(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *ConditionalAccessApplications) GetExcludeApplications()([]string) {
         return nil
     } else {
         return m.excludeApplications
-    }
-}
-// GetIncludeApplications gets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
-func (m *ConditionalAccessApplications) GetIncludeApplications()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeApplications
-    }
-}
-// GetIncludeAuthenticationContextClassReferences gets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
-func (m *ConditionalAccessApplications) GetIncludeAuthenticationContextClassReferences()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeAuthenticationContextClassReferences
-    }
-}
-// GetIncludeUserActions gets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-func (m *ConditionalAccessApplications) GetIncludeUserActions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeUserActions
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -124,6 +104,30 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetIncludeApplications gets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
+func (m *ConditionalAccessApplications) GetIncludeApplications()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeApplications
+    }
+}
+// GetIncludeAuthenticationContextClassReferences gets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
+func (m *ConditionalAccessApplications) GetIncludeAuthenticationContextClassReferences()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeAuthenticationContextClassReferences
+    }
+}
+// GetIncludeUserActions gets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
+func (m *ConditionalAccessApplications) GetIncludeUserActions()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeUserActions
+    }
 }
 func (m *ConditionalAccessApplications) IsNil()(bool) {
     return m == nil

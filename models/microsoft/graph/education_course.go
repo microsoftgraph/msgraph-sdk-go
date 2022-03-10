@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationCourse 
+// EducationCourse provides operations to manage the educationRoot singleton.
 type EducationCourse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,6 +25,10 @@ func NewEducationCourse()(*EducationCourse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateEducationCourseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationCourseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationCourse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationCourse) GetAdditionalData()(map[string]interface{}) {
@@ -64,14 +68,6 @@ func (m *EducationCourse) GetExternalId()(*string) {
         return nil
     } else {
         return m.externalId
-    }
-}
-// GetSubject gets the subject property value. Subject of the course.
-func (m *EducationCourse) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +124,14 @@ func (m *EducationCourse) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetSubject gets the subject property value. Subject of the course.
+func (m *EducationCourse) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
 }
 func (m *EducationCourse) IsNil()(bool) {
     return m == nil

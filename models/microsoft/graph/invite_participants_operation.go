@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InviteParticipantsOperation 
+// InviteParticipantsOperation provides operations to call the invite method.
 type InviteParticipantsOperation struct {
     CommsOperation
     // The participants to invite.
-    participants []InvitationParticipantInfo;
+    participants []InvitationParticipantInfoable;
 }
 // NewInviteParticipantsOperation instantiates a new inviteParticipantsOperation and sets the default values.
 func NewInviteParticipantsOperation()(*InviteParticipantsOperation) {
@@ -17,32 +17,36 @@ func NewInviteParticipantsOperation()(*InviteParticipantsOperation) {
     }
     return m
 }
-// GetParticipants gets the participants property value. The participants to invite.
-func (m *InviteParticipantsOperation) GetParticipants()([]InvitationParticipantInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
+// CreateInviteParticipantsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInviteParticipantsOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInviteParticipantsOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InviteParticipantsOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     res["participants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInvitationParticipantInfo() })
+        val, err := n.GetCollectionOfObjectValues(CreateInvitationParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]InvitationParticipantInfo, len(val))
+            res := make([]InvitationParticipantInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*InvitationParticipantInfo))
+                res[i] = v.(InvitationParticipantInfoable)
             }
             m.SetParticipants(res)
         }
         return nil
     }
     return res
+}
+// GetParticipants gets the participants property value. The participants to invite.
+func (m *InviteParticipantsOperation) GetParticipants()([]InvitationParticipantInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.participants
+    }
 }
 func (m *InviteParticipantsOperation) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *InviteParticipantsOperation) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetParticipants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("participants", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *InviteParticipantsOperation) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetParticipants sets the participants property value. The participants to invite.
-func (m *InviteParticipantsOperation) SetParticipants(value []InvitationParticipantInfo)() {
+func (m *InviteParticipantsOperation) SetParticipants(value []InvitationParticipantInfoable)() {
     if m != nil {
         m.participants = value
     }

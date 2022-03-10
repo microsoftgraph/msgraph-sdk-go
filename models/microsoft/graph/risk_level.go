@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the auditLogRoot singleton.
 type RiskLevel int
 
 const (

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CertificateBasedAuthConfiguration 
+// CertificateBasedAuthConfiguration provides operations to manage the collection of certificateBasedAuthConfiguration entities.
 type CertificateBasedAuthConfiguration struct {
     Entity
     // Collection of certificate authorities which creates a trusted certificate chain.
-    certificateAuthorities []CertificateAuthority;
+    certificateAuthorities []CertificateAuthorityable;
 }
 // NewCertificateBasedAuthConfiguration instantiates a new certificateBasedAuthConfiguration and sets the default values.
 func NewCertificateBasedAuthConfiguration()(*CertificateBasedAuthConfiguration) {
@@ -17,8 +17,12 @@ func NewCertificateBasedAuthConfiguration()(*CertificateBasedAuthConfiguration) 
     }
     return m
 }
+// CreateCertificateBasedAuthConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCertificateBasedAuthConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCertificateBasedAuthConfiguration(), nil
+}
 // GetCertificateAuthorities gets the certificateAuthorities property value. Collection of certificate authorities which creates a trusted certificate chain.
-func (m *CertificateBasedAuthConfiguration) GetCertificateAuthorities()([]CertificateAuthority) {
+func (m *CertificateBasedAuthConfiguration) GetCertificateAuthorities()([]CertificateAuthorityable) {
     if m == nil {
         return nil
     } else {
@@ -29,14 +33,14 @@ func (m *CertificateBasedAuthConfiguration) GetCertificateAuthorities()([]Certif
 func (m *CertificateBasedAuthConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["certificateAuthorities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCertificateAuthority() })
+        val, err := n.GetCollectionOfObjectValues(CreateCertificateAuthorityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CertificateAuthority, len(val))
+            res := make([]CertificateAuthorityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CertificateAuthority))
+                res[i] = v.(CertificateAuthorityable)
             }
             m.SetCertificateAuthorities(res)
         }
@@ -56,8 +60,7 @@ func (m *CertificateBasedAuthConfiguration) Serialize(writer i04eb5309aeaafadd28
     if m.GetCertificateAuthorities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCertificateAuthorities()))
         for i, v := range m.GetCertificateAuthorities() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("certificateAuthorities", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *CertificateBasedAuthConfiguration) Serialize(writer i04eb5309aeaafadd28
     return nil
 }
 // SetCertificateAuthorities sets the certificateAuthorities property value. Collection of certificate authorities which creates a trusted certificate chain.
-func (m *CertificateBasedAuthConfiguration) SetCertificateAuthorities(value []CertificateAuthority)() {
+func (m *CertificateBasedAuthConfiguration) SetCertificateAuthorities(value []CertificateAuthorityable)() {
     if m != nil {
         m.certificateAuthorities = value
     }

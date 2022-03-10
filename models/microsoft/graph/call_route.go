@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CallRoute 
+// CallRoute provides operations to manage the cloudCommunications singleton.
 type CallRoute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    final *IdentitySet;
+    final IdentitySetable;
     // 
-    original *IdentitySet;
+    original IdentitySetable;
     // Possible values are: forwarded, lookup, selfFork.
     routingType *RoutingType;
 }
@@ -22,6 +22,10 @@ func NewCallRoute()(*CallRoute) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCallRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCallRouteFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCallRoute(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallRoute) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -30,50 +34,26 @@ func (m *CallRoute) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetFinal gets the final property value. 
-func (m *CallRoute) GetFinal()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.final
-    }
-}
-// GetOriginal gets the original property value. 
-func (m *CallRoute) GetOriginal()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.original
-    }
-}
-// GetRoutingType gets the routingType property value. Possible values are: forwarded, lookup, selfFork.
-func (m *CallRoute) GetRoutingType()(*RoutingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.routingType
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallRoute) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["final"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFinal(val.(*IdentitySet))
+            m.SetFinal(val.(IdentitySetable))
         }
         return nil
     }
     res["original"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOriginal(val.(*IdentitySet))
+            m.SetOriginal(val.(IdentitySetable))
         }
         return nil
     }
@@ -88,6 +68,30 @@ func (m *CallRoute) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetFinal gets the final property value. 
+func (m *CallRoute) GetFinal()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.final
+    }
+}
+// GetOriginal gets the original property value. 
+func (m *CallRoute) GetOriginal()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.original
+    }
+}
+// GetRoutingType gets the routingType property value. Possible values are: forwarded, lookup, selfFork.
+func (m *CallRoute) GetRoutingType()(*RoutingType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.routingType
+    }
 }
 func (m *CallRoute) IsNil()(bool) {
     return m == nil
@@ -128,13 +132,13 @@ func (m *CallRoute) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetFinal sets the final property value. 
-func (m *CallRoute) SetFinal(value *IdentitySet)() {
+func (m *CallRoute) SetFinal(value IdentitySetable)() {
     if m != nil {
         m.final = value
     }
 }
 // SetOriginal sets the original property value. 
-func (m *CallRoute) SetOriginal(value *IdentitySet)() {
+func (m *CallRoute) SetOriginal(value IdentitySetable)() {
     if m != nil {
         m.original = value
     }

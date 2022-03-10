@@ -5,23 +5,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ComplianceManagementPartner 
+// ComplianceManagementPartner provides operations to manage the deviceManagement singleton.
 type ComplianceManagementPartner struct {
     Entity
     // User groups which enroll Android devices through partner.
-    androidEnrollmentAssignments []ComplianceManagementPartnerAssignment;
+    androidEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
     // Partner onboarded for Android devices.
     androidOnboarded *bool;
     // Partner display name
     displayName *string;
     // User groups which enroll ios devices through partner.
-    iosEnrollmentAssignments []ComplianceManagementPartnerAssignment;
+    iosEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
     // Partner onboarded for ios devices.
     iosOnboarded *bool;
     // Timestamp of last heartbeat after admin onboarded to the compliance management partner
     lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // User groups which enroll Mac devices through partner.
-    macOsEnrollmentAssignments []ComplianceManagementPartnerAssignment;
+    macOsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
     // Partner onboarded for Mac devices.
     macOsOnboarded *bool;
     // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
@@ -34,8 +34,12 @@ func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
     }
     return m
 }
+// CreateComplianceManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateComplianceManagementPartnerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewComplianceManagementPartner(), nil
+}
 // GetAndroidEnrollmentAssignments gets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
-func (m *ComplianceManagementPartner) GetAndroidEnrollmentAssignments()([]ComplianceManagementPartnerAssignment) {
+func (m *ComplianceManagementPartner) GetAndroidEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -58,66 +62,18 @@ func (m *ComplianceManagementPartner) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIosEnrollmentAssignments gets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
-func (m *ComplianceManagementPartner) GetIosEnrollmentAssignments()([]ComplianceManagementPartnerAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosEnrollmentAssignments
-    }
-}
-// GetIosOnboarded gets the iosOnboarded property value. Partner onboarded for ios devices.
-func (m *ComplianceManagementPartner) GetIosOnboarded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosOnboarded
-    }
-}
-// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
-func (m *ComplianceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastHeartbeatDateTime
-    }
-}
-// GetMacOsEnrollmentAssignments gets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
-func (m *ComplianceManagementPartner) GetMacOsEnrollmentAssignments()([]ComplianceManagementPartnerAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macOsEnrollmentAssignments
-    }
-}
-// GetMacOsOnboarded gets the macOsOnboarded property value. Partner onboarded for Mac devices.
-func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macOsOnboarded
-    }
-}
-// GetPartnerState gets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
-func (m *ComplianceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerState
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["androidEnrollmentAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewComplianceManagementPartnerAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ComplianceManagementPartnerAssignment, len(val))
+            res := make([]ComplianceManagementPartnerAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+                res[i] = v.(ComplianceManagementPartnerAssignmentable)
             }
             m.SetAndroidEnrollmentAssignments(res)
         }
@@ -144,14 +100,14 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["iosEnrollmentAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewComplianceManagementPartnerAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ComplianceManagementPartnerAssignment, len(val))
+            res := make([]ComplianceManagementPartnerAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+                res[i] = v.(ComplianceManagementPartnerAssignmentable)
             }
             m.SetIosEnrollmentAssignments(res)
         }
@@ -178,14 +134,14 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["macOsEnrollmentAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewComplianceManagementPartnerAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ComplianceManagementPartnerAssignment, len(val))
+            res := make([]ComplianceManagementPartnerAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+                res[i] = v.(ComplianceManagementPartnerAssignmentable)
             }
             m.SetMacOsEnrollmentAssignments(res)
         }
@@ -213,6 +169,54 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
     }
     return res
 }
+// GetIosEnrollmentAssignments gets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
+func (m *ComplianceManagementPartner) GetIosEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosEnrollmentAssignments
+    }
+}
+// GetIosOnboarded gets the iosOnboarded property value. Partner onboarded for ios devices.
+func (m *ComplianceManagementPartner) GetIosOnboarded()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosOnboarded
+    }
+}
+// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
+func (m *ComplianceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastHeartbeatDateTime
+    }
+}
+// GetMacOsEnrollmentAssignments gets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
+func (m *ComplianceManagementPartner) GetMacOsEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.macOsEnrollmentAssignments
+    }
+}
+// GetMacOsOnboarded gets the macOsOnboarded property value. Partner onboarded for Mac devices.
+func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.macOsOnboarded
+    }
+}
+// GetPartnerState gets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+func (m *ComplianceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerState
+    }
+}
 func (m *ComplianceManagementPartner) IsNil()(bool) {
     return m == nil
 }
@@ -225,8 +229,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetAndroidEnrollmentAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAndroidEnrollmentAssignments()))
         for i, v := range m.GetAndroidEnrollmentAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("androidEnrollmentAssignments", cast)
         if err != nil {
@@ -248,8 +251,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetIosEnrollmentAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIosEnrollmentAssignments()))
         for i, v := range m.GetIosEnrollmentAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("iosEnrollmentAssignments", cast)
         if err != nil {
@@ -271,8 +273,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetMacOsEnrollmentAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMacOsEnrollmentAssignments()))
         for i, v := range m.GetMacOsEnrollmentAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("macOsEnrollmentAssignments", cast)
         if err != nil {
@@ -295,7 +296,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetAndroidEnrollmentAssignments sets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
-func (m *ComplianceManagementPartner) SetAndroidEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
+func (m *ComplianceManagementPartner) SetAndroidEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {
     if m != nil {
         m.androidEnrollmentAssignments = value
     }
@@ -313,7 +314,7 @@ func (m *ComplianceManagementPartner) SetDisplayName(value *string)() {
     }
 }
 // SetIosEnrollmentAssignments sets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
-func (m *ComplianceManagementPartner) SetIosEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
+func (m *ComplianceManagementPartner) SetIosEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {
     if m != nil {
         m.iosEnrollmentAssignments = value
     }
@@ -331,7 +332,7 @@ func (m *ComplianceManagementPartner) SetLastHeartbeatDateTime(value *i336074805
     }
 }
 // SetMacOsEnrollmentAssignments sets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
-func (m *ComplianceManagementPartner) SetMacOsEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
+func (m *ComplianceManagementPartner) SetMacOsEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {
     if m != nil {
         m.macOsEnrollmentAssignments = value
     }

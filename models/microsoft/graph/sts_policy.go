@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// StsPolicy 
+// StsPolicy provides operations to manage the collection of application entities.
 type StsPolicy struct {
     PolicyBase
     // 
-    appliesTo []DirectoryObject;
+    appliesTo []DirectoryObjectable;
     // A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
     definition []string;
     // If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
@@ -21,8 +21,12 @@ func NewStsPolicy()(*StsPolicy) {
     }
     return m
 }
+// CreateStsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateStsPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewStsPolicy(), nil
+}
 // GetAppliesTo gets the appliesTo property value. 
-func (m *StsPolicy) GetAppliesTo()([]DirectoryObject) {
+func (m *StsPolicy) GetAppliesTo()([]DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -37,26 +41,18 @@ func (m *StsPolicy) GetDefinition()([]string) {
         return m.definition
     }
 }
-// GetIsOrganizationDefault gets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
-func (m *StsPolicy) GetIsOrganizationDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOrganizationDefault
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["appliesTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetAppliesTo(res)
         }
@@ -88,6 +84,14 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
     }
     return res
 }
+// GetIsOrganizationDefault gets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
+func (m *StsPolicy) GetIsOrganizationDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isOrganizationDefault
+    }
+}
 func (m *StsPolicy) IsNil()(bool) {
     return m == nil
 }
@@ -100,8 +104,7 @@ func (m *StsPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetAppliesTo() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppliesTo()))
         for i, v := range m.GetAppliesTo() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appliesTo", cast)
         if err != nil {
@@ -123,7 +126,7 @@ func (m *StsPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     return nil
 }
 // SetAppliesTo sets the appliesTo property value. 
-func (m *StsPolicy) SetAppliesTo(value []DirectoryObject)() {
+func (m *StsPolicy) SetAppliesTo(value []DirectoryObjectable)() {
     if m != nil {
         m.appliesTo = value
     }

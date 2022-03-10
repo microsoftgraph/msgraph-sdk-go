@@ -2,10 +2,9 @@ package getallmessages
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetAllMessagesRequestBuilder builds and executes requests for operations under \chats\microsoft.graph.getAllMessages()
+// GetAllMessagesRequestBuilder provides operations to call the getAllMessages method.
 type GetAllMessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -32,7 +31,7 @@ func NewGetAllMessagesRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -60,18 +59,14 @@ func (m *GetAllMessagesRequestBuilder) CreateGetRequestInformation(options *GetA
     return requestInfo, nil
 }
 // Get invoke function getAllMessages
-func (m *GetAllMessagesRequestBuilder) Get(options *GetAllMessagesRequestBuilderGetOptions)([]GetAllMessages, error) {
+func (m *GetAllMessagesRequestBuilder) Get(options *GetAllMessagesRequestBuilderGetOptions)(GetAllMessagesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetAllMessages() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetAllMessagesResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetAllMessages, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetAllMessages))
-    }
-    return val, nil
+    return res.(GetAllMessagesResponseable), nil
 }

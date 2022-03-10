@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CopyNotebookRequestBody 
+// CopyNotebookRequestBody provides operations to call the copyNotebook method.
 type CopyNotebookRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,52 +26,16 @@ func NewCopyNotebookRequestBody()(*CopyNotebookRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCopyNotebookRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCopyNotebookRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCopyNotebookRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyNotebookRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetGroupId gets the groupId property value. 
-func (m *CopyNotebookRequestBody) GetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupId
-    }
-}
-// GetNotebookFolder gets the notebookFolder property value. 
-func (m *CopyNotebookRequestBody) GetNotebookFolder()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notebookFolder
-    }
-}
-// GetRenameAs gets the renameAs property value. 
-func (m *CopyNotebookRequestBody) GetRenameAs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.renameAs
-    }
-}
-// GetSiteCollectionId gets the siteCollectionId property value. 
-func (m *CopyNotebookRequestBody) GetSiteCollectionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteCollectionId
-    }
-}
-// GetSiteId gets the siteId property value. 
-func (m *CopyNotebookRequestBody) GetSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +92,46 @@ func (m *CopyNotebookRequestBody) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetGroupId gets the groupId property value. 
+func (m *CopyNotebookRequestBody) GetGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupId
+    }
+}
+// GetNotebookFolder gets the notebookFolder property value. 
+func (m *CopyNotebookRequestBody) GetNotebookFolder()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notebookFolder
+    }
+}
+// GetRenameAs gets the renameAs property value. 
+func (m *CopyNotebookRequestBody) GetRenameAs()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.renameAs
+    }
+}
+// GetSiteCollectionId gets the siteCollectionId property value. 
+func (m *CopyNotebookRequestBody) GetSiteCollectionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteCollectionId
+    }
+}
+// GetSiteId gets the siteId property value. 
+func (m *CopyNotebookRequestBody) GetSiteId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteId
+    }
 }
 func (m *CopyNotebookRequestBody) IsNil()(bool) {
     return m == nil

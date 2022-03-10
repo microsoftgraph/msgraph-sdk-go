@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OptionalClaims 
+// OptionalClaims provides operations to manage the collection of application entities.
 type OptionalClaims struct {
     // The optional claims returned in the JWT access token.
-    accessToken []OptionalClaim;
+    accessToken []OptionalClaimable;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The optional claims returned in the JWT ID token.
-    idToken []OptionalClaim;
+    idToken []OptionalClaimable;
     // The optional claims returned in the SAML token.
-    saml2Token []OptionalClaim;
+    saml2Token []OptionalClaimable;
 }
 // NewOptionalClaims instantiates a new optionalClaims and sets the default values.
 func NewOptionalClaims()(*OptionalClaims) {
@@ -22,8 +22,12 @@ func NewOptionalClaims()(*OptionalClaims) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateOptionalClaimsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOptionalClaimsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOptionalClaims(), nil
+}
 // GetAccessToken gets the accessToken property value. The optional claims returned in the JWT access token.
-func (m *OptionalClaims) GetAccessToken()([]OptionalClaim) {
+func (m *OptionalClaims) GetAccessToken()([]OptionalClaimable) {
     if m == nil {
         return nil
     } else {
@@ -38,8 +42,55 @@ func (m *OptionalClaims) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["accessToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOptionalClaimFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OptionalClaimable, len(val))
+            for i, v := range val {
+                res[i] = v.(OptionalClaimable)
+            }
+            m.SetAccessToken(res)
+        }
+        return nil
+    }
+    res["idToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOptionalClaimFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OptionalClaimable, len(val))
+            for i, v := range val {
+                res[i] = v.(OptionalClaimable)
+            }
+            m.SetIdToken(res)
+        }
+        return nil
+    }
+    res["saml2Token"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOptionalClaimFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OptionalClaimable, len(val))
+            for i, v := range val {
+                res[i] = v.(OptionalClaimable)
+            }
+            m.SetSaml2Token(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetIdToken gets the idToken property value. The optional claims returned in the JWT ID token.
-func (m *OptionalClaims) GetIdToken()([]OptionalClaim) {
+func (m *OptionalClaims) GetIdToken()([]OptionalClaimable) {
     if m == nil {
         return nil
     } else {
@@ -47,59 +98,12 @@ func (m *OptionalClaims) GetIdToken()([]OptionalClaim) {
     }
 }
 // GetSaml2Token gets the saml2Token property value. The optional claims returned in the SAML token.
-func (m *OptionalClaims) GetSaml2Token()([]OptionalClaim) {
+func (m *OptionalClaims) GetSaml2Token()([]OptionalClaimable) {
     if m == nil {
         return nil
     } else {
         return m.saml2Token
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["accessToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOptionalClaim() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OptionalClaim, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*OptionalClaim))
-            }
-            m.SetAccessToken(res)
-        }
-        return nil
-    }
-    res["idToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOptionalClaim() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OptionalClaim, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*OptionalClaim))
-            }
-            m.SetIdToken(res)
-        }
-        return nil
-    }
-    res["saml2Token"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOptionalClaim() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OptionalClaim, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*OptionalClaim))
-            }
-            m.SetSaml2Token(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *OptionalClaims) IsNil()(bool) {
     return m == nil
@@ -109,8 +113,7 @@ func (m *OptionalClaims) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetAccessToken() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessToken()))
         for i, v := range m.GetAccessToken() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("accessToken", cast)
         if err != nil {
@@ -120,8 +123,7 @@ func (m *OptionalClaims) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetIdToken() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIdToken()))
         for i, v := range m.GetIdToken() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("idToken", cast)
         if err != nil {
@@ -131,8 +133,7 @@ func (m *OptionalClaims) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetSaml2Token() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSaml2Token()))
         for i, v := range m.GetSaml2Token() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("saml2Token", cast)
         if err != nil {
@@ -148,7 +149,7 @@ func (m *OptionalClaims) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     return nil
 }
 // SetAccessToken sets the accessToken property value. The optional claims returned in the JWT access token.
-func (m *OptionalClaims) SetAccessToken(value []OptionalClaim)() {
+func (m *OptionalClaims) SetAccessToken(value []OptionalClaimable)() {
     if m != nil {
         m.accessToken = value
     }
@@ -160,13 +161,13 @@ func (m *OptionalClaims) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetIdToken sets the idToken property value. The optional claims returned in the JWT ID token.
-func (m *OptionalClaims) SetIdToken(value []OptionalClaim)() {
+func (m *OptionalClaims) SetIdToken(value []OptionalClaimable)() {
     if m != nil {
         m.idToken = value
     }
 }
 // SetSaml2Token sets the saml2Token property value. The optional claims returned in the SAML token.
-func (m *OptionalClaims) SetSaml2Token(value []OptionalClaim)() {
+func (m *OptionalClaims) SetSaml2Token(value []OptionalClaimable)() {
     if m != nil {
         m.saml2Token = value
     }

@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CommsOperation 
+// CommsOperation provides operations to manage the cloudCommunications singleton.
 type CommsOperation struct {
     Entity
     // Unique Client Context string. Max limit is 256 chars.
     clientContext *string;
     // The result information. Read-only.
-    resultInfo *ResultInfo;
+    resultInfo ResultInfoable;
     // Possible values are: notStarted, running, completed, failed. Read-only.
     status *OperationStatus;
 }
@@ -21,28 +21,16 @@ func NewCommsOperation()(*CommsOperation) {
     }
     return m
 }
+// CreateCommsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCommsOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCommsOperation(), nil
+}
 // GetClientContext gets the clientContext property value. Unique Client Context string. Max limit is 256 chars.
 func (m *CommsOperation) GetClientContext()(*string) {
     if m == nil {
         return nil
     } else {
         return m.clientContext
-    }
-}
-// GetResultInfo gets the resultInfo property value. The result information. Read-only.
-func (m *CommsOperation) GetResultInfo()(*ResultInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultInfo
-    }
-}
-// GetStatus gets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
-func (m *CommsOperation) GetStatus()(*OperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,12 +47,12 @@ func (m *CommsOperation) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["resultInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResultInfo() })
+        val, err := n.GetObjectValue(CreateResultInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResultInfo(val.(*ResultInfo))
+            m.SetResultInfo(val.(ResultInfoable))
         }
         return nil
     }
@@ -79,6 +67,22 @@ func (m *CommsOperation) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetResultInfo gets the resultInfo property value. The result information. Read-only.
+func (m *CommsOperation) GetResultInfo()(ResultInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultInfo
+    }
+}
+// GetStatus gets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
+func (m *CommsOperation) GetStatus()(*OperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *CommsOperation) IsNil()(bool) {
     return m == nil
@@ -117,7 +121,7 @@ func (m *CommsOperation) SetClientContext(value *string)() {
     }
 }
 // SetResultInfo sets the resultInfo property value. The result information. Read-only.
-func (m *CommsOperation) SetResultInfo(value *ResultInfo)() {
+func (m *CommsOperation) SetResultInfo(value ResultInfoable)() {
     if m != nil {
         m.resultInfo = value
     }

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the instantiate method.
 type PermissionClassificationType int
 
 const (

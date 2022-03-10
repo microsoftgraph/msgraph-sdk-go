@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Trending 
+// Trending provides operations to manage the collection of drive entities.
 type Trending struct {
     Entity
     // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Used for navigating to the trending document.
-    resource *Entity;
+    resource Entityable;
     // Reference properties of the trending document, such as the url and type of the document.
-    resourceReference *ResourceReference;
+    resourceReference ResourceReferenceable;
     // Properties that you can use to visualize the document in your experience.
-    resourceVisualization *ResourceVisualization;
+    resourceVisualization ResourceVisualizationable;
     // Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
     weight *float64;
 }
@@ -26,45 +26,9 @@ func NewTrending()(*Trending) {
     }
     return m
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *Trending) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetResource gets the resource property value. Used for navigating to the trending document.
-func (m *Trending) GetResource()(*Entity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
-}
-// GetResourceReference gets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
-func (m *Trending) GetResourceReference()(*ResourceReference) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceReference
-    }
-}
-// GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
-func (m *Trending) GetResourceVisualization()(*ResourceVisualization) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceVisualization
-    }
-}
-// GetWeight gets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-func (m *Trending) GetWeight()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.weight
-    }
+// CreateTrendingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTrendingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTrending(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Trending) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -80,32 +44,32 @@ func (m *Trending) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEntity() })
+        val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResource(val.(*Entity))
+            m.SetResource(val.(Entityable))
         }
         return nil
     }
     res["resourceReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResourceReference() })
+        val, err := n.GetObjectValue(CreateResourceReferenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResourceReference(val.(*ResourceReference))
+            m.SetResourceReference(val.(ResourceReferenceable))
         }
         return nil
     }
     res["resourceVisualization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResourceVisualization() })
+        val, err := n.GetObjectValue(CreateResourceVisualizationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResourceVisualization(val.(*ResourceVisualization))
+            m.SetResourceVisualization(val.(ResourceVisualizationable))
         }
         return nil
     }
@@ -120,6 +84,46 @@ func (m *Trending) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *Trending) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetResource gets the resource property value. Used for navigating to the trending document.
+func (m *Trending) GetResource()(Entityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resource
+    }
+}
+// GetResourceReference gets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
+func (m *Trending) GetResourceReference()(ResourceReferenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceReference
+    }
+}
+// GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
+func (m *Trending) GetResourceVisualization()(ResourceVisualizationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceVisualization
+    }
+}
+// GetWeight gets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
+func (m *Trending) GetWeight()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.weight
+    }
 }
 func (m *Trending) IsNil()(bool) {
     return m == nil
@@ -169,19 +173,19 @@ func (m *Trending) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad9
     }
 }
 // SetResource sets the resource property value. Used for navigating to the trending document.
-func (m *Trending) SetResource(value *Entity)() {
+func (m *Trending) SetResource(value Entityable)() {
     if m != nil {
         m.resource = value
     }
 }
 // SetResourceReference sets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
-func (m *Trending) SetResourceReference(value *ResourceReference)() {
+func (m *Trending) SetResourceReference(value ResourceReferenceable)() {
     if m != nil {
         m.resourceReference = value
     }
 }
 // SetResourceVisualization sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
-func (m *Trending) SetResourceVisualization(value *ResourceVisualization)() {
+func (m *Trending) SetResourceVisualization(value ResourceVisualizationable)() {
     if m != nil {
         m.resourceVisualization = value
     }

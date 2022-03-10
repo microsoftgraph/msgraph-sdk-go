@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintUsageByUser 
+// PrintUsageByUser provides operations to manage the reportRoot singleton.
 type PrintUsageByUser struct {
     PrintUsage
     // The UPN of the user represented by these statistics.
@@ -17,13 +17,9 @@ func NewPrintUsageByUser()(*PrintUsageByUser) {
     }
     return m
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user represented by these statistics.
-func (m *PrintUsageByUser) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+// CreatePrintUsageByUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintUsageByUserFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintUsageByUser(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintUsageByUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *PrintUsageByUser) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user represented by these statistics.
+func (m *PrintUsageByUser) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *PrintUsageByUser) IsNil()(bool) {
     return m == nil

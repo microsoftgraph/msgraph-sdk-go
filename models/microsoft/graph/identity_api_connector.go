@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentityApiConnector 
+// IdentityApiConnector provides operations to manage the identityContainer singleton.
 type IdentityApiConnector struct {
     Entity
     // The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
-    authenticationConfiguration *ApiAuthenticationConfigurationBase;
+    authenticationConfiguration ApiAuthenticationConfigurationBaseable;
     // The name of the API connector.
     displayName *string;
     // The URL of the API endpoint to call.
@@ -21,8 +21,12 @@ func NewIdentityApiConnector()(*IdentityApiConnector) {
     }
     return m
 }
+// CreateIdentityApiConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIdentityApiConnectorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIdentityApiConnector(), nil
+}
 // GetAuthenticationConfiguration gets the authenticationConfiguration property value. The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
-func (m *IdentityApiConnector) GetAuthenticationConfiguration()(*ApiAuthenticationConfigurationBase) {
+func (m *IdentityApiConnector) GetAuthenticationConfiguration()(ApiAuthenticationConfigurationBaseable) {
     if m == nil {
         return nil
     } else {
@@ -37,24 +41,16 @@ func (m *IdentityApiConnector) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetTargetUrl gets the targetUrl property value. The URL of the API endpoint to call.
-func (m *IdentityApiConnector) GetTargetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityApiConnector) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApiAuthenticationConfigurationBase() })
+        val, err := n.GetObjectValue(CreateApiAuthenticationConfigurationBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationConfiguration(val.(*ApiAuthenticationConfigurationBase))
+            m.SetAuthenticationConfiguration(val.(ApiAuthenticationConfigurationBaseable))
         }
         return nil
     }
@@ -79,6 +75,14 @@ func (m *IdentityApiConnector) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetTargetUrl gets the targetUrl property value. The URL of the API endpoint to call.
+func (m *IdentityApiConnector) GetTargetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetUrl
+    }
 }
 func (m *IdentityApiConnector) IsNil()(bool) {
     return m == nil
@@ -110,7 +114,7 @@ func (m *IdentityApiConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     return nil
 }
 // SetAuthenticationConfiguration sets the authenticationConfiguration property value. The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
-func (m *IdentityApiConnector) SetAuthenticationConfiguration(value *ApiAuthenticationConfigurationBase)() {
+func (m *IdentityApiConnector) SetAuthenticationConfiguration(value ApiAuthenticationConfigurationBaseable)() {
     if m != nil {
         m.authenticationConfiguration = value
     }

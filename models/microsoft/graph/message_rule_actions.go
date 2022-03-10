@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MessageRuleActions 
+// MessageRuleActions provides operations to manage the collection of drive entities.
 type MessageRuleActions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,9 +15,9 @@ type MessageRuleActions struct {
     // Indicates whether a message should be moved to the Deleted Items folder.
     delete *bool;
     // The email addresses of the recipients to which a message should be forwarded as an attachment.
-    forwardAsAttachmentTo []Recipient;
+    forwardAsAttachmentTo []Recipientable;
     // The email addresses of the recipients to which a message should be forwarded.
-    forwardTo []Recipient;
+    forwardTo []Recipientable;
     // Indicates whether a message should be marked as read.
     markAsRead *bool;
     // Sets the importance of the message, which can be: low, normal, high.
@@ -27,7 +27,7 @@ type MessageRuleActions struct {
     // Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
     permanentDelete *bool;
     // The email addresses to which a message should be redirected.
-    redirectTo []Recipient;
+    redirectTo []Recipientable;
     // Indicates whether subsequent rules should be evaluated.
     stopProcessingRules *bool;
 }
@@ -37,6 +37,10 @@ func NewMessageRuleActions()(*MessageRuleActions) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateMessageRuleActionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMessageRuleActionsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMessageRuleActions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageRuleActions) GetAdditionalData()(map[string]interface{}) {
@@ -68,70 +72,6 @@ func (m *MessageRuleActions) GetDelete()(*bool) {
         return nil
     } else {
         return m.delete
-    }
-}
-// GetForwardAsAttachmentTo gets the forwardAsAttachmentTo property value. The email addresses of the recipients to which a message should be forwarded as an attachment.
-func (m *MessageRuleActions) GetForwardAsAttachmentTo()([]Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.forwardAsAttachmentTo
-    }
-}
-// GetForwardTo gets the forwardTo property value. The email addresses of the recipients to which a message should be forwarded.
-func (m *MessageRuleActions) GetForwardTo()([]Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.forwardTo
-    }
-}
-// GetMarkAsRead gets the markAsRead property value. Indicates whether a message should be marked as read.
-func (m *MessageRuleActions) GetMarkAsRead()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.markAsRead
-    }
-}
-// GetMarkImportance gets the markImportance property value. Sets the importance of the message, which can be: low, normal, high.
-func (m *MessageRuleActions) GetMarkImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.markImportance
-    }
-}
-// GetMoveToFolder gets the moveToFolder property value. The ID of the folder that a message will be moved to.
-func (m *MessageRuleActions) GetMoveToFolder()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.moveToFolder
-    }
-}
-// GetPermanentDelete gets the permanentDelete property value. Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-func (m *MessageRuleActions) GetPermanentDelete()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permanentDelete
-    }
-}
-// GetRedirectTo gets the redirectTo property value. The email addresses to which a message should be redirected.
-func (m *MessageRuleActions) GetRedirectTo()([]Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redirectTo
-    }
-}
-// GetStopProcessingRules gets the stopProcessingRules property value. Indicates whether subsequent rules should be evaluated.
-func (m *MessageRuleActions) GetStopProcessingRules()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stopProcessingRules
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -172,28 +112,28 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["forwardAsAttachmentTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetForwardAsAttachmentTo(res)
         }
         return nil
     }
     res["forwardTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetForwardTo(res)
         }
@@ -240,14 +180,14 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["redirectTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetRedirectTo(res)
         }
@@ -264,6 +204,70 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetForwardAsAttachmentTo gets the forwardAsAttachmentTo property value. The email addresses of the recipients to which a message should be forwarded as an attachment.
+func (m *MessageRuleActions) GetForwardAsAttachmentTo()([]Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.forwardAsAttachmentTo
+    }
+}
+// GetForwardTo gets the forwardTo property value. The email addresses of the recipients to which a message should be forwarded.
+func (m *MessageRuleActions) GetForwardTo()([]Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.forwardTo
+    }
+}
+// GetMarkAsRead gets the markAsRead property value. Indicates whether a message should be marked as read.
+func (m *MessageRuleActions) GetMarkAsRead()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.markAsRead
+    }
+}
+// GetMarkImportance gets the markImportance property value. Sets the importance of the message, which can be: low, normal, high.
+func (m *MessageRuleActions) GetMarkImportance()(*Importance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.markImportance
+    }
+}
+// GetMoveToFolder gets the moveToFolder property value. The ID of the folder that a message will be moved to.
+func (m *MessageRuleActions) GetMoveToFolder()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.moveToFolder
+    }
+}
+// GetPermanentDelete gets the permanentDelete property value. Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
+func (m *MessageRuleActions) GetPermanentDelete()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.permanentDelete
+    }
+}
+// GetRedirectTo gets the redirectTo property value. The email addresses to which a message should be redirected.
+func (m *MessageRuleActions) GetRedirectTo()([]Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.redirectTo
+    }
+}
+// GetStopProcessingRules gets the stopProcessingRules property value. Indicates whether subsequent rules should be evaluated.
+func (m *MessageRuleActions) GetStopProcessingRules()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stopProcessingRules
+    }
 }
 func (m *MessageRuleActions) IsNil()(bool) {
     return m == nil
@@ -291,8 +295,7 @@ func (m *MessageRuleActions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetForwardAsAttachmentTo() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetForwardAsAttachmentTo()))
         for i, v := range m.GetForwardAsAttachmentTo() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("forwardAsAttachmentTo", cast)
         if err != nil {
@@ -302,8 +305,7 @@ func (m *MessageRuleActions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetForwardTo() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetForwardTo()))
         for i, v := range m.GetForwardTo() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("forwardTo", cast)
         if err != nil {
@@ -338,8 +340,7 @@ func (m *MessageRuleActions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetRedirectTo() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRedirectTo()))
         for i, v := range m.GetRedirectTo() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("redirectTo", cast)
         if err != nil {
@@ -385,13 +386,13 @@ func (m *MessageRuleActions) SetDelete(value *bool)() {
     }
 }
 // SetForwardAsAttachmentTo sets the forwardAsAttachmentTo property value. The email addresses of the recipients to which a message should be forwarded as an attachment.
-func (m *MessageRuleActions) SetForwardAsAttachmentTo(value []Recipient)() {
+func (m *MessageRuleActions) SetForwardAsAttachmentTo(value []Recipientable)() {
     if m != nil {
         m.forwardAsAttachmentTo = value
     }
 }
 // SetForwardTo sets the forwardTo property value. The email addresses of the recipients to which a message should be forwarded.
-func (m *MessageRuleActions) SetForwardTo(value []Recipient)() {
+func (m *MessageRuleActions) SetForwardTo(value []Recipientable)() {
     if m != nil {
         m.forwardTo = value
     }
@@ -421,7 +422,7 @@ func (m *MessageRuleActions) SetPermanentDelete(value *bool)() {
     }
 }
 // SetRedirectTo sets the redirectTo property value. The email addresses to which a message should be redirected.
-func (m *MessageRuleActions) SetRedirectTo(value []Recipient)() {
+func (m *MessageRuleActions) SetRedirectTo(value []Recipientable)() {
     if m != nil {
         m.redirectTo = value
     }

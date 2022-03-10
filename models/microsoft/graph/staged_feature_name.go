@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the policyRoot singleton.
 type StagedFeatureName int
 
 const (

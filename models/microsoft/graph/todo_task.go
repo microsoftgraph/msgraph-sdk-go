@@ -5,21 +5,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TodoTask 
+// TodoTask provides operations to manage the collection of drive entities.
 type TodoTask struct {
     Entity
     // The task body that typically contains information about the task.
-    body *ItemBody;
+    body ItemBodyable;
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     bodyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The date in the specified time zone that the task was finished.
-    completedDateTime *DateTimeTimeZone;
+    completedDateTime DateTimeTimeZoneable;
     // The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The date in the specified time zone that the task is to be finished.
-    dueDateTime *DateTimeTimeZone;
+    dueDateTime DateTimeTimeZoneable;
     // The collection of open extensions defined for the task. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // The importance of the task. Possible values are: low, normal, high.
     importance *Importance;
     // Set to true if an alert is set to remind the user of the task.
@@ -27,11 +27,11 @@ type TodoTask struct {
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A collection of resources linked to the task.
-    linkedResources []LinkedResource;
+    linkedResources []LinkedResourceable;
     // The recurrence pattern for the task.
-    recurrence *PatternedRecurrence;
+    recurrence PatternedRecurrenceable;
     // The date and time for a reminder alert of the task to occur.
-    reminderDateTime *DateTimeTimeZone;
+    reminderDateTime DateTimeTimeZoneable;
     // Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
     status *TaskStatus;
     // A brief description of the task.
@@ -44,8 +44,12 @@ func NewTodoTask()(*TodoTask) {
     }
     return m
 }
+// CreateTodoTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTodoTaskFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTodoTask(), nil
+}
 // GetBody gets the body property value. The task body that typically contains information about the task.
-func (m *TodoTask) GetBody()(*ItemBody) {
+func (m *TodoTask) GetBody()(ItemBodyable) {
     if m == nil {
         return nil
     } else {
@@ -61,7 +65,7 @@ func (m *TodoTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date in the specified time zone that the task was finished.
-func (m *TodoTask) GetCompletedDateTime()(*DateTimeTimeZone) {
+func (m *TodoTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
@@ -77,7 +81,7 @@ func (m *TodoTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
 }
 // GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
-func (m *TodoTask) GetDueDateTime()(*DateTimeTimeZone) {
+func (m *TodoTask) GetDueDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
@@ -85,87 +89,23 @@ func (m *TodoTask) GetDueDateTime()(*DateTimeTimeZone) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task. Nullable.
-func (m *TodoTask) GetExtensions()([]Extension) {
+func (m *TodoTask) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
     }
 }
-// GetImportance gets the importance property value. The importance of the task. Possible values are: low, normal, high.
-func (m *TodoTask) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
-}
-// GetIsReminderOn gets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
-func (m *TodoTask) GetIsReminderOn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReminderOn
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
-func (m *TodoTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLinkedResources gets the linkedResources property value. A collection of resources linked to the task.
-func (m *TodoTask) GetLinkedResources()([]LinkedResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.linkedResources
-    }
-}
-// GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
-func (m *TodoTask) GetRecurrence()(*PatternedRecurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
-}
-// GetReminderDateTime gets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
-func (m *TodoTask) GetReminderDateTime()(*DateTimeTimeZone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminderDateTime
-    }
-}
-// GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
-func (m *TodoTask) GetStatus()(*TaskStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTitle gets the title property value. A brief description of the task.
-func (m *TodoTask) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBody(val.(*ItemBody))
+            m.SetBody(val.(ItemBodyable))
         }
         return nil
     }
@@ -180,12 +120,12 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["completedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCompletedDateTime(val.(*DateTimeTimeZone))
+            m.SetCompletedDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -200,24 +140,24 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["dueDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDueDateTime(val.(*DateTimeTimeZone))
+            m.SetDueDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
@@ -254,36 +194,36 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["linkedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLinkedResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateLinkedResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LinkedResource, len(val))
+            res := make([]LinkedResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LinkedResource))
+                res[i] = v.(LinkedResourceable)
             }
             m.SetLinkedResources(res)
         }
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPatternedRecurrence() })
+        val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecurrence(val.(*PatternedRecurrence))
+            m.SetRecurrence(val.(PatternedRecurrenceable))
         }
         return nil
     }
     res["reminderDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReminderDateTime(val.(*DateTimeTimeZone))
+            m.SetReminderDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -308,6 +248,70 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetImportance gets the importance property value. The importance of the task. Possible values are: low, normal, high.
+func (m *TodoTask) GetImportance()(*Importance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importance
+    }
+}
+// GetIsReminderOn gets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
+func (m *TodoTask) GetIsReminderOn()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isReminderOn
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+func (m *TodoTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLinkedResources gets the linkedResources property value. A collection of resources linked to the task.
+func (m *TodoTask) GetLinkedResources()([]LinkedResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.linkedResources
+    }
+}
+// GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
+func (m *TodoTask) GetRecurrence()(PatternedRecurrenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrence
+    }
+}
+// GetReminderDateTime gets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
+func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reminderDateTime
+    }
+}
+// GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
+func (m *TodoTask) GetStatus()(*TaskStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTitle gets the title property value. A brief description of the task.
+func (m *TodoTask) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
 }
 func (m *TodoTask) IsNil()(bool) {
     return m == nil
@@ -351,8 +355,7 @@ func (m *TodoTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -381,8 +384,7 @@ func (m *TodoTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetLinkedResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLinkedResources()))
         for i, v := range m.GetLinkedResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("linkedResources", cast)
         if err != nil {
@@ -417,7 +419,7 @@ func (m *TodoTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetBody sets the body property value. The task body that typically contains information about the task.
-func (m *TodoTask) SetBody(value *ItemBody)() {
+func (m *TodoTask) SetBody(value ItemBodyable)() {
     if m != nil {
         m.body = value
     }
@@ -429,7 +431,7 @@ func (m *TodoTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe
     }
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date in the specified time zone that the task was finished.
-func (m *TodoTask) SetCompletedDateTime(value *DateTimeTimeZone)() {
+func (m *TodoTask) SetCompletedDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.completedDateTime = value
     }
@@ -441,13 +443,13 @@ func (m *TodoTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // SetDueDateTime sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
-func (m *TodoTask) SetDueDateTime(value *DateTimeTimeZone)() {
+func (m *TodoTask) SetDueDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.dueDateTime = value
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task. Nullable.
-func (m *TodoTask) SetExtensions(value []Extension)() {
+func (m *TodoTask) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
@@ -471,19 +473,19 @@ func (m *TodoTask) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad9
     }
 }
 // SetLinkedResources sets the linkedResources property value. A collection of resources linked to the task.
-func (m *TodoTask) SetLinkedResources(value []LinkedResource)() {
+func (m *TodoTask) SetLinkedResources(value []LinkedResourceable)() {
     if m != nil {
         m.linkedResources = value
     }
 }
 // SetRecurrence sets the recurrence property value. The recurrence pattern for the task.
-func (m *TodoTask) SetRecurrence(value *PatternedRecurrence)() {
+func (m *TodoTask) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value
     }
 }
 // SetReminderDateTime sets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
-func (m *TodoTask) SetReminderDateTime(value *DateTimeTimeZone)() {
+func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.reminderDateTime = value
     }

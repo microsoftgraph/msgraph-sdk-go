@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDeviceOverview 
+// ManagedDeviceOverview provides operations to manage the deviceManagement singleton.
 type ManagedDeviceOverview struct {
     Entity
     // Distribution of Exchange Access State in Intune
-    deviceExchangeAccessStateSummary *DeviceExchangeAccessStateSummary;
+    deviceExchangeAccessStateSummary DeviceExchangeAccessStateSummaryable;
     // Device operating system summary.
-    deviceOperatingSystemSummary *DeviceOperatingSystemSummary;
+    deviceOperatingSystemSummary DeviceOperatingSystemSummaryable;
     // The number of devices enrolled in both MDM and EAS
     dualEnrolledDeviceCount *int32;
     // Total enrolled device count. Does not include PC devices managed via Intune PC Agent
@@ -25,8 +25,12 @@ func NewManagedDeviceOverview()(*ManagedDeviceOverview) {
     }
     return m
 }
+// CreateManagedDeviceOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedDeviceOverviewFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedDeviceOverview(), nil
+}
 // GetDeviceExchangeAccessStateSummary gets the deviceExchangeAccessStateSummary property value. Distribution of Exchange Access State in Intune
-func (m *ManagedDeviceOverview) GetDeviceExchangeAccessStateSummary()(*DeviceExchangeAccessStateSummary) {
+func (m *ManagedDeviceOverview) GetDeviceExchangeAccessStateSummary()(DeviceExchangeAccessStateSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -34,7 +38,7 @@ func (m *ManagedDeviceOverview) GetDeviceExchangeAccessStateSummary()(*DeviceExc
     }
 }
 // GetDeviceOperatingSystemSummary gets the deviceOperatingSystemSummary property value. Device operating system summary.
-func (m *ManagedDeviceOverview) GetDeviceOperatingSystemSummary()(*DeviceOperatingSystemSummary) {
+func (m *ManagedDeviceOverview) GetDeviceOperatingSystemSummary()(DeviceOperatingSystemSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -57,34 +61,26 @@ func (m *ManagedDeviceOverview) GetEnrolledDeviceCount()(*int32) {
         return m.enrolledDeviceCount
     }
 }
-// GetMdmEnrolledCount gets the mdmEnrolledCount property value. The number of devices enrolled in MDM
-func (m *ManagedDeviceOverview) GetMdmEnrolledCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmEnrolledCount
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceExchangeAccessStateSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceExchangeAccessStateSummary() })
+        val, err := n.GetObjectValue(CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceExchangeAccessStateSummary(val.(*DeviceExchangeAccessStateSummary))
+            m.SetDeviceExchangeAccessStateSummary(val.(DeviceExchangeAccessStateSummaryable))
         }
         return nil
     }
     res["deviceOperatingSystemSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceOperatingSystemSummary() })
+        val, err := n.GetObjectValue(CreateDeviceOperatingSystemSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceOperatingSystemSummary(val.(*DeviceOperatingSystemSummary))
+            m.SetDeviceOperatingSystemSummary(val.(DeviceOperatingSystemSummaryable))
         }
         return nil
     }
@@ -119,6 +115,14 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetMdmEnrolledCount gets the mdmEnrolledCount property value. The number of devices enrolled in MDM
+func (m *ManagedDeviceOverview) GetMdmEnrolledCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mdmEnrolledCount
+    }
 }
 func (m *ManagedDeviceOverview) IsNil()(bool) {
     return m == nil
@@ -162,13 +166,13 @@ func (m *ManagedDeviceOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     return nil
 }
 // SetDeviceExchangeAccessStateSummary sets the deviceExchangeAccessStateSummary property value. Distribution of Exchange Access State in Intune
-func (m *ManagedDeviceOverview) SetDeviceExchangeAccessStateSummary(value *DeviceExchangeAccessStateSummary)() {
+func (m *ManagedDeviceOverview) SetDeviceExchangeAccessStateSummary(value DeviceExchangeAccessStateSummaryable)() {
     if m != nil {
         m.deviceExchangeAccessStateSummary = value
     }
 }
 // SetDeviceOperatingSystemSummary sets the deviceOperatingSystemSummary property value. Device operating system summary.
-func (m *ManagedDeviceOverview) SetDeviceOperatingSystemSummary(value *DeviceOperatingSystemSummary)() {
+func (m *ManagedDeviceOverview) SetDeviceOperatingSystemSummary(value DeviceOperatingSystemSummaryable)() {
     if m != nil {
         m.deviceOperatingSystemSummary = value
     }

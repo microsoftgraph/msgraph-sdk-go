@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// CreateLinkRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.createLink
+// CreateLinkRequestBuilder provides operations to call the createLink method.
 type CreateLinkRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CreateLinkRequestBuilder struct {
 // CreateLinkRequestBuilderPostOptions options for Post
 type CreateLinkRequestBuilderPostOptions struct {
     // 
-    Body *CreateLinkRequestBody;
+    Body CreateLinkRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type CreateLinkResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type permission
-    permission *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission;
+    permission i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable;
 }
 // NewCreateLinkResponse instantiates a new createLinkResponse and sets the default values.
 func NewCreateLinkResponse()(*CreateLinkResponse) {
@@ -39,6 +39,9 @@ func NewCreateLinkResponse()(*CreateLinkResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCreateLinkResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateLinkResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateLinkResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *CreateLinkResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CreateLinkResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["permission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePermissionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPermission(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPermission gets the permission property value. Union type representation for type permission
-func (m *CreateLinkResponse) GetPermission()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission) {
+func (m *CreateLinkResponse) GetPermission()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable) {
     if m == nil {
         return nil
     } else {
         return m.permission
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CreateLinkResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["permission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewPermission() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPermission(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CreateLinkResponse) IsNil()(bool) {
     return m == nil
@@ -97,10 +100,17 @@ func (m *CreateLinkResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetPermission sets the permission property value. Union type representation for type permission
-func (m *CreateLinkResponse) SetPermission(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission)() {
+func (m *CreateLinkResponse) SetPermission(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable)() {
     if m != nil {
         m.permission = value
     }
+}
+// CreateLinkResponseable 
+type CreateLinkResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetPermission()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable)
+    SetPermission(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permissionable)()
 }
 // NewCreateLinkRequestBuilderInternal instantiates a new CreateLinkRequestBuilder and sets the default values.
 func NewCreateLinkRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateLinkRequestBuilder) {
@@ -111,7 +121,7 @@ func NewCreateLinkRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *CreateLinkRequestBuilder) CreatePostRequestInformation(options *CreateL
     return requestInfo, nil
 }
 // Post invoke action createLink
-func (m *CreateLinkRequestBuilder) Post(options *CreateLinkRequestBuilderPostOptions)(*CreateLinkResponse, error) {
+func (m *CreateLinkRequestBuilder) Post(options *CreateLinkRequestBuilderPostOptions)(CreateLinkResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCreateLinkResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateLinkResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CreateLinkResponse), nil
+    return res.(CreateLinkResponseable), nil
 }

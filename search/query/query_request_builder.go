@@ -2,11 +2,9 @@ package query
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// QueryRequestBuilder builds and executes requests for operations under \search\microsoft.graph.query
+// QueryRequestBuilder provides operations to call the query method.
 type QueryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +16,7 @@ type QueryRequestBuilder struct {
 // QueryRequestBuilderPostOptions options for Post
 type QueryRequestBuilderPostOptions struct {
     // 
-    Body *QueryRequestBody;
+    Body QueryRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -35,7 +33,7 @@ func NewQueryRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,18 +62,14 @@ func (m *QueryRequestBuilder) CreatePostRequestInformation(options *QueryRequest
     return requestInfo, nil
 }
 // Post invoke action query
-func (m *QueryRequestBuilder) Post(options *QueryRequestBuilderPostOptions)([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchResponse, error) {
+func (m *QueryRequestBuilder) Post(options *QueryRequestBuilderPostOptions)(QueryResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSearchResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateQueryResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchResponse, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchResponse))
-    }
-    return val, nil
+    return res.(QueryResponseable), nil
 }

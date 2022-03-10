@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TelecomExpenseManagementPartner 
+// TelecomExpenseManagementPartner provides operations to manage the deviceManagement singleton.
 type TelecomExpenseManagementPartner struct {
     Entity
     // Whether the partner's AAD app has been authorized to access Intune.
@@ -25,6 +25,10 @@ func NewTelecomExpenseManagementPartner()(*TelecomExpenseManagementPartner) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateTelecomExpenseManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTelecomExpenseManagementPartnerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTelecomExpenseManagementPartner(), nil
 }
 // GetAppAuthorized gets the appAuthorized property value. Whether the partner's AAD app has been authorized to access Intune.
 func (m *TelecomExpenseManagementPartner) GetAppAuthorized()(*bool) {
@@ -48,22 +52,6 @@ func (m *TelecomExpenseManagementPartner) GetEnabled()(*bool) {
         return nil
     } else {
         return m.enabled
-    }
-}
-// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
-func (m *TelecomExpenseManagementPartner) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConnectionDateTime
-    }
-}
-// GetUrl gets the url property value. URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
-func (m *TelecomExpenseManagementPartner) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +108,22 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
+func (m *TelecomExpenseManagementPartner) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastConnectionDateTime
+    }
+}
+// GetUrl gets the url property value. URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
+func (m *TelecomExpenseManagementPartner) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
 }
 func (m *TelecomExpenseManagementPartner) IsNil()(bool) {
     return m == nil

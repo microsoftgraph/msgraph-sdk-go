@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SelfSignedCertificate 
+// SelfSignedCertificate provides operations to call the addTokenSigningCertificate method.
 type SelfSignedCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,6 +34,10 @@ func NewSelfSignedCertificate()(*SelfSignedCertificate) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSelfSignedCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSelfSignedCertificateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSelfSignedCertificate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SelfSignedCertificate) GetAdditionalData()(map[string]interface{}) {
@@ -65,54 +69,6 @@ func (m *SelfSignedCertificate) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad9
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetKey gets the key property value. 
-func (m *SelfSignedCertificate) GetKey()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
-}
-// GetKeyId gets the keyId property value. 
-func (m *SelfSignedCertificate) GetKeyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyId
-    }
-}
-// GetStartDateTime gets the startDateTime property value. 
-func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetThumbprint gets the thumbprint property value. 
-func (m *SelfSignedCertificate) GetThumbprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbprint
-    }
-}
-// GetType gets the type property value. 
-func (m *SelfSignedCertificate) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUsage gets the usage property value. 
-func (m *SelfSignedCertificate) GetUsage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usage
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -209,6 +165,54 @@ func (m *SelfSignedCertificate) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetKey gets the key property value. 
+func (m *SelfSignedCertificate) GetKey()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
+}
+// GetKeyId gets the keyId property value. 
+func (m *SelfSignedCertificate) GetKeyId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keyId
+    }
+}
+// GetStartDateTime gets the startDateTime property value. 
+func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetThumbprint gets the thumbprint property value. 
+func (m *SelfSignedCertificate) GetThumbprint()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbprint
+    }
+}
+// GetType gets the type property value. 
+func (m *SelfSignedCertificate) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUsage gets the usage property value. 
+func (m *SelfSignedCertificate) GetUsage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usage
+    }
 }
 func (m *SelfSignedCertificate) IsNil()(bool) {
     return m == nil

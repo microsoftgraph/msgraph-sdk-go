@@ -5,29 +5,29 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Message 
+// Message provides operations to manage the collection of drive entities.
 type Message struct {
     OutlookItem
     // The fileAttachment and itemAttachment attachments for the message.
-    attachments []Attachment;
+    attachments []Attachmentable;
     // The Bcc: recipients for the message.
-    bccRecipients []Recipient;
+    bccRecipients []Recipientable;
     // The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
-    body *ItemBody;
+    body ItemBodyable;
     // The first 255 characters of the message body. It is in text format.
     bodyPreview *string;
     // The Cc: recipients for the message.
-    ccRecipients []Recipient;
+    ccRecipients []Recipientable;
     // The ID of the conversation the email belongs to.
     conversationId *string;
     // Indicates the position of the message within the conversation.
     conversationIndex []byte;
     // The collection of open extensions defined for the message. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // The flag value that indicates the status, start date, due date, or completion date for the message.
-    flag *FollowupFlag;
+    flag FollowupFlagable;
     // The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
-    from *Recipient;
+    from Recipientable;
     // Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
     hasAttachments *bool;
     // 
@@ -35,7 +35,7 @@ type Message struct {
     // 
     inferenceClassification *InferenceClassificationType;
     // 
-    internetMessageHeaders []InternetMessageHeader;
+    internetMessageHeaders []InternetMessageHeaderable;
     // 
     internetMessageId *string;
     // 
@@ -47,25 +47,25 @@ type Message struct {
     // 
     isReadReceiptRequested *bool;
     // The collection of multi-value extended properties defined for the message. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
     // 
     parentFolderId *string;
     // 
     receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    replyTo []Recipient;
+    replyTo []Recipientable;
     // 
-    sender *Recipient;
+    sender Recipientable;
     // 
     sentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The collection of single-value extended properties defined for the message. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
     // 
     subject *string;
     // 
-    toRecipients []Recipient;
+    toRecipients []Recipientable;
     // 
-    uniqueBody *ItemBody;
+    uniqueBody ItemBodyable;
     // 
     webLink *string;
 }
@@ -76,8 +76,12 @@ func NewMessage()(*Message) {
     }
     return m
 }
+// CreateMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMessageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMessage(), nil
+}
 // GetAttachments gets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
-func (m *Message) GetAttachments()([]Attachment) {
+func (m *Message) GetAttachments()([]Attachmentable) {
     if m == nil {
         return nil
     } else {
@@ -85,7 +89,7 @@ func (m *Message) GetAttachments()([]Attachment) {
     }
 }
 // GetBccRecipients gets the bccRecipients property value. The Bcc: recipients for the message.
-func (m *Message) GetBccRecipients()([]Recipient) {
+func (m *Message) GetBccRecipients()([]Recipientable) {
     if m == nil {
         return nil
     } else {
@@ -93,7 +97,7 @@ func (m *Message) GetBccRecipients()([]Recipient) {
     }
 }
 // GetBody gets the body property value. The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
-func (m *Message) GetBody()(*ItemBody) {
+func (m *Message) GetBody()(ItemBodyable) {
     if m == nil {
         return nil
     } else {
@@ -109,7 +113,7 @@ func (m *Message) GetBodyPreview()(*string) {
     }
 }
 // GetCcRecipients gets the ccRecipients property value. The Cc: recipients for the message.
-func (m *Message) GetCcRecipients()([]Recipient) {
+func (m *Message) GetCcRecipients()([]Recipientable) {
     if m == nil {
         return nil
     } else {
@@ -133,227 +137,51 @@ func (m *Message) GetConversationIndex()([]byte) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the message. Nullable.
-func (m *Message) GetExtensions()([]Extension) {
+func (m *Message) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
     }
 }
-// GetFlag gets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the message.
-func (m *Message) GetFlag()(*FollowupFlag) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flag
-    }
-}
-// GetFrom gets the from property value. The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
-func (m *Message) GetFrom()(*Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.from
-    }
-}
-// GetHasAttachments gets the hasAttachments property value. Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
-func (m *Message) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
-}
-// GetImportance gets the importance property value. 
-func (m *Message) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
-}
-// GetInferenceClassification gets the inferenceClassification property value. 
-func (m *Message) GetInferenceClassification()(*InferenceClassificationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inferenceClassification
-    }
-}
-// GetInternetMessageHeaders gets the internetMessageHeaders property value. 
-func (m *Message) GetInternetMessageHeaders()([]InternetMessageHeader) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internetMessageHeaders
-    }
-}
-// GetInternetMessageId gets the internetMessageId property value. 
-func (m *Message) GetInternetMessageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internetMessageId
-    }
-}
-// GetIsDeliveryReceiptRequested gets the isDeliveryReceiptRequested property value. 
-func (m *Message) GetIsDeliveryReceiptRequested()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeliveryReceiptRequested
-    }
-}
-// GetIsDraft gets the isDraft property value. 
-func (m *Message) GetIsDraft()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDraft
-    }
-}
-// GetIsRead gets the isRead property value. 
-func (m *Message) GetIsRead()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRead
-    }
-}
-// GetIsReadReceiptRequested gets the isReadReceiptRequested property value. 
-func (m *Message) GetIsReadReceiptRequested()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReadReceiptRequested
-    }
-}
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the message. Nullable.
-func (m *Message) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
-}
-// GetParentFolderId gets the parentFolderId property value. 
-func (m *Message) GetParentFolderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentFolderId
-    }
-}
-// GetReceivedDateTime gets the receivedDateTime property value. 
-func (m *Message) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivedDateTime
-    }
-}
-// GetReplyTo gets the replyTo property value. 
-func (m *Message) GetReplyTo()([]Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replyTo
-    }
-}
-// GetSender gets the sender property value. 
-func (m *Message) GetSender()(*Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sender
-    }
-}
-// GetSentDateTime gets the sentDateTime property value. 
-func (m *Message) GetSentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sentDateTime
-    }
-}
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the message. Nullable.
-func (m *Message) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
-}
-// GetSubject gets the subject property value. 
-func (m *Message) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
-}
-// GetToRecipients gets the toRecipients property value. 
-func (m *Message) GetToRecipients()([]Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.toRecipients
-    }
-}
-// GetUniqueBody gets the uniqueBody property value. 
-func (m *Message) GetUniqueBody()(*ItemBody) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueBody
-    }
-}
-// GetWebLink gets the webLink property value. 
-func (m *Message) GetWebLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webLink
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["attachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttachment() })
+        val, err := n.GetCollectionOfObjectValues(CreateAttachmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Attachment, len(val))
+            res := make([]Attachmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Attachment))
+                res[i] = v.(Attachmentable)
             }
             m.SetAttachments(res)
         }
         return nil
     }
     res["bccRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetBccRecipients(res)
         }
         return nil
     }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBody(val.(*ItemBody))
+            m.SetBody(val.(ItemBodyable))
         }
         return nil
     }
@@ -368,14 +196,14 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["ccRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetCcRecipients(res)
         }
@@ -402,36 +230,36 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
         return nil
     }
     res["flag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFollowupFlag() })
+        val, err := n.GetObjectValue(CreateFollowupFlagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFlag(val.(*FollowupFlag))
+            m.SetFlag(val.(FollowupFlagable))
         }
         return nil
     }
     res["from"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetObjectValue(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFrom(val.(*Recipient))
+            m.SetFrom(val.(Recipientable))
         }
         return nil
     }
@@ -466,14 +294,14 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["internetMessageHeaders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInternetMessageHeader() })
+        val, err := n.GetCollectionOfObjectValues(CreateInternetMessageHeaderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]InternetMessageHeader, len(val))
+            res := make([]InternetMessageHeaderable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*InternetMessageHeader))
+                res[i] = v.(InternetMessageHeaderable)
             }
             m.SetInternetMessageHeaders(res)
         }
@@ -530,14 +358,14 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMultiValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+                res[i] = v.(MultiValueLegacyExtendedPropertyable)
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -564,26 +392,26 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["replyTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetReplyTo(res)
         }
         return nil
     }
     res["sender"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetObjectValue(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSender(val.(*Recipient))
+            m.SetSender(val.(Recipientable))
         }
         return nil
     }
@@ -598,14 +426,14 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSingleValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+                res[i] = v.(SingleValueLegacyExtendedPropertyable)
             }
             m.SetSingleValueExtendedProperties(res)
         }
@@ -622,26 +450,26 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["toRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetToRecipients(res)
         }
         return nil
     }
     res["uniqueBody"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUniqueBody(val.(*ItemBody))
+            m.SetUniqueBody(val.(ItemBodyable))
         }
         return nil
     }
@@ -657,6 +485,182 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
     }
     return res
 }
+// GetFlag gets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the message.
+func (m *Message) GetFlag()(FollowupFlagable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.flag
+    }
+}
+// GetFrom gets the from property value. The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
+func (m *Message) GetFrom()(Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.from
+    }
+}
+// GetHasAttachments gets the hasAttachments property value. Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
+func (m *Message) GetHasAttachments()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasAttachments
+    }
+}
+// GetImportance gets the importance property value. 
+func (m *Message) GetImportance()(*Importance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importance
+    }
+}
+// GetInferenceClassification gets the inferenceClassification property value. 
+func (m *Message) GetInferenceClassification()(*InferenceClassificationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inferenceClassification
+    }
+}
+// GetInternetMessageHeaders gets the internetMessageHeaders property value. 
+func (m *Message) GetInternetMessageHeaders()([]InternetMessageHeaderable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.internetMessageHeaders
+    }
+}
+// GetInternetMessageId gets the internetMessageId property value. 
+func (m *Message) GetInternetMessageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.internetMessageId
+    }
+}
+// GetIsDeliveryReceiptRequested gets the isDeliveryReceiptRequested property value. 
+func (m *Message) GetIsDeliveryReceiptRequested()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDeliveryReceiptRequested
+    }
+}
+// GetIsDraft gets the isDraft property value. 
+func (m *Message) GetIsDraft()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDraft
+    }
+}
+// GetIsRead gets the isRead property value. 
+func (m *Message) GetIsRead()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRead
+    }
+}
+// GetIsReadReceiptRequested gets the isReadReceiptRequested property value. 
+func (m *Message) GetIsReadReceiptRequested()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isReadReceiptRequested
+    }
+}
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the message. Nullable.
+func (m *Message) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multiValueExtendedProperties
+    }
+}
+// GetParentFolderId gets the parentFolderId property value. 
+func (m *Message) GetParentFolderId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentFolderId
+    }
+}
+// GetReceivedDateTime gets the receivedDateTime property value. 
+func (m *Message) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.receivedDateTime
+    }
+}
+// GetReplyTo gets the replyTo property value. 
+func (m *Message) GetReplyTo()([]Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.replyTo
+    }
+}
+// GetSender gets the sender property value. 
+func (m *Message) GetSender()(Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sender
+    }
+}
+// GetSentDateTime gets the sentDateTime property value. 
+func (m *Message) GetSentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sentDateTime
+    }
+}
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the message. Nullable.
+func (m *Message) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleValueExtendedProperties
+    }
+}
+// GetSubject gets the subject property value. 
+func (m *Message) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
+}
+// GetToRecipients gets the toRecipients property value. 
+func (m *Message) GetToRecipients()([]Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.toRecipients
+    }
+}
+// GetUniqueBody gets the uniqueBody property value. 
+func (m *Message) GetUniqueBody()(ItemBodyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueBody
+    }
+}
+// GetWebLink gets the webLink property value. 
+func (m *Message) GetWebLink()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webLink
+    }
+}
 func (m *Message) IsNil()(bool) {
     return m == nil
 }
@@ -669,8 +673,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetAttachments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttachments()))
         for i, v := range m.GetAttachments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("attachments", cast)
         if err != nil {
@@ -680,8 +683,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetBccRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBccRecipients()))
         for i, v := range m.GetBccRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("bccRecipients", cast)
         if err != nil {
@@ -703,8 +705,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetCcRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCcRecipients()))
         for i, v := range m.GetCcRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("ccRecipients", cast)
         if err != nil {
@@ -726,8 +727,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -769,8 +769,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetInternetMessageHeaders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInternetMessageHeaders()))
         for i, v := range m.GetInternetMessageHeaders() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("internetMessageHeaders", cast)
         if err != nil {
@@ -810,8 +809,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -833,8 +831,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetReplyTo() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReplyTo()))
         for i, v := range m.GetReplyTo() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("replyTo", cast)
         if err != nil {
@@ -856,8 +853,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {
@@ -873,8 +869,7 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetToRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetToRecipients()))
         for i, v := range m.GetToRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("toRecipients", cast)
         if err != nil {
@@ -896,19 +891,19 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     return nil
 }
 // SetAttachments sets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
-func (m *Message) SetAttachments(value []Attachment)() {
+func (m *Message) SetAttachments(value []Attachmentable)() {
     if m != nil {
         m.attachments = value
     }
 }
 // SetBccRecipients sets the bccRecipients property value. The Bcc: recipients for the message.
-func (m *Message) SetBccRecipients(value []Recipient)() {
+func (m *Message) SetBccRecipients(value []Recipientable)() {
     if m != nil {
         m.bccRecipients = value
     }
 }
 // SetBody sets the body property value. The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
-func (m *Message) SetBody(value *ItemBody)() {
+func (m *Message) SetBody(value ItemBodyable)() {
     if m != nil {
         m.body = value
     }
@@ -920,7 +915,7 @@ func (m *Message) SetBodyPreview(value *string)() {
     }
 }
 // SetCcRecipients sets the ccRecipients property value. The Cc: recipients for the message.
-func (m *Message) SetCcRecipients(value []Recipient)() {
+func (m *Message) SetCcRecipients(value []Recipientable)() {
     if m != nil {
         m.ccRecipients = value
     }
@@ -938,19 +933,19 @@ func (m *Message) SetConversationIndex(value []byte)() {
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the message. Nullable.
-func (m *Message) SetExtensions(value []Extension)() {
+func (m *Message) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
 }
 // SetFlag sets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the message.
-func (m *Message) SetFlag(value *FollowupFlag)() {
+func (m *Message) SetFlag(value FollowupFlagable)() {
     if m != nil {
         m.flag = value
     }
 }
 // SetFrom sets the from property value. The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
-func (m *Message) SetFrom(value *Recipient)() {
+func (m *Message) SetFrom(value Recipientable)() {
     if m != nil {
         m.from = value
     }
@@ -974,7 +969,7 @@ func (m *Message) SetInferenceClassification(value *InferenceClassificationType)
     }
 }
 // SetInternetMessageHeaders sets the internetMessageHeaders property value. 
-func (m *Message) SetInternetMessageHeaders(value []InternetMessageHeader)() {
+func (m *Message) SetInternetMessageHeaders(value []InternetMessageHeaderable)() {
     if m != nil {
         m.internetMessageHeaders = value
     }
@@ -1010,7 +1005,7 @@ func (m *Message) SetIsReadReceiptRequested(value *bool)() {
     }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the message. Nullable.
-func (m *Message) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
+func (m *Message) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.multiValueExtendedProperties = value
     }
@@ -1028,13 +1023,13 @@ func (m *Message) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // SetReplyTo sets the replyTo property value. 
-func (m *Message) SetReplyTo(value []Recipient)() {
+func (m *Message) SetReplyTo(value []Recipientable)() {
     if m != nil {
         m.replyTo = value
     }
 }
 // SetSender sets the sender property value. 
-func (m *Message) SetSender(value *Recipient)() {
+func (m *Message) SetSender(value Recipientable)() {
     if m != nil {
         m.sender = value
     }
@@ -1046,7 +1041,7 @@ func (m *Message) SetSentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
     }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the message. Nullable.
-func (m *Message) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
+func (m *Message) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.singleValueExtendedProperties = value
     }
@@ -1058,13 +1053,13 @@ func (m *Message) SetSubject(value *string)() {
     }
 }
 // SetToRecipients sets the toRecipients property value. 
-func (m *Message) SetToRecipients(value []Recipient)() {
+func (m *Message) SetToRecipients(value []Recipientable)() {
     if m != nil {
         m.toRecipients = value
     }
 }
 // SetUniqueBody sets the uniqueBody property value. 
-func (m *Message) SetUniqueBody(value *ItemBody)() {
+func (m *Message) SetUniqueBody(value ItemBodyable)() {
     if m != nil {
         m.uniqueBody = value
     }

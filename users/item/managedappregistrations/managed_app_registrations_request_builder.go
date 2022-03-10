@@ -2,12 +2,12 @@ package managedappregistrations
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i7e975f33d4b01e27c6cd3625ae8f7b30dc51d547286f10ad29474b734ae348d9 "github.com/microsoftgraph/msgraph-sdk-go/users/item/managedappregistrations/ref"
-    id0044acc4fa27eb6383b5a73b5f9e0bafc65844f934e448ac3d3cbf1c69e3dcc "github.com/microsoftgraph/msgraph-sdk-go/users/item/managedappregistrations/getuseridswithflaggedappregistration"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i49699f4ed3cc6657da24dd711cba4b3ea025d69d7e79fb66f9d9bce8536a4909 "github.com/microsoftgraph/msgraph-sdk-go/users/item/managedappregistrations/count"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// ManagedAppRegistrationsRequestBuilder builds and executes requests for operations under \users\{user-id}\managedAppRegistrations
+// ManagedAppRegistrationsRequestBuilder provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
 type ManagedAppRegistrationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -55,7 +55,7 @@ func NewManagedAppRegistrationsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,6 +64,9 @@ func NewManagedAppRegistrationsRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagedAppRegistrationsRequestBuilder) Count()(*i49699f4ed3cc6657da24dd711cba4b3ea025d69d7e79fb66f9d9bce8536a4909.CountRequestBuilder) {
+    return i49699f4ed3cc6657da24dd711cba4b3ea025d69d7e79fb66f9d9bce8536a4909.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation zero or more managed app registrations that belong to the user.
 func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformation(options *ManagedAppRegistrationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -86,21 +89,18 @@ func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformation(opti
     return requestInfo, nil
 }
 // Get zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationsRequestBuilder) Get(options *ManagedAppRegistrationsRequestBuilderGetOptions)(*ManagedAppRegistrationsResponse, error) {
+func (m *ManagedAppRegistrationsRequestBuilder) Get(options *ManagedAppRegistrationsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppRegistrationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedAppRegistrationsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateManagedAppRegistrationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagedAppRegistrationsResponse), nil
-}
-// GetUserIdsWithFlaggedAppRegistration builds and executes requests for operations under \users\{user-id}\managedAppRegistrations\microsoft.graph.getUserIdsWithFlaggedAppRegistration()
-func (m *ManagedAppRegistrationsRequestBuilder) GetUserIdsWithFlaggedAppRegistration()(*id0044acc4fa27eb6383b5a73b5f9e0bafc65844f934e448ac3d3cbf1c69e3dcc.GetUserIdsWithFlaggedAppRegistrationRequestBuilder) {
-    return id0044acc4fa27eb6383b5a73b5f9e0bafc65844f934e448ac3d3cbf1c69e3dcc.NewGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *ManagedAppRegistrationsRequestBuilder) Ref()(*i7e975f33d4b01e27c6cd3625ae8f7b30dc51d547286f10ad29474b734ae348d9.RefRequestBuilder) {
-    return i7e975f33d4b01e27c6cd3625ae8f7b30dc51d547286f10ad29474b734ae348d9.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppRegistrationCollectionResponseable), nil
 }

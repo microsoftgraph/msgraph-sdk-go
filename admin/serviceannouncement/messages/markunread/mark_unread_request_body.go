@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MarkUnreadRequestBody 
+// MarkUnreadRequestBody provides operations to call the markUnread method.
 type MarkUnreadRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewMarkUnreadRequestBody()(*MarkUnreadRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMarkUnreadRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMarkUnreadRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMarkUnreadRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MarkUnreadRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMessageIds gets the messageIds property value. 
-func (m *MarkUnreadRequestBody) GetMessageIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -52,6 +48,14 @@ func (m *MarkUnreadRequestBody) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetMessageIds gets the messageIds property value. 
+func (m *MarkUnreadRequestBody) GetMessageIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageIds
+    }
 }
 func (m *MarkUnreadRequestBody) IsNil()(bool) {
     return m == nil

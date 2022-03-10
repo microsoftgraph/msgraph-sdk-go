@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// HostSecurityState 
+// HostSecurityState provides operations to manage the security singleton.
 type HostSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,84 +34,16 @@ func NewHostSecurityState()(*HostSecurityState) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateHostSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateHostSecurityStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewHostSecurityState(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HostSecurityState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFqdn gets the fqdn property value. Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
-func (m *HostSecurityState) GetFqdn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fqdn
-    }
-}
-// GetIsAzureAdJoined gets the isAzureAdJoined property value. 
-func (m *HostSecurityState) GetIsAzureAdJoined()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAzureAdJoined
-    }
-}
-// GetIsAzureAdRegistered gets the isAzureAdRegistered property value. 
-func (m *HostSecurityState) GetIsAzureAdRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAzureAdRegistered
-    }
-}
-// GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. True if the host is domain joined to an on-premises Active Directory domain.
-func (m *HostSecurityState) GetIsHybridAzureDomainJoined()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHybridAzureDomainJoined
-    }
-}
-// GetNetBiosName gets the netBiosName property value. The local host name, without the DNS domain name.
-func (m *HostSecurityState) GetNetBiosName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netBiosName
-    }
-}
-// GetOs gets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
-func (m *HostSecurityState) GetOs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.os
-    }
-}
-// GetPrivateIpAddress gets the privateIpAddress property value. Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
-func (m *HostSecurityState) GetPrivateIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privateIpAddress
-    }
-}
-// GetPublicIpAddress gets the publicIpAddress property value. Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
-func (m *HostSecurityState) GetPublicIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publicIpAddress
-    }
-}
-// GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
-func (m *HostSecurityState) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -208,6 +140,78 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetFqdn gets the fqdn property value. Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
+func (m *HostSecurityState) GetFqdn()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fqdn
+    }
+}
+// GetIsAzureAdJoined gets the isAzureAdJoined property value. 
+func (m *HostSecurityState) GetIsAzureAdJoined()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAzureAdJoined
+    }
+}
+// GetIsAzureAdRegistered gets the isAzureAdRegistered property value. 
+func (m *HostSecurityState) GetIsAzureAdRegistered()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAzureAdRegistered
+    }
+}
+// GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. True if the host is domain joined to an on-premises Active Directory domain.
+func (m *HostSecurityState) GetIsHybridAzureDomainJoined()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHybridAzureDomainJoined
+    }
+}
+// GetNetBiosName gets the netBiosName property value. The local host name, without the DNS domain name.
+func (m *HostSecurityState) GetNetBiosName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.netBiosName
+    }
+}
+// GetOs gets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+func (m *HostSecurityState) GetOs()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.os
+    }
+}
+// GetPrivateIpAddress gets the privateIpAddress property value. Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
+func (m *HostSecurityState) GetPrivateIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.privateIpAddress
+    }
+}
+// GetPublicIpAddress gets the publicIpAddress property value. Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
+func (m *HostSecurityState) GetPublicIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publicIpAddress
+    }
+}
+// GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
+func (m *HostSecurityState) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
 }
 func (m *HostSecurityState) IsNil()(bool) {
     return m == nil

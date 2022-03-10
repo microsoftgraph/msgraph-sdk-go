@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrinterLocation 
+// PrinterLocation provides operations to manage the print singleton.
 type PrinterLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -50,6 +50,10 @@ func NewPrinterLocation()(*PrinterLocation) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePrinterLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrinterLocationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrinterLocation(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterLocation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -88,110 +92,6 @@ func (m *PrinterLocation) GetCountryOrRegion()(*string) {
         return nil
     } else {
         return m.countryOrRegion
-    }
-}
-// GetFloor gets the floor property value. The floor that the printer is located on. Only numerical values are supported right now.
-func (m *PrinterLocation) GetFloor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.floor
-    }
-}
-// GetFloorDescription gets the floorDescription property value. The description of the floor that the printer is located on.
-func (m *PrinterLocation) GetFloorDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.floorDescription
-    }
-}
-// GetLatitude gets the latitude property value. The latitude that the printer is located at.
-func (m *PrinterLocation) GetLatitude()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.latitude
-    }
-}
-// GetLongitude gets the longitude property value. The longitude that the printer is located at.
-func (m *PrinterLocation) GetLongitude()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.longitude
-    }
-}
-// GetOrganization gets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
-func (m *PrinterLocation) GetOrganization()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organization
-    }
-}
-// GetPostalCode gets the postalCode property value. The postal code that the printer is located in.
-func (m *PrinterLocation) GetPostalCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postalCode
-    }
-}
-// GetRoomDescription gets the roomDescription property value. The description of the room that the printer is located in.
-func (m *PrinterLocation) GetRoomDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roomDescription
-    }
-}
-// GetRoomName gets the roomName property value. The room that the printer is located in. Only numerical values are supported right now.
-func (m *PrinterLocation) GetRoomName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roomName
-    }
-}
-// GetSite gets the site property value. The site that the printer is located in.
-func (m *PrinterLocation) GetSite()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.site
-    }
-}
-// GetStateOrProvince gets the stateOrProvince property value. The state or province that the printer is located in.
-func (m *PrinterLocation) GetStateOrProvince()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stateOrProvince
-    }
-}
-// GetStreetAddress gets the streetAddress property value. The street address where the printer is located.
-func (m *PrinterLocation) GetStreetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.streetAddress
-    }
-}
-// GetSubdivision gets the subdivision property value. The subdivision that the printer is located in. The elements should be in hierarchical order.
-func (m *PrinterLocation) GetSubdivision()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subdivision
-    }
-}
-// GetSubunit gets the subunit property value. 
-func (m *PrinterLocation) GetSubunit()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subunit
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -380,6 +280,110 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetFloor gets the floor property value. The floor that the printer is located on. Only numerical values are supported right now.
+func (m *PrinterLocation) GetFloor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.floor
+    }
+}
+// GetFloorDescription gets the floorDescription property value. The description of the floor that the printer is located on.
+func (m *PrinterLocation) GetFloorDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.floorDescription
+    }
+}
+// GetLatitude gets the latitude property value. The latitude that the printer is located at.
+func (m *PrinterLocation) GetLatitude()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.latitude
+    }
+}
+// GetLongitude gets the longitude property value. The longitude that the printer is located at.
+func (m *PrinterLocation) GetLongitude()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.longitude
+    }
+}
+// GetOrganization gets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+func (m *PrinterLocation) GetOrganization()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organization
+    }
+}
+// GetPostalCode gets the postalCode property value. The postal code that the printer is located in.
+func (m *PrinterLocation) GetPostalCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postalCode
+    }
+}
+// GetRoomDescription gets the roomDescription property value. The description of the room that the printer is located in.
+func (m *PrinterLocation) GetRoomDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roomDescription
+    }
+}
+// GetRoomName gets the roomName property value. The room that the printer is located in. Only numerical values are supported right now.
+func (m *PrinterLocation) GetRoomName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roomName
+    }
+}
+// GetSite gets the site property value. The site that the printer is located in.
+func (m *PrinterLocation) GetSite()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.site
+    }
+}
+// GetStateOrProvince gets the stateOrProvince property value. The state or province that the printer is located in.
+func (m *PrinterLocation) GetStateOrProvince()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stateOrProvince
+    }
+}
+// GetStreetAddress gets the streetAddress property value. The street address where the printer is located.
+func (m *PrinterLocation) GetStreetAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.streetAddress
+    }
+}
+// GetSubdivision gets the subdivision property value. The subdivision that the printer is located in. The elements should be in hierarchical order.
+func (m *PrinterLocation) GetSubdivision()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subdivision
+    }
+}
+// GetSubunit gets the subunit property value. 
+func (m *PrinterLocation) GetSubunit()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subunit
+    }
 }
 func (m *PrinterLocation) IsNil()(bool) {
     return m == nil

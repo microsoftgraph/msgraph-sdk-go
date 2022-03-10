@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AcceptRequestBody 
+// AcceptRequestBody provides operations to call the accept method.
 type AcceptRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewAcceptRequestBody()(*AcceptRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAcceptRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAcceptRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAcceptRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AcceptRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *AcceptRequestBody) GetComment()(*string) {
         return nil
     } else {
         return m.comment
-    }
-}
-// GetSendResponse gets the sendResponse property value. 
-func (m *AcceptRequestBody) GetSendResponse()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendResponse
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *AcceptRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetSendResponse gets the sendResponse property value. 
+func (m *AcceptRequestBody) GetSendResponse()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sendResponse
+    }
 }
 func (m *AcceptRequestBody) IsNil()(bool) {
     return m == nil

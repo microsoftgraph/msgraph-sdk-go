@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// GetOffice365ActiveUserDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActiveUserDetail(date={date})
+// GetOffice365ActiveUserDetailWithDateRequestBuilder provides operations to call the getOffice365ActiveUserDetail method.
 type GetOffice365ActiveUserDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ func NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(pathParameter
     if date != nil {
         urlTplParams["date"] = (*date).String()
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,14 +64,14 @@ func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) CreateGetRequestInf
     return requestInfo, nil
 }
 // Get invoke function getOffice365ActiveUserDetail
-func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) Get(options *GetOffice365ActiveUserDetailWithDateRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report, error) {
+func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) Get(options *GetOffice365ActiveUserDetailWithDateRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewReport() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateReportFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Reportable), nil
 }

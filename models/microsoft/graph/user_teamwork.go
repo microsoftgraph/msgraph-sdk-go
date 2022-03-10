@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserTeamwork 
+// UserTeamwork provides operations to manage the collection of drive entities.
 type UserTeamwork struct {
     Entity
     // The apps installed in the personal scope of this user.
-    installedApps []UserScopeTeamsAppInstallation;
+    installedApps []UserScopeTeamsAppInstallationable;
 }
 // NewUserTeamwork instantiates a new userTeamwork and sets the default values.
 func NewUserTeamwork()(*UserTeamwork) {
@@ -17,32 +17,36 @@ func NewUserTeamwork()(*UserTeamwork) {
     }
     return m
 }
-// GetInstalledApps gets the installedApps property value. The apps installed in the personal scope of this user.
-func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedApps
-    }
+// CreateUserTeamworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserTeamworkFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserTeamwork(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["installedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserScopeTeamsAppInstallation() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserScopeTeamsAppInstallationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserScopeTeamsAppInstallation, len(val))
+            res := make([]UserScopeTeamsAppInstallationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserScopeTeamsAppInstallation))
+                res[i] = v.(UserScopeTeamsAppInstallationable)
             }
             m.SetInstalledApps(res)
         }
         return nil
     }
     return res
+}
+// GetInstalledApps gets the installedApps property value. The apps installed in the personal scope of this user.
+func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedApps
+    }
 }
 func (m *UserTeamwork) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *UserTeamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetInstalledApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInstalledApps()))
         for i, v := range m.GetInstalledApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("installedApps", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *UserTeamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in the personal scope of this user.
-func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallation)() {
+func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallationable)() {
     if m != nil {
         m.installedApps = value
     }

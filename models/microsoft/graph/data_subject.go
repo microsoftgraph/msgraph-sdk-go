@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DataSubject 
+// DataSubject provides operations to manage the privacy singleton.
 type DataSubject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewDataSubject()(*DataSubject) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDataSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDataSubjectFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDataSubject(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DataSubject) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *DataSubject) GetEmail()(*string) {
         return nil
     } else {
         return m.email
-    }
-}
-// GetFirstName gets the firstName property value. First name of the data subject.
-func (m *DataSubject) GetFirstName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstName
-    }
-}
-// GetLastName gets the lastName property value. Last Name of the data subject.
-func (m *DataSubject) GetLastName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastName
-    }
-}
-// GetResidency gets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
-func (m *DataSubject) GetResidency()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.residency
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *DataSubject) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetFirstName gets the firstName property value. First name of the data subject.
+func (m *DataSubject) GetFirstName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firstName
+    }
+}
+// GetLastName gets the lastName property value. Last Name of the data subject.
+func (m *DataSubject) GetLastName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastName
+    }
+}
+// GetResidency gets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
+func (m *DataSubject) GetResidency()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.residency
+    }
 }
 func (m *DataSubject) IsNil()(bool) {
     return m == nil

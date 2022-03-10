@@ -35,7 +35,6 @@ import (
     ifacc6e78462b6602604fdba95c2c687304c070fc8161931add6511708842e0df "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/verifywindowsenrollmentautodiscoverywithdomainname"
     ifeb490582be8577fe0d05594823855d35edb357366160e9ad7c2198d3cbbb980 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/devicemanagementpartners"
     iff68b83db7285c0f9536fd151184fbcf3100e0776163008e6628f613e5e93c83 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/devicecompliancepolicydevicestatesummary"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i0e012f8f6f74902658fef78becd57ef59cb2e332f0de1d45c2eb7b0da3bc8d8d "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/devicemanagementpartners/item"
     i0fb841dc54b62513276e2131192e7fde71d44b2cc7e9032d7989e15cac59cfd5 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/compliancemanagementpartners/item"
     i17dd1ea085fa58e7adff79de1f08a20011914cbfc90ae645da10d72117831db1 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/devicecategories/item"
@@ -61,9 +60,10 @@ import (
     ica2e7c96970b16f0b22ac5b31ac7c15aa22995be1933576de089c9bd0b5c3cc8 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/termsandconditions/item"
     idd0a88efd8948b1f5076671630001feacd82e5f59287364da79d7d9ea14e73b1 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/roleassignments/item"
     ie2787738d6d6382b33609c61cb384a808f64e6df1c1b03c2b26417c950b5b448 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/exchangeconnectors/item"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DeviceManagementRequestBuilder builds and executes requests for operations under \deviceManagement
+// DeviceManagementRequestBuilder provides operations to manage the deviceManagement singleton.
 type DeviceManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -93,7 +93,7 @@ type DeviceManagementRequestBuilderGetQueryParameters struct {
 // DeviceManagementRequestBuilderPatchOptions options for Patch
 type DeviceManagementRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagement;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementable;
     // Request headers
     H map[string]string;
     // Request options
@@ -130,7 +130,7 @@ func NewDeviceManagementRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -297,18 +297,22 @@ func (m *DeviceManagementRequestBuilder) ExchangeConnectorsById(id string)(*ie27
     return ie2787738d6d6382b33609c61cb384a808f64e6df1c1b03c2b26417c950b5b448.NewDeviceManagementExchangeConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get deviceManagement
-func (m *DeviceManagementRequestBuilder) Get(options *DeviceManagementRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagement, error) {
+func (m *DeviceManagementRequestBuilder) Get(options *DeviceManagementRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDeviceManagement() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDeviceManagementFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagement), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementable), nil
 }
-// GetEffectivePermissionsWithScope builds and executes requests for operations under \deviceManagement\microsoft.graph.getEffectivePermissions(scope='{scope}')
+// GetEffectivePermissionsWithScope provides operations to call the getEffectivePermissions method.
 func (m *DeviceManagementRequestBuilder) GetEffectivePermissionsWithScope(scope *string)(*i6b79e19af80218ca443b0983adbe0f6cdef30c9d057c37be983e59c74074ca29.GetEffectivePermissionsWithScopeRequestBuilder) {
     return i6b79e19af80218ca443b0983adbe0f6cdef30c9d057c37be983e59c74074ca29.NewGetEffectivePermissionsWithScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter, scope);
 }
@@ -391,7 +395,11 @@ func (m *DeviceManagementRequestBuilder) Patch(options *DeviceManagementRequestB
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -501,7 +509,7 @@ func (m *DeviceManagementRequestBuilder) TroubleshootingEventsById(id string)(*i
     }
     return ib49f8e333a9996485568d4de1f3efae787c0dbde2d33bdbd2a863ae5e110192c.NewDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// VerifyWindowsEnrollmentAutoDiscoveryWithDomainName builds and executes requests for operations under \deviceManagement\microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')
+// VerifyWindowsEnrollmentAutoDiscoveryWithDomainName provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
 func (m *DeviceManagementRequestBuilder) VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(domainName *string)(*ifacc6e78462b6602604fdba95c2c687304c070fc8161931add6511708842e0df.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
     return ifacc6e78462b6602604fdba95c2c687304c070fc8161931add6511708842e0df.NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, domainName);
 }

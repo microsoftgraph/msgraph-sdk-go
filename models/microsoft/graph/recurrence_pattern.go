@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RecurrencePattern 
+// RecurrencePattern provides operations to manage the collection of drive entities.
 type RecurrencePattern struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -30,6 +30,10 @@ func NewRecurrencePattern()(*RecurrencePattern) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRecurrencePatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRecurrencePatternFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecurrencePattern(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrencePattern) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -52,46 +56,6 @@ func (m *RecurrencePattern) GetDaysOfWeek()([]DayOfWeek) {
         return nil
     } else {
         return m.daysOfWeek
-    }
-}
-// GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
-func (m *RecurrencePattern) GetFirstDayOfWeek()(*DayOfWeek) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstDayOfWeek
-    }
-}
-// GetIndex gets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
-func (m *RecurrencePattern) GetIndex()(*WeekIndex) {
-    if m == nil {
-        return nil
-    } else {
-        return m.index
-    }
-}
-// GetInterval gets the interval property value. The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
-func (m *RecurrencePattern) GetInterval()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.interval
-    }
-}
-// GetMonth gets the month property value. The month in which the event occurs.  This is a number from 1 to 12.
-func (m *RecurrencePattern) GetMonth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.month
-    }
-}
-// GetType gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
-func (m *RecurrencePattern) GetType()(*RecurrencePatternType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -172,6 +136,46 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
+func (m *RecurrencePattern) GetFirstDayOfWeek()(*DayOfWeek) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firstDayOfWeek
+    }
+}
+// GetIndex gets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
+func (m *RecurrencePattern) GetIndex()(*WeekIndex) {
+    if m == nil {
+        return nil
+    } else {
+        return m.index
+    }
+}
+// GetInterval gets the interval property value. The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
+func (m *RecurrencePattern) GetInterval()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.interval
+    }
+}
+// GetMonth gets the month property value. The month in which the event occurs.  This is a number from 1 to 12.
+func (m *RecurrencePattern) GetMonth()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.month
+    }
+}
+// GetType gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
+func (m *RecurrencePattern) GetType()(*RecurrencePatternType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *RecurrencePattern) IsNil()(bool) {
     return m == nil

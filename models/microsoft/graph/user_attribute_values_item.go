@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserAttributeValuesItem 
+// UserAttributeValuesItem provides operations to manage the identityContainer singleton.
 type UserAttributeValuesItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewUserAttributeValuesItem()(*UserAttributeValuesItem) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUserAttributeValuesItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserAttributeValuesItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserAttributeValuesItem(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAttributeValuesItem) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsDefault gets the isDefault property value. Determines whether the value is set as the default.
-func (m *UserAttributeValuesItem) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetName gets the name property value. The display name of the property displayed to the user in the user flow.
-func (m *UserAttributeValuesItem) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetValue gets the value property value. The value that is set when this item is selected.
-func (m *UserAttributeValuesItem) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *UserAttributeValuesItem) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. Determines whether the value is set as the default.
+func (m *UserAttributeValuesItem) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetName gets the name property value. The display name of the property displayed to the user in the user flow.
+func (m *UserAttributeValuesItem) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetValue gets the value property value. The value that is set when this item is selected.
+func (m *UserAttributeValuesItem) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *UserAttributeValuesItem) IsNil()(bool) {
     return m == nil

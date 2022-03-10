@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Contract 
+// Contract provides operations to manage the collection of contract entities.
 type Contract struct {
     DirectoryObject
     // Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
@@ -22,6 +22,10 @@ func NewContract()(*Contract) {
         DirectoryObject: *NewDirectoryObject(),
     }
     return m
+}
+// CreateContractFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContractFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContract(), nil
 }
 // GetContractType gets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 func (m *Contract) GetContractType()(*string) {

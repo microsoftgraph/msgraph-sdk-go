@@ -2,12 +2,13 @@ package channels
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i41561efde70da542a74b95779c51e04625a929d4b4de914523d340e11ba91428 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/count"
+    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     ifbfa806881e4a911e45472238559e460501ed60f59cbbb62f114212c3ebd9169 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/getallmessages"
 )
 
-// ChannelsRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels
+// ChannelsRequestBuilder provides operations to manage the channels property of the microsoft.graph.team entity.
 type ChannelsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type ChannelsRequestBuilderGetQueryParameters struct {
 // ChannelsRequestBuilderPostOptions options for Post
 type ChannelsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channel;
+    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channelable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewChannelsRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewChannelsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChannelsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ChannelsRequestBuilder) Count()(*i41561efde70da542a74b95779c51e04625a929d4b4de914523d340e11ba91428.CountRequestBuilder) {
+    return i41561efde70da542a74b95779c51e04625a929d4b4de914523d340e11ba91428.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of channels and messages associated with the team.
 func (m *ChannelsRequestBuilder) CreateGetRequestInformation(options *ChannelsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *ChannelsRequestBuilder) CreateGetRequestInformation(options *ChannelsRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of channels and messages associated with the team.
+// CreatePostRequestInformation create new navigation property to channels for teams
 func (m *ChannelsRequestBuilder) CreatePostRequestInformation(options *ChannelsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,30 +119,38 @@ func (m *ChannelsRequestBuilder) CreatePostRequestInformation(options *ChannelsR
     return requestInfo, nil
 }
 // Get the collection of channels and messages associated with the team.
-func (m *ChannelsRequestBuilder) Get(options *ChannelsRequestBuilderGetOptions)(*ChannelsResponse, error) {
+func (m *ChannelsRequestBuilder) Get(options *ChannelsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChannelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChannelsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChannelCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ChannelsResponse), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChannelCollectionResponseable), nil
 }
-// GetAllMessages builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.getAllMessages()
+// GetAllMessages provides operations to call the getAllMessages method.
 func (m *ChannelsRequestBuilder) GetAllMessages()(*ifbfa806881e4a911e45472238559e460501ed60f59cbbb62f114212c3ebd9169.GetAllMessagesRequestBuilder) {
     return ifbfa806881e4a911e45472238559e460501ed60f59cbbb62f114212c3ebd9169.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post the collection of channels and messages associated with the team.
-func (m *ChannelsRequestBuilder) Post(options *ChannelsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channel, error) {
+// Post create new navigation property to channels for teams
+func (m *ChannelsRequestBuilder) Post(options *ChannelsRequestBuilderPostOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channelable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewChannel() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChannelFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channel), nil
+    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channelable), nil
 }

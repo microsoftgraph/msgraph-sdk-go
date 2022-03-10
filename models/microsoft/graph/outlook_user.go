@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutlookUser 
+// OutlookUser provides operations to manage the collection of drive entities.
 type OutlookUser struct {
     Entity
     // A list of categories defined for the user.
-    masterCategories []OutlookCategory;
+    masterCategories []OutlookCategoryable;
 }
 // NewOutlookUser instantiates a new outlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
@@ -17,32 +17,36 @@ func NewOutlookUser()(*OutlookUser) {
     }
     return m
 }
-// GetMasterCategories gets the masterCategories property value. A list of categories defined for the user.
-func (m *OutlookUser) GetMasterCategories()([]OutlookCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.masterCategories
-    }
+// CreateOutlookUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOutlookUserFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOutlookUser(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["masterCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOutlookCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateOutlookCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OutlookCategory, len(val))
+            res := make([]OutlookCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OutlookCategory))
+                res[i] = v.(OutlookCategoryable)
             }
             m.SetMasterCategories(res)
         }
         return nil
     }
     return res
+}
+// GetMasterCategories gets the masterCategories property value. A list of categories defined for the user.
+func (m *OutlookUser) GetMasterCategories()([]OutlookCategoryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.masterCategories
+    }
 }
 func (m *OutlookUser) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetMasterCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMasterCategories()))
         for i, v := range m.GetMasterCategories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("masterCategories", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     return nil
 }
 // SetMasterCategories sets the masterCategories property value. A list of categories defined for the user.
-func (m *OutlookUser) SetMasterCategories(value []OutlookCategory)() {
+func (m *OutlookUser) SetMasterCategories(value []OutlookCategoryable)() {
     if m != nil {
         m.masterCategories = value
     }

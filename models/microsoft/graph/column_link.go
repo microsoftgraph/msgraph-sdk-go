@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ColumnLink 
+// ColumnLink provides operations to manage the educationRoot singleton.
 type ColumnLink struct {
     Entity
     // The name of the column  in this content type.
@@ -17,13 +17,9 @@ func NewColumnLink()(*ColumnLink) {
     }
     return m
 }
-// GetName gets the name property value. The name of the column  in this content type.
-func (m *ColumnLink) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+// CreateColumnLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateColumnLinkFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewColumnLink(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ColumnLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *ColumnLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetName gets the name property value. The name of the column  in this content type.
+func (m *ColumnLink) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
 }
 func (m *ColumnLink) IsNil()(bool) {
     return m == nil

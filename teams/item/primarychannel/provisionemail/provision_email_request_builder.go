@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// ProvisionEmailRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\microsoft.graph.provisionEmail
+// ProvisionEmailRequestBuilder provides operations to call the provisionEmail method.
 type ProvisionEmailRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ProvisionEmailResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type provisionChannelEmailResult
-    provisionChannelEmailResult *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResult;
+    provisionChannelEmailResult i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResultable;
 }
 // NewProvisionEmailResponse instantiates a new provisionEmailResponse and sets the default values.
 func NewProvisionEmailResponse()(*ProvisionEmailResponse) {
@@ -37,6 +37,9 @@ func NewProvisionEmailResponse()(*ProvisionEmailResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateProvisionEmailResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProvisionEmailResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisionEmailResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *ProvisionEmailResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ProvisionEmailResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["provisionChannelEmailResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateProvisionChannelEmailResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProvisionChannelEmailResult(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResultable))
+        }
+        return nil
+    }
+    return res
+}
 // GetProvisionChannelEmailResult gets the provisionChannelEmailResult property value. Union type representation for type provisionChannelEmailResult
-func (m *ProvisionEmailResponse) GetProvisionChannelEmailResult()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResult) {
+func (m *ProvisionEmailResponse) GetProvisionChannelEmailResult()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResultable) {
     if m == nil {
         return nil
     } else {
         return m.provisionChannelEmailResult
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ProvisionEmailResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["provisionChannelEmailResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewProvisionChannelEmailResult() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProvisionChannelEmailResult(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResult))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ProvisionEmailResponse) IsNil()(bool) {
     return m == nil
@@ -95,10 +98,17 @@ func (m *ProvisionEmailResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetProvisionChannelEmailResult sets the provisionChannelEmailResult property value. Union type representation for type provisionChannelEmailResult
-func (m *ProvisionEmailResponse) SetProvisionChannelEmailResult(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResult)() {
+func (m *ProvisionEmailResponse) SetProvisionChannelEmailResult(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResultable)() {
     if m != nil {
         m.provisionChannelEmailResult = value
     }
+}
+// ProvisionEmailResponseable 
+type ProvisionEmailResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetProvisionChannelEmailResult()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResultable)
+    SetProvisionChannelEmailResult(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResultable)()
 }
 // NewProvisionEmailRequestBuilderInternal instantiates a new ProvisionEmailRequestBuilder and sets the default values.
 func NewProvisionEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProvisionEmailRequestBuilder) {
@@ -109,7 +119,7 @@ func NewProvisionEmailRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *ProvisionEmailRequestBuilder) CreatePostRequestInformation(options *Pro
     return requestInfo, nil
 }
 // Post invoke action provisionEmail
-func (m *ProvisionEmailRequestBuilder) Post(options *ProvisionEmailRequestBuilderPostOptions)(*ProvisionEmailResponse, error) {
+func (m *ProvisionEmailRequestBuilder) Post(options *ProvisionEmailRequestBuilderPostOptions)(ProvisionEmailResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisionEmailResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateProvisionEmailResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ProvisionEmailResponse), nil
+    return res.(ProvisionEmailResponseable), nil
 }

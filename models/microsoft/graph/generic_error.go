@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GenericError 
+// GenericError provides operations to call the translateExchangeIds method.
 type GenericError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewGenericError()(*GenericError) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGenericErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGenericErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGenericError(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GenericError) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *GenericError) GetCode()(*string) {
         return nil
     } else {
         return m.code
-    }
-}
-// GetMessage gets the message property value. The error message.
-func (m *GenericError) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *GenericError) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. The error message.
+func (m *GenericError) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
 }
 func (m *GenericError) IsNil()(bool) {
     return m == nil

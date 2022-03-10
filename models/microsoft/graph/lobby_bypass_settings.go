@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LobbyBypassSettings 
+// LobbyBypassSettings provides operations to manage the cloudCommunications singleton.
 type LobbyBypassSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewLobbyBypassSettings()(*LobbyBypassSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateLobbyBypassSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLobbyBypassSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLobbyBypassSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LobbyBypassSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsDialInBypassEnabled gets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-func (m *LobbyBypassSettings) GetIsDialInBypassEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDialInBypassEnabled
-    }
-}
-// GetScope gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
-func (m *LobbyBypassSettings) GetScope()(*LobbyBypassScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetIsDialInBypassEnabled gets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+func (m *LobbyBypassSettings) GetIsDialInBypassEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDialInBypassEnabled
+    }
+}
+// GetScope gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
+func (m *LobbyBypassSettings) GetScope()(*LobbyBypassScope) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scope
+    }
 }
 func (m *LobbyBypassSettings) IsNil()(bool) {
     return m == nil

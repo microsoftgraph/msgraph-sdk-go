@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetTeamsUserActivityUserDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityUserDetail(date={date})
+// GetTeamsUserActivityUserDetailWithDateRequestBuilder provides operations to call the getTeamsUserActivityUserDetail method.
 type GetTeamsUserActivityUserDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ func NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(pathParamet
     if date != nil {
         urlTplParams["date"] = (*date).String()
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,14 +63,14 @@ func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) CreateGetRequestI
     return requestInfo, nil
 }
 // Get invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) Get(options *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetOptions)([]byte, error) {
+func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) Get(options *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetOptions)(GetTeamsUserActivityUserDetailWithDateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetTeamsUserActivityUserDetailWithDateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetTeamsUserActivityUserDetailWithDateResponseable), nil
 }

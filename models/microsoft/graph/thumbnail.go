@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Thumbnail 
+// Thumbnail provides operations to manage the drive singleton.
 type Thumbnail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewThumbnail()(*Thumbnail) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateThumbnailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateThumbnailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewThumbnail(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Thumbnail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *Thumbnail) GetContent()([]byte) {
         return nil
     } else {
         return m.content
-    }
-}
-// GetHeight gets the height property value. The height of the thumbnail, in pixels.
-func (m *Thumbnail) GetHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.height
-    }
-}
-// GetSourceItemId gets the sourceItemId property value. The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
-func (m *Thumbnail) GetSourceItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceItemId
-    }
-}
-// GetUrl gets the url property value. The URL used to fetch the thumbnail content.
-func (m *Thumbnail) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
-}
-// GetWidth gets the width property value. The width of the thumbnail, in pixels.
-func (m *Thumbnail) GetWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.width
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *Thumbnail) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetHeight gets the height property value. The height of the thumbnail, in pixels.
+func (m *Thumbnail) GetHeight()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.height
+    }
+}
+// GetSourceItemId gets the sourceItemId property value. The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
+func (m *Thumbnail) GetSourceItemId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceItemId
+    }
+}
+// GetUrl gets the url property value. The URL used to fetch the thumbnail content.
+func (m *Thumbnail) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
+}
+// GetWidth gets the width property value. The width of the thumbnail, in pixels.
+func (m *Thumbnail) GetWidth()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.width
+    }
 }
 func (m *Thumbnail) IsNil()(bool) {
     return m == nil
