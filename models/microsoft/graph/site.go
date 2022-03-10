@@ -2,7 +2,6 @@ package graph
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/termstore"
 )
 
 // Site provides operations to manage the educationRoot singleton.
@@ -40,10 +39,6 @@ type Site struct {
     siteCollection SiteCollectionable;
     // The collection of the sub-sites under this site.
     sites []Siteable;
-    // The default termStore under this site.
-    termStore id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable;
-    // The collection of termStores under this site.
-    termStores []id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable;
 }
 // NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
@@ -315,30 +310,6 @@ func (m *Site) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
-    res["termStore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.CreateStoreFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTermStore(val.(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable))
-        }
-        return nil
-    }
-    res["termStores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.CreateStoreFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable, len(val))
-            for i, v := range val {
-                res[i] = v.(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable)
-            }
-            m.SetTermStores(res)
-        }
-        return nil
-    }
     return res
 }
 // GetItems gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
@@ -403,22 +374,6 @@ func (m *Site) GetSites()([]Siteable) {
         return nil
     } else {
         return m.sites
-    }
-}
-// GetTermStore gets the termStore property value. The default termStore under this site.
-func (m *Site) GetTermStore()(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termStore
-    }
-}
-// GetTermStores gets the termStores property value. The collection of termStores under this site.
-func (m *Site) GetTermStores()([]id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termStores
     }
 }
 func (m *Site) IsNil()(bool) {
@@ -558,22 +513,6 @@ func (m *Site) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
-        err = writer.WriteObjectValue("termStore", m.GetTermStore())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTermStores() != nil {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTermStores()))
-        for i, v := range m.GetTermStores() {
-            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("termStores", cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place in this site.
@@ -670,17 +609,5 @@ func (m *Site) SetSiteCollection(value SiteCollectionable)() {
 func (m *Site) SetSites(value []Siteable)() {
     if m != nil {
         m.sites = value
-    }
-}
-// SetTermStore sets the termStore property value. The default termStore under this site.
-func (m *Site) SetTermStore(value id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable)() {
-    if m != nil {
-        m.termStore = value
-    }
-}
-// SetTermStores sets the termStores property value. The collection of termStores under this site.
-func (m *Site) SetTermStores(value []id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.Storeable)() {
-    if m != nil {
-        m.termStores = value
     }
 }

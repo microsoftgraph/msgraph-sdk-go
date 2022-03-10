@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ActivityHistoryItem provides operations to manage the drive singleton.
+// ActivityHistoryItem provides operations to manage the collection of drive entities.
 type ActivityHistoryItem struct {
     Entity
     // Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.

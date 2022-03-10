@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookTableRow provides operations to manage the collection of drive entities.
+// WorkbookTableRow provides operations to manage the drive singleton.
 type WorkbookTableRow struct {
     Entity
     // Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
