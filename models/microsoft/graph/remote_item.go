@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RemoteItem provides operations to manage the drive singleton.
+// RemoteItem provides operations to manage the collection of drive entities.
 type RemoteItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -38,7 +38,7 @@ type RemoteItem struct {
     // Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
     sharepointIds SharepointIdsable;
     // Size of the remote item. Read-only.
-    size *int64;
+    size *int32;
     // If the current item is also available as a special folder, this facet is returned. Read-only.
     specialFolder SpecialFolderable;
     // Video metadata, if the item is a video. Read-only.
@@ -227,7 +227,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -375,7 +375,7 @@ func (m *RemoteItem) GetSharepointIds()(SharepointIdsable) {
     }
 }
 // GetSize gets the size property value. Size of the remote item. Read-only.
-func (m *RemoteItem) GetSize()(*int64) {
+func (m *RemoteItem) GetSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -504,7 +504,7 @@ func (m *RemoteItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err := writer.WriteInt64Value("size", m.GetSize())
+        err := writer.WriteInt32Value("size", m.GetSize())
         if err != nil {
             return err
         }
@@ -632,7 +632,7 @@ func (m *RemoteItem) SetSharepointIds(value SharepointIdsable)() {
     }
 }
 // SetSize sets the size property value. Size of the remote item. Read-only.
-func (m *RemoteItem) SetSize(value *int64)() {
+func (m *RemoteItem) SetSize(value *int32)() {
     if m != nil {
         m.size = value
     }

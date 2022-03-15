@@ -13,11 +13,11 @@ type AttachmentItemable interface {
     GetContentType()(*string)
     GetIsInline()(*bool)
     GetName()(*string)
-    GetSize()(*int64)
+    GetSize()(*int32)
     SetAttachmentType(value *AttachmentType)()
     SetContentId(value *string)()
     SetContentType(value *string)()
     SetIsInline(value *bool)()
     SetName(value *string)()
-    SetSize(value *int64)()
+    SetSize(value *int32)()
 }

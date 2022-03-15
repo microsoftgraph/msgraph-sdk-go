@@ -27,7 +27,7 @@ type FilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// FilesRequestBuilderGetQueryParameters pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// FilesRequestBuilderGetQueryParameters pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 type FilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewFilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
 func (m *FilesRequestBuilder) Count()(*id3c46667e45113503457e4073e76118d97a07b8c0010b567eee8efa8a8ba9b84.CountRequestBuilder) {
     return id3c46667e45113503457e4073e76118d97a07b8c0010b567eee8efa8a8ba9b84.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// CreateGetRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 func (m *FilesRequestBuilder) CreateGetRequestInformation(options *FilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *FilesRequestBuilder) CreatePostRequestInformation(options *FilesRequest
     }
     return requestInfo, nil
 }
-// Get pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// Get pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 func (m *FilesRequestBuilder) Get(options *FilesRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalizationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

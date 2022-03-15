@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Relation provides operations to manage the educationRoot singleton.
+// Relation provides operations to manage the collection of drive entities.
 type Relation struct {
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Entity
     // The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].

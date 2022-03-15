@@ -21,7 +21,7 @@ type NetworkInfo struct {
     // IP address of the media endpoint.
     ipAddress *string;
     // Link speed in bits per second reported by the network adapter used by the media endpoint.
-    linkSpeed *int64;
+    linkSpeed *int32;
     // The media access control (MAC) address of the media endpoint's network device.
     macAddress *string;
     // Network port number used by media endpoint.
@@ -180,7 +180,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["linkSpeed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -370,7 +370,7 @@ func (m *NetworkInfo) GetIpAddress()(*string) {
     }
 }
 // GetLinkSpeed gets the linkSpeed property value. Link speed in bits per second reported by the network adapter used by the media endpoint.
-func (m *NetworkInfo) GetLinkSpeed()(*int64) {
+func (m *NetworkInfo) GetLinkSpeed()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -556,7 +556,7 @@ func (m *NetworkInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err := writer.WriteInt64Value("linkSpeed", m.GetLinkSpeed())
+        err := writer.WriteInt32Value("linkSpeed", m.GetLinkSpeed())
         if err != nil {
             return err
         }
@@ -716,7 +716,7 @@ func (m *NetworkInfo) SetIpAddress(value *string)() {
     }
 }
 // SetLinkSpeed sets the linkSpeed property value. Link speed in bits per second reported by the network adapter used by the media endpoint.
-func (m *NetworkInfo) SetLinkSpeed(value *int64)() {
+func (m *NetworkInfo) SetLinkSpeed(value *int32)() {
     if m != nil {
         m.linkSpeed = value
     }

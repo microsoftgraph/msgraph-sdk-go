@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartSeriesFormat provides operations to manage the drive singleton.
+// WorkbookChartSeriesFormat provides operations to manage the collection of drive entities.
 type WorkbookChartSeriesFormat struct {
     Entity
     // Represents the fill format of a chart series, which includes background formating information. Read-only.

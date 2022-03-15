@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SchedulingGroup provides operations to manage the educationRoot singleton.
+// SchedulingGroup provides operations to manage the collection of group entities.
 type SchedulingGroup struct {
     ChangeTrackedEntity
     // The display name for the schedulingGroup. Required.

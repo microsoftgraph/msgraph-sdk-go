@@ -8,7 +8,7 @@ import (
 type AgreementFileData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Data that represents the terms of use PDF document. Read-only.
     data []byte;
 }
 // NewAgreementFileData instantiates a new agreementFileData and sets the default values.
@@ -30,7 +30,7 @@ func (m *AgreementFileData) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetData gets the data property value. 
+// GetData gets the data property value. Data that represents the terms of use PDF document. Read-only.
 func (m *AgreementFileData) GetData()([]byte) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *AgreementFileData) GetData()([]byte) {
 func (m *AgreementFileData) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["data"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetByteArrayValue()
+        val, err := n.Get[]byteValue()
         if err != nil {
             return err
         }
@@ -78,7 +78,7 @@ func (m *AgreementFileData) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetData sets the data property value. 
+// SetData sets the data property value. Data that represents the terms of use PDF document. Read-only.
 func (m *AgreementFileData) SetData(value []byte)() {
     if m != nil {
         m.data = value

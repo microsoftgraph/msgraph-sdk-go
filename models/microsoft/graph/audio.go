@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Audio provides operations to manage the drive singleton.
+// Audio provides operations to manage the collection of drive entities.
 type Audio struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,7 +15,7 @@ type Audio struct {
     // The performing artist for the audio file.
     artist *string;
     // Bitrate expressed in kbps.
-    bitrate *int64;
+    bitrate *int32;
     // The name of the composer of the audio file.
     composers *string;
     // Copyright information for the audio file.
@@ -25,7 +25,7 @@ type Audio struct {
     // The total number of discs in this album.
     discCount *int32;
     // Duration of the audio file, expressed in milliseconds
-    duration *int64;
+    duration *int32;
     // The genre of this audio file.
     genre *string;
     // Indicates if the file is protected with digital rights management.
@@ -85,7 +85,7 @@ func (m *Audio) GetArtist()(*string) {
     }
 }
 // GetBitrate gets the bitrate property value. Bitrate expressed in kbps.
-func (m *Audio) GetBitrate()(*int64) {
+func (m *Audio) GetBitrate()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -125,7 +125,7 @@ func (m *Audio) GetDiscCount()(*int32) {
     }
 }
 // GetDuration gets the duration property value. Duration of the audio file, expressed in milliseconds
-func (m *Audio) GetDuration()(*int64) {
+func (m *Audio) GetDuration()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -166,7 +166,7 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["bitrate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -216,7 +216,7 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -377,7 +377,7 @@ func (m *Audio) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     {
-        err := writer.WriteInt64Value("bitrate", m.GetBitrate())
+        err := writer.WriteInt32Value("bitrate", m.GetBitrate())
         if err != nil {
             return err
         }
@@ -407,7 +407,7 @@ func (m *Audio) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     {
-        err := writer.WriteInt64Value("duration", m.GetDuration())
+        err := writer.WriteInt32Value("duration", m.GetDuration())
         if err != nil {
             return err
         }
@@ -487,7 +487,7 @@ func (m *Audio) SetArtist(value *string)() {
     }
 }
 // SetBitrate sets the bitrate property value. Bitrate expressed in kbps.
-func (m *Audio) SetBitrate(value *int64)() {
+func (m *Audio) SetBitrate(value *int32)() {
     if m != nil {
         m.bitrate = value
     }
@@ -517,7 +517,7 @@ func (m *Audio) SetDiscCount(value *int32)() {
     }
 }
 // SetDuration sets the duration property value. Duration of the audio file, expressed in milliseconds
-func (m *Audio) SetDuration(value *int64)() {
+func (m *Audio) SetDuration(value *int32)() {
     if m != nil {
         m.duration = value
     }

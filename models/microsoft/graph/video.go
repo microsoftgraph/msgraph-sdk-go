@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Video provides operations to manage the drive singleton.
+// Video provides operations to manage the collection of drive entities.
 type Video struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,7 +19,7 @@ type Video struct {
     // Bit rate of the video in bits per second.
     bitrate *int32;
     // Duration of the file in milliseconds.
-    duration *int64;
+    duration *int32;
     // 'Four character code' name of the video format.
     fourCC *string;
     // Frame rate of the video.
@@ -89,7 +89,7 @@ func (m *Video) GetBitrate()(*int32) {
     }
 }
 // GetDuration gets the duration property value. Duration of the file in milliseconds.
-func (m *Video) GetDuration()(*int64) {
+func (m *Video) GetDuration()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +150,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -269,7 +269,7 @@ func (m *Video) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     {
-        err := writer.WriteInt64Value("duration", m.GetDuration())
+        err := writer.WriteInt32Value("duration", m.GetDuration())
         if err != nil {
             return err
         }
@@ -343,7 +343,7 @@ func (m *Video) SetBitrate(value *int32)() {
     }
 }
 // SetDuration sets the duration property value. Duration of the file in milliseconds.
-func (m *Video) SetDuration(value *int64)() {
+func (m *Video) SetDuration(value *int32)() {
     if m != nil {
         m.duration = value
     }

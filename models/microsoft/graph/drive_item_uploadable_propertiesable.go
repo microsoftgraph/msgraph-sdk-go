@@ -9,11 +9,11 @@ type DriveItemUploadablePropertiesable interface {
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
     GetDescription()(*string)
-    GetFileSize()(*int64)
+    GetFileSize()(*int32)
     GetFileSystemInfo()(FileSystemInfoable)
     GetName()(*string)
     SetDescription(value *string)()
-    SetFileSize(value *int64)()
+    SetFileSize(value *int32)()
     SetFileSystemInfo(value FileSystemInfoable)()
     SetName(value *string)()
 }

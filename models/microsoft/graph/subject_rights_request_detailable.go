@@ -8,18 +8,18 @@ import (
 type SubjectRightsRequestDetailable interface {
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetExcludedItemCount()(*int64)
+    GetExcludedItemCount()(*int32)
     GetInsightCounts()([]KeyValuePairable)
-    GetItemCount()(*int64)
-    GetItemNeedReview()(*int64)
+    GetItemCount()(*int32)
+    GetItemNeedReview()(*int32)
     GetProductItemCounts()([]KeyValuePairable)
-    GetSignedOffItemCount()(*int64)
-    GetTotalItemSize()(*int64)
-    SetExcludedItemCount(value *int64)()
+    GetSignedOffItemCount()(*int32)
+    GetTotalItemSize()(*int32)
+    SetExcludedItemCount(value *int32)()
     SetInsightCounts(value []KeyValuePairable)()
-    SetItemCount(value *int64)()
-    SetItemNeedReview(value *int64)()
+    SetItemCount(value *int32)()
+    SetItemNeedReview(value *int32)()
     SetProductItemCounts(value []KeyValuePairable)()
-    SetSignedOffItemCount(value *int64)()
-    SetTotalItemSize(value *int64)()
+    SetSignedOffItemCount(value *int32)()
+    SetTotalItemSize(value *int32)()
 }

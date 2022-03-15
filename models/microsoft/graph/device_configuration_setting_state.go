@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationSettingState provides operations to manage the collection of drive entities.
+// DeviceConfigurationSettingState provides operations to manage the deviceManagement singleton.
 type DeviceConfigurationSettingState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Current value of setting on device
     currentValue *string;
     // Error code for the setting
-    errorCode *int64;
+    errorCode *int32;
     // Error description
     errorDescription *string;
     // Name of setting instance that is being reported.
@@ -61,7 +61,7 @@ func (m *DeviceConfigurationSettingState) GetCurrentValue()(*string) {
     }
 }
 // GetErrorCode gets the errorCode property value. Error code for the setting
-func (m *DeviceConfigurationSettingState) GetErrorCode()(*int64) {
+func (m *DeviceConfigurationSettingState) GetErrorCode()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -90,7 +90,7 @@ func (m *DeviceConfigurationSettingState) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["errorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -289,7 +289,7 @@ func (m *DeviceConfigurationSettingState) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     {
-        err := writer.WriteInt64Value("errorCode", m.GetErrorCode())
+        err := writer.WriteInt32Value("errorCode", m.GetErrorCode())
         if err != nil {
             return err
         }
@@ -380,7 +380,7 @@ func (m *DeviceConfigurationSettingState) SetCurrentValue(value *string)() {
     }
 }
 // SetErrorCode sets the errorCode property value. Error code for the setting
-func (m *DeviceConfigurationSettingState) SetErrorCode(value *int64)() {
+func (m *DeviceConfigurationSettingState) SetErrorCode(value *int32)() {
     if m != nil {
         m.errorCode = value
     }

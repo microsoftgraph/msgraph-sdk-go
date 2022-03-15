@@ -5,6 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     i82c767b5012f97dcb46f02ff991f0c26a1a7967f84309e34ede909edfa1546e0 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignments/item/target"
+    i89ce7f3453a99fc00ceb72ee142034423113f7282418e19187b392e880621914 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignments/item/assignmentpolicy"
     i8da3a952221aa4c7bde05a62c631de52f912d9f6898d19d970a88752a1c845e5 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignments/item/accesspackage"
 )
 
@@ -57,6 +58,9 @@ type AccessPackageAssignmentItemRequestBuilderPatchOptions struct {
 }
 func (m *AccessPackageAssignmentItemRequestBuilder) AccessPackage()(*i8da3a952221aa4c7bde05a62c631de52f912d9f6898d19d970a88752a1c845e5.AccessPackageRequestBuilder) {
     return i8da3a952221aa4c7bde05a62c631de52f912d9f6898d19d970a88752a1c845e5.NewAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *AccessPackageAssignmentItemRequestBuilder) AssignmentPolicy()(*i89ce7f3453a99fc00ceb72ee142034423113f7282418e19187b392e880621914.AssignmentPolicyRequestBuilder) {
+    return i89ce7f3453a99fc00ceb72ee142034423113f7282418e19187b392e880621914.NewAssignmentPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewAccessPackageAssignmentItemRequestBuilderInternal instantiates a new AccessPackageAssignmentItemRequestBuilder and sets the default values.
 func NewAccessPackageAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentItemRequestBuilder) {

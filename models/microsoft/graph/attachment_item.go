@@ -19,7 +19,7 @@ type AttachmentItem struct {
     // The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
     name *string;
     // The length of the attachment in bytes. Required.
-    size *int64;
+    size *int32;
 }
 // NewAttachmentItem instantiates a new attachmentItem and sets the default values.
 func NewAttachmentItem()(*AttachmentItem) {
@@ -118,7 +118,7 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -146,7 +146,7 @@ func (m *AttachmentItem) GetName()(*string) {
     }
 }
 // GetSize gets the size property value. The length of the attachment in bytes. Required.
-func (m *AttachmentItem) GetSize()(*int64) {
+func (m *AttachmentItem) GetSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -190,7 +190,7 @@ func (m *AttachmentItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err := writer.WriteInt64Value("size", m.GetSize())
+        err := writer.WriteInt32Value("size", m.GetSize())
         if err != nil {
             return err
         }
@@ -240,7 +240,7 @@ func (m *AttachmentItem) SetName(value *string)() {
     }
 }
 // SetSize sets the size property value. The length of the attachment in bytes. Required.
-func (m *AttachmentItem) SetSize(value *int64)() {
+func (m *AttachmentItem) SetSize(value *int32)() {
     if m != nil {
         m.size = value
     }

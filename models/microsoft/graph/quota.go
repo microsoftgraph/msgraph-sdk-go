@@ -4,22 +4,22 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Quota provides operations to manage the drive singleton.
+// Quota provides operations to manage the collection of drive entities.
 type Quota struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Total space consumed by files in the recycle bin, in bytes. Read-only.
-    deleted *int64;
+    deleted *int32;
     // Total space remaining before reaching the quota limit, in bytes. Read-only.
-    remaining *int64;
+    remaining *int32;
     // Enumeration value that indicates the state of the storage space. Read-only.
     state *string;
     // Information about the drive's storage quota plans. Only in Personal OneDrive.
     storagePlanInformation StoragePlanInformationable;
     // Total allowed storage space, in bytes. Read-only.
-    total *int64;
+    total *int32;
     // Total space used, in bytes. Read-only.
-    used *int64;
+    used *int32;
 }
 // NewQuota instantiates a new quota and sets the default values.
 func NewQuota()(*Quota) {
@@ -41,7 +41,7 @@ func (m *Quota) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDeleted gets the deleted property value. Total space consumed by files in the recycle bin, in bytes. Read-only.
-func (m *Quota) GetDeleted()(*int64) {
+func (m *Quota) GetDeleted()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -52,7 +52,7 @@ func (m *Quota) GetDeleted()(*int64) {
 func (m *Quota) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -62,7 +62,7 @@ func (m *Quota) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["remaining"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -92,7 +92,7 @@ func (m *Quota) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["total"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -102,7 +102,7 @@ func (m *Quota) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["used"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -114,7 +114,7 @@ func (m *Quota) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
     return res
 }
 // GetRemaining gets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
-func (m *Quota) GetRemaining()(*int64) {
+func (m *Quota) GetRemaining()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -138,7 +138,7 @@ func (m *Quota) GetStoragePlanInformation()(StoragePlanInformationable) {
     }
 }
 // GetTotal gets the total property value. Total allowed storage space, in bytes. Read-only.
-func (m *Quota) GetTotal()(*int64) {
+func (m *Quota) GetTotal()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -146,7 +146,7 @@ func (m *Quota) GetTotal()(*int64) {
     }
 }
 // GetUsed gets the used property value. Total space used, in bytes. Read-only.
-func (m *Quota) GetUsed()(*int64) {
+func (m *Quota) GetUsed()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -159,13 +159,13 @@ func (m *Quota) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *Quota) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("deleted", m.GetDeleted())
+        err := writer.WriteInt32Value("deleted", m.GetDeleted())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("remaining", m.GetRemaining())
+        err := writer.WriteInt32Value("remaining", m.GetRemaining())
         if err != nil {
             return err
         }
@@ -183,13 +183,13 @@ func (m *Quota) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     {
-        err := writer.WriteInt64Value("total", m.GetTotal())
+        err := writer.WriteInt32Value("total", m.GetTotal())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("used", m.GetUsed())
+        err := writer.WriteInt32Value("used", m.GetUsed())
         if err != nil {
             return err
         }
@@ -209,13 +209,13 @@ func (m *Quota) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDeleted sets the deleted property value. Total space consumed by files in the recycle bin, in bytes. Read-only.
-func (m *Quota) SetDeleted(value *int64)() {
+func (m *Quota) SetDeleted(value *int32)() {
     if m != nil {
         m.deleted = value
     }
 }
 // SetRemaining sets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
-func (m *Quota) SetRemaining(value *int64)() {
+func (m *Quota) SetRemaining(value *int32)() {
     if m != nil {
         m.remaining = value
     }
@@ -233,13 +233,13 @@ func (m *Quota) SetStoragePlanInformation(value StoragePlanInformationable)() {
     }
 }
 // SetTotal sets the total property value. Total allowed storage space, in bytes. Read-only.
-func (m *Quota) SetTotal(value *int64)() {
+func (m *Quota) SetTotal(value *int32)() {
     if m != nil {
         m.total = value
     }
 }
 // SetUsed sets the used property value. Total space used, in bytes. Read-only.
-func (m *Quota) SetUsed(value *int64)() {
+func (m *Quota) SetUsed(value *int32)() {
     if m != nil {
         m.used = value
     }

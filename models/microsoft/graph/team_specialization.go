@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the educationRoot singleton.
+// Provides operations to manage the collection of group entities.
 type TeamSpecialization int
 
 const (

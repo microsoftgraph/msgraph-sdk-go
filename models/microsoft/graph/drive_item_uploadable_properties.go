@@ -11,7 +11,7 @@ type DriveItemUploadableProperties struct {
     // Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
     description *string;
     // Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
-    fileSize *int64;
+    fileSize *int32;
     // File system information on client. Read-write.
     fileSystemInfo FileSystemInfoable;
     // The name of the item (filename and extension). Read-write.
@@ -58,7 +58,7 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["fileSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -90,7 +90,7 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetFileSize gets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
-func (m *DriveItemUploadableProperties) GetFileSize()(*int64) {
+func (m *DriveItemUploadableProperties) GetFileSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -125,7 +125,7 @@ func (m *DriveItemUploadableProperties) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     {
-        err := writer.WriteInt64Value("fileSize", m.GetFileSize())
+        err := writer.WriteInt32Value("fileSize", m.GetFileSize())
         if err != nil {
             return err
         }
@@ -163,7 +163,7 @@ func (m *DriveItemUploadableProperties) SetDescription(value *string)() {
     }
 }
 // SetFileSize sets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
-func (m *DriveItemUploadableProperties) SetFileSize(value *int64)() {
+func (m *DriveItemUploadableProperties) SetFileSize(value *int32)() {
     if m != nil {
         m.fileSize = value
     }
