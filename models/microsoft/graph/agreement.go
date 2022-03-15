@@ -9,19 +9,19 @@ type Agreement struct {
     Entity
     // Read-only. Information about acceptances of this agreement.
     acceptances []AgreementAcceptanceable;
-    // Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
+    // Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
     displayName *string;
     // Default PDF linked to this agreement.
     file AgreementFileable;
-    // PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+    // PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
     files []AgreementFileLocalizationable;
-    // Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+    // Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
     isPerDeviceAcceptanceRequired *bool;
-    // Indicates whether the user has to expand the agreement before accepting.
+    // Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
     isViewingBeforeAcceptanceRequired *bool;
-    // Expiration schedule and frequency of agreement for all users.
+    // Expiration schedule and frequency of agreement for all users. Supports $filter (eq).
     termsExpiration TermsExpirationable;
-    // The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
+    // The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
     userReacceptRequiredFrequency *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
 }
 // NewAgreement instantiates a new agreement and sets the default values.
@@ -43,7 +43,7 @@ func (m *Agreement) GetAcceptances()([]AgreementAcceptanceable) {
         return m.acceptances
     }
 }
-// GetDisplayName gets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
+// GetDisplayName gets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
 func (m *Agreement) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -152,7 +152,7 @@ func (m *Agreement) GetFile()(AgreementFileable) {
         return m.file
     }
 }
-// GetFiles gets the files property value. PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// GetFiles gets the files property value. PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 func (m *Agreement) GetFiles()([]AgreementFileLocalizationable) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *Agreement) GetFiles()([]AgreementFileLocalizationable) {
         return m.files
     }
 }
-// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
 func (m *Agreement) GetIsPerDeviceAcceptanceRequired()(*bool) {
     if m == nil {
         return nil
@@ -168,7 +168,7 @@ func (m *Agreement) GetIsPerDeviceAcceptanceRequired()(*bool) {
         return m.isPerDeviceAcceptanceRequired
     }
 }
-// GetIsViewingBeforeAcceptanceRequired gets the isViewingBeforeAcceptanceRequired property value. Indicates whether the user has to expand the agreement before accepting.
+// GetIsViewingBeforeAcceptanceRequired gets the isViewingBeforeAcceptanceRequired property value. Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
 func (m *Agreement) GetIsViewingBeforeAcceptanceRequired()(*bool) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *Agreement) GetIsViewingBeforeAcceptanceRequired()(*bool) {
         return m.isViewingBeforeAcceptanceRequired
     }
 }
-// GetTermsExpiration gets the termsExpiration property value. Expiration schedule and frequency of agreement for all users.
+// GetTermsExpiration gets the termsExpiration property value. Expiration schedule and frequency of agreement for all users. Supports $filter (eq).
 func (m *Agreement) GetTermsExpiration()(TermsExpirationable) {
     if m == nil {
         return nil
@@ -184,7 +184,7 @@ func (m *Agreement) GetTermsExpiration()(TermsExpirationable) {
         return m.termsExpiration
     }
 }
-// GetUserReacceptRequiredFrequency gets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
+// GetUserReacceptRequiredFrequency gets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
 func (m *Agreement) GetUserReacceptRequiredFrequency()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
@@ -265,7 +265,7 @@ func (m *Agreement) SetAcceptances(value []AgreementAcceptanceable)() {
         m.acceptances = value
     }
 }
-// SetDisplayName sets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
+// SetDisplayName sets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
 func (m *Agreement) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -277,31 +277,31 @@ func (m *Agreement) SetFile(value AgreementFileable)() {
         m.file = value
     }
 }
-// SetFiles sets the files property value. PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// SetFiles sets the files property value. PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 func (m *Agreement) SetFiles(value []AgreementFileLocalizationable)() {
     if m != nil {
         m.files = value
     }
 }
-// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
 func (m *Agreement) SetIsPerDeviceAcceptanceRequired(value *bool)() {
     if m != nil {
         m.isPerDeviceAcceptanceRequired = value
     }
 }
-// SetIsViewingBeforeAcceptanceRequired sets the isViewingBeforeAcceptanceRequired property value. Indicates whether the user has to expand the agreement before accepting.
+// SetIsViewingBeforeAcceptanceRequired sets the isViewingBeforeAcceptanceRequired property value. Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
 func (m *Agreement) SetIsViewingBeforeAcceptanceRequired(value *bool)() {
     if m != nil {
         m.isViewingBeforeAcceptanceRequired = value
     }
 }
-// SetTermsExpiration sets the termsExpiration property value. Expiration schedule and frequency of agreement for all users.
+// SetTermsExpiration sets the termsExpiration property value. Expiration schedule and frequency of agreement for all users. Supports $filter (eq).
 func (m *Agreement) SetTermsExpiration(value TermsExpirationable)() {
     if m != nil {
         m.termsExpiration = value
     }
 }
-// SetUserReacceptRequiredFrequency sets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
+// SetUserReacceptRequiredFrequency sets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
 func (m *Agreement) SetUserReacceptRequiredFrequency(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.userReacceptRequiredFrequency = value

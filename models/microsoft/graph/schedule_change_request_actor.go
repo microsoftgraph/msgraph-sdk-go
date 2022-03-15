@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the educationRoot singleton.
+// Provides operations to manage the drive singleton.
 type ScheduleChangeRequestActor int
 
 const (

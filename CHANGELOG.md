@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.14.0] - 2022-03-15
+
+### Changed
+
+- Updated reference to core for new serialization types
+- Weekly generation
+
 ## [0.13.0] - 2022-03-08
 
 ### Changed

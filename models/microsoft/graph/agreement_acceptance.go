@@ -24,7 +24,7 @@ type AgreementAcceptance struct {
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The state of the agreement acceptance. Possible values are: accepted, declined.
+    // The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
     state *AgreementAcceptanceState;
     // Display name of the user when the acceptance was recorded.
     userDisplayName *string;
@@ -245,7 +245,7 @@ func (m *AgreementAcceptance) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3
         return m.recordedDateTime
     }
 }
-// GetState gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined.
+// GetState gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
 func (m *AgreementAcceptance) GetState()(*AgreementAcceptanceState) {
     if m == nil {
         return nil
@@ -423,7 +423,7 @@ func (m *AgreementAcceptance) SetRecordedDateTime(value *i336074805fc853987abe6f
         m.recordedDateTime = value
     }
 }
-// SetState sets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined.
+// SetState sets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
 func (m *AgreementAcceptance) SetState(value *AgreementAcceptanceState)() {
     if m != nil {
         m.state = value

@@ -37,7 +37,7 @@ type ApprovalItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ApprovalItemRequestBuilderGetQueryParameters get accessPackageAssignmentApprovals from identityGovernance
+// ApprovalItemRequestBuilderGetQueryParameters approval stages for assignment requests.
 type ApprovalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -91,7 +91,7 @@ func (m *ApprovalItemRequestBuilder) CreateDeleteRequestInformation(options *App
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get accessPackageAssignmentApprovals from identityGovernance
+// CreateGetRequestInformation approval stages for assignment requests.
 func (m *ApprovalItemRequestBuilder) CreateGetRequestInformation(options *ApprovalItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,7 +145,7 @@ func (m *ApprovalItemRequestBuilder) Delete(options *ApprovalItemRequestBuilderD
     }
     return nil
 }
-// Get get accessPackageAssignmentApprovals from identityGovernance
+// Get approval stages for assignment requests.
 func (m *ApprovalItemRequestBuilder) Get(options *ApprovalItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Approvalable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Event provides operations to manage the collection of drive entities.
+// Event provides operations to manage the drive singleton.
 type Event struct {
     OutlookItem
     // true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
