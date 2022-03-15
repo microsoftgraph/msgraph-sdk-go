@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Conversation provides operations to manage the educationRoot singleton.
+// Conversation provides operations to manage the drive singleton.
 type Conversation struct {
     Entity
     // Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.

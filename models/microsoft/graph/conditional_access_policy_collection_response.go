@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessPolicyCollectionResponse provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
+// ConditionalAccessPolicyCollectionResponse provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
 type ConditionalAccessPolicyCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};

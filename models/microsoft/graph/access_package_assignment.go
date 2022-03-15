@@ -10,6 +10,8 @@ type AccessPackageAssignment struct {
     Entity
     // Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
     accessPackage AccessPackageable;
+    // 
+    assignmentPolicy AccessPackageAssignmentPolicyable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     expiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // When the access assignment is to be in place. Read-only.
@@ -40,6 +42,14 @@ func (m *AccessPackageAssignment) GetAccessPackage()(AccessPackageable) {
         return m.accessPackage
     }
 }
+// GetAssignmentPolicy gets the assignmentPolicy property value. 
+func (m *AccessPackageAssignment) GetAssignmentPolicy()(AccessPackageAssignmentPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.assignmentPolicy
+    }
+}
 // GetExpiredDateTime gets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -58,6 +68,16 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         if val != nil {
             m.SetAccessPackage(val.(AccessPackageable))
+        }
+        return nil
+    }
+    res["assignmentPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignmentPolicy(val.(AccessPackageAssignmentPolicyable))
         }
         return nil
     }
@@ -161,6 +181,12 @@ func (m *AccessPackageAssignment) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
+        err = writer.WriteObjectValue("assignmentPolicy", m.GetAssignmentPolicy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("expiredDateTime", m.GetExpiredDateTime())
         if err != nil {
             return err
@@ -197,6 +223,12 @@ func (m *AccessPackageAssignment) Serialize(writer i04eb5309aeaafadd28374d79c847
 func (m *AccessPackageAssignment) SetAccessPackage(value AccessPackageable)() {
     if m != nil {
         m.accessPackage = value
+    }
+}
+// SetAssignmentPolicy sets the assignmentPolicy property value. 
+func (m *AccessPackageAssignment) SetAssignmentPolicy(value AccessPackageAssignmentPolicyable)() {
+    if m != nil {
+        m.assignmentPolicy = value
     }
 }
 // SetExpiredDateTime sets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

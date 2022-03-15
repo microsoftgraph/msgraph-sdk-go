@@ -9,11 +9,11 @@ type RgbColor struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Blue value
-    b *int32;
+    b *byte;
     // Green value
-    g *int32;
+    g *byte;
     // Red value
-    r *int32;
+    r *byte;
 }
 // NewRgbColor instantiates a new rgbColor and sets the default values.
 func NewRgbColor()(*RgbColor) {
@@ -35,7 +35,7 @@ func (m *RgbColor) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetB gets the b property value. Blue value
-func (m *RgbColor) GetB()(*int32) {
+func (m *RgbColor) GetB()(*byte) {
     if m == nil {
         return nil
     } else {
@@ -46,7 +46,7 @@ func (m *RgbColor) GetB()(*int32) {
 func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["b"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetByteValue()
         if err != nil {
             return err
         }
@@ -56,7 +56,7 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["g"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetByteValue()
         if err != nil {
             return err
         }
@@ -66,7 +66,7 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["r"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetByteValue()
         if err != nil {
             return err
         }
@@ -78,7 +78,7 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
     return res
 }
 // GetG gets the g property value. Green value
-func (m *RgbColor) GetG()(*int32) {
+func (m *RgbColor) GetG()(*byte) {
     if m == nil {
         return nil
     } else {
@@ -86,7 +86,7 @@ func (m *RgbColor) GetG()(*int32) {
     }
 }
 // GetR gets the r property value. Red value
-func (m *RgbColor) GetR()(*int32) {
+func (m *RgbColor) GetR()(*byte) {
     if m == nil {
         return nil
     } else {
@@ -99,19 +99,19 @@ func (m *RgbColor) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *RgbColor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt32Value("b", m.GetB())
+        err := writer.WriteByteValue("b", m.GetB())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt32Value("g", m.GetG())
+        err := writer.WriteByteValue("g", m.GetG())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt32Value("r", m.GetR())
+        err := writer.WriteByteValue("r", m.GetR())
         if err != nil {
             return err
         }
@@ -131,19 +131,19 @@ func (m *RgbColor) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetB sets the b property value. Blue value
-func (m *RgbColor) SetB(value *int32)() {
+func (m *RgbColor) SetB(value *byte)() {
     if m != nil {
         m.b = value
     }
 }
 // SetG sets the g property value. Green value
-func (m *RgbColor) SetG(value *int32)() {
+func (m *RgbColor) SetG(value *byte)() {
     if m != nil {
         m.g = value
     }
 }
 // SetR sets the r property value. Red value
-func (m *RgbColor) SetR(value *int32)() {
+func (m *RgbColor) SetR(value *byte)() {
     if m != nil {
         m.r = value
     }

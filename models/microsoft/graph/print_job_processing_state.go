@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the print singleton.
+// Provides operations to call the getGroupArchivedPrintJobs method.
 type PrintJobProcessingState int
 
 const (
