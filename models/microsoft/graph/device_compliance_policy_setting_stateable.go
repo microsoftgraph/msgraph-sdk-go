@@ -9,7 +9,7 @@ type DeviceCompliancePolicySettingStateable interface {
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
     GetCurrentValue()(*string)
-    GetErrorCode()(*int64)
+    GetErrorCode()(*int32)
     GetErrorDescription()(*string)
     GetInstanceDisplayName()(*string)
     GetSetting()(*string)
@@ -21,7 +21,7 @@ type DeviceCompliancePolicySettingStateable interface {
     GetUserName()(*string)
     GetUserPrincipalName()(*string)
     SetCurrentValue(value *string)()
-    SetErrorCode(value *int64)()
+    SetErrorCode(value *int32)()
     SetErrorDescription(value *string)()
     SetInstanceDisplayName(value *string)()
     SetSetting(value *string)()

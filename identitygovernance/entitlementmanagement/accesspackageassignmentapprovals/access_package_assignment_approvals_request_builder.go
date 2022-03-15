@@ -28,7 +28,7 @@ type AccessPackageAssignmentApprovalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters get accessPackageAssignmentApprovals from identityGovernance
+// AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters approval stages for assignment requests.
 type AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -80,7 +80,7 @@ func NewAccessPackageAssignmentApprovalsRequestBuilder(rawUrl string, requestAda
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) Count()(*ic41bfe078537c68f179f24357a35d8604aa37b37489f1403c83169437a7f47c2.CountRequestBuilder) {
     return ic41bfe078537c68f179f24357a35d8604aa37b37489f1403c83169437a7f47c2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get accessPackageAssignmentApprovals from identityGovernance
+// CreateGetRequestInformation approval stages for assignment requests.
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentApprovalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,7 +122,7 @@ func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreatePostRequestInform
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ia71d5a5b6b3ea77f765bc2b0175ea2dbe4bccb5b112d222630b4264a2bd127e5.FilterByCurrentUserWithOnRequestBuilder) {
     return ia71d5a5b6b3ea77f765bc2b0175ea2dbe4bccb5b112d222630b4264a2bd127e5.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get get accessPackageAssignmentApprovals from identityGovernance
+// Get approval stages for assignment requests.
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) Get(options *AccessPackageAssignmentApprovalsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

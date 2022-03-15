@@ -12,7 +12,7 @@ type PrintDocument struct {
     // The document's name. Read-only.
     displayName *string;
     // The document's size in bytes. Read-only.
-    size *int64;
+    size *int32;
 }
 // NewPrintDocument instantiates a new printDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {
@@ -65,7 +65,7 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -77,7 +77,7 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i04
     return res
 }
 // GetSize gets the size property value. The document's size in bytes. Read-only.
-func (m *PrintDocument) GetSize()(*int64) {
+func (m *PrintDocument) GetSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -106,7 +106,7 @@ func (m *PrintDocument) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        err = writer.WriteInt64Value("size", m.GetSize())
+        err = writer.WriteInt32Value("size", m.GetSize())
         if err != nil {
             return err
         }
@@ -126,7 +126,7 @@ func (m *PrintDocument) SetDisplayName(value *string)() {
     }
 }
 // SetSize sets the size property value. The document's size in bytes. Read-only.
-func (m *PrintDocument) SetSize(value *int64)() {
+func (m *PrintDocument) SetSize(value *int32)() {
     if m != nil {
         m.size = value
     }

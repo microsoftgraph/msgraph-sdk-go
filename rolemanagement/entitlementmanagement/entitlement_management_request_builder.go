@@ -39,7 +39,7 @@ type EntitlementManagementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EntitlementManagementRequestBuilderGetQueryParameters container for all entitlement management resources in Azure AD identity governance.
+// EntitlementManagementRequestBuilderGetQueryParameters container for roles and assignments for entitlement management resources.
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -93,7 +93,7 @@ func (m *EntitlementManagementRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation container for all entitlement management resources in Azure AD identity governance.
+// CreateGetRequestInformation container for roles and assignments for entitlement management resources.
 func (m *EntitlementManagementRequestBuilder) CreateGetRequestInformation(options *EntitlementManagementRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *EntitlementManagementRequestBuilder) Delete(options *EntitlementManagem
     }
     return nil
 }
-// Get container for all entitlement management resources in Azure AD identity governance.
+// Get container for roles and assignments for entitlement management resources.
 func (m *EntitlementManagementRequestBuilder) Get(options *EntitlementManagementRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RbacApplicationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -12,7 +12,7 @@ type SendActivityNotificationRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    chainId *int64;
+    chainId *int32;
     // 
     previewText i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBodyable;
     // 
@@ -50,7 +50,7 @@ func (m *SendActivityNotificationRequestBody) GetAdditionalData()(map[string]int
     }
 }
 // GetChainId gets the chainId property value. 
-func (m *SendActivityNotificationRequestBody) GetChainId()(*int64) {
+func (m *SendActivityNotificationRequestBody) GetChainId()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -71,7 +71,7 @@ func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string
         return nil
     }
     res["chainId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -170,7 +170,7 @@ func (m *SendActivityNotificationRequestBody) Serialize(writer i04eb5309aeaafadd
         }
     }
     {
-        err := writer.WriteInt64Value("chainId", m.GetChainId())
+        err := writer.WriteInt32Value("chainId", m.GetChainId())
         if err != nil {
             return err
         }
@@ -224,7 +224,7 @@ func (m *SendActivityNotificationRequestBody) SetAdditionalData(value map[string
     }
 }
 // SetChainId sets the chainId property value. 
-func (m *SendActivityNotificationRequestBody) SetChainId(value *int64)() {
+func (m *SendActivityNotificationRequestBody) SetChainId(value *int32)() {
     if m != nil {
         m.chainId = value
     }

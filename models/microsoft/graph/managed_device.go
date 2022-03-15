@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDevice provides operations to manage the collection of drive entities.
+// ManagedDevice provides operations to manage the deviceManagement singleton.
 type ManagedDevice struct {
     Entity
     // Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
@@ -59,7 +59,7 @@ type ManagedDevice struct {
     // Last time the device contacted Exchange. This property is read-only.
     exchangeLastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Free Storage in Bytes. This property is read-only.
-    freeStorageSpaceInBytes *int64;
+    freeStorageSpaceInBytes *int32;
     // Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
     iccid *string;
     // IMEI. This property is read-only.
@@ -95,7 +95,7 @@ type ManagedDevice struct {
     // Phone number of the device. This property is read-only.
     phoneNumber *string;
     // Total Memory in Bytes. This property is read-only.
-    physicalMemoryInBytes *int64;
+    physicalMemoryInBytes *int32;
     // An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
     remoteAssistanceSessionErrorDetails *string;
     // Url that allows a Remote Assistance session to be established with the device. This property is read-only.
@@ -105,7 +105,7 @@ type ManagedDevice struct {
     // Subscriber Carrier. This property is read-only.
     subscriberCarrier *string;
     // Total Storage in Bytes. This property is read-only.
-    totalStorageSpaceInBytes *int64;
+    totalStorageSpaceInBytes *int32;
     // Unique Device Identifier for iOS and macOS devices. This property is read-only.
     udid *string;
     // User display name. This property is read-only.
@@ -594,7 +594,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["freeStorageSpaceInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -774,7 +774,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["physicalMemoryInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -824,7 +824,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["totalStorageSpaceInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -886,7 +886,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
     return res
 }
 // GetFreeStorageSpaceInBytes gets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
-func (m *ManagedDevice) GetFreeStorageSpaceInBytes()(*int64) {
+func (m *ManagedDevice) GetFreeStorageSpaceInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -1030,7 +1030,7 @@ func (m *ManagedDevice) GetPhoneNumber()(*string) {
     }
 }
 // GetPhysicalMemoryInBytes gets the physicalMemoryInBytes property value. Total Memory in Bytes. This property is read-only.
-func (m *ManagedDevice) GetPhysicalMemoryInBytes()(*int64) {
+func (m *ManagedDevice) GetPhysicalMemoryInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -1070,7 +1070,7 @@ func (m *ManagedDevice) GetSubscriberCarrier()(*string) {
     }
 }
 // GetTotalStorageSpaceInBytes gets the totalStorageSpaceInBytes property value. Total Storage in Bytes. This property is read-only.
-func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int64) {
+func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -1294,7 +1294,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        err = writer.WriteInt64Value("freeStorageSpaceInBytes", m.GetFreeStorageSpaceInBytes())
+        err = writer.WriteInt32Value("freeStorageSpaceInBytes", m.GetFreeStorageSpaceInBytes())
         if err != nil {
             return err
         }
@@ -1405,7 +1405,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        err = writer.WriteInt64Value("physicalMemoryInBytes", m.GetPhysicalMemoryInBytes())
+        err = writer.WriteInt32Value("physicalMemoryInBytes", m.GetPhysicalMemoryInBytes())
         if err != nil {
             return err
         }
@@ -1435,7 +1435,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        err = writer.WriteInt64Value("totalStorageSpaceInBytes", m.GetTotalStorageSpaceInBytes())
+        err = writer.WriteInt32Value("totalStorageSpaceInBytes", m.GetTotalStorageSpaceInBytes())
         if err != nil {
             return err
         }
@@ -1623,7 +1623,7 @@ func (m *ManagedDevice) SetExchangeLastSuccessfulSyncDateTime(value *i336074805f
     }
 }
 // SetFreeStorageSpaceInBytes sets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
-func (m *ManagedDevice) SetFreeStorageSpaceInBytes(value *int64)() {
+func (m *ManagedDevice) SetFreeStorageSpaceInBytes(value *int32)() {
     if m != nil {
         m.freeStorageSpaceInBytes = value
     }
@@ -1731,7 +1731,7 @@ func (m *ManagedDevice) SetPhoneNumber(value *string)() {
     }
 }
 // SetPhysicalMemoryInBytes sets the physicalMemoryInBytes property value. Total Memory in Bytes. This property is read-only.
-func (m *ManagedDevice) SetPhysicalMemoryInBytes(value *int64)() {
+func (m *ManagedDevice) SetPhysicalMemoryInBytes(value *int32)() {
     if m != nil {
         m.physicalMemoryInBytes = value
     }
@@ -1761,7 +1761,7 @@ func (m *ManagedDevice) SetSubscriberCarrier(value *string)() {
     }
 }
 // SetTotalStorageSpaceInBytes sets the totalStorageSpaceInBytes property value. Total Storage in Bytes. This property is read-only.
-func (m *ManagedDevice) SetTotalStorageSpaceInBytes(value *int64)() {
+func (m *ManagedDevice) SetTotalStorageSpaceInBytes(value *int32)() {
     if m != nil {
         m.totalStorageSpaceInBytes = value
     }

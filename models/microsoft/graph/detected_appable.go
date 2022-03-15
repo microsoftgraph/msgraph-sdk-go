@@ -11,11 +11,11 @@ type DetectedAppable interface {
     GetDeviceCount()(*int32)
     GetDisplayName()(*string)
     GetManagedDevices()([]ManagedDeviceable)
-    GetSizeInByte()(*int64)
+    GetSizeInByte()(*int32)
     GetVersion()(*string)
     SetDeviceCount(value *int32)()
     SetDisplayName(value *string)()
     SetManagedDevices(value []ManagedDeviceable)()
-    SetSizeInByte(value *int64)()
+    SetSizeInByte(value *int32)()
     SetVersion(value *string)()
 }

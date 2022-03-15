@@ -14,7 +14,7 @@ type DetectedApp struct {
     // The devices that have the discovered application installed
     managedDevices []ManagedDeviceable;
     // Discovered application size in bytes. Read-only
-    sizeInByte *int64;
+    sizeInByte *int32;
     // Version of the discovered application. Read-only
     version *string;
 }
@@ -83,7 +83,7 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["sizeInByte"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -113,7 +113,7 @@ func (m *DetectedApp) GetManagedDevices()([]ManagedDeviceable) {
     }
 }
 // GetSizeInByte gets the sizeInByte property value. Discovered application size in bytes. Read-only
-func (m *DetectedApp) GetSizeInByte()(*int64) {
+func (m *DetectedApp) GetSizeInByte()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -160,7 +160,7 @@ func (m *DetectedApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err = writer.WriteInt64Value("sizeInByte", m.GetSizeInByte())
+        err = writer.WriteInt32Value("sizeInByte", m.GetSizeInByte())
         if err != nil {
             return err
         }
@@ -192,7 +192,7 @@ func (m *DetectedApp) SetManagedDevices(value []ManagedDeviceable)() {
     }
 }
 // SetSizeInByte sets the sizeInByte property value. Discovered application size in bytes. Read-only
-func (m *DetectedApp) SetSizeInByte(value *int64)() {
+func (m *DetectedApp) SetSizeInByte(value *int32)() {
     if m != nil {
         m.sizeInByte = value
     }

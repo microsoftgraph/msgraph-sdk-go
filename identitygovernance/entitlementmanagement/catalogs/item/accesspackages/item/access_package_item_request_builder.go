@@ -6,6 +6,8 @@ import (
     i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     i3af26ef062248fc936f438d7e7cc8fe358d3b1a890b9bcf59c9846f337791fa0 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/getapplicablepolicyrequirements"
     i717f71254096bee879057f5e946ada732407df581c92d78a2a9cf53bfbdcf41e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/catalog"
+    ic82697aaed3461913f1b2cee0ca18a05c44db320a3c1fb9e745b665258f9e63f "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/assignmentpolicies"
+    ia1916e1833ba6379a656d854d9addb1fc255aaed3c8365e594204fe629eaac7f "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/assignmentpolicies/item"
 )
 
 // AccessPackageItemRequestBuilder provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
@@ -54,6 +56,20 @@ type AccessPackageItemRequestBuilderPatchOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *AccessPackageItemRequestBuilder) AssignmentPolicies()(*ic82697aaed3461913f1b2cee0ca18a05c44db320a3c1fb9e745b665258f9e63f.AssignmentPoliciesRequestBuilder) {
+    return ic82697aaed3461913f1b2cee0ca18a05c44db320a3c1fb9e745b665258f9e63f.NewAssignmentPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignmentPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item.assignmentPolicies.item collection
+func (m *AccessPackageItemRequestBuilder) AssignmentPoliciesById(id string)(*ia1916e1833ba6379a656d854d9addb1fc255aaed3c8365e594204fe629eaac7f.AccessPackageAssignmentPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessPackageAssignmentPolicy_id"] = id
+    }
+    return ia1916e1833ba6379a656d854d9addb1fc255aaed3c8365e594204fe629eaac7f.NewAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AccessPackageItemRequestBuilder) Catalog()(*i717f71254096bee879057f5e946ada732407df581c92d78a2a9cf53bfbdcf41e.CatalogRequestBuilder) {
     return i717f71254096bee879057f5e946ada732407df581c92d78a2a9cf53bfbdcf41e.NewCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);

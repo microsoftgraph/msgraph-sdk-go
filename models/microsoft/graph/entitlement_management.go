@@ -7,10 +7,12 @@ import (
 // EntitlementManagement provides operations to manage the identityGovernance singleton.
 type EntitlementManagement struct {
     Entity
-    // 
+    // Approval stages for assignment requests.
     accessPackageAssignmentApprovals []Approvalable;
     // Represents access package objects.
     accessPackages []AccessPackageable;
+    // 
+    assignmentPolicies []AccessPackageAssignmentPolicyable;
     // Represents access package assignment requests created by or on behalf of a user.
     assignmentRequests []AccessPackageAssignmentRequestable;
     // Represents the grant of an access package to a subject (user or group).
@@ -33,7 +35,7 @@ func NewEntitlementManagement()(*EntitlementManagement) {
 func CreateEntitlementManagementFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
     return NewEntitlementManagement(), nil
 }
-// GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. 
+// GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. Approval stages for assignment requests.
 func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approvalable) {
     if m == nil {
         return nil
@@ -47,6 +49,14 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackageable) {
         return nil
     } else {
         return m.accessPackages
+    }
+}
+// GetAssignmentPolicies gets the assignmentPolicies property value. 
+func (m *EntitlementManagement) GetAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.assignmentPolicies
     }
 }
 // GetAssignmentRequests gets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
@@ -109,6 +119,20 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
                 res[i] = v.(AccessPackageable)
             }
             m.SetAccessPackages(res)
+        }
+        return nil
+    }
+    res["assignmentPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageAssignmentPolicyable, len(val))
+            for i, v := range val {
+                res[i] = v.(AccessPackageAssignmentPolicyable)
+            }
+            m.SetAssignmentPolicies(res)
         }
         return nil
     }
@@ -217,6 +241,16 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
+    if m.GetAssignmentPolicies() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignmentPolicies()))
+        for i, v := range m.GetAssignmentPolicies() {
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("assignmentPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAssignmentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignmentRequests()))
         for i, v := range m.GetAssignmentRequests() {
@@ -265,7 +299,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. 
+// SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. Approval stages for assignment requests.
 func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approvalable)() {
     if m != nil {
         m.accessPackageAssignmentApprovals = value
@@ -275,6 +309,12 @@ func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Appr
 func (m *EntitlementManagement) SetAccessPackages(value []AccessPackageable)() {
     if m != nil {
         m.accessPackages = value
+    }
+}
+// SetAssignmentPolicies sets the assignmentPolicies property value. 
+func (m *EntitlementManagement) SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
+    if m != nil {
+        m.assignmentPolicies = value
     }
 }
 // SetAssignmentRequests sets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.

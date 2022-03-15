@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the collection of drive entities.
+// Provides operations to manage the deviceManagement singleton.
 type DeviceManagementExchangeAccessStateReason int
 
 const (

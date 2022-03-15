@@ -23,7 +23,7 @@ type TeleconferenceDeviceMediaQuality struct {
     // The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.
     channelIndex *int32;
     // The total number of the inbound packets.
-    inboundPackets *int64;
+    inboundPackets *int32;
     // the local IP address for the media session.
     localIPAddress *string;
     // The local media port.
@@ -43,9 +43,9 @@ type TeleconferenceDeviceMediaQuality struct {
     // The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.
     mediaDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The network link speed in bytes
-    networkLinkSpeedInBytes *int64;
+    networkLinkSpeedInBytes *int32;
     // The total number of the outbound packets.
-    outboundPackets *int64;
+    outboundPackets *int32;
     // The remote IP address for the media session.
     remoteIPAddress *string;
     // The remote media port.
@@ -200,7 +200,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["inboundPackets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -300,7 +300,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["networkLinkSpeedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -310,7 +310,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["outboundPackets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -342,7 +342,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetInboundPackets gets the inboundPackets property value. The total number of the inbound packets.
-func (m *TeleconferenceDeviceMediaQuality) GetInboundPackets()(*int64) {
+func (m *TeleconferenceDeviceMediaQuality) GetInboundPackets()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -422,7 +422,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetMediaDuration()(*i04eb5309aeaafadd
     }
 }
 // GetNetworkLinkSpeedInBytes gets the networkLinkSpeedInBytes property value. The network link speed in bytes
-func (m *TeleconferenceDeviceMediaQuality) GetNetworkLinkSpeedInBytes()(*int64) {
+func (m *TeleconferenceDeviceMediaQuality) GetNetworkLinkSpeedInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -430,7 +430,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetNetworkLinkSpeedInBytes()(*int64) 
     }
 }
 // GetOutboundPackets gets the outboundPackets property value. The total number of the outbound packets.
-func (m *TeleconferenceDeviceMediaQuality) GetOutboundPackets()(*int64) {
+func (m *TeleconferenceDeviceMediaQuality) GetOutboundPackets()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -501,7 +501,7 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i04eb5309aeaafadd283
         }
     }
     {
-        err := writer.WriteInt64Value("inboundPackets", m.GetInboundPackets())
+        err := writer.WriteInt32Value("inboundPackets", m.GetInboundPackets())
         if err != nil {
             return err
         }
@@ -561,13 +561,13 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i04eb5309aeaafadd283
         }
     }
     {
-        err := writer.WriteInt64Value("networkLinkSpeedInBytes", m.GetNetworkLinkSpeedInBytes())
+        err := writer.WriteInt32Value("networkLinkSpeedInBytes", m.GetNetworkLinkSpeedInBytes())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("outboundPackets", m.GetOutboundPackets())
+        err := writer.WriteInt32Value("outboundPackets", m.GetOutboundPackets())
         if err != nil {
             return err
         }
@@ -641,7 +641,7 @@ func (m *TeleconferenceDeviceMediaQuality) SetChannelIndex(value *int32)() {
     }
 }
 // SetInboundPackets sets the inboundPackets property value. The total number of the inbound packets.
-func (m *TeleconferenceDeviceMediaQuality) SetInboundPackets(value *int64)() {
+func (m *TeleconferenceDeviceMediaQuality) SetInboundPackets(value *int32)() {
     if m != nil {
         m.inboundPackets = value
     }
@@ -701,13 +701,13 @@ func (m *TeleconferenceDeviceMediaQuality) SetMediaDuration(value *i04eb5309aeaa
     }
 }
 // SetNetworkLinkSpeedInBytes sets the networkLinkSpeedInBytes property value. The network link speed in bytes
-func (m *TeleconferenceDeviceMediaQuality) SetNetworkLinkSpeedInBytes(value *int64)() {
+func (m *TeleconferenceDeviceMediaQuality) SetNetworkLinkSpeedInBytes(value *int32)() {
     if m != nil {
         m.networkLinkSpeedInBytes = value
     }
 }
 // SetOutboundPackets sets the outboundPackets property value. The total number of the outbound packets.
-func (m *TeleconferenceDeviceMediaQuality) SetOutboundPackets(value *int64)() {
+func (m *TeleconferenceDeviceMediaQuality) SetOutboundPackets(value *int32)() {
     if m != nil {
         m.outboundPackets = value
     }

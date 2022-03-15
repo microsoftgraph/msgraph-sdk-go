@@ -14,7 +14,7 @@ type MediaStream struct {
     // Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
     averageAudioNetworkJitter *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Average estimated bandwidth available between two endpoints in bits per second.
-    averageBandwidthEstimate *int64;
+    averageBandwidthEstimate *int32;
     // Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
     averageJitter *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Average packet loss rate for stream.
@@ -48,7 +48,7 @@ type MediaStream struct {
     // Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
     maxRoundTripTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Packet count for the stream.
-    packetUtilization *int64;
+    packetUtilization *int32;
     // Packet loss rate after FEC has been applied aggregated across all video streams and codecs.
     postForwardErrorCorrectionPacketLossRate *float32;
     // UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -96,7 +96,7 @@ func (m *MediaStream) GetAverageAudioNetworkJitter()(*i04eb5309aeaafadd28374d79c
     }
 }
 // GetAverageBandwidthEstimate gets the averageBandwidthEstimate property value. Average estimated bandwidth available between two endpoints in bits per second.
-func (m *MediaStream) GetAverageBandwidthEstimate()(*int64) {
+func (m *MediaStream) GetAverageBandwidthEstimate()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -199,7 +199,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["averageBandwidthEstimate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -369,7 +369,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["packetUtilization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -487,7 +487,7 @@ func (m *MediaStream) GetMaxRoundTripTime()(*i04eb5309aeaafadd28374d79c8471df9b2
     }
 }
 // GetPacketUtilization gets the packetUtilization property value. Packet count for the stream.
-func (m *MediaStream) GetPacketUtilization()(*int64) {
+func (m *MediaStream) GetPacketUtilization()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -552,7 +552,7 @@ func (m *MediaStream) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err := writer.WriteInt64Value("averageBandwidthEstimate", m.GetAverageBandwidthEstimate())
+        err := writer.WriteInt32Value("averageBandwidthEstimate", m.GetAverageBandwidthEstimate())
         if err != nil {
             return err
         }
@@ -654,7 +654,7 @@ func (m *MediaStream) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err := writer.WriteInt64Value("packetUtilization", m.GetPacketUtilization())
+        err := writer.WriteInt32Value("packetUtilization", m.GetPacketUtilization())
         if err != nil {
             return err
         }
@@ -717,7 +717,7 @@ func (m *MediaStream) SetAverageAudioNetworkJitter(value *i04eb5309aeaafadd28374
     }
 }
 // SetAverageBandwidthEstimate sets the averageBandwidthEstimate property value. Average estimated bandwidth available between two endpoints in bits per second.
-func (m *MediaStream) SetAverageBandwidthEstimate(value *int64)() {
+func (m *MediaStream) SetAverageBandwidthEstimate(value *int32)() {
     if m != nil {
         m.averageBandwidthEstimate = value
     }
@@ -819,7 +819,7 @@ func (m *MediaStream) SetMaxRoundTripTime(value *i04eb5309aeaafadd28374d79c8471d
     }
 }
 // SetPacketUtilization sets the packetUtilization property value. Packet count for the stream.
-func (m *MediaStream) SetPacketUtilization(value *int64)() {
+func (m *MediaStream) SetPacketUtilization(value *int32)() {
     if m != nil {
         m.packetUtilization = value
     }

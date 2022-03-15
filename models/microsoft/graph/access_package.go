@@ -8,6 +8,8 @@ import (
 // AccessPackage provides operations to manage the identityGovernance singleton.
 type AccessPackage struct {
     Entity
+    // 
+    assignmentPolicies []AccessPackageAssignmentPolicyable;
     // Read-only. Nullable.
     catalog AccessPackageCatalogable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -31,6 +33,14 @@ func NewAccessPackage()(*AccessPackage) {
 // CreateAccessPackageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAccessPackageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
     return NewAccessPackage(), nil
+}
+// GetAssignmentPolicies gets the assignmentPolicies property value. 
+func (m *AccessPackage) GetAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.assignmentPolicies
+    }
 }
 // GetCatalog gets the catalog property value. Read-only. Nullable.
 func (m *AccessPackage) GetCatalog()(AccessPackageCatalogable) {
@@ -67,6 +77,20 @@ func (m *AccessPackage) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["assignmentPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageAssignmentPolicyable, len(val))
+            for i, v := range val {
+                res[i] = v.(AccessPackageAssignmentPolicyable)
+            }
+            m.SetAssignmentPolicies(res)
+        }
+        return nil
+    }
     res["catalog"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageCatalogFromDiscriminatorValue)
         if err != nil {
@@ -154,6 +178,16 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if err != nil {
         return err
     }
+    if m.GetAssignmentPolicies() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignmentPolicies()))
+        for i, v := range m.GetAssignmentPolicies() {
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("assignmentPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("catalog", m.GetCatalog())
         if err != nil {
@@ -191,6 +225,12 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     return nil
+}
+// SetAssignmentPolicies sets the assignmentPolicies property value. 
+func (m *AccessPackage) SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
+    if m != nil {
+        m.assignmentPolicies = value
+    }
 }
 // SetCatalog sets the catalog property value. Read-only. Nullable.
 func (m *AccessPackage) SetCatalog(value AccessPackageCatalogable)() {

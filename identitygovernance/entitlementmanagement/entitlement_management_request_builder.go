@@ -8,8 +8,10 @@ import (
     i458b5d51a7c8ed196efc57bee2af7eeeea44a7093ec6fe9b40b0d87560256cca "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/accesspackages"
     i4a6e5bbedb985fd4e83bec609cf8d21a776d26a1c6807eac6ae0d88110984ab9 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentapprovals"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i6676dbd3ebb41db58dd801dbe33621dbe43cb8d0142648650dee5f3cf366ddd0 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentpolicies"
     i890fb4653f4dff2b9ab5a72705a40947b79d9bb64793d05773197622a996fc61 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations"
     i8d2bfa033b27ef0ce19de47e723f8c3475251f8917d2cbf768fc4e424505f65e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentrequests"
+    i0b0fdc1abe3e98caf17dadc8636597ba88c5644fc68edc06b6f9a0aeb66660bc "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentpolicies/item"
     i3a731cbed9792cd58eb16385c435f4b1af4fafbdc6a965b8534ab7ff7df19e39 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item"
     i558fcddcc0d01116d05fce610754153bd32852762580e628e25c34b7d8fffa4a "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignments/item"
     i76acc551f9c3cb51943981936cb0b2aa4089fd504de3bf817176dbbe448d3fb7 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentrequests/item"
@@ -93,6 +95,20 @@ func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*i98
         urlTplParams["accessPackage_id"] = id
     }
     return i98d02a4533e64ff168c5023553f526cbe65a72cacee2308e1a90cb06055c2a93.NewAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *EntitlementManagementRequestBuilder) AssignmentPolicies()(*i6676dbd3ebb41db58dd801dbe33621dbe43cb8d0142648650dee5f3cf366ddd0.AssignmentPoliciesRequestBuilder) {
+    return i6676dbd3ebb41db58dd801dbe33621dbe43cb8d0142648650dee5f3cf366ddd0.NewAssignmentPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignmentPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.assignmentPolicies.item collection
+func (m *EntitlementManagementRequestBuilder) AssignmentPoliciesById(id string)(*i0b0fdc1abe3e98caf17dadc8636597ba88c5644fc68edc06b6f9a0aeb66660bc.AccessPackageAssignmentPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessPackageAssignmentPolicy_id"] = id
+    }
+    return i0b0fdc1abe3e98caf17dadc8636597ba88c5644fc68edc06b6f9a0aeb66660bc.NewAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *EntitlementManagementRequestBuilder) AssignmentRequests()(*i8d2bfa033b27ef0ce19de47e723f8c3475251f8917d2cbf768fc4e424505f65e.AssignmentRequestsRequestBuilder) {
     return i8d2bfa033b27ef0ce19de47e723f8c3475251f8917d2cbf768fc4e424505f65e.NewAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

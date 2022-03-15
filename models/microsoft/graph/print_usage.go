@@ -8,11 +8,11 @@ import (
 type PrintUsage struct {
     Entity
     // 
-    completedBlackAndWhiteJobCount *int64;
+    completedBlackAndWhiteJobCount *int32;
     // 
-    completedColorJobCount *int64;
+    completedColorJobCount *int32;
     // 
-    incompleteJobCount *int64;
+    incompleteJobCount *int32;
     // 
     usageDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
@@ -28,7 +28,7 @@ func CreatePrintUsageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c
     return NewPrintUsage(), nil
 }
 // GetCompletedBlackAndWhiteJobCount gets the completedBlackAndWhiteJobCount property value. 
-func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
+func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -36,7 +36,7 @@ func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
     }
 }
 // GetCompletedColorJobCount gets the completedColorJobCount property value. 
-func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
+func (m *PrintUsage) GetCompletedColorJobCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +47,7 @@ func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
 func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["completedBlackAndWhiteJobCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -57,7 +57,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["completedColorJobCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -67,7 +67,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["incompleteJobCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -89,7 +89,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
     return res
 }
 // GetIncompleteJobCount gets the incompleteJobCount property value. 
-func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
+func (m *PrintUsage) GetIncompleteJobCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -114,19 +114,19 @@ func (m *PrintUsage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         return err
     }
     {
-        err = writer.WriteInt64Value("completedBlackAndWhiteJobCount", m.GetCompletedBlackAndWhiteJobCount())
+        err = writer.WriteInt32Value("completedBlackAndWhiteJobCount", m.GetCompletedBlackAndWhiteJobCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("completedColorJobCount", m.GetCompletedColorJobCount())
+        err = writer.WriteInt32Value("completedColorJobCount", m.GetCompletedColorJobCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("incompleteJobCount", m.GetIncompleteJobCount())
+        err = writer.WriteInt32Value("incompleteJobCount", m.GetIncompleteJobCount())
         if err != nil {
             return err
         }
@@ -140,19 +140,19 @@ func (m *PrintUsage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     return nil
 }
 // SetCompletedBlackAndWhiteJobCount sets the completedBlackAndWhiteJobCount property value. 
-func (m *PrintUsage) SetCompletedBlackAndWhiteJobCount(value *int64)() {
+func (m *PrintUsage) SetCompletedBlackAndWhiteJobCount(value *int32)() {
     if m != nil {
         m.completedBlackAndWhiteJobCount = value
     }
 }
 // SetCompletedColorJobCount sets the completedColorJobCount property value. 
-func (m *PrintUsage) SetCompletedColorJobCount(value *int64)() {
+func (m *PrintUsage) SetCompletedColorJobCount(value *int32)() {
     if m != nil {
         m.completedColorJobCount = value
     }
 }
 // SetIncompleteJobCount sets the incompleteJobCount property value. 
-func (m *PrintUsage) SetIncompleteJobCount(value *int64)() {
+func (m *PrintUsage) SetIncompleteJobCount(value *int32)() {
     if m != nil {
         m.incompleteJobCount = value
     }

@@ -37,7 +37,7 @@ type AgreementFileLocalizationItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AgreementFileLocalizationItemRequestBuilderGetQueryParameters pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// AgreementFileLocalizationItemRequestBuilderGetQueryParameters pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 type AgreementFileLocalizationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -91,7 +91,7 @@ func (m *AgreementFileLocalizationItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// CreateGetRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 func (m *AgreementFileLocalizationItemRequestBuilder) CreateGetRequestInformation(options *AgreementFileLocalizationItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,7 +145,7 @@ func (m *AgreementFileLocalizationItemRequestBuilder) Delete(options *AgreementF
     }
     return nil
 }
-// Get pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// Get pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 func (m *AgreementFileLocalizationItemRequestBuilder) Get(options *AgreementFileLocalizationItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalizationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

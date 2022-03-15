@@ -28,7 +28,7 @@ type CallRecord struct {
     // Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
     type_escaped *CallType;
     // Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
-    version *int64;
+    version *int32;
 }
 // NewCallRecord instantiates a new callRecord and sets the default values.
 func NewCallRecord()(*CallRecord) {
@@ -155,7 +155,7 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -231,7 +231,7 @@ func (m *CallRecord) GetType()(*CallType) {
     }
 }
 // GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
-func (m *CallRecord) GetVersion()(*int64) {
+func (m *CallRecord) GetVersion()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -311,7 +311,7 @@ func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteInt64Value("version", m.GetVersion())
+        err = writer.WriteInt32Value("version", m.GetVersion())
         if err != nil {
             return err
         }
@@ -373,7 +373,7 @@ func (m *CallRecord) SetType(value *CallType)() {
     }
 }
 // SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
-func (m *CallRecord) SetVersion(value *int64)() {
+func (m *CallRecord) SetVersion(value *int32)() {
     if m != nil {
         m.version = value
     }

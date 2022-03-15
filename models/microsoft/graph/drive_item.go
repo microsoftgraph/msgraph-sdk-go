@@ -56,7 +56,7 @@ type DriveItem struct {
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
     sharepointIds SharepointIdsable;
     // Size of the item in bytes. Read-only.
-    size *int64;
+    size *int32;
     // If the current item is also available as a special folder, this facet is returned. Read-only.
     specialFolder SpecialFolderable;
     // The set of subscriptions on the item. Only supported on the root of a drive.
@@ -391,7 +391,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -621,7 +621,7 @@ func (m *DriveItem) GetSharepointIds()(SharepointIdsable) {
     }
 }
 // GetSize gets the size property value. Size of the item in bytes. Read-only.
-func (m *DriveItem) GetSize()(*int64) {
+func (m *DriveItem) GetSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -846,7 +846,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     {
-        err = writer.WriteInt64Value("size", m.GetSize())
+        err = writer.WriteInt32Value("size", m.GetSize())
         if err != nil {
             return err
         }
@@ -1052,7 +1052,7 @@ func (m *DriveItem) SetSharepointIds(value SharepointIdsable)() {
     }
 }
 // SetSize sets the size property value. Size of the item in bytes. Read-only.
-func (m *DriveItem) SetSize(value *int64)() {
+func (m *DriveItem) SetSize(value *int32)() {
     if m != nil {
         m.size = value
     }

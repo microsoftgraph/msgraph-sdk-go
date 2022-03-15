@@ -19,7 +19,7 @@ type CallRecordable interface {
     GetSessions()([]Sessionable)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetType()(*CallType)
-    GetVersion()(*int64)
+    GetVersion()(*int32)
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetJoinWebUrl(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -29,5 +29,5 @@ type CallRecordable interface {
     SetSessions(value []Sessionable)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetType(value *CallType)()
-    SetVersion(value *int64)()
+    SetVersion(value *int32)()
 }

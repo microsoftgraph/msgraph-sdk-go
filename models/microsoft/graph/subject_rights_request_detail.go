@@ -9,19 +9,19 @@ type SubjectRightsRequestDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Count of items that are excluded from the request.
-    excludedItemCount *int64;
+    excludedItemCount *int32;
     // Count of items per insight.
     insightCounts []KeyValuePairable;
     // Count of items found.
-    itemCount *int64;
+    itemCount *int32;
     // Count of item that need review.
-    itemNeedReview *int64;
+    itemNeedReview *int32;
     // Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
     productItemCounts []KeyValuePairable;
     // Count of items signed off by the administrator.
-    signedOffItemCount *int64;
+    signedOffItemCount *int32;
     // Total item size in bytes.
-    totalItemSize *int64;
+    totalItemSize *int32;
 }
 // NewSubjectRightsRequestDetail instantiates a new subjectRightsRequestDetail and sets the default values.
 func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {
@@ -43,7 +43,7 @@ func (m *SubjectRightsRequestDetail) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetExcludedItemCount gets the excludedItemCount property value. Count of items that are excluded from the request.
-func (m *SubjectRightsRequestDetail) GetExcludedItemCount()(*int64) {
+func (m *SubjectRightsRequestDetail) GetExcludedItemCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -54,7 +54,7 @@ func (m *SubjectRightsRequestDetail) GetExcludedItemCount()(*int64) {
 func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["excludedItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -78,7 +78,7 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["itemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -88,7 +88,7 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["itemNeedReview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -112,7 +112,7 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["signedOffItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -122,7 +122,7 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["totalItemSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -142,7 +142,7 @@ func (m *SubjectRightsRequestDetail) GetInsightCounts()([]KeyValuePairable) {
     }
 }
 // GetItemCount gets the itemCount property value. Count of items found.
-func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
+func (m *SubjectRightsRequestDetail) GetItemCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +150,7 @@ func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
     }
 }
 // GetItemNeedReview gets the itemNeedReview property value. Count of item that need review.
-func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
+func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -166,7 +166,7 @@ func (m *SubjectRightsRequestDetail) GetProductItemCounts()([]KeyValuePairable) 
     }
 }
 // GetSignedOffItemCount gets the signedOffItemCount property value. Count of items signed off by the administrator.
-func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int64) {
+func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -174,7 +174,7 @@ func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int64) {
     }
 }
 // GetTotalItemSize gets the totalItemSize property value. Total item size in bytes.
-func (m *SubjectRightsRequestDetail) GetTotalItemSize()(*int64) {
+func (m *SubjectRightsRequestDetail) GetTotalItemSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -187,7 +187,7 @@ func (m *SubjectRightsRequestDetail) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("excludedItemCount", m.GetExcludedItemCount())
+        err := writer.WriteInt32Value("excludedItemCount", m.GetExcludedItemCount())
         if err != nil {
             return err
         }
@@ -203,13 +203,13 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     {
-        err := writer.WriteInt64Value("itemCount", m.GetItemCount())
+        err := writer.WriteInt32Value("itemCount", m.GetItemCount())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("itemNeedReview", m.GetItemNeedReview())
+        err := writer.WriteInt32Value("itemNeedReview", m.GetItemNeedReview())
         if err != nil {
             return err
         }
@@ -225,13 +225,13 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     {
-        err := writer.WriteInt64Value("signedOffItemCount", m.GetSignedOffItemCount())
+        err := writer.WriteInt32Value("signedOffItemCount", m.GetSignedOffItemCount())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("totalItemSize", m.GetTotalItemSize())
+        err := writer.WriteInt32Value("totalItemSize", m.GetTotalItemSize())
         if err != nil {
             return err
         }
@@ -251,7 +251,7 @@ func (m *SubjectRightsRequestDetail) SetAdditionalData(value map[string]interfac
     }
 }
 // SetExcludedItemCount sets the excludedItemCount property value. Count of items that are excluded from the request.
-func (m *SubjectRightsRequestDetail) SetExcludedItemCount(value *int64)() {
+func (m *SubjectRightsRequestDetail) SetExcludedItemCount(value *int32)() {
     if m != nil {
         m.excludedItemCount = value
     }
@@ -263,13 +263,13 @@ func (m *SubjectRightsRequestDetail) SetInsightCounts(value []KeyValuePairable)(
     }
 }
 // SetItemCount sets the itemCount property value. Count of items found.
-func (m *SubjectRightsRequestDetail) SetItemCount(value *int64)() {
+func (m *SubjectRightsRequestDetail) SetItemCount(value *int32)() {
     if m != nil {
         m.itemCount = value
     }
 }
 // SetItemNeedReview sets the itemNeedReview property value. Count of item that need review.
-func (m *SubjectRightsRequestDetail) SetItemNeedReview(value *int64)() {
+func (m *SubjectRightsRequestDetail) SetItemNeedReview(value *int32)() {
     if m != nil {
         m.itemNeedReview = value
     }
@@ -281,13 +281,13 @@ func (m *SubjectRightsRequestDetail) SetProductItemCounts(value []KeyValuePairab
     }
 }
 // SetSignedOffItemCount sets the signedOffItemCount property value. Count of items signed off by the administrator.
-func (m *SubjectRightsRequestDetail) SetSignedOffItemCount(value *int64)() {
+func (m *SubjectRightsRequestDetail) SetSignedOffItemCount(value *int32)() {
     if m != nil {
         m.signedOffItemCount = value
     }
 }
 // SetTotalItemSize sets the totalItemSize property value. Total item size in bytes.
-func (m *SubjectRightsRequestDetail) SetTotalItemSize(value *int64)() {
+func (m *SubjectRightsRequestDetail) SetTotalItemSize(value *int32)() {
     if m != nil {
         m.totalItemSize = value
     }

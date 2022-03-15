@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealthAttestationState provides operations to manage the collection of drive entities.
+// DeviceHealthAttestationState provides operations to manage the deviceManagement singleton.
 type DeviceHealthAttestationState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -56,9 +56,9 @@ type DeviceHealthAttestationState struct {
     // Informational attribute that identifies the HASH algorithm that was used by TPM
     pcrHashAlgorithm *string;
     // The number of times a PC device has hibernated or resumed
-    resetCount *int64;
+    resetCount *int32;
     // The number of times a PC device has rebooted
-    restartCount *int64;
+    restartCount *int32;
     // Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
     safeMode *string;
     // When Secure Boot is enabled, the core components must have the correct cryptographic signatures
@@ -447,7 +447,7 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["resetCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -457,7 +457,7 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["restartCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -603,7 +603,7 @@ func (m *DeviceHealthAttestationState) GetPcrHashAlgorithm()(*string) {
     }
 }
 // GetResetCount gets the resetCount property value. The number of times a PC device has hibernated or resumed
-func (m *DeviceHealthAttestationState) GetResetCount()(*int64) {
+func (m *DeviceHealthAttestationState) GetResetCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -611,7 +611,7 @@ func (m *DeviceHealthAttestationState) GetResetCount()(*int64) {
     }
 }
 // GetRestartCount gets the restartCount property value. The number of times a PC device has rebooted
-func (m *DeviceHealthAttestationState) GetRestartCount()(*int64) {
+func (m *DeviceHealthAttestationState) GetRestartCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -818,13 +818,13 @@ func (m *DeviceHealthAttestationState) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     {
-        err := writer.WriteInt64Value("resetCount", m.GetResetCount())
+        err := writer.WriteInt32Value("resetCount", m.GetResetCount())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("restartCount", m.GetRestartCount())
+        err := writer.WriteInt32Value("restartCount", m.GetRestartCount())
         if err != nil {
             return err
         }
@@ -1024,13 +1024,13 @@ func (m *DeviceHealthAttestationState) SetPcrHashAlgorithm(value *string)() {
     }
 }
 // SetResetCount sets the resetCount property value. The number of times a PC device has hibernated or resumed
-func (m *DeviceHealthAttestationState) SetResetCount(value *int64)() {
+func (m *DeviceHealthAttestationState) SetResetCount(value *int32)() {
     if m != nil {
         m.resetCount = value
     }
 }
 // SetRestartCount sets the restartCount property value. The number of times a PC device has rebooted
-func (m *DeviceHealthAttestationState) SetRestartCount(value *int64)() {
+func (m *DeviceHealthAttestationState) SetRestartCount(value *int32)() {
     if m != nil {
         m.restartCount = value
     }

@@ -9,7 +9,7 @@ type ToneInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // An incremental identifier used for ordering DTMF events.
-    sequenceId *int64;
+    sequenceId *int32;
     // Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
     tone *Tone;
 }
@@ -36,7 +36,7 @@ func (m *ToneInfo) GetAdditionalData()(map[string]interface{}) {
 func (m *ToneInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["sequenceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -58,7 +58,7 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
     return res
 }
 // GetSequenceId gets the sequenceId property value. An incremental identifier used for ordering DTMF events.
-func (m *ToneInfo) GetSequenceId()(*int64) {
+func (m *ToneInfo) GetSequenceId()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -79,7 +79,7 @@ func (m *ToneInfo) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ToneInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("sequenceId", m.GetSequenceId())
+        err := writer.WriteInt32Value("sequenceId", m.GetSequenceId())
         if err != nil {
             return err
         }
@@ -106,7 +106,7 @@ func (m *ToneInfo) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetSequenceId sets the sequenceId property value. An incremental identifier used for ordering DTMF events.
-func (m *ToneInfo) SetSequenceId(value *int64)() {
+func (m *ToneInfo) SetSequenceId(value *int32)() {
     if m != nil {
         m.sequenceId = value
     }
