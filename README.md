@@ -110,7 +110,7 @@ if err != nil {
 }
 
 // Use PageIterator to iterate through all users
-pageIterator, err := msgraphcore.NewPageIterator(result, adapter.GraphRequestAdapterBase, graph.CreateUserCollectionResponseFromDiscriminatorValue)
+pageIterator, err := msgraphcore.NewPageIterator(result, adapter, graph.CreateUserCollectionResponseFromDiscriminatorValue)
 
 err = pageIterator.Iterate(func(pageItem interface{}) bool {
     user := pageItem.(graph.User)
