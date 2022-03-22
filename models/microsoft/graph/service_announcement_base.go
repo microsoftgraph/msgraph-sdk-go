@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceAnnouncementBase provides operations to manage the admin singleton.
+// ServiceAnnouncementBase 
 type ServiceAnnouncementBase struct {
     Entity
     // Additional details about service event. This property doesn't support filters.
@@ -128,9 +128,6 @@ func (m *ServiceAnnouncementBase) GetTitle()(*string) {
     } else {
         return m.title
     }
-}
-func (m *ServiceAnnouncementBase) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ServiceAnnouncementBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

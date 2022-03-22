@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContentType provides operations to manage the drive singleton.
+// ContentType 
 type ContentType struct {
     Entity
     // List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
@@ -423,9 +423,6 @@ func (m *ContentType) GetSealed()(*bool) {
     } else {
         return m.sealed
     }
-}
-func (m *ContentType) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ContentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

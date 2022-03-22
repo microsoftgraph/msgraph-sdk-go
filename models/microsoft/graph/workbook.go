@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Workbook provides operations to manage the drive singleton.
+// Workbook 
 type Workbook struct {
     Entity
     // 
@@ -183,9 +183,6 @@ func (m *Workbook) GetWorksheets()([]WorkbookWorksheetable) {
     } else {
         return m.worksheets
     }
-}
-func (m *Workbook) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Workbook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

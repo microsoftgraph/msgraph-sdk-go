@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RubricQuality provides operations to manage the educationRoot singleton.
+// RubricQuality 
 type RubricQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -136,9 +136,6 @@ func (m *RubricQuality) GetWeight()(*float32) {
     } else {
         return m.weight
     }
-}
-func (m *RubricQuality) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RubricQuality) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

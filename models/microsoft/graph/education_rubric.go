@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationRubric provides operations to manage the educationRoot singleton.
+// EducationRubric 
 type EducationRubric struct {
     Entity
     // The user who created this resource.
@@ -212,9 +212,6 @@ func (m *EducationRubric) GetQualities()([]RubricQualityable) {
     } else {
         return m.qualities
     }
-}
-func (m *EducationRubric) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationRubric) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

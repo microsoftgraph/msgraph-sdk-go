@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExternalItemContent provides operations to manage the collection of externalConnection entities.
+// ExternalItemContent 
 type ExternalItemContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The type of content in the value property. Possible values are: text, html, unknownFutureValue.
+    // The type of content in the value property. Possible values are: text, html, unknownFutureValue. These are the content types that the indexer supports, and not the file extension types allowed.
     type_escaped *ExternalItemContentType;
     // The content for the externalItem. Required.
     value *string;
@@ -57,7 +57,7 @@ func (m *ExternalItemContent) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
-// GetType gets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue.
+// GetType gets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue. These are the content types that the indexer supports, and not the file extension types allowed.
 func (m *ExternalItemContent) GetType()(*ExternalItemContentType) {
     if m == nil {
         return nil
@@ -72,9 +72,6 @@ func (m *ExternalItemContent) GetValue()(*string) {
     } else {
         return m.value
     }
-}
-func (m *ExternalItemContent) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ExternalItemContent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -105,7 +102,7 @@ func (m *ExternalItemContent) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue.
+// SetType sets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue. These are the content types that the indexer supports, and not the file extension types allowed.
 func (m *ExternalItemContent) SetType(value *ExternalItemContentType)() {
     if m != nil {
         m.type_escaped = value

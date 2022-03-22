@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Agreement provides operations to manage the collection of agreement entities.
+// Agreement 
 type Agreement struct {
     Entity
     // Read-only. Information about acceptances of this agreement.
@@ -191,9 +191,6 @@ func (m *Agreement) GetUserReacceptRequiredFrequency()(*i04eb5309aeaafadd28374d7
     } else {
         return m.userReacceptRequiredFrequency
     }
-}
-func (m *Agreement) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Agreement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

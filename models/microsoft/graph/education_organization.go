@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationOrganization provides operations to manage the educationRoot singleton.
+// EducationOrganization 
 type EducationOrganization struct {
     Entity
     // Organization description.
@@ -103,9 +103,6 @@ func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
-}
-func (m *EducationOrganization) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

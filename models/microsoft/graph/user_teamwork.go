@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserTeamwork provides operations to manage the drive singleton.
+// UserTeamwork 
 type UserTeamwork struct {
     Entity
     // The apps installed in the personal scope of this user.
@@ -47,9 +47,6 @@ func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallationable) {
     } else {
         return m.installedApps
     }
-}
-func (m *UserTeamwork) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserTeamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

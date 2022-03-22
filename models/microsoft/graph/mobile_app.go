@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileApp provides operations to manage the deviceAppManagement singleton.
+// MobileApp 
 type MobileApp struct {
     Entity
     // The list of group assignments for this mobile app.
@@ -332,9 +332,6 @@ func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
     } else {
         return m.publishingState
     }
-}
-func (m *MobileApp) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

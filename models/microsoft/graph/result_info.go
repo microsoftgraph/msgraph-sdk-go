@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResultInfo provides operations to manage the cloudCommunications singleton.
+// ResultInfo 
 type ResultInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -92,9 +92,6 @@ func (m *ResultInfo) GetSubcode()(*int32) {
     } else {
         return m.subcode
     }
-}
-func (m *ResultInfo) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ResultInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

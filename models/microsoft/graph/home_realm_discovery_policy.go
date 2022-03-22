@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// HomeRealmDiscoveryPolicy provides operations to manage the collection of application entities.
+// HomeRealmDiscoveryPolicy 
 type HomeRealmDiscoveryPolicy struct {
     StsPolicy
 }
@@ -23,9 +23,6 @@ func CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue(parseNode i04eb5309aea
 func (m *HomeRealmDiscoveryPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.StsPolicy.GetFieldDeserializers()
     return res
-}
-func (m *HomeRealmDiscoveryPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *HomeRealmDiscoveryPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

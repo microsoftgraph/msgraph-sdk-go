@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedAppPolicy provides operations to manage the deviceAppManagement singleton.
+// ManagedAppPolicy 
 type ManagedAppPolicy struct {
     Entity
     // The date and time the policy was created.
@@ -124,9 +124,6 @@ func (m *ManagedAppPolicy) GetVersion()(*string) {
     } else {
         return m.version
     }
-}
-func (m *ManagedAppPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAppPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

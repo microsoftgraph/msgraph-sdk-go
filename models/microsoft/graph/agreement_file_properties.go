@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AgreementFileProperties provides operations to manage the collection of agreement entities.
+// AgreementFileProperties 
 type AgreementFileProperties struct {
     Entity
     // The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -164,9 +164,6 @@ func (m *AgreementFileProperties) GetLanguage()(*string) {
     } else {
         return m.language
     }
-}
-func (m *AgreementFileProperties) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AgreementFileProperties) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DirectoryAudit provides operations to manage the auditLogRoot singleton.
+// DirectoryAudit 
 type DirectoryAudit struct {
     Entity
     // Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -252,9 +252,6 @@ func (m *DirectoryAudit) GetTargetResources()([]TargetResourceable) {
     } else {
         return m.targetResources
     }
-}
-func (m *DirectoryAudit) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DirectoryAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SubscribedSku provides operations to manage the collection of subscribedSku entities.
+// SubscribedSku 
 type SubscribedSku struct {
     Entity
     // For example, 'User' or 'Company'.
@@ -167,9 +167,6 @@ func (m *SubscribedSku) GetSkuPartNumber()(*string) {
     } else {
         return m.skuPartNumber
     }
-}
-func (m *SubscribedSku) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SubscribedSku) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

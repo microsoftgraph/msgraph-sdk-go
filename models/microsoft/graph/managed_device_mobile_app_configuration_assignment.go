@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDeviceMobileAppConfigurationAssignment provides operations to manage the deviceAppManagement singleton.
+// ManagedDeviceMobileAppConfigurationAssignment 
 type ManagedDeviceMobileAppConfigurationAssignment struct {
     Entity
     // Assignment target that the T&C policy is assigned to.
@@ -43,9 +43,6 @@ func (m *ManagedDeviceMobileAppConfigurationAssignment) GetTarget()(DeviceAndApp
     } else {
         return m.target
     }
-}
-func (m *ManagedDeviceMobileAppConfigurationAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

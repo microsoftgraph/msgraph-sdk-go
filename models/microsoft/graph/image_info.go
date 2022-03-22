@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ImageInfo provides operations to manage the drive singleton.
+// ImageInfo 
 type ImageInfo struct {
     // Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
     addImageQuery *bool;
@@ -112,9 +112,6 @@ func (m *ImageInfo) GetIconUrl()(*string) {
     } else {
         return m.iconUrl
     }
-}
-func (m *ImageInfo) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ImageInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

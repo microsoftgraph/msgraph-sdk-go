@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartAxisFormat provides operations to manage the drive singleton.
+// WorkbookChartAxisFormat 
 type WorkbookChartAxisFormat struct {
     Entity
     // Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
@@ -63,9 +63,6 @@ func (m *WorkbookChartAxisFormat) GetLine()(WorkbookChartLineFormatable) {
     } else {
         return m.line
     }
-}
-func (m *WorkbookChartAxisFormat) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartAxisFormat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

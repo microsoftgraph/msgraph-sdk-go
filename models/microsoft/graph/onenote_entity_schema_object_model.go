@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnenoteEntitySchemaObjectModel provides operations to manage the drive singleton.
+// OnenoteEntitySchemaObjectModel 
 type OnenoteEntitySchemaObjectModel struct {
     OnenoteEntityBaseModel
     // The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -44,9 +44,6 @@ func (m *OnenoteEntitySchemaObjectModel) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
-}
-func (m *OnenoteEntitySchemaObjectModel) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OnenoteEntitySchemaObjectModel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

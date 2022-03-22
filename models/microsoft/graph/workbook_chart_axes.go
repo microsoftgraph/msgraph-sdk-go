@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartAxes provides operations to manage the drive singleton.
+// WorkbookChartAxes 
 type WorkbookChartAxes struct {
     Entity
     // Represents the category axis in a chart. Read-only.
@@ -83,9 +83,6 @@ func (m *WorkbookChartAxes) GetValueAxis()(WorkbookChartAxisable) {
     } else {
         return m.valueAxis
     }
-}
-func (m *WorkbookChartAxes) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartAxes) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

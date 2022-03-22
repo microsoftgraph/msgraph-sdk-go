@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ArchivedPrintJob provides operations to call the getGroupArchivedPrintJobs method.
+// ArchivedPrintJob 
 type ArchivedPrintJob struct {
     // True if the job was acquired by a printer; false otherwise. Read-only.
     acquiredByPrinter *bool;
@@ -213,9 +213,6 @@ func (m *ArchivedPrintJob) GetProcessingState()(*PrintJobProcessingState) {
     } else {
         return m.processingState
     }
-}
-func (m *ArchivedPrintJob) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ArchivedPrintJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

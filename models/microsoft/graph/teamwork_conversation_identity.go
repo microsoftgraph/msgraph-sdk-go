@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkConversationIdentity provides operations to manage the collection of chat entities.
+// TeamworkConversationIdentity 
 type TeamworkConversationIdentity struct {
     Identity
     // Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
@@ -43,9 +43,6 @@ func (m *TeamworkConversationIdentity) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
-}
-func (m *TeamworkConversationIdentity) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkConversationIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

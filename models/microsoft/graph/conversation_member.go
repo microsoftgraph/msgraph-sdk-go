@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConversationMember provides operations to manage the collection of chat entities.
+// ConversationMember 
 type ConversationMember struct {
     Entity
     // The display name of the user.
@@ -88,9 +88,6 @@ func (m *ConversationMember) GetVisibleHistoryStartDateTime()(*i336074805fc85398
     } else {
         return m.visibleHistoryStartDateTime
     }
-}
-func (m *ConversationMember) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ConversationMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ShiftPreferences provides operations to manage the drive singleton.
+// ShiftPreferences 
 type ShiftPreferences struct {
     ChangeTrackedEntity
     // Availability of the user to be scheduled for work and its recurrence pattern.
@@ -47,9 +47,6 @@ func (m *ShiftPreferences) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
-}
-func (m *ShiftPreferences) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ShiftPreferences) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsHelloForBusinessAuthenticationMethod provides operations to manage the drive singleton.
+// WindowsHelloForBusinessAuthenticationMethod 
 type WindowsHelloForBusinessAuthenticationMethod struct {
     AuthenticationMethod
     // The date and time that this Windows Hello for Business key was registered.
@@ -104,9 +104,6 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetKeyStrength()(*Authenti
     } else {
         return m.keyStrength
     }
-}
-func (m *WindowsHelloForBusinessAuthenticationMethod) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsHelloForBusinessAuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationAssignmentResource provides operations to manage the educationRoot singleton.
+// EducationAssignmentResource 
 type EducationAssignmentResource struct {
     Entity
     // Indicates whether this resource should be copied to each student submission for modification and submission. Required
@@ -63,9 +63,6 @@ func (m *EducationAssignmentResource) GetResource()(EducationResourceable) {
     } else {
         return m.resource
     }
-}
-func (m *EducationAssignmentResource) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceExchangeAccessStateSummary provides operations to manage the deviceManagement singleton.
+// DeviceExchangeAccessStateSummary device Exchange Access State summary
 type DeviceExchangeAccessStateSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -132,9 +132,6 @@ func (m *DeviceExchangeAccessStateSummary) GetUnknownDeviceCount()(*int32) {
     } else {
         return m.unknownDeviceCount
     }
-}
-func (m *DeviceExchangeAccessStateSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceExchangeAccessStateSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

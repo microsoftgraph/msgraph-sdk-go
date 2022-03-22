@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OrgContact provides operations to manage the collection of orgContact entities.
+// OrgContact 
 type OrgContact struct {
     DirectoryObject
     // Postal addresses for this organizational contact. For now a contact can only have one physical address.
@@ -412,9 +412,6 @@ func (m *OrgContact) GetTransitiveMemberOf()([]DirectoryObjectable) {
     } else {
         return m.transitiveMemberOf
     }
-}
-func (m *OrgContact) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

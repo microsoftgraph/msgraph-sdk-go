@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AudioRoutingGroupCollectionResponse provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
+// AudioRoutingGroupCollectionResponse 
 type AudioRoutingGroupCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *AudioRoutingGroupCollectionResponse) GetValue()([]AudioRoutingGroupable
     } else {
         return m.value
     }
-}
-func (m *AudioRoutingGroupCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AudioRoutingGroupCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

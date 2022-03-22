@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceCompliancePolicyDeviceStateSummary provides operations to manage the deviceManagement singleton.
+// DeviceCompliancePolicyDeviceStateSummary 
 type DeviceCompliancePolicyDeviceStateSummary struct {
     Entity
     // Number of compliant devices
@@ -203,9 +203,6 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetUnknownDeviceCount()(*int3
     } else {
         return m.unknownDeviceCount
     }
-}
-func (m *DeviceCompliancePolicyDeviceStateSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicyDeviceStateSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

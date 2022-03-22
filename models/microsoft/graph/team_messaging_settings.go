@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamMessagingSettings provides operations to manage the drive singleton.
+// TeamMessagingSettings 
 type TeamMessagingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -132,9 +132,6 @@ func (m *TeamMessagingSettings) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
-}
-func (m *TeamMessagingSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamMessagingSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

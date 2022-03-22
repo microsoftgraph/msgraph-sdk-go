@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RiskyUser provides operations to manage the identityProtectionRoot singleton.
+// RiskyUser 
 type RiskyUser struct {
     Entity
     // The activity related to user risk level change
@@ -208,9 +208,6 @@ func (m *RiskyUser) GetUserPrincipalName()(*string) {
     } else {
         return m.userPrincipalName
     }
-}
-func (m *RiskyUser) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RiskyUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

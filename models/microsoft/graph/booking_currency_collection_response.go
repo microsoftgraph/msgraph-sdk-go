@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingCurrencyCollectionResponse provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
+// BookingCurrencyCollectionResponse 
 type BookingCurrencyCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *BookingCurrencyCollectionResponse) GetValue()([]BookingCurrencyable) {
     } else {
         return m.value
     }
-}
-func (m *BookingCurrencyCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *BookingCurrencyCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

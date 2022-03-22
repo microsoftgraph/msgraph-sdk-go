@@ -111,6 +111,7 @@ import (
     if405c95e51d6685837bc60276ac44a0be46f00a5930cc59ce198c3a5119099a0 "github.com/microsoftgraph/msgraph-sdk-go/subscriptions/item"
     if697b88a41912c7fd65ee1e2a7160ff70a9f5fd5c48778b62d0d0ef4bc46fdb9 "github.com/microsoftgraph/msgraph-sdk-go/groups/item"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    ia243ce3d1d3e11007cd13019fb945309b7c6b87d47ebf8240be333dba0876aef "github.com/microsoft/kiota/serialization/go/text"
     id1ae20a9e00c372d14381acc2299aa946a25894316974139983388e4b11bb84b "github.com/microsoft/kiota/serialization/go/json"
 )
 
@@ -273,7 +274,9 @@ func NewGraphServiceClient(requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c
     m.urlTemplate = "{+baseurl}";
     m.requestAdapter = requestAdapter;
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RegisterDefaultSerializer(func() i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriterFactory { return id1ae20a9e00c372d14381acc2299aa946a25894316974139983388e4b11bb84b.NewJsonSerializationWriterFactory() })
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RegisterDefaultSerializer(func() i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriterFactory { return ia243ce3d1d3e11007cd13019fb945309b7c6b87d47ebf8240be333dba0876aef.NewTextSerializationWriterFactory() })
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RegisterDefaultDeserializer(func() i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNodeFactory { return id1ae20a9e00c372d14381acc2299aa946a25894316974139983388e4b11bb84b.NewJsonParseNodeFactory() })
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RegisterDefaultDeserializer(func() i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNodeFactory { return ia243ce3d1d3e11007cd13019fb945309b7c6b87d47ebf8240be333dba0876aef.NewTextParseNodeFactory() })
     m.requestAdapter.SetBaseUrl("https://graph.microsoft.com/v1.0")
     return m
 }

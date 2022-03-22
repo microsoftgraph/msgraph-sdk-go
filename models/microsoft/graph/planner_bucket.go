@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerBucket provides operations to manage the drive singleton.
+// PlannerBucket 
 type PlannerBucket struct {
     Entity
     // Name of the bucket.
@@ -107,9 +107,6 @@ func (m *PlannerBucket) GetTasks()([]PlannerTaskable) {
     } else {
         return m.tasks
     }
-}
-func (m *PlannerBucket) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PlannerBucket) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

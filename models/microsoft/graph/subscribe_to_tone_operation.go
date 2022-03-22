@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SubscribeToToneOperation provides operations to call the subscribeToTone method.
+// SubscribeToToneOperation 
 type SubscribeToToneOperation struct {
     CommsOperation
 }
@@ -23,9 +23,6 @@ func CreateSubscribeToToneOperationFromDiscriminatorValue(parseNode i04eb5309aea
 func (m *SubscribeToToneOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     return res
-}
-func (m *SubscribeToToneOperation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SubscribeToToneOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

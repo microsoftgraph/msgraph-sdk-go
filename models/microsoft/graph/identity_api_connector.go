@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentityApiConnector provides operations to manage the identityContainer singleton.
+// IdentityApiConnector 
 type IdentityApiConnector struct {
     Entity
     // The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
@@ -83,9 +83,6 @@ func (m *IdentityApiConnector) GetTargetUrl()(*string) {
     } else {
         return m.targetUrl
     }
-}
-func (m *IdentityApiConnector) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *IdentityApiConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

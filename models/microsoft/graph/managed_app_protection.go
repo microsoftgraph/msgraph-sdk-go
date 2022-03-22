@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedAppProtection provides operations to manage the deviceAppManagement singleton.
+// ManagedAppProtection 
 type ManagedAppProtection struct {
     ManagedAppPolicy
     // Data storage locations where a user may store managed data.
@@ -567,9 +567,6 @@ func (m *ManagedAppProtection) GetSimplePinBlocked()(*bool) {
     } else {
         return m.simplePinBlocked
     }
-}
-func (m *ManagedAppProtection) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

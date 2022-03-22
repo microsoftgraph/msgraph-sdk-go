@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ODataError provides operations to manage the admin singleton.
+// ODataError 
 type ODataError struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ApiError
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -55,9 +55,6 @@ func (m *ODataError) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
-}
-func (m *ODataError) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ODataError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

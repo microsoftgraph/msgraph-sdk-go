@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Application provides operations to manage the collection of application entities.
+// Application 
 type Application struct {
     DirectoryObject
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
@@ -792,9 +792,6 @@ func (m *Application) GetWeb()(WebApplicationable) {
     } else {
         return m.web
     }
-}
-func (m *Application) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

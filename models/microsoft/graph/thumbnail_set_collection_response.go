@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ThumbnailSetCollectionResponse provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
+// ThumbnailSetCollectionResponse 
 type ThumbnailSetCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *ThumbnailSetCollectionResponse) GetValue()([]ThumbnailSetable) {
     } else {
         return m.value
     }
-}
-func (m *ThumbnailSetCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ThumbnailSetCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

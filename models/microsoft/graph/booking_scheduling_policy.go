@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingSchedulingPolicy provides operations to manage the solutionsRoot singleton.
+// BookingSchedulingPolicy this type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
 type BookingSchedulingPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -132,9 +132,6 @@ func (m *BookingSchedulingPolicy) GetTimeSlotInterval()(*i04eb5309aeaafadd28374d
     } else {
         return m.timeSlotInterval
     }
-}
-func (m *BookingSchedulingPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *BookingSchedulingPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

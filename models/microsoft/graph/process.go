@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Process provides operations to manage the security singleton.
+// Process 
 type Process struct {
     // User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
     accountName *string;
@@ -273,9 +273,6 @@ func (m *Process) GetProcessId()(*int32) {
     } else {
         return m.processId
     }
-}
-func (m *Process) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Process) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MailFolder provides operations to manage the drive singleton.
+// MailFolder 
 type MailFolder struct {
     Entity
     // The number of immediate child mailFolders in the current mailFolder.
@@ -263,9 +263,6 @@ func (m *MailFolder) GetUnreadItemCount()(*int32) {
     } else {
         return m.unreadItemCount
     }
-}
-func (m *MailFolder) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MailFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

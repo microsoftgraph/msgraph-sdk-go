@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceHealthIssuePost provides operations to manage the admin singleton.
+// ServiceHealthIssuePost 
 type ServiceHealthIssuePost struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -93,9 +93,6 @@ func (m *ServiceHealthIssuePost) GetPostType()(*PostType) {
     } else {
         return m.postType
     }
-}
-func (m *ServiceHealthIssuePost) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ServiceHealthIssuePost) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

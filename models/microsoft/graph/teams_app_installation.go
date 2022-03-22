@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamsAppInstallation provides operations to manage the collection of chat entities.
+// TeamsAppInstallation 
 type TeamsAppInstallation struct {
     Entity
     // The app that is installed.
@@ -63,9 +63,6 @@ func (m *TeamsAppInstallation) GetTeamsAppDefinition()(TeamsAppDefinitionable) {
     } else {
         return m.teamsAppDefinition
     }
-}
-func (m *TeamsAppInstallation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamsAppInstallation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnlineMeetingInfo provides operations to manage the drive singleton.
+// OnlineMeetingInfo 
 type OnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -160,9 +160,6 @@ func (m *OnlineMeetingInfo) GetTollNumber()(*string) {
     } else {
         return m.tollNumber
     }
-}
-func (m *OnlineMeetingInfo) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

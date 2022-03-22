@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedPermissionClassificationCollectionResponse provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
+// DelegatedPermissionClassificationCollectionResponse 
 type DelegatedPermissionClassificationCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *DelegatedPermissionClassificationCollectionResponse) GetValue()([]Deleg
     } else {
         return m.value
     }
-}
-func (m *DelegatedPermissionClassificationCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DelegatedPermissionClassificationCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

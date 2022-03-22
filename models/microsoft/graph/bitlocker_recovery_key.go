@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BitlockerRecoveryKey provides operations to manage the informationProtection singleton.
+// BitlockerRecoveryKey 
 type BitlockerRecoveryKey struct {
     Entity
     // The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
@@ -104,9 +104,6 @@ func (m *BitlockerRecoveryKey) GetVolumeType()(*VolumeType) {
     } else {
         return m.volumeType
     }
-}
-func (m *BitlockerRecoveryKey) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *BitlockerRecoveryKey) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

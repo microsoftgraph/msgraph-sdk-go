@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentityGovernance provides operations to manage the identityGovernance singleton.
+// IdentityGovernance 
 type IdentityGovernance struct {
     // 
     accessReviews AccessReviewSetable;
@@ -112,9 +112,6 @@ func (m *IdentityGovernance) GetTermsOfUse()(TermsOfUseContainerable) {
     } else {
         return m.termsOfUse
     }
-}
-func (m *IdentityGovernance) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *IdentityGovernance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

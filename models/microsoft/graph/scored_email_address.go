@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ScoredEmailAddress provides operations to manage the drive singleton.
+// ScoredEmailAddress 
 type ScoredEmailAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -112,9 +112,6 @@ func (m *ScoredEmailAddress) GetSelectionLikelihood()(*SelectionLikelihoodInfo) 
     } else {
         return m.selectionLikelihood
     }
-}
-func (m *ScoredEmailAddress) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ScoredEmailAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

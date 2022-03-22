@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SignInFrequencySessionControl provides operations to manage the identityContainer singleton.
+// SignInFrequencySessionControl 
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: days, hours.
@@ -63,9 +63,6 @@ func (m *SignInFrequencySessionControl) GetValue()(*int32) {
     } else {
         return m.value
     }
-}
-func (m *SignInFrequencySessionControl) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SignInFrequencySessionControl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

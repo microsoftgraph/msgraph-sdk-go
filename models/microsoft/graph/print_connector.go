@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintConnector provides operations to manage the print singleton.
+// PrintConnector 
 type PrintConnector struct {
     Entity
     // The connector's version.
@@ -144,9 +144,6 @@ func (m *PrintConnector) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad9
     } else {
         return m.registeredDateTime
     }
-}
-func (m *PrintConnector) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PrintConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ColumnDefinition provides operations to manage the drive singleton.
+// ColumnDefinition 
 type ColumnDefinition struct {
     Entity
     // This column stores boolean values.
@@ -59,6 +59,8 @@ type ColumnDefinition struct {
     required *bool;
     // The source column for the content type column.
     sourceColumn ColumnDefinitionable;
+    // ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
+    sourceContentType ContentTypeInfoable;
     // This column stores taxonomy terms.
     term TermColumnable;
     // This column stores text values.
@@ -432,6 +434,16 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
+    res["sourceContentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateContentTypeInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSourceContentType(val.(ContentTypeInfoable))
+        }
+        return nil
+    }
     res["term"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(CreateTermColumnFromDiscriminatorValue)
         if err != nil {
@@ -604,6 +616,14 @@ func (m *ColumnDefinition) GetSourceColumn()(ColumnDefinitionable) {
         return m.sourceColumn
     }
 }
+// GetSourceContentType gets the sourceContentType property value. ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
+func (m *ColumnDefinition) GetSourceContentType()(ContentTypeInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceContentType
+    }
+}
 // GetTerm gets the term property value. This column stores taxonomy terms.
 func (m *ColumnDefinition) GetTerm()(TermColumnable) {
     if m == nil {
@@ -643,9 +663,6 @@ func (m *ColumnDefinition) GetValidation()(ColumnValidationable) {
     } else {
         return m.validation
     }
-}
-func (m *ColumnDefinition) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ColumnDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -805,6 +822,12 @@ func (m *ColumnDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     {
         err = writer.WriteObjectValue("sourceColumn", m.GetSourceColumn())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("sourceContentType", m.GetSourceContentType())
         if err != nil {
             return err
         }
@@ -996,6 +1019,12 @@ func (m *ColumnDefinition) SetRequired(value *bool)() {
 func (m *ColumnDefinition) SetSourceColumn(value ColumnDefinitionable)() {
     if m != nil {
         m.sourceColumn = value
+    }
+}
+// SetSourceContentType sets the sourceContentType property value. ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
+func (m *ColumnDefinition) SetSourceContentType(value ContentTypeInfoable)() {
+    if m != nil {
+        m.sourceContentType = value
     }
 }
 // SetTerm sets the term property value. This column stores taxonomy terms.

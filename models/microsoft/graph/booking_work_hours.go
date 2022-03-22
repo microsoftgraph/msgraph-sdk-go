@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingWorkHours provides operations to manage the solutionsRoot singleton.
+// BookingWorkHours this type represents the set of working hours in a single day of the week.
 type BookingWorkHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *BookingWorkHours) GetTimeSlots()([]BookingWorkTimeSlotable) {
     } else {
         return m.timeSlots
     }
-}
-func (m *BookingWorkHours) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *BookingWorkHours) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

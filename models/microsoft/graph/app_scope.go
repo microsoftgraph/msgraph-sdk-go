@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppScope provides operations to manage the roleManagement singleton.
+// AppScope 
 type AppScope struct {
     Entity
     // Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
@@ -63,9 +63,6 @@ func (m *AppScope) GetType()(*string) {
     } else {
         return m.type_escaped
     }
-}
-func (m *AppScope) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AppScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersistentBrowserSessionControl provides operations to manage the identityContainer singleton.
+// PersistentBrowserSessionControl 
 type PersistentBrowserSessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: always, never.
@@ -43,9 +43,6 @@ func (m *PersistentBrowserSessionControl) GetMode()(*PersistentBrowserSessionMod
     } else {
         return m.mode
     }
-}
-func (m *PersistentBrowserSessionControl) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PersistentBrowserSessionControl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

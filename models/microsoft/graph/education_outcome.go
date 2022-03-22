@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationOutcome provides operations to manage the educationRoot singleton.
+// EducationOutcome 
 type EducationOutcome struct {
     Entity
     // The individual who updated the resource.
@@ -64,9 +64,6 @@ func (m *EducationOutcome) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe
     } else {
         return m.lastModifiedDateTime
     }
-}
-func (m *EducationOutcome) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationOutcome) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

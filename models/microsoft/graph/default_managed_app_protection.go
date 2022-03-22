@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DefaultManagedAppProtection provides operations to manage the deviceAppManagement singleton.
+// DefaultManagedAppProtection 
 type DefaultManagedAppProtection struct {
     ManagedAppProtection
     // Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
@@ -271,9 +271,6 @@ func (m *DefaultManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
     } else {
         return m.screenCaptureBlocked
     }
-}
-func (m *DefaultManagedAppProtection) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DefaultManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

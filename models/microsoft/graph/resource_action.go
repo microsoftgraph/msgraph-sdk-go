@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResourceAction provides operations to manage the deviceManagement singleton.
+// ResourceAction set of allowed and not allowed actions for a resource.
 type ResourceAction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -80,9 +80,6 @@ func (m *ResourceAction) GetNotAllowedResourceActions()([]string) {
     } else {
         return m.notAllowedResourceActions
     }
-}
-func (m *ResourceAction) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ResourceAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

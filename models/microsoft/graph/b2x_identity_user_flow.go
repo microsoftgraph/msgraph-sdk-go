@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// B2xIdentityUserFlow provides operations to manage the identityContainer singleton.
+// B2xIdentityUserFlow 
 type B2xIdentityUserFlow struct {
     IdentityUserFlow
     // Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
@@ -139,9 +139,6 @@ func (m *B2xIdentityUserFlow) GetUserFlowIdentityProviders()([]IdentityProviderB
     } else {
         return m.userFlowIdentityProviders
     }
-}
-func (m *B2xIdentityUserFlow) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *B2xIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

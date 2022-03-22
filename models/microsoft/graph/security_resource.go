@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityResource provides operations to manage the security singleton.
+// SecurityResource 
 type SecurityResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -72,9 +72,6 @@ func (m *SecurityResource) GetResourceType()(*SecurityResourceType) {
     } else {
         return m.resourceType
     }
-}
-func (m *SecurityResource) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SecurityResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationSettingState provides operations to manage the drive singleton.
+// DeviceConfigurationSettingState device Configuration Setting State for a given device.
 type DeviceConfigurationSettingState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -276,9 +276,6 @@ func (m *DeviceConfigurationSettingState) GetUserPrincipalName()(*string) {
     } else {
         return m.userPrincipalName
     }
-}
-func (m *DeviceConfigurationSettingState) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationSettingState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

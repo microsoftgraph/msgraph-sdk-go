@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResourceSpecificPermissionGrant provides operations to manage the drive singleton.
+// ResourceSpecificPermissionGrant 
 type ResourceSpecificPermissionGrant struct {
     DirectoryObject
     // ID of the service principal of the Azure AD app that has been granted access. Read-only.
@@ -123,9 +123,6 @@ func (m *ResourceSpecificPermissionGrant) GetResourceAppId()(*string) {
     } else {
         return m.resourceAppId
     }
-}
-func (m *ResourceSpecificPermissionGrant) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ResourceSpecificPermissionGrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

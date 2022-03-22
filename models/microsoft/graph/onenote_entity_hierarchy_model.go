@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnenoteEntityHierarchyModel provides operations to manage the drive singleton.
+// OnenoteEntityHierarchyModel 
 type OnenoteEntityHierarchyModel struct {
     OnenoteEntitySchemaObjectModel
     // Identity of the user, device, and application which created the item. Read-only.
@@ -104,9 +104,6 @@ func (m *OnenoteEntityHierarchyModel) GetLastModifiedDateTime()(*i336074805fc853
     } else {
         return m.lastModifiedDateTime
     }
-}
-func (m *OnenoteEntityHierarchyModel) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OnenoteEntityHierarchyModel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

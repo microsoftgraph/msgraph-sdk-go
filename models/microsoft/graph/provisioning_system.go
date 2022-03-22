@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProvisioningSystem provides operations to manage the auditLogRoot singleton.
+// ProvisioningSystem 
 type ProvisioningSystem struct {
     Identity
     // Details of the system.
@@ -43,9 +43,6 @@ func (m *ProvisioningSystem) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
-}
-func (m *ProvisioningSystem) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ProvisioningSystem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

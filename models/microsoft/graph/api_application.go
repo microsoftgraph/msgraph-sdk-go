@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApiApplication provides operations to manage the collection of application entities.
+// ApiApplication 
 type ApiApplication struct {
     // When true, allows an application to use claims mapping without specifying a custom signing key.
     acceptMappedClaims *bool;
@@ -144,9 +144,6 @@ func (m *ApiApplication) GetRequestedAccessTokenVersion()(*int32) {
     } else {
         return m.requestedAccessTokenVersion
     }
-}
-func (m *ApiApplication) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ApiApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

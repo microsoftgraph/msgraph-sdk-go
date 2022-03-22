@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentityUserFlow provides operations to manage the identityContainer singleton.
+// IdentityUserFlow 
 type IdentityUserFlow struct {
     Entity
     // 
@@ -63,9 +63,6 @@ func (m *IdentityUserFlow) GetUserFlowTypeVersion()(*float32) {
     } else {
         return m.userFlowTypeVersion
     }
-}
-func (m *IdentityUserFlow) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *IdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

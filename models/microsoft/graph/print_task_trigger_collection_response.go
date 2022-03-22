@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintTaskTriggerCollectionResponse provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
+// PrintTaskTriggerCollectionResponse 
 type PrintTaskTriggerCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *PrintTaskTriggerCollectionResponse) GetValue()([]PrintTaskTriggerable) 
     } else {
         return m.value
     }
-}
-func (m *PrintTaskTriggerCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PrintTaskTriggerCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

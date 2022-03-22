@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationAssignmentCollectionResponse provides operations to manage the assignments property of the microsoft.graph.deviceConfiguration entity.
+// DeviceConfigurationAssignmentCollectionResponse 
 type DeviceConfigurationAssignmentCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *DeviceConfigurationAssignmentCollectionResponse) GetValue()([]DeviceCon
     } else {
         return m.value
     }
-}
-func (m *DeviceConfigurationAssignmentCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationAssignmentCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnlineMeeting provides operations to manage the cloudCommunications singleton.
+// OnlineMeeting 
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
@@ -488,9 +488,6 @@ func (m *OnlineMeeting) GetVideoTeleconferenceId()(*string) {
     } else {
         return m.videoTeleconferenceId
     }
-}
-func (m *OnlineMeeting) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OnlineMeeting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

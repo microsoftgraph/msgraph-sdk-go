@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ThreatAssessmentRequest provides operations to manage the informationProtection singleton.
+// ThreatAssessmentRequest 
 type ThreatAssessmentRequest struct {
     Entity
     // The threat category. Possible values are: spam, phishing, malware.
@@ -188,9 +188,6 @@ func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
     } else {
         return m.status
     }
-}
-func (m *ThreatAssessmentRequest) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ThreatAssessmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

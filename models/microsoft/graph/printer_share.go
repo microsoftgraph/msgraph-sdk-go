@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrinterShare provides operations to manage the print singleton.
+// PrinterShare 
 type PrinterShare struct {
     PrinterBase
     // If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
@@ -132,9 +132,6 @@ func (m *PrinterShare) GetPrinter()(Printerable) {
     } else {
         return m.printer
     }
-}
-func (m *PrinterShare) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PrinterShare) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

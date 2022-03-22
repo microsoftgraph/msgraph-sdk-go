@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Notebook provides operations to manage the drive singleton.
+// Notebook 
 type Notebook struct {
     OnenoteEntityHierarchyModel
     // Indicates whether this is the user's default notebook. Read-only.
@@ -191,9 +191,6 @@ func (m *Notebook) GetUserRole()(*OnenoteUserRole) {
     } else {
         return m.userRole
     }
-}
-func (m *Notebook) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Notebook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

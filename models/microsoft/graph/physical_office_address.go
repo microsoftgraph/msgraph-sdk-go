@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PhysicalOfficeAddress provides operations to manage the collection of orgContact entities.
+// PhysicalOfficeAddress 
 type PhysicalOfficeAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -152,9 +152,6 @@ func (m *PhysicalOfficeAddress) GetStreet()(*string) {
     } else {
         return m.street
     }
-}
-func (m *PhysicalOfficeAddress) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PhysicalOfficeAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

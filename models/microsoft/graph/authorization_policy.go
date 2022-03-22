@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthorizationPolicy provides operations to manage the policyRoot singleton.
+// AuthorizationPolicy 
 type AuthorizationPolicy struct {
     PolicyBase
     // Indicates whether users can sign up for email based subscriptions.
@@ -163,9 +163,6 @@ func (m *AuthorizationPolicy) GetGuestUserRoleId()(*string) {
     } else {
         return m.guestUserRoleId
     }
-}
-func (m *AuthorizationPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AuthorizationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

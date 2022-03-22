@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProvisioningServicePrincipal provides operations to manage the auditLogRoot singleton.
+// ProvisioningServicePrincipal 
 type ProvisioningServicePrincipal struct {
     Identity
 }
@@ -23,9 +23,6 @@ func CreateProvisioningServicePrincipalFromDiscriminatorValue(parseNode i04eb530
 func (m *ProvisioningServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     return res
-}
-func (m *ProvisioningServicePrincipal) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ProvisioningServicePrincipal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

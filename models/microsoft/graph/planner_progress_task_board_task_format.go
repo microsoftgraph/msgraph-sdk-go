@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerProgressTaskBoardTaskFormat provides operations to manage the drive singleton.
+// PlannerProgressTaskBoardTaskFormat 
 type PlannerProgressTaskBoardTaskFormat struct {
     Entity
     // Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
@@ -43,9 +43,6 @@ func (m *PlannerProgressTaskBoardTaskFormat) GetOrderHint()(*string) {
     } else {
         return m.orderHint
     }
-}
-func (m *PlannerProgressTaskBoardTaskFormat) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PlannerProgressTaskBoardTaskFormat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

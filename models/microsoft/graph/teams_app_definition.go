@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamsAppDefinition provides operations to manage the appCatalogs singleton.
+// TeamsAppDefinition 
 type TeamsAppDefinition struct {
     Entity
     // The details of the bot specified in the Teams app manifest.
@@ -204,9 +204,6 @@ func (m *TeamsAppDefinition) GetVersion()(*string) {
     } else {
         return m.version
     }
-}
-func (m *TeamsAppDefinition) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamsAppDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttendanceInterval provides operations to manage the cloudCommunications singleton.
+// AttendanceInterval 
 type AttendanceInterval struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -93,9 +93,6 @@ func (m *AttendanceInterval) GetLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97
     } else {
         return m.leaveDateTime
     }
-}
-func (m *AttendanceInterval) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AttendanceInterval) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicyBase provides operations to manage the collection of application entities.
+// PolicyBase 
 type PolicyBase struct {
     DirectoryObject
     // Description for this policy. Required.
@@ -63,9 +63,6 @@ func (m *PolicyBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
-}
-func (m *PolicyBase) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PolicyBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

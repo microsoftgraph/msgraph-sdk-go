@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationSubmission provides operations to manage the educationRoot singleton.
+// EducationSubmission 
 type EducationSubmission struct {
     Entity
     // Read-Write. Nullable.
@@ -316,9 +316,6 @@ func (m *EducationSubmission) GetUnsubmittedDateTime()(*i336074805fc853987abe6f7
     } else {
         return m.unsubmittedDateTime
     }
-}
-func (m *EducationSubmission) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationSubmission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

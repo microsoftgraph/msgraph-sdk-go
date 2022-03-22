@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UploadSession provides operations to call the createUploadSession method.
+// UploadSession 
 type UploadSession struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -97,9 +97,6 @@ func (m *UploadSession) GetUploadUrl()(*string) {
     } else {
         return m.uploadUrl
     }
-}
-func (m *UploadSession) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UploadSession) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

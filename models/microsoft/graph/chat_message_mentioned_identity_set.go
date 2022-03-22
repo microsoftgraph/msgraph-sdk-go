@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChatMessageMentionedIdentitySet provides operations to manage the collection of chat entities.
+// ChatMessageMentionedIdentitySet 
 type ChatMessageMentionedIdentitySet struct {
     IdentitySet
     // If present, represents a conversation (for example, team or channel) @mentioned in a message.
@@ -43,9 +43,6 @@ func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
-}
-func (m *ChatMessageMentionedIdentitySet) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ChatMessageMentionedIdentitySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

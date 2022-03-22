@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeOff provides operations to manage the drive singleton.
+// TimeOff 
 type TimeOff struct {
     ChangeTrackedEntity
     // The draft version of this timeOff that is viewable by managers. Required.
@@ -83,9 +83,6 @@ func (m *TimeOff) GetUserId()(*string) {
     } else {
         return m.userId
     }
-}
-func (m *TimeOff) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TimeOff) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
