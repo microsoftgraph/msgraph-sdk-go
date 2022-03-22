@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ActivityHistoryItem provides operations to manage the drive singleton.
+// ActivityHistoryItem 
 type ActivityHistoryItem struct {
     Entity
     // Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
@@ -204,9 +204,6 @@ func (m *ActivityHistoryItem) GetUserTimezone()(*string) {
     } else {
         return m.userTimezone
     }
-}
-func (m *ActivityHistoryItem) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ActivityHistoryItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApplePushNotificationCertificate provides operations to manage the deviceManagement singleton.
+// ApplePushNotificationCertificate 
 type ApplePushNotificationCertificate struct {
     Entity
     // Apple Id of the account used to create the MDM push certificate.
@@ -144,9 +144,6 @@ func (m *ApplePushNotificationCertificate) GetTopicIdentifier()(*string) {
     } else {
         return m.topicIdentifier
     }
-}
-func (m *ApplePushNotificationCertificate) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ApplePushNotificationCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

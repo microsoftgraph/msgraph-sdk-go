@@ -4,12 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessConditionSet provides operations to manage the identityContainer singleton.
+// ConditionalAccessConditionSet 
 type ConditionalAccessConditionSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Applications and user actions included in and excluded from the policy. Required.
     applications ConditionalAccessApplicationsable;
+    // Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
+    clientApplications ConditionalAccessClientApplicationsable;
     // Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
     clientAppTypes []ConditionalAccessClientApp;
     // Devices in the policy.
@@ -22,7 +24,7 @@ type ConditionalAccessConditionSet struct {
     signInRiskLevels []RiskLevel;
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     userRiskLevels []RiskLevel;
-    // 
+    // Users, groups, and roles included in and excluded from the policy. Required.
     users ConditionalAccessUsersable;
 }
 // NewConditionalAccessConditionSet instantiates a new conditionalAccessConditionSet and sets the default values.
@@ -52,6 +54,14 @@ func (m *ConditionalAccessConditionSet) GetApplications()(ConditionalAccessAppli
         return m.applications
     }
 }
+// GetClientApplications gets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
+func (m *ConditionalAccessConditionSet) GetClientApplications()(ConditionalAccessClientApplicationsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.clientApplications
+    }
+}
 // GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
 func (m *ConditionalAccessConditionSet) GetClientAppTypes()([]ConditionalAccessClientApp) {
     if m == nil {
@@ -78,6 +88,16 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetApplications(val.(ConditionalAccessApplicationsable))
+        }
+        return nil
+    }
+    res["clientApplications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessClientApplicationsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientApplications(val.(ConditionalAccessClientApplicationsable))
         }
         return nil
     }
@@ -197,7 +217,7 @@ func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]RiskLevel) {
         return m.userRiskLevels
     }
 }
-// GetUsers gets the users property value. 
+// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
 func (m *ConditionalAccessConditionSet) GetUsers()(ConditionalAccessUsersable) {
     if m == nil {
         return nil
@@ -205,13 +225,16 @@ func (m *ConditionalAccessConditionSet) GetUsers()(ConditionalAccessUsersable) {
         return m.users
     }
 }
-func (m *ConditionalAccessConditionSet) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *ConditionalAccessConditionSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("applications", m.GetApplications())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("clientApplications", m.GetClientApplications())
         if err != nil {
             return err
         }
@@ -278,6 +301,12 @@ func (m *ConditionalAccessConditionSet) SetApplications(value ConditionalAccessA
         m.applications = value
     }
 }
+// SetClientApplications sets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
+func (m *ConditionalAccessConditionSet) SetClientApplications(value ConditionalAccessClientApplicationsable)() {
+    if m != nil {
+        m.clientApplications = value
+    }
+}
 // SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
 func (m *ConditionalAccessConditionSet) SetClientAppTypes(value []ConditionalAccessClientApp)() {
     if m != nil {
@@ -314,7 +343,7 @@ func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []RiskLevel)() {
         m.userRiskLevels = value
     }
 }
-// SetUsers sets the users property value. 
+// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
 func (m *ConditionalAccessConditionSet) SetUsers(value ConditionalAccessUsersable)() {
     if m != nil {
         m.users = value

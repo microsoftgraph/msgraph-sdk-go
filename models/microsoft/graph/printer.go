@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Printer provides operations to manage the print singleton.
+// Printer 
 type Printer struct {
     PrinterBase
     // The connectors that are associated with the printer.
@@ -176,9 +176,6 @@ func (m *Printer) GetTaskTriggers()([]PrintTaskTriggerable) {
     } else {
         return m.taskTriggers
     }
-}
-func (m *Printer) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Printer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AdministrativeUnit provides operations to manage the directory singleton.
+// AdministrativeUnit 
 type AdministrativeUnit struct {
     DirectoryObject
     // An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
@@ -155,9 +155,6 @@ func (m *AdministrativeUnit) GetVisibility()(*string) {
     } else {
         return m.visibility
     }
-}
-func (m *AdministrativeUnit) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AdministrativeUnit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TermsAndConditionsAcceptanceStatus provides operations to manage the deviceManagement singleton.
+// TermsAndConditionsAcceptanceStatus 
 type TermsAndConditionsAcceptanceStatus struct {
     Entity
     // DateTime when the terms were last accepted by the user.
@@ -124,9 +124,6 @@ func (m *TermsAndConditionsAcceptanceStatus) GetUserPrincipalName()(*string) {
     } else {
         return m.userPrincipalName
     }
-}
-func (m *TermsAndConditionsAcceptanceStatus) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TermsAndConditionsAcceptanceStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

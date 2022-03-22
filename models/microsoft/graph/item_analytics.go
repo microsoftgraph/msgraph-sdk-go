@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemAnalytics provides operations to manage the drive singleton.
+// ItemAnalytics 
 type ItemAnalytics struct {
     Entity
     // 
@@ -87,9 +87,6 @@ func (m *ItemAnalytics) GetLastSevenDays()(ItemActivityStatable) {
     } else {
         return m.lastSevenDays
     }
-}
-func (m *ItemAnalytics) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ItemAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

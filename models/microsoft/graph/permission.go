@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Permission provides operations to manage the drive singleton.
+// Permission 
 type Permission struct {
     Entity
     // A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -256,9 +256,6 @@ func (m *Permission) GetShareId()(*string) {
     } else {
         return m.shareId
     }
-}
-func (m *Permission) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Permission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FeatureRolloutPolicy provides operations to manage the policyRoot singleton.
+// FeatureRolloutPolicy 
 type FeatureRolloutPolicy struct {
     Entity
     // Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -147,9 +147,6 @@ func (m *FeatureRolloutPolicy) GetIsEnabled()(*bool) {
     } else {
         return m.isEnabled
     }
-}
-func (m *FeatureRolloutPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *FeatureRolloutPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

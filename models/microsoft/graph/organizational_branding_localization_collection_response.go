@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OrganizationalBrandingLocalizationCollectionResponse provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
+// OrganizationalBrandingLocalizationCollectionResponse 
 type OrganizationalBrandingLocalizationCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *OrganizationalBrandingLocalizationCollectionResponse) GetValue()([]Orga
     } else {
         return m.value
     }
-}
-func (m *OrganizationalBrandingLocalizationCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OrganizationalBrandingLocalizationCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

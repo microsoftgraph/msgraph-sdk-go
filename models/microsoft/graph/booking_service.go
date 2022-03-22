@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingService provides operations to manage the solutionsRoot singleton.
+// BookingService 
 type BookingService struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
@@ -415,9 +415,6 @@ func (m *BookingService) GetWebUrl()(*string) {
     } else {
         return m.webUrl
     }
-}
-func (m *BookingService) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

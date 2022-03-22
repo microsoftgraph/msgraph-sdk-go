@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceCompliancePolicyAssignment provides operations to manage the deviceManagement singleton.
+// DeviceCompliancePolicyAssignment 
 type DeviceCompliancePolicyAssignment struct {
     Entity
     // Target for the compliance policy assignment.
@@ -43,9 +43,6 @@ func (m *DeviceCompliancePolicyAssignment) GetTarget()(DeviceAndAppManagementAss
     } else {
         return m.target
     }
-}
-func (m *DeviceCompliancePolicyAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicyAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApplicationTemplateCollectionResponse provides operations to manage the collection of applicationTemplate entities.
+// ApplicationTemplateCollectionResponse 
 type ApplicationTemplateCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *ApplicationTemplateCollectionResponse) GetValue()([]ApplicationTemplate
     } else {
         return m.value
     }
-}
-func (m *ApplicationTemplateCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ApplicationTemplateCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

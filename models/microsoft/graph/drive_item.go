@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DriveItem provides operations to manage the drive singleton.
+// DriveItem 
 type DriveItem struct {
     BaseItem
     // Analytics about the view activities that took place on this item.
     analytics ItemAnalyticsable;
-    // Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
+    // Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
     audio Audioable;
-    // 
+    // Bundle metadata, if the item is a bundle. Read-only.
     bundle Bundleable;
     // Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
     children []DriveItemable;
@@ -91,7 +91,7 @@ func (m *DriveItem) GetAnalytics()(ItemAnalyticsable) {
         return m.analytics
     }
 }
-// GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
+// GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
 func (m *DriveItem) GetAudio()(Audioable) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *DriveItem) GetAudio()(Audioable) {
         return m.audio
     }
 }
-// GetBundle gets the bundle property value. 
+// GetBundle gets the bundle property value. Bundle metadata, if the item is a bundle. Read-only.
 func (m *DriveItem) GetBundle()(Bundleable) {
     if m == nil {
         return nil
@@ -684,9 +684,6 @@ func (m *DriveItem) GetWorkbook()(Workbookable) {
         return m.workbook
     }
 }
-func (m *DriveItem) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.BaseItem.Serialize(writer)
@@ -913,13 +910,13 @@ func (m *DriveItem) SetAnalytics(value ItemAnalyticsable)() {
         m.analytics = value
     }
 }
-// SetAudio sets the audio property value. Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
+// SetAudio sets the audio property value. Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
 func (m *DriveItem) SetAudio(value Audioable)() {
     if m != nil {
         m.audio = value
     }
 }
-// SetBundle sets the bundle property value. 
+// SetBundle sets the bundle property value. Bundle metadata, if the item is a bundle. Read-only.
 func (m *DriveItem) SetBundle(value Bundleable)() {
     if m != nil {
         m.bundle = value

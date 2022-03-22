@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AgreementFileLocalization provides operations to manage the collection of agreement entities.
+// AgreementFileLocalization 
 type AgreementFileLocalization struct {
     AgreementFileProperties
     // Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
@@ -47,9 +47,6 @@ func (m *AgreementFileLocalization) GetVersions()([]AgreementFileVersionable) {
     } else {
         return m.versions
     }
-}
-func (m *AgreementFileLocalization) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AgreementFileLocalization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

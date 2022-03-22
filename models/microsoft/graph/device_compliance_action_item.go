@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceActionItem provides operations to manage the deviceManagement singleton.
+// DeviceComplianceActionItem 
 type DeviceComplianceActionItem struct {
     Entity
     // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
@@ -107,9 +107,6 @@ func (m *DeviceComplianceActionItem) GetNotificationTemplateId()(*string) {
     } else {
         return m.notificationTemplateId
     }
-}
-func (m *DeviceComplianceActionItem) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceActionItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ClaimsMappingPolicyCollectionResponse provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.
+// ClaimsMappingPolicyCollectionResponse 
 type ClaimsMappingPolicyCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *ClaimsMappingPolicyCollectionResponse) GetValue()([]ClaimsMappingPolicy
     } else {
         return m.value
     }
-}
-func (m *ClaimsMappingPolicyCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ClaimsMappingPolicyCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

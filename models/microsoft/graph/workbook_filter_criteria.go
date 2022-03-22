@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookFilterCriteria provides operations to manage the drive singleton.
+// WorkbookFilterCriteria 
 type WorkbookFilterCriteria struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -192,9 +192,6 @@ func (m *WorkbookFilterCriteria) GetValues()(Jsonable) {
     } else {
         return m.values
     }
-}
-func (m *WorkbookFilterCriteria) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookFilterCriteria) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

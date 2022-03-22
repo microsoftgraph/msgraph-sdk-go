@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewHistoryDefinition provides operations to manage the identityGovernance singleton.
+// AccessReviewHistoryDefinition 
 type AccessReviewHistoryDefinition struct {
     Entity
     // 
@@ -236,9 +236,6 @@ func (m *AccessReviewHistoryDefinition) GetStatus()(*AccessReviewHistoryStatus) 
     } else {
         return m.status
     }
-}
-func (m *AccessReviewHistoryDefinition) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewHistoryDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

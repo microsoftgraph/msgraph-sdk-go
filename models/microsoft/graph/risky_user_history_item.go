@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RiskyUserHistoryItem provides operations to manage the identityProtectionRoot singleton.
+// RiskyUserHistoryItem 
 type RiskyUserHistoryItem struct {
     RiskyUser
     // The activity related to user risk level change.
@@ -83,9 +83,6 @@ func (m *RiskyUserHistoryItem) GetUserId()(*string) {
     } else {
         return m.userId
     }
-}
-func (m *RiskyUserHistoryItem) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RiskyUserHistoryItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

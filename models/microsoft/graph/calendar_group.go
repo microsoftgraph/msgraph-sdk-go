@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CalendarGroup provides operations to manage the drive singleton.
+// CalendarGroup 
 type CalendarGroup struct {
     Entity
     // The calendars in the calendar group. Navigation property. Read-only. Nullable.
@@ -107,9 +107,6 @@ func (m *CalendarGroup) GetName()(*string) {
     } else {
         return m.name
     }
-}
-func (m *CalendarGroup) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CalendarGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

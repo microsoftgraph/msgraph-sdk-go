@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserFlowLanguagePageCollectionResponse provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
+// UserFlowLanguagePageCollectionResponse 
 type UserFlowLanguagePageCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *UserFlowLanguagePageCollectionResponse) GetValue()([]UserFlowLanguagePa
     } else {
         return m.value
     }
-}
-func (m *UserFlowLanguagePageCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserFlowLanguagePageCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

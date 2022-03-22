@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Video provides operations to manage the drive singleton.
+// Video 
 type Video struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -232,9 +232,6 @@ func (m *Video) GetWidth()(*int32) {
     } else {
         return m.width
     }
-}
-func (m *Video) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Video) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

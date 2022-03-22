@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtection provides operations to manage the deviceAppManagement singleton.
+// WindowsInformationProtection 
 type WindowsInformationProtection struct {
     ManagedAppPolicy
     // Navigation property to list of security groups targeted for policy.
@@ -575,9 +575,6 @@ func (m *WindowsInformationProtection) GetSmbAutoEncryptedFileExtensions()([]Win
     } else {
         return m.smbAutoEncryptedFileExtensions
     }
-}
-func (m *WindowsInformationProtection) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

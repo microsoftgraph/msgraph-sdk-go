@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnenotePatchContentCommand provides operations to call the onenotePatchContent method.
+// OnenotePatchContentCommand 
 type OnenotePatchContentCommand struct {
     // The action to perform on the target element. The possible values are: replace, append, delete, insert, or prepend.
     action *OnenotePatchActionType;
@@ -112,9 +112,6 @@ func (m *OnenotePatchContentCommand) GetTarget()(*string) {
     } else {
         return m.target
     }
-}
-func (m *OnenotePatchContentCommand) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OnenotePatchContentCommand) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

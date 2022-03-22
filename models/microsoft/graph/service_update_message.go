@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceUpdateMessage provides operations to manage the admin singleton.
+// ServiceUpdateMessage 
 type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
     // The expected deadline of the action for the message.
@@ -256,9 +256,6 @@ func (m *ServiceUpdateMessage) GetViewPoint()(ServiceUpdateMessageViewpointable)
     } else {
         return m.viewPoint
     }
-}
-func (m *ServiceUpdateMessage) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

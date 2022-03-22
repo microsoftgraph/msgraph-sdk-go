@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IosManagedAppProtection provides operations to manage the deviceAppManagement singleton.
+// IosManagedAppProtection 
 type IosManagedAppProtection struct {
     TargetedManagedAppProtection
     // Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
@@ -167,9 +167,6 @@ func (m *IosManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
     } else {
         return m.minimumRequiredSdkVersion
     }
-}
-func (m *IosManagedAppProtection) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnenoteSection provides operations to manage the drive singleton.
+// OnenoteSection 
 type OnenoteSection struct {
     OnenoteEntityHierarchyModel
     // Indicates whether this is the user's default section. Read-only.
@@ -147,9 +147,6 @@ func (m *OnenoteSection) GetParentSectionGroup()(SectionGroupable) {
     } else {
         return m.parentSectionGroup
     }
-}
-func (m *OnenoteSection) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OnenoteSection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

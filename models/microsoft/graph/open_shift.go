@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OpenShift provides operations to manage the drive singleton.
+// OpenShift 
 type OpenShift struct {
     ChangeTrackedEntity
     // An unpublished open shift.
@@ -83,9 +83,6 @@ func (m *OpenShift) GetSharedOpenShift()(OpenShiftItemable) {
     } else {
         return m.sharedOpenShift
     }
-}
-func (m *OpenShift) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OpenShift) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

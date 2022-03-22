@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartLegend provides operations to manage the drive singleton.
+// WorkbookChartLegend 
 type WorkbookChartLegend struct {
     Entity
     // Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
@@ -103,9 +103,6 @@ func (m *WorkbookChartLegend) GetVisible()(*bool) {
     } else {
         return m.visible
     }
-}
-func (m *WorkbookChartLegend) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartLegend) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

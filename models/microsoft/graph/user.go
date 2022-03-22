@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// User provides operations to manage the drive singleton.
+// User 
 type User struct {
     DirectoryObject
     // A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -2512,9 +2512,6 @@ func (m *User) GetUserType()(*string) {
     } else {
         return m.userType
     }
-}
-func (m *User) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

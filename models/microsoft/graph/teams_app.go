@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamsApp provides operations to manage the appCatalogs singleton.
+// TeamsApp 
 type TeamsApp struct {
     Entity
     // The details for each version of the app.
@@ -107,9 +107,6 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
-}
-func (m *TeamsApp) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamsApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

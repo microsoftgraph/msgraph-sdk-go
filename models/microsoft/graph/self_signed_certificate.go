@@ -5,27 +5,27 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SelfSignedCertificate provides operations to call the addTokenSigningCertificate method.
+// SelfSignedCertificate 
 type SelfSignedCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Custom key identifier.
     customKeyIdentifier []byte;
-    // 
+    // The friendly name for the key.
     displayName *string;
-    // 
+    // The date and time at which the credential expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The value for the key credential. Should be a base-64 encoded value.
     key []byte;
-    // 
+    // The unique identifier (GUID) for the key.
     keyId *string;
-    // 
+    // The date and time at which the credential becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The thumbprint value for the key.
     thumbprint *string;
-    // 
+    // The type of key credential. 'AsymmetricX509Cert'.
     type_escaped *string;
-    // 
+    // A string that describes the purpose for which the key can be used. For example, 'Verify'.
     usage *string;
 }
 // NewSelfSignedCertificate instantiates a new SelfSignedCertificate and sets the default values.
@@ -47,7 +47,7 @@ func (m *SelfSignedCertificate) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCustomKeyIdentifier gets the customKeyIdentifier property value. 
+// GetCustomKeyIdentifier gets the customKeyIdentifier property value. Custom key identifier.
 func (m *SelfSignedCertificate) GetCustomKeyIdentifier()([]byte) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *SelfSignedCertificate) GetCustomKeyIdentifier()([]byte) {
         return m.customKeyIdentifier
     }
 }
-// GetDisplayName gets the displayName property value. 
+// GetDisplayName gets the displayName property value. The friendly name for the key.
 func (m *SelfSignedCertificate) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *SelfSignedCertificate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEndDateTime gets the endDateTime property value. 
+// GetEndDateTime gets the endDateTime property value. The date and time at which the credential expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SelfSignedCertificate) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -166,7 +166,7 @@ func (m *SelfSignedCertificate) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
-// GetKey gets the key property value. 
+// GetKey gets the key property value. The value for the key credential. Should be a base-64 encoded value.
 func (m *SelfSignedCertificate) GetKey()([]byte) {
     if m == nil {
         return nil
@@ -174,7 +174,7 @@ func (m *SelfSignedCertificate) GetKey()([]byte) {
         return m.key
     }
 }
-// GetKeyId gets the keyId property value. 
+// GetKeyId gets the keyId property value. The unique identifier (GUID) for the key.
 func (m *SelfSignedCertificate) GetKeyId()(*string) {
     if m == nil {
         return nil
@@ -182,7 +182,7 @@ func (m *SelfSignedCertificate) GetKeyId()(*string) {
         return m.keyId
     }
 }
-// GetStartDateTime gets the startDateTime property value. 
+// GetStartDateTime gets the startDateTime property value. The date and time at which the credential becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -190,7 +190,7 @@ func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3a
         return m.startDateTime
     }
 }
-// GetThumbprint gets the thumbprint property value. 
+// GetThumbprint gets the thumbprint property value. The thumbprint value for the key.
 func (m *SelfSignedCertificate) GetThumbprint()(*string) {
     if m == nil {
         return nil
@@ -198,7 +198,7 @@ func (m *SelfSignedCertificate) GetThumbprint()(*string) {
         return m.thumbprint
     }
 }
-// GetType gets the type property value. 
+// GetType gets the type property value. The type of key credential. 'AsymmetricX509Cert'.
 func (m *SelfSignedCertificate) GetType()(*string) {
     if m == nil {
         return nil
@@ -206,16 +206,13 @@ func (m *SelfSignedCertificate) GetType()(*string) {
         return m.type_escaped
     }
 }
-// GetUsage gets the usage property value. 
+// GetUsage gets the usage property value. A string that describes the purpose for which the key can be used. For example, 'Verify'.
 func (m *SelfSignedCertificate) GetUsage()(*string) {
     if m == nil {
         return nil
     } else {
         return m.usage
     }
-}
-func (m *SelfSignedCertificate) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SelfSignedCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -287,55 +284,55 @@ func (m *SelfSignedCertificate) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetCustomKeyIdentifier sets the customKeyIdentifier property value. 
+// SetCustomKeyIdentifier sets the customKeyIdentifier property value. Custom key identifier.
 func (m *SelfSignedCertificate) SetCustomKeyIdentifier(value []byte)() {
     if m != nil {
         m.customKeyIdentifier = value
     }
 }
-// SetDisplayName sets the displayName property value. 
+// SetDisplayName sets the displayName property value. The friendly name for the key.
 func (m *SelfSignedCertificate) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetEndDateTime sets the endDateTime property value. 
+// SetEndDateTime sets the endDateTime property value. The date and time at which the credential expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SelfSignedCertificate) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.endDateTime = value
     }
 }
-// SetKey sets the key property value. 
+// SetKey sets the key property value. The value for the key credential. Should be a base-64 encoded value.
 func (m *SelfSignedCertificate) SetKey(value []byte)() {
     if m != nil {
         m.key = value
     }
 }
-// SetKeyId sets the keyId property value. 
+// SetKeyId sets the keyId property value. The unique identifier (GUID) for the key.
 func (m *SelfSignedCertificate) SetKeyId(value *string)() {
     if m != nil {
         m.keyId = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. 
+// SetStartDateTime sets the startDateTime property value. The date and time at which the credential becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SelfSignedCertificate) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startDateTime = value
     }
 }
-// SetThumbprint sets the thumbprint property value. 
+// SetThumbprint sets the thumbprint property value. The thumbprint value for the key.
 func (m *SelfSignedCertificate) SetThumbprint(value *string)() {
     if m != nil {
         m.thumbprint = value
     }
 }
-// SetType sets the type property value. 
+// SetType sets the type property value. The type of key credential. 'AsymmetricX509Cert'.
 func (m *SelfSignedCertificate) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }
 }
-// SetUsage sets the usage property value. 
+// SetUsage sets the usage property value. A string that describes the purpose for which the key can be used. For example, 'Verify'.
 func (m *SelfSignedCertificate) SetUsage(value *string)() {
     if m != nil {
         m.usage = value

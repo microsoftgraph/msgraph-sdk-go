@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeConstraint provides operations to call the findMeetingTimes method.
+// TimeConstraint 
 type TimeConstraint struct {
     // The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
     activityDomain *ActivityDomain;
@@ -76,9 +76,6 @@ func (m *TimeConstraint) GetTimeSlots()([]TimeSlotable) {
     } else {
         return m.timeSlots
     }
-}
-func (m *TimeConstraint) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TimeConstraint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

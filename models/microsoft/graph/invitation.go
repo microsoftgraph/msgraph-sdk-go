@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Invitation provides operations to manage the collection of invitation entities.
+// Invitation 
 type Invitation struct {
     Entity
     // The user created as part of the invitation creation. Read-Only
@@ -203,9 +203,6 @@ func (m *Invitation) GetStatus()(*string) {
     } else {
         return m.status
     }
-}
-func (m *Invitation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Invitation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

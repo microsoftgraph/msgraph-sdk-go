@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TelecomExpenseManagementPartner provides operations to manage the deviceManagement singleton.
+// TelecomExpenseManagementPartner 
 type TelecomExpenseManagementPartner struct {
     Entity
     // Whether the partner's AAD app has been authorized to access Intune.
@@ -124,9 +124,6 @@ func (m *TelecomExpenseManagementPartner) GetUrl()(*string) {
     } else {
         return m.url
     }
-}
-func (m *TelecomExpenseManagementPartner) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TelecomExpenseManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

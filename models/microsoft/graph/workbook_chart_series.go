@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartSeries provides operations to manage the drive singleton.
+// WorkbookChartSeries 
 type WorkbookChartSeries struct {
     Entity
     // Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
@@ -87,9 +87,6 @@ func (m *WorkbookChartSeries) GetPoints()([]WorkbookChartPointable) {
     } else {
         return m.points
     }
-}
-func (m *WorkbookChartSeries) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartSeries) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

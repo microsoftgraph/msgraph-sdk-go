@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SchemaExtension provides operations to manage the collection of schemaExtension entities.
+// SchemaExtension 
 type SchemaExtension struct {
     Entity
     // Description for the schema extension. Supports $filter (eq).
@@ -131,9 +131,6 @@ func (m *SchemaExtension) GetTargetTypes()([]string) {
     } else {
         return m.targetTypes
     }
-}
-func (m *SchemaExtension) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SchemaExtension) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

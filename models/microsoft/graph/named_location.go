@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// NamedLocation provides operations to manage the identityContainer singleton.
+// NamedLocation 
 type NamedLocation struct {
     Entity
     // The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -84,9 +84,6 @@ func (m *NamedLocation) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     } else {
         return m.modifiedDateTime
     }
-}
-func (m *NamedLocation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *NamedLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

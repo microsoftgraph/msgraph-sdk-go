@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Request provides operations to manage the identityGovernance singleton.
+// Request 
 type Request struct {
     Entity
     // The identifier of the approval of the request.
@@ -144,9 +144,6 @@ func (m *Request) GetStatus()(*string) {
     } else {
         return m.status
     }
-}
-func (m *Request) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Request) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewHistoryInstance provides operations to manage the identityGovernance singleton.
+// AccessReviewHistoryInstance 
 type AccessReviewHistoryInstance struct {
     Entity
     // Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
@@ -164,9 +164,6 @@ func (m *AccessReviewHistoryInstance) GetStatus()(*AccessReviewHistoryStatus) {
     } else {
         return m.status
     }
-}
-func (m *AccessReviewHistoryInstance) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewHistoryInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

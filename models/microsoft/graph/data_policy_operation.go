@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DataPolicyOperation provides operations to manage the collection of dataPolicyOperation entities.
+// DataPolicyOperation 
 type DataPolicyOperation struct {
     Entity
     // Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
@@ -144,9 +144,6 @@ func (m *DataPolicyOperation) GetUserId()(*string) {
     } else {
         return m.userId
     }
-}
-func (m *DataPolicyOperation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DataPolicyOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

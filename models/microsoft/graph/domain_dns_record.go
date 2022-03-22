@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DomainDnsRecord provides operations to manage the collection of domainDnsRecord entities.
+// DomainDnsRecord 
 type DomainDnsRecord struct {
     Entity
     // If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
@@ -123,9 +123,6 @@ func (m *DomainDnsRecord) GetTtl()(*int32) {
     } else {
         return m.ttl
     }
-}
-func (m *DomainDnsRecord) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DomainDnsRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

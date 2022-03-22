@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Endpoint provides operations to call the instantiate method.
+// Endpoint 
 type Endpoint struct {
     DirectoryObject
     // Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
@@ -123,9 +123,6 @@ func (m *Endpoint) GetUri()(*string) {
     } else {
         return m.uri
     }
-}
-func (m *Endpoint) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Endpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

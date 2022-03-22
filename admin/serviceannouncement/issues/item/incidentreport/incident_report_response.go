@@ -53,9 +53,6 @@ func (m *IncidentReportResponse) GetValue()([]byte) {
         return m.value
     }
 }
-func (m *IncidentReportResponse) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *IncidentReportResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {

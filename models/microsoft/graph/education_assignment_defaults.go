@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationAssignmentDefaults provides operations to manage the educationRoot singleton.
+// EducationAssignmentDefaults 
 type EducationAssignmentDefaults struct {
     Entity
     // Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
@@ -103,9 +103,6 @@ func (m *EducationAssignmentDefaults) GetNotificationChannelUrl()(*string) {
     } else {
         return m.notificationChannelUrl
     }
-}
-func (m *EducationAssignmentDefaults) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentDefaults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

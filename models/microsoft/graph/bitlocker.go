@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Bitlocker provides operations to manage the informationProtection singleton.
+// Bitlocker 
 type Bitlocker struct {
     Entity
     // The recovery keys associated with the bitlocker entity.
@@ -47,9 +47,6 @@ func (m *Bitlocker) GetRecoveryKeys()([]BitlockerRecoveryKeyable) {
     } else {
         return m.recoveryKeys
     }
-}
-func (m *Bitlocker) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Bitlocker) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

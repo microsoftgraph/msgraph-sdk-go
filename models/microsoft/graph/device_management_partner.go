@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementPartner provides operations to manage the deviceManagement singleton.
+// DeviceManagementPartner 
 type DeviceManagementPartner struct {
     Entity
     // Partner display name
@@ -184,9 +184,6 @@ func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeRemovedDateTime()(*
     } else {
         return m.whenPartnerDevicesWillBeRemovedDateTime
     }
-}
-func (m *DeviceManagementPartner) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

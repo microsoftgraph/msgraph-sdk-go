@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppliedConditionalAccessPolicy provides operations to manage the auditLogRoot singleton.
+// AppliedConditionalAccessPolicy 
 type AppliedConditionalAccessPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -140,9 +140,6 @@ func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPo
     } else {
         return m.result
     }
-}
-func (m *AppliedConditionalAccessPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AppliedConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

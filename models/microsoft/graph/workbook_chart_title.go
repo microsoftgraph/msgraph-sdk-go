@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookChartTitle provides operations to manage the drive singleton.
+// WorkbookChartTitle 
 type WorkbookChartTitle struct {
     Entity
     // Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
@@ -103,9 +103,6 @@ func (m *WorkbookChartTitle) GetVisible()(*bool) {
     } else {
         return m.visible
     }
-}
-func (m *WorkbookChartTitle) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartTitle) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttendeeBase provides operations to manage the drive singleton.
+// AttendeeBase 
 type AttendeeBase struct {
     Recipient
     // The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
@@ -43,9 +43,6 @@ func (m *AttendeeBase) GetType()(*AttendeeType) {
     } else {
         return m.type_escaped
     }
-}
-func (m *AttendeeBase) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AttendeeBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

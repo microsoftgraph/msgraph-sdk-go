@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ListInfo provides operations to manage the drive singleton.
+// ListInfo 
 type ListInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -92,9 +92,6 @@ func (m *ListInfo) GetTemplate()(*string) {
     } else {
         return m.template
     }
-}
-func (m *ListInfo) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ListInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

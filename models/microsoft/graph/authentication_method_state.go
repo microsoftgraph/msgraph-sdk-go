@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the collection of authenticationMethodConfiguration entities.
+// Provides operations to manage the authenticationMethodsPolicy singleton.
 type AuthenticationMethodState int
 
 const (

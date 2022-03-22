@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Alert provides operations to manage the security singleton.
+// Alert 
 type Alert struct {
     Entity
     // Name or alias of the activity group (attacker) this alert is attributed to.
@@ -892,9 +892,6 @@ func (m *Alert) GetVulnerabilityStates()([]VulnerabilityStateable) {
     } else {
         return m.vulnerabilityStates
     }
-}
-func (m *Alert) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

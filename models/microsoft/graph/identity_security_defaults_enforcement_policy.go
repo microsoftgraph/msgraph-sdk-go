@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentitySecurityDefaultsEnforcementPolicy provides operations to manage the policyRoot singleton.
+// IdentitySecurityDefaultsEnforcementPolicy 
 type IdentitySecurityDefaultsEnforcementPolicy struct {
     PolicyBase
     // If set to true, Azure Active Directory security defaults is enabled for the tenant.
@@ -43,9 +43,6 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) GetIsEnabled()(*bool) {
     } else {
         return m.isEnabled
     }
-}
-func (m *IdentitySecurityDefaultsEnforcementPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *IdentitySecurityDefaultsEnforcementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

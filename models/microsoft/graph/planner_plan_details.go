@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerPlanDetails provides operations to manage the drive singleton.
+// PlannerPlanDetails 
 type PlannerPlanDetails struct {
     Entity
     // An object that specifies the descriptions of the six categories that can be associated with tasks in the plan
@@ -63,9 +63,6 @@ func (m *PlannerPlanDetails) GetSharedWith()(PlannerUserIdsable) {
     } else {
         return m.sharedWith
     }
-}
-func (m *PlannerPlanDetails) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

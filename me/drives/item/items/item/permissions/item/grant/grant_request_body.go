@@ -82,9 +82,6 @@ func (m *GrantRequestBody) GetRoles()([]string) {
         return m.roles
     }
 }
-func (m *GrantRequestBody) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *GrantRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetRecipients() != nil {

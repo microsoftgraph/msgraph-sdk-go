@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttendanceRecord provides operations to manage the cloudCommunications singleton.
+// AttendanceRecord 
 type AttendanceRecord struct {
     Entity
     // List of time periods between joining and leaving a meeting.
@@ -127,9 +127,6 @@ func (m *AttendanceRecord) GetTotalAttendanceInSeconds()(*int32) {
     } else {
         return m.totalAttendanceInSeconds
     }
-}
-func (m *AttendanceRecord) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AttendanceRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

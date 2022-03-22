@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Domain provides operations to manage the collection of domain entities.
+// Domain 
 type Domain struct {
     Entity
     // Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
@@ -359,9 +359,6 @@ func (m *Domain) GetVerificationDnsRecords()([]DomainDnsRecordable) {
     } else {
         return m.verificationDnsRecords
     }
-}
-func (m *Domain) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Domain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

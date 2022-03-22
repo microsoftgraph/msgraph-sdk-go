@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppCategory provides operations to manage the deviceAppManagement singleton.
+// MobileAppCategory 
 type MobileAppCategory struct {
     Entity
     // The name of the app category.
@@ -64,9 +64,6 @@ func (m *MobileAppCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7f
     } else {
         return m.lastModifiedDateTime
     }
-}
-func (m *MobileAppCategory) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

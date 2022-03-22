@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingAppointmentCollectionResponse provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
+// BookingAppointmentCollectionResponse 
 type BookingAppointmentCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *BookingAppointmentCollectionResponse) GetValue()([]BookingAppointmentab
     } else {
         return m.value
     }
-}
-func (m *BookingAppointmentCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *BookingAppointmentCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

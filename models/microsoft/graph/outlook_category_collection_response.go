@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutlookCategoryCollectionResponse provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
+// OutlookCategoryCollectionResponse 
 type OutlookCategoryCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *OutlookCategoryCollectionResponse) GetValue()([]OutlookCategoryable) {
     } else {
         return m.value
     }
-}
-func (m *OutlookCategoryCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OutlookCategoryCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

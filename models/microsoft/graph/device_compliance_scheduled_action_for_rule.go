@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceScheduledActionForRule provides operations to manage the deviceManagement singleton.
+// DeviceComplianceScheduledActionForRule 
 type DeviceComplianceScheduledActionForRule struct {
     Entity
     // Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
@@ -67,9 +67,6 @@ func (m *DeviceComplianceScheduledActionForRule) GetScheduledActionConfiguration
     } else {
         return m.scheduledActionConfigurations
     }
-}
-func (m *DeviceComplianceScheduledActionForRule) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScheduledActionForRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

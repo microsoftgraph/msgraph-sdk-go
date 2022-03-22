@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UsedInsight provides operations to manage the drive singleton.
+// UsedInsight 
 type UsedInsight struct {
     Entity
     // Information about when the item was last viewed or modified by the user. Read only.
@@ -103,9 +103,6 @@ func (m *UsedInsight) GetResourceVisualization()(ResourceVisualizationable) {
     } else {
         return m.resourceVisualization
     }
-}
-func (m *UsedInsight) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UsedInsight) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

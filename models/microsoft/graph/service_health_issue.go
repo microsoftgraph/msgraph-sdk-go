@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceHealthIssue provides operations to manage the admin singleton.
+// ServiceHealthIssue 
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
     // The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
@@ -207,9 +207,6 @@ func (m *ServiceHealthIssue) GetStatus()(*ServiceHealthStatus) {
     } else {
         return m.status
     }
-}
-func (m *ServiceHealthIssue) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ServiceHealthIssue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationUser provides operations to manage the educationRoot singleton.
+// EducationUser 
 type EducationUser struct {
     Entity
     // True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
@@ -824,9 +824,6 @@ func (m *EducationUser) GetUserType()(*string) {
     } else {
         return m.userType
     }
-}
-func (m *EducationUser) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

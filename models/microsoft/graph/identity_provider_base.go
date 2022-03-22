@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IdentityProviderBase provides operations to manage the identityContainer singleton.
+// IdentityProviderBase 
 type IdentityProviderBase struct {
     Entity
     // The display name of the identity provider.
@@ -43,9 +43,6 @@ func (m *IdentityProviderBase) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
-}
-func (m *IdentityProviderBase) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *IdentityProviderBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

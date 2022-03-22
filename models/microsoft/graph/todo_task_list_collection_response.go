@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TodoTaskListCollectionResponse provides operations to manage the lists property of the microsoft.graph.todo entity.
+// TodoTaskListCollectionResponse 
 type TodoTaskListCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *TodoTaskListCollectionResponse) GetValue()([]TodoTaskListable) {
     } else {
         return m.value
     }
-}
-func (m *TodoTaskListCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TodoTaskListCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

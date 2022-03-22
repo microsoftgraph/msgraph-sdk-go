@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtectionPolicy provides operations to manage the deviceAppManagement singleton.
+// WindowsInformationProtectionPolicy 
 type WindowsInformationProtectionPolicy struct {
     WindowsInformationProtection
     // Offline interval before app data is wiped (days)
@@ -263,9 +263,6 @@ func (m *WindowsInformationProtectionPolicy) GetWindowsHelloForBusinessBlocked()
     } else {
         return m.windowsHelloForBusinessBlocked
     }
-}
-func (m *WindowsInformationProtectionPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

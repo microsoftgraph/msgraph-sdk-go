@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ReportRoot provides operations to manage the reportRoot singleton.
+// ReportRoot the resource that represents an instance of Enrollment Failure Reports.
 type ReportRoot struct {
     Entity
     // 
@@ -119,9 +119,6 @@ func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     } else {
         return m.monthlyPrintUsageByUser
     }
-}
-func (m *ReportRoot) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

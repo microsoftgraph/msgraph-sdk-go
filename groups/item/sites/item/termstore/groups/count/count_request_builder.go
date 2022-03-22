@@ -60,7 +60,7 @@ func (m *CountRequestBuilder) CreateGetRequestInformation(options *CountRequestB
     return requestInfo, nil
 }
 // Get get the number of the resource
-func (m *CountRequestBuilder) Get(options *CountRequestBuilderGetOptions)(*string, error) {
+func (m *CountRequestBuilder) Get(options *CountRequestBuilderGetOptions)(*int32, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
@@ -69,9 +69,9 @@ func (m *CountRequestBuilder) Get(options *CountRequestBuilderGetOptions)(*strin
         "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
         "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "string", nil, errorMapping)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "int32", nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(*int32), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServiceAnnouncement provides operations to manage the admin singleton.
+// ServiceAnnouncement 
 type ServiceAnnouncement struct {
     Entity
     // A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
@@ -95,9 +95,6 @@ func (m *ServiceAnnouncement) GetMessages()([]ServiceUpdateMessageable) {
     } else {
         return m.messages
     }
-}
-func (m *ServiceAnnouncement) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ServiceAnnouncement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

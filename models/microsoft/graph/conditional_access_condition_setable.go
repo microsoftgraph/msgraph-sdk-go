@@ -9,6 +9,7 @@ type ConditionalAccessConditionSetable interface {
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
     GetApplications()(ConditionalAccessApplicationsable)
+    GetClientApplications()(ConditionalAccessClientApplicationsable)
     GetClientAppTypes()([]ConditionalAccessClientApp)
     GetDevices()(ConditionalAccessDevicesable)
     GetLocations()(ConditionalAccessLocationsable)
@@ -17,6 +18,7 @@ type ConditionalAccessConditionSetable interface {
     GetUserRiskLevels()([]RiskLevel)
     GetUsers()(ConditionalAccessUsersable)
     SetApplications(value ConditionalAccessApplicationsable)()
+    SetClientApplications(value ConditionalAccessClientApplicationsable)()
     SetClientAppTypes(value []ConditionalAccessClientApp)()
     SetDevices(value ConditionalAccessDevicesable)()
     SetLocations(value ConditionalAccessLocationsable)()

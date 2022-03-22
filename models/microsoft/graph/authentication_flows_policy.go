@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationFlowsPolicy provides operations to manage the policyRoot singleton.
+// AuthenticationFlowsPolicy 
 type AuthenticationFlowsPolicy struct {
     Entity
     // Inherited property. A description of the policy. Optional. Read-only.
@@ -83,9 +83,6 @@ func (m *AuthenticationFlowsPolicy) GetSelfServiceSignUp()(SelfServiceSignUpAuth
     } else {
         return m.selfServiceSignUp
     }
-}
-func (m *AuthenticationFlowsPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationFlowsPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

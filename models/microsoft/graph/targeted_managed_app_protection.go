@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TargetedManagedAppProtection provides operations to manage the deviceAppManagement singleton.
+// TargetedManagedAppProtection 
 type TargetedManagedAppProtection struct {
     ManagedAppProtection
     // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
@@ -67,9 +67,6 @@ func (m *TargetedManagedAppProtection) GetIsAssigned()(*bool) {
     } else {
         return m.isAssigned
     }
-}
-func (m *TargetedManagedAppProtection) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TargetedManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

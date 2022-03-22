@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupLifecyclePolicy provides operations to manage the collection of groupLifecyclePolicy entities.
+// GroupLifecyclePolicy 
 type GroupLifecyclePolicy struct {
     Entity
     // List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
@@ -83,9 +83,6 @@ func (m *GroupLifecyclePolicy) GetManagedGroupTypes()(*string) {
     } else {
         return m.managedGroupTypes
     }
-}
-func (m *GroupLifecyclePolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *GroupLifecyclePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

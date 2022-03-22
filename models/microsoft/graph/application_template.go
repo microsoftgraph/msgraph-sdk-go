@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApplicationTemplate provides operations to manage the collection of applicationTemplate entities.
+// ApplicationTemplate 
 type ApplicationTemplate struct {
     Entity
     // The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
@@ -195,9 +195,6 @@ func (m *ApplicationTemplate) GetSupportedSingleSignOnModes()([]string) {
     } else {
         return m.supportedSingleSignOnModes
     }
-}
-func (m *ApplicationTemplate) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ApplicationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

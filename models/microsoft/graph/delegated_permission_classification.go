@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedPermissionClassification provides operations to call the instantiate method.
+// DelegatedPermissionClassification 
 type DelegatedPermissionClassification struct {
     Entity
     // The classification value being given. Possible value: low. Does not support $filter.
@@ -83,9 +83,6 @@ func (m *DelegatedPermissionClassification) GetPermissionName()(*string) {
     } else {
         return m.permissionName
     }
-}
-func (m *DelegatedPermissionClassification) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DelegatedPermissionClassification) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationMethodConfiguration provides operations to manage the collection of authenticationMethodConfiguration entities.
+// AuthenticationMethodConfiguration 
 type AuthenticationMethodConfiguration struct {
     Entity
     // The state of the policy. Possible values are: enabled, disabled.
@@ -43,9 +43,6 @@ func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodStat
     } else {
         return m.state
     }
-}
-func (m *AuthenticationMethodConfiguration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

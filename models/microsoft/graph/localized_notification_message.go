@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LocalizedNotificationMessage provides operations to manage the deviceManagement singleton.
+// LocalizedNotificationMessage 
 type LocalizedNotificationMessage struct {
     Entity
     // Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
@@ -124,9 +124,6 @@ func (m *LocalizedNotificationMessage) GetSubject()(*string) {
     } else {
         return m.subject
     }
-}
-func (m *LocalizedNotificationMessage) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *LocalizedNotificationMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

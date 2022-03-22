@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SwapShiftsChangeRequest provides operations to manage the drive singleton.
+// SwapShiftsChangeRequest 
 type SwapShiftsChangeRequest struct {
     OfferShiftRequest
     // ShiftId for the recipient user with whom the request is to swap.
@@ -43,9 +43,6 @@ func (m *SwapShiftsChangeRequest) GetRecipientShiftId()(*string) {
     } else {
         return m.recipientShiftId
     }
-}
-func (m *SwapShiftsChangeRequest) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SwapShiftsChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

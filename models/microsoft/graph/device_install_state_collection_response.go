@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceInstallStateCollectionResponse provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.
+// DeviceInstallStateCollectionResponse 
 type DeviceInstallStateCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *DeviceInstallStateCollectionResponse) GetValue()([]DeviceInstallStateab
     } else {
         return m.value
     }
-}
-func (m *DeviceInstallStateCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceInstallStateCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

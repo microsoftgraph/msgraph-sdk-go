@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecureScoreControlProfile provides operations to manage the security singleton.
+// SecureScoreControlProfile 
 type SecureScoreControlProfile struct {
     Entity
     // Control action type (Config, Review, Behavior).
@@ -416,9 +416,6 @@ func (m *SecureScoreControlProfile) GetVendorInformation()(SecurityVendorInforma
     } else {
         return m.vendorInformation
     }
-}
-func (m *SecureScoreControlProfile) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SecureScoreControlProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

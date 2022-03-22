@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkbookWorksheet provides operations to manage the drive singleton.
+// WorkbookWorksheet 
 type WorkbookWorksheet struct {
     Entity
     // Returns collection of charts that are part of the worksheet. Read-only.
@@ -199,9 +199,6 @@ func (m *WorkbookWorksheet) GetVisibility()(*string) {
     } else {
         return m.visibility
     }
-}
-func (m *WorkbookWorksheet) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

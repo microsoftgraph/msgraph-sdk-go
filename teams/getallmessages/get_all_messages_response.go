@@ -58,9 +58,6 @@ func (m *GetAllMessagesResponse) GetValue()([]i4a838ef194e4c99e9f2c63ba10dab9cb1
         return m.value
     }
 }
-func (m *GetAllMessagesResponse) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *GetAllMessagesResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetValue() != nil {

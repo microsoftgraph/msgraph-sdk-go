@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchBucket provides operations to call the query method.
+// SearchBucket 
 type SearchBucket struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -92,9 +92,6 @@ func (m *SearchBucket) GetKey()(*string) {
     } else {
         return m.key
     }
-}
-func (m *SearchBucket) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SearchBucket) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

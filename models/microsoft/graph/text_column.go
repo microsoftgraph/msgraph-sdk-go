@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TextColumn provides operations to manage the drive singleton.
+// TextColumn 
 type TextColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -132,9 +132,6 @@ func (m *TextColumn) GetTextType()(*string) {
     } else {
         return m.textType
     }
-}
-func (m *TextColumn) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TextColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

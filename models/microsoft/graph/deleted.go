@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Deleted provides operations to manage the drive singleton.
+// Deleted 
 type Deleted struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -52,9 +52,6 @@ func (m *Deleted) GetState()(*string) {
     } else {
         return m.state
     }
-}
-func (m *Deleted) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Deleted) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

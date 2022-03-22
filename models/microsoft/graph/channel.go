@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Channel provides operations to manage the drive singleton.
+// Channel 
 type Channel struct {
     Entity
     // Read only. Timestamp at which the channel was created.
@@ -256,9 +256,6 @@ func (m *Channel) GetWebUrl()(*string) {
     } else {
         return m.webUrl
     }
-}
-func (m *Channel) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Channel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

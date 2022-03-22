@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceOperatingSystemSummary provides operations to manage the deviceManagement singleton.
+// DeviceOperatingSystemSummary device operating system summary.
 type DeviceOperatingSystemSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -152,9 +152,6 @@ func (m *DeviceOperatingSystemSummary) GetWindowsMobileCount()(*int32) {
     } else {
         return m.windowsMobileCount
     }
-}
-func (m *DeviceOperatingSystemSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceOperatingSystemSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

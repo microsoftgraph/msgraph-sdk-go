@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RelatedContact provides operations to manage the educationRoot singleton.
+// RelatedContact 
 type RelatedContact struct {
     // Indicates whether the user has been consented to access student data.
     accessConsent *bool;
@@ -132,9 +132,6 @@ func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
     } else {
         return m.relationship
     }
-}
-func (m *RelatedContact) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RelatedContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

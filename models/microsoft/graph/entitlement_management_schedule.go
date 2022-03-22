@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EntitlementManagementSchedule provides operations to manage the identityGovernance singleton.
+// EntitlementManagementSchedule 
 type EntitlementManagementSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -93,9 +93,6 @@ func (m *EntitlementManagementSchedule) GetStartDateTime()(*i336074805fc853987ab
     } else {
         return m.startDateTime
     }
-}
-func (m *EntitlementManagementSchedule) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EntitlementManagementSchedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
