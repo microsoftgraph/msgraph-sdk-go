@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/microsoft/kiota/abstractions/go v0.0.0-20220322090755-7332983145f2
 	github.com/microsoft/kiota/serialization/go/json v0.0.0-20220322090755-7332983145f2
-	github.com/microsoftgraph/msgraph-sdk-go-core v0.11.0
+	github.com/microsoftgraph/msgraph-sdk-go-core v0.0.15
 )
 
 require (
