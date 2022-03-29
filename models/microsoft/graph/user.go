@@ -24,7 +24,7 @@ type User struct {
     assignedLicenses []AssignedLicenseable;
     // The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
     assignedPlans []AssignedPlanable;
-    // 
+    // The authentication methods that are supported for the user.
     authentication Authenticationable;
     // The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -314,7 +314,7 @@ func (m *User) GetAssignedPlans()([]AssignedPlanable) {
         return m.assignedPlans
     }
 }
-// GetAuthentication gets the authentication property value. 
+// GetAuthentication gets the authentication property value. The authentication methods that are supported for the user.
 func (m *User) GetAuthentication()(Authenticationable) {
     if m == nil {
         return nil
@@ -3411,7 +3411,7 @@ func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
         m.assignedPlans = value
     }
 }
-// SetAuthentication sets the authentication property value. 
+// SetAuthentication sets the authentication property value. The authentication methods that are supported for the user.
 func (m *User) SetAuthentication(value Authenticationable)() {
     if m != nil {
         m.authentication = value

@@ -36,7 +36,7 @@ type MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters get microsoftAuthenticatorMethods from users
+// MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters the details of the Microsoft Authenticator app registered to a user for authentication.
 type MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -90,7 +90,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) CreateDel
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get microsoftAuthenticatorMethods from users
+// CreateGetRequestInformation the details of the Microsoft Authenticator app registered to a user for authentication.
 func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Delete(op
 func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Device()(*ifce57a57adfd7290b293a3e17c5be0796fea90e87fd8cf8b6f8988ea949ad506.DeviceRequestBuilder) {
     return ifce57a57adfd7290b293a3e17c5be0796fea90e87fd8cf8b6f8988ea949ad506.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get microsoftAuthenticatorMethods from users
+// Get the details of the Microsoft Authenticator app registered to a user for authentication.
 func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Get(options *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MicrosoftAuthenticatorAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

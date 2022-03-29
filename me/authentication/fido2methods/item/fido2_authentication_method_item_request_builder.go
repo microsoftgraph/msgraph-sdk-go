@@ -35,7 +35,7 @@ type Fido2AuthenticationMethodItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters get fido2Methods from me
+// Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters represents the FIDO2 security keys registered to a user for authentication.
 type Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get fido2Methods from me
+// CreateGetRequestInformation represents the FIDO2 security keys registered to a user for authentication.
 func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *Fido2AuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *Fido2AuthenticationMethodItemRequestBuilder) Delete(options *Fido2Authe
     }
     return nil
 }
-// Get get fido2Methods from me
+// Get represents the FIDO2 security keys registered to a user for authentication.
 func (m *Fido2AuthenticationMethodItemRequestBuilder) Get(options *Fido2AuthenticationMethodItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Fido2AuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
