@@ -27,7 +27,7 @@ type Fido2MethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Fido2MethodsRequestBuilderGetQueryParameters get fido2Methods from me
+// Fido2MethodsRequestBuilderGetQueryParameters represents the FIDO2 security keys registered to a user for authentication.
 type Fido2MethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewFido2MethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
 func (m *Fido2MethodsRequestBuilder) Count()(*i5f31b277e9cd3c631a38dfaa858abcdc6a87c8912691c0d13707d5728069a4ad.CountRequestBuilder) {
     return i5f31b277e9cd3c631a38dfaa858abcdc6a87c8912691c0d13707d5728069a4ad.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get fido2Methods from me
+// CreateGetRequestInformation represents the FIDO2 security keys registered to a user for authentication.
 func (m *Fido2MethodsRequestBuilder) CreateGetRequestInformation(options *Fido2MethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *Fido2MethodsRequestBuilder) CreatePostRequestInformation(options *Fido2
     }
     return requestInfo, nil
 }
-// Get get fido2Methods from me
+// Get represents the FIDO2 security keys registered to a user for authentication.
 func (m *Fido2MethodsRequestBuilder) Get(options *Fido2MethodsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Fido2AuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

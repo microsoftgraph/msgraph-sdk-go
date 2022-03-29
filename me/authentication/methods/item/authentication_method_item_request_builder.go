@@ -35,7 +35,7 @@ type AuthenticationMethodItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AuthenticationMethodItemRequestBuilderGetQueryParameters get methods from me
+// AuthenticationMethodItemRequestBuilderGetQueryParameters represents all authentication methods registered to a user.
 type AuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *AuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get methods from me
+// CreateGetRequestInformation represents all authentication methods registered to a user.
 func (m *AuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *AuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *AuthenticationMethodItemRequestBuilder) Delete(options *AuthenticationM
     }
     return nil
 }
-// Get get methods from me
+// Get represents all authentication methods registered to a user.
 func (m *AuthenticationMethodItemRequestBuilder) Get(options *AuthenticationMethodItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

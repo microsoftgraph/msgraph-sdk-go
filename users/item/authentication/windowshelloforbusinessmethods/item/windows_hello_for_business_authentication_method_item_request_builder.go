@@ -36,7 +36,7 @@ type WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters get windowsHelloForBusinessMethods from users
+// WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters represents the Windows Hello for Business authentication method registered to a user for authentication.
 type WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -90,7 +90,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreateDe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get windowsHelloForBusinessMethods from users
+// CreateGetRequestInformation represents the Windows Hello for Business authentication method registered to a user for authentication.
 func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Delete(o
 func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Device()(*i17a551f6ae04520746ef7db241088a70d320ddb575bde71433bfc5f82f59e839.DeviceRequestBuilder) {
     return i17a551f6ae04520746ef7db241088a70d320ddb575bde71433bfc5f82f59e839.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get windowsHelloForBusinessMethods from users
+// Get represents the Windows Hello for Business authentication method registered to a user for authentication.
 func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Get(options *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsHelloForBusinessAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

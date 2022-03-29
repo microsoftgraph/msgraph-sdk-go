@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the educationRoot singleton.
 type LocationUniqueIdType int
 
 const (

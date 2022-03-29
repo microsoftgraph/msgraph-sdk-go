@@ -14,10 +14,11 @@ const (
     MACOS_CONDITIONALACCESSDEVICEPLATFORM
     ALL_CONDITIONALACCESSDEVICEPLATFORM
     UNKNOWNFUTUREVALUE_CONDITIONALACCESSDEVICEPLATFORM
+    LINUX_CONDITIONALACCESSDEVICEPLATFORM
 )
 
 func (i ConditionalAccessDevicePlatform) String() string {
-    return []string{"ANDROID", "IOS", "WINDOWS", "WINDOWSPHONE", "MACOS", "ALL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"ANDROID", "IOS", "WINDOWS", "WINDOWSPHONE", "MACOS", "ALL", "UNKNOWNFUTUREVALUE", "LINUX"}[i]
 }
 func ParseConditionalAccessDevicePlatform(v string) (interface{}, error) {
     result := ANDROID_CONDITIONALACCESSDEVICEPLATFORM
@@ -36,6 +37,8 @@ func ParseConditionalAccessDevicePlatform(v string) (interface{}, error) {
             result = ALL_CONDITIONALACCESSDEVICEPLATFORM
         case "UNKNOWNFUTUREVALUE":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSDEVICEPLATFORM
+        case "LINUX":
+            result = LINUX_CONDITIONALACCESSDEVICEPLATFORM
         default:
             return 0, errors.New("Unknown ConditionalAccessDevicePlatform value: " + v)
     }
