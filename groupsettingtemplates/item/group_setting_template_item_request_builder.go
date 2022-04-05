@@ -1,14 +1,14 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i535340b77c27094ee236bb42cd6d6ecb0741e1f8ed70e47b43e92472c1f9535c "github.com/microsoftgraph/msgraph-sdk-go/groupsettingtemplates/item/checkmemberobjects"
     ib24705b5e21850aefb572da669580b25cff74a7513ba53674efeff14fe51e5cb "github.com/microsoftgraph/msgraph-sdk-go/groupsettingtemplates/item/getmemberobjects"
     ic9284ba20a018bdf9cc611bd4cc87612370fd87e308417912c51e24a09a84b7b "github.com/microsoftgraph/msgraph-sdk-go/groupsettingtemplates/item/checkmembergroups"
     id343ec0d598ad136300b8599ebf6da41179c7224734d67f8c9ca6914ab993a9c "github.com/microsoftgraph/msgraph-sdk-go/groupsettingtemplates/item/getmembergroups"
     if0de78395fe1dccb1dbdb7b7fe16ca5dd70edd86fe4f481d0b82bca471e231f0 "github.com/microsoftgraph/msgraph-sdk-go/groupsettingtemplates/item/restore"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
 // GroupSettingTemplateItemRequestBuilder provides operations to manage the collection of groupSettingTemplate entities.
@@ -16,29 +16,29 @@ type GroupSettingTemplateItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // GroupSettingTemplateItemRequestBuilderDeleteOptions options for Delete
 type GroupSettingTemplateItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // GroupSettingTemplateItemRequestBuilderGetOptions options for Get
 type GroupSettingTemplateItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *GroupSettingTemplateItemRequestBuilderGetQueryParameters;
+    QueryParameters *GroupSettingTemplateItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // GroupSettingTemplateItemRequestBuilderGetQueryParameters get entity from groupSettingTemplates by key
 type GroupSettingTemplateItemRequestBuilderGetQueryParameters struct {
@@ -50,22 +50,24 @@ type GroupSettingTemplateItemRequestBuilderGetQueryParameters struct {
 // GroupSettingTemplateItemRequestBuilderPatchOptions options for Patch
 type GroupSettingTemplateItemRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupSettingTemplateable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// CheckMemberGroups the checkMemberGroups property
 func (m *GroupSettingTemplateItemRequestBuilder) CheckMemberGroups()(*ic9284ba20a018bdf9cc611bd4cc87612370fd87e308417912c51e24a09a84b7b.CheckMemberGroupsRequestBuilder) {
     return ic9284ba20a018bdf9cc611bd4cc87612370fd87e308417912c51e24a09a84b7b.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// CheckMemberObjects the checkMemberObjects property
 func (m *GroupSettingTemplateItemRequestBuilder) CheckMemberObjects()(*i535340b77c27094ee236bb42cd6d6ecb0741e1f8ed70e47b43e92472c1f9535c.CheckMemberObjectsRequestBuilder) {
     return i535340b77c27094ee236bb42cd6d6ecb0741e1f8ed70e47b43e92472c1f9535c.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewGroupSettingTemplateItemRequestBuilderInternal instantiates a new GroupSettingTemplateItemRequestBuilder and sets the default values.
-func NewGroupSettingTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupSettingTemplateItemRequestBuilder) {
+func NewGroupSettingTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupSettingTemplateItemRequestBuilder) {
     m := &GroupSettingTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groupSettingTemplates/{groupSettingTemplate_id}{?select,expand}";
@@ -78,22 +80,22 @@ func NewGroupSettingTemplateItemRequestBuilderInternal(pathParameters map[string
     return m
 }
 // NewGroupSettingTemplateItemRequestBuilder instantiates a new GroupSettingTemplateItemRequestBuilder and sets the default values.
-func NewGroupSettingTemplateItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupSettingTemplateItemRequestBuilder) {
+func NewGroupSettingTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupSettingTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupSettingTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete entity from groupSettingTemplates
-func (m *GroupSettingTemplateItemRequestBuilder) CreateDeleteRequestInformation(options *GroupSettingTemplateItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *GroupSettingTemplateItemRequestBuilder) CreateDeleteRequestInformation(options *GroupSettingTemplateItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -101,19 +103,19 @@ func (m *GroupSettingTemplateItemRequestBuilder) CreateDeleteRequestInformation(
     return requestInfo, nil
 }
 // CreateGetRequestInformation get entity from groupSettingTemplates by key
-func (m *GroupSettingTemplateItemRequestBuilder) CreateGetRequestInformation(options *GroupSettingTemplateItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *GroupSettingTemplateItemRequestBuilder) CreateGetRequestInformation(options *GroupSettingTemplateItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -121,17 +123,17 @@ func (m *GroupSettingTemplateItemRequestBuilder) CreateGetRequestInformation(opt
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update entity in groupSettingTemplates
-func (m *GroupSettingTemplateItemRequestBuilder) CreatePatchRequestInformation(options *GroupSettingTemplateItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *GroupSettingTemplateItemRequestBuilder) CreatePatchRequestInformation(options *GroupSettingTemplateItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -144,9 +146,9 @@ func (m *GroupSettingTemplateItemRequestBuilder) Delete(options *GroupSettingTem
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -155,24 +157,26 @@ func (m *GroupSettingTemplateItemRequestBuilder) Delete(options *GroupSettingTem
     return nil
 }
 // Get get entity from groupSettingTemplates by key
-func (m *GroupSettingTemplateItemRequestBuilder) Get(options *GroupSettingTemplateItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupSettingTemplateable, error) {
+func (m *GroupSettingTemplateItemRequestBuilder) Get(options *GroupSettingTemplateItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateGroupSettingTemplateFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateGroupSettingTemplateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupSettingTemplateable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable), nil
 }
+// GetMemberGroups the getMemberGroups property
 func (m *GroupSettingTemplateItemRequestBuilder) GetMemberGroups()(*id343ec0d598ad136300b8599ebf6da41179c7224734d67f8c9ca6914ab993a9c.GetMemberGroupsRequestBuilder) {
     return id343ec0d598ad136300b8599ebf6da41179c7224734d67f8c9ca6914ab993a9c.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// GetMemberObjects the getMemberObjects property
 func (m *GroupSettingTemplateItemRequestBuilder) GetMemberObjects()(*ib24705b5e21850aefb572da669580b25cff74a7513ba53674efeff14fe51e5cb.GetMemberObjectsRequestBuilder) {
     return ib24705b5e21850aefb572da669580b25cff74a7513ba53674efeff14fe51e5cb.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -182,9 +186,9 @@ func (m *GroupSettingTemplateItemRequestBuilder) Patch(options *GroupSettingTemp
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -192,6 +196,7 @@ func (m *GroupSettingTemplateItemRequestBuilder) Patch(options *GroupSettingTemp
     }
     return nil
 }
+// Restore the restore property
 func (m *GroupSettingTemplateItemRequestBuilder) Restore()(*if0de78395fe1dccb1dbdb7b7fe16ca5dd70edd86fe4f481d0b82bca471e231f0.RestoreRequestBuilder) {
     return if0de78395fe1dccb1dbdb7b7fe16ca5dd70edd86fe4f481d0b82bca471e231f0.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

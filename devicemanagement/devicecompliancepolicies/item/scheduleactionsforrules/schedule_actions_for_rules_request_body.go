@@ -1,16 +1,16 @@
 package scheduleactionsforrules
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // ScheduleActionsForRulesRequestBody provides operations to call the scheduleActionsForRules method.
 type ScheduleActionsForRulesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    deviceComplianceScheduledActionForRules []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRuleable;
+    // The deviceComplianceScheduledActionForRules property
+    deviceComplianceScheduledActionForRules []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable;
 }
 // NewScheduleActionsForRulesRequestBody instantiates a new scheduleActionsForRulesRequestBody and sets the default values.
 func NewScheduleActionsForRulesRequestBody()(*ScheduleActionsForRulesRequestBody) {
@@ -20,7 +20,7 @@ func NewScheduleActionsForRulesRequestBody()(*ScheduleActionsForRulesRequestBody
     return m
 }
 // CreateScheduleActionsForRulesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateScheduleActionsForRulesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateScheduleActionsForRulesRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewScheduleActionsForRulesRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,8 +31,8 @@ func (m *ScheduleActionsForRulesRequestBody) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
-// GetDeviceComplianceScheduledActionForRules gets the deviceComplianceScheduledActionForRules property value. 
-func (m *ScheduleActionsForRulesRequestBody) GetDeviceComplianceScheduledActionForRules()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRuleable) {
+// GetDeviceComplianceScheduledActionForRules gets the deviceComplianceScheduledActionForRules property value. The deviceComplianceScheduledActionForRules property
+func (m *ScheduleActionsForRulesRequestBody) GetDeviceComplianceScheduledActionForRules()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable) {
     if m == nil {
         return nil
     } else {
@@ -40,17 +40,17 @@ func (m *ScheduleActionsForRulesRequestBody) GetDeviceComplianceScheduledActionF
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ScheduleActionsForRulesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["deviceComplianceScheduledActionForRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue)
+func (m *ScheduleActionsForRulesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceComplianceScheduledActionForRules"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRuleable, len(val))
+            res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRuleable)
+                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable)
             }
             m.SetDeviceComplianceScheduledActionForRules(res)
         }
@@ -59,11 +59,11 @@ func (m *ScheduleActionsForRulesRequestBody) GetFieldDeserializers()(map[string]
     return res
 }
 // Serialize serializes information the current object
-func (m *ScheduleActionsForRulesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ScheduleActionsForRulesRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetDeviceComplianceScheduledActionForRules() != nil {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceComplianceScheduledActionForRules()))
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceComplianceScheduledActionForRules()))
         for i, v := range m.GetDeviceComplianceScheduledActionForRules() {
-            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("deviceComplianceScheduledActionForRules", cast)
         if err != nil {
@@ -84,8 +84,8 @@ func (m *ScheduleActionsForRulesRequestBody) SetAdditionalData(value map[string]
         m.additionalData = value
     }
 }
-// SetDeviceComplianceScheduledActionForRules sets the deviceComplianceScheduledActionForRules property value. 
-func (m *ScheduleActionsForRulesRequestBody) SetDeviceComplianceScheduledActionForRules(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRuleable)() {
+// SetDeviceComplianceScheduledActionForRules sets the deviceComplianceScheduledActionForRules property value. The deviceComplianceScheduledActionForRules property
+func (m *ScheduleActionsForRulesRequestBody) SetDeviceComplianceScheduledActionForRules(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable)() {
     if m != nil {
         m.deviceComplianceScheduledActionForRules = value
     }

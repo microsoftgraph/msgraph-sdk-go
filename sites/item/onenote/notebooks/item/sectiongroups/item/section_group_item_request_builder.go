@@ -1,9 +1,9 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i0c14da62f472572c4b89863f4de53d17f3a18be0fc10a386a0ac7f800819f6b6 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/notebooks/item/sectiongroups/item/sectiongroups"
     i73f544158d821f2cb63bc6b38148151233069d55aa360e833e13e7e236eaf168 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/notebooks/item/sectiongroups/item/parentnotebook"
     ia296cd308244b8227b6fbee4d356552f410953412d6808ab5311b70f3b9d2634 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/notebooks/item/sectiongroups/item/sections"
@@ -17,29 +17,29 @@ type SectionGroupItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // SectionGroupItemRequestBuilderDeleteOptions options for Delete
 type SectionGroupItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // SectionGroupItemRequestBuilderGetOptions options for Get
 type SectionGroupItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *SectionGroupItemRequestBuilderGetQueryParameters;
+    QueryParameters *SectionGroupItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // SectionGroupItemRequestBuilderGetQueryParameters the section groups in the notebook. Read-only. Nullable.
 type SectionGroupItemRequestBuilderGetQueryParameters struct {
@@ -51,16 +51,16 @@ type SectionGroupItemRequestBuilderGetQueryParameters struct {
 // SectionGroupItemRequestBuilderPatchOptions options for Patch
 type SectionGroupItemRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroupable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // NewSectionGroupItemRequestBuilderInternal instantiates a new SectionGroupItemRequestBuilder and sets the default values.
-func NewSectionGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SectionGroupItemRequestBuilder) {
+func NewSectionGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SectionGroupItemRequestBuilder) {
     m := &SectionGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site_id}/onenote/notebooks/{notebook_id}/sectionGroups/{sectionGroup_id}{?select,expand}";
@@ -73,22 +73,22 @@ func NewSectionGroupItemRequestBuilderInternal(pathParameters map[string]string,
     return m
 }
 // NewSectionGroupItemRequestBuilder instantiates a new SectionGroupItemRequestBuilder and sets the default values.
-func NewSectionGroupItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SectionGroupItemRequestBuilder) {
+func NewSectionGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SectionGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSectionGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property sectionGroups for sites
-func (m *SectionGroupItemRequestBuilder) CreateDeleteRequestInformation(options *SectionGroupItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *SectionGroupItemRequestBuilder) CreateDeleteRequestInformation(options *SectionGroupItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -96,19 +96,19 @@ func (m *SectionGroupItemRequestBuilder) CreateDeleteRequestInformation(options 
     return requestInfo, nil
 }
 // CreateGetRequestInformation the section groups in the notebook. Read-only. Nullable.
-func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformation(options *SectionGroupItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformation(options *SectionGroupItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -116,17 +116,17 @@ func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformation(options *Se
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property sectionGroups in sites
-func (m *SectionGroupItemRequestBuilder) CreatePatchRequestInformation(options *SectionGroupItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *SectionGroupItemRequestBuilder) CreatePatchRequestInformation(options *SectionGroupItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -139,9 +139,9 @@ func (m *SectionGroupItemRequestBuilder) Delete(options *SectionGroupItemRequest
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -150,24 +150,26 @@ func (m *SectionGroupItemRequestBuilder) Delete(options *SectionGroupItemRequest
     return nil
 }
 // Get the section groups in the notebook. Read-only. Nullable.
-func (m *SectionGroupItemRequestBuilder) Get(options *SectionGroupItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroupable, error) {
+func (m *SectionGroupItemRequestBuilder) Get(options *SectionGroupItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSectionGroupFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSectionGroupFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroupable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable), nil
 }
+// ParentNotebook the parentNotebook property
 func (m *SectionGroupItemRequestBuilder) ParentNotebook()(*i73f544158d821f2cb63bc6b38148151233069d55aa360e833e13e7e236eaf168.ParentNotebookRequestBuilder) {
     return i73f544158d821f2cb63bc6b38148151233069d55aa360e833e13e7e236eaf168.NewParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ParentSectionGroup the parentSectionGroup property
 func (m *SectionGroupItemRequestBuilder) ParentSectionGroup()(*if248964e57740c18113c649a36cf3ac92e9918cd515e078e5e1c536c9c97dcd7.ParentSectionGroupRequestBuilder) {
     return if248964e57740c18113c649a36cf3ac92e9918cd515e078e5e1c536c9c97dcd7.NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -177,9 +179,9 @@ func (m *SectionGroupItemRequestBuilder) Patch(options *SectionGroupItemRequestB
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -187,6 +189,7 @@ func (m *SectionGroupItemRequestBuilder) Patch(options *SectionGroupItemRequestB
     }
     return nil
 }
+// SectionGroups the sectionGroups property
 func (m *SectionGroupItemRequestBuilder) SectionGroups()(*i0c14da62f472572c4b89863f4de53d17f3a18be0fc10a386a0ac7f800819f6b6.SectionGroupsRequestBuilder) {
     return i0c14da62f472572c4b89863f4de53d17f3a18be0fc10a386a0ac7f800819f6b6.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -201,6 +204,7 @@ func (m *SectionGroupItemRequestBuilder) SectionGroupsById(id string)(*i021bd612
     }
     return i021bd612dd07d157ba0a8b98e6398be8f6b5835cdb3afaaf94297d6611ace831.NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Sections the sections property
 func (m *SectionGroupItemRequestBuilder) Sections()(*ia296cd308244b8227b6fbee4d356552f410953412d6808ab5311b70f3b9d2634.SectionsRequestBuilder) {
     return ia296cd308244b8227b6fbee4d356552f410953412d6808ab5311b70f3b9d2634.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

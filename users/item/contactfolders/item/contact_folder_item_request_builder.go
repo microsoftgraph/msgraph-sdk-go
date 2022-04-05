@@ -1,9 +1,9 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i12bbca421752c1a216af39c1b248202a000c0523508478cb12f65bebbdf390b1 "github.com/microsoftgraph/msgraph-sdk-go/users/item/contactfolders/item/singlevalueextendedproperties"
     i60ab60f82d14e2dac827c4a94548731a12742fd43ee5e3c8ad4e981c63b3430e "github.com/microsoftgraph/msgraph-sdk-go/users/item/contactfolders/item/childfolders"
     i65553c18ffeaa784c3939c2a02713d4581a841081044d39399ed69407816f934 "github.com/microsoftgraph/msgraph-sdk-go/users/item/contactfolders/item/multivalueextendedproperties"
@@ -19,29 +19,29 @@ type ContactFolderItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // ContactFolderItemRequestBuilderDeleteOptions options for Delete
 type ContactFolderItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // ContactFolderItemRequestBuilderGetOptions options for Get
 type ContactFolderItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *ContactFolderItemRequestBuilderGetQueryParameters;
+    QueryParameters *ContactFolderItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // ContactFolderItemRequestBuilderGetQueryParameters the user's contacts folders. Read-only. Nullable.
 type ContactFolderItemRequestBuilderGetQueryParameters struct {
@@ -51,14 +51,15 @@ type ContactFolderItemRequestBuilderGetQueryParameters struct {
 // ContactFolderItemRequestBuilderPatchOptions options for Patch
 type ContactFolderItemRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolderable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// ChildFolders the childFolders property
 func (m *ContactFolderItemRequestBuilder) ChildFolders()(*i60ab60f82d14e2dac827c4a94548731a12742fd43ee5e3c8ad4e981c63b3430e.ChildFoldersRequestBuilder) {
     return i60ab60f82d14e2dac827c4a94548731a12742fd43ee5e3c8ad4e981c63b3430e.NewChildFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -74,7 +75,7 @@ func (m *ContactFolderItemRequestBuilder) ChildFoldersById(id string)(*i313408c9
     return i313408c9cc7b38ecc6251cca569a0b7c6640fe8f5556623d6b010c4ad94526c7.NewContactFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewContactFolderItemRequestBuilderInternal instantiates a new ContactFolderItemRequestBuilder and sets the default values.
-func NewContactFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactFolderItemRequestBuilder) {
+func NewContactFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContactFolderItemRequestBuilder) {
     m := &ContactFolderItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user_id}/contactFolders/{contactFolder_id}{?select}";
@@ -87,11 +88,12 @@ func NewContactFolderItemRequestBuilderInternal(pathParameters map[string]string
     return m
 }
 // NewContactFolderItemRequestBuilder instantiates a new ContactFolderItemRequestBuilder and sets the default values.
-func NewContactFolderItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactFolderItemRequestBuilder) {
+func NewContactFolderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContactFolderItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContactFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Contacts the contacts property
 func (m *ContactFolderItemRequestBuilder) Contacts()(*ida83c3cad119a461d4351a90d275d85f7ab07a13493267b770834de6b0df1e46.ContactsRequestBuilder) {
     return ida83c3cad119a461d4351a90d275d85f7ab07a13493267b770834de6b0df1e46.NewContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -107,16 +109,16 @@ func (m *ContactFolderItemRequestBuilder) ContactsById(id string)(*i316f60e76d66
     return i316f60e76d66ed07f62c18eb8b9dbe052faea000d861699ea2e1e9ee3745269a.NewContactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property contactFolders for users
-func (m *ContactFolderItemRequestBuilder) CreateDeleteRequestInformation(options *ContactFolderItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *ContactFolderItemRequestBuilder) CreateDeleteRequestInformation(options *ContactFolderItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -124,19 +126,19 @@ func (m *ContactFolderItemRequestBuilder) CreateDeleteRequestInformation(options
     return requestInfo, nil
 }
 // CreateGetRequestInformation the user's contacts folders. Read-only. Nullable.
-func (m *ContactFolderItemRequestBuilder) CreateGetRequestInformation(options *ContactFolderItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *ContactFolderItemRequestBuilder) CreateGetRequestInformation(options *ContactFolderItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -144,17 +146,17 @@ func (m *ContactFolderItemRequestBuilder) CreateGetRequestInformation(options *C
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property contactFolders in users
-func (m *ContactFolderItemRequestBuilder) CreatePatchRequestInformation(options *ContactFolderItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *ContactFolderItemRequestBuilder) CreatePatchRequestInformation(options *ContactFolderItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -167,9 +169,9 @@ func (m *ContactFolderItemRequestBuilder) Delete(options *ContactFolderItemReque
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -178,21 +180,22 @@ func (m *ContactFolderItemRequestBuilder) Delete(options *ContactFolderItemReque
     return nil
 }
 // Get the user's contacts folders. Read-only. Nullable.
-func (m *ContactFolderItemRequestBuilder) Get(options *ContactFolderItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolderable, error) {
+func (m *ContactFolderItemRequestBuilder) Get(options *ContactFolderItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateContactFolderFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateContactFolderFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolderable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
+// MultiValueExtendedProperties the multiValueExtendedProperties property
 func (m *ContactFolderItemRequestBuilder) MultiValueExtendedProperties()(*i65553c18ffeaa784c3939c2a02713d4581a841081044d39399ed69407816f934.MultiValueExtendedPropertiesRequestBuilder) {
     return i65553c18ffeaa784c3939c2a02713d4581a841081044d39399ed69407816f934.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -213,9 +216,9 @@ func (m *ContactFolderItemRequestBuilder) Patch(options *ContactFolderItemReques
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -223,6 +226,7 @@ func (m *ContactFolderItemRequestBuilder) Patch(options *ContactFolderItemReques
     }
     return nil
 }
+// SingleValueExtendedProperties the singleValueExtendedProperties property
 func (m *ContactFolderItemRequestBuilder) SingleValueExtendedProperties()(*i12bbca421752c1a216af39c1b248202a000c0523508478cb12f65bebbdf390b1.SingleValueExtendedPropertiesRequestBuilder) {
     return i12bbca421752c1a216af39c1b248202a000c0523508478cb12f65bebbdf390b1.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

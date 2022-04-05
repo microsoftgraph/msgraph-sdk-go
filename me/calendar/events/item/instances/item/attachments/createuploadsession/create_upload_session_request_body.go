@@ -1,16 +1,16 @@
 package createuploadsession
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // CreateUploadSessionRequestBody provides operations to call the createUploadSession method.
 type CreateUploadSessionRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    attachmentItem i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AttachmentItemable;
+    // The AttachmentItem property
+    attachmentItem iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable;
 }
 // NewCreateUploadSessionRequestBody instantiates a new createUploadSessionRequestBody and sets the default values.
 func NewCreateUploadSessionRequestBody()(*CreateUploadSessionRequestBody) {
@@ -20,7 +20,7 @@ func NewCreateUploadSessionRequestBody()(*CreateUploadSessionRequestBody) {
     return m
 }
 // CreateCreateUploadSessionRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCreateUploadSessionRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCreateUploadSessionRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCreateUploadSessionRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,8 +31,8 @@ func (m *CreateUploadSessionRequestBody) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetAttachmentItem gets the attachmentItem property value. 
-func (m *CreateUploadSessionRequestBody) GetAttachmentItem()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AttachmentItemable) {
+// GetAttachmentItem gets the attachmentItem property value. The AttachmentItem property
+func (m *CreateUploadSessionRequestBody) GetAttachmentItem()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable) {
     if m == nil {
         return nil
     } else {
@@ -40,22 +40,22 @@ func (m *CreateUploadSessionRequestBody) GetAttachmentItem()(i4a838ef194e4c99e9f
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CreateUploadSessionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["attachmentItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateAttachmentItemFromDiscriminatorValue)
+func (m *CreateUploadSessionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attachmentItem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAttachmentItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAttachmentItem(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AttachmentItemable))
+            m.SetAttachmentItem(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable))
         }
         return nil
     }
     return res
 }
 // Serialize serializes information the current object
-func (m *CreateUploadSessionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CreateUploadSessionRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("attachmentItem", m.GetAttachmentItem())
         if err != nil {
@@ -76,8 +76,8 @@ func (m *CreateUploadSessionRequestBody) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetAttachmentItem sets the attachmentItem property value. 
-func (m *CreateUploadSessionRequestBody) SetAttachmentItem(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AttachmentItemable)() {
+// SetAttachmentItem sets the attachmentItem property value. The AttachmentItem property
+func (m *CreateUploadSessionRequestBody) SetAttachmentItem(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable)() {
     if m != nil {
         m.attachmentItem = value
     }

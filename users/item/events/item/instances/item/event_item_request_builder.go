@@ -1,9 +1,9 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i06b377af3ae66d378617ba4960aa8e040b78e63f3ebfd980bf3a5d47930f6ecc "github.com/microsoftgraph/msgraph-sdk-go/users/item/events/item/instances/item/forward"
     i1a802c2e4b157587519614c1bc8be3ea7021108354647debc56f0b6d913669bd "github.com/microsoftgraph/msgraph-sdk-go/users/item/events/item/instances/item/calendar"
     i22b4abf5d21f46083e388fe3297f3a331d292876d79491e062ea21ab4d5d5d96 "github.com/microsoftgraph/msgraph-sdk-go/users/item/events/item/instances/item/cancel"
@@ -27,29 +27,29 @@ type EventItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // EventItemRequestBuilderDeleteOptions options for Delete
 type EventItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // EventItemRequestBuilderGetOptions options for Get
 type EventItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *EventItemRequestBuilderGetQueryParameters;
+    QueryParameters *EventItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // EventItemRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 type EventItemRequestBuilderGetQueryParameters struct {
@@ -59,17 +59,19 @@ type EventItemRequestBuilderGetQueryParameters struct {
 // EventItemRequestBuilderPatchOptions options for Patch
 type EventItemRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Eventable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// Accept the accept property
 func (m *EventItemRequestBuilder) Accept()(*i2914318856007078157daa88f50c0c37f7a2d7216058973bf90effba2e5d7a68.AcceptRequestBuilder) {
     return i2914318856007078157daa88f50c0c37f7a2d7216058973bf90effba2e5d7a68.NewAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Attachments the attachments property
 func (m *EventItemRequestBuilder) Attachments()(*ib18d29dbe5c1c698693687c9c8e985db4ab1ddf50a568e2d1bfca96b9b934e87.AttachmentsRequestBuilder) {
     return ib18d29dbe5c1c698693687c9c8e985db4ab1ddf50a568e2d1bfca96b9b934e87.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -84,14 +86,16 @@ func (m *EventItemRequestBuilder) AttachmentsById(id string)(*ia583e36d9ac073d78
     }
     return ia583e36d9ac073d787b4f5e0abb093224bbfbbb0acf8b3a6f1b0f1e7dfd13a55.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Calendar the calendar property
 func (m *EventItemRequestBuilder) Calendar()(*i1a802c2e4b157587519614c1bc8be3ea7021108354647debc56f0b6d913669bd.CalendarRequestBuilder) {
     return i1a802c2e4b157587519614c1bc8be3ea7021108354647debc56f0b6d913669bd.NewCalendarRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Cancel the cancel property
 func (m *EventItemRequestBuilder) Cancel()(*i22b4abf5d21f46083e388fe3297f3a331d292876d79491e062ea21ab4d5d5d96.CancelRequestBuilder) {
     return i22b4abf5d21f46083e388fe3297f3a331d292876d79491e062ea21ab4d5d5d96.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewEventItemRequestBuilderInternal instantiates a new EventItemRequestBuilder and sets the default values.
-func NewEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventItemRequestBuilder) {
+func NewEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EventItemRequestBuilder) {
     m := &EventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user_id}/events/{event_id}/instances/{event_id1}{?select}";
@@ -104,22 +108,22 @@ func NewEventItemRequestBuilderInternal(pathParameters map[string]string, reques
     return m
 }
 // NewEventItemRequestBuilder instantiates a new EventItemRequestBuilder and sets the default values.
-func NewEventItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventItemRequestBuilder) {
+func NewEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property instances for users
-func (m *EventItemRequestBuilder) CreateDeleteRequestInformation(options *EventItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EventItemRequestBuilder) CreateDeleteRequestInformation(options *EventItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -127,19 +131,19 @@ func (m *EventItemRequestBuilder) CreateDeleteRequestInformation(options *EventI
     return requestInfo, nil
 }
 // CreateGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
-func (m *EventItemRequestBuilder) CreateGetRequestInformation(options *EventItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EventItemRequestBuilder) CreateGetRequestInformation(options *EventItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -147,23 +151,24 @@ func (m *EventItemRequestBuilder) CreateGetRequestInformation(options *EventItem
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property instances in users
-func (m *EventItemRequestBuilder) CreatePatchRequestInformation(options *EventItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EventItemRequestBuilder) CreatePatchRequestInformation(options *EventItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
+// Decline the decline property
 func (m *EventItemRequestBuilder) Decline()(*i82457e731323ccb1502e74a2a6dd1d66fc84027eee6d3af7a3949d1172d5ff8f.DeclineRequestBuilder) {
     return i82457e731323ccb1502e74a2a6dd1d66fc84027eee6d3af7a3949d1172d5ff8f.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,9 +178,9 @@ func (m *EventItemRequestBuilder) Delete(options *EventItemRequestBuilderDeleteO
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -183,9 +188,11 @@ func (m *EventItemRequestBuilder) Delete(options *EventItemRequestBuilderDeleteO
     }
     return nil
 }
+// DismissReminder the dismissReminder property
 func (m *EventItemRequestBuilder) DismissReminder()(*i23d3284ba64b73b3325b23aef59a544daf0104c53a03ed2b31edafd13fc4e145.DismissReminderRequestBuilder) {
     return i23d3284ba64b73b3325b23aef59a544daf0104c53a03ed2b31edafd13fc4e145.NewDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Extensions the extensions property
 func (m *EventItemRequestBuilder) Extensions()(*i2d17d3f526e425e1407b9c1b64ad35279c0bd50d1d5815931329eb39e568cf03.ExtensionsRequestBuilder) {
     return i2d17d3f526e425e1407b9c1b64ad35279c0bd50d1d5815931329eb39e568cf03.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -200,25 +207,27 @@ func (m *EventItemRequestBuilder) ExtensionsById(id string)(*i38f54e1f5ed4752a82
     }
     return i38f54e1f5ed4752a820f6c2288d81c7117bf023cb9f0e0280f49cb1e9cb0ddfd.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Forward the forward property
 func (m *EventItemRequestBuilder) Forward()(*i06b377af3ae66d378617ba4960aa8e040b78e63f3ebfd980bf3a5d47930f6ecc.ForwardRequestBuilder) {
     return i06b377af3ae66d378617ba4960aa8e040b78e63f3ebfd980bf3a5d47930f6ecc.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
-func (m *EventItemRequestBuilder) Get(options *EventItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Eventable, error) {
+func (m *EventItemRequestBuilder) Get(options *EventItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEventFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEventFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Eventable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable), nil
 }
+// MultiValueExtendedProperties the multiValueExtendedProperties property
 func (m *EventItemRequestBuilder) MultiValueExtendedProperties()(*i8f6b1073998fe7e072e94da48aef27ff47795e232ec787943a4bc43820018dd7.MultiValueExtendedPropertiesRequestBuilder) {
     return i8f6b1073998fe7e072e94da48aef27ff47795e232ec787943a4bc43820018dd7.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -239,9 +248,9 @@ func (m *EventItemRequestBuilder) Patch(options *EventItemRequestBuilderPatchOpt
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -249,6 +258,7 @@ func (m *EventItemRequestBuilder) Patch(options *EventItemRequestBuilderPatchOpt
     }
     return nil
 }
+// SingleValueExtendedProperties the singleValueExtendedProperties property
 func (m *EventItemRequestBuilder) SingleValueExtendedProperties()(*i2641548965eaf8952f9123f07765870567794d4a5f1f35fbb5f9b4b9179f3cda.SingleValueExtendedPropertiesRequestBuilder) {
     return i2641548965eaf8952f9123f07765870567794d4a5f1f35fbb5f9b4b9179f3cda.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -263,9 +273,11 @@ func (m *EventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*
     }
     return i9528e41139478696eb2cf527c6102ee1417a84b633910fb7734d66d6603dfe33.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// SnoozeReminder the snoozeReminder property
 func (m *EventItemRequestBuilder) SnoozeReminder()(*ice7a8351756d24c105c5bc2d1f4183f8e71e711980b3646eef4d0ab27daba9f5.SnoozeReminderRequestBuilder) {
     return ice7a8351756d24c105c5bc2d1f4183f8e71e711980b3646eef4d0ab27daba9f5.NewSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// TentativelyAccept the tentativelyAccept property
 func (m *EventItemRequestBuilder) TentativelyAccept()(*i3ebed318d699e805b107ab544bb8d4e7846a7e636121dc579c5d3f23b875434b.TentativelyAcceptRequestBuilder) {
     return i3ebed318d699e805b107ab544bb8d4e7846a7e636121dc579c5d3f23b875434b.NewTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

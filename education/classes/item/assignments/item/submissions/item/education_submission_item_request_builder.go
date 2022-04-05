@@ -1,9 +1,9 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i3c6015cf8457d8d8ec01d019f3dbc202765651c2130e73641cf6b06caeb2d228 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/setupresourcesfolder"
     i4897ecfe261ff150792387d2c4b3c93a4a0c1fa8d17924ec2e00dd6cf21d022d "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/return_escaped"
     i6676fa5ab422c72e51792bf14b597f55c25d08008768ede327ecc59a581d7d7c "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/reassign"
@@ -22,29 +22,29 @@ type EducationSubmissionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // EducationSubmissionItemRequestBuilderDeleteOptions options for Delete
 type EducationSubmissionItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // EducationSubmissionItemRequestBuilderGetOptions options for Get
 type EducationSubmissionItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *EducationSubmissionItemRequestBuilderGetQueryParameters;
+    QueryParameters *EducationSubmissionItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // EducationSubmissionItemRequestBuilderGetQueryParameters once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 type EducationSubmissionItemRequestBuilderGetQueryParameters struct {
@@ -56,16 +56,16 @@ type EducationSubmissionItemRequestBuilderGetQueryParameters struct {
 // EducationSubmissionItemRequestBuilderPatchOptions options for Patch
 type EducationSubmissionItemRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // NewEducationSubmissionItemRequestBuilderInternal instantiates a new EducationSubmissionItemRequestBuilder and sets the default values.
-func NewEducationSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSubmissionItemRequestBuilder) {
+func NewEducationSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationSubmissionItemRequestBuilder) {
     m := &EducationSubmissionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/classes/{educationClass_id}/assignments/{educationAssignment_id}/submissions/{educationSubmission_id}{?select,expand}";
@@ -78,22 +78,22 @@ func NewEducationSubmissionItemRequestBuilderInternal(pathParameters map[string]
     return m
 }
 // NewEducationSubmissionItemRequestBuilder instantiates a new EducationSubmissionItemRequestBuilder and sets the default values.
-func NewEducationSubmissionItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSubmissionItemRequestBuilder) {
+func NewEducationSubmissionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationSubmissionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationSubmissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property submissions for education
-func (m *EducationSubmissionItemRequestBuilder) CreateDeleteRequestInformation(options *EducationSubmissionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EducationSubmissionItemRequestBuilder) CreateDeleteRequestInformation(options *EducationSubmissionItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -101,19 +101,19 @@ func (m *EducationSubmissionItemRequestBuilder) CreateDeleteRequestInformation(o
     return requestInfo, nil
 }
 // CreateGetRequestInformation once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-func (m *EducationSubmissionItemRequestBuilder) CreateGetRequestInformation(options *EducationSubmissionItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EducationSubmissionItemRequestBuilder) CreateGetRequestInformation(options *EducationSubmissionItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -121,17 +121,17 @@ func (m *EducationSubmissionItemRequestBuilder) CreateGetRequestInformation(opti
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property submissions in education
-func (m *EducationSubmissionItemRequestBuilder) CreatePatchRequestInformation(options *EducationSubmissionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EducationSubmissionItemRequestBuilder) CreatePatchRequestInformation(options *EducationSubmissionItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -144,9 +144,9 @@ func (m *EducationSubmissionItemRequestBuilder) Delete(options *EducationSubmiss
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -155,21 +155,22 @@ func (m *EducationSubmissionItemRequestBuilder) Delete(options *EducationSubmiss
     return nil
 }
 // Get once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-func (m *EducationSubmissionItemRequestBuilder) Get(options *EducationSubmissionItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable, error) {
+func (m *EducationSubmissionItemRequestBuilder) Get(options *EducationSubmissionItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEducationSubmissionFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEducationSubmissionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmissionable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionable), nil
 }
+// Outcomes the outcomes property
 func (m *EducationSubmissionItemRequestBuilder) Outcomes()(*ic9e6f044df077c5c49203af4cbb1cb4bdd990da9a1e6a2c50a189335ae8c62fc.OutcomesRequestBuilder) {
     return ic9e6f044df077c5c49203af4cbb1cb4bdd990da9a1e6a2c50a189335ae8c62fc.NewOutcomesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -190,9 +191,9 @@ func (m *EducationSubmissionItemRequestBuilder) Patch(options *EducationSubmissi
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -200,9 +201,11 @@ func (m *EducationSubmissionItemRequestBuilder) Patch(options *EducationSubmissi
     }
     return nil
 }
+// Reassign the reassign property
 func (m *EducationSubmissionItemRequestBuilder) Reassign()(*i6676fa5ab422c72e51792bf14b597f55c25d08008768ede327ecc59a581d7d7c.ReassignRequestBuilder) {
     return i6676fa5ab422c72e51792bf14b597f55c25d08008768ede327ecc59a581d7d7c.NewReassignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Resources the resources property
 func (m *EducationSubmissionItemRequestBuilder) Resources()(*id25fa828362bc547da297fba40d2cdbe268a1fd50d31a4ead0dd41ffa77fdfc6.ResourcesRequestBuilder) {
     return id25fa828362bc547da297fba40d2cdbe268a1fd50d31a4ead0dd41ffa77fdfc6.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -217,15 +220,19 @@ func (m *EducationSubmissionItemRequestBuilder) ResourcesById(id string)(*idf6da
     }
     return idf6da69a1128e56db2a075a35c90dfb9d769744b063f36a369e943680fa35795.NewEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Return_escaped the return property
 func (m *EducationSubmissionItemRequestBuilder) Return_escaped()(*i4897ecfe261ff150792387d2c4b3c93a4a0c1fa8d17924ec2e00dd6cf21d022d.ReturnRequestBuilder) {
     return i4897ecfe261ff150792387d2c4b3c93a4a0c1fa8d17924ec2e00dd6cf21d022d.NewReturnRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SetUpResourcesFolder the setUpResourcesFolder property
 func (m *EducationSubmissionItemRequestBuilder) SetUpResourcesFolder()(*i3c6015cf8457d8d8ec01d019f3dbc202765651c2130e73641cf6b06caeb2d228.SetUpResourcesFolderRequestBuilder) {
     return i3c6015cf8457d8d8ec01d019f3dbc202765651c2130e73641cf6b06caeb2d228.NewSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Submit the submit property
 func (m *EducationSubmissionItemRequestBuilder) Submit()(*i685e1486255b2d524092d2de81f1a7d1d38632cbb99a29975e93cc433375ed77.SubmitRequestBuilder) {
     return i685e1486255b2d524092d2de81f1a7d1d38632cbb99a29975e93cc433375ed77.NewSubmitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SubmittedResources the submittedResources property
 func (m *EducationSubmissionItemRequestBuilder) SubmittedResources()(*id595ffd3ed593bffbb73e849bb31881e531d536f5c57d0b37c7933bb34ad1ad0.SubmittedResourcesRequestBuilder) {
     return id595ffd3ed593bffbb73e849bb31881e531d536f5c57d0b37c7933bb34ad1ad0.NewSubmittedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -240,6 +247,7 @@ func (m *EducationSubmissionItemRequestBuilder) SubmittedResourcesById(id string
     }
     return if2b3a1bb63b3f0f978027b12a06272583c8a6c2ebe1a551f1e1b72a751ef4004.NewEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Unsubmit the unsubmit property
 func (m *EducationSubmissionItemRequestBuilder) Unsubmit()(*id45b66ebeec3910c7bc64c11a6669bb5fd10605cbdd08bde69bcaa49dd9ab2a7.UnsubmitRequestBuilder) {
     return id45b66ebeec3910c7bc64c11a6669bb5fd10605cbdd08bde69bcaa49dd9ab2a7.NewUnsubmitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

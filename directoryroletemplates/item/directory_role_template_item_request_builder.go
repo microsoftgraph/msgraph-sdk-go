@@ -1,14 +1,14 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i414bcfa81cf62cb492a10891e6ade220e793a207338da61bbf717173d599c787 "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/item/checkmemberobjects"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     iaa01455e2185fdd184cd4993202a2e1f3eec805d38e4ba431cce0c3144cca8f4 "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/item/getmemberobjects"
     ic28c47ff94ea6e8ffffd08e5644e712f6344e2bc49deb132bfac7a2d04ceb662 "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/item/restore"
     iec1a8ab976accbeb3945c4eeab0a0c4f560960c9c1f9f5ebd942d29059b40629 "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/item/getmembergroups"
     iff1e45e5e14f79eaaea630c1948f4ffdd5e56ce522e6fc233cd011734be4178b "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/item/checkmembergroups"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
 // DirectoryRoleTemplateItemRequestBuilder provides operations to manage the collection of directoryRoleTemplate entities.
@@ -16,29 +16,29 @@ type DirectoryRoleTemplateItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // DirectoryRoleTemplateItemRequestBuilderDeleteOptions options for Delete
 type DirectoryRoleTemplateItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // DirectoryRoleTemplateItemRequestBuilderGetOptions options for Get
 type DirectoryRoleTemplateItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *DirectoryRoleTemplateItemRequestBuilderGetQueryParameters;
+    QueryParameters *DirectoryRoleTemplateItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // DirectoryRoleTemplateItemRequestBuilderGetQueryParameters get entity from directoryRoleTemplates by key
 type DirectoryRoleTemplateItemRequestBuilderGetQueryParameters struct {
@@ -50,22 +50,24 @@ type DirectoryRoleTemplateItemRequestBuilderGetQueryParameters struct {
 // DirectoryRoleTemplateItemRequestBuilderPatchOptions options for Patch
 type DirectoryRoleTemplateItemRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleTemplateable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// CheckMemberGroups the checkMemberGroups property
 func (m *DirectoryRoleTemplateItemRequestBuilder) CheckMemberGroups()(*iff1e45e5e14f79eaaea630c1948f4ffdd5e56ce522e6fc233cd011734be4178b.CheckMemberGroupsRequestBuilder) {
     return iff1e45e5e14f79eaaea630c1948f4ffdd5e56ce522e6fc233cd011734be4178b.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// CheckMemberObjects the checkMemberObjects property
 func (m *DirectoryRoleTemplateItemRequestBuilder) CheckMemberObjects()(*i414bcfa81cf62cb492a10891e6ade220e793a207338da61bbf717173d599c787.CheckMemberObjectsRequestBuilder) {
     return i414bcfa81cf62cb492a10891e6ade220e793a207338da61bbf717173d599c787.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryRoleTemplateItemRequestBuilderInternal instantiates a new DirectoryRoleTemplateItemRequestBuilder and sets the default values.
-func NewDirectoryRoleTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleTemplateItemRequestBuilder) {
+func NewDirectoryRoleTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleTemplateItemRequestBuilder) {
     m := &DirectoryRoleTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directoryRoleTemplates/{directoryRoleTemplate_id}{?select,expand}";
@@ -78,22 +80,22 @@ func NewDirectoryRoleTemplateItemRequestBuilderInternal(pathParameters map[strin
     return m
 }
 // NewDirectoryRoleTemplateItemRequestBuilder instantiates a new DirectoryRoleTemplateItemRequestBuilder and sets the default values.
-func NewDirectoryRoleTemplateItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleTemplateItemRequestBuilder) {
+func NewDirectoryRoleTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete entity from directoryRoleTemplates
-func (m *DirectoryRoleTemplateItemRequestBuilder) CreateDeleteRequestInformation(options *DirectoryRoleTemplateItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *DirectoryRoleTemplateItemRequestBuilder) CreateDeleteRequestInformation(options *DirectoryRoleTemplateItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -101,19 +103,19 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) CreateDeleteRequestInformation
     return requestInfo, nil
 }
 // CreateGetRequestInformation get entity from directoryRoleTemplates by key
-func (m *DirectoryRoleTemplateItemRequestBuilder) CreateGetRequestInformation(options *DirectoryRoleTemplateItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *DirectoryRoleTemplateItemRequestBuilder) CreateGetRequestInformation(options *DirectoryRoleTemplateItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -121,17 +123,17 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) CreateGetRequestInformation(op
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update entity in directoryRoleTemplates
-func (m *DirectoryRoleTemplateItemRequestBuilder) CreatePatchRequestInformation(options *DirectoryRoleTemplateItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *DirectoryRoleTemplateItemRequestBuilder) CreatePatchRequestInformation(options *DirectoryRoleTemplateItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -144,9 +146,9 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) Delete(options *DirectoryRoleT
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -155,24 +157,26 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) Delete(options *DirectoryRoleT
     return nil
 }
 // Get get entity from directoryRoleTemplates by key
-func (m *DirectoryRoleTemplateItemRequestBuilder) Get(options *DirectoryRoleTemplateItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleTemplateable, error) {
+func (m *DirectoryRoleTemplateItemRequestBuilder) Get(options *DirectoryRoleTemplateItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDirectoryRoleTemplateFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryRoleTemplateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleTemplateable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable), nil
 }
+// GetMemberGroups the getMemberGroups property
 func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberGroups()(*iec1a8ab976accbeb3945c4eeab0a0c4f560960c9c1f9f5ebd942d29059b40629.GetMemberGroupsRequestBuilder) {
     return iec1a8ab976accbeb3945c4eeab0a0c4f560960c9c1f9f5ebd942d29059b40629.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// GetMemberObjects the getMemberObjects property
 func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberObjects()(*iaa01455e2185fdd184cd4993202a2e1f3eec805d38e4ba431cce0c3144cca8f4.GetMemberObjectsRequestBuilder) {
     return iaa01455e2185fdd184cd4993202a2e1f3eec805d38e4ba431cce0c3144cca8f4.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -182,9 +186,9 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) Patch(options *DirectoryRoleTe
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -192,6 +196,7 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) Patch(options *DirectoryRoleTe
     }
     return nil
 }
+// Restore the restore property
 func (m *DirectoryRoleTemplateItemRequestBuilder) Restore()(*ic28c47ff94ea6e8ffffd08e5644e712f6344e2bc49deb132bfac7a2d04ceb662.RestoreRequestBuilder) {
     return ic28c47ff94ea6e8ffffd08e5644e712f6344e2bc49deb132bfac7a2d04ceb662.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -1,18 +1,18 @@
 package getmailtips
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // GetMailTipsRequestBody provides operations to call the getMailTips method.
 type GetMailTipsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The EmailAddresses property
     emailAddresses []string;
-    // 
-    mailTipsOptions *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailTipsType;
+    // The MailTipsOptions property
+    mailTipsOptions *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType;
 }
 // NewGetMailTipsRequestBody instantiates a new getMailTipsRequestBody and sets the default values.
 func NewGetMailTipsRequestBody()(*GetMailTipsRequestBody) {
@@ -22,7 +22,7 @@ func NewGetMailTipsRequestBody()(*GetMailTipsRequestBody) {
     return m
 }
 // CreateGetMailTipsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateGetMailTipsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateGetMailTipsRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetMailTipsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,7 +33,7 @@ func (m *GetMailTipsRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetEmailAddresses gets the emailAddresses property value. 
+// GetEmailAddresses gets the emailAddresses property value. The EmailAddresses property
 func (m *GetMailTipsRequestBody) GetEmailAddresses()([]string) {
     if m == nil {
         return nil
@@ -42,9 +42,9 @@ func (m *GetMailTipsRequestBody) GetEmailAddresses()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetMailTipsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["emailAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *GetMailTipsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["emailAddresses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -58,20 +58,20 @@ func (m *GetMailTipsRequestBody) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["mailTipsOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ParseMailTipsType)
+    res["mailTipsOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseMailTipsType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMailTipsOptions(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailTipsType))
+            m.SetMailTipsOptions(val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType))
         }
         return nil
     }
     return res
 }
-// GetMailTipsOptions gets the mailTipsOptions property value. 
-func (m *GetMailTipsRequestBody) GetMailTipsOptions()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailTipsType) {
+// GetMailTipsOptions gets the mailTipsOptions property value. The MailTipsOptions property
+func (m *GetMailTipsRequestBody) GetMailTipsOptions()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType) {
     if m == nil {
         return nil
     } else {
@@ -79,7 +79,7 @@ func (m *GetMailTipsRequestBody) GetMailTipsOptions()(*i4a838ef194e4c99e9f2c63ba
     }
 }
 // Serialize serializes information the current object
-func (m *GetMailTipsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *GetMailTipsRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetEmailAddresses() != nil {
         err := writer.WriteCollectionOfStringValues("emailAddresses", m.GetEmailAddresses())
         if err != nil {
@@ -107,14 +107,14 @@ func (m *GetMailTipsRequestBody) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetEmailAddresses sets the emailAddresses property value. 
+// SetEmailAddresses sets the emailAddresses property value. The EmailAddresses property
 func (m *GetMailTipsRequestBody) SetEmailAddresses(value []string)() {
     if m != nil {
         m.emailAddresses = value
     }
 }
-// SetMailTipsOptions sets the mailTipsOptions property value. 
-func (m *GetMailTipsRequestBody) SetMailTipsOptions(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailTipsType)() {
+// SetMailTipsOptions sets the mailTipsOptions property value. The MailTipsOptions property
+func (m *GetMailTipsRequestBody) SetMailTipsOptions(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType)() {
     if m != nil {
         m.mailTipsOptions = value
     }

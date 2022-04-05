@@ -1,9 +1,9 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i05d5f2d2f7d8643c0cc65d242a1e8e39efdfff6868938e24cc4d55d7dc247a81 "github.com/microsoftgraph/msgraph-sdk-go/drives/item/items/item/thumbnails"
     i0cb44ac3ff5b85c2f1592086ca294cb612434d9f0b242efaa25ca47763aeef53 "github.com/microsoftgraph/msgraph-sdk-go/drives/item/items/item/subscriptions"
     i1028a583cd3165679a2742667fe557347c15e838469016c886ba9642f536e3c5 "github.com/microsoftgraph/msgraph-sdk-go/drives/item/items/item/analytics"
@@ -24,29 +24,29 @@ type DriveItemItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // DriveItemItemRequestBuilderDeleteOptions options for Delete
 type DriveItemItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // DriveItemItemRequestBuilderGetOptions options for Get
 type DriveItemItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *DriveItemItemRequestBuilderGetQueryParameters;
+    QueryParameters *DriveItemItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // DriveItemItemRequestBuilderGetQueryParameters all items contained in the drive. Read-only. Nullable.
 type DriveItemItemRequestBuilderGetQueryParameters struct {
@@ -58,17 +58,19 @@ type DriveItemItemRequestBuilderGetQueryParameters struct {
 // DriveItemItemRequestBuilderPatchOptions options for Patch
 type DriveItemItemRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// Analytics the analytics property
 func (m *DriveItemItemRequestBuilder) Analytics()(*i1028a583cd3165679a2742667fe557347c15e838469016c886ba9642f536e3c5.AnalyticsRequestBuilder) {
     return i1028a583cd3165679a2742667fe557347c15e838469016c886ba9642f536e3c5.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Children the children property
 func (m *DriveItemItemRequestBuilder) Children()(*i18a280d283ce2e40c61dc3a789783cd9b87e7d03b58573398c49a171ab7a1061.ChildrenRequestBuilder) {
     return i18a280d283ce2e40c61dc3a789783cd9b87e7d03b58573398c49a171ab7a1061.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -84,7 +86,7 @@ func (m *DriveItemItemRequestBuilder) ChildrenById(id string)(*i90ba6214fcbef64f
     return i90ba6214fcbef64f1de16cc5f1976222c710318406c262c19cfa0401c934bdd3.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
-func NewDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveItemItemRequestBuilder) {
+func NewDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DriveItemItemRequestBuilder) {
     m := &DriveItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive_id}/items/{driveItem_id}{?select,expand}";
@@ -97,25 +99,26 @@ func NewDriveItemItemRequestBuilderInternal(pathParameters map[string]string, re
     return m
 }
 // NewDriveItemItemRequestBuilder instantiates a new DriveItemItemRequestBuilder and sets the default values.
-func NewDriveItemItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveItemItemRequestBuilder) {
+func NewDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DriveItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Content the content property
 func (m *DriveItemItemRequestBuilder) Content()(*id5401dd754f1beaff524a09c4501c5fceb1e5bdd9e70bbe3d95723c2f329c5da.ContentRequestBuilder) {
     return id5401dd754f1beaff524a09c4501c5fceb1e5bdd9e70bbe3d95723c2f329c5da.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property items for drives
-func (m *DriveItemItemRequestBuilder) CreateDeleteRequestInformation(options *DriveItemItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *DriveItemItemRequestBuilder) CreateDeleteRequestInformation(options *DriveItemItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -123,19 +126,19 @@ func (m *DriveItemItemRequestBuilder) CreateDeleteRequestInformation(options *Dr
     return requestInfo, nil
 }
 // CreateGetRequestInformation all items contained in the drive. Read-only. Nullable.
-func (m *DriveItemItemRequestBuilder) CreateGetRequestInformation(options *DriveItemItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *DriveItemItemRequestBuilder) CreateGetRequestInformation(options *DriveItemItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -143,17 +146,17 @@ func (m *DriveItemItemRequestBuilder) CreateGetRequestInformation(options *Drive
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property items in drives
-func (m *DriveItemItemRequestBuilder) CreatePatchRequestInformation(options *DriveItemItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *DriveItemItemRequestBuilder) CreatePatchRequestInformation(options *DriveItemItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -166,9 +169,9 @@ func (m *DriveItemItemRequestBuilder) Delete(options *DriveItemItemRequestBuilde
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -177,21 +180,22 @@ func (m *DriveItemItemRequestBuilder) Delete(options *DriveItemItemRequestBuilde
     return nil
 }
 // Get all items contained in the drive. Read-only. Nullable.
-func (m *DriveItemItemRequestBuilder) Get(options *DriveItemItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable, error) {
+func (m *DriveItemItemRequestBuilder) Get(options *DriveItemItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateDriveItemFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDriveItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
+// ListItem the listItem property
 func (m *DriveItemItemRequestBuilder) ListItem()(*icc851f6701cc3e379edf8f1c8a5a20a493cce7efe46c146a987b9411a8c91b78.ListItemRequestBuilder) {
     return icc851f6701cc3e379edf8f1c8a5a20a493cce7efe46c146a987b9411a8c91b78.NewListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -201,9 +205,9 @@ func (m *DriveItemItemRequestBuilder) Patch(options *DriveItemItemRequestBuilder
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -211,6 +215,7 @@ func (m *DriveItemItemRequestBuilder) Patch(options *DriveItemItemRequestBuilder
     }
     return nil
 }
+// Permissions the permissions property
 func (m *DriveItemItemRequestBuilder) Permissions()(*ifda175920025647e9407948753f11cc7a3fabff7fd6e426cf29edc97c408e5c2.PermissionsRequestBuilder) {
     return ifda175920025647e9407948753f11cc7a3fabff7fd6e426cf29edc97c408e5c2.NewPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -225,6 +230,7 @@ func (m *DriveItemItemRequestBuilder) PermissionsById(id string)(*id6e448f4be609
     }
     return id6e448f4be60986224ef6568b4a9b7d39a61886fbd386e3281d8989508828a70.NewPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Subscriptions the subscriptions property
 func (m *DriveItemItemRequestBuilder) Subscriptions()(*i0cb44ac3ff5b85c2f1592086ca294cb612434d9f0b242efaa25ca47763aeef53.SubscriptionsRequestBuilder) {
     return i0cb44ac3ff5b85c2f1592086ca294cb612434d9f0b242efaa25ca47763aeef53.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -239,6 +245,7 @@ func (m *DriveItemItemRequestBuilder) SubscriptionsById(id string)(*i2ab5710457c
     }
     return i2ab5710457ce9e7de18564cd6ca79881ae7e842006bdf4476c908f1264282bdd.NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Thumbnails the thumbnails property
 func (m *DriveItemItemRequestBuilder) Thumbnails()(*i05d5f2d2f7d8643c0cc65d242a1e8e39efdfff6868938e24cc4d55d7dc247a81.ThumbnailsRequestBuilder) {
     return i05d5f2d2f7d8643c0cc65d242a1e8e39efdfff6868938e24cc4d55d7dc247a81.NewThumbnailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -253,6 +260,7 @@ func (m *DriveItemItemRequestBuilder) ThumbnailsById(id string)(*ic92493f36906ee
     }
     return ic92493f36906ee5f9721f2db0a85d2445ba0fba9bae564c8d6aaae67916102a7.NewThumbnailSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Versions the versions property
 func (m *DriveItemItemRequestBuilder) Versions()(*id9669323a3b4752f5b4c8d5f78acfd3b98dfdc33cd348c62aa7c25cc35e019f1.VersionsRequestBuilder) {
     return id9669323a3b4752f5b4c8d5f78acfd3b98dfdc33cd348c62aa7c25cc35e019f1.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

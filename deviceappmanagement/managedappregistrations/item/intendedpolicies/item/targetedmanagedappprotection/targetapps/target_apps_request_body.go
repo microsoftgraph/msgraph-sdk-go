@@ -1,18 +1,18 @@
 package targetapps
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // TargetAppsRequestBody provides operations to call the targetApps method.
 type TargetAppsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    appGroupType *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppGroupType;
-    // 
-    apps []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileAppable;
+    // The appGroupType property
+    appGroupType *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType;
+    // The apps property
+    apps []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable;
 }
 // NewTargetAppsRequestBody instantiates a new targetAppsRequestBody and sets the default values.
 func NewTargetAppsRequestBody()(*TargetAppsRequestBody) {
@@ -22,7 +22,7 @@ func NewTargetAppsRequestBody()(*TargetAppsRequestBody) {
     return m
 }
 // CreateTargetAppsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateTargetAppsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateTargetAppsRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetAppsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,16 +33,16 @@ func (m *TargetAppsRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAppGroupType gets the appGroupType property value. 
-func (m *TargetAppsRequestBody) GetAppGroupType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppGroupType) {
+// GetAppGroupType gets the appGroupType property value. The appGroupType property
+func (m *TargetAppsRequestBody) GetAppGroupType()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType) {
     if m == nil {
         return nil
     } else {
         return m.appGroupType
     }
 }
-// GetApps gets the apps property value. 
-func (m *TargetAppsRequestBody) GetApps()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileAppable) {
+// GetApps gets the apps property value. The apps property
+func (m *TargetAppsRequestBody) GetApps()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable) {
     if m == nil {
         return nil
     } else {
@@ -50,27 +50,27 @@ func (m *TargetAppsRequestBody) GetApps()([]i4a838ef194e4c99e9f2c63ba10dab9cb120
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TargetAppsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["appGroupType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ParseTargetedManagedAppGroupType)
+func (m *TargetAppsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["appGroupType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseTargetedManagedAppGroupType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppGroupType(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppGroupType))
+            m.SetAppGroupType(val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType))
         }
         return nil
     }
-    res["apps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateManagedMobileAppFromDiscriminatorValue)
+    res["apps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileAppable, len(val))
+            res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, len(val))
             for i, v := range val {
-                res[i] = v.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileAppable)
+                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable)
             }
             m.SetApps(res)
         }
@@ -79,7 +79,7 @@ func (m *TargetAppsRequestBody) GetFieldDeserializers()(map[string]func(interfac
     return res
 }
 // Serialize serializes information the current object
-func (m *TargetAppsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *TargetAppsRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAppGroupType() != nil {
         cast := (*m.GetAppGroupType()).String()
         err := writer.WriteStringValue("appGroupType", &cast)
@@ -88,9 +88,9 @@ func (m *TargetAppsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetApps() != nil {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApps()))
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
-            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("apps", cast)
         if err != nil {
@@ -111,14 +111,14 @@ func (m *TargetAppsRequestBody) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetAppGroupType sets the appGroupType property value. 
-func (m *TargetAppsRequestBody) SetAppGroupType(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppGroupType)() {
+// SetAppGroupType sets the appGroupType property value. The appGroupType property
+func (m *TargetAppsRequestBody) SetAppGroupType(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType)() {
     if m != nil {
         m.appGroupType = value
     }
 }
-// SetApps sets the apps property value. 
-func (m *TargetAppsRequestBody) SetApps(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileAppable)() {
+// SetApps sets the apps property value. The apps property
+func (m *TargetAppsRequestBody) SetApps(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable)() {
     if m != nil {
         m.apps = value
     }

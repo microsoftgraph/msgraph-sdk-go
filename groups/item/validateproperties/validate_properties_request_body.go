@@ -1,18 +1,18 @@
 package validateproperties
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // ValidatePropertiesRequestBody provides operations to call the validateProperties method.
 type ValidatePropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The displayName property
     displayName *string;
-    // 
+    // The mailNickname property
     mailNickname *string;
-    // 
+    // The onBehalfOfUserId property
     onBehalfOfUserId *string;
 }
 // NewValidatePropertiesRequestBody instantiates a new validatePropertiesRequestBody and sets the default values.
@@ -23,7 +23,7 @@ func NewValidatePropertiesRequestBody()(*ValidatePropertiesRequestBody) {
     return m
 }
 // CreateValidatePropertiesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateValidatePropertiesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateValidatePropertiesRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewValidatePropertiesRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -34,7 +34,7 @@ func (m *ValidatePropertiesRequestBody) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetDisplayName gets the displayName property value. 
+// GetDisplayName gets the displayName property value. The displayName property
 func (m *ValidatePropertiesRequestBody) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -43,9 +43,9 @@ func (m *ValidatePropertiesRequestBody) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["mailNickname"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["mailNickname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["onBehalfOfUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["onBehalfOfUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetMailNickname gets the mailNickname property value. 
+// GetMailNickname gets the mailNickname property value. The mailNickname property
 func (m *ValidatePropertiesRequestBody) GetMailNickname()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *ValidatePropertiesRequestBody) GetMailNickname()(*string) {
         return m.mailNickname
     }
 }
-// GetOnBehalfOfUserId gets the onBehalfOfUserId property value. 
+// GetOnBehalfOfUserId gets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ValidatePropertiesRequestBody) GetOnBehalfOfUserId()(*string) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *ValidatePropertiesRequestBody) GetOnBehalfOfUserId()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *ValidatePropertiesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ValidatePropertiesRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
@@ -127,19 +127,19 @@ func (m *ValidatePropertiesRequestBody) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetDisplayName sets the displayName property value. 
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *ValidatePropertiesRequestBody) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetMailNickname sets the mailNickname property value. 
+// SetMailNickname sets the mailNickname property value. The mailNickname property
 func (m *ValidatePropertiesRequestBody) SetMailNickname(value *string)() {
     if m != nil {
         m.mailNickname = value
     }
 }
-// SetOnBehalfOfUserId sets the onBehalfOfUserId property value. 
+// SetOnBehalfOfUserId sets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ValidatePropertiesRequestBody) SetOnBehalfOfUserId(value *string)() {
     if m != nil {
         m.onBehalfOfUserId = value

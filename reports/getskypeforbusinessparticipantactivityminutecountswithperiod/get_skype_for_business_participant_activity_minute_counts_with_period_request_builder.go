@@ -1,8 +1,8 @@
 package getskypeforbusinessparticipantactivityminutecountswithperiod
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder provides operations to call the getSkypeForBusinessParticipantActivityMinuteCounts method.
@@ -10,21 +10,21 @@ type GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder 
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderInternal instantiates a new GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder and sets the default values.
-func NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) {
+func NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) {
     m := &GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getSkypeForBusinessParticipantActivityMinuteCounts(period='{period}')";
@@ -40,22 +40,22 @@ func NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuild
     return m
 }
 // NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder instantiates a new GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder and sets the default values.
-func NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) {
+func NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getSkypeForBusinessParticipantActivityMinuteCounts
-func (m *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -63,14 +63,14 @@ func (m *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuil
     return requestInfo, nil
 }
 // Get invoke function getSkypeForBusinessParticipantActivityMinuteCounts
-func (m *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) Get(options *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Reportable, error) {
+func (m *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) Get(options *GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateReportFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateReportFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Reportable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable), nil
 }

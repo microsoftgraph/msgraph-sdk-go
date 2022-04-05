@@ -1,14 +1,14 @@
 package team
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i04e49204322d308913c8af78daf5ae0e14fb7df81490288b98bd1c408480bbb4 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/group"
     i34294a7456473fba252b3ca961ed3381f55b7a770d74ee4720d752d9a45ad739 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/primarychannel"
     i477873d925c8fe5f007dfb4043f82ed6374d80069f96d4931626a23aeb0f2a87 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/template"
     i495e85248bfc2c7bf36f36ede17adf8bc672f00e69df645f352a27b2b7d30e61 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/schedule"
     i7aee2305413b3b465064d02a6aa79c0f32df27bc874d76350b572847a880a22f "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/installedapps"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     i8f663f97c6eef0cee280b998b250f55e4d63fc289392b2a09af9c95210ca5d5d "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/channels"
     i97dd0d985d4eaf1cbaeb3d771ef48c101ec691107d9a79dcd3f38213ccae863b "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/members"
     i9f6a3c1c4300552f4792a53f0d0fe603636d1b865d408ff28e1cdd722683ebe3 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/operations"
@@ -23,29 +23,29 @@ type TeamRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // TeamRequestBuilderDeleteOptions options for Delete
 type TeamRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // TeamRequestBuilderGetOptions options for Get
 type TeamRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *TeamRequestBuilderGetQueryParameters;
+    QueryParameters *TeamRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // TeamRequestBuilderGetQueryParameters get team from groups
 type TeamRequestBuilderGetQueryParameters struct {
@@ -57,14 +57,15 @@ type TeamRequestBuilderGetQueryParameters struct {
 // TeamRequestBuilderPatchOptions options for Patch
 type TeamRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Teamable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// Channels the channels property
 func (m *TeamRequestBuilder) Channels()(*i8f663f97c6eef0cee280b998b250f55e4d63fc289392b2a09af9c95210ca5d5d.ChannelsRequestBuilder) {
     return i8f663f97c6eef0cee280b998b250f55e4d63fc289392b2a09af9c95210ca5d5d.NewChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -80,7 +81,7 @@ func (m *TeamRequestBuilder) ChannelsById(id string)(*ie594d6624cc5e7f45c840beec
     return ie594d6624cc5e7f45c840beec42560c6f347a2da3e424188e2fbe60f77fbc850.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTeamRequestBuilderInternal instantiates a new TeamRequestBuilder and sets the default values.
-func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamRequestBuilder) {
+func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamRequestBuilder) {
     m := &TeamRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group_id}/team{?select,expand}";
@@ -93,22 +94,22 @@ func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdap
     return m
 }
 // NewTeamRequestBuilder instantiates a new TeamRequestBuilder and sets the default values.
-func NewTeamRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamRequestBuilder) {
+func NewTeamRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property team for groups
-func (m *TeamRequestBuilder) CreateDeleteRequestInformation(options *TeamRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *TeamRequestBuilder) CreateDeleteRequestInformation(options *TeamRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -116,19 +117,19 @@ func (m *TeamRequestBuilder) CreateDeleteRequestInformation(options *TeamRequest
     return requestInfo, nil
 }
 // CreateGetRequestInformation get team from groups
-func (m *TeamRequestBuilder) CreateGetRequestInformation(options *TeamRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *TeamRequestBuilder) CreateGetRequestInformation(options *TeamRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -136,17 +137,17 @@ func (m *TeamRequestBuilder) CreateGetRequestInformation(options *TeamRequestBui
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property team in groups
-func (m *TeamRequestBuilder) CreatePatchRequestInformation(options *TeamRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *TeamRequestBuilder) CreatePatchRequestInformation(options *TeamRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -159,9 +160,9 @@ func (m *TeamRequestBuilder) Delete(options *TeamRequestBuilderDeleteOptions)(er
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -170,24 +171,26 @@ func (m *TeamRequestBuilder) Delete(options *TeamRequestBuilderDeleteOptions)(er
     return nil
 }
 // Get get team from groups
-func (m *TeamRequestBuilder) Get(options *TeamRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Teamable, error) {
+func (m *TeamRequestBuilder) Get(options *TeamRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateTeamFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTeamFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Teamable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
 }
+// Group the group property
 func (m *TeamRequestBuilder) Group()(*i04e49204322d308913c8af78daf5ae0e14fb7df81490288b98bd1c408480bbb4.GroupRequestBuilder) {
     return i04e49204322d308913c8af78daf5ae0e14fb7df81490288b98bd1c408480bbb4.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// InstalledApps the installedApps property
 func (m *TeamRequestBuilder) InstalledApps()(*i7aee2305413b3b465064d02a6aa79c0f32df27bc874d76350b572847a880a22f.InstalledAppsRequestBuilder) {
     return i7aee2305413b3b465064d02a6aa79c0f32df27bc874d76350b572847a880a22f.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -202,6 +205,7 @@ func (m *TeamRequestBuilder) InstalledAppsById(id string)(*i6e500f69af937bd22bbf
     }
     return i6e500f69af937bd22bbfc2b6ee2698da77bfc652c449bb8ce6a2ee75470b9de9.NewTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Members the members property
 func (m *TeamRequestBuilder) Members()(*i97dd0d985d4eaf1cbaeb3d771ef48c101ec691107d9a79dcd3f38213ccae863b.MembersRequestBuilder) {
     return i97dd0d985d4eaf1cbaeb3d771ef48c101ec691107d9a79dcd3f38213ccae863b.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -216,6 +220,7 @@ func (m *TeamRequestBuilder) MembersById(id string)(*ie59099b1e42dc6f55628ccb467
     }
     return ie59099b1e42dc6f55628ccb467e95d4e7416a9bd33399bd6beff110ff67ea34e.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Operations the operations property
 func (m *TeamRequestBuilder) Operations()(*i9f6a3c1c4300552f4792a53f0d0fe603636d1b865d408ff28e1cdd722683ebe3.OperationsRequestBuilder) {
     return i9f6a3c1c4300552f4792a53f0d0fe603636d1b865d408ff28e1cdd722683ebe3.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -236,9 +241,9 @@ func (m *TeamRequestBuilder) Patch(options *TeamRequestBuilderPatchOptions)(erro
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -246,12 +251,15 @@ func (m *TeamRequestBuilder) Patch(options *TeamRequestBuilderPatchOptions)(erro
     }
     return nil
 }
+// PrimaryChannel the primaryChannel property
 func (m *TeamRequestBuilder) PrimaryChannel()(*i34294a7456473fba252b3ca961ed3381f55b7a770d74ee4720d752d9a45ad739.PrimaryChannelRequestBuilder) {
     return i34294a7456473fba252b3ca961ed3381f55b7a770d74ee4720d752d9a45ad739.NewPrimaryChannelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Schedule the schedule property
 func (m *TeamRequestBuilder) Schedule()(*i495e85248bfc2c7bf36f36ede17adf8bc672f00e69df645f352a27b2b7d30e61.ScheduleRequestBuilder) {
     return i495e85248bfc2c7bf36f36ede17adf8bc672f00e69df645f352a27b2b7d30e61.NewScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Template the template property
 func (m *TeamRequestBuilder) Template()(*i477873d925c8fe5f007dfb4043f82ed6374d80069f96d4931626a23aeb0f2a87.TemplateRequestBuilder) {
     return i477873d925c8fe5f007dfb4043f82ed6374d80069f96d4931626a23aeb0f2a87.NewTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

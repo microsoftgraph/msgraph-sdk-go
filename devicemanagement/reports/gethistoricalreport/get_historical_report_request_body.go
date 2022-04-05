@@ -1,28 +1,28 @@
 package gethistoricalreport
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // GetHistoricalReportRequestBody provides operations to call the getHistoricalReport method.
 type GetHistoricalReportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The filter property
     filter *string;
-    // 
+    // The groupBy property
     groupBy []string;
-    // 
+    // The name property
     name *string;
-    // 
+    // The orderBy property
     orderBy []string;
-    // 
+    // The search property
     search *string;
-    // 
+    // The select property
     select_escaped []string;
-    // 
+    // The skip property
     skip *int32;
-    // 
+    // The top property
     top *int32;
 }
 // NewGetHistoricalReportRequestBody instantiates a new getHistoricalReportRequestBody and sets the default values.
@@ -33,7 +33,7 @@ func NewGetHistoricalReportRequestBody()(*GetHistoricalReportRequestBody) {
     return m
 }
 // CreateGetHistoricalReportRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateGetHistoricalReportRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateGetHistoricalReportRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetHistoricalReportRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -45,9 +45,9 @@ func (m *GetHistoricalReportRequestBody) GetAdditionalData()(map[string]interfac
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["filter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["filter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["groupBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["groupBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["orderBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["orderBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["search"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["search"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["skip"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["skip"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["top"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["top"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetFilter gets the filter property value. 
+// GetFilter gets the filter property value. The filter property
 func (m *GetHistoricalReportRequestBody) GetFilter()(*string) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *GetHistoricalReportRequestBody) GetFilter()(*string) {
         return m.filter
     }
 }
-// GetGroupBy gets the groupBy property value. 
+// GetGroupBy gets the groupBy property value. The groupBy property
 func (m *GetHistoricalReportRequestBody) GetGroupBy()([]string) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *GetHistoricalReportRequestBody) GetGroupBy()([]string) {
         return m.groupBy
     }
 }
-// GetName gets the name property value. 
+// GetName gets the name property value. The name property
 func (m *GetHistoricalReportRequestBody) GetName()(*string) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *GetHistoricalReportRequestBody) GetName()(*string) {
         return m.name
     }
 }
-// GetOrderBy gets the orderBy property value. 
+// GetOrderBy gets the orderBy property value. The orderBy property
 func (m *GetHistoricalReportRequestBody) GetOrderBy()([]string) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *GetHistoricalReportRequestBody) GetOrderBy()([]string) {
         return m.orderBy
     }
 }
-// GetSearch gets the search property value. 
+// GetSearch gets the search property value. The search property
 func (m *GetHistoricalReportRequestBody) GetSearch()(*string) {
     if m == nil {
         return nil
@@ -181,7 +181,7 @@ func (m *GetHistoricalReportRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
-// GetSelect gets the select property value. 
+// GetSelect gets the select property value. The select property
 func (m *GetHistoricalReportRequestBody) GetSelect()([]string) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *GetHistoricalReportRequestBody) GetSelect()([]string) {
         return m.select_escaped
     }
 }
-// GetSkip gets the skip property value. 
+// GetSkip gets the skip property value. The skip property
 func (m *GetHistoricalReportRequestBody) GetSkip()(*int32) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *GetHistoricalReportRequestBody) GetSkip()(*int32) {
         return m.skip
     }
 }
-// GetTop gets the top property value. 
+// GetTop gets the top property value. The top property
 func (m *GetHistoricalReportRequestBody) GetTop()(*int32) {
     if m == nil {
         return nil
@@ -206,7 +206,7 @@ func (m *GetHistoricalReportRequestBody) GetTop()(*int32) {
     }
 }
 // Serialize serializes information the current object
-func (m *GetHistoricalReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *GetHistoricalReportRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("filter", m.GetFilter())
         if err != nil {
@@ -269,49 +269,49 @@ func (m *GetHistoricalReportRequestBody) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetFilter sets the filter property value. 
+// SetFilter sets the filter property value. The filter property
 func (m *GetHistoricalReportRequestBody) SetFilter(value *string)() {
     if m != nil {
         m.filter = value
     }
 }
-// SetGroupBy sets the groupBy property value. 
+// SetGroupBy sets the groupBy property value. The groupBy property
 func (m *GetHistoricalReportRequestBody) SetGroupBy(value []string)() {
     if m != nil {
         m.groupBy = value
     }
 }
-// SetName sets the name property value. 
+// SetName sets the name property value. The name property
 func (m *GetHistoricalReportRequestBody) SetName(value *string)() {
     if m != nil {
         m.name = value
     }
 }
-// SetOrderBy sets the orderBy property value. 
+// SetOrderBy sets the orderBy property value. The orderBy property
 func (m *GetHistoricalReportRequestBody) SetOrderBy(value []string)() {
     if m != nil {
         m.orderBy = value
     }
 }
-// SetSearch sets the search property value. 
+// SetSearch sets the search property value. The search property
 func (m *GetHistoricalReportRequestBody) SetSearch(value *string)() {
     if m != nil {
         m.search = value
     }
 }
-// SetSelect sets the select property value. 
+// SetSelect sets the select property value. The select property
 func (m *GetHistoricalReportRequestBody) SetSelect(value []string)() {
     if m != nil {
         m.select_escaped = value
     }
 }
-// SetSkip sets the skip property value. 
+// SetSkip sets the skip property value. The skip property
 func (m *GetHistoricalReportRequestBody) SetSkip(value *int32)() {
     if m != nil {
         m.skip = value
     }
 }
-// SetTop sets the top property value. 
+// SetTop sets the top property value. The top property
 func (m *GetHistoricalReportRequestBody) SetTop(value *int32)() {
     if m != nil {
         m.top = value

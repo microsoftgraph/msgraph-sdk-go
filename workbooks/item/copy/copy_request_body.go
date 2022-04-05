@@ -1,18 +1,18 @@
 package copy
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // CopyRequestBody provides operations to call the copy method.
 type CopyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The name property
     name *string;
-    // 
-    parentReference i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReferenceable;
+    // The parentReference property
+    parentReference iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable;
 }
 // NewCopyRequestBody instantiates a new copyRequestBody and sets the default values.
 func NewCopyRequestBody()(*CopyRequestBody) {
@@ -22,7 +22,7 @@ func NewCopyRequestBody()(*CopyRequestBody) {
     return m
 }
 // CreateCopyRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCopyRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCopyRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCopyRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -34,9 +34,9 @@ func (m *CopyRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CopyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *CopyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,19 +46,19 @@ func (m *CopyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["parentReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateItemReferenceFromDiscriminatorValue)
+    res["parentReference"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateItemReferenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentReference(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReferenceable))
+            m.SetParentReference(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable))
         }
         return nil
     }
     return res
 }
-// GetName gets the name property value. 
+// GetName gets the name property value. The name property
 func (m *CopyRequestBody) GetName()(*string) {
     if m == nil {
         return nil
@@ -66,8 +66,8 @@ func (m *CopyRequestBody) GetName()(*string) {
         return m.name
     }
 }
-// GetParentReference gets the parentReference property value. 
-func (m *CopyRequestBody) GetParentReference()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReferenceable) {
+// GetParentReference gets the parentReference property value. The parentReference property
+func (m *CopyRequestBody) GetParentReference()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +75,7 @@ func (m *CopyRequestBody) GetParentReference()(i4a838ef194e4c99e9f2c63ba10dab9cb
     }
 }
 // Serialize serializes information the current object
-func (m *CopyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CopyRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("name", m.GetName())
         if err != nil {
@@ -102,14 +102,14 @@ func (m *CopyRequestBody) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetName sets the name property value. 
+// SetName sets the name property value. The name property
 func (m *CopyRequestBody) SetName(value *string)() {
     if m != nil {
         m.name = value
     }
 }
-// SetParentReference sets the parentReference property value. 
-func (m *CopyRequestBody) SetParentReference(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReferenceable)() {
+// SetParentReference sets the parentReference property value. The parentReference property
+func (m *CopyRequestBody) SetParentReference(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable)() {
     if m != nil {
         m.parentReference = value
     }

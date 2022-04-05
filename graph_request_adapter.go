@@ -3,14 +3,14 @@ package msgraphsdkgo
 import (
 	nethttp "net/http"
 
-	absauth "github.com/microsoft/kiota/abstractions/go/authentication"
-	absser "github.com/microsoft/kiota/abstractions/go/serialization"
+	absauth "github.com/microsoft/kiota-abstractions-go/authentication"
+	absser "github.com/microsoft/kiota-abstractions-go/serialization"
 	core "github.com/microsoftgraph/msgraph-sdk-go-core"
 )
 
 var clientOptions = core.GraphClientOptions{
 	GraphServiceVersion:        "", //v1 doesn't include the service version in the telemetry header
-	GraphServiceLibraryVersion: "0.16.0",
+	GraphServiceLibraryVersion: "0.17.0",
 }
 
 // GetDefaultClientOptions returns the default client options used by the GraphRequestAdapterBase and the middleware.
@@ -72,6 +72,7 @@ func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndH
 
 	return result, nil
 }
+
 
 
 

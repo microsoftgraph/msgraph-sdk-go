@@ -1,23 +1,23 @@
 package answer
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // AnswerRequestBody provides operations to call the answer method.
 type AnswerRequestBody struct {
-    // 
-    acceptedModalities []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Modality;
+    // The acceptedModalities property
+    acceptedModalities []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The callbackUri property
     callbackUri *string;
-    // 
-    callOptions i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IncomingCallOptionsable;
-    // 
-    mediaConfig i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MediaConfigable;
-    // 
+    // The callOptions property
+    callOptions iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IncomingCallOptionsable;
+    // The mediaConfig property
+    mediaConfig iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MediaConfigable;
+    // The participantCapacity property
     participantCapacity *int32;
 }
 // NewAnswerRequestBody instantiates a new answerRequestBody and sets the default values.
@@ -28,11 +28,11 @@ func NewAnswerRequestBody()(*AnswerRequestBody) {
     return m
 }
 // CreateAnswerRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateAnswerRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateAnswerRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAnswerRequestBody(), nil
 }
-// GetAcceptedModalities gets the acceptedModalities property value. 
-func (m *AnswerRequestBody) GetAcceptedModalities()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Modality) {
+// GetAcceptedModalities gets the acceptedModalities property value. The acceptedModalities property
+func (m *AnswerRequestBody) GetAcceptedModalities()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +47,7 @@ func (m *AnswerRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCallbackUri gets the callbackUri property value. 
+// GetCallbackUri gets the callbackUri property value. The callbackUri property
 func (m *AnswerRequestBody) GetCallbackUri()(*string) {
     if m == nil {
         return nil
@@ -55,8 +55,8 @@ func (m *AnswerRequestBody) GetCallbackUri()(*string) {
         return m.callbackUri
     }
 }
-// GetCallOptions gets the callOptions property value. 
-func (m *AnswerRequestBody) GetCallOptions()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IncomingCallOptionsable) {
+// GetCallOptions gets the callOptions property value. The callOptions property
+func (m *AnswerRequestBody) GetCallOptions()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IncomingCallOptionsable) {
     if m == nil {
         return nil
     } else {
@@ -64,23 +64,23 @@ func (m *AnswerRequestBody) GetCallOptions()(i4a838ef194e4c99e9f2c63ba10dab9cb12
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AnswerRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["acceptedModalities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ParseModality)
+func (m *AnswerRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["acceptedModalities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Modality, len(val))
+            res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Modality))
+                res[i] = *(v.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality))
             }
             m.SetAcceptedModalities(res)
         }
         return nil
     }
-    res["callbackUri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["callbackUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,27 +90,27 @@ func (m *AnswerRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["callOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateIncomingCallOptionsFromDiscriminatorValue)
+    res["callOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIncomingCallOptionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCallOptions(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IncomingCallOptionsable))
+            m.SetCallOptions(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IncomingCallOptionsable))
         }
         return nil
     }
-    res["mediaConfig"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMediaConfigFromDiscriminatorValue)
+    res["mediaConfig"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateMediaConfigFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMediaConfig(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MediaConfigable))
+            m.SetMediaConfig(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MediaConfigable))
         }
         return nil
     }
-    res["participantCapacity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["participantCapacity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -122,15 +122,15 @@ func (m *AnswerRequestBody) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
-// GetMediaConfig gets the mediaConfig property value. 
-func (m *AnswerRequestBody) GetMediaConfig()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MediaConfigable) {
+// GetMediaConfig gets the mediaConfig property value. The mediaConfig property
+func (m *AnswerRequestBody) GetMediaConfig()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MediaConfigable) {
     if m == nil {
         return nil
     } else {
         return m.mediaConfig
     }
 }
-// GetParticipantCapacity gets the participantCapacity property value. 
+// GetParticipantCapacity gets the participantCapacity property value. The participantCapacity property
 func (m *AnswerRequestBody) GetParticipantCapacity()(*int32) {
     if m == nil {
         return nil
@@ -139,9 +139,9 @@ func (m *AnswerRequestBody) GetParticipantCapacity()(*int32) {
     }
 }
 // Serialize serializes information the current object
-func (m *AnswerRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *AnswerRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAcceptedModalities() != nil {
-        err := writer.WriteCollectionOfStringValues("acceptedModalities", i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SerializeModality(m.GetAcceptedModalities()))
+        err := writer.WriteCollectionOfStringValues("acceptedModalities", iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SerializeModality(m.GetAcceptedModalities()))
         if err != nil {
             return err
         }
@@ -178,8 +178,8 @@ func (m *AnswerRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// SetAcceptedModalities sets the acceptedModalities property value. 
-func (m *AnswerRequestBody) SetAcceptedModalities(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Modality)() {
+// SetAcceptedModalities sets the acceptedModalities property value. The acceptedModalities property
+func (m *AnswerRequestBody) SetAcceptedModalities(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality)() {
     if m != nil {
         m.acceptedModalities = value
     }
@@ -190,25 +190,25 @@ func (m *AnswerRequestBody) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetCallbackUri sets the callbackUri property value. 
+// SetCallbackUri sets the callbackUri property value. The callbackUri property
 func (m *AnswerRequestBody) SetCallbackUri(value *string)() {
     if m != nil {
         m.callbackUri = value
     }
 }
-// SetCallOptions sets the callOptions property value. 
-func (m *AnswerRequestBody) SetCallOptions(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IncomingCallOptionsable)() {
+// SetCallOptions sets the callOptions property value. The callOptions property
+func (m *AnswerRequestBody) SetCallOptions(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IncomingCallOptionsable)() {
     if m != nil {
         m.callOptions = value
     }
 }
-// SetMediaConfig sets the mediaConfig property value. 
-func (m *AnswerRequestBody) SetMediaConfig(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MediaConfigable)() {
+// SetMediaConfig sets the mediaConfig property value. The mediaConfig property
+func (m *AnswerRequestBody) SetMediaConfig(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MediaConfigable)() {
     if m != nil {
         m.mediaConfig = value
     }
 }
-// SetParticipantCapacity sets the participantCapacity property value. 
+// SetParticipantCapacity sets the participantCapacity property value. The participantCapacity property
 func (m *AnswerRequestBody) SetParticipantCapacity(value *int32)() {
     if m != nil {
         m.participantCapacity = value

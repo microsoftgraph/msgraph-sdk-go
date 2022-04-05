@@ -1,16 +1,16 @@
 package checkin
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // CheckinRequestBody provides operations to call the checkin method.
 type CheckinRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The checkInAs property
     checkInAs *string;
-    // 
+    // The comment property
     comment *string;
 }
 // NewCheckinRequestBody instantiates a new checkinRequestBody and sets the default values.
@@ -21,7 +21,7 @@ func NewCheckinRequestBody()(*CheckinRequestBody) {
     return m
 }
 // CreateCheckinRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCheckinRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCheckinRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCheckinRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -32,7 +32,7 @@ func (m *CheckinRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCheckInAs gets the checkInAs property value. 
+// GetCheckInAs gets the checkInAs property value. The checkInAs property
 func (m *CheckinRequestBody) GetCheckInAs()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *CheckinRequestBody) GetCheckInAs()(*string) {
         return m.checkInAs
     }
 }
-// GetComment gets the comment property value. 
+// GetComment gets the comment property value. The comment property
 func (m *CheckinRequestBody) GetComment()(*string) {
     if m == nil {
         return nil
@@ -49,9 +49,9 @@ func (m *CheckinRequestBody) GetComment()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CheckinRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["checkInAs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *CheckinRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["checkInAs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *CheckinRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["comment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["comment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *CheckinRequestBody) GetFieldDeserializers()(map[string]func(interface{}
     return res
 }
 // Serialize serializes information the current object
-func (m *CheckinRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CheckinRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("checkInAs", m.GetCheckInAs())
         if err != nil {
@@ -101,13 +101,13 @@ func (m *CheckinRequestBody) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetCheckInAs sets the checkInAs property value. 
+// SetCheckInAs sets the checkInAs property value. The checkInAs property
 func (m *CheckinRequestBody) SetCheckInAs(value *string)() {
     if m != nil {
         m.checkInAs = value
     }
 }
-// SetComment sets the comment property value. 
+// SetComment sets the comment property value. The comment property
 func (m *CheckinRequestBody) SetComment(value *string)() {
     if m != nil {
         m.comment = value

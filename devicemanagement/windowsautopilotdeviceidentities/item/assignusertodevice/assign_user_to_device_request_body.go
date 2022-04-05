@@ -1,16 +1,16 @@
 package assignusertodevice
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // AssignUserToDeviceRequestBody provides operations to call the assignUserToDevice method.
 type AssignUserToDeviceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The addressableUserName property
     addressableUserName *string;
-    // 
+    // The userPrincipalName property
     userPrincipalName *string;
 }
 // NewAssignUserToDeviceRequestBody instantiates a new assignUserToDeviceRequestBody and sets the default values.
@@ -21,7 +21,7 @@ func NewAssignUserToDeviceRequestBody()(*AssignUserToDeviceRequestBody) {
     return m
 }
 // CreateAssignUserToDeviceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateAssignUserToDeviceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateAssignUserToDeviceRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignUserToDeviceRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -32,7 +32,7 @@ func (m *AssignUserToDeviceRequestBody) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetAddressableUserName gets the addressableUserName property value. 
+// GetAddressableUserName gets the addressableUserName property value. The addressableUserName property
 func (m *AssignUserToDeviceRequestBody) GetAddressableUserName()(*string) {
     if m == nil {
         return nil
@@ -41,9 +41,9 @@ func (m *AssignUserToDeviceRequestBody) GetAddressableUserName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AssignUserToDeviceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["addressableUserName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *AssignUserToDeviceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["addressableUserName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *AssignUserToDeviceRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *AssignUserToDeviceRequestBody) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetUserPrincipalName gets the userPrincipalName property value. 
+// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *AssignUserToDeviceRequestBody) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *AssignUserToDeviceRequestBody) GetUserPrincipalName()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *AssignUserToDeviceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *AssignUserToDeviceRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("addressableUserName", m.GetAddressableUserName())
         if err != nil {
@@ -101,13 +101,13 @@ func (m *AssignUserToDeviceRequestBody) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetAddressableUserName sets the addressableUserName property value. 
+// SetAddressableUserName sets the addressableUserName property value. The addressableUserName property
 func (m *AssignUserToDeviceRequestBody) SetAddressableUserName(value *string)() {
     if m != nil {
         m.addressableUserName = value
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. 
+// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *AssignUserToDeviceRequestBody) SetUserPrincipalName(value *string)() {
     if m != nil {
         m.userPrincipalName = value

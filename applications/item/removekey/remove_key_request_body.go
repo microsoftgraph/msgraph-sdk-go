@@ -1,16 +1,16 @@
 package removekey
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // RemoveKeyRequestBody provides operations to call the removeKey method.
 type RemoveKeyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The keyId property
     keyId *string;
-    // 
+    // The proof property
     proof *string;
 }
 // NewRemoveKeyRequestBody instantiates a new removeKeyRequestBody and sets the default values.
@@ -21,7 +21,7 @@ func NewRemoveKeyRequestBody()(*RemoveKeyRequestBody) {
     return m
 }
 // CreateRemoveKeyRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateRemoveKeyRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateRemoveKeyRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoveKeyRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,9 +33,9 @@ func (m *RemoveKeyRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RemoveKeyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["keyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *RemoveKeyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["keyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *RemoveKeyRequestBody) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["proof"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["proof"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *RemoveKeyRequestBody) GetFieldDeserializers()(map[string]func(interface
     }
     return res
 }
-// GetKeyId gets the keyId property value. 
+// GetKeyId gets the keyId property value. The keyId property
 func (m *RemoveKeyRequestBody) GetKeyId()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *RemoveKeyRequestBody) GetKeyId()(*string) {
         return m.keyId
     }
 }
-// GetProof gets the proof property value. 
+// GetProof gets the proof property value. The proof property
 func (m *RemoveKeyRequestBody) GetProof()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *RemoveKeyRequestBody) GetProof()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *RemoveKeyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *RemoveKeyRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("keyId", m.GetKeyId())
         if err != nil {
@@ -101,13 +101,13 @@ func (m *RemoveKeyRequestBody) SetAdditionalData(value map[string]interface{})()
         m.additionalData = value
     }
 }
-// SetKeyId sets the keyId property value. 
+// SetKeyId sets the keyId property value. The keyId property
 func (m *RemoveKeyRequestBody) SetKeyId(value *string)() {
     if m != nil {
         m.keyId = value
     }
 }
-// SetProof sets the proof property value. 
+// SetProof sets the proof property value. The proof property
 func (m *RemoveKeyRequestBody) SetProof(value *string)() {
     if m != nil {
         m.proof = value

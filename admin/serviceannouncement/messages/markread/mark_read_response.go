@@ -1,14 +1,14 @@
 package markread
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // MarkReadResponse provides operations to call the markRead method.
 type MarkReadResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The value property
     value *bool;
 }
 // NewMarkReadResponse instantiates a new markReadResponse and sets the default values.
@@ -19,7 +19,7 @@ func NewMarkReadResponse()(*MarkReadResponse) {
     return m
 }
 // CreateMarkReadResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateMarkReadResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateMarkReadResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMarkReadResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,9 +31,9 @@ func (m *MarkReadResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MarkReadResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *MarkReadResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *MarkReadResponse) GetFieldDeserializers()(map[string]func(interface{}, 
     }
     return res
 }
-// GetValue gets the value property value. 
+// GetValue gets the value property value. The value property
 func (m *MarkReadResponse) GetValue()(*bool) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *MarkReadResponse) GetValue()(*bool) {
     }
 }
 // Serialize serializes information the current object
-func (m *MarkReadResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *MarkReadResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("value", m.GetValue())
         if err != nil {
@@ -75,7 +75,7 @@ func (m *MarkReadResponse) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetValue sets the value property value. 
+// SetValue sets the value property value. The value property
 func (m *MarkReadResponse) SetValue(value *bool)() {
     if m != nil {
         m.value = value
