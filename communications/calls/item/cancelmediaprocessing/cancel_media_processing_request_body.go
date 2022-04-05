@@ -1,14 +1,14 @@
 package cancelmediaprocessing
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // CancelMediaProcessingRequestBody provides operations to call the cancelMediaProcessing method.
 type CancelMediaProcessingRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The clientContext property
     clientContext *string;
 }
 // NewCancelMediaProcessingRequestBody instantiates a new cancelMediaProcessingRequestBody and sets the default values.
@@ -19,7 +19,7 @@ func NewCancelMediaProcessingRequestBody()(*CancelMediaProcessingRequestBody) {
     return m
 }
 // CreateCancelMediaProcessingRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCancelMediaProcessingRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCancelMediaProcessingRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCancelMediaProcessingRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -30,7 +30,7 @@ func (m *CancelMediaProcessingRequestBody) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// GetClientContext gets the clientContext property value. 
+// GetClientContext gets the clientContext property value. The clientContext property
 func (m *CancelMediaProcessingRequestBody) GetClientContext()(*string) {
     if m == nil {
         return nil
@@ -39,9 +39,9 @@ func (m *CancelMediaProcessingRequestBody) GetClientContext()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CancelMediaProcessingRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["clientContext"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *CancelMediaProcessingRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["clientContext"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *CancelMediaProcessingRequestBody) GetFieldDeserializers()(map[string]fu
     return res
 }
 // Serialize serializes information the current object
-func (m *CancelMediaProcessingRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CancelMediaProcessingRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("clientContext", m.GetClientContext())
         if err != nil {
@@ -75,7 +75,7 @@ func (m *CancelMediaProcessingRequestBody) SetAdditionalData(value map[string]in
         m.additionalData = value
     }
 }
-// SetClientContext sets the clientContext property value. 
+// SetClientContext sets the clientContext property value. The clientContext property
 func (m *CancelMediaProcessingRequestBody) SetClientContext(value *string)() {
     if m != nil {
         m.clientContext = value

@@ -1,13 +1,13 @@
 package solutions
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingcurrencies"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses"
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingcurrencies/item"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
 )
 
 // SolutionsRequestBuilder provides operations to manage the solutionsRoot singleton.
@@ -15,20 +15,20 @@ type SolutionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // SolutionsRequestBuilderGetOptions options for Get
 type SolutionsRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *SolutionsRequestBuilderGetQueryParameters;
+    QueryParameters *SolutionsRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // SolutionsRequestBuilderGetQueryParameters get solutions
 type SolutionsRequestBuilderGetQueryParameters struct {
@@ -40,14 +40,15 @@ type SolutionsRequestBuilderGetQueryParameters struct {
 // SolutionsRequestBuilderPatchOptions options for Patch
 type SolutionsRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SolutionsRootable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SolutionsRootable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// BookingBusinesses the bookingBusinesses property
 func (m *SolutionsRequestBuilder) BookingBusinesses()(*ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408.BookingBusinessesRequestBuilder) {
     return ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408.NewBookingBusinessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -62,6 +63,7 @@ func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*i98532a0d439
     }
     return i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.NewBookingBusinessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// BookingCurrencies the bookingCurrencies property
 func (m *SolutionsRequestBuilder) BookingCurrencies()(*i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0.BookingCurrenciesRequestBuilder) {
     return i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0.NewBookingCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -77,7 +79,7 @@ func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*i30929f1a7f5
     return i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a.NewBookingCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
-func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SolutionsRequestBuilder) {
+func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {
     m := &SolutionsRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/solutions{?select,expand}";
@@ -90,25 +92,25 @@ func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, reques
     return m
 }
 // NewSolutionsRequestBuilder instantiates a new SolutionsRequestBuilder and sets the default values.
-func NewSolutionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SolutionsRequestBuilder) {
+func NewSolutionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSolutionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get solutions
-func (m *SolutionsRequestBuilder) CreateGetRequestInformation(options *SolutionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *SolutionsRequestBuilder) CreateGetRequestInformation(options *SolutionsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -116,17 +118,17 @@ func (m *SolutionsRequestBuilder) CreateGetRequestInformation(options *Solutions
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update solutions
-func (m *SolutionsRequestBuilder) CreatePatchRequestInformation(options *SolutionsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *SolutionsRequestBuilder) CreatePatchRequestInformation(options *SolutionsRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -134,20 +136,20 @@ func (m *SolutionsRequestBuilder) CreatePatchRequestInformation(options *Solutio
     return requestInfo, nil
 }
 // Get get solutions
-func (m *SolutionsRequestBuilder) Get(options *SolutionsRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SolutionsRootable, error) {
+func (m *SolutionsRequestBuilder) Get(options *SolutionsRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SolutionsRootable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateSolutionsRootFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSolutionsRootFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SolutionsRootable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SolutionsRootable), nil
 }
 // Patch update solutions
 func (m *SolutionsRequestBuilder) Patch(options *SolutionsRequestBuilderPatchOptions)(error) {
@@ -155,9 +157,9 @@ func (m *SolutionsRequestBuilder) Patch(options *SolutionsRequestBuilderPatchOpt
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

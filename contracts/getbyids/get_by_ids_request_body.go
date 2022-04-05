@@ -1,16 +1,16 @@
 package getbyids
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // GetByIdsRequestBody provides operations to call the getByIds method.
 type GetByIdsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The ids property
     ids []string;
-    // 
+    // The types property
     types []string;
 }
 // NewGetByIdsRequestBody instantiates a new getByIdsRequestBody and sets the default values.
@@ -21,7 +21,7 @@ func NewGetByIdsRequestBody()(*GetByIdsRequestBody) {
     return m
 }
 // CreateGetByIdsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateGetByIdsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateGetByIdsRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetByIdsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,9 +33,9 @@ func (m *GetByIdsRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetByIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["ids"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *GetByIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["ids"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *GetByIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["types"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["types"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *GetByIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
-// GetIds gets the ids property value. 
+// GetIds gets the ids property value. The ids property
 func (m *GetByIdsRequestBody) GetIds()([]string) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *GetByIdsRequestBody) GetIds()([]string) {
         return m.ids
     }
 }
-// GetTypes gets the types property value. 
+// GetTypes gets the types property value. The types property
 func (m *GetByIdsRequestBody) GetTypes()([]string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *GetByIdsRequestBody) GetTypes()([]string) {
     }
 }
 // Serialize serializes information the current object
-func (m *GetByIdsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *GetByIdsRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetIds() != nil {
         err := writer.WriteCollectionOfStringValues("ids", m.GetIds())
         if err != nil {
@@ -109,13 +109,13 @@ func (m *GetByIdsRequestBody) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetIds sets the ids property value. 
+// SetIds sets the ids property value. The ids property
 func (m *GetByIdsRequestBody) SetIds(value []string)() {
     if m != nil {
         m.ids = value
     }
 }
-// SetTypes sets the types property value. 
+// SetTypes sets the types property value. The types property
 func (m *GetByIdsRequestBody) SetTypes(value []string)() {
     if m != nil {
         m.types = value

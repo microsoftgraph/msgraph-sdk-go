@@ -1,11 +1,11 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i221d3f1c8592f7a9636476245f2e4a9e82296b6e5cc50822548a6744c13ec682 "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/user"
     i3ff603f1915775aa8fd74380549e8fdf33447260d93eee635198c7c3ce55ef41 "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/assignments"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     ibaab995f04768ff7b941456360e066c6fd775e37b26f2c71367a3f6264b2a4c3 "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/classes"
     icc9d55c2563db563fec8aa8615c0e6e26a0a9a03820b47d4b01f7ef2f53ee2e6 "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/schools"
     if19c2a0949f5f27bde752502b1831a530b8da87a55d1240bdad90f98dc585e1e "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/rubrics"
@@ -22,29 +22,29 @@ type EducationUserItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // EducationUserItemRequestBuilderDeleteOptions options for Delete
 type EducationUserItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // EducationUserItemRequestBuilderGetOptions options for Get
 type EducationUserItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *EducationUserItemRequestBuilderGetQueryParameters;
+    QueryParameters *EducationUserItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // EducationUserItemRequestBuilderGetQueryParameters get users from education
 type EducationUserItemRequestBuilderGetQueryParameters struct {
@@ -56,14 +56,15 @@ type EducationUserItemRequestBuilderGetQueryParameters struct {
 // EducationUserItemRequestBuilderPatchOptions options for Patch
 type EducationUserItemRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationUserable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// Assignments the assignments property
 func (m *EducationUserItemRequestBuilder) Assignments()(*i3ff603f1915775aa8fd74380549e8fdf33447260d93eee635198c7c3ce55ef41.AssignmentsRequestBuilder) {
     return i3ff603f1915775aa8fd74380549e8fdf33447260d93eee635198c7c3ce55ef41.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -78,6 +79,7 @@ func (m *EducationUserItemRequestBuilder) AssignmentsById(id string)(*i142cc9160
     }
     return i142cc91605bccdf7d1947e2356d3e675fabe42483abf58b911ef3417b99a7658.NewEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Classes the classes property
 func (m *EducationUserItemRequestBuilder) Classes()(*ibaab995f04768ff7b941456360e066c6fd775e37b26f2c71367a3f6264b2a4c3.ClassesRequestBuilder) {
     return ibaab995f04768ff7b941456360e066c6fd775e37b26f2c71367a3f6264b2a4c3.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -93,7 +95,7 @@ func (m *EducationUserItemRequestBuilder) ClassesById(id string)(*id83e01290b448
     return id83e01290b448c553c9d9d81fdf7d67ecfbcc1916e58827c310107bad3ba0ec7.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewEducationUserItemRequestBuilderInternal instantiates a new EducationUserItemRequestBuilder and sets the default values.
-func NewEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationUserItemRequestBuilder) {
+func NewEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationUserItemRequestBuilder) {
     m := &EducationUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/users/{educationUser_id}{?select,expand}";
@@ -106,22 +108,22 @@ func NewEducationUserItemRequestBuilderInternal(pathParameters map[string]string
     return m
 }
 // NewEducationUserItemRequestBuilder instantiates a new EducationUserItemRequestBuilder and sets the default values.
-func NewEducationUserItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationUserItemRequestBuilder) {
+func NewEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property users for education
-func (m *EducationUserItemRequestBuilder) CreateDeleteRequestInformation(options *EducationUserItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EducationUserItemRequestBuilder) CreateDeleteRequestInformation(options *EducationUserItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -129,19 +131,19 @@ func (m *EducationUserItemRequestBuilder) CreateDeleteRequestInformation(options
     return requestInfo, nil
 }
 // CreateGetRequestInformation get users from education
-func (m *EducationUserItemRequestBuilder) CreateGetRequestInformation(options *EducationUserItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EducationUserItemRequestBuilder) CreateGetRequestInformation(options *EducationUserItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -149,17 +151,17 @@ func (m *EducationUserItemRequestBuilder) CreateGetRequestInformation(options *E
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property users in education
-func (m *EducationUserItemRequestBuilder) CreatePatchRequestInformation(options *EducationUserItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EducationUserItemRequestBuilder) CreatePatchRequestInformation(options *EducationUserItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -172,9 +174,9 @@ func (m *EducationUserItemRequestBuilder) Delete(options *EducationUserItemReque
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -183,20 +185,20 @@ func (m *EducationUserItemRequestBuilder) Delete(options *EducationUserItemReque
     return nil
 }
 // Get get users from education
-func (m *EducationUserItemRequestBuilder) Get(options *EducationUserItemRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationUserable, error) {
+func (m *EducationUserItemRequestBuilder) Get(options *EducationUserItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateEducationUserFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEducationUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationUserable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable), nil
 }
 // Patch update the navigation property users in education
 func (m *EducationUserItemRequestBuilder) Patch(options *EducationUserItemRequestBuilderPatchOptions)(error) {
@@ -204,9 +206,9 @@ func (m *EducationUserItemRequestBuilder) Patch(options *EducationUserItemReques
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -214,6 +216,7 @@ func (m *EducationUserItemRequestBuilder) Patch(options *EducationUserItemReques
     }
     return nil
 }
+// Rubrics the rubrics property
 func (m *EducationUserItemRequestBuilder) Rubrics()(*if19c2a0949f5f27bde752502b1831a530b8da87a55d1240bdad90f98dc585e1e.RubricsRequestBuilder) {
     return if19c2a0949f5f27bde752502b1831a530b8da87a55d1240bdad90f98dc585e1e.NewRubricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -228,6 +231,7 @@ func (m *EducationUserItemRequestBuilder) RubricsById(id string)(*ia6a8d66cb9ce8
     }
     return ia6a8d66cb9ce8a7587ed39000e658b45c988146e3baee26d141c9c4829ae1818.NewEducationRubricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Schools the schools property
 func (m *EducationUserItemRequestBuilder) Schools()(*icc9d55c2563db563fec8aa8615c0e6e26a0a9a03820b47d4b01f7ef2f53ee2e6.SchoolsRequestBuilder) {
     return icc9d55c2563db563fec8aa8615c0e6e26a0a9a03820b47d4b01f7ef2f53ee2e6.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -242,6 +246,7 @@ func (m *EducationUserItemRequestBuilder) SchoolsById(id string)(*ia9b5ce3f1a9b6
     }
     return ia9b5ce3f1a9b6628a35c3d194c8db39e4f5a678c68df1c7d38765c1e6983ee9f.NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// TaughtClasses the taughtClasses property
 func (m *EducationUserItemRequestBuilder) TaughtClasses()(*ifc2ed629d6ca53bbfc33acc06329c54a103a8e43f74a0e018639ae7bafc6020b.TaughtClassesRequestBuilder) {
     return ifc2ed629d6ca53bbfc33acc06329c54a103a8e43f74a0e018639ae7bafc6020b.NewTaughtClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -256,6 +261,7 @@ func (m *EducationUserItemRequestBuilder) TaughtClassesById(id string)(*i6c43b62
     }
     return i6c43b628928247a4ca6ee2535b4cc6a110e39b8ff8155ce809de4582b7428450.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// User the user property
 func (m *EducationUserItemRequestBuilder) User()(*i221d3f1c8592f7a9636476245f2e4a9e82296b6e5cc50822548a6744c13ec682.UserRequestBuilder) {
     return i221d3f1c8592f7a9636476245f2e4a9e82296b6e5cc50822548a6744c13ec682.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

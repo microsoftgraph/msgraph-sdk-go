@@ -1,18 +1,18 @@
 package startholdmusic
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // StartHoldMusicRequestBody provides operations to call the startHoldMusic method.
 type StartHoldMusicRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The clientContext property
     clientContext *string;
-    // 
-    customPrompt i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Promptable;
+    // The customPrompt property
+    customPrompt iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable;
 }
 // NewStartHoldMusicRequestBody instantiates a new startHoldMusicRequestBody and sets the default values.
 func NewStartHoldMusicRequestBody()(*StartHoldMusicRequestBody) {
@@ -22,7 +22,7 @@ func NewStartHoldMusicRequestBody()(*StartHoldMusicRequestBody) {
     return m
 }
 // CreateStartHoldMusicRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateStartHoldMusicRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateStartHoldMusicRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStartHoldMusicRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,7 +33,7 @@ func (m *StartHoldMusicRequestBody) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// GetClientContext gets the clientContext property value. 
+// GetClientContext gets the clientContext property value. The clientContext property
 func (m *StartHoldMusicRequestBody) GetClientContext()(*string) {
     if m == nil {
         return nil
@@ -41,8 +41,8 @@ func (m *StartHoldMusicRequestBody) GetClientContext()(*string) {
         return m.clientContext
     }
 }
-// GetCustomPrompt gets the customPrompt property value. 
-func (m *StartHoldMusicRequestBody) GetCustomPrompt()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Promptable) {
+// GetCustomPrompt gets the customPrompt property value. The customPrompt property
+func (m *StartHoldMusicRequestBody) GetCustomPrompt()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable) {
     if m == nil {
         return nil
     } else {
@@ -50,9 +50,9 @@ func (m *StartHoldMusicRequestBody) GetCustomPrompt()(i4a838ef194e4c99e9f2c63ba1
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *StartHoldMusicRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["clientContext"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *StartHoldMusicRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["clientContext"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,20 +62,20 @@ func (m *StartHoldMusicRequestBody) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["customPrompt"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreatePromptFromDiscriminatorValue)
+    res["customPrompt"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePromptFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCustomPrompt(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Promptable))
+            m.SetCustomPrompt(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable))
         }
         return nil
     }
     return res
 }
 // Serialize serializes information the current object
-func (m *StartHoldMusicRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *StartHoldMusicRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("clientContext", m.GetClientContext())
         if err != nil {
@@ -102,14 +102,14 @@ func (m *StartHoldMusicRequestBody) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetClientContext sets the clientContext property value. 
+// SetClientContext sets the clientContext property value. The clientContext property
 func (m *StartHoldMusicRequestBody) SetClientContext(value *string)() {
     if m != nil {
         m.clientContext = value
     }
 }
-// SetCustomPrompt sets the customPrompt property value. 
-func (m *StartHoldMusicRequestBody) SetCustomPrompt(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Promptable)() {
+// SetCustomPrompt sets the customPrompt property value. The customPrompt property
+func (m *StartHoldMusicRequestBody) SetCustomPrompt(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)() {
     if m != nil {
         m.customPrompt = value
     }

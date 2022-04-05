@@ -2,25 +2,25 @@ package createorget
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // CreateOrGetRequestBody provides operations to call the createOrGet method.
 type CreateOrGetRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    chatInfo i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatInfoable;
-    // 
+    // The chatInfo property
+    chatInfo iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatInfoable;
+    // The endDateTime property
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The externalId property
     externalId *string;
-    // 
-    participants i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingParticipantsable;
-    // 
+    // The participants property
+    participants iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingParticipantsable;
+    // The startDateTime property
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The subject property
     subject *string;
 }
 // NewCreateOrGetRequestBody instantiates a new createOrGetRequestBody and sets the default values.
@@ -31,7 +31,7 @@ func NewCreateOrGetRequestBody()(*CreateOrGetRequestBody) {
     return m
 }
 // CreateCreateOrGetRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCreateOrGetRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCreateOrGetRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCreateOrGetRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -42,15 +42,15 @@ func (m *CreateOrGetRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetChatInfo gets the chatInfo property value. 
-func (m *CreateOrGetRequestBody) GetChatInfo()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatInfoable) {
+// GetChatInfo gets the chatInfo property value. The chatInfo property
+func (m *CreateOrGetRequestBody) GetChatInfo()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatInfoable) {
     if m == nil {
         return nil
     } else {
         return m.chatInfo
     }
 }
-// GetEndDateTime gets the endDateTime property value. 
+// GetEndDateTime gets the endDateTime property value. The endDateTime property
 func (m *CreateOrGetRequestBody) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *CreateOrGetRequestBody) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.endDateTime
     }
 }
-// GetExternalId gets the externalId property value. 
+// GetExternalId gets the externalId property value. The externalId property
 func (m *CreateOrGetRequestBody) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -67,19 +67,19 @@ func (m *CreateOrGetRequestBody) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CreateOrGetRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["chatInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateChatInfoFromDiscriminatorValue)
+func (m *CreateOrGetRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["chatInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateChatInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetChatInfo(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatInfoable))
+            m.SetChatInfo(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatInfoable))
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *CreateOrGetRequestBody) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,17 +99,17 @@ func (m *CreateOrGetRequestBody) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["participants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateMeetingParticipantsFromDiscriminatorValue)
+    res["participants"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateMeetingParticipantsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParticipants(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingParticipantsable))
+            m.SetParticipants(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingParticipantsable))
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *CreateOrGetRequestBody) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,15 +131,15 @@ func (m *CreateOrGetRequestBody) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
-// GetParticipants gets the participants property value. 
-func (m *CreateOrGetRequestBody) GetParticipants()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingParticipantsable) {
+// GetParticipants gets the participants property value. The participants property
+func (m *CreateOrGetRequestBody) GetParticipants()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingParticipantsable) {
     if m == nil {
         return nil
     } else {
         return m.participants
     }
 }
-// GetStartDateTime gets the startDateTime property value. 
+// GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *CreateOrGetRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -147,7 +147,7 @@ func (m *CreateOrGetRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3
         return m.startDateTime
     }
 }
-// GetSubject gets the subject property value. 
+// GetSubject gets the subject property value. The subject property
 func (m *CreateOrGetRequestBody) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *CreateOrGetRequestBody) GetSubject()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *CreateOrGetRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CreateOrGetRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("chatInfo", m.GetChatInfo())
         if err != nil {
@@ -207,37 +207,37 @@ func (m *CreateOrGetRequestBody) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetChatInfo sets the chatInfo property value. 
-func (m *CreateOrGetRequestBody) SetChatInfo(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatInfoable)() {
+// SetChatInfo sets the chatInfo property value. The chatInfo property
+func (m *CreateOrGetRequestBody) SetChatInfo(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatInfoable)() {
     if m != nil {
         m.chatInfo = value
     }
 }
-// SetEndDateTime sets the endDateTime property value. 
+// SetEndDateTime sets the endDateTime property value. The endDateTime property
 func (m *CreateOrGetRequestBody) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.endDateTime = value
     }
 }
-// SetExternalId sets the externalId property value. 
+// SetExternalId sets the externalId property value. The externalId property
 func (m *CreateOrGetRequestBody) SetExternalId(value *string)() {
     if m != nil {
         m.externalId = value
     }
 }
-// SetParticipants sets the participants property value. 
-func (m *CreateOrGetRequestBody) SetParticipants(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingParticipantsable)() {
+// SetParticipants sets the participants property value. The participants property
+func (m *CreateOrGetRequestBody) SetParticipants(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingParticipantsable)() {
     if m != nil {
         m.participants = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. 
+// SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *CreateOrGetRequestBody) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startDateTime = value
     }
 }
-// SetSubject sets the subject property value. 
+// SetSubject sets the subject property value. The subject property
 func (m *CreateOrGetRequestBody) SetSubject(value *string)() {
     if m != nil {
         m.subject = value

@@ -1,18 +1,18 @@
 package copytodefaultcontentlocation
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // CopyToDefaultContentLocationRequestBody provides operations to call the copyToDefaultContentLocation method.
 type CopyToDefaultContentLocationRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The destinationFileName property
     destinationFileName *string;
-    // 
-    sourceFile i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReferenceable;
+    // The sourceFile property
+    sourceFile iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable;
 }
 // NewCopyToDefaultContentLocationRequestBody instantiates a new copyToDefaultContentLocationRequestBody and sets the default values.
 func NewCopyToDefaultContentLocationRequestBody()(*CopyToDefaultContentLocationRequestBody) {
@@ -22,7 +22,7 @@ func NewCopyToDefaultContentLocationRequestBody()(*CopyToDefaultContentLocationR
     return m
 }
 // CreateCopyToDefaultContentLocationRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCopyToDefaultContentLocationRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCopyToDefaultContentLocationRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCopyToDefaultContentLocationRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,7 +33,7 @@ func (m *CopyToDefaultContentLocationRequestBody) GetAdditionalData()(map[string
         return m.additionalData
     }
 }
-// GetDestinationFileName gets the destinationFileName property value. 
+// GetDestinationFileName gets the destinationFileName property value. The destinationFileName property
 func (m *CopyToDefaultContentLocationRequestBody) GetDestinationFileName()(*string) {
     if m == nil {
         return nil
@@ -42,9 +42,9 @@ func (m *CopyToDefaultContentLocationRequestBody) GetDestinationFileName()(*stri
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CopyToDefaultContentLocationRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["destinationFileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *CopyToDefaultContentLocationRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["destinationFileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,20 +54,20 @@ func (m *CopyToDefaultContentLocationRequestBody) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["sourceFile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateItemReferenceFromDiscriminatorValue)
+    res["sourceFile"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateItemReferenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceFile(val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReferenceable))
+            m.SetSourceFile(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable))
         }
         return nil
     }
     return res
 }
-// GetSourceFile gets the sourceFile property value. 
-func (m *CopyToDefaultContentLocationRequestBody) GetSourceFile()(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReferenceable) {
+// GetSourceFile gets the sourceFile property value. The sourceFile property
+func (m *CopyToDefaultContentLocationRequestBody) GetSourceFile()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +75,7 @@ func (m *CopyToDefaultContentLocationRequestBody) GetSourceFile()(i4a838ef194e4c
     }
 }
 // Serialize serializes information the current object
-func (m *CopyToDefaultContentLocationRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CopyToDefaultContentLocationRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("destinationFileName", m.GetDestinationFileName())
         if err != nil {
@@ -102,14 +102,14 @@ func (m *CopyToDefaultContentLocationRequestBody) SetAdditionalData(value map[st
         m.additionalData = value
     }
 }
-// SetDestinationFileName sets the destinationFileName property value. 
+// SetDestinationFileName sets the destinationFileName property value. The destinationFileName property
 func (m *CopyToDefaultContentLocationRequestBody) SetDestinationFileName(value *string)() {
     if m != nil {
         m.destinationFileName = value
     }
 }
-// SetSourceFile sets the sourceFile property value. 
-func (m *CopyToDefaultContentLocationRequestBody) SetSourceFile(value i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReferenceable)() {
+// SetSourceFile sets the sourceFile property value. The sourceFile property
+func (m *CopyToDefaultContentLocationRequestBody) SetSourceFile(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable)() {
     if m != nil {
         m.sourceFile = value
     }

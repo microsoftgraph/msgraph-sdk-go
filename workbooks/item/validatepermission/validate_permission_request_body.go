@@ -1,16 +1,16 @@
 package validatepermission
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // ValidatePermissionRequestBody provides operations to call the validatePermission method.
 type ValidatePermissionRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The challengeToken property
     challengeToken *string;
-    // 
+    // The password property
     password *string;
 }
 // NewValidatePermissionRequestBody instantiates a new validatePermissionRequestBody and sets the default values.
@@ -21,7 +21,7 @@ func NewValidatePermissionRequestBody()(*ValidatePermissionRequestBody) {
     return m
 }
 // CreateValidatePermissionRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateValidatePermissionRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateValidatePermissionRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewValidatePermissionRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -32,7 +32,7 @@ func (m *ValidatePermissionRequestBody) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetChallengeToken gets the challengeToken property value. 
+// GetChallengeToken gets the challengeToken property value. The challengeToken property
 func (m *ValidatePermissionRequestBody) GetChallengeToken()(*string) {
     if m == nil {
         return nil
@@ -41,9 +41,9 @@ func (m *ValidatePermissionRequestBody) GetChallengeToken()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ValidatePermissionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["challengeToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ValidatePermissionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["challengeToken"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *ValidatePermissionRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["password"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["password"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *ValidatePermissionRequestBody) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetPassword gets the password property value. 
+// GetPassword gets the password property value. The password property
 func (m *ValidatePermissionRequestBody) GetPassword()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *ValidatePermissionRequestBody) GetPassword()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *ValidatePermissionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ValidatePermissionRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("challengeToken", m.GetChallengeToken())
         if err != nil {
@@ -101,13 +101,13 @@ func (m *ValidatePermissionRequestBody) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetChallengeToken sets the challengeToken property value. 
+// SetChallengeToken sets the challengeToken property value. The challengeToken property
 func (m *ValidatePermissionRequestBody) SetChallengeToken(value *string)() {
     if m != nil {
         m.challengeToken = value
     }
 }
-// SetPassword sets the password property value. 
+// SetPassword sets the password property value. The password property
 func (m *ValidatePermissionRequestBody) SetPassword(value *string)() {
     if m != nil {
         m.password = value

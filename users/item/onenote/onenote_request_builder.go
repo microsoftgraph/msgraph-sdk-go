@@ -1,11 +1,11 @@
 package onenote
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i3521324ea2fa03aac1ba1029060d9326077d780f41956c3996cc7c08c74175d5 "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/operations"
     i6ab0f57415f0f91846673c7144401d1ecb437b2ed9583ff3a324fce02d79d6ce "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/sectiongroups"
-    i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/odataerrors"
     i89a64f4378390a1ff2c4709e25458a2484ce3ed41135ba5fb5e45f1f2c8feecd "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/sections"
     iac5f1f7ab3fe7f049908ebaa2118d2ae66da6365ddcc42c944df9fa3747dd82e "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/resources"
     ic1143c927ee5b190553f9b473aa6e674cb9c24f3a9e2793ca61c4126357f44d4 "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/pages"
@@ -23,29 +23,29 @@ type OnenoteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // OnenoteRequestBuilderDeleteOptions options for Delete
 type OnenoteRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // OnenoteRequestBuilderGetOptions options for Get
 type OnenoteRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *OnenoteRequestBuilderGetQueryParameters;
+    QueryParameters *OnenoteRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // OnenoteRequestBuilderGetQueryParameters read-only.
 type OnenoteRequestBuilderGetQueryParameters struct {
@@ -57,16 +57,16 @@ type OnenoteRequestBuilderGetQueryParameters struct {
 // OnenoteRequestBuilderPatchOptions options for Patch
 type OnenoteRequestBuilderPatchOptions struct {
     // 
-    Body i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Onenoteable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // NewOnenoteRequestBuilderInternal instantiates a new OnenoteRequestBuilder and sets the default values.
-func NewOnenoteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenoteRequestBuilder) {
+func NewOnenoteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnenoteRequestBuilder) {
     m := &OnenoteRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user_id}/onenote{?select,expand}";
@@ -79,22 +79,22 @@ func NewOnenoteRequestBuilderInternal(pathParameters map[string]string, requestA
     return m
 }
 // NewOnenoteRequestBuilder instantiates a new OnenoteRequestBuilder and sets the default values.
-func NewOnenoteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenoteRequestBuilder) {
+func NewOnenoteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnenoteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnenoteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property onenote for users
-func (m *OnenoteRequestBuilder) CreateDeleteRequestInformation(options *OnenoteRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *OnenoteRequestBuilder) CreateDeleteRequestInformation(options *OnenoteRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -102,19 +102,19 @@ func (m *OnenoteRequestBuilder) CreateDeleteRequestInformation(options *OnenoteR
     return requestInfo, nil
 }
 // CreateGetRequestInformation read-only.
-func (m *OnenoteRequestBuilder) CreateGetRequestInformation(options *OnenoteRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *OnenoteRequestBuilder) CreateGetRequestInformation(options *OnenoteRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -122,17 +122,17 @@ func (m *OnenoteRequestBuilder) CreateGetRequestInformation(options *OnenoteRequ
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property onenote in users
-func (m *OnenoteRequestBuilder) CreatePatchRequestInformation(options *OnenoteRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *OnenoteRequestBuilder) CreatePatchRequestInformation(options *OnenoteRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -145,9 +145,9 @@ func (m *OnenoteRequestBuilder) Delete(options *OnenoteRequestBuilderDeleteOptio
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -156,21 +156,22 @@ func (m *OnenoteRequestBuilder) Delete(options *OnenoteRequestBuilderDeleteOptio
     return nil
 }
 // Get read-only.
-func (m *OnenoteRequestBuilder) Get(options *OnenoteRequestBuilderGetOptions)(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Onenoteable, error) {
+func (m *OnenoteRequestBuilder) Get(options *OnenoteRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CreateOnenoteFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateOnenoteFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Onenoteable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable), nil
 }
+// Notebooks the notebooks property
 func (m *OnenoteRequestBuilder) Notebooks()(*ieb61df1d5a7fd9e6e860ccddd58f15f53dabcafd6e50ba4704ac752bb5e98897.NotebooksRequestBuilder) {
     return ieb61df1d5a7fd9e6e860ccddd58f15f53dabcafd6e50ba4704ac752bb5e98897.NewNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -185,6 +186,7 @@ func (m *OnenoteRequestBuilder) NotebooksById(id string)(*ifa98a498cfd880b015264
     }
     return ifa98a498cfd880b015264285e62bc7fee30c1a6cc2150f3d064f69448f9f5b27.NewNotebookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Operations the operations property
 func (m *OnenoteRequestBuilder) Operations()(*i3521324ea2fa03aac1ba1029060d9326077d780f41956c3996cc7c08c74175d5.OperationsRequestBuilder) {
     return i3521324ea2fa03aac1ba1029060d9326077d780f41956c3996cc7c08c74175d5.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -199,6 +201,7 @@ func (m *OnenoteRequestBuilder) OperationsById(id string)(*i5ce07e3fde797b20643c
     }
     return i5ce07e3fde797b20643c20f1577367403edd721d4ddd3efd58a478430089aa94.NewOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Pages the pages property
 func (m *OnenoteRequestBuilder) Pages()(*ic1143c927ee5b190553f9b473aa6e674cb9c24f3a9e2793ca61c4126357f44d4.PagesRequestBuilder) {
     return ic1143c927ee5b190553f9b473aa6e674cb9c24f3a9e2793ca61c4126357f44d4.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -219,9 +222,9 @@ func (m *OnenoteRequestBuilder) Patch(options *OnenoteRequestBuilderPatchOptions
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i7df4e557a1198b9abe14a17b40c7ac7db49b0d3050c749c3169541cb6f012b8b.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -229,6 +232,7 @@ func (m *OnenoteRequestBuilder) Patch(options *OnenoteRequestBuilderPatchOptions
     }
     return nil
 }
+// Resources the resources property
 func (m *OnenoteRequestBuilder) Resources()(*iac5f1f7ab3fe7f049908ebaa2118d2ae66da6365ddcc42c944df9fa3747dd82e.ResourcesRequestBuilder) {
     return iac5f1f7ab3fe7f049908ebaa2118d2ae66da6365ddcc42c944df9fa3747dd82e.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -243,6 +247,7 @@ func (m *OnenoteRequestBuilder) ResourcesById(id string)(*ie9d18cbc4daa0c9f216a9
     }
     return ie9d18cbc4daa0c9f216a92bd04bfbd2e093269deb326c4499728b346448951ef.NewOnenoteResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// SectionGroups the sectionGroups property
 func (m *OnenoteRequestBuilder) SectionGroups()(*i6ab0f57415f0f91846673c7144401d1ecb437b2ed9583ff3a324fce02d79d6ce.SectionGroupsRequestBuilder) {
     return i6ab0f57415f0f91846673c7144401d1ecb437b2ed9583ff3a324fce02d79d6ce.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -257,6 +262,7 @@ func (m *OnenoteRequestBuilder) SectionGroupsById(id string)(*ief43f129f43e4e2e0
     }
     return ief43f129f43e4e2e00209d40c6ab20f225d4a6be2f614f3de5c37ad2d36f6397.NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Sections the sections property
 func (m *OnenoteRequestBuilder) Sections()(*i89a64f4378390a1ff2c4709e25458a2484ce3ed41135ba5fb5e45f1f2c8feecd.SectionsRequestBuilder) {
     return i89a64f4378390a1ff2c4709e25458a2484ce3ed41135ba5fb5e45f1f2c8feecd.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

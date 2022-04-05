@@ -1,22 +1,22 @@
 package copytosectiongroup
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // CopyToSectionGroupRequestBody provides operations to call the copyToSectionGroup method.
 type CopyToSectionGroupRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The groupId property
     groupId *string;
-    // 
+    // The id property
     id *string;
-    // 
+    // The renameAs property
     renameAs *string;
-    // 
+    // The siteCollectionId property
     siteCollectionId *string;
-    // 
+    // The siteId property
     siteId *string;
 }
 // NewCopyToSectionGroupRequestBody instantiates a new copyToSectionGroupRequestBody and sets the default values.
@@ -27,7 +27,7 @@ func NewCopyToSectionGroupRequestBody()(*CopyToSectionGroupRequestBody) {
     return m
 }
 // CreateCopyToSectionGroupRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCopyToSectionGroupRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCopyToSectionGroupRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCopyToSectionGroupRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -39,9 +39,9 @@ func (m *CopyToSectionGroupRequestBody) GetAdditionalData()(map[string]interface
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CopyToSectionGroupRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["groupId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *CopyToSectionGroupRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["groupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *CopyToSectionGroupRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *CopyToSectionGroupRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["renameAs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["renameAs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *CopyToSectionGroupRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["siteCollectionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["siteCollectionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *CopyToSectionGroupRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["siteId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["siteId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *CopyToSectionGroupRequestBody) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetGroupId gets the groupId property value. 
+// GetGroupId gets the groupId property value. The groupId property
 func (m *CopyToSectionGroupRequestBody) GetGroupId()(*string) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *CopyToSectionGroupRequestBody) GetGroupId()(*string) {
         return m.groupId
     }
 }
-// GetId gets the id property value. 
+// GetId gets the id property value. The id property
 func (m *CopyToSectionGroupRequestBody) GetId()(*string) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *CopyToSectionGroupRequestBody) GetId()(*string) {
         return m.id
     }
 }
-// GetRenameAs gets the renameAs property value. 
+// GetRenameAs gets the renameAs property value. The renameAs property
 func (m *CopyToSectionGroupRequestBody) GetRenameAs()(*string) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *CopyToSectionGroupRequestBody) GetRenameAs()(*string) {
         return m.renameAs
     }
 }
-// GetSiteCollectionId gets the siteCollectionId property value. 
+// GetSiteCollectionId gets the siteCollectionId property value. The siteCollectionId property
 func (m *CopyToSectionGroupRequestBody) GetSiteCollectionId()(*string) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *CopyToSectionGroupRequestBody) GetSiteCollectionId()(*string) {
         return m.siteCollectionId
     }
 }
-// GetSiteId gets the siteId property value. 
+// GetSiteId gets the siteId property value. The siteId property
 func (m *CopyToSectionGroupRequestBody) GetSiteId()(*string) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *CopyToSectionGroupRequestBody) GetSiteId()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *CopyToSectionGroupRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CopyToSectionGroupRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("groupId", m.GetGroupId())
         if err != nil {
@@ -179,31 +179,31 @@ func (m *CopyToSectionGroupRequestBody) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetGroupId sets the groupId property value. 
+// SetGroupId sets the groupId property value. The groupId property
 func (m *CopyToSectionGroupRequestBody) SetGroupId(value *string)() {
     if m != nil {
         m.groupId = value
     }
 }
-// SetId sets the id property value. 
+// SetId sets the id property value. The id property
 func (m *CopyToSectionGroupRequestBody) SetId(value *string)() {
     if m != nil {
         m.id = value
     }
 }
-// SetRenameAs sets the renameAs property value. 
+// SetRenameAs sets the renameAs property value. The renameAs property
 func (m *CopyToSectionGroupRequestBody) SetRenameAs(value *string)() {
     if m != nil {
         m.renameAs = value
     }
 }
-// SetSiteCollectionId sets the siteCollectionId property value. 
+// SetSiteCollectionId sets the siteCollectionId property value. The siteCollectionId property
 func (m *CopyToSectionGroupRequestBody) SetSiteCollectionId(value *string)() {
     if m != nil {
         m.siteCollectionId = value
     }
 }
-// SetSiteId sets the siteId property value. 
+// SetSiteId sets the siteId property value. The siteId property
 func (m *CopyToSectionGroupRequestBody) SetSiteId(value *string)() {
     if m != nil {
         m.siteId = value

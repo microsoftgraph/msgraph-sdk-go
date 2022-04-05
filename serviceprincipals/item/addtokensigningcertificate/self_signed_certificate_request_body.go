@@ -2,16 +2,16 @@ package addtokensigningcertificate
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // SelfSignedCertificateRequestBody provides operations to call the addTokenSigningCertificate method.
 type SelfSignedCertificateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The displayName property
     displayName *string;
-    // 
+    // The endDateTime property
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewSelfSignedCertificateRequestBody instantiates a new SelfSignedCertificateRequestBody and sets the default values.
@@ -22,7 +22,7 @@ func NewSelfSignedCertificateRequestBody()(*SelfSignedCertificateRequestBody) {
     return m
 }
 // CreateSelfSignedCertificateRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateSelfSignedCertificateRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateSelfSignedCertificateRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSelfSignedCertificateRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,7 +33,7 @@ func (m *SelfSignedCertificateRequestBody) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// GetDisplayName gets the displayName property value. 
+// GetDisplayName gets the displayName property value. The displayName property
 func (m *SelfSignedCertificateRequestBody) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *SelfSignedCertificateRequestBody) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEndDateTime gets the endDateTime property value. 
+// GetEndDateTime gets the endDateTime property value. The endDateTime property
 func (m *SelfSignedCertificateRequestBody) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -50,9 +50,9 @@ func (m *SelfSignedCertificateRequestBody) GetEndDateTime()(*i336074805fc853987a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SelfSignedCertificateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *SelfSignedCertificateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *SelfSignedCertificateRequestBody) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *SelfSignedCertificateRequestBody) GetFieldDeserializers()(map[string]fu
     return res
 }
 // Serialize serializes information the current object
-func (m *SelfSignedCertificateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *SelfSignedCertificateRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
@@ -102,13 +102,13 @@ func (m *SelfSignedCertificateRequestBody) SetAdditionalData(value map[string]in
         m.additionalData = value
     }
 }
-// SetDisplayName sets the displayName property value. 
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *SelfSignedCertificateRequestBody) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetEndDateTime sets the endDateTime property value. 
+// SetEndDateTime sets the endDateTime property value. The endDateTime property
 func (m *SelfSignedCertificateRequestBody) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.endDateTime = value
