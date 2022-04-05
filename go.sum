@@ -1,4 +1,3 @@
-github.com/cjlapao/common-go v0.0.18/go.mod h1:zGdh2KmXnH4HTRfT7vPpY41cws776KULk44f09OPJgs=
 github.com/cjlapao/common-go v0.0.19 h1:dhPllblgZwHn92u8wNleLDCg6+T2rjV57H8eyz82tbQ=
 github.com/cjlapao/common-go v0.0.19/go.mod h1:EVLEXIxsBHblPMrhJYOvL4yBCcBj7IYDdW88VlfxpPM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -27,15 +26,8 @@ github.com/microsoft/kiota-http-go v0.1.0 h1:bpIQMfKHc6Gf2Yq0habBnlPF7jFgecRvgu1
 github.com/microsoft/kiota-http-go v0.1.0/go.mod h1:gRdOvtTMOPd9ad8hzwfranD3xdPsTpG6QEmC0HhibLs=
 github.com/microsoft/kiota-serialization-json-go v0.1.0 h1:K+ykyYyYjC4yJ6CaKrJFzO5FUZZwat/jdux0DIeXzbA=
 github.com/microsoft/kiota-serialization-json-go v0.1.0/go.mod h1:7wxGuNOHgu9TjUk/pQf6FAdweR/OX5p0DeR1sBjrixA=
+github.com/microsoft/kiota-serialization-text-go v0.1.0 h1:nfhiwh8bo4d1I+bB5/yYgrkXy1NaBhwCzxbUC/Ha5o0=
 github.com/microsoft/kiota-serialization-text-go v0.1.0/go.mod h1:v7ermshF2oaytMuUSO9VR9dftCUiPUe1iUoNdbu0BpE=
-github.com/microsoft/kiota/abstractions/go v0.0.0-20220314101957-d2823fe62079/go.mod h1:BUv5PFNuBLFXQlDtarjdgqdqDjee3FgfjrNkfZlA5us=
-github.com/microsoft/kiota/abstractions/go v0.0.0-20220316090511-468a319ac5ba/go.mod h1:ByVU/M0XlWTE0uflKWPv9Xrfrait2pcpMZSNGYM2nRc=
-github.com/microsoft/kiota/abstractions/go v0.0.0-20220322090755-7332983145f2 h1:Z0vdUqVg4YKC5Kkw5kM6hSBzBNk/C6X+w1juClV3GZs=
-github.com/microsoft/kiota/abstractions/go v0.0.0-20220322090755-7332983145f2/go.mod h1:ByVU/M0XlWTE0uflKWPv9Xrfrait2pcpMZSNGYM2nRc=
-github.com/microsoft/kiota/serialization/go/json v0.0.0-20220322090755-7332983145f2 h1:XYXnYwaZWZOvYeIXonA39k70qlNM8asSQbeJg/ro2xg=
-github.com/microsoft/kiota/serialization/go/json v0.0.0-20220322090755-7332983145f2/go.mod h1:Jtz7hHhcXIqLk4cVhv1+4sC8PKtEgu2qLeQawnRp0JU=
-github.com/microsoft/kiota/serialization/go/text v0.0.0-20220322090755-7332983145f2 h1:ql3E0M8wEstxc6oXkZtdu41CG7DyFnAgqWDgD3WbklQ=
-github.com/microsoft/kiota/serialization/go/text v0.0.0-20220322090755-7332983145f2/go.mod h1:16Afg9jFYY+3yEx+D7xq/boJDRW5zYOsy/YPWIK5nLE=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.20.0 h1:6jQKZv8LrSPasIK63HDC3HWbl+3XpwfDCRrBLMi+CV8=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.20.0/go.mod h1:VxRRSdcAi4o4kC1Jn1NMjhQPHeeRxyR1DbZT62wZHJg=
 github.com/montanaflynn/stats v0.0.0-20171201202039-1bf9dbcd8cbe/go.mod h1:wL8QJuTMNUDYhXwkmfOly8iTdp5TEcJFWZD2D7SIkUc=

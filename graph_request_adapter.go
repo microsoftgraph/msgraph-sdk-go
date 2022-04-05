@@ -3,8 +3,8 @@ package msgraphsdkgo
 import (
 	nethttp "net/http"
 
-	absauth "github.com/microsoft/kiota/abstractions/go/authentication"
-	absser "github.com/microsoft/kiota/abstractions/go/serialization"
+	absauth "github.com/microsoft/kiota-abstractions-go/authentication"
+	absser "github.com/microsoft/kiota-abstractions-go/serialization"
 	core "github.com/microsoftgraph/msgraph-sdk-go-core"
 )
 
