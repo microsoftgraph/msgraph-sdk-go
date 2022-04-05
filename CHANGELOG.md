@@ -11,6 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.17.0] - 2022-04-05
+
+### Added
+
+- Added support for vendor specific content types.
+- Added support for 204 no content responses.
+
+### Changed
+
+- Weekly generation
+- Breaking: kiota dependencies have been moved to their own repository.
+
 ## [0.16.0] - 2022-03-29
 
 ### Changed
