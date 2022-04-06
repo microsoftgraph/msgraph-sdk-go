@@ -20,12 +20,14 @@ github.com/mattn/go-colorable v0.1.9/go.mod h1:u6P/XSegPjTcexA+o6vUJrdnUu04hMope
 github.com/mattn/go-colorable v0.1.12/go.mod h1:u5H1YNBxpqRaxsYJYSkiCWKzEfiAb1Gb520KVy5xxl4=
 github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Kysco4FUpU=
 github.com/mattn/go-isatty v0.0.14/go.mod h1:7GGIvUiUoEMVVmxf/4nioHXj79iQHKdU27kJ6hsGG94=
-github.com/microsoft/kiota-abstractions-go v0.1.0 h1:oaUAitWTfV/v9nuyF8Et5d74/n8jDTrQ/yGfttFmkW0=
 github.com/microsoft/kiota-abstractions-go v0.1.0/go.mod h1:72wco+cRPd6SJf6R2wjEQT/BzbpfCGJQ/MGJixj+AIM=
+github.com/microsoft/kiota-abstractions-go v0.2.0 h1:5zg8SLQBUfAvg0wP6vH42k97pjCZ6sI5yBC7QOovsXM=
+github.com/microsoft/kiota-abstractions-go v0.2.0/go.mod h1:72wco+cRPd6SJf6R2wjEQT/BzbpfCGJQ/MGJixj+AIM=
 github.com/microsoft/kiota-http-go v0.1.0 h1:bpIQMfKHc6Gf2Yq0habBnlPF7jFgecRvgu1GDcAsnSI=
 github.com/microsoft/kiota-http-go v0.1.0/go.mod h1:gRdOvtTMOPd9ad8hzwfranD3xdPsTpG6QEmC0HhibLs=
-github.com/microsoft/kiota-serialization-json-go v0.1.0 h1:K+ykyYyYjC4yJ6CaKrJFzO5FUZZwat/jdux0DIeXzbA=
 github.com/microsoft/kiota-serialization-json-go v0.1.0/go.mod h1:7wxGuNOHgu9TjUk/pQf6FAdweR/OX5p0DeR1sBjrixA=
+github.com/microsoft/kiota-serialization-json-go v0.2.0 h1:K47w/RJDLWDN54Za+PlGJPUYPM/kWHMRvI5eNduibFA=
+github.com/microsoft/kiota-serialization-json-go v0.2.0/go.mod h1:imCtF1b5htfZYhg9iZSc1mWrcyxgRi30+LPOL7rry+4=
 github.com/microsoft/kiota-serialization-text-go v0.1.0 h1:nfhiwh8bo4d1I+bB5/yYgrkXy1NaBhwCzxbUC/Ha5o0=
 github.com/microsoft/kiota-serialization-text-go v0.1.0/go.mod h1:v7ermshF2oaytMuUSO9VR9dftCUiPUe1iUoNdbu0BpE=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.20.0 h1:6jQKZv8LrSPasIK63HDC3HWbl+3XpwfDCRrBLMi+CV8=
