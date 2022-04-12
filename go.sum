@@ -23,6 +23,8 @@ github.com/mattn/go-isatty v0.0.14/go.mod h1:7GGIvUiUoEMVVmxf/4nioHXj79iQHKdU27k
 github.com/microsoft/kiota-abstractions-go v0.1.0/go.mod h1:72wco+cRPd6SJf6R2wjEQT/BzbpfCGJQ/MGJixj+AIM=
 github.com/microsoft/kiota-abstractions-go v0.2.0 h1:5zg8SLQBUfAvg0wP6vH42k97pjCZ6sI5yBC7QOovsXM=
 github.com/microsoft/kiota-abstractions-go v0.2.0/go.mod h1:72wco+cRPd6SJf6R2wjEQT/BzbpfCGJQ/MGJixj+AIM=
+github.com/microsoft/kiota-abstractions-go v0.3.0 h1:EPfw6rCWBOS8plXUsTpqTDrKlmhkL65nznbpkA4hIy0=
+github.com/microsoft/kiota-abstractions-go v0.3.0/go.mod h1:72wco+cRPd6SJf6R2wjEQT/BzbpfCGJQ/MGJixj+AIM=
 github.com/microsoft/kiota-http-go v0.1.0 h1:bpIQMfKHc6Gf2Yq0habBnlPF7jFgecRvgu1GDcAsnSI=
 github.com/microsoft/kiota-http-go v0.1.0/go.mod h1:gRdOvtTMOPd9ad8hzwfranD3xdPsTpG6QEmC0HhibLs=
 github.com/microsoft/kiota-serialization-json-go v0.2.0 h1:K47w/RJDLWDN54Za+PlGJPUYPM/kWHMRvI5eNduibFA=

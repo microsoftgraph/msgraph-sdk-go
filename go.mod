@@ -3,7 +3,7 @@ module github.com/microsoftgraph/msgraph-sdk-go
 go 1.17
 
 require (
-	github.com/microsoft/kiota-abstractions-go v0.2.0
+	github.com/microsoft/kiota-abstractions-go v0.3.0
 	github.com/microsoft/kiota-serialization-json-go v0.2.0
 	github.com/microsoft/kiota-serialization-text-go v0.1.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v0.21.0
