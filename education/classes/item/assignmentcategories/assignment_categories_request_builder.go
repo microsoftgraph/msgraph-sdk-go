@@ -27,7 +27,7 @@ type AssignmentCategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
-// AssignmentCategoriesRequestBuilderGetQueryParameters get assignmentCategories from education
+// AssignmentCategoriesRequestBuilderGetQueryParameters all categories associated with this class. Nullable.
 type AssignmentCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -80,7 +80,7 @@ func NewAssignmentCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *AssignmentCategoriesRequestBuilder) Count()(*if8a9424f1fa1eee1652b4b54501d594cfadb14c4815b85847e5754f7843a8be7.CountRequestBuilder) {
     return if8a9424f1fa1eee1652b4b54501d594cfadb14c4815b85847e5754f7843a8be7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get assignmentCategories from education
+// CreateGetRequestInformation all categories associated with this class. Nullable.
 func (m *AssignmentCategoriesRequestBuilder) CreateGetRequestInformation(options *AssignmentCategoriesRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AssignmentCategoriesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get get assignmentCategories from education
+// Get all categories associated with this class. Nullable.
 func (m *AssignmentCategoriesRequestBuilder) Get(options *AssignmentCategoriesRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -52,9 +52,9 @@ func (m *WindowsInformationProtectionPolicy) GetDaysWithoutContactBeforeUnenroll
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsInformationProtection.GetFieldDeserializers()
-    res["daysWithoutContactBeforeUnenroll"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["daysWithoutContactBeforeUnenroll"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["mdmEnrollmentUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmEnrollmentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["minutesOfInactivityBeforeDeviceLock"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minutesOfInactivityBeforeDeviceLock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["numberOfPastPinsRemembered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfPastPinsRemembered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["passwordMaximumAttemptCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordMaximumAttemptCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinExpirationDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinExpirationDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinLowercaseLetters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinLowercaseLetters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinMinimumLength"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinSpecialCharacters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinSpecialCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinUppercaseLetters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinUppercaseLetters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["revokeOnMdmHandoffDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["revokeOnMdmHandoffDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["windowsHelloForBusinessBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsHelloForBusinessBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

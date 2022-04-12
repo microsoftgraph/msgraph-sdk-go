@@ -176,9 +176,9 @@ func (m *MediaStream) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["averageAudioDegradation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["averageAudioDegradation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -188,7 +188,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageAudioNetworkJitter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageAudioNetworkJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageBandwidthEstimate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageBandwidthEstimate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -208,7 +208,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageJitter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -218,7 +218,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averagePacketLossRate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averagePacketLossRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -228,7 +228,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageRatioOfConcealedSamples"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageRatioOfConcealedSamples"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -238,7 +238,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageReceivedFrameRate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageReceivedFrameRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -248,7 +248,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageRoundTripTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageRoundTripTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -258,7 +258,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageVideoFrameLossPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageVideoFrameLossPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -268,7 +268,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageVideoFrameRate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageVideoFrameRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -278,7 +278,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageVideoPacketLossRate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageVideoPacketLossRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -288,7 +288,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["lowFrameRateRatio"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lowFrameRateRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -308,7 +308,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["lowVideoProcessingCapabilityRatio"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lowVideoProcessingCapabilityRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -318,7 +318,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["maxAudioNetworkJitter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxAudioNetworkJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -328,7 +328,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["maxJitter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -338,7 +338,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["maxPacketLossRate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxPacketLossRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -348,7 +348,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["maxRatioOfConcealedSamples"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxRatioOfConcealedSamples"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -358,7 +358,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["maxRoundTripTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxRoundTripTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -368,7 +368,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["packetUtilization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["packetUtilization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -378,7 +378,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["postForwardErrorCorrectionPacketLossRate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postForwardErrorCorrectionPacketLossRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -388,7 +388,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -398,7 +398,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["streamDirection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["streamDirection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMediaStreamDirection)
         if err != nil {
             return err
@@ -408,7 +408,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["streamId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["streamId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -418,7 +418,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wasMediaBypassed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wasMediaBypassed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

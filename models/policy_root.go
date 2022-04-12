@@ -29,6 +29,10 @@ type PolicyRoot struct {
     identitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicyable;
     // The policy that specifies the conditions under which consent can be granted.
     permissionGrantPolicies []PermissionGrantPolicyable;
+    // Represents the role management policies.
+    roleManagementPolicies []UnifiedRoleManagementPolicyable;
+    // Represents the role management policy assignments.
+    roleManagementPolicyAssignments []UnifiedRoleManagementPolicyAssignmentable;
     // The policy that specifies the characteristics of SAML tokens issued by Azure AD.
     tokenIssuancePolicies []TokenIssuancePolicyable;
     // The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
@@ -110,9 +114,9 @@ func (m *PolicyRoot) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activityBasedTimeoutPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityBasedTimeoutPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateActivityBasedTimeoutPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -126,7 +130,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["adminConsentRequestPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["adminConsentRequestPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAdminConsentRequestPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -136,7 +140,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["authenticationFlowsPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authenticationFlowsPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAuthenticationFlowsPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -146,7 +150,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["authenticationMethodsPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authenticationMethodsPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAuthenticationMethodsPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -156,7 +160,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["authorizationPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authorizationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAuthorizationPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -166,7 +170,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["claimsMappingPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["claimsMappingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateClaimsMappingPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -180,7 +184,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["conditionalAccessPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditionalAccessPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -194,7 +198,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["featureRolloutPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["featureRolloutPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFeatureRolloutPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -208,7 +212,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["homeRealmDiscoveryPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["homeRealmDiscoveryPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -222,7 +226,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["identitySecurityDefaultsEnforcementPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["identitySecurityDefaultsEnforcementPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySecurityDefaultsEnforcementPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -232,7 +236,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["permissionGrantPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionGrantPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -246,7 +250,35 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["tokenIssuancePolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleManagementPolicyable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleManagementPolicyable)
+            }
+            m.SetRoleManagementPolicies(res)
+        }
+        return nil
+    }
+    res["roleManagementPolicyAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleManagementPolicyAssignmentable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleManagementPolicyAssignmentable)
+            }
+            m.SetRoleManagementPolicyAssignments(res)
+        }
+        return nil
+    }
+    res["tokenIssuancePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTokenIssuancePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -260,7 +292,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["tokenLifetimePolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenLifetimePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTokenLifetimePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -298,6 +330,22 @@ func (m *PolicyRoot) GetPermissionGrantPolicies()([]PermissionGrantPolicyable) {
         return nil
     } else {
         return m.permissionGrantPolicies
+    }
+}
+// GetRoleManagementPolicies gets the roleManagementPolicies property value. Represents the role management policies.
+func (m *PolicyRoot) GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleManagementPolicies
+    }
+}
+// GetRoleManagementPolicyAssignments gets the roleManagementPolicyAssignments property value. Represents the role management policy assignments.
+func (m *PolicyRoot) GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleManagementPolicyAssignments
     }
 }
 // GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
@@ -412,6 +460,26 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetRoleManagementPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicies()))
+        for i, v := range m.GetRoleManagementPolicies() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("roleManagementPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRoleManagementPolicyAssignments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicyAssignments()))
+        for i, v := range m.GetRoleManagementPolicyAssignments() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("roleManagementPolicyAssignments", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTokenIssuancePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenIssuancePolicies()))
         for i, v := range m.GetTokenIssuancePolicies() {
@@ -498,6 +566,18 @@ func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value Identity
 func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable)() {
     if m != nil {
         m.permissionGrantPolicies = value
+    }
+}
+// SetRoleManagementPolicies sets the roleManagementPolicies property value. Represents the role management policies.
+func (m *PolicyRoot) SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)() {
+    if m != nil {
+        m.roleManagementPolicies = value
+    }
+}
+// SetRoleManagementPolicyAssignments sets the roleManagementPolicyAssignments property value. Represents the role management policy assignments.
+func (m *PolicyRoot) SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)() {
+    if m != nil {
+        m.roleManagementPolicyAssignments = value
     }
 }
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.

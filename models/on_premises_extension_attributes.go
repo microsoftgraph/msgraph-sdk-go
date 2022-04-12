@@ -179,9 +179,9 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute9()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["extensionAttribute1"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["extensionAttribute1"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute10"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute10"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute11"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute11"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute12"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute12"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -221,7 +221,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute13"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute13"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -231,7 +231,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute14"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute14"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute15"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute15"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -251,7 +251,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute2"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -261,7 +261,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute3"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute3"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -271,7 +271,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute4"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute4"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -281,7 +281,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute5"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute5"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -291,7 +291,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute6"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute6"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -301,7 +301,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute7"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute7"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -311,7 +311,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute8"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute8"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -321,7 +321,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["extensionAttribute9"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionAttribute9"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

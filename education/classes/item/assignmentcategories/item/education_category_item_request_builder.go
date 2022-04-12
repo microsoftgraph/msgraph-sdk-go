@@ -35,7 +35,7 @@ type EducationCategoryItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
-// EducationCategoryItemRequestBuilderGetQueryParameters get assignmentCategories from education
+// EducationCategoryItemRequestBuilderGetQueryParameters all categories associated with this class. Nullable.
 type EducationCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *EducationCategoryItemRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get assignmentCategories from education
+// CreateGetRequestInformation all categories associated with this class. Nullable.
 func (m *EducationCategoryItemRequestBuilder) CreateGetRequestInformation(options *EducationCategoryItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *EducationCategoryItemRequestBuilder) Delete(options *EducationCategoryI
     }
     return nil
 }
-// Get get assignmentCategories from education
+// Get all categories associated with this class. Nullable.
 func (m *EducationCategoryItemRequestBuilder) Get(options *EducationCategoryItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

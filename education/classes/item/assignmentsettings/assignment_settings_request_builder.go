@@ -35,7 +35,7 @@ type AssignmentSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
-// AssignmentSettingsRequestBuilderGetQueryParameters get assignmentSettings from education
+// AssignmentSettingsRequestBuilderGetQueryParameters specifies class-level assignments settings.
 type AssignmentSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *AssignmentSettingsRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get assignmentSettings from education
+// CreateGetRequestInformation specifies class-level assignments settings.
 func (m *AssignmentSettingsRequestBuilder) CreateGetRequestInformation(options *AssignmentSettingsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *AssignmentSettingsRequestBuilder) Delete(options *AssignmentSettingsReq
     }
     return nil
 }
-// Get get assignmentSettings from education
+// Get specifies class-level assignments settings.
 func (m *AssignmentSettingsRequestBuilder) Get(options *AssignmentSettingsRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -22,9 +22,9 @@ func CreateAttendeeBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewAttendeeBase(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Recipient.GetFieldDeserializers()
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttendeeType)
         if err != nil {
             return err

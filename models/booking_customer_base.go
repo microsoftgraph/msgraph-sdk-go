@@ -20,7 +20,7 @@ func CreateBookingCustomerBaseFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewBookingCustomerBase(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingCustomerBase) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *BookingCustomerBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     return res
 }

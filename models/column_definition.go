@@ -172,9 +172,9 @@ func (m *ColumnDefinition) GetEnforceUniqueValues()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["boolean"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["boolean"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBooleanColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["calculated"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["calculated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCalculatedColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["choice"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["choice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChoiceColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["columnGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["columnGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["contentApprovalStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentApprovalStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateContentApprovalStatusColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["currency"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCurrencyColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["dateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["defaultValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDefaultColumnValueFromDiscriminatorValue)
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -264,7 +264,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["enforceUniqueValues"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enforceUniqueValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["geolocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["geolocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGeolocationColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -294,7 +294,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["hidden"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -304,7 +304,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["hyperlinkOrPicture"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hyperlinkOrPicture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateHyperlinkOrPictureColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -314,7 +314,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["indexed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["indexed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -324,7 +324,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["isDeletable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDeletable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -334,7 +334,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["isReorderable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isReorderable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -344,7 +344,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["isSealed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSealed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -354,7 +354,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["lookup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lookup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLookupColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -364,7 +364,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -374,7 +374,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["number"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["number"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateNumberColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -384,7 +384,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["personOrGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["personOrGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePersonOrGroupColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -394,7 +394,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["propagateChanges"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["propagateChanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -404,7 +404,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["readOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["readOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -414,7 +414,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["required"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["required"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -424,7 +424,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["sourceColumn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceColumn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateColumnDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -434,7 +434,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["sourceContentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceContentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateContentTypeInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -444,7 +444,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["term"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["term"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTermColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -454,7 +454,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["text"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTextColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -464,7 +464,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["thumbnail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbnail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateThumbnailColumnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -474,7 +474,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseColumnTypes)
         if err != nil {
             return err
@@ -484,7 +484,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["validation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["validation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateColumnValidationFromDiscriminatorValue)
         if err != nil {
             return err

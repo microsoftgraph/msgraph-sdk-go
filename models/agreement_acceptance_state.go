@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type AgreementAcceptanceState int
 
 const (

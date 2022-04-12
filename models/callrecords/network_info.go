@@ -117,9 +117,9 @@ func (m *NetworkInfo) GetDnsSuffix()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["bandwidthLowEventRatio"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["bandwidthLowEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["basicServiceSetIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["basicServiceSetIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["connectionType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseNetworkConnectionType)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["delayEventRatio"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["delayEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["dnsSuffix"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dnsSuffix"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["ipAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["linkSpeed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["linkSpeed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["macAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["macAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["port"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["port"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["receivedQualityEventRatio"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["receivedQualityEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["reflexiveIPAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reflexiveIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["relayIPAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["relayIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["relayPort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["relayPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["sentQualityEventRatio"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sentQualityEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
             return err
@@ -259,7 +259,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["subnet"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subnet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiBand"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiBand"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWifiBand)
         if err != nil {
             return err
@@ -279,7 +279,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiBatteryCharge"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiBatteryCharge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiChannel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -299,7 +299,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiMicrosoftDriver"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiMicrosoftDriver"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -309,7 +309,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiMicrosoftDriverVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiMicrosoftDriverVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -319,7 +319,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiRadioType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiRadioType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWifiRadioType)
         if err != nil {
             return err
@@ -329,7 +329,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiSignalStrength"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiSignalStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -339,7 +339,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiVendorDriver"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiVendorDriver"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -349,7 +349,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["wifiVendorDriverVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiVendorDriverVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -27,7 +27,7 @@ type RubricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
-// RubricsRequestBuilderGetQueryParameters get rubrics from education
+// RubricsRequestBuilderGetQueryParameters when set, the grading rubric attached to the assignment.
 type RubricsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -80,7 +80,7 @@ func NewRubricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *RubricsRequestBuilder) Count()(*ie8bf4562f168f1e9950028bc068e083eaf24f13b2aa53c97453a8590f851fe9b.CountRequestBuilder) {
     return ie8bf4562f168f1e9950028bc068e083eaf24f13b2aa53c97453a8590f851fe9b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get rubrics from education
+// CreateGetRequestInformation when set, the grading rubric attached to the assignment.
 func (m *RubricsRequestBuilder) CreateGetRequestInformation(options *RubricsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *RubricsRequestBuilder) CreatePostRequestInformation(options *RubricsReq
     }
     return requestInfo, nil
 }
-// Get get rubrics from education
+// Get when set, the grading rubric attached to the assignment.
 func (m *RubricsRequestBuilder) Get(options *RubricsRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

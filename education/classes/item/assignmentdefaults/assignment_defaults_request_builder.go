@@ -35,7 +35,7 @@ type AssignmentDefaultsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
-// AssignmentDefaultsRequestBuilderGetQueryParameters get assignmentDefaults from education
+// AssignmentDefaultsRequestBuilderGetQueryParameters specifies class-level defaults respected by new assignments created in the class.
 type AssignmentDefaultsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *AssignmentDefaultsRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get assignmentDefaults from education
+// CreateGetRequestInformation specifies class-level defaults respected by new assignments created in the class.
 func (m *AssignmentDefaultsRequestBuilder) CreateGetRequestInformation(options *AssignmentDefaultsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *AssignmentDefaultsRequestBuilder) Delete(options *AssignmentDefaultsReq
     }
     return nil
 }
-// Get get assignmentDefaults from education
+// Get specifies class-level defaults respected by new assignments created in the class.
 func (m *AssignmentDefaultsRequestBuilder) Get(options *AssignmentDefaultsRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentDefaultsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

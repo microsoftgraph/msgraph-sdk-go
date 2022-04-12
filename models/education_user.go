@@ -14,7 +14,7 @@ type EducationUser struct {
     assignedLicenses []AssignedLicenseable;
     // The plans that are assigned to the user. Read-only. Not nullable.
     assignedPlans []AssignedPlanable;
-    // Assignments that belongs to the user.
+    // Assignments belonging to the user.
     assignments []EducationAssignmentable;
     // The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
     businessPhones []string;
@@ -62,7 +62,7 @@ type EducationUser struct {
     relatedContacts []RelatedContactable;
     // The address where the user lives.
     residenceAddress PhysicalAddressable;
-    // The rubrics property
+    // When set, the grading rubric attached to the assignment.
     rubrics []EducationRubricable;
     // Schools to which the user belongs. Nullable.
     schools []EducationSchoolable;
@@ -120,7 +120,7 @@ func (m *EducationUser) GetAssignedPlans()([]AssignedPlanable) {
         return m.assignedPlans
     }
 }
-// GetAssignments gets the assignments property value. Assignments that belongs to the user.
+// GetAssignments gets the assignments property value. Assignments belonging to the user.
 func (m *EducationUser) GetAssignments()([]EducationAssignmentable) {
     if m == nil {
         return nil
@@ -185,9 +185,9 @@ func (m *EducationUser) GetExternalSourceDetail()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EducationUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accountEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["assignedLicenses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAssignedLicenseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["assignedPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAssignedPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["businessPhones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["businessPhones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -253,7 +253,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["classes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationClassFromDiscriminatorValue)
         if err != nil {
             return err
@@ -267,7 +267,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -277,7 +277,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["department"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["department"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -287,7 +287,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -297,7 +297,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["externalSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationExternalSource)
         if err != nil {
             return err
@@ -307,7 +307,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["externalSourceDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalSourceDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -317,7 +317,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["givenName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["givenName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -327,7 +327,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -337,7 +337,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mailingAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailingAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -347,7 +347,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mailNickname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailNickname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -357,7 +357,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["middleName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["middleName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -367,7 +367,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mobilePhone"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobilePhone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -377,7 +377,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["officeLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["officeLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -387,7 +387,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["onPremisesInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationOnPremisesInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -397,7 +397,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["passwordPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -407,7 +407,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["passwordProfile"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePasswordProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -417,7 +417,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["preferredLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preferredLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -427,7 +427,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["primaryRole"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["primaryRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationUserRole)
         if err != nil {
             return err
@@ -437,7 +437,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["provisionedPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provisionedPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProvisionedPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -451,7 +451,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["refreshTokensValidFromDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["refreshTokensValidFromDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -461,7 +461,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["relatedContacts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["relatedContacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRelatedContactFromDiscriminatorValue)
         if err != nil {
             return err
@@ -475,7 +475,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["residenceAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["residenceAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -485,7 +485,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["rubrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rubrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationRubricFromDiscriminatorValue)
         if err != nil {
             return err
@@ -499,7 +499,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["schools"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
             return err
@@ -513,7 +513,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["showInAddressList"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["showInAddressList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -523,7 +523,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["student"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["student"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationStudentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -533,7 +533,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["surname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["surname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -543,7 +543,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["taughtClasses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["taughtClasses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationClassFromDiscriminatorValue)
         if err != nil {
             return err
@@ -557,7 +557,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["teacher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teacher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationTeacherFromDiscriminatorValue)
         if err != nil {
             return err
@@ -567,7 +567,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["usageLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["usageLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -577,7 +577,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["user"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -587,7 +587,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -597,7 +597,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["userType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -737,7 +737,7 @@ func (m *EducationUser) GetResidenceAddress()(PhysicalAddressable) {
         return m.residenceAddress
     }
 }
-// GetRubrics gets the rubrics property value. The rubrics property
+// GetRubrics gets the rubrics property value. When set, the grading rubric attached to the assignment.
 func (m *EducationUser) GetRubrics()([]EducationRubricable) {
     if m == nil {
         return nil
@@ -1117,7 +1117,7 @@ func (m *EducationUser) SetAssignedPlans(value []AssignedPlanable)() {
         m.assignedPlans = value
     }
 }
-// SetAssignments sets the assignments property value. Assignments that belongs to the user.
+// SetAssignments sets the assignments property value. Assignments belonging to the user.
 func (m *EducationUser) SetAssignments(value []EducationAssignmentable)() {
     if m != nil {
         m.assignments = value
@@ -1261,7 +1261,7 @@ func (m *EducationUser) SetResidenceAddress(value PhysicalAddressable)() {
         m.residenceAddress = value
     }
 }
-// SetRubrics sets the rubrics property value. The rubrics property
+// SetRubrics sets the rubrics property value. When set, the grading rubric attached to the assignment.
 func (m *EducationUser) SetRubrics(value []EducationRubricable)() {
     if m != nil {
         m.rubrics = value

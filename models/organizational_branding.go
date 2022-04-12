@@ -22,9 +22,9 @@ func CreateOrganizationalBrandingFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewOrganizationalBranding(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OrganizationalBrandingProperties.GetFieldDeserializers()
-    res["localizations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["localizations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOrganizationalBrandingLocalizationFromDiscriminatorValue)
         if err != nil {
             return err

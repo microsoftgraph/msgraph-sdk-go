@@ -19,6 +19,8 @@ type PolicyRootable interface {
     GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable)
     GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable)
     GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
+    GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
+    GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable)
     GetTokenIssuancePolicies()([]TokenIssuancePolicyable)
     GetTokenLifetimePolicies()([]TokenLifetimePolicyable)
     SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicyable)()
@@ -32,6 +34,8 @@ type PolicyRootable interface {
     SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)()
     SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)()
     SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
+    SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()
+    SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)()
     SetTokenIssuancePolicies(value []TokenIssuancePolicyable)()
     SetTokenLifetimePolicies(value []TokenLifetimePolicyable)()
 }

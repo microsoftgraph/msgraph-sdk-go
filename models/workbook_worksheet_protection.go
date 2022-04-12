@@ -24,9 +24,9 @@ func CreateWorkbookWorksheetProtectionFromDiscriminatorValue(parseNode i878a80d2
     return NewWorkbookWorksheetProtection(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["options"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["options"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookWorksheetProtectionOptionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["protected"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protected"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
