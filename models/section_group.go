@@ -32,9 +32,9 @@ func CreateSectionGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewSectionGroup(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SectionGroup) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SectionGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnenoteEntityHierarchyModel.GetFieldDeserializers()
-    res["parentNotebook"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentNotebook"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateNotebookFromDiscriminatorValue)
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *SectionGroup) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["parentSectionGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentSectionGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSectionGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *SectionGroup) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["sectionGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sectionGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSectionGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *SectionGroup) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["sectionGroupsUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sectionGroupsUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *SectionGroup) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["sections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnenoteSectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *SectionGroup) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["sectionsUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sectionsUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -38,9 +38,9 @@ func CreateInvitationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewInvitation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Invitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["invitedUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitedUserDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUserDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitedUserEmailAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUserEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitedUserMessageInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUserMessageInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInvitedUserMessageInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitedUserType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUserType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["inviteRedeemUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inviteRedeemUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["inviteRedirectUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inviteRedirectUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["sendInvitationMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sendInvitationMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

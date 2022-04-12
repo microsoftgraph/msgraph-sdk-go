@@ -26,9 +26,9 @@ func CreateLicenseDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewLicenseDetails(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["servicePlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServicePlanInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["skuId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skuId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["skuPartNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skuPartNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -28,9 +28,9 @@ func CreateUsedInsightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewUsedInsight(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UsedInsight) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UsedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["lastUsed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUsed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUsageDetailsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["resource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["resourceReference"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceReference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResourceReferenceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["resourceVisualization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceVisualization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResourceVisualizationFromDiscriminatorValue)
         if err != nil {
             return err

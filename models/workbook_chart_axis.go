@@ -36,9 +36,9 @@ func CreateWorkbookChartAxisFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewWorkbookChartAxis(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["format"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartAxisFormatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["majorGridlines"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["majorGridlines"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartGridlinesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["majorUnit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["majorUnit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["maximum"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximum"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["minimum"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimum"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["minorGridlines"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minorGridlines"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartGridlinesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["minorUnit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minorUnit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["title"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartAxisTitleFromDiscriminatorValue)
         if err != nil {
             return err

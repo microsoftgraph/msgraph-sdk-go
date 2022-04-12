@@ -73,9 +73,9 @@ func (m *DeviceAppManagement) GetDefaultManagedAppProtections()([]DefaultManaged
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["androidManagedAppProtections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["androidManagedAppProtections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAndroidManagedAppProtectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["defaultManagedAppProtections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultManagedAppProtections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDefaultManagedAppProtectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["iosManagedAppProtections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iosManagedAppProtections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIosManagedAppProtectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isEnabledForMicrosoftStoreForBusiness"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabledForMicrosoftStoreForBusiness"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["managedAppPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedAppPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedAppPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["managedAppRegistrations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedAppRegistrations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedAppRegistrationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["managedAppStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedAppStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedAppStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["managedEBooks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedEBooks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedEBookFromDiscriminatorValue)
         if err != nil {
             return err
@@ -183,7 +183,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["mdmWindowsInformationProtectionPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmWindowsInformationProtectionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMdmWindowsInformationProtectionPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["microsoftStoreForBusinessLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microsoftStoreForBusinessLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["microsoftStoreForBusinessLastCompletedApplicationSyncTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microsoftStoreForBusinessLastCompletedApplicationSyncTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["microsoftStoreForBusinessLastSuccessfulSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microsoftStoreForBusinessLastSuccessfulSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["mobileAppCategories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobileAppCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["mobileAppConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobileAppConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -255,7 +255,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["mobileApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobileApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["targetedManagedAppConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedManagedAppConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTargetedManagedAppConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -283,7 +283,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["vppTokens"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vppTokens"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVppTokenFromDiscriminatorValue)
         if err != nil {
             return err
@@ -297,7 +297,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["windowsInformationProtectionPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsInformationProtectionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionPolicyFromDiscriminatorValue)
         if err != nil {
             return err

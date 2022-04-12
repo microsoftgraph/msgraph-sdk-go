@@ -22,9 +22,9 @@ func CreateAgreementFileLocalizationFromDiscriminatorValue(parseNode i878a80d233
     return NewAgreementFileLocalization(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AgreementFileLocalization) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AgreementFileLocalization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AgreementFileProperties.GetFieldDeserializers()
-    res["versions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["versions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAgreementFileVersionFromDiscriminatorValue)
         if err != nil {
             return err

@@ -194,9 +194,9 @@ func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeCon
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applePushNotificationCertificate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applePushNotificationCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateApplePushNotificationCertificateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -206,7 +206,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["complianceManagementPartners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["complianceManagementPartners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -220,7 +220,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["conditionalAccessSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditionalAccessSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -230,7 +230,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["detectedApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detectedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDetectedAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["deviceCategories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -258,7 +258,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["deviceCompliancePolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCompliancePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -272,7 +272,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["deviceCompliancePolicyDeviceStateSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCompliancePolicyDeviceStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceCompliancePolicyDeviceStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -282,7 +282,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["deviceCompliancePolicySettingStateSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCompliancePolicySettingStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -296,7 +296,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["deviceConfigurationDeviceStateSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceConfigurationDeviceStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceConfigurationDeviceStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -306,7 +306,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["deviceConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -320,7 +320,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["deviceEnrollmentConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceEnrollmentConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceEnrollmentConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -334,7 +334,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["deviceManagementPartners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceManagementPartners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementPartnerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -348,7 +348,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["exchangeConnectors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exchangeConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeConnectorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -362,7 +362,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["importedWindowsAutopilotDeviceIdentities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["importedWindowsAutopilotDeviceIdentities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -376,7 +376,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["intuneAccountId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intuneAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -386,7 +386,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["intuneBrand"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intuneBrand"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIntuneBrandFromDiscriminatorValue)
         if err != nil {
             return err
@@ -396,7 +396,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["iosUpdateStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iosUpdateStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIosUpdateDeviceStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -410,7 +410,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["managedDeviceOverview"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceOverview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagedDeviceOverviewFromDiscriminatorValue)
         if err != nil {
             return err
@@ -420,7 +420,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["managedDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -434,7 +434,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["mobileThreatDefenseConnectors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobileThreatDefenseConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileThreatDefenseConnectorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -448,7 +448,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["notificationMessageTemplates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notificationMessageTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateNotificationMessageTemplateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -462,7 +462,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["remoteAssistancePartners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remoteAssistancePartners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRemoteAssistancePartnerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -476,7 +476,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["reports"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementReportsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -486,7 +486,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["resourceOperations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceOperations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateResourceOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -500,7 +500,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["roleAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -514,7 +514,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["roleDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -528,7 +528,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -538,7 +538,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["softwareUpdateStatusSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["softwareUpdateStatusSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSoftwareUpdateStatusSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -548,7 +548,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["subscriptionState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subscriptionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementSubscriptionState)
         if err != nil {
             return err
@@ -558,7 +558,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["telecomExpenseManagementPartners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["telecomExpenseManagementPartners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTelecomExpenseManagementPartnerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -572,7 +572,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["termsAndConditions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["termsAndConditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTermsAndConditionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -586,7 +586,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["troubleshootingEvents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["troubleshootingEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue)
         if err != nil {
             return err
@@ -600,7 +600,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["windowsAutopilotDeviceIdentities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsAutopilotDeviceIdentities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -614,7 +614,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["windowsInformationProtectionAppLearningSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsInformationProtectionAppLearningSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -628,7 +628,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["windowsInformationProtectionNetworkLearningSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsInformationProtectionNetworkLearningSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorValue)
         if err != nil {
             return err

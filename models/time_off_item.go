@@ -22,9 +22,9 @@ func CreateTimeOffItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewTimeOffItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TimeOffItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TimeOffItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ScheduleEntity.GetFieldDeserializers()
-    res["timeOffReasonId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeOffReasonId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

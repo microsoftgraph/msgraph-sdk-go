@@ -26,9 +26,9 @@ func CreateWorkbookTableSortFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewWorkbookTableSort(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["fields"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkbookSortFieldFromDiscriminatorValue)
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["matchCase"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["matchCase"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["method"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["method"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -24,9 +24,9 @@ func CreateConditionalAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewConditionalAccessRoot(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["namedLocations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["namedLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateNamedLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["policies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
         if err != nil {
             return err

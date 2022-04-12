@@ -124,15 +124,6 @@ type GraphServiceClient struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// GraphServiceClientGetOptions options for Get
-type GraphServiceClientGetOptions struct {
-    // Request headers
-    Headers map[string]string;
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
-}
 // Admin the admin property
 func (m *GraphServiceClient) Admin()(*i7c9d1b36ac198368c1d8bed014b43e2a518b170ee45bf02c8bbe64544a50539a.AdminRequestBuilder) {
     return i7c9d1b36ac198368c1d8bed014b43e2a518b170ee45bf02c8bbe64544a50539a.NewAdminRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -327,22 +318,6 @@ func (m *GraphServiceClient) ContractsById(id string)(*i86bb3d05e1a6bbdb496bd3c6
     }
     return i86bb3d05e1a6bbdb496bd3c65829f1a6eb272be42e9ac6060f873dfbd921e4ea.NewContractItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-func (m *GraphServiceClient) CreateGetRequestInformation(options *GraphServiceClientGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
 // DataPolicyOperations the dataPolicyOperations property
 func (m *GraphServiceClient) DataPolicyOperations()(*ib33fc5e9889e020c0c572578957f59819123a589c61fd7f3eb37eb7958b525ee.DataPolicyOperationsRequestBuilder) {
     return ib33fc5e9889e020c0c572578957f59819123a589c61fd7f3eb37eb7958b525ee.NewDataPolicyOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -486,17 +461,6 @@ func (m *GraphServiceClient) Education()(*i1be0f1b1da466bc62355d411ef490acbd8dc0
 // External the external property
 func (m *GraphServiceClient) External()(*ib3217193884e00033cb8182cac52178dfa3b20ce9c4eb48e37a6217882d956ae.ExternalRequestBuilder) {
     return ib3217193884e00033cb8182cac52178dfa3b20ce9c4eb48e37a6217882d956ae.NewExternalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *GraphServiceClient) Get(options *GraphServiceClientGetOptions)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", nil, nil)
-    if err != nil {
-        return nil, err
-    }
-    return res.([]byte), nil
 }
 // GroupLifecyclePolicies the groupLifecyclePolicies property
 func (m *GraphServiceClient) GroupLifecyclePolicies()(*i1d6652ecc686b20c37a9a3448b26db8187e284e1a4017cab8876b02b97557436.GroupLifecyclePoliciesRequestBuilder) {

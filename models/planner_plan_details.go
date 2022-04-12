@@ -32,9 +32,9 @@ func (m *PlannerPlanDetails) GetCategoryDescriptions()(PlannerCategoryDescriptio
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["categoryDescriptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categoryDescriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerCategoryDescriptionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["sharedWith"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedWith"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerUserIdsFromDiscriminatorValue)
         if err != nil {
             return err

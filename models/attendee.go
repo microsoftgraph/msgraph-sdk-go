@@ -24,9 +24,9 @@ func CreateAttendeeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewAttendee(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Attendee) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Attendee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AttendeeBase.GetFieldDeserializers()
-    res["proposedNewTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["proposedNewTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeSlotFromDiscriminatorValue)
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *Attendee) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResponseStatusFromDiscriminatorValue)
         if err != nil {
             return err

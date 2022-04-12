@@ -101,9 +101,9 @@ func (m *AccessPackageAssignmentRequestorSettings) GetEnableTargetsToSelfUpdateA
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowCustomAssignmentSchedule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowCustomAssignmentSchedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["enableOnBehalfRequestorsToAddAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableOnBehalfRequestorsToAddAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["enableOnBehalfRequestorsToRemoveAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableOnBehalfRequestorsToRemoveAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["enableOnBehalfRequestorsToUpdateAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableOnBehalfRequestorsToUpdateAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["enableTargetsToSelfAddAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableTargetsToSelfAddAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["enableTargetsToSelfRemoveAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableTargetsToSelfRemoveAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["enableTargetsToSelfUpdateAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableTargetsToSelfUpdateAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["onBehalfRequestors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onBehalfRequestors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSubjectSetFromDiscriminatorValue)
         if err != nil {
             return err

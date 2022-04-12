@@ -26,9 +26,9 @@ func CreateOfficeGraphInsightsFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewOfficeGraphInsights(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["shared"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shared"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharedInsightFromDiscriminatorValue)
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["trending"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trending"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTrendingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["used"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["used"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUsedInsightFromDiscriminatorValue)
         if err != nil {
             return err

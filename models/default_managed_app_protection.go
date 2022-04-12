@@ -108,9 +108,9 @@ func (m *DefaultManagedAppProtection) GetFaceIdBlocked()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppProtection.GetFieldDeserializers()
-    res["appDataEncryptionType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDataEncryptionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedAppDataEncryptionType)
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["apps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["customSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deployedAppCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deployedAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deploymentSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["disableAppEncryptionIfDeviceEncryptionIsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disableAppEncryptionIfDeviceEncryptionIsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["encryptAppData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["encryptAppData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -188,7 +188,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["faceIdBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["faceIdBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumRequiredPatchVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumRequiredPatchVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -208,7 +208,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumRequiredSdkVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumRequiredSdkVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -218,7 +218,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumWarningPatchVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumWarningPatchVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -228,7 +228,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["screenCaptureBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["screenCaptureBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

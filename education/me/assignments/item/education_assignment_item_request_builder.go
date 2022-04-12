@@ -44,7 +44,7 @@ type EducationAssignmentItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
-// EducationAssignmentItemRequestBuilderGetQueryParameters assignments that belongs to the user.
+// EducationAssignmentItemRequestBuilderGetQueryParameters assignments belonging to the user.
 type EducationAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -113,7 +113,7 @@ func (m *EducationAssignmentItemRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation assignments that belongs to the user.
+// CreateGetRequestInformation assignments belonging to the user.
 func (m *EducationAssignmentItemRequestBuilder) CreateGetRequestInformation(options *EducationAssignmentItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -167,7 +167,7 @@ func (m *EducationAssignmentItemRequestBuilder) Delete(options *EducationAssignm
     }
     return nil
 }
-// Get assignments that belongs to the user.
+// Get assignments belonging to the user.
 func (m *EducationAssignmentItemRequestBuilder) Get(options *EducationAssignmentItemRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

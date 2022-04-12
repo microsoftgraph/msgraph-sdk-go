@@ -27,7 +27,7 @@ type AssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
-// AssignmentsRequestBuilderGetQueryParameters assignments that belongs to the user.
+// AssignmentsRequestBuilderGetQueryParameters assignments belonging to the user.
 type AssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -80,7 +80,7 @@ func NewAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AssignmentsRequestBuilder) Count()(*i7525ec54997983d78c8cab3439780299b99a487353564be835368ba8054cc16b.CountRequestBuilder) {
     return i7525ec54997983d78c8cab3439780299b99a487353564be835368ba8054cc16b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation assignments that belongs to the user.
+// CreateGetRequestInformation assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *AssignmentsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *Assign
     }
     return requestInfo, nil
 }
-// Get assignments that belongs to the user.
+// Get assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

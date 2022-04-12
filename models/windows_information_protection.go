@@ -190,9 +190,9 @@ func (m *WindowsInformationProtection) GetExemptApps()([]WindowsInformationProte
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTargetedManagedAppPolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -206,7 +206,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["azureRightsManagementServicesAllowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureRightsManagementServicesAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -216,7 +216,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["dataRecoveryCertificate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataRecoveryCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -226,7 +226,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enforcementLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enforcementLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsInformationProtectionEnforcementLevel)
         if err != nil {
             return err
@@ -236,7 +236,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseDomain"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -246,7 +246,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseInternalProxyServers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseInternalProxyServers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -260,7 +260,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseIPRanges"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseIPRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionIPRangeCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseIPRangesAreAuthoritative"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseIPRangesAreAuthoritative"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseNetworkDomainNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseNetworkDomainNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseProtectedDomainNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseProtectedDomainNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -312,7 +312,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseProxiedDomains"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseProxiedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -326,7 +326,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseProxyServers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseProxyServers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -340,7 +340,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseProxyServersAreAuthoritative"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseProxyServersAreAuthoritative"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -350,7 +350,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["exemptAppLockerFiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exemptAppLockerFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -364,7 +364,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["exemptApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exemptApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -378,7 +378,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["iconsVisible"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iconsVisible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -388,7 +388,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["indexingEncryptedStoresOrItemsBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["indexingEncryptedStoresOrItemsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -398,7 +398,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["isAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -408,7 +408,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["neutralDomainResources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["neutralDomainResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -422,7 +422,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["protectedAppLockerFiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protectedAppLockerFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -436,7 +436,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["protectedApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protectedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -450,7 +450,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["protectionUnderLockConfigRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protectionUnderLockConfigRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -460,7 +460,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["revokeOnUnenrollDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["revokeOnUnenrollDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -470,7 +470,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["rightsManagementServicesTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rightsManagementServicesTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -480,7 +480,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["smbAutoEncryptedFileExtensions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["smbAutoEncryptedFileExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
