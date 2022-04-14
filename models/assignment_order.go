@@ -7,9 +7,9 @@ import (
 // AssignmentOrder 
 type AssignmentOrder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
-    order []string;
+    order []string
 }
 // NewAssignmentOrder instantiates a new assignmentOrder and sets the default values.
 func NewAssignmentOrder()(*AssignmentOrder) {

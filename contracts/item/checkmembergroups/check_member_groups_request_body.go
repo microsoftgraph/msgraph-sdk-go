@@ -7,9 +7,9 @@ import (
 // CheckMemberGroupsRequestBody provides operations to call the checkMemberGroups method.
 type CheckMemberGroupsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The groupIds property
-    groupIds []string;
+    groupIds []string
 }
 // NewCheckMemberGroupsRequestBody instantiates a new checkMemberGroupsRequestBody and sets the default values.
 func NewCheckMemberGroupsRequestBody()(*CheckMemberGroupsRequestBody) {

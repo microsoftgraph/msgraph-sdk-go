@@ -7,11 +7,11 @@ import (
 // ResourceAccess 
 type ResourceAccess struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
-    id *string;
+    id *string
     // Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
-    type_escaped *string;
+    type_escaped *string
 }
 // NewResourceAccess instantiates a new resourceAccess and sets the default values.
 func NewResourceAccess()(*ResourceAccess) {

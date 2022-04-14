@@ -8,19 +8,19 @@ import (
 type IosManagedAppProtection struct {
     TargetedManagedAppProtection
     // Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
-    appDataEncryptionType *ManagedAppDataEncryptionType;
+    appDataEncryptionType *ManagedAppDataEncryptionType
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable;
+    apps []ManagedMobileAppable
     // A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-    customBrowserProtocol *string;
+    customBrowserProtocol *string
     // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32;
+    deployedAppCount *int32
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable
     // Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
-    faceIdBlocked *bool;
+    faceIdBlocked *bool
     // Versions less than the specified version will block the managed app from accessing company data.
-    minimumRequiredSdkVersion *string;
+    minimumRequiredSdkVersion *string
 }
 // NewIosManagedAppProtection instantiates a new iosManagedAppProtection and sets the default values.
 func NewIosManagedAppProtection()(*IosManagedAppProtection) {

@@ -9,15 +9,15 @@ import (
 type TermsAndConditionsAcceptanceStatus struct {
     Entity
     // DateTime when the terms were last accepted by the user.
-    acceptedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    acceptedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Most recent version number of the T&C accepted by the user.
-    acceptedVersion *int32;
+    acceptedVersion *int32
     // Navigation link to the terms and conditions that are assigned.
-    termsAndConditions TermsAndConditionsable;
+    termsAndConditions TermsAndConditionsable
     // Display name of the user whose acceptance the entity represents.
-    userDisplayName *string;
+    userDisplayName *string
     // The userPrincipalName of the User that accepted the term.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewTermsAndConditionsAcceptanceStatus instantiates a new termsAndConditionsAcceptanceStatus and sets the default values.
 func NewTermsAndConditionsAcceptanceStatus()(*TermsAndConditionsAcceptanceStatus) {

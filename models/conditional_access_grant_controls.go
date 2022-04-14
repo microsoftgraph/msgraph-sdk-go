@@ -7,15 +7,15 @@ import (
 // ConditionalAccessGrantControls 
 type ConditionalAccessGrantControls struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-    builtInControls []ConditionalAccessGrantControl;
+    builtInControls []ConditionalAccessGrantControl
     // List of custom controls IDs required by the policy. For more information, see Custom controls.
-    customAuthenticationFactors []string;
+    customAuthenticationFactors []string
     // Defines the relationship of the grant controls. Possible values: AND, OR.
-    operator *string;
+    operator *string
     // List of terms of use IDs required by the policy.
-    termsOfUse []string;
+    termsOfUse []string
 }
 // NewConditionalAccessGrantControls instantiates a new conditionalAccessGrantControls and sets the default values.
 func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {

@@ -7,13 +7,13 @@ import (
 // SiteCollection 
 type SiteCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The geographic region code for where this site collection resides. Read-only.
-    dataLocationCode *string;
+    dataLocationCode *string
     // The hostname for the site collection. Read-only.
-    hostname *string;
+    hostname *string
     // If present, indicates that this is a root site collection in SharePoint. Read-only.
-    root Rootable;
+    root Rootable
 }
 // NewSiteCollection instantiates a new siteCollection and sets the default values.
 func NewSiteCollection()(*SiteCollection) {

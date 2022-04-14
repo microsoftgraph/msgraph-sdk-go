@@ -7,13 +7,13 @@ import (
 // PrinterStatus 
 type PrinterStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A human-readable description of the printer's current processing state. Read-only.
-    description *string;
+    description *string
     // The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
-    details []PrinterProcessingStateDetail;
+    details []PrinterProcessingStateDetail
     // The current processing state. Valid values are described in the following table. Read-only.
-    state *PrinterProcessingState;
+    state *PrinterProcessingState
 }
 // NewPrinterStatus instantiates a new printerStatus and sets the default values.
 func NewPrinterStatus()(*PrinterStatus) {

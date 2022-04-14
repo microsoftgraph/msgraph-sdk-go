@@ -7,11 +7,11 @@ import (
 // InternetMessageHeader 
 type InternetMessageHeader struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents the key in a key-value pair.
-    name *string;
+    name *string
     // The value in a key-value pair.
-    value *string;
+    value *string
 }
 // NewInternetMessageHeader instantiates a new internetMessageHeader and sets the default values.
 func NewInternetMessageHeader()(*InternetMessageHeader) {

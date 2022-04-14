@@ -9,19 +9,19 @@ import (
 type AuthenticationMethodsPolicy struct {
     Entity
     // Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-    authenticationMethodConfigurations []AuthenticationMethodConfigurationable;
+    authenticationMethodConfigurations []AuthenticationMethodConfigurationable
     // A description of the policy. Read-only.
-    description *string;
+    description *string
     // The name of the policy. Read-only.
-    displayName *string;
+    displayName *string
     // The date and time of the last update to the policy. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The version of the policy in use. Read-only.
-    policyVersion *string;
+    policyVersion *string
     // The reconfirmationInDays property
-    reconfirmationInDays *int32;
+    reconfirmationInDays *int32
     // Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
-    registrationEnforcement RegistrationEnforcementable;
+    registrationEnforcement RegistrationEnforcementable
 }
 // NewAuthenticationMethodsPolicy instantiates a new authenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {

@@ -8,25 +8,25 @@ import (
 // Photo 
 type Photo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Camera manufacturer. Read-only.
-    cameraMake *string;
+    cameraMake *string
     // Camera model. Read-only.
-    cameraModel *string;
+    cameraModel *string
     // The denominator for the exposure time fraction from the camera. Read-only.
-    exposureDenominator *float64;
+    exposureDenominator *float64
     // The numerator for the exposure time fraction from the camera. Read-only.
-    exposureNumerator *float64;
+    exposureNumerator *float64
     // The F-stop value from the camera. Read-only.
-    fNumber *float64;
+    fNumber *float64
     // The focal length from the camera. Read-only.
-    focalLength *float64;
+    focalLength *float64
     // The ISO value from the camera. Read-only.
-    iso *int32;
+    iso *int32
     // The orientation value from the camera. Writable on OneDrive Personal.
-    orientation *int32;
+    orientation *int32
     // Represents the date and time the photo was taken. Read-only.
-    takenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    takenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewPhoto instantiates a new photo and sets the default values.
 func NewPhoto()(*Photo) {

@@ -7,9 +7,9 @@ import (
 // MarkReadResponse provides operations to call the markRead method.
 type MarkReadResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value *bool;
+    value *bool
 }
 // NewMarkReadResponse instantiates a new markReadResponse and sets the default values.
 func NewMarkReadResponse()(*MarkReadResponse) {

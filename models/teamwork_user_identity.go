@@ -8,7 +8,7 @@ import (
 type TeamworkUserIdentity struct {
     Identity
     // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
-    userIdentityType *TeamworkUserIdentityType;
+    userIdentityType *TeamworkUserIdentityType
 }
 // NewTeamworkUserIdentity instantiates a new teamworkUserIdentity and sets the default values.
 func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {

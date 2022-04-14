@@ -7,9 +7,9 @@ import (
 // SelfServiceSignUpAuthenticationFlowConfiguration 
 type SelfServiceSignUpAuthenticationFlowConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
-    isEnabled *bool;
+    isEnabled *bool
 }
 // NewSelfServiceSignUpAuthenticationFlowConfiguration instantiates a new selfServiceSignUpAuthenticationFlowConfiguration and sets the default values.
 func NewSelfServiceSignUpAuthenticationFlowConfiguration()(*SelfServiceSignUpAuthenticationFlowConfiguration) {

@@ -7,13 +7,13 @@ import (
 // PersonOrGroupColumn 
 type PersonOrGroupColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether multiple values can be selected from the source.
-    allowMultipleSelection *bool;
+    allowMultipleSelection *bool
     // Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
-    chooseFromType *string;
+    chooseFromType *string
     // How to display the information about the person or group chosen. See below.
-    displayAs *string;
+    displayAs *string
 }
 // NewPersonOrGroupColumn instantiates a new personOrGroupColumn and sets the default values.
 func NewPersonOrGroupColumn()(*PersonOrGroupColumn) {

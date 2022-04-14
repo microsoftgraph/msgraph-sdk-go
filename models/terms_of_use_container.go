@@ -8,9 +8,9 @@ import (
 type TermsOfUseContainer struct {
     Entity
     // Represents the current status of a user's response to a company's customizable terms of use agreement.
-    agreementAcceptances []AgreementAcceptanceable;
+    agreementAcceptances []AgreementAcceptanceable
     // Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-    agreements []Agreementable;
+    agreements []Agreementable
 }
 // NewTermsOfUseContainer instantiates a new termsOfUseContainer and sets the default values.
 func NewTermsOfUseContainer()(*TermsOfUseContainer) {

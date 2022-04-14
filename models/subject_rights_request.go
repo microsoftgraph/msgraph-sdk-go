@@ -9,43 +9,43 @@ import (
 type SubjectRightsRequest struct {
     Entity
     // Identity that the request is assigned to.
-    assignedTo Identityable;
+    assignedTo Identityable
     // The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    closedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    closedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Identity information for the entity that created the request.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The date and time when the request was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Information about the data subject.
-    dataSubject DataSubjectable;
+    dataSubject DataSubjectable
     // The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
-    dataSubjectType *DataSubjectType;
+    dataSubjectType *DataSubjectType
     // Description for the request.
-    description *string;
+    description *string
     // The name of the request.
-    displayName *string;
+    displayName *string
     // Collection of history change events.
-    history []SubjectRightsRequestHistoryable;
+    history []SubjectRightsRequestHistoryable
     // Insight about the request.
-    insight SubjectRightsRequestDetailable;
+    insight SubjectRightsRequestDetailable
     // The date and time when the request is internally due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    internalDueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    internalDueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Identity information for the entity that last modified the request.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of notes associcated with the request.
-    notes []AuthoredNoteable;
+    notes []AuthoredNoteable
     // List of regulations that this request will fulfill.
-    regulations []string;
+    regulations []string
     // Information about the different stages for the request.
-    stages []SubjectRightsRequestStageDetailable;
+    stages []SubjectRightsRequestStageDetailable
     // The status of the request.. Possible values are: active, closed, unknownFutureValue.
-    status *SubjectRightsRequestStatus;
+    status *SubjectRightsRequestStatus
     // Information about the Microsoft Teams team that was created for the request.
-    team Teamable;
+    team Teamable
     // The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
-    type_escaped *SubjectRightsRequestType;
+    type_escaped *SubjectRightsRequestType
 }
 // NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {

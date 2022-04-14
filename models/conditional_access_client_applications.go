@@ -7,11 +7,11 @@ import (
 // ConditionalAccessClientApplications 
 type ConditionalAccessClientApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Service principal IDs excluded from the policy scope.
-    excludeServicePrincipals []string;
+    excludeServicePrincipals []string
     // Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
-    includeServicePrincipals []string;
+    includeServicePrincipals []string
 }
 // NewConditionalAccessClientApplications instantiates a new conditionalAccessClientApplications and sets the default values.
 func NewConditionalAccessClientApplications()(*ConditionalAccessClientApplications) {

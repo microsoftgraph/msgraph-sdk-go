@@ -9,23 +9,23 @@ import (
 type EducationRubric struct {
     Entity
     // The user who created this resource.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of this rubric.
-    description EducationItemBodyable;
+    description EducationItemBodyable
     // The name of this rubric.
-    displayName *string;
+    displayName *string
     // The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
-    grading EducationAssignmentGradeTypeable;
+    grading EducationAssignmentGradeTypeable
     // The last user to modify the resource.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The collection of levels making up this rubric.
-    levels []RubricLevelable;
+    levels []RubricLevelable
     // The collection of qualities making up this rubric.
-    qualities []RubricQualityable;
+    qualities []RubricQualityable
 }
 // NewEducationRubric instantiates a new educationRubric and sets the default values.
 func NewEducationRubric()(*EducationRubric) {

@@ -7,15 +7,15 @@ import (
 // WorkingHours 
 type WorkingHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The days of the week on which the user works.
-    daysOfWeek []DayOfWeek;
+    daysOfWeek []DayOfWeek
     // The time of the day that the user stops working.
-    endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The time of the day that the user starts working.
-    startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The time zone to which the working hours apply.
-    timeZone TimeZoneBaseable;
+    timeZone TimeZoneBaseable
 }
 // NewWorkingHours instantiates a new workingHours and sets the default values.
 func NewWorkingHours()(*WorkingHours) {

@@ -8,19 +8,19 @@ import (
 // ShiftActivity 
 type ShiftActivity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Customer defined code for the shiftActivity. Required.
-    code *string;
+    code *string
     // The name of the shiftActivity. Required.
-    displayName *string;
+    displayName *string
     // The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
-    isPaid *bool;
+    isPaid *bool
     // The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The theme property
-    theme *ScheduleEntityTheme;
+    theme *ScheduleEntityTheme
 }
 // NewShiftActivity instantiates a new shiftActivity and sets the default values.
 func NewShiftActivity()(*ShiftActivity) {

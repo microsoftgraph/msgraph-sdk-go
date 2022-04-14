@@ -7,11 +7,11 @@ import (
 // FailureInfo 
 type FailureInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Classification of why a call or portion of a call failed.
-    reason *string;
+    reason *string
     // The stage when the failure occurred. Possible values are: unknown, callSetup, midcall, unknownFutureValue.
-    stage *FailureStage;
+    stage *FailureStage
 }
 // NewFailureInfo instantiates a new failureInfo and sets the default values.
 func NewFailureInfo()(*FailureInfo) {

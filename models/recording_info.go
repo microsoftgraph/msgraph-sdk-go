@@ -7,11 +7,11 @@ import (
 // RecordingInfo 
 type RecordingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The identities of the recording initiator.
-    initiator IdentitySetable;
+    initiator IdentitySetable
     // Possible values are: unknown, notRecording, recording, or failed.
-    recordingStatus *RecordingStatus;
+    recordingStatus *RecordingStatus
 }
 // NewRecordingInfo instantiates a new recordingInfo and sets the default values.
 func NewRecordingInfo()(*RecordingInfo) {

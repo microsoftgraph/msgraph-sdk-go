@@ -7,67 +7,67 @@ import (
 // MessageRulePredicates 
 type MessageRulePredicates struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
-    bodyContains []string;
+    bodyContains []string
     // Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
-    bodyOrSubjectContains []string;
+    bodyOrSubjectContains []string
     // Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
-    categories []string;
+    categories []string
     // Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
-    fromAddresses []Recipientable;
+    fromAddresses []Recipientable
     // Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
-    hasAttachments *bool;
+    hasAttachments *bool
     // Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
-    headerContains []string;
+    headerContains []string
     // The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
-    importance *Importance;
+    importance *Importance
     // Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
-    isApprovalRequest *bool;
+    isApprovalRequest *bool
     // Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
-    isAutomaticForward *bool;
+    isAutomaticForward *bool
     // Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
-    isAutomaticReply *bool;
+    isAutomaticReply *bool
     // Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
-    isEncrypted *bool;
+    isEncrypted *bool
     // Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
-    isMeetingRequest *bool;
+    isMeetingRequest *bool
     // Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
-    isMeetingResponse *bool;
+    isMeetingResponse *bool
     // Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
-    isNonDeliveryReport *bool;
+    isNonDeliveryReport *bool
     // Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
-    isPermissionControlled *bool;
+    isPermissionControlled *bool
     // Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
-    isReadReceipt *bool;
+    isReadReceipt *bool
     // Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
-    isSigned *bool;
+    isSigned *bool
     // Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
-    isVoicemail *bool;
+    isVoicemail *bool
     // Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
-    messageActionFlag *MessageActionFlag;
+    messageActionFlag *MessageActionFlag
     // Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
-    notSentToMe *bool;
+    notSentToMe *bool
     // Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
-    recipientContains []string;
+    recipientContains []string
     // Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
-    senderContains []string;
+    senderContains []string
     // Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
-    sensitivity *Sensitivity;
+    sensitivity *Sensitivity
     // Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
-    sentCcMe *bool;
+    sentCcMe *bool
     // Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
-    sentOnlyToMe *bool;
+    sentOnlyToMe *bool
     // Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
-    sentToAddresses []Recipientable;
+    sentToAddresses []Recipientable
     // Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
-    sentToMe *bool;
+    sentToMe *bool
     // Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
-    sentToOrCcMe *bool;
+    sentToOrCcMe *bool
     // Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
-    subjectContains []string;
+    subjectContains []string
     // Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
-    withinSizeRange SizeRangeable;
+    withinSizeRange SizeRangeable
 }
 // NewMessageRulePredicates instantiates a new messageRulePredicates and sets the default values.
 func NewMessageRulePredicates()(*MessageRulePredicates) {

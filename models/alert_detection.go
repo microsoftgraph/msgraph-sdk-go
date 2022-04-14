@@ -7,13 +7,13 @@ import (
 // AlertDetection 
 type AlertDetection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The detectionType property
-    detectionType *string;
+    detectionType *string
     // The method property
-    method *string;
+    method *string
     // The name property
-    name *string;
+    name *string
 }
 // NewAlertDetection instantiates a new alertDetection and sets the default values.
 func NewAlertDetection()(*AlertDetection) {

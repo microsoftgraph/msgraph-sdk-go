@@ -9,35 +9,35 @@ import (
 // InvitedUserRequestBuilder provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
 type InvitedUserRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // InvitedUserRequestBuilderGetOptions options for Get
 type InvitedUserRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *InvitedUserRequestBuilderGetQueryParameters;
+    QueryParameters *InvitedUserRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // InvitedUserRequestBuilderGetQueryParameters the user created as part of the invitation creation. Read-Only
 type InvitedUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // NewInvitedUserRequestBuilderInternal instantiates a new InvitedUserRequestBuilder and sets the default values.
 func NewInvitedUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InvitedUserRequestBuilder) {
     m := &InvitedUserRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/invitations/{invitation_id}/invitedUser{?select,expand}";
+    m.urlTemplate = "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

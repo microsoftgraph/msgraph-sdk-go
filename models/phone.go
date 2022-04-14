@@ -7,15 +7,15 @@ import (
 // Phone 
 type Phone struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The language property
-    language *string;
+    language *string
     // The phone number.
-    number *string;
+    number *string
     // The region property
-    region *string;
+    region *string
     // The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-    type_escaped *PhoneType;
+    type_escaped *PhoneType
 }
 // NewPhone instantiates a new phone and sets the default values.
 func NewPhone()(*Phone) {

@@ -10,21 +10,21 @@ import (
 type Set struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Children terms of set in term [store].
-    children []Termable;
+    children []Termable
     // Date and time of set creation. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description that gives details on the term usage.
-    description *string;
+    description *string
     // Name of the set for each languageTag.
-    localizedNames []LocalizedNameable;
+    localizedNames []LocalizedNameable
     // The parentGroup property
-    parentGroup Groupable;
+    parentGroup Groupable
     // Custom properties for the set.
-    properties []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable;
+    properties []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable
     // Indicates which terms have been pinned or reused directly under the set.
-    relations []Relationable;
+    relations []Relationable
     // All the terms under the set.
-    terms []Termable;
+    terms []Termable
 }
 // NewSet instantiates a new set and sets the default values.
 func NewSet()(*Set) {

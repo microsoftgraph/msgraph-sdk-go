@@ -8,29 +8,29 @@ import (
 type WorkbookChart struct {
     Entity
     // Represents chart axes. Read-only.
-    axes WorkbookChartAxesable;
+    axes WorkbookChartAxesable
     // Represents the datalabels on the chart. Read-only.
-    dataLabels WorkbookChartDataLabelsable;
+    dataLabels WorkbookChartDataLabelsable
     // Encapsulates the format properties for the chart area. Read-only.
-    format WorkbookChartAreaFormatable;
+    format WorkbookChartAreaFormatable
     // Represents the height, in points, of the chart object.
-    height *float64;
+    height *float64
     // The distance, in points, from the left side of the chart to the worksheet origin.
-    left *float64;
+    left *float64
     // Represents the legend for the chart. Read-only.
-    legend WorkbookChartLegendable;
+    legend WorkbookChartLegendable
     // Represents the name of a chart object.
-    name *string;
+    name *string
     // Represents either a single series or collection of series in the chart. Read-only.
-    series []WorkbookChartSeriesable;
+    series []WorkbookChartSeriesable
     // Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
-    title WorkbookChartTitleable;
+    title WorkbookChartTitleable
     // Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).
-    top *float64;
+    top *float64
     // Represents the width, in points, of the chart object.
-    width *float64;
+    width *float64
     // The worksheet containing the current chart. Read-only.
-    worksheet WorkbookWorksheetable;
+    worksheet WorkbookWorksheetable
 }
 // NewWorkbookChart instantiates a new workbookChart and sets the default values.
 func NewWorkbookChart()(*WorkbookChart) {

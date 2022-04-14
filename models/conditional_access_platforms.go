@@ -7,11 +7,11 @@ import (
 // ConditionalAccessPlatforms 
 type ConditionalAccessPlatforms struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
-    excludePlatforms []ConditionalAccessDevicePlatform;
+    excludePlatforms []ConditionalAccessDevicePlatform
     // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
-    includePlatforms []ConditionalAccessDevicePlatform;
+    includePlatforms []ConditionalAccessDevicePlatform
 }
 // NewConditionalAccessPlatforms instantiates a new conditionalAccessPlatforms and sets the default values.
 func NewConditionalAccessPlatforms()(*ConditionalAccessPlatforms) {

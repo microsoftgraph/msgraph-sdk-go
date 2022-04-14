@@ -8,7 +8,7 @@ import (
 type TimeOffItem struct {
     ScheduleEntity
     // ID of the timeOffReason for this timeOffItem. Required.
-    timeOffReasonId *string;
+    timeOffReasonId *string
 }
 // NewTimeOffItem instantiates a new timeOffItem and sets the default values.
 func NewTimeOffItem()(*TimeOffItem) {

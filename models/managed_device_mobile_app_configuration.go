@@ -9,27 +9,27 @@ import (
 type ManagedDeviceMobileAppConfiguration struct {
     Entity
     // The list of group assignemenets for app configration.
-    assignments []ManagedDeviceMobileAppConfigurationAssignmentable;
+    assignments []ManagedDeviceMobileAppConfigurationAssignmentable
     // DateTime the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Admin provided description of the Device Configuration.
-    description *string;
+    description *string
     // List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-    deviceStatuses []ManagedDeviceMobileAppConfigurationDeviceStatusable;
+    deviceStatuses []ManagedDeviceMobileAppConfigurationDeviceStatusable
     // App configuration device status summary.
-    deviceStatusSummary ManagedDeviceMobileAppConfigurationDeviceSummaryable;
+    deviceStatusSummary ManagedDeviceMobileAppConfigurationDeviceSummaryable
     // Admin provided name of the device configuration.
-    displayName *string;
+    displayName *string
     // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // the associated app.
-    targetedMobileApps []string;
+    targetedMobileApps []string
     // List of ManagedDeviceMobileAppConfigurationUserStatus.
-    userStatuses []ManagedDeviceMobileAppConfigurationUserStatusable;
+    userStatuses []ManagedDeviceMobileAppConfigurationUserStatusable
     // App configuration user status summary.
-    userStatusSummary ManagedDeviceMobileAppConfigurationUserSummaryable;
+    userStatusSummary ManagedDeviceMobileAppConfigurationUserSummaryable
     // Version of the device configuration.
-    version *int32;
+    version *int32
 }
 // NewManagedDeviceMobileAppConfiguration instantiates a new managedDeviceMobileAppConfiguration and sets the default values.
 func NewManagedDeviceMobileAppConfiguration()(*ManagedDeviceMobileAppConfiguration) {

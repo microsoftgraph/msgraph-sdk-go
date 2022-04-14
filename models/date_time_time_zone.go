@@ -7,11 +7,11 @@ import (
 // DateTimeTimeZone 
 type DateTimeTimeZone struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    dateTime *string;
+    dateTime *string
     // Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
-    timeZone *string;
+    timeZone *string
 }
 // NewDateTimeTimeZone instantiates a new dateTimeTimeZone and sets the default values.
 func NewDateTimeTimeZone()(*DateTimeTimeZone) {

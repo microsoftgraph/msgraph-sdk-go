@@ -7,17 +7,17 @@ import (
 // BucketAggregationDefinition 
 type BucketAggregationDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
-    isDescending *bool;
+    isDescending *bool
     // The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
-    minimumCount *int32;
+    minimumCount *int32
     // A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
-    prefixFilter *string;
+    prefixFilter *string
     // Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
-    ranges []BucketAggregationRangeable;
+    ranges []BucketAggregationRangeable
     // The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
-    sortBy *BucketAggregationSortProperty;
+    sortBy *BucketAggregationSortProperty
 }
 // NewBucketAggregationDefinition instantiates a new bucketAggregationDefinition and sets the default values.
 func NewBucketAggregationDefinition()(*BucketAggregationDefinition) {

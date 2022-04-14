@@ -9,11 +9,11 @@ import (
 type Operation struct {
     Entity
     // The start time of the operation.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The time of the last action of the operation.
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The current status of the operation: notStarted, running, completed, failed
-    status *OperationStatus;
+    status *OperationStatus
 }
 // NewOperation instantiates a new operation and sets the default values.
 func NewOperation()(*Operation) {

@@ -7,15 +7,15 @@ import (
 // FollowupFlag 
 type FollowupFlag struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The date and time that the follow-up was finished.
-    completedDateTime DateTimeTimeZoneable;
+    completedDateTime DateTimeTimeZoneable
     // The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
-    dueDateTime DateTimeTimeZoneable;
+    dueDateTime DateTimeTimeZoneable
     // The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
-    flagStatus *FollowupFlagStatus;
+    flagStatus *FollowupFlagStatus
     // The date and time that the follow-up is to begin.
-    startDateTime DateTimeTimeZoneable;
+    startDateTime DateTimeTimeZoneable
 }
 // NewFollowupFlag instantiates a new followupFlag and sets the default values.
 func NewFollowupFlag()(*FollowupFlag) {

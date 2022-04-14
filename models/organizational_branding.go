@@ -8,7 +8,7 @@ import (
 type OrganizationalBranding struct {
     OrganizationalBrandingProperties
     // Add different branding based on a locale.
-    localizations []OrganizationalBrandingLocalizationable;
+    localizations []OrganizationalBrandingLocalizationable
 }
 // NewOrganizationalBranding instantiates a new organizationalBranding and sets the default values.
 func NewOrganizationalBranding()(*OrganizationalBranding) {

@@ -8,15 +8,15 @@ import (
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
     // The policy for the assignment.
-    policy UnifiedRoleManagementPolicyable;
+    policy UnifiedRoleManagementPolicyable
     // The id of the policy.
-    policyId *string;
+    policyId *string
     // The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
-    roleDefinitionId *string;
+    roleDefinitionId *string
     // The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
-    scopeId *string;
+    scopeId *string
     // The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
-    scopeType *string;
+    scopeType *string
 }
 // NewUnifiedRoleManagementPolicyAssignment instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssignment) {

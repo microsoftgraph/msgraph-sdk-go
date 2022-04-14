@@ -9,17 +9,17 @@ import (
 type Fido2AuthenticationMethod struct {
     AuthenticationMethod
     // Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
-    aaGuid *string;
+    aaGuid *string
     // The attestation certificate(s) attached to this security key.
-    attestationCertificates []string;
+    attestationCertificates []string
     // The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
-    attestationLevel *AttestationLevel;
+    attestationLevel *AttestationLevel
     // The timestamp when this key was registered to the user.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name of the key as given by the user.
-    displayName *string;
+    displayName *string
     // The manufacturer-assigned model of the FIDO2 security key.
-    model *string;
+    model *string
 }
 // NewFido2AuthenticationMethod instantiates a new fido2AuthenticationMethod and sets the default values.
 func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {

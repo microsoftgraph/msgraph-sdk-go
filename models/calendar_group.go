@@ -8,13 +8,13 @@ import (
 type CalendarGroup struct {
     Entity
     // The calendars in the calendar group. Navigation property. Read-only. Nullable.
-    calendars []Calendarable;
+    calendars []Calendarable
     // Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-    changeKey *string;
+    changeKey *string
     // The class identifier. Read-only.
-    classId *string;
+    classId *string
     // The group name.
-    name *string;
+    name *string
 }
 // NewCalendarGroup instantiates a new calendarGroup and sets the default values.
 func NewCalendarGroup()(*CalendarGroup) {

@@ -7,9 +7,9 @@ import (
 // GetMailboxUsageDetailWithPeriodResponse provides operations to call the getMailboxUsageDetail method.
 type GetMailboxUsageDetailWithPeriodResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetMailboxUsageDetailWithPeriodResponse instantiates a new getMailboxUsageDetailWithPeriodResponse and sets the default values.
 func NewGetMailboxUsageDetailWithPeriodResponse()(*GetMailboxUsageDetailWithPeriodResponse) {

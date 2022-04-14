@@ -8,28 +8,28 @@ import (
 // CopyNotebookRequestBuilder provides operations to call the copyNotebook method.
 type CopyNotebookRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CopyNotebookRequestBuilderPostOptions options for Post
 type CopyNotebookRequestBuilderPostOptions struct {
     // 
-    Body CopyNotebookRequestBodyable;
+    Body CopyNotebookRequestBodyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewCopyNotebookRequestBuilderInternal instantiates a new CopyNotebookRequestBuilder and sets the default values.
 func NewCopyNotebookRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CopyNotebookRequestBuilder) {
     m := &CopyNotebookRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/onenote/notebooks/{notebook_id}/microsoft.graph.copyNotebook";
+    m.urlTemplate = "{+baseurl}/me/onenote/notebooks/{notebook%2Did}/microsoft.graph.copyNotebook";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

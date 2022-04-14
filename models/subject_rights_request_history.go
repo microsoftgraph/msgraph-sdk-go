@@ -8,17 +8,17 @@ import (
 // SubjectRightsRequestHistory 
 type SubjectRightsRequestHistory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Identity of the user who changed the  subject rights request.
-    changedBy IdentitySetable;
+    changedBy IdentitySetable
     // Data and time when the entity was changed.
-    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
-    stage *SubjectRightsRequestStage;
+    stage *SubjectRightsRequestStage
     // The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-    stageStatus *SubjectRightsRequestStageStatus;
+    stageStatus *SubjectRightsRequestStageStatus
     // Type of history.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewSubjectRightsRequestHistory instantiates a new subjectRightsRequestHistory and sets the default values.
 func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {

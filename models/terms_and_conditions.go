@@ -9,25 +9,25 @@ import (
 type TermsAndConditions struct {
     Entity
     // Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
-    acceptanceStatement *string;
+    acceptanceStatement *string
     // The list of acceptance statuses for this T&C policy.
-    acceptanceStatuses []TermsAndConditionsAcceptanceStatusable;
+    acceptanceStatuses []TermsAndConditionsAcceptanceStatusable
     // The list of assignments for this T&C policy.
-    assignments []TermsAndConditionsAssignmentable;
+    assignments []TermsAndConditionsAssignmentable
     // Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.
-    bodyText *string;
+    bodyText *string
     // DateTime the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Administrator-supplied description of the T&C policy.
-    description *string;
+    description *string
     // Administrator-supplied name for the T&C policy.
-    displayName *string;
+    displayName *string
     // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
-    title *string;
+    title *string
     // Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
-    version *int32;
+    version *int32
 }
 // NewTermsAndConditions instantiates a new termsAndConditions and sets the default values.
 func NewTermsAndConditions()(*TermsAndConditions) {

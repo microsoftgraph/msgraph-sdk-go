@@ -9,17 +9,17 @@ import (
 type Request struct {
     Entity
     // The identifier of the approval of the request.
-    approvalId *string;
+    approvalId *string
     // The request completion date time.
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The user who created this request.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The request creation date time.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Free text field to define any custom data for the request. Not used.
-    customData *string;
+    customData *string
     // The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
-    status *string;
+    status *string
 }
 // NewRequest instantiates a new request and sets the default values.
 func NewRequest()(*Request) {

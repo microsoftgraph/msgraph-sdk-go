@@ -8,9 +8,9 @@ import (
 // PasswordCredentialRequestBody provides operations to call the addPassword method.
 type PasswordCredentialRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The passwordCredential property
-    passwordCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable;
+    passwordCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable
 }
 // NewPasswordCredentialRequestBody instantiates a new PasswordCredentialRequestBody and sets the default values.
 func NewPasswordCredentialRequestBody()(*PasswordCredentialRequestBody) {

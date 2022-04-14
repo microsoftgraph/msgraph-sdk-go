@@ -8,13 +8,13 @@ import (
 type PrintTask struct {
     Entity
     // The definition property
-    definition PrintTaskDefinitionable;
+    definition PrintTaskDefinitionable
     // The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
-    parentUrl *string;
+    parentUrl *string
     // The status property
-    status PrintTaskStatusable;
+    status PrintTaskStatusable
     // The trigger property
-    trigger PrintTaskTriggerable;
+    trigger PrintTaskTriggerable
 }
 // NewPrintTask instantiates a new printTask and sets the default values.
 func NewPrintTask()(*PrintTask) {

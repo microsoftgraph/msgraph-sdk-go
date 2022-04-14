@@ -8,17 +8,17 @@ import (
 // SharingDetail 
 type SharingDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The user who shared the document.
-    sharedBy InsightIdentityable;
+    sharedBy InsightIdentityable
     // The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    sharedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    sharedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The sharingReference property
-    sharingReference ResourceReferenceable;
+    sharingReference ResourceReferenceable
     // The subject with which the document was shared.
-    sharingSubject *string;
+    sharingSubject *string
     // Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.
-    sharingType *string;
+    sharingType *string
 }
 // NewSharingDetail instantiates a new sharingDetail and sets the default values.
 func NewSharingDetail()(*SharingDetail) {

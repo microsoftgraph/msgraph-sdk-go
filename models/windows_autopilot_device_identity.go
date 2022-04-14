@@ -9,37 +9,37 @@ import (
 type WindowsAutopilotDeviceIdentity struct {
     Entity
     // Addressable user name.
-    addressableUserName *string;
+    addressableUserName *string
     // AAD Device ID - to be deprecated
-    azureActiveDirectoryDeviceId *string;
+    azureActiveDirectoryDeviceId *string
     // Display Name
-    displayName *string;
+    displayName *string
     // Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.
-    enrollmentState *EnrollmentState;
+    enrollmentState *EnrollmentState
     // Group Tag of the Windows autopilot device.
-    groupTag *string;
+    groupTag *string
     // Intune Last Contacted Date Time of the Windows autopilot device.
-    lastContactedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastContactedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Managed Device ID
-    managedDeviceId *string;
+    managedDeviceId *string
     // Oem manufacturer of the Windows autopilot device.
-    manufacturer *string;
+    manufacturer *string
     // Model name of the Windows autopilot device.
-    model *string;
+    model *string
     // Product Key of the Windows autopilot device.
-    productKey *string;
+    productKey *string
     // Purchase Order Identifier of the Windows autopilot device.
-    purchaseOrderIdentifier *string;
+    purchaseOrderIdentifier *string
     // Resource Name.
-    resourceName *string;
+    resourceName *string
     // Serial number of the Windows autopilot device.
-    serialNumber *string;
+    serialNumber *string
     // SKU Number
-    skuNumber *string;
+    skuNumber *string
     // System Family
-    systemFamily *string;
+    systemFamily *string
     // User Principal Name.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewWindowsAutopilotDeviceIdentity instantiates a new windowsAutopilotDeviceIdentity and sets the default values.
 func NewWindowsAutopilotDeviceIdentity()(*WindowsAutopilotDeviceIdentity) {

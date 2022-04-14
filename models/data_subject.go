@@ -7,15 +7,15 @@ import (
 // DataSubject 
 type DataSubject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Email of the data subject.
-    email *string;
+    email *string
     // First name of the data subject.
-    firstName *string;
+    firstName *string
     // Last Name of the data subject.
-    lastName *string;
+    lastName *string
     // The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
-    residency *string;
+    residency *string
 }
 // NewDataSubject instantiates a new dataSubject and sets the default values.
 func NewDataSubject()(*DataSubject) {

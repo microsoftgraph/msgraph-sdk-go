@@ -7,11 +7,11 @@ import (
 // IdentityProtectionRoot 
 type IdentityProtectionRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Risk detection in Azure AD Identity Protection and the associated information about the detection.
-    riskDetections []RiskDetectionable;
+    riskDetections []RiskDetectionable
     // Users that are flagged as at-risk by Azure AD Identity Protection.
-    riskyUsers []RiskyUserable;
+    riskyUsers []RiskyUserable
 }
 // NewIdentityProtectionRoot instantiates a new IdentityProtectionRoot and sets the default values.
 func NewIdentityProtectionRoot()(*IdentityProtectionRoot) {

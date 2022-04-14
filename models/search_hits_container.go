@@ -7,15 +7,15 @@ import (
 // SearchHitsContainer 
 type SearchHitsContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
-    aggregations []SearchAggregationable;
+    aggregations []SearchAggregationable
     // A collection of the search results.
-    hits []SearchHitable;
+    hits []SearchHitable
     // Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
-    moreResultsAvailable *bool;
+    moreResultsAvailable *bool
     // The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
-    total *int32;
+    total *int32
 }
 // NewSearchHitsContainer instantiates a new searchHitsContainer and sets the default values.
 func NewSearchHitsContainer()(*SearchHitsContainer) {

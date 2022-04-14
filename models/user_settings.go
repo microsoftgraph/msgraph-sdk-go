@@ -8,11 +8,11 @@ import (
 type UserSettings struct {
     Entity
     // Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
-    contributionToContentDiscoveryAsOrganizationDisabled *bool;
+    contributionToContentDiscoveryAsOrganizationDisabled *bool
     // When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
-    contributionToContentDiscoveryDisabled *bool;
+    contributionToContentDiscoveryDisabled *bool
     // The shift preferences for the user.
-    shiftPreferences ShiftPreferencesable;
+    shiftPreferences ShiftPreferencesable
 }
 // NewUserSettings instantiates a new userSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {

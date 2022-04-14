@@ -9,9 +9,9 @@ import (
 type DeviceManagementTroubleshootingEvent struct {
     Entity
     // Id used for tracing the failure in the service.
-    correlationId *string;
+    correlationId *string
     // Time when the event occurred .
-    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {

@@ -9,11 +9,11 @@ import (
 type BaseItemVersion struct {
     Entity
     // Identity of the user which last modified the version. Read-only.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // Date and time the version was last modified. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates the publication status of this particular version. Read-only.
-    publication PublicationFacetable;
+    publication PublicationFacetable
 }
 // NewBaseItemVersion instantiates a new baseItemVersion and sets the default values.
 func NewBaseItemVersion()(*BaseItemVersion) {

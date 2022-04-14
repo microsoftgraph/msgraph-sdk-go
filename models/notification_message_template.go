@@ -9,15 +9,15 @@ import (
 type NotificationMessageTemplate struct {
     Entity
     // The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
-    brandingOptions *NotificationTemplateBrandingOptions;
+    brandingOptions *NotificationTemplateBrandingOptions
     // The default locale to fallback onto when the requested locale is not available.
-    defaultLocale *string;
+    defaultLocale *string
     // Display name for the Notification Message Template.
-    displayName *string;
+    displayName *string
     // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The list of localized messages for this Notification Message Template.
-    localizedNotificationMessages []LocalizedNotificationMessageable;
+    localizedNotificationMessages []LocalizedNotificationMessageable
 }
 // NewNotificationMessageTemplate instantiates a new notificationMessageTemplate and sets the default values.
 func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {

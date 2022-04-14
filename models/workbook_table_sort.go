@@ -8,11 +8,11 @@ import (
 type WorkbookTableSort struct {
     Entity
     // Represents the current conditions used to last sort the table. Read-only.
-    fields []WorkbookSortFieldable;
+    fields []WorkbookSortFieldable
     // Represents whether the casing impacted the last sort of the table. Read-only.
-    matchCase *bool;
+    matchCase *bool
     // Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
-    method *string;
+    method *string
 }
 // NewWorkbookTableSort instantiates a new workbookTableSort and sets the default values.
 func NewWorkbookTableSort()(*WorkbookTableSort) {

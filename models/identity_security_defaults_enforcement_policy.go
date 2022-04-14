@@ -8,7 +8,7 @@ import (
 type IdentitySecurityDefaultsEnforcementPolicy struct {
     PolicyBase
     // If set to true, Azure Active Directory security defaults is enabled for the tenant.
-    isEnabled *bool;
+    isEnabled *bool
 }
 // NewIdentitySecurityDefaultsEnforcementPolicy instantiates a new identitySecurityDefaultsEnforcementPolicy and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnforcementPolicy) {

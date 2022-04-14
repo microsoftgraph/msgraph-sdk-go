@@ -8,11 +8,11 @@ import (
 type PrintTaskDefinition struct {
     Entity
     // The createdBy property
-    createdBy AppIdentityable;
+    createdBy AppIdentityable
     // The name of the printTaskDefinition.
-    displayName *string;
+    displayName *string
     // A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-    tasks []PrintTaskable;
+    tasks []PrintTaskable
 }
 // NewPrintTaskDefinition instantiates a new printTaskDefinition and sets the default values.
 func NewPrintTaskDefinition()(*PrintTaskDefinition) {

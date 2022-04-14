@@ -9,25 +9,25 @@ import (
 type AccessReviewHistoryDefinition struct {
     Entity
     // The createdBy property
-    createdBy UserIdentityable;
+    createdBy UserIdentityable
     // Timestamp when the access review definition was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
-    decisions []AccessReviewHistoryDecisionFilter;
+    decisions []AccessReviewHistoryDecisionFilter
     // Name for the access review history data collection. Required.
-    displayName *string;
+    displayName *string
     // If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
-    instances []AccessReviewHistoryInstanceable;
+    instances []AccessReviewHistoryInstanceable
     // A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-    reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-    reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
-    scheduleSettings AccessReviewHistoryScheduleSettingsable;
+    reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.
+    scheduleSettings AccessReviewHistoryScheduleSettingsable
     // Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
-    scopes []AccessReviewScopeable;
+    scopes []AccessReviewScopeable
     // Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
-    status *AccessReviewHistoryStatus;
+    status *AccessReviewHistoryStatus
 }
 // NewAccessReviewHistoryDefinition instantiates a new accessReviewHistoryDefinition and sets the default values.
 func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
@@ -213,7 +213,7 @@ func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodStartDateTime()(*i
         return m.reviewHistoryPeriodStartDateTime
     }
 }
-// GetScheduleSettings gets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
+// GetScheduleSettings gets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.
 func (m *AccessReviewHistoryDefinition) GetScheduleSettings()(AccessReviewHistoryScheduleSettingsable) {
     if m == nil {
         return nil
@@ -356,7 +356,7 @@ func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodStartDateTime(valu
         m.reviewHistoryPeriodStartDateTime = value
     }
 }
-// SetScheduleSettings sets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
+// SetScheduleSettings sets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.
 func (m *AccessReviewHistoryDefinition) SetScheduleSettings(value AccessReviewHistoryScheduleSettingsable)() {
     if m != nil {
         m.scheduleSettings = value

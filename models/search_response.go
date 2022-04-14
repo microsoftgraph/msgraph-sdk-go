@@ -7,15 +7,15 @@ import (
 // SearchResponse 
 type SearchResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A collection of search results.
-    hitsContainers []SearchHitsContainerable;
+    hitsContainers []SearchHitsContainerable
     // Provides information related to spelling corrections in the alteration response.
-    queryAlterationResponse AlterationResponseable;
+    queryAlterationResponse AlterationResponseable
     // A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
-    resultTemplates ResultTemplateDictionaryable;
+    resultTemplates ResultTemplateDictionaryable
     // Contains the search terms sent in the initial search query.
-    searchTerms []string;
+    searchTerms []string
 }
 // NewSearchResponse instantiates a new searchResponse and sets the default values.
 func NewSearchResponse()(*SearchResponse) {

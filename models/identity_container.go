@@ -8,15 +8,15 @@ import (
 type IdentityContainer struct {
     Entity
     // Represents entry point for API connectors.
-    apiConnectors []IdentityApiConnectorable;
+    apiConnectors []IdentityApiConnectorable
     // Represents entry point for B2X/self-service sign-up identity userflows.
-    b2xUserFlows []B2xIdentityUserFlowable;
+    b2xUserFlows []B2xIdentityUserFlowable
     // the entry point for the Conditional Access (CA) object model.
-    conditionalAccess ConditionalAccessRootable;
+    conditionalAccess ConditionalAccessRootable
     // Represents entry point for identity provider base.
-    identityProviders []IdentityProviderBaseable;
+    identityProviders []IdentityProviderBaseable
     // Represents entry point for identity userflow attributes.
-    userFlowAttributes []IdentityUserFlowAttributeable;
+    userFlowAttributes []IdentityUserFlowAttributeable
 }
 // NewIdentityContainer instantiates a new identityContainer and sets the default values.
 func NewIdentityContainer()(*IdentityContainer) {

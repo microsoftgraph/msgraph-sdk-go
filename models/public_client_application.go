@@ -7,9 +7,9 @@ import (
 // PublicClientApplication 
 type PublicClientApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
-    redirectUris []string;
+    redirectUris []string
 }
 // NewPublicClientApplication instantiates a new publicClientApplication and sets the default values.
 func NewPublicClientApplication()(*PublicClientApplication) {

@@ -8,11 +8,11 @@ import (
 // CopyRequestBody provides operations to call the copy method.
 type CopyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The name property
-    name *string;
+    name *string
     // The parentReference property
-    parentReference iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable;
+    parentReference iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable
 }
 // NewCopyRequestBody instantiates a new copyRequestBody and sets the default values.
 func NewCopyRequestBody()(*CopyRequestBody) {

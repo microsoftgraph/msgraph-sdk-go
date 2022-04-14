@@ -7,11 +7,11 @@ import (
 // WindowsInformationProtectionProxiedDomainCollection windows Information Protection Proxied Domain Collection
 type WindowsInformationProtectionProxiedDomainCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Display name
-    displayName *string;
+    displayName *string
     // Collection of proxied domains
-    proxiedDomains []ProxiedDomainable;
+    proxiedDomains []ProxiedDomainable
 }
 // NewWindowsInformationProtectionProxiedDomainCollection instantiates a new windowsInformationProtectionProxiedDomainCollection and sets the default values.
 func NewWindowsInformationProtectionProxiedDomainCollection()(*WindowsInformationProtectionProxiedDomainCollection) {

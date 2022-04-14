@@ -9,21 +9,21 @@ import (
 type ScheduleChangeRequest struct {
     ChangeTrackedEntity
     // The assignedTo property
-    assignedTo *ScheduleChangeRequestActor;
+    assignedTo *ScheduleChangeRequestActor
     // The managerActionDateTime property
-    managerActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    managerActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The managerActionMessage property
-    managerActionMessage *string;
+    managerActionMessage *string
     // The managerUserId property
-    managerUserId *string;
+    managerUserId *string
     // The senderDateTime property
-    senderDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    senderDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The senderMessage property
-    senderMessage *string;
+    senderMessage *string
     // The senderUserId property
-    senderUserId *string;
+    senderUserId *string
     // The state property
-    state *ScheduleChangeState;
+    state *ScheduleChangeState
 }
 // NewScheduleChangeRequest instantiates a new scheduleChangeRequest and sets the default values.
 func NewScheduleChangeRequest()(*ScheduleChangeRequest) {

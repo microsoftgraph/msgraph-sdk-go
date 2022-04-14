@@ -8,7 +8,7 @@ import (
 type UserTeamwork struct {
     Entity
     // The apps installed in the personal scope of this user.
-    installedApps []UserScopeTeamsAppInstallationable;
+    installedApps []UserScopeTeamsAppInstallationable
 }
 // NewUserTeamwork instantiates a new userTeamwork and sets the default values.
 func NewUserTeamwork()(*UserTeamwork) {

@@ -8,21 +8,21 @@ import (
 // AlertHistoryState 
 type AlertHistoryState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
-    appId *string;
+    appId *string
     // UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
-    assignedTo *string;
+    assignedTo *string
     // Comment entered by signed-in user.
-    comments []string;
+    comments []string
     // Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
-    feedback *AlertFeedback;
+    feedback *AlertFeedback
     // Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
-    status *AlertStatus;
+    status *AlertStatus
     // Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    updatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    updatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
-    user *string;
+    user *string
 }
 // NewAlertHistoryState instantiates a new alertHistoryState and sets the default values.
 func NewAlertHistoryState()(*AlertHistoryState) {

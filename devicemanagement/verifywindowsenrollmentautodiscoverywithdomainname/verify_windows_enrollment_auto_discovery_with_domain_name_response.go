@@ -7,9 +7,9 @@ import (
 // VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
 type VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value *bool;
+    value *bool
 }
 // NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse instantiates a new verifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse and sets the default values.
 func NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse()(*VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse) {

@@ -47,49 +47,49 @@ import (
 // ServicePrincipalItemRequestBuilder provides operations to manage the collection of servicePrincipal entities.
 type ServicePrincipalItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ServicePrincipalItemRequestBuilderDeleteOptions options for Delete
 type ServicePrincipalItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ServicePrincipalItemRequestBuilderGetOptions options for Get
 type ServicePrincipalItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ServicePrincipalItemRequestBuilderGetQueryParameters;
+    QueryParameters *ServicePrincipalItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ServicePrincipalItemRequestBuilderGetQueryParameters get entity from servicePrincipals by key
 type ServicePrincipalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ServicePrincipalItemRequestBuilderPatchOptions options for Patch
 type ServicePrincipalItemRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AddKey the addKey property
 func (m *ServicePrincipalItemRequestBuilder) AddKey()(*i3f559eeb0a32c852d52064d33f878279ea63214977aec7d5605657ac813f843e.AddKeyRequestBuilder) {
@@ -114,7 +114,7 @@ func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignedToById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["appRoleAssignment_id"] = id
+        urlTplParams["appRoleAssignment%2Did"] = id
     }
     return ieade744732b95d81e11bac4d5146b5ac0bfeb407228f97be47815b5b44c77ff1.NewAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -129,7 +129,7 @@ func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignmentsById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["appRoleAssignment_id"] = id
+        urlTplParams["appRoleAssignment%2Did"] = id
     }
     return i80395ca3a6452268f5c4d3e92f315d7c92e78fef9911bf32e289ea47d6968415.NewAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -152,7 +152,7 @@ func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPoliciesById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["claimsMappingPolicy_id"] = id
+        urlTplParams["claimsMappingPolicy%2Did"] = id
     }
     return id569966c2c6119078f6226e2ed4c7c42d8bd056f52f7651bd3fafcc36ffb7d0c.NewClaimsMappingPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -160,7 +160,7 @@ func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPoliciesById(id string
 func NewServicePrincipalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalItemRequestBuilder) {
     m := &ServicePrincipalItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -203,7 +203,7 @@ func (m *ServicePrincipalItemRequestBuilder) CreatedObjectsById(id string)(*i2e9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i2e9c412d7776dbbef6b295067f85a1c21e3fd42b4d7846e1174dfd55eb8d8811.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -256,7 +256,7 @@ func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassificationsB
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["delegatedPermissionClassification_id"] = id
+        urlTplParams["delegatedPermissionClassification%2Did"] = id
     }
     return i38c5edd99af7364922d88fc2b49de45f320d11c5fa36e8234c12f1d863cbea73.NewDelegatedPermissionClassificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -287,7 +287,7 @@ func (m *ServicePrincipalItemRequestBuilder) EndpointsById(id string)(*iae6f1167
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["endpoint_id"] = id
+        urlTplParams["endpoint%2Did"] = id
     }
     return iae6f1167638ef01ba227e18af033b58e9203edca74b4641453bc1cec1de3aa91.NewEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -326,7 +326,7 @@ func (m *ServicePrincipalItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id s
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["homeRealmDiscoveryPolicy_id"] = id
+        urlTplParams["homeRealmDiscoveryPolicy%2Did"] = id
     }
     return ie33736e058581033dd3335478f67d4920269f0937f554299dea9b4a420f14037.NewHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -341,7 +341,7 @@ func (m *ServicePrincipalItemRequestBuilder) MemberOfById(id string)(*i56e2c3bd7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i56e2c3bd7faf41b227bd7eb65043ee578bb4d1dc5df7c395a2d64d2ed4af7fce.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -356,7 +356,7 @@ func (m *ServicePrincipalItemRequestBuilder) Oauth2PermissionGrantsById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["oAuth2PermissionGrant_id"] = id
+        urlTplParams["oAuth2PermissionGrant%2Did"] = id
     }
     return i83568fd90c133e34217ad0e8f925c320323fb270d334badf13c19b1a8ac14daa.NewOAuth2PermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -371,7 +371,7 @@ func (m *ServicePrincipalItemRequestBuilder) OwnedObjectsById(id string)(*i9fe3c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i9fe3c2224826dcb0cde6e1f06bdfb308132901afdafc77fa24614124022a183b.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -386,7 +386,7 @@ func (m *ServicePrincipalItemRequestBuilder) OwnersById(id string)(*ie10051a8bcf
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ie10051a8bcf74fee28b7346347c913cf4c35b13dc5337d6b1877c19ead0529ae.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -429,7 +429,7 @@ func (m *ServicePrincipalItemRequestBuilder) TokenIssuancePoliciesById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tokenIssuancePolicy_id"] = id
+        urlTplParams["tokenIssuancePolicy%2Did"] = id
     }
     return i4c7a31e042d98d59ede758ea63655f65992075acf7610c7db5c90df699c7c9e2.NewTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -444,7 +444,7 @@ func (m *ServicePrincipalItemRequestBuilder) TokenLifetimePoliciesById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tokenLifetimePolicy_id"] = id
+        urlTplParams["tokenLifetimePolicy%2Did"] = id
     }
     return i14cf3ba6d0e45059a525d05353e514742297a11654926e06d365c73081a6a0dd.NewTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -459,7 +459,7 @@ func (m *ServicePrincipalItemRequestBuilder) TransitiveMemberOfById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ib95837107c1a1d541878efdf1d0902a7c67b80de5fc97d771d55c403ab043621.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

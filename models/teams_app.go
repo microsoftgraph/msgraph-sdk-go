@@ -8,13 +8,13 @@ import (
 type TeamsApp struct {
     Entity
     // The details for each version of the app.
-    appDefinitions []TeamsAppDefinitionable;
+    appDefinitions []TeamsAppDefinitionable
     // The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
-    displayName *string;
+    displayName *string
     // The method of distribution for the app. Read-only.
-    distributionMethod *TeamsAppDistributionMethod;
+    distributionMethod *TeamsAppDistributionMethod
     // The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-    externalId *string;
+    externalId *string
 }
 // NewTeamsApp instantiates a new teamsApp and sets the default values.
 func NewTeamsApp()(*TeamsApp) {

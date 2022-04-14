@@ -7,11 +7,11 @@ import (
 // LocalizedDescription 
 type LocalizedDescription struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The description in the localized language.
-    description *string;
+    description *string
     // The language tag for the label.
-    languageTag *string;
+    languageTag *string
 }
 // NewLocalizedDescription instantiates a new localizedDescription and sets the default values.
 func NewLocalizedDescription()(*LocalizedDescription) {

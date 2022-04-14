@@ -7,9 +7,9 @@ import (
 // CopyRequestBody provides operations to call the copy method.
 type CopyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The DestinationId property
-    destinationId *string;
+    destinationId *string
 }
 // NewCopyRequestBody instantiates a new copyRequestBody and sets the default values.
 func NewCopyRequestBody()(*CopyRequestBody) {

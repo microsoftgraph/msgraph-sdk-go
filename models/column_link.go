@@ -8,7 +8,7 @@ import (
 type ColumnLink struct {
     Entity
     // The name of the column  in this content type.
-    name *string;
+    name *string
 }
 // NewColumnLink instantiates a new columnLink and sets the default values.
 func NewColumnLink()(*ColumnLink) {

@@ -9,11 +9,11 @@ import (
 type ThreatAssessmentResult struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The result message for each threat assessment.
-    message *string;
+    message *string
     // The threat assessment result type. Possible values are: checkPolicy, rescan.
-    resultType *ThreatAssessmentResultType;
+    resultType *ThreatAssessmentResultType
 }
 // NewThreatAssessmentResult instantiates a new threatAssessmentResult and sets the default values.
 func NewThreatAssessmentResult()(*ThreatAssessmentResult) {

@@ -9,19 +9,19 @@ import (
 type ApprovalStage struct {
     Entity
     // Indicates whether the stage is assigned to the calling user to review. Read-only.
-    assignedToMe *bool;
+    assignedToMe *bool
     // The label provided by the policy creator to identify an approval stage. Read-only.
-    displayName *string;
+    displayName *string
     // The justification associated with the approval stage decision.
-    justification *string;
+    justification *string
     // The identifier of the reviewer. Read-only.
-    reviewedBy Identityable;
+    reviewedBy Identityable
     // The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    reviewedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    reviewedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
-    reviewResult *string;
+    reviewResult *string
     // The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
-    status *string;
+    status *string
 }
 // NewApprovalStage instantiates a new approvalStage and sets the default values.
 func NewApprovalStage()(*ApprovalStage) {

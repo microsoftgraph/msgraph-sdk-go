@@ -7,11 +7,11 @@ import (
 // WindowsInformationProtectionIPRangeCollection windows Information Protection IP Range Collection
 type WindowsInformationProtectionIPRangeCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Display name
-    displayName *string;
+    displayName *string
     // Collection of ip ranges
-    ranges []IpRangeable;
+    ranges []IpRangeable
 }
 // NewWindowsInformationProtectionIPRangeCollection instantiates a new windowsInformationProtectionIPRangeCollection and sets the default values.
 func NewWindowsInformationProtectionIPRangeCollection()(*WindowsInformationProtectionIPRangeCollection) {

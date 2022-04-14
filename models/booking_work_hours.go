@@ -7,11 +7,11 @@ import (
 // BookingWorkHours this type represents the set of working hours in a single day of the week.
 type BookingWorkHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
-    day *DayOfWeek;
+    day *DayOfWeek
     // A list of start/end times during a day.
-    timeSlots []BookingWorkTimeSlotable;
+    timeSlots []BookingWorkTimeSlotable
 }
 // NewBookingWorkHours instantiates a new bookingWorkHours and sets the default values.
 func NewBookingWorkHours()(*BookingWorkHours) {

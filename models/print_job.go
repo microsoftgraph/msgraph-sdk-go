@@ -9,23 +9,23 @@ import (
 type PrintJob struct {
     Entity
     // The configuration property
-    configuration PrintJobConfigurationable;
+    configuration PrintJobConfigurationable
     // Read-only. Nullable.
-    createdBy UserIdentityable;
+    createdBy UserIdentityable
     // The DateTimeOffset when the job was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only.
-    documents []PrintDocumentable;
+    documents []PrintDocumentable
     // If true, document can be fetched by printer.
-    isFetchable *bool;
+    isFetchable *bool
     // Contains the source job URL, if the job has been redirected from another printer.
-    redirectedFrom *string;
+    redirectedFrom *string
     // Contains the destination job URL, if the job has been redirected to another printer.
-    redirectedTo *string;
+    redirectedTo *string
     // The status property
-    status PrintJobStatusable;
+    status PrintJobStatusable
     // A list of printTasks that were triggered by this print job.
-    tasks []PrintTaskable;
+    tasks []PrintTaskable
 }
 // NewPrintJob instantiates a new printJob and sets the default values.
 func NewPrintJob()(*PrintJob) {

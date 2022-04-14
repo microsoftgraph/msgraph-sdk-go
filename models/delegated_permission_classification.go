@@ -8,11 +8,11 @@ import (
 type DelegatedPermissionClassification struct {
     Entity
     // The classification value being given. Possible value: low. Does not support $filter.
-    classification *PermissionClassificationType;
+    classification *PermissionClassificationType
     // The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
-    permissionId *string;
+    permissionId *string
     // The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
-    permissionName *string;
+    permissionName *string
 }
 // NewDelegatedPermissionClassification instantiates a new delegatedPermissionClassification and sets the default values.
 func NewDelegatedPermissionClassification()(*DelegatedPermissionClassification) {

@@ -7,15 +7,15 @@ import (
 // ControlScore 
 type ControlScore struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Control action category (Identity, Data, Device, Apps, Infrastructure).
-    controlCategory *string;
+    controlCategory *string
     // Control unique name.
-    controlName *string;
+    controlName *string
     // Description of the control.
-    description *string;
+    description *string
     // Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
-    score *float64;
+    score *float64
 }
 // NewControlScore instantiates a new controlScore and sets the default values.
 func NewControlScore()(*ControlScore) {

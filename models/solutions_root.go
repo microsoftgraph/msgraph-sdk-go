@@ -7,11 +7,11 @@ import (
 // SolutionsRoot 
 type SolutionsRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The bookingBusinesses property
-    bookingBusinesses []BookingBusinessable;
+    bookingBusinesses []BookingBusinessable
     // The bookingCurrencies property
-    bookingCurrencies []BookingCurrencyable;
+    bookingCurrencies []BookingCurrencyable
 }
 // NewSolutionsRoot instantiates a new SolutionsRoot and sets the default values.
 func NewSolutionsRoot()(*SolutionsRoot) {

@@ -8,13 +8,13 @@ import (
 type EducationAssignmentDefaults struct {
     Entity
     // Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
-    addedStudentAction *EducationAddedStudentAction;
+    addedStudentAction *EducationAddedStudentAction
     // Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-    addToCalendarAction *EducationAddToCalendarOptions;
+    addToCalendarAction *EducationAddToCalendarOptions
     // Class-level default value for due time field. Default value is 23:59:00.
-    dueTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    dueTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // Default Teams channel to which notifications will be sent. Default value is null.
-    notificationChannelUrl *string;
+    notificationChannelUrl *string
 }
 // NewEducationAssignmentDefaults instantiates a new educationAssignmentDefaults and sets the default values.
 func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {

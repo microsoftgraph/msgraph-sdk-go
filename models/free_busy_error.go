@@ -7,11 +7,11 @@ import (
 // FreeBusyError 
 type FreeBusyError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Describes the error.
-    message *string;
+    message *string
     // The response code from querying for the availability of the user, distribution list, or resource.
-    responseCode *string;
+    responseCode *string
 }
 // NewFreeBusyError instantiates a new freeBusyError and sets the default values.
 func NewFreeBusyError()(*FreeBusyError) {

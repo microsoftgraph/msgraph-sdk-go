@@ -8,7 +8,7 @@ import (
 type WorkbookChartGridlinesFormat struct {
     Entity
     // Represents chart line formatting. Read-only.
-    line WorkbookChartLineFormatable;
+    line WorkbookChartLineFormatable
 }
 // NewWorkbookChartGridlinesFormat instantiates a new workbookChartGridlinesFormat and sets the default values.
 func NewWorkbookChartGridlinesFormat()(*WorkbookChartGridlinesFormat) {

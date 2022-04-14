@@ -7,9 +7,9 @@ import (
 // WindowsDefenderScanRequestBody provides operations to call the windowsDefenderScan method.
 type WindowsDefenderScanRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The quickScan property
-    quickScan *bool;
+    quickScan *bool
 }
 // NewWindowsDefenderScanRequestBody instantiates a new windowsDefenderScanRequestBody and sets the default values.
 func NewWindowsDefenderScanRequestBody()(*WindowsDefenderScanRequestBody) {

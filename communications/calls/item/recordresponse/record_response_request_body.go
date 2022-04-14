@@ -8,23 +8,23 @@ import (
 // RecordResponseRequestBody provides operations to call the recordResponse method.
 type RecordResponseRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The bargeInAllowed property
-    bargeInAllowed *bool;
+    bargeInAllowed *bool
     // The clientContext property
-    clientContext *string;
+    clientContext *string
     // The initialSilenceTimeoutInSeconds property
-    initialSilenceTimeoutInSeconds *int32;
+    initialSilenceTimeoutInSeconds *int32
     // The maxRecordDurationInSeconds property
-    maxRecordDurationInSeconds *int32;
+    maxRecordDurationInSeconds *int32
     // The maxSilenceTimeoutInSeconds property
-    maxSilenceTimeoutInSeconds *int32;
+    maxSilenceTimeoutInSeconds *int32
     // The playBeep property
-    playBeep *bool;
+    playBeep *bool
     // The prompts property
-    prompts []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable;
+    prompts []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable
     // The stopTones property
-    stopTones []string;
+    stopTones []string
 }
 // NewRecordResponseRequestBody instantiates a new recordResponseRequestBody and sets the default values.
 func NewRecordResponseRequestBody()(*RecordResponseRequestBody) {

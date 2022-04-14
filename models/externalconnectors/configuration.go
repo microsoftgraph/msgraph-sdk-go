@@ -7,9 +7,9 @@ import (
 // Configuration 
 type Configuration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
-    authorizedAppIds []string;
+    authorizedAppIds []string
 }
 // NewConfiguration instantiates a new configuration and sets the default values.
 func NewConfiguration()(*Configuration) {

@@ -8,9 +8,9 @@ import (
 type IdentityUserFlow struct {
     Entity
     // The userFlowType property
-    userFlowType *UserFlowType;
+    userFlowType *UserFlowType
     // The userFlowTypeVersion property
-    userFlowTypeVersion *float32;
+    userFlowTypeVersion *float32
 }
 // NewIdentityUserFlow instantiates a new identityUserFlow and sets the default values.
 func NewIdentityUserFlow()(*IdentityUserFlow) {

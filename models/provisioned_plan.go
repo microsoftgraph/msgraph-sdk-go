@@ -7,13 +7,13 @@ import (
 // ProvisionedPlan 
 type ProvisionedPlan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // For example, 'Enabled'.
-    capabilityStatus *string;
+    capabilityStatus *string
     // For example, 'Success'.
-    provisioningStatus *string;
+    provisioningStatus *string
     // The name of the service; for example, 'AccessControlS2S'
-    service *string;
+    service *string
 }
 // NewProvisionedPlan instantiates a new provisionedPlan and sets the default values.
 func NewProvisionedPlan()(*ProvisionedPlan) {

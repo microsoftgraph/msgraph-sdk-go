@@ -8,25 +8,25 @@ import (
 // ArchivedPrintJob 
 type ArchivedPrintJob struct {
     // True if the job was acquired by a printer; false otherwise. Read-only.
-    acquiredByPrinter *bool;
+    acquiredByPrinter *bool
     // The dateTimeOffset when the job was acquired by the printer, if any. Read-only.
-    acquiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    acquiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
-    completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number of copies that were printed. Read-only.
-    copiesPrinted *int32;
+    copiesPrinted *int32
     // The user who created the print job. Read-only.
-    createdBy UserIdentityable;
+    createdBy UserIdentityable
     // The dateTimeOffset when the job was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The archived print job's GUID. Read-only.
-    id *string;
+    id *string
     // The printer ID that the job was queued for. Read-only.
-    printerId *string;
+    printerId *string
     // The print job's final processing state. Read-only.
-    processingState *PrintJobProcessingState;
+    processingState *PrintJobProcessingState
 }
 // NewArchivedPrintJob instantiates a new archivedPrintJob and sets the default values.
 func NewArchivedPrintJob()(*ArchivedPrintJob) {

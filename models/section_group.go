@@ -8,17 +8,17 @@ import (
 type SectionGroup struct {
     OnenoteEntityHierarchyModel
     // The notebook that contains the section group. Read-only.
-    parentNotebook Notebookable;
+    parentNotebook Notebookable
     // The section group that contains the section group. Read-only.
-    parentSectionGroup SectionGroupable;
+    parentSectionGroup SectionGroupable
     // The section groups in the section. Read-only. Nullable.
-    sectionGroups []SectionGroupable;
+    sectionGroups []SectionGroupable
     // The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
-    sectionGroupsUrl *string;
+    sectionGroupsUrl *string
     // The sections in the section group. Read-only. Nullable.
-    sections []OnenoteSectionable;
+    sections []OnenoteSectionable
     // The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
-    sectionsUrl *string;
+    sectionsUrl *string
 }
 // NewSectionGroup instantiates a new sectionGroup and sets the default values.
 func NewSectionGroup()(*SectionGroup) {

@@ -7,11 +7,11 @@ import (
 // ProvisioningStatusInfo 
 type ProvisioningStatusInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The errorInformation property
-    errorInformation ProvisioningErrorInfoable;
+    errorInformation ProvisioningErrorInfoable
     // Possible values are: success, warning, failure, skipped, unknownFutureValue.
-    status *ProvisioningResult;
+    status *ProvisioningResult
 }
 // NewProvisioningStatusInfo instantiates a new provisioningStatusInfo and sets the default values.
 func NewProvisioningStatusInfo()(*ProvisioningStatusInfo) {

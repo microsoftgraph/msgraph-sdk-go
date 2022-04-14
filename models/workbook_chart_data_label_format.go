@@ -8,9 +8,9 @@ import (
 type WorkbookChartDataLabelFormat struct {
     Entity
     // Represents the fill format of the current chart data label. Read-only.
-    fill WorkbookChartFillable;
+    fill WorkbookChartFillable
     // Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.
-    font WorkbookChartFontable;
+    font WorkbookChartFontable
 }
 // NewWorkbookChartDataLabelFormat instantiates a new workbookChartDataLabelFormat and sets the default values.
 func NewWorkbookChartDataLabelFormat()(*WorkbookChartDataLabelFormat) {

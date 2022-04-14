@@ -8,37 +8,37 @@ import (
 // CopyNotebookModel 
 type CopyNotebookModel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The createdBy property
-    createdBy *string;
+    createdBy *string
     // The createdByIdentity property
-    createdByIdentity IdentitySetable;
+    createdByIdentity IdentitySetable
     // The createdTime property
-    createdTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The id property
-    id *string;
+    id *string
     // The isDefault property
-    isDefault *bool;
+    isDefault *bool
     // The isShared property
-    isShared *bool;
+    isShared *bool
     // The lastModifiedBy property
-    lastModifiedBy *string;
+    lastModifiedBy *string
     // The lastModifiedByIdentity property
-    lastModifiedByIdentity IdentitySetable;
+    lastModifiedByIdentity IdentitySetable
     // The lastModifiedTime property
-    lastModifiedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The links property
-    links NotebookLinksable;
+    links NotebookLinksable
     // The name property
-    name *string;
+    name *string
     // The sectionGroupsUrl property
-    sectionGroupsUrl *string;
+    sectionGroupsUrl *string
     // The sectionsUrl property
-    sectionsUrl *string;
+    sectionsUrl *string
     // The self property
-    self *string;
+    self *string
     // The userRole property
-    userRole *OnenoteUserRole;
+    userRole *OnenoteUserRole
 }
 // NewCopyNotebookModel instantiates a new CopyNotebookModel and sets the default values.
 func NewCopyNotebookModel()(*CopyNotebookModel) {

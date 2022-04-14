@@ -7,11 +7,11 @@ import (
 // SecurityResource 
 type SecurityResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the resource that is related to current alert. Required.
-    resource *string;
+    resource *string
     // Represents type of security resources related to an alert. Possible values are: attacked, related.
-    resourceType *SecurityResourceType;
+    resourceType *SecurityResourceType
 }
 // NewSecurityResource instantiates a new securityResource and sets the default values.
 func NewSecurityResource()(*SecurityResource) {

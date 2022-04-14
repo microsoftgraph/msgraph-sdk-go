@@ -8,7 +8,7 @@ import (
 type SwapShiftsChangeRequest struct {
     OfferShiftRequest
     // ShiftId for the recipient user with whom the request is to swap.
-    recipientShiftId *string;
+    recipientShiftId *string
 }
 // NewSwapShiftsChangeRequest instantiates a new swapShiftsChangeRequest and sets the default values.
 func NewSwapShiftsChangeRequest()(*SwapShiftsChangeRequest) {

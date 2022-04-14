@@ -8,7 +8,7 @@ import (
 type DeviceManagementReports struct {
     Entity
     // Entity representing a job to export a report
-    exportJobs []DeviceManagementExportJobable;
+    exportJobs []DeviceManagementExportJobable
 }
 // NewDeviceManagementReports instantiates a new deviceManagementReports and sets the default values.
 func NewDeviceManagementReports()(*DeviceManagementReports) {

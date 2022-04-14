@@ -9,27 +9,27 @@ import (
 type Chat struct {
     Entity
     // Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
-    chatType *ChatType;
+    chatType *ChatType
     // Date and time at which the chat was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of all the apps in the chat. Nullable.
-    installedApps []TeamsAppInstallationable;
+    installedApps []TeamsAppInstallationable
     // Date and time at which the chat was renamed or list of members were last changed. Read-only.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of all the members in the chat. Nullable.
-    members []ConversationMemberable;
+    members []ConversationMemberable
     // A collection of all the messages in the chat. Nullable.
-    messages []ChatMessageable;
+    messages []ChatMessageable
     // Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
-    onlineMeetingInfo TeamworkOnlineMeetingInfoable;
+    onlineMeetingInfo TeamworkOnlineMeetingInfoable
     // A collection of all the tabs in the chat. Nullable.
-    tabs []TeamsTabable;
+    tabs []TeamsTabable
     // The identifier of the tenant in which the chat was created. Read-only.
-    tenantId *string;
+    tenantId *string
     // (Optional) Subject or topic for the chat. Only available for group chats.
-    topic *string;
+    topic *string
     // The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
-    webUrl *string;
+    webUrl *string
 }
 // NewChat instantiates a new chat and sets the default values.
 func NewChat()(*Chat) {

@@ -7,11 +7,11 @@ import (
 // AssociateWithHubSitesRequestBody provides operations to call the associateWithHubSites method.
 type AssociateWithHubSitesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The hubSiteUrls property
-    hubSiteUrls []string;
+    hubSiteUrls []string
     // The propagateToExistingLists property
-    propagateToExistingLists *bool;
+    propagateToExistingLists *bool
 }
 // NewAssociateWithHubSitesRequestBody instantiates a new associateWithHubSitesRequestBody and sets the default values.
 func NewAssociateWithHubSitesRequestBody()(*AssociateWithHubSitesRequestBody) {

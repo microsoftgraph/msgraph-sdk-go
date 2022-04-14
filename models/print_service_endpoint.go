@@ -8,9 +8,9 @@ import (
 type PrintServiceEndpoint struct {
     Entity
     // A human-readable display name for the endpoint.
-    displayName *string;
+    displayName *string
     // The URI that can be used to access the service.
-    uri *string;
+    uri *string
 }
 // NewPrintServiceEndpoint instantiates a new printServiceEndpoint and sets the default values.
 func NewPrintServiceEndpoint()(*PrintServiceEndpoint) {

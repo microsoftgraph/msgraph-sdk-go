@@ -7,9 +7,9 @@ import (
 // GetReportFiltersResponse provides operations to call the getReportFilters method.
 type GetReportFiltersResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetReportFiltersResponse instantiates a new getReportFiltersResponse and sets the default values.
 func NewGetReportFiltersResponse()(*GetReportFiltersResponse) {

@@ -7,9 +7,9 @@ import (
 // GetCompliancePolicyNonComplianceReportResponse provides operations to call the getCompliancePolicyNonComplianceReport method.
 type GetCompliancePolicyNonComplianceReportResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetCompliancePolicyNonComplianceReportResponse instantiates a new getCompliancePolicyNonComplianceReportResponse and sets the default values.
 func NewGetCompliancePolicyNonComplianceReportResponse()(*GetCompliancePolicyNonComplianceReportResponse) {

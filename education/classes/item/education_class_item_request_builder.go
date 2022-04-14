@@ -22,49 +22,49 @@ import (
 // EducationClassItemRequestBuilder provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
 type EducationClassItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // EducationClassItemRequestBuilderDeleteOptions options for Delete
 type EducationClassItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EducationClassItemRequestBuilderGetOptions options for Get
 type EducationClassItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *EducationClassItemRequestBuilderGetQueryParameters;
+    QueryParameters *EducationClassItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EducationClassItemRequestBuilderGetQueryParameters get classes from education
 type EducationClassItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // EducationClassItemRequestBuilderPatchOptions options for Patch
 type EducationClassItemRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AssignmentCategories the assignmentCategories property
 func (m *EducationClassItemRequestBuilder) AssignmentCategories()(*i36a91c3cde131d885c49a7e8a965b98d9d4f243edffd1923ccbe125acab7c772.AssignmentCategoriesRequestBuilder) {
@@ -77,7 +77,7 @@ func (m *EducationClassItemRequestBuilder) AssignmentCategoriesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationCategory_id"] = id
+        urlTplParams["educationCategory%2Did"] = id
     }
     return if858bdb47736adc9d1c8aed87379aeb8381ad64cf3e897cb2b7ea10ddc52a603.NewEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -96,7 +96,7 @@ func (m *EducationClassItemRequestBuilder) AssignmentsById(id string)(*i82d47a38
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationAssignment_id"] = id
+        urlTplParams["educationAssignment%2Did"] = id
     }
     return i82d47a387f18ab75fa126f3d2f3697a6ff95af00e66e3604a99d5edbdd0dd896.NewEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -108,7 +108,7 @@ func (m *EducationClassItemRequestBuilder) AssignmentSettings()(*i67f45afa87d432
 func NewEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationClassItemRequestBuilder) {
     m := &EducationClassItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/classes/{educationClass_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -225,7 +225,7 @@ func (m *EducationClassItemRequestBuilder) MembersById(id string)(*if939da9a656c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationUser_id"] = id
+        urlTplParams["educationUser%2Did"] = id
     }
     return if939da9a656c288d5389707e55630431aca3554eaf235d0e14f5f7fad55c64a8.NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -256,7 +256,7 @@ func (m *EducationClassItemRequestBuilder) SchoolsById(id string)(*ie06837c5d8d4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationSchool_id"] = id
+        urlTplParams["educationSchool%2Did"] = id
     }
     return ie06837c5d8d48e6cef6cb6b1bdc8fbe725c1239ff35cadfb51756b614376e50f.NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -271,7 +271,7 @@ func (m *EducationClassItemRequestBuilder) TeachersById(id string)(*i30f20691b86
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationUser_id"] = id
+        urlTplParams["educationUser%2Did"] = id
     }
     return i30f20691b867314f7df4463e5a84cdcabc27d3c5ee04690a1c94de7c4661e568.NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

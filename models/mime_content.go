@@ -7,11 +7,11 @@ import (
 // MimeContent contains properties for a generic mime content.
 type MimeContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates the content mime type.
-    type_escaped *string;
+    type_escaped *string
     // The byte array that contains the actual content.
-    value []byte;
+    value []byte
 }
 // NewMimeContent instantiates a new mimeContent and sets the default values.
 func NewMimeContent()(*MimeContent) {

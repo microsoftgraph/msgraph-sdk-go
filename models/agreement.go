@@ -8,21 +8,21 @@ import (
 type Agreement struct {
     Entity
     // Read-only. Information about acceptances of this agreement.
-    acceptances []AgreementAcceptanceable;
+    acceptances []AgreementAcceptanceable
     // Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
-    displayName *string;
+    displayName *string
     // Default PDF linked to this agreement.
-    file AgreementFileable;
+    file AgreementFileable
     // PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
-    files []AgreementFileLocalizationable;
+    files []AgreementFileLocalizationable
     // Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
-    isPerDeviceAcceptanceRequired *bool;
+    isPerDeviceAcceptanceRequired *bool
     // Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
-    isViewingBeforeAcceptanceRequired *bool;
+    isViewingBeforeAcceptanceRequired *bool
     // Expiration schedule and frequency of agreement for all users. Supports $filter (eq).
-    termsExpiration TermsExpirationable;
+    termsExpiration TermsExpirationable
     // The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
-    userReacceptRequiredFrequency *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    userReacceptRequiredFrequency *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewAgreement instantiates a new agreement and sets the default values.
 func NewAgreement()(*Agreement) {

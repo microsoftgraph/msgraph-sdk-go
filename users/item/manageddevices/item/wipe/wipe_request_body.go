@@ -7,15 +7,15 @@ import (
 // WipeRequestBody provides operations to call the wipe method.
 type WipeRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The keepEnrollmentData property
-    keepEnrollmentData *bool;
+    keepEnrollmentData *bool
     // The keepUserData property
-    keepUserData *bool;
+    keepUserData *bool
     // The macOsUnlockCode property
-    macOsUnlockCode *string;
+    macOsUnlockCode *string
     // The persistEsimDataPlan property
-    persistEsimDataPlan *bool;
+    persistEsimDataPlan *bool
 }
 // NewWipeRequestBody instantiates a new wipeRequestBody and sets the default values.
 func NewWipeRequestBody()(*WipeRequestBody) {

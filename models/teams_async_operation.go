@@ -9,21 +9,21 @@ import (
 type TeamsAsyncOperation struct {
     Entity
     // Number of times the operation was attempted before being marked successful or failed.
-    attemptsCount *int32;
+    attemptsCount *int32
     // Time when the operation was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Any error that causes the async operation to fail.
-    error OperationErrorable;
+    error OperationErrorable
     // Time when the async operation was last updated.
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Denotes which type of operation is being described.
-    operationType *TeamsAsyncOperationType;
+    operationType *TeamsAsyncOperationType
     // Operation status.
-    status *TeamsAsyncOperationStatus;
+    status *TeamsAsyncOperationStatus
     // The ID of the object that's created or modified as result of this async operation, typically a team.
-    targetResourceId *string;
+    targetResourceId *string
     // The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
-    targetResourceLocation *string;
+    targetResourceLocation *string
 }
 // NewTeamsAsyncOperation instantiates a new teamsAsyncOperation and sets the default values.
 func NewTeamsAsyncOperation()(*TeamsAsyncOperation) {

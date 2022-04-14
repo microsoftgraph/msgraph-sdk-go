@@ -9,37 +9,37 @@ import (
 type ProvisioningObjectSummary struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Unique ID of this change in this cycle.
-    changeId *string;
+    changeId *string
     // Unique ID per job iteration.
-    cycleId *string;
+    cycleId *string
     // Indicates how long this provisioning action took to finish. Measured in milliseconds.
-    durationInMilliseconds *int32;
+    durationInMilliseconds *int32
     // Details of who initiated this provisioning.
-    initiatedBy Initiatorable;
+    initiatedBy Initiatorable
     // The unique ID for the whole provisioning job.
-    jobId *string;
+    jobId *string
     // Details of each property that was modified in this provisioning action on this object.
-    modifiedProperties []ModifiedPropertyable;
+    modifiedProperties []ModifiedPropertyable
     // Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
-    provisioningAction *ProvisioningAction;
+    provisioningAction *ProvisioningAction
     // Details of provisioning status.
-    provisioningStatusInfo ProvisioningStatusInfoable;
+    provisioningStatusInfo ProvisioningStatusInfoable
     // Details of each step in provisioning.
-    provisioningSteps []ProvisioningStepable;
+    provisioningSteps []ProvisioningStepable
     // Represents the service principal used for provisioning.
-    servicePrincipal ProvisioningServicePrincipalable;
+    servicePrincipal ProvisioningServicePrincipalable
     // Details of source object being provisioned.
-    sourceIdentity ProvisionedIdentityable;
+    sourceIdentity ProvisionedIdentityable
     // Details of source system of the object being provisioned.
-    sourceSystem ProvisioningSystemable;
+    sourceSystem ProvisioningSystemable
     // Details of target object being provisioned.
-    targetIdentity ProvisionedIdentityable;
+    targetIdentity ProvisionedIdentityable
     // Details of target system of the object being provisioned.
-    targetSystem ProvisioningSystemable;
+    targetSystem ProvisioningSystemable
     // Unique Azure AD tenant ID.
-    tenantId *string;
+    tenantId *string
 }
 // NewProvisioningObjectSummary instantiates a new provisioningObjectSummary and sets the default values.
 func NewProvisioningObjectSummary()(*ProvisioningObjectSummary) {

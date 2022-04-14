@@ -7,11 +7,11 @@ import (
 // Image 
 type Image struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Optional. Height of the image, in pixels. Read-only.
-    height *int32;
+    height *int32
     // Optional. Width of the image, in pixels. Read-only.
-    width *int32;
+    width *int32
 }
 // NewImage instantiates a new image and sets the default values.
 func NewImage()(*Image) {

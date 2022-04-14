@@ -13,46 +13,46 @@ import (
 // IdentityProtectionRequestBuilder provides operations to manage the identityProtectionRoot singleton.
 type IdentityProtectionRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // IdentityProtectionRequestBuilderGetOptions options for Get
 type IdentityProtectionRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *IdentityProtectionRequestBuilderGetQueryParameters;
+    QueryParameters *IdentityProtectionRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // IdentityProtectionRequestBuilderGetQueryParameters get identityProtection
 type IdentityProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // IdentityProtectionRequestBuilderPatchOptions options for Patch
 type IdentityProtectionRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProtectionRootable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProtectionRootable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewIdentityProtectionRequestBuilderInternal instantiates a new IdentityProtectionRequestBuilder and sets the default values.
 func NewIdentityProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityProtectionRequestBuilder) {
     m := &IdentityProtectionRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityProtection{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityProtection{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -148,7 +148,7 @@ func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i919d7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["riskDetection_id"] = id
+        urlTplParams["riskDetection%2Did"] = id
     }
     return i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.NewRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -163,7 +163,7 @@ func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i4fd606188
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["riskyUser_id"] = id
+        urlTplParams["riskyUser%2Did"] = id
     }
     return i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0.NewRiskyUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

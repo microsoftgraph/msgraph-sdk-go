@@ -8,7 +8,7 @@ import (
 type WorkbookFilter struct {
     Entity
     // The currently applied filter on the given column. Read-only.
-    criteria WorkbookFilterCriteriaable;
+    criteria WorkbookFilterCriteriaable
 }
 // NewWorkbookFilter instantiates a new workbookFilter and sets the default values.
 func NewWorkbookFilter()(*WorkbookFilter) {

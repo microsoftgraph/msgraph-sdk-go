@@ -9,31 +9,31 @@ import (
 type AgreementAcceptance struct {
     Entity
     // The identifier of the agreement file accepted by the user.
-    agreementFileId *string;
+    agreementFileId *string
     // The identifier of the agreement.
-    agreementId *string;
+    agreementId *string
     // The display name of the device used for accepting the agreement.
-    deviceDisplayName *string;
+    deviceDisplayName *string
     // The unique identifier of the device used for accepting the agreement.
-    deviceId *string;
+    deviceId *string
     // The operating system used to accept the agreement.
-    deviceOSType *string;
+    deviceOSType *string
     // The operating system version of the device used to accept the agreement.
-    deviceOSVersion *string;
+    deviceOSVersion *string
     // The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
-    state *AgreementAcceptanceState;
+    state *AgreementAcceptanceState
     // Display name of the user when the acceptance was recorded.
-    userDisplayName *string;
+    userDisplayName *string
     // Email of the user when the acceptance was recorded.
-    userEmail *string;
+    userEmail *string
     // The identifier of the user who accepted the agreement.
-    userId *string;
+    userId *string
     // UPN of the user when the acceptance was recorded.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewAgreementAcceptance instantiates a new agreementAcceptance and sets the default values.
 func NewAgreementAcceptance()(*AgreementAcceptance) {

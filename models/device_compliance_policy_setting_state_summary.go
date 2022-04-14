@@ -8,27 +8,27 @@ import (
 type DeviceCompliancePolicySettingStateSummary struct {
     Entity
     // Number of compliant devices
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // Number of conflict devices
-    conflictDeviceCount *int32;
+    conflictDeviceCount *int32
     // Not yet documented
-    deviceComplianceSettingStates []DeviceComplianceSettingStateable;
+    deviceComplianceSettingStates []DeviceComplianceSettingStateable
     // Number of error devices
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // Number of NonCompliant devices
-    nonCompliantDeviceCount *int32;
+    nonCompliantDeviceCount *int32
     // Number of not applicable devices
-    notApplicableDeviceCount *int32;
+    notApplicableDeviceCount *int32
     // Setting platform. Possible values are: android, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, all.
-    platformType *PolicyPlatformType;
+    platformType *PolicyPlatformType
     // Number of remediated devices
-    remediatedDeviceCount *int32;
+    remediatedDeviceCount *int32
     // The setting class name and property name.
-    setting *string;
+    setting *string
     // Name of the setting.
-    settingName *string;
+    settingName *string
     // Number of unknown devices
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
 }
 // NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {

@@ -7,9 +7,9 @@ import (
 // CancelMediaProcessingRequestBody provides operations to call the cancelMediaProcessing method.
 type CancelMediaProcessingRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The clientContext property
-    clientContext *string;
+    clientContext *string
 }
 // NewCancelMediaProcessingRequestBody instantiates a new cancelMediaProcessingRequestBody and sets the default values.
 func NewCancelMediaProcessingRequestBody()(*CancelMediaProcessingRequestBody) {

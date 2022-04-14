@@ -7,19 +7,19 @@ import (
 // UpdateWindowsDeviceAccountActionParameter 
 type UpdateWindowsDeviceAccountActionParameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Not yet documented
-    calendarSyncEnabled *bool;
+    calendarSyncEnabled *bool
     // Not yet documented
-    deviceAccount WindowsDeviceAccountable;
+    deviceAccount WindowsDeviceAccountable
     // Not yet documented
-    deviceAccountEmail *string;
+    deviceAccountEmail *string
     // Not yet documented
-    exchangeServer *string;
+    exchangeServer *string
     // Not yet documented
-    passwordRotationEnabled *bool;
+    passwordRotationEnabled *bool
     // Not yet documented
-    sessionInitiationProtocalAddress *string;
+    sessionInitiationProtocalAddress *string
 }
 // NewUpdateWindowsDeviceAccountActionParameter instantiates a new updateWindowsDeviceAccountActionParameter and sets the default values.
 func NewUpdateWindowsDeviceAccountActionParameter()(*UpdateWindowsDeviceAccountActionParameter) {

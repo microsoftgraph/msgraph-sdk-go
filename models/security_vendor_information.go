@@ -7,15 +7,15 @@ import (
 // SecurityVendorInformation 
 type SecurityVendorInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-    provider *string;
+    provider *string
     // Version of the provider or subprovider, if it exists, that generated the alert. Required
-    providerVersion *string;
+    providerVersion *string
     // Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-    subProvider *string;
+    subProvider *string
     // Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
-    vendor_escaped *string;
+    vendor_escaped *string
 }
 // NewSecurityVendorInformation instantiates a new securityVendorInformation and sets the default values.
 func NewSecurityVendorInformation()(*SecurityVendorInformation) {

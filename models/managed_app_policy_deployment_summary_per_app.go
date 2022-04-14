@@ -7,11 +7,11 @@ import (
 // ManagedAppPolicyDeploymentSummaryPerApp represents policy deployment summary per app.
 type ManagedAppPolicyDeploymentSummaryPerApp struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Number of users the policy is applied.
-    configurationAppliedUserCount *int32;
+    configurationAppliedUserCount *int32
     // Deployment of an app.
-    mobileAppIdentifier MobileAppIdentifierable;
+    mobileAppIdentifier MobileAppIdentifierable
 }
 // NewManagedAppPolicyDeploymentSummaryPerApp instantiates a new managedAppPolicyDeploymentSummaryPerApp and sets the default values.
 func NewManagedAppPolicyDeploymentSummaryPerApp()(*ManagedAppPolicyDeploymentSummaryPerApp) {

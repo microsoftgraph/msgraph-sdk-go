@@ -8,7 +8,7 @@ import (
 type AuthenticationMethodConfiguration struct {
     Entity
     // The state of the policy. Possible values are: enabled, disabled.
-    state *AuthenticationMethodState;
+    state *AuthenticationMethodState
 }
 // NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {

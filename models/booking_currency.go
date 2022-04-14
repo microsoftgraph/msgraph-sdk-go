@@ -8,7 +8,7 @@ import (
 type BookingCurrency struct {
     Entity
     // The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
-    symbol *string;
+    symbol *string
 }
 // NewBookingCurrency instantiates a new bookingCurrency and sets the default values.
 func NewBookingCurrency()(*BookingCurrency) {

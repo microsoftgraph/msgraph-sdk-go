@@ -7,17 +7,17 @@ import (
 // ProvisioningErrorInfo 
 type ProvisioningErrorInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Additional details in case of error.
-    additionalDetails *string;
+    additionalDetails *string
     // Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
-    errorCategory *ProvisioningStatusErrorCategory;
+    errorCategory *ProvisioningStatusErrorCategory
     // Unique error code if any occurred. Learn more
-    errorCode *string;
+    errorCode *string
     // Summarizes the status and describes why the status happened.
-    reason *string;
+    reason *string
     // Provides the resolution for the corresponding error.
-    recommendedAction *string;
+    recommendedAction *string
 }
 // NewProvisioningErrorInfo instantiates a new provisioningErrorInfo and sets the default values.
 func NewProvisioningErrorInfo()(*ProvisioningErrorInfo) {

@@ -8,7 +8,7 @@ import (
 type EnrollmentConfigurationAssignment struct {
     Entity
     // Represents an assignment to managed devices in the tenant
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewEnrollmentConfigurationAssignment instantiates a new enrollmentConfigurationAssignment and sets the default values.
 func NewEnrollmentConfigurationAssignment()(*EnrollmentConfigurationAssignment) {

@@ -7,13 +7,13 @@ import (
 // ShiftAvailability 
 type ShiftAvailability struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies the pattern for recurrence
-    recurrence PatternedRecurrenceable;
+    recurrence PatternedRecurrenceable
     // The time slot(s) preferred by the user.
-    timeSlots []TimeRangeable;
+    timeSlots []TimeRangeable
     // Specifies the time zone for the indicated time.
-    timeZone *string;
+    timeZone *string
 }
 // NewShiftAvailability instantiates a new shiftAvailability and sets the default values.
 func NewShiftAvailability()(*ShiftAvailability) {

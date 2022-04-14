@@ -8,13 +8,13 @@ import (
 // TentativelyAcceptRequestBody provides operations to call the tentativelyAccept method.
 type TentativelyAcceptRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The Comment property
-    comment *string;
+    comment *string
     // The ProposedNewTime property
-    proposedNewTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeSlotable;
+    proposedNewTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeSlotable
     // The SendResponse property
-    sendResponse *bool;
+    sendResponse *bool
 }
 // NewTentativelyAcceptRequestBody instantiates a new tentativelyAcceptRequestBody and sets the default values.
 func NewTentativelyAcceptRequestBody()(*TentativelyAcceptRequestBody) {

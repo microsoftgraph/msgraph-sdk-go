@@ -8,11 +8,11 @@ import (
 type PrintDocument struct {
     Entity
     // The document's content (MIME) type. Read-only.
-    contentType *string;
+    contentType *string
     // The document's name. Read-only.
-    displayName *string;
+    displayName *string
     // The document's size in bytes. Read-only.
-    size *int64;
+    size *int64
 }
 // NewPrintDocument instantiates a new printDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {

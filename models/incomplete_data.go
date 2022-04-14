@@ -8,11 +8,11 @@ import (
 // IncompleteData 
 type IncompleteData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The service does not have source data before the specified time.
-    missingDataBeforeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    missingDataBeforeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Some data was not recorded due to excessive activity.
-    wasThrottled *bool;
+    wasThrottled *bool
 }
 // NewIncompleteData instantiates a new incompleteData and sets the default values.
 func NewIncompleteData()(*IncompleteData) {

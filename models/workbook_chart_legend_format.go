@@ -8,9 +8,9 @@ import (
 type WorkbookChartLegendFormat struct {
     Entity
     // Represents the fill format of an object, which includes background formating information. Read-only.
-    fill WorkbookChartFillable;
+    fill WorkbookChartFillable
     // Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.
-    font WorkbookChartFontable;
+    font WorkbookChartFontable
 }
 // NewWorkbookChartLegendFormat instantiates a new workbookChartLegendFormat and sets the default values.
 func NewWorkbookChartLegendFormat()(*WorkbookChartLegendFormat) {

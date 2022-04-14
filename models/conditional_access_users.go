@@ -7,19 +7,19 @@ import (
 // ConditionalAccessUsers 
 type ConditionalAccessUsers struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Group IDs excluded from scope of policy.
-    excludeGroups []string;
+    excludeGroups []string
     // Role IDs excluded from scope of policy.
-    excludeRoles []string;
+    excludeRoles []string
     // User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-    excludeUsers []string;
+    excludeUsers []string
     // Group IDs in scope of policy unless explicitly excluded, or All.
-    includeGroups []string;
+    includeGroups []string
     // Role IDs in scope of policy unless explicitly excluded, or All.
-    includeRoles []string;
+    includeRoles []string
     // User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
-    includeUsers []string;
+    includeUsers []string
 }
 // NewConditionalAccessUsers instantiates a new conditionalAccessUsers and sets the default values.
 func NewConditionalAccessUsers()(*ConditionalAccessUsers) {

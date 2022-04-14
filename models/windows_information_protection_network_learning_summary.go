@@ -8,9 +8,9 @@ import (
 type WindowsInformationProtectionNetworkLearningSummary struct {
     Entity
     // Device Count
-    deviceCount *int32;
+    deviceCount *int32
     // Website url
-    url *string;
+    url *string
 }
 // NewWindowsInformationProtectionNetworkLearningSummary instantiates a new windowsInformationProtectionNetworkLearningSummary and sets the default values.
 func NewWindowsInformationProtectionNetworkLearningSummary()(*WindowsInformationProtectionNetworkLearningSummary) {

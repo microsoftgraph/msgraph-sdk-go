@@ -8,9 +8,9 @@ import (
 // PendingContentUpdate 
 type PendingContentUpdate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Date and time the pending binary operation was queued in UTC time. Read-only.
-    queuedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    queuedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewPendingContentUpdate instantiates a new pendingContentUpdate and sets the default values.
 func NewPendingContentUpdate()(*PendingContentUpdate) {

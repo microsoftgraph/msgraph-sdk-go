@@ -7,9 +7,9 @@ import (
 // PrintSettings 
 type PrintSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
-    documentConversionEnabled *bool;
+    documentConversionEnabled *bool
 }
 // NewPrintSettings instantiates a new printSettings and sets the default values.
 func NewPrintSettings()(*PrintSettings) {

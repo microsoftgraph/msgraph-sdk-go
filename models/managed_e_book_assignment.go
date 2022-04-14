@@ -8,9 +8,9 @@ import (
 type ManagedEBookAssignment struct {
     Entity
     // The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
-    installIntent *InstallIntent;
+    installIntent *InstallIntent
     // The assignment target for eBook.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewManagedEBookAssignment instantiates a new managedEBookAssignment and sets the default values.
 func NewManagedEBookAssignment()(*ManagedEBookAssignment) {

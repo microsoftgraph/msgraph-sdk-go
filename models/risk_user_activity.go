@@ -7,11 +7,11 @@ import (
 // RiskUserActivity 
 type RiskUserActivity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-    detail *RiskDetail;
+    detail *RiskDetail
     // The type of risk event detected.
-    riskEventTypes []string;
+    riskEventTypes []string
 }
 // NewRiskUserActivity instantiates a new riskUserActivity and sets the default values.
 func NewRiskUserActivity()(*RiskUserActivity) {

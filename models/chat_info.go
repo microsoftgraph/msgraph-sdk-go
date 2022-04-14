@@ -7,13 +7,13 @@ import (
 // ChatInfo 
 type ChatInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The unique identifier of a message in a Microsoft Teams channel.
-    messageId *string;
+    messageId *string
     // The ID of the reply message.
-    replyChainMessageId *string;
+    replyChainMessageId *string
     // The unique identifier for a thread in Microsoft Teams.
-    threadId *string;
+    threadId *string
 }
 // NewChatInfo instantiates a new chatInfo and sets the default values.
 func NewChatInfo()(*ChatInfo) {

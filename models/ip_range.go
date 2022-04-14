@@ -7,7 +7,7 @@ import (
 // IpRange 
 type IpRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewIpRange instantiates a new ipRange and sets the default values.
 func NewIpRange()(*IpRange) {

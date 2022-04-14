@@ -70,49 +70,49 @@ import (
 // GroupItemRequestBuilder provides operations to manage the collection of group entities.
 type GroupItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // GroupItemRequestBuilderDeleteOptions options for Delete
 type GroupItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // GroupItemRequestBuilderGetOptions options for Get
 type GroupItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *GroupItemRequestBuilderGetQueryParameters;
+    QueryParameters *GroupItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // GroupItemRequestBuilderGetQueryParameters get entity from groups by key
 type GroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // GroupItemRequestBuilderPatchOptions options for Patch
 type GroupItemRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AcceptedSenders the acceptedSenders property
 func (m *GroupItemRequestBuilder) AcceptedSenders()(*ia4d9b5e6814f0473a8235d1fcd1b0fba509840c5da363927bf12356141119b6b.AcceptedSendersRequestBuilder) {
@@ -125,7 +125,7 @@ func (m *GroupItemRequestBuilder) AcceptedSendersById(id string)(*i30d47231dcdfa
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i30d47231dcdfa73edc9d7c0ac96860d5844d03578cacae32cb6f6360f16895f0.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *GroupItemRequestBuilder) AppRoleAssignmentsById(id string)(*i1e824fbe5d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["appRoleAssignment_id"] = id
+        urlTplParams["appRoleAssignment%2Did"] = id
     }
     return i1e824fbe5d664ceca8d12a43b50d7d7f49e8713e55656dd7def6bfe0df703627.NewAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *GroupItemRequestBuilder) CalendarViewById(id string)(*ic5de56bd9caa7009
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["event_id"] = id
+        urlTplParams["event%2Did"] = id
     }
     return ic5de56bd9caa7009872a581bda3b0f3ff9e503e4dc9abc07f06521e46c0472ca.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -187,7 +187,7 @@ func (m *GroupItemRequestBuilder) CheckMemberObjects()(*i1e3ffd7e01fa4360b91692e
 func NewGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupItemRequestBuilder) {
     m := &GroupItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -213,7 +213,7 @@ func (m *GroupItemRequestBuilder) ConversationsById(id string)(*ice1094b94e12d64
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["conversation_id"] = id
+        urlTplParams["conversation%2Did"] = id
     }
     return ice1094b94e12d6484840204756982a958170f3c66b8047a166bf39c98320acc7.NewConversationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -307,7 +307,7 @@ func (m *GroupItemRequestBuilder) DrivesById(id string)(*idb19301160b95d9f7c5034
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["drive_id"] = id
+        urlTplParams["drive%2Did"] = id
     }
     return idb19301160b95d9f7c5034e26232a3aa92b814911db3a14c43386bd9461c541c.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -322,7 +322,7 @@ func (m *GroupItemRequestBuilder) EventsById(id string)(*i08f2a0edeb243e9cfaba69
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["event_id"] = id
+        urlTplParams["event%2Did"] = id
     }
     return i08f2a0edeb243e9cfaba694782db5c61d4ff36791058cfde168e2c9472490a8c.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -337,7 +337,7 @@ func (m *GroupItemRequestBuilder) ExtensionsById(id string)(*iddc33c1a3316b503c0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["extension_id"] = id
+        urlTplParams["extension%2Did"] = id
     }
     return iddc33c1a3316b503c055f30aa899183e7ab6a6cd014c230bef3258364feeaf7c.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -376,7 +376,7 @@ func (m *GroupItemRequestBuilder) GroupLifecyclePoliciesById(id string)(*i441b30
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["groupLifecyclePolicy_id"] = id
+        urlTplParams["groupLifecyclePolicy%2Did"] = id
     }
     return i441b3030f4e4a48458260f546a7160d5d7f7a51cc67d40ce8267b45eb54c0876.NewGroupLifecyclePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -391,7 +391,7 @@ func (m *GroupItemRequestBuilder) MemberOfById(id string)(*ibc3803313680b4296788
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ibc3803313680b4296788dc4af919c8430717ae78a03fbf76f8908847c1f9eb59.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -406,7 +406,7 @@ func (m *GroupItemRequestBuilder) MembersById(id string)(*ic9cb6ba6fd36468c16f70
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ic9cb6ba6fd36468c16f70878cae690f90c84787d5ad2afa6bd37e816ae785a33.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -421,7 +421,7 @@ func (m *GroupItemRequestBuilder) MembersWithLicenseErrorsById(id string)(*i8100
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i8100ae206785a6248cbaf0c346ceb824c6ceb5d96e653e64029f6e2af9b06478.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -440,7 +440,7 @@ func (m *GroupItemRequestBuilder) OwnersById(id string)(*i2d2215ed73fcbca88b8f88
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i2d2215ed73fcbca88b8f88969d7acd610a9c72b3ee0a78abf1772fe8334332c0.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -471,7 +471,7 @@ func (m *GroupItemRequestBuilder) PermissionGrantsById(id string)(*i0364eb181a6c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["resourceSpecificPermissionGrant_id"] = id
+        urlTplParams["resourceSpecificPermissionGrant%2Did"] = id
     }
     return i0364eb181a6c8e59a0dd7c8a13994a8d5b1df88f847ca1217f353d68aec7fb0c.NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -490,7 +490,7 @@ func (m *GroupItemRequestBuilder) PhotosById(id string)(*id632a3f6a3ad5fcc8b0136
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["profilePhoto_id"] = id
+        urlTplParams["profilePhoto%2Did"] = id
     }
     return id632a3f6a3ad5fcc8b0136d664e83c04052ada39b1f8b92e7bccf7c61fb49848.NewProfilePhotoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -509,7 +509,7 @@ func (m *GroupItemRequestBuilder) RejectedSendersById(id string)(*iba4d555c5ad6c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return iba4d555c5ad6c13e50560d26d60e73b7999102b19ba226f2062bddbff2778430.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -540,7 +540,7 @@ func (m *GroupItemRequestBuilder) SettingsById(id string)(*i5fa4399b660c3896f8bf
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["groupSetting_id"] = id
+        urlTplParams["groupSetting%2Did"] = id
     }
     return i5fa4399b660c3896f8bf2358c9bf08baa829b8c8768c9f069b443692c2c9b1f3.NewGroupSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -555,7 +555,7 @@ func (m *GroupItemRequestBuilder) SitesById(id string)(*iaa0f64945b540b5b0648f03
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["site_id"] = id
+        urlTplParams["site%2Did"] = id
     }
     return iaa0f64945b540b5b0648f03319b424981c2ea47cf4a0113ee649e5f593a07253.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -578,7 +578,7 @@ func (m *GroupItemRequestBuilder) ThreadsById(id string)(*ia4ceaf879d63c036e207b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["conversationThread_id"] = id
+        urlTplParams["conversationThread%2Did"] = id
     }
     return ia4ceaf879d63c036e207bfe238095ee32d3e41faae41517d448ab206c335f0cb.NewConversationThreadItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -593,7 +593,7 @@ func (m *GroupItemRequestBuilder) TransitiveMemberOfById(id string)(*ifc7f30e8b4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ifc7f30e8b4611dcc448f04e37469a00b2a58beb77bdd13eae1e82293cb31fabc.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -608,7 +608,7 @@ func (m *GroupItemRequestBuilder) TransitiveMembersById(id string)(*i9410603bdeb
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i9410603bdeb28ed0b5bf67092100cee5acdb554f09aedb339519f6b7f32cdcd2.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

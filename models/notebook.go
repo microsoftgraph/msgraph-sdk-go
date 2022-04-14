@@ -8,21 +8,21 @@ import (
 type Notebook struct {
     OnenoteEntityHierarchyModel
     // Indicates whether this is the user's default notebook. Read-only.
-    isDefault *bool;
+    isDefault *bool
     // Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
-    isShared *bool;
+    isShared *bool
     // Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
-    links NotebookLinksable;
+    links NotebookLinksable
     // The section groups in the notebook. Read-only. Nullable.
-    sectionGroups []SectionGroupable;
+    sectionGroups []SectionGroupable
     // The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
-    sectionGroupsUrl *string;
+    sectionGroupsUrl *string
     // The sections in the notebook. Read-only. Nullable.
-    sections []OnenoteSectionable;
+    sections []OnenoteSectionable
     // The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
-    sectionsUrl *string;
+    sectionsUrl *string
     // Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
-    userRole *OnenoteUserRole;
+    userRole *OnenoteUserRole
 }
 // NewNotebook instantiates a new notebook and sets the default values.
 func NewNotebook()(*Notebook) {

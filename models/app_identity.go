@@ -7,15 +7,15 @@ import (
 // AppIdentity 
 type AppIdentity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Refers to the Unique GUID representing Application Id in the Azure Active Directory.
-    appId *string;
+    appId *string
     // Refers to the Application Name displayed in the Azure Portal.
-    displayName *string;
+    displayName *string
     // Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
-    servicePrincipalId *string;
+    servicePrincipalId *string
     // Refers to the Service Principal Name is the Application name in the tenant.
-    servicePrincipalName *string;
+    servicePrincipalName *string
 }
 // NewAppIdentity instantiates a new appIdentity and sets the default values.
 func NewAppIdentity()(*AppIdentity) {

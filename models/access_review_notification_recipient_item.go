@@ -7,11 +7,11 @@ import (
 // AccessReviewNotificationRecipientItem 
 type AccessReviewNotificationRecipientItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Determines the recipient of the notification email.
-    notificationRecipientScope AccessReviewNotificationRecipientScopeable;
+    notificationRecipientScope AccessReviewNotificationRecipientScopeable
     // Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
-    notificationTemplateType *string;
+    notificationTemplateType *string
 }
 // NewAccessReviewNotificationRecipientItem instantiates a new accessReviewNotificationRecipientItem and sets the default values.
 func NewAccessReviewNotificationRecipientItem()(*AccessReviewNotificationRecipientItem) {

@@ -8,13 +8,13 @@ import (
 // AttendanceInterval 
 type AttendanceInterval struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
-    durationInSeconds *int32;
+    durationInSeconds *int32
     // The time the attendee joined in UTC.
-    joinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    joinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The time the attendee left in UTC.
-    leaveDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    leaveDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewAttendanceInterval instantiates a new attendanceInterval and sets the default values.
 func NewAttendanceInterval()(*AttendanceInterval) {

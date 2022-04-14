@@ -7,19 +7,19 @@ import (
 // UnifiedRoleManagementPolicyRuleTarget 
 type UnifiedRoleManagementPolicyRuleTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
-    caller *string;
+    caller *string
     // The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
-    enforcedSettings []string;
+    enforcedSettings []string
     // The list of settings which can be inherited by child scopes. Use All for all settings.
-    inheritableSettings []string;
+    inheritableSettings []string
     // The level for the policy rule target. Allowed values are: Eligibility, Assignment.
-    level *string;
+    level *string
     // The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-    operations []UnifiedRoleManagementPolicyRuleTargetOperations;
+    operations []UnifiedRoleManagementPolicyRuleTargetOperations
     // The targetObjects property
-    targetObjects []DirectoryObjectable;
+    targetObjects []DirectoryObjectable
 }
 // NewUnifiedRoleManagementPolicyRuleTarget instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.
 func NewUnifiedRoleManagementPolicyRuleTarget()(*UnifiedRoleManagementPolicyRuleTarget) {

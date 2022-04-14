@@ -8,15 +8,15 @@ import (
 // RecentNotebook 
 type RecentNotebook struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The name of the notebook.
-    displayName *string;
+    displayName *string
     // The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    lastAccessedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastAccessedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote client, if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
-    links RecentNotebookLinksable;
+    links RecentNotebookLinksable
     // The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
-    sourceService *OnenoteSourceService;
+    sourceService *OnenoteSourceService
 }
 // NewRecentNotebook instantiates a new recentNotebook and sets the default values.
 func NewRecentNotebook()(*RecentNotebook) {

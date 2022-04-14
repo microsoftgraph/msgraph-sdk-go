@@ -7,9 +7,9 @@ import (
 // CheckMemberObjectsRequestBody provides operations to call the checkMemberObjects method.
 type CheckMemberObjectsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ids property
-    ids []string;
+    ids []string
 }
 // NewCheckMemberObjectsRequestBody instantiates a new checkMemberObjectsRequestBody and sets the default values.
 func NewCheckMemberObjectsRequestBody()(*CheckMemberObjectsRequestBody) {

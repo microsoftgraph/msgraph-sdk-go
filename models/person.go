@@ -8,43 +8,43 @@ import (
 type Person struct {
     Entity
     // The person's birthday.
-    birthday *string;
+    birthday *string
     // The name of the person's company.
-    companyName *string;
+    companyName *string
     // The person's department.
-    department *string;
+    department *string
     // The person's display name.
-    displayName *string;
+    displayName *string
     // The person's given name.
-    givenName *string;
+    givenName *string
     // The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-    imAddress *string;
+    imAddress *string
     // true if the user has flagged this person as a favorite.
-    isFavorite *bool;
+    isFavorite *bool
     // The person's job title.
-    jobTitle *string;
+    jobTitle *string
     // The location of the person's office.
-    officeLocation *string;
+    officeLocation *string
     // Free-form notes that the user has taken about this person.
-    personNotes *string;
+    personNotes *string
     // The type of person.
-    personType PersonTypeable;
+    personType PersonTypeable
     // The person's phone numbers.
-    phones []Phoneable;
+    phones []Phoneable
     // The person's addresses.
-    postalAddresses []Locationable;
+    postalAddresses []Locationable
     // The person's profession.
-    profession *string;
+    profession *string
     // The person's email addresses.
-    scoredEmailAddresses []ScoredEmailAddressable;
+    scoredEmailAddresses []ScoredEmailAddressable
     // The person's surname.
-    surname *string;
+    surname *string
     // The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
-    userPrincipalName *string;
+    userPrincipalName *string
     // The person's websites.
-    websites []Websiteable;
+    websites []Websiteable
     // The phonetic Japanese name of the person's company.
-    yomiCompany *string;
+    yomiCompany *string
 }
 // NewPerson instantiates a new person and sets the default values.
 func NewPerson()(*Person) {

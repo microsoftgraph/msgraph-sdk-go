@@ -9,53 +9,53 @@ import (
 type Device struct {
     DirectoryObject
     // true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
-    accountEnabled *bool;
+    accountEnabled *bool
     // For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-    alternativeSecurityIds []AlternativeSecurityIdable;
+    alternativeSecurityIds []AlternativeSecurityIdable
     // The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
-    approximateLastSignInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    approximateLastSignInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    complianceExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    complianceExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
-    deviceId *string;
+    deviceId *string
     // For internal use only. Set to null.
-    deviceMetadata *string;
+    deviceMetadata *string
     // For internal use only.
-    deviceVersion *int32;
+    deviceVersion *int32
     // The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-    displayName *string;
+    displayName *string
     // The collection of open extensions defined for the device. Read-only. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-    isCompliant *bool;
+    isCompliant *bool
     // true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-    isManaged *bool;
+    isManaged *bool
     // Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
-    mdmAppId *string;
+    mdmAppId *string
     // Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-    memberOf []DirectoryObjectable;
+    memberOf []DirectoryObjectable
     // The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-    onPremisesSyncEnabled *bool;
+    onPremisesSyncEnabled *bool
     // The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
-    operatingSystem *string;
+    operatingSystem *string
     // The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
-    operatingSystemVersion *string;
+    operatingSystemVersion *string
     // For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
-    physicalIds []string;
+    physicalIds []string
     // The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
-    profileType *string;
+    profileType *string
     // The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
-    registeredOwners []DirectoryObjectable;
+    registeredOwners []DirectoryObjectable
     // Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-    registeredUsers []DirectoryObjectable;
+    registeredUsers []DirectoryObjectable
     // List of labels applied to the device by the system.
-    systemLabels []string;
+    systemLabels []string
     // Groups that the device is a member of. This operation is transitive. Supports $expand.
-    transitiveMemberOf []DirectoryObjectable;
+    transitiveMemberOf []DirectoryObjectable
     // Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
-    trustType *string;
+    trustType *string
 }
 // NewDevice instantiates a new device and sets the default values.
 func NewDevice()(*Device) {

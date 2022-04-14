@@ -7,11 +7,11 @@ import (
 // PreviewRequestBody provides operations to call the preview method.
 type PreviewRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The page property
-    page *string;
+    page *string
     // The zoom property
-    zoom *float64;
+    zoom *float64
 }
 // NewPreviewRequestBody instantiates a new previewRequestBody and sets the default values.
 func NewPreviewRequestBody()(*PreviewRequestBody) {

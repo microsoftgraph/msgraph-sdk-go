@@ -8,23 +8,23 @@ import (
 type SettingStateDeviceSummary struct {
     Entity
     // Device Compliant count for the setting
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // Device conflict error count for the setting
-    conflictDeviceCount *int32;
+    conflictDeviceCount *int32
     // Device error count for the setting
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // Name of the InstancePath for the setting
-    instancePath *string;
+    instancePath *string
     // Device NonCompliant count for the setting
-    nonCompliantDeviceCount *int32;
+    nonCompliantDeviceCount *int32
     // Device Not Applicable count for the setting
-    notApplicableDeviceCount *int32;
+    notApplicableDeviceCount *int32
     // Device Compliant count for the setting
-    remediatedDeviceCount *int32;
+    remediatedDeviceCount *int32
     // Name of the setting
-    settingName *string;
+    settingName *string
     // Device Unkown count for the setting
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
 }
 // NewSettingStateDeviceSummary instantiates a new settingStateDeviceSummary and sets the default values.
 func NewSettingStateDeviceSummary()(*SettingStateDeviceSummary) {

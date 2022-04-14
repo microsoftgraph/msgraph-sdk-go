@@ -8,13 +8,13 @@ import (
 // ShareRequestBody provides operations to call the share method.
 type ShareRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The endDateTime property
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The notifyTeam property
-    notifyTeam *bool;
+    notifyTeam *bool
     // The startDateTime property
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewShareRequestBody instantiates a new shareRequestBody and sets the default values.
 func NewShareRequestBody()(*ShareRequestBody) {

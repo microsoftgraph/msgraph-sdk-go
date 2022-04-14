@@ -8,9 +8,9 @@ import (
 type DirectoryRoleTemplate struct {
     DirectoryObject
     // The description to set for the directory role. Read-only.
-    description *string;
+    description *string
     // The display name to set for the directory role. Read-only.
-    displayName *string;
+    displayName *string
 }
 // NewDirectoryRoleTemplate instantiates a new directoryRoleTemplate and sets the default values.
 func NewDirectoryRoleTemplate()(*DirectoryRoleTemplate) {

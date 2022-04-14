@@ -8,33 +8,33 @@ import (
 type EducationSchool struct {
     EducationOrganization
     // Address of the school.
-    address PhysicalAddressable;
+    address PhysicalAddressable
     // The underlying administrativeUnit for this school.
-    administrativeUnit AdministrativeUnitable;
+    administrativeUnit AdministrativeUnitable
     // Classes taught at the school. Nullable.
-    classes []EducationClassable;
+    classes []EducationClassable
     // Entity who created the school.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // ID of school in syncing system.
-    externalId *string;
+    externalId *string
     // ID of principal in syncing system.
-    externalPrincipalId *string;
+    externalPrincipalId *string
     // The fax property
-    fax *string;
+    fax *string
     // Highest grade taught.
-    highestGrade *string;
+    highestGrade *string
     // Lowest grade taught.
-    lowestGrade *string;
+    lowestGrade *string
     // Phone number of school.
-    phone *string;
+    phone *string
     // Email address of the principal.
-    principalEmail *string;
+    principalEmail *string
     // Name of the principal.
-    principalName *string;
+    principalName *string
     // School Number.
-    schoolNumber *string;
+    schoolNumber *string
     // Users in the school. Nullable.
-    users []EducationUserable;
+    users []EducationUserable
 }
 // NewEducationSchool instantiates a new educationSchool and sets the default values.
 func NewEducationSchool()(*EducationSchool) {

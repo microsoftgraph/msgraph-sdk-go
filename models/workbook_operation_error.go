@@ -7,13 +7,13 @@ import (
 // WorkbookOperationError 
 type WorkbookOperationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The error code.
-    code *string;
+    code *string
     // The innerError property
-    innerError WorkbookOperationErrorable;
+    innerError WorkbookOperationErrorable
     // The error message.
-    message *string;
+    message *string
 }
 // NewWorkbookOperationError instantiates a new workbookOperationError and sets the default values.
 func NewWorkbookOperationError()(*WorkbookOperationError) {

@@ -9,13 +9,13 @@ import (
 type MeetingAttendanceReport struct {
     Entity
     // List of attendance records of an attendance report. Read-only.
-    attendanceRecords []AttendanceRecordable;
+    attendanceRecords []AttendanceRecordable
     // UTC time when the meeting ended. Read-only.
-    meetingEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    meetingEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // UTC time when the meeting started. Read-only.
-    meetingStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    meetingStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Total number of participants. Read-only.
-    totalParticipantCount *int32;
+    totalParticipantCount *int32
 }
 // NewMeetingAttendanceReport instantiates a new meetingAttendanceReport and sets the default values.
 func NewMeetingAttendanceReport()(*MeetingAttendanceReport) {

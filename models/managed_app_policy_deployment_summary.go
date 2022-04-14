@@ -9,15 +9,15 @@ import (
 type ManagedAppPolicyDeploymentSummary struct {
     Entity
     // Not yet documented
-    configurationDeployedUserCount *int32;
+    configurationDeployedUserCount *int32
     // Not yet documented
-    configurationDeploymentSummaryPerApp []ManagedAppPolicyDeploymentSummaryPerAppable;
+    configurationDeploymentSummaryPerApp []ManagedAppPolicyDeploymentSummaryPerAppable
     // Not yet documented
-    displayName *string;
+    displayName *string
     // Not yet documented
-    lastRefreshTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Version of the entity.
-    version *string;
+    version *string
 }
 // NewManagedAppPolicyDeploymentSummary instantiates a new managedAppPolicyDeploymentSummary and sets the default values.
 func NewManagedAppPolicyDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {

@@ -7,11 +7,11 @@ import (
 // AverageComparativeScore 
 type AverageComparativeScore struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Average score within specified basis.
-    averageScore *float64;
+    averageScore *float64
     // Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
-    basis *string;
+    basis *string
 }
 // NewAverageComparativeScore instantiates a new averageComparativeScore and sets the default values.
 func NewAverageComparativeScore()(*AverageComparativeScore) {

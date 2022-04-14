@@ -7,27 +7,27 @@ import (
 // AccessReviewScheduleSettings 
 type AccessReviewScheduleSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-    applyActions []AccessReviewApplyActionable;
+    applyActions []AccessReviewApplyActionable
     // Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
-    autoApplyDecisionsEnabled *bool;
+    autoApplyDecisionsEnabled *bool
     // Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
-    defaultDecision *string;
+    defaultDecision *string
     // Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
-    defaultDecisionEnabled *bool;
+    defaultDecisionEnabled *bool
     // Duration of each recurrence of review (accessReviewInstance) in number of days.
-    instanceDurationInDays *int32;
+    instanceDurationInDays *int32
     // Indicates whether reviewers are required to provide justification with their decision. Default value is false.
-    justificationRequiredOnApproval *bool;
+    justificationRequiredOnApproval *bool
     // Indicates whether emails are enabled or disabled. Default value is false.
-    mailNotificationsEnabled *bool;
+    mailNotificationsEnabled *bool
     // Indicates whether decision recommendations are enabled or disabled.
-    recommendationsEnabled *bool;
+    recommendationsEnabled *bool
     // Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
-    recurrence PatternedRecurrenceable;
+    recurrence PatternedRecurrenceable
     // Indicates whether reminders are enabled or disabled. Default value is false.
-    reminderNotificationsEnabled *bool;
+    reminderNotificationsEnabled *bool
 }
 // NewAccessReviewScheduleSettings instantiates a new accessReviewScheduleSettings and sets the default values.
 func NewAccessReviewScheduleSettings()(*AccessReviewScheduleSettings) {

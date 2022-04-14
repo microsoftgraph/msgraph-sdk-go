@@ -7,11 +7,11 @@ import (
 // PrintTaskStatus 
 type PrintTaskStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A human-readable description of the current processing state of the printTask.
-    description *string;
+    description *string
     // The current processing state of the printTask. Valid values are described in the following table.
-    state *PrintTaskProcessingState;
+    state *PrintTaskProcessingState
 }
 // NewPrintTaskStatus instantiates a new printTaskStatus and sets the default values.
 func NewPrintTaskStatus()(*PrintTaskStatus) {

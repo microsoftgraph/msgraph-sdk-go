@@ -7,13 +7,13 @@ import (
 // ResultInfo 
 type ResultInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The result code.
-    code *int32;
+    code *int32
     // The message.
-    message *string;
+    message *string
     // The result sub-code.
-    subcode *int32;
+    subcode *int32
 }
 // NewResultInfo instantiates a new resultInfo and sets the default values.
 func NewResultInfo()(*ResultInfo) {

@@ -7,9 +7,9 @@ import (
 // GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse provides operations to call the getOmaSettingPlainTextValue method.
 type GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value *string;
+    value *string
 }
 // NewGetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse instantiates a new getOmaSettingPlainTextValueWithSecretReferenceValueIdResponse and sets the default values.
 func NewGetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse()(*GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse) {

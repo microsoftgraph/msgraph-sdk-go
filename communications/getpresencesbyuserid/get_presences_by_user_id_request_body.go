@@ -7,9 +7,9 @@ import (
 // GetPresencesByUserIdRequestBody provides operations to call the getPresencesByUserId method.
 type GetPresencesByUserIdRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ids property
-    ids []string;
+    ids []string
 }
 // NewGetPresencesByUserIdRequestBody instantiates a new getPresencesByUserIdRequestBody and sets the default values.
 func NewGetPresencesByUserIdRequestBody()(*GetPresencesByUserIdRequestBody) {

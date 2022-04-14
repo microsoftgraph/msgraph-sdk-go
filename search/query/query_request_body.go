@@ -8,9 +8,9 @@ import (
 // QueryRequestBody provides operations to call the query method.
 type QueryRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The requests property
-    requests []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SearchRequestable;
+    requests []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SearchRequestable
 }
 // NewQueryRequestBody instantiates a new queryRequestBody and sets the default values.
 func NewQueryRequestBody()(*QueryRequestBody) {

@@ -7,9 +7,9 @@ import (
 // Package_escaped 
 type Package_escaped struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewPackage_escaped instantiates a new package_escaped and sets the default values.
 func NewPackage_escaped()(*Package_escaped) {

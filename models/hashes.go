@@ -7,15 +7,15 @@ import (
 // Hashes 
 type Hashes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The CRC32 value of the file in little endian (if available). Read-only.
-    crc32Hash *string;
+    crc32Hash *string
     // A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
-    quickXorHash *string;
+    quickXorHash *string
     // SHA1 hash for the contents of the file (if available). Read-only.
-    sha1Hash *string;
+    sha1Hash *string
     // SHA256 hash for the contents of the file (if available). Read-only.
-    sha256Hash *string;
+    sha256Hash *string
 }
 // NewHashes instantiates a new hashes and sets the default values.
 func NewHashes()(*Hashes) {

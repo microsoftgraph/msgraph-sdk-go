@@ -9,13 +9,13 @@ import (
 type OnenoteEntityHierarchyModel struct {
     OnenoteEntitySchemaObjectModel
     // Identity of the user, device, and application which created the item. Read-only.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The name of the notebook.
-    displayName *string;
+    displayName *string
     // Identity of the user, device, and application which created the item. Read-only.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewOnenoteEntityHierarchyModel instantiates a new onenoteEntityHierarchyModel and sets the default values.
 func NewOnenoteEntityHierarchyModel()(*OnenoteEntityHierarchyModel) {

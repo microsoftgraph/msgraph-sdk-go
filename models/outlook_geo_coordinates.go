@@ -7,17 +7,17 @@ import (
 // OutlookGeoCoordinates 
 type OutlookGeoCoordinates struct {
     // The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-    accuracy *float64;
+    accuracy *float64
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The altitude of the location.
-    altitude *float64;
+    altitude *float64
     // The accuracy of the altitude.
-    altitudeAccuracy *float64;
+    altitudeAccuracy *float64
     // The latitude of the location.
-    latitude *float64;
+    latitude *float64
     // The longitude of the location.
-    longitude *float64;
+    longitude *float64
 }
 // NewOutlookGeoCoordinates instantiates a new outlookGeoCoordinates and sets the default values.
 func NewOutlookGeoCoordinates()(*OutlookGeoCoordinates) {

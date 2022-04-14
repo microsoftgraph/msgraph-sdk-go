@@ -7,11 +7,11 @@ import (
 // MobileAppAssignmentCollectionResponse 
 type MobileAppAssignmentCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []MobileAppAssignmentable;
+    value []MobileAppAssignmentable
 }
 // NewMobileAppAssignmentCollectionResponse instantiates a new MobileAppAssignmentCollectionResponse and sets the default values.
 func NewMobileAppAssignmentCollectionResponse()(*MobileAppAssignmentCollectionResponse) {
@@ -41,7 +41,7 @@ func (m *MobileAppAssignmentCollectionResponse) GetFieldDeserializers()(map[stri
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.SetOdatanextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *MobileAppAssignmentCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *MobileAppAssignmentCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *MobileAppAssignmentCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *MobileAppAssignmentCollectionResponse) GetValue()([]MobileAppAssignment
 // Serialize serializes information the current object
 func (m *MobileAppAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *MobileAppAssignmentCollectionResponse) SetAdditionalData(value map[stri
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *MobileAppAssignmentCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *MobileAppAssignmentCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

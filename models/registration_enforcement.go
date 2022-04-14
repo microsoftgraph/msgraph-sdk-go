@@ -7,9 +7,9 @@ import (
 // RegistrationEnforcement 
 type RegistrationEnforcement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Run campaigns to remind users to set up targeted authentication methods.
-    authenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaignable;
+    authenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaignable
 }
 // NewRegistrationEnforcement instantiates a new registrationEnforcement and sets the default values.
 func NewRegistrationEnforcement()(*RegistrationEnforcement) {

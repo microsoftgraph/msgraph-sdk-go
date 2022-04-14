@@ -7,9 +7,9 @@ import (
 // GetMemberGroupsRequestBody provides operations to call the getMemberGroups method.
 type GetMemberGroupsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The securityEnabledOnly property
-    securityEnabledOnly *bool;
+    securityEnabledOnly *bool
 }
 // NewGetMemberGroupsRequestBody instantiates a new getMemberGroupsRequestBody and sets the default values.
 func NewGetMemberGroupsRequestBody()(*GetMemberGroupsRequestBody) {

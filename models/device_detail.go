@@ -7,21 +7,21 @@ import (
 // DeviceDetail 
 type DeviceDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates the browser information of the used for signing in.
-    browser *string;
+    browser *string
     // Refers to the UniqueID of the device used for signing in.
-    deviceId *string;
+    deviceId *string
     // Refers to the name of the device used for signing in.
-    displayName *string;
+    displayName *string
     // Indicates whether the device is compliant.
-    isCompliant *bool;
+    isCompliant *bool
     // Indicates whether the device is managed.
-    isManaged *bool;
+    isManaged *bool
     // Indicates the operating system name and version used for signing in.
-    operatingSystem *string;
+    operatingSystem *string
     // Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
-    trustType *string;
+    trustType *string
 }
 // NewDeviceDetail instantiates a new deviceDetail and sets the default values.
 func NewDeviceDetail()(*DeviceDetail) {

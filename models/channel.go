@@ -9,27 +9,27 @@ import (
 type Channel struct {
     Entity
     // Read only. Timestamp at which the channel was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional textual description for the channel.
-    description *string;
+    description *string
     // Channel name as it will appear to the user in Microsoft Teams.
-    displayName *string;
+    displayName *string
     // The email address for sending messages to the channel. Read-only.
-    email *string;
+    email *string
     // Metadata for the location where the channel's files are stored.
-    filesFolder DriveItemable;
+    filesFolder DriveItemable
     // Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
-    isFavoriteByDefault *bool;
+    isFavoriteByDefault *bool
     // A collection of membership records associated with the channel.
-    members []ConversationMemberable;
+    members []ConversationMemberable
     // The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
-    membershipType *ChannelMembershipType;
+    membershipType *ChannelMembershipType
     // A collection of all the messages in the channel. A navigation property. Nullable.
-    messages []ChatMessageable;
+    messages []ChatMessageable
     // A collection of all the tabs in the channel. A navigation property.
-    tabs []TeamsTabable;
+    tabs []TeamsTabable
     // A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-    webUrl *string;
+    webUrl *string
 }
 // NewChannel instantiates a new channel and sets the default values.
 func NewChannel()(*Channel) {

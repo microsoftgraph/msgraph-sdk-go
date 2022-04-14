@@ -8,11 +8,11 @@ import (
 type GroupSettingTemplate struct {
     DirectoryObject
     // Description of the template.
-    description *string;
+    description *string
     // Display name of the template. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
-    displayName *string;
+    displayName *string
     // Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
-    values []SettingTemplateValueable;
+    values []SettingTemplateValueable
 }
 // NewGroupSettingTemplate instantiates a new groupSettingTemplate and sets the default values.
 func NewGroupSettingTemplate()(*GroupSettingTemplate) {

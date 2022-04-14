@@ -7,9 +7,9 @@ import (
 // UnfavoriteRequestBody provides operations to call the unfavorite method.
 type UnfavoriteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The messageIds property
-    messageIds []string;
+    messageIds []string
 }
 // NewUnfavoriteRequestBody instantiates a new unfavoriteRequestBody and sets the default values.
 func NewUnfavoriteRequestBody()(*UnfavoriteRequestBody) {

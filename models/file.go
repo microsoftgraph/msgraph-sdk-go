@@ -7,13 +7,13 @@ import (
 // File 
 type File struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Hashes of the file's binary content, if available. Read-only.
-    hashes Hashesable;
+    hashes Hashesable
     // The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
-    mimeType *string;
+    mimeType *string
     // The processingMetadata property
-    processingMetadata *bool;
+    processingMetadata *bool
 }
 // NewFile instantiates a new file and sets the default values.
 func NewFile()(*File) {

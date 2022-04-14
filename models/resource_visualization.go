@@ -7,23 +7,23 @@ import (
 // ResourceVisualization 
 type ResourceVisualization struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
-    containerDisplayName *string;
+    containerDisplayName *string
     // Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
-    containerType *string;
+    containerType *string
     // A path leading to the folder in which the item is stored.
-    containerWebUrl *string;
+    containerWebUrl *string
     // The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
-    mediaType *string;
+    mediaType *string
     // A URL leading to the preview image for the item.
-    previewImageUrl *string;
+    previewImageUrl *string
     // A preview text for the item.
-    previewText *string;
+    previewText *string
     // The item's title text.
-    title *string;
+    title *string
     // The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewResourceVisualization instantiates a new resourceVisualization and sets the default values.
 func NewResourceVisualization()(*ResourceVisualization) {

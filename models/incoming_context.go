@@ -7,15 +7,15 @@ import (
 // IncomingContext 
 type IncomingContext struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ID of the participant that is under observation. Read-only.
-    observedParticipantId *string;
+    observedParticipantId *string
     // The identity that the call is happening on behalf of.
-    onBehalfOf IdentitySetable;
+    onBehalfOf IdentitySetable
     // The ID of the participant that triggered the incoming call. Read-only.
-    sourceParticipantId *string;
+    sourceParticipantId *string
     // The identity that transferred the call.
-    transferor IdentitySetable;
+    transferor IdentitySetable
 }
 // NewIncomingContext instantiates a new incomingContext and sets the default values.
 func NewIncomingContext()(*IncomingContext) {

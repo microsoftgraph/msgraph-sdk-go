@@ -7,15 +7,15 @@ import (
 // ImageInfo 
 type ImageInfo struct {
     // Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
-    addImageQuery *bool;
+    addImageQuery *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Optional; alt-text accessible content for the image
-    alternateText *string;
+    alternateText *string
     // The alternativeText property
-    alternativeText *string;
+    alternativeText *string
     // Optional; URI that points to an icon which represents the application used to generate the activity
-    iconUrl *string;
+    iconUrl *string
 }
 // NewImageInfo instantiates a new imageInfo and sets the default values.
 func NewImageInfo()(*ImageInfo) {

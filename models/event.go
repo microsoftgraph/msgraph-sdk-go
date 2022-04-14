@@ -9,89 +9,89 @@ import (
 type Event struct {
     OutlookItem
     // true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
-    allowNewTimeProposals *bool;
+    allowNewTimeProposals *bool
     // The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
-    attachments []Attachmentable;
+    attachments []Attachmentable
     // The collection of attendees for the event.
-    attendees []Attendeeable;
+    attendees []Attendeeable
     // The body of the message associated with the event. It can be in HTML or text format.
-    body ItemBodyable;
+    body ItemBodyable
     // The preview of the message associated with the event. It is in text format.
-    bodyPreview *string;
+    bodyPreview *string
     // The calendar that contains the event. Navigation property. Read-only.
-    calendar Calendarable;
+    calendar Calendarable
     // The date, time, and time zone that the event ends. By default, the end time is in UTC.
-    end DateTimeTimeZoneable;
+    end DateTimeTimeZoneable
     // The collection of open extensions defined for the event. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // Set to true if the event has attachments.
-    hasAttachments *bool;
+    hasAttachments *bool
     // When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
-    hideAttendees *bool;
+    hideAttendees *bool
     // A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
-    iCalUId *string;
+    iCalUId *string
     // The importance property
-    importance *Importance;
+    importance *Importance
     // The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
-    instances []Eventable;
+    instances []Eventable
     // The isAllDay property
-    isAllDay *bool;
+    isAllDay *bool
     // The isCancelled property
-    isCancelled *bool;
+    isCancelled *bool
     // The isDraft property
-    isDraft *bool;
+    isDraft *bool
     // The isOnlineMeeting property
-    isOnlineMeeting *bool;
+    isOnlineMeeting *bool
     // The isOrganizer property
-    isOrganizer *bool;
+    isOrganizer *bool
     // The isReminderOn property
-    isReminderOn *bool;
+    isReminderOn *bool
     // The location property
-    location Locationable;
+    location Locationable
     // The locations property
-    locations []Locationable;
+    locations []Locationable
     // The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // The onlineMeeting property
-    onlineMeeting OnlineMeetingInfoable;
+    onlineMeeting OnlineMeetingInfoable
     // The onlineMeetingProvider property
-    onlineMeetingProvider *OnlineMeetingProviderType;
+    onlineMeetingProvider *OnlineMeetingProviderType
     // The onlineMeetingUrl property
-    onlineMeetingUrl *string;
+    onlineMeetingUrl *string
     // The organizer property
-    organizer Recipientable;
+    organizer Recipientable
     // The originalEndTimeZone property
-    originalEndTimeZone *string;
+    originalEndTimeZone *string
     // The originalStart property
-    originalStart *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    originalStart *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The originalStartTimeZone property
-    originalStartTimeZone *string;
+    originalStartTimeZone *string
     // The recurrence property
-    recurrence PatternedRecurrenceable;
+    recurrence PatternedRecurrenceable
     // The reminderMinutesBeforeStart property
-    reminderMinutesBeforeStart *int32;
+    reminderMinutesBeforeStart *int32
     // The responseRequested property
-    responseRequested *bool;
+    responseRequested *bool
     // The responseStatus property
-    responseStatus ResponseStatusable;
+    responseStatus ResponseStatusable
     // The sensitivity property
-    sensitivity *Sensitivity;
+    sensitivity *Sensitivity
     // The seriesMasterId property
-    seriesMasterId *string;
+    seriesMasterId *string
     // The showAs property
-    showAs *FreeBusyStatus;
+    showAs *FreeBusyStatus
     // The collection of single-value extended properties defined for the event. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The start property
-    start DateTimeTimeZoneable;
+    start DateTimeTimeZoneable
     // The subject property
-    subject *string;
+    subject *string
     // The transactionId property
-    transactionId *string;
+    transactionId *string
     // The type property
-    type_escaped *EventType;
+    type_escaped *EventType
     // The webLink property
-    webLink *string;
+    webLink *string
 }
 // NewEvent instantiates a new event and sets the default values.
 func NewEvent()(*Event) {

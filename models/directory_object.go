@@ -9,7 +9,7 @@ import (
 type DirectoryObject struct {
     Entity
     // Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewDirectoryObject instantiates a new directoryObject and sets the default values.
 func NewDirectoryObject()(*DirectoryObject) {

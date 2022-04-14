@@ -9,41 +9,41 @@ import (
 type DeviceAppManagement struct {
     Entity
     // Android managed app policies.
-    androidManagedAppProtections []AndroidManagedAppProtectionable;
+    androidManagedAppProtections []AndroidManagedAppProtectionable
     // Default managed app policies.
-    defaultManagedAppProtections []DefaultManagedAppProtectionable;
+    defaultManagedAppProtections []DefaultManagedAppProtectionable
     // iOS managed app policies.
-    iosManagedAppProtections []IosManagedAppProtectionable;
+    iosManagedAppProtections []IosManagedAppProtectionable
     // Whether the account is enabled for syncing applications from the Microsoft Store for Business.
-    isEnabledForMicrosoftStoreForBusiness *bool;
+    isEnabledForMicrosoftStoreForBusiness *bool
     // Managed app policies.
-    managedAppPolicies []ManagedAppPolicyable;
+    managedAppPolicies []ManagedAppPolicyable
     // The managed app registrations.
-    managedAppRegistrations []ManagedAppRegistrationable;
+    managedAppRegistrations []ManagedAppRegistrationable
     // The managed app statuses.
-    managedAppStatuses []ManagedAppStatusable;
+    managedAppStatuses []ManagedAppStatusable
     // The Managed eBook.
-    managedEBooks []ManagedEBookable;
+    managedEBooks []ManagedEBookable
     // Windows information protection for apps running on devices which are MDM enrolled.
-    mdmWindowsInformationProtectionPolicies []MdmWindowsInformationProtectionPolicyable;
+    mdmWindowsInformationProtectionPolicies []MdmWindowsInformationProtectionPolicyable
     // The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
-    microsoftStoreForBusinessLanguage *string;
+    microsoftStoreForBusinessLanguage *string
     // The last time an application sync from the Microsoft Store for Business was completed.
-    microsoftStoreForBusinessLastCompletedApplicationSyncTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    microsoftStoreForBusinessLastCompletedApplicationSyncTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The last time the apps from the Microsoft Store for Business were synced successfully for the account.
-    microsoftStoreForBusinessLastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    microsoftStoreForBusinessLastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The mobile app categories.
-    mobileAppCategories []MobileAppCategoryable;
+    mobileAppCategories []MobileAppCategoryable
     // The Managed Device Mobile Application Configurations.
-    mobileAppConfigurations []ManagedDeviceMobileAppConfigurationable;
+    mobileAppConfigurations []ManagedDeviceMobileAppConfigurationable
     // The mobile apps.
-    mobileApps []MobileAppable;
+    mobileApps []MobileAppable
     // Targeted managed app configurations.
-    targetedManagedAppConfigurations []TargetedManagedAppConfigurationable;
+    targetedManagedAppConfigurations []TargetedManagedAppConfigurationable
     // List of Vpp tokens for this organization.
-    vppTokens []VppTokenable;
+    vppTokens []VppTokenable
     // Windows information protection for apps running on devices which are not MDM enrolled.
-    windowsInformationProtectionPolicies []WindowsInformationProtectionPolicyable;
+    windowsInformationProtectionPolicies []WindowsInformationProtectionPolicyable
 }
 // NewDeviceAppManagement instantiates a new deviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {

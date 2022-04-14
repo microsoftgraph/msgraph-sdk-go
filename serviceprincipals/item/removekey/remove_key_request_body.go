@@ -7,11 +7,11 @@ import (
 // RemoveKeyRequestBody provides operations to call the removeKey method.
 type RemoveKeyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The keyId property
-    keyId *string;
+    keyId *string
     // The proof property
-    proof *string;
+    proof *string
 }
 // NewRemoveKeyRequestBody instantiates a new removeKeyRequestBody and sets the default values.
 func NewRemoveKeyRequestBody()(*RemoveKeyRequestBody) {

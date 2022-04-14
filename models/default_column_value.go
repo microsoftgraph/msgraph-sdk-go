@@ -7,11 +7,11 @@ import (
 // DefaultColumnValue 
 type DefaultColumnValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The formula used to compute the default value for this column.
-    formula *string;
+    formula *string
     // The direct value to use as the default value for this column.
-    value *string;
+    value *string
 }
 // NewDefaultColumnValue instantiates a new defaultColumnValue and sets the default values.
 func NewDefaultColumnValue()(*DefaultColumnValue) {

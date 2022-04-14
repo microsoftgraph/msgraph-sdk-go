@@ -7,11 +7,11 @@ import (
 // TodoTaskCollectionResponse 
 type TodoTaskCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []TodoTaskable;
+    value []TodoTaskable
 }
 // NewTodoTaskCollectionResponse instantiates a new TodoTaskCollectionResponse and sets the default values.
 func NewTodoTaskCollectionResponse()(*TodoTaskCollectionResponse) {
@@ -41,7 +41,7 @@ func (m *TodoTaskCollectionResponse) GetFieldDeserializers()(map[string]func(i87
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.SetOdatanextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *TodoTaskCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *TodoTaskCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *TodoTaskCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *TodoTaskCollectionResponse) GetValue()([]TodoTaskable) {
 // Serialize serializes information the current object
 func (m *TodoTaskCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *TodoTaskCollectionResponse) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *TodoTaskCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *TodoTaskCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

@@ -8,69 +8,69 @@ import (
 type ColumnDefinition struct {
     Entity
     // This column stores boolean values.
-    boolean BooleanColumnable;
+    boolean BooleanColumnable
     // This column's data is calculated based on other columns.
-    calculated CalculatedColumnable;
+    calculated CalculatedColumnable
     // This column stores data from a list of choices.
-    choice ChoiceColumnable;
+    choice ChoiceColumnable
     // For site columns, the name of the group this column belongs to. Helps organize related columns.
-    columnGroup *string;
+    columnGroup *string
     // This column stores content approval status.
-    contentApprovalStatus ContentApprovalStatusColumnable;
+    contentApprovalStatus ContentApprovalStatusColumnable
     // This column stores currency values.
-    currency CurrencyColumnable;
+    currency CurrencyColumnable
     // This column stores DateTime values.
-    dateTime DateTimeColumnable;
+    dateTime DateTimeColumnable
     // The default value for this column.
-    defaultValue DefaultColumnValueable;
+    defaultValue DefaultColumnValueable
     // The user-facing description of the column.
-    description *string;
+    description *string
     // The user-facing name of the column.
-    displayName *string;
+    displayName *string
     // If true, no two list items may have the same value for this column.
-    enforceUniqueValues *bool;
+    enforceUniqueValues *bool
     // This column stores a geolocation.
-    geolocation GeolocationColumnable;
+    geolocation GeolocationColumnable
     // Specifies whether the column is displayed in the user interface.
-    hidden *bool;
+    hidden *bool
     // This column stores hyperlink or picture values.
-    hyperlinkOrPicture HyperlinkOrPictureColumnable;
+    hyperlinkOrPicture HyperlinkOrPictureColumnable
     // Specifies whether the column values can be used for sorting and searching.
-    indexed *bool;
+    indexed *bool
     // Indicates whether this column can be deleted.
-    isDeletable *bool;
+    isDeletable *bool
     // Indicates whether values in the column can be reordered. Read-only.
-    isReorderable *bool;
+    isReorderable *bool
     // Specifies whether the column can be changed.
-    isSealed *bool;
+    isSealed *bool
     // This column's data is looked up from another source in the site.
-    lookup LookupColumnable;
+    lookup LookupColumnable
     // The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
-    name *string;
+    name *string
     // This column stores number values.
-    number NumberColumnable;
+    number NumberColumnable
     // This column stores Person or Group values.
-    personOrGroup PersonOrGroupColumnable;
+    personOrGroup PersonOrGroupColumnable
     // If 'true', changes to this column will be propagated to lists that implement the column.
-    propagateChanges *bool;
+    propagateChanges *bool
     // Specifies whether the column values can be modified.
-    readOnly *bool;
+    readOnly *bool
     // Specifies whether the column value isn't optional.
-    required *bool;
+    required *bool
     // The source column for the content type column.
-    sourceColumn ColumnDefinitionable;
+    sourceColumn ColumnDefinitionable
     // ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
-    sourceContentType ContentTypeInfoable;
+    sourceContentType ContentTypeInfoable
     // This column stores taxonomy terms.
-    term TermColumnable;
+    term TermColumnable
     // This column stores text values.
-    text TextColumnable;
+    text TextColumnable
     // This column stores thumbnail values.
-    thumbnail ThumbnailColumnable;
+    thumbnail ThumbnailColumnable
     // For site columns, the type of column. Read-only.
-    type_escaped *ColumnTypes;
+    type_escaped *ColumnTypes
     // This column stores validation formula and message for the column.
-    validation ColumnValidationable;
+    validation ColumnValidationable
 }
 // NewColumnDefinition instantiates a new columnDefinition and sets the default values.
 func NewColumnDefinition()(*ColumnDefinition) {

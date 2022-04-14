@@ -8,23 +8,23 @@ import (
 type List struct {
     BaseItem
     // The collection of field definitions for this list.
-    columns []ColumnDefinitionable;
+    columns []ColumnDefinitionable
     // The collection of content types present in this list.
-    contentTypes []ContentTypeable;
+    contentTypes []ContentTypeable
     // The displayable title of the list.
-    displayName *string;
+    displayName *string
     // Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
-    drive Driveable;
+    drive Driveable
     // All items contained in the list.
-    items []ListItemable;
+    items []ListItemable
     // Provides additional details about the list.
-    list ListInfoable;
+    list ListInfoable
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds SharepointIdsable;
+    sharepointIds SharepointIdsable
     // The set of subscriptions on the list.
-    subscriptions []Subscriptionable;
+    subscriptions []Subscriptionable
     // If present, indicates that this is a system-managed list. Read-only.
-    system SystemFacetable;
+    system SystemFacetable
 }
 // NewList instantiates a new list and sets the default values.
 func NewList()(*List) {

@@ -7,17 +7,17 @@ import (
 // RelatedContact 
 type RelatedContact struct {
     // Indicates whether the user has been consented to access student data.
-    accessConsent *bool;
+    accessConsent *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the contact. Required.
-    displayName *string;
+    displayName *string
     // Primary email address of the contact. Required.
-    emailAddress *string;
+    emailAddress *string
     // Mobile phone number of the contact.
-    mobilePhone *string;
+    mobilePhone *string
     // Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
-    relationship *ContactRelationship;
+    relationship *ContactRelationship
 }
 // NewRelatedContact instantiates a new relatedContact and sets the default values.
 func NewRelatedContact()(*RelatedContact) {

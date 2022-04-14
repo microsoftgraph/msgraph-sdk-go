@@ -9,11 +9,11 @@ import (
 type ExternalItem struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // An array of access control entries. Each entry specifies the access granted to a user or group. Required.
-    acl []Aclable;
+    acl []Aclable
     // A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
-    content ExternalItemContentable;
+    content ExternalItemContentable
     // A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
-    properties Propertiesable;
+    properties Propertiesable
 }
 // NewExternalItem instantiates a new externalItem and sets the default values.
 func NewExternalItem()(*ExternalItem) {

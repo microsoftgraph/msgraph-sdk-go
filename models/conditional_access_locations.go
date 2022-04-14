@@ -7,11 +7,11 @@ import (
 // ConditionalAccessLocations 
 type ConditionalAccessLocations struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Location IDs excluded from scope of policy.
-    excludeLocations []string;
+    excludeLocations []string
     // Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
-    includeLocations []string;
+    includeLocations []string
 }
 // NewConditionalAccessLocations instantiates a new conditionalAccessLocations and sets the default values.
 func NewConditionalAccessLocations()(*ConditionalAccessLocations) {

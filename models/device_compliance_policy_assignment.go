@@ -8,7 +8,7 @@ import (
 type DeviceCompliancePolicyAssignment struct {
     Entity
     // Target for the compliance policy assignment.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceCompliancePolicyAssignment instantiates a new deviceCompliancePolicyAssignment and sets the default values.
 func NewDeviceCompliancePolicyAssignment()(*DeviceCompliancePolicyAssignment) {

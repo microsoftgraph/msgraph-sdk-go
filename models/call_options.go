@@ -7,9 +7,9 @@ import (
 // CallOptions 
 type CallOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The hideBotAfterEscalation property
-    hideBotAfterEscalation *bool;
+    hideBotAfterEscalation *bool
 }
 // NewCallOptions instantiates a new callOptions and sets the default values.
 func NewCallOptions()(*CallOptions) {

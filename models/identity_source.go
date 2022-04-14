@@ -7,7 +7,7 @@ import (
 // IdentitySource 
 type IdentitySource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewIdentitySource instantiates a new identitySource and sets the default values.
 func NewIdentitySource()(*IdentitySource) {

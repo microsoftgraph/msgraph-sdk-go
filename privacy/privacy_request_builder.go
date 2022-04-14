@@ -11,46 +11,46 @@ import (
 // PrivacyRequestBuilder provides operations to manage the privacy singleton.
 type PrivacyRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // PrivacyRequestBuilderGetOptions options for Get
 type PrivacyRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *PrivacyRequestBuilderGetQueryParameters;
+    QueryParameters *PrivacyRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // PrivacyRequestBuilderGetQueryParameters get privacy
 type PrivacyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // PrivacyRequestBuilderPatchOptions options for Patch
 type PrivacyRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Privacyable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Privacyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewPrivacyRequestBuilderInternal instantiates a new PrivacyRequestBuilder and sets the default values.
 func NewPrivacyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivacyRequestBuilder) {
     m := &PrivacyRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/privacy{?select,expand}";
+    m.urlTemplate = "{+baseurl}/privacy{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -146,7 +146,7 @@ func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*ib411193b5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["subjectRightsRequest_id"] = id
+        urlTplParams["subjectRightsRequest%2Did"] = id
     }
     return ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.NewSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

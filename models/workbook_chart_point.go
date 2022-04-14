@@ -8,9 +8,9 @@ import (
 type WorkbookChartPoint struct {
     Entity
     // Encapsulates the format properties chart point. Read-only.
-    format WorkbookChartPointFormatable;
+    format WorkbookChartPointFormatable
     // Returns the value of a chart point. Read-only.
-    value Jsonable;
+    value Jsonable
 }
 // NewWorkbookChartPoint instantiates a new workbookChartPoint and sets the default values.
 func NewWorkbookChartPoint()(*WorkbookChartPoint) {

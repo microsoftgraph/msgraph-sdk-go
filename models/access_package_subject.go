@@ -8,19 +8,19 @@ import (
 type AccessPackageSubject struct {
     Entity
     // The connected organization of the subject. Read-only. Nullable.
-    connectedOrganization ConnectedOrganizationable;
+    connectedOrganization ConnectedOrganizationable
     // The display name of the subject.
-    displayName *string;
+    displayName *string
     // The email address of the subject.
-    email *string;
+    email *string
     // The object identifier of the subject. null if the subject is not yet a user in the tenant.
-    objectId *string;
+    objectId *string
     // A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
-    onPremisesSecurityIdentifier *string;
+    onPremisesSecurityIdentifier *string
     // The principal name, if known, of the subject.
-    principalName *string;
+    principalName *string
     // The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
-    subjectType *AccessPackageSubjectType;
+    subjectType *AccessPackageSubjectType
 }
 // NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {

@@ -9,13 +9,13 @@ import (
 type Relation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-    fromTerm Termable;
+    fromTerm Termable
     // The type of relation. Possible values are: pin, reuse.
-    relationship *RelationType;
+    relationship *RelationType
     // The [set] in which the relation is relevant.
-    set Setable;
+    set Setable
     // The to [term] of the relation. The term to which the relationship is defined.
-    toTerm Termable;
+    toTerm Termable
 }
 // NewRelation instantiates a new relation and sets the default values.
 func NewRelation()(*Relation) {

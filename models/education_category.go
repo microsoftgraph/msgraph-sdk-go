@@ -8,7 +8,7 @@ import (
 type EducationCategory struct {
     Entity
     // Unique identifier for the category.
-    displayName *string;
+    displayName *string
 }
 // NewEducationCategory instantiates a new educationCategory and sets the default values.
 func NewEducationCategory()(*EducationCategory) {

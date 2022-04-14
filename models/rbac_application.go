@@ -8,21 +8,21 @@ import (
 type RbacApplication struct {
     Entity
     // Resource to grant access to users or groups.
-    roleAssignments []UnifiedRoleAssignmentable;
+    roleAssignments []UnifiedRoleAssignmentable
     // The roleAssignmentScheduleInstances property
-    roleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstanceable;
+    roleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstanceable
     // The roleAssignmentScheduleRequests property
-    roleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequestable;
+    roleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequestable
     // The roleAssignmentSchedules property
-    roleAssignmentSchedules []UnifiedRoleAssignmentScheduleable;
+    roleAssignmentSchedules []UnifiedRoleAssignmentScheduleable
     // Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-    roleDefinitions []UnifiedRoleDefinitionable;
+    roleDefinitions []UnifiedRoleDefinitionable
     // The roleEligibilityScheduleInstances property
-    roleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstanceable;
+    roleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstanceable
     // The roleEligibilityScheduleRequests property
-    roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestable;
+    roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestable
     // The roleEligibilitySchedules property
-    roleEligibilitySchedules []UnifiedRoleEligibilityScheduleable;
+    roleEligibilitySchedules []UnifiedRoleEligibilityScheduleable
 }
 // NewRbacApplication instantiates a new rbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {

@@ -9,35 +9,35 @@ import (
 type MobileApp struct {
     Entity
     // The list of group assignments for this mobile app.
-    assignments []MobileAppAssignmentable;
+    assignments []MobileAppAssignmentable
     // The list of categories for this app.
-    categories []MobileAppCategoryable;
+    categories []MobileAppCategoryable
     // The date and time the app was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the app.
-    description *string;
+    description *string
     // The developer of the app.
-    developer *string;
+    developer *string
     // The admin provided or imported title of the app.
-    displayName *string;
+    displayName *string
     // The more information Url.
-    informationUrl *string;
+    informationUrl *string
     // The value indicating whether the app is marked as featured by the admin.
-    isFeatured *bool;
+    isFeatured *bool
     // The large icon, to be displayed in the app details and used for upload of the icon.
-    largeIcon MimeContentable;
+    largeIcon MimeContentable
     // The date and time the app was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Notes for the app.
-    notes *string;
+    notes *string
     // The owner of the app.
-    owner *string;
+    owner *string
     // The privacy statement Url.
-    privacyInformationUrl *string;
+    privacyInformationUrl *string
     // The publisher of the app.
-    publisher *string;
+    publisher *string
     // The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
-    publishingState *MobileAppPublishingState;
+    publishingState *MobileAppPublishingState
 }
 // NewMobileApp instantiates a new mobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {

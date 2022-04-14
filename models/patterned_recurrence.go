@@ -7,11 +7,11 @@ import (
 // PatternedRecurrence 
 type PatternedRecurrence struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
-    pattern RecurrencePatternable;
+    pattern RecurrencePatternable
     // The duration of an event.
-    range_escaped RecurrenceRangeable;
+    range_escaped RecurrenceRangeable
 }
 // NewPatternedRecurrence instantiates a new patternedRecurrence and sets the default values.
 func NewPatternedRecurrence()(*PatternedRecurrence) {

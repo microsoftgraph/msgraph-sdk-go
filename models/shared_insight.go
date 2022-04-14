@@ -8,17 +8,17 @@ import (
 type SharedInsight struct {
     Entity
     // Details about the shared item. Read only.
-    lastShared SharingDetailable;
+    lastShared SharingDetailable
     // The lastSharedMethod property
-    lastSharedMethod Entityable;
+    lastSharedMethod Entityable
     // Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
-    resource Entityable;
+    resource Entityable
     // Reference properties of the shared document, such as the url and type of the document. Read-only
-    resourceReference ResourceReferenceable;
+    resourceReference ResourceReferenceable
     // Properties that you can use to visualize the document in your experience. Read-only
-    resourceVisualization ResourceVisualizationable;
+    resourceVisualization ResourceVisualizationable
     // The sharingHistory property
-    sharingHistory []SharingDetailable;
+    sharingHistory []SharingDetailable
 }
 // NewSharedInsight instantiates a new sharedInsight and sets the default values.
 func NewSharedInsight()(*SharedInsight) {

@@ -8,37 +8,37 @@ import (
 type Site struct {
     BaseItem
     // Analytics about the view activities that took place in this site.
-    analytics ItemAnalyticsable;
+    analytics ItemAnalyticsable
     // The collection of column definitions reusable across lists under this site.
-    columns []ColumnDefinitionable;
+    columns []ColumnDefinitionable
     // The collection of content types defined for this site.
-    contentTypes []ContentTypeable;
+    contentTypes []ContentTypeable
     // The full title for the site. Read-only.
-    displayName *string;
+    displayName *string
     // The default drive (document library) for this site.
-    drive Driveable;
+    drive Driveable
     // The collection of drives (document libraries) under this site.
-    drives []Driveable;
+    drives []Driveable
     // The error property
-    error PublicErrorable;
+    error PublicErrorable
     // The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-    externalColumns []ColumnDefinitionable;
+    externalColumns []ColumnDefinitionable
     // Used to address any item contained in this site. This collection can't be enumerated.
-    items []BaseItemable;
+    items []BaseItemable
     // The collection of lists under this site.
-    lists []Listable;
+    lists []Listable
     // Calls the OneNote service for notebook related operations.
-    onenote Onenoteable;
+    onenote Onenoteable
     // The permissions associated with the site. Nullable.
-    permissions []Permissionable;
+    permissions []Permissionable
     // If present, indicates that this is the root site in the site collection. Read-only.
-    root Rootable;
+    root Rootable
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds SharepointIdsable;
+    sharepointIds SharepointIdsable
     // Provides details about the site's site collection. Available only on the root site. Read-only.
-    siteCollection SiteCollectionable;
+    siteCollection SiteCollectionable
     // The collection of the sub-sites under this site.
-    sites []Siteable;
+    sites []Siteable
 }
 // NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {

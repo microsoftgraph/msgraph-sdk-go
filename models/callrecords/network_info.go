@@ -7,55 +7,55 @@ import (
 // NetworkInfo 
 type NetworkInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
-    bandwidthLowEventRatio *float32;
+    bandwidthLowEventRatio *float32
     // The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
-    basicServiceSetIdentifier *string;
+    basicServiceSetIdentifier *string
     // Type of network used by the media endpoint. Possible values are: unknown, wired, wifi, mobile, tunnel, unknownFutureValue.
-    connectionType *NetworkConnectionType;
+    connectionType *NetworkConnectionType
     // Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
-    delayEventRatio *float32;
+    delayEventRatio *float32
     // DNS suffix associated with the network adapter of the media endpoint.
-    dnsSuffix *string;
+    dnsSuffix *string
     // IP address of the media endpoint.
-    ipAddress *string;
+    ipAddress *string
     // Link speed in bits per second reported by the network adapter used by the media endpoint.
-    linkSpeed *int64;
+    linkSpeed *int64
     // The media access control (MAC) address of the media endpoint's network device.
-    macAddress *string;
+    macAddress *string
     // Network port number used by media endpoint.
-    port *int32;
+    port *int32
     // Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
-    receivedQualityEventRatio *float32;
+    receivedQualityEventRatio *float32
     // IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.
-    reflexiveIPAddress *string;
+    reflexiveIPAddress *string
     // IP address of the media relay server allocated by the media endpoint.
-    relayIPAddress *string;
+    relayIPAddress *string
     // Network port number allocated on the media relay server by the media endpoint.
-    relayPort *int32;
+    relayPort *int32
     // Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
-    sentQualityEventRatio *float32;
+    sentQualityEventRatio *float32
     // Subnet used for media stream by the media endpoint.
-    subnet *string;
+    subnet *string
     // WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
-    wifiBand *WifiBand;
+    wifiBand *WifiBand
     // Estimated remaining battery charge in percentage reported by the media endpoint.
-    wifiBatteryCharge *int32;
+    wifiBatteryCharge *int32
     // WiFi channel used by the media endpoint.
-    wifiChannel *int32;
+    wifiChannel *int32
     // Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
-    wifiMicrosoftDriver *string;
+    wifiMicrosoftDriver *string
     // Version of the Microsoft WiFi driver used by the media endpoint.
-    wifiMicrosoftDriverVersion *string;
+    wifiMicrosoftDriverVersion *string
     // Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.
-    wifiRadioType *WifiRadioType;
+    wifiRadioType *WifiRadioType
     // WiFi signal strength in percentage reported by the media endpoint.
-    wifiSignalStrength *int32;
+    wifiSignalStrength *int32
     // Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
-    wifiVendorDriver *string;
+    wifiVendorDriver *string
     // Version of the WiFi driver used by the media endpoint.
-    wifiVendorDriverVersion *string;
+    wifiVendorDriverVersion *string
 }
 // NewNetworkInfo instantiates a new networkInfo and sets the default values.
 func NewNetworkInfo()(*NetworkInfo) {

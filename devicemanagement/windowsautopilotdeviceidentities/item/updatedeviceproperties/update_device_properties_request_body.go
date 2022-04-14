@@ -7,15 +7,15 @@ import (
 // UpdateDevicePropertiesRequestBody provides operations to call the updateDeviceProperties method.
 type UpdateDevicePropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The addressableUserName property
-    addressableUserName *string;
+    addressableUserName *string
     // The displayName property
-    displayName *string;
+    displayName *string
     // The groupTag property
-    groupTag *string;
+    groupTag *string
     // The userPrincipalName property
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewUpdateDevicePropertiesRequestBody instantiates a new updateDevicePropertiesRequestBody and sets the default values.
 func NewUpdateDevicePropertiesRequestBody()(*UpdateDevicePropertiesRequestBody) {

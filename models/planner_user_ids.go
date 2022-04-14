@@ -7,7 +7,7 @@ import (
 // PlannerUserIds 
 type PlannerUserIds struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewPlannerUserIds instantiates a new plannerUserIds and sets the default values.
 func NewPlannerUserIds()(*PlannerUserIds) {

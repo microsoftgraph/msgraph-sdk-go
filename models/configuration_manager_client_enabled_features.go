@@ -7,19 +7,19 @@ import (
 // ConfigurationManagerClientEnabledFeatures configuration Manager client enabled features
 type ConfigurationManagerClientEnabledFeatures struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Whether compliance policy is managed by Intune
-    compliancePolicy *bool;
+    compliancePolicy *bool
     // Whether device configuration is managed by Intune
-    deviceConfiguration *bool;
+    deviceConfiguration *bool
     // Whether inventory is managed by Intune
-    inventory *bool;
+    inventory *bool
     // Whether modern application is managed by Intune
-    modernApps *bool;
+    modernApps *bool
     // Whether resource access is managed by Intune
-    resourceAccess *bool;
+    resourceAccess *bool
     // Whether Windows Update for Business is managed by Intune
-    windowsUpdateForBusiness *bool;
+    windowsUpdateForBusiness *bool
 }
 // NewConfigurationManagerClientEnabledFeatures instantiates a new configurationManagerClientEnabledFeatures and sets the default values.
 func NewConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientEnabledFeatures) {

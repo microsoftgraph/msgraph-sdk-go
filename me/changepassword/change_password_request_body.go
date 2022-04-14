@@ -7,11 +7,11 @@ import (
 // ChangePasswordRequestBody provides operations to call the changePassword method.
 type ChangePasswordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The currentPassword property
-    currentPassword *string;
+    currentPassword *string
     // The newPassword property
-    newPassword *string;
+    newPassword *string
 }
 // NewChangePasswordRequestBody instantiates a new changePasswordRequestBody and sets the default values.
 func NewChangePasswordRequestBody()(*ChangePasswordRequestBody) {

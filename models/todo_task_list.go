@@ -8,17 +8,17 @@ import (
 type TodoTaskList struct {
     Entity
     // The name of the task list.
-    displayName *string;
+    displayName *string
     // The collection of open extensions defined for the task list. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // True if the user is owner of the given task list.
-    isOwner *bool;
+    isOwner *bool
     // True if the task list is shared with other users
-    isShared *bool;
+    isShared *bool
     // The tasks in this task list. Read-only. Nullable.
-    tasks []TodoTaskable;
+    tasks []TodoTaskable
     // Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
-    wellknownListName *WellknownListName;
+    wellknownListName *WellknownListName
 }
 // NewTodoTaskList instantiates a new todoTaskList and sets the default values.
 func NewTodoTaskList()(*TodoTaskList) {

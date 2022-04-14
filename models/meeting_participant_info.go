@@ -7,13 +7,13 @@ import (
 // MeetingParticipantInfo 
 type MeetingParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Identity information of the participant.
-    identity IdentitySetable;
+    identity IdentitySetable
     // Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
-    role *OnlineMeetingRole;
+    role *OnlineMeetingRole
     // User principal name of the participant.
-    upn *string;
+    upn *string
 }
 // NewMeetingParticipantInfo instantiates a new meetingParticipantInfo and sets the default values.
 func NewMeetingParticipantInfo()(*MeetingParticipantInfo) {

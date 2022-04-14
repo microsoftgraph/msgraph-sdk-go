@@ -8,19 +8,19 @@ import (
 // CreateLinkRequestBody provides operations to call the createLink method.
 type CreateLinkRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The expirationDateTime property
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The message property
-    message *string;
+    message *string
     // The password property
-    password *string;
+    password *string
     // The retainInheritedPermissions property
-    retainInheritedPermissions *bool;
+    retainInheritedPermissions *bool
     // The scope property
-    scope *string;
+    scope *string
     // The type property
-    type_escaped *string;
+    type_escaped *string
 }
 // NewCreateLinkRequestBody instantiates a new createLinkRequestBody and sets the default values.
 func NewCreateLinkRequestBody()(*CreateLinkRequestBody) {

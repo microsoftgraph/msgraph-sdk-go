@@ -7,11 +7,11 @@ import (
 // ChannelIdentity 
 type ChannelIdentity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The identity of the channel in which the message was posted.
-    channelId *string;
+    channelId *string
     // The identity of the team in which the message was posted.
-    teamId *string;
+    teamId *string
 }
 // NewChannelIdentity instantiates a new channelIdentity and sets the default values.
 func NewChannelIdentity()(*ChannelIdentity) {

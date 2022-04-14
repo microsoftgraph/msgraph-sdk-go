@@ -8,15 +8,15 @@ import (
 type B2xIdentityUserFlow struct {
     IdentityUserFlow
     // Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
-    apiConnectorConfiguration UserFlowApiConnectorConfigurationable;
+    apiConnectorConfiguration UserFlowApiConnectorConfigurationable
     // The identity providers included in the user flow.
-    identityProviders []IdentityProviderable;
+    identityProviders []IdentityProviderable
     // The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-    languages []UserFlowLanguageConfigurationable;
+    languages []UserFlowLanguageConfigurationable
     // The user attribute assignments included in the user flow.
-    userAttributeAssignments []IdentityUserFlowAttributeAssignmentable;
+    userAttributeAssignments []IdentityUserFlowAttributeAssignmentable
     // The userFlowIdentityProviders property
-    userFlowIdentityProviders []IdentityProviderBaseable;
+    userFlowIdentityProviders []IdentityProviderBaseable
 }
 // NewB2xIdentityUserFlow instantiates a new b2xIdentityUserFlow and sets the default values.
 func NewB2xIdentityUserFlow()(*B2xIdentityUserFlow) {

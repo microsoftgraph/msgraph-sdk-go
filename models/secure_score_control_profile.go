@@ -9,43 +9,43 @@ import (
 type SecureScoreControlProfile struct {
     Entity
     // Control action type (Config, Review, Behavior).
-    actionType *string;
+    actionType *string
     // URL to where the control can be actioned.
-    actionUrl *string;
+    actionUrl *string
     // GUID string for tenant ID.
-    azureTenantId *string;
+    azureTenantId *string
     // The collection of compliance information associated with secure score control
-    complianceInformation []ComplianceInformationable;
+    complianceInformation []ComplianceInformationable
     // Control action category (Identity, Data, Device, Apps, Infrastructure).
-    controlCategory *string;
+    controlCategory *string
     // Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
-    controlStateUpdates []SecureScoreControlStateUpdateable;
+    controlStateUpdates []SecureScoreControlStateUpdateable
     // Flag to indicate if a control is depreciated.
-    deprecated *bool;
+    deprecated *bool
     // Resource cost of implemmentating control (low, moderate, high).
-    implementationCost *string;
+    implementationCost *string
     // Time at which the control profile entity was last modified. The Timestamp type represents date and time
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // max attainable score for the control.
-    maxScore *float64;
+    maxScore *float64
     // Microsoft's stack ranking of control.
-    rank *int32;
+    rank *int32
     // Description of what the control will help remediate.
-    remediation *string;
+    remediation *string
     // Description of the impact on users of the remediation.
-    remediationImpact *string;
+    remediationImpact *string
     // Service that owns the control (Exchange, Sharepoint, Azure AD).
-    service *string;
+    service *string
     // List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
-    threats []string;
+    threats []string
     // Control tier (Core, Defense in Depth, Advanced.)
-    tier *string;
+    tier *string
     // Title of the control.
-    title *string;
+    title *string
     // User impact of implementing control (low, moderate, high).
-    userImpact *string;
+    userImpact *string
     // The vendorInformation property
-    vendorInformation SecurityVendorInformationable;
+    vendorInformation SecurityVendorInformationable
 }
 // NewSecureScoreControlProfile instantiates a new secureScoreControlProfile and sets the default values.
 func NewSecureScoreControlProfile()(*SecureScoreControlProfile) {

@@ -7,9 +7,9 @@ import (
 // SamlSingleSignOnSettings 
 type SamlSingleSignOnSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The relative URI the service provider would redirect to after completion of the single sign-on flow.
-    relayState *string;
+    relayState *string
 }
 // NewSamlSingleSignOnSettings instantiates a new samlSingleSignOnSettings and sets the default values.
 func NewSamlSingleSignOnSettings()(*SamlSingleSignOnSettings) {

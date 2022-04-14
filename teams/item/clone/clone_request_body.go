@@ -8,19 +8,19 @@ import (
 // CloneRequestBody provides operations to call the clone method.
 type CloneRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The classification property
-    classification *string;
+    classification *string
     // The description property
-    description *string;
+    description *string
     // The displayName property
-    displayName *string;
+    displayName *string
     // The mailNickname property
-    mailNickname *string;
+    mailNickname *string
     // The partsToClone property
-    partsToClone *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts;
+    partsToClone *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts
     // The visibility property
-    visibility *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType;
+    visibility *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType
 }
 // NewCloneRequestBody instantiates a new cloneRequestBody and sets the default values.
 func NewCloneRequestBody()(*CloneRequestBody) {

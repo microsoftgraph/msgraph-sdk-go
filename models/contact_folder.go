@@ -8,17 +8,17 @@ import (
 type ContactFolder struct {
     Entity
     // The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-    childFolders []ContactFolderable;
+    childFolders []ContactFolderable
     // The contacts in the folder. Navigation property. Read-only. Nullable.
-    contacts []Contactable;
+    contacts []Contactable
     // The folder's display name.
-    displayName *string;
+    displayName *string
     // The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // The ID of the folder's parent folder.
-    parentFolderId *string;
+    parentFolderId *string
     // The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
 }
 // NewContactFolder instantiates a new contactFolder and sets the default values.
 func NewContactFolder()(*ContactFolder) {

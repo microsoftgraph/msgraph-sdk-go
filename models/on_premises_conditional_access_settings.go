@@ -8,13 +8,13 @@ import (
 type OnPremisesConditionalAccessSettings struct {
     Entity
     // Indicates if on premises conditional access is enabled for this organization
-    enabled *bool;
+    enabled *bool
     // User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
-    excludedGroups []string;
+    excludedGroups []string
     // User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
-    includedGroups []string;
+    includedGroups []string
     // Override the default access rule when allowing a device to ensure access is granted.
-    overrideDefaultRule *bool;
+    overrideDefaultRule *bool
 }
 // NewOnPremisesConditionalAccessSettings instantiates a new onPremisesConditionalAccessSettings and sets the default values.
 func NewOnPremisesConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {

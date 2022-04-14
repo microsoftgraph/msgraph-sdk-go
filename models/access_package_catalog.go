@@ -9,21 +9,21 @@ import (
 type AccessPackageCatalog struct {
     Entity
     // The access packages in this catalog. Read-only. Nullable.
-    accessPackages []AccessPackageable;
+    accessPackages []AccessPackageable
     // Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
-    catalogType *AccessPackageCatalogType;
+    catalogType *AccessPackageCatalogType
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the access package catalog.
-    description *string;
+    description *string
     // The display name of the access package catalog.
-    displayName *string;
+    displayName *string
     // Whether the access packages in this catalog can be requested by users outside of the tenant.
-    isExternallyVisible *bool;
+    isExternallyVisible *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
-    state *AccessPackageCatalogState;
+    state *AccessPackageCatalogState
 }
 // NewAccessPackageCatalog instantiates a new accessPackageCatalog and sets the default values.
 func NewAccessPackageCatalog()(*AccessPackageCatalog) {

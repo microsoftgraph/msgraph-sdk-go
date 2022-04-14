@@ -7,7 +7,7 @@ import (
 // ContentApprovalStatusColumn 
 type ContentApprovalStatusColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewContentApprovalStatusColumn instantiates a new contentApprovalStatusColumn and sets the default values.
 func NewContentApprovalStatusColumn()(*ContentApprovalStatusColumn) {

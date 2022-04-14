@@ -7,9 +7,9 @@ import (
 // GetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponse provides operations to call the getMailboxUsageQuotaStatusMailboxCounts method.
 type GetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponse instantiates a new getMailboxUsageQuotaStatusMailboxCountsWithPeriodResponse and sets the default values.
 func NewGetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponse()(*GetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponse) {

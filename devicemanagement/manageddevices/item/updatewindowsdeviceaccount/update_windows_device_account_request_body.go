@@ -8,9 +8,9 @@ import (
 // UpdateWindowsDeviceAccountRequestBody provides operations to call the updateWindowsDeviceAccount method.
 type UpdateWindowsDeviceAccountRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The updateWindowsDeviceAccountActionParameter property
-    updateWindowsDeviceAccountActionParameter iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UpdateWindowsDeviceAccountActionParameterable;
+    updateWindowsDeviceAccountActionParameter iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UpdateWindowsDeviceAccountActionParameterable
 }
 // NewUpdateWindowsDeviceAccountRequestBody instantiates a new updateWindowsDeviceAccountRequestBody and sets the default values.
 func NewUpdateWindowsDeviceAccountRequestBody()(*UpdateWindowsDeviceAccountRequestBody) {

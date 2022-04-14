@@ -7,13 +7,13 @@ import (
 // OptionalClaims 
 type OptionalClaims struct {
     // The optional claims returned in the JWT access token.
-    accessToken []OptionalClaimable;
+    accessToken []OptionalClaimable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The optional claims returned in the JWT ID token.
-    idToken []OptionalClaimable;
+    idToken []OptionalClaimable
     // The optional claims returned in the SAML token.
-    saml2Token []OptionalClaimable;
+    saml2Token []OptionalClaimable
 }
 // NewOptionalClaims instantiates a new optionalClaims and sets the default values.
 func NewOptionalClaims()(*OptionalClaims) {

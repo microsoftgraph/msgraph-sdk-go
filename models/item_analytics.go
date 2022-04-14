@@ -8,11 +8,11 @@ import (
 type ItemAnalytics struct {
     Entity
     // The allTime property
-    allTime ItemActivityStatable;
+    allTime ItemActivityStatable
     // The itemActivityStats property
-    itemActivityStats []ItemActivityStatable;
+    itemActivityStats []ItemActivityStatable
     // The lastSevenDays property
-    lastSevenDays ItemActivityStatable;
+    lastSevenDays ItemActivityStatable
 }
 // NewItemAnalytics instantiates a new itemAnalytics and sets the default values.
 func NewItemAnalytics()(*ItemAnalytics) {

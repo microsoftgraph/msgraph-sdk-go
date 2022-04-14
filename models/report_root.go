@@ -8,13 +8,13 @@ import (
 type ReportRoot struct {
     Entity
     // The dailyPrintUsageByPrinter property
-    dailyPrintUsageByPrinter []PrintUsageByPrinterable;
+    dailyPrintUsageByPrinter []PrintUsageByPrinterable
     // The dailyPrintUsageByUser property
-    dailyPrintUsageByUser []PrintUsageByUserable;
+    dailyPrintUsageByUser []PrintUsageByUserable
     // The monthlyPrintUsageByPrinter property
-    monthlyPrintUsageByPrinter []PrintUsageByPrinterable;
+    monthlyPrintUsageByPrinter []PrintUsageByPrinterable
     // The monthlyPrintUsageByUser property
-    monthlyPrintUsageByUser []PrintUsageByUserable;
+    monthlyPrintUsageByUser []PrintUsageByUserable
 }
 // NewReportRoot instantiates a new reportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {

@@ -7,19 +7,19 @@ import (
 // SearchHit 
 type SearchHit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The name of the content source which the externalItem is part of .
-    contentSource *string;
+    contentSource *string
     // The internal identifier for the item.
-    hitId *string;
+    hitId *string
     // The rank or the order of the result.
-    rank *int32;
+    rank *int32
     // The resource property
-    resource Entityable;
+    resource Entityable
     // ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
-    resultTemplateId *string;
+    resultTemplateId *string
     // A summary of the result, if a summary is available.
-    summary *string;
+    summary *string
 }
 // NewSearchHit instantiates a new searchHit and sets the default values.
 func NewSearchHit()(*SearchHit) {

@@ -7,17 +7,17 @@ import (
 // Thumbnail 
 type Thumbnail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The content stream for the thumbnail.
-    content []byte;
+    content []byte
     // The height of the thumbnail, in pixels.
-    height *int32;
+    height *int32
     // The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
-    sourceItemId *string;
+    sourceItemId *string
     // The URL used to fetch the thumbnail content.
-    url *string;
+    url *string
     // The width of the thumbnail, in pixels.
-    width *int32;
+    width *int32
 }
 // NewThumbnail instantiates a new thumbnail and sets the default values.
 func NewThumbnail()(*Thumbnail) {

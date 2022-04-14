@@ -7,9 +7,9 @@ import (
 // GetCachedReportResponse provides operations to call the getCachedReport method.
 type GetCachedReportResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetCachedReportResponse instantiates a new getCachedReportResponse and sets the default values.
 func NewGetCachedReportResponse()(*GetCachedReportResponse) {

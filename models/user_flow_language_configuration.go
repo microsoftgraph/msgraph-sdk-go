@@ -8,13 +8,13 @@ import (
 type UserFlowLanguageConfiguration struct {
     Entity
     // Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-    defaultPages []UserFlowLanguagePageable;
+    defaultPages []UserFlowLanguagePageable
     // The language name to display. This property is read-only.
-    displayName *string;
+    displayName *string
     // Indicates whether the language is enabled within the user flow.
-    isEnabled *bool;
+    isEnabled *bool
     // Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
-    overridesPages []UserFlowLanguagePageable;
+    overridesPages []UserFlowLanguagePageable
 }
 // NewUserFlowLanguageConfiguration instantiates a new userFlowLanguageConfiguration and sets the default values.
 func NewUserFlowLanguageConfiguration()(*UserFlowLanguageConfiguration) {

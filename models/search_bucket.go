@@ -7,13 +7,13 @@ import (
 // SearchBucket 
 type SearchBucket struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
-    aggregationFilterToken *string;
+    aggregationFilterToken *string
     // The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
-    count *int32;
+    count *int32
     // The discrete value of the field that an aggregation was computed on.
-    key *string;
+    key *string
 }
 // NewSearchBucket instantiates a new searchBucket and sets the default values.
 func NewSearchBucket()(*SearchBucket) {

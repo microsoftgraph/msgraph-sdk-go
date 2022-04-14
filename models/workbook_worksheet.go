@@ -8,21 +8,21 @@ import (
 type WorkbookWorksheet struct {
     Entity
     // Returns collection of charts that are part of the worksheet. Read-only.
-    charts []WorkbookChartable;
+    charts []WorkbookChartable
     // The display name of the worksheet.
-    name *string;
+    name *string
     // Returns collection of names that are associated with the worksheet. Read-only.
-    names []WorkbookNamedItemable;
+    names []WorkbookNamedItemable
     // Collection of PivotTables that are part of the worksheet.
-    pivotTables []WorkbookPivotTableable;
+    pivotTables []WorkbookPivotTableable
     // The zero-based position of the worksheet within the workbook.
-    position *int32;
+    position *int32
     // Returns sheet protection object for a worksheet. Read-only.
-    protection WorkbookWorksheetProtectionable;
+    protection WorkbookWorksheetProtectionable
     // Collection of tables that are part of the worksheet. Read-only.
-    tables []WorkbookTableable;
+    tables []WorkbookTableable
     // The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
-    visibility *string;
+    visibility *string
 }
 // NewWorkbookWorksheet instantiates a new workbookWorksheet and sets the default values.
 func NewWorkbookWorksheet()(*WorkbookWorksheet) {

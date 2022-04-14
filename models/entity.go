@@ -7,9 +7,9 @@ import (
 // Entity 
 type Entity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Read-only.
-    id *string;
+    id *string
 }
 // NewEntity instantiates a new entity and sets the default values.
 func NewEntity()(*Entity) {

@@ -7,11 +7,11 @@ import (
 // TicketInfo 
 type TicketInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Ticket number meta data
-    ticketNumber *string;
+    ticketNumber *string
     // Ticket system meta data
-    ticketSystem *string;
+    ticketSystem *string
 }
 // NewTicketInfo instantiates a new ticketInfo and sets the default values.
 func NewTicketInfo()(*TicketInfo) {

@@ -7,9 +7,9 @@ import (
 // MuteRequestBody provides operations to call the mute method.
 type MuteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The clientContext property
-    clientContext *string;
+    clientContext *string
 }
 // NewMuteRequestBody instantiates a new muteRequestBody and sets the default values.
 func NewMuteRequestBody()(*MuteRequestBody) {

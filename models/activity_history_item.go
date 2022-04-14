@@ -9,23 +9,23 @@ import (
 type ActivityHistoryItem struct {
     Entity
     // Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
-    activeDurationSeconds *int32;
+    activeDurationSeconds *int32
     // The activity property
-    activity UserActivityable;
+    activity UserActivityable
     // Set by the server. DateTime in UTC when the object was created on the server.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.
-    lastActiveDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActiveDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Set by the server. DateTime in UTC when the object was modified on the server.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
-    startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-    status *Status;
+    status *Status
     // Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
-    userTimezone *string;
+    userTimezone *string
 }
 // NewActivityHistoryItem instantiates a new activityHistoryItem and sets the default values.
 func NewActivityHistoryItem()(*ActivityHistoryItem) {

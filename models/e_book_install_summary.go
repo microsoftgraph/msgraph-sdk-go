@@ -8,17 +8,17 @@ import (
 type EBookInstallSummary struct {
     Entity
     // Number of Devices that have failed to install this book.
-    failedDeviceCount *int32;
+    failedDeviceCount *int32
     // Number of Users that have 1 or more device that failed to install this book.
-    failedUserCount *int32;
+    failedUserCount *int32
     // Number of Devices that have successfully installed this book.
-    installedDeviceCount *int32;
+    installedDeviceCount *int32
     // Number of Users whose devices have all succeeded to install this book.
-    installedUserCount *int32;
+    installedUserCount *int32
     // Number of Devices that does not have this book installed.
-    notInstalledDeviceCount *int32;
+    notInstalledDeviceCount *int32
     // Number of Users that did not install this book.
-    notInstalledUserCount *int32;
+    notInstalledUserCount *int32
 }
 // NewEBookInstallSummary instantiates a new eBookInstallSummary and sets the default values.
 func NewEBookInstallSummary()(*EBookInstallSummary) {

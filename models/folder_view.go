@@ -7,13 +7,13 @@ import (
 // FolderView 
 type FolderView struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The method by which the folder should be sorted.
-    sortBy *string;
+    sortBy *string
     // If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.
-    sortOrder *string;
+    sortOrder *string
     // The type of view that should be used to represent the folder.
-    viewType *string;
+    viewType *string
 }
 // NewFolderView instantiates a new folderView and sets the default values.
 func NewFolderView()(*FolderView) {

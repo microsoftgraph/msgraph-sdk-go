@@ -7,11 +7,11 @@ import (
 // OnenotePagePreview 
 type OnenotePagePreview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The links property
-    links OnenotePagePreviewLinksable;
+    links OnenotePagePreviewLinksable
     // The previewText property
-    previewText *string;
+    previewText *string
 }
 // NewOnenotePagePreview instantiates a new onenotePagePreview and sets the default values.
 func NewOnenotePagePreview()(*OnenotePagePreview) {

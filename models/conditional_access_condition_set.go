@@ -7,25 +7,25 @@ import (
 // ConditionalAccessConditionSet 
 type ConditionalAccessConditionSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Applications and user actions included in and excluded from the policy. Required.
-    applications ConditionalAccessApplicationsable;
+    applications ConditionalAccessApplicationsable
     // Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
-    clientApplications ConditionalAccessClientApplicationsable;
+    clientApplications ConditionalAccessClientApplicationsable
     // Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
-    clientAppTypes []ConditionalAccessClientApp;
+    clientAppTypes []ConditionalAccessClientApp
     // Devices in the policy.
-    devices ConditionalAccessDevicesable;
+    devices ConditionalAccessDevicesable
     // Locations included in and excluded from the policy.
-    locations ConditionalAccessLocationsable;
+    locations ConditionalAccessLocationsable
     // Platforms included in and excluded from the policy.
-    platforms ConditionalAccessPlatformsable;
+    platforms ConditionalAccessPlatformsable
     // Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-    signInRiskLevels []RiskLevel;
+    signInRiskLevels []RiskLevel
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-    userRiskLevels []RiskLevel;
+    userRiskLevels []RiskLevel
     // Users, groups, and roles included in and excluded from the policy. Required.
-    users ConditionalAccessUsersable;
+    users ConditionalAccessUsersable
 }
 // NewConditionalAccessConditionSet instantiates a new conditionalAccessConditionSet and sets the default values.
 func NewConditionalAccessConditionSet()(*ConditionalAccessConditionSet) {

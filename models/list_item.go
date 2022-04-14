@@ -8,17 +8,17 @@ import (
 type ListItem struct {
     BaseItem
     // Analytics about the view activities that took place on this item.
-    analytics ItemAnalyticsable;
+    analytics ItemAnalyticsable
     // The content type of this list item
-    contentType ContentTypeInfoable;
+    contentType ContentTypeInfoable
     // For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-    driveItem DriveItemable;
+    driveItem DriveItemable
     // The values of the columns set on this list item.
-    fields FieldValueSetable;
+    fields FieldValueSetable
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds SharepointIdsable;
+    sharepointIds SharepointIdsable
     // The list of previous versions of the list item.
-    versions []ListItemVersionable;
+    versions []ListItemVersionable
 }
 // NewListItem instantiates a new listItem and sets the default values.
 func NewListItem()(*ListItem) {

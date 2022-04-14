@@ -8,13 +8,13 @@ import (
 type WorkbookTableColumn struct {
     Entity
     // Retrieve the filter applied to the column. Read-only.
-    filter WorkbookFilterable;
+    filter WorkbookFilterable
     // Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
-    index *int32;
+    index *int32
     // Returns the name of the table column.
-    name *string;
+    name *string
     // Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-    values Jsonable;
+    values Jsonable
 }
 // NewWorkbookTableColumn instantiates a new workbookTableColumn and sets the default values.
 func NewWorkbookTableColumn()(*WorkbookTableColumn) {

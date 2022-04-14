@@ -8,15 +8,15 @@ import (
 type UserInstallStateSummary struct {
     Entity
     // The install state of the eBook.
-    deviceStates []DeviceInstallStateable;
+    deviceStates []DeviceInstallStateable
     // Failed Device Count.
-    failedDeviceCount *int32;
+    failedDeviceCount *int32
     // Installed Device Count.
-    installedDeviceCount *int32;
+    installedDeviceCount *int32
     // Not installed device count.
-    notInstalledDeviceCount *int32;
+    notInstalledDeviceCount *int32
     // User name.
-    userName *string;
+    userName *string
 }
 // NewUserInstallStateSummary instantiates a new userInstallStateSummary and sets the default values.
 func NewUserInstallStateSummary()(*UserInstallStateSummary) {

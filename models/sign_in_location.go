@@ -7,15 +7,15 @@ import (
 // SignInLocation 
 type SignInLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-    city *string;
+    city *string
     // Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
-    countryOrRegion *string;
+    countryOrRegion *string
     // Provides the latitude, longitude and altitude where the sign-in originated.
-    geoCoordinates GeoCoordinatesable;
+    geoCoordinates GeoCoordinatesable
     // Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-    state *string;
+    state *string
 }
 // NewSignInLocation instantiates a new signInLocation and sets the default values.
 func NewSignInLocation()(*SignInLocation) {

@@ -7,19 +7,19 @@ import (
 // EducationStudent 
 type EducationStudent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Birth date of the student.
-    birthDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    birthDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // ID of the student in the source system.
-    externalId *string;
+    externalId *string
     // The possible values are: female, male, other, unknownFutureValue.
-    gender *EducationGender;
+    gender *EducationGender
     // Current grade level of the student.
-    grade *string;
+    grade *string
     // Year the student is graduating from the school.
-    graduationYear *string;
+    graduationYear *string
     // Student Number.
-    studentNumber *string;
+    studentNumber *string
 }
 // NewEducationStudent instantiates a new educationStudent and sets the default values.
 func NewEducationStudent()(*EducationStudent) {

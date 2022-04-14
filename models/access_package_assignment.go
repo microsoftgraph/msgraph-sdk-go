@@ -9,19 +9,19 @@ import (
 type AccessPackageAssignment struct {
     Entity
     // Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-    accessPackage AccessPackageable;
+    accessPackage AccessPackageable
     // Read-only. Supports $filter (eq) on the id property and $expand query parameters.
-    assignmentPolicy AccessPackageAssignmentPolicyable;
+    assignmentPolicy AccessPackageAssignmentPolicyable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    expiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // When the access assignment is to be in place. Read-only.
-    schedule EntitlementManagementScheduleable;
+    schedule EntitlementManagementScheduleable
     // The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).
-    state *AccessPackageAssignmentState;
+    state *AccessPackageAssignmentState
     // More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
-    status *string;
+    status *string
     // The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-    target AccessPackageSubjectable;
+    target AccessPackageSubjectable
 }
 // NewAccessPackageAssignment instantiates a new accessPackageAssignment and sets the default values.
 func NewAccessPackageAssignment()(*AccessPackageAssignment) {

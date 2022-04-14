@@ -7,9 +7,9 @@ import (
 // RemoveGroupRequestBody provides operations to call the removeGroup method.
 type RemoveGroupRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The groupId property
-    groupId *string;
+    groupId *string
 }
 // NewRemoveGroupRequestBody instantiates a new removeGroupRequestBody and sets the default values.
 func NewRemoveGroupRequestBody()(*RemoveGroupRequestBody) {

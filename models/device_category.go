@@ -8,9 +8,9 @@ import (
 type DeviceCategory struct {
     Entity
     // Optional description for the device category.
-    description *string;
+    description *string
     // Display name for the device category.
-    displayName *string;
+    displayName *string
 }
 // NewDeviceCategory instantiates a new deviceCategory and sets the default values.
 func NewDeviceCategory()(*DeviceCategory) {

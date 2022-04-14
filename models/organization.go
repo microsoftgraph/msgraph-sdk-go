@@ -9,55 +9,55 @@ import (
 type Organization struct {
     DirectoryObject
     // The collection of service plans associated with the tenant. Not nullable.
-    assignedPlans []AssignedPlanable;
+    assignedPlans []AssignedPlanable
     // The branding property
-    branding OrganizationalBrandingable;
+    branding OrganizationalBrandingable
     // Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
-    businessPhones []string;
+    businessPhones []string
     // Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-    certificateBasedAuthConfiguration []CertificateBasedAuthConfigurationable;
+    certificateBasedAuthConfiguration []CertificateBasedAuthConfigurationable
     // City name of the address for the organization.
-    city *string;
+    city *string
     // Country/region name of the address for the organization.
-    country *string;
+    country *string
     // Country or region abbreviation for the organization in ISO 3166-2 format.
-    countryLetterCode *string;
+    countryLetterCode *string
     // Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name for the tenant.
-    displayName *string;
+    displayName *string
     // The collection of open extensions defined for the organization. Read-only. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // Not nullable.
-    marketingNotificationEmails []string;
+    marketingNotificationEmails []string
     // Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
-    mobileDeviceManagementAuthority *MdmAuthority;
+    mobileDeviceManagementAuthority *MdmAuthority
     // The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
-    onPremisesSyncEnabled *bool;
+    onPremisesSyncEnabled *bool
     // Postal code of the address for the organization.
-    postalCode *string;
+    postalCode *string
     // The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
-    preferredLanguage *string;
+    preferredLanguage *string
     // The privacy profile of an organization.
-    privacyProfile PrivacyProfileable;
+    privacyProfile PrivacyProfileable
     // Not nullable.
-    provisionedPlans []ProvisionedPlanable;
+    provisionedPlans []ProvisionedPlanable
     // The securityComplianceNotificationMails property
-    securityComplianceNotificationMails []string;
+    securityComplianceNotificationMails []string
     // The securityComplianceNotificationPhones property
-    securityComplianceNotificationPhones []string;
+    securityComplianceNotificationPhones []string
     // State name of the address for the organization.
-    state *string;
+    state *string
     // Street name of the address for organization.
-    street *string;
+    street *string
     // Not nullable.
-    technicalNotificationMails []string;
+    technicalNotificationMails []string
     // The tenantType property
-    tenantType *string;
+    tenantType *string
     // The collection of domains associated with this tenant. Not nullable.
-    verifiedDomains []VerifiedDomainable;
+    verifiedDomains []VerifiedDomainable
 }
 // NewOrganization instantiates a new organization and sets the default values.
 func NewOrganization()(*Organization) {

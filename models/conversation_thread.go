@@ -9,23 +9,23 @@ import (
 type ConversationThread struct {
     Entity
     // The Cc: recipients for the thread. Returned only on $select.
-    ccRecipients []Recipientable;
+    ccRecipients []Recipientable
     // Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
-    hasAttachments *bool;
+    hasAttachments *bool
     // Indicates if the thread is locked. Returned by default.
-    isLocked *bool;
+    isLocked *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
-    lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Nullable.
-    posts []Postable;
+    posts []Postable
     // A short summary from the body of the latest post in this conversation. Returned by default.
-    preview *string;
+    preview *string
     // The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.
-    topic *string;
+    topic *string
     // The To: recipients for the thread. Returned only on $select.
-    toRecipients []Recipientable;
+    toRecipients []Recipientable
     // All the users that sent a message to this thread. Returned by default.
-    uniqueSenders []string;
+    uniqueSenders []string
 }
 // NewConversationThread instantiates a new conversationThread and sets the default values.
 func NewConversationThread()(*ConversationThread) {

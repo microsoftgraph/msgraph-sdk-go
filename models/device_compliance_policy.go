@@ -9,29 +9,29 @@ import (
 type DeviceCompliancePolicy struct {
     Entity
     // The collection of assignments for this compliance policy.
-    assignments []DeviceCompliancePolicyAssignmentable;
+    assignments []DeviceCompliancePolicyAssignmentable
     // DateTime the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Admin provided description of the Device Configuration.
-    description *string;
+    description *string
     // Compliance Setting State Device Summary
-    deviceSettingStateSummaries []SettingStateDeviceSummaryable;
+    deviceSettingStateSummaries []SettingStateDeviceSummaryable
     // List of DeviceComplianceDeviceStatus.
-    deviceStatuses []DeviceComplianceDeviceStatusable;
+    deviceStatuses []DeviceComplianceDeviceStatusable
     // Device compliance devices status overview
-    deviceStatusOverview DeviceComplianceDeviceOverviewable;
+    deviceStatusOverview DeviceComplianceDeviceOverviewable
     // Admin provided name of the device configuration.
-    displayName *string;
+    displayName *string
     // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-    scheduledActionsForRule []DeviceComplianceScheduledActionForRuleable;
+    scheduledActionsForRule []DeviceComplianceScheduledActionForRuleable
     // List of DeviceComplianceUserStatus.
-    userStatuses []DeviceComplianceUserStatusable;
+    userStatuses []DeviceComplianceUserStatusable
     // Device compliance users status overview
-    userStatusOverview DeviceComplianceUserOverviewable;
+    userStatusOverview DeviceComplianceUserOverviewable
     // Version of the device configuration.
-    version *int32;
+    version *int32
 }
 // NewDeviceCompliancePolicy instantiates a new deviceCompliancePolicy and sets the default values.
 func NewDeviceCompliancePolicy()(*DeviceCompliancePolicy) {

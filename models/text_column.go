@@ -7,17 +7,17 @@ import (
 // TextColumn 
 type TextColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Whether to allow multiple lines of text.
-    allowMultipleLines *bool;
+    allowMultipleLines *bool
     // Whether updates to this column should replace existing text, or append to it.
-    appendChangesToExistingText *bool;
+    appendChangesToExistingText *bool
     // The size of the text box.
-    linesForEditing *int32;
+    linesForEditing *int32
     // The maximum number of characters for the value.
-    maxLength *int32;
+    maxLength *int32
     // The type of text being stored. Must be one of plain or richText
-    textType *string;
+    textType *string
 }
 // NewTextColumn instantiates a new textColumn and sets the default values.
 func NewTextColumn()(*TextColumn) {

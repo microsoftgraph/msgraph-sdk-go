@@ -9,21 +9,21 @@ import (
 type DeviceManagementPartner struct {
     Entity
     // Partner display name
-    displayName *string;
+    displayName *string
     // Whether device management partner is configured or not
-    isConfigured *bool;
+    isConfigured *bool
     // Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
-    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
-    partnerAppType *DeviceManagementPartnerAppType;
+    partnerAppType *DeviceManagementPartnerAppType
     // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
-    partnerState *DeviceManagementPartnerTenantState;
+    partnerState *DeviceManagementPartnerTenantState
     // Partner Single tenant App id
-    singleTenantAppId *string;
+    singleTenantAppId *string
     // DateTime in UTC when PartnerDevices will be marked as NonCompliant
-    whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // DateTime in UTC when PartnerDevices will be removed
-    whenPartnerDevicesWillBeRemovedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    whenPartnerDevicesWillBeRemovedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewDeviceManagementPartner instantiates a new deviceManagementPartner and sets the default values.
 func NewDeviceManagementPartner()(*DeviceManagementPartner) {

@@ -8,11 +8,11 @@ import (
 type WindowsInformationProtectionAppLearningSummary struct {
     Entity
     // Application Name
-    applicationName *string;
+    applicationName *string
     // Application Type. Possible values are: universal, desktop.
-    applicationType *ApplicationType;
+    applicationType *ApplicationType
     // Device Count
-    deviceCount *int32;
+    deviceCount *int32
 }
 // NewWindowsInformationProtectionAppLearningSummary instantiates a new windowsInformationProtectionAppLearningSummary and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProtectionAppLearningSummary) {

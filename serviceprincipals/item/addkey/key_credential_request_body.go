@@ -8,13 +8,13 @@ import (
 // KeyCredentialRequestBody provides operations to call the addKey method.
 type KeyCredentialRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The keyCredential property
-    keyCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable;
+    keyCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable
     // The passwordCredential property
-    passwordCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable;
+    passwordCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable
     // The proof property
-    proof *string;
+    proof *string
 }
 // NewKeyCredentialRequestBody instantiates a new KeyCredentialRequestBody and sets the default values.
 func NewKeyCredentialRequestBody()(*KeyCredentialRequestBody) {

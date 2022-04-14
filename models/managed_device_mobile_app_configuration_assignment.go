@@ -8,7 +8,7 @@ import (
 type ManagedDeviceMobileAppConfigurationAssignment struct {
     Entity
     // Assignment target that the T&C policy is assigned to.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewManagedDeviceMobileAppConfigurationAssignment instantiates a new managedDeviceMobileAppConfigurationAssignment and sets the default values.
 func NewManagedDeviceMobileAppConfigurationAssignment()(*ManagedDeviceMobileAppConfigurationAssignment) {

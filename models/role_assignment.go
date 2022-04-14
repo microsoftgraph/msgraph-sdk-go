@@ -8,13 +8,13 @@ import (
 type RoleAssignment struct {
     Entity
     // Description of the Role Assignment.
-    description *string;
+    description *string
     // The display or friendly name of the role Assignment.
-    displayName *string;
+    displayName *string
     // List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
-    resourceScopes []string;
+    resourceScopes []string
     // Role definition this assignment is part of.
-    roleDefinition RoleDefinitionable;
+    roleDefinition RoleDefinitionable
 }
 // NewRoleAssignment instantiates a new roleAssignment and sets the default values.
 func NewRoleAssignment()(*RoleAssignment) {

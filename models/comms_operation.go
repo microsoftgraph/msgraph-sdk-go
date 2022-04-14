@@ -8,11 +8,11 @@ import (
 type CommsOperation struct {
     Entity
     // Unique Client Context string. Max limit is 256 chars.
-    clientContext *string;
+    clientContext *string
     // The result information. Read-only.
-    resultInfo ResultInfoable;
+    resultInfo ResultInfoable
     // Possible values are: notStarted, running, completed, failed. Read-only.
-    status *OperationStatus;
+    status *OperationStatus
 }
 // NewCommsOperation instantiates a new commsOperation and sets the default values.
 func NewCommsOperation()(*CommsOperation) {

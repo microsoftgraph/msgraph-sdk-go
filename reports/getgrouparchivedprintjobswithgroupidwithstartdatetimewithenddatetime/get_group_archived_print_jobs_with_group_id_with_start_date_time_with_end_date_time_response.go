@@ -8,9 +8,9 @@ import (
 // GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse provides operations to call the getGroupArchivedPrintJobs method.
 type GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArchivedPrintJobable;
+    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArchivedPrintJobable
 }
 // NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse instantiates a new getGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse and sets the default values.
 func NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse()(*GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse) {

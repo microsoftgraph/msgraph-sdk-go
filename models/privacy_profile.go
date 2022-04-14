@@ -7,11 +7,11 @@ import (
 // PrivacyProfile 
 type PrivacyProfile struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A valid smtp email address for the privacy statement contact. Not required.
-    contactEmail *string;
+    contactEmail *string
     // A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
-    statementUrl *string;
+    statementUrl *string
 }
 // NewPrivacyProfile instantiates a new privacyProfile and sets the default values.
 func NewPrivacyProfile()(*PrivacyProfile) {

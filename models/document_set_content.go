@@ -7,13 +7,13 @@ import (
 // DocumentSetContent 
 type DocumentSetContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Content type information of the file.
-    contentType ContentTypeInfoable;
+    contentType ContentTypeInfoable
     // Name of the file in resource folder that should be added as a default content or a template in the document set.
-    fileName *string;
+    fileName *string
     // Folder name in which the file will be placed when a new document set is created in the library.
-    folderName *string;
+    folderName *string
 }
 // NewDocumentSetContent instantiates a new documentSetContent and sets the default values.
 func NewDocumentSetContent()(*DocumentSetContent) {

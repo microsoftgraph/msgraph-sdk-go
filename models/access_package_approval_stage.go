@@ -7,23 +7,23 @@ import (
 // AccessPackageApprovalStage 
 type AccessPackageApprovalStage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of days that a request can be pending a response before it is automatically denied.
-    durationBeforeAutomaticDenial *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    durationBeforeAutomaticDenial *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // If escalation is required, the time a request can be pending a response from a primary approver.
-    durationBeforeEscalation *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    durationBeforeEscalation *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
-    escalationApprovers []SubjectSetable;
+    escalationApprovers []SubjectSetable
     // The subjects, typically users, who are the fallback escalation approvers.
-    fallbackEscalationApprovers []SubjectSetable;
+    fallbackEscalationApprovers []SubjectSetable
     // The subjects, typically users, who are the fallback primary approvers.
-    fallbackPrimaryApprovers []SubjectSetable;
+    fallbackPrimaryApprovers []SubjectSetable
     // Indicates whether the approver is required to provide a justification for approving a request.
-    isApproverJustificationRequired *bool;
+    isApproverJustificationRequired *bool
     // If true, then one or more escalationApprovers are configured in this approval stage.
-    isEscalationEnabled *bool;
+    isEscalationEnabled *bool
     // The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
-    primaryApprovers []SubjectSetable;
+    primaryApprovers []SubjectSetable
 }
 // NewAccessPackageApprovalStage instantiates a new accessPackageApprovalStage and sets the default values.
 func NewAccessPackageApprovalStage()(*AccessPackageApprovalStage) {

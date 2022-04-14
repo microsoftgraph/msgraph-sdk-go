@@ -7,15 +7,15 @@ import (
 // BatchRecordDecisionsRequestBody provides operations to call the batchRecordDecisions method.
 type BatchRecordDecisionsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The decision property
-    decision *string;
+    decision *string
     // The justification property
-    justification *string;
+    justification *string
     // The principalId property
-    principalId *string;
+    principalId *string
     // The resourceId property
-    resourceId *string;
+    resourceId *string
 }
 // NewBatchRecordDecisionsRequestBody instantiates a new batchRecordDecisionsRequestBody and sets the default values.
 func NewBatchRecordDecisionsRequestBody()(*BatchRecordDecisionsRequestBody) {

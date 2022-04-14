@@ -9,27 +9,27 @@ import (
 type BaseItem struct {
     Entity
     // Identity of the user, device, or application which created the item. Read-only.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // Identity of the user who created the item. Read-only.
-    createdByUser Userable;
+    createdByUser Userable
     // Date and time of item creation. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Provides a user-visible description of the item. Optional.
-    description *string;
+    description *string
     // ETag for the item. Read-only.
-    eTag *string;
+    eTag *string
     // Identity of the user, device, and application which last modified the item. Read-only.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // Identity of the user who last modified the item. Read-only.
-    lastModifiedByUser Userable;
+    lastModifiedByUser Userable
     // Date and time the item was last modified. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The name of the item. Read-write.
-    name *string;
+    name *string
     // Parent information, if the item has a parent. Read-write.
-    parentReference ItemReferenceable;
+    parentReference ItemReferenceable
     // URL that displays the resource in the browser. Read-only.
-    webUrl *string;
+    webUrl *string
 }
 // NewBaseItem instantiates a new baseItem and sets the default values.
 func NewBaseItem()(*BaseItem) {

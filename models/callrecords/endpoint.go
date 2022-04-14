@@ -7,9 +7,9 @@ import (
 // Endpoint 
 type Endpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // User-agent reported by this endpoint.
-    userAgent UserAgentable;
+    userAgent UserAgentable
 }
 // NewEndpoint instantiates a new endpoint and sets the default values.
 func NewEndpoint()(*Endpoint) {

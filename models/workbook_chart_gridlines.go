@@ -8,9 +8,9 @@ import (
 type WorkbookChartGridlines struct {
     Entity
     // Represents the formatting of chart gridlines. Read-only.
-    format WorkbookChartGridlinesFormatable;
+    format WorkbookChartGridlinesFormatable
     // Boolean value representing if the axis gridlines are visible or not.
-    visible *bool;
+    visible *bool
 }
 // NewWorkbookChartGridlines instantiates a new workbookChartGridlines and sets the default values.
 func NewWorkbookChartGridlines()(*WorkbookChartGridlines) {

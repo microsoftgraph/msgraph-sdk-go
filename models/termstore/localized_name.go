@@ -7,11 +7,11 @@ import (
 // LocalizedName 
 type LocalizedName struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The language tag for the label.
-    languageTag *string;
+    languageTag *string
     // The name in the localized language.
-    name *string;
+    name *string
 }
 // NewLocalizedName instantiates a new localizedName and sets the default values.
 func NewLocalizedName()(*LocalizedName) {

@@ -7,9 +7,9 @@ import (
 // Privacy 
 type Privacy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The subjectRightsRequests property
-    subjectRightsRequests []SubjectRightsRequestable;
+    subjectRightsRequests []SubjectRightsRequestable
 }
 // NewPrivacy instantiates a new Privacy and sets the default values.
 func NewPrivacy()(*Privacy) {

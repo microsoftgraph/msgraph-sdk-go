@@ -8,7 +8,7 @@ import (
 type EducationAssignmentSettings struct {
     Entity
     // Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
-    submissionAnimationDisabled *bool;
+    submissionAnimationDisabled *bool
 }
 // NewEducationAssignmentSettings instantiates a new educationAssignmentSettings and sets the default values.
 func NewEducationAssignmentSettings()(*EducationAssignmentSettings) {

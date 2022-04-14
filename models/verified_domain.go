@@ -7,17 +7,17 @@ import (
 // VerifiedDomain 
 type VerifiedDomain struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // For example, 'Email', 'OfficeCommunicationsOnline'.
-    capabilities *string;
+    capabilities *string
     // true if this is the default domain associated with the tenant; otherwise, false.
-    isDefault *bool;
+    isDefault *bool
     // true if this is the initial domain associated with the tenant; otherwise, false
-    isInitial *bool;
+    isInitial *bool
     // The domain name; for example, 'contoso.onmicrosoft.com'
-    name *string;
+    name *string
     // For example, 'Managed'.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewVerifiedDomain instantiates a new verifiedDomain and sets the default values.
 func NewVerifiedDomain()(*VerifiedDomain) {

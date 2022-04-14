@@ -8,13 +8,13 @@ import (
 type WorkbookChartTitle struct {
     Entity
     // Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
-    format WorkbookChartTitleFormatable;
+    format WorkbookChartTitleFormatable
     // Boolean value representing if the chart title will overlay the chart or not.
-    overlay *bool;
+    overlay *bool
     // Represents the title text of a chart.
-    text *string;
+    text *string
     // A boolean value the represents the visibility of a chart title object.
-    visible *bool;
+    visible *bool
 }
 // NewWorkbookChartTitle instantiates a new workbookChartTitle and sets the default values.
 func NewWorkbookChartTitle()(*WorkbookChartTitle) {

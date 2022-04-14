@@ -9,35 +9,35 @@ import (
 type ManagedAppRegistration struct {
     Entity
     // The app package Identifier
-    appIdentifier MobileAppIdentifierable;
+    appIdentifier MobileAppIdentifierable
     // App version
-    applicationVersion *string;
+    applicationVersion *string
     // Zero or more policys already applied on the registered app when it last synchronized with managment service.
-    appliedPolicies []ManagedAppPolicyable;
+    appliedPolicies []ManagedAppPolicyable
     // Date and time of creation
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Host device name
-    deviceName *string;
+    deviceName *string
     // App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
-    deviceTag *string;
+    deviceTag *string
     // Host device type
-    deviceType *string;
+    deviceType *string
     // Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-    flaggedReasons []ManagedAppFlaggedReason;
+    flaggedReasons []ManagedAppFlaggedReason
     // Zero or more policies admin intended for the app as of now.
-    intendedPolicies []ManagedAppPolicyable;
+    intendedPolicies []ManagedAppPolicyable
     // Date and time of last the app synced with management service.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // App management SDK version
-    managementSdkVersion *string;
+    managementSdkVersion *string
     // Zero or more long running operations triggered on the app registration.
-    operations []ManagedAppOperationable;
+    operations []ManagedAppOperationable
     // Operating System version
-    platformVersion *string;
+    platformVersion *string
     // The user Id to who this app registration belongs.
-    userId *string;
+    userId *string
     // Version of the entity.
-    version *string;
+    version *string
 }
 // NewManagedAppRegistration instantiates a new managedAppRegistration and sets the default values.
 func NewManagedAppRegistration()(*ManagedAppRegistration) {

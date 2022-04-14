@@ -16,49 +16,49 @@ import (
 // PrinterItemRequestBuilder provides operations to manage the printers property of the microsoft.graph.print entity.
 type PrinterItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // PrinterItemRequestBuilderDeleteOptions options for Delete
 type PrinterItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // PrinterItemRequestBuilderGetOptions options for Get
 type PrinterItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *PrinterItemRequestBuilderGetQueryParameters;
+    QueryParameters *PrinterItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // PrinterItemRequestBuilderGetQueryParameters the list of printers registered in the tenant.
 type PrinterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // PrinterItemRequestBuilderPatchOptions options for Patch
 type PrinterItemRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Connectors the connectors property
 func (m *PrinterItemRequestBuilder) Connectors()(*i6ef3a73ca24cdfe4f01546d744e3ad5d5f17082ec1283caf5b2176d392cb9cd9.ConnectorsRequestBuilder) {
@@ -71,7 +71,7 @@ func (m *PrinterItemRequestBuilder) ConnectorsById(id string)(*i02acec2b11a647c1
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printConnector_id"] = id
+        urlTplParams["printConnector%2Did"] = id
     }
     return i02acec2b11a647c1fc0601a6c9f6283bf36064facb17fdc38860e7fc02ca0db0.NewPrintConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -79,7 +79,7 @@ func (m *PrinterItemRequestBuilder) ConnectorsById(id string)(*i02acec2b11a647c1
 func NewPrinterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterItemRequestBuilder) {
     m := &PrinterItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/printers/{printer_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/print/printers/{printer%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -212,7 +212,7 @@ func (m *PrinterItemRequestBuilder) SharesById(id string)(*i652aa29a7f8828f592dc
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printerShare_id"] = id
+        urlTplParams["printerShare%2Did"] = id
     }
     return i652aa29a7f8828f592dc5bf3e9ada513fbcda2a67c9d060f001cc99e28d86159.NewPrinterShareItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -227,7 +227,7 @@ func (m *PrinterItemRequestBuilder) TaskTriggersById(id string)(*i8a35ad54635f07
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printTaskTrigger_id"] = id
+        urlTplParams["printTaskTrigger%2Did"] = id
     }
     return i8a35ad54635f07016096adf7157efc92ede0057cd4a790d06a32332ce94f22cc.NewPrintTaskTriggerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

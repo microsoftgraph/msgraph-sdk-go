@@ -8,11 +8,11 @@ import (
 // TargetAppsRequestBody provides operations to call the targetApps method.
 type TargetAppsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The appGroupType property
-    appGroupType *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType;
+    appGroupType *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType
     // The apps property
-    apps []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable;
+    apps []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable
 }
 // NewTargetAppsRequestBody instantiates a new targetAppsRequestBody and sets the default values.
 func NewTargetAppsRequestBody()(*TargetAppsRequestBody) {

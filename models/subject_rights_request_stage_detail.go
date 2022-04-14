@@ -7,13 +7,13 @@ import (
 // SubjectRightsRequestStageDetail 
 type SubjectRightsRequestStageDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Describes the error, if any, for the current stage.
-    error PublicErrorable;
+    error PublicErrorable
     // The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
-    stage *SubjectRightsRequestStage;
+    stage *SubjectRightsRequestStage
     // Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-    status *SubjectRightsRequestStageStatus;
+    status *SubjectRightsRequestStageStatus
 }
 // NewSubjectRightsRequestStageDetail instantiates a new subjectRightsRequestStageDetail and sets the default values.
 func NewSubjectRightsRequestStageDetail()(*SubjectRightsRequestStageDetail) {

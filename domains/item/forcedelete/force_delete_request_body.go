@@ -7,9 +7,9 @@ import (
 // ForceDeleteRequestBody provides operations to call the forceDelete method.
 type ForceDeleteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The disableUserAccounts property
-    disableUserAccounts *bool;
+    disableUserAccounts *bool
 }
 // NewForceDeleteRequestBody instantiates a new forceDeleteRequestBody and sets the default values.
 func NewForceDeleteRequestBody()(*ForceDeleteRequestBody) {

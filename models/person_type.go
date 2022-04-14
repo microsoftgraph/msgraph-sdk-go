@@ -7,11 +7,11 @@ import (
 // PersonType 
 type PersonType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The type of data source, such as Person.
-    class *string;
+    class *string
     // The secondary type of data source, such as OrganizationUser.
-    subclass *string;
+    subclass *string
 }
 // NewPersonType instantiates a new personType and sets the default values.
 func NewPersonType()(*PersonType) {

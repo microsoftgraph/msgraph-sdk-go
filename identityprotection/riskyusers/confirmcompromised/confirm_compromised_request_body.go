@@ -7,9 +7,9 @@ import (
 // ConfirmCompromisedRequestBody provides operations to call the confirmCompromised method.
 type ConfirmCompromisedRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The userIds property
-    userIds []string;
+    userIds []string
 }
 // NewConfirmCompromisedRequestBody instantiates a new confirmCompromisedRequestBody and sets the default values.
 func NewConfirmCompromisedRequestBody()(*ConfirmCompromisedRequestBody) {

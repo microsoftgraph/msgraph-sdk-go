@@ -8,7 +8,7 @@ import (
 type Bitlocker struct {
     Entity
     // The recovery keys associated with the bitlocker entity.
-    recoveryKeys []BitlockerRecoveryKeyable;
+    recoveryKeys []BitlockerRecoveryKeyable
 }
 // NewBitlocker instantiates a new bitlocker and sets the default values.
 func NewBitlocker()(*Bitlocker) {

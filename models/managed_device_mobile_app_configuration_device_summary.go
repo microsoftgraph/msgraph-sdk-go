@@ -9,19 +9,19 @@ import (
 type ManagedDeviceMobileAppConfigurationDeviceSummary struct {
     Entity
     // Version of the policy for that overview
-    configurationVersion *int32;
+    configurationVersion *int32
     // Number of error devices
-    errorCount *int32;
+    errorCount *int32
     // Number of failed devices
-    failedCount *int32;
+    failedCount *int32
     // Last update time
-    lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Number of not applicable devices
-    notApplicableCount *int32;
+    notApplicableCount *int32
     // Number of pending devices
-    pendingCount *int32;
+    pendingCount *int32
     // Number of succeeded devices
-    successCount *int32;
+    successCount *int32
 }
 // NewManagedDeviceMobileAppConfigurationDeviceSummary instantiates a new managedDeviceMobileAppConfigurationDeviceSummary and sets the default values.
 func NewManagedDeviceMobileAppConfigurationDeviceSummary()(*ManagedDeviceMobileAppConfigurationDeviceSummary) {

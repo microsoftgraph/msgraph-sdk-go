@@ -7,19 +7,19 @@ import (
 // DeviceOperatingSystemSummary device operating system summary.
 type DeviceOperatingSystemSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Number of android device count.
-    androidCount *int32;
+    androidCount *int32
     // Number of iOS device count.
-    iosCount *int32;
+    iosCount *int32
     // Number of Mac OS X device count.
-    macOSCount *int32;
+    macOSCount *int32
     // Number of unknown device count.
-    unknownCount *int32;
+    unknownCount *int32
     // Number of Windows device count.
-    windowsCount *int32;
+    windowsCount *int32
     // Number of Windows mobile device count.
-    windowsMobileCount *int32;
+    windowsMobileCount *int32
 }
 // NewDeviceOperatingSystemSummary instantiates a new deviceOperatingSystemSummary and sets the default values.
 func NewDeviceOperatingSystemSummary()(*DeviceOperatingSystemSummary) {

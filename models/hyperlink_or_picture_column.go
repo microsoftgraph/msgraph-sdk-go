@@ -7,9 +7,9 @@ import (
 // HyperlinkOrPictureColumn 
 type HyperlinkOrPictureColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies whether the display format used for URL columns is an image or a hyperlink.
-    isPicture *bool;
+    isPicture *bool
 }
 // NewHyperlinkOrPictureColumn instantiates a new hyperlinkOrPictureColumn and sets the default values.
 func NewHyperlinkOrPictureColumn()(*HyperlinkOrPictureColumn) {

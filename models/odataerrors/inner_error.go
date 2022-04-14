@@ -8,13 +8,13 @@ import (
 // InnerError 
 type InnerError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Client request Id as sent by the client application.
-    clientRequestId *string;
+    clientRequestId *string
     // Date when the error occured.
-    date *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    date *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Request Id as tracked internally by the service
-    requestId *string;
+    requestId *string
 }
 // NewInnerError instantiates a new InnerError and sets the default values.
 func NewInnerError()(*InnerError) {

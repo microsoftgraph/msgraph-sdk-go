@@ -7,11 +7,11 @@ import (
 // TimeSlot 
 type TimeSlot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The end property
-    end DateTimeTimeZoneable;
+    end DateTimeTimeZoneable
     // The start property
-    start DateTimeTimeZoneable;
+    start DateTimeTimeZoneable
 }
 // NewTimeSlot instantiates a new timeSlot and sets the default values.
 func NewTimeSlot()(*TimeSlot) {

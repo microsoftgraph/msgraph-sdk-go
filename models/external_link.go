@@ -7,9 +7,9 @@ import (
 // ExternalLink 
 type ExternalLink struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The url of the link.
-    href *string;
+    href *string
 }
 // NewExternalLink instantiates a new externalLink and sets the default values.
 func NewExternalLink()(*ExternalLink) {

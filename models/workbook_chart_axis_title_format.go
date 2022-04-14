@@ -8,7 +8,7 @@ import (
 type WorkbookChartAxisTitleFormat struct {
     Entity
     // Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.
-    font WorkbookChartFontable;
+    font WorkbookChartFontable
 }
 // NewWorkbookChartAxisTitleFormat instantiates a new workbookChartAxisTitleFormat and sets the default values.
 func NewWorkbookChartAxisTitleFormat()(*WorkbookChartAxisTitleFormat) {

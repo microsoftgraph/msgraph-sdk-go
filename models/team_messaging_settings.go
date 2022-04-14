@@ -7,17 +7,17 @@ import (
 // TeamMessagingSettings 
 type TeamMessagingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If set to true, @channel mentions are allowed.
-    allowChannelMentions *bool;
+    allowChannelMentions *bool
     // If set to true, owners can delete any message.
-    allowOwnerDeleteMessages *bool;
+    allowOwnerDeleteMessages *bool
     // If set to true, @team mentions are allowed.
-    allowTeamMentions *bool;
+    allowTeamMentions *bool
     // If set to true, users can delete their messages.
-    allowUserDeleteMessages *bool;
+    allowUserDeleteMessages *bool
     // If set to true, users can edit their messages.
-    allowUserEditMessages *bool;
+    allowUserEditMessages *bool
 }
 // NewTeamMessagingSettings instantiates a new teamMessagingSettings and sets the default values.
 func NewTeamMessagingSettings()(*TeamMessagingSettings) {

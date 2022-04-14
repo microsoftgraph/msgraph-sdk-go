@@ -8,11 +8,11 @@ import (
 type RiskyUserHistoryItem struct {
     RiskyUser
     // The activity related to user risk level change.
-    activity RiskUserActivityable;
+    activity RiskUserActivityable
     // The id of actor that does the operation.
-    initiatedBy *string;
+    initiatedBy *string
     // The id of the user.
-    userId *string;
+    userId *string
 }
 // NewRiskyUserHistoryItem instantiates a new riskyUserHistoryItem and sets the default values.
 func NewRiskyUserHistoryItem()(*RiskyUserHistoryItem) {

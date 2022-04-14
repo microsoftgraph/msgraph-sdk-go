@@ -7,11 +7,11 @@ import (
 // PrintOperationStatus 
 type PrintOperationStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A human-readable description of the printOperation's current processing state. Read-only.
-    description *string;
+    description *string
     // The printOperation's current processing state. Valid values are described in the following table. Read-only.
-    state *PrintOperationProcessingState;
+    state *PrintOperationProcessingState
 }
 // NewPrintOperationStatus instantiates a new printOperationStatus and sets the default values.
 func NewPrintOperationStatus()(*PrintOperationStatus) {

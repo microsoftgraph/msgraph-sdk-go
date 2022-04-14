@@ -7,13 +7,13 @@ import (
 // CalculatedColumn 
 type CalculatedColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
-    format *string;
+    format *string
     // The formula used to compute the value for this column.
-    formula *string;
+    formula *string
     // The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
-    outputType *string;
+    outputType *string
 }
 // NewCalculatedColumn instantiates a new calculatedColumn and sets the default values.
 func NewCalculatedColumn()(*CalculatedColumn) {

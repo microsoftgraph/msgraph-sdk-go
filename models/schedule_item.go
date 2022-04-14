@@ -7,19 +7,19 @@ import (
 // ScheduleItem 
 type ScheduleItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The date, time, and time zone that the corresponding event ends.
-    end DateTimeTimeZoneable;
+    end DateTimeTimeZoneable
     // The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
-    isPrivate *bool;
+    isPrivate *bool
     // The location where the corresponding event is held or attended from. Optional.
-    location *string;
+    location *string
     // The date, time, and time zone that the corresponding event starts.
-    start DateTimeTimeZoneable;
+    start DateTimeTimeZoneable
     // The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-    status *FreeBusyStatus;
+    status *FreeBusyStatus
     // The corresponding event's subject line. Optional.
-    subject *string;
+    subject *string
 }
 // NewScheduleItem instantiates a new scheduleItem and sets the default values.
 func NewScheduleItem()(*ScheduleItem) {

@@ -7,13 +7,13 @@ import (
 // LicenseUnitsDetail 
 type LicenseUnitsDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of units that are enabled for the active subscription of the service SKU.
-    enabled *int32;
+    enabled *int32
     // The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
-    suspended *int32;
+    suspended *int32
     // The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
-    warning *int32;
+    warning *int32
 }
 // NewLicenseUnitsDetail instantiates a new licenseUnitsDetail and sets the default values.
 func NewLicenseUnitsDetail()(*LicenseUnitsDetail) {

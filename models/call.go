@@ -8,51 +8,51 @@ import (
 type Call struct {
     Entity
     // Read-only. Nullable.
-    audioRoutingGroups []AudioRoutingGroupable;
+    audioRoutingGroups []AudioRoutingGroupable
     // The callback URL on which callbacks will be delivered. Must be https.
-    callbackUri *string;
+    callbackUri *string
     // A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
-    callChainId *string;
+    callChainId *string
     // The callOptions property
-    callOptions CallOptionsable;
+    callOptions CallOptionsable
     // The routing information on how the call was retargeted. Read-only.
-    callRoutes []CallRouteable;
+    callRoutes []CallRouteable
     // The chat information. Required information for joining a meeting.
-    chatInfo ChatInfoable;
+    chatInfo ChatInfoable
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
-    direction *CallDirection;
+    direction *CallDirection
     // The context associated with an incoming call. Read-only. Server generated.
-    incomingContext IncomingContextable;
+    incomingContext IncomingContextable
     // The media configuration. Required.
-    mediaConfig MediaConfigable;
+    mediaConfig MediaConfigable
     // Read-only. The call media state.
-    mediaState CallMediaStateable;
+    mediaState CallMediaStateable
     // The meeting information that's required for joining a meeting.
-    meetingInfo MeetingInfoable;
+    meetingInfo MeetingInfoable
     // The myParticipantId property
-    myParticipantId *string;
+    myParticipantId *string
     // Read-only. Nullable.
-    operations []CommsOperationable;
+    operations []CommsOperationable
     // Read-only. Nullable.
-    participants []Participantable;
+    participants []Participantable
     // The requestedModalities property
-    requestedModalities []Modality;
+    requestedModalities []Modality
     // The resultInfo property
-    resultInfo ResultInfoable;
+    resultInfo ResultInfoable
     // The source property
-    source ParticipantInfoable;
+    source ParticipantInfoable
     // The state property
-    state *CallState;
+    state *CallState
     // The subject property
-    subject *string;
+    subject *string
     // The targets property
-    targets []InvitationParticipantInfoable;
+    targets []InvitationParticipantInfoable
     // The tenantId property
-    tenantId *string;
+    tenantId *string
     // The toneInfo property
-    toneInfo ToneInfoable;
+    toneInfo ToneInfoable
     // The transcription information for the call. Read-only.
-    transcription CallTranscriptionInfoable;
+    transcription CallTranscriptionInfoable
 }
 // NewCall instantiates a new call and sets the default values.
 func NewCall()(*Call) {

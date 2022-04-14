@@ -7,11 +7,11 @@ import (
 // TeamGuestSettings 
 type TeamGuestSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If set to true, guests can add and update channels.
-    allowCreateUpdateChannels *bool;
+    allowCreateUpdateChannels *bool
     // If set to true, guests can delete channels.
-    allowDeleteChannels *bool;
+    allowDeleteChannels *bool
 }
 // NewTeamGuestSettings instantiates a new teamGuestSettings and sets the default values.
 func NewTeamGuestSettings()(*TeamGuestSettings) {

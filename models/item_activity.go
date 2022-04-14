@@ -9,13 +9,13 @@ import (
 type ItemActivity struct {
     Entity
     // An item was accessed.
-    access AccessActionable;
+    access AccessActionable
     // Details about when the activity took place. Read-only.
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Identity of who performed the action. Read-only.
-    actor IdentitySetable;
+    actor IdentitySetable
     // Exposes the driveItem that was the target of this activity.
-    driveItem DriveItemable;
+    driveItem DriveItemable
 }
 // NewItemActivity instantiates a new itemActivity and sets the default values.
 func NewItemActivity()(*ItemActivity) {

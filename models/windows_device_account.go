@@ -7,9 +7,9 @@ import (
 // WindowsDeviceAccount 
 type WindowsDeviceAccount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Not yet documented
-    password *string;
+    password *string
 }
 // NewWindowsDeviceAccount instantiates a new windowsDeviceAccount and sets the default values.
 func NewWindowsDeviceAccount()(*WindowsDeviceAccount) {

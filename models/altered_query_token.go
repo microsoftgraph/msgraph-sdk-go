@@ -7,13 +7,13 @@ import (
 // AlteredQueryToken 
 type AlteredQueryToken struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Defines the length of a changed segment.
-    length *int32;
+    length *int32
     // Defines the offset of a changed segment.
-    offset *int32;
+    offset *int32
     // Represents the corrected segment string.
-    suggestion *string;
+    suggestion *string
 }
 // NewAlteredQueryToken instantiates a new alteredQueryToken and sets the default values.
 func NewAlteredQueryToken()(*AlteredQueryToken) {

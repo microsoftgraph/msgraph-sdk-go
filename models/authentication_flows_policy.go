@@ -8,11 +8,11 @@ import (
 type AuthenticationFlowsPolicy struct {
     Entity
     // Inherited property. A description of the policy. Optional. Read-only.
-    description *string;
+    description *string
     // Inherited property. The human-readable name of the policy. Optional. Read-only.
-    displayName *string;
+    displayName *string
     // Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
-    selfServiceSignUp SelfServiceSignUpAuthenticationFlowConfigurationable;
+    selfServiceSignUp SelfServiceSignUpAuthenticationFlowConfigurationable
 }
 // NewAuthenticationFlowsPolicy instantiates a new authenticationFlowsPolicy and sets the default values.
 func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {

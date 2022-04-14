@@ -8,9 +8,9 @@ import (
 type WorkbookPivotTable struct {
     Entity
     // Name of the PivotTable.
-    name *string;
+    name *string
     // The worksheet containing the current PivotTable. Read-only.
-    worksheet WorkbookWorksheetable;
+    worksheet WorkbookWorksheetable
 }
 // NewWorkbookPivotTable instantiates a new workbookPivotTable and sets the default values.
 func NewWorkbookPivotTable()(*WorkbookPivotTable) {

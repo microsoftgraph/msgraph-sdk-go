@@ -9,27 +9,27 @@ import (
 type VppToken struct {
     Entity
     // The apple Id associated with the given Apple Volume Purchase Program Token.
-    appleId *string;
+    appleId *string
     // Whether or not apps for the VPP token will be automatically updated.
-    automaticallyUpdateApps *bool;
+    automaticallyUpdateApps *bool
     // Whether or not apps for the VPP token will be automatically updated.
-    countryOrRegion *string;
+    countryOrRegion *string
     // The expiration date time of the Apple Volume Purchase Program Token.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Last modification date time associated with the Apple Volume Purchase Program Token.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Current sync status of the last application sync which was triggered using the Apple Volume Purchase Program Token. Possible values are: none, inProgress, completed, failed. Possible values are: none, inProgress, completed, failed.
-    lastSyncStatus *VppTokenSyncStatus;
+    lastSyncStatus *VppTokenSyncStatus
     // The organization associated with the Apple Volume Purchase Program Token
-    organizationName *string;
+    organizationName *string
     // Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
-    state *VppTokenState;
+    state *VppTokenState
     // The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
-    token *string;
+    token *string
     // The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
-    vppTokenAccountType *VppTokenAccountType;
+    vppTokenAccountType *VppTokenAccountType
 }
 // NewVppToken instantiates a new vppToken and sets the default values.
 func NewVppToken()(*VppToken) {

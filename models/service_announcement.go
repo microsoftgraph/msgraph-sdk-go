@@ -8,11 +8,11 @@ import (
 type ServiceAnnouncement struct {
     Entity
     // A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-    healthOverviews []ServiceHealthable;
+    healthOverviews []ServiceHealthable
     // A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
-    issues []ServiceHealthIssueable;
+    issues []ServiceHealthIssueable
     // A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-    messages []ServiceUpdateMessageable;
+    messages []ServiceUpdateMessageable
 }
 // NewServiceAnnouncement instantiates a new serviceAnnouncement and sets the default values.
 func NewServiceAnnouncement()(*ServiceAnnouncement) {

@@ -8,7 +8,7 @@ import (
 type AgreementFile struct {
     AgreementFileProperties
     // The localized version of the terms of use agreement files attached to the agreement.
-    localizations []AgreementFileLocalizationable;
+    localizations []AgreementFileLocalizationable
 }
 // NewAgreementFile instantiates a new agreementFile and sets the default values.
 func NewAgreementFile()(*AgreementFile) {

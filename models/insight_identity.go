@@ -7,13 +7,13 @@ import (
 // InsightIdentity 
 type InsightIdentity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The email address of the user who shared the item.
-    address *string;
+    address *string
     // The display name of the user who shared the item.
-    displayName *string;
+    displayName *string
     // The id of the user who shared the item.
-    id *string;
+    id *string
 }
 // NewInsightIdentity instantiates a new insightIdentity and sets the default values.
 func NewInsightIdentity()(*InsightIdentity) {

@@ -8,25 +8,25 @@ import (
 type AndroidManagedAppProtection struct {
     TargetedManagedAppProtection
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable;
+    apps []ManagedMobileAppable
     // Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-    customBrowserDisplayName *string;
+    customBrowserDisplayName *string
     // Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-    customBrowserPackageId *string;
+    customBrowserPackageId *string
     // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32;
+    deployedAppCount *int32
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable
     // When this setting is enabled, app level encryption is disabled if device level encryption is enabled
-    disableAppEncryptionIfDeviceEncryptionIsEnabled *bool;
+    disableAppEncryptionIfDeviceEncryptionIsEnabled *bool
     // Indicates whether application data for managed apps should be encrypted
-    encryptAppData *bool;
+    encryptAppData *bool
     // Define the oldest required Android security patch level a user can have to gain secure access to the app.
-    minimumRequiredPatchVersion *string;
+    minimumRequiredPatchVersion *string
     // Define the oldest recommended Android security patch level a user can have for secure access to the app.
-    minimumWarningPatchVersion *string;
+    minimumWarningPatchVersion *string
     // Indicates whether a managed user can take screen captures of managed apps
-    screenCaptureBlocked *bool;
+    screenCaptureBlocked *bool
 }
 // NewAndroidManagedAppProtection instantiates a new androidManagedAppProtection and sets the default values.
 func NewAndroidManagedAppProtection()(*AndroidManagedAppProtection) {

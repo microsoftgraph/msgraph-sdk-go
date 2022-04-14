@@ -7,19 +7,19 @@ import (
 // WorkbookSortField 
 type WorkbookSortField struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents whether the sorting is done in an ascending fashion.
-    ascending *bool;
+    ascending *bool
     // Represents the color that is the target of the condition if the sorting is on font or cell color.
-    color *string;
+    color *string
     // Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
-    dataOption *string;
+    dataOption *string
     // Represents the icon that is the target of the condition if the sorting is on the cell's icon.
-    icon WorkbookIconable;
+    icon WorkbookIconable
     // Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
-    key *int32;
+    key *int32
     // Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
-    sortOn *string;
+    sortOn *string
 }
 // NewWorkbookSortField instantiates a new workbookSortField and sets the default values.
 func NewWorkbookSortField()(*WorkbookSortField) {

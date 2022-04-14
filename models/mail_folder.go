@@ -8,27 +8,27 @@ import (
 type MailFolder struct {
     Entity
     // The number of immediate child mailFolders in the current mailFolder.
-    childFolderCount *int32;
+    childFolderCount *int32
     // The collection of child folders in the mailFolder.
-    childFolders []MailFolderable;
+    childFolders []MailFolderable
     // The mailFolder's display name.
-    displayName *string;
+    displayName *string
     // Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
-    isHidden *bool;
+    isHidden *bool
     // The collection of rules that apply to the user's Inbox folder.
-    messageRules []MessageRuleable;
+    messageRules []MessageRuleable
     // The collection of messages in the mailFolder.
-    messages []Messageable;
+    messages []Messageable
     // The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // The unique identifier for the mailFolder's parent mailFolder.
-    parentFolderId *string;
+    parentFolderId *string
     // The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The number of items in the mailFolder.
-    totalItemCount *int32;
+    totalItemCount *int32
     // The number of items in the mailFolder marked as unread.
-    unreadItemCount *int32;
+    unreadItemCount *int32
 }
 // NewMailFolder instantiates a new mailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {

@@ -8,13 +8,13 @@ import (
 type ThumbnailSet struct {
     Entity
     // A 1920x1920 scaled thumbnail.
-    large Thumbnailable;
+    large Thumbnailable
     // A 176x176 scaled thumbnail.
-    medium Thumbnailable;
+    medium Thumbnailable
     // A 48x48 cropped thumbnail.
-    small Thumbnailable;
+    small Thumbnailable
     // A custom thumbnail image or the original image used to generate other thumbnails.
-    source Thumbnailable;
+    source Thumbnailable
 }
 // NewThumbnailSet instantiates a new thumbnailSet and sets the default values.
 func NewThumbnailSet()(*ThumbnailSet) {

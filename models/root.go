@@ -7,7 +7,7 @@ import (
 // Root 
 type Root struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewRoot instantiates a new root and sets the default values.
 func NewRoot()(*Root) {

@@ -8,9 +8,9 @@ import (
 type TargetedManagedAppProtection struct {
     ManagedAppProtection
     // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    assignments []TargetedManagedAppPolicyAssignmentable;
+    assignments []TargetedManagedAppPolicyAssignmentable
     // Indicates if the policy is deployed to any inclusion groups or not.
-    isAssigned *bool;
+    isAssigned *bool
 }
 // NewTargetedManagedAppProtection instantiates a new targetedManagedAppProtection and sets the default values.
 func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {

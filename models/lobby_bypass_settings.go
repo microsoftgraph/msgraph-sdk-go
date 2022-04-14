@@ -7,11 +7,11 @@ import (
 // LobbyBypassSettings 
 type LobbyBypassSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-    isDialInBypassEnabled *bool;
+    isDialInBypassEnabled *bool
     // Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
-    scope *LobbyBypassScope;
+    scope *LobbyBypassScope
 }
 // NewLobbyBypassSettings instantiates a new lobbyBypassSettings and sets the default values.
 func NewLobbyBypassSettings()(*LobbyBypassSettings) {

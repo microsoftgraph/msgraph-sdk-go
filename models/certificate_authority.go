@@ -7,19 +7,19 @@ import (
 // CertificateAuthority 
 type CertificateAuthority struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Required. The base64 encoded string representing the public certificate.
-    certificate []byte;
+    certificate []byte
     // The URL of the certificate revocation list.
-    certificateRevocationListUrl *string;
+    certificateRevocationListUrl *string
     // The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
-    deltaCertificateRevocationListUrl *string;
+    deltaCertificateRevocationListUrl *string
     // Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
-    isRootAuthority *bool;
+    isRootAuthority *bool
     // The issuer of the certificate, calculated from the certificate value. Read-only.
-    issuer *string;
+    issuer *string
     // The subject key identifier of the certificate, calculated from the certificate value. Read-only.
-    issuerSki *string;
+    issuerSki *string
 }
 // NewCertificateAuthority instantiates a new certificateAuthority and sets the default values.
 func NewCertificateAuthority()(*CertificateAuthority) {

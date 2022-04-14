@@ -9,27 +9,27 @@ import (
 type DeviceComplianceSettingState struct {
     Entity
     // The DateTime when device compliance grace period expires
-    complianceGracePeriodExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    complianceGracePeriodExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Device Id that is being reported
-    deviceId *string;
+    deviceId *string
     // The device model that is being reported
-    deviceModel *string;
+    deviceModel *string
     // The Device Name that is being reported
-    deviceName *string;
+    deviceName *string
     // The setting class name and property name.
-    setting *string;
+    setting *string
     // The Setting Name that is being reported
-    settingName *string;
+    settingName *string
     // The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-    state *ComplianceStatus;
+    state *ComplianceStatus
     // The User email address that is being reported
-    userEmail *string;
+    userEmail *string
     // The user Id that is being reported
-    userId *string;
+    userId *string
     // The User Name that is being reported
-    userName *string;
+    userName *string
     // The User PrincipalName that is being reported
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewDeviceComplianceSettingState instantiates a new deviceComplianceSettingState and sets the default values.
 func NewDeviceComplianceSettingState()(*DeviceComplianceSettingState) {

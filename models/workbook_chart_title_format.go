@@ -8,9 +8,9 @@ import (
 type WorkbookChartTitleFormat struct {
     Entity
     // Represents the fill format of an object, which includes background formatting information. Read-only.
-    fill WorkbookChartFillable;
+    fill WorkbookChartFillable
     // Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.
-    font WorkbookChartFontable;
+    font WorkbookChartFontable
 }
 // NewWorkbookChartTitleFormat instantiates a new workbookChartTitleFormat and sets the default values.
 func NewWorkbookChartTitleFormat()(*WorkbookChartTitleFormat) {

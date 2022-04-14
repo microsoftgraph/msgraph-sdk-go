@@ -8,13 +8,13 @@ import (
 // ServiceHealthIssuePost 
 type ServiceHealthIssuePost struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The published time of the post.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The content of the service issue post.
-    description ItemBodyable;
+    description ItemBodyable
     // The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
-    postType *PostType;
+    postType *PostType
 }
 // NewServiceHealthIssuePost instantiates a new serviceHealthIssuePost and sets the default values.
 func NewServiceHealthIssuePost()(*ServiceHealthIssuePost) {

@@ -8,9 +8,9 @@ import (
 type InformationProtection struct {
     Entity
     // The bitlocker property
-    bitlocker Bitlockerable;
+    bitlocker Bitlockerable
     // The threatAssessmentRequests property
-    threatAssessmentRequests []ThreatAssessmentRequestable;
+    threatAssessmentRequests []ThreatAssessmentRequestable
 }
 // NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {

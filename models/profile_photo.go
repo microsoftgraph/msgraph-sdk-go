@@ -8,9 +8,9 @@ import (
 type ProfilePhoto struct {
     Entity
     // The height of the photo. Read-only.
-    height *int32;
+    height *int32
     // The width of the photo. Read-only.
-    width *int32;
+    width *int32
 }
 // NewProfilePhoto instantiates a new profilePhoto and sets the default values.
 func NewProfilePhoto()(*ProfilePhoto) {

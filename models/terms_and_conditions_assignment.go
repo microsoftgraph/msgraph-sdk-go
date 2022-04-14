@@ -8,7 +8,7 @@ import (
 type TermsAndConditionsAssignment struct {
     Entity
     // Assignment target that the T&C policy is assigned to.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewTermsAndConditionsAssignment instantiates a new termsAndConditionsAssignment and sets the default values.
 func NewTermsAndConditionsAssignment()(*TermsAndConditionsAssignment) {

@@ -7,21 +7,21 @@ import (
 // DocumentSet 
 type DocumentSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Content types allowed in document set.
-    allowedContentTypes []ContentTypeInfoable;
+    allowedContentTypes []ContentTypeInfoable
     // Default contents of document set.
-    defaultContents []DocumentSetContentable;
+    defaultContents []DocumentSetContentable
     // Specifies whether to push welcome page changes to inherited content types.
-    propagateWelcomePageChanges *bool;
+    propagateWelcomePageChanges *bool
     // The sharedColumns property
-    sharedColumns []ColumnDefinitionable;
+    sharedColumns []ColumnDefinitionable
     // Indicates whether to add the name of the document set to each file name.
-    shouldPrefixNameToFile *bool;
+    shouldPrefixNameToFile *bool
     // The welcomePageColumns property
-    welcomePageColumns []ColumnDefinitionable;
+    welcomePageColumns []ColumnDefinitionable
     // Welcome page absolute URL.
-    welcomePageUrl *string;
+    welcomePageUrl *string
 }
 // NewDocumentSet instantiates a new documentSet and sets the default values.
 func NewDocumentSet()(*DocumentSet) {

@@ -7,9 +7,9 @@ import (
 // GetTeamsDeviceUsageDistributionUserCountsWithPeriodResponse provides operations to call the getTeamsDeviceUsageDistributionUserCounts method.
 type GetTeamsDeviceUsageDistributionUserCountsWithPeriodResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetTeamsDeviceUsageDistributionUserCountsWithPeriodResponse instantiates a new getTeamsDeviceUsageDistributionUserCountsWithPeriodResponse and sets the default values.
 func NewGetTeamsDeviceUsageDistributionUserCountsWithPeriodResponse()(*GetTeamsDeviceUsageDistributionUserCountsWithPeriodResponse) {

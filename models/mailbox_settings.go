@@ -7,25 +7,25 @@ import (
 // MailboxSettings 
 type MailboxSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Folder ID of an archive folder for the user.
-    archiveFolder *string;
+    archiveFolder *string
     // Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-    automaticRepliesSetting AutomaticRepliesSettingable;
+    automaticRepliesSetting AutomaticRepliesSettingable
     // The date format for the user's mailbox.
-    dateFormat *string;
+    dateFormat *string
     // If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
-    delegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions;
+    delegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions
     // The locale information for the user, including the preferred language and country/region.
-    language LocaleInfoable;
+    language LocaleInfoable
     // The time format for the user's mailbox.
-    timeFormat *string;
+    timeFormat *string
     // The default time zone for the user's mailbox.
-    timeZone *string;
+    timeZone *string
     // The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
-    userPurpose *UserPurpose;
+    userPurpose *UserPurpose
     // The days of the week and hours in a specific time zone that the user works.
-    workingHours WorkingHoursable;
+    workingHours WorkingHoursable
 }
 // NewMailboxSettings instantiates a new mailboxSettings and sets the default values.
 func NewMailboxSettings()(*MailboxSettings) {

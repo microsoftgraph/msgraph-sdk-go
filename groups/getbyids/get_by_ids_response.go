@@ -8,9 +8,9 @@ import (
 // GetByIdsResponse provides operations to call the getByIds method.
 type GetByIdsResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable;
+    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable
 }
 // NewGetByIdsResponse instantiates a new getByIdsResponse and sets the default values.
 func NewGetByIdsResponse()(*GetByIdsResponse) {

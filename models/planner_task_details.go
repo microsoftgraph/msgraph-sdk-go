@@ -8,13 +8,13 @@ import (
 type PlannerTaskDetails struct {
     Entity
     // The collection of checklist items on the task.
-    checklist PlannerChecklistItemsable;
+    checklist PlannerChecklistItemsable
     // Description of the task.
-    description *string;
+    description *string
     // This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
-    previewType *PlannerPreviewType;
+    previewType *PlannerPreviewType
     // The collection of references on the task.
-    references PlannerExternalReferencesable;
+    references PlannerExternalReferencesable
 }
 // NewPlannerTaskDetails instantiates a new plannerTaskDetails and sets the default values.
 func NewPlannerTaskDetails()(*PlannerTaskDetails) {

@@ -7,17 +7,17 @@ import (
 // ResourceSpecificPermission 
 type ResourceSpecificPermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Describes the level of access that the resource-specific permission represents.
-    description *string;
+    description *string
     // The display name for the resource-specific permission.
-    displayName *string;
+    displayName *string
     // The unique identifier for the resource-specific application permission.
-    id *string;
+    id *string
     // Indicates whether the permission is enabled.
-    isEnabled *bool;
+    isEnabled *bool
     // The value of the permission.
-    value *string;
+    value *string
 }
 // NewResourceSpecificPermission instantiates a new resourceSpecificPermission and sets the default values.
 func NewResourceSpecificPermission()(*ResourceSpecificPermission) {

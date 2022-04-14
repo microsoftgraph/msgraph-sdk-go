@@ -7,11 +7,11 @@ import (
 // EducationItemBody 
 type EducationItemBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The content property
-    content *string;
+    content *string
     // The contentType property
-    contentType *BodyType;
+    contentType *BodyType
 }
 // NewEducationItemBody instantiates a new educationItemBody and sets the default values.
 func NewEducationItemBody()(*EducationItemBody) {

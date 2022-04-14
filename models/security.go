@@ -8,11 +8,11 @@ import (
 type Security struct {
     Entity
     // Read-only. Nullable.
-    alerts []Alertable;
+    alerts []Alertable
     // The secureScoreControlProfiles property
-    secureScoreControlProfiles []SecureScoreControlProfileable;
+    secureScoreControlProfiles []SecureScoreControlProfileable
     // The secureScores property
-    secureScores []SecureScoreable;
+    secureScores []SecureScoreable
 }
 // NewSecurity instantiates a new security and sets the default values.
 func NewSecurity()(*Security) {

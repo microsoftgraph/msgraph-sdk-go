@@ -9,15 +9,15 @@ import (
 type ManagedAppPolicy struct {
     Entity
     // The date and time the policy was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The policy's description.
-    description *string;
+    description *string
     // Policy display name.
-    displayName *string;
+    displayName *string
     // Last time the policy was modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Version of the entity.
-    version *string;
+    version *string
 }
 // NewManagedAppPolicy instantiates a new managedAppPolicy and sets the default values.
 func NewManagedAppPolicy()(*ManagedAppPolicy) {

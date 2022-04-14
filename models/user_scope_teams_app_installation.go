@@ -8,7 +8,7 @@ import (
 type UserScopeTeamsAppInstallation struct {
     TeamsAppInstallation
     // The chat between the user and Teams app.
-    chat Chatable;
+    chat Chatable
 }
 // NewUserScopeTeamsAppInstallation instantiates a new userScopeTeamsAppInstallation and sets the default values.
 func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {

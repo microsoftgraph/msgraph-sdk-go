@@ -8,7 +8,7 @@ import (
 type OnenoteEntityBaseModel struct {
     Entity
     // The endpoint where you can get details about the page. Read-only.
-    self *string;
+    self *string
 }
 // NewOnenoteEntityBaseModel instantiates a new onenoteEntityBaseModel and sets the default values.
 func NewOnenoteEntityBaseModel()(*OnenoteEntityBaseModel) {

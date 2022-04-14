@@ -9,33 +9,33 @@ import (
 type EducationSubmission struct {
     Entity
     // Read-Write. Nullable.
-    outcomes []EducationOutcomeable;
+    outcomes []EducationOutcomeable
     // User who moved the status of this submission to reassigned.
-    reassignedBy IdentitySetable;
+    reassignedBy IdentitySetable
     // Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    reassignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    reassignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Who this submission is assigned to.
-    recipient EducationSubmissionRecipientable;
+    recipient EducationSubmissionRecipientable
     // Nullable.
-    resources []EducationSubmissionResourceable;
+    resources []EducationSubmissionResourceable
     // Folder where all file resources for this submission need to be stored.
-    resourcesFolderUrl *string;
+    resourcesFolderUrl *string
     // User who moved the status of this submission to returned.
-    returnedBy IdentitySetable;
+    returnedBy IdentitySetable
     // Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    returnedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    returnedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
-    status *EducationSubmissionStatus;
+    status *EducationSubmissionStatus
     // User who moved the resource into the submitted state.
-    submittedBy IdentitySetable;
+    submittedBy IdentitySetable
     // Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    submittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    submittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Nullable.
-    submittedResources []EducationSubmissionResourceable;
+    submittedResources []EducationSubmissionResourceable
     // User who moved the resource from submitted into the working state.
-    unsubmittedBy IdentitySetable;
+    unsubmittedBy IdentitySetable
     // Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    unsubmittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    unsubmittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewEducationSubmission instantiates a new educationSubmission and sets the default values.
 func NewEducationSubmission()(*EducationSubmission) {

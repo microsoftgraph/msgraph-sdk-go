@@ -8,15 +8,15 @@ import (
 // DeviceActionResult device action result
 type DeviceActionResult struct {
     // Action name
-    actionName *string;
+    actionName *string
     // State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
-    actionState *ActionState;
+    actionState *ActionState
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Time the action state was last updated
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Time the action was initiated
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewDeviceActionResult instantiates a new deviceActionResult and sets the default values.
 func NewDeviceActionResult()(*DeviceActionResult) {

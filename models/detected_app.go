@@ -8,15 +8,15 @@ import (
 type DetectedApp struct {
     Entity
     // The number of devices that have installed this application
-    deviceCount *int32;
+    deviceCount *int32
     // Name of the discovered application. Read-only
-    displayName *string;
+    displayName *string
     // The devices that have the discovered application installed
-    managedDevices []ManagedDeviceable;
+    managedDevices []ManagedDeviceable
     // Discovered application size in bytes. Read-only
-    sizeInByte *int64;
+    sizeInByte *int64
     // Version of the discovered application. Read-only
-    version *string;
+    version *string
 }
 // NewDetectedApp instantiates a new detectedApp and sets the default values.
 func NewDetectedApp()(*DetectedApp) {

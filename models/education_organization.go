@@ -8,13 +8,13 @@ import (
 type EducationOrganization struct {
     Entity
     // Organization description.
-    description *string;
+    description *string
     // Organization display name.
-    displayName *string;
+    displayName *string
     // Source where this organization was created from. Possible values are: sis, manual.
-    externalSource *EducationExternalSource;
+    externalSource *EducationExternalSource
     // The name of the external source this resources was generated from.
-    externalSourceDetail *string;
+    externalSourceDetail *string
 }
 // NewEducationOrganization instantiates a new educationOrganization and sets the default values.
 func NewEducationOrganization()(*EducationOrganization) {

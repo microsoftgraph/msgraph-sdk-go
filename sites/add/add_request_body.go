@@ -8,9 +8,9 @@ import (
 // AddRequestBody provides operations to call the add method.
 type AddRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable;
+    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable
 }
 // NewAddRequestBody instantiates a new addRequestBody and sets the default values.
 func NewAddRequestBody()(*AddRequestBody) {

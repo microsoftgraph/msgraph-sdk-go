@@ -8,13 +8,13 @@ import (
 type DeviceComplianceActionItem struct {
     Entity
     // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
-    actionType *DeviceComplianceActionType;
+    actionType *DeviceComplianceActionType
     // Number of hours to wait till the action will be enforced. Valid values 0 to 8760
-    gracePeriodHours *int32;
+    gracePeriodHours *int32
     // A list of group IDs to speicify who to CC this notification message to.
-    notificationMessageCCList []string;
+    notificationMessageCCList []string
     // What notification Message template to use
-    notificationTemplateId *string;
+    notificationTemplateId *string
 }
 // NewDeviceComplianceActionItem instantiates a new deviceComplianceActionItem and sets the default values.
 func NewDeviceComplianceActionItem()(*DeviceComplianceActionItem) {

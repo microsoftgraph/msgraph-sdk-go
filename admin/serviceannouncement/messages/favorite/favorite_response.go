@@ -7,9 +7,9 @@ import (
 // FavoriteResponse provides operations to call the favorite method.
 type FavoriteResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value *bool;
+    value *bool
 }
 // NewFavoriteResponse instantiates a new favoriteResponse and sets the default values.
 func NewFavoriteResponse()(*FavoriteResponse) {

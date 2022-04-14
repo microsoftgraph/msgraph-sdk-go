@@ -7,17 +7,17 @@ import (
 // AppliedConditionalAccessPolicy 
 type AppliedConditionalAccessPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
-    displayName *string;
+    displayName *string
     // Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
-    enforcedGrantControls []string;
+    enforcedGrantControls []string
     // Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
-    enforcedSessionControls []string;
+    enforcedSessionControls []string
     // An identifier of the conditional access policy.
-    id *string;
+    id *string
     // Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
-    result *AppliedConditionalAccessPolicyResult;
+    result *AppliedConditionalAccessPolicyResult
 }
 // NewAppliedConditionalAccessPolicy instantiates a new appliedConditionalAccessPolicy and sets the default values.
 func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {

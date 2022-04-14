@@ -7,7 +7,7 @@ import (
 // Compliance 
 type Compliance struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewCompliance instantiates a new Compliance and sets the default values.
 func NewCompliance()(*Compliance) {

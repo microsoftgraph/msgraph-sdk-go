@@ -7,11 +7,11 @@ import (
 // UsedInsightCollectionResponse 
 type UsedInsightCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []UsedInsightable;
+    value []UsedInsightable
 }
 // NewUsedInsightCollectionResponse instantiates a new UsedInsightCollectionResponse and sets the default values.
 func NewUsedInsightCollectionResponse()(*UsedInsightCollectionResponse) {
@@ -41,7 +41,7 @@ func (m *UsedInsightCollectionResponse) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.SetOdatanextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *UsedInsightCollectionResponse) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *UsedInsightCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *UsedInsightCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *UsedInsightCollectionResponse) GetValue()([]UsedInsightable) {
 // Serialize serializes information the current object
 func (m *UsedInsightCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *UsedInsightCollectionResponse) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *UsedInsightCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *UsedInsightCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

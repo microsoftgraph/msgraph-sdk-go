@@ -7,11 +7,11 @@ import (
 // ItemBody 
 type ItemBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The content of the item.
-    content *string;
+    content *string
     // The type of the content. Possible values are text and html.
-    contentType *BodyType;
+    contentType *BodyType
 }
 // NewItemBody instantiates a new itemBody and sets the default values.
 func NewItemBody()(*ItemBody) {

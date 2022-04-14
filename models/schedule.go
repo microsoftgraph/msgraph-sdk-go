@@ -8,43 +8,43 @@ import (
 type Schedule struct {
     Entity
     // Indicates whether the schedule is enabled for the team. Required.
-    enabled *bool;
+    enabled *bool
     // The offerShiftRequests property
-    offerShiftRequests []OfferShiftRequestable;
+    offerShiftRequests []OfferShiftRequestable
     // Indicates whether offer shift requests are enabled for the schedule.
-    offerShiftRequestsEnabled *bool;
+    offerShiftRequestsEnabled *bool
     // The openShiftChangeRequests property
-    openShiftChangeRequests []OpenShiftChangeRequestable;
+    openShiftChangeRequests []OpenShiftChangeRequestable
     // The openShifts property
-    openShifts []OpenShiftable;
+    openShifts []OpenShiftable
     // Indicates whether open shifts are enabled for the schedule.
-    openShiftsEnabled *bool;
+    openShiftsEnabled *bool
     // The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
-    provisionStatus *OperationStatus;
+    provisionStatus *OperationStatus
     // Additional information about why schedule provisioning failed.
-    provisionStatusCode *string;
+    provisionStatusCode *string
     // The logical grouping of users in the schedule (usually by role).
-    schedulingGroups []SchedulingGroupable;
+    schedulingGroups []SchedulingGroupable
     // The shifts in the schedule.
-    shifts []Shiftable;
+    shifts []Shiftable
     // The swapShiftsChangeRequests property
-    swapShiftsChangeRequests []SwapShiftsChangeRequestable;
+    swapShiftsChangeRequests []SwapShiftsChangeRequestable
     // Indicates whether swap shifts requests are enabled for the schedule.
-    swapShiftsRequestsEnabled *bool;
+    swapShiftsRequestsEnabled *bool
     // Indicates whether time clock is enabled for the schedule.
-    timeClockEnabled *bool;
+    timeClockEnabled *bool
     // The set of reasons for a time off in the schedule.
-    timeOffReasons []TimeOffReasonable;
+    timeOffReasons []TimeOffReasonable
     // The timeOffRequests property
-    timeOffRequests []TimeOffRequestable;
+    timeOffRequests []TimeOffRequestable
     // Indicates whether time off requests are enabled for the schedule.
-    timeOffRequestsEnabled *bool;
+    timeOffRequestsEnabled *bool
     // The instances of times off in the schedule.
-    timesOff []TimeOffable;
+    timesOff []TimeOffable
     // Indicates the time zone of the schedule team using tz database format. Required.
-    timeZone *string;
+    timeZone *string
     // The workforceIntegrationIds property
-    workforceIntegrationIds []string;
+    workforceIntegrationIds []string
 }
 // NewSchedule instantiates a new schedule and sets the default values.
 func NewSchedule()(*Schedule) {

@@ -7,9 +7,9 @@ import (
 // GetUserIdsWithFlaggedAppRegistrationResponse provides operations to call the getUserIdsWithFlaggedAppRegistration method.
 type GetUserIdsWithFlaggedAppRegistrationResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []string;
+    value []string
 }
 // NewGetUserIdsWithFlaggedAppRegistrationResponse instantiates a new getUserIdsWithFlaggedAppRegistrationResponse and sets the default values.
 func NewGetUserIdsWithFlaggedAppRegistrationResponse()(*GetUserIdsWithFlaggedAppRegistrationResponse) {

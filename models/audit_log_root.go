@@ -8,13 +8,13 @@ import (
 type AuditLogRoot struct {
     Entity
     // Read-only. Nullable.
-    directoryAudits []DirectoryAuditable;
+    directoryAudits []DirectoryAuditable
     // The provisioning property
-    provisioning []ProvisioningObjectSummaryable;
+    provisioning []ProvisioningObjectSummaryable
     // The restrictedSignIns property
-    restrictedSignIns []RestrictedSignInable;
+    restrictedSignIns []RestrictedSignInable
     // Read-only. Nullable.
-    signIns []SignInable;
+    signIns []SignInable
 }
 // NewAuditLogRoot instantiates a new auditLogRoot and sets the default values.
 func NewAuditLogRoot()(*AuditLogRoot) {

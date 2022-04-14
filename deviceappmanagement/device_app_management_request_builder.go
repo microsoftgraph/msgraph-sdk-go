@@ -38,40 +38,40 @@ import (
 // DeviceAppManagementRequestBuilder provides operations to manage the deviceAppManagement singleton.
 type DeviceAppManagementRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DeviceAppManagementRequestBuilderGetOptions options for Get
 type DeviceAppManagementRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DeviceAppManagementRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceAppManagementRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceAppManagementRequestBuilderGetQueryParameters get deviceAppManagement
 type DeviceAppManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DeviceAppManagementRequestBuilderPatchOptions options for Patch
 type DeviceAppManagementRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAppManagementable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAppManagementable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AndroidManagedAppProtections the androidManagedAppProtections property
 func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtections()(*i2adc870208a84a1c715e640a35a322f60d13c7132faecab92cbdc856af0e50aa.AndroidManagedAppProtectionsRequestBuilder) {
@@ -84,7 +84,7 @@ func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtectionsById(id 
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["androidManagedAppProtection_id"] = id
+        urlTplParams["androidManagedAppProtection%2Did"] = id
     }
     return i89d4341c9169ba82f4022fde15796f9a0594e04c5cc3dab59767eaa7b1fdf35c.NewAndroidManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -92,7 +92,7 @@ func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtectionsById(id 
 func NewDeviceAppManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceAppManagementRequestBuilder) {
     m := &DeviceAppManagementRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -156,7 +156,7 @@ func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtectionsById(id 
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["defaultManagedAppProtection_id"] = id
+        urlTplParams["defaultManagedAppProtection%2Did"] = id
     }
     return ia3c7a3f771ad6210672d21e0ac5e24781d4c319a31e3c1088a61103e6a6c19b8.NewDefaultManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -187,7 +187,7 @@ func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtectionsById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["iosManagedAppProtection_id"] = id
+        urlTplParams["iosManagedAppProtection%2Did"] = id
     }
     return ib2f42e9c4d8f657233687ebcb7ea2a7be72112a45159e6921784148695f33cc8.NewIosManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -202,7 +202,7 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppPoliciesById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedAppPolicy_id"] = id
+        urlTplParams["managedAppPolicy%2Did"] = id
     }
     return i560cf4a9f430034859b2e6c353602d2fd9280316fd3f2f1265995ae7216d4dc3.NewManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -217,7 +217,7 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrationsById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedAppRegistration_id"] = id
+        urlTplParams["managedAppRegistration%2Did"] = id
     }
     return i090e5453c2fdf074fa2d7cb168a2f22ffe8f16816d015832f6cb242b663410b3.NewManagedAppRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -232,7 +232,7 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppStatusesById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedAppStatus_id"] = id
+        urlTplParams["managedAppStatus%2Did"] = id
     }
     return iea05d6821455c74468d20c06a0c7e47fe33a08b96f01d52bce3d6d5aebb6e52d.NewManagedAppStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -247,7 +247,7 @@ func (m *DeviceAppManagementRequestBuilder) ManagedEBooksById(id string)(*iddcc8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedEBook_id"] = id
+        urlTplParams["managedEBook%2Did"] = id
     }
     return iddcc8f3790be69a76d73a881b2a5249b825b8ed1e8dcd570bba76b931dfeb702.NewManagedEBookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -262,7 +262,7 @@ func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPolic
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mdmWindowsInformationProtectionPolicy_id"] = id
+        urlTplParams["mdmWindowsInformationProtectionPolicy%2Did"] = id
     }
     return ic9cf4eefa0a637dd860228da8f11a3a1b0e6c19dcc2c41b740a8ff4b6ce24681.NewMdmWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -277,7 +277,7 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppCategoriesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobileAppCategory_id"] = id
+        urlTplParams["mobileAppCategory%2Did"] = id
     }
     return i0f78fb508810d8046e0126c99b4e2f29dfbc726d712f29fb4c961a92e8630256.NewMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -292,7 +292,7 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurationsById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedDeviceMobileAppConfiguration_id"] = id
+        urlTplParams["managedDeviceMobileAppConfiguration%2Did"] = id
     }
     return ib471248babfa75d07aa6e6560ccb2ae999e37717a38cabb105d8b72b51a59fdb.NewManagedDeviceMobileAppConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -307,7 +307,7 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppsById(id string)(*i4d54ef09
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobileApp_id"] = id
+        urlTplParams["mobileApp%2Did"] = id
     }
     return i4d54ef094838af59d772f617ee78a54ffbb57f062a912b927b484571e3b93ca5.NewMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -342,7 +342,7 @@ func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurationsById
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["targetedManagedAppConfiguration_id"] = id
+        urlTplParams["targetedManagedAppConfiguration%2Did"] = id
     }
     return i0076e81bdc67eb89b0f75e1d90ce618e38e43bf24fdd9abc2d2dd7b7b418df1c.NewTargetedManagedAppConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -357,7 +357,7 @@ func (m *DeviceAppManagementRequestBuilder) VppTokensById(id string)(*idbad9dd44
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["vppToken_id"] = id
+        urlTplParams["vppToken%2Did"] = id
     }
     return idbad9dd444740f91fdc2deb224c3442bfd8ca9dbec92cd68d18bc8830f6cc2bf.NewVppTokenItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -372,7 +372,7 @@ func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["windowsInformationProtectionPolicy_id"] = id
+        urlTplParams["windowsInformationProtectionPolicy%2Did"] = id
     }
     return i3ab3bf13acf28406514cba3b07ab5235a9c5c97ff398576b733a15152cfb62d3.NewWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -8,35 +8,35 @@ import (
 type PolicyRoot struct {
     Entity
     // The policy that controls the idle time out for web sessions for applications.
-    activityBasedTimeoutPolicies []ActivityBasedTimeoutPolicyable;
+    activityBasedTimeoutPolicies []ActivityBasedTimeoutPolicyable
     // The policy by which consent requests are created and managed for the entire tenant.
-    adminConsentRequestPolicy AdminConsentRequestPolicyable;
+    adminConsentRequestPolicy AdminConsentRequestPolicyable
     // The policy configuration of the self-service sign-up experience of external users.
-    authenticationFlowsPolicy AuthenticationFlowsPolicyable;
+    authenticationFlowsPolicy AuthenticationFlowsPolicyable
     // The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
-    authenticationMethodsPolicy AuthenticationMethodsPolicyable;
+    authenticationMethodsPolicy AuthenticationMethodsPolicyable
     // The policy that controls Azure AD authorization settings.
-    authorizationPolicy AuthorizationPolicyable;
+    authorizationPolicy AuthorizationPolicyable
     // The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
-    claimsMappingPolicies []ClaimsMappingPolicyable;
+    claimsMappingPolicies []ClaimsMappingPolicyable
     // The custom rules that define an access scenario.
-    conditionalAccessPolicies []ConditionalAccessPolicyable;
+    conditionalAccessPolicies []ConditionalAccessPolicyable
     // The feature rollout policy associated with a directory object.
-    featureRolloutPolicies []FeatureRolloutPolicyable;
+    featureRolloutPolicies []FeatureRolloutPolicyable
     // The policy to control Azure AD authentication behavior for federated users.
-    homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicyable;
+    homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicyable
     // The policy that represents the security defaults that protect against common attacks.
-    identitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicyable;
+    identitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicyable
     // The policy that specifies the conditions under which consent can be granted.
-    permissionGrantPolicies []PermissionGrantPolicyable;
+    permissionGrantPolicies []PermissionGrantPolicyable
     // Represents the role management policies.
-    roleManagementPolicies []UnifiedRoleManagementPolicyable;
+    roleManagementPolicies []UnifiedRoleManagementPolicyable
     // Represents the role management policy assignments.
-    roleManagementPolicyAssignments []UnifiedRoleManagementPolicyAssignmentable;
+    roleManagementPolicyAssignments []UnifiedRoleManagementPolicyAssignmentable
     // The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-    tokenIssuancePolicies []TokenIssuancePolicyable;
+    tokenIssuancePolicies []TokenIssuancePolicyable
     // The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
-    tokenLifetimePolicies []TokenLifetimePolicyable;
+    tokenLifetimePolicies []TokenLifetimePolicyable
 }
 // NewPolicyRoot instantiates a new policyRoot and sets the default values.
 func NewPolicyRoot()(*PolicyRoot) {

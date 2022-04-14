@@ -7,17 +7,17 @@ import (
 // MediaStream 
 type MediaStream struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.
-    direction *MediaDirection;
+    direction *MediaDirection
     // The media stream label.
-    label *string;
+    label *string
     // The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
-    mediaType *Modality;
+    mediaType *Modality
     // If the media is muted by the server.
-    serverMuted *bool;
+    serverMuted *bool
     // The source ID.
-    sourceId *string;
+    sourceId *string
 }
 // NewMediaStream instantiates a new mediaStream and sets the default values.
 func NewMediaStream()(*MediaStream) {

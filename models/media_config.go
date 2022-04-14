@@ -7,7 +7,7 @@ import (
 // MediaConfig 
 type MediaConfig struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewMediaConfig instantiates a new mediaConfig and sets the default values.
 func NewMediaConfig()(*MediaConfig) {

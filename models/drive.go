@@ -8,27 +8,27 @@ import (
 type Drive struct {
     BaseItem
     // Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-    bundles []DriveItemable;
+    bundles []DriveItemable
     // Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
-    driveType *string;
+    driveType *string
     // The list of items the user is following. Only in OneDrive for Business.
-    following []DriveItemable;
+    following []DriveItemable
     // All items contained in the drive. Read-only. Nullable.
-    items []DriveItemable;
+    items []DriveItemable
     // For drives in SharePoint, the underlying document library list. Read-only. Nullable.
-    list Listable;
+    list Listable
     // Optional. The user account that owns the drive. Read-only.
-    owner IdentitySetable;
+    owner IdentitySetable
     // Optional. Information about the drive's storage space quota. Read-only.
-    quota Quotaable;
+    quota Quotaable
     // The root folder of the drive. Read-only.
-    root DriveItemable;
+    root DriveItemable
     // The sharePointIds property
-    sharePointIds SharepointIdsable;
+    sharePointIds SharepointIdsable
     // Collection of common folders available in OneDrive. Read-only. Nullable.
-    special []DriveItemable;
+    special []DriveItemable
     // If present, indicates that this is a system-managed drive. Read-only.
-    system SystemFacetable;
+    system SystemFacetable
 }
 // NewDrive instantiates a new drive and sets the default values.
 func NewDrive()(*Drive) {

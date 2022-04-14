@@ -7,11 +7,11 @@ import (
 // UserAgent 
 type UserAgent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Identifies the version of application software used by this endpoint.
-    applicationVersion *string;
+    applicationVersion *string
     // User-agent header value reported by this endpoint.
-    headerValue *string;
+    headerValue *string
 }
 // NewUserAgent instantiates a new userAgent and sets the default values.
 func NewUserAgent()(*UserAgent) {

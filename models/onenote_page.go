@@ -9,27 +9,27 @@ import (
 type OnenotePage struct {
     OnenoteEntitySchemaObjectModel
     // The page's HTML content.
-    content []byte;
+    content []byte
     // The URL for the page's HTML content.  Read-only.
-    contentUrl *string;
+    contentUrl *string
     // The unique identifier of the application that created the page. Read-only.
-    createdByAppId *string;
+    createdByAppId *string
     // The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The indentation level of the page. Read-only.
-    level *int32;
+    level *int32
     // Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it 's installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.
-    links PageLinksable;
+    links PageLinksable
     // The order of the page within its parent section. Read-only.
-    order *int32;
+    order *int32
     // The notebook that contains the page.  Read-only.
-    parentNotebook Notebookable;
+    parentNotebook Notebookable
     // The section that contains the page. Read-only.
-    parentSection OnenoteSectionable;
+    parentSection OnenoteSectionable
     // The title of the page.
-    title *string;
+    title *string
     // The userTags property
-    userTags []string;
+    userTags []string
 }
 // NewOnenotePage instantiates a new onenotePage and sets the default values.
 func NewOnenotePage()(*OnenotePage) {

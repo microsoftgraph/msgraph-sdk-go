@@ -8,19 +8,19 @@ import (
 type ImportedWindowsAutopilotDeviceIdentity struct {
     Entity
     // UPN of the user the device will be assigned
-    assignedUserPrincipalName *string;
+    assignedUserPrincipalName *string
     // Group Tag of the Windows autopilot device.
-    groupTag *string;
+    groupTag *string
     // Hardware Blob of the Windows autopilot device.
-    hardwareIdentifier []byte;
+    hardwareIdentifier []byte
     // The Import Id of the Windows autopilot device.
-    importId *string;
+    importId *string
     // Product Key of the Windows autopilot device.
-    productKey *string;
+    productKey *string
     // Serial number of the Windows autopilot device.
-    serialNumber *string;
+    serialNumber *string
     // Current state of the imported device.
-    state ImportedWindowsAutopilotDeviceIdentityStateable;
+    state ImportedWindowsAutopilotDeviceIdentityStateable
 }
 // NewImportedWindowsAutopilotDeviceIdentity instantiates a new importedWindowsAutopilotDeviceIdentity and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentity()(*ImportedWindowsAutopilotDeviceIdentity) {

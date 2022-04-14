@@ -8,9 +8,9 @@ import (
 type ConditionalAccessRoot struct {
     Entity
     // Read-only. Nullable. Returns a collection of the specified named locations.
-    namedLocations []NamedLocationable;
+    namedLocations []NamedLocationable
     // Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
-    policies []ConditionalAccessPolicyable;
+    policies []ConditionalAccessPolicyable
 }
 // NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {

@@ -7,9 +7,9 @@ import (
 // AddGroupRequestBody provides operations to call the addGroup method.
 type AddGroupRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The groupId property
-    groupId *string;
+    groupId *string
 }
 // NewAddGroupRequestBody instantiates a new addGroupRequestBody and sets the default values.
 func NewAddGroupRequestBody()(*AddGroupRequestBody) {

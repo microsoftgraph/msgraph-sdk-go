@@ -7,11 +7,11 @@ import (
 // SectionLinks 
 type SectionLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Opens the section in the OneNote native client if it's installed.
-    oneNoteClientUrl ExternalLinkable;
+    oneNoteClientUrl ExternalLinkable
     // Opens the section in OneNote on the web.
-    oneNoteWebUrl ExternalLinkable;
+    oneNoteWebUrl ExternalLinkable
 }
 // NewSectionLinks instantiates a new sectionLinks and sets the default values.
 func NewSectionLinks()(*SectionLinks) {

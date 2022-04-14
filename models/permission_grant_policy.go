@@ -8,9 +8,9 @@ import (
 type PermissionGrantPolicy struct {
     PolicyBase
     // Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
-    excludes []PermissionGrantConditionSetable;
+    excludes []PermissionGrantConditionSetable
     // Condition sets which are included in this permission grant policy. Automatically expanded on GET.
-    includes []PermissionGrantConditionSetable;
+    includes []PermissionGrantConditionSetable
 }
 // NewPermissionGrantPolicy instantiates a new permissionGrantPolicy and sets the default values.
 func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {

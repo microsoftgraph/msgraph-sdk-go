@@ -7,13 +7,13 @@ import (
 // ResourceReference 
 type ResourceReference struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The item's unique identifier.
-    id *string;
+    id *string
     // A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
-    type_escaped *string;
+    type_escaped *string
     // A URL leading to the referenced item.
-    webUrl *string;
+    webUrl *string
 }
 // NewResourceReference instantiates a new resourceReference and sets the default values.
 func NewResourceReference()(*ResourceReference) {

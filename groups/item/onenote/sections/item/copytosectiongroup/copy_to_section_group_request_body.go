@@ -7,17 +7,17 @@ import (
 // CopyToSectionGroupRequestBody provides operations to call the copyToSectionGroup method.
 type CopyToSectionGroupRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The groupId property
-    groupId *string;
+    groupId *string
     // The id property
-    id *string;
+    id *string
     // The renameAs property
-    renameAs *string;
+    renameAs *string
     // The siteCollectionId property
-    siteCollectionId *string;
+    siteCollectionId *string
     // The siteId property
-    siteId *string;
+    siteId *string
 }
 // NewCopyToSectionGroupRequestBody instantiates a new copyToSectionGroupRequestBody and sets the default values.
 func NewCopyToSectionGroupRequestBody()(*CopyToSectionGroupRequestBody) {

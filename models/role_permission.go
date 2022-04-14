@@ -7,9 +7,9 @@ import (
 // RolePermission contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
 type RolePermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Resource Actions each containing a set of allowed and not allowed permissions.
-    resourceActions []ResourceActionable;
+    resourceActions []ResourceActionable
 }
 // NewRolePermission instantiates a new rolePermission and sets the default values.
 func NewRolePermission()(*RolePermission) {

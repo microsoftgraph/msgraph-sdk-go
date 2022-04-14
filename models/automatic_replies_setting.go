@@ -7,19 +7,19 @@ import (
 // AutomaticRepliesSetting 
 type AutomaticRepliesSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
-    externalAudience *ExternalAudienceScope;
+    externalAudience *ExternalAudienceScope
     // The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
-    externalReplyMessage *string;
+    externalReplyMessage *string
     // The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
-    internalReplyMessage *string;
+    internalReplyMessage *string
     // The date and time that automatic replies are set to end, if Status is set to Scheduled.
-    scheduledEndDateTime DateTimeTimeZoneable;
+    scheduledEndDateTime DateTimeTimeZoneable
     // The date and time that automatic replies are set to begin, if Status is set to Scheduled.
-    scheduledStartDateTime DateTimeTimeZoneable;
+    scheduledStartDateTime DateTimeTimeZoneable
     // Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
-    status *AutomaticRepliesStatus;
+    status *AutomaticRepliesStatus
 }
 // NewAutomaticRepliesSetting instantiates a new automaticRepliesSetting and sets the default values.
 func NewAutomaticRepliesSetting()(*AutomaticRepliesSetting) {

@@ -7,9 +7,9 @@ import (
 // Album 
 type Album struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Unique identifier of the [driveItem][] that is the cover of the album.
-    coverImageItemId *string;
+    coverImageItemId *string
 }
 // NewAlbum instantiates a new album and sets the default values.
 func NewAlbum()(*Album) {

@@ -8,15 +8,15 @@ import (
 type TargetedManagedAppConfiguration struct {
     ManagedAppConfiguration
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable;
+    apps []ManagedMobileAppable
     // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    assignments []TargetedManagedAppPolicyAssignmentable;
+    assignments []TargetedManagedAppPolicyAssignmentable
     // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32;
+    deployedAppCount *int32
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable
     // Indicates if the policy is deployed to any inclusion groups or not.
-    isAssigned *bool;
+    isAssigned *bool
 }
 // NewTargetedManagedAppConfiguration instantiates a new targetedManagedAppConfiguration and sets the default values.
 func NewTargetedManagedAppConfiguration()(*TargetedManagedAppConfiguration) {

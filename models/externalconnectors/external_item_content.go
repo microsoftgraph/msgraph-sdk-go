@@ -7,11 +7,11 @@ import (
 // ExternalItemContent 
 type ExternalItemContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The type of content in the value property. Possible values are: text, html, unknownFutureValue. These are the content types that the indexer supports, and not the file extension types allowed.
-    type_escaped *ExternalItemContentType;
+    type_escaped *ExternalItemContentType
     // The content for the externalItem. Required.
-    value *string;
+    value *string
 }
 // NewExternalItemContent instantiates a new externalItemContent and sets the default values.
 func NewExternalItemContent()(*ExternalItemContent) {

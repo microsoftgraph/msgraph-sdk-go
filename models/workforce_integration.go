@@ -8,17 +8,17 @@ import (
 type WorkforceIntegration struct {
     ChangeTrackedEntity
     // API version for the call back URL. Start with 1.
-    apiVersion *int32;
+    apiVersion *int32
     // Name of the workforce integration.
-    displayName *string;
+    displayName *string
     // The workforce integration encryption resource.
-    encryption WorkforceIntegrationEncryptionable;
+    encryption WorkforceIntegrationEncryptionable
     // Indicates whether this workforce integration is currently active and available.
-    isActive *bool;
+    isActive *bool
     // The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.
-    supportedEntities *WorkforceIntegrationSupportedEntities;
+    supportedEntities *WorkforceIntegrationSupportedEntities
     // Workforce Integration URL for callbacks from the Shifts service.
-    url *string;
+    url *string
 }
 // NewWorkforceIntegration instantiates a new workforceIntegration and sets the default values.
 func NewWorkforceIntegration()(*WorkforceIntegration) {

@@ -8,9 +8,9 @@ import (
 type UserConsentRequest struct {
     Request
     // Approval decisions associated with a request.
-    approval Approvalable;
+    approval Approvalable
     // The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
-    reason *string;
+    reason *string
 }
 // NewUserConsentRequest instantiates a new userConsentRequest and sets the default values.
 func NewUserConsentRequest()(*UserConsentRequest) {

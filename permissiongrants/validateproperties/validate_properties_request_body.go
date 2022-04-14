@@ -7,15 +7,15 @@ import (
 // ValidatePropertiesRequestBody provides operations to call the validateProperties method.
 type ValidatePropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The displayName property
-    displayName *string;
+    displayName *string
     // The entityType property
-    entityType *string;
+    entityType *string
     // The mailNickname property
-    mailNickname *string;
+    mailNickname *string
     // The onBehalfOfUserId property
-    onBehalfOfUserId *string;
+    onBehalfOfUserId *string
 }
 // NewValidatePropertiesRequestBody instantiates a new validatePropertiesRequestBody and sets the default values.
 func NewValidatePropertiesRequestBody()(*ValidatePropertiesRequestBody) {

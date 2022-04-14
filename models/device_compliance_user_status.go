@@ -9,15 +9,15 @@ import (
 type DeviceComplianceUserStatus struct {
     Entity
     // Devices count for that user.
-    devicesCount *int32;
+    devicesCount *int32
     // Last modified date time of the policy report.
-    lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-    status *ComplianceStatus;
+    status *ComplianceStatus
     // User name of the DevicePolicyStatus.
-    userDisplayName *string;
+    userDisplayName *string
     // UserPrincipalName.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewDeviceComplianceUserStatus instantiates a new deviceComplianceUserStatus and sets the default values.
 func NewDeviceComplianceUserStatus()(*DeviceComplianceUserStatus) {

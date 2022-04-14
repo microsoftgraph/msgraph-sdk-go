@@ -8,71 +8,71 @@ import (
 // DeviceHealthAttestationState 
 type DeviceHealthAttestationState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.
-    attestationIdentityKey *string;
+    attestationIdentityKey *string
     // On or Off of BitLocker Drive Encryption
-    bitLockerStatus *string;
+    bitLockerStatus *string
     // The security version number of the Boot Application
-    bootAppSecurityVersion *string;
+    bootAppSecurityVersion *string
     // When bootDebugging is enabled, the device is used in development and testing
-    bootDebugging *string;
+    bootDebugging *string
     // The security version number of the Boot Application
-    bootManagerSecurityVersion *string;
+    bootManagerSecurityVersion *string
     // The version of the Boot Manager
-    bootManagerVersion *string;
+    bootManagerVersion *string
     // The Boot Revision List that was loaded during initial boot on the attested device
-    bootRevisionListInfo *string;
+    bootRevisionListInfo *string
     // When code integrity is enabled, code execution is restricted to integrity verified code
-    codeIntegrity *string;
+    codeIntegrity *string
     // The version of the Boot Manager
-    codeIntegrityCheckVersion *string;
+    codeIntegrityCheckVersion *string
     // The Code Integrity policy that is controlling the security of the boot environment
-    codeIntegrityPolicy *string;
+    codeIntegrityPolicy *string
     // The DHA report version. (Namespace version)
-    contentNamespaceUrl *string;
+    contentNamespaceUrl *string
     // The HealthAttestation state schema version
-    contentVersion *string;
+    contentVersion *string
     // DEP Policy defines a set of hardware and software technologies that perform additional checks on memory
-    dataExcutionPolicy *string;
+    dataExcutionPolicy *string
     // The DHA report version. (Namespace version)
-    deviceHealthAttestationStatus *string;
+    deviceHealthAttestationStatus *string
     // ELAM provides protection for the computers in your network when they start up
-    earlyLaunchAntiMalwareDriverProtection *string;
+    earlyLaunchAntiMalwareDriverProtection *string
     // This attribute indicates if DHA is supported for the device
-    healthAttestationSupportedStatus *string;
+    healthAttestationSupportedStatus *string
     // This attribute appears if DHA-Service detects an integrity issue
-    healthStatusMismatchInfo *string;
+    healthStatusMismatchInfo *string
     // The DateTime when device was evaluated or issued to MDM
-    issuedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    issuedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Timestamp of the last update.
-    lastUpdateDateTime *string;
+    lastUpdateDateTime *string
     // When operatingSystemKernelDebugging is enabled, the device is used in development and testing
-    operatingSystemKernelDebugging *string;
+    operatingSystemKernelDebugging *string
     // The Operating System Revision List that was loaded during initial boot on the attested device
-    operatingSystemRevListInfo *string;
+    operatingSystemRevListInfo *string
     // The measurement that is captured in PCR[0]
-    pcr0 *string;
+    pcr0 *string
     // Informational attribute that identifies the HASH algorithm that was used by TPM
-    pcrHashAlgorithm *string;
+    pcrHashAlgorithm *string
     // The number of times a PC device has hibernated or resumed
-    resetCount *int64;
+    resetCount *int64
     // The number of times a PC device has rebooted
-    restartCount *int64;
+    restartCount *int64
     // Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
-    safeMode *string;
+    safeMode *string
     // When Secure Boot is enabled, the core components must have the correct cryptographic signatures
-    secureBoot *string;
+    secureBoot *string
     // Fingerprint of the Custom Secure Boot Configuration Policy
-    secureBootConfigurationPolicyFingerPrint *string;
+    secureBootConfigurationPolicyFingerPrint *string
     // When test signing is allowed, the device does not enforce signature validation during boot
-    testSigning *string;
+    testSigning *string
     // The security version number of the Boot Application
-    tpmVersion *string;
+    tpmVersion *string
     // VSM is a container that protects high value assets from a compromised kernel
-    virtualSecureMode *string;
+    virtualSecureMode *string
     // Operating system running with limited services that is used to prepare a computer for Windows
-    windowsPE *string;
+    windowsPE *string
 }
 // NewDeviceHealthAttestationState instantiates a new deviceHealthAttestationState and sets the default values.
 func NewDeviceHealthAttestationState()(*DeviceHealthAttestationState) {

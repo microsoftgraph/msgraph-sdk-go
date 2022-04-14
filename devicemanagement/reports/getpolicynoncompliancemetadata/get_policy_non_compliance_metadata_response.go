@@ -7,9 +7,9 @@ import (
 // GetPolicyNonComplianceMetadataResponse provides operations to call the getPolicyNonComplianceMetadata method.
 type GetPolicyNonComplianceMetadataResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetPolicyNonComplianceMetadataResponse instantiates a new getPolicyNonComplianceMetadataResponse and sets the default values.
 func NewGetPolicyNonComplianceMetadataResponse()(*GetPolicyNonComplianceMetadataResponse) {

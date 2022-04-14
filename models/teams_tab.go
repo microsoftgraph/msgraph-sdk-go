@@ -8,13 +8,13 @@ import (
 type TeamsTab struct {
     Entity
     // Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
-    configuration TeamsTabConfigurationable;
+    configuration TeamsTabConfigurationable
     // Name of the tab.
-    displayName *string;
+    displayName *string
     // The application that is linked to the tab. This cannot be changed after tab creation.
-    teamsApp TeamsAppable;
+    teamsApp TeamsAppable
     // Deep link URL of the tab instance. Read only.
-    webUrl *string;
+    webUrl *string
 }
 // NewTeamsTab instantiates a new teamsTab and sets the default values.
 func NewTeamsTab()(*TeamsTab) {

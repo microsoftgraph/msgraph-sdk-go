@@ -8,17 +8,17 @@ import (
 type FeatureRolloutPolicy struct {
     Entity
     // Nullable. Specifies a list of directoryObjects that feature is enabled for.
-    appliesTo []DirectoryObjectable;
+    appliesTo []DirectoryObjectable
     // A description for this feature rollout policy.
-    description *string;
+    description *string
     // The display name for this  feature rollout policy.
-    displayName *string;
+    displayName *string
     // Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
-    feature *StagedFeatureName;
+    feature *StagedFeatureName
     // Indicates whether this feature rollout policy should be applied to the entire organization.
-    isAppliedToOrganization *bool;
+    isAppliedToOrganization *bool
     // Indicates whether the feature rollout is enabled.
-    isEnabled *bool;
+    isEnabled *bool
 }
 // NewFeatureRolloutPolicy instantiates a new featureRolloutPolicy and sets the default values.
 func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {

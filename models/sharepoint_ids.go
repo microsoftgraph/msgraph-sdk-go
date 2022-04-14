@@ -7,21 +7,21 @@ import (
 // SharepointIds 
 type SharepointIds struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The unique identifier (guid) for the item's list in SharePoint.
-    listId *string;
+    listId *string
     // An integer identifier for the item within the containing list.
-    listItemId *string;
+    listItemId *string
     // The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
-    listItemUniqueId *string;
+    listItemUniqueId *string
     // The unique identifier (guid) for the item's site collection (SPSite).
-    siteId *string;
+    siteId *string
     // The SharePoint URL for the site that contains the item.
-    siteUrl *string;
+    siteUrl *string
     // The unique identifier (guid) for the tenancy.
-    tenantId *string;
+    tenantId *string
     // The unique identifier (guid) for the item's site (SPWeb).
-    webId *string;
+    webId *string
 }
 // NewSharepointIds instantiates a new sharepointIds and sets the default values.
 func NewSharepointIds()(*SharepointIds) {

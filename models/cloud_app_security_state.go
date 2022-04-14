@@ -7,13 +7,13 @@ import (
 // CloudAppSecurityState 
 type CloudAppSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Destination IP Address of the connection to the cloud application/service.
-    destinationServiceIp *string;
+    destinationServiceIp *string
     // Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
-    destinationServiceName *string;
+    destinationServiceName *string
     // Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
-    riskScore *string;
+    riskScore *string
 }
 // NewCloudAppSecurityState instantiates a new cloudAppSecurityState and sets the default values.
 func NewCloudAppSecurityState()(*CloudAppSecurityState) {

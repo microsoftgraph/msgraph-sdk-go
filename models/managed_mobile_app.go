@@ -8,9 +8,9 @@ import (
 type ManagedMobileApp struct {
     Entity
     // The identifier for an app with it's operating system type.
-    mobileAppIdentifier MobileAppIdentifierable;
+    mobileAppIdentifier MobileAppIdentifierable
     // Version of the entity.
-    version *string;
+    version *string
 }
 // NewManagedMobileApp instantiates a new managedMobileApp and sets the default values.
 func NewManagedMobileApp()(*ManagedMobileApp) {

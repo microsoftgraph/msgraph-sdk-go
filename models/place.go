@@ -8,13 +8,13 @@ import (
 type Place struct {
     Entity
     // The street address of the place.
-    address PhysicalAddressable;
+    address PhysicalAddressable
     // The name associated with the place.
-    displayName *string;
+    displayName *string
     // Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
-    geoCoordinates OutlookGeoCoordinatesable;
+    geoCoordinates OutlookGeoCoordinatesable
     // The phone number of the place.
-    phone *string;
+    phone *string
 }
 // NewPlace instantiates a new place and sets the default values.
 func NewPlace()(*Place) {

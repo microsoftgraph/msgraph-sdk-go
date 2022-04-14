@@ -8,11 +8,11 @@ import (
 // CopyToDefaultContentLocationRequestBody provides operations to call the copyToDefaultContentLocation method.
 type CopyToDefaultContentLocationRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The destinationFileName property
-    destinationFileName *string;
+    destinationFileName *string
     // The sourceFile property
-    sourceFile iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable;
+    sourceFile iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable
 }
 // NewCopyToDefaultContentLocationRequestBody instantiates a new copyToDefaultContentLocationRequestBody and sets the default values.
 func NewCopyToDefaultContentLocationRequestBody()(*CopyToDefaultContentLocationRequestBody) {

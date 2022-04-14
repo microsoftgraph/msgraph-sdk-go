@@ -8,13 +8,13 @@ import (
 type Shift struct {
     ChangeTrackedEntity
     // The draft version of this shift that is viewable by managers. Required.
-    draftShift ShiftItemable;
+    draftShift ShiftItemable
     // ID of the scheduling group the shift is part of. Required.
-    schedulingGroupId *string;
+    schedulingGroupId *string
     // The shared version of this shift that is viewable by both employees and managers. Required.
-    sharedShift ShiftItemable;
+    sharedShift ShiftItemable
     // ID of the user assigned to the shift. Required.
-    userId *string;
+    userId *string
 }
 // NewShift instantiates a new shift and sets the default values.
 func NewShift()(*Shift) {
