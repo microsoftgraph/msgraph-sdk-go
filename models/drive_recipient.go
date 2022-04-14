@@ -7,13 +7,13 @@ import (
 // DriveRecipient 
 type DriveRecipient struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
-    alias *string;
+    alias *string
     // The email address for the recipient, if the recipient has an associated email address.
-    email *string;
+    email *string
     // The unique identifier for the recipient in the directory.
-    objectId *string;
+    objectId *string
 }
 // NewDriveRecipient instantiates a new driveRecipient and sets the default values.
 func NewDriveRecipient()(*DriveRecipient) {

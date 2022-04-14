@@ -7,9 +7,9 @@ import (
 // MoveRequestBody provides operations to call the move method.
 type MoveRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The DestinationId property
-    destinationId *string;
+    destinationId *string
 }
 // NewMoveRequestBody instantiates a new moveRequestBody and sets the default values.
 func NewMoveRequestBody()(*MoveRequestBody) {

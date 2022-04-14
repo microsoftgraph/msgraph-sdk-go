@@ -10,58 +10,58 @@ import (
 // SessionsRequestBuilder provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
 type SessionsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SessionsRequestBuilderGetOptions options for Get
 type SessionsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SessionsRequestBuilderGetQueryParameters;
+    QueryParameters *SessionsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SessionsRequestBuilderGetQueryParameters list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
 type SessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool;
+    Count *bool `uriparametername:"%24count"`
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
-    Filter *string;
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
-    Orderby []string;
+    Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
-    Search *string;
+    Search *string `uriparametername:"%24search"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32;
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32;
+    Top *int32 `uriparametername:"%24top"`
 }
 // SessionsRequestBuilderPostOptions options for Post
 type SessionsRequestBuilderPostOptions struct {
     // 
-    Body iaf7085b34cf3df74d75420043707a37fee7e9a355a2db4b4b46244736f7f1d19.Sessionable;
+    Body iaf7085b34cf3df74d75420043707a37fee7e9a355a2db4b4b46244736f7f1d19.Sessionable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewSessionsRequestBuilderInternal instantiates a new SessionsRequestBuilder and sets the default values.
 func NewSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SessionsRequestBuilder) {
     m := &SessionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/communications/callRecords/{callRecord_id}/sessions{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

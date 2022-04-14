@@ -28,55 +28,55 @@ import (
 // ScheduleRequestBuilder provides operations to manage the schedule property of the microsoft.graph.team entity.
 type ScheduleRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ScheduleRequestBuilderDeleteOptions options for Delete
 type ScheduleRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ScheduleRequestBuilderGetOptions options for Get
 type ScheduleRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ScheduleRequestBuilderGetQueryParameters;
+    QueryParameters *ScheduleRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ScheduleRequestBuilderGetQueryParameters the schedule of shifts for this team.
 type ScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ScheduleRequestBuilderPatchOptions options for Patch
 type ScheduleRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewScheduleRequestBuilderInternal instantiates a new ScheduleRequestBuilder and sets the default values.
 func NewScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ScheduleRequestBuilder) {
     m := &ScheduleRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/team/schedule{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -189,7 +189,7 @@ func (m *ScheduleRequestBuilder) OfferShiftRequestsById(id string)(*iea0766a6107
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["offerShiftRequest_id"] = id
+        urlTplParams["offerShiftRequest%2Did"] = id
     }
     return iea0766a6107f3958d23f6d55165a212b7c18810c581726007daff6658ae36796.NewOfferShiftRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -204,7 +204,7 @@ func (m *ScheduleRequestBuilder) OpenShiftChangeRequestsById(id string)(*i7c1a8c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["openShiftChangeRequest_id"] = id
+        urlTplParams["openShiftChangeRequest%2Did"] = id
     }
     return i7c1a8cd3fa594c1fc7433210be87d46a669f79ffa033b2ed121559b1a7836b36.NewOpenShiftChangeRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -219,7 +219,7 @@ func (m *ScheduleRequestBuilder) OpenShiftsById(id string)(*i4371af37049a1309388
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["openShift_id"] = id
+        urlTplParams["openShift%2Did"] = id
     }
     return i4371af37049a130938818ac064e9a7234fa37759b90ddd60c724a9f2e40312aa.NewOpenShiftItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -250,7 +250,7 @@ func (m *ScheduleRequestBuilder) SchedulingGroupsById(id string)(*i25835bf2ea4b2
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["schedulingGroup_id"] = id
+        urlTplParams["schedulingGroup%2Did"] = id
     }
     return i25835bf2ea4b2783655a613062849327eae2c462a3fb0bb246ab4e81c0aeefcd.NewSchedulingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -269,7 +269,7 @@ func (m *ScheduleRequestBuilder) ShiftsById(id string)(*i49f769d63eb0f564f5e3fd6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["shift_id"] = id
+        urlTplParams["shift%2Did"] = id
     }
     return i49f769d63eb0f564f5e3fd6dcde8d8b66f068577823c2849fb223a24af8c4b6d.NewShiftItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -284,7 +284,7 @@ func (m *ScheduleRequestBuilder) SwapShiftsChangeRequestsById(id string)(*i8d73b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["swapShiftsChangeRequest_id"] = id
+        urlTplParams["swapShiftsChangeRequest%2Did"] = id
     }
     return i8d73b6115390f96f3f9effc6c115d9a8c01e4bccf3a6ffb524fe8f9d6d189521.NewSwapShiftsChangeRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -299,7 +299,7 @@ func (m *ScheduleRequestBuilder) TimeOffReasonsById(id string)(*iad1beb593b32b2b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["timeOffReason_id"] = id
+        urlTplParams["timeOffReason%2Did"] = id
     }
     return iad1beb593b32b2b10705cc5c3c2e390baf898c1d2ec6abdecf140dd092a393c5.NewTimeOffReasonItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -314,7 +314,7 @@ func (m *ScheduleRequestBuilder) TimeOffRequestsById(id string)(*i4d1975d833f087
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["timeOffRequest_id"] = id
+        urlTplParams["timeOffRequest%2Did"] = id
     }
     return i4d1975d833f0871642b081140a8181ebd5b9b14b52c8daf8c17e9fc462496d93.NewTimeOffRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -329,7 +329,7 @@ func (m *ScheduleRequestBuilder) TimesOffById(id string)(*i91916952245ecadf3a132
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["timeOff_id"] = id
+        urlTplParams["timeOff%2Did"] = id
     }
     return i91916952245ecadf3a132c25d6712618462caf09e7999a937a6bdd80260050a1.NewTimeOffItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

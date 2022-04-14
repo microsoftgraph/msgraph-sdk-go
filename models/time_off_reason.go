@@ -8,11 +8,11 @@ import (
 type TimeOffReason struct {
     ChangeTrackedEntity
     // The name of the timeOffReason. Required.
-    displayName *string;
+    displayName *string
     // Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
-    iconType *TimeOffReasonIconType;
+    iconType *TimeOffReasonIconType
     // Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-    isActive *bool;
+    isActive *bool
 }
 // NewTimeOffReason instantiates a new timeOffReason and sets the default values.
 func NewTimeOffReason()(*TimeOffReason) {

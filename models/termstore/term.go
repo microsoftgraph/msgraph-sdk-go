@@ -10,21 +10,21 @@ import (
 type Term struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Children of current term.
-    children []Termable;
+    children []Termable
     // Date and time of term creation. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description about term that is dependent on the languageTag.
-    descriptions []LocalizedDescriptionable;
+    descriptions []LocalizedDescriptionable
     // Label metadata for a term.
-    labels []LocalizedLabelable;
+    labels []LocalizedLabelable
     // Last date and time of term modification. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Collection of properties on the term.
-    properties []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable;
+    properties []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable
     // To indicate which terms are related to the current term as either pinned or reused.
-    relations []Relationable;
+    relations []Relationable
     // The [set] in which the term is created.
-    set Setable;
+    set Setable
 }
 // NewTerm instantiates a new term and sets the default values.
 func NewTerm()(*Term) {

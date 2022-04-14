@@ -8,11 +8,11 @@ import (
 type CloudCommunications struct {
     Entity
     // The calls property
-    calls []Callable;
+    calls []Callable
     // The onlineMeetings property
-    onlineMeetings []OnlineMeetingable;
+    onlineMeetings []OnlineMeetingable
     // The presences property
-    presences []Presenceable;
+    presences []Presenceable
 }
 // NewCloudCommunications instantiates a new cloudCommunications and sets the default values.
 func NewCloudCommunications()(*CloudCommunications) {

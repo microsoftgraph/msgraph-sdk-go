@@ -7,13 +7,13 @@ import (
 // AlternativeSecurityId 
 type AlternativeSecurityId struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // For internal use only
-    identityProvider *string;
+    identityProvider *string
     // For internal use only
-    key []byte;
+    key []byte
     // For internal use only
-    type_escaped *int32;
+    type_escaped *int32
 }
 // NewAlternativeSecurityId instantiates a new alternativeSecurityId and sets the default values.
 func NewAlternativeSecurityId()(*AlternativeSecurityId) {

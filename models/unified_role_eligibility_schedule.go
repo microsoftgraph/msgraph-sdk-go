@@ -8,9 +8,9 @@ import (
 type UnifiedRoleEligibilitySchedule struct {
     UnifiedRoleScheduleBase
     // Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
-    memberType *string;
+    memberType *string
     // The schedule object of the eligible role assignment request.
-    scheduleInfo RequestScheduleable;
+    scheduleInfo RequestScheduleable
 }
 // NewUnifiedRoleEligibilitySchedule instantiates a new unifiedRoleEligibilitySchedule and sets the default values.
 func NewUnifiedRoleEligibilitySchedule()(*UnifiedRoleEligibilitySchedule) {

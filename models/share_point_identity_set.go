@@ -8,11 +8,11 @@ import (
 type SharePointIdentitySet struct {
     IdentitySet
     // The group associated with this action. Optional.
-    group Identityable;
+    group Identityable
     // The SharePoint group associated with this action. Optional.
-    siteGroup SharePointIdentityable;
+    siteGroup SharePointIdentityable
     // The SharePoint user associated with this action. Optional.
-    siteUser SharePointIdentityable;
+    siteUser SharePointIdentityable
 }
 // NewSharePointIdentitySet instantiates a new sharePointIdentitySet and sets the default values.
 func NewSharePointIdentitySet()(*SharePointIdentitySet) {

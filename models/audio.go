@@ -7,39 +7,39 @@ import (
 // Audio 
 type Audio struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The title of the album for this audio file.
-    album *string;
+    album *string
     // The artist named on the album for the audio file.
-    albumArtist *string;
+    albumArtist *string
     // The performing artist for the audio file.
-    artist *string;
+    artist *string
     // Bitrate expressed in kbps.
-    bitrate *int64;
+    bitrate *int64
     // The name of the composer of the audio file.
-    composers *string;
+    composers *string
     // Copyright information for the audio file.
-    copyright *string;
+    copyright *string
     // The number of the disc this audio file came from.
-    disc *int32;
+    disc *int32
     // The total number of discs in this album.
-    discCount *int32;
+    discCount *int32
     // Duration of the audio file, expressed in milliseconds
-    duration *int64;
+    duration *int64
     // The genre of this audio file.
-    genre *string;
+    genre *string
     // Indicates if the file is protected with digital rights management.
-    hasDrm *bool;
+    hasDrm *bool
     // Indicates if the file is encoded with a variable bitrate.
-    isVariableBitrate *bool;
+    isVariableBitrate *bool
     // The title of the audio file.
-    title *string;
+    title *string
     // The number of the track on the original disc for this audio file.
-    track *int32;
+    track *int32
     // The total number of tracks on the original disc for this audio file.
-    trackCount *int32;
+    trackCount *int32
     // The year the audio file was recorded.
-    year *int32;
+    year *int32
 }
 // NewAudio instantiates a new audio and sets the default values.
 func NewAudio()(*Audio) {

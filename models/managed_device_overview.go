@@ -8,15 +8,15 @@ import (
 type ManagedDeviceOverview struct {
     Entity
     // Distribution of Exchange Access State in Intune
-    deviceExchangeAccessStateSummary DeviceExchangeAccessStateSummaryable;
+    deviceExchangeAccessStateSummary DeviceExchangeAccessStateSummaryable
     // Device operating system summary.
-    deviceOperatingSystemSummary DeviceOperatingSystemSummaryable;
+    deviceOperatingSystemSummary DeviceOperatingSystemSummaryable
     // The number of devices enrolled in both MDM and EAS
-    dualEnrolledDeviceCount *int32;
+    dualEnrolledDeviceCount *int32
     // Total enrolled device count. Does not include PC devices managed via Intune PC Agent
-    enrolledDeviceCount *int32;
+    enrolledDeviceCount *int32
     // The number of devices enrolled in MDM
-    mdmEnrolledCount *int32;
+    mdmEnrolledCount *int32
 }
 // NewManagedDeviceOverview instantiates a new managedDeviceOverview and sets the default values.
 func NewManagedDeviceOverview()(*ManagedDeviceOverview) {

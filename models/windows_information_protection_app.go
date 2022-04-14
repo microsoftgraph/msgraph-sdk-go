@@ -7,17 +7,17 @@ import (
 // WindowsInformationProtectionApp app for Windows information protection
 type WindowsInformationProtectionApp struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If true, app is denied protection or exemption.
-    denied *bool;
+    denied *bool
     // The app's description.
-    description *string;
+    description *string
     // App display name.
-    displayName *string;
+    displayName *string
     // The product name.
-    productName *string;
+    productName *string
     // The publisher name
-    publisherName *string;
+    publisherName *string
 }
 // NewWindowsInformationProtectionApp instantiates a new windowsInformationProtectionApp and sets the default values.
 func NewWindowsInformationProtectionApp()(*WindowsInformationProtectionApp) {

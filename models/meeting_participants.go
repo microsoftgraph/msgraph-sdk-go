@@ -7,11 +7,11 @@ import (
 // MeetingParticipants 
 type MeetingParticipants struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Information of the meeting attendees.
-    attendees []MeetingParticipantInfoable;
+    attendees []MeetingParticipantInfoable
     // Information of the meeting organizer.
-    organizer MeetingParticipantInfoable;
+    organizer MeetingParticipantInfoable
 }
 // NewMeetingParticipants instantiates a new meetingParticipants and sets the default values.
 func NewMeetingParticipants()(*MeetingParticipants) {

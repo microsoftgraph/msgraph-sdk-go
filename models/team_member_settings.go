@@ -7,19 +7,19 @@ import (
 // TeamMemberSettings 
 type TeamMemberSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If set to true, members can add and remove apps.
-    allowAddRemoveApps *bool;
+    allowAddRemoveApps *bool
     // If set to true, members can add and update private channels.
-    allowCreatePrivateChannels *bool;
+    allowCreatePrivateChannels *bool
     // If set to true, members can add and update channels.
-    allowCreateUpdateChannels *bool;
+    allowCreateUpdateChannels *bool
     // If set to true, members can add, update, and remove connectors.
-    allowCreateUpdateRemoveConnectors *bool;
+    allowCreateUpdateRemoveConnectors *bool
     // If set to true, members can add, update, and remove tabs.
-    allowCreateUpdateRemoveTabs *bool;
+    allowCreateUpdateRemoveTabs *bool
     // If set to true, members can delete channels.
-    allowDeleteChannels *bool;
+    allowDeleteChannels *bool
 }
 // NewTeamMemberSettings instantiates a new teamMemberSettings and sets the default values.
 func NewTeamMemberSettings()(*TeamMemberSettings) {

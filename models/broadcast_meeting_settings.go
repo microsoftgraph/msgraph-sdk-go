@@ -7,17 +7,17 @@ import (
 // BroadcastMeetingSettings 
 type BroadcastMeetingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Defines who can join the Teams live event. Possible values are listed in the following table.
-    allowedAudience *BroadcastMeetingAudience;
+    allowedAudience *BroadcastMeetingAudience
     // Indicates whether attendee report is enabled for this Teams live event. Default value is false.
-    isAttendeeReportEnabled *bool;
+    isAttendeeReportEnabled *bool
     // Indicates whether Q&A is enabled for this Teams live event. Default value is false.
-    isQuestionAndAnswerEnabled *bool;
+    isQuestionAndAnswerEnabled *bool
     // Indicates whether recording is enabled for this Teams live event. Default value is false.
-    isRecordingEnabled *bool;
+    isRecordingEnabled *bool
     // Indicates whether video on demand is enabled for this Teams live event. Default value is false.
-    isVideoOnDemandEnabled *bool;
+    isVideoOnDemandEnabled *bool
 }
 // NewBroadcastMeetingSettings instantiates a new broadcastMeetingSettings and sets the default values.
 func NewBroadcastMeetingSettings()(*BroadcastMeetingSettings) {

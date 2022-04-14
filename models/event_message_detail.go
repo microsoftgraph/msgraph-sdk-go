@@ -7,7 +7,7 @@ import (
 // EventMessageDetail 
 type EventMessageDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewEventMessageDetail instantiates a new eventMessageDetail and sets the default values.
 func NewEventMessageDetail()(*EventMessageDetail) {

@@ -8,9 +8,9 @@ import (
 type WorkbookCommentReply struct {
     Entity
     // The content of a comment reply.
-    content *string;
+    content *string
     // Indicates the type for the comment reply.
-    contentType *string;
+    contentType *string
 }
 // NewWorkbookCommentReply instantiates a new workbookCommentReply and sets the default values.
 func NewWorkbookCommentReply()(*WorkbookCommentReply) {

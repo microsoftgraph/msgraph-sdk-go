@@ -7,11 +7,11 @@ import (
 // SearchAggregation 
 type SearchAggregation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Defines the actual buckets of the computed aggregation.
-    buckets []SearchBucketable;
+    buckets []SearchBucketable
     // Defines on which field the aggregation was computed on.
-    field *string;
+    field *string
 }
 // NewSearchAggregation instantiates a new searchAggregation and sets the default values.
 func NewSearchAggregation()(*SearchAggregation) {

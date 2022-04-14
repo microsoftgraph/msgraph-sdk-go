@@ -7,11 +7,11 @@ import (
 // OperationError 
 type OperationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Operation error code.
-    code *string;
+    code *string
     // Operation error message.
-    message *string;
+    message *string
 }
 // NewOperationError instantiates a new operationError and sets the default values.
 func NewOperationError()(*OperationError) {

@@ -8,25 +8,25 @@ import (
 // SelfSignedCertificate 
 type SelfSignedCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Custom key identifier.
-    customKeyIdentifier []byte;
+    customKeyIdentifier []byte
     // The friendly name for the key.
-    displayName *string;
+    displayName *string
     // The date and time at which the credential expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The value for the key credential. Should be a base-64 encoded value.
-    key []byte;
+    key []byte
     // The unique identifier (GUID) for the key.
-    keyId *string;
+    keyId *string
     // The date and time at which the credential becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The thumbprint value for the key.
-    thumbprint *string;
+    thumbprint *string
     // The type of key credential. 'AsymmetricX509Cert'.
-    type_escaped *string;
+    type_escaped *string
     // A string that describes the purpose for which the key can be used. For example, 'Verify'.
-    usage *string;
+    usage *string
 }
 // NewSelfSignedCertificate instantiates a new SelfSignedCertificate and sets the default values.
 func NewSelfSignedCertificate()(*SelfSignedCertificate) {

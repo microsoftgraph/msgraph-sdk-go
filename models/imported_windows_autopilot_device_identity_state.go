@@ -7,15 +7,15 @@ import (
 // ImportedWindowsAutopilotDeviceIdentityState 
 type ImportedWindowsAutopilotDeviceIdentityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Device error code reported by Device Directory Service(DDS).
-    deviceErrorCode *int32;
+    deviceErrorCode *int32
     // Device error name reported by Device Directory Service(DDS).
-    deviceErrorName *string;
+    deviceErrorName *string
     // Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.
-    deviceImportStatus *ImportedWindowsAutopilotDeviceIdentityImportStatus;
+    deviceImportStatus *ImportedWindowsAutopilotDeviceIdentityImportStatus
     // Device Registration ID for successfully added device reported by Device Directory Service(DDS).
-    deviceRegistrationId *string;
+    deviceRegistrationId *string
 }
 // NewImportedWindowsAutopilotDeviceIdentityState instantiates a new importedWindowsAutopilotDeviceIdentityState and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentityState()(*ImportedWindowsAutopilotDeviceIdentityState) {

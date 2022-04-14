@@ -7,11 +7,11 @@ import (
 // GenericError 
 type GenericError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The error code.
-    code *string;
+    code *string
     // The error message.
-    message *string;
+    message *string
 }
 // NewGenericError instantiates a new genericError and sets the default values.
 func NewGenericError()(*GenericError) {

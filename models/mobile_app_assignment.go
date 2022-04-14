@@ -8,11 +8,11 @@ import (
 type MobileAppAssignment struct {
     Entity
     // The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
-    intent *InstallIntent;
+    intent *InstallIntent
     // The settings for target assignment defined by the admin.
-    settings MobileAppAssignmentSettingsable;
+    settings MobileAppAssignmentSettingsable
     // The target group assignment defined by the admin.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewMobileAppAssignment instantiates a new mobileAppAssignment and sets the default values.
 func NewMobileAppAssignment()(*MobileAppAssignment) {

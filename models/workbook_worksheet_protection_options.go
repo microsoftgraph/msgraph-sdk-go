@@ -7,29 +7,29 @@ import (
 // WorkbookWorksheetProtectionOptions 
 type WorkbookWorksheetProtectionOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents the worksheet protection option of allowing using auto filter feature.
-    allowAutoFilter *bool;
+    allowAutoFilter *bool
     // Represents the worksheet protection option of allowing deleting columns.
-    allowDeleteColumns *bool;
+    allowDeleteColumns *bool
     // Represents the worksheet protection option of allowing deleting rows.
-    allowDeleteRows *bool;
+    allowDeleteRows *bool
     // Represents the worksheet protection option of allowing formatting cells.
-    allowFormatCells *bool;
+    allowFormatCells *bool
     // Represents the worksheet protection option of allowing formatting columns.
-    allowFormatColumns *bool;
+    allowFormatColumns *bool
     // Represents the worksheet protection option of allowing formatting rows.
-    allowFormatRows *bool;
+    allowFormatRows *bool
     // Represents the worksheet protection option of allowing inserting columns.
-    allowInsertColumns *bool;
+    allowInsertColumns *bool
     // Represents the worksheet protection option of allowing inserting hyperlinks.
-    allowInsertHyperlinks *bool;
+    allowInsertHyperlinks *bool
     // Represents the worksheet protection option of allowing inserting rows.
-    allowInsertRows *bool;
+    allowInsertRows *bool
     // Represents the worksheet protection option of allowing using pivot table feature.
-    allowPivotTables *bool;
+    allowPivotTables *bool
     // Represents the worksheet protection option of allowing using sort feature.
-    allowSort *bool;
+    allowSort *bool
 }
 // NewWorkbookWorksheetProtectionOptions instantiates a new workbookWorksheetProtectionOptions and sets the default values.
 func NewWorkbookWorksheetProtectionOptions()(*WorkbookWorksheetProtectionOptions) {

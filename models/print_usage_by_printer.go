@@ -8,7 +8,7 @@ import (
 type PrintUsageByPrinter struct {
     PrintUsage
     // The printerId property
-    printerId *string;
+    printerId *string
 }
 // NewPrintUsageByPrinter instantiates a new printUsageByPrinter and sets the default values.
 func NewPrintUsageByPrinter()(*PrintUsageByPrinter) {

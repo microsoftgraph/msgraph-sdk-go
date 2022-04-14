@@ -9,15 +9,15 @@ import (
 type PrinterShare struct {
     PrinterBase
     // If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
-    allowAllUsers *bool;
+    allowAllUsers *bool
     // The groups whose users have access to print using the printer.
-    allowedGroups []Groupable;
+    allowedGroups []Groupable
     // The users who have access to print using the printer.
-    allowedUsers []Userable;
+    allowedUsers []Userable
     // The DateTimeOffset when the printer share was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The printer that this printer share is related to.
-    printer Printerable;
+    printer Printerable
 }
 // NewPrinterShare instantiates a new printerShare and sets the default values.
 func NewPrinterShare()(*PrinterShare) {

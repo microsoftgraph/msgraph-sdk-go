@@ -8,19 +8,19 @@ import (
 // LicenseAssignmentState 
 type LicenseAssignmentState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
-    assignedByGroup *string;
+    assignedByGroup *string
     // The service plans that are disabled in this assignment. Read-Only.
-    disabledPlans []string;
+    disabledPlans []string
     // License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
-    error *string;
+    error *string
     // The timestamp when the state of the license assignment was last updated.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The unique identifier for the SKU. Read-Only.
-    skuId *string;
+    skuId *string
     // Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
-    state *string;
+    state *string
 }
 // NewLicenseAssignmentState instantiates a new licenseAssignmentState and sets the default values.
 func NewLicenseAssignmentState()(*LicenseAssignmentState) {

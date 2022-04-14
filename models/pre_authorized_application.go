@@ -7,11 +7,11 @@ import (
 // PreAuthorizedApplication 
 type PreAuthorizedApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The unique identifier for the application.
-    appId *string;
+    appId *string
     // The unique identifier for the oauth2PermissionScopes the application requires.
-    delegatedPermissionIds []string;
+    delegatedPermissionIds []string
 }
 // NewPreAuthorizedApplication instantiates a new preAuthorizedApplication and sets the default values.
 func NewPreAuthorizedApplication()(*PreAuthorizedApplication) {

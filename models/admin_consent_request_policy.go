@@ -8,17 +8,17 @@ import (
 type AdminConsentRequestPolicy struct {
     Entity
     // Specifies whether the admin consent request feature is enabled or disabled. Required.
-    isEnabled *bool;
+    isEnabled *bool
     // Specifies whether reviewers will receive notifications. Required.
-    notifyReviewers *bool;
+    notifyReviewers *bool
     // Specifies whether reviewers will receive reminder emails. Required.
-    remindersEnabled *bool;
+    remindersEnabled *bool
     // Specifies the duration the request is active before it automatically expires if no decision is applied.
-    requestDurationInDays *int32;
+    requestDurationInDays *int32
     // The list of reviewers for the admin consent. Required.
-    reviewers []AccessReviewReviewerScopeable;
+    reviewers []AccessReviewReviewerScopeable
     // Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
-    version *int32;
+    version *int32
 }
 // NewAdminConsentRequestPolicy instantiates a new adminConsentRequestPolicy and sets the default values.
 func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {

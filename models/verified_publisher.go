@@ -8,13 +8,13 @@ import (
 // VerifiedPublisher 
 type VerifiedPublisher struct {
     // The timestamp when the verified publisher was first added or most recently updated.
-    addedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    addedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The verified publisher name from the app publisher's Partner Center account.
-    displayName *string;
+    displayName *string
     // The ID of the verified publisher from the app publisher's Partner Center account.
-    verifiedPublisherId *string;
+    verifiedPublisherId *string
 }
 // NewVerifiedPublisher instantiates a new verifiedPublisher and sets the default values.
 func NewVerifiedPublisher()(*VerifiedPublisher) {

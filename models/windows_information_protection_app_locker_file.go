@@ -8,13 +8,13 @@ import (
 type WindowsInformationProtectionAppLockerFile struct {
     Entity
     // The friendly name
-    displayName *string;
+    displayName *string
     // File as a byte array
-    file []byte;
+    file []byte
     // SHA256 hash of the file
-    fileHash *string;
+    fileHash *string
     // Version of the entity.
-    version *string;
+    version *string
 }
 // NewWindowsInformationProtectionAppLockerFile instantiates a new windowsInformationProtectionAppLockerFile and sets the default values.
 func NewWindowsInformationProtectionAppLockerFile()(*WindowsInformationProtectionAppLockerFile) {

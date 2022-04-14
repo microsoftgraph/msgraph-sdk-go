@@ -7,11 +7,11 @@ import (
 // GetByIdsRequestBody provides operations to call the getByIds method.
 type GetByIdsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ids property
-    ids []string;
+    ids []string
     // The types property
-    types []string;
+    types []string
 }
 // NewGetByIdsRequestBody instantiates a new getByIdsRequestBody and sets the default values.
 func NewGetByIdsRequestBody()(*GetByIdsRequestBody) {

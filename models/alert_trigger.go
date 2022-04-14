@@ -7,13 +7,13 @@ import (
 // AlertTrigger 
 type AlertTrigger struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the property serving as a detection trigger.
-    name *string;
+    name *string
     // Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
-    type_escaped *string;
+    type_escaped *string
     // Value of the property serving as a detection trigger.
-    value *string;
+    value *string
 }
 // NewAlertTrigger instantiates a new alertTrigger and sets the default values.
 func NewAlertTrigger()(*AlertTrigger) {

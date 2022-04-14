@@ -8,9 +8,9 @@ import (
 type PlannerUser struct {
     Entity
     // Read-only. Nullable. Returns the plannerTasks assigned to the user.
-    plans []PlannerPlanable;
+    plans []PlannerPlanable
     // Read-only. Nullable. Returns the plannerPlans shared with the user.
-    tasks []PlannerTaskable;
+    tasks []PlannerTaskable
 }
 // NewPlannerUser instantiates a new plannerUser and sets the default values.
 func NewPlannerUser()(*PlannerUser) {

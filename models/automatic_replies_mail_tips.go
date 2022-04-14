@@ -7,15 +7,15 @@ import (
 // AutomaticRepliesMailTips 
 type AutomaticRepliesMailTips struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The automatic reply message.
-    message *string;
+    message *string
     // The language that the automatic reply message is in.
-    messageLanguage LocaleInfoable;
+    messageLanguage LocaleInfoable
     // The date and time that automatic replies are set to end.
-    scheduledEndTime DateTimeTimeZoneable;
+    scheduledEndTime DateTimeTimeZoneable
     // The date and time that automatic replies are set to begin.
-    scheduledStartTime DateTimeTimeZoneable;
+    scheduledStartTime DateTimeTimeZoneable
 }
 // NewAutomaticRepliesMailTips instantiates a new automaticRepliesMailTips and sets the default values.
 func NewAutomaticRepliesMailTips()(*AutomaticRepliesMailTips) {

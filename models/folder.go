@@ -7,11 +7,11 @@ import (
 // Folder 
 type Folder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Number of children contained immediately within this container.
-    childCount *int32;
+    childCount *int32
     // A collection of properties defining the recommended view for the folder.
-    view FolderViewable;
+    view FolderViewable
 }
 // NewFolder instantiates a new folder and sets the default values.
 func NewFolder()(*Folder) {

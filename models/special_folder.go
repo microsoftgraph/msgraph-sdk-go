@@ -7,9 +7,9 @@ import (
 // SpecialFolder 
 type SpecialFolder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The unique identifier for this item in the /drive/special collection
-    name *string;
+    name *string
 }
 // NewSpecialFolder instantiates a new specialFolder and sets the default values.
 func NewSpecialFolder()(*SpecialFolder) {

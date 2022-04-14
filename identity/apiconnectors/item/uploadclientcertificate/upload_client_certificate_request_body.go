@@ -7,11 +7,11 @@ import (
 // UploadClientCertificateRequestBody provides operations to call the uploadClientCertificate method.
 type UploadClientCertificateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The password property
-    password *string;
+    password *string
     // The pkcs12Value property
-    pkcs12Value *string;
+    pkcs12Value *string
 }
 // NewUploadClientCertificateRequestBody instantiates a new uploadClientCertificateRequestBody and sets the default values.
 func NewUploadClientCertificateRequestBody()(*UploadClientCertificateRequestBody) {

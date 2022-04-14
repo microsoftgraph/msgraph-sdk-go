@@ -7,9 +7,9 @@ import (
 // SetVerifiedPublisherRequestBody provides operations to call the setVerifiedPublisher method.
 type SetVerifiedPublisherRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The verifiedPublisherId property
-    verifiedPublisherId *string;
+    verifiedPublisherId *string
 }
 // NewSetVerifiedPublisherRequestBody instantiates a new setVerifiedPublisherRequestBody and sets the default values.
 func NewSetVerifiedPublisherRequestBody()(*SetVerifiedPublisherRequestBody) {

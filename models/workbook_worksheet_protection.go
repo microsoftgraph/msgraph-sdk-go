@@ -8,9 +8,9 @@ import (
 type WorkbookWorksheetProtection struct {
     Entity
     // Sheet protection options. Read-only.
-    options WorkbookWorksheetProtectionOptionsable;
+    options WorkbookWorksheetProtectionOptionsable
     // Indicates if the worksheet is protected.  Read-only.
-    protected *bool;
+    protected *bool
 }
 // NewWorkbookWorksheetProtection instantiates a new workbookWorksheetProtection and sets the default values.
 func NewWorkbookWorksheetProtection()(*WorkbookWorksheetProtection) {

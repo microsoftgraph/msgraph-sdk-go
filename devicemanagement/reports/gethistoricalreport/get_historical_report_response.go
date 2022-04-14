@@ -7,9 +7,9 @@ import (
 // GetHistoricalReportResponse provides operations to call the getHistoricalReport method.
 type GetHistoricalReportResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetHistoricalReportResponse instantiates a new getHistoricalReportResponse and sets the default values.
 func NewGetHistoricalReportResponse()(*GetHistoricalReportResponse) {

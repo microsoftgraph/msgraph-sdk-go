@@ -8,45 +8,45 @@ import (
 // RemoteItem 
 type RemoteItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Identity of the user, device, and application which created the item. Read-only.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // Date and time of item creation. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates that the remote item is a file. Read-only.
-    file Fileable;
+    file Fileable
     // Information about the remote item from the local file system. Read-only.
-    fileSystemInfo FileSystemInfoable;
+    fileSystemInfo FileSystemInfoable
     // Indicates that the remote item is a folder. Read-only.
-    folder Folderable;
+    folder Folderable
     // Unique identifier for the remote item in its drive. Read-only.
-    id *string;
+    id *string
     // Image metadata, if the item is an image. Read-only.
-    image Imageable;
+    image Imageable
     // Identity of the user, device, and application which last modified the item. Read-only.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // Date and time the item was last modified. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional. Filename of the remote item. Read-only.
-    name *string;
+    name *string
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    package_escaped Package_escapedable;
+    package_escaped Package_escapedable
     // Properties of the parent of the remote item. Read-only.
-    parentReference ItemReferenceable;
+    parentReference ItemReferenceable
     // Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
-    shared Sharedable;
+    shared Sharedable
     // Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
-    sharepointIds SharepointIdsable;
+    sharepointIds SharepointIdsable
     // Size of the remote item. Read-only.
-    size *int64;
+    size *int64
     // If the current item is also available as a special folder, this facet is returned. Read-only.
-    specialFolder SpecialFolderable;
+    specialFolder SpecialFolderable
     // Video metadata, if the item is a video. Read-only.
-    video Videoable;
+    video Videoable
     // DAV compatible URL for the item.
-    webDavUrl *string;
+    webDavUrl *string
     // URL that displays the resource in the browser. Read-only.
-    webUrl *string;
+    webUrl *string
 }
 // NewRemoteItem instantiates a new remoteItem and sets the default values.
 func NewRemoteItem()(*RemoteItem) {

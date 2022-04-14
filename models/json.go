@@ -7,7 +7,7 @@ import (
 // Json 
 type Json struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewJson instantiates a new Json and sets the default values.
 func NewJson()(*Json) {

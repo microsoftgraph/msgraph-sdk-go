@@ -7,9 +7,9 @@ import (
 // GetNotebookFromWebUrlRequestBody provides operations to call the getNotebookFromWebUrl method.
 type GetNotebookFromWebUrlRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The webUrl property
-    webUrl *string;
+    webUrl *string
 }
 // NewGetNotebookFromWebUrlRequestBody instantiates a new getNotebookFromWebUrlRequestBody and sets the default values.
 func NewGetNotebookFromWebUrlRequestBody()(*GetNotebookFromWebUrlRequestBody) {

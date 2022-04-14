@@ -9,27 +9,27 @@ import (
 type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
     // The expected deadline of the action for the message.
-    actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of serviceAnnouncementAttachments.
-    attachments []ServiceAnnouncementAttachmentable;
+    attachments []ServiceAnnouncementAttachmentable
     // The zip file that contains all attachments for a message.
-    attachmentsArchive []byte;
+    attachmentsArchive []byte
     // The body property
-    body ItemBodyable;
+    body ItemBodyable
     // The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
-    category *ServiceUpdateCategory;
+    category *ServiceUpdateCategory
     // Indicates whether the message has any attachment.
-    hasAttachments *bool;
+    hasAttachments *bool
     // Indicates whether the message describes a major update for the service.
-    isMajorChange *bool;
+    isMajorChange *bool
     // The affected services by the service message.
-    services []string;
+    services []string
     // The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
-    severity *ServiceUpdateSeverity;
+    severity *ServiceUpdateSeverity
     // A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
-    tags []string;
+    tags []string
     // Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
-    viewPoint ServiceUpdateMessageViewpointable;
+    viewPoint ServiceUpdateMessageViewpointable
 }
 // NewServiceUpdateMessage instantiates a new serviceUpdateMessage and sets the default values.
 func NewServiceUpdateMessage()(*ServiceUpdateMessage) {

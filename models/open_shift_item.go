@@ -8,7 +8,7 @@ import (
 type OpenShiftItem struct {
     ShiftItem
     // Count of the number of slots for the given open shift.
-    openSlotCount *int32;
+    openSlotCount *int32
 }
 // NewOpenShiftItem instantiates a new openShiftItem and sets the default values.
 func NewOpenShiftItem()(*OpenShiftItem) {

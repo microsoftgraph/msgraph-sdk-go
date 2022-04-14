@@ -7,17 +7,17 @@ import (
 // CopyNotebookRequestBody provides operations to call the copyNotebook method.
 type CopyNotebookRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The groupId property
-    groupId *string;
+    groupId *string
     // The notebookFolder property
-    notebookFolder *string;
+    notebookFolder *string
     // The renameAs property
-    renameAs *string;
+    renameAs *string
     // The siteCollectionId property
-    siteCollectionId *string;
+    siteCollectionId *string
     // The siteId property
-    siteId *string;
+    siteId *string
 }
 // NewCopyNotebookRequestBody instantiates a new copyNotebookRequestBody and sets the default values.
 func NewCopyNotebookRequestBody()(*CopyNotebookRequestBody) {

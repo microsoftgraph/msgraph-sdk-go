@@ -7,9 +7,9 @@ import (
 // DownloadApplePushNotificationCertificateSigningRequestResponse provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.
 type DownloadApplePushNotificationCertificateSigningRequestResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value *string;
+    value *string
 }
 // NewDownloadApplePushNotificationCertificateSigningRequestResponse instantiates a new downloadApplePushNotificationCertificateSigningRequestResponse and sets the default values.
 func NewDownloadApplePushNotificationCertificateSigningRequestResponse()(*DownloadApplePushNotificationCertificateSigningRequestResponse) {

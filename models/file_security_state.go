@@ -7,15 +7,15 @@ import (
 // FileSecurityState 
 type FileSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Complex type containing file hashes (cryptographic and location-sensitive).
-    fileHash FileHashable;
+    fileHash FileHashable
     // File name (without path).
-    name *string;
+    name *string
     // Full file path of the file/imageFile.
-    path *string;
+    path *string
     // Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
-    riskScore *string;
+    riskScore *string
 }
 // NewFileSecurityState instantiates a new fileSecurityState and sets the default values.
 func NewFileSecurityState()(*FileSecurityState) {

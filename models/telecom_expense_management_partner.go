@@ -9,15 +9,15 @@ import (
 type TelecomExpenseManagementPartner struct {
     Entity
     // Whether the partner's AAD app has been authorized to access Intune.
-    appAuthorized *bool;
+    appAuthorized *bool
     // Display name of the TEM partner.
-    displayName *string;
+    displayName *string
     // Whether Intune's connection to the TEM service is currently enabled or disabled.
-    enabled *bool;
+    enabled *bool
     // Timestamp of the last request sent to Intune by the TEM partner.
-    lastConnectionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastConnectionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
-    url *string;
+    url *string
 }
 // NewTelecomExpenseManagementPartner instantiates a new telecomExpenseManagementPartner and sets the default values.
 func NewTelecomExpenseManagementPartner()(*TelecomExpenseManagementPartner) {

@@ -9,23 +9,23 @@ import (
 type ComplianceManagementPartner struct {
     Entity
     // User groups which enroll Android devices through partner.
-    androidEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
+    androidEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Android devices.
-    androidOnboarded *bool;
+    androidOnboarded *bool
     // Partner display name
-    displayName *string;
+    displayName *string
     // User groups which enroll ios devices through partner.
-    iosEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
+    iosEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for ios devices.
-    iosOnboarded *bool;
+    iosOnboarded *bool
     // Timestamp of last heartbeat after admin onboarded to the compliance management partner
-    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // User groups which enroll Mac devices through partner.
-    macOsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
+    macOsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Mac devices.
-    macOsOnboarded *bool;
+    macOsOnboarded *bool
     // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
-    partnerState *DeviceManagementPartnerTenantState;
+    partnerState *DeviceManagementPartnerTenantState
 }
 // NewComplianceManagementPartner instantiates a new complianceManagementPartner and sets the default values.
 func NewComplianceManagementPartner()(*ComplianceManagementPartner) {

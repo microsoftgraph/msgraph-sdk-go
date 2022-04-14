@@ -7,15 +7,15 @@ import (
 // EducationRoot 
 type EducationRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The classes property
-    classes []EducationClassable;
+    classes []EducationClassable
     // The me property
-    me EducationUserable;
+    me EducationUserable
     // The schools property
-    schools []EducationSchoolable;
+    schools []EducationSchoolable
     // The users property
-    users []EducationUserable;
+    users []EducationUserable
 }
 // NewEducationRoot instantiates a new EducationRoot and sets the default values.
 func NewEducationRoot()(*EducationRoot) {

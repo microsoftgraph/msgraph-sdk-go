@@ -8,7 +8,7 @@ import (
 type PrintUsageByUser struct {
     PrintUsage
     // The UPN of the user represented by these statistics.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewPrintUsageByUser instantiates a new printUsageByUser and sets the default values.
 func NewPrintUsageByUser()(*PrintUsageByUser) {

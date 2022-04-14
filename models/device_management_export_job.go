@@ -9,25 +9,25 @@ import (
 type DeviceManagementExportJob struct {
     Entity
     // Time that the exported report expires
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Filters applied on the report
-    filter *string;
+    filter *string
     // Format of the exported report. Possible values are: csv, pdf.
-    format *DeviceManagementReportFileFormat;
+    format *DeviceManagementReportFileFormat
     // Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.
-    localizationType *DeviceManagementExportJobLocalizationType;
+    localizationType *DeviceManagementExportJobLocalizationType
     // Name of the report
-    reportName *string;
+    reportName *string
     // Time that the exported report was requested
-    requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Columns selected from the report
-    select_escaped []string;
+    select_escaped []string
     // A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
-    snapshotId *string;
+    snapshotId *string
     // Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.
-    status *DeviceManagementReportStatus;
+    status *DeviceManagementReportStatus
     // Temporary location of the exported report
-    url *string;
+    url *string
 }
 // NewDeviceManagementExportJob instantiates a new deviceManagementExportJob and sets the default values.
 func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {

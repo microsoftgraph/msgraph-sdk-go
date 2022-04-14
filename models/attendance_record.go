@@ -8,15 +8,15 @@ import (
 type AttendanceRecord struct {
     Entity
     // List of time periods between joining and leaving a meeting.
-    attendanceIntervals []AttendanceIntervalable;
+    attendanceIntervals []AttendanceIntervalable
     // Email address of the user associated with this atttendance record.
-    emailAddress *string;
+    emailAddress *string
     // Identity of the user associated with this atttendance record.
-    identity Identityable;
+    identity Identityable
     // Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
-    role *string;
+    role *string
     // Total duration of the attendances in seconds.
-    totalAttendanceInSeconds *int32;
+    totalAttendanceInSeconds *int32
 }
 // NewAttendanceRecord instantiates a new attendanceRecord and sets the default values.
 func NewAttendanceRecord()(*AttendanceRecord) {

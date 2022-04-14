@@ -14,49 +14,49 @@ import (
 // PrinterShareItemRequestBuilder provides operations to manage the shares property of the microsoft.graph.print entity.
 type PrinterShareItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // PrinterShareItemRequestBuilderDeleteOptions options for Delete
 type PrinterShareItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // PrinterShareItemRequestBuilderGetOptions options for Get
 type PrinterShareItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *PrinterShareItemRequestBuilderGetQueryParameters;
+    QueryParameters *PrinterShareItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // PrinterShareItemRequestBuilderGetQueryParameters the list of printer shares registered in the tenant.
 type PrinterShareItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // PrinterShareItemRequestBuilderPatchOptions options for Patch
 type PrinterShareItemRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AllowedGroups the allowedGroups property
 func (m *PrinterShareItemRequestBuilder) AllowedGroups()(*if71bc0def059e5cd43ad758ac90e0476d545be67abc269b44c62b0e319bd0c1c.AllowedGroupsRequestBuilder) {
@@ -69,7 +69,7 @@ func (m *PrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*i19852dfc
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["group_id"] = id
+        urlTplParams["group%2Did"] = id
     }
     return i19852dfc496eca0fe63108cfac8774cb2809469b264ed6de9f0834e636ab428c.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -84,7 +84,7 @@ func (m *PrinterShareItemRequestBuilder) AllowedUsersById(id string)(*i30908241d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["user_id"] = id
+        urlTplParams["user%2Did"] = id
     }
     return i30908241df49cb55a70218cf04d4d0e1e3dfdde514367f11bb0ada2960507068.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -92,7 +92,7 @@ func (m *PrinterShareItemRequestBuilder) AllowedUsersById(id string)(*i30908241d
 func NewPrinterShareItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterShareItemRequestBuilder) {
     m := &PrinterShareItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/shares/{printerShare_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/print/shares/{printerShare%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

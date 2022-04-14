@@ -8,7 +8,7 @@ import (
 type RestrictedSignIn struct {
     SignIn
     // The targetTenantId property
-    targetTenantId *string;
+    targetTenantId *string
 }
 // NewRestrictedSignIn instantiates a new restrictedSignIn and sets the default values.
 func NewRestrictedSignIn()(*RestrictedSignIn) {

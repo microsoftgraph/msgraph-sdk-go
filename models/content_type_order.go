@@ -7,11 +7,11 @@ import (
 // ContentTypeOrder 
 type ContentTypeOrder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Whether this is the default Content Type
-    default_escaped *bool;
+    default_escaped *bool
     // Specifies the position in which the Content Type appears in the selection UI.
-    position *int32;
+    position *int32
 }
 // NewContentTypeOrder instantiates a new contentTypeOrder and sets the default values.
 func NewContentTypeOrder()(*ContentTypeOrder) {

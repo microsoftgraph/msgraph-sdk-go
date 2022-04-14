@@ -9,15 +9,15 @@ import (
 type MicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
     // The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
-    device Deviceable;
+    device Deviceable
     // Tags containing app metadata.
-    deviceTag *string;
+    deviceTag *string
     // The name of the device on which this app is registered.
-    displayName *string;
+    displayName *string
     // Numerical version of this instance of the Authenticator app.
-    phoneAppVersion *string;
+    phoneAppVersion *string
 }
 // NewMicrosoftAuthenticatorAuthenticationMethod instantiates a new microsoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethod()(*MicrosoftAuthenticatorAuthenticationMethod) {

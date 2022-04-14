@@ -8,17 +8,17 @@ import (
 type DeviceCompliancePolicyState struct {
     Entity
     // The name of the policy for this policyBase
-    displayName *string;
+    displayName *string
     // Platform type that the policy applies to
-    platformType *PolicyPlatformType;
+    platformType *PolicyPlatformType
     // Count of how many setting a policy holds
-    settingCount *int32;
+    settingCount *int32
     // The settingStates property
-    settingStates []DeviceCompliancePolicySettingStateable;
+    settingStates []DeviceCompliancePolicySettingStateable
     // The compliance state of the policy
-    state *ComplianceStatus;
+    state *ComplianceStatus
     // The version of the policy
-    version *int32;
+    version *int32
 }
 // NewDeviceCompliancePolicyState instantiates a new deviceCompliancePolicyState and sets the default values.
 func NewDeviceCompliancePolicyState()(*DeviceCompliancePolicyState) {

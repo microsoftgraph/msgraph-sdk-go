@@ -7,11 +7,11 @@ import (
 // PublicationFacet 
 type PublicationFacet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The state of publication for this document. Either published or checkout. Read-only.
-    level *string;
+    level *string
     // The unique identifier for the version that is visible to the current caller. Read-only.
-    versionId *string;
+    versionId *string
 }
 // NewPublicationFacet instantiates a new publicationFacet and sets the default values.
 func NewPublicationFacet()(*PublicationFacet) {

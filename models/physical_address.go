@@ -7,17 +7,17 @@ import (
 // PhysicalAddress 
 type PhysicalAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The city.
-    city *string;
+    city *string
     // The country or region. It's a free-format string value, for example, 'United States'.
-    countryOrRegion *string;
+    countryOrRegion *string
     // The postal code.
-    postalCode *string;
+    postalCode *string
     // The state.
-    state *string;
+    state *string
     // The street.
-    street *string;
+    street *string
 }
 // NewPhysicalAddress instantiates a new physicalAddress and sets the default values.
 func NewPhysicalAddress()(*PhysicalAddress) {

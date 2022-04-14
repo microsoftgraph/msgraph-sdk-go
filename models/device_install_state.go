@@ -9,21 +9,21 @@ import (
 type DeviceInstallState struct {
     Entity
     // Device Id.
-    deviceId *string;
+    deviceId *string
     // Device name.
-    deviceName *string;
+    deviceName *string
     // The error code for install failures.
-    errorCode *string;
+    errorCode *string
     // The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
-    installState *InstallState;
+    installState *InstallState
     // Last sync date and time.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // OS Description.
-    osDescription *string;
+    osDescription *string
     // OS Version.
-    osVersion *string;
+    osVersion *string
     // Device User Name.
-    userName *string;
+    userName *string
 }
 // NewDeviceInstallState instantiates a new deviceInstallState and sets the default values.
 func NewDeviceInstallState()(*DeviceInstallState) {

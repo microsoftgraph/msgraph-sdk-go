@@ -7,9 +7,9 @@ import (
 // CallMediaState 
 type CallMediaState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The audio media state. Possible values are: active, inactive, unknownFutureValue.
-    audio *MediaState;
+    audio *MediaState
 }
 // NewCallMediaState instantiates a new callMediaState and sets the default values.
 func NewCallMediaState()(*CallMediaState) {

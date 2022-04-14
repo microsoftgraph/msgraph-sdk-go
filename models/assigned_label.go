@@ -7,11 +7,11 @@ import (
 // AssignedLabel 
 type AssignedLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The display name of the label. Read-only.
-    displayName *string;
+    displayName *string
     // The unique identifier of the label.
-    labelId *string;
+    labelId *string
 }
 // NewAssignedLabel instantiates a new assignedLabel and sets the default values.
 func NewAssignedLabel()(*AssignedLabel) {

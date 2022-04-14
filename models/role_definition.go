@@ -8,15 +8,15 @@ import (
 type RoleDefinition struct {
     Entity
     // Description of the Role definition.
-    description *string;
+    description *string
     // Display Name of the Role definition.
-    displayName *string;
+    displayName *string
     // Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
-    isBuiltIn *bool;
+    isBuiltIn *bool
     // List of Role assignments for this role definition.
-    roleAssignments []RoleAssignmentable;
+    roleAssignments []RoleAssignmentable
     // List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
-    rolePermissions []RolePermissionable;
+    rolePermissions []RolePermissionable
 }
 // NewRoleDefinition instantiates a new roleDefinition and sets the default values.
 func NewRoleDefinition()(*RoleDefinition) {

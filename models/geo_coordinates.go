@@ -7,13 +7,13 @@ import (
 // GeoCoordinates 
 type GeoCoordinates struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-    altitude *float64;
+    altitude *float64
     // Optional. The latitude, in decimal, for the item. Read-only.
-    latitude *float64;
+    latitude *float64
     // Optional. The longitude, in decimal, for the item. Read-only.
-    longitude *float64;
+    longitude *float64
 }
 // NewGeoCoordinates instantiates a new geoCoordinates and sets the default values.
 func NewGeoCoordinates()(*GeoCoordinates) {

@@ -7,23 +7,23 @@ import (
 // Location 
 type Location struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The street address of the location.
-    address PhysicalAddressable;
+    address PhysicalAddressable
     // The geographic coordinates and elevation of the location.
-    coordinates OutlookGeoCoordinatesable;
+    coordinates OutlookGeoCoordinatesable
     // The name associated with the location.
-    displayName *string;
+    displayName *string
     // Optional email address of the location.
-    locationEmailAddress *string;
+    locationEmailAddress *string
     // The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
-    locationType *LocationType;
+    locationType *LocationType
     // Optional URI representing the location.
-    locationUri *string;
+    locationUri *string
     // For internal use only.
-    uniqueId *string;
+    uniqueId *string
     // For internal use only.
-    uniqueIdType *LocationUniqueIdType;
+    uniqueIdType *LocationUniqueIdType
 }
 // NewLocation instantiates a new location and sets the default values.
 func NewLocation()(*Location) {

@@ -8,7 +8,7 @@ import (
 type PlannerBucketTaskBoardTaskFormat struct {
     Entity
     // Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
-    orderHint *string;
+    orderHint *string
 }
 // NewPlannerBucketTaskBoardTaskFormat instantiates a new plannerBucketTaskBoardTaskFormat and sets the default values.
 func NewPlannerBucketTaskBoardTaskFormat()(*PlannerBucketTaskBoardTaskFormat) {

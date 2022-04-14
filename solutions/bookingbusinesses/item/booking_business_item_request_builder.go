@@ -23,49 +23,49 @@ import (
 // BookingBusinessItemRequestBuilder provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
 type BookingBusinessItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // BookingBusinessItemRequestBuilderDeleteOptions options for Delete
 type BookingBusinessItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BookingBusinessItemRequestBuilderGetOptions options for Get
 type BookingBusinessItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *BookingBusinessItemRequestBuilderGetQueryParameters;
+    QueryParameters *BookingBusinessItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BookingBusinessItemRequestBuilderGetQueryParameters get bookingBusinesses from solutions
 type BookingBusinessItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // BookingBusinessItemRequestBuilderPatchOptions options for Patch
 type BookingBusinessItemRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Appointments the appointments property
 func (m *BookingBusinessItemRequestBuilder) Appointments()(*ic2d5072df0f8d04e99de862f3a1d2feb5ded47db9ddb8fabf60b325a3045df1c.AppointmentsRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *BookingBusinessItemRequestBuilder) AppointmentsById(id string)(*i13fa9f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["bookingAppointment_id"] = id
+        urlTplParams["bookingAppointment%2Did"] = id
     }
     return i13fa9f102f5550ee0debc695a8553b7bb18a56cacbb2474b92004bac21331107.NewBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -93,7 +93,7 @@ func (m *BookingBusinessItemRequestBuilder) CalendarViewById(id string)(*i666b4f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["bookingAppointment_id"] = id
+        urlTplParams["bookingAppointment%2Did"] = id
     }
     return i666b4f4b64d4f34838144b722929f6fa3671d9928954f8b977c2e8b643847f95.NewBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -101,7 +101,7 @@ func (m *BookingBusinessItemRequestBuilder) CalendarViewById(id string)(*i666b4f
 func NewBookingBusinessItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessItemRequestBuilder) {
     m := &BookingBusinessItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -182,7 +182,7 @@ func (m *BookingBusinessItemRequestBuilder) CustomersById(id string)(*i0c8d27942
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["bookingCustomerBase_id"] = id
+        urlTplParams["bookingCustomerBase%2Did"] = id
     }
     return i0c8d27942293fe15088aee376560cc63f01e0de684e17140e97deb80c8d67040.NewBookingCustomerBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -197,7 +197,7 @@ func (m *BookingBusinessItemRequestBuilder) CustomQuestionsById(id string)(*i69a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["bookingCustomQuestion_id"] = id
+        urlTplParams["bookingCustomQuestion%2Did"] = id
     }
     return i69ae791b5e1d3acb35e488b8f8f9fc402d31eddf07089c2cc865d430ceef10d9.NewBookingCustomQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -264,7 +264,7 @@ func (m *BookingBusinessItemRequestBuilder) ServicesById(id string)(*i1dac550ea6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["bookingService_id"] = id
+        urlTplParams["bookingService%2Did"] = id
     }
     return i1dac550ea6326e46204247bf797ccc6ac538b2fbe14da8d2f54928298a9ad4d6.NewBookingServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -279,7 +279,7 @@ func (m *BookingBusinessItemRequestBuilder) StaffMembersById(id string)(*i864a68
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["bookingStaffMemberBase_id"] = id
+        urlTplParams["bookingStaffMemberBase%2Did"] = id
     }
     return i864a68457d2653b81efe9986ef9566d379d369000a1a4808dfb1ca609c7ea560.NewBookingStaffMemberBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

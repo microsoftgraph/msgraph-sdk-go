@@ -7,7 +7,7 @@ import (
 // PlannerAssignments 
 type PlannerAssignments struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewPlannerAssignments instantiates a new plannerAssignments and sets the default values.
 func NewPlannerAssignments()(*PlannerAssignments) {

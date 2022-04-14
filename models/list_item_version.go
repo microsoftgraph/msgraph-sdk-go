@@ -8,7 +8,7 @@ import (
 type ListItemVersion struct {
     BaseItemVersion
     // A collection of the fields and values for this version of the list item.
-    fields FieldValueSetable;
+    fields FieldValueSetable
 }
 // NewListItemVersion instantiates a new listItemVersion and sets the default values.
 func NewListItemVersion()(*ListItemVersion) {

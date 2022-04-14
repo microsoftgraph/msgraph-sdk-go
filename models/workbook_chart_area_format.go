@@ -8,9 +8,9 @@ import (
 type WorkbookChartAreaFormat struct {
     Entity
     // Represents the fill format of an object, which includes background formatting information. Read-only.
-    fill WorkbookChartFillable;
+    fill WorkbookChartFillable
     // Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.
-    font WorkbookChartFontable;
+    font WorkbookChartFontable
 }
 // NewWorkbookChartAreaFormat instantiates a new workbookChartAreaFormat and sets the default values.
 func NewWorkbookChartAreaFormat()(*WorkbookChartAreaFormat) {

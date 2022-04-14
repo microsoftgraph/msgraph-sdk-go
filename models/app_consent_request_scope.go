@@ -7,9 +7,9 @@ import (
 // AppConsentRequestScope 
 type AppConsentRequestScope struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The name of the scope.
-    displayName *string;
+    displayName *string
 }
 // NewAppConsentRequestScope instantiates a new appConsentRequestScope and sets the default values.
 func NewAppConsentRequestScope()(*AppConsentRequestScope) {

@@ -9,17 +9,17 @@ import (
 type DataPolicyOperation struct {
     Entity
     // Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Specifies the progress of an operation.
-    progress *float64;
+    progress *float64
     // Possible values are: notStarted, running, complete, failed, unknownFutureValue.
-    status *DataPolicyOperationStatus;
+    status *DataPolicyOperationStatus
     // The URL location to where data is being exported for export requests.
-    storageLocation *string;
+    storageLocation *string
     // Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    submittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    submittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The id for the user on whom the operation is performed.
-    userId *string;
+    userId *string
 }
 // NewDataPolicyOperation instantiates a new dataPolicyOperation and sets the default values.
 func NewDataPolicyOperation()(*DataPolicyOperation) {

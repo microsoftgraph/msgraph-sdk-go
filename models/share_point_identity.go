@@ -8,7 +8,7 @@ import (
 type SharePointIdentity struct {
     Identity
     // The sign in name of the SharePoint identity.
-    loginName *string;
+    loginName *string
 }
 // NewSharePointIdentity instantiates a new sharePointIdentity and sets the default values.
 func NewSharePointIdentity()(*SharePointIdentity) {

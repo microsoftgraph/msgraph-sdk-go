@@ -9,79 +9,79 @@ import (
 type Contact struct {
     OutlookItem
     // The name of the contact's assistant.
-    assistantName *string;
+    assistantName *string
     // The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The contact's business address.
-    businessAddress PhysicalAddressable;
+    businessAddress PhysicalAddressable
     // The business home page of the contact.
-    businessHomePage *string;
+    businessHomePage *string
     // The contact's business phone numbers.
-    businessPhones []string;
+    businessPhones []string
     // The names of the contact's children.
-    children []string;
+    children []string
     // The name of the contact's company.
-    companyName *string;
+    companyName *string
     // The contact's department.
-    department *string;
+    department *string
     // The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
-    displayName *string;
+    displayName *string
     // The contact's email addresses.
-    emailAddresses []EmailAddressable;
+    emailAddresses []EmailAddressable
     // The collection of open extensions defined for the contact. Read-only. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // The name the contact is filed under.
-    fileAs *string;
+    fileAs *string
     // The contact's generation.
-    generation *string;
+    generation *string
     // The contact's given name.
-    givenName *string;
+    givenName *string
     // The contact's home address.
-    homeAddress PhysicalAddressable;
+    homeAddress PhysicalAddressable
     // The contact's home phone numbers.
-    homePhones []string;
+    homePhones []string
     // The imAddresses property
-    imAddresses []string;
+    imAddresses []string
     // The initials property
-    initials *string;
+    initials *string
     // The jobTitle property
-    jobTitle *string;
+    jobTitle *string
     // The manager property
-    manager *string;
+    manager *string
     // The middleName property
-    middleName *string;
+    middleName *string
     // The mobilePhone property
-    mobilePhone *string;
+    mobilePhone *string
     // The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // The nickName property
-    nickName *string;
+    nickName *string
     // The officeLocation property
-    officeLocation *string;
+    officeLocation *string
     // The otherAddress property
-    otherAddress PhysicalAddressable;
+    otherAddress PhysicalAddressable
     // The parentFolderId property
-    parentFolderId *string;
+    parentFolderId *string
     // The personalNotes property
-    personalNotes *string;
+    personalNotes *string
     // Optional contact picture. You can get or set a photo for a contact.
-    photo ProfilePhotoable;
+    photo ProfilePhotoable
     // The profession property
-    profession *string;
+    profession *string
     // The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The spouseName property
-    spouseName *string;
+    spouseName *string
     // The surname property
-    surname *string;
+    surname *string
     // The title property
-    title *string;
+    title *string
     // The yomiCompanyName property
-    yomiCompanyName *string;
+    yomiCompanyName *string
     // The yomiGivenName property
-    yomiGivenName *string;
+    yomiGivenName *string
     // The yomiSurname property
-    yomiSurname *string;
+    yomiSurname *string
 }
 // NewContact instantiates a new contact and sets the default values.
 func NewContact()(*Contact) {

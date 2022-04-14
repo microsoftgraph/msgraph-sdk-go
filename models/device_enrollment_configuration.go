@@ -9,19 +9,19 @@ import (
 type DeviceEnrollmentConfiguration struct {
     Entity
     // The list of group assignments for the device configuration profile
-    assignments []EnrollmentConfigurationAssignmentable;
+    assignments []EnrollmentConfigurationAssignmentable
     // Created date time in UTC of the device enrollment configuration
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the device enrollment configuration
-    description *string;
+    description *string
     // The display name of the device enrollment configuration
-    displayName *string;
+    displayName *string
     // Last modified date time in UTC of the device enrollment configuration
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
-    priority *int32;
+    priority *int32
     // The version of the device enrollment configuration
-    version *int32;
+    version *int32
 }
 // NewDeviceEnrollmentConfiguration instantiates a new deviceEnrollmentConfiguration and sets the default values.
 func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {

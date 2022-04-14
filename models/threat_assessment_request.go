@@ -9,21 +9,21 @@ import (
 type ThreatAssessmentRequest struct {
     Entity
     // The threat category. Possible values are: spam, phishing, malware.
-    category *ThreatCategory;
+    category *ThreatCategory
     // The content type of threat assessment. Possible values are: mail, url, file.
-    contentType *ThreatAssessmentContentType;
+    contentType *ThreatAssessmentContentType
     // The threat assessment request creator.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The expected assessment from submitter. Possible values are: block, unblock.
-    expectedAssessment *ThreatExpectedAssessment;
+    expectedAssessment *ThreatExpectedAssessment
     // The source of the threat assessment request. Possible values are: administrator.
-    requestSource *ThreatAssessmentRequestSource;
+    requestSource *ThreatAssessmentRequestSource
     // A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-    results []ThreatAssessmentResultable;
+    results []ThreatAssessmentResultable
     // The assessment process status. Possible values are: pending, completed.
-    status *ThreatAssessmentStatus;
+    status *ThreatAssessmentStatus
 }
 // NewThreatAssessmentRequest instantiates a new threatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {

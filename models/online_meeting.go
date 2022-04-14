@@ -9,51 +9,51 @@ import (
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
-    allowAttendeeToEnableCamera *bool;
+    allowAttendeeToEnableCamera *bool
     // Indicates whether attendees can turn on their microphone.
-    allowAttendeeToEnableMic *bool;
+    allowAttendeeToEnableMic *bool
     // Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-    allowedPresenters *OnlineMeetingPresenters;
+    allowedPresenters *OnlineMeetingPresenters
     // Specifies the mode of meeting chat.
-    allowMeetingChat *MeetingChatMode;
+    allowMeetingChat *MeetingChatMode
     // Indicates whether Teams reactions are enabled for the meeting.
-    allowTeamworkReactions *bool;
+    allowTeamworkReactions *bool
     // The attendance reports of an online meeting. Read-only.
-    attendanceReports []MeetingAttendanceReportable;
+    attendanceReports []MeetingAttendanceReportable
     // The content stream of the attendee report of a Microsoft Teams live event. Read-only.
-    attendeeReport []byte;
+    attendeeReport []byte
     // The phone access (dial-in) information for an online meeting. Read-only.
-    audioConferencing AudioConferencingable;
+    audioConferencing AudioConferencingable
     // Settings related to a live event.
-    broadcastSettings BroadcastMeetingSettingsable;
+    broadcastSettings BroadcastMeetingSettingsable
     // The chat information associated with this online meeting.
-    chatInfo ChatInfoable;
+    chatInfo ChatInfoable
     // The meeting creation time in UTC. Read-only.
-    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The meeting end time in UTC.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The external ID. A custom ID. Optional.
-    externalId *string;
+    externalId *string
     // Indicates if this is a Teams live event.
-    isBroadcast *bool;
+    isBroadcast *bool
     // Indicates whether to announce when callers join or leave.
-    isEntryExitAnnounced *bool;
+    isEntryExitAnnounced *bool
     // The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
-    joinInformation ItemBodyable;
+    joinInformation ItemBodyable
     // The join URL of the online meeting. Read-only.
-    joinWebUrl *string;
+    joinWebUrl *string
     // Specifies which participants can bypass the meeting   lobby.
-    lobbyBypassSettings LobbyBypassSettingsable;
+    lobbyBypassSettings LobbyBypassSettingsable
     // The participants associated with the online meeting.  This includes the organizer and the attendees.
-    participants MeetingParticipantsable;
+    participants MeetingParticipantsable
     // Indicates whether to record the meeting automatically.
-    recordAutomatically *bool;
+    recordAutomatically *bool
     // The meeting start time in UTC.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The subject of the online meeting.
-    subject *string;
+    subject *string
     // The video teleconferencing ID. Read-only.
-    videoTeleconferenceId *string;
+    videoTeleconferenceId *string
 }
 // NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {

@@ -7,49 +7,49 @@ import (
 // DeviceInfo 
 type DeviceInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the capture device driver used by the media endpoint.
-    captureDeviceDriver *string;
+    captureDeviceDriver *string
     // Name of the capture device used by the media endpoint.
-    captureDeviceName *string;
+    captureDeviceName *string
     // Fraction of the call that the media endpoint detected the capture device was not working properly.
-    captureNotFunctioningEventRatio *float32;
+    captureNotFunctioningEventRatio *float32
     // Fraction of the call that the media endpoint detected the CPU resources available were insufficient and caused poor quality of the audio sent and received.
-    cpuInsufficentEventRatio *float32;
+    cpuInsufficentEventRatio *float32
     // Fraction of the call that the media endpoint detected clipping in the captured audio that caused poor quality of the audio being sent.
-    deviceClippingEventRatio *float32;
+    deviceClippingEventRatio *float32
     // Fraction of the call that the media endpoint detected glitches or gaps in the audio played or captured that caused poor quality of the audio being sent or received.
-    deviceGlitchEventRatio *float32;
+    deviceGlitchEventRatio *float32
     // Number of times during the call that the media endpoint detected howling or screeching audio.
-    howlingEventCount *int32;
+    howlingEventCount *int32
     // The root mean square (RMS) of the incoming signal of up to the first 30 seconds of the call.
-    initialSignalLevelRootMeanSquare *float32;
+    initialSignalLevelRootMeanSquare *float32
     // Fraction of the call that the media endpoint detected low speech level that caused poor quality of the audio being sent.
-    lowSpeechLevelEventRatio *float32;
+    lowSpeechLevelEventRatio *float32
     // Fraction of the call that the media endpoint detected low speech to noise level that caused poor quality of the audio being sent.
-    lowSpeechToNoiseEventRatio *float32;
+    lowSpeechToNoiseEventRatio *float32
     // Glitches per 5 minute interval for the media endpoint's microphone.
-    micGlitchRate *float32;
+    micGlitchRate *float32
     // Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
-    receivedNoiseLevel *int32;
+    receivedNoiseLevel *int32
     // Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
-    receivedSignalLevel *int32;
+    receivedSignalLevel *int32
     // Name of the render device driver used by the media endpoint.
-    renderDeviceDriver *string;
+    renderDeviceDriver *string
     // Name of the render device used by the media endpoint.
-    renderDeviceName *string;
+    renderDeviceName *string
     // Fraction of the call that media endpoint detected device render is muted.
-    renderMuteEventRatio *float32;
+    renderMuteEventRatio *float32
     // Fraction of the call that the media endpoint detected the render device was not working properly.
-    renderNotFunctioningEventRatio *float32;
+    renderNotFunctioningEventRatio *float32
     // Fraction of the call that media endpoint detected device render volume is set to 0.
-    renderZeroVolumeEventRatio *float32;
+    renderZeroVolumeEventRatio *float32
     // Average energy level of sent audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
-    sentNoiseLevel *int32;
+    sentNoiseLevel *int32
     // Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
-    sentSignalLevel *int32;
+    sentSignalLevel *int32
     // Glitches per 5 minute internal for the media endpoint's loudspeaker.
-    speakerGlitchRate *float32;
+    speakerGlitchRate *float32
 }
 // NewDeviceInfo instantiates a new deviceInfo and sets the default values.
 func NewDeviceInfo()(*DeviceInfo) {

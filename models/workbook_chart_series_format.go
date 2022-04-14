@@ -8,9 +8,9 @@ import (
 type WorkbookChartSeriesFormat struct {
     Entity
     // Represents the fill format of a chart series, which includes background formating information. Read-only.
-    fill WorkbookChartFillable;
+    fill WorkbookChartFillable
     // Represents line formatting. Read-only.
-    line WorkbookChartLineFormatable;
+    line WorkbookChartLineFormatable
 }
 // NewWorkbookChartSeriesFormat instantiates a new workbookChartSeriesFormat and sets the default values.
 func NewWorkbookChartSeriesFormat()(*WorkbookChartSeriesFormat) {

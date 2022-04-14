@@ -8,13 +8,13 @@ import (
 // EntitlementManagementSchedule 
 type EntitlementManagementSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // When the access should expire.
-    expiration ExpirationPatternable;
-    // For recurring access. Not used at present.
-    recurrence PatternedRecurrenceable;
+    expiration ExpirationPatternable
+    // For recurring access reviews.  Not used in access requests.
+    recurrence PatternedRecurrenceable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewEntitlementManagementSchedule instantiates a new entitlementManagementSchedule and sets the default values.
 func NewEntitlementManagementSchedule()(*EntitlementManagementSchedule) {
@@ -78,7 +78,7 @@ func (m *EntitlementManagementSchedule) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetRecurrence gets the recurrence property value. For recurring access. Not used at present.
+// GetRecurrence gets the recurrence property value. For recurring access reviews.  Not used in access requests.
 func (m *EntitlementManagementSchedule) GetRecurrence()(PatternedRecurrenceable) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *EntitlementManagementSchedule) SetExpiration(value ExpirationPatternabl
         m.expiration = value
     }
 }
-// SetRecurrence sets the recurrence property value. For recurring access. Not used at present.
+// SetRecurrence sets the recurrence property value. For recurring access reviews.  Not used in access requests.
 func (m *EntitlementManagementSchedule) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value

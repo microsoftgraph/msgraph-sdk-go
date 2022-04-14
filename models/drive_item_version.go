@@ -8,9 +8,9 @@ import (
 type DriveItemVersion struct {
     BaseItemVersion
     // The content stream for this version of the item.
-    content []byte;
+    content []byte
     // Indicates the size of the content stream for this version of the item.
-    size *int64;
+    size *int64
 }
 // NewDriveItemVersion instantiates a new driveItemVersion and sets the default values.
 func NewDriveItemVersion()(*DriveItemVersion) {

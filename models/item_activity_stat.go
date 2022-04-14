@@ -9,25 +9,25 @@ import (
 type ItemActivityStat struct {
     Entity
     // Statistics about the access actions in this interval. Read-only.
-    access ItemActionStatable;
+    access ItemActionStatable
     // Exposes the itemActivities represented in this itemActivityStat resource.
-    activities []ItemActivityable;
+    activities []ItemActivityable
     // Statistics about the create actions in this interval. Read-only.
-    create ItemActionStatable;
+    create ItemActionStatable
     // Statistics about the delete actions in this interval. Read-only.
-    delete ItemActionStatable;
+    delete ItemActionStatable
     // Statistics about the edit actions in this interval. Read-only.
-    edit ItemActionStatable;
+    edit ItemActionStatable
     // When the interval ends. Read-only.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates that the statistics in this interval are based on incomplete data. Read-only.
-    incompleteData IncompleteDataable;
+    incompleteData IncompleteDataable
     // Indicates whether the item is 'trending.' Read-only.
-    isTrending *bool;
+    isTrending *bool
     // Statistics about the move actions in this interval. Read-only.
-    move ItemActionStatable;
+    move ItemActionStatable
     // When the interval starts. Read-only.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewItemActivityStat instantiates a new itemActivityStat and sets the default values.
 func NewItemActivityStat()(*ItemActivityStat) {

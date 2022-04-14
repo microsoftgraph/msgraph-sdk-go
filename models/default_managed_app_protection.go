@@ -8,29 +8,29 @@ import (
 type DefaultManagedAppProtection struct {
     ManagedAppProtection
     // Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
-    appDataEncryptionType *ManagedAppDataEncryptionType;
+    appDataEncryptionType *ManagedAppDataEncryptionType
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable;
+    apps []ManagedMobileAppable
     // A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-    customSettings []KeyValuePairable;
+    customSettings []KeyValuePairable
     // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32;
+    deployedAppCount *int32
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable
     // When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
-    disableAppEncryptionIfDeviceEncryptionIsEnabled *bool;
+    disableAppEncryptionIfDeviceEncryptionIsEnabled *bool
     // Indicates whether managed-app data should be encrypted. (Android only)
-    encryptAppData *bool;
+    encryptAppData *bool
     // Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
-    faceIdBlocked *bool;
+    faceIdBlocked *bool
     // Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
-    minimumRequiredPatchVersion *string;
+    minimumRequiredPatchVersion *string
     // Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
-    minimumRequiredSdkVersion *string;
+    minimumRequiredSdkVersion *string
     // Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
-    minimumWarningPatchVersion *string;
+    minimumWarningPatchVersion *string
     // Indicates whether screen capture is blocked. (Android only)
-    screenCaptureBlocked *bool;
+    screenCaptureBlocked *bool
 }
 // NewDefaultManagedAppProtection instantiates a new defaultManagedAppProtection and sets the default values.
 func NewDefaultManagedAppProtection()(*DefaultManagedAppProtection) {

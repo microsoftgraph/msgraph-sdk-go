@@ -7,15 +7,15 @@ import (
 // EducationTerm 
 type EducationTerm struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Display name of the term.
-    displayName *string;
+    displayName *string
     // End of the term.
-    endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // ID of term in the syncing system.
-    externalId *string;
+    externalId *string
     // Start of the term.
-    startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewEducationTerm instantiates a new educationTerm and sets the default values.
 func NewEducationTerm()(*EducationTerm) {

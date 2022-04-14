@@ -7,15 +7,15 @@ import (
 // RubricLevel 
 type RubricLevel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The description of this rubric level.
-    description EducationItemBodyable;
+    description EducationItemBodyable
     // The name of this rubric level.
-    displayName *string;
+    displayName *string
     // Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
-    grading EducationAssignmentGradeTypeable;
+    grading EducationAssignmentGradeTypeable
     // The ID of this resource.
-    levelId *string;
+    levelId *string
 }
 // NewRubricLevel instantiates a new rubricLevel and sets the default values.
 func NewRubricLevel()(*RubricLevel) {

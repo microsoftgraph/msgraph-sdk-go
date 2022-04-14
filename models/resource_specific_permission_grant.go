@@ -8,15 +8,15 @@ import (
 type ResourceSpecificPermissionGrant struct {
     DirectoryObject
     // ID of the service principal of the Azure AD app that has been granted access. Read-only.
-    clientAppId *string;
+    clientAppId *string
     // ID of the Azure AD app that has been granted access. Read-only.
-    clientId *string;
+    clientId *string
     // The name of the resource-specific permission. Read-only.
-    permission *string;
+    permission *string
     // The type of permission. Possible values are: Application, Delegated. Read-only.
-    permissionType *string;
+    permissionType *string
     // ID of the Azure AD app that is hosting the resource. Read-only.
-    resourceAppId *string;
+    resourceAppId *string
 }
 // NewResourceSpecificPermissionGrant instantiates a new resourceSpecificPermissionGrant and sets the default values.
 func NewResourceSpecificPermissionGrant()(*ResourceSpecificPermissionGrant) {

@@ -7,19 +7,19 @@ import (
 // Media 
 type Media struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Device information associated with the callee endpoint of this media.
-    calleeDevice DeviceInfoable;
+    calleeDevice DeviceInfoable
     // Network information associated with the callee endpoint of this media.
-    calleeNetwork NetworkInfoable;
+    calleeNetwork NetworkInfoable
     // Device information associated with the caller endpoint of this media.
-    callerDevice DeviceInfoable;
+    callerDevice DeviceInfoable
     // Network information associated with the caller endpoint of this media.
-    callerNetwork NetworkInfoable;
+    callerNetwork NetworkInfoable
     // How the media was identified during media negotiation stage.
-    label *string;
+    label *string
     // Network streams associated with this media.
-    streams []MediaStreamable;
+    streams []MediaStreamable
 }
 // NewMedia instantiates a new media and sets the default values.
 func NewMedia()(*Media) {

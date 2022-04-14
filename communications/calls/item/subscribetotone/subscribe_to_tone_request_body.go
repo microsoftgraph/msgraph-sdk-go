@@ -7,9 +7,9 @@ import (
 // SubscribeToToneRequestBody provides operations to call the subscribeToTone method.
 type SubscribeToToneRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The clientContext property
-    clientContext *string;
+    clientContext *string
 }
 // NewSubscribeToToneRequestBody instantiates a new subscribeToToneRequestBody and sets the default values.
 func NewSubscribeToToneRequestBody()(*SubscribeToToneRequestBody) {

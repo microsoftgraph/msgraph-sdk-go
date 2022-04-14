@@ -9,13 +9,13 @@ import (
 type BitlockerRecoveryKey struct {
     Entity
     // The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
-    deviceId *string;
+    deviceId *string
     // The BitLocker recovery key. Returned only on $select. Not nullable.
-    key *string;
+    key *string
     // Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
-    volumeType *VolumeType;
+    volumeType *VolumeType
 }
 // NewBitlockerRecoveryKey instantiates a new bitlockerRecoveryKey and sets the default values.
 func NewBitlockerRecoveryKey()(*BitlockerRecoveryKey) {

@@ -8,7 +8,7 @@ import (
 type WorkbookChartPointFormat struct {
     Entity
     // Represents the fill format of a chart, which includes background formating information. Read-only.
-    fill WorkbookChartFillable;
+    fill WorkbookChartFillable
 }
 // NewWorkbookChartPointFormat instantiates a new workbookChartPointFormat and sets the default values.
 func NewWorkbookChartPointFormat()(*WorkbookChartPointFormat) {

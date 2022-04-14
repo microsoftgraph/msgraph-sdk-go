@@ -7,11 +7,11 @@ import (
 // SortProperty 
 type SortProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
-    isDescending *bool;
+    isDescending *bool
     // The name of the property to sort on. Required.
-    name *string;
+    name *string
 }
 // NewSortProperty instantiates a new sortProperty and sets the default values.
 func NewSortProperty()(*SortProperty) {

@@ -7,9 +7,9 @@ import (
 // Admin 
 type Admin struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A container for service communications resources. Read-only.
-    serviceAnnouncement ServiceAnnouncementable;
+    serviceAnnouncement ServiceAnnouncementable
 }
 // NewAdmin instantiates a new Admin and sets the default values.
 func NewAdmin()(*Admin) {

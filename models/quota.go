@@ -7,19 +7,19 @@ import (
 // Quota 
 type Quota struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Total space consumed by files in the recycle bin, in bytes. Read-only.
-    deleted *int64;
+    deleted *int64
     // Total space remaining before reaching the quota limit, in bytes. Read-only.
-    remaining *int64;
+    remaining *int64
     // Enumeration value that indicates the state of the storage space. Read-only.
-    state *string;
+    state *string
     // Information about the drive's storage quota plans. Only in Personal OneDrive.
-    storagePlanInformation StoragePlanInformationable;
+    storagePlanInformation StoragePlanInformationable
     // Total allowed storage space, in bytes. Read-only.
-    total *int64;
+    total *int64
     // Total space used, in bytes. Read-only.
-    used *int64;
+    used *int64
 }
 // NewQuota instantiates a new quota and sets the default values.
 func NewQuota()(*Quota) {

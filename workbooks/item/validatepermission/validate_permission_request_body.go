@@ -7,11 +7,11 @@ import (
 // ValidatePermissionRequestBody provides operations to call the validatePermission method.
 type ValidatePermissionRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The challengeToken property
-    challengeToken *string;
+    challengeToken *string
     // The password property
-    password *string;
+    password *string
 }
 // NewValidatePermissionRequestBody instantiates a new validatePermissionRequestBody and sets the default values.
 func NewValidatePermissionRequestBody()(*ValidatePermissionRequestBody) {

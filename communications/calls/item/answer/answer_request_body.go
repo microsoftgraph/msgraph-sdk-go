@@ -8,17 +8,17 @@ import (
 // AnswerRequestBody provides operations to call the answer method.
 type AnswerRequestBody struct {
     // The acceptedModalities property
-    acceptedModalities []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality;
+    acceptedModalities []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The callbackUri property
-    callbackUri *string;
+    callbackUri *string
     // The callOptions property
-    callOptions iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IncomingCallOptionsable;
+    callOptions iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IncomingCallOptionsable
     // The mediaConfig property
-    mediaConfig iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MediaConfigable;
+    mediaConfig iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MediaConfigable
     // The participantCapacity property
-    participantCapacity *int32;
+    participantCapacity *int32
 }
 // NewAnswerRequestBody instantiates a new answerRequestBody and sets the default values.
 func NewAnswerRequestBody()(*AnswerRequestBody) {

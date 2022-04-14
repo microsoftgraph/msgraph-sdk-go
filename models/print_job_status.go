@@ -7,15 +7,15 @@ import (
 // PrintJobStatus 
 type PrintJobStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A human-readable description of the print job's current processing state. Read-only.
-    description *string;
+    description *string
     // Additional details for print job state. Valid values are described in the following table. Read-only.
-    details []PrintJobStateDetail;
+    details []PrintJobStateDetail
     // True if the job was acknowledged by a printer; false otherwise. Read-only.
-    isAcquiredByPrinter *bool;
+    isAcquiredByPrinter *bool
     // The print job's current processing state. Valid values are described in the following table. Read-only.
-    state *PrintJobProcessingState;
+    state *PrintJobProcessingState
 }
 // NewPrintJobStatus instantiates a new printJobStatus and sets the default values.
 func NewPrintJobStatus()(*PrintJobStatus) {

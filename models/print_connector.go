@@ -9,17 +9,17 @@ import (
 type PrintConnector struct {
     Entity
     // The connector's version.
-    appVersion *string;
+    appVersion *string
     // The name of the connector.
-    displayName *string;
+    displayName *string
     // The connector machine's hostname.
-    fullyQualifiedDomainName *string;
+    fullyQualifiedDomainName *string
     // The physical and/or organizational location of the connector.
-    location PrinterLocationable;
+    location PrinterLocationable
     // The connector machine's operating system version.
-    operatingSystem *string;
+    operatingSystem *string
     // The DateTimeOffset when the connector was registered.
-    registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewPrintConnector instantiates a new printConnector and sets the default values.
 func NewPrintConnector()(*PrintConnector) {

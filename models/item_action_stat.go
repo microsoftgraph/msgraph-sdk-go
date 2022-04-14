@@ -7,11 +7,11 @@ import (
 // ItemActionStat 
 type ItemActionStat struct {
     // The number of times the action took place. Read-only.
-    actionCount *int32;
+    actionCount *int32
     // The number of distinct actors that performed the action. Read-only.
-    actorCount *int32;
+    actorCount *int32
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewItemActionStat instantiates a new itemActionStat and sets the default values.
 func NewItemActionStat()(*ItemActionStat) {

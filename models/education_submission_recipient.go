@@ -7,7 +7,7 @@ import (
 // EducationSubmissionRecipient 
 type EducationSubmissionRecipient struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewEducationSubmissionRecipient instantiates a new educationSubmissionRecipient and sets the default values.
 func NewEducationSubmissionRecipient()(*EducationSubmissionRecipient) {

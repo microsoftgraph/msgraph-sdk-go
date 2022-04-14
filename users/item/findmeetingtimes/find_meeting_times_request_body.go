@@ -8,23 +8,23 @@ import (
 // FindMeetingTimesRequestBody provides operations to call the findMeetingTimes method.
 type FindMeetingTimesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The attendees property
-    attendees []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable;
+    attendees []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable
     // The isOrganizerOptional property
-    isOrganizerOptional *bool;
+    isOrganizerOptional *bool
     // The locationConstraint property
-    locationConstraint iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocationConstraintable;
+    locationConstraint iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocationConstraintable
     // The maxCandidates property
-    maxCandidates *int32;
+    maxCandidates *int32
     // The meetingDuration property
-    meetingDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    meetingDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The minimumAttendeePercentage property
-    minimumAttendeePercentage *float64;
+    minimumAttendeePercentage *float64
     // The returnSuggestionReasons property
-    returnSuggestionReasons *bool;
+    returnSuggestionReasons *bool
     // The timeConstraint property
-    timeConstraint iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeConstraintable;
+    timeConstraint iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeConstraintable
 }
 // NewFindMeetingTimesRequestBody instantiates a new findMeetingTimesRequestBody and sets the default values.
 func NewFindMeetingTimesRequestBody()(*FindMeetingTimesRequestBody) {

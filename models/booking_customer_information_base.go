@@ -7,7 +7,7 @@ import (
 // BookingCustomerInformationBase 
 type BookingCustomerInformationBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewBookingCustomerInformationBase instantiates a new bookingCustomerInformationBase and sets the default values.
 func NewBookingCustomerInformationBase()(*BookingCustomerInformationBase) {

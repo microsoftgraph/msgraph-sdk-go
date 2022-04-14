@@ -8,75 +8,75 @@ import (
 type DeviceManagement struct {
     Entity
     // Apple push notification certificate.
-    applePushNotificationCertificate ApplePushNotificationCertificateable;
+    applePushNotificationCertificate ApplePushNotificationCertificateable
     // The list of Compliance Management Partners configured by the tenant.
-    complianceManagementPartners []ComplianceManagementPartnerable;
+    complianceManagementPartners []ComplianceManagementPartnerable
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-    conditionalAccessSettings OnPremisesConditionalAccessSettingsable;
+    conditionalAccessSettings OnPremisesConditionalAccessSettingsable
     // The list of detected apps associated with a device.
-    detectedApps []DetectedAppable;
+    detectedApps []DetectedAppable
     // The list of device categories with the tenant.
-    deviceCategories []DeviceCategoryable;
+    deviceCategories []DeviceCategoryable
     // The device compliance policies.
-    deviceCompliancePolicies []DeviceCompliancePolicyable;
+    deviceCompliancePolicies []DeviceCompliancePolicyable
     // The device compliance state summary for this account.
-    deviceCompliancePolicyDeviceStateSummary DeviceCompliancePolicyDeviceStateSummaryable;
+    deviceCompliancePolicyDeviceStateSummary DeviceCompliancePolicyDeviceStateSummaryable
     // The summary states of compliance policy settings for this account.
-    deviceCompliancePolicySettingStateSummaries []DeviceCompliancePolicySettingStateSummaryable;
+    deviceCompliancePolicySettingStateSummaries []DeviceCompliancePolicySettingStateSummaryable
     // The device configuration device state summary for this account.
-    deviceConfigurationDeviceStateSummaries DeviceConfigurationDeviceStateSummaryable;
+    deviceConfigurationDeviceStateSummaries DeviceConfigurationDeviceStateSummaryable
     // The device configurations.
-    deviceConfigurations []DeviceConfigurationable;
+    deviceConfigurations []DeviceConfigurationable
     // The list of device enrollment configurations
-    deviceEnrollmentConfigurations []DeviceEnrollmentConfigurationable;
+    deviceEnrollmentConfigurations []DeviceEnrollmentConfigurationable
     // The list of Device Management Partners configured by the tenant.
-    deviceManagementPartners []DeviceManagementPartnerable;
+    deviceManagementPartners []DeviceManagementPartnerable
     // The list of Exchange Connectors configured by the tenant.
-    exchangeConnectors []DeviceManagementExchangeConnectorable;
+    exchangeConnectors []DeviceManagementExchangeConnectorable
     // Collection of imported Windows autopilot devices.
-    importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentityable;
+    importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentityable
     // Intune Account Id for given tenant
-    intuneAccountId *string;
+    intuneAccountId *string
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
-    intuneBrand IntuneBrandable;
+    intuneBrand IntuneBrandable
     // The IOS software update installation statuses for this account.
-    iosUpdateStatuses []IosUpdateDeviceStatusable;
+    iosUpdateStatuses []IosUpdateDeviceStatusable
     // Device overview
-    managedDeviceOverview ManagedDeviceOverviewable;
+    managedDeviceOverview ManagedDeviceOverviewable
     // The list of managed devices.
-    managedDevices []ManagedDeviceable;
+    managedDevices []ManagedDeviceable
     // The list of Mobile threat Defense connectors configured by the tenant.
-    mobileThreatDefenseConnectors []MobileThreatDefenseConnectorable;
+    mobileThreatDefenseConnectors []MobileThreatDefenseConnectorable
     // The Notification Message Templates.
-    notificationMessageTemplates []NotificationMessageTemplateable;
+    notificationMessageTemplates []NotificationMessageTemplateable
     // The remote assist partners.
-    remoteAssistancePartners []RemoteAssistancePartnerable;
+    remoteAssistancePartners []RemoteAssistancePartnerable
     // Reports singleton
-    reports DeviceManagementReportsable;
+    reports DeviceManagementReportsable
     // The Resource Operations.
-    resourceOperations []ResourceOperationable;
+    resourceOperations []ResourceOperationable
     // The Role Assignments.
-    roleAssignments []DeviceAndAppManagementRoleAssignmentable;
+    roleAssignments []DeviceAndAppManagementRoleAssignmentable
     // The Role Definitions.
-    roleDefinitions []RoleDefinitionable;
+    roleDefinitions []RoleDefinitionable
     // Account level settings.
-    settings DeviceManagementSettingsable;
+    settings DeviceManagementSettingsable
     // The software update status summary.
-    softwareUpdateStatusSummary SoftwareUpdateStatusSummaryable;
+    softwareUpdateStatusSummary SoftwareUpdateStatusSummaryable
     // Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
-    subscriptionState *DeviceManagementSubscriptionState;
+    subscriptionState *DeviceManagementSubscriptionState
     // The telecom expense management partners.
-    telecomExpenseManagementPartners []TelecomExpenseManagementPartnerable;
+    telecomExpenseManagementPartners []TelecomExpenseManagementPartnerable
     // The terms and conditions associated with device management of the company.
-    termsAndConditions []TermsAndConditionsable;
+    termsAndConditions []TermsAndConditionsable
     // The list of troubleshooting events for the tenant.
-    troubleshootingEvents []DeviceManagementTroubleshootingEventable;
+    troubleshootingEvents []DeviceManagementTroubleshootingEventable
     // The Windows autopilot device identities contained collection.
-    windowsAutopilotDeviceIdentities []WindowsAutopilotDeviceIdentityable;
+    windowsAutopilotDeviceIdentities []WindowsAutopilotDeviceIdentityable
     // The windows information protection app learning summaries.
-    windowsInformationProtectionAppLearningSummaries []WindowsInformationProtectionAppLearningSummaryable;
+    windowsInformationProtectionAppLearningSummaries []WindowsInformationProtectionAppLearningSummaryable
     // The windows information protection network learning summaries.
-    windowsInformationProtectionNetworkLearningSummaries []WindowsInformationProtectionNetworkLearningSummaryable;
+    windowsInformationProtectionNetworkLearningSummaries []WindowsInformationProtectionNetworkLearningSummaryable
 }
 // NewDeviceManagement instantiates a new deviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {

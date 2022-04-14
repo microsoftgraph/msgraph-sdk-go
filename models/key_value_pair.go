@@ -7,11 +7,11 @@ import (
 // KeyValuePair 
 type KeyValuePair struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name for this key-value pair
-    name *string;
+    name *string
     // Value for this key-value pair
-    value *string;
+    value *string
 }
 // NewKeyValuePair instantiates a new keyValuePair and sets the default values.
 func NewKeyValuePair()(*KeyValuePair) {

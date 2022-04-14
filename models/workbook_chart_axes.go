@@ -8,11 +8,11 @@ import (
 type WorkbookChartAxes struct {
     Entity
     // Represents the category axis in a chart. Read-only.
-    categoryAxis WorkbookChartAxisable;
+    categoryAxis WorkbookChartAxisable
     // Represents the series axis of a 3-dimensional chart. Read-only.
-    seriesAxis WorkbookChartAxisable;
+    seriesAxis WorkbookChartAxisable
     // Represents the value axis in an axis. Read-only.
-    valueAxis WorkbookChartAxisable;
+    valueAxis WorkbookChartAxisable
 }
 // NewWorkbookChartAxes instantiates a new workbookChartAxes and sets the default values.
 func NewWorkbookChartAxes()(*WorkbookChartAxes) {

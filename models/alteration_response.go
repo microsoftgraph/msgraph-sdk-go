@@ -7,13 +7,13 @@ import (
 // AlterationResponse 
 type AlterationResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Defines the original user query string.
-    originalQueryString *string;
+    originalQueryString *string
     // Defines the details of the alteration information for the spelling correction.
-    queryAlteration SearchAlterationable;
+    queryAlteration SearchAlterationable
     // Defines the type of the spelling correction. Possible values are: suggestion, modification.
-    queryAlterationType *SearchAlterationType;
+    queryAlterationType *SearchAlterationType
 }
 // NewAlterationResponse instantiates a new alterationResponse and sets the default values.
 func NewAlterationResponse()(*AlterationResponse) {

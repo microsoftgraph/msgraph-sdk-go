@@ -7,9 +7,9 @@ import (
 // GetEmailActivityUserDetailWithDateResponse provides operations to call the getEmailActivityUserDetail method.
 type GetEmailActivityUserDetailWithDateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetEmailActivityUserDetailWithDateResponse instantiates a new getEmailActivityUserDetailWithDateResponse and sets the default values.
 func NewGetEmailActivityUserDetailWithDateResponse()(*GetEmailActivityUserDetailWithDateResponse) {

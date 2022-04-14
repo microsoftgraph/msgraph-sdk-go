@@ -8,7 +8,7 @@ import (
 type Teamwork struct {
     Entity
     // A workforce integration with shifts.
-    workforceIntegrations []WorkforceIntegrationable;
+    workforceIntegrations []WorkforceIntegrationable
 }
 // NewTeamwork instantiates a new teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {

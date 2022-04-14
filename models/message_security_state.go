@@ -8,25 +8,25 @@ import (
 // MessageSecurityState 
 type MessageSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The connectingIP property
-    connectingIP *string;
+    connectingIP *string
     // The deliveryAction property
-    deliveryAction *string;
+    deliveryAction *string
     // The deliveryLocation property
-    deliveryLocation *string;
+    deliveryLocation *string
     // The directionality property
-    directionality *string;
+    directionality *string
     // The internetMessageId property
-    internetMessageId *string;
+    internetMessageId *string
     // The messageFingerprint property
-    messageFingerprint *string;
+    messageFingerprint *string
     // The messageReceivedDateTime property
-    messageReceivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    messageReceivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The messageSubject property
-    messageSubject *string;
+    messageSubject *string
     // The networkMessageId property
-    networkMessageId *string;
+    networkMessageId *string
 }
 // NewMessageSecurityState instantiates a new messageSecurityState and sets the default values.
 func NewMessageSecurityState()(*MessageSecurityState) {

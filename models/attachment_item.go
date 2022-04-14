@@ -7,19 +7,19 @@ import (
 // AttachmentItem 
 type AttachmentItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The type of attachment. Possible values are: file, item, reference. Required.
-    attachmentType *AttachmentType;
+    attachmentType *AttachmentType
     // The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
-    contentId *string;
+    contentId *string
     // The nature of the data in the attachment. Optional.
-    contentType *string;
+    contentType *string
     // true if the attachment is an inline attachment; otherwise, false. Optional.
-    isInline *bool;
+    isInline *bool
     // The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
-    name *string;
+    name *string
     // The length of the attachment in bytes. Required.
-    size *int64;
+    size *int64
 }
 // NewAttachmentItem instantiates a new attachmentItem and sets the default values.
 func NewAttachmentItem()(*AttachmentItem) {

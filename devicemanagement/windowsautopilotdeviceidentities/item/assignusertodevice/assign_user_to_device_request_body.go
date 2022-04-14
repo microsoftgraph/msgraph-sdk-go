@@ -7,11 +7,11 @@ import (
 // AssignUserToDeviceRequestBody provides operations to call the assignUserToDevice method.
 type AssignUserToDeviceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The addressableUserName property
-    addressableUserName *string;
+    addressableUserName *string
     // The userPrincipalName property
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewAssignUserToDeviceRequestBody instantiates a new assignUserToDeviceRequestBody and sets the default values.
 func NewAssignUserToDeviceRequestBody()(*AssignUserToDeviceRequestBody) {

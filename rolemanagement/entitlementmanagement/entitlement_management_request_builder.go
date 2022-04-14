@@ -25,55 +25,55 @@ import (
 // EntitlementManagementRequestBuilder provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
 type EntitlementManagementRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // EntitlementManagementRequestBuilderDeleteOptions options for Delete
 type EntitlementManagementRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EntitlementManagementRequestBuilderGetOptions options for Get
 type EntitlementManagementRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *EntitlementManagementRequestBuilderGetQueryParameters;
+    QueryParameters *EntitlementManagementRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EntitlementManagementRequestBuilderGetQueryParameters container for roles and assignments for entitlement management resources.
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // EntitlementManagementRequestBuilderPatchOptions options for Patch
 type EntitlementManagementRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RbacApplicationable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RbacApplicationable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewEntitlementManagementRequestBuilderInternal instantiates a new EntitlementManagementRequestBuilder and sets the default values.
 func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRequestBuilder) {
     m := &EntitlementManagementRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement{?select,expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -202,7 +202,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignment_id"] = id
+        urlTplParams["unifiedRoleAssignment%2Did"] = id
     }
     return i02dcd7ccbb395e0de15ed121c8c0a0de1ce9b7389ee22ee420b13b1115a5b1d4.NewUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -217,7 +217,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstancesByI
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignmentScheduleInstance_id"] = id
+        urlTplParams["unifiedRoleAssignmentScheduleInstance%2Did"] = id
     }
     return i1e88f04b4de5bc9a33401e3c9b33e94251a138355ac41b0e707b0340e1fb8409.NewUnifiedRoleAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -232,7 +232,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequestsById
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignmentScheduleRequest_id"] = id
+        urlTplParams["unifiedRoleAssignmentScheduleRequest%2Did"] = id
     }
     return i13c7c694392be2fc5947090399fe93a9fdab4dedaabe0939405a5313dd75bdae.NewUnifiedRoleAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -247,7 +247,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedulesById(id str
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignmentSchedule_id"] = id
+        urlTplParams["unifiedRoleAssignmentSchedule%2Did"] = id
     }
     return i7c97a82666b511908e752f14b6d01e35e5f2565606757e69c0f6835e4ec31b4c.NewUnifiedRoleAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -262,7 +262,7 @@ func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*i4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleDefinition_id"] = id
+        urlTplParams["unifiedRoleDefinition%2Did"] = id
     }
     return i450e6fa82c54d6f54b7abb6a155c2b0b0cb9aced086261fdf11e3d7d814c6286.NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -277,7 +277,7 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstancesBy
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleEligibilityScheduleInstance_id"] = id
+        urlTplParams["unifiedRoleEligibilityScheduleInstance%2Did"] = id
     }
     return i987a32583667f0a5ef515c4455c9a8fa39e772a7676688f15e1cc180c13ae1c9.NewUnifiedRoleEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -292,7 +292,7 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequestsByI
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleEligibilityScheduleRequest_id"] = id
+        urlTplParams["unifiedRoleEligibilityScheduleRequest%2Did"] = id
     }
     return i3b9e25b9426e31e4bcd53952d1b0865afd529e64b7d980cc74d8ef468d55a6ca.NewUnifiedRoleEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -307,7 +307,7 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedulesById(id st
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleEligibilitySchedule_id"] = id
+        urlTplParams["unifiedRoleEligibilitySchedule%2Did"] = id
     }
     return i9737b224e822cfafa077e03d8ff571fad57ee6c6761c45f56482ea39d6af9c92.NewUnifiedRoleEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

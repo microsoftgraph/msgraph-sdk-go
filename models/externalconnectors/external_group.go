@@ -9,11 +9,11 @@ import (
 type ExternalGroup struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The description of the external group. Optional.
-    description *string;
+    description *string
     // The friendly name of the external group. Optional.
-    displayName *string;
+    displayName *string
     // A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-    members []Identityable;
+    members []Identityable
 }
 // NewExternalGroup instantiates a new externalGroup and sets the default values.
 func NewExternalGroup()(*ExternalGroup) {

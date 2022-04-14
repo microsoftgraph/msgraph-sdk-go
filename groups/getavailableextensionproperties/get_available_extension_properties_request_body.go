@@ -7,9 +7,9 @@ import (
 // GetAvailableExtensionPropertiesRequestBody provides operations to call the getAvailableExtensionProperties method.
 type GetAvailableExtensionPropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The isSyncedFromOnPremises property
-    isSyncedFromOnPremises *bool;
+    isSyncedFromOnPremises *bool
 }
 // NewGetAvailableExtensionPropertiesRequestBody instantiates a new getAvailableExtensionPropertiesRequestBody and sets the default values.
 func NewGetAvailableExtensionPropertiesRequestBody()(*GetAvailableExtensionPropertiesRequestBody) {

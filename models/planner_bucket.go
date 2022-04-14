@@ -8,13 +8,13 @@ import (
 type PlannerBucket struct {
     Entity
     // Name of the bucket.
-    name *string;
+    name *string
     // Hint used to order items of this type in a list view. The format is defined as outlined here.
-    orderHint *string;
+    orderHint *string
     // Plan ID to which the bucket belongs.
-    planId *string;
+    planId *string
     // Read-only. Nullable. The collection of tasks in the bucket.
-    tasks []PlannerTaskable;
+    tasks []PlannerTaskable
 }
 // NewPlannerBucket instantiates a new plannerBucket and sets the default values.
 func NewPlannerBucket()(*PlannerBucket) {

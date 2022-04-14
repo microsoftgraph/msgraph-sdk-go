@@ -8,23 +8,23 @@ import (
 type PrinterBase struct {
     Entity
     // The capabilities of the printer/printerShare.
-    capabilities PrinterCapabilitiesable;
+    capabilities PrinterCapabilitiesable
     // The default print settings of printer/printerShare.
-    defaults PrinterDefaultsable;
+    defaults PrinterDefaultsable
     // The name of the printer/printerShare.
-    displayName *string;
+    displayName *string
     // Whether the printer/printerShare is currently accepting new print jobs.
-    isAcceptingJobs *bool;
+    isAcceptingJobs *bool
     // The list of jobs that are queued for printing by the printer/printerShare.
-    jobs []PrintJobable;
+    jobs []PrintJobable
     // The physical and/or organizational location of the printer/printerShare.
-    location PrinterLocationable;
+    location PrinterLocationable
     // The manufacturer of the printer/printerShare.
-    manufacturer *string;
+    manufacturer *string
     // The model name of the printer/printerShare.
-    model *string;
+    model *string
     // The status property
-    status PrinterStatusable;
+    status PrinterStatusable
 }
 // NewPrinterBase instantiates a new printerBase and sets the default values.
 func NewPrinterBase()(*PrinterBase) {

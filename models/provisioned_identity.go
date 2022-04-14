@@ -8,9 +8,9 @@ import (
 type ProvisionedIdentity struct {
     Identity
     // Details of the identity.
-    details DetailsInfoable;
+    details DetailsInfoable
     // Type of identity that has been provisioned, such as 'user' or 'group'.
-    identityType *string;
+    identityType *string
 }
 // NewProvisionedIdentity instantiates a new provisionedIdentity and sets the default values.
 func NewProvisionedIdentity()(*ProvisionedIdentity) {

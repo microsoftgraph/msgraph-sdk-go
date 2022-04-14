@@ -8,13 +8,13 @@ import (
 type UsedInsight struct {
     Entity
     // Information about when the item was last viewed or modified by the user. Read only.
-    lastUsed UsageDetailsable;
+    lastUsed UsageDetailsable
     // Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
-    resource Entityable;
+    resource Entityable
     // Reference properties of the used document, such as the url and type of the document. Read-only
-    resourceReference ResourceReferenceable;
+    resourceReference ResourceReferenceable
     // Properties that you can use to visualize the document in your experience. Read-only
-    resourceVisualization ResourceVisualizationable;
+    resourceVisualization ResourceVisualizationable
 }
 // NewUsedInsight instantiates a new usedInsight and sets the default values.
 func NewUsedInsight()(*UsedInsight) {

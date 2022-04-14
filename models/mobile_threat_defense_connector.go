@@ -9,21 +9,21 @@ import (
 type MobileThreatDefenseConnector struct {
     Entity
     // For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-    androidDeviceBlockedOnMissingPartnerData *bool;
+    androidDeviceBlockedOnMissingPartnerData *bool
     // For Android, set whether data from the data sync partner should be used during compliance evaluations
-    androidEnabled *bool;
+    androidEnabled *bool
     // For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-    iosDeviceBlockedOnMissingPartnerData *bool;
+    iosDeviceBlockedOnMissingPartnerData *bool
     // For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
-    iosEnabled *bool;
+    iosEnabled *bool
     // DateTime of last Heartbeat recieved from the Data Sync Partner
-    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
-    partnerState *MobileThreatPartnerTenantState;
+    partnerState *MobileThreatPartnerTenantState
     // Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
-    partnerUnresponsivenessThresholdInDays *int32;
+    partnerUnresponsivenessThresholdInDays *int32
     // Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
-    partnerUnsupportedOsVersionBlocked *bool;
+    partnerUnsupportedOsVersionBlocked *bool
 }
 // NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {

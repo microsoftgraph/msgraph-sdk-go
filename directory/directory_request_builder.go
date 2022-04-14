@@ -13,40 +13,40 @@ import (
 // DirectoryRequestBuilder provides operations to manage the directory singleton.
 type DirectoryRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DirectoryRequestBuilderGetOptions options for Get
 type DirectoryRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DirectoryRequestBuilderGetQueryParameters;
+    QueryParameters *DirectoryRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DirectoryRequestBuilderGetQueryParameters get directory
 type DirectoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DirectoryRequestBuilderPatchOptions options for Patch
 type DirectoryRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AdministrativeUnits the administrativeUnits property
 func (m *DirectoryRequestBuilder) AdministrativeUnits()(*i47420a6f1d93f934067d08aecf791436625344c23db8a5ebf8ac8c6aa35228f5.AdministrativeUnitsRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*ib6eef2930
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["administrativeUnit_id"] = id
+        urlTplParams["administrativeUnit%2Did"] = id
     }
     return ib6eef29306489af3d4867139be6f8c0d2f07e27cc972bbe619040834fd6bc53c.NewAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -67,7 +67,7 @@ func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*ib6eef2930
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
     m := &DirectoryRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directory{?select,expand}";
+    m.urlTemplate = "{+baseurl}/directory{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -131,7 +131,7 @@ func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ic11656dccc6289d4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

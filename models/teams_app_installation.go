@@ -8,9 +8,9 @@ import (
 type TeamsAppInstallation struct {
     Entity
     // The app that is installed.
-    teamsApp TeamsAppable;
+    teamsApp TeamsAppable
     // The details of this version of the app.
-    teamsAppDefinition TeamsAppDefinitionable;
+    teamsAppDefinition TeamsAppDefinitionable
 }
 // NewTeamsAppInstallation instantiates a new teamsAppInstallation and sets the default values.
 func NewTeamsAppInstallation()(*TeamsAppInstallation) {

@@ -8,13 +8,13 @@ import (
 // DomainState 
 type DomainState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Type of asynchronous operation. The values can be ForceDelete or Verification
-    operation *string;
+    operation *string
     // Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
-    status *string;
+    status *string
 }
 // NewDomainState instantiates a new domainState and sets the default values.
 func NewDomainState()(*DomainState) {

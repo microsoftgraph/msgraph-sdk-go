@@ -7,19 +7,19 @@ import (
 // PlannerCategoryDescriptions 
 type PlannerCategoryDescriptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The label associated with Category 1
-    category1 *string;
+    category1 *string
     // The label associated with Category 2
-    category2 *string;
+    category2 *string
     // The label associated with Category 3
-    category3 *string;
+    category3 *string
     // The label associated with Category 4
-    category4 *string;
+    category4 *string
     // The label associated with Category 5
-    category5 *string;
+    category5 *string
     // The label associated with Category 6
-    category6 *string;
+    category6 *string
 }
 // NewPlannerCategoryDescriptions instantiates a new plannerCategoryDescriptions and sets the default values.
 func NewPlannerCategoryDescriptions()(*PlannerCategoryDescriptions) {

@@ -8,11 +8,11 @@ import (
 type ShiftItem struct {
     ScheduleEntity
     // An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
-    activities []ShiftActivityable;
+    activities []ShiftActivityable
     // The shift label of the shiftItem.
-    displayName *string;
+    displayName *string
     // The shift notes for the shiftItem.
-    notes *string;
+    notes *string
 }
 // NewShiftItem instantiates a new shiftItem and sets the default values.
 func NewShiftItem()(*ShiftItem) {

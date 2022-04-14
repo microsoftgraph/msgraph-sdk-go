@@ -8,39 +8,39 @@ import (
 type BookingBusiness struct {
     Entity
     // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
-    address PhysicalAddressable;
+    address PhysicalAddressable
     // All the appointments of this business. Read-only. Nullable.
-    appointments []BookingAppointmentable;
+    appointments []BookingAppointmentable
     // The hours of operation for the business.
-    businessHours []BookingWorkHoursable;
+    businessHours []BookingWorkHoursable
     // The type of business.
-    businessType *string;
+    businessType *string
     // The set of appointments of this business in a specified date range. Read-only. Nullable.
-    calendarView []BookingAppointmentable;
+    calendarView []BookingAppointmentable
     // All the customers of this business. Read-only. Nullable.
-    customers []BookingCustomerBaseable;
+    customers []BookingCustomerBaseable
     // All the custom questions of this business. Read-only. Nullable.
-    customQuestions []BookingCustomQuestionable;
+    customQuestions []BookingCustomQuestionable
     // The code for the currency that the business operates in on Microsoft Bookings.
-    defaultCurrencyIso *string;
+    defaultCurrencyIso *string
     // The name of the business, which interfaces with customers. This name appears at the top of the business scheduling page.
-    displayName *string;
+    displayName *string
     // The email address for the business.
-    email *string;
+    email *string
     // The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
-    isPublished *bool;
+    isPublished *bool
     // The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
-    phone *string;
+    phone *string
     // The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
-    publicUrl *string;
+    publicUrl *string
     // Specifies how bookings can be created for this business.
-    schedulingPolicy BookingSchedulingPolicyable;
+    schedulingPolicy BookingSchedulingPolicyable
     // All the services offered by this business. Read-only. Nullable.
-    services []BookingServiceable;
+    services []BookingServiceable
     // All the staff members that provide services in this business. Read-only. Nullable.
-    staffMembers []BookingStaffMemberBaseable;
+    staffMembers []BookingStaffMemberBaseable
     // The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
-    webSiteUrl *string;
+    webSiteUrl *string
 }
 // NewBookingBusiness instantiates a new bookingBusiness and sets the default values.
 func NewBookingBusiness()(*BookingBusiness) {

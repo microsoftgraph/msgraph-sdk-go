@@ -7,23 +7,23 @@ import (
 // WorkbookFilterCriteria 
 type WorkbookFilterCriteria struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The color property
-    color *string;
+    color *string
     // The criterion1 property
-    criterion1 *string;
+    criterion1 *string
     // The criterion2 property
-    criterion2 *string;
+    criterion2 *string
     // The dynamicCriteria property
-    dynamicCriteria *string;
+    dynamicCriteria *string
     // The filterOn property
-    filterOn *string;
+    filterOn *string
     // The icon property
-    icon WorkbookIconable;
+    icon WorkbookIconable
     // The operator property
-    operator *string;
+    operator *string
     // The values property
-    values Jsonable;
+    values Jsonable
 }
 // NewWorkbookFilterCriteria instantiates a new workbookFilterCriteria and sets the default values.
 func NewWorkbookFilterCriteria()(*WorkbookFilterCriteria) {

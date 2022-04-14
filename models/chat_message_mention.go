@@ -7,13 +7,13 @@ import (
 // ChatMessageMention 
 type ChatMessageMention struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
-    id *int32;
+    id *int32
     // The entity (user, application, team, or channel) that was @mentioned.
-    mentioned ChatMessageMentionedIdentitySetable;
+    mentioned ChatMessageMentionedIdentitySetable
     // String used to represent the mention. For example, a user's display name, a team name.
-    mentionText *string;
+    mentionText *string
 }
 // NewChatMessageMention instantiates a new chatMessageMention and sets the default values.
 func NewChatMessageMention()(*ChatMessageMention) {

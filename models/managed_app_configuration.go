@@ -8,7 +8,7 @@ import (
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
     // A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-    customSettings []KeyValuePairable;
+    customSettings []KeyValuePairable
 }
 // NewManagedAppConfiguration instantiates a new managedAppConfiguration and sets the default values.
 func NewManagedAppConfiguration()(*ManagedAppConfiguration) {

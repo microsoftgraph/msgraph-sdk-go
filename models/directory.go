@@ -8,9 +8,9 @@ import (
 type Directory struct {
     Entity
     // Conceptual container for user and group directory objects.
-    administrativeUnits []AdministrativeUnitable;
+    administrativeUnits []AdministrativeUnitable
     // Recently deleted items. Read-only. Nullable.
-    deletedItems []DirectoryObjectable;
+    deletedItems []DirectoryObjectable
 }
 // NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {

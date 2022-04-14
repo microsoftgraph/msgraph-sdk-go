@@ -7,49 +7,49 @@ import (
 // TeleconferenceDeviceMediaQuality 
 type TeleconferenceDeviceMediaQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The average inbound stream network jitter.
-    averageInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    averageInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-    averageInboundPacketLossRateInPercentage *float64;
+    averageInboundPacketLossRateInPercentage *float64
     // The average inbound stream network round trip delay.
-    averageInboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    averageInboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The average outbound stream network jitter.
-    averageOutboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    averageOutboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The average outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-    averageOutboundPacketLossRateInPercentage *float64;
+    averageOutboundPacketLossRateInPercentage *float64
     // The average outbound stream network round trip delay.
-    averageOutboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    averageOutboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.
-    channelIndex *int32;
+    channelIndex *int32
     // The total number of the inbound packets.
-    inboundPackets *int64;
+    inboundPackets *int64
     // the local IP address for the media session.
-    localIPAddress *string;
+    localIPAddress *string
     // The local media port.
-    localPort *int32;
+    localPort *int32
     // The maximum inbound stream network jitter.
-    maximumInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-    maximumInboundPacketLossRateInPercentage *float64;
+    maximumInboundPacketLossRateInPercentage *float64
     // The maximum inbound stream network round trip delay.
-    maximumInboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumInboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The maximum outbound stream network jitter.
-    maximumOutboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumOutboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-    maximumOutboundPacketLossRateInPercentage *float64;
+    maximumOutboundPacketLossRateInPercentage *float64
     // The maximum outbound stream network round trip delay.
-    maximumOutboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumOutboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.
-    mediaDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    mediaDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The network link speed in bytes
-    networkLinkSpeedInBytes *int64;
+    networkLinkSpeedInBytes *int64
     // The total number of the outbound packets.
-    outboundPackets *int64;
+    outboundPackets *int64
     // The remote IP address for the media session.
-    remoteIPAddress *string;
+    remoteIPAddress *string
     // The remote media port.
-    remotePort *int32;
+    remotePort *int32
 }
 // NewTeleconferenceDeviceMediaQuality instantiates a new teleconferenceDeviceMediaQuality and sets the default values.
 func NewTeleconferenceDeviceMediaQuality()(*TeleconferenceDeviceMediaQuality) {

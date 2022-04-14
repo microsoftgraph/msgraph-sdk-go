@@ -9,13 +9,13 @@ import (
 type Store struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Default language of the term store.
-    defaultLanguageTag *string;
+    defaultLanguageTag *string
     // Collection of all groups available in the term store.
-    groups []Groupable;
+    groups []Groupable
     // List of languages for the term store.
-    languageTags []string;
+    languageTags []string
     // Collection of all sets available in the term store.
-    sets []Setable;
+    sets []Setable
 }
 // NewStore instantiates a new store and sets the default values.
 func NewStore()(*Store) {

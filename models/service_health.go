@@ -8,11 +8,11 @@ import (
 type ServiceHealth struct {
     Entity
     // A collection of issues that happened on the service, with detailed information for each issue.
-    issues []ServiceHealthIssueable;
+    issues []ServiceHealthIssueable
     // The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
-    service *string;
+    service *string
     // Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
-    status *ServiceHealthStatus;
+    status *ServiceHealthStatus
 }
 // NewServiceHealth instantiates a new serviceHealth and sets the default values.
 func NewServiceHealth()(*ServiceHealth) {

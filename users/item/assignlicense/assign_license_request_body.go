@@ -8,11 +8,11 @@ import (
 // AssignLicenseRequestBody provides operations to call the assignLicense method.
 type AssignLicenseRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The addLicenses property
-    addLicenses []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable;
+    addLicenses []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable
     // The removeLicenses property
-    removeLicenses []string;
+    removeLicenses []string
 }
 // NewAssignLicenseRequestBody instantiates a new assignLicenseRequestBody and sets the default values.
 func NewAssignLicenseRequestBody()(*AssignLicenseRequestBody) {

@@ -7,11 +7,11 @@ import (
 // ConditionalAccessFilter 
 type ConditionalAccessFilter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Mode to use for the filter. Possible values are include or exclude.
-    mode *FilterMode;
+    mode *FilterMode
     // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
-    rule *string;
+    rule *string
 }
 // NewConditionalAccessFilter instantiates a new conditionalAccessFilter and sets the default values.
 func NewConditionalAccessFilter()(*ConditionalAccessFilter) {

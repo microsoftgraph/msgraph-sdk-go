@@ -7,11 +7,11 @@ import (
 // ResourceAction set of allowed and not allowed actions for a resource.
 type ResourceAction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Allowed Actions
-    allowedResourceActions []string;
+    allowedResourceActions []string
     // Not Allowed Actions.
-    notAllowedResourceActions []string;
+    notAllowedResourceActions []string
 }
 // NewResourceAction instantiates a new resourceAction and sets the default values.
 func NewResourceAction()(*ResourceAction) {

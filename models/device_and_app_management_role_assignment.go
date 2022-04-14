@@ -8,7 +8,7 @@ import (
 type DeviceAndAppManagementRoleAssignment struct {
     RoleAssignment
     // The list of ids of role member security groups. These are IDs from Azure Active Directory.
-    members []string;
+    members []string
 }
 // NewDeviceAndAppManagementRoleAssignment instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
 func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssignment) {

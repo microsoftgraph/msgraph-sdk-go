@@ -7,11 +7,11 @@ import (
 // ComplianceInformation 
 type ComplianceInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Collection of the certification controls associated with certification
-    certificationControls []CertificationControlable;
+    certificationControls []CertificationControlable
     // Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
-    certificationName *string;
+    certificationName *string
 }
 // NewComplianceInformation instantiates a new complianceInformation and sets the default values.
 func NewComplianceInformation()(*ComplianceInformation) {

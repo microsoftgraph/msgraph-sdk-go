@@ -8,11 +8,11 @@ import (
 type BookingCustomQuestion struct {
     Entity
     // The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
-    answerInputType *AnswerInputType;
+    answerInputType *AnswerInputType
     // List of possible answer values.
-    answerOptions []string;
+    answerOptions []string
     // Display name of this entity.
-    displayName *string;
+    displayName *string
 }
 // NewBookingCustomQuestion instantiates a new bookingCustomQuestion and sets the default values.
 func NewBookingCustomQuestion()(*BookingCustomQuestion) {

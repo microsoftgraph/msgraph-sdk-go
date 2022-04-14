@@ -8,19 +8,19 @@ import (
 // UriClickSecurityState 
 type UriClickSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The clickAction property
-    clickAction *string;
+    clickAction *string
     // The clickDateTime property
-    clickDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    clickDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The id property
-    id *string;
+    id *string
     // The sourceId property
-    sourceId *string;
+    sourceId *string
     // The uriDomain property
-    uriDomain *string;
+    uriDomain *string
     // The verdict property
-    verdict *string;
+    verdict *string
 }
 // NewUriClickSecurityState instantiates a new uriClickSecurityState and sets the default values.
 func NewUriClickSecurityState()(*UriClickSecurityState) {

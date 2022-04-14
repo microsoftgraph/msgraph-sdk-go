@@ -106,40 +106,40 @@ import (
 // MeRequestBuilder provides operations to manage the user singleton.
 type MeRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // MeRequestBuilderGetOptions options for Get
 type MeRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *MeRequestBuilderGetQueryParameters;
+    QueryParameters *MeRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // MeRequestBuilderGetQueryParameters get me
 type MeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // MeRequestBuilderPatchOptions options for Patch
 type MeRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Activities the activities property
 func (m *MeRequestBuilder) Activities()(*i400df5b1ed0100dbcae47bf4ceadd56eb71bfe33cebe1e407f4d5bfb8117b817.ActivitiesRequestBuilder) {
@@ -152,7 +152,7 @@ func (m *MeRequestBuilder) ActivitiesById(id string)(*i82519bf2607f9e93061888d9c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userActivity_id"] = id
+        urlTplParams["userActivity%2Did"] = id
     }
     return i82519bf2607f9e93061888d9cc2d4e3080d112fa88638604197007e67f12d566.NewUserActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *MeRequestBuilder) AgreementAcceptancesById(id string)(*ie0310afb7a1781a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["agreementAcceptance_id"] = id
+        urlTplParams["agreementAcceptance%2Did"] = id
     }
     return ie0310afb7a1781a55727731b49e4acea109e64cbae050dcc7e94da2c346c0ff6.NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -182,7 +182,7 @@ func (m *MeRequestBuilder) AppRoleAssignmentsById(id string)(*i752ffd2149afbb596
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["appRoleAssignment_id"] = id
+        urlTplParams["appRoleAssignment%2Did"] = id
     }
     return i752ffd2149afbb59609f4e3b13e45c1e9596654430b65978023435d0b0bf8870.NewAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -209,7 +209,7 @@ func (m *MeRequestBuilder) CalendarGroupsById(id string)(*iacc2566a5831cf5ddad54
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["calendarGroup_id"] = id
+        urlTplParams["calendarGroup%2Did"] = id
     }
     return iacc2566a5831cf5ddad547cea0842bc8e654bd4e9694e5687421afcbc7870697.NewCalendarGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -224,7 +224,7 @@ func (m *MeRequestBuilder) CalendarsById(id string)(*i6db87d2607e360763d6144f96a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["calendar_id"] = id
+        urlTplParams["calendar%2Did"] = id
     }
     return i6db87d2607e360763d6144f96a5539d25e575d719b1c6486ff32ca05194b469f.NewCalendarItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -239,7 +239,7 @@ func (m *MeRequestBuilder) CalendarViewById(id string)(*ic34e2b1716720766154a420
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["event_id"] = id
+        urlTplParams["event%2Did"] = id
     }
     return ic34e2b1716720766154a4200263bd99d00617b2dbbdacdf92c9bdd0f2abc909d.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -258,7 +258,7 @@ func (m *MeRequestBuilder) ChatsById(id string)(*i50623afd83f34872b2858002ef89a7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["chat_id"] = id
+        urlTplParams["chat%2Did"] = id
     }
     return i50623afd83f34872b2858002ef89a796dbcb413e984eb8f2c393ab63dfe9f627.NewChatItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -274,7 +274,7 @@ func (m *MeRequestBuilder) CheckMemberObjects()(*i6f81259ff975e6273be10a39dd1ba9
 func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeRequestBuilder) {
     m := &MeRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -300,7 +300,7 @@ func (m *MeRequestBuilder) ContactFoldersById(id string)(*i75076f3180c03011b5915
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["contactFolder_id"] = id
+        urlTplParams["contactFolder%2Did"] = id
     }
     return i75076f3180c03011b591579c7879bb208b53bd7df65ecaec246e426b96222960.NewContactFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -315,7 +315,7 @@ func (m *MeRequestBuilder) ContactsById(id string)(*iedeff048dd4d8b91b3d6b0f2ea6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["contact_id"] = id
+        urlTplParams["contact%2Did"] = id
     }
     return iedeff048dd4d8b91b3d6b0f2ea6810bff050db01d964ad2520525eab286ef758.NewContactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -330,7 +330,7 @@ func (m *MeRequestBuilder) CreatedObjectsById(id string)(*i6e1b93e0473298fe79a38
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i6e1b93e0473298fe79a38305d7bf2db2074faedb9a475b583d858140855d2862.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -383,7 +383,7 @@ func (m *MeRequestBuilder) DeviceManagementTroubleshootingEventsById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementTroubleshootingEvent_id"] = id
+        urlTplParams["deviceManagementTroubleshootingEvent%2Did"] = id
     }
     return i83de839160b1a76c562f0c577e0521385e7ededa8ac09093fcb0042ae0b34038.NewDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -398,7 +398,7 @@ func (m *MeRequestBuilder) DirectReportsById(id string)(*ica721dc17363a9bb3fb6b8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ica721dc17363a9bb3fb6b865e141cf03079b6514c7938846e614f9439564c8ef.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -417,7 +417,7 @@ func (m *MeRequestBuilder) DrivesById(id string)(*i97ba4ab89e2ae86eddef1645331bb
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["drive_id"] = id
+        urlTplParams["drive%2Did"] = id
     }
     return i97ba4ab89e2ae86eddef1645331bb1ff7664a5d8975c392bde50d7d40498c4d7.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -432,7 +432,7 @@ func (m *MeRequestBuilder) EventsById(id string)(*i409a18a3611aab89ea3fdfbbfcd81
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["event_id"] = id
+        urlTplParams["event%2Did"] = id
     }
     return i409a18a3611aab89ea3fdfbbfcd81dee9c098de84cb70a324adb81efe77cd9c9.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -451,7 +451,7 @@ func (m *MeRequestBuilder) ExtensionsById(id string)(*i50dd9a7afd373a7096c01b2a6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["extension_id"] = id
+        urlTplParams["extension%2Did"] = id
     }
     return i50dd9a7afd373a7096c01b2a6c52a0dc97b9ce9b8050e77ebbec5f2113eeedfb.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -470,7 +470,7 @@ func (m *MeRequestBuilder) FollowedSitesById(id string)(*i13b26c48e29ae7a719f51d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["site_id"] = id
+        urlTplParams["site%2Did"] = id
     }
     return i13b26c48e29ae7a719f51dfa0917bf8696c975cf6dd9ae25d0438be0209dbda5.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -529,7 +529,7 @@ func (m *MeRequestBuilder) JoinedTeamsById(id string)(*ib6fc3cd91dac93a9c6c62259
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["team_id"] = id
+        urlTplParams["team%2Did"] = id
     }
     return ib6fc3cd91dac93a9c6c6225979a445d5d12b9cbde994609403d5f99724571a99.NewTeamItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -544,7 +544,7 @@ func (m *MeRequestBuilder) LicenseDetailsById(id string)(*i1f6210a16ec36fc016102
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["licenseDetails_id"] = id
+        urlTplParams["licenseDetails%2Did"] = id
     }
     return i1f6210a16ec36fc0161027c4dadb2c4921fcc0c35b6aca7d8a6b0f84242f9b7a.NewLicenseDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -559,7 +559,7 @@ func (m *MeRequestBuilder) MailFoldersById(id string)(*ic04fc81ee412d734a4c3dfd9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mailFolder_id"] = id
+        urlTplParams["mailFolder%2Did"] = id
     }
     return ic04fc81ee412d734a4c3dfd98f60894e358d83f93c390e56d414c05ff05e1c03.NewMailFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -574,7 +574,7 @@ func (m *MeRequestBuilder) ManagedAppRegistrationsById(id string)(*if0f1ade0df7a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedAppRegistration_id"] = id
+        urlTplParams["managedAppRegistration%2Did"] = id
     }
     return if0f1ade0df7a7797822395b6c5ab0bf8feeef34b89d6e0ed3f6bf8b6b07f466d.NewManagedAppRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -589,7 +589,7 @@ func (m *MeRequestBuilder) ManagedDevicesById(id string)(*i0e5e8b891a423bb213a9c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedDevice_id"] = id
+        urlTplParams["managedDevice%2Did"] = id
     }
     return i0e5e8b891a423bb213a9ca59b700130801c575d572de2f19f7ef7c3dec985001.NewManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -608,7 +608,7 @@ func (m *MeRequestBuilder) MemberOfById(id string)(*id5583a6d63fa38595f3ea4b9e75
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return id5583a6d63fa38595f3ea4b9e751b022edcc99808a33ff9358eae9a79f94265f.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -623,7 +623,7 @@ func (m *MeRequestBuilder) MessagesById(id string)(*ib6af81a46e1cd2294b1d59edaed
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["message_id"] = id
+        urlTplParams["message%2Did"] = id
     }
     return ib6af81a46e1cd2294b1d59edaed878023b799ed71ffaeb0e543a0c7b2a9c45a0.NewMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -638,7 +638,7 @@ func (m *MeRequestBuilder) Oauth2PermissionGrantsById(id string)(*i2d880aca07567
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["oAuth2PermissionGrant_id"] = id
+        urlTplParams["oAuth2PermissionGrant%2Did"] = id
     }
     return i2d880aca075674c18718bbdc5415b0da5d08cebea3e0c680312dcb2e05ab7f6a.NewOAuth2PermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -657,7 +657,7 @@ func (m *MeRequestBuilder) OnlineMeetingsById(id string)(*i9c1bc246a87f6ba4dcf4c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["onlineMeeting_id"] = id
+        urlTplParams["onlineMeeting%2Did"] = id
     }
     return i9c1bc246a87f6ba4dcf4c0f9c4f30c60d893d596cd2e949badd25f8199ed6cef.NewOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -676,7 +676,7 @@ func (m *MeRequestBuilder) OwnedDevicesById(id string)(*i4450247ceb5fd075c1b8207
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i4450247ceb5fd075c1b82073377748bb2bd35be33b94841136adf7e448348aa3.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -691,7 +691,7 @@ func (m *MeRequestBuilder) OwnedObjectsById(id string)(*i359e22728a63ee681d74d6f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i359e22728a63ee681d74d6f87258c4c50801300227cbd518621e95560d035112.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -722,7 +722,7 @@ func (m *MeRequestBuilder) PeopleById(id string)(*ia1410212e65c13be6cba0cefbf225
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["person_id"] = id
+        urlTplParams["person%2Did"] = id
     }
     return ia1410212e65c13be6cba0cefbf2258deb7d5d955a0132ae6350cb69d39b4f134.NewPersonItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -741,7 +741,7 @@ func (m *MeRequestBuilder) PhotosById(id string)(*i23e227c47e59513561e1310dee7f2
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["profilePhoto_id"] = id
+        urlTplParams["profilePhoto%2Did"] = id
     }
     return i23e227c47e59513561e1310dee7f275d72e661826989ad5fb79f0410e26e3d6d.NewProfilePhotoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -764,7 +764,7 @@ func (m *MeRequestBuilder) RegisteredDevicesById(id string)(*i75357129261f0d61fb
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i75357129261f0d61fb0ed20554c833b6a14ff7fb13981f9f332b2a8c2863bfbf.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -799,7 +799,7 @@ func (m *MeRequestBuilder) ScopedRoleMemberOfById(id string)(*icfc73b24da43bea43
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["scopedRoleMembership_id"] = id
+        urlTplParams["scopedRoleMembership%2Did"] = id
     }
     return icfc73b24da43bea4379998bbe38e31b2617fa5b3e777573a24b5722fdae583b3.NewScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -830,7 +830,7 @@ func (m *MeRequestBuilder) TransitiveMemberOfById(id string)(*i08cf7ae0d2a2d6071
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i08cf7ae0d2a2d607199d484d90798117b3953077e41b4c68ac7e067b5b49f96c.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

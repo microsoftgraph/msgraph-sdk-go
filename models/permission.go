@@ -9,27 +9,27 @@ import (
 type Permission struct {
     Entity
     // A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The grantedTo property
-    grantedTo IdentitySetable;
+    grantedTo IdentitySetable
     // The grantedToIdentities property
-    grantedToIdentities []IdentitySetable;
+    grantedToIdentities []IdentitySetable
     // For link type permissions, the details of the users to whom permission was granted. Read-only.
-    grantedToIdentitiesV2 []SharePointIdentitySetable;
+    grantedToIdentitiesV2 []SharePointIdentitySetable
     // For user type permissions, the details of the users and applications for this permission. Read-only.
-    grantedToV2 SharePointIdentitySetable;
+    grantedToV2 SharePointIdentitySetable
     // Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
-    hasPassword *bool;
+    hasPassword *bool
     // Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
-    inheritedFrom ItemReferenceable;
+    inheritedFrom ItemReferenceable
     // Details of any associated sharing invitation for this permission. Read-only.
-    invitation SharingInvitationable;
+    invitation SharingInvitationable
     // Provides the link details of the current permission, if it is a link type permissions. Read-only.
-    link SharingLinkable;
+    link SharingLinkable
     // The type of permission, for example, read. See below for the full list of roles. Read-only.
-    roles []string;
+    roles []string
     // A unique token that can be used to access this shared item via the **shares** API. Read-only.
-    shareId *string;
+    shareId *string
 }
 // NewPermission instantiates a new permission and sets the default values.
 func NewPermission()(*Permission) {

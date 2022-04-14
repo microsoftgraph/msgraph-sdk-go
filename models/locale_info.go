@@ -7,11 +7,11 @@ import (
 // LocaleInfo 
 type LocaleInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A name representing the user's locale in natural language, for example, 'English (United States)'.
-    displayName *string;
+    displayName *string
     // A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
-    locale *string;
+    locale *string
 }
 // NewLocaleInfo instantiates a new localeInfo and sets the default values.
 func NewLocaleInfo()(*LocaleInfo) {

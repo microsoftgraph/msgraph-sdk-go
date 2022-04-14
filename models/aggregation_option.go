@@ -7,13 +7,13 @@ import (
 // AggregationOption 
 type AggregationOption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The bucketDefinition property
-    bucketDefinition BucketAggregationDefinitionable;
+    bucketDefinition BucketAggregationDefinitionable
     // Computes aggregation on the field while the field exists in current entity type. Required.
-    field *string;
+    field *string
     // The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
-    size *int32;
+    size *int32
 }
 // NewAggregationOption instantiates a new aggregationOption and sets the default values.
 func NewAggregationOption()(*AggregationOption) {

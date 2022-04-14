@@ -8,7 +8,7 @@ import (
 type TargetedManagedAppPolicyAssignment struct {
     Entity
     // Identifier for deployment to a group or app
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewTargetedManagedAppPolicyAssignment instantiates a new targetedManagedAppPolicyAssignment and sets the default values.
 func NewTargetedManagedAppPolicyAssignment()(*TargetedManagedAppPolicyAssignment) {

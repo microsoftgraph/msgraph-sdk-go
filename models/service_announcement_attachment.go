@@ -9,15 +9,15 @@ import (
 type ServiceAnnouncementAttachment struct {
     Entity
     // The attachment content.
-    content []byte;
+    content []byte
     // The contentType property
-    contentType *string;
+    contentType *string
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The name property
-    name *string;
+    name *string
     // The size property
-    size *int32;
+    size *int32
 }
 // NewServiceAnnouncementAttachment instantiates a new serviceAnnouncementAttachment and sets the default values.
 func NewServiceAnnouncementAttachment()(*ServiceAnnouncementAttachment) {

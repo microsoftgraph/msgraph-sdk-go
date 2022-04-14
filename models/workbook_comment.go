@@ -8,11 +8,11 @@ import (
 type WorkbookComment struct {
     Entity
     // The content of comment.
-    content *string;
+    content *string
     // Indicates the type for the comment.
-    contentType *string;
+    contentType *string
     // Read-only. Nullable.
-    replies []WorkbookCommentReplyable;
+    replies []WorkbookCommentReplyable
 }
 // NewWorkbookComment instantiates a new workbookComment and sets the default values.
 func NewWorkbookComment()(*WorkbookComment) {

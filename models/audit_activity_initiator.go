@@ -7,11 +7,11 @@ import (
 // AuditActivityInitiator 
 type AuditActivityInitiator struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
-    app AppIdentityable;
+    app AppIdentityable
     // If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
-    user UserIdentityable;
+    user UserIdentityable
 }
 // NewAuditActivityInitiator instantiates a new auditActivityInitiator and sets the default values.
 func NewAuditActivityInitiator()(*AuditActivityInitiator) {

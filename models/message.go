@@ -9,65 +9,65 @@ import (
 type Message struct {
     OutlookItem
     // The fileAttachment and itemAttachment attachments for the message.
-    attachments []Attachmentable;
+    attachments []Attachmentable
     // The Bcc: recipients for the message.
-    bccRecipients []Recipientable;
+    bccRecipients []Recipientable
     // The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
-    body ItemBodyable;
+    body ItemBodyable
     // The first 255 characters of the message body. It is in text format.
-    bodyPreview *string;
+    bodyPreview *string
     // The Cc: recipients for the message.
-    ccRecipients []Recipientable;
+    ccRecipients []Recipientable
     // The ID of the conversation the email belongs to.
-    conversationId *string;
+    conversationId *string
     // Indicates the position of the message within the conversation.
-    conversationIndex []byte;
+    conversationIndex []byte
     // The collection of open extensions defined for the message. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // The flag value that indicates the status, start date, due date, or completion date for the message.
-    flag FollowupFlagable;
+    flag FollowupFlagable
     // The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
-    from Recipientable;
+    from Recipientable
     // Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
-    hasAttachments *bool;
+    hasAttachments *bool
     // The importance property
-    importance *Importance;
+    importance *Importance
     // The inferenceClassification property
-    inferenceClassification *InferenceClassificationType;
+    inferenceClassification *InferenceClassificationType
     // The internetMessageHeaders property
-    internetMessageHeaders []InternetMessageHeaderable;
+    internetMessageHeaders []InternetMessageHeaderable
     // The internetMessageId property
-    internetMessageId *string;
+    internetMessageId *string
     // The isDeliveryReceiptRequested property
-    isDeliveryReceiptRequested *bool;
+    isDeliveryReceiptRequested *bool
     // The isDraft property
-    isDraft *bool;
+    isDraft *bool
     // The isRead property
-    isRead *bool;
+    isRead *bool
     // The isReadReceiptRequested property
-    isReadReceiptRequested *bool;
+    isReadReceiptRequested *bool
     // The collection of multi-value extended properties defined for the message. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // The parentFolderId property
-    parentFolderId *string;
+    parentFolderId *string
     // The receivedDateTime property
-    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The replyTo property
-    replyTo []Recipientable;
+    replyTo []Recipientable
     // The sender property
-    sender Recipientable;
+    sender Recipientable
     // The sentDateTime property
-    sentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    sentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The collection of single-value extended properties defined for the message. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The subject property
-    subject *string;
+    subject *string
     // The toRecipients property
-    toRecipients []Recipientable;
+    toRecipients []Recipientable
     // The uniqueBody property
-    uniqueBody ItemBodyable;
+    uniqueBody ItemBodyable
     // The webLink property
-    webLink *string;
+    webLink *string
 }
 // NewMessage instantiates a new message and sets the default values.
 func NewMessage()(*Message) {

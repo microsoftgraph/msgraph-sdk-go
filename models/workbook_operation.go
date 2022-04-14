@@ -8,11 +8,11 @@ import (
 type WorkbookOperation struct {
     Entity
     // The error returned by the operation.
-    error WorkbookOperationErrorable;
+    error WorkbookOperationErrorable
     // The resource URI for the result.
-    resourceLocation *string;
+    resourceLocation *string
     // The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
-    status *WorkbookOperationStatus;
+    status *WorkbookOperationStatus
 }
 // NewWorkbookOperation instantiates a new workbookOperation and sets the default values.
 func NewWorkbookOperation()(*WorkbookOperation) {

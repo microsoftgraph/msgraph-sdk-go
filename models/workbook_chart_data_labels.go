@@ -8,23 +8,23 @@ import (
 type WorkbookChartDataLabels struct {
     Entity
     // Represents the format of chart data labels, which includes fill and font formatting. Read-only.
-    format WorkbookChartDataLabelFormatable;
+    format WorkbookChartDataLabelFormatable
     // DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
-    position *string;
+    position *string
     // String representing the separator used for the data labels on a chart.
-    separator *string;
+    separator *string
     // Boolean value representing if the data label bubble size is visible or not.
-    showBubbleSize *bool;
+    showBubbleSize *bool
     // Boolean value representing if the data label category name is visible or not.
-    showCategoryName *bool;
+    showCategoryName *bool
     // Boolean value representing if the data label legend key is visible or not.
-    showLegendKey *bool;
+    showLegendKey *bool
     // Boolean value representing if the data label percentage is visible or not.
-    showPercentage *bool;
+    showPercentage *bool
     // Boolean value representing if the data label series name is visible or not.
-    showSeriesName *bool;
+    showSeriesName *bool
     // Boolean value representing if the data label value is visible or not.
-    showValue *bool;
+    showValue *bool
 }
 // NewWorkbookChartDataLabels instantiates a new workbookChartDataLabels and sets the default values.
 func NewWorkbookChartDataLabels()(*WorkbookChartDataLabels) {

@@ -8,19 +8,19 @@ import (
 type DeviceConfigurationDeviceStateSummary struct {
     Entity
     // Number of compliant devices
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // Number of conflict devices
-    conflictDeviceCount *int32;
+    conflictDeviceCount *int32
     // Number of error devices
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // Number of NonCompliant devices
-    nonCompliantDeviceCount *int32;
+    nonCompliantDeviceCount *int32
     // Number of not applicable devices
-    notApplicableDeviceCount *int32;
+    notApplicableDeviceCount *int32
     // Number of remediated devices
-    remediatedDeviceCount *int32;
+    remediatedDeviceCount *int32
     // Number of unknown devices
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
 }
 // NewDeviceConfigurationDeviceStateSummary instantiates a new deviceConfigurationDeviceStateSummary and sets the default values.
 func NewDeviceConfigurationDeviceStateSummary()(*DeviceConfigurationDeviceStateSummary) {

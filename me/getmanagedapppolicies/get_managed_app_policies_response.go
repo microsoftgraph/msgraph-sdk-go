@@ -8,9 +8,9 @@ import (
 // GetManagedAppPoliciesResponse provides operations to call the getManagedAppPolicies method.
 type GetManagedAppPoliciesResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyable;
+    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyable
 }
 // NewGetManagedAppPoliciesResponse instantiates a new getManagedAppPoliciesResponse and sets the default values.
 func NewGetManagedAppPoliciesResponse()(*GetManagedAppPoliciesResponse) {

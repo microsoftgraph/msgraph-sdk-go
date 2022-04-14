@@ -8,13 +8,13 @@ import (
 // TranslateExchangeIdsRequestBody provides operations to call the translateExchangeIds method.
 type TranslateExchangeIdsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The InputIds property
-    inputIds []string;
+    inputIds []string
     // The SourceIdType property
-    sourceIdType *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat;
+    sourceIdType *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat
     // The TargetIdType property
-    targetIdType *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat;
+    targetIdType *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat
 }
 // NewTranslateExchangeIdsRequestBody instantiates a new translateExchangeIdsRequestBody and sets the default values.
 func NewTranslateExchangeIdsRequestBody()(*TranslateExchangeIdsRequestBody) {

@@ -8,7 +8,7 @@ import (
 type AppCatalogs struct {
     Entity
     // The teamsApps property
-    teamsApps []TeamsAppable;
+    teamsApps []TeamsAppable
 }
 // NewAppCatalogs instantiates a new appCatalogs and sets the default values.
 func NewAppCatalogs()(*AppCatalogs) {

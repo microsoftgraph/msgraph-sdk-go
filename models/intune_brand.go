@@ -7,35 +7,35 @@ import (
 // IntuneBrand intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
 type IntuneBrand struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Email address of the person/organization responsible for IT support.
-    contactITEmailAddress *string;
+    contactITEmailAddress *string
     // Name of the person/organization responsible for IT support.
-    contactITName *string;
+    contactITName *string
     // Text comments regarding the person/organization responsible for IT support.
-    contactITNotes *string;
+    contactITNotes *string
     // Phone number of the person/organization responsible for IT support.
-    contactITPhoneNumber *string;
+    contactITPhoneNumber *string
     // Logo image displayed in Company Portal apps which have a dark background behind the logo.
-    darkBackgroundLogo MimeContentable;
+    darkBackgroundLogo MimeContentable
     // Company/organization name that is displayed to end users.
-    displayName *string;
+    displayName *string
     // Logo image displayed in Company Portal apps which have a light background behind the logo.
-    lightBackgroundLogo MimeContentable;
+    lightBackgroundLogo MimeContentable
     // Display name of the company/organization’s IT helpdesk site.
-    onlineSupportSiteName *string;
+    onlineSupportSiteName *string
     // URL to the company/organization’s IT helpdesk site.
-    onlineSupportSiteUrl *string;
+    onlineSupportSiteUrl *string
     // URL to the company/organization’s privacy policy.
-    privacyUrl *string;
+    privacyUrl *string
     // Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-    showDisplayNameNextToLogo *bool;
+    showDisplayNameNextToLogo *bool
     // Boolean that represents whether the administrator-supplied logo images are shown or not shown.
-    showLogo *bool;
+    showLogo *bool
     // Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-    showNameNextToLogo *bool;
+    showNameNextToLogo *bool
     // Primary theme color used in the Company Portal applications and web portal.
-    themeColor RgbColorable;
+    themeColor RgbColorable
 }
 // NewIntuneBrand instantiates a new intuneBrand and sets the default values.
 func NewIntuneBrand()(*IntuneBrand) {

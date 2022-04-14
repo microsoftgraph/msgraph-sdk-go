@@ -7,11 +7,11 @@ import (
 // OnenoteOperationError 
 type OnenoteOperationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The error code.
-    code *string;
+    code *string
     // The error message.
-    message *string;
+    message *string
 }
 // NewOnenoteOperationError instantiates a new onenoteOperationError and sets the default values.
 func NewOnenoteOperationError()(*OnenoteOperationError) {

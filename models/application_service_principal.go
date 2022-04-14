@@ -7,11 +7,11 @@ import (
 // ApplicationServicePrincipal 
 type ApplicationServicePrincipal struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The application property
-    application Applicationable;
+    application Applicationable
     // The servicePrincipal property
-    servicePrincipal ServicePrincipalable;
+    servicePrincipal ServicePrincipalable
 }
 // NewApplicationServicePrincipal instantiates a new applicationServicePrincipal and sets the default values.
 func NewApplicationServicePrincipal()(*ApplicationServicePrincipal) {

@@ -8,7 +8,7 @@ import (
 type UnifiedRoleManagementPolicyRule struct {
     Entity
     // The target for the policy rule.
-    target UnifiedRoleManagementPolicyRuleTargetable;
+    target UnifiedRoleManagementPolicyRuleTargetable
 }
 // NewUnifiedRoleManagementPolicyRule instantiates a new unifiedRoleManagementPolicyRule and sets the default values.
 func NewUnifiedRoleManagementPolicyRule()(*UnifiedRoleManagementPolicyRule) {

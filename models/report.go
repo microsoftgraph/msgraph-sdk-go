@@ -7,9 +7,9 @@ import (
 // Report device Configuration profile History reports.
 type Report struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Not yet documented
-    content []byte;
+    content []byte
 }
 // NewReport instantiates a new report and sets the default values.
 func NewReport()(*Report) {

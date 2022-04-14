@@ -9,19 +9,19 @@ import (
 type UnifiedRoleAssignmentScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
     // If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
-    activatedUsing UnifiedRoleEligibilityScheduleInstanceable;
+    activatedUsing UnifiedRoleEligibilityScheduleInstanceable
     // Type of the assignment. It can either be Assigned or Activated.
-    assignmentType *string;
+    assignmentType *string
     // Time that the roleAssignmentInstance will expire
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Membership type of the assignment. It can either be Inherited, Direct, or Group.
-    memberType *string;
+    memberType *string
     // ID of the roleAssignment in the directory
-    roleAssignmentOriginId *string;
+    roleAssignmentOriginId *string
     // ID of the parent roleAssignmentSchedule for this instance
-    roleAssignmentScheduleId *string;
+    roleAssignmentScheduleId *string
     // Time that the roleAssignmentInstance will start
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewUnifiedRoleAssignmentScheduleInstance instantiates a new unifiedRoleAssignmentScheduleInstance and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleInstance) {

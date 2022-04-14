@@ -8,21 +8,21 @@ import (
 // CreateRequestBody provides operations to call the create method.
 type CreateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The certificateSigningRequest property
-    certificateSigningRequest iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable;
+    certificateSigningRequest iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable
     // The connectorId property
-    connectorId *string;
+    connectorId *string
     // The displayName property
-    displayName *string;
+    displayName *string
     // The hasPhysicalDevice property
-    hasPhysicalDevice *bool;
+    hasPhysicalDevice *bool
     // The manufacturer property
-    manufacturer *string;
+    manufacturer *string
     // The model property
-    model *string;
+    model *string
     // The physicalDeviceId property
-    physicalDeviceId *string;
+    physicalDeviceId *string
 }
 // NewCreateRequestBody instantiates a new createRequestBody and sets the default values.
 func NewCreateRequestBody()(*CreateRequestBody) {

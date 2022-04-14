@@ -7,21 +7,21 @@ import (
 // Print 
 type Print struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The list of available print connectors.
-    connectors []PrintConnectorable;
+    connectors []PrintConnectorable
     // The list of print long running operations.
-    operations []PrintOperationable;
+    operations []PrintOperationable
     // The list of printers registered in the tenant.
-    printers []Printerable;
+    printers []Printerable
     // The list of available Universal Print service endpoints.
-    services []PrintServiceable;
+    services []PrintServiceable
     // Tenant-wide settings for the Universal Print service.
-    settings PrintSettingsable;
+    settings PrintSettingsable
     // The list of printer shares registered in the tenant.
-    shares []PrinterShareable;
+    shares []PrinterShareable
     // List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-    taskDefinitions []PrintTaskDefinitionable;
+    taskDefinitions []PrintTaskDefinitionable
 }
 // NewPrint instantiates a new Print and sets the default values.
 func NewPrint()(*Print) {

@@ -9,15 +9,15 @@ import (
 type LocalizedNotificationMessage struct {
     Entity
     // Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
-    isDefault *bool;
+    isDefault *bool
     // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Locale for which this message is destined.
-    locale *string;
+    locale *string
     // The Message Template content.
-    messageTemplate *string;
+    messageTemplate *string
     // The Message Template Subject.
-    subject *string;
+    subject *string
 }
 // NewLocalizedNotificationMessage instantiates a new localizedNotificationMessage and sets the default values.
 func NewLocalizedNotificationMessage()(*LocalizedNotificationMessage) {

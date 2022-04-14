@@ -8,35 +8,35 @@ import (
 type SoftwareUpdateStatusSummary struct {
     Entity
     // Number of compliant devices.
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // Number of compliant users.
-    compliantUserCount *int32;
+    compliantUserCount *int32
     // Number of conflict devices.
-    conflictDeviceCount *int32;
+    conflictDeviceCount *int32
     // Number of conflict users.
-    conflictUserCount *int32;
+    conflictUserCount *int32
     // The name of the policy.
-    displayName *string;
+    displayName *string
     // Number of devices had error.
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // Number of users had error.
-    errorUserCount *int32;
+    errorUserCount *int32
     // Number of non compliant devices.
-    nonCompliantDeviceCount *int32;
+    nonCompliantDeviceCount *int32
     // Number of non compliant users.
-    nonCompliantUserCount *int32;
+    nonCompliantUserCount *int32
     // Number of not applicable devices.
-    notApplicableDeviceCount *int32;
+    notApplicableDeviceCount *int32
     // Number of not applicable users.
-    notApplicableUserCount *int32;
+    notApplicableUserCount *int32
     // Number of remediated devices.
-    remediatedDeviceCount *int32;
+    remediatedDeviceCount *int32
     // Number of remediated users.
-    remediatedUserCount *int32;
+    remediatedUserCount *int32
     // Number of unknown devices.
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
     // Number of unknown users.
-    unknownUserCount *int32;
+    unknownUserCount *int32
 }
 // NewSoftwareUpdateStatusSummary instantiates a new softwareUpdateStatusSummary and sets the default values.
 func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {

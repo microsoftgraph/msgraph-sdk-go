@@ -7,13 +7,13 @@ import (
 // LocationConstraint 
 type LocationConstraint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-    isRequired *bool;
+    isRequired *bool
     // Constraint information for one or more locations that the client requests for the meeting.
-    locations []LocationConstraintItemable;
+    locations []LocationConstraintItemable
     // The client requests the service to suggest one or more meeting locations.
-    suggestLocation *bool;
+    suggestLocation *bool
 }
 // NewLocationConstraint instantiates a new locationConstraint and sets the default values.
 func NewLocationConstraint()(*LocationConstraint) {

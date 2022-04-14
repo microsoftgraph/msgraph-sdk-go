@@ -7,19 +7,19 @@ import (
 // SharingLink 
 type SharingLink struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The app the link is associated with.
-    application Identityable;
+    application Identityable
     // If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
-    preventsDownload *bool;
+    preventsDownload *bool
     // The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
-    scope *string;
+    scope *string
     // The type of the link created.
-    type_escaped *string;
+    type_escaped *string
     // For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
-    webHtml *string;
+    webHtml *string
     // A URL that opens the item in the browser on the OneDrive website.
-    webUrl *string;
+    webUrl *string
 }
 // NewSharingLink instantiates a new sharingLink and sets the default values.
 func NewSharingLink()(*SharingLink) {

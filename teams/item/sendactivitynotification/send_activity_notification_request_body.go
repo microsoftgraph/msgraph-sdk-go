@@ -8,19 +8,19 @@ import (
 // SendActivityNotificationRequestBody provides operations to call the sendActivityNotification method.
 type SendActivityNotificationRequestBody struct {
     // The activityType property
-    activityType *string;
+    activityType *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The chainId property
-    chainId *int64;
+    chainId *int64
     // The previewText property
-    previewText iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemBodyable;
+    previewText iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemBodyable
     // The recipient property
-    recipient iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkNotificationRecipientable;
+    recipient iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkNotificationRecipientable
     // The templateParameters property
-    templateParameters []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValuePairable;
+    templateParameters []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValuePairable
     // The topic property
-    topic iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkActivityTopicable;
+    topic iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkActivityTopicable
 }
 // NewSendActivityNotificationRequestBody instantiates a new sendActivityNotificationRequestBody and sets the default values.
 func NewSendActivityNotificationRequestBody()(*SendActivityNotificationRequestBody) {

@@ -7,9 +7,9 @@ import (
 // ConditionalAccessSessionControl 
 type ConditionalAccessSessionControl struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies whether the session control is enabled.
-    isEnabled *bool;
+    isEnabled *bool
 }
 // NewConditionalAccessSessionControl instantiates a new conditionalAccessSessionControl and sets the default values.
 func NewConditionalAccessSessionControl()(*ConditionalAccessSessionControl) {

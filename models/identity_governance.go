@@ -7,15 +7,15 @@ import (
 // IdentityGovernance 
 type IdentityGovernance struct {
     // The accessReviews property
-    accessReviews AccessReviewSetable;
+    accessReviews AccessReviewSetable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The appConsent property
-    appConsent AppConsentApprovalRouteable;
+    appConsent AppConsentApprovalRouteable
     // The entitlementManagement property
-    entitlementManagement EntitlementManagementable;
+    entitlementManagement EntitlementManagementable
     // The termsOfUse property
-    termsOfUse TermsOfUseContainerable;
+    termsOfUse TermsOfUseContainerable
 }
 // NewIdentityGovernance instantiates a new IdentityGovernance and sets the default values.
 func NewIdentityGovernance()(*IdentityGovernance) {

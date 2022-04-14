@@ -7,15 +7,15 @@ import (
 // SettingTemplateValue 
 type SettingTemplateValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Default value for the setting.
-    defaultValue *string;
+    defaultValue *string
     // Description of the setting.
-    description *string;
+    description *string
     // Name of the setting.
-    name *string;
+    name *string
     // Type of the setting.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewSettingTemplateValue instantiates a new settingTemplateValue and sets the default values.
 func NewSettingTemplateValue()(*SettingTemplateValue) {

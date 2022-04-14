@@ -8,9 +8,9 @@ import (
 type EducationAssignmentResource struct {
     Entity
     // Indicates whether this resource should be copied to each student submission for modification and submission. Required
-    distributeForStudentWork *bool;
+    distributeForStudentWork *bool
     // Resource object that has been associated with this assignment.
-    resource EducationResourceable;
+    resource EducationResourceable
 }
 // NewEducationAssignmentResource instantiates a new educationAssignmentResource and sets the default values.
 func NewEducationAssignmentResource()(*EducationAssignmentResource) {

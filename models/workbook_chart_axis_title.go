@@ -8,11 +8,11 @@ import (
 type WorkbookChartAxisTitle struct {
     Entity
     // Represents the formatting of chart axis title. Read-only.
-    format WorkbookChartAxisTitleFormatable;
+    format WorkbookChartAxisTitleFormatable
     // Represents the axis title.
-    text *string;
+    text *string
     // A boolean that specifies the visibility of an axis title.
-    visible *bool;
+    visible *bool
 }
 // NewWorkbookChartAxisTitle instantiates a new workbookChartAxisTitle and sets the default values.
 func NewWorkbookChartAxisTitle()(*WorkbookChartAxisTitle) {

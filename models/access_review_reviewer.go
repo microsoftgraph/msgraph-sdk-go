@@ -9,11 +9,11 @@ import (
 type AccessReviewReviewer struct {
     Entity
     // The date when the reviewer was added for the access review.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Name of reviewer.
-    displayName *string;
+    displayName *string
     // User principal name of the reviewer.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewAccessReviewReviewer instantiates a new accessReviewReviewer and sets the default values.
 func NewAccessReviewReviewer()(*AccessReviewReviewer) {

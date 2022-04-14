@@ -8,9 +8,9 @@ import (
 type RecordOperation struct {
     CommsOperation
     // The access token required to retrieve the recording.
-    recordingAccessToken *string;
+    recordingAccessToken *string
     // The location where the recording is located.
-    recordingLocation *string;
+    recordingLocation *string
 }
 // NewRecordOperation instantiates a new recordOperation and sets the default values.
 func NewRecordOperation()(*RecordOperation) {

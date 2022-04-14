@@ -8,7 +8,7 @@ import (
 type DeviceConfigurationAssignment struct {
     Entity
     // The assignment target for the device configuration.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceConfigurationAssignment instantiates a new deviceConfigurationAssignment and sets the default values.
 func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {

@@ -8,7 +8,7 @@ import (
 type OutlookUser struct {
     Entity
     // A list of categories defined for the user.
-    masterCategories []OutlookCategoryable;
+    masterCategories []OutlookCategoryable
 }
 // NewOutlookUser instantiates a new outlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {

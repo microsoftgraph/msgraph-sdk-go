@@ -7,11 +7,11 @@ import (
 // PageLinks 
 type PageLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Opens the page in the OneNote native client if it's installed.
-    oneNoteClientUrl ExternalLinkable;
+    oneNoteClientUrl ExternalLinkable
     // Opens the page in OneNote on the web.
-    oneNoteWebUrl ExternalLinkable;
+    oneNoteWebUrl ExternalLinkable
 }
 // NewPageLinks instantiates a new pageLinks and sets the default values.
 func NewPageLinks()(*PageLinks) {

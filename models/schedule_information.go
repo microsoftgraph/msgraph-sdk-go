@@ -7,17 +7,17 @@ import (
 // ScheduleInformation 
 type ScheduleInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
-    availabilityView *string;
+    availabilityView *string
     // Error information from attempting to get the availability of the user, distribution list, or resource.
-    error FreeBusyErrorable;
+    error FreeBusyErrorable
     // An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
-    scheduleId *string;
+    scheduleId *string
     // Contains the items that describe the availability of the user or resource.
-    scheduleItems []ScheduleItemable;
+    scheduleItems []ScheduleItemable
     // The days of the week and hours in a specific time zone that the user works. These are set as part of the user's mailboxSettings.
-    workingHours WorkingHoursable;
+    workingHours WorkingHoursable
 }
 // NewScheduleInformation instantiates a new scheduleInformation and sets the default values.
 func NewScheduleInformation()(*ScheduleInformation) {

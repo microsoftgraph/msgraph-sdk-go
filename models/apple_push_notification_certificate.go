@@ -9,17 +9,17 @@ import (
 type ApplePushNotificationCertificate struct {
     Entity
     // Apple Id of the account used to create the MDM push certificate.
-    appleIdentifier *string;
+    appleIdentifier *string
     // Not yet documented
-    certificate *string;
+    certificate *string
     // Certificate serial number. This property is read-only.
-    certificateSerialNumber *string;
+    certificateSerialNumber *string
     // The expiration date and time for Apple push notification certificate.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Last modified date and time for Apple push notification certificate.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Topic Id.
-    topicIdentifier *string;
+    topicIdentifier *string
 }
 // NewApplePushNotificationCertificate instantiates a new applePushNotificationCertificate and sets the default values.
 func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {

@@ -7,11 +7,11 @@ import (
 // MailTipsError 
 type MailTipsError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The error code.
-    code *string;
+    code *string
     // The error message.
-    message *string;
+    message *string
 }
 // NewMailTipsError instantiates a new mailTipsError and sets the default values.
 func NewMailTipsError()(*MailTipsError) {

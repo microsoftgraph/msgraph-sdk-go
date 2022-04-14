@@ -8,9 +8,9 @@ import (
 type OnenoteResource struct {
     OnenoteEntityBaseModel
     // The content stream
-    content []byte;
+    content []byte
     // The URL for downloading the content
-    contentUrl *string;
+    contentUrl *string
 }
 // NewOnenoteResource instantiates a new onenoteResource and sets the default values.
 func NewOnenoteResource()(*OnenoteResource) {

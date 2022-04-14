@@ -7,11 +7,11 @@ import (
 // WorkforceIntegrationEncryption 
 type WorkforceIntegrationEncryption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Possible values are: sharedSecret, unknownFutureValue.
-    protocol *WorkforceIntegrationEncryptionProtocol;
+    protocol *WorkforceIntegrationEncryptionProtocol
     // Encryption shared secret.
-    secret *string;
+    secret *string
 }
 // NewWorkforceIntegrationEncryption instantiates a new workforceIntegrationEncryption and sets the default values.
 func NewWorkforceIntegrationEncryption()(*WorkforceIntegrationEncryption) {

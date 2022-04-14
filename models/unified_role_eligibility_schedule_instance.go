@@ -9,13 +9,13 @@ import (
 type UnifiedRoleEligibilityScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
     // Time that the roleEligibilityScheduleInstance will expire.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Membership type of the assignment. It can either be Inherited, Direct, or Group.
-    memberType *string;
+    memberType *string
     // Identifier of the parent roleEligibilitySchedule for this instance.
-    roleEligibilityScheduleId *string;
+    roleEligibilityScheduleId *string
     // Time that the roleEligibilityScheduleInstance will start.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewUnifiedRoleEligibilityScheduleInstance instantiates a new unifiedRoleEligibilityScheduleInstance and sets the default values.
 func NewUnifiedRoleEligibilityScheduleInstance()(*UnifiedRoleEligibilityScheduleInstance) {

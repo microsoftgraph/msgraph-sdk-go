@@ -9,19 +9,19 @@ import (
 type PlannerPlan struct {
     Entity
     // Read-only. Nullable. Collection of buckets in the plan.
-    buckets []PlannerBucketable;
+    buckets []PlannerBucketable
     // Read-only. The user who created the plan.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Nullable. Additional details about the plan.
-    details PlannerPlanDetailsable;
+    details PlannerPlanDetailsable
     // ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
-    owner *string;
+    owner *string
     // Read-only. Nullable. Collection of tasks in the plan.
-    tasks []PlannerTaskable;
+    tasks []PlannerTaskable
     // Required. Title of the plan.
-    title *string;
+    title *string
 }
 // NewPlannerPlan instantiates a new plannerPlan and sets the default values.
 func NewPlannerPlan()(*PlannerPlan) {

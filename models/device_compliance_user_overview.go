@@ -9,19 +9,19 @@ import (
 type DeviceComplianceUserOverview struct {
     Entity
     // Version of the policy for that overview
-    configurationVersion *int32;
+    configurationVersion *int32
     // Number of error Users
-    errorCount *int32;
+    errorCount *int32
     // Number of failed Users
-    failedCount *int32;
+    failedCount *int32
     // Last update time
-    lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Number of not applicable users
-    notApplicableCount *int32;
+    notApplicableCount *int32
     // Number of pending Users
-    pendingCount *int32;
+    pendingCount *int32
     // Number of succeeded Users
-    successCount *int32;
+    successCount *int32
 }
 // NewDeviceComplianceUserOverview instantiates a new deviceComplianceUserOverview and sets the default values.
 func NewDeviceComplianceUserOverview()(*DeviceComplianceUserOverview) {

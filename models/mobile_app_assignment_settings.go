@@ -7,7 +7,7 @@ import (
 // MobileAppAssignmentSettings abstract class to contain properties used to assign a mobile app to a group.
 type MobileAppAssignmentSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewMobileAppAssignmentSettings instantiates a new mobileAppAssignmentSettings and sets the default values.
 func NewMobileAppAssignmentSettings()(*MobileAppAssignmentSettings) {

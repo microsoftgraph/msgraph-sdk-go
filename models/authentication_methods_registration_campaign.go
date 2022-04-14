@@ -7,15 +7,15 @@ import (
 // AuthenticationMethodsRegistrationCampaign 
 type AuthenticationMethodsRegistrationCampaign struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Users and groups of users that are excluded from being prompted to set up the authentication method.
-    excludeTargets []ExcludeTargetable;
+    excludeTargets []ExcludeTargetable
     // Users and groups of users that are prompted to set up the authentication method.
-    includeTargets []AuthenticationMethodsRegistrationCampaignIncludeTargetable;
+    includeTargets []AuthenticationMethodsRegistrationCampaignIncludeTargetable
     // Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
-    snoozeDurationInDays *int32;
+    snoozeDurationInDays *int32
     // Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure Active Directory for the setting. The default value is disabled.
-    state *AdvancedConfigState;
+    state *AdvancedConfigState
 }
 // NewAuthenticationMethodsRegistrationCampaign instantiates a new authenticationMethodsRegistrationCampaign and sets the default values.
 func NewAuthenticationMethodsRegistrationCampaign()(*AuthenticationMethodsRegistrationCampaign) {

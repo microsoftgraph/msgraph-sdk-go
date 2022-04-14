@@ -8,7 +8,7 @@ import (
 type ProvisioningSystem struct {
     Identity
     // Details of the system.
-    details DetailsInfoable;
+    details DetailsInfoable
 }
 // NewProvisioningSystem instantiates a new provisioningSystem and sets the default values.
 func NewProvisioningSystem()(*ProvisioningSystem) {

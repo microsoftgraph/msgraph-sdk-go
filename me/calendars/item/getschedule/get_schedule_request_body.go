@@ -8,15 +8,15 @@ import (
 // GetScheduleRequestBody provides operations to call the getSchedule method.
 type GetScheduleRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The AvailabilityViewInterval property
-    availabilityViewInterval *int32;
+    availabilityViewInterval *int32
     // The EndTime property
-    endTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable;
+    endTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable
     // The Schedules property
-    schedules []string;
+    schedules []string
     // The StartTime property
-    startTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable;
+    startTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable
 }
 // NewGetScheduleRequestBody instantiates a new getScheduleRequestBody and sets the default values.
 func NewGetScheduleRequestBody()(*GetScheduleRequestBody) {

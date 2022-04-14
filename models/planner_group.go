@@ -8,7 +8,7 @@ import (
 type PlannerGroup struct {
     Entity
     // Read-only. Nullable. Returns the plannerPlans owned by the group.
-    plans []PlannerPlanable;
+    plans []PlannerPlanable
 }
 // NewPlannerGroup instantiates a new plannerGroup and sets the default values.
 func NewPlannerGroup()(*PlannerGroup) {

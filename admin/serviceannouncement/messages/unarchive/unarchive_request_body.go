@@ -7,9 +7,9 @@ import (
 // UnarchiveRequestBody provides operations to call the unarchive method.
 type UnarchiveRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The messageIds property
-    messageIds []string;
+    messageIds []string
 }
 // NewUnarchiveRequestBody instantiates a new unarchiveRequestBody and sets the default values.
 func NewUnarchiveRequestBody()(*UnarchiveRequestBody) {

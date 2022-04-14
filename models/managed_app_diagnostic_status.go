@@ -7,13 +7,13 @@ import (
 // ManagedAppDiagnosticStatus represents diagnostics status.
 type ManagedAppDiagnosticStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Instruction on how to mitigate a failed validation
-    mitigationInstruction *string;
+    mitigationInstruction *string
     // The state of the operation
-    state *string;
+    state *string
     // The validation friendly name
-    validationName *string;
+    validationName *string
 }
 // NewManagedAppDiagnosticStatus instantiates a new managedAppDiagnosticStatus and sets the default values.
 func NewManagedAppDiagnosticStatus()(*ManagedAppDiagnosticStatus) {

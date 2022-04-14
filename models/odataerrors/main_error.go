@@ -7,17 +7,17 @@ import (
 // MainError 
 type MainError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The code property
-    code *string;
+    code *string
     // The details property
-    details []ErrorDetailsable;
+    details []ErrorDetailsable
     // The innererror property
-    innererror InnerErrorable;
+    innererror InnerErrorable
     // The message property
-    message *string;
+    message *string
     // The target property
-    target *string;
+    target *string
 }
 // NewMainError instantiates a new MainError and sets the default values.
 func NewMainError()(*MainError) {

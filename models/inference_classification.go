@@ -8,7 +8,7 @@ import (
 type InferenceClassification struct {
     Entity
     // A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
-    overrides []InferenceClassificationOverrideable;
+    overrides []InferenceClassificationOverrideable
 }
 // NewInferenceClassification instantiates a new inferenceClassification and sets the default values.
 func NewInferenceClassification()(*InferenceClassification) {

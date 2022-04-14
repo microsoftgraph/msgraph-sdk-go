@@ -7,17 +7,17 @@ import (
 // InvitationParticipantInfo 
 type InvitationParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The hidden property
-    hidden *bool;
+    hidden *bool
     // The identity property
-    identity IdentitySetable;
+    identity IdentitySetable
     // The participantId property
-    participantId *string;
+    participantId *string
     // The removeFromDefaultAudioRoutingGroup property
-    removeFromDefaultAudioRoutingGroup *bool;
+    removeFromDefaultAudioRoutingGroup *bool
     // Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
-    replacesCallId *string;
+    replacesCallId *string
 }
 // NewInvitationParticipantInfo instantiates a new invitationParticipantInfo and sets the default values.
 func NewInvitationParticipantInfo()(*InvitationParticipantInfo) {

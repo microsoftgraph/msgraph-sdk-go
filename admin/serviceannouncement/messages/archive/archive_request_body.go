@@ -7,9 +7,9 @@ import (
 // ArchiveRequestBody provides operations to call the archive method.
 type ArchiveRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The messageIds property
-    messageIds []string;
+    messageIds []string
 }
 // NewArchiveRequestBody instantiates a new archiveRequestBody and sets the default values.
 func NewArchiveRequestBody()(*ArchiveRequestBody) {

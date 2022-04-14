@@ -8,19 +8,19 @@ import (
 type Workbook struct {
     Entity
     // The application property
-    application WorkbookApplicationable;
+    application WorkbookApplicationable
     // The comments property
-    comments []WorkbookCommentable;
+    comments []WorkbookCommentable
     // The functions property
-    functions WorkbookFunctionsable;
+    functions WorkbookFunctionsable
     // Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-    names []WorkbookNamedItemable;
+    names []WorkbookNamedItemable
     // The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
-    operations []WorkbookOperationable;
+    operations []WorkbookOperationable
     // Represents a collection of tables associated with the workbook. Read-only.
-    tables []WorkbookTableable;
+    tables []WorkbookTableable
     // Represents a collection of worksheets associated with the workbook. Read-only.
-    worksheets []WorkbookWorksheetable;
+    worksheets []WorkbookWorksheetable
 }
 // NewWorkbook instantiates a new workbook and sets the default values.
 func NewWorkbook()(*Workbook) {

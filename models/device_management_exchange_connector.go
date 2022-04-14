@@ -9,23 +9,23 @@ import (
 type DeviceManagementExchangeConnector struct {
     Entity
     // The name of the server hosting the Exchange Connector.
-    connectorServerName *string;
+    connectorServerName *string
     // An alias assigned to the Exchange server
-    exchangeAlias *string;
+    exchangeAlias *string
     // The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.
-    exchangeConnectorType *DeviceManagementExchangeConnectorType;
+    exchangeConnectorType *DeviceManagementExchangeConnectorType
     // Exchange Organization to the Exchange server
-    exchangeOrganization *string;
+    exchangeOrganization *string
     // Last sync time for the Exchange Connector
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Email address used to configure the Service To Service Exchange Connector.
-    primarySmtpAddress *string;
+    primarySmtpAddress *string
     // The name of the Exchange server.
-    serverName *string;
+    serverName *string
     // Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
-    status *DeviceManagementExchangeConnectorStatus;
+    status *DeviceManagementExchangeConnectorStatus
     // The version of the ExchangeConnectorAgent
-    version *string;
+    version *string
 }
 // NewDeviceManagementExchangeConnector instantiates a new deviceManagementExchangeConnector and sets the default values.
 func NewDeviceManagementExchangeConnector()(*DeviceManagementExchangeConnector) {

@@ -8,9 +8,9 @@ import (
 // SupportedLanguagesResponse provides operations to call the supportedLanguages method.
 type SupportedLanguagesResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocaleInfoable;
+    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocaleInfoable
 }
 // NewSupportedLanguagesResponse instantiates a new supportedLanguagesResponse and sets the default values.
 func NewSupportedLanguagesResponse()(*SupportedLanguagesResponse) {

@@ -8,9 +8,9 @@ import (
 // SnoozeReminderRequestBody provides operations to call the snoozeReminder method.
 type SnoozeReminderRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The NewReminderTime property
-    newReminderTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable;
+    newReminderTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable
 }
 // NewSnoozeReminderRequestBody instantiates a new snoozeReminderRequestBody and sets the default values.
 func NewSnoozeReminderRequestBody()(*SnoozeReminderRequestBody) {

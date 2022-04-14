@@ -8,11 +8,11 @@ import (
 type WorkbookChartSeries struct {
     Entity
     // Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
-    format WorkbookChartSeriesFormatable;
+    format WorkbookChartSeriesFormatable
     // Represents the name of a series in a chart.
-    name *string;
+    name *string
     // Represents a collection of all points in the series. Read-only.
-    points []WorkbookChartPointable;
+    points []WorkbookChartPointable
 }
 // NewWorkbookChartSeries instantiates a new workbookChartSeries and sets the default values.
 func NewWorkbookChartSeries()(*WorkbookChartSeries) {

@@ -7,11 +7,11 @@ import (
 // AttendeeAvailability 
 type AttendeeAvailability struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
-    attendee AttendeeBaseable;
+    attendee AttendeeBaseable
     // The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-    availability *FreeBusyStatus;
+    availability *FreeBusyStatus
 }
 // NewAttendeeAvailability instantiates a new attendeeAvailability and sets the default values.
 func NewAttendeeAvailability()(*AttendeeAvailability) {

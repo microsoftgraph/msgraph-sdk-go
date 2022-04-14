@@ -8,11 +8,11 @@ import (
 type GroupLifecyclePolicy struct {
     Entity
     // List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
-    alternateNotificationEmails *string;
+    alternateNotificationEmails *string
     // Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
-    groupLifetimeInDays *int32;
+    groupLifetimeInDays *int32
     // The group type for which the expiration policy applies. Possible values are All, Selected or None.
-    managedGroupTypes *string;
+    managedGroupTypes *string
 }
 // NewGroupLifecyclePolicy instantiates a new groupLifecyclePolicy and sets the default values.
 func NewGroupLifecyclePolicy()(*GroupLifecyclePolicy) {

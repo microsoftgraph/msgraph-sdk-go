@@ -7,29 +7,29 @@ import (
 // MessageRuleActions 
 type MessageRuleActions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A list of categories to be assigned to a message.
-    assignCategories []string;
+    assignCategories []string
     // The ID of a folder that a message is to be copied to.
-    copyToFolder *string;
+    copyToFolder *string
     // Indicates whether a message should be moved to the Deleted Items folder.
-    delete *bool;
+    delete *bool
     // The email addresses of the recipients to which a message should be forwarded as an attachment.
-    forwardAsAttachmentTo []Recipientable;
+    forwardAsAttachmentTo []Recipientable
     // The email addresses of the recipients to which a message should be forwarded.
-    forwardTo []Recipientable;
+    forwardTo []Recipientable
     // Indicates whether a message should be marked as read.
-    markAsRead *bool;
+    markAsRead *bool
     // Sets the importance of the message, which can be: low, normal, high.
-    markImportance *Importance;
+    markImportance *Importance
     // The ID of the folder that a message will be moved to.
-    moveToFolder *string;
+    moveToFolder *string
     // Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-    permanentDelete *bool;
+    permanentDelete *bool
     // The email addresses to which a message should be redirected.
-    redirectTo []Recipientable;
+    redirectTo []Recipientable
     // Indicates whether subsequent rules should be evaluated.
-    stopProcessingRules *bool;
+    stopProcessingRules *bool
 }
 // NewMessageRuleActions instantiates a new messageRuleActions and sets the default values.
 func NewMessageRuleActions()(*MessageRuleActions) {

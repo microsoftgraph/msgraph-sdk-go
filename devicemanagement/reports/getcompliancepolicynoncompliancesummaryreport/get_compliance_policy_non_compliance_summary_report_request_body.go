@@ -7,25 +7,25 @@ import (
 // GetCompliancePolicyNonComplianceSummaryReportRequestBody provides operations to call the getCompliancePolicyNonComplianceSummaryReport method.
 type GetCompliancePolicyNonComplianceSummaryReportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The filter property
-    filter *string;
+    filter *string
     // The groupBy property
-    groupBy []string;
+    groupBy []string
     // The name property
-    name *string;
+    name *string
     // The orderBy property
-    orderBy []string;
+    orderBy []string
     // The search property
-    search *string;
+    search *string
     // The select property
-    select_escaped []string;
+    select_escaped []string
     // The sessionId property
-    sessionId *string;
+    sessionId *string
     // The skip property
-    skip *int32;
+    skip *int32
     // The top property
-    top *int32;
+    top *int32
 }
 // NewGetCompliancePolicyNonComplianceSummaryReportRequestBody instantiates a new getCompliancePolicyNonComplianceSummaryReportRequestBody and sets the default values.
 func NewGetCompliancePolicyNonComplianceSummaryReportRequestBody()(*GetCompliancePolicyNonComplianceSummaryReportRequestBody) {

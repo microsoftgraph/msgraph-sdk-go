@@ -7,31 +7,31 @@ import (
 // DeviceCompliancePolicySettingState device Compilance Policy Setting State for a given device.
 type DeviceCompliancePolicySettingState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Current value of setting on device
-    currentValue *string;
+    currentValue *string
     // Error code for the setting
-    errorCode *int64;
+    errorCode *int64
     // Error description
-    errorDescription *string;
+    errorDescription *string
     // Name of setting instance that is being reported.
-    instanceDisplayName *string;
+    instanceDisplayName *string
     // The setting that is being reported
-    setting *string;
+    setting *string
     // Localized/user friendly setting name that is being reported
-    settingName *string;
+    settingName *string
     // Contributing policies
-    sources []SettingSourceable;
+    sources []SettingSourceable
     // The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-    state *ComplianceStatus;
+    state *ComplianceStatus
     // UserEmail
-    userEmail *string;
+    userEmail *string
     // UserId
-    userId *string;
+    userId *string
     // UserName
-    userName *string;
+    userName *string
     // UserPrincipalName.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewDeviceCompliancePolicySettingState instantiates a new deviceCompliancePolicySettingState and sets the default values.
 func NewDeviceCompliancePolicySettingState()(*DeviceCompliancePolicySettingState) {

@@ -8,7 +8,7 @@ import (
 type CertificateBasedAuthConfiguration struct {
     Entity
     // Collection of certificate authorities which creates a trusted certificate chain.
-    certificateAuthorities []CertificateAuthorityable;
+    certificateAuthorities []CertificateAuthorityable
 }
 // NewCertificateBasedAuthConfiguration instantiates a new certificateBasedAuthConfiguration and sets the default values.
 func NewCertificateBasedAuthConfiguration()(*CertificateBasedAuthConfiguration) {

@@ -8,9 +8,9 @@ import (
 type PolicyBase struct {
     DirectoryObject
     // Description for this policy. Required.
-    description *string;
+    description *string
     // Display name for this policy. Required.
-    displayName *string;
+    displayName *string
 }
 // NewPolicyBase instantiates a new policyBase and sets the default values.
 func NewPolicyBase()(*PolicyBase) {

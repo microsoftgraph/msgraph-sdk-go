@@ -8,9 +8,9 @@ import (
 type WorkbookTableRow struct {
     Entity
     // Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
-    index *int32;
+    index *int32
     // Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-    values Jsonable;
+    values Jsonable
 }
 // NewWorkbookTableRow instantiates a new workbookTableRow and sets the default values.
 func NewWorkbookTableRow()(*WorkbookTableRow) {

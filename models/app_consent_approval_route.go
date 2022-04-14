@@ -8,7 +8,7 @@ import (
 type AppConsentApprovalRoute struct {
     Entity
     // A collection of userConsentRequest objects for a specific application.
-    appConsentRequests []AppConsentRequestable;
+    appConsentRequests []AppConsentRequestable
 }
 // NewAppConsentApprovalRoute instantiates a new appConsentApprovalRoute and sets the default values.
 func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {

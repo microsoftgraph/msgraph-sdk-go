@@ -8,11 +8,11 @@ import (
 type IdentityApiConnector struct {
     Entity
     // The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
-    authenticationConfiguration ApiAuthenticationConfigurationBaseable;
+    authenticationConfiguration ApiAuthenticationConfigurationBaseable
     // The name of the API connector.
-    displayName *string;
+    displayName *string
     // The URL of the API endpoint to call.
-    targetUrl *string;
+    targetUrl *string
 }
 // NewIdentityApiConnector instantiates a new identityApiConnector and sets the default values.
 func NewIdentityApiConnector()(*IdentityApiConnector) {

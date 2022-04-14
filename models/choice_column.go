@@ -7,13 +7,13 @@ import (
 // ChoiceColumn 
 type ChoiceColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If true, allows custom values that aren't in the configured choices.
-    allowTextEntry *bool;
+    allowTextEntry *bool
     // The list of values available for this column.
-    choices []string;
+    choices []string
     // How the choices are to be presented in the UX. Must be one of checkBoxes, dropDownMenu, or radioButtons
-    displayAs *string;
+    displayAs *string
 }
 // NewChoiceColumn instantiates a new choiceColumn and sets the default values.
 func NewChoiceColumn()(*ChoiceColumn) {

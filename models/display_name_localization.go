@@ -7,11 +7,11 @@ import (
 // DisplayNameLocalization 
 type DisplayNameLocalization struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
-    displayName *string;
+    displayName *string
     // Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-    languageTag *string;
+    languageTag *string
 }
 // NewDisplayNameLocalization instantiates a new displayNameLocalization and sets the default values.
 func NewDisplayNameLocalization()(*DisplayNameLocalization) {

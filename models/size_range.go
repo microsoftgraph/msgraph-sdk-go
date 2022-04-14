@@ -7,11 +7,11 @@ import (
 // SizeRange 
 type SizeRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
-    maximumSize *int32;
+    maximumSize *int32
     // The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
-    minimumSize *int32;
+    minimumSize *int32
 }
 // NewSizeRange instantiates a new sizeRange and sets the default values.
 func NewSizeRange()(*SizeRange) {

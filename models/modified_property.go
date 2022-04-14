@@ -7,13 +7,13 @@ import (
 // ModifiedProperty 
 type ModifiedProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates the property name of the target attribute that was changed.
-    displayName *string;
+    displayName *string
     // Indicates the updated value for the propery.
-    newValue *string;
+    newValue *string
     // Indicates the previous value (before the update) for the property.
-    oldValue *string;
+    oldValue *string
 }
 // NewModifiedProperty instantiates a new modifiedProperty and sets the default values.
 func NewModifiedProperty()(*ModifiedProperty) {

@@ -8,11 +8,11 @@ import (
 type ScopedRoleMembership struct {
     Entity
     // Unique identifier for the administrative unit that the directory role is scoped to
-    administrativeUnitId *string;
+    administrativeUnitId *string
     // Unique identifier for the directory role that the member is in.
-    roleId *string;
+    roleId *string
     // The roleMemberInfo property
-    roleMemberInfo Identityable;
+    roleMemberInfo Identityable
 }
 // NewScopedRoleMembership instantiates a new scopedRoleMembership and sets the default values.
 func NewScopedRoleMembership()(*ScopedRoleMembership) {

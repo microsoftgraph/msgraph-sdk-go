@@ -10,17 +10,17 @@ import (
 type Group struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Date and time of the group creation. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description that gives details on the term usage.
-    description *string;
+    description *string
     // Name of the group.
-    displayName *string;
+    displayName *string
     // ID of the parent site of this group.
-    parentSiteId *string;
+    parentSiteId *string
     // Returns the type of the group. Possible values are global, system, and siteCollection.
-    scope *TermGroupScope;
+    scope *TermGroupScope
     // All sets under the group in a term [store].
-    sets []Setable;
+    sets []Setable
 }
 // NewGroup instantiates a new group and sets the default values.
 func NewGroup()(*Group) {

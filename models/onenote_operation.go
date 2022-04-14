@@ -8,13 +8,13 @@ import (
 type OnenoteOperation struct {
     Operation
     // The error returned by the operation.
-    error OnenoteOperationErrorable;
+    error OnenoteOperationErrorable
     // The operation percent complete if the operation is still in running status.
-    percentComplete *string;
+    percentComplete *string
     // The resource id.
-    resourceId *string;
+    resourceId *string
     // The resource URI for the object. For example, the resource URI for a copied page or section.
-    resourceLocation *string;
+    resourceLocation *string
 }
 // NewOnenoteOperation instantiates a new onenoteOperation and sets the default values.
 func NewOnenoteOperation()(*OnenoteOperation) {

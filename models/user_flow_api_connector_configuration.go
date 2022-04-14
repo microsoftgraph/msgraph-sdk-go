@@ -7,11 +7,11 @@ import (
 // UserFlowApiConnectorConfiguration 
 type UserFlowApiConnectorConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The postAttributeCollection property
-    postAttributeCollection IdentityApiConnectorable;
+    postAttributeCollection IdentityApiConnectorable
     // The postFederationSignup property
-    postFederationSignup IdentityApiConnectorable;
+    postFederationSignup IdentityApiConnectorable
 }
 // NewUserFlowApiConnectorConfiguration instantiates a new userFlowApiConnectorConfiguration and sets the default values.
 func NewUserFlowApiConnectorConfiguration()(*UserFlowApiConnectorConfiguration) {

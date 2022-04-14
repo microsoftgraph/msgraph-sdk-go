@@ -8,23 +8,23 @@ import (
 type DeviceCompliancePolicyDeviceStateSummary struct {
     Entity
     // Number of compliant devices
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // Number of devices that have compliance managed by System Center Configuration Manager
-    configManagerCount *int32;
+    configManagerCount *int32
     // Number of conflict devices
-    conflictDeviceCount *int32;
+    conflictDeviceCount *int32
     // Number of error devices
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // Number of devices that are in grace period
-    inGracePeriodCount *int32;
+    inGracePeriodCount *int32
     // Number of NonCompliant devices
-    nonCompliantDeviceCount *int32;
+    nonCompliantDeviceCount *int32
     // Number of not applicable devices
-    notApplicableDeviceCount *int32;
+    notApplicableDeviceCount *int32
     // Number of remediated devices
-    remediatedDeviceCount *int32;
+    remediatedDeviceCount *int32
     // Number of unknown devices
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
 }
 // NewDeviceCompliancePolicyDeviceStateSummary instantiates a new deviceCompliancePolicyDeviceStateSummary and sets the default values.
 func NewDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummary) {

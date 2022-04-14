@@ -7,11 +7,11 @@ import (
 // ExcludeTarget 
 type ExcludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The object identifier of an Azure Active Directory user or group.
-    id *string;
+    id *string
     // The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
-    targetType *AuthenticationMethodTargetType;
+    targetType *AuthenticationMethodTargetType
 }
 // NewExcludeTarget instantiates a new excludeTarget and sets the default values.
 func NewExcludeTarget()(*ExcludeTarget) {

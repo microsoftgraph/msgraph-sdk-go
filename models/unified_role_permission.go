@@ -7,13 +7,13 @@ import (
 // UnifiedRolePermission 
 type UnifiedRolePermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Set of tasks that can be performed on a resource. Required.
-    allowedResourceActions []string;
+    allowedResourceActions []string
     // Optional constraints that must be met for the permission to be effective.
-    condition *string;
+    condition *string
     // Set of tasks that may not be performed on a resource. Not yet supported.
-    excludedResourceActions []string;
+    excludedResourceActions []string
 }
 // NewUnifiedRolePermission instantiates a new unifiedRolePermission and sets the default values.
 func NewUnifiedRolePermission()(*UnifiedRolePermission) {

@@ -8,21 +8,21 @@ import (
 type EntitlementManagement struct {
     Entity
     // Approval stages for assignment requests.
-    accessPackageAssignmentApprovals []Approvalable;
+    accessPackageAssignmentApprovals []Approvalable
     // Represents access package objects.
-    accessPackages []AccessPackageable;
+    accessPackages []AccessPackageable
     // Access package assignment policies.
-    assignmentPolicies []AccessPackageAssignmentPolicyable;
+    assignmentPolicies []AccessPackageAssignmentPolicyable
     // Represents access package assignment requests created by or on behalf of a user.
-    assignmentRequests []AccessPackageAssignmentRequestable;
+    assignmentRequests []AccessPackageAssignmentRequestable
     // Represents the grant of an access package to a subject (user or group).
-    assignments []AccessPackageAssignmentable;
+    assignments []AccessPackageAssignmentable
     // Represents a collection of access packages.
-    catalogs []AccessPackageCatalogable;
+    catalogs []AccessPackageCatalogable
     // Represents references to a directory or domain of another organization whose users can request access.
-    connectedOrganizations []ConnectedOrganizationable;
+    connectedOrganizations []ConnectedOrganizationable
     // Represents the settings that control the behavior of Azure AD entitlement management.
-    settings EntitlementManagementSettingsable;
+    settings EntitlementManagementSettingsable
 }
 // NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {

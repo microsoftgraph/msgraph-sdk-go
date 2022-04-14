@@ -7,15 +7,15 @@ import (
 // DriveItemUploadableProperties 
 type DriveItemUploadableProperties struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
-    description *string;
+    description *string
     // Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
-    fileSize *int64;
+    fileSize *int64
     // File system information on client. Read-write.
-    fileSystemInfo FileSystemInfoable;
+    fileSystemInfo FileSystemInfoable
     // The name of the item (filename and extension). Read-write.
-    name *string;
+    name *string
 }
 // NewDriveItemUploadableProperties instantiates a new driveItemUploadableProperties and sets the default values.
 func NewDriveItemUploadableProperties()(*DriveItemUploadableProperties) {

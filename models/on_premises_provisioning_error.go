@@ -8,15 +8,15 @@ import (
 // OnPremisesProvisioningError 
 type OnPremisesProvisioningError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
-    category *string;
+    category *string
     // The date and time at which the error occurred.
-    occurredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    occurredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
-    propertyCausingError *string;
+    propertyCausingError *string
     // Value of the property causing the error.
-    value *string;
+    value *string
 }
 // NewOnPremisesProvisioningError instantiates a new onPremisesProvisioningError and sets the default values.
 func NewOnPremisesProvisioningError()(*OnPremisesProvisioningError) {

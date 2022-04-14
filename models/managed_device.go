@@ -9,113 +9,113 @@ import (
 type ManagedDevice struct {
     Entity
     // Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
-    activationLockBypassCode *string;
+    activationLockBypassCode *string
     // Android security patch level. This property is read-only.
-    androidSecurityPatchLevel *string;
+    androidSecurityPatchLevel *string
     // The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
-    azureADDeviceId *string;
+    azureADDeviceId *string
     // Whether the device is Azure Active Directory registered. This property is read-only.
-    azureADRegistered *bool;
+    azureADRegistered *bool
     // The DateTime when device compliance grace period expires. This property is read-only.
-    complianceGracePeriodExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    complianceGracePeriodExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.
-    complianceState *ComplianceState;
+    complianceState *ComplianceState
     // ConfigrMgr client enabled features. This property is read-only.
-    configurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeaturesable;
+    configurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeaturesable
     // List of ComplexType deviceActionResult objects. This property is read-only.
-    deviceActionResults []DeviceActionResultable;
+    deviceActionResults []DeviceActionResultable
     // Device category
-    deviceCategory DeviceCategoryable;
+    deviceCategory DeviceCategoryable
     // Device category display name. This property is read-only.
-    deviceCategoryDisplayName *string;
+    deviceCategoryDisplayName *string
     // Device compliance policy states for this device.
-    deviceCompliancePolicyStates []DeviceCompliancePolicyStateable;
+    deviceCompliancePolicyStates []DeviceCompliancePolicyStateable
     // Device configuration states for this device.
-    deviceConfigurationStates []DeviceConfigurationStateable;
+    deviceConfigurationStates []DeviceConfigurationStateable
     // Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount.
-    deviceEnrollmentType *DeviceEnrollmentType;
+    deviceEnrollmentType *DeviceEnrollmentType
     // The device health attestation state. This property is read-only.
-    deviceHealthAttestationState DeviceHealthAttestationStateable;
+    deviceHealthAttestationState DeviceHealthAttestationStateable
     // Name of the device. This property is read-only.
-    deviceName *string;
+    deviceName *string
     // Device registration state. This property is read-only. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
-    deviceRegistrationState *DeviceRegistrationState;
+    deviceRegistrationState *DeviceRegistrationState
     // Whether the device is Exchange ActiveSync activated. This property is read-only.
-    easActivated *bool;
+    easActivated *bool
     // Exchange ActivationSync activation time of the device. This property is read-only.
-    easActivationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    easActivationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Exchange ActiveSync Id of the device. This property is read-only.
-    easDeviceId *string;
+    easDeviceId *string
     // Email(s) for the user associated with the device. This property is read-only.
-    emailAddress *string;
+    emailAddress *string
     // Enrollment time of the device. This property is read-only.
-    enrolledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    enrolledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Ethernet MAC. This property is read-only.
-    ethernetMacAddress *string;
+    ethernetMacAddress *string
     // The Access State of the device in Exchange. This property is read-only. Possible values are: none, unknown, allowed, blocked, quarantined.
-    exchangeAccessState *DeviceManagementExchangeAccessState;
+    exchangeAccessState *DeviceManagementExchangeAccessState
     // The reason for the device's access state in Exchange. This property is read-only. Possible values are: none, unknown, exchangeGlobalRule, exchangeIndividualRule, exchangeDeviceRule, exchangeUpgrade, exchangeMailboxPolicy, other, compliant, notCompliant, notEnrolled, unknownLocation, mfaRequired, azureADBlockDueToAccessPolicy, compromisedPassword, deviceNotKnownWithManagedApp.
-    exchangeAccessStateReason *DeviceManagementExchangeAccessStateReason;
+    exchangeAccessStateReason *DeviceManagementExchangeAccessStateReason
     // Last time the device contacted Exchange. This property is read-only.
-    exchangeLastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    exchangeLastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Free Storage in Bytes. This property is read-only.
-    freeStorageSpaceInBytes *int64;
+    freeStorageSpaceInBytes *int64
     // Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
-    iccid *string;
+    iccid *string
     // IMEI. This property is read-only.
-    imei *string;
+    imei *string
     // Device encryption status. This property is read-only.
-    isEncrypted *bool;
+    isEncrypted *bool
     // Device supervised status. This property is read-only.
-    isSupervised *bool;
+    isSupervised *bool
     // whether the device is jail broken or rooted. This property is read-only.
-    jailBroken *string;
+    jailBroken *string
     // The date and time that the device last completed a successful sync with Intune. This property is read-only.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Automatically generated name to identify a device. Can be overwritten to a user friendly name.
-    managedDeviceName *string;
+    managedDeviceName *string
     // Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
-    managedDeviceOwnerType *ManagedDeviceOwnerType;
+    managedDeviceOwnerType *ManagedDeviceOwnerType
     // Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-    managementAgent *ManagementAgentType;
+    managementAgent *ManagementAgentType
     // Manufacturer of the device. This property is read-only.
-    manufacturer *string;
+    manufacturer *string
     // MEID. This property is read-only.
-    meid *string;
+    meid *string
     // Model of the device. This property is read-only.
-    model *string;
+    model *string
     // Notes on the device created by IT Admin
-    notes *string;
+    notes *string
     // Operating system of the device. Windows, iOS, etc. This property is read-only.
-    operatingSystem *string;
+    operatingSystem *string
     // Operating system version of the device. This property is read-only.
-    osVersion *string;
+    osVersion *string
     // Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.
-    partnerReportedThreatState *ManagedDevicePartnerReportedHealthState;
+    partnerReportedThreatState *ManagedDevicePartnerReportedHealthState
     // Phone number of the device. This property is read-only.
-    phoneNumber *string;
+    phoneNumber *string
     // Total Memory in Bytes. This property is read-only.
-    physicalMemoryInBytes *int64;
+    physicalMemoryInBytes *int64
     // An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
-    remoteAssistanceSessionErrorDetails *string;
+    remoteAssistanceSessionErrorDetails *string
     // Url that allows a Remote Assistance session to be established with the device. This property is read-only.
-    remoteAssistanceSessionUrl *string;
+    remoteAssistanceSessionUrl *string
     // SerialNumber. This property is read-only.
-    serialNumber *string;
+    serialNumber *string
     // Subscriber Carrier. This property is read-only.
-    subscriberCarrier *string;
+    subscriberCarrier *string
     // Total Storage in Bytes. This property is read-only.
-    totalStorageSpaceInBytes *int64;
+    totalStorageSpaceInBytes *int64
     // Unique Device Identifier for iOS and macOS devices. This property is read-only.
-    udid *string;
+    udid *string
     // User display name. This property is read-only.
-    userDisplayName *string;
+    userDisplayName *string
     // Unique Identifier for the user associated with the device. This property is read-only.
-    userId *string;
+    userId *string
     // Device user principal name. This property is read-only.
-    userPrincipalName *string;
+    userPrincipalName *string
     // Wi-Fi MAC. This property is read-only.
-    wiFiMacAddress *string;
+    wiFiMacAddress *string
 }
 // NewManagedDevice instantiates a new managedDevice and sets the default values.
 func NewManagedDevice()(*ManagedDevice) {

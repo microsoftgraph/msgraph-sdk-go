@@ -7,9 +7,9 @@ import (
 // RubricCriterion 
 type RubricCriterion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The description of this criterion.
-    description EducationItemBodyable;
+    description EducationItemBodyable
 }
 // NewRubricCriterion instantiates a new rubricCriterion and sets the default values.
 func NewRubricCriterion()(*RubricCriterion) {

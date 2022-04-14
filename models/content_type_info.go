@@ -7,11 +7,11 @@ import (
 // ContentTypeInfo 
 type ContentTypeInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The id of the content type.
-    id *string;
+    id *string
     // The name of the content type.
-    name *string;
+    name *string
 }
 // NewContentTypeInfo instantiates a new contentTypeInfo and sets the default values.
 func NewContentTypeInfo()(*ContentTypeInfo) {

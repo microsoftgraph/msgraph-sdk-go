@@ -8,7 +8,7 @@ import (
 type Todo struct {
     Entity
     // The task lists in the users mailbox.
-    lists []TodoTaskListable;
+    lists []TodoTaskListable
 }
 // NewTodo instantiates a new todo and sets the default values.
 func NewTodo()(*Todo) {

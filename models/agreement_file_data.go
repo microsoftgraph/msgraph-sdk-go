@@ -7,9 +7,9 @@ import (
 // AgreementFileData 
 type AgreementFileData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Data that represents the terms of use PDF document. Read-only.
-    data []byte;
+    data []byte
 }
 // NewAgreementFileData instantiates a new agreementFileData and sets the default values.
 func NewAgreementFileData()(*AgreementFileData) {

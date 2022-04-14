@@ -7,9 +7,9 @@ import (
 // AvailableProviderTypesResponse provides operations to call the availableProviderTypes method.
 type AvailableProviderTypesResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []string;
+    value []string
 }
 // NewAvailableProviderTypesResponse instantiates a new availableProviderTypesResponse and sets the default values.
 func NewAvailableProviderTypesResponse()(*AvailableProviderTypesResponse) {

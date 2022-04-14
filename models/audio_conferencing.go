@@ -7,19 +7,19 @@ import (
 // AudioConferencing 
 type AudioConferencing struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The conference id of the online meeting.
-    conferenceId *string;
+    conferenceId *string
     // A URL to the externally-accessible web page that contains dial-in information.
-    dialinUrl *string;
+    dialinUrl *string
     // The tollFreeNumber property
-    tollFreeNumber *string;
+    tollFreeNumber *string
     // List of toll-free numbers that are displayed in the meeting invite.
-    tollFreeNumbers []string;
+    tollFreeNumbers []string
     // The tollNumber property
-    tollNumber *string;
+    tollNumber *string
     // List of toll numbers that are displayed in the meeting invite.
-    tollNumbers []string;
+    tollNumbers []string
 }
 // NewAudioConferencing instantiates a new audioConferencing and sets the default values.
 func NewAudioConferencing()(*AudioConferencing) {

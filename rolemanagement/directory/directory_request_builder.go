@@ -25,55 +25,55 @@ import (
 // DirectoryRequestBuilder provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
 type DirectoryRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DirectoryRequestBuilderDeleteOptions options for Delete
 type DirectoryRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DirectoryRequestBuilderGetOptions options for Get
 type DirectoryRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DirectoryRequestBuilderGetQueryParameters;
+    QueryParameters *DirectoryRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DirectoryRequestBuilderGetQueryParameters read-only. Nullable.
 type DirectoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DirectoryRequestBuilderPatchOptions options for Patch
 type DirectoryRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RbacApplicationable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RbacApplicationable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
     m := &DirectoryRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/directory{?select,expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/directory{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -202,7 +202,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentsById(id string)(*i26564a3dcf6f5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignment_id"] = id
+        urlTplParams["unifiedRoleAssignment%2Did"] = id
     }
     return i26564a3dcf6f5b8f339c5029b420a35ad925e9ec8a807e073a522418b894b461.NewUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -217,7 +217,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstancesById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignmentScheduleInstance_id"] = id
+        urlTplParams["unifiedRoleAssignmentScheduleInstance%2Did"] = id
     }
     return if28346ffd76078448f76b8e3a6438c69f288f33de995f80b4470bf3dd729afa7.NewUnifiedRoleAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -232,7 +232,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequestsById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignmentScheduleRequest_id"] = id
+        urlTplParams["unifiedRoleAssignmentScheduleRequest%2Did"] = id
     }
     return i97ec61667ae4af0dc73f94ca00501e020bfd2cab6faca9653c9cdf54198c1c7b.NewUnifiedRoleAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -247,7 +247,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentSchedulesById(id string)(*ifcfea
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignmentSchedule_id"] = id
+        urlTplParams["unifiedRoleAssignmentSchedule%2Did"] = id
     }
     return ifcfeaaa38c74c27248ac242dc390a943df9fda837089f362cf5a0b616515e16e.NewUnifiedRoleAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -262,7 +262,7 @@ func (m *DirectoryRequestBuilder) RoleDefinitionsById(id string)(*i93f0046b6ea93
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleDefinition_id"] = id
+        urlTplParams["unifiedRoleDefinition%2Did"] = id
     }
     return i93f0046b6ea93bb22d2872d826c5bb0b32c7bd776d82404d212ed81ae3bfa20c.NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -277,7 +277,7 @@ func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstancesById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleEligibilityScheduleInstance_id"] = id
+        urlTplParams["unifiedRoleEligibilityScheduleInstance%2Did"] = id
     }
     return i38a0099911c322678afe0e91db6bf13f1336c0bd7474a79696eab0396dd25d72.NewUnifiedRoleEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -292,7 +292,7 @@ func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequestsById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleEligibilityScheduleRequest_id"] = id
+        urlTplParams["unifiedRoleEligibilityScheduleRequest%2Did"] = id
     }
     return ied8d8d84ec67ed4fa1c183cd3b843abe9fbf78b547b4078399ffd2ded02c5b9f.NewUnifiedRoleEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -307,7 +307,7 @@ func (m *DirectoryRequestBuilder) RoleEligibilitySchedulesById(id string)(*i329c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleEligibilitySchedule_id"] = id
+        urlTplParams["unifiedRoleEligibilitySchedule%2Did"] = id
     }
     return i329ceabcf38e19751c19b2a6282c453f471d4acda1f60ae66f8e961ea5ffe9e7.NewUnifiedRoleEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

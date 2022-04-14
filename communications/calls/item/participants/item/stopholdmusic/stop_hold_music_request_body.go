@@ -7,9 +7,9 @@ import (
 // StopHoldMusicRequestBody provides operations to call the stopHoldMusic method.
 type StopHoldMusicRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The clientContext property
-    clientContext *string;
+    clientContext *string
 }
 // NewStopHoldMusicRequestBody instantiates a new stopHoldMusicRequestBody and sets the default values.
 func NewStopHoldMusicRequestBody()(*StopHoldMusicRequestBody) {

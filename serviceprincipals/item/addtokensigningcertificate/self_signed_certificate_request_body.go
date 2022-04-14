@@ -8,11 +8,11 @@ import (
 // SelfSignedCertificateRequestBody provides operations to call the addTokenSigningCertificate method.
 type SelfSignedCertificateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The displayName property
-    displayName *string;
+    displayName *string
     // The endDateTime property
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewSelfSignedCertificateRequestBody instantiates a new SelfSignedCertificateRequestBody and sets the default values.
 func NewSelfSignedCertificateRequestBody()(*SelfSignedCertificateRequestBody) {

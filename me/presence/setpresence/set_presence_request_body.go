@@ -7,15 +7,15 @@ import (
 // SetPresenceRequestBody provides operations to call the setPresence method.
 type SetPresenceRequestBody struct {
     // The activity property
-    activity *string;
+    activity *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The availability property
-    availability *string;
+    availability *string
     // The expirationDuration property
-    expirationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    expirationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The sessionId property
-    sessionId *string;
+    sessionId *string
 }
 // NewSetPresenceRequestBody instantiates a new setPresenceRequestBody and sets the default values.
 func NewSetPresenceRequestBody()(*SetPresenceRequestBody) {

@@ -7,9 +7,9 @@ import (
 // GetEmailAppUsageUserCountsWithPeriodResponse provides operations to call the getEmailAppUsageUserCounts method.
 type GetEmailAppUsageUserCountsWithPeriodResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetEmailAppUsageUserCountsWithPeriodResponse instantiates a new getEmailAppUsageUserCountsWithPeriodResponse and sets the default values.
 func NewGetEmailAppUsageUserCountsWithPeriodResponse()(*GetEmailAppUsageUserCountsWithPeriodResponse) {

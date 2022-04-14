@@ -7,9 +7,9 @@ import (
 // SetPriorityRequestBody provides operations to call the setPriority method.
 type SetPriorityRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The priority property
-    priority *int32;
+    priority *int32
 }
 // NewSetPriorityRequestBody instantiates a new setPriorityRequestBody and sets the default values.
 func NewSetPriorityRequestBody()(*SetPriorityRequestBody) {

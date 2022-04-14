@@ -7,11 +7,11 @@ import (
 // ActivityBasedTimeoutPolicyCollectionResponse 
 type ActivityBasedTimeoutPolicyCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []ActivityBasedTimeoutPolicyable;
+    value []ActivityBasedTimeoutPolicyable
 }
 // NewActivityBasedTimeoutPolicyCollectionResponse instantiates a new ActivityBasedTimeoutPolicyCollectionResponse and sets the default values.
 func NewActivityBasedTimeoutPolicyCollectionResponse()(*ActivityBasedTimeoutPolicyCollectionResponse) {
@@ -41,7 +41,7 @@ func (m *ActivityBasedTimeoutPolicyCollectionResponse) GetFieldDeserializers()(m
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.SetOdatanextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *ActivityBasedTimeoutPolicyCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *ActivityBasedTimeoutPolicyCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *ActivityBasedTimeoutPolicyCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *ActivityBasedTimeoutPolicyCollectionResponse) GetValue()([]ActivityBase
 // Serialize serializes information the current object
 func (m *ActivityBasedTimeoutPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *ActivityBasedTimeoutPolicyCollectionResponse) SetAdditionalData(value m
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *ActivityBasedTimeoutPolicyCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *ActivityBasedTimeoutPolicyCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

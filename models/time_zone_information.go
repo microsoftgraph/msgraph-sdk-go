@@ -7,11 +7,11 @@ import (
 // TimeZoneInformation 
 type TimeZoneInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // An identifier for the time zone.
-    alias *string;
+    alias *string
     // A display string that represents the time zone.
-    displayName *string;
+    displayName *string
 }
 // NewTimeZoneInformation instantiates a new timeZoneInformation and sets the default values.
 func NewTimeZoneInformation()(*TimeZoneInformation) {

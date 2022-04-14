@@ -8,17 +8,17 @@ import (
 type Participant struct {
     Entity
     // The info property
-    info ParticipantInfoable;
+    info ParticipantInfoable
     // true if the participant is in lobby.
-    isInLobby *bool;
+    isInLobby *bool
     // true if the participant is muted (client or server muted).
-    isMuted *bool;
+    isMuted *bool
     // The list of media streams.
-    mediaStreams []MediaStreamable;
+    mediaStreams []MediaStreamable
     // A blob of data provided by the participant in the roster.
-    metadata *string;
+    metadata *string
     // Information about whether the participant has recording capability.
-    recordingInfo RecordingInfoable;
+    recordingInfo RecordingInfoable
 }
 // NewParticipant instantiates a new participant and sets the default values.
 func NewParticipant()(*Participant) {

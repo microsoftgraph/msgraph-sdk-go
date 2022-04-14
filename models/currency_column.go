@@ -7,9 +7,9 @@ import (
 // CurrencyColumn 
 type CurrencyColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies the locale from which to infer the currency symbol.
-    locale *string;
+    locale *string
 }
 // NewCurrencyColumn instantiates a new currencyColumn and sets the default values.
 func NewCurrencyColumn()(*CurrencyColumn) {

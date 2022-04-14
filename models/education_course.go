@@ -7,17 +7,17 @@ import (
 // EducationCourse 
 type EducationCourse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Unique identifier for the course.
-    courseNumber *string;
+    courseNumber *string
     // Description of the course.
-    description *string;
+    description *string
     // Name of the course.
-    displayName *string;
+    displayName *string
     // ID of the course from the syncing system.
-    externalId *string;
+    externalId *string
     // Subject of the course.
-    subject *string;
+    subject *string
 }
 // NewEducationCourse instantiates a new educationCourse and sets the default values.
 func NewEducationCourse()(*EducationCourse) {

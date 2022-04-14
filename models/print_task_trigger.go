@@ -8,9 +8,9 @@ import (
 type PrintTaskTrigger struct {
     Entity
     // The definition property
-    definition PrintTaskDefinitionable;
+    definition PrintTaskDefinitionable
     // The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
-    event *PrintEvent;
+    event *PrintEvent
 }
 // NewPrintTaskTrigger instantiates a new printTaskTrigger and sets the default values.
 func NewPrintTaskTrigger()(*PrintTaskTrigger) {

@@ -9,21 +9,21 @@ import (
 type ConditionalAccessPolicy struct {
     Entity
     // The conditions property
-    conditions ConditionalAccessConditionSetable;
+    conditions ConditionalAccessConditionSetable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Not used.
-    description *string;
+    description *string
     // Specifies a display name for the conditionalAccessPolicy object.
-    displayName *string;
+    displayName *string
     // Specifies the grant controls that must be fulfilled to pass the policy.
-    grantControls ConditionalAccessGrantControlsable;
+    grantControls ConditionalAccessGrantControlsable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Specifies the session controls that are enforced after sign-in.
-    sessionControls ConditionalAccessSessionControlsable;
+    sessionControls ConditionalAccessSessionControlsable
     // Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
-    state *ConditionalAccessPolicyState;
+    state *ConditionalAccessPolicyState
 }
 // NewConditionalAccessPolicy instantiates a new conditionalAccessPolicy and sets the default values.
 func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {

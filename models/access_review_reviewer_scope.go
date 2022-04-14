@@ -7,13 +7,13 @@ import (
 // AccessReviewReviewerScope 
 type AccessReviewReviewerScope struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The query specifying who will be the reviewer. See table for examples.
-    query *string;
+    query *string
     // In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
-    queryRoot *string;
+    queryRoot *string
     // The type of query. Examples include MicrosoftGraph and ARM.
-    queryType *string;
+    queryType *string
 }
 // NewAccessReviewReviewerScope instantiates a new accessReviewReviewerScope and sets the default values.
 func NewAccessReviewReviewerScope()(*AccessReviewReviewerScope) {

@@ -7,11 +7,11 @@ import (
 // CertificationControl 
 type CertificationControl struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Certification control name
-    name *string;
+    name *string
     // URL for the Microsoft Service Trust Portal
-    url *string;
+    url *string
 }
 // NewCertificationControl instantiates a new certificationControl and sets the default values.
 func NewCertificationControl()(*CertificationControl) {

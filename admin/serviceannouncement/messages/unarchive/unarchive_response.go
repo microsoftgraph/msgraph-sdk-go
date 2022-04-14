@@ -7,9 +7,9 @@ import (
 // UnarchiveResponse provides operations to call the unarchive method.
 type UnarchiveResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value *bool;
+    value *bool
 }
 // NewUnarchiveResponse instantiates a new unarchiveResponse and sets the default values.
 func NewUnarchiveResponse()(*UnarchiveResponse) {

@@ -7,13 +7,13 @@ import (
 // DeviceManagementSettings 
 type DeviceManagementSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of days a device is allowed to go without checking in to remain compliant.
-    deviceComplianceCheckinThresholdDays *int32;
+    deviceComplianceCheckinThresholdDays *int32
     // Is feature enabled or not for scheduled action for rule.
-    isScheduledActionEnabled *bool;
+    isScheduledActionEnabled *bool
     // Device should be noncompliant when there is no compliance policy targeted when this is true
-    secureByDefault *bool;
+    secureByDefault *bool
 }
 // NewDeviceManagementSettings instantiates a new deviceManagementSettings and sets the default values.
 func NewDeviceManagementSettings()(*DeviceManagementSettings) {

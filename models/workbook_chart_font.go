@@ -8,17 +8,17 @@ import (
 type WorkbookChartFont struct {
     Entity
     // Represents the bold status of font.
-    bold *bool;
+    bold *bool
     // HTML color code representation of the text color. E.g. #FF0000 represents Red.
-    color *string;
+    color *string
     // Represents the italic status of the font.
-    italic *bool;
+    italic *bool
     // Font name (e.g. 'Calibri')
-    name *string;
+    name *string
     // Size of the font (e.g. 11)
-    size *float64;
+    size *float64
     // Type of underline applied to the font. The possible values are: None, Single.
-    underline *string;
+    underline *string
 }
 // NewWorkbookChartFont instantiates a new workbookChartFont and sets the default values.
 func NewWorkbookChartFont()(*WorkbookChartFont) {

@@ -7,13 +7,13 @@ import (
 // ErrorDetails 
 type ErrorDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The code property
-    code *string;
+    code *string
     // The message property
-    message *string;
+    message *string
     // The target property
-    target *string;
+    target *string
 }
 // NewErrorDetails instantiates a new ErrorDetails and sets the default values.
 func NewErrorDetails()(*ErrorDetails) {

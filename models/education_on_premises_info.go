@@ -7,9 +7,9 @@ import (
 // EducationOnPremisesInfo 
 type EducationOnPremisesInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Unique identifier for the user object in Active Directory.
-    immutableId *string;
+    immutableId *string
 }
 // NewEducationOnPremisesInfo instantiates a new educationOnPremisesInfo and sets the default values.
 func NewEducationOnPremisesInfo()(*EducationOnPremisesInfo) {

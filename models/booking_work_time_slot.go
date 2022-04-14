@@ -7,11 +7,11 @@ import (
 // BookingWorkTimeSlot 
 type BookingWorkTimeSlot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The time of the day when work stops. For example, 17:00:00.0000000.
-    endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The time of the day when work starts. For example, 08:00:00.0000000.
-    startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
 }
 // NewBookingWorkTimeSlot instantiates a new bookingWorkTimeSlot and sets the default values.
 func NewBookingWorkTimeSlot()(*BookingWorkTimeSlot) {

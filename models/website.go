@@ -7,13 +7,13 @@ import (
 // Website 
 type Website struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The URL of the website.
-    address *string;
+    address *string
     // The display name of the web site.
-    displayName *string;
+    displayName *string
     // The possible values are: other, home, work, blog, profile.
-    type_escaped *WebsiteType;
+    type_escaped *WebsiteType
 }
 // NewWebsite instantiates a new website and sets the default values.
 func NewWebsite()(*Website) {

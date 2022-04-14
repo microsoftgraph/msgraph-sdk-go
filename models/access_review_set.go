@@ -8,9 +8,9 @@ import (
 type AccessReviewSet struct {
     Entity
     // Represents the template and scheduling for an access review.
-    definitions []AccessReviewScheduleDefinitionable;
+    definitions []AccessReviewScheduleDefinitionable
     // Represents a collection of access review history data and the scopes used to collect that data.
-    historyDefinitions []AccessReviewHistoryDefinitionable;
+    historyDefinitions []AccessReviewHistoryDefinitionable
 }
 // NewAccessReviewSet instantiates a new accessReviewSet and sets the default values.
 func NewAccessReviewSet()(*AccessReviewSet) {

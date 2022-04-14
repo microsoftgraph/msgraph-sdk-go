@@ -7,11 +7,11 @@ import (
 // WorkbookIcon 
 type WorkbookIcon struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents the index of the icon in the given set.
-    index *int32;
+    index *int32
     // Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
-    set *string;
+    set *string
 }
 // NewWorkbookIcon instantiates a new workbookIcon and sets the default values.
 func NewWorkbookIcon()(*WorkbookIcon) {

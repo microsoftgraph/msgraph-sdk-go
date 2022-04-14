@@ -8,9 +8,9 @@ import (
 // SetOrderRequestBody provides operations to call the setOrder method.
 type SetOrderRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The newAssignmentOrder property
-    newAssignmentOrder iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignmentOrderable;
+    newAssignmentOrder iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignmentOrderable
 }
 // NewSetOrderRequestBody instantiates a new setOrderRequestBody and sets the default values.
 func NewSetOrderRequestBody()(*SetOrderRequestBody) {

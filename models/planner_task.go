@@ -9,53 +9,53 @@ import (
 type PlannerTask struct {
     Entity
     // Number of checklist items with value set to false, representing incomplete items.
-    activeChecklistItemCount *int32;
+    activeChecklistItemCount *int32
     // The categories to which the task has been applied. See applied Categories for possible values.
-    appliedCategories PlannerAppliedCategoriesable;
+    appliedCategories PlannerAppliedCategoriesable
     // Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-    assignedToTaskBoardFormat PlannerAssignedToTaskBoardTaskFormatable;
+    assignedToTaskBoardFormat PlannerAssignedToTaskBoardTaskFormatable
     // Hint used to order items of this type in a list view. The format is defined as outlined here.
-    assigneePriority *string;
+    assigneePriority *string
     // The set of assignees the task is assigned to.
-    assignments PlannerAssignmentsable;
+    assignments PlannerAssignmentsable
     // Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
-    bucketId *string;
+    bucketId *string
     // Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-    bucketTaskBoardFormat PlannerBucketTaskBoardTaskFormatable;
+    bucketTaskBoardFormat PlannerBucketTaskBoardTaskFormatable
     // Number of checklist items that are present on the task.
-    checklistItemCount *int32;
+    checklistItemCount *int32
     // Identity of the user that completed the task.
-    completedBy IdentitySetable;
+    completedBy IdentitySetable
     // Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
-    conversationThreadId *string;
+    conversationThreadId *string
     // Identity of the user that created the task.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Nullable. Additional details about the task.
-    details PlannerTaskDetailsable;
+    details PlannerTaskDetailsable
     // Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
-    hasDescription *bool;
+    hasDescription *bool
     // Hint used to order items of this type in a list view. The format is defined as outlined here.
-    orderHint *string;
+    orderHint *string
     // Percentage of task completion. When set to 100, the task is considered completed.
-    percentComplete *int32;
+    percentComplete *int32
     // Plan ID to which the task belongs.
-    planId *string;
+    planId *string
     // This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
-    previewType *PlannerPreviewType;
+    previewType *PlannerPreviewType
     // Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-    progressTaskBoardFormat PlannerProgressTaskBoardTaskFormatable;
+    progressTaskBoardFormat PlannerProgressTaskBoardTaskFormatable
     // Number of external references that exist on the task.
-    referenceCount *int32;
+    referenceCount *int32
     // Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Title of the task.
-    title *string;
+    title *string
 }
 // NewPlannerTask instantiates a new plannerTask and sets the default values.
 func NewPlannerTask()(*PlannerTask) {

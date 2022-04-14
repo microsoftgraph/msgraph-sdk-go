@@ -8,7 +8,7 @@ import (
 type AttendeeBase struct {
     Recipient
     // The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
-    type_escaped *AttendeeType;
+    type_escaped *AttendeeType
 }
 // NewAttendeeBase instantiates a new attendeeBase and sets the default values.
 func NewAttendeeBase()(*AttendeeBase) {

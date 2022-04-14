@@ -8,7 +8,7 @@ import (
 type SingleValueLegacyExtendedProperty struct {
     Entity
     // A property value.
-    value *string;
+    value *string
 }
 // NewSingleValueLegacyExtendedProperty instantiates a new singleValueLegacyExtendedProperty and sets the default values.
 func NewSingleValueLegacyExtendedProperty()(*SingleValueLegacyExtendedProperty) {

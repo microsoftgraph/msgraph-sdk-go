@@ -7,9 +7,9 @@ import (
 // AddCopyRequestBody provides operations to call the addCopy method.
 type AddCopyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The contentType property
-    contentType *string;
+    contentType *string
 }
 // NewAddCopyRequestBody instantiates a new addCopyRequestBody and sets the default values.
 func NewAddCopyRequestBody()(*AddCopyRequestBody) {

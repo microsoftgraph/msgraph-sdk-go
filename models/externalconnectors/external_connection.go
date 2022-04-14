@@ -9,21 +9,21 @@ import (
 type ExternalConnection struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
-    configuration Configurationable;
+    configuration Configurationable
     // Description of the connection displayed in the Microsoft 365 admin center. Optional.
-    description *string;
+    description *string
     // Read-only. Nullable.
-    groups []ExternalGroupable;
+    groups []ExternalGroupable
     // Read-only. Nullable.
-    items []ExternalItemable;
+    items []ExternalItemable
     // The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
-    name *string;
+    name *string
     // Read-only. Nullable.
-    operations []ConnectionOperationable;
+    operations []ConnectionOperationable
     // Read-only. Nullable.
-    schema Schemaable;
+    schema Schemaable
     // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
-    state *ConnectionState;
+    state *ConnectionState
 }
 // NewExternalConnection instantiates a new externalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {

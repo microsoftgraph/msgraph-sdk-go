@@ -8,9 +8,9 @@ import (
 type InferenceClassificationOverride struct {
     Entity
     // Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
-    classifyAs *InferenceClassificationType;
+    classifyAs *InferenceClassificationType
     // The email address information of the sender for whom the override is created.
-    senderEmailAddress EmailAddressable;
+    senderEmailAddress EmailAddressable
 }
 // NewInferenceClassificationOverride instantiates a new inferenceClassificationOverride and sets the default values.
 func NewInferenceClassificationOverride()(*InferenceClassificationOverride) {

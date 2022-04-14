@@ -7,17 +7,17 @@ import (
 // RecurrenceRange 
 type RecurrenceRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.
-    endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of times to repeat the event. Required and must be positive if type is numbered.
-    numberOfOccurrences *int32;
+    numberOfOccurrences *int32
     // Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
-    recurrenceTimeZone *string;
+    recurrenceTimeZone *string
     // The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
-    startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-    type_escaped *RecurrenceRangeType;
+    type_escaped *RecurrenceRangeType
 }
 // NewRecurrenceRange instantiates a new recurrenceRange and sets the default values.
 func NewRecurrenceRange()(*RecurrenceRange) {

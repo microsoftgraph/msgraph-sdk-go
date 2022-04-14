@@ -8,15 +8,15 @@ import (
 // WindowsInformationProtectionDataRecoveryCertificate windows Information Protection DataRecoveryCertificate
 type WindowsInformationProtectionDataRecoveryCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Data recovery Certificate
-    certificate []byte;
+    certificate []byte
     // Data recovery Certificate description
-    description *string;
+    description *string
     // Data recovery Certificate expiration datetime
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Data recovery Certificate subject name
-    subjectName *string;
+    subjectName *string
 }
 // NewWindowsInformationProtectionDataRecoveryCertificate instantiates a new windowsInformationProtectionDataRecoveryCertificate and sets the default values.
 func NewWindowsInformationProtectionDataRecoveryCertificate()(*WindowsInformationProtectionDataRecoveryCertificate) {

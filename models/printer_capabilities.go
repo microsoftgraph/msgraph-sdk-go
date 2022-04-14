@@ -7,57 +7,57 @@ import (
 // PrinterCapabilities 
 type PrinterCapabilities struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A list of supported bottom margins(in microns) for the printer.
-    bottomMargins []int32;
+    bottomMargins []int32
     // True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
-    collation *bool;
+    collation *bool
     // The color modes supported by the printer. Valid values are described in the following table.
-    colorModes []PrintColorMode;
+    colorModes []PrintColorMode
     // A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
-    contentTypes []string;
+    contentTypes []string
     // The range of copies per job supported by the printer.
-    copiesPerJob IntegerRangeable;
+    copiesPerJob IntegerRangeable
     // The list of print resolutions in DPI that are supported by the printer.
-    dpis []int32;
+    dpis []int32
     // The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-    duplexModes []PrintDuplexMode;
+    duplexModes []PrintDuplexMode
     // The list of feed orientations that are supported by the printer.
-    feedOrientations []PrinterFeedOrientation;
+    feedOrientations []PrinterFeedOrientation
     // Finishing processes the printer supports for a printed document.
-    finishings []PrintFinishing;
+    finishings []PrintFinishing
     // Supported input bins for the printer.
-    inputBins []string;
+    inputBins []string
     // True if color printing is supported by the printer; false otherwise. Read-only.
-    isColorPrintingSupported *bool;
+    isColorPrintingSupported *bool
     // True if the printer supports printing by page ranges; false otherwise.
-    isPageRangeSupported *bool;
+    isPageRangeSupported *bool
     // A list of supported left margins(in microns) for the printer.
-    leftMargins []int32;
+    leftMargins []int32
     // The media (i.e., paper) colors supported by the printer.
-    mediaColors []string;
+    mediaColors []string
     // The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
-    mediaSizes []string;
+    mediaSizes []string
     // The media types supported by the printer.
-    mediaTypes []string;
+    mediaTypes []string
     // The presentation directions supported by the printer. Supported values are described in the following table.
-    multipageLayouts []PrintMultipageLayout;
+    multipageLayouts []PrintMultipageLayout
     // The print orientations supported by the printer. Valid values are described in the following table.
-    orientations []PrintOrientation;
+    orientations []PrintOrientation
     // The printer's supported output bins (trays).
-    outputBins []string;
+    outputBins []string
     // Supported number of Input Pages to impose upon a single Impression.
-    pagesPerSheet []int32;
+    pagesPerSheet []int32
     // The print qualities supported by the printer.
-    qualities []PrintQuality;
+    qualities []PrintQuality
     // A list of supported right margins(in microns) for the printer.
-    rightMargins []int32;
+    rightMargins []int32
     // Supported print scalings.
-    scalings []PrintScaling;
+    scalings []PrintScaling
     // True if the printer supports scaling PDF pages to match the print media size; false otherwise.
-    supportsFitPdfToPage *bool;
+    supportsFitPdfToPage *bool
     // A list of supported top margins(in microns) for the printer.
-    topMargins []int32;
+    topMargins []int32
 }
 // NewPrinterCapabilities instantiates a new printerCapabilities and sets the default values.
 func NewPrinterCapabilities()(*PrinterCapabilities) {

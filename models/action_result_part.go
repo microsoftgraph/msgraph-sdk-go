@@ -7,9 +7,9 @@ import (
 // ActionResultPart 
 type ActionResultPart struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The error that occurred, if any, during the course of the bulk operation.
-    error PublicErrorable;
+    error PublicErrorable
 }
 // NewActionResultPart instantiates a new actionResultPart and sets the default values.
 func NewActionResultPart()(*ActionResultPart) {

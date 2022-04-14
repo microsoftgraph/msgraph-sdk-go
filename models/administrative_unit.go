@@ -8,17 +8,17 @@ import (
 type AdministrativeUnit struct {
     DirectoryObject
     // An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
-    description *string;
+    description *string
     // Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-    displayName *string;
+    displayName *string
     // The collection of open extensions defined for this administrative unit. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // Users and groups that are members of this administrative unit. Supports $expand.
-    members []DirectoryObjectable;
+    members []DirectoryObjectable
     // Scoped-role members of this administrative unit.
-    scopedRoleMembers []ScopedRoleMembershipable;
+    scopedRoleMembers []ScopedRoleMembershipable
     // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
-    visibility *string;
+    visibility *string
 }
 // NewAdministrativeUnit instantiates a new administrativeUnit and sets the default values.
 func NewAdministrativeUnit()(*AdministrativeUnit) {

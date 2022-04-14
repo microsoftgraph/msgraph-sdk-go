@@ -8,23 +8,23 @@ import (
 // InviteRequestBody provides operations to call the invite method.
 type InviteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The expirationDateTime property
-    expirationDateTime *string;
+    expirationDateTime *string
     // The message property
-    message *string;
+    message *string
     // The password property
-    password *string;
+    password *string
     // The recipients property
-    recipients []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable;
+    recipients []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
     // The requireSignIn property
-    requireSignIn *bool;
+    requireSignIn *bool
     // The retainInheritedPermissions property
-    retainInheritedPermissions *bool;
+    retainInheritedPermissions *bool
     // The roles property
-    roles []string;
+    roles []string
     // The sendInvitation property
-    sendInvitation *bool;
+    sendInvitation *bool
 }
 // NewInviteRequestBody instantiates a new inviteRequestBody and sets the default values.
 func NewInviteRequestBody()(*InviteRequestBody) {

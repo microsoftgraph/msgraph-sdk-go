@@ -7,15 +7,15 @@ import (
 // PrintMargin 
 type PrintMargin struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The margin in microns from the bottom edge.
-    bottom *int32;
+    bottom *int32
     // The margin in microns from the left edge.
-    left *int32;
+    left *int32
     // The margin in microns from the right edge.
-    right *int32;
+    right *int32
     // The margin in microns from the top edge.
-    top *int32;
+    top *int32
 }
 // NewPrintMargin instantiates a new printMargin and sets the default values.
 func NewPrintMargin()(*PrintMargin) {

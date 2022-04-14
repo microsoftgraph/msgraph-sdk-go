@@ -7,11 +7,11 @@ import (
 // IntegerRange 
 type IntegerRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The inclusive upper bound of the integer range.
-    end *int64;
+    end *int64
     // The inclusive lower bound of the integer range.
-    start *int64;
+    start *int64
 }
 // NewIntegerRange instantiates a new integerRange and sets the default values.
 func NewIntegerRange()(*IntegerRange) {

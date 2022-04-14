@@ -7,11 +7,11 @@ import (
 // CheckinRequestBody provides operations to call the checkin method.
 type CheckinRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The checkInAs property
-    checkInAs *string;
+    checkInAs *string
     // The comment property
-    comment *string;
+    comment *string
 }
 // NewCheckinRequestBody instantiates a new checkinRequestBody and sets the default values.
 func NewCheckinRequestBody()(*CheckinRequestBody) {

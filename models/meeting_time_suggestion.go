@@ -7,21 +7,21 @@ import (
 // MeetingTimeSuggestion 
 type MeetingTimeSuggestion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // An array that shows the availability status of each attendee for this meeting suggestion.
-    attendeeAvailability []AttendeeAvailabilityable;
+    attendeeAvailability []AttendeeAvailabilityable
     // A percentage that represents the likelhood of all the attendees attending.
-    confidence *float64;
+    confidence *float64
     // An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
-    locations []Locationable;
+    locations []Locationable
     // A time period suggested for the meeting.
-    meetingTimeSlot TimeSlotable;
+    meetingTimeSlot TimeSlotable
     // Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
-    order *int32;
+    order *int32
     // Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-    organizerAvailability *FreeBusyStatus;
+    organizerAvailability *FreeBusyStatus
     // Reason for suggesting the meeting time.
-    suggestionReason *string;
+    suggestionReason *string
 }
 // NewMeetingTimeSuggestion instantiates a new meetingTimeSuggestion and sets the default values.
 func NewMeetingTimeSuggestion()(*MeetingTimeSuggestion) {

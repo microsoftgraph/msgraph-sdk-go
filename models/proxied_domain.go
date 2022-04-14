@@ -7,11 +7,11 @@ import (
 // ProxiedDomain proxied Domain
 type ProxiedDomain struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The IP address or FQDN
-    ipAddressOrFQDN *string;
+    ipAddressOrFQDN *string
     // Proxy IP or FQDN
-    proxy *string;
+    proxy *string
 }
 // NewProxiedDomain instantiates a new proxiedDomain and sets the default values.
 func NewProxiedDomain()(*ProxiedDomain) {

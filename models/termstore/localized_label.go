@@ -7,13 +7,13 @@ import (
 // LocalizedLabel 
 type LocalizedLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether the label is the default label.
-    isDefault *bool;
+    isDefault *bool
     // The language tag for the label.
-    languageTag *string;
+    languageTag *string
     // The name of the label.
-    name *string;
+    name *string
 }
 // NewLocalizedLabel instantiates a new localizedLabel and sets the default values.
 func NewLocalizedLabel()(*LocalizedLabel) {

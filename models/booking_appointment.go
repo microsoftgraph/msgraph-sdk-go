@@ -8,51 +8,51 @@ import (
 type BookingAppointment struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
-    additionalInformation *string;
+    additionalInformation *string
     // It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
-    customers []BookingCustomerInformationBaseable;
+    customers []BookingCustomerInformationBaseable
     // The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-    customerTimeZone *string;
+    customerTimeZone *string
     // The length of the appointment, denoted in ISO8601 format.
-    duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The endDateTime property
-    endDateTime DateTimeTimeZoneable;
+    endDateTime DateTimeTimeZoneable
     // The current number of customers in the appointment
-    filledAttendeesCount *int32;
+    filledAttendeesCount *int32
     // If true, indicates that the appointment will be held online. Default value is false.
-    isLocationOnline *bool;
+    isLocationOnline *bool
     // The URL of the online meeting for the appointment.
-    joinWebUrl *string;
+    joinWebUrl *string
     // The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
-    maximumAttendeesCount *int32;
+    maximumAttendeesCount *int32
     // If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
-    optOutOfCustomerEmail *bool;
+    optOutOfCustomerEmail *bool
     // The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-    postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-    preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The regular price for an appointment for the specified bookingService.
-    price *float64;
+    price *float64
     // A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
-    priceType *BookingPriceType;
+    priceType *BookingPriceType
     // The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
-    reminders []BookingReminderable;
+    reminders []BookingReminderable
     // An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
-    selfServiceAppointmentId *string;
+    selfServiceAppointmentId *string
     // The ID of the bookingService associated with this appointment.
-    serviceId *string;
+    serviceId *string
     // The location where the service is delivered.
-    serviceLocation Locationable;
+    serviceLocation Locationable
     // The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
-    serviceName *string;
+    serviceName *string
     // Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
-    serviceNotes *string;
+    serviceNotes *string
     // If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
-    smsNotificationsEnabled *bool;
+    smsNotificationsEnabled *bool
     // The ID of each bookingStaffMember who is scheduled in this appointment.
-    staffMemberIds []string;
+    staffMemberIds []string
     // The startDateTime property
-    startDateTime DateTimeTimeZoneable;
+    startDateTime DateTimeTimeZoneable
 }
 // NewBookingAppointment instantiates a new bookingAppointment and sets the default values.
 func NewBookingAppointment()(*BookingAppointment) {

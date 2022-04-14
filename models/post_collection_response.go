@@ -7,11 +7,11 @@ import (
 // PostCollectionResponse 
 type PostCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []Postable;
+    value []Postable
 }
 // NewPostCollectionResponse instantiates a new PostCollectionResponse and sets the default values.
 func NewPostCollectionResponse()(*PostCollectionResponse) {
@@ -41,7 +41,7 @@ func (m *PostCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.SetOdatanextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *PostCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *PostCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *PostCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *PostCollectionResponse) GetValue()([]Postable) {
 // Serialize serializes information the current object
 func (m *PostCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *PostCollectionResponse) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *PostCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *PostCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

@@ -7,13 +7,13 @@ import (
 // UserAttributeValuesItem 
 type UserAttributeValuesItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Determines whether the value is set as the default.
-    isDefault *bool;
+    isDefault *bool
     // The display name of the property displayed to the user in the user flow.
-    name *string;
+    name *string
     // The value that is set when this item is selected.
-    value *string;
+    value *string
 }
 // NewUserAttributeValuesItem instantiates a new userAttributeValuesItem and sets the default values.
 func NewUserAttributeValuesItem()(*UserAttributeValuesItem) {

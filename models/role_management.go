@@ -7,11 +7,11 @@ import (
 // RoleManagement 
 type RoleManagement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Read-only. Nullable.
-    directory RbacApplicationable;
+    directory RbacApplicationable
     // Container for roles and assignments for entitlement management resources.
-    entitlementManagement RbacApplicationable;
+    entitlementManagement RbacApplicationable
 }
 // NewRoleManagement instantiates a new RoleManagement and sets the default values.
 func NewRoleManagement()(*RoleManagement) {

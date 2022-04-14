@@ -8,9 +8,9 @@ import (
 type OutlookCategory struct {
     Entity
     // A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
-    color *CategoryColor;
+    color *CategoryColor
     // A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
-    displayName *string;
+    displayName *string
 }
 // NewOutlookCategory instantiates a new outlookCategory and sets the default values.
 func NewOutlookCategory()(*OutlookCategory) {

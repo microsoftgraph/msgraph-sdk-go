@@ -8,17 +8,17 @@ import (
 type Onenote struct {
     Entity
     // The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-    notebooks []Notebookable;
+    notebooks []Notebookable
     // The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
-    operations []OnenoteOperationable;
+    operations []OnenoteOperationable
     // The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-    pages []OnenotePageable;
+    pages []OnenotePageable
     // The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
-    resources []OnenoteResourceable;
+    resources []OnenoteResourceable
     // The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-    sectionGroups []SectionGroupable;
+    sectionGroups []SectionGroupable
     // The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-    sections []OnenoteSectionable;
+    sections []OnenoteSectionable
 }
 // NewOnenote instantiates a new onenote and sets the default values.
 func NewOnenote()(*Onenote) {

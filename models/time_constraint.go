@@ -7,11 +7,11 @@ import (
 // TimeConstraint 
 type TimeConstraint struct {
     // The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
-    activityDomain *ActivityDomain;
+    activityDomain *ActivityDomain
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The timeSlots property
-    timeSlots []TimeSlotable;
+    timeSlots []TimeSlotable
 }
 // NewTimeConstraint instantiates a new timeConstraint and sets the default values.
 func NewTimeConstraint()(*TimeConstraint) {

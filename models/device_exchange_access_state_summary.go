@@ -7,17 +7,17 @@ import (
 // DeviceExchangeAccessStateSummary device Exchange Access State summary
 type DeviceExchangeAccessStateSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Total count of devices with Exchange Access State: Allowed.
-    allowedDeviceCount *int32;
+    allowedDeviceCount *int32
     // Total count of devices with Exchange Access State: Blocked.
-    blockedDeviceCount *int32;
+    blockedDeviceCount *int32
     // Total count of devices with Exchange Access State: Quarantined.
-    quarantinedDeviceCount *int32;
+    quarantinedDeviceCount *int32
     // Total count of devices for which no Exchange Access State could be found.
-    unavailableDeviceCount *int32;
+    unavailableDeviceCount *int32
     // Total count of devices with Exchange Access State: Unknown.
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
 }
 // NewDeviceExchangeAccessStateSummary instantiates a new deviceExchangeAccessStateSummary and sets the default values.
 func NewDeviceExchangeAccessStateSummary()(*DeviceExchangeAccessStateSummary) {

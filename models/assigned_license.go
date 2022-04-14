@@ -7,11 +7,11 @@ import (
 // AssignedLicense 
 type AssignedLicense struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A collection of the unique identifiers for plans that have been disabled.
-    disabledPlans []string;
+    disabledPlans []string
     // The unique identifier for the SKU.
-    skuId *string;
+    skuId *string
 }
 // NewAssignedLicense instantiates a new assignedLicense and sets the default values.
 func NewAssignedLicense()(*AssignedLicense) {

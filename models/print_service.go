@@ -8,7 +8,7 @@ import (
 type PrintService struct {
     Entity
     // Endpoints that can be used to access the service. Read-only. Nullable.
-    endpoints []PrintServiceEndpointable;
+    endpoints []PrintServiceEndpointable
 }
 // NewPrintService instantiates a new printService and sets the default values.
 func NewPrintService()(*PrintService) {

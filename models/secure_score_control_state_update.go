@@ -8,17 +8,17 @@ import (
 // SecureScoreControlStateUpdate 
 type SecureScoreControlStateUpdate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Assigns the control to the user who will take the action.
-    assignedTo *string;
+    assignedTo *string
     // Provides optional comment about the control.
-    comment *string;
+    comment *string
     // State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
-    state *string;
+    state *string
     // ID of the user who updated tenant state.
-    updatedBy *string;
+    updatedBy *string
     // Time at which the control state was updated.
-    updatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    updatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewSecureScoreControlStateUpdate instantiates a new secureScoreControlStateUpdate and sets the default values.
 func NewSecureScoreControlStateUpdate()(*SecureScoreControlStateUpdate) {

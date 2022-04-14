@@ -8,11 +8,11 @@ import (
 type AudioRoutingGroup struct {
     Entity
     // List of receiving participant ids.
-    receivers []string;
+    receivers []string
     // Routing group mode.  Possible values are: oneToOne, multicast.
-    routingMode *RoutingMode;
+    routingMode *RoutingMode
     // List of source participant ids.
-    sources []string;
+    sources []string
 }
 // NewAudioRoutingGroup instantiates a new audioRoutingGroup and sets the default values.
 func NewAudioRoutingGroup()(*AudioRoutingGroup) {

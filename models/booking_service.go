@@ -8,43 +8,43 @@ import (
 type BookingService struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
-    additionalInformation *string;
+    additionalInformation *string
     // Contains the set of custom questions associated with a particular service.
-    customQuestions []BookingQuestionAssignmentable;
+    customQuestions []BookingQuestionAssignmentable
     // The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
-    defaultDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    defaultDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The default physical location for the service.
-    defaultLocation Locationable;
+    defaultLocation Locationable
     // The default monetary price for the service.
-    defaultPrice *float64;
+    defaultPrice *float64
     // The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
-    defaultPriceType *BookingPriceType;
+    defaultPriceType *BookingPriceType
     // The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
-    defaultReminders []BookingReminderable;
+    defaultReminders []BookingReminderable
     // A text description for the service.
-    description *string;
+    description *string
     // A service name.
-    displayName *string;
+    displayName *string
     // True means this service is not available to customers for booking.
-    isHiddenFromCustomers *bool;
+    isHiddenFromCustomers *bool
     // True indicates that the appointments for the service will be held online. Default value is false.
-    isLocationOnline *bool;
+    isLocationOnline *bool
     // The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
-    maximumAttendeesCount *int32;
+    maximumAttendeesCount *int32
     // Additional information about this service.
-    notes *string;
+    notes *string
     // The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
-    postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The time to buffer before an appointment for this service can start.
-    preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The set of policies that determine how appointments for this type of service should be created and managed.
-    schedulingPolicy BookingSchedulingPolicyable;
+    schedulingPolicy BookingSchedulingPolicyable
     // True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
-    smsNotificationsEnabled *bool;
+    smsNotificationsEnabled *bool
     // Represents those staff members who provide this service.
-    staffMemberIds []string;
+    staffMemberIds []string
     // The URL a customer uses to access the service.
-    webUrl *string;
+    webUrl *string
 }
 // NewBookingService instantiates a new bookingService and sets the default values.
 func NewBookingService()(*BookingService) {

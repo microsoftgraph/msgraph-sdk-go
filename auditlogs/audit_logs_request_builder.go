@@ -17,46 +17,46 @@ import (
 // AuditLogsRequestBuilder provides operations to manage the auditLogRoot singleton.
 type AuditLogsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AuditLogsRequestBuilderGetOptions options for Get
 type AuditLogsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AuditLogsRequestBuilderGetQueryParameters;
+    QueryParameters *AuditLogsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuditLogsRequestBuilderGetQueryParameters get auditLogs
 type AuditLogsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AuditLogsRequestBuilderPatchOptions options for Patch
 type AuditLogsRequestBuilderPatchOptions struct {
     // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditLogRootable;
+    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditLogRootable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewAuditLogsRequestBuilderInternal instantiates a new AuditLogsRequestBuilder and sets the default values.
 func NewAuditLogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuditLogsRequestBuilder) {
     m := &AuditLogsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/auditLogs{?select,expand}";
+    m.urlTemplate = "{+baseurl}/auditLogs{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -120,7 +120,7 @@ func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*i8ab9c44a4a415
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryAudit_id"] = id
+        urlTplParams["directoryAudit%2Did"] = id
     }
     return i8ab9c44a4a415e76c346c3f6eda2e19ce5ffba6ea1f21df106cb58013b2ec53f.NewDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*i1a750e38628ba458
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["provisioningObjectSummary_id"] = id
+        urlTplParams["provisioningObjectSummary%2Did"] = id
     }
     return i1a750e38628ba45883889a3ea54a13c3e3772956da70ded7ae26f13e0bbbedd2.NewProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -182,7 +182,7 @@ func (m *AuditLogsRequestBuilder) RestrictedSignInsById(id string)(*i7f3e11d84b3
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["restrictedSignIn_id"] = id
+        urlTplParams["restrictedSignIn%2Did"] = id
     }
     return i7f3e11d84b38e07c2ad13447d9693f755cb3ec92773d58ec7b0f68b62669249f.NewRestrictedSignInItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -197,7 +197,7 @@ func (m *AuditLogsRequestBuilder) SignInsById(id string)(*i72f75127bd05e9eb686f0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["signIn_id"] = id
+        urlTplParams["signIn%2Did"] = id
     }
     return i72f75127bd05e9eb686f047ff40a72bc034bcb41296fc9a2b3b1cc35881c4f3e.NewSignInItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

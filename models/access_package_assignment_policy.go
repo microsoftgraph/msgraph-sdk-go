@@ -9,29 +9,29 @@ import (
 type AccessPackageAssignmentPolicy struct {
     Entity
     // Access package containing this policy. Read-only.
-    accessPackage AccessPackageable;
+    accessPackage AccessPackageable
     // Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
-    allowedTargetScope *AllowedTargetScope;
+    allowedTargetScope *AllowedTargetScope
     // Catalog of the access package containing this policy. Read-only.
-    catalog AccessPackageCatalogable;
+    catalog AccessPackageCatalogable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the policy.
-    description *string;
+    description *string
     // The display name of the policy.
-    displayName *string;
+    displayName *string
     // The expiration date for assignments created in this policy.
-    expiration ExpirationPatternable;
+    expiration ExpirationPatternable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
-    requestApprovalSettings AccessPackageAssignmentApprovalSettingsable;
+    requestApprovalSettings AccessPackageAssignmentApprovalSettingsable
     // Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
-    requestorSettings AccessPackageAssignmentRequestorSettingsable;
+    requestorSettings AccessPackageAssignmentRequestorSettingsable
     // Settings for access reviews of assignments through this policy.
-    reviewSettings AccessPackageAssignmentReviewSettingsable;
+    reviewSettings AccessPackageAssignmentReviewSettingsable
     // The principals that can be assigned access from an access package through this policy.
-    specificAllowedTargets []SubjectSetable;
+    specificAllowedTargets []SubjectSetable
 }
 // NewAccessPackageAssignmentPolicy instantiates a new accessPackageAssignmentPolicy and sets the default values.
 func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {

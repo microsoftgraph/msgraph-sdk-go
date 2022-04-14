@@ -7,15 +7,15 @@ import (
 // SharingInvitation 
 type SharingInvitation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The email address provided for the recipient of the sharing invitation. Read-only.
-    email *string;
+    email *string
     // Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
-    invitedBy IdentitySetable;
+    invitedBy IdentitySetable
     // The redeemedBy property
-    redeemedBy *string;
+    redeemedBy *string
     // If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-    signInRequired *bool;
+    signInRequired *bool
 }
 // NewSharingInvitation instantiates a new sharingInvitation and sets the default values.
 func NewSharingInvitation()(*SharingInvitation) {

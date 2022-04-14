@@ -7,21 +7,21 @@ import (
 // SubjectRightsRequestDetail 
 type SubjectRightsRequestDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Count of items that are excluded from the request.
-    excludedItemCount *int64;
+    excludedItemCount *int64
     // Count of items per insight.
-    insightCounts []KeyValuePairable;
+    insightCounts []KeyValuePairable
     // Count of items found.
-    itemCount *int64;
+    itemCount *int64
     // Count of item that need review.
-    itemNeedReview *int64;
+    itemNeedReview *int64
     // Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
-    productItemCounts []KeyValuePairable;
+    productItemCounts []KeyValuePairable
     // Count of items signed off by the administrator.
-    signedOffItemCount *int64;
+    signedOffItemCount *int64
     // Total item size in bytes.
-    totalItemSize *int64;
+    totalItemSize *int64
 }
 // NewSubjectRightsRequestDetail instantiates a new subjectRightsRequestDetail and sets the default values.
 func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {

@@ -7,17 +7,17 @@ import (
 // ProvisioningStep 
 type ProvisioningStep struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Summary of what occurred during the step.
-    description *string;
+    description *string
     // Details of what occurred during the step.
-    details DetailsInfoable;
+    details DetailsInfoable
     // Name of the step.
-    name *string;
+    name *string
     // Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
-    provisioningStepType *ProvisioningStepType;
+    provisioningStepType *ProvisioningStepType
     // Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
-    status *ProvisioningResult;
+    status *ProvisioningResult
 }
 // NewProvisioningStep instantiates a new provisioningStep and sets the default values.
 func NewProvisioningStep()(*ProvisioningStep) {

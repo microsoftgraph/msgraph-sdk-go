@@ -8,7 +8,7 @@ import (
 type IdentityProviderBase struct {
     Entity
     // The display name of the identity provider.
-    displayName *string;
+    displayName *string
 }
 // NewIdentityProviderBase instantiates a new identityProviderBase and sets the default values.
 func NewIdentityProviderBase()(*IdentityProviderBase) {

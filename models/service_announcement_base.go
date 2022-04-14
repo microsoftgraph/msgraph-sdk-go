@@ -9,15 +9,15 @@ import (
 type ServiceAnnouncementBase struct {
     Entity
     // Additional details about service event. This property doesn't support filters.
-    details []KeyValuePairable;
+    details []KeyValuePairable
     // The end time of the service event.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The last modified time of the service event.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The start time of the service event.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The title of the service event.
-    title *string;
+    title *string
 }
 // NewServiceAnnouncementBase instantiates a new serviceAnnouncementBase and sets the default values.
 func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {

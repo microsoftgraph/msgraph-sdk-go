@@ -7,15 +7,15 @@ import (
 // NumberColumn 
 type NumberColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // How many decimal places to display. See below for information about the possible values.
-    decimalPlaces *string;
+    decimalPlaces *string
     // How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
-    displayAs *string;
+    displayAs *string
     // The maximum permitted value.
-    maximum *float64;
+    maximum *float64
     // The minimum permitted value.
-    minimum *float64;
+    minimum *float64
 }
 // NewNumberColumn instantiates a new numberColumn and sets the default values.
 func NewNumberColumn()(*NumberColumn) {

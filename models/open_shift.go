@@ -8,11 +8,11 @@ import (
 type OpenShift struct {
     ChangeTrackedEntity
     // An unpublished open shift.
-    draftOpenShift OpenShiftItemable;
+    draftOpenShift OpenShiftItemable
     // ID for the scheduling group that the open shift belongs to.
-    schedulingGroupId *string;
+    schedulingGroupId *string
     // A published open shift.
-    sharedOpenShift OpenShiftItemable;
+    sharedOpenShift OpenShiftItemable
 }
 // NewOpenShift instantiates a new openShift and sets the default values.
 func NewOpenShift()(*OpenShift) {

@@ -7,27 +7,27 @@ import (
 // Video 
 type Video struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Number of audio bits per sample.
-    audioBitsPerSample *int32;
+    audioBitsPerSample *int32
     // Number of audio channels.
-    audioChannels *int32;
+    audioChannels *int32
     // Name of the audio format (AAC, MP3, etc.).
-    audioFormat *string;
+    audioFormat *string
     // Number of audio samples per second.
-    audioSamplesPerSecond *int32;
+    audioSamplesPerSecond *int32
     // Bit rate of the video in bits per second.
-    bitrate *int32;
+    bitrate *int32
     // Duration of the file in milliseconds.
-    duration *int64;
+    duration *int64
     // 'Four character code' name of the video format.
-    fourCC *string;
+    fourCC *string
     // Frame rate of the video.
-    frameRate *float64;
+    frameRate *float64
     // Height of the video, in pixels.
-    height *int32;
+    height *int32
     // Width of the video, in pixels.
-    width *int32;
+    width *int32
 }
 // NewVideo instantiates a new video and sets the default values.
 func NewVideo()(*Video) {

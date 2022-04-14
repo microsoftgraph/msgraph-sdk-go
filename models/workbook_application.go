@@ -8,7 +8,7 @@ import (
 type WorkbookApplication struct {
     Entity
     // Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
-    calculationMode *string;
+    calculationMode *string
 }
 // NewWorkbookApplication instantiates a new workbookApplication and sets the default values.
 func NewWorkbookApplication()(*WorkbookApplication) {

@@ -7,9 +7,9 @@ import (
 // RemovePasswordRequestBody provides operations to call the removePassword method.
 type RemovePasswordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The keyId property
-    keyId *string;
+    keyId *string
 }
 // NewRemovePasswordRequestBody instantiates a new removePasswordRequestBody and sets the default values.
 func NewRemovePasswordRequestBody()(*RemovePasswordRequestBody) {

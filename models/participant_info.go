@@ -7,19 +7,19 @@ import (
 // ParticipantInfo 
 type ParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
-    countryCode *string;
+    countryCode *string
     // The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
-    endpointType *EndpointType;
+    endpointType *EndpointType
     // The identity property
-    identity IdentitySetable;
+    identity IdentitySetable
     // The language culture string. Read-only.
-    languageId *string;
+    languageId *string
     // The participant ID of the participant. Read-only.
-    participantId *string;
+    participantId *string
     // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
-    region *string;
+    region *string
 }
 // NewParticipantInfo instantiates a new participantInfo and sets the default values.
 func NewParticipantInfo()(*ParticipantInfo) {

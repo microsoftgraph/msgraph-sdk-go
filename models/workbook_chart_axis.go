@@ -8,21 +8,21 @@ import (
 type WorkbookChartAxis struct {
     Entity
     // Represents the formatting of a chart object, which includes line and font formatting. Read-only.
-    format WorkbookChartAxisFormatable;
+    format WorkbookChartAxisFormatable
     // Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-    majorGridlines WorkbookChartGridlinesable;
+    majorGridlines WorkbookChartGridlinesable
     // Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
-    majorUnit Jsonable;
+    majorUnit Jsonable
     // Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-    maximum Jsonable;
+    maximum Jsonable
     // Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-    minimum Jsonable;
+    minimum Jsonable
     // Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-    minorGridlines WorkbookChartGridlinesable;
+    minorGridlines WorkbookChartGridlinesable
     // Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
-    minorUnit Jsonable;
+    minorUnit Jsonable
     // Represents the axis title. Read-only.
-    title WorkbookChartAxisTitleable;
+    title WorkbookChartAxisTitleable
 }
 // NewWorkbookChartAxis instantiates a new workbookChartAxis and sets the default values.
 func NewWorkbookChartAxis()(*WorkbookChartAxis) {

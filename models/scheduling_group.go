@@ -8,11 +8,11 @@ import (
 type SchedulingGroup struct {
     ChangeTrackedEntity
     // The display name for the schedulingGroup. Required.
-    displayName *string;
+    displayName *string
     // Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
-    isActive *bool;
+    isActive *bool
     // The list of user IDs that are a member of the schedulingGroup. Required.
-    userIds []string;
+    userIds []string
 }
 // NewSchedulingGroup instantiates a new schedulingGroup and sets the default values.
 func NewSchedulingGroup()(*SchedulingGroup) {

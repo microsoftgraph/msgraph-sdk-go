@@ -7,13 +7,13 @@ import (
 // InvitedUserMessageInfo 
 type InvitedUserMessageInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
-    ccRecipients []Recipientable;
+    ccRecipients []Recipientable
     // Customized message body you want to send if you don't want the default message.
-    customizedMessageBody *string;
+    customizedMessageBody *string
     // The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
-    messageLanguage *string;
+    messageLanguage *string
 }
 // NewInvitedUserMessageInfo instantiates a new invitedUserMessageInfo and sets the default values.
 func NewInvitedUserMessageInfo()(*InvitedUserMessageInfo) {

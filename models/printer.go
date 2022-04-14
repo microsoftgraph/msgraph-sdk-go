@@ -9,19 +9,19 @@ import (
 type Printer struct {
     PrinterBase
     // The connectors that are associated with the printer.
-    connectors []PrintConnectorable;
+    connectors []PrintConnectorable
     // True if the printer has a physical device for printing. Read-only.
-    hasPhysicalDevice *bool;
+    hasPhysicalDevice *bool
     // True if the printer is shared; false otherwise. Read-only.
-    isShared *bool;
+    isShared *bool
     // The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
-    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The DateTimeOffset when the printer was registered. Read-only.
-    registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
-    shares []PrinterShareable;
+    shares []PrinterShareable
     // A list of task triggers that are associated with the printer.
-    taskTriggers []PrintTaskTriggerable;
+    taskTriggers []PrintTaskTriggerable
 }
 // NewPrinter instantiates a new printer and sets the default values.
 func NewPrinter()(*Printer) {

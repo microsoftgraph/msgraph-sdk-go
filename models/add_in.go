@@ -7,13 +7,13 @@ import (
 // AddIn 
 type AddIn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The id property
-    id *string;
+    id *string
     // The properties property
-    properties []KeyValueable;
+    properties []KeyValueable
     // The type property
-    type_escaped *string;
+    type_escaped *string
 }
 // NewAddIn instantiates a new addIn and sets the default values.
 func NewAddIn()(*AddIn) {

@@ -7,9 +7,9 @@ import (
 // ClearPresenceRequestBody provides operations to call the clearPresence method.
 type ClearPresenceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The sessionId property
-    sessionId *string;
+    sessionId *string
 }
 // NewClearPresenceRequestBody instantiates a new clearPresenceRequestBody and sets the default values.
 func NewClearPresenceRequestBody()(*ClearPresenceRequestBody) {

@@ -8,9 +8,9 @@ import (
 type ManagedAppStatus struct {
     Entity
     // Friendly name of the status report.
-    displayName *string;
+    displayName *string
     // Version of the entity.
-    version *string;
+    version *string
 }
 // NewManagedAppStatus instantiates a new managedAppStatus and sets the default values.
 func NewManagedAppStatus()(*ManagedAppStatus) {

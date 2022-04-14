@@ -8,13 +8,13 @@ import (
 type PrintUsage struct {
     Entity
     // The completedBlackAndWhiteJobCount property
-    completedBlackAndWhiteJobCount *int64;
+    completedBlackAndWhiteJobCount *int64
     // The completedColorJobCount property
-    completedColorJobCount *int64;
+    completedColorJobCount *int64
     // The incompleteJobCount property
-    incompleteJobCount *int64;
+    incompleteJobCount *int64
     // The usageDate property
-    usageDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    usageDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewPrintUsage instantiates a new printUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {

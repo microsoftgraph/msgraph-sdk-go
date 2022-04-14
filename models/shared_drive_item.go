@@ -8,21 +8,21 @@ import (
 type SharedDriveItem struct {
     BaseItem
     // Used to access the underlying driveItem
-    driveItem DriveItemable;
+    driveItem DriveItemable
     // All driveItems contained in the sharing root. This collection cannot be enumerated.
-    items []DriveItemable;
+    items []DriveItemable
     // Used to access the underlying list
-    list Listable;
+    list Listable
     // Used to access the underlying listItem
-    listItem ListItemable;
+    listItem ListItemable
     // Information about the owner of the shared item being referenced.
-    owner IdentitySetable;
+    owner IdentitySetable
     // Used to access the permission representing the underlying sharing link
-    permission Permissionable;
+    permission Permissionable
     // Used to access the underlying driveItem. Deprecated -- use driveItem instead.
-    root DriveItemable;
+    root DriveItemable
     // Used to access the underlying site
-    site Siteable;
+    site Siteable
 }
 // NewSharedDriveItem instantiates a new sharedDriveItem and sets the default values.
 func NewSharedDriveItem()(*SharedDriveItem) {

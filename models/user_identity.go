@@ -8,9 +8,9 @@ import (
 type UserIdentity struct {
     Identity
     // Indicates the client IP address used by user performing the activity (audit log only).
-    ipAddress *string;
+    ipAddress *string
     // The userPrincipalName attribute of the user.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewUserIdentity instantiates a new userIdentity and sets the default values.
 func NewUserIdentity()(*UserIdentity) {

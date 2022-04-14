@@ -7,9 +7,9 @@ import (
 // PendingOperations 
 type PendingOperations struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A property that indicates that an operation that might update the binary content of a file is pending completion.
-    pendingContentUpdate PendingContentUpdateable;
+    pendingContentUpdate PendingContentUpdateable
 }
 // NewPendingOperations instantiates a new pendingOperations and sets the default values.
 func NewPendingOperations()(*PendingOperations) {

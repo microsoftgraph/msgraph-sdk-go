@@ -8,13 +8,13 @@ import (
 type UnifiedRoleAssignmentSchedule struct {
     UnifiedRoleScheduleBase
     // If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
-    activatedUsing UnifiedRoleEligibilityScheduleable;
+    activatedUsing UnifiedRoleEligibilityScheduleable
     // Type of the assignment. It can either be Assigned or Activated.
-    assignmentType *string;
+    assignmentType *string
     // Membership type of the assignment. It can either be Inherited, Direct, or Group.
-    memberType *string;
+    memberType *string
     // The schedule object of the role assignment request.
-    scheduleInfo RequestScheduleable;
+    scheduleInfo RequestScheduleable
 }
 // NewUnifiedRoleAssignmentSchedule instantiates a new unifiedRoleAssignmentSchedule and sets the default values.
 func NewUnifiedRoleAssignmentSchedule()(*UnifiedRoleAssignmentSchedule) {

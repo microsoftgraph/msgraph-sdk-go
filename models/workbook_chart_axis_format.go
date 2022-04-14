@@ -8,9 +8,9 @@ import (
 type WorkbookChartAxisFormat struct {
     Entity
     // Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
-    font WorkbookChartFontable;
+    font WorkbookChartFontable
     // Represents chart line formatting. Read-only.
-    line WorkbookChartLineFormatable;
+    line WorkbookChartLineFormatable
 }
 // NewWorkbookChartAxisFormat instantiates a new workbookChartAxisFormat and sets the default values.
 func NewWorkbookChartAxisFormat()(*WorkbookChartAxisFormat) {

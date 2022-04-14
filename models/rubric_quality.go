@@ -7,17 +7,17 @@ import (
 // RubricQuality 
 type RubricQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The collection of criteria for this rubric quality.
-    criteria []RubricCriterionable;
+    criteria []RubricCriterionable
     // The description of this rubric quality.
-    description EducationItemBodyable;
+    description EducationItemBodyable
     // The name of this rubric quality.
-    displayName *string;
+    displayName *string
     // The ID of this resource.
-    qualityId *string;
+    qualityId *string
     // If present, a numerical weight for this quality.  Weights must add up to 100.
-    weight *float32;
+    weight *float32
 }
 // NewRubricQuality instantiates a new rubricQuality and sets the default values.
 func NewRubricQuality()(*RubricQuality) {

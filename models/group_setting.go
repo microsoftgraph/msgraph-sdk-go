@@ -8,11 +8,11 @@ import (
 type GroupSetting struct {
     Entity
     // Display name of this group of settings, which comes from the associated template.
-    displayName *string;
+    displayName *string
     // Unique identifier for the tenant-level groupSettingTemplates object that's been customized for this group-level settings object. Read-only.
-    templateId *string;
+    templateId *string
     // Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced groupSettingTemplates object.
-    values []SettingValueable;
+    values []SettingValueable
 }
 // NewGroupSetting instantiates a new groupSetting and sets the default values.
 func NewGroupSetting()(*GroupSetting) {

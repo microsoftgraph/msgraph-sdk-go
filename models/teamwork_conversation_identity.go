@@ -8,7 +8,7 @@ import (
 type TeamworkConversationIdentity struct {
     Identity
     // Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
-    conversationIdentityType *TeamworkConversationIdentityType;
+    conversationIdentityType *TeamworkConversationIdentityType
 }
 // NewTeamworkConversationIdentity instantiates a new teamworkConversationIdentity and sets the default values.
 func NewTeamworkConversationIdentity()(*TeamworkConversationIdentity) {

@@ -9,21 +9,21 @@ import (
 type ConnectedOrganization struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the connected organization.
-    description *string;
+    description *string
     // The display name of the connected organization. Supports $filter (eq).
-    displayName *string;
+    displayName *string
     // Nullable.
-    externalSponsors []DirectoryObjectable;
+    externalSponsors []DirectoryObjectable
     // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
-    identitySources []IdentitySourceable;
+    identitySources []IdentitySourceable
     // Nullable.
-    internalSponsors []DirectoryObjectable;
+    internalSponsors []DirectoryObjectable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
-    state *ConnectedOrganizationState;
+    state *ConnectedOrganizationState
 }
 // NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
 func NewConnectedOrganization()(*ConnectedOrganization) {

@@ -8,13 +8,13 @@ import (
 type WorkbookChartLegend struct {
     Entity
     // Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
-    format WorkbookChartLegendFormatable;
+    format WorkbookChartLegendFormatable
     // Boolean value for whether the chart legend should overlap with the main body of the chart.
-    overlay *bool;
+    overlay *bool
     // Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
-    position *string;
+    position *string
     // A boolean value the represents the visibility of a ChartLegend object.
-    visible *bool;
+    visible *bool
 }
 // NewWorkbookChartLegend instantiates a new workbookChartLegend and sets the default values.
 func NewWorkbookChartLegend()(*WorkbookChartLegend) {

@@ -7,9 +7,9 @@ import (
 // WipeManagedAppRegistrationsByDeviceTagRequestBody provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
 type WipeManagedAppRegistrationsByDeviceTagRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The deviceTag property
-    deviceTag *string;
+    deviceTag *string
 }
 // NewWipeManagedAppRegistrationsByDeviceTagRequestBody instantiates a new wipeManagedAppRegistrationsByDeviceTagRequestBody and sets the default values.
 func NewWipeManagedAppRegistrationsByDeviceTagRequestBody()(*WipeManagedAppRegistrationsByDeviceTagRequestBody) {

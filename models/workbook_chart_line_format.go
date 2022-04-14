@@ -8,7 +8,7 @@ import (
 type WorkbookChartLineFormat struct {
     Entity
     // HTML color code representing the color of lines in the chart.
-    color *string;
+    color *string
 }
 // NewWorkbookChartLineFormat instantiates a new workbookChartLineFormat and sets the default values.
 func NewWorkbookChartLineFormat()(*WorkbookChartLineFormat) {

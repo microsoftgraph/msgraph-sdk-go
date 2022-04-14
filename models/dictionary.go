@@ -7,7 +7,7 @@ import (
 // Dictionary 
 type Dictionary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewDictionary instantiates a new Dictionary and sets the default values.
 func NewDictionary()(*Dictionary) {

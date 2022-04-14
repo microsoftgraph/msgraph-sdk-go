@@ -8,11 +8,11 @@ import (
 type TimeOff struct {
     ChangeTrackedEntity
     // The draft version of this timeOff that is viewable by managers. Required.
-    draftTimeOff TimeOffItemable;
+    draftTimeOff TimeOffItemable
     // The shared version of this timeOff that is viewable by both employees and managers. Required.
-    sharedTimeOff TimeOffItemable;
+    sharedTimeOff TimeOffItemable
     // ID of the user assigned to the timeOff. Required.
-    userId *string;
+    userId *string
 }
 // NewTimeOff instantiates a new timeOff and sets the default values.
 func NewTimeOff()(*TimeOff) {

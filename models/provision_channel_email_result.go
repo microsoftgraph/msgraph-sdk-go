@@ -7,9 +7,9 @@ import (
 // ProvisionChannelEmailResult 
 type ProvisionChannelEmailResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents the provisioned email address.
-    email *string;
+    email *string
 }
 // NewProvisionChannelEmailResult instantiates a new provisionChannelEmailResult and sets the default values.
 func NewProvisionChannelEmailResult()(*ProvisionChannelEmailResult) {

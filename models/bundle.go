@@ -7,11 +7,11 @@ import (
 // Bundle 
 type Bundle struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If the bundle is an [album][], then the album property is included
-    album Albumable;
+    album Albumable
     // Number of children contained immediately within this container.
-    childCount *int32;
+    childCount *int32
 }
 // NewBundle instantiates a new bundle and sets the default values.
 func NewBundle()(*Bundle) {

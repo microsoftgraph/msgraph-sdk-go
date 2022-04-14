@@ -7,11 +7,11 @@ import (
 // EmailAddress 
 type EmailAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The email address of the person or entity.
-    address *string;
+    address *string
     // The display name of the person or entity.
-    name *string;
+    name *string
 }
 // NewEmailAddress instantiates a new emailAddress and sets the default values.
 func NewEmailAddress()(*EmailAddress) {

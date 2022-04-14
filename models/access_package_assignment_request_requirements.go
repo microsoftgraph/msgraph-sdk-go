@@ -7,21 +7,21 @@ import (
 // AccessPackageAssignmentRequestRequirements 
 type AccessPackageAssignmentRequestRequirements struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether the requestor is allowed to set a custom schedule.
-    allowCustomAssignmentSchedule *bool;
+    allowCustomAssignmentSchedule *bool
     // Indicates whether a request to add must be approved by an approver.
-    isApprovalRequiredForAdd *bool;
+    isApprovalRequiredForAdd *bool
     // Indicates whether a request to update must be approved by an approver.
-    isApprovalRequiredForUpdate *bool;
+    isApprovalRequiredForUpdate *bool
     // The description of the policy that the user is trying to request access using.
-    policyDescription *string;
+    policyDescription *string
     // The display name of the policy that the user is trying to request access using.
-    policyDisplayName *string;
+    policyDisplayName *string
     // The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
-    policyId *string;
+    policyId *string
     // Schedule restrictions enforced, if any.
-    schedule EntitlementManagementScheduleable;
+    schedule EntitlementManagementScheduleable
 }
 // NewAccessPackageAssignmentRequestRequirements instantiates a new accessPackageAssignmentRequestRequirements and sets the default values.
 func NewAccessPackageAssignmentRequestRequirements()(*AccessPackageAssignmentRequestRequirements) {

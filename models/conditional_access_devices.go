@@ -7,9 +7,9 @@ import (
 // ConditionalAccessDevices 
 type ConditionalAccessDevices struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
-    deviceFilter ConditionalAccessFilterable;
+    deviceFilter ConditionalAccessFilterable
 }
 // NewConditionalAccessDevices instantiates a new conditionalAccessDevices and sets the default values.
 func NewConditionalAccessDevices()(*ConditionalAccessDevices) {

@@ -7,9 +7,9 @@ import (
 // RemoveGroupResponse provides operations to call the removeGroup method.
 type RemoveGroupResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value *bool;
+    value *bool
 }
 // NewRemoveGroupResponse instantiates a new removeGroupResponse and sets the default values.
 func NewRemoveGroupResponse()(*RemoveGroupResponse) {

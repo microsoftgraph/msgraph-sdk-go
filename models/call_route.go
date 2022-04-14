@@ -7,13 +7,13 @@ import (
 // CallRoute 
 type CallRoute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The final property
-    final IdentitySetable;
+    final IdentitySetable
     // The original property
-    original IdentitySetable;
+    original IdentitySetable
     // Possible values are: forwarded, lookup, selfFork.
-    routingType *RoutingType;
+    routingType *RoutingType
 }
 // NewCallRoute instantiates a new callRoute and sets the default values.
 func NewCallRoute()(*CallRoute) {

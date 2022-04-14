@@ -8,17 +8,17 @@ import (
 type IdentityUserFlowAttributeAssignment struct {
     Entity
     // The display name of the identityUserFlowAttribute within a user flow.
-    displayName *string;
+    displayName *string
     // Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
-    isOptional *bool;
+    isOptional *bool
     // Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
-    requiresVerification *bool;
+    requiresVerification *bool
     // The user attribute that you want to add to your user flow.
-    userAttribute IdentityUserFlowAttributeable;
+    userAttribute IdentityUserFlowAttributeable
     // The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-    userAttributeValues []UserAttributeValuesItemable;
+    userAttributeValues []UserAttributeValuesItemable
     // The input type of the user flow attribute. Possible values are: textBox, dateTimeDropdown, radioSingleSelect, dropdownSingleSelect, emailBox, checkboxMultiSelect.
-    userInputType *IdentityUserFlowAttributeInputType;
+    userInputType *IdentityUserFlowAttributeInputType
 }
 // NewIdentityUserFlowAttributeAssignment instantiates a new identityUserFlowAttributeAssignment and sets the default values.
 func NewIdentityUserFlowAttributeAssignment()(*IdentityUserFlowAttributeAssignment) {

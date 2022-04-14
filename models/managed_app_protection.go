@@ -8,59 +8,59 @@ import (
 type ManagedAppProtection struct {
     ManagedAppPolicy
     // Data storage locations where a user may store managed data.
-    allowedDataStorageLocations []ManagedAppDataStorageLocation;
+    allowedDataStorageLocations []ManagedAppDataStorageLocation
     // Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
-    allowedInboundDataTransferSources *ManagedAppDataTransferLevel;
+    allowedInboundDataTransferSources *ManagedAppDataTransferLevel
     // The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
-    allowedOutboundClipboardSharingLevel *ManagedAppClipboardSharingLevel;
+    allowedOutboundClipboardSharingLevel *ManagedAppClipboardSharingLevel
     // Destinations to which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
-    allowedOutboundDataTransferDestinations *ManagedAppDataTransferLevel;
+    allowedOutboundDataTransferDestinations *ManagedAppDataTransferLevel
     // Indicates whether contacts can be synced to the user's device.
-    contactSyncBlocked *bool;
+    contactSyncBlocked *bool
     // Indicates whether the backup of a managed app's data is blocked.
-    dataBackupBlocked *bool;
+    dataBackupBlocked *bool
     // Indicates whether device compliance is required.
-    deviceComplianceRequired *bool;
+    deviceComplianceRequired *bool
     // Indicates whether use of the app pin is required if the device pin is set.
-    disableAppPinIfDevicePinIsSet *bool;
+    disableAppPinIfDevicePinIsSet *bool
     // Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
-    fingerprintBlocked *bool;
+    fingerprintBlocked *bool
     // Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
-    managedBrowser *ManagedBrowserType;
+    managedBrowser *ManagedBrowserType
     // Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
-    managedBrowserToOpenLinksRequired *bool;
+    managedBrowserToOpenLinksRequired *bool
     // Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
-    maximumPinRetries *int32;
+    maximumPinRetries *int32
     // Minimum pin length required for an app-level pin if PinRequired is set to True
-    minimumPinLength *int32;
+    minimumPinLength *int32
     // Versions less than the specified version will block the managed app from accessing company data.
-    minimumRequiredAppVersion *string;
+    minimumRequiredAppVersion *string
     // Versions less than the specified version will block the managed app from accessing company data.
-    minimumRequiredOsVersion *string;
+    minimumRequiredOsVersion *string
     // Versions less than the specified version will result in warning message on the managed app.
-    minimumWarningAppVersion *string;
+    minimumWarningAppVersion *string
     // Versions less than the specified version will result in warning message on the managed app from accessing company data.
-    minimumWarningOsVersion *string;
+    minimumWarningOsVersion *string
     // Indicates whether organizational credentials are required for app use.
-    organizationalCredentialsRequired *bool;
+    organizationalCredentialsRequired *bool
     // TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-    periodBeforePinReset *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    periodBeforePinReset *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The period after which access is checked when the device is not connected to the internet.
-    periodOfflineBeforeAccessCheck *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    periodOfflineBeforeAccessCheck *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-    periodOfflineBeforeWipeIsEnforced *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    periodOfflineBeforeWipeIsEnforced *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The period after which access is checked when the device is connected to the internet.
-    periodOnlineBeforeAccessCheck *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    periodOnlineBeforeAccessCheck *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
-    pinCharacterSet *ManagedAppPinCharacterSet;
+    pinCharacterSet *ManagedAppPinCharacterSet
     // Indicates whether an app-level pin is required.
-    pinRequired *bool;
+    pinRequired *bool
     // Indicates whether printing is allowed from managed apps.
-    printBlocked *bool;
+    printBlocked *bool
     // Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
-    saveAsBlocked *bool;
+    saveAsBlocked *bool
     // Indicates whether simplePin is blocked.
-    simplePinBlocked *bool;
+    simplePinBlocked *bool
 }
 // NewManagedAppProtection instantiates a new managedAppProtection and sets the default values.
 func NewManagedAppProtection()(*ManagedAppProtection) {

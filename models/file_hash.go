@@ -7,11 +7,11 @@ import (
 // FileHash 
 type FileHash struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
-    hashType *FileHashType;
+    hashType *FileHashType
     // Value of the file hash.
-    hashValue *string;
+    hashValue *string
 }
 // NewFileHash instantiates a new fileHash and sets the default values.
 func NewFileHash()(*FileHash) {

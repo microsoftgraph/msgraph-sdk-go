@@ -8,7 +8,7 @@ import (
 type PlannerProgressTaskBoardTaskFormat struct {
     Entity
     // Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
-    orderHint *string;
+    orderHint *string
 }
 // NewPlannerProgressTaskBoardTaskFormat instantiates a new plannerProgressTaskBoardTaskFormat and sets the default values.
 func NewPlannerProgressTaskBoardTaskFormat()(*PlannerProgressTaskBoardTaskFormat) {

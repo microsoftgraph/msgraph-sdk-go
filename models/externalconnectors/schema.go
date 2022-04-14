@@ -9,9 +9,9 @@ import (
 type Schema struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Must be set to microsoft.graph.externalConnector.externalItem. Required.
-    baseType *string;
+    baseType *string
     // The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
-    properties []Propertyable;
+    properties []Propertyable
 }
 // NewSchema instantiates a new schema and sets the default values.
 func NewSchema()(*Schema) {

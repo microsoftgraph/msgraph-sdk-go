@@ -9,31 +9,31 @@ import (
 type Post struct {
     OutlookItem
     // Read-only. Nullable. Supports $expand.
-    attachments []Attachmentable;
+    attachments []Attachmentable
     // The contents of the post. This is a default property. This property can be null.
-    body ItemBodyable;
+    body ItemBodyable
     // Unique ID of the conversation. Read-only.
-    conversationId *string;
+    conversationId *string
     // Unique ID of the conversation thread. Read-only.
-    conversationThreadId *string;
+    conversationThreadId *string
     // The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-    extensions []Extensionable;
+    extensions []Extensionable
     // The from property
-    from Recipientable;
+    from Recipientable
     // Indicates whether the post has at least one attachment. This is a default property.
-    hasAttachments *bool;
+    hasAttachments *bool
     // Read-only. Supports $expand.
-    inReplyTo Postable;
+    inReplyTo Postable
     // The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // Conversation participants that were added to the thread as part of this post.
-    newParticipants []Recipientable;
+    newParticipants []Recipientable
     // Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
-    sender Recipientable;
+    sender Recipientable
     // The collection of single-value extended properties defined for the post. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
 }
 // NewPost instantiates a new post and sets the default values.
 func NewPost()(*Post) {

@@ -8,45 +8,45 @@ import (
 type EducationClass struct {
     Entity
     // All categories associated with this class. Nullable.
-    assignmentCategories []EducationCategoryable;
+    assignmentCategories []EducationCategoryable
     // Specifies class-level defaults respected by new assignments created in the class.
-    assignmentDefaults EducationAssignmentDefaultsable;
+    assignmentDefaults EducationAssignmentDefaultsable
     // All assignments associated with this class. Nullable.
-    assignments []EducationAssignmentable;
+    assignments []EducationAssignmentable
     // Specifies class-level assignments settings.
-    assignmentSettings EducationAssignmentSettingsable;
+    assignmentSettings EducationAssignmentSettingsable
     // Class code used by the school to identify the class.
-    classCode *string;
+    classCode *string
     // Course information for the class.
-    course EducationCourseable;
+    course EducationCourseable
     // Entity who created the class
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // Description of the class.
-    description *string;
+    description *string
     // Name of the class.
-    displayName *string;
+    displayName *string
     // ID of the class from the syncing system.
-    externalId *string;
+    externalId *string
     // Name of the class in the syncing system.
-    externalName *string;
+    externalName *string
     // How this class was created. Possible values are: sis, manual.
-    externalSource *EducationExternalSource;
+    externalSource *EducationExternalSource
     // The name of the external source this resources was generated from.
-    externalSourceDetail *string;
+    externalSourceDetail *string
     // Grade level of the class.
-    grade *string;
+    grade *string
     // The underlying Microsoft 365 group object.
-    group Groupable;
+    group Groupable
     // Mail name for sending email to all members, if this is enabled.
-    mailNickname *string;
+    mailNickname *string
     // All users in the class. Nullable.
-    members []EducationUserable;
+    members []EducationUserable
     // All schools that this class is associated with. Nullable.
-    schools []EducationSchoolable;
+    schools []EducationSchoolable
     // All teachers in the class. Nullable.
-    teachers []EducationUserable;
+    teachers []EducationUserable
     // Term for this class.
-    term EducationTermable;
+    term EducationTermable
 }
 // NewEducationClass instantiates a new educationClass and sets the default values.
 func NewEducationClass()(*EducationClass) {

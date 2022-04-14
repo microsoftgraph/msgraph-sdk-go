@@ -7,13 +7,13 @@ import (
 // AuthenticationMethodsRegistrationCampaignIncludeTarget 
 type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The object identifier of an Azure Active Directory user or group.
-    id *string;
+    id *string
     // The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-    targetedAuthenticationMethod *string;
+    targetedAuthenticationMethod *string
     // The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
-    targetType *AuthenticationMethodTargetType;
+    targetType *AuthenticationMethodTargetType
 }
 // NewAuthenticationMethodsRegistrationCampaignIncludeTarget instantiates a new authenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
 func NewAuthenticationMethodsRegistrationCampaignIncludeTarget()(*AuthenticationMethodsRegistrationCampaignIncludeTarget) {

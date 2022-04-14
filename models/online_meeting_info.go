@@ -7,19 +7,19 @@ import (
 // OnlineMeetingInfo 
 type OnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ID of the conference.
-    conferenceId *string;
+    conferenceId *string
     // The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-    joinUrl *string;
+    joinUrl *string
     // All of the phone numbers associated with this conference.
-    phones []Phoneable;
+    phones []Phoneable
     // The pre-formatted quickdial for this call.
-    quickDial *string;
+    quickDial *string
     // The toll free numbers that can be used to join the conference.
-    tollFreeNumbers []string;
+    tollFreeNumbers []string
     // The toll number that can be used to join the conference.
-    tollNumber *string;
+    tollNumber *string
 }
 // NewOnlineMeetingInfo instantiates a new onlineMeetingInfo and sets the default values.
 func NewOnlineMeetingInfo()(*OnlineMeetingInfo) {

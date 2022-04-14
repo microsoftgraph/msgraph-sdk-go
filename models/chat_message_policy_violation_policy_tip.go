@@ -7,13 +7,13 @@ import (
 // ChatMessagePolicyViolationPolicyTip 
 type ChatMessagePolicyViolationPolicyTip struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
-    complianceUrl *string;
+    complianceUrl *string
     // Explanatory text shown to the sender of the message.
-    generalText *string;
+    generalText *string
     // The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
-    matchedConditionDescriptions []string;
+    matchedConditionDescriptions []string
 }
 // NewChatMessagePolicyViolationPolicyTip instantiates a new chatMessagePolicyViolationPolicyTip and sets the default values.
 func NewChatMessagePolicyViolationPolicyTip()(*ChatMessagePolicyViolationPolicyTip) {

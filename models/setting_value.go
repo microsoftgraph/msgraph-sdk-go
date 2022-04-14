@@ -7,11 +7,11 @@ import (
 // SettingValue 
 type SettingValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the setting (as defined by the groupSettingTemplate).
-    name *string;
+    name *string
     // Value of the setting.
-    value *string;
+    value *string
 }
 // NewSettingValue instantiates a new settingValue and sets the default values.
 func NewSettingValue()(*SettingValue) {

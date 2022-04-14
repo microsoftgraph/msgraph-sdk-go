@@ -7,13 +7,13 @@ import (
 // ItemPreviewInfo 
 type ItemPreviewInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The getUrl property
-    getUrl *string;
+    getUrl *string
     // The postParameters property
-    postParameters *string;
+    postParameters *string
     // The postUrl property
-    postUrl *string;
+    postUrl *string
 }
 // NewItemPreviewInfo instantiates a new itemPreviewInfo and sets the default values.
 func NewItemPreviewInfo()(*ItemPreviewInfo) {

@@ -7,9 +7,9 @@ import (
 // CancelRequestBody provides operations to call the cancel method.
 type CancelRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The Comment property
-    comment *string;
+    comment *string
 }
 // NewCancelRequestBody instantiates a new cancelRequestBody and sets the default values.
 func NewCancelRequestBody()(*CancelRequestBody) {

@@ -7,21 +7,21 @@ import (
 // GetCachedReportRequestBody provides operations to call the getCachedReport method.
 type GetCachedReportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The groupBy property
-    groupBy []string;
+    groupBy []string
     // The id property
-    id *string;
+    id *string
     // The orderBy property
-    orderBy []string;
+    orderBy []string
     // The search property
-    search *string;
+    search *string
     // The select property
-    select_escaped []string;
+    select_escaped []string
     // The skip property
-    skip *int32;
+    skip *int32
     // The top property
-    top *int32;
+    top *int32
 }
 // NewGetCachedReportRequestBody instantiates a new getCachedReportRequestBody and sets the default values.
 func NewGetCachedReportRequestBody()(*GetCachedReportRequestBody) {

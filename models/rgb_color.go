@@ -7,13 +7,13 @@ import (
 // RgbColor color in RGB.
 type RgbColor struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Blue value
-    b *byte;
+    b *byte
     // Green value
-    g *byte;
+    g *byte
     // Red value
-    r *byte;
+    r *byte
 }
 // NewRgbColor instantiates a new rgbColor and sets the default values.
 func NewRgbColor()(*RgbColor) {

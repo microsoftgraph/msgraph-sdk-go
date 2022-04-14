@@ -9,33 +9,33 @@ import (
 type AccessReviewScheduleDefinition struct {
     Entity
     // Defines the list of additional users or group members to be notified of the access review progress.
-    additionalNotificationRecipients []AccessReviewNotificationRecipientItemable;
+    additionalNotificationRecipients []AccessReviewNotificationRecipientItemable
     // User who created this review. Read-only.
-    createdBy UserIdentityable;
+    createdBy UserIdentityable
     // Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description provided by review creators to provide more context of the review to admins. Supports $select.
-    descriptionForAdmins *string;
+    descriptionForAdmins *string
     // Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
-    descriptionForReviewers *string;
+    descriptionForReviewers *string
     // Name of the access review series. Supports $select and $orderBy. Required on create.
-    displayName *string;
+    displayName *string
     // This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
-    fallbackReviewers []AccessReviewReviewerScopeable;
+    fallbackReviewers []AccessReviewReviewerScopeable
     // This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
-    instanceEnumerationScope AccessReviewScopeable;
+    instanceEnumerationScope AccessReviewScopeable
     // If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
-    instances []AccessReviewInstanceable;
+    instances []AccessReviewInstanceable
     // Timestamp when the access review series was last modified. Supports $select. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
-    reviewers []AccessReviewReviewerScopeable;
+    reviewers []AccessReviewReviewerScopeable
     // Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
-    scope AccessReviewScopeable;
+    scope AccessReviewScopeable
     // The settings for an access review series, see type definition below. Supports $select. Required on create.
-    settings AccessReviewScheduleSettingsable;
+    settings AccessReviewScheduleSettingsable
     // This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
-    status *string;
+    status *string
 }
 // NewAccessReviewScheduleDefinition instantiates a new accessReviewScheduleDefinition and sets the default values.
 func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {

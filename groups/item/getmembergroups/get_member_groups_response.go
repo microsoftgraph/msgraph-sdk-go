@@ -7,9 +7,9 @@ import (
 // GetMemberGroupsResponse provides operations to call the getMemberGroups method.
 type GetMemberGroupsResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []string;
+    value []string
 }
 // NewGetMemberGroupsResponse instantiates a new getMemberGroupsResponse and sets the default values.
 func NewGetMemberGroupsResponse()(*GetMemberGroupsResponse) {

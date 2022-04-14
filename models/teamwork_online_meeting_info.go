@@ -7,13 +7,13 @@ import (
 // TeamworkOnlineMeetingInfo 
 type TeamworkOnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The identifier of the calendar event associated with the meeting.
-    calendarEventId *string;
+    calendarEventId *string
     // The URL that users click to join or uniquely identify the meeting.
-    joinWebUrl *string;
+    joinWebUrl *string
     // The organizer of the meeting.
-    organizer TeamworkUserIdentityable;
+    organizer TeamworkUserIdentityable
 }
 // NewTeamworkOnlineMeetingInfo instantiates a new teamworkOnlineMeetingInfo and sets the default values.
 func NewTeamworkOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {

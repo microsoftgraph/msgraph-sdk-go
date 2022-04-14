@@ -7,11 +7,11 @@ import (
 // WindowsInformationProtectionResourceCollection windows Information Protection Resource Collection
 type WindowsInformationProtectionResourceCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Display name
-    displayName *string;
+    displayName *string
     // Collection of resources
-    resources []string;
+    resources []string
 }
 // NewWindowsInformationProtectionResourceCollection instantiates a new windowsInformationProtectionResourceCollection and sets the default values.
 func NewWindowsInformationProtectionResourceCollection()(*WindowsInformationProtectionResourceCollection) {

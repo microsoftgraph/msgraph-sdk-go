@@ -8,7 +8,7 @@ import (
 type Approval struct {
     Entity
     // A collection of stages in the approval decision.
-    stages []ApprovalStageable;
+    stages []ApprovalStageable
 }
 // NewApproval instantiates a new approval and sets the default values.
 func NewApproval()(*Approval) {

@@ -7,11 +7,11 @@ import (
 // AcceptRequestBody provides operations to call the accept method.
 type AcceptRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The Comment property
-    comment *string;
+    comment *string
     // The SendResponse property
-    sendResponse *bool;
+    sendResponse *bool
 }
 // NewAcceptRequestBody instantiates a new acceptRequestBody and sets the default values.
 func NewAcceptRequestBody()(*AcceptRequestBody) {

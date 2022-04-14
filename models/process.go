@@ -8,31 +8,31 @@ import (
 // Process 
 type Process struct {
     // User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
-    accountName *string;
+    accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The full process invocation commandline including all parameters.
-    commandLine *string;
+    commandLine *string
     // Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Complex type containing file hashes (cryptographic and location-sensitive).
-    fileHash FileHashable;
+    fileHash FileHashable
     // The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
-    integrityLevel *ProcessIntegrityLevel;
+    integrityLevel *ProcessIntegrityLevel
     // True if the process is elevated.
-    isElevated *bool;
+    isElevated *bool
     // The name of the process' Image file.
-    name *string;
+    name *string
     // DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    parentProcessCreatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    parentProcessCreatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Process ID (PID) of the parent process.
-    parentProcessId *int32;
+    parentProcessId *int32
     // The name of the image file of the parent process.
-    parentProcessName *string;
+    parentProcessName *string
     // Full path, including filename.
-    path *string;
+    path *string
     // The Process ID (PID) of the process.
-    processId *int32;
+    processId *int32
 }
 // NewProcess instantiates a new process and sets the default values.
 func NewProcess()(*Process) {

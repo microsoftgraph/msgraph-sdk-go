@@ -7,9 +7,9 @@ import (
 // StoragePlanInformation 
 type StoragePlanInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether there are higher storage quota plans available. Read-only.
-    upgradeAvailable *bool;
+    upgradeAvailable *bool
 }
 // NewStoragePlanInformation instantiates a new storagePlanInformation and sets the default values.
 func NewStoragePlanInformation()(*StoragePlanInformation) {

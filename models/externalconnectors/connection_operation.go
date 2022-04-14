@@ -9,9 +9,9 @@ import (
 type ConnectionOperation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // If status is failed, provides more information about the error that caused the failure.
-    error iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PublicErrorable;
+    error iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PublicErrorable
     // Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
-    status *ConnectionOperationStatus;
+    status *ConnectionOperationStatus
 }
 // NewConnectionOperation instantiates a new connectionOperation and sets the default values.
 func NewConnectionOperation()(*ConnectionOperation) {

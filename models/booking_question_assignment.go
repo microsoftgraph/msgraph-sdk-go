@@ -7,11 +7,11 @@ import (
 // BookingQuestionAssignment 
 type BookingQuestionAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ID of the custom question.
-    isRequired *bool;
+    isRequired *bool
     // Indicates whether it is mandatory to answer the custom question.
-    questionId *string;
+    questionId *string
 }
 // NewBookingQuestionAssignment instantiates a new bookingQuestionAssignment and sets the default values.
 func NewBookingQuestionAssignment()(*BookingQuestionAssignment) {

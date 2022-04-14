@@ -8,35 +8,35 @@ import (
 // UserSecurityState 
 type UserSecurityState struct {
     // AAD User object identifier (GUID) - represents the physical/multi-account user entity.
-    aadUserId *string;
+    aadUserId *string
     // Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).
-    accountName *string;
+    accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // NetBIOS/Active Directory domain of user account (that is, domain/account format).
-    domainName *string;
+    domainName *string
     // For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
-    emailRole *EmailRole;
+    emailRole *EmailRole
     // Indicates whether the user logged on through a VPN.
-    isVpn *bool;
+    isVpn *bool
     // Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    logonDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    logonDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // User sign-in ID.
-    logonId *string;
+    logonId *string
     // IP Address the sign-in request originated from.
-    logonIp *string;
+    logonIp *string
     // Location (by IP address mapping) associated with a user sign-in event by this user.
-    logonLocation *string;
+    logonLocation *string
     // Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-    logonType *LogonType;
+    logonType *LogonType
     // Active Directory (on-premises) Security Identifier (SID) of the user.
-    onPremisesSecurityIdentifier *string;
+    onPremisesSecurityIdentifier *string
     // Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
-    riskScore *string;
+    riskScore *string
     // User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
-    userAccountType *UserAccountSecurityType;
+    userAccountType *UserAccountSecurityType
     // User sign-in name - internet format: (user account name)@(user account DNS domain name).
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewUserSecurityState instantiates a new userSecurityState and sets the default values.
 func NewUserSecurityState()(*UserSecurityState) {

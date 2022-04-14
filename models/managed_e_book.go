@@ -9,31 +9,31 @@ import (
 type ManagedEBook struct {
     Entity
     // The list of assignments for this eBook.
-    assignments []ManagedEBookAssignmentable;
+    assignments []ManagedEBookAssignmentable
     // The date and time when the eBook file was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description.
-    description *string;
+    description *string
     // The list of installation states for this eBook.
-    deviceStates []DeviceInstallStateable;
+    deviceStates []DeviceInstallStateable
     // Name of the eBook.
-    displayName *string;
+    displayName *string
     // The more information Url.
-    informationUrl *string;
+    informationUrl *string
     // Mobile App Install Summary.
-    installSummary EBookInstallSummaryable;
+    installSummary EBookInstallSummaryable
     // Book cover.
-    largeCover MimeContentable;
+    largeCover MimeContentable
     // The date and time when the eBook was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The privacy statement Url.
-    privacyInformationUrl *string;
+    privacyInformationUrl *string
     // The date and time when the eBook was published.
-    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Publisher.
-    publisher *string;
+    publisher *string
     // The list of installation states for this eBook.
-    userStateSummary []UserInstallStateSummaryable;
+    userStateSummary []UserInstallStateSummaryable
 }
 // NewManagedEBook instantiates a new managedEBook and sets the default values.
 func NewManagedEBook()(*ManagedEBook) {

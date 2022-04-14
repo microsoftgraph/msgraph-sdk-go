@@ -7,15 +7,15 @@ import (
 // TeamFunSettings 
 type TeamFunSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If set to true, enables users to include custom memes.
-    allowCustomMemes *bool;
+    allowCustomMemes *bool
     // If set to true, enables Giphy use.
-    allowGiphy *bool;
+    allowGiphy *bool
     // If set to true, enables users to include stickers and memes.
-    allowStickersAndMemes *bool;
+    allowStickersAndMemes *bool
     // Giphy content rating. Possible values are: moderate, strict.
-    giphyContentRating *GiphyRatingType;
+    giphyContentRating *GiphyRatingType
 }
 // NewTeamFunSettings instantiates a new teamFunSettings and sets the default values.
 func NewTeamFunSettings()(*TeamFunSettings) {

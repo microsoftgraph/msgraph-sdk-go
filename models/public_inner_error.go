@@ -7,15 +7,15 @@ import (
 // PublicInnerError 
 type PublicInnerError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The error code.
-    code *string;
+    code *string
     // A collection of error details.
-    details []PublicErrorDetailable;
+    details []PublicErrorDetailable
     // The error message.
-    message *string;
+    message *string
     // The target of the error.
-    target *string;
+    target *string
 }
 // NewPublicInnerError instantiates a new publicInnerError and sets the default values.
 func NewPublicInnerError()(*PublicInnerError) {

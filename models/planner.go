@@ -8,11 +8,11 @@ import (
 type Planner struct {
     Entity
     // Read-only. Nullable. Returns a collection of the specified buckets
-    buckets []PlannerBucketable;
+    buckets []PlannerBucketable
     // Read-only. Nullable. Returns a collection of the specified plans
-    plans []PlannerPlanable;
+    plans []PlannerPlanable
     // Read-only. Nullable. Returns a collection of the specified tasks
-    tasks []PlannerTaskable;
+    tasks []PlannerTaskable
 }
 // NewPlanner instantiates a new planner and sets the default values.
 func NewPlanner()(*Planner) {

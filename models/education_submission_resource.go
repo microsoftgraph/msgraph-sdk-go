@@ -8,9 +8,9 @@ import (
 type EducationSubmissionResource struct {
     Entity
     // Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
-    assignmentResourceUrl *string;
+    assignmentResourceUrl *string
     // Resource object.
-    resource EducationResourceable;
+    resource EducationResourceable
 }
 // NewEducationSubmissionResource instantiates a new educationSubmissionResource and sets the default values.
 func NewEducationSubmissionResource()(*EducationSubmissionResource) {

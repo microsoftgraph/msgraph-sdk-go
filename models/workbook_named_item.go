@@ -8,19 +8,19 @@ import (
 type WorkbookNamedItem struct {
     Entity
     // Represents the comment associated with this name.
-    comment *string;
+    comment *string
     // The name of the object. Read-only.
-    name *string;
+    name *string
     // Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
-    scope *string;
+    scope *string
     // Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
-    type_escaped *string;
+    type_escaped *string
     // Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
-    value Jsonable;
+    value Jsonable
     // Specifies whether the object is visible or not.
-    visible *bool;
+    visible *bool
     // Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
-    worksheet WorkbookWorksheetable;
+    worksheet WorkbookWorksheetable
 }
 // NewWorkbookNamedItem instantiates a new workbookNamedItem and sets the default values.
 func NewWorkbookNamedItem()(*WorkbookNamedItem) {

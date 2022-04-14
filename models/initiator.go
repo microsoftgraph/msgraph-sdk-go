@@ -8,7 +8,7 @@ import (
 type Initiator struct {
     Identity
     // Type of initiator. Possible values are: user, application, system, unknownFutureValue.
-    initiatorType *InitiatorType;
+    initiatorType *InitiatorType
 }
 // NewInitiator instantiates a new initiator and sets the default values.
 func NewInitiator()(*Initiator) {

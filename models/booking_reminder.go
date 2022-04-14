@@ -7,13 +7,13 @@ import (
 // BookingReminder this type represents when and to whom to send an e-mail reminder.
 type BookingReminder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The message in the reminder.
-    message *string;
+    message *string
     // The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
-    offset *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    offset *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
-    recipients *BookingReminderRecipients;
+    recipients *BookingReminderRecipients
 }
 // NewBookingReminder instantiates a new bookingReminder and sets the default values.
 func NewBookingReminder()(*BookingReminder) {

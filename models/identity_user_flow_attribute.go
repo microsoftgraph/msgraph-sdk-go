@@ -8,13 +8,13 @@ import (
 type IdentityUserFlowAttribute struct {
     Entity
     // The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
-    dataType *IdentityUserFlowAttributeDataType;
+    dataType *IdentityUserFlowAttributeDataType
     // The description of the user flow attribute that's shown to the user at the time of sign-up.
-    description *string;
+    description *string
     // The display name of the user flow attribute.
-    displayName *string;
+    displayName *string
     // The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
-    userFlowAttributeType *IdentityUserFlowAttributeType;
+    userFlowAttributeType *IdentityUserFlowAttributeType
 }
 // NewIdentityUserFlowAttribute instantiates a new identityUserFlowAttribute and sets the default values.
 func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {

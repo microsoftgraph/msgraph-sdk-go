@@ -8,7 +8,7 @@ import (
 type MultiValueLegacyExtendedProperty struct {
     Entity
     // A collection of property values.
-    value []string;
+    value []string
 }
 // NewMultiValueLegacyExtendedProperty instantiates a new multiValueLegacyExtendedProperty and sets the default values.
 func NewMultiValueLegacyExtendedProperty()(*MultiValueLegacyExtendedProperty) {

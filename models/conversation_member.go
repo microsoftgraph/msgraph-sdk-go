@@ -9,11 +9,11 @@ import (
 type ConversationMember struct {
     Entity
     // The display name of the user.
-    displayName *string;
+    displayName *string
     // The roles for that user.
-    roles []string;
+    roles []string
     // The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-    visibleHistoryStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    visibleHistoryStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewConversationMember instantiates a new conversationMember and sets the default values.
 func NewConversationMember()(*ConversationMember) {

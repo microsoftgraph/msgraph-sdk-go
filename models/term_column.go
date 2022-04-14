@@ -7,11 +7,11 @@ import (
 // TermColumn 
 type TermColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies whether the column will allow more than one value.
-    allowMultipleValues *bool;
+    allowMultipleValues *bool
     // Specifies whether to display the entire term path or only the term label.
-    showFullyQualifiedName *bool;
+    showFullyQualifiedName *bool
 }
 // NewTermColumn instantiates a new termColumn and sets the default values.
 func NewTermColumn()(*TermColumn) {

@@ -7,9 +7,9 @@ import (
 // ComplianceManagementPartnerAssignment user group targeting for Compliance Management Partner
 type ComplianceManagementPartnerAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Group assignment target.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewComplianceManagementPartnerAssignment instantiates a new complianceManagementPartnerAssignment and sets the default values.
 func NewComplianceManagementPartnerAssignment()(*ComplianceManagementPartnerAssignment) {

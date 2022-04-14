@@ -8,13 +8,13 @@ import (
 type Authentication struct {
     Entity
     // Represents the FIDO2 security keys registered to a user for authentication.
-    fido2Methods []Fido2AuthenticationMethodable;
+    fido2Methods []Fido2AuthenticationMethodable
     // Represents all authentication methods registered to a user.
-    methods []AuthenticationMethodable;
+    methods []AuthenticationMethodable
     // The details of the Microsoft Authenticator app registered to a user for authentication.
-    microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethodable;
+    microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethodable
     // Represents the Windows Hello for Business authentication method registered to a user for authentication.
-    windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethodable;
+    windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethodable
 }
 // NewAuthentication instantiates a new authentication and sets the default values.
 func NewAuthentication()(*Authentication) {

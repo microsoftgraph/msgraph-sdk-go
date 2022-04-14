@@ -8,13 +8,13 @@ import (
 type AppConsentRequest struct {
     Entity
     // The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
-    appDisplayName *string;
+    appDisplayName *string
     // The identifier of the application. Required. Supports $filter (eq only) and $orderby.
-    appId *string;
+    appId *string
     // A list of pending scopes waiting for approval. Required.
-    pendingScopes []AppConsentRequestScopeable;
+    pendingScopes []AppConsentRequestScopeable
     // A list of pending user consent requests.
-    userConsentRequests []UserConsentRequestable;
+    userConsentRequests []UserConsentRequestable
 }
 // NewAppConsentRequest instantiates a new appConsentRequest and sets the default values.
 func NewAppConsentRequest()(*AppConsentRequest) {
