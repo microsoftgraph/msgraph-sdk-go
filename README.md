@@ -100,7 +100,7 @@ To retrieve the users:
 import (
     msgraphcore "github.com/microsoftgraph/msgraph-sdk-go-core"
     "github.com/microsoftgraph/msgraph-sdk-go/users"
-    "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 result, err := client.Users().Get(nil)
@@ -113,7 +113,7 @@ if err != nil {
 pageIterator, err := msgraphcore.NewPageIterator(result, adapter, graph.CreateUserCollectionResponseFromDiscriminatorValue)
 
 err = pageIterator.Iterate(func(pageItem interface{}) bool {
-    user := pageItem.(graph.User)
+    user := pageItem.(graph.Userable)
     fmt.Printf("%s\n", *user.GetDisplayName())
     // Return true to continue the iteration
     return true
