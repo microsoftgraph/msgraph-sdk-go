@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Upgraded to go 18.
+
 ## [0.19.1] - 2022-04-14
 
 ### Changed

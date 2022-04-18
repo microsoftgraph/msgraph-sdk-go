@@ -1,6 +1,6 @@
 module github.com/microsoftgraph/msgraph-sdk-go
 
-go 1.17
+go 1.18
 
 require (
 	github.com/microsoft/kiota-abstractions-go v0.3.0
