@@ -10,6 +10,8 @@ type PlannerPlan struct {
     Entity
     // Read-only. Nullable. Collection of buckets in the plan.
     buckets []PlannerBucketable
+    // Identifies the container of the plan. After it is set, this property can’t be updated. Required.
+    container PlannerPlanContainerable
     // Read-only. The user who created the plan.
     createdBy IdentitySetable
     // Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -40,6 +42,14 @@ func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
         return nil
     } else {
         return m.buckets
+    }
+}
+// GetContainer gets the container property value. Identifies the container of the plan. After it is set, this property can’t be updated. Required.
+func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.container
     }
 }
 // GetCreatedBy gets the createdBy property value. Read-only. The user who created the plan.
@@ -80,6 +90,16 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 res[i] = v.(PlannerBucketable)
             }
             m.SetBuckets(res)
+        }
+        return nil
+    }
+    res["container"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerPlanContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContainer(val.(PlannerPlanContainerable))
         }
         return nil
     }
@@ -190,6 +210,12 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("container", m.GetContainer())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("createdBy", m.GetCreatedBy())
         if err != nil {
             return err
@@ -235,6 +261,12 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *PlannerPlan) SetBuckets(value []PlannerBucketable)() {
     if m != nil {
         m.buckets = value
+    }
+}
+// SetContainer sets the container property value. Identifies the container of the plan. After it is set, this property can’t be updated. Required.
+func (m *PlannerPlan) SetContainer(value PlannerPlanContainerable)() {
+    if m != nil {
+        m.container = value
     }
 }
 // SetCreatedBy sets the createdBy property value. Read-only. The user who created the plan.

@@ -15,10 +15,11 @@ const (
     SKYPEUSER_TEAMWORKUSERIDENTITYTYPE
     PHONEUSER_TEAMWORKUSERIDENTITYTYPE
     UNKNOWNFUTUREVALUE_TEAMWORKUSERIDENTITYTYPE
+    EMAILUSER_TEAMWORKUSERIDENTITYTYPE
 )
 
 func (i TeamworkUserIdentityType) String() string {
-    return []string{"AADUSER", "ONPREMISEAADUSER", "ANONYMOUSGUEST", "FEDERATEDUSER", "PERSONALMICROSOFTACCOUNTUSER", "SKYPEUSER", "PHONEUSER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"AADUSER", "ONPREMISEAADUSER", "ANONYMOUSGUEST", "FEDERATEDUSER", "PERSONALMICROSOFTACCOUNTUSER", "SKYPEUSER", "PHONEUSER", "UNKNOWNFUTUREVALUE", "EMAILUSER"}[i]
 }
 func ParseTeamworkUserIdentityType(v string) (interface{}, error) {
     result := AADUSER_TEAMWORKUSERIDENTITYTYPE
@@ -39,6 +40,8 @@ func ParseTeamworkUserIdentityType(v string) (interface{}, error) {
             result = PHONEUSER_TEAMWORKUSERIDENTITYTYPE
         case "UNKNOWNFUTUREVALUE":
             result = UNKNOWNFUTUREVALUE_TEAMWORKUSERIDENTITYTYPE
+        case "EMAILUSER":
+            result = EMAILUSER_TEAMWORKUSERIDENTITYTYPE
         default:
             return 0, errors.New("Unknown TeamworkUserIdentityType value: " + v)
     }

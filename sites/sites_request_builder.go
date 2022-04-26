@@ -48,17 +48,6 @@ type SitesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
-// SitesRequestBuilderPostOptions options for Post
-type SitesRequestBuilderPostOptions struct {
-    // 
-    Body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
-}
 // Add the add property
 func (m *SitesRequestBuilder) Add()(*i04168ffe2353eecc18b03924033a8b3a497518b96de485de3c54646fd2088af1.AddRequestBuilder) {
     return i04168ffe2353eecc18b03924033a8b3a497518b96de485de3c54646fd2088af1.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -106,24 +95,6 @@ func (m *SitesRequestBuilder) CreateGetRequestInformation(options *SitesRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation add new entity to sites
-func (m *SitesRequestBuilder) CreatePostRequestInformation(options *SitesRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
 // Get get entities from sites
 func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
@@ -139,22 +110,6 @@ func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(iadcd8
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
-}
-// Post add new entity to sites
-func (m *SitesRequestBuilder) Post(options *SitesRequestBuilderPostOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSiteFromDiscriminatorValue, nil, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable), nil
 }
 // Remove the remove property
 func (m *SitesRequestBuilder) Remove()(*i36e45f2c65a6887462977eb125acfe848013e7ff15c056bbdef95a2654f52bba.RemoveRequestBuilder) {
