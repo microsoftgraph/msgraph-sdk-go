@@ -13,7 +13,7 @@ type Call struct {
     callbackUri *string
     // A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
     callChainId *string
-    // The callOptions property
+    // Contains the optional features for the call.
     callOptions CallOptionsable
     // The routing information on how the call was retargeted. Read-only.
     callRoutes []CallRouteable
@@ -89,7 +89,7 @@ func (m *Call) GetCallChainId()(*string) {
         return m.callChainId
     }
 }
-// GetCallOptions gets the callOptions property value. The callOptions property
+// GetCallOptions gets the callOptions property value. Contains the optional features for the call.
 func (m *Call) GetCallOptions()(CallOptionsable) {
     if m == nil {
         return nil
@@ -694,7 +694,7 @@ func (m *Call) SetCallChainId(value *string)() {
         m.callChainId = value
     }
 }
-// SetCallOptions sets the callOptions property value. The callOptions property
+// SetCallOptions sets the callOptions property value. Contains the optional features for the call.
 func (m *Call) SetCallOptions(value CallOptionsable)() {
     if m != nil {
         m.callOptions = value

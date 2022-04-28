@@ -22,7 +22,7 @@ type DirectoryAudit struct {
     initiatedBy AuditActivityInitiatorable
     // Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
     loggedByService *string
-    // The operationType property
+    // Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
     operationType *string
     // Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
     result *OperationResult
@@ -221,7 +221,7 @@ func (m *DirectoryAudit) GetLoggedByService()(*string) {
         return m.loggedByService
     }
 }
-// GetOperationType gets the operationType property value. The operationType property
+// GetOperationType gets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
 func (m *DirectoryAudit) GetOperationType()(*string) {
     if m == nil {
         return nil
@@ -378,7 +378,7 @@ func (m *DirectoryAudit) SetLoggedByService(value *string)() {
         m.loggedByService = value
     }
 }
-// SetOperationType sets the operationType property value. The operationType property
+// SetOperationType sets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
 func (m *DirectoryAudit) SetOperationType(value *string)() {
     if m != nil {
         m.operationType = value

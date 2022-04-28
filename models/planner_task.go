@@ -48,6 +48,8 @@ type PlannerTask struct {
     planId *string
     // This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
     previewType *PlannerPreviewType
+    // Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+    priority *int32
     // Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
     progressTaskBoardFormat PlannerProgressTaskBoardTaskFormatable
     // Number of external references that exist on the task.
@@ -391,6 +393,16 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPriority(val)
+        }
+        return nil
+    }
     res["progressTaskBoardFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerProgressTaskBoardTaskFormatFromDiscriminatorValue)
         if err != nil {
@@ -471,6 +483,14 @@ func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
         return nil
     } else {
         return m.previewType
+    }
+}
+// GetPriority gets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+func (m *PlannerTask) GetPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
     }
 }
 // GetProgressTaskBoardFormat gets the progressTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
@@ -633,6 +653,12 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteInt32Value("priority", m.GetPriority())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("progressTaskBoardFormat", m.GetProgressTaskBoardFormat())
         if err != nil {
             return err
@@ -776,6 +802,12 @@ func (m *PlannerTask) SetPlanId(value *string)() {
 func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
     if m != nil {
         m.previewType = value
+    }
+}
+// SetPriority sets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+func (m *PlannerTask) SetPriority(value *int32)() {
+    if m != nil {
+        m.priority = value
     }
 }
 // SetProgressTaskBoardFormat sets the progressTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
