@@ -28,7 +28,7 @@ type Contact struct {
     displayName *string
     // The contact's email addresses.
     emailAddresses []EmailAddressable
-    // The collection of open extensions defined for the contact. Read-only. Nullable.
+    // The collection of open extensions defined for the contact. Nullable.
     extensions []Extensionable
     // The name the contact is filed under.
     fileAs *string
@@ -174,7 +174,7 @@ func (m *Contact) GetEmailAddresses()([]EmailAddressable) {
         return m.emailAddresses
     }
 }
-// GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
+// GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Nullable.
 func (m *Contact) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
@@ -1103,7 +1103,7 @@ func (m *Contact) SetEmailAddresses(value []EmailAddressable)() {
         m.emailAddresses = value
     }
 }
-// SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
+// SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Nullable.
 func (m *Contact) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value

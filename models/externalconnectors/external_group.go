@@ -12,7 +12,7 @@ type ExternalGroup struct {
     description *string
     // The friendly name of the external group. Optional.
     displayName *string
-    // A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+    // A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
     members []Identityable
 }
 // NewExternalGroup instantiates a new externalGroup and sets the default values.
@@ -81,7 +81,7 @@ func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetMembers gets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+// GetMembers gets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
 func (m *ExternalGroup) GetMembers()([]Identityable) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *ExternalGroup) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetMembers sets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+// SetMembers sets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
 func (m *ExternalGroup) SetMembers(value []Identityable)() {
     if m != nil {
         m.members = value

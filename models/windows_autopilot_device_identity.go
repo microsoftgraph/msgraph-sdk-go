@@ -14,7 +14,7 @@ type WindowsAutopilotDeviceIdentity struct {
     azureActiveDirectoryDeviceId *string
     // Display Name
     displayName *string
-    // Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.
+    // Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
     enrollmentState *EnrollmentState
     // Group Tag of the Windows autopilot device.
     groupTag *string
@@ -76,7 +76,7 @@ func (m *WindowsAutopilotDeviceIdentity) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEnrollmentState gets the enrollmentState property value. Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.
+// GetEnrollmentState gets the enrollmentState property value. Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
 func (m *WindowsAutopilotDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
     if m == nil {
         return nil
@@ -468,7 +468,7 @@ func (m *WindowsAutopilotDeviceIdentity) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEnrollmentState sets the enrollmentState property value. Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.
+// SetEnrollmentState sets the enrollmentState property value. Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
 func (m *WindowsAutopilotDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
     if m != nil {
         m.enrollmentState = value

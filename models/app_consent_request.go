@@ -11,7 +11,7 @@ type AppConsentRequest struct {
     appDisplayName *string
     // The identifier of the application. Required. Supports $filter (eq only) and $orderby.
     appId *string
-    // A list of pending scopes waiting for approval. Required.
+    // A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
     pendingScopes []AppConsentRequestScopeable
     // A list of pending user consent requests.
     userConsentRequests []UserConsentRequestable
@@ -96,7 +96,7 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
+// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
 func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScopeable) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *AppConsentRequest) SetAppId(value *string)() {
         m.appId = value
     }
 }
-// SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
+// SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
 func (m *AppConsentRequest) SetPendingScopes(value []AppConsentRequestScopeable)() {
     if m != nil {
         m.pendingScopes = value

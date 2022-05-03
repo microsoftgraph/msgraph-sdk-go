@@ -8,9 +8,9 @@ import (
 type ConditionalAccessPlatforms struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+    // Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.
     excludePlatforms []ConditionalAccessDevicePlatform
-    // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+    // Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.
     includePlatforms []ConditionalAccessDevicePlatform
 }
 // NewConditionalAccessPlatforms instantiates a new conditionalAccessPlatforms and sets the default values.
@@ -32,7 +32,7 @@ func (m *ConditionalAccessPlatforms) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// GetExcludePlatforms gets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+// GetExcludePlatforms gets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.
 func (m *ConditionalAccessPlatforms) GetExcludePlatforms()([]ConditionalAccessDevicePlatform) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIncludePlatforms gets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+// GetIncludePlatforms gets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.
 func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]ConditionalAccessDevicePlatform) {
     if m == nil {
         return nil
@@ -109,13 +109,13 @@ func (m *ConditionalAccessPlatforms) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetExcludePlatforms sets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+// SetExcludePlatforms sets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.
 func (m *ConditionalAccessPlatforms) SetExcludePlatforms(value []ConditionalAccessDevicePlatform)() {
     if m != nil {
         m.excludePlatforms = value
     }
 }
-// SetIncludePlatforms sets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+// SetIncludePlatforms sets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.
 func (m *ConditionalAccessPlatforms) SetIncludePlatforms(value []ConditionalAccessDevicePlatform)() {
     if m != nil {
         m.includePlatforms = value

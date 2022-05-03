@@ -7,7 +7,7 @@ import (
 // BookingBusiness 
 type BookingBusiness struct {
     Entity
-    // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+    // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
     address PhysicalAddressable
     // All the appointments of this business. Read-only. Nullable.
     appointments []BookingAppointmentable
@@ -53,7 +53,7 @@ func NewBookingBusiness()(*BookingBusiness) {
 func CreateBookingBusinessFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingBusiness(), nil
 }
-// GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+// GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) GetAddress()(PhysicalAddressable) {
     if m == nil {
         return nil
@@ -530,7 +530,7 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+// SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetAddress(value PhysicalAddressable)() {
     if m != nil {
         m.address = value

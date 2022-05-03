@@ -8,7 +8,7 @@ import (
 type Hashes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The CRC32 value of the file in little endian (if available). Read-only.
+    // The CRC32 value of the file (if available). Read-only.
     crc32Hash *string
     // A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
     quickXorHash *string
@@ -36,7 +36,7 @@ func (m *Hashes) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCrc32Hash gets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.
+// GetCrc32Hash gets the crc32Hash property value. The CRC32 value of the file (if available). Read-only.
 func (m *Hashes) GetCrc32Hash()(*string) {
     if m == nil {
         return nil
@@ -153,7 +153,7 @@ func (m *Hashes) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetCrc32Hash sets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.
+// SetCrc32Hash sets the crc32Hash property value. The CRC32 value of the file (if available). Read-only.
 func (m *Hashes) SetCrc32Hash(value *string)() {
     if m != nil {
         m.crc32Hash = value

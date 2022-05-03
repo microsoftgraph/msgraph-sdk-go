@@ -8,7 +8,7 @@ import (
 type UnifiedRolePermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Set of tasks that can be performed on a resource. Required.
+    // Set of tasks that can be performed on a resource.
     allowedResourceActions []string
     // Optional constraints that must be met for the permission to be effective.
     condition *string
@@ -34,7 +34,7 @@ func (m *UnifiedRolePermission) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAllowedResourceActions gets the allowedResourceActions property value. Set of tasks that can be performed on a resource. Required.
+// GetAllowedResourceActions gets the allowedResourceActions property value. Set of tasks that can be performed on a resource.
 func (m *UnifiedRolePermission) GetAllowedResourceActions()([]string) {
     if m == nil {
         return nil
@@ -135,7 +135,7 @@ func (m *UnifiedRolePermission) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetAllowedResourceActions sets the allowedResourceActions property value. Set of tasks that can be performed on a resource. Required.
+// SetAllowedResourceActions sets the allowedResourceActions property value. Set of tasks that can be performed on a resource.
 func (m *UnifiedRolePermission) SetAllowedResourceActions(value []string)() {
     if m != nil {
         m.allowedResourceActions = value

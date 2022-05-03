@@ -9,7 +9,7 @@ type EntitlementManagementSettings struct {
     Entity
     // If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
     durationUntilExternalUserDeletedAfterBlocked *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
+    // One of None, BlockSignIn, or BlockSignInAndDelete.
     externalUserLifecycleAction *AccessPackageExternalUserLifecycleAction
 }
 // NewEntitlementManagementSettings instantiates a new entitlementManagementSettings and sets the default values.
@@ -31,7 +31,7 @@ func (m *EntitlementManagementSettings) GetDurationUntilExternalUserDeletedAfter
         return m.durationUntilExternalUserDeletedAfterBlocked
     }
 }
-// GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
+// GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*AccessPackageExternalUserLifecycleAction) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *EntitlementManagementSettings) SetDurationUntilExternalUserDeletedAfter
         m.durationUntilExternalUserDeletedAfterBlocked = value
     }
 }
-// SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
+// SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *AccessPackageExternalUserLifecycleAction)() {
     if m != nil {
         m.externalUserLifecycleAction = value

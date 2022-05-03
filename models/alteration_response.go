@@ -10,9 +10,9 @@ type AlterationResponse struct {
     additionalData map[string]interface{}
     // Defines the original user query string.
     originalQueryString *string
-    // Defines the details of the alteration information for the spelling correction.
+    // Defines the details of alteration information for the spelling correction.
     queryAlteration SearchAlterationable
-    // Defines the type of the spelling correction. Possible values are: suggestion, modification.
+    // Defines the type of the spelling correction. Possible values are suggestion, modification.
     queryAlterationType *SearchAlterationType
 }
 // NewAlterationResponse instantiates a new alterationResponse and sets the default values.
@@ -77,7 +77,7 @@ func (m *AlterationResponse) GetOriginalQueryString()(*string) {
         return m.originalQueryString
     }
 }
-// GetQueryAlteration gets the queryAlteration property value. Defines the details of the alteration information for the spelling correction.
+// GetQueryAlteration gets the queryAlteration property value. Defines the details of alteration information for the spelling correction.
 func (m *AlterationResponse) GetQueryAlteration()(SearchAlterationable) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *AlterationResponse) GetQueryAlteration()(SearchAlterationable) {
         return m.queryAlteration
     }
 }
-// GetQueryAlterationType gets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
+// GetQueryAlterationType gets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are suggestion, modification.
 func (m *AlterationResponse) GetQueryAlterationType()(*SearchAlterationType) {
     if m == nil {
         return nil
@@ -134,13 +134,13 @@ func (m *AlterationResponse) SetOriginalQueryString(value *string)() {
         m.originalQueryString = value
     }
 }
-// SetQueryAlteration sets the queryAlteration property value. Defines the details of the alteration information for the spelling correction.
+// SetQueryAlteration sets the queryAlteration property value. Defines the details of alteration information for the spelling correction.
 func (m *AlterationResponse) SetQueryAlteration(value SearchAlterationable)() {
     if m != nil {
         m.queryAlteration = value
     }
 }
-// SetQueryAlterationType sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
+// SetQueryAlterationType sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are suggestion, modification.
 func (m *AlterationResponse) SetQueryAlterationType(value *SearchAlterationType)() {
     if m != nil {
         m.queryAlterationType = value

@@ -28,7 +28,7 @@ type PrintJobConfiguration struct {
     inputBin *string
     // The margin settings to use when printing.
     margin PrintMarginable
-    // The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
+    // The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
     mediaSize *string
     // The default media (such as paper) type to print the document on.
     mediaType *string
@@ -349,7 +349,7 @@ func (m *PrintJobConfiguration) GetMargin()(PrintMarginable) {
         return m.margin
     }
 }
-// GetMediaSize gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
+// GetMediaSize gets the mediaSize property value. The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
 func (m *PrintJobConfiguration) GetMediaSize()(*string) {
     if m == nil {
         return nil
@@ -622,7 +622,7 @@ func (m *PrintJobConfiguration) SetMargin(value PrintMarginable)() {
         m.margin = value
     }
 }
-// SetMediaSize sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
+// SetMediaSize sets the mediaSize property value. The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
 func (m *PrintJobConfiguration) SetMediaSize(value *string)() {
     if m != nil {
         m.mediaSize = value

@@ -8,7 +8,7 @@ import (
 type AgreementFileData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Data that represents the terms of use PDF document. Read-only.
+    // Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path 'your_file_path' -Encoding byte)).
     data []byte
 }
 // NewAgreementFileData instantiates a new agreementFileData and sets the default values.
@@ -30,7 +30,7 @@ func (m *AgreementFileData) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetData gets the data property value. Data that represents the terms of use PDF document. Read-only.
+// GetData gets the data property value. Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path 'your_file_path' -Encoding byte)).
 func (m *AgreementFileData) GetData()([]byte) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *AgreementFileData) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetData sets the data property value. Data that represents the terms of use PDF document. Read-only.
+// SetData sets the data property value. Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path 'your_file_path' -Encoding byte)).
 func (m *AgreementFileData) SetData(value []byte)() {
     if m != nil {
         m.data = value

@@ -22,7 +22,7 @@ type ChatMessage struct {
     deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Version number of the chat message.
     etag *string
-    // Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
+    // Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
     eventDetail EventMessageDetailable
     // Details of the sender of the chat message. Can only be set during migration.
     from ChatMessageFromIdentitySetable
@@ -36,7 +36,7 @@ type ChatMessage struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Locale of the chat message set by the client. Always set to en-us.
     locale *string
-    // List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+    // List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
     mentions []ChatMessageMentionable
     // The type of chat message. The possible values are: message, chatEvent, typing, unknownFutureValue, systemEventMessage. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: systemEventMessage.
     messageType *ChatMessageType
@@ -122,7 +122,7 @@ func (m *ChatMessage) GetEtag()(*string) {
         return m.etag
     }
 }
-// GetEventDetail gets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
+// GetEventDetail gets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessage) GetEventDetail()(EventMessageDetailable) {
     if m == nil {
         return nil
@@ -433,7 +433,7 @@ func (m *ChatMessage) GetLocale()(*string) {
         return m.locale
     }
 }
-// GetMentions gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+// GetMentions gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
 func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
     if m == nil {
         return nil
@@ -715,7 +715,7 @@ func (m *ChatMessage) SetEtag(value *string)() {
         m.etag = value
     }
 }
-// SetEventDetail sets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
+// SetEventDetail sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessage) SetEventDetail(value EventMessageDetailable)() {
     if m != nil {
         m.eventDetail = value
@@ -757,7 +757,7 @@ func (m *ChatMessage) SetLocale(value *string)() {
         m.locale = value
     }
 }
-// SetMentions sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+// SetMentions sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
 func (m *ChatMessage) SetMentions(value []ChatMessageMentionable)() {
     if m != nil {
         m.mentions = value

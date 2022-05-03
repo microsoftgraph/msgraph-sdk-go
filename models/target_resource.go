@@ -10,7 +10,7 @@ type TargetResource struct {
     additionalData map[string]interface{}
     // Indicates the visible name defined for the resource. Typically specified when the resource is created.
     displayName *string
-    // When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
+    // When type is set to Group, this indicates the group type.  Possible values are: unifiedGroups, azureAD, and unknownFutureValue
     groupType *GroupType
     // Indicates the unique ID of the resource.
     id *string
@@ -117,7 +117,7 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
+// GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type.  Possible values are: unifiedGroups, azureAD, and unknownFutureValue
 func (m *TargetResource) GetGroupType()(*GroupType) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *TargetResource) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetGroupType sets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
+// SetGroupType sets the groupType property value. When type is set to Group, this indicates the group type.  Possible values are: unifiedGroups, azureAD, and unknownFutureValue
 func (m *TargetResource) SetGroupType(value *GroupType)() {
     if m != nil {
         m.groupType = value

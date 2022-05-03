@@ -18,7 +18,7 @@ type Permission struct {
     grantedToIdentitiesV2 []SharePointIdentitySetable
     // For user type permissions, the details of the users and applications for this permission. Read-only.
     grantedToV2 SharePointIdentitySetable
-    // Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
+    // Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only.
     hasPassword *bool
     // Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
     inheritedFrom ItemReferenceable
@@ -28,7 +28,7 @@ type Permission struct {
     link SharingLinkable
     // The type of permission, for example, read. See below for the full list of roles. Read-only.
     roles []string
-    // A unique token that can be used to access this shared item via the **shares** API. Read-only.
+    // A unique token that can be used to access this shared item via the [shares API][]. Read-only.
     shareId *string
 }
 // NewPermission instantiates a new permission and sets the default values.
@@ -209,7 +209,7 @@ func (m *Permission) GetGrantedToV2()(SharePointIdentitySetable) {
         return m.grantedToV2
     }
 }
-// GetHasPassword gets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
+// GetHasPassword gets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only.
 func (m *Permission) GetHasPassword()(*bool) {
     if m == nil {
         return nil
@@ -249,7 +249,7 @@ func (m *Permission) GetRoles()([]string) {
         return m.roles
     }
 }
-// GetShareId gets the shareId property value. A unique token that can be used to access this shared item via the **shares** API. Read-only.
+// GetShareId gets the shareId property value. A unique token that can be used to access this shared item via the [shares API][]. Read-only.
 func (m *Permission) GetShareId()(*string) {
     if m == nil {
         return nil
@@ -369,7 +369,7 @@ func (m *Permission) SetGrantedToV2(value SharePointIdentitySetable)() {
         m.grantedToV2 = value
     }
 }
-// SetHasPassword sets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
+// SetHasPassword sets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only.
 func (m *Permission) SetHasPassword(value *bool)() {
     if m != nil {
         m.hasPassword = value
@@ -399,7 +399,7 @@ func (m *Permission) SetRoles(value []string)() {
         m.roles = value
     }
 }
-// SetShareId sets the shareId property value. A unique token that can be used to access this shared item via the **shares** API. Read-only.
+// SetShareId sets the shareId property value. A unique token that can be used to access this shared item via the [shares API][]. Read-only.
 func (m *Permission) SetShareId(value *string)() {
     if m != nil {
         m.shareId = value

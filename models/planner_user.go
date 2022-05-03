@@ -9,7 +9,7 @@ type PlannerUser struct {
     Entity
     // Read-only. Nullable. Returns the plannerTasks assigned to the user.
     plans []PlannerPlanable
-    // Read-only. Nullable. Returns the plannerPlans shared with the user.
+    // Read-only. Nullable. Returns the plannerTasks assigned to the user.
     tasks []PlannerTaskable
 }
 // NewPlannerUser instantiates a new plannerUser and sets the default values.
@@ -64,7 +64,7 @@ func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
         return m.plans
     }
 }
-// GetTasks gets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.
+// GetTasks gets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) GetTasks()([]PlannerTaskable) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
         m.plans = value
     }
 }
-// SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.
+// SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetTasks(value []PlannerTaskable)() {
     if m != nil {
         m.tasks = value

@@ -35,7 +35,7 @@ type ColumnDefinition struct {
     hidden *bool
     // This column stores hyperlink or picture values.
     hyperlinkOrPicture HyperlinkOrPictureColumnable
-    // Specifies whether the column values can be used for sorting and searching.
+    // Specifies whether the column values can used for sorting and searching.
     indexed *bool
     // Indicates whether this column can be deleted.
     isDeletable *bool
@@ -51,15 +51,15 @@ type ColumnDefinition struct {
     number NumberColumnable
     // This column stores Person or Group values.
     personOrGroup PersonOrGroupColumnable
-    // If 'true', changes to this column will be propagated to lists that implement the column.
+    // If true, changes to this column will be propagated to lists that implement the column.
     propagateChanges *bool
     // Specifies whether the column values can be modified.
     readOnly *bool
     // Specifies whether the column value isn't optional.
     required *bool
-    // The source column for the content type column.
+    // The source column for content type column.
     sourceColumn ColumnDefinitionable
-    // ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
+    // ContentType from which this column is inherited from. Used only to fetch contentTypes columns.
     sourceContentType ContentTypeInfoable
     // This column stores taxonomy terms.
     term TermColumnable
@@ -520,7 +520,7 @@ func (m *ColumnDefinition) GetHyperlinkOrPicture()(HyperlinkOrPictureColumnable)
         return m.hyperlinkOrPicture
     }
 }
-// GetIndexed gets the indexed property value. Specifies whether the column values can be used for sorting and searching.
+// GetIndexed gets the indexed property value. Specifies whether the column values can used for sorting and searching.
 func (m *ColumnDefinition) GetIndexed()(*bool) {
     if m == nil {
         return nil
@@ -584,7 +584,7 @@ func (m *ColumnDefinition) GetPersonOrGroup()(PersonOrGroupColumnable) {
         return m.personOrGroup
     }
 }
-// GetPropagateChanges gets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
+// GetPropagateChanges gets the propagateChanges property value. If true, changes to this column will be propagated to lists that implement the column.
 func (m *ColumnDefinition) GetPropagateChanges()(*bool) {
     if m == nil {
         return nil
@@ -608,7 +608,7 @@ func (m *ColumnDefinition) GetRequired()(*bool) {
         return m.required
     }
 }
-// GetSourceColumn gets the sourceColumn property value. The source column for the content type column.
+// GetSourceColumn gets the sourceColumn property value. The source column for content type column.
 func (m *ColumnDefinition) GetSourceColumn()(ColumnDefinitionable) {
     if m == nil {
         return nil
@@ -616,7 +616,7 @@ func (m *ColumnDefinition) GetSourceColumn()(ColumnDefinitionable) {
         return m.sourceColumn
     }
 }
-// GetSourceContentType gets the sourceContentType property value. ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
+// GetSourceContentType gets the sourceContentType property value. ContentType from which this column is inherited from. Used only to fetch contentTypes columns.
 func (m *ColumnDefinition) GetSourceContentType()(ContentTypeInfoable) {
     if m == nil {
         return nil
@@ -949,7 +949,7 @@ func (m *ColumnDefinition) SetHyperlinkOrPicture(value HyperlinkOrPictureColumna
         m.hyperlinkOrPicture = value
     }
 }
-// SetIndexed sets the indexed property value. Specifies whether the column values can be used for sorting and searching.
+// SetIndexed sets the indexed property value. Specifies whether the column values can used for sorting and searching.
 func (m *ColumnDefinition) SetIndexed(value *bool)() {
     if m != nil {
         m.indexed = value
@@ -997,7 +997,7 @@ func (m *ColumnDefinition) SetPersonOrGroup(value PersonOrGroupColumnable)() {
         m.personOrGroup = value
     }
 }
-// SetPropagateChanges sets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
+// SetPropagateChanges sets the propagateChanges property value. If true, changes to this column will be propagated to lists that implement the column.
 func (m *ColumnDefinition) SetPropagateChanges(value *bool)() {
     if m != nil {
         m.propagateChanges = value
@@ -1015,13 +1015,13 @@ func (m *ColumnDefinition) SetRequired(value *bool)() {
         m.required = value
     }
 }
-// SetSourceColumn sets the sourceColumn property value. The source column for the content type column.
+// SetSourceColumn sets the sourceColumn property value. The source column for content type column.
 func (m *ColumnDefinition) SetSourceColumn(value ColumnDefinitionable)() {
     if m != nil {
         m.sourceColumn = value
     }
 }
-// SetSourceContentType sets the sourceContentType property value. ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
+// SetSourceContentType sets the sourceContentType property value. ContentType from which this column is inherited from. Used only to fetch contentTypes columns.
 func (m *ColumnDefinition) SetSourceContentType(value ContentTypeInfoable)() {
     if m != nil {
         m.sourceContentType = value

@@ -9,7 +9,7 @@ type PrintTask struct {
     Entity
     // The definition property
     definition PrintTaskDefinitionable
-    // The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
+    // The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
     parentUrl *string
     // The status property
     status PrintTaskStatusable
@@ -80,7 +80,7 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetParentUrl gets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
+// GetParentUrl gets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
 func (m *PrintTask) GetParentUrl()(*string) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *PrintTask) SetDefinition(value PrintTaskDefinitionable)() {
         m.definition = value
     }
 }
-// SetParentUrl sets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
+// SetParentUrl sets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
 func (m *PrintTask) SetParentUrl(value *string)() {
     if m != nil {
         m.parentUrl = value

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the identityContainer singleton.
+// Provides operations to manage the policyRoot singleton.
 type ConditionalAccessClientApp int
 
 const (

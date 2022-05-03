@@ -13,16 +13,12 @@ type WipeManagedAppRegistrationsByDeviceTagRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostOptions options for Post
-type WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostOptions struct {
-    // 
-    Body WipeManagedAppRegistrationsByDeviceTagRequestBodyable
+// WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewWipeManagedAppRegistrationsByDeviceTagRequestBuilderInternal instantiates a new WipeManagedAppRegistrationsByDeviceTagRequestBuilder and sets the default values.
 func NewWipeManagedAppRegistrationsByDeviceTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WipeManagedAppRegistrationsByDeviceTagRequestBuilder) {
@@ -43,31 +39,34 @@ func NewWipeManagedAppRegistrationsByDeviceTagRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewWipeManagedAppRegistrationsByDeviceTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation issues a wipe operation on an app registration with specified device tag.
-func (m *WipeManagedAppRegistrationsByDeviceTagRequestBuilder) CreatePostRequestInformation(options *WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration issues a wipe operation on an app registration with specified device tag.
+func (m *WipeManagedAppRegistrationsByDeviceTagRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipeManagedAppRegistrationsByDeviceTagRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration issues a wipe operation on an app registration with specified device tag.
+func (m *WipeManagedAppRegistrationsByDeviceTagRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipeManagedAppRegistrationsByDeviceTagRequestBodyable, requestConfiguration *WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post issues a wipe operation on an app registration with specified device tag.
-func (m *WipeManagedAppRegistrationsByDeviceTagRequestBuilder) Post(options *WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler issues a wipe operation on an app registration with specified device tag.
+func (m *WipeManagedAppRegistrationsByDeviceTagRequestBuilder) PostWithResponseHandler(body WipeManagedAppRegistrationsByDeviceTagRequestBodyable, requestConfiguration *WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostRequestConfiguration)(error) {
+    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+}
+// PostWithResponseHandler issues a wipe operation on an app registration with specified device tag.
+func (m *WipeManagedAppRegistrationsByDeviceTagRequestBuilder) PostWithResponseHandler(body WipeManagedAppRegistrationsByDeviceTagRequestBodyable, requestConfiguration *WipeManagedAppRegistrationsByDeviceTagRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

@@ -12,7 +12,7 @@ type Website struct {
     address *string
     // The display name of the web site.
     displayName *string
-    // The possible values are: other, home, work, blog, profile.
+    // Possible values are: other, home, work, blog, profile.
     type_escaped *WebsiteType
 }
 // NewWebsite instantiates a new website and sets the default values.
@@ -85,7 +85,7 @@ func (m *Website) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetType gets the type property value. The possible values are: other, home, work, blog, profile.
+// GetType gets the type property value. Possible values are: other, home, work, blog, profile.
 func (m *Website) GetType()(*WebsiteType) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *Website) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetType sets the type property value. The possible values are: other, home, work, blog, profile.
+// SetType sets the type property value. Possible values are: other, home, work, blog, profile.
 func (m *Website) SetType(value *WebsiteType)() {
     if m != nil {
         m.type_escaped = value

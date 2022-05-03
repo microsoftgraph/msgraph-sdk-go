@@ -12,7 +12,7 @@ type EducationStudent struct {
     birthDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // ID of the student in the source system.
     externalId *string
-    // The possible values are: female, male, other, unknownFutureValue.
+    // Possible values are: female, male, other.
     gender *EducationGender
     // Current grade level of the student.
     grade *string
@@ -121,7 +121,7 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
+// GetGender gets the gender property value. Possible values are: female, male, other.
 func (m *EducationStudent) GetGender()(*EducationGender) {
     if m == nil {
         return nil
@@ -218,7 +218,7 @@ func (m *EducationStudent) SetExternalId(value *string)() {
         m.externalId = value
     }
 }
-// SetGender sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
+// SetGender sets the gender property value. Possible values are: female, male, other.
 func (m *EducationStudent) SetGender(value *EducationGender)() {
     if m != nil {
         m.gender = value

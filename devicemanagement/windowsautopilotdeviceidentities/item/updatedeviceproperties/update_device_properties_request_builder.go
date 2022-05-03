@@ -13,16 +13,12 @@ type UpdateDevicePropertiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UpdateDevicePropertiesRequestBuilderPostOptions options for Post
-type UpdateDevicePropertiesRequestBuilderPostOptions struct {
-    // 
-    Body UpdateDevicePropertiesRequestBodyable
+// UpdateDevicePropertiesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type UpdateDevicePropertiesRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewUpdateDevicePropertiesRequestBuilderInternal instantiates a new UpdateDevicePropertiesRequestBuilder and sets the default values.
 func NewUpdateDevicePropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UpdateDevicePropertiesRequestBuilder) {
@@ -43,31 +39,34 @@ func NewUpdateDevicePropertiesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateDevicePropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation updates properties on Autopilot devices.
-func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformation(options *UpdateDevicePropertiesRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration updates properties on Autopilot devices.
+func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateDevicePropertiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration updates properties on Autopilot devices.
+func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateDevicePropertiesRequestBodyable, requestConfiguration *UpdateDevicePropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post updates properties on Autopilot devices.
-func (m *UpdateDevicePropertiesRequestBuilder) Post(options *UpdateDevicePropertiesRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler updates properties on Autopilot devices.
+func (m *UpdateDevicePropertiesRequestBuilder) PostWithResponseHandler(body UpdateDevicePropertiesRequestBodyable, requestConfiguration *UpdateDevicePropertiesRequestBuilderPostRequestConfiguration)(error) {
+    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+}
+// PostWithResponseHandler updates properties on Autopilot devices.
+func (m *UpdateDevicePropertiesRequestBuilder) PostWithResponseHandler(body UpdateDevicePropertiesRequestBodyable, requestConfiguration *UpdateDevicePropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

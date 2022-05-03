@@ -16,7 +16,7 @@ type TeamsAsyncOperation struct {
     error OperationErrorable
     // Time when the async operation was last updated.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Denotes which type of operation is being described.
+    // Denotes the type of operation being described.
     operationType *TeamsAsyncOperationType
     // Operation status.
     status *TeamsAsyncOperationStatus
@@ -153,7 +153,7 @@ func (m *TeamsAsyncOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7f
         return m.lastActionDateTime
     }
 }
-// GetOperationType gets the operationType property value. Denotes which type of operation is being described.
+// GetOperationType gets the operationType property value. Denotes the type of operation being described.
 func (m *TeamsAsyncOperation) GetOperationType()(*TeamsAsyncOperationType) {
     if m == nil {
         return nil
@@ -267,7 +267,7 @@ func (m *TeamsAsyncOperation) SetLastActionDateTime(value *i336074805fc853987abe
         m.lastActionDateTime = value
     }
 }
-// SetOperationType sets the operationType property value. Denotes which type of operation is being described.
+// SetOperationType sets the operationType property value. Denotes the type of operation being described.
 func (m *TeamsAsyncOperation) SetOperationType(value *TeamsAsyncOperationType)() {
     if m != nil {
         m.operationType = value

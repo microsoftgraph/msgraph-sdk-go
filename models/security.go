@@ -7,7 +7,7 @@ import (
 // Security provides operations to manage the security singleton.
 type Security struct {
     Entity
-    // Read-only. Nullable.
+    // Notifications for suspicious or potential security issues in a customer’s tenant.
     alerts []Alertable
     // The secureScoreControlProfiles property
     secureScoreControlProfiles []SecureScoreControlProfileable
@@ -25,7 +25,7 @@ func NewSecurity()(*Security) {
 func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurity(), nil
 }
-// GetAlerts gets the alerts property value. Read-only. Nullable.
+// GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) GetAlerts()([]Alertable) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAlerts sets the alerts property value. Read-only. Nullable.
+// SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) SetAlerts(value []Alertable)() {
     if m != nil {
         m.alerts = value

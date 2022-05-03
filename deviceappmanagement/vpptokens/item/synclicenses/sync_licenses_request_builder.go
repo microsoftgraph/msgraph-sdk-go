@@ -14,14 +14,12 @@ type SyncLicensesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SyncLicensesRequestBuilderPostOptions options for Post
-type SyncLicensesRequestBuilderPostOptions struct {
+// SyncLicensesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type SyncLicensesRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewSyncLicensesRequestBuilderInternal instantiates a new SyncLicensesRequestBuilder and sets the default values.
 func NewSyncLicensesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SyncLicensesRequestBuilder) {
@@ -42,30 +40,33 @@ func NewSyncLicensesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewSyncLicensesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation syncs licenses associated with a specific appleVolumePurchaseProgramToken
-func (m *SyncLicensesRequestBuilder) CreatePostRequestInformation(options *SyncLicensesRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration syncs licenses associated with a specific appleVolumePurchaseProgramToken
+func (m *SyncLicensesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration syncs licenses associated with a specific appleVolumePurchaseProgramToken
+func (m *SyncLicensesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SyncLicensesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post syncs licenses associated with a specific appleVolumePurchaseProgramToken
-func (m *SyncLicensesRequestBuilder) Post(options *SyncLicensesRequestBuilderPostOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler syncs licenses associated with a specific appleVolumePurchaseProgramToken
+func (m *SyncLicensesRequestBuilder) PostWithResponseHandler(requestConfiguration *SyncLicensesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
+    return m.PostWithResponseHandler(requestConfiguration, nil);
+}
+// PostWithResponseHandler syncs licenses associated with a specific appleVolumePurchaseProgramToken
+func (m *SyncLicensesRequestBuilder) PostWithResponseHandler(requestConfiguration *SyncLicensesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateVppTokenFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateVppTokenFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

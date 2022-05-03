@@ -25,7 +25,7 @@ type Photo struct {
     iso *int32
     // The orientation value from the camera. Writable on OneDrive Personal.
     orientation *int32
-    // Represents the date and time the photo was taken. Read-only.
+    // The date and time the photo was taken in UTC time. Read-only.
     takenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewPhoto instantiates a new photo and sets the default values.
@@ -206,7 +206,7 @@ func (m *Photo) GetOrientation()(*int32) {
         return m.orientation
     }
 }
-// GetTakenDateTime gets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.
+// GetTakenDateTime gets the takenDateTime property value. The date and time the photo was taken in UTC time. Read-only.
 func (m *Photo) GetTakenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -332,7 +332,7 @@ func (m *Photo) SetOrientation(value *int32)() {
         m.orientation = value
     }
 }
-// SetTakenDateTime sets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.
+// SetTakenDateTime sets the takenDateTime property value. The date and time the photo was taken in UTC time. Read-only.
 func (m *Photo) SetTakenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.takenDateTime = value

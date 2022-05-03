@@ -19,6 +19,8 @@ type List struct {
     items []ListItemable
     // Provides additional details about the list.
     list ListInfoable
+    // The collection of long running operations for the list.
+    operations []RichLongRunningOperationable
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
     sharepointIds SharepointIdsable
     // The set of subscriptions on the list.
@@ -144,6 +146,20 @@ func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRichLongRunningOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RichLongRunningOperationable, len(val))
+            for i, v := range val {
+                res[i] = v.(RichLongRunningOperationable)
+            }
+            m.SetOperations(res)
+        }
+        return nil
+    }
     res["sharepointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
@@ -194,6 +210,14 @@ func (m *List) GetList()(ListInfoable) {
         return nil
     } else {
         return m.list
+    }
+}
+// GetOperations gets the operations property value. The collection of long running operations for the list.
+func (m *List) GetOperations()([]RichLongRunningOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
     }
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
@@ -274,6 +298,16 @@ func (m *List) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetOperations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
+        for i, v := range m.GetOperations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("sharepointIds", m.GetSharepointIds())
         if err != nil {
@@ -332,6 +366,12 @@ func (m *List) SetItems(value []ListItemable)() {
 func (m *List) SetList(value ListInfoable)() {
     if m != nil {
         m.list = value
+    }
+}
+// SetOperations sets the operations property value. The collection of long running operations for the list.
+func (m *List) SetOperations(value []RichLongRunningOperationable)() {
+    if m != nil {
+        m.operations = value
     }
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.

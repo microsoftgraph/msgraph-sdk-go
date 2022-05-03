@@ -12,7 +12,7 @@ type TeamMemberSettings struct {
     allowAddRemoveApps *bool
     // If set to true, members can add and update private channels.
     allowCreatePrivateChannels *bool
-    // If set to true, members can add and update channels.
+    // If set to true, members can add and update any channels.
     allowCreateUpdateChannels *bool
     // If set to true, members can add, update, and remove connectors.
     allowCreateUpdateRemoveConnectors *bool
@@ -56,7 +56,7 @@ func (m *TeamMemberSettings) GetAllowCreatePrivateChannels()(*bool) {
         return m.allowCreatePrivateChannels
     }
 }
-// GetAllowCreateUpdateChannels gets the allowCreateUpdateChannels property value. If set to true, members can add and update channels.
+// GetAllowCreateUpdateChannels gets the allowCreateUpdateChannels property value. If set to true, members can add and update any channels.
 func (m *TeamMemberSettings) GetAllowCreateUpdateChannels()(*bool) {
     if m == nil {
         return nil
@@ -217,7 +217,7 @@ func (m *TeamMemberSettings) SetAllowCreatePrivateChannels(value *bool)() {
         m.allowCreatePrivateChannels = value
     }
 }
-// SetAllowCreateUpdateChannels sets the allowCreateUpdateChannels property value. If set to true, members can add and update channels.
+// SetAllowCreateUpdateChannels sets the allowCreateUpdateChannels property value. If set to true, members can add and update any channels.
 func (m *TeamMemberSettings) SetAllowCreateUpdateChannels(value *bool)() {
     if m != nil {
         m.allowCreateUpdateChannels = value

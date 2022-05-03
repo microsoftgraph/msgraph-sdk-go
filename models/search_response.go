@@ -10,7 +10,7 @@ type SearchResponse struct {
     additionalData map[string]interface{}
     // A collection of search results.
     hitsContainers []SearchHitsContainerable
-    // Provides information related to spelling corrections in the alteration response.
+    // Provides details of query alteration response for spelling correction.
     queryAlterationResponse AlterationResponseable
     // A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
     resultTemplates ResultTemplateDictionaryable
@@ -97,7 +97,7 @@ func (m *SearchResponse) GetHitsContainers()([]SearchHitsContainerable) {
         return m.hitsContainers
     }
 }
-// GetQueryAlterationResponse gets the queryAlterationResponse property value. Provides information related to spelling corrections in the alteration response.
+// GetQueryAlterationResponse gets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.
 func (m *SearchResponse) GetQueryAlterationResponse()(AlterationResponseable) {
     if m == nil {
         return nil
@@ -171,7 +171,7 @@ func (m *SearchResponse) SetHitsContainers(value []SearchHitsContainerable)() {
         m.hitsContainers = value
     }
 }
-// SetQueryAlterationResponse sets the queryAlterationResponse property value. Provides information related to spelling corrections in the alteration response.
+// SetQueryAlterationResponse sets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.
 func (m *SearchResponse) SetQueryAlterationResponse(value AlterationResponseable)() {
     if m != nil {
         m.queryAlterationResponse = value

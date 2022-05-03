@@ -8,7 +8,7 @@ import (
 type ConditionalAccessDevices struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
+    // Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them. Cannot be set if includeDevices or excludeDevices is set.
     deviceFilter ConditionalAccessFilterable
 }
 // NewConditionalAccessDevices instantiates a new conditionalAccessDevices and sets the default values.
@@ -30,7 +30,7 @@ func (m *ConditionalAccessDevices) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDeviceFilter gets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
+// GetDeviceFilter gets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them. Cannot be set if includeDevices or excludeDevices is set.
 func (m *ConditionalAccessDevices) GetDeviceFilter()(ConditionalAccessFilterable) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *ConditionalAccessDevices) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetDeviceFilter sets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
+// SetDeviceFilter sets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them. Cannot be set if includeDevices or excludeDevices is set.
 func (m *ConditionalAccessDevices) SetDeviceFilter(value ConditionalAccessFilterable)() {
     if m != nil {
         m.deviceFilter = value

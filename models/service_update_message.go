@@ -12,7 +12,7 @@ type ServiceUpdateMessage struct {
     actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of serviceAnnouncementAttachments.
     attachments []ServiceAnnouncementAttachmentable
-    // The zip file that contains all attachments for a message.
+    // The zip file of all attachments for a message.
     attachmentsArchive []byte
     // The body property
     body ItemBodyable
@@ -58,7 +58,7 @@ func (m *ServiceUpdateMessage) GetAttachments()([]ServiceAnnouncementAttachmenta
         return m.attachments
     }
 }
-// GetAttachmentsArchive gets the attachmentsArchive property value. The zip file that contains all attachments for a message.
+// GetAttachmentsArchive gets the attachmentsArchive property value. The zip file of all attachments for a message.
 func (m *ServiceUpdateMessage) GetAttachmentsArchive()([]byte) {
     if m == nil {
         return nil
@@ -349,7 +349,7 @@ func (m *ServiceUpdateMessage) SetAttachments(value []ServiceAnnouncementAttachm
         m.attachments = value
     }
 }
-// SetAttachmentsArchive sets the attachmentsArchive property value. The zip file that contains all attachments for a message.
+// SetAttachmentsArchive sets the attachmentsArchive property value. The zip file of all attachments for a message.
 func (m *ServiceUpdateMessage) SetAttachmentsArchive(value []byte)() {
     if m != nil {
         m.attachmentsArchive = value

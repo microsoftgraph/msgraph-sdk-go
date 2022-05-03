@@ -8,7 +8,7 @@ import (
 // Schema 
 type Schema struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // Must be set to microsoft.graph.externalConnector.externalItem. Required.
+    // Must be set to microsoft.graph.externalItem. Required.
     baseType *string
     // The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
     properties []Propertyable
@@ -24,7 +24,7 @@ func NewSchema()(*Schema) {
 func CreateSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchema(), nil
 }
-// GetBaseType gets the baseType property value. Must be set to microsoft.graph.externalConnector.externalItem. Required.
+// GetBaseType gets the baseType property value. Must be set to microsoft.graph.externalItem. Required.
 func (m *Schema) GetBaseType()(*string) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *Schema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetBaseType sets the baseType property value. Must be set to microsoft.graph.externalConnector.externalItem. Required.
+// SetBaseType sets the baseType property value. Must be set to microsoft.graph.externalItem. Required.
 func (m *Schema) SetBaseType(value *string)() {
     if m != nil {
         m.baseType = value

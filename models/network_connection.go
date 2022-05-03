@@ -9,7 +9,7 @@ import (
 type NetworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Name of the application managing the network connection (for example, Facebook or SMTP).
+    // Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
     applicationName *string
     // Destination IP address (of the network connection).
     destinationAddress *string
@@ -69,7 +69,7 @@ func (m *NetworkConnection) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetApplicationName gets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
+// GetApplicationName gets the applicationName property value. Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
 func (m *NetworkConnection) GetApplicationName()(*string) {
     if m == nil {
         return nil
@@ -573,7 +573,7 @@ func (m *NetworkConnection) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetApplicationName sets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
+// SetApplicationName sets the applicationName property value. Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
 func (m *NetworkConnection) SetApplicationName(value *string)() {
     if m != nil {
         m.applicationName = value

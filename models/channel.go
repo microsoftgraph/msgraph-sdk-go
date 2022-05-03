@@ -22,7 +22,7 @@ type Channel struct {
     isFavoriteByDefault *bool
     // A collection of membership records associated with the channel.
     members []ConversationMemberable
-    // The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
+    // The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
     membershipType *ChannelMembershipType
     // A collection of all the messages in the channel. A navigation property. Nullable.
     messages []ChatMessageable
@@ -225,7 +225,7 @@ func (m *Channel) GetMembers()([]ConversationMemberable) {
         return m.members
     }
 }
-// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
+// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
 func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
     if m == nil {
         return nil
@@ -386,7 +386,7 @@ func (m *Channel) SetMembers(value []ConversationMemberable)() {
         m.members = value
     }
 }
-// SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
+// SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
 func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
     if m != nil {
         m.membershipType = value

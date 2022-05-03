@@ -16,7 +16,7 @@ type RecurrenceRange struct {
     recurrenceTimeZone *string
     // The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
     startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+    // The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
     type_escaped *RecurrenceRangeType
 }
 // NewRecurrenceRange instantiates a new recurrenceRange and sets the default values.
@@ -125,7 +125,7 @@ func (m *RecurrenceRange) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a
         return m.startDate
     }
 }
-// GetType gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+// GetType gets the type property value. The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
 func (m *RecurrenceRange) GetType()(*RecurrenceRangeType) {
     if m == nil {
         return nil
@@ -204,7 +204,7 @@ func (m *RecurrenceRange) SetStartDate(value *i878a80d2330e89d26896388a3f487eef2
         m.startDate = value
     }
 }
-// SetType sets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+// SetType sets the type property value. The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
 func (m *RecurrenceRange) SetType(value *RecurrenceRangeType)() {
     if m != nil {
         m.type_escaped = value

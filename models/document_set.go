@@ -12,11 +12,11 @@ type DocumentSet struct {
     allowedContentTypes []ContentTypeInfoable
     // Default contents of document set.
     defaultContents []DocumentSetContentable
-    // Specifies whether to push welcome page changes to inherited content types.
+    // Indicates whether to add the name of the document set to each file name.
     propagateWelcomePageChanges *bool
     // The sharedColumns property
     sharedColumns []ColumnDefinitionable
-    // Indicates whether to add the name of the document set to each file name.
+    // Add the name of the Document Set to each file name.
     shouldPrefixNameToFile *bool
     // The welcomePageColumns property
     welcomePageColumns []ColumnDefinitionable
@@ -149,7 +149,7 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetPropagateWelcomePageChanges gets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
+// GetPropagateWelcomePageChanges gets the propagateWelcomePageChanges property value. Indicates whether to add the name of the document set to each file name.
 func (m *DocumentSet) GetPropagateWelcomePageChanges()(*bool) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *DocumentSet) GetSharedColumns()([]ColumnDefinitionable) {
         return m.sharedColumns
     }
 }
-// GetShouldPrefixNameToFile gets the shouldPrefixNameToFile property value. Indicates whether to add the name of the document set to each file name.
+// GetShouldPrefixNameToFile gets the shouldPrefixNameToFile property value. Add the name of the Document Set to each file name.
 func (m *DocumentSet) GetShouldPrefixNameToFile()(*bool) {
     if m == nil {
         return nil
@@ -275,7 +275,7 @@ func (m *DocumentSet) SetDefaultContents(value []DocumentSetContentable)() {
         m.defaultContents = value
     }
 }
-// SetPropagateWelcomePageChanges sets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
+// SetPropagateWelcomePageChanges sets the propagateWelcomePageChanges property value. Indicates whether to add the name of the document set to each file name.
 func (m *DocumentSet) SetPropagateWelcomePageChanges(value *bool)() {
     if m != nil {
         m.propagateWelcomePageChanges = value
@@ -287,7 +287,7 @@ func (m *DocumentSet) SetSharedColumns(value []ColumnDefinitionable)() {
         m.sharedColumns = value
     }
 }
-// SetShouldPrefixNameToFile sets the shouldPrefixNameToFile property value. Indicates whether to add the name of the document set to each file name.
+// SetShouldPrefixNameToFile sets the shouldPrefixNameToFile property value. Add the name of the Document Set to each file name.
 func (m *DocumentSet) SetShouldPrefixNameToFile(value *bool)() {
     if m != nil {
         m.shouldPrefixNameToFile = value

@@ -8,9 +8,9 @@ import (
 type KeyValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Key for the key-value pair.
+    // Key.
     key *string
-    // Value for the key-value pair.
+    // Value.
     value *string
 }
 // NewKeyValue instantiates a new keyValue and sets the default values.
@@ -57,7 +57,7 @@ func (m *KeyValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetKey gets the key property value. Key for the key-value pair.
+// GetKey gets the key property value. Key.
 func (m *KeyValue) GetKey()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *KeyValue) GetKey()(*string) {
         return m.key
     }
 }
-// GetValue gets the value property value. Value for the key-value pair.
+// GetValue gets the value property value. Value.
 func (m *KeyValue) GetValue()(*string) {
     if m == nil {
         return nil
@@ -101,13 +101,13 @@ func (m *KeyValue) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetKey sets the key property value. Key for the key-value pair.
+// SetKey sets the key property value. Key.
 func (m *KeyValue) SetKey(value *string)() {
     if m != nil {
         m.key = value
     }
 }
-// SetValue sets the value property value. Value for the key-value pair.
+// SetValue sets the value property value. Value.
 func (m *KeyValue) SetValue(value *string)() {
     if m != nil {
         m.value = value

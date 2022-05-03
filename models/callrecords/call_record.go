@@ -23,11 +23,11 @@ type CallRecord struct {
     participants []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable
     // List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
     sessions []Sessionable
-    // UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    // UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
     type_escaped *CallType
-    // Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+    // Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
     version *int64
 }
 // NewCallRecord instantiates a new callRecord and sets the default values.
@@ -214,7 +214,7 @@ func (m *CallRecord) GetSessions()([]Sessionable) {
         return m.sessions
     }
 }
-// GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -230,7 +230,7 @@ func (m *CallRecord) GetType()(*CallType) {
         return m.type_escaped
     }
 }
-// GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+// GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
 func (m *CallRecord) GetVersion()(*int64) {
     if m == nil {
         return nil
@@ -357,7 +357,7 @@ func (m *CallRecord) SetSessions(value []Sessionable)() {
         m.sessions = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetStartDateTime sets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *CallRecord) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startDateTime = value
@@ -369,7 +369,7 @@ func (m *CallRecord) SetType(value *CallType)() {
         m.type_escaped = value
     }
 }
-// SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+// SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
 func (m *CallRecord) SetVersion(value *int64)() {
     if m != nil {
         m.version = value

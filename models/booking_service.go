@@ -29,7 +29,7 @@ type BookingService struct {
     isHiddenFromCustomers *bool
     // True indicates that the appointments for the service will be held online. Default value is false.
     isLocationOnline *bool
-    // The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
+    // The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
     maximumAttendeesCount *int32
     // Additional information about this service.
     notes *string
@@ -352,7 +352,7 @@ func (m *BookingService) GetIsLocationOnline()(*bool) {
         return m.isLocationOnline
     }
 }
-// GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
+// GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
 func (m *BookingService) GetMaximumAttendeesCount()(*int32) {
     if m == nil {
         return nil
@@ -613,7 +613,7 @@ func (m *BookingService) SetIsLocationOnline(value *bool)() {
         m.isLocationOnline = value
     }
 }
-// SetMaximumAttendeesCount sets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
+// SetMaximumAttendeesCount sets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
 func (m *BookingService) SetMaximumAttendeesCount(value *int32)() {
     if m != nil {
         m.maximumAttendeesCount = value

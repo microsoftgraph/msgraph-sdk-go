@@ -10,7 +10,7 @@ type AccessReviewNotificationRecipientItem struct {
     additionalData map[string]interface{}
     // Determines the recipient of the notification email.
     notificationRecipientScope AccessReviewNotificationRecipientScopeable
-    // Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
+    // Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
     notificationTemplateType *string
 }
 // NewAccessReviewNotificationRecipientItem instantiates a new accessReviewNotificationRecipientItem and sets the default values.
@@ -65,7 +65,7 @@ func (m *AccessReviewNotificationRecipientItem) GetNotificationRecipientScope()(
         return m.notificationRecipientScope
     }
 }
-// GetNotificationTemplateType gets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
+// GetNotificationTemplateType gets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
 func (m *AccessReviewNotificationRecipientItem) GetNotificationTemplateType()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *AccessReviewNotificationRecipientItem) SetNotificationRecipientScope(va
         m.notificationRecipientScope = value
     }
 }
-// SetNotificationTemplateType sets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
+// SetNotificationTemplateType sets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
 func (m *AccessReviewNotificationRecipientItem) SetNotificationTemplateType(value *string)() {
     if m != nil {
         m.notificationTemplateType = value

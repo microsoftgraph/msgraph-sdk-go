@@ -24,7 +24,7 @@ type ConditionalAccessConditionSet struct {
     signInRiskLevels []RiskLevel
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     userRiskLevels []RiskLevel
-    // Users, groups, and roles included in and excluded from the policy. Required.
+    // Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
     users ConditionalAccessUsersable
 }
 // NewConditionalAccessConditionSet instantiates a new conditionalAccessConditionSet and sets the default values.
@@ -217,7 +217,7 @@ func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]RiskLevel) {
         return m.userRiskLevels
     }
 }
-// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
+// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) GetUsers()(ConditionalAccessUsersable) {
     if m == nil {
         return nil
@@ -343,7 +343,7 @@ func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []RiskLevel)() {
         m.userRiskLevels = value
     }
 }
-// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
+// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) SetUsers(value ConditionalAccessUsersable)() {
     if m != nil {
         m.users = value

@@ -8,7 +8,7 @@ import (
 type StoragePlanInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Indicates whether there are higher storage quota plans available. Read-only.
+    // Indicates if there are higher storage quota plans available. Read-only.
     upgradeAvailable *bool
 }
 // NewStoragePlanInformation instantiates a new storagePlanInformation and sets the default values.
@@ -45,7 +45,7 @@ func (m *StoragePlanInformation) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetUpgradeAvailable gets the upgradeAvailable property value. Indicates whether there are higher storage quota plans available. Read-only.
+// GetUpgradeAvailable gets the upgradeAvailable property value. Indicates if there are higher storage quota plans available. Read-only.
 func (m *StoragePlanInformation) GetUpgradeAvailable()(*bool) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *StoragePlanInformation) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetUpgradeAvailable sets the upgradeAvailable property value. Indicates whether there are higher storage quota plans available. Read-only.
+// SetUpgradeAvailable sets the upgradeAvailable property value. Indicates if there are higher storage quota plans available. Read-only.
 func (m *StoragePlanInformation) SetUpgradeAvailable(value *bool)() {
     if m != nil {
         m.upgradeAvailable = value
