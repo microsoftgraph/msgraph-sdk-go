@@ -40,8 +40,8 @@ func NewCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get the number of the resource
-func (m *CountRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get the number of the resource
+func (m *CountRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get the number of the resource
@@ -56,12 +56,12 @@ func (m *CountRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get the number of the resource
-func (m *CountRequestBuilder) GetWithResponseHandler(requestConfiguration *CountRequestBuilderGetRequestConfiguration)(*int32, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get the number of the resource
+func (m *CountRequestBuilder) Get()(*int32, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get the number of the resource
-func (m *CountRequestBuilder) GetWithResponseHandler(requestConfiguration *CountRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(*int32, error) {
+// GetWithRequestConfigurationAndResponseHandler get the number of the resource
+func (m *CountRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CountRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(*int32, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

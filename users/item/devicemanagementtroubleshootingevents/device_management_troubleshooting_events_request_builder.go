@@ -74,8 +74,8 @@ func NewDeviceManagementTroubleshootingEventsRequestBuilder(rawUrl string, reque
 func (m *DeviceManagementTroubleshootingEventsRequestBuilder) Count()(*idec00ea4818c9de5a3edca235914193689d54b6351d9e4b22fc7b7bbdaa5f643.CountRequestBuilder) {
     return idec00ea4818c9de5a3edca235914193689d54b6351d9e4b22fc7b7bbdaa5f643.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of troubleshooting events for this user.
-func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of troubleshooting events for this user.
+func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of troubleshooting events for this user.
@@ -93,8 +93,8 @@ func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceManagementTroubleshootingEvents for users
-func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceManagementTroubleshootingEvents for users
+func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceManagementTroubleshootingEvents for users
@@ -110,12 +110,12 @@ func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of troubleshooting events for this user.
-func (m *DeviceManagementTroubleshootingEventsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementTroubleshootingEventsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of troubleshooting events for this user.
+func (m *DeviceManagementTroubleshootingEventsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of troubleshooting events for this user.
-func (m *DeviceManagementTroubleshootingEventsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementTroubleshootingEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of troubleshooting events for this user.
+func (m *DeviceManagementTroubleshootingEventsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementTroubleshootingEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DeviceManagementTroubleshootingEventsRequestBuilder) GetWithResponseHan
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deviceManagementTroubleshootingEvents for users
-func (m *DeviceManagementTroubleshootingEventsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable, requestConfiguration *DeviceManagementTroubleshootingEventsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceManagementTroubleshootingEvents for users
+func (m *DeviceManagementTroubleshootingEventsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceManagementTroubleshootingEvents for users
-func (m *DeviceManagementTroubleshootingEventsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable, requestConfiguration *DeviceManagementTroubleshootingEventsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceManagementTroubleshootingEvents for users
+func (m *DeviceManagementTroubleshootingEventsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable, requestConfiguration *DeviceManagementTroubleshootingEventsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementTroubleshootingEventable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

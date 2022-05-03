@@ -67,8 +67,8 @@ func NewFollowingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *FollowingRequestBuilder) Count()(*i45545c49001d0ed9b4827c421e313570cb45e5b72cf87167e6166b70c774adb8.CountRequestBuilder) {
     return i45545c49001d0ed9b4827c421e313570cb45e5b72cf87167e6166b70c774adb8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of items the user is following. Only in OneDrive for Business.
-func (m *FollowingRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of items the user is following. Only in OneDrive for Business.
+func (m *FollowingRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of items the user is following. Only in OneDrive for Business.
@@ -86,12 +86,12 @@ func (m *FollowingRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of items the user is following. Only in OneDrive for Business.
-func (m *FollowingRequestBuilder) GetWithResponseHandler(requestConfiguration *FollowingRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of items the user is following. Only in OneDrive for Business.
+func (m *FollowingRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of items the user is following. Only in OneDrive for Business.
-func (m *FollowingRequestBuilder) GetWithResponseHandler(requestConfiguration *FollowingRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of items the user is following. Only in OneDrive for Business.
+func (m *FollowingRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FollowingRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

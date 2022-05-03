@@ -40,8 +40,8 @@ func NewRestoreRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action restore
-func (m *RestoreRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RestoreRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action restore
+func (m *RestoreRequestBuilder) CreatePostRequestInformation(body RestoreRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action restore
@@ -57,12 +57,12 @@ func (m *RestoreRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action restore
-func (m *RestoreRequestBuilder) PostWithResponseHandler(body RestoreRequestBodyable, requestConfiguration *RestoreRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action restore
+func (m *RestoreRequestBuilder) Post(body RestoreRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action restore
-func (m *RestoreRequestBuilder) PostWithResponseHandler(body RestoreRequestBodyable, requestConfiguration *RestoreRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action restore
+func (m *RestoreRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RestoreRequestBodyable, requestConfiguration *RestoreRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

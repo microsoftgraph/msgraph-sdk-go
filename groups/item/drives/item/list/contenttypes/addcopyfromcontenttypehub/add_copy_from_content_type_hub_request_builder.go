@@ -40,8 +40,8 @@ func NewAddCopyFromContentTypeHubRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewAddCopyFromContentTypeHubRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addCopyFromContentTypeHub
-func (m *AddCopyFromContentTypeHubRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddCopyFromContentTypeHubRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addCopyFromContentTypeHub
+func (m *AddCopyFromContentTypeHubRequestBuilder) CreatePostRequestInformation(body AddCopyFromContentTypeHubRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addCopyFromContentTypeHub
@@ -57,12 +57,12 @@ func (m *AddCopyFromContentTypeHubRequestBuilder) CreatePostRequestInformationWi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addCopyFromContentTypeHub
-func (m *AddCopyFromContentTypeHubRequestBuilder) PostWithResponseHandler(body AddCopyFromContentTypeHubRequestBodyable, requestConfiguration *AddCopyFromContentTypeHubRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addCopyFromContentTypeHub
+func (m *AddCopyFromContentTypeHubRequestBuilder) Post(body AddCopyFromContentTypeHubRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addCopyFromContentTypeHub
-func (m *AddCopyFromContentTypeHubRequestBuilder) PostWithResponseHandler(body AddCopyFromContentTypeHubRequestBodyable, requestConfiguration *AddCopyFromContentTypeHubRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addCopyFromContentTypeHub
+func (m *AddCopyFromContentTypeHubRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddCopyFromContentTypeHubRequestBodyable, requestConfiguration *AddCopyFromContentTypeHubRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

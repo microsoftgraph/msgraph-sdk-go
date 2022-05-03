@@ -64,8 +64,8 @@ func NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
@@ -80,8 +80,8 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the policy that represents the security defaults that protect against common attacks.
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the policy that represents the security defaults that protect against common attacks.
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the policy that represents the security defaults that protect against common attacks.
@@ -99,8 +99,8 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
@@ -116,12 +116,12 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreatePatchReq
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) DeleteWithResp
     }
     return nil
 }
-// GetWithResponseHandler the policy that represents the security defaults that protect against common attacks.
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the policy that represents the security defaults that protect against common attacks.
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the policy that represents the security defaults that protect against common attacks.
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler the policy that represents the security defaults that protect against common attacks.
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) GetWithRespons
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

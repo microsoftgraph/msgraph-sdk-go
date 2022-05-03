@@ -39,8 +39,8 @@ func NewWipeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewWipeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration wipe a device
-func (m *WipeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation wipe a device
+func (m *WipeRequestBuilder) CreatePostRequestInformation(body WipeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration wipe a device
@@ -56,12 +56,12 @@ func (m *WipeRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler wipe a device
-func (m *WipeRequestBuilder) PostWithResponseHandler(body WipeRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post wipe a device
+func (m *WipeRequestBuilder) Post(body WipeRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler wipe a device
-func (m *WipeRequestBuilder) PostWithResponseHandler(body WipeRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler wipe a device
+func (m *WipeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WipeRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

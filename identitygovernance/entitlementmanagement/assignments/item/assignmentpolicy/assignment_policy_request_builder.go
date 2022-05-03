@@ -50,8 +50,8 @@ func NewAssignmentPolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Supports $filter (eq) on the id property and $expand query parameters.
-func (m *AssignmentPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Supports $filter (eq) on the id property and $expand query parameters.
+func (m *AssignmentPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Supports $filter (eq) on the id property and $expand query parameters.
@@ -69,12 +69,12 @@ func (m *AssignmentPolicyRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only. Supports $filter (eq) on the id property and $expand query parameters.
-func (m *AssignmentPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *AssignmentPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Supports $filter (eq) on the id property and $expand query parameters.
+func (m *AssignmentPolicyRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Supports $filter (eq) on the id property and $expand query parameters.
-func (m *AssignmentPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *AssignmentPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Supports $filter (eq) on the id property and $expand query parameters.
+func (m *AssignmentPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

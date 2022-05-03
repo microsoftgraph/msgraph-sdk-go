@@ -42,8 +42,8 @@ func NewGetMailboxUsageStorageWithPeriodRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetMailboxUsageStorageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getMailboxUsageStorage
-func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getMailboxUsageStorage
+func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getMailboxUsageStorage
@@ -58,12 +58,12 @@ func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getMailboxUsageStorage
-func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetMailboxUsageStorageWithPeriodRequestBuilderGetRequestConfiguration)(GetMailboxUsageStorageWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getMailboxUsageStorage
+func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) Get()(GetMailboxUsageStorageWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getMailboxUsageStorage
-func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetMailboxUsageStorageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailboxUsageStorageWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getMailboxUsageStorage
+func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetMailboxUsageStorageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailboxUsageStorageWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

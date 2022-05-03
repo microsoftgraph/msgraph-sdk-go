@@ -39,8 +39,8 @@ func NewSendActivityNotificationRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action sendActivityNotification
-func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SendActivityNotificationRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action sendActivityNotification
+func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformation(body SendActivityNotificationRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action sendActivityNotification
@@ -56,12 +56,12 @@ func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action sendActivityNotification
-func (m *SendActivityNotificationRequestBuilder) PostWithResponseHandler(body SendActivityNotificationRequestBodyable, requestConfiguration *SendActivityNotificationRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action sendActivityNotification
+func (m *SendActivityNotificationRequestBuilder) Post(body SendActivityNotificationRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action sendActivityNotification
-func (m *SendActivityNotificationRequestBuilder) PostWithResponseHandler(body SendActivityNotificationRequestBodyable, requestConfiguration *SendActivityNotificationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action sendActivityNotification
+func (m *SendActivityNotificationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SendActivityNotificationRequestBodyable, requestConfiguration *SendActivityNotificationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

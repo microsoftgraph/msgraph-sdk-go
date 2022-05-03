@@ -39,8 +39,8 @@ func NewGetUserIdsWithFlaggedAppRegistrationRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getUserIdsWithFlaggedAppRegistration
-func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getUserIdsWithFlaggedAppRegistration
+func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getUserIdsWithFlaggedAppRegistration
@@ -55,12 +55,12 @@ func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getUserIdsWithFlaggedAppRegistration
-func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) GetWithResponseHandler(requestConfiguration *GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(GetUserIdsWithFlaggedAppRegistrationResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getUserIdsWithFlaggedAppRegistration
+func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) Get()(GetUserIdsWithFlaggedAppRegistrationResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getUserIdsWithFlaggedAppRegistration
-func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) GetWithResponseHandler(requestConfiguration *GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUserIdsWithFlaggedAppRegistrationResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getUserIdsWithFlaggedAppRegistration
+func (m *GetUserIdsWithFlaggedAppRegistrationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUserIdsWithFlaggedAppRegistrationResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

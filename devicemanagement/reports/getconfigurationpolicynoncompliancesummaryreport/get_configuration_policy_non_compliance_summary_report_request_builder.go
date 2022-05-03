@@ -39,8 +39,8 @@ func NewGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewGetConfigurationPolicyNonComplianceSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationPolicyNonComplianceSummaryReport
-func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getConfigurationPolicyNonComplianceSummaryReport
+func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationPolicyNonComplianceSummaryReport
@@ -56,12 +56,12 @@ func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreateP
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getConfigurationPolicyNonComplianceSummaryReport
-func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) PostWithResponseHandler(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration)(GetConfigurationPolicyNonComplianceSummaryReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getConfigurationPolicyNonComplianceSummaryReport
+func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) Post(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable)(GetConfigurationPolicyNonComplianceSummaryReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getConfigurationPolicyNonComplianceSummaryReport
-func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) PostWithResponseHandler(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationPolicyNonComplianceSummaryReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getConfigurationPolicyNonComplianceSummaryReport
+func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationPolicyNonComplianceSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

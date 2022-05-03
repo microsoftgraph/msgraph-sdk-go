@@ -39,8 +39,8 @@ func NewOnenotePatchContentRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewOnenotePatchContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action onenotePatchContent
-func (m *OnenotePatchContentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body OnenotePatchContentRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action onenotePatchContent
+func (m *OnenotePatchContentRequestBuilder) CreatePostRequestInformation(body OnenotePatchContentRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action onenotePatchContent
@@ -56,12 +56,12 @@ func (m *OnenotePatchContentRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action onenotePatchContent
-func (m *OnenotePatchContentRequestBuilder) PostWithResponseHandler(body OnenotePatchContentRequestBodyable, requestConfiguration *OnenotePatchContentRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action onenotePatchContent
+func (m *OnenotePatchContentRequestBuilder) Post(body OnenotePatchContentRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action onenotePatchContent
-func (m *OnenotePatchContentRequestBuilder) PostWithResponseHandler(body OnenotePatchContentRequestBodyable, requestConfiguration *OnenotePatchContentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action onenotePatchContent
+func (m *OnenotePatchContentRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body OnenotePatchContentRequestBodyable, requestConfiguration *OnenotePatchContentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

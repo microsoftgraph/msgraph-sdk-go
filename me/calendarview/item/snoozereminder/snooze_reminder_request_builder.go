@@ -39,8 +39,8 @@ func NewSnoozeReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action snoozeReminder
-func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SnoozeReminderRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action snoozeReminder
+func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformation(body SnoozeReminderRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action snoozeReminder
@@ -56,12 +56,12 @@ func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action snoozeReminder
-func (m *SnoozeReminderRequestBuilder) PostWithResponseHandler(body SnoozeReminderRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action snoozeReminder
+func (m *SnoozeReminderRequestBuilder) Post(body SnoozeReminderRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action snoozeReminder
-func (m *SnoozeReminderRequestBuilder) PostWithResponseHandler(body SnoozeReminderRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action snoozeReminder
+func (m *SnoozeReminderRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SnoozeReminderRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

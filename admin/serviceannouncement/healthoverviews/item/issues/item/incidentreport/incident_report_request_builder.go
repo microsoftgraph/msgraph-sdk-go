@@ -39,8 +39,8 @@ func NewIncidentReportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewIncidentReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function incidentReport
-func (m *IncidentReportRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function incidentReport
+func (m *IncidentReportRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function incidentReport
@@ -55,12 +55,12 @@ func (m *IncidentReportRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function incidentReport
-func (m *IncidentReportRequestBuilder) GetWithResponseHandler(requestConfiguration *IncidentReportRequestBuilderGetRequestConfiguration)(IncidentReportResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function incidentReport
+func (m *IncidentReportRequestBuilder) Get()(IncidentReportResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function incidentReport
-func (m *IncidentReportRequestBuilder) GetWithResponseHandler(requestConfiguration *IncidentReportRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(IncidentReportResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function incidentReport
+func (m *IncidentReportRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IncidentReportRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(IncidentReportResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

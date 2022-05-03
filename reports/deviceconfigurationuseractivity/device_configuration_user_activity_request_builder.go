@@ -40,8 +40,8 @@ func NewDeviceConfigurationUserActivityRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationUserActivityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration metadata for the device configuration user activity report
-func (m *DeviceConfigurationUserActivityRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation metadata for the device configuration user activity report
+func (m *DeviceConfigurationUserActivityRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration metadata for the device configuration user activity report
@@ -56,12 +56,12 @@ func (m *DeviceConfigurationUserActivityRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler metadata for the device configuration user activity report
-func (m *DeviceConfigurationUserActivityRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationUserActivityRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get metadata for the device configuration user activity report
+func (m *DeviceConfigurationUserActivityRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler metadata for the device configuration user activity report
-func (m *DeviceConfigurationUserActivityRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationUserActivityRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler metadata for the device configuration user activity report
+func (m *DeviceConfigurationUserActivityRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationUserActivityRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

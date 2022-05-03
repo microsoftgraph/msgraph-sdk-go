@@ -39,8 +39,8 @@ func NewSupportedLanguagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewSupportedLanguagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function supportedLanguages
-func (m *SupportedLanguagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function supportedLanguages
+func (m *SupportedLanguagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function supportedLanguages
@@ -55,12 +55,12 @@ func (m *SupportedLanguagesRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function supportedLanguages
-func (m *SupportedLanguagesRequestBuilder) GetWithResponseHandler(requestConfiguration *SupportedLanguagesRequestBuilderGetRequestConfiguration)(SupportedLanguagesResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function supportedLanguages
+func (m *SupportedLanguagesRequestBuilder) Get()(SupportedLanguagesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function supportedLanguages
-func (m *SupportedLanguagesRequestBuilder) GetWithResponseHandler(requestConfiguration *SupportedLanguagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SupportedLanguagesResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function supportedLanguages
+func (m *SupportedLanguagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SupportedLanguagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SupportedLanguagesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

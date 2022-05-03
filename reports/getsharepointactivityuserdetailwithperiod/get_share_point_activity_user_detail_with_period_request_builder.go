@@ -43,8 +43,8 @@ func NewGetSharePointActivityUserDetailWithPeriodRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointActivityUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointActivityUserDetail
-func (m *GetSharePointActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSharePointActivityUserDetail
+func (m *GetSharePointActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointActivityUserDetail
@@ -59,12 +59,12 @@ func (m *GetSharePointActivityUserDetailWithPeriodRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSharePointActivityUserDetail
-func (m *GetSharePointActivityUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSharePointActivityUserDetail
+func (m *GetSharePointActivityUserDetailWithPeriodRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSharePointActivityUserDetail
-func (m *GetSharePointActivityUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSharePointActivityUserDetail
+func (m *GetSharePointActivityUserDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

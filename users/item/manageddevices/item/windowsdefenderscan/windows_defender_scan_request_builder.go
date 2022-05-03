@@ -39,8 +39,8 @@ func NewWindowsDefenderScanRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDefenderScanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action windowsDefenderScan
-func (m *WindowsDefenderScanRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WindowsDefenderScanRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action windowsDefenderScan
+func (m *WindowsDefenderScanRequestBuilder) CreatePostRequestInformation(body WindowsDefenderScanRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action windowsDefenderScan
@@ -56,12 +56,12 @@ func (m *WindowsDefenderScanRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action windowsDefenderScan
-func (m *WindowsDefenderScanRequestBuilder) PostWithResponseHandler(body WindowsDefenderScanRequestBodyable, requestConfiguration *WindowsDefenderScanRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action windowsDefenderScan
+func (m *WindowsDefenderScanRequestBuilder) Post(body WindowsDefenderScanRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action windowsDefenderScan
-func (m *WindowsDefenderScanRequestBuilder) PostWithResponseHandler(body WindowsDefenderScanRequestBodyable, requestConfiguration *WindowsDefenderScanRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action windowsDefenderScan
+func (m *WindowsDefenderScanRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WindowsDefenderScanRequestBodyable, requestConfiguration *WindowsDefenderScanRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

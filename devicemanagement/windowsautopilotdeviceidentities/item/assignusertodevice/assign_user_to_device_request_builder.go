@@ -39,8 +39,8 @@ func NewAssignUserToDeviceRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAssignUserToDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration assigns user to Autopilot devices.
-func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignUserToDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation assigns user to Autopilot devices.
+func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformation(body AssignUserToDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration assigns user to Autopilot devices.
@@ -56,12 +56,12 @@ func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler assigns user to Autopilot devices.
-func (m *AssignUserToDeviceRequestBuilder) PostWithResponseHandler(body AssignUserToDeviceRequestBodyable, requestConfiguration *AssignUserToDeviceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post assigns user to Autopilot devices.
+func (m *AssignUserToDeviceRequestBuilder) Post(body AssignUserToDeviceRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler assigns user to Autopilot devices.
-func (m *AssignUserToDeviceRequestBuilder) PostWithResponseHandler(body AssignUserToDeviceRequestBodyable, requestConfiguration *AssignUserToDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler assigns user to Autopilot devices.
+func (m *AssignUserToDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssignUserToDeviceRequestBodyable, requestConfiguration *AssignUserToDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

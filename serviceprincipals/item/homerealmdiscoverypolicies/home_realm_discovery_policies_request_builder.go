@@ -67,8 +67,8 @@ func NewHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapter i
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Count()(*i3dfc6630970b4cf1bdc13ea02cd2bf16023fbf02df66d59f36ab6c7756c170e9.CountRequestBuilder) {
     return i3dfc6630970b4cf1bdc13ea02cd2bf16023fbf02df66d59f36ab6c7756c170e9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
+func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
@@ -86,12 +86,12 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-func (m *HomeRealmDiscoveryPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
+func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-func (m *HomeRealmDiscoveryPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
+func (m *HomeRealmDiscoveryPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

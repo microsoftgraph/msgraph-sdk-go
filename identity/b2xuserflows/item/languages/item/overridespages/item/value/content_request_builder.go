@@ -47,8 +47,8 @@ func NewContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get media content for the navigation property overridesPages from identity
-func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get media content for the navigation property overridesPages from identity
+func (m *ContentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get media content for the navigation property overridesPages from identity
@@ -63,8 +63,8 @@ func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformationWithRequestConfiguration update media content for the navigation property overridesPages in identity
-func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation update media content for the navigation property overridesPages in identity
+func (m *ContentRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePutRequestInformationWithRequestConfiguration update media content for the navigation property overridesPages in identity
@@ -80,12 +80,12 @@ func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get media content for the navigation property overridesPages from identity
-func (m *ContentRequestBuilder) GetWithResponseHandler(requestConfiguration *ContentRequestBuilderGetRequestConfiguration)([]byte, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get media content for the navigation property overridesPages from identity
+func (m *ContentRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get media content for the navigation property overridesPages from identity
-func (m *ContentRequestBuilder) GetWithResponseHandler(requestConfiguration *ContentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+// GetWithRequestConfigurationAndResponseHandler get media content for the navigation property overridesPages from identity
+func (m *ContentRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,12 +100,12 @@ func (m *ContentRequestBuilder) GetWithResponseHandler(requestConfiguration *Con
     }
     return res.([]byte), nil
 }
-// PutWithResponseHandler update media content for the navigation property overridesPages in identity
-func (m *ContentRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration)(error) {
-    return m.PutWithResponseHandler(body, requestConfiguration, nil);
+// Put update media content for the navigation property overridesPages in identity
+func (m *ContentRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithResponseHandler update media content for the navigation property overridesPages in identity
-func (m *ContentRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PutWithRequestConfigurationAndResponseHandler update media content for the navigation property overridesPages in identity
+func (m *ContentRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

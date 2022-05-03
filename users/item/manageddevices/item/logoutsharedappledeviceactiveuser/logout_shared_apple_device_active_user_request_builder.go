@@ -39,8 +39,8 @@ func NewLogoutSharedAppleDeviceActiveUserRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewLogoutSharedAppleDeviceActiveUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration logout shared Apple device active user
-func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation logout shared Apple device active user
+func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration logout shared Apple device active user
@@ -55,12 +55,12 @@ func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler logout shared Apple device active user
-func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) PostWithResponseHandler(requestConfiguration *LogoutSharedAppleDeviceActiveUserRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post logout shared Apple device active user
+func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler logout shared Apple device active user
-func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) PostWithResponseHandler(requestConfiguration *LogoutSharedAppleDeviceActiveUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler logout shared Apple device active user
+func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *LogoutSharedAppleDeviceActiveUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

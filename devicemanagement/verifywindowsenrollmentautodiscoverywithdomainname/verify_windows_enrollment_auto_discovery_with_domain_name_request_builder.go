@@ -42,8 +42,8 @@ func NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function verifyWindowsEnrollmentAutoDiscovery
-func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function verifyWindowsEnrollmentAutoDiscovery
+func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function verifyWindowsEnrollmentAutoDiscovery
@@ -58,12 +58,12 @@ func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function verifyWindowsEnrollmentAutoDiscovery
-func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) GetWithResponseHandler(requestConfiguration *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderGetRequestConfiguration)(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function verifyWindowsEnrollmentAutoDiscovery
+func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) Get()(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function verifyWindowsEnrollmentAutoDiscovery
-func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) GetWithResponseHandler(requestConfiguration *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function verifyWindowsEnrollmentAutoDiscovery
+func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

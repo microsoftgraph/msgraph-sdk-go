@@ -48,8 +48,8 @@ func NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalReque
     urlParams["request-raw-url"] = rawUrl
     return NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(urlParams, requestAdapter, nil, nil, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getActivitiesByInterval
-func (m *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getActivitiesByInterval
+func (m *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getActivitiesByInterval
@@ -64,12 +64,12 @@ func (m *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getActivitiesByInterval
-func (m *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) GetWithResponseHandler(requestConfiguration *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration)(GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getActivitiesByInterval
+func (m *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) Get()(GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getActivitiesByInterval
-func (m *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) GetWithResponseHandler(requestConfiguration *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getActivitiesByInterval
+func (m *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

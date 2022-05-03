@@ -39,8 +39,8 @@ func NewCheckMemberGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCheckMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action checkMemberGroups
-func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CheckMemberGroupsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action checkMemberGroups
+func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformation(body CheckMemberGroupsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action checkMemberGroups
@@ -56,12 +56,12 @@ func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action checkMemberGroups
-func (m *CheckMemberGroupsRequestBuilder) PostWithResponseHandler(body CheckMemberGroupsRequestBodyable, requestConfiguration *CheckMemberGroupsRequestBuilderPostRequestConfiguration)(CheckMemberGroupsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action checkMemberGroups
+func (m *CheckMemberGroupsRequestBuilder) Post(body CheckMemberGroupsRequestBodyable)(CheckMemberGroupsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action checkMemberGroups
-func (m *CheckMemberGroupsRequestBuilder) PostWithResponseHandler(body CheckMemberGroupsRequestBodyable, requestConfiguration *CheckMemberGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CheckMemberGroupsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action checkMemberGroups
+func (m *CheckMemberGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CheckMemberGroupsRequestBodyable, requestConfiguration *CheckMemberGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CheckMemberGroupsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

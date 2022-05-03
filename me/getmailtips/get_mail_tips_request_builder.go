@@ -39,8 +39,8 @@ func NewGetMailTipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewGetMailTipsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getMailTips
-func (m *GetMailTipsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMailTipsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getMailTips
+func (m *GetMailTipsRequestBuilder) CreatePostRequestInformation(body GetMailTipsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getMailTips
@@ -56,12 +56,12 @@ func (m *GetMailTipsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getMailTips
-func (m *GetMailTipsRequestBuilder) PostWithResponseHandler(body GetMailTipsRequestBodyable, requestConfiguration *GetMailTipsRequestBuilderPostRequestConfiguration)(GetMailTipsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getMailTips
+func (m *GetMailTipsRequestBuilder) Post(body GetMailTipsRequestBodyable)(GetMailTipsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getMailTips
-func (m *GetMailTipsRequestBuilder) PostWithResponseHandler(body GetMailTipsRequestBodyable, requestConfiguration *GetMailTipsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailTipsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getMailTips
+func (m *GetMailTipsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMailTipsRequestBodyable, requestConfiguration *GetMailTipsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailTipsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

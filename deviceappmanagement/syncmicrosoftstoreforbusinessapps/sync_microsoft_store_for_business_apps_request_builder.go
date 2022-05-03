@@ -39,8 +39,8 @@ func NewSyncMicrosoftStoreForBusinessAppsRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration syncs Intune account with Microsoft Store For Business
-func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation syncs Intune account with Microsoft Store For Business
+func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration syncs Intune account with Microsoft Store For Business
@@ -55,12 +55,12 @@ func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler syncs Intune account with Microsoft Store For Business
-func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) PostWithResponseHandler(requestConfiguration *SyncMicrosoftStoreForBusinessAppsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post syncs Intune account with Microsoft Store For Business
+func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler syncs Intune account with Microsoft Store For Business
-func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) PostWithResponseHandler(requestConfiguration *SyncMicrosoftStoreForBusinessAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler syncs Intune account with Microsoft Store For Business
+func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *SyncMicrosoftStoreForBusinessAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

@@ -39,8 +39,8 @@ func NewConfirmCompromisedRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewConfirmCompromisedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action confirmCompromised
-func (m *ConfirmCompromisedRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ConfirmCompromisedRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action confirmCompromised
+func (m *ConfirmCompromisedRequestBuilder) CreatePostRequestInformation(body ConfirmCompromisedRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action confirmCompromised
@@ -56,12 +56,12 @@ func (m *ConfirmCompromisedRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action confirmCompromised
-func (m *ConfirmCompromisedRequestBuilder) PostWithResponseHandler(body ConfirmCompromisedRequestBodyable, requestConfiguration *ConfirmCompromisedRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action confirmCompromised
+func (m *ConfirmCompromisedRequestBuilder) Post(body ConfirmCompromisedRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action confirmCompromised
-func (m *ConfirmCompromisedRequestBuilder) PostWithResponseHandler(body ConfirmCompromisedRequestBodyable, requestConfiguration *ConfirmCompromisedRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action confirmCompromised
+func (m *ConfirmCompromisedRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ConfirmCompromisedRequestBodyable, requestConfiguration *ConfirmCompromisedRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

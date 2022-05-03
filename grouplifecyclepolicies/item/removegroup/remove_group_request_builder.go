@@ -39,8 +39,8 @@ func NewRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveGroupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action removeGroup
+func (m *RemoveGroupRequestBuilder) CreatePostRequestInformation(body RemoveGroupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removeGroup
@@ -56,12 +56,12 @@ func (m *RemoveGroupRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) PostWithResponseHandler(body RemoveGroupRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration)(RemoveGroupResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action removeGroup
+func (m *RemoveGroupRequestBuilder) Post(body RemoveGroupRequestBodyable)(RemoveGroupResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) PostWithResponseHandler(body RemoveGroupRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RemoveGroupResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action removeGroup
+func (m *RemoveGroupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveGroupRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RemoveGroupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

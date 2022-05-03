@@ -39,8 +39,8 @@ func NewResetUnseenCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewResetUnseenCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action resetUnseenCount
-func (m *ResetUnseenCountRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action resetUnseenCount
+func (m *ResetUnseenCountRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action resetUnseenCount
@@ -55,12 +55,12 @@ func (m *ResetUnseenCountRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action resetUnseenCount
-func (m *ResetUnseenCountRequestBuilder) PostWithResponseHandler(requestConfiguration *ResetUnseenCountRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action resetUnseenCount
+func (m *ResetUnseenCountRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action resetUnseenCount
-func (m *ResetUnseenCountRequestBuilder) PostWithResponseHandler(requestConfiguration *ResetUnseenCountRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action resetUnseenCount
+func (m *ResetUnseenCountRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ResetUnseenCountRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

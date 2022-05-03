@@ -39,8 +39,8 @@ func NewRequestRemoteAssistanceRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewRequestRemoteAssistanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration request remote assistance
-func (m *RequestRemoteAssistanceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation request remote assistance
+func (m *RequestRemoteAssistanceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration request remote assistance
@@ -55,12 +55,12 @@ func (m *RequestRemoteAssistanceRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler request remote assistance
-func (m *RequestRemoteAssistanceRequestBuilder) PostWithResponseHandler(requestConfiguration *RequestRemoteAssistanceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post request remote assistance
+func (m *RequestRemoteAssistanceRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler request remote assistance
-func (m *RequestRemoteAssistanceRequestBuilder) PostWithResponseHandler(requestConfiguration *RequestRemoteAssistanceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler request remote assistance
+func (m *RequestRemoteAssistanceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *RequestRemoteAssistanceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

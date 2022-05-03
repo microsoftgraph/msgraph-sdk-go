@@ -39,8 +39,8 @@ func NewRemovePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRemovePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action removePassword
-func (m *RemovePasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemovePasswordRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action removePassword
+func (m *RemovePasswordRequestBuilder) CreatePostRequestInformation(body RemovePasswordRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removePassword
@@ -56,12 +56,12 @@ func (m *RemovePasswordRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action removePassword
-func (m *RemovePasswordRequestBuilder) PostWithResponseHandler(body RemovePasswordRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action removePassword
+func (m *RemovePasswordRequestBuilder) Post(body RemovePasswordRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action removePassword
-func (m *RemovePasswordRequestBuilder) PostWithResponseHandler(body RemovePasswordRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action removePassword
+func (m *RemovePasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemovePasswordRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

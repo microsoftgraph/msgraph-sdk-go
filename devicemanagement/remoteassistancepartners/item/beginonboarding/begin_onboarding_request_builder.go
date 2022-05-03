@@ -39,8 +39,8 @@ func NewBeginOnboardingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewBeginOnboardingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-func (m *BeginOnboardingRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
+func (m *BeginOnboardingRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
@@ -55,12 +55,12 @@ func (m *BeginOnboardingRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-func (m *BeginOnboardingRequestBuilder) PostWithResponseHandler(requestConfiguration *BeginOnboardingRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
+func (m *BeginOnboardingRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-func (m *BeginOnboardingRequestBuilder) PostWithResponseHandler(requestConfiguration *BeginOnboardingRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
+func (m *BeginOnboardingRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *BeginOnboardingRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

@@ -39,8 +39,8 @@ func NewGetMemberObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMemberObjectsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getMemberObjects
+func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformation(body GetMemberObjectsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getMemberObjects
@@ -56,12 +56,12 @@ func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) PostWithResponseHandler(body GetMemberObjectsRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration)(GetMemberObjectsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getMemberObjects
+func (m *GetMemberObjectsRequestBuilder) Post(body GetMemberObjectsRequestBodyable)(GetMemberObjectsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) PostWithResponseHandler(body GetMemberObjectsRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberObjectsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getMemberObjects
+func (m *GetMemberObjectsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMemberObjectsRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberObjectsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

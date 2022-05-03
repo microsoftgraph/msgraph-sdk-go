@@ -39,8 +39,8 @@ func NewSharedWithMeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewSharedWithMeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function sharedWithMe
-func (m *SharedWithMeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function sharedWithMe
+func (m *SharedWithMeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function sharedWithMe
@@ -55,12 +55,12 @@ func (m *SharedWithMeRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function sharedWithMe
-func (m *SharedWithMeRequestBuilder) GetWithResponseHandler(requestConfiguration *SharedWithMeRequestBuilderGetRequestConfiguration)(SharedWithMeResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function sharedWithMe
+func (m *SharedWithMeRequestBuilder) Get()(SharedWithMeResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function sharedWithMe
-func (m *SharedWithMeRequestBuilder) GetWithResponseHandler(requestConfiguration *SharedWithMeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SharedWithMeResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function sharedWithMe
+func (m *SharedWithMeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SharedWithMeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SharedWithMeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

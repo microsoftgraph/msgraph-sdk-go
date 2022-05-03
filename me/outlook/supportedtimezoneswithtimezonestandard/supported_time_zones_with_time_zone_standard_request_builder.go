@@ -42,8 +42,8 @@ func NewSupportedTimeZonesWithTimeZoneStandardRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function supportedTimeZones
-func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function supportedTimeZones
+func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function supportedTimeZones
@@ -58,12 +58,12 @@ func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function supportedTimeZones
-func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) GetWithResponseHandler(requestConfiguration *SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetRequestConfiguration)(SupportedTimeZonesWithTimeZoneStandardResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function supportedTimeZones
+func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) Get()(SupportedTimeZonesWithTimeZoneStandardResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function supportedTimeZones
-func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) GetWithResponseHandler(requestConfiguration *SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SupportedTimeZonesWithTimeZoneStandardResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function supportedTimeZones
+func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SupportedTimeZonesWithTimeZoneStandardResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

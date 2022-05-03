@@ -39,8 +39,8 @@ func NewDisconnectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewDisconnectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration a request to remove the active TeamViewer connector
-func (m *DisconnectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation a request to remove the active TeamViewer connector
+func (m *DisconnectRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration a request to remove the active TeamViewer connector
@@ -55,12 +55,12 @@ func (m *DisconnectRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler a request to remove the active TeamViewer connector
-func (m *DisconnectRequestBuilder) PostWithResponseHandler(requestConfiguration *DisconnectRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post a request to remove the active TeamViewer connector
+func (m *DisconnectRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler a request to remove the active TeamViewer connector
-func (m *DisconnectRequestBuilder) PostWithResponseHandler(requestConfiguration *DisconnectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler a request to remove the active TeamViewer connector
+func (m *DisconnectRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *DisconnectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

@@ -43,8 +43,8 @@ func NewGetTeamsUserActivityUserDetailWithDateRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getTeamsUserActivityUserDetail
+func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsUserActivityUserDetail
@@ -59,12 +59,12 @@ func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(GetTeamsUserActivityUserDetailWithDateResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getTeamsUserActivityUserDetail
+func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) Get()(GetTeamsUserActivityUserDetailWithDateResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsUserActivityUserDetailWithDateResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getTeamsUserActivityUserDetail
+func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsUserActivityUserDetailWithDateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

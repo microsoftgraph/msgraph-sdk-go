@@ -74,8 +74,8 @@ func NewWorkforceIntegrationsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *WorkforceIntegrationsRequestBuilder) Count()(*i8246fcd383fd1fbb2735090abd23799f2f183f5675fcc13611be2ffe48bb2f74.CountRequestBuilder) {
     return i8246fcd383fd1fbb2735090abd23799f2f183f5675fcc13611be2ffe48bb2f74.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a workforce integration with shifts.
-func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a workforce integration with shifts.
+func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a workforce integration with shifts.
@@ -93,8 +93,8 @@ func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to workforceIntegrations for teamwork
-func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to workforceIntegrations for teamwork
+func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to workforceIntegrations for teamwork
@@ -110,12 +110,12 @@ func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a workforce integration with shifts.
-func (m *WorkforceIntegrationsRequestBuilder) GetWithResponseHandler(requestConfiguration *WorkforceIntegrationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a workforce integration with shifts.
+func (m *WorkforceIntegrationsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a workforce integration with shifts.
-func (m *WorkforceIntegrationsRequestBuilder) GetWithResponseHandler(requestConfiguration *WorkforceIntegrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a workforce integration with shifts.
+func (m *WorkforceIntegrationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WorkforceIntegrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *WorkforceIntegrationsRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to workforceIntegrations for teamwork
-func (m *WorkforceIntegrationsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to workforceIntegrations for teamwork
+func (m *WorkforceIntegrationsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to workforceIntegrations for teamwork
-func (m *WorkforceIntegrationsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to workforceIntegrations for teamwork
+func (m *WorkforceIntegrationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -43,8 +43,8 @@ func NewGetEmailActivityUserDetailWithDateRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGetEmailActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getEmailActivityUserDetail
-func (m *GetEmailActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getEmailActivityUserDetail
+func (m *GetEmailActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getEmailActivityUserDetail
@@ -59,12 +59,12 @@ func (m *GetEmailActivityUserDetailWithDateRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getEmailActivityUserDetail
-func (m *GetEmailActivityUserDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEmailActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(GetEmailActivityUserDetailWithDateResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getEmailActivityUserDetail
+func (m *GetEmailActivityUserDetailWithDateRequestBuilder) Get()(GetEmailActivityUserDetailWithDateResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getEmailActivityUserDetail
-func (m *GetEmailActivityUserDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEmailActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailActivityUserDetailWithDateResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getEmailActivityUserDetail
+func (m *GetEmailActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEmailActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailActivityUserDetailWithDateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

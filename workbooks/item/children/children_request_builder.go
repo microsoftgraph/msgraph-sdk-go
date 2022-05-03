@@ -67,8 +67,8 @@ func NewChildrenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ChildrenRequestBuilder) Count()(*i9a92f8414f1e8da442aa5d0f6c62798aa55d684fa6bcda8800b96653a1c41ea0.CountRequestBuilder) {
     return i9a92f8414f1e8da442aa5d0f6c62798aa55d684fa6bcda8800b96653a1c41ea0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
-func (m *ChildrenRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+func (m *ChildrenRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
@@ -86,12 +86,12 @@ func (m *ChildrenRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
-func (m *ChildrenRequestBuilder) GetWithResponseHandler(requestConfiguration *ChildrenRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+func (m *ChildrenRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
-func (m *ChildrenRequestBuilder) GetWithResponseHandler(requestConfiguration *ChildrenRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+func (m *ChildrenRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChildrenRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

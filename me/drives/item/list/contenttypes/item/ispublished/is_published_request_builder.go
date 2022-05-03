@@ -39,8 +39,8 @@ func NewIsPublishedRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewIsPublishedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function isPublished
-func (m *IsPublishedRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function isPublished
+func (m *IsPublishedRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function isPublished
@@ -55,12 +55,12 @@ func (m *IsPublishedRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function isPublished
-func (m *IsPublishedRequestBuilder) GetWithResponseHandler(requestConfiguration *IsPublishedRequestBuilderGetRequestConfiguration)(IsPublishedResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function isPublished
+func (m *IsPublishedRequestBuilder) Get()(IsPublishedResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function isPublished
-func (m *IsPublishedRequestBuilder) GetWithResponseHandler(requestConfiguration *IsPublishedRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(IsPublishedResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function isPublished
+func (m *IsPublishedRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IsPublishedRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(IsPublishedResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

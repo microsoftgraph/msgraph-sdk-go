@@ -39,8 +39,8 @@ func NewRestoreFactoryDefaultsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewRestoreFactoryDefaultsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action restoreFactoryDefaults
-func (m *RestoreFactoryDefaultsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action restoreFactoryDefaults
+func (m *RestoreFactoryDefaultsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action restoreFactoryDefaults
@@ -55,12 +55,12 @@ func (m *RestoreFactoryDefaultsRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action restoreFactoryDefaults
-func (m *RestoreFactoryDefaultsRequestBuilder) PostWithResponseHandler(requestConfiguration *RestoreFactoryDefaultsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action restoreFactoryDefaults
+func (m *RestoreFactoryDefaultsRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action restoreFactoryDefaults
-func (m *RestoreFactoryDefaultsRequestBuilder) PostWithResponseHandler(requestConfiguration *RestoreFactoryDefaultsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action restoreFactoryDefaults
+func (m *RestoreFactoryDefaultsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *RestoreFactoryDefaultsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

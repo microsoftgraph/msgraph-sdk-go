@@ -39,8 +39,8 @@ func NewGetPolicyNonComplianceMetadataRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewGetPolicyNonComplianceMetadataRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getPolicyNonComplianceMetadata
-func (m *GetPolicyNonComplianceMetadataRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPolicyNonComplianceMetadataRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getPolicyNonComplianceMetadata
+func (m *GetPolicyNonComplianceMetadataRequestBuilder) CreatePostRequestInformation(body GetPolicyNonComplianceMetadataRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getPolicyNonComplianceMetadata
@@ -56,12 +56,12 @@ func (m *GetPolicyNonComplianceMetadataRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getPolicyNonComplianceMetadata
-func (m *GetPolicyNonComplianceMetadataRequestBuilder) PostWithResponseHandler(body GetPolicyNonComplianceMetadataRequestBodyable, requestConfiguration *GetPolicyNonComplianceMetadataRequestBuilderPostRequestConfiguration)(GetPolicyNonComplianceMetadataResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getPolicyNonComplianceMetadata
+func (m *GetPolicyNonComplianceMetadataRequestBuilder) Post(body GetPolicyNonComplianceMetadataRequestBodyable)(GetPolicyNonComplianceMetadataResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getPolicyNonComplianceMetadata
-func (m *GetPolicyNonComplianceMetadataRequestBuilder) PostWithResponseHandler(body GetPolicyNonComplianceMetadataRequestBodyable, requestConfiguration *GetPolicyNonComplianceMetadataRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPolicyNonComplianceMetadataResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getPolicyNonComplianceMetadata
+func (m *GetPolicyNonComplianceMetadataRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPolicyNonComplianceMetadataRequestBodyable, requestConfiguration *GetPolicyNonComplianceMetadataRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPolicyNonComplianceMetadataResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

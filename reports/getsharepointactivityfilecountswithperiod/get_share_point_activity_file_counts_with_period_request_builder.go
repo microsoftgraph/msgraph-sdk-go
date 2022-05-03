@@ -43,8 +43,8 @@ func NewGetSharePointActivityFileCountsWithPeriodRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointActivityFileCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointActivityFileCounts
-func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSharePointActivityFileCounts
+func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointActivityFileCounts
@@ -59,12 +59,12 @@ func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSharePointActivityFileCounts
-func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSharePointActivityFileCounts
+func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSharePointActivityFileCounts
-func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSharePointActivityFileCounts
+func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

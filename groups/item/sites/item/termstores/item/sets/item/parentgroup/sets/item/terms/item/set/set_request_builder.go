@@ -50,8 +50,8 @@ func NewSetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     urlParams["request-raw-url"] = rawUrl
     return NewSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the [set] in which the term is created.
-func (m *SetRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the [set] in which the term is created.
+func (m *SetRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the [set] in which the term is created.
@@ -69,12 +69,12 @@ func (m *SetRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the [set] in which the term is created.
-func (m *SetRequestBuilder) GetWithResponseHandler(requestConfiguration *SetRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the [set] in which the term is created.
+func (m *SetRequestBuilder) Get()(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the [set] in which the term is created.
-func (m *SetRequestBuilder) GetWithResponseHandler(requestConfiguration *SetRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, error) {
+// GetWithRequestConfigurationAndResponseHandler the [set] in which the term is created.
+func (m *SetRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SetRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

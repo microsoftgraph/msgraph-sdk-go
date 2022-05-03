@@ -67,8 +67,8 @@ func NewBundlesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *BundlesRequestBuilder) Count()(*i9203d68348039925ded1f551136194e176d560a4d629614f1372205cbacf05d1.CountRequestBuilder) {
     return i9203d68348039925ded1f551136194e176d560a4d629614f1372205cbacf05d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-func (m *BundlesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+func (m *BundlesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
@@ -86,12 +86,12 @@ func (m *BundlesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-func (m *BundlesRequestBuilder) GetWithResponseHandler(requestConfiguration *BundlesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+func (m *BundlesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-func (m *BundlesRequestBuilder) GetWithResponseHandler(requestConfiguration *BundlesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+func (m *BundlesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BundlesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

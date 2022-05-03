@@ -50,8 +50,8 @@ func NewTokenIssuancePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the tokenIssuancePolicies assigned to this service principal. Supports $expand.
-func (m *TokenIssuancePolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+func (m *TokenIssuancePolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the tokenIssuancePolicies assigned to this service principal. Supports $expand.
@@ -69,12 +69,12 @@ func (m *TokenIssuancePolicyItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the tokenIssuancePolicies assigned to this service principal. Supports $expand.
-func (m *TokenIssuancePolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+func (m *TokenIssuancePolicyItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the tokenIssuancePolicies assigned to this service principal. Supports $expand.
-func (m *TokenIssuancePolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+func (m *TokenIssuancePolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

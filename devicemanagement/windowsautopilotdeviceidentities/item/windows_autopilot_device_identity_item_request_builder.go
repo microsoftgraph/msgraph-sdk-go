@@ -71,8 +71,8 @@ func NewWindowsAutopilotDeviceIdentityItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
@@ -87,8 +87,8 @@ func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the Windows autopilot device identities contained collection.
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the Windows autopilot device identities contained collection.
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the Windows autopilot device identities contained collection.
@@ -106,8 +106,8 @@ func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
@@ -123,12 +123,12 @@ func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -143,12 +143,12 @@ func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) DeleteWithResponseHan
     }
     return nil
 }
-// GetWithResponseHandler the Windows autopilot device identities contained collection.
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the Windows autopilot device identities contained collection.
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the Windows autopilot device identities contained collection.
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, error) {
+// GetWithRequestConfigurationAndResponseHandler the Windows autopilot device identities contained collection.
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -163,12 +163,12 @@ func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) GetWithResponseHandle
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable), nil
 }
-// PatchWithResponseHandler update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
-func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
+func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, requestConfiguration *WindowsAutopilotDeviceIdentityItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -50,8 +50,8 @@ func NewAnalyticsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewAnalyticsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration analytics about the view activities that took place in this site.
-func (m *AnalyticsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation analytics about the view activities that took place in this site.
+func (m *AnalyticsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration analytics about the view activities that took place in this site.
@@ -69,12 +69,12 @@ func (m *AnalyticsRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler analytics about the view activities that took place in this site.
-func (m *AnalyticsRequestBuilder) GetWithResponseHandler(requestConfiguration *AnalyticsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemAnalyticsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get analytics about the view activities that took place in this site.
+func (m *AnalyticsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemAnalyticsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler analytics about the view activities that took place in this site.
-func (m *AnalyticsRequestBuilder) GetWithResponseHandler(requestConfiguration *AnalyticsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemAnalyticsable, error) {
+// GetWithRequestConfigurationAndResponseHandler analytics about the view activities that took place in this site.
+func (m *AnalyticsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AnalyticsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemAnalyticsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

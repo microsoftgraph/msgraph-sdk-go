@@ -42,8 +42,8 @@ func NewFilterByCurrentUserWithOnRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function filterByCurrentUser
-func (m *FilterByCurrentUserWithOnRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function filterByCurrentUser
+func (m *FilterByCurrentUserWithOnRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function filterByCurrentUser
@@ -58,12 +58,12 @@ func (m *FilterByCurrentUserWithOnRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function filterByCurrentUser
-func (m *FilterByCurrentUserWithOnRequestBuilder) GetWithResponseHandler(requestConfiguration *FilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(FilterByCurrentUserWithOnResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function filterByCurrentUser
+func (m *FilterByCurrentUserWithOnRequestBuilder) Get()(FilterByCurrentUserWithOnResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function filterByCurrentUser
-func (m *FilterByCurrentUserWithOnRequestBuilder) GetWithResponseHandler(requestConfiguration *FilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FilterByCurrentUserWithOnResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function filterByCurrentUser
+func (m *FilterByCurrentUserWithOnRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

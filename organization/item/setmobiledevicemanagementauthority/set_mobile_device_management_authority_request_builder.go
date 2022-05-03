@@ -39,8 +39,8 @@ func NewSetMobileDeviceManagementAuthorityRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewSetMobileDeviceManagementAuthorityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration set mobile device management authority
-func (m *SetMobileDeviceManagementAuthorityRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation set mobile device management authority
+func (m *SetMobileDeviceManagementAuthorityRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration set mobile device management authority
@@ -55,12 +55,12 @@ func (m *SetMobileDeviceManagementAuthorityRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler set mobile device management authority
-func (m *SetMobileDeviceManagementAuthorityRequestBuilder) PostWithResponseHandler(requestConfiguration *SetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration)(SetMobileDeviceManagementAuthorityResponseable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post set mobile device management authority
+func (m *SetMobileDeviceManagementAuthorityRequestBuilder) Post()(SetMobileDeviceManagementAuthorityResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler set mobile device management authority
-func (m *SetMobileDeviceManagementAuthorityRequestBuilder) PostWithResponseHandler(requestConfiguration *SetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SetMobileDeviceManagementAuthorityResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler set mobile device management authority
+func (m *SetMobileDeviceManagementAuthorityRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *SetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SetMobileDeviceManagementAuthorityResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

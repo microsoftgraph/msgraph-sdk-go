@@ -64,8 +64,8 @@ func NewIosUpdateDeviceStatusItemRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewIosUpdateDeviceStatusItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property iosUpdateStatuses for deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property iosUpdateStatuses for deviceManagement
+func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property iosUpdateStatuses for deviceManagement
@@ -80,8 +80,8 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the IOS software update installation statuses for this account.
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the IOS software update installation statuses for this account.
+func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the IOS software update installation statuses for this account.
@@ -99,8 +99,8 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property iosUpdateStatuses in deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property iosUpdateStatuses in deviceManagement
+func (m *IosUpdateDeviceStatusItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property iosUpdateStatuses in deviceManagement
@@ -116,12 +116,12 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) CreatePatchRequestInformationW
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property iosUpdateStatuses for deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property iosUpdateStatuses for deviceManagement
+func (m *IosUpdateDeviceStatusItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property iosUpdateStatuses for deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property iosUpdateStatuses for deviceManagement
+func (m *IosUpdateDeviceStatusItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) DeleteWithResponseHandler(requ
     }
     return nil
 }
-// GetWithResponseHandler the IOS software update installation statuses for this account.
-func (m *IosUpdateDeviceStatusItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the IOS software update installation statuses for this account.
+func (m *IosUpdateDeviceStatusItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the IOS software update installation statuses for this account.
-func (m *IosUpdateDeviceStatusItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
+// GetWithRequestConfigurationAndResponseHandler the IOS software update installation statuses for this account.
+func (m *IosUpdateDeviceStatusItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) GetWithResponseHandler(request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable), nil
 }
-// PatchWithResponseHandler update the navigation property iosUpdateStatuses in deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property iosUpdateStatuses in deviceManagement
+func (m *IosUpdateDeviceStatusItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property iosUpdateStatuses in deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property iosUpdateStatuses in deviceManagement
+func (m *IosUpdateDeviceStatusItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

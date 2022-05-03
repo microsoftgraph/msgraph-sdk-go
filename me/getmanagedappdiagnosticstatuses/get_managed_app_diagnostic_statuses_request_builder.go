@@ -39,8 +39,8 @@ func NewGetManagedAppDiagnosticStatusesRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagedAppDiagnosticStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration gets diagnostics validation status for a given user.
-func (m *GetManagedAppDiagnosticStatusesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation gets diagnostics validation status for a given user.
+func (m *GetManagedAppDiagnosticStatusesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration gets diagnostics validation status for a given user.
@@ -55,12 +55,12 @@ func (m *GetManagedAppDiagnosticStatusesRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler gets diagnostics validation status for a given user.
-func (m *GetManagedAppDiagnosticStatusesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(GetManagedAppDiagnosticStatusesResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get gets diagnostics validation status for a given user.
+func (m *GetManagedAppDiagnosticStatusesRequestBuilder) Get()(GetManagedAppDiagnosticStatusesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler gets diagnostics validation status for a given user.
-func (m *GetManagedAppDiagnosticStatusesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppDiagnosticStatusesResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler gets diagnostics validation status for a given user.
+func (m *GetManagedAppDiagnosticStatusesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppDiagnosticStatusesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

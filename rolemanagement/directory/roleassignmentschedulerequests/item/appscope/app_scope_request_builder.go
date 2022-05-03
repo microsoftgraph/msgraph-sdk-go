@@ -50,8 +50,8 @@ func NewAppScopeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewAppScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-func (m *AppScopeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+func (m *AppScopeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
@@ -69,12 +69,12 @@ func (m *AppScopeRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-func (m *AppScopeRequestBuilder) GetWithResponseHandler(requestConfiguration *AppScopeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppScopeable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+func (m *AppScopeRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppScopeable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-func (m *AppScopeRequestBuilder) GetWithResponseHandler(requestConfiguration *AppScopeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppScopeable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+func (m *AppScopeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppScopeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppScopeable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

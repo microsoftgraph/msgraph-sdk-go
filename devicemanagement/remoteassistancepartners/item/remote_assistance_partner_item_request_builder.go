@@ -70,8 +70,8 @@ func NewRemoteAssistancePartnerItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteAssistancePartnerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property remoteAssistancePartners for deviceManagement
-func (m *RemoteAssistancePartnerItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property remoteAssistancePartners for deviceManagement
+func (m *RemoteAssistancePartnerItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property remoteAssistancePartners for deviceManagement
@@ -86,8 +86,8 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the remote assist partners.
-func (m *RemoteAssistancePartnerItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the remote assist partners.
+func (m *RemoteAssistancePartnerItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the remote assist partners.
@@ -105,8 +105,8 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property remoteAssistancePartners in deviceManagement
-func (m *RemoteAssistancePartnerItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property remoteAssistancePartners in deviceManagement
+func (m *RemoteAssistancePartnerItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property remoteAssistancePartners in deviceManagement
@@ -122,12 +122,12 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property remoteAssistancePartners for deviceManagement
-func (m *RemoteAssistancePartnerItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RemoteAssistancePartnerItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property remoteAssistancePartners for deviceManagement
+func (m *RemoteAssistancePartnerItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property remoteAssistancePartners for deviceManagement
-func (m *RemoteAssistancePartnerItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RemoteAssistancePartnerItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property remoteAssistancePartners for deviceManagement
+func (m *RemoteAssistancePartnerItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *RemoteAssistancePartnerItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -146,12 +146,12 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) DeleteWithResponseHandler(re
 func (m *RemoteAssistancePartnerItemRequestBuilder) Disconnect()(*i29fbcbcb8e56dedcb7c4ccd053be8c6ac9c1cbee92fcef32794ed684b5ade934.DisconnectRequestBuilder) {
     return i29fbcbcb8e56dedcb7c4ccd053be8c6ac9c1cbee92fcef32794ed684b5ade934.NewDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the remote assist partners.
-func (m *RemoteAssistancePartnerItemRequestBuilder) GetWithResponseHandler(requestConfiguration *RemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the remote assist partners.
+func (m *RemoteAssistancePartnerItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the remote assist partners.
-func (m *RemoteAssistancePartnerItemRequestBuilder) GetWithResponseHandler(requestConfiguration *RemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
+// GetWithRequestConfigurationAndResponseHandler the remote assist partners.
+func (m *RemoteAssistancePartnerItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -166,12 +166,12 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable), nil
 }
-// PatchWithResponseHandler update the navigation property remoteAssistancePartners in deviceManagement
-func (m *RemoteAssistancePartnerItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, requestConfiguration *RemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property remoteAssistancePartners in deviceManagement
+func (m *RemoteAssistancePartnerItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property remoteAssistancePartners in deviceManagement
-func (m *RemoteAssistancePartnerItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, requestConfiguration *RemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property remoteAssistancePartners in deviceManagement
+func (m *RemoteAssistancePartnerItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, requestConfiguration *RemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

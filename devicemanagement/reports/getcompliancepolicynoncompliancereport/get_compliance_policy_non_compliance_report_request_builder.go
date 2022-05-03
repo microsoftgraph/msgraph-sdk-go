@@ -39,8 +39,8 @@ func NewGetCompliancePolicyNonComplianceReportRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewGetCompliancePolicyNonComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getCompliancePolicyNonComplianceReport
-func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCompliancePolicyNonComplianceReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getCompliancePolicyNonComplianceReport
+func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) CreatePostRequestInformation(body GetCompliancePolicyNonComplianceReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getCompliancePolicyNonComplianceReport
@@ -56,12 +56,12 @@ func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) CreatePostRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getCompliancePolicyNonComplianceReport
-func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) PostWithResponseHandler(body GetCompliancePolicyNonComplianceReportRequestBodyable, requestConfiguration *GetCompliancePolicyNonComplianceReportRequestBuilderPostRequestConfiguration)(GetCompliancePolicyNonComplianceReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getCompliancePolicyNonComplianceReport
+func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) Post(body GetCompliancePolicyNonComplianceReportRequestBodyable)(GetCompliancePolicyNonComplianceReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getCompliancePolicyNonComplianceReport
-func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) PostWithResponseHandler(body GetCompliancePolicyNonComplianceReportRequestBodyable, requestConfiguration *GetCompliancePolicyNonComplianceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompliancePolicyNonComplianceReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getCompliancePolicyNonComplianceReport
+func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCompliancePolicyNonComplianceReportRequestBodyable, requestConfiguration *GetCompliancePolicyNonComplianceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompliancePolicyNonComplianceReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

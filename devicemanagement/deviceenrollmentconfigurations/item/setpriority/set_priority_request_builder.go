@@ -39,8 +39,8 @@ func NewSetPriorityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewSetPriorityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action setPriority
-func (m *SetPriorityRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetPriorityRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action setPriority
+func (m *SetPriorityRequestBuilder) CreatePostRequestInformation(body SetPriorityRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setPriority
@@ -56,12 +56,12 @@ func (m *SetPriorityRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action setPriority
-func (m *SetPriorityRequestBuilder) PostWithResponseHandler(body SetPriorityRequestBodyable, requestConfiguration *SetPriorityRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action setPriority
+func (m *SetPriorityRequestBuilder) Post(body SetPriorityRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action setPriority
-func (m *SetPriorityRequestBuilder) PostWithResponseHandler(body SetPriorityRequestBodyable, requestConfiguration *SetPriorityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action setPriority
+func (m *SetPriorityRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetPriorityRequestBodyable, requestConfiguration *SetPriorityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

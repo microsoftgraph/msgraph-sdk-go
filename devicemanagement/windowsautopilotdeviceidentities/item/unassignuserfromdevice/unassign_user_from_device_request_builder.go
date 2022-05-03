@@ -39,8 +39,8 @@ func NewUnassignUserFromDeviceRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewUnassignUserFromDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration unassigns the user from an Autopilot device.
-func (m *UnassignUserFromDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation unassigns the user from an Autopilot device.
+func (m *UnassignUserFromDeviceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration unassigns the user from an Autopilot device.
@@ -55,12 +55,12 @@ func (m *UnassignUserFromDeviceRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler unassigns the user from an Autopilot device.
-func (m *UnassignUserFromDeviceRequestBuilder) PostWithResponseHandler(requestConfiguration *UnassignUserFromDeviceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post unassigns the user from an Autopilot device.
+func (m *UnassignUserFromDeviceRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler unassigns the user from an Autopilot device.
-func (m *UnassignUserFromDeviceRequestBuilder) PostWithResponseHandler(requestConfiguration *UnassignUserFromDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler unassigns the user from an Autopilot device.
+func (m *UnassignUserFromDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *UnassignUserFromDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

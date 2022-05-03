@@ -40,8 +40,8 @@ func NewUploadClientCertificateRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewUploadClientCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action uploadClientCertificate
-func (m *UploadClientCertificateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadClientCertificateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action uploadClientCertificate
+func (m *UploadClientCertificateRequestBuilder) CreatePostRequestInformation(body UploadClientCertificateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action uploadClientCertificate
@@ -57,12 +57,12 @@ func (m *UploadClientCertificateRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action uploadClientCertificate
-func (m *UploadClientCertificateRequestBuilder) PostWithResponseHandler(body UploadClientCertificateRequestBodyable, requestConfiguration *UploadClientCertificateRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action uploadClientCertificate
+func (m *UploadClientCertificateRequestBuilder) Post(body UploadClientCertificateRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action uploadClientCertificate
-func (m *UploadClientCertificateRequestBuilder) PostWithResponseHandler(body UploadClientCertificateRequestBodyable, requestConfiguration *UploadClientCertificateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action uploadClientCertificate
+func (m *UploadClientCertificateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadClientCertificateRequestBodyable, requestConfiguration *UploadClientCertificateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

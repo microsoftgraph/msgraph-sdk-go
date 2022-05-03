@@ -67,8 +67,8 @@ func NewAllowedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *AllowedGroupsRequestBuilder) Count()(*i647e3e8ba60d13ec826f53bdc5dfa381dbef8b36e6db3d906684d954ea2532b3.CountRequestBuilder) {
     return i647e3e8ba60d13ec826f53bdc5dfa381dbef8b36e6db3d906684d954ea2532b3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the groups whose users have access to print using the printer.
-func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the groups whose users have access to print using the printer.
+func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the groups whose users have access to print using the printer.
@@ -86,12 +86,12 @@ func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the groups whose users have access to print using the printer.
-func (m *AllowedGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration *AllowedGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the groups whose users have access to print using the printer.
+func (m *AllowedGroupsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the groups whose users have access to print using the printer.
-func (m *AllowedGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration *AllowedGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the groups whose users have access to print using the printer.
+func (m *AllowedGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AllowedGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

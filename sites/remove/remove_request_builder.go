@@ -39,8 +39,8 @@ func NewRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action remove
-func (m *RemoveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action remove
+func (m *RemoveRequestBuilder) CreatePostRequestInformation(body RemoveRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action remove
@@ -56,12 +56,12 @@ func (m *RemoveRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action remove
-func (m *RemoveRequestBuilder) PostWithResponseHandler(body RemoveRequestBodyable, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration)(RemoveResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action remove
+func (m *RemoveRequestBuilder) Post(body RemoveRequestBodyable)(RemoveResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action remove
-func (m *RemoveRequestBuilder) PostWithResponseHandler(body RemoveRequestBodyable, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RemoveResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action remove
+func (m *RemoveRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveRequestBodyable, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RemoveResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

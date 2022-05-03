@@ -39,8 +39,8 @@ func NewAddGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewAddGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addGroup
-func (m *AddGroupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddGroupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addGroup
+func (m *AddGroupRequestBuilder) CreatePostRequestInformation(body AddGroupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addGroup
@@ -56,12 +56,12 @@ func (m *AddGroupRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addGroup
-func (m *AddGroupRequestBuilder) PostWithResponseHandler(body AddGroupRequestBodyable, requestConfiguration *AddGroupRequestBuilderPostRequestConfiguration)(AddGroupResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addGroup
+func (m *AddGroupRequestBuilder) Post(body AddGroupRequestBodyable)(AddGroupResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addGroup
-func (m *AddGroupRequestBuilder) PostWithResponseHandler(body AddGroupRequestBodyable, requestConfiguration *AddGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AddGroupResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addGroup
+func (m *AddGroupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddGroupRequestBodyable, requestConfiguration *AddGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AddGroupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
