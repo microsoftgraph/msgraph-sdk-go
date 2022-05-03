@@ -16,7 +16,7 @@ type SecureScoreControlProfile struct {
     azureTenantId *string
     // The collection of compliance information associated with secure score control
     complianceInformation []ComplianceInformationable
-    // Control action category (Identity, Data, Device, Apps, Infrastructure).
+    // Control action category (Account, Data, Device, Apps, Infrastructure).
     controlCategory *string
     // Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
     controlStateUpdates []SecureScoreControlStateUpdateable
@@ -26,7 +26,7 @@ type SecureScoreControlProfile struct {
     implementationCost *string
     // Time at which the control profile entity was last modified. The Timestamp type represents date and time
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // max attainable score for the control.
+    // Current obtained max score on specified date.
     maxScore *float64
     // Microsoft's stack ranking of control.
     rank *int32
@@ -36,7 +36,7 @@ type SecureScoreControlProfile struct {
     remediationImpact *string
     // Service that owns the control (Exchange, Sharepoint, Azure AD).
     service *string
-    // List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+    // List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
     threats []string
     // Control tier (Core, Defense in Depth, Advanced.)
     tier *string
@@ -90,7 +90,7 @@ func (m *SecureScoreControlProfile) GetComplianceInformation()([]ComplianceInfor
         return m.complianceInformation
     }
 }
-// GetControlCategory gets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
+// GetControlCategory gets the controlCategory property value. Control action category (Account, Data, Device, Apps, Infrastructure).
 func (m *SecureScoreControlProfile) GetControlCategory()(*string) {
     if m == nil {
         return nil
@@ -337,7 +337,7 @@ func (m *SecureScoreControlProfile) GetLastModifiedDateTime()(*i336074805fc85398
         return m.lastModifiedDateTime
     }
 }
-// GetMaxScore gets the maxScore property value. max attainable score for the control.
+// GetMaxScore gets the maxScore property value. Current obtained max score on specified date.
 func (m *SecureScoreControlProfile) GetMaxScore()(*float64) {
     if m == nil {
         return nil
@@ -377,7 +377,7 @@ func (m *SecureScoreControlProfile) GetService()(*string) {
         return m.service
     }
 }
-// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
 func (m *SecureScoreControlProfile) GetThreats()([]string) {
     if m == nil {
         return nil
@@ -571,7 +571,7 @@ func (m *SecureScoreControlProfile) SetComplianceInformation(value []ComplianceI
         m.complianceInformation = value
     }
 }
-// SetControlCategory sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
+// SetControlCategory sets the controlCategory property value. Control action category (Account, Data, Device, Apps, Infrastructure).
 func (m *SecureScoreControlProfile) SetControlCategory(value *string)() {
     if m != nil {
         m.controlCategory = value
@@ -601,7 +601,7 @@ func (m *SecureScoreControlProfile) SetLastModifiedDateTime(value *i336074805fc8
         m.lastModifiedDateTime = value
     }
 }
-// SetMaxScore sets the maxScore property value. max attainable score for the control.
+// SetMaxScore sets the maxScore property value. Current obtained max score on specified date.
 func (m *SecureScoreControlProfile) SetMaxScore(value *float64)() {
     if m != nil {
         m.maxScore = value
@@ -631,7 +631,7 @@ func (m *SecureScoreControlProfile) SetService(value *string)() {
         m.service = value
     }
 }
-// SetThreats sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+// SetThreats sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
 func (m *SecureScoreControlProfile) SetThreats(value []string)() {
     if m != nil {
         m.threats = value

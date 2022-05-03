@@ -13,16 +13,12 @@ type CheckMemberGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CheckMemberGroupsRequestBuilderPostOptions options for Post
-type CheckMemberGroupsRequestBuilderPostOptions struct {
-    // 
-    Body CheckMemberGroupsRequestBodyable
+// CheckMemberGroupsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type CheckMemberGroupsRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewCheckMemberGroupsRequestBuilderInternal instantiates a new CheckMemberGroupsRequestBuilder and sets the default values.
 func NewCheckMemberGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CheckMemberGroupsRequestBuilder) {
@@ -44,30 +40,33 @@ func NewCheckMemberGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewCheckMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action checkMemberGroups
-func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformation(options *CheckMemberGroupsRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformation(body CheckMemberGroupsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action checkMemberGroups
+func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CheckMemberGroupsRequestBodyable, requestConfiguration *CheckMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action checkMemberGroups
-func (m *CheckMemberGroupsRequestBuilder) Post(options *CheckMemberGroupsRequestBuilderPostOptions)(CheckMemberGroupsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *CheckMemberGroupsRequestBuilder) Post(body CheckMemberGroupsRequestBodyable)(CheckMemberGroupsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action checkMemberGroups
+func (m *CheckMemberGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CheckMemberGroupsRequestBodyable, requestConfiguration *CheckMemberGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CheckMemberGroupsResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCheckMemberGroupsResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCheckMemberGroupsResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

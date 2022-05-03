@@ -8,7 +8,7 @@ import (
 // AccessPackageAssignmentRequest 
 type AccessPackageAssignmentRequest struct {
     Entity
-    // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+    // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
     accessPackage AccessPackageable
     // For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
     assignment AccessPackageAssignmentable
@@ -18,9 +18,9 @@ type AccessPackageAssignmentRequest struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
     requestor AccessPackageSubjectable
-    // The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
+    // One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
     requestType *AccessPackageRequestType
-    // The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+    // The range of dates that access is to be assigned to the requestor. Read-only.
     schedule EntitlementManagementScheduleable
     // The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only.
     state *AccessPackageRequestState
@@ -38,7 +38,7 @@ func NewAccessPackageAssignmentRequest()(*AccessPackageAssignmentRequest) {
 func CreateAccessPackageAssignmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentRequest(), nil
 }
-// GetAccessPackage gets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+// GetAccessPackage gets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentRequest) GetAccessPackage()(AccessPackageable) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestor()(AccessPackageSubjectable
         return m.requestor
     }
 }
-// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
+// GetRequestType gets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestType) {
     if m == nil {
         return nil
@@ -181,7 +181,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestT
         return m.requestType
     }
 }
-// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
 func (m *AccessPackageAssignmentRequest) GetSchedule()(EntitlementManagementScheduleable) {
     if m == nil {
         return nil
@@ -269,7 +269,7 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetAccessPackage sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+// SetAccessPackage sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAccessPackage(value AccessPackageable)() {
     if m != nil {
         m.accessPackage = value
@@ -299,13 +299,13 @@ func (m *AccessPackageAssignmentRequest) SetRequestor(value AccessPackageSubject
         m.requestor = value
     }
 }
-// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
+// SetRequestType sets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *AccessPackageRequestType)() {
     if m != nil {
         m.requestType = value
     }
 }
-// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
 func (m *AccessPackageAssignmentRequest) SetSchedule(value EntitlementManagementScheduleable)() {
     if m != nil {
         m.schedule = value

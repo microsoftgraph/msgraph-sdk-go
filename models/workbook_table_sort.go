@@ -11,7 +11,7 @@ type WorkbookTableSort struct {
     fields []WorkbookSortFieldable
     // Represents whether the casing impacted the last sort of the table. Read-only.
     matchCase *bool
-    // Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+    // Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.
     method *string
 }
 // NewWorkbookTableSort instantiates a new workbookTableSort and sets the default values.
@@ -80,7 +80,7 @@ func (m *WorkbookTableSort) GetMatchCase()(*bool) {
         return m.matchCase
     }
 }
-// GetMethod gets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+// GetMethod gets the method property value. Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.
 func (m *WorkbookTableSort) GetMethod()(*string) {
     if m == nil {
         return nil
@@ -130,7 +130,7 @@ func (m *WorkbookTableSort) SetMatchCase(value *bool)() {
         m.matchCase = value
     }
 }
-// SetMethod sets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+// SetMethod sets the method property value. Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.
 func (m *WorkbookTableSort) SetMethod(value *string)() {
     if m != nil {
         m.method = value

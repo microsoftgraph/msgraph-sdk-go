@@ -11,7 +11,7 @@ type WorkbookOperation struct {
     error WorkbookOperationErrorable
     // The resource URI for the result.
     resourceLocation *string
-    // The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
+    // The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
     status *WorkbookOperationStatus
 }
 // NewWorkbookOperation instantiates a new workbookOperation and sets the default values.
@@ -76,7 +76,7 @@ func (m *WorkbookOperation) GetResourceLocation()(*string) {
         return m.resourceLocation
     }
 }
-// GetStatus gets the status property value. The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
+// GetStatus gets the status property value. The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
 func (m *WorkbookOperation) GetStatus()(*WorkbookOperationStatus) {
     if m == nil {
         return nil
@@ -123,7 +123,7 @@ func (m *WorkbookOperation) SetResourceLocation(value *string)() {
         m.resourceLocation = value
     }
 }
-// SetStatus sets the status property value. The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
+// SetStatus sets the status property value. The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
 func (m *WorkbookOperation) SetStatus(value *WorkbookOperationStatus)() {
     if m != nil {
         m.status = value

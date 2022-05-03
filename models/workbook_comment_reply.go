@@ -7,9 +7,9 @@ import (
 // WorkbookCommentReply 
 type WorkbookCommentReply struct {
     Entity
-    // The content of a comment reply.
+    // The content of replied comment.
     content *string
-    // Indicates the type for the comment reply.
+    // Indicates the type for the replied comment.
     contentType *string
 }
 // NewWorkbookCommentReply instantiates a new workbookCommentReply and sets the default values.
@@ -23,7 +23,7 @@ func NewWorkbookCommentReply()(*WorkbookCommentReply) {
 func CreateWorkbookCommentReplyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookCommentReply(), nil
 }
-// GetContent gets the content property value. The content of a comment reply.
+// GetContent gets the content property value. The content of replied comment.
 func (m *WorkbookCommentReply) GetContent()(*string) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *WorkbookCommentReply) GetContent()(*string) {
         return m.content
     }
 }
-// GetContentType gets the contentType property value. Indicates the type for the comment reply.
+// GetContentType gets the contentType property value. Indicates the type for the replied comment.
 func (m *WorkbookCommentReply) GetContentType()(*string) {
     if m == nil {
         return nil
@@ -84,13 +84,13 @@ func (m *WorkbookCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetContent sets the content property value. The content of a comment reply.
+// SetContent sets the content property value. The content of replied comment.
 func (m *WorkbookCommentReply) SetContent(value *string)() {
     if m != nil {
         m.content = value
     }
 }
-// SetContentType sets the contentType property value. Indicates the type for the comment reply.
+// SetContentType sets the contentType property value. Indicates the type for the replied comment.
 func (m *WorkbookCommentReply) SetContentType(value *string)() {
     if m != nil {
         m.contentType = value

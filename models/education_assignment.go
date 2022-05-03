@@ -12,11 +12,11 @@ type EducationAssignment struct {
     addedStudentAction *EducationAddedStudentAction
     // Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
     addToCalendarAction *EducationAddToCalendarOptions
-    // Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
+    // Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
     allowLateSubmissions *bool
     // Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
     allowStudentsToAddResourcesToSubmission *bool
-    // The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    // The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     assignDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     assignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -44,7 +44,7 @@ type EducationAssignment struct {
     lastModifiedBy IdentitySetable
     // Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
+    // Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
     notificationChannelUrl *string
     // Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
     resources []EducationAssignmentResourceable
@@ -52,7 +52,7 @@ type EducationAssignment struct {
     resourcesFolderUrl *string
     // When set, the grading rubric attached to this assignment.
     rubric EducationRubricable
-    // Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
+    // Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.
     status *EducationAssignmentStatus
     // Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
     submissions []EducationSubmissionable
@@ -86,7 +86,7 @@ func (m *EducationAssignment) GetAddToCalendarAction()(*EducationAddToCalendarOp
         return m.addToCalendarAction
     }
 }
-// GetAllowLateSubmissions gets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
+// GetAllowLateSubmissions gets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
 func (m *EducationAssignment) GetAllowLateSubmissions()(*bool) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *EducationAssignment) GetAllowStudentsToAddResourcesToSubmission()(*bool
         return m.allowStudentsToAddResourcesToSubmission
     }
 }
-// GetAssignDateTime gets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetAssignDateTime gets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) GetAssignDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -481,7 +481,7 @@ func (m *EducationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f
         return m.lastModifiedDateTime
     }
 }
-// GetNotificationChannelUrl gets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
+// GetNotificationChannelUrl gets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
 func (m *EducationAssignment) GetNotificationChannelUrl()(*string) {
     if m == nil {
         return nil
@@ -513,7 +513,7 @@ func (m *EducationAssignment) GetRubric()(EducationRubricable) {
         return m.rubric
     }
 }
-// GetStatus gets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
+// GetStatus gets the status property value. Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.
 func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
     if m == nil {
         return nil
@@ -722,7 +722,7 @@ func (m *EducationAssignment) SetAddToCalendarAction(value *EducationAddToCalend
         m.addToCalendarAction = value
     }
 }
-// SetAllowLateSubmissions sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
+// SetAllowLateSubmissions sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
 func (m *EducationAssignment) SetAllowLateSubmissions(value *bool)() {
     if m != nil {
         m.allowLateSubmissions = value
@@ -734,7 +734,7 @@ func (m *EducationAssignment) SetAllowStudentsToAddResourcesToSubmission(value *
         m.allowStudentsToAddResourcesToSubmission = value
     }
 }
-// SetAssignDateTime sets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetAssignDateTime sets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetAssignDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.assignDateTime = value
@@ -818,7 +818,7 @@ func (m *EducationAssignment) SetLastModifiedDateTime(value *i336074805fc853987a
         m.lastModifiedDateTime = value
     }
 }
-// SetNotificationChannelUrl sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
+// SetNotificationChannelUrl sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
 func (m *EducationAssignment) SetNotificationChannelUrl(value *string)() {
     if m != nil {
         m.notificationChannelUrl = value
@@ -842,7 +842,7 @@ func (m *EducationAssignment) SetRubric(value EducationRubricable)() {
         m.rubric = value
     }
 }
-// SetStatus sets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
+// SetStatus sets the status property value. Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.
 func (m *EducationAssignment) SetStatus(value *EducationAssignmentStatus)() {
     if m != nil {
         m.status = value

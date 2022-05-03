@@ -14,25 +14,19 @@ type ContentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ContentRequestBuilderGetOptions options for Get
-type ContentRequestBuilderGetOptions struct {
+// ContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// ContentRequestBuilderPutOptions options for Put
-type ContentRequestBuilderPutOptions struct {
-    // Binary request body
-    Body []byte
+// ContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ContentRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
 func NewContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContentRequestBuilder) {
@@ -54,43 +48,45 @@ func NewContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the page's HTML content.
-func (m *ContentRequestBuilder) CreateGetRequestInformation(options *ContentRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ContentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration the page's HTML content.
+func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // CreatePutRequestInformation the page's HTML content.
-func (m *ContentRequestBuilder) CreatePutRequestInformation(options *ContentRequestBuilderPutOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ContentRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePutRequestInformationWithRequestConfiguration the page's HTML content.
+func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetStreamContent(options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetStreamContent(body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get the page's HTML content.
-func (m *ContentRequestBuilder) Get(options *ContentRequestBuilderGetOptions)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *ContentRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler the page's HTML content.
+func (m *ContentRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -98,15 +94,19 @@ func (m *ContentRequestBuilder) Get(options *ContentRequestBuilderGetOptions)([]
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", nil, errorMapping)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, errorMapping)
     if err != nil {
         return nil, err
     }
     return res.([]byte), nil
 }
 // Put the page's HTML content.
-func (m *ContentRequestBuilder) Put(options *ContentRequestBuilderPutOptions)(error) {
-    requestInfo, err := m.CreatePutRequestInformation(options);
+func (m *ContentRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PutWithRequestConfigurationAndResponseHandler the page's HTML content.
+func (m *ContentRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -114,7 +114,7 @@ func (m *ContentRequestBuilder) Put(options *ContentRequestBuilderPutOptions)(er
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
     if err != nil {
         return err
     }

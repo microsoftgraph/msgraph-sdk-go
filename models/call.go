@@ -17,17 +17,17 @@ type Call struct {
     callOptions CallOptionsable
     // The routing information on how the call was retargeted. Read-only.
     callRoutes []CallRouteable
-    // The chat information. Required information for joining a meeting.
+    // The chat information. Required information for meeting scenarios.
     chatInfo ChatInfoable
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
     direction *CallDirection
     // The context associated with an incoming call. Read-only. Server generated.
     incomingContext IncomingContextable
-    // The media configuration. Required.
+    // The media configuration. Required information for creating peer to peer calls or joining meetings.
     mediaConfig MediaConfigable
     // Read-only. The call media state.
     mediaState CallMediaStateable
-    // The meeting information that's required for joining a meeting.
+    // The meeting information. Required information for meeting scenarios.
     meetingInfo MeetingInfoable
     // The myParticipantId property
     myParticipantId *string
@@ -105,7 +105,7 @@ func (m *Call) GetCallRoutes()([]CallRouteable) {
         return m.callRoutes
     }
 }
-// GetChatInfo gets the chatInfo property value. The chat information. Required information for joining a meeting.
+// GetChatInfo gets the chatInfo property value. The chat information. Required information for meeting scenarios.
 func (m *Call) GetChatInfo()(ChatInfoable) {
     if m == nil {
         return nil
@@ -388,7 +388,7 @@ func (m *Call) GetIncomingContext()(IncomingContextable) {
         return m.incomingContext
     }
 }
-// GetMediaConfig gets the mediaConfig property value. The media configuration. Required.
+// GetMediaConfig gets the mediaConfig property value. The media configuration. Required information for creating peer to peer calls or joining meetings.
 func (m *Call) GetMediaConfig()(MediaConfigable) {
     if m == nil {
         return nil
@@ -404,7 +404,7 @@ func (m *Call) GetMediaState()(CallMediaStateable) {
         return m.mediaState
     }
 }
-// GetMeetingInfo gets the meetingInfo property value. The meeting information that's required for joining a meeting.
+// GetMeetingInfo gets the meetingInfo property value. The meeting information. Required information for meeting scenarios.
 func (m *Call) GetMeetingInfo()(MeetingInfoable) {
     if m == nil {
         return nil
@@ -706,7 +706,7 @@ func (m *Call) SetCallRoutes(value []CallRouteable)() {
         m.callRoutes = value
     }
 }
-// SetChatInfo sets the chatInfo property value. The chat information. Required information for joining a meeting.
+// SetChatInfo sets the chatInfo property value. The chat information. Required information for meeting scenarios.
 func (m *Call) SetChatInfo(value ChatInfoable)() {
     if m != nil {
         m.chatInfo = value
@@ -724,7 +724,7 @@ func (m *Call) SetIncomingContext(value IncomingContextable)() {
         m.incomingContext = value
     }
 }
-// SetMediaConfig sets the mediaConfig property value. The media configuration. Required.
+// SetMediaConfig sets the mediaConfig property value. The media configuration. Required information for creating peer to peer calls or joining meetings.
 func (m *Call) SetMediaConfig(value MediaConfigable)() {
     if m != nil {
         m.mediaConfig = value
@@ -736,7 +736,7 @@ func (m *Call) SetMediaState(value CallMediaStateable)() {
         m.mediaState = value
     }
 }
-// SetMeetingInfo sets the meetingInfo property value. The meeting information that's required for joining a meeting.
+// SetMeetingInfo sets the meetingInfo property value. The meeting information. Required information for meeting scenarios.
 func (m *Call) SetMeetingInfo(value MeetingInfoable)() {
     if m != nil {
         m.meetingInfo = value

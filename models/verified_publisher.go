@@ -11,7 +11,7 @@ type VerifiedPublisher struct {
     addedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The verified publisher name from the app publisher's Partner Center account.
+    // The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
     displayName *string
     // The ID of the verified publisher from the app publisher's Partner Center account.
     verifiedPublisherId *string
@@ -43,7 +43,7 @@ func (m *VerifiedPublisher) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDisplayName gets the displayName property value. The verified publisher name from the app publisher's Partner Center account.
+// GetDisplayName gets the displayName property value. The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
 func (m *VerifiedPublisher) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *VerifiedPublisher) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetDisplayName sets the displayName property value. The verified publisher name from the app publisher's Partner Center account.
+// SetDisplayName sets the displayName property value. The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
 func (m *VerifiedPublisher) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value

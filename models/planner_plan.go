@@ -8,7 +8,7 @@ import (
 // PlannerPlan 
 type PlannerPlan struct {
     Entity
-    // Read-only. Nullable. Collection of buckets in the plan.
+    // Collection of buckets in the plan. Read-only. Nullable.
     buckets []PlannerBucketable
     // Identifies the container of the plan. After it is set, this property can’t be updated. Required.
     container PlannerPlanContainerable
@@ -16,11 +16,11 @@ type PlannerPlan struct {
     createdBy IdentitySetable
     // Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Read-only. Nullable. Additional details about the plan.
+    // Additional details about the plan. Read-only. Nullable.
     details PlannerPlanDetailsable
     // ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
     owner *string
-    // Read-only. Nullable. Collection of tasks in the plan.
+    // Collection of tasks in the plan. Read-only. Nullable.
     tasks []PlannerTaskable
     // Required. Title of the plan.
     title *string
@@ -36,7 +36,7 @@ func NewPlannerPlan()(*PlannerPlan) {
 func CreatePlannerPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerPlan(), nil
 }
-// GetBuckets gets the buckets property value. Read-only. Nullable. Collection of buckets in the plan.
+// GetBuckets gets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.createdDateTime
     }
 }
-// GetDetails gets the details property value. Read-only. Nullable. Additional details about the plan.
+// GetDetails gets the details property value. Additional details about the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetDetails()(PlannerPlanDetailsable) {
     if m == nil {
         return nil
@@ -177,7 +177,7 @@ func (m *PlannerPlan) GetOwner()(*string) {
         return m.owner
     }
 }
-// GetTasks gets the tasks property value. Read-only. Nullable. Collection of tasks in the plan.
+// GetTasks gets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetTasks()([]PlannerTaskable) {
     if m == nil {
         return nil
@@ -257,7 +257,7 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetBuckets sets the buckets property value. Read-only. Nullable. Collection of buckets in the plan.
+// SetBuckets sets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetBuckets(value []PlannerBucketable)() {
     if m != nil {
         m.buckets = value
@@ -281,7 +281,7 @@ func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
         m.createdDateTime = value
     }
 }
-// SetDetails sets the details property value. Read-only. Nullable. Additional details about the plan.
+// SetDetails sets the details property value. Additional details about the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
     if m != nil {
         m.details = value
@@ -293,7 +293,7 @@ func (m *PlannerPlan) SetOwner(value *string)() {
         m.owner = value
     }
 }
-// SetTasks sets the tasks property value. Read-only. Nullable. Collection of tasks in the plan.
+// SetTasks sets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetTasks(value []PlannerTaskable)() {
     if m != nil {
         m.tasks = value

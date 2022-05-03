@@ -7,7 +7,7 @@ import (
 // DeviceComplianceActionItem 
 type DeviceComplianceActionItem struct {
     Entity
-    // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
+    // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
     actionType *DeviceComplianceActionType
     // Number of hours to wait till the action will be enforced. Valid values 0 to 8760
     gracePeriodHours *int32
@@ -27,7 +27,7 @@ func NewDeviceComplianceActionItem()(*DeviceComplianceActionItem) {
 func CreateDeviceComplianceActionItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceActionItem(), nil
 }
-// GetActionType gets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
+// GetActionType gets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
 func (m *DeviceComplianceActionItem) GetActionType()(*DeviceComplianceActionType) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *DeviceComplianceActionItem) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetActionType sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
+// SetActionType sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
 func (m *DeviceComplianceActionItem) SetActionType(value *DeviceComplianceActionType)() {
     if m != nil {
         m.actionType = value

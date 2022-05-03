@@ -8,11 +8,11 @@ import (
 type IncomingContext struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The ID of the participant that is under observation. Read-only.
+    // The id of the participant that is under observation. Read-only.
     observedParticipantId *string
     // The identity that the call is happening on behalf of.
     onBehalfOf IdentitySetable
-    // The ID of the participant that triggered the incoming call. Read-only.
+    // The id of the participant that triggered the incoming call. Read-only.
     sourceParticipantId *string
     // The identity that transferred the call.
     transferor IdentitySetable
@@ -81,7 +81,7 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetObservedParticipantId gets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
+// GetObservedParticipantId gets the observedParticipantId property value. The id of the participant that is under observation. Read-only.
 func (m *IncomingContext) GetObservedParticipantId()(*string) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *IncomingContext) GetOnBehalfOf()(IdentitySetable) {
         return m.onBehalfOf
     }
 }
-// GetSourceParticipantId gets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
+// GetSourceParticipantId gets the sourceParticipantId property value. The id of the participant that triggered the incoming call. Read-only.
 func (m *IncomingContext) GetSourceParticipantId()(*string) {
     if m == nil {
         return nil
@@ -153,7 +153,7 @@ func (m *IncomingContext) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetObservedParticipantId sets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
+// SetObservedParticipantId sets the observedParticipantId property value. The id of the participant that is under observation. Read-only.
 func (m *IncomingContext) SetObservedParticipantId(value *string)() {
     if m != nil {
         m.observedParticipantId = value
@@ -165,7 +165,7 @@ func (m *IncomingContext) SetOnBehalfOf(value IdentitySetable)() {
         m.onBehalfOf = value
     }
 }
-// SetSourceParticipantId sets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
+// SetSourceParticipantId sets the sourceParticipantId property value. The id of the participant that triggered the incoming call. Read-only.
 func (m *IncomingContext) SetSourceParticipantId(value *string)() {
     if m != nil {
         m.sourceParticipantId = value

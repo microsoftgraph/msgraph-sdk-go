@@ -6,7 +6,7 @@ import (
 
 // TimeConstraint 
 type TimeConstraint struct {
-    // The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
+    // The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.
     activityDomain *ActivityDomain
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -24,7 +24,7 @@ func NewTimeConstraint()(*TimeConstraint) {
 func CreateTimeConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeConstraint(), nil
 }
-// GetActivityDomain gets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
+// GetActivityDomain gets the activityDomain property value. The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.
 func (m *TimeConstraint) GetActivityDomain()(*ActivityDomain) {
     if m == nil {
         return nil
@@ -104,7 +104,7 @@ func (m *TimeConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetActivityDomain sets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
+// SetActivityDomain sets the activityDomain property value. The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.
 func (m *TimeConstraint) SetActivityDomain(value *ActivityDomain)() {
     if m != nil {
         m.activityDomain = value

@@ -13,14 +13,12 @@ type GetMailboxUsageDetailWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetMailboxUsageDetailWithPeriodRequestBuilderGetOptions options for Get
-type GetMailboxUsageDetailWithPeriodRequestBuilderGetOptions struct {
+// GetMailboxUsageDetailWithPeriodRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetMailboxUsageDetailWithPeriodRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetMailboxUsageDetailWithPeriodRequestBuilderInternal instantiates a new GetMailboxUsageDetailWithPeriodRequestBuilder and sets the default values.
 func NewGetMailboxUsageDetailWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetMailboxUsageDetailWithPeriodRequestBuilder) {
@@ -45,29 +43,32 @@ func NewGetMailboxUsageDetailWithPeriodRequestBuilder(rawUrl string, requestAdap
     return NewGetMailboxUsageDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getMailboxUsageDetail
-func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetMailboxUsageDetailWithPeriodRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration invoke function getMailboxUsageDetail
+func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetMailboxUsageDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get invoke function getMailboxUsageDetail
-func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) Get(options *GetMailboxUsageDetailWithPeriodRequestBuilderGetOptions)(GetMailboxUsageDetailWithPeriodResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) Get()(GetMailboxUsageDetailWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler invoke function getMailboxUsageDetail
+func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetMailboxUsageDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailboxUsageDetailWithPeriodResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetMailboxUsageDetailWithPeriodResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetMailboxUsageDetailWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

@@ -10,7 +10,7 @@ type MeetingParticipantInfo struct {
     additionalData map[string]interface{}
     // Identity information of the participant.
     identity IdentitySetable
-    // Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+    // Specifies the participant's role in the meeting.
     role *OnlineMeetingRole
     // User principal name of the participant.
     upn *string
@@ -77,7 +77,7 @@ func (m *MeetingParticipantInfo) GetIdentity()(IdentitySetable) {
         return m.identity
     }
 }
-// GetRole gets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+// GetRole gets the role property value. Specifies the participant's role in the meeting.
 func (m *MeetingParticipantInfo) GetRole()(*OnlineMeetingRole) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *MeetingParticipantInfo) SetIdentity(value IdentitySetable)() {
         m.identity = value
     }
 }
-// SetRole sets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+// SetRole sets the role property value. Specifies the participant's role in the meeting.
 func (m *MeetingParticipantInfo) SetRole(value *OnlineMeetingRole)() {
     if m != nil {
         m.role = value

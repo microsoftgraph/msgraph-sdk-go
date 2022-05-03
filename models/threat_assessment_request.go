@@ -18,7 +18,7 @@ type ThreatAssessmentRequest struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The expected assessment from submitter. Possible values are: block, unblock.
     expectedAssessment *ThreatExpectedAssessment
-    // The source of the threat assessment request. Possible values are: administrator.
+    // The source of the threat assessment request. Possible values are: user, administrator.
     requestSource *ThreatAssessmentRequestSource
     // A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
     results []ThreatAssessmentResultable
@@ -165,7 +165,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
+// GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: user, administrator.
 func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
     if m == nil {
         return nil
@@ -284,7 +284,7 @@ func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAss
         m.expectedAssessment = value
     }
 }
-// SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
+// SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: user, administrator.
 func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequestSource)() {
     if m != nil {
         m.requestSource = value

@@ -14,14 +14,12 @@ type VerifyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// VerifyRequestBuilderPostOptions options for Post
-type VerifyRequestBuilderPostOptions struct {
+// VerifyRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type VerifyRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewVerifyRequestBuilderInternal instantiates a new VerifyRequestBuilder and sets the default values.
 func NewVerifyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VerifyRequestBuilder) {
@@ -43,29 +41,32 @@ func NewVerifyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewVerifyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action verify
-func (m *VerifyRequestBuilder) CreatePostRequestInformation(options *VerifyRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *VerifyRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action verify
+func (m *VerifyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *VerifyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action verify
-func (m *VerifyRequestBuilder) Post(options *VerifyRequestBuilderPostOptions)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *VerifyRequestBuilder) Post()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action verify
+func (m *VerifyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *VerifyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDomainFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDomainFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

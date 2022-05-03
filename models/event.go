@@ -8,7 +8,7 @@ import (
 // Event 
 type Event struct {
     OutlookItem
-    // true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
+    // true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
     allowNewTimeProposals *bool
     // The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
     attachments []Attachmentable
@@ -104,7 +104,7 @@ func NewEvent()(*Event) {
 func CreateEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvent(), nil
 }
-// GetAllowNewTimeProposals gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
+// GetAllowNewTimeProposals gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
 func (m *Event) GetAllowNewTimeProposals()(*bool) {
     if m == nil {
         return nil
@@ -1186,7 +1186,7 @@ func (m *Event) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     return nil
 }
-// SetAllowNewTimeProposals sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
+// SetAllowNewTimeProposals sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
 func (m *Event) SetAllowNewTimeProposals(value *bool)() {
     if m != nil {
         m.allowNewTimeProposals = value

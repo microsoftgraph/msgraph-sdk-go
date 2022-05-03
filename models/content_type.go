@@ -7,13 +7,13 @@ import (
 // ContentType 
 type ContentType struct {
     Entity
-    // List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+    // List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
     associatedHubsUrls []string
     // Parent contentType from which this content type is derived.
     base ContentTypeable
     // The collection of content types that are ancestors of this content type.
     baseTypes []ContentTypeable
-    // The collection of columns that are required by this content type.
+    // The collection of columns that are required by this content type
     columnLinks []ColumnLinkable
     // Column order information in a content type.
     columnPositions []ColumnDefinitionable
@@ -41,9 +41,9 @@ type ContentType struct {
     parentId *string
     // If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
     propagateChanges *bool
-    // If true, the content type can't be modified unless this value is first set to false.
+    // If true, the content type cannot be modified unless this value is first set to false.
     readOnly *bool
-    // If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+    // If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
     sealed *bool
 }
 // NewContentType instantiates a new contentType and sets the default values.
@@ -57,7 +57,7 @@ func NewContentType()(*ContentType) {
 func CreateContentTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentType(), nil
 }
-// GetAssociatedHubsUrls gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+// GetAssociatedHubsUrls gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 func (m *ContentType) GetAssociatedHubsUrls()([]string) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *ContentType) GetBaseTypes()([]ContentTypeable) {
         return m.baseTypes
     }
 }
-// GetColumnLinks gets the columnLinks property value. The collection of columns that are required by this content type.
+// GetColumnLinks gets the columnLinks property value. The collection of columns that are required by this content type
 func (m *ContentType) GetColumnLinks()([]ColumnLinkable) {
     if m == nil {
         return nil
@@ -408,7 +408,7 @@ func (m *ContentType) GetPropagateChanges()(*bool) {
         return m.propagateChanges
     }
 }
-// GetReadOnly gets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
+// GetReadOnly gets the readOnly property value. If true, the content type cannot be modified unless this value is first set to false.
 func (m *ContentType) GetReadOnly()(*bool) {
     if m == nil {
         return nil
@@ -416,7 +416,7 @@ func (m *ContentType) GetReadOnly()(*bool) {
         return m.readOnly
     }
 }
-// GetSealed gets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+// GetSealed gets the sealed property value. If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 func (m *ContentType) GetSealed()(*bool) {
     if m == nil {
         return nil
@@ -562,7 +562,7 @@ func (m *ContentType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAssociatedHubsUrls sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+// SetAssociatedHubsUrls sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 func (m *ContentType) SetAssociatedHubsUrls(value []string)() {
     if m != nil {
         m.associatedHubsUrls = value
@@ -580,7 +580,7 @@ func (m *ContentType) SetBaseTypes(value []ContentTypeable)() {
         m.baseTypes = value
     }
 }
-// SetColumnLinks sets the columnLinks property value. The collection of columns that are required by this content type.
+// SetColumnLinks sets the columnLinks property value. The collection of columns that are required by this content type
 func (m *ContentType) SetColumnLinks(value []ColumnLinkable)() {
     if m != nil {
         m.columnLinks = value
@@ -664,13 +664,13 @@ func (m *ContentType) SetPropagateChanges(value *bool)() {
         m.propagateChanges = value
     }
 }
-// SetReadOnly sets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
+// SetReadOnly sets the readOnly property value. If true, the content type cannot be modified unless this value is first set to false.
 func (m *ContentType) SetReadOnly(value *bool)() {
     if m != nil {
         m.readOnly = value
     }
 }
-// SetSealed sets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+// SetSealed sets the sealed property value. If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 func (m *ContentType) SetSealed(value *bool)() {
     if m != nil {
         m.sealed = value

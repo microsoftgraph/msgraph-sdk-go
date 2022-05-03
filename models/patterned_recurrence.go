@@ -8,7 +8,7 @@ import (
 type PatternedRecurrence struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
+    // The frequency of an event. Do not specify for a one-time access review.  For access reviews: Do not specify this property for a one-time access review.   Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
     pattern RecurrencePatternable
     // The duration of an event.
     range_escaped RecurrenceRangeable
@@ -57,7 +57,7 @@ func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetPattern gets the pattern property value. The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
+// GetPattern gets the pattern property value. The frequency of an event. Do not specify for a one-time access review.  For access reviews: Do not specify this property for a one-time access review.   Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
 func (m *PatternedRecurrence) GetPattern()(RecurrencePatternable) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *PatternedRecurrence) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetPattern sets the pattern property value. The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
+// SetPattern sets the pattern property value. The frequency of an event. Do not specify for a one-time access review.  For access reviews: Do not specify this property for a one-time access review.   Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
 func (m *PatternedRecurrence) SetPattern(value RecurrencePatternable)() {
     if m != nil {
         m.pattern = value

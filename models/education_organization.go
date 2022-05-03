@@ -11,7 +11,7 @@ type EducationOrganization struct {
     description *string
     // Organization display name.
     displayName *string
-    // Source where this organization was created from. Possible values are: sis, manual.
+    // Where this user was created from. Possible values are: sis, lms, or manual.
     externalSource *EducationExternalSource
     // The name of the external source this resources was generated from.
     externalSourceDetail *string
@@ -43,7 +43,7 @@ func (m *EducationOrganization) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExternalSource gets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
+// GetExternalSource gets the externalSource property value. Where this user was created from. Possible values are: sis, lms, or manual.
 func (m *EducationOrganization) GetExternalSource()(*EducationExternalSource) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *EducationOrganization) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExternalSource sets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
+// SetExternalSource sets the externalSource property value. Where this user was created from. Possible values are: sis, lms, or manual.
 func (m *EducationOrganization) SetExternalSource(value *EducationExternalSource)() {
     if m != nil {
         m.externalSource = value

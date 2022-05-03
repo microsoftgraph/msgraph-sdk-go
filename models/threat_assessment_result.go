@@ -12,7 +12,7 @@ type ThreatAssessmentResult struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The result message for each threat assessment.
     message *string
-    // The threat assessment result type. Possible values are: checkPolicy, rescan.
+    // The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.
     resultType *ThreatAssessmentResultType
 }
 // NewThreatAssessmentResult instantiates a new threatAssessmentResult and sets the default values.
@@ -77,7 +77,7 @@ func (m *ThreatAssessmentResult) GetMessage()(*string) {
         return m.message
     }
 }
-// GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
+// GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.
 func (m *ThreatAssessmentResult) GetResultType()(*ThreatAssessmentResultType) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *ThreatAssessmentResult) SetMessage(value *string)() {
         m.message = value
     }
 }
-// SetResultType sets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
+// SetResultType sets the resultType property value. The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.
 func (m *ThreatAssessmentResult) SetResultType(value *ThreatAssessmentResultType)() {
     if m != nil {
         m.resultType = value

@@ -10,7 +10,7 @@ type DirectoryAudit struct {
     Entity
     // Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+    // Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure Ad activity list.
     activityDisplayName *string
     // Indicates additional details on the activity.
     additionalDetails []KeyValueable
@@ -28,7 +28,7 @@ type DirectoryAudit struct {
     result *OperationResult
     // Indicates the reason for failure if the result is failure or timeout.
     resultReason *string
-    // Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
+    // Information about the resource that changed due to the activity.
     targetResources []TargetResourceable
 }
 // NewDirectoryAudit instantiates a new directoryAudit and sets the default values.
@@ -50,7 +50,7 @@ func (m *DirectoryAudit) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.activityDateTime
     }
 }
-// GetActivityDisplayName gets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+// GetActivityDisplayName gets the activityDisplayName property value. Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure Ad activity list.
 func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
     if m == nil {
         return nil
@@ -245,7 +245,7 @@ func (m *DirectoryAudit) GetResultReason()(*string) {
         return m.resultReason
     }
 }
-// GetTargetResources gets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
+// GetTargetResources gets the targetResources property value. Information about the resource that changed due to the activity.
 func (m *DirectoryAudit) GetTargetResources()([]TargetResourceable) {
     if m == nil {
         return nil
@@ -342,7 +342,7 @@ func (m *DirectoryAudit) SetActivityDateTime(value *i336074805fc853987abe6f7fe3a
         m.activityDateTime = value
     }
 }
-// SetActivityDisplayName sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+// SetActivityDisplayName sets the activityDisplayName property value. Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure Ad activity list.
 func (m *DirectoryAudit) SetActivityDisplayName(value *string)() {
     if m != nil {
         m.activityDisplayName = value
@@ -396,7 +396,7 @@ func (m *DirectoryAudit) SetResultReason(value *string)() {
         m.resultReason = value
     }
 }
-// SetTargetResources sets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
+// SetTargetResources sets the targetResources property value. Information about the resource that changed due to the activity.
 func (m *DirectoryAudit) SetTargetResources(value []TargetResourceable)() {
     if m != nil {
         m.targetResources = value

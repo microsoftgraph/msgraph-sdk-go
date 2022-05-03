@@ -13,14 +13,12 @@ type GetEmailAppUsageUserCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions options for Get
-type GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions struct {
+// GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal instantiates a new GetEmailAppUsageUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetEmailAppUsageUserCountsWithPeriodRequestBuilder) {
@@ -45,29 +43,32 @@ func NewGetEmailAppUsageUserCountsWithPeriodRequestBuilder(rawUrl string, reques
     return NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getEmailAppUsageUserCounts
-func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration invoke function getEmailAppUsageUserCounts
+func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get invoke function getEmailAppUsageUserCounts
-func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) Get(options *GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions)(GetEmailAppUsageUserCountsWithPeriodResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) Get()(GetEmailAppUsageUserCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler invoke function getEmailAppUsageUserCounts
+func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailAppUsageUserCountsWithPeriodResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEmailAppUsageUserCountsWithPeriodResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEmailAppUsageUserCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

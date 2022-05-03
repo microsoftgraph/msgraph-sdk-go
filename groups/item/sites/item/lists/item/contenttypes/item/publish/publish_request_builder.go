@@ -13,14 +13,12 @@ type PublishRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PublishRequestBuilderPostOptions options for Post
-type PublishRequestBuilderPostOptions struct {
+// PublishRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type PublishRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewPublishRequestBuilderInternal instantiates a new PublishRequestBuilder and sets the default values.
 func NewPublishRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PublishRequestBuilder) {
@@ -42,29 +40,32 @@ func NewPublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action publish
-func (m *PublishRequestBuilder) CreatePostRequestInformation(options *PublishRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PublishRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action publish
+func (m *PublishRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *PublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action publish
-func (m *PublishRequestBuilder) Post(options *PublishRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *PublishRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action publish
+func (m *PublishRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *PublishRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

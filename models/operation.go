@@ -12,7 +12,7 @@ type Operation struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The time of the last action of the operation.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The current status of the operation: notStarted, running, completed, failed
+    // Possible values are: notStarted, running, completed, failed. Read-only.
     status *OperationStatus
 }
 // NewOperation instantiates a new operation and sets the default values.
@@ -77,7 +77,7 @@ func (m *Operation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.lastActionDateTime
     }
 }
-// GetStatus gets the status property value. The current status of the operation: notStarted, running, completed, failed
+// GetStatus gets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
 func (m *Operation) GetStatus()(*OperationStatus) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *Operation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97
         m.lastActionDateTime = value
     }
 }
-// SetStatus sets the status property value. The current status of the operation: notStarted, running, completed, failed
+// SetStatus sets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
 func (m *Operation) SetStatus(value *OperationStatus)() {
     if m != nil {
         m.status = value

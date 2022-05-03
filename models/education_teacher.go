@@ -8,7 +8,7 @@ import (
 type EducationTeacher struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // ID of the teacher in the source system.
+    // Id of the Teacher in external source system.
     externalId *string
     // Teacher number.
     teacherNumber *string
@@ -32,7 +32,7 @@ func (m *EducationTeacher) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetExternalId gets the externalId property value. ID of the teacher in the source system.
+// GetExternalId gets the externalId property value. Id of the Teacher in external source system.
 func (m *EducationTeacher) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *EducationTeacher) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetExternalId sets the externalId property value. ID of the teacher in the source system.
+// SetExternalId sets the externalId property value. Id of the Teacher in external source system.
 func (m *EducationTeacher) SetExternalId(value *string)() {
     if m != nil {
         m.externalId = value

@@ -24,7 +24,7 @@ type EducationSubmission struct {
     returnedBy IdentitySetable
     // Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     returnedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
+    // Read-only. Possible values are: working, submitted, released, returned, unknownFutureValue and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
     status *EducationSubmissionStatus
     // User who moved the resource into the submitted state.
     submittedBy IdentitySetable
@@ -269,7 +269,7 @@ func (m *EducationSubmission) GetReturnedDateTime()(*i336074805fc853987abe6f7fe3
         return m.returnedDateTime
     }
 }
-// GetStatus gets the status property value. Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
+// GetStatus gets the status property value. Read-only. Possible values are: working, submitted, released, returned, unknownFutureValue and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
 func (m *EducationSubmission) GetStatus()(*EducationSubmissionStatus) {
     if m == nil {
         return nil
@@ -470,7 +470,7 @@ func (m *EducationSubmission) SetReturnedDateTime(value *i336074805fc853987abe6f
         m.returnedDateTime = value
     }
 }
-// SetStatus sets the status property value. Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
+// SetStatus sets the status property value. Read-only. Possible values are: working, submitted, released, returned, unknownFutureValue and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
 func (m *EducationSubmission) SetStatus(value *EducationSubmissionStatus)() {
     if m != nil {
         m.status = value

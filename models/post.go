@@ -8,7 +8,7 @@ import (
 // Post 
 type Post struct {
     OutlookItem
-    // Read-only. Nullable. Supports $expand.
+    // The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
     attachments []Attachmentable
     // The contents of the post. This is a default property. This property can be null.
     body ItemBodyable
@@ -22,7 +22,7 @@ type Post struct {
     from Recipientable
     // Indicates whether the post has at least one attachment. This is a default property.
     hasAttachments *bool
-    // Read-only. Supports $expand.
+    // The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
     inReplyTo Postable
     // The collection of multi-value extended properties defined for the post. Read-only. Nullable.
     multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
@@ -46,7 +46,7 @@ func NewPost()(*Post) {
 func CreatePostFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPost(), nil
 }
-// GetAttachments gets the attachments property value. Read-only. Nullable. Supports $expand.
+// GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
 func (m *Post) GetAttachments()([]Attachmentable) {
     if m == nil {
         return nil
@@ -257,7 +257,7 @@ func (m *Post) GetHasAttachments()(*bool) {
         return m.hasAttachments
     }
 }
-// GetInReplyTo gets the inReplyTo property value. Read-only. Supports $expand.
+// GetInReplyTo gets the inReplyTo property value. The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
 func (m *Post) GetInReplyTo()(Postable) {
     if m == nil {
         return nil
@@ -411,7 +411,7 @@ func (m *Post) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAttachments sets the attachments property value. Read-only. Nullable. Supports $expand.
+// SetAttachments sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
 func (m *Post) SetAttachments(value []Attachmentable)() {
     if m != nil {
         m.attachments = value
@@ -453,7 +453,7 @@ func (m *Post) SetHasAttachments(value *bool)() {
         m.hasAttachments = value
     }
 }
-// SetInReplyTo sets the inReplyTo property value. Read-only. Supports $expand.
+// SetInReplyTo sets the inReplyTo property value. The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
 func (m *Post) SetInReplyTo(value Postable)() {
     if m != nil {
         m.inReplyTo = value

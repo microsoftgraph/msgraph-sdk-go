@@ -8,11 +8,11 @@ import (
 type AppIdentity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+    // Refers to the unique identifier representing Application Id in the Azure Active Directory.
     appId *string
     // Refers to the Application Name displayed in the Azure Portal.
     displayName *string
-    // Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+    // Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
     servicePrincipalId *string
     // Refers to the Service Principal Name is the Application name in the tenant.
     servicePrincipalName *string
@@ -36,7 +36,7 @@ func (m *AppIdentity) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAppId gets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+// GetAppId gets the appId property value. Refers to the unique identifier representing Application Id in the Azure Active Directory.
 func (m *AppIdentity) GetAppId()(*string) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *AppIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetServicePrincipalId gets the servicePrincipalId property value. Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+// GetServicePrincipalId gets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
 func (m *AppIdentity) GetServicePrincipalId()(*string) {
     if m == nil {
         return nil
@@ -153,7 +153,7 @@ func (m *AppIdentity) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAppId sets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+// SetAppId sets the appId property value. Refers to the unique identifier representing Application Id in the Azure Active Directory.
 func (m *AppIdentity) SetAppId(value *string)() {
     if m != nil {
         m.appId = value
@@ -165,7 +165,7 @@ func (m *AppIdentity) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetServicePrincipalId sets the servicePrincipalId property value. Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+// SetServicePrincipalId sets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
 func (m *AppIdentity) SetServicePrincipalId(value *string)() {
     if m != nil {
         m.servicePrincipalId = value

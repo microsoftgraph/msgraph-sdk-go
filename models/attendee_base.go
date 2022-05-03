@@ -7,7 +7,7 @@ import (
 // AttendeeBase 
 type AttendeeBase struct {
     Recipient
-    // The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
+    // The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
     type_escaped *AttendeeType
 }
 // NewAttendeeBase instantiates a new attendeeBase and sets the default values.
@@ -36,7 +36,7 @@ func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetType gets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
+// GetType gets the type property value. The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
 func (m *AttendeeBase) GetType()(*AttendeeType) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *AttendeeBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetType sets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
+// SetType sets the type property value. The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
 func (m *AttendeeBase) SetType(value *AttendeeType)() {
     if m != nil {
         m.type_escaped = value

@@ -8,11 +8,11 @@ import (
 type SearchAlteration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.
+    // Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
     alteredHighlightedQueryString *string
     // Defines the altered query string with spelling correction.
     alteredQueryString *string
-    // Represents changed segments related to an original user query.
+    // Represents changed segments with respect to original query.
     alteredQueryTokens []AlteredQueryTokenable
 }
 // NewSearchAlteration instantiates a new searchAlteration and sets the default values.
@@ -34,7 +34,7 @@ func (m *SearchAlteration) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAlteredHighlightedQueryString gets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.
+// GetAlteredHighlightedQueryString gets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
 func (m *SearchAlteration) GetAlteredHighlightedQueryString()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *SearchAlteration) GetAlteredQueryString()(*string) {
         return m.alteredQueryString
     }
 }
-// GetAlteredQueryTokens gets the alteredQueryTokens property value. Represents changed segments related to an original user query.
+// GetAlteredQueryTokens gets the alteredQueryTokens property value. Represents changed segments with respect to original query.
 func (m *SearchAlteration) GetAlteredQueryTokens()([]AlteredQueryTokenable) {
     if m == nil {
         return nil
@@ -135,7 +135,7 @@ func (m *SearchAlteration) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAlteredHighlightedQueryString sets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.
+// SetAlteredHighlightedQueryString sets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
 func (m *SearchAlteration) SetAlteredHighlightedQueryString(value *string)() {
     if m != nil {
         m.alteredHighlightedQueryString = value
@@ -147,7 +147,7 @@ func (m *SearchAlteration) SetAlteredQueryString(value *string)() {
         m.alteredQueryString = value
     }
 }
-// SetAlteredQueryTokens sets the alteredQueryTokens property value. Represents changed segments related to an original user query.
+// SetAlteredQueryTokens sets the alteredQueryTokens property value. Represents changed segments with respect to original query.
 func (m *SearchAlteration) SetAlteredQueryTokens(value []AlteredQueryTokenable)() {
     if m != nil {
         m.alteredQueryTokens = value

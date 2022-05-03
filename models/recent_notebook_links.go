@@ -8,7 +8,7 @@ import (
 type RecentNotebookLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Opens the notebook in the OneNote native client if it's installed.
+    // Opens the notebook in the OneNote client, if it's installed.
     oneNoteClientUrl ExternalLinkable
     // Opens the notebook in OneNote on the web.
     oneNoteWebUrl ExternalLinkable
@@ -57,7 +57,7 @@ func (m *RecentNotebookLinks) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOneNoteClientUrl gets the oneNoteClientUrl property value. Opens the notebook in the OneNote native client if it's installed.
+// GetOneNoteClientUrl gets the oneNoteClientUrl property value. Opens the notebook in the OneNote client, if it's installed.
 func (m *RecentNotebookLinks) GetOneNoteClientUrl()(ExternalLinkable) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *RecentNotebookLinks) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetOneNoteClientUrl sets the oneNoteClientUrl property value. Opens the notebook in the OneNote native client if it's installed.
+// SetOneNoteClientUrl sets the oneNoteClientUrl property value. Opens the notebook in the OneNote client, if it's installed.
 func (m *RecentNotebookLinks) SetOneNoteClientUrl(value ExternalLinkable)() {
     if m != nil {
         m.oneNoteClientUrl = value

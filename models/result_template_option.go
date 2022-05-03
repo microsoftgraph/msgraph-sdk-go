@@ -8,7 +8,7 @@ import (
 type ResultTemplateOption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
+    // Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.
     enableResultTemplate *bool
 }
 // NewResultTemplateOption instantiates a new resultTemplateOption and sets the default values.
@@ -30,7 +30,7 @@ func (m *ResultTemplateOption) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetEnableResultTemplate gets the enableResultTemplate property value. Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
+// GetEnableResultTemplate gets the enableResultTemplate property value. Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.
 func (m *ResultTemplateOption) GetEnableResultTemplate()(*bool) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *ResultTemplateOption) SetAdditionalData(value map[string]interface{})()
         m.additionalData = value
     }
 }
-// SetEnableResultTemplate sets the enableResultTemplate property value. Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
+// SetEnableResultTemplate sets the enableResultTemplate property value. Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.
 func (m *ResultTemplateOption) SetEnableResultTemplate(value *bool)() {
     if m != nil {
         m.enableResultTemplate = value

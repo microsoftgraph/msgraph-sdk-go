@@ -10,7 +10,7 @@ type DocumentSetContent struct {
     additionalData map[string]interface{}
     // Content type information of the file.
     contentType ContentTypeInfoable
-    // Name of the file in resource folder that should be added as a default content or a template in the document set.
+    // Name of the file in resource folder that should be added as a default content or a template in the document set
     fileName *string
     // Folder name in which the file will be placed when a new document set is created in the library.
     folderName *string
@@ -77,7 +77,7 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFileName gets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
+// GetFileName gets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set
 func (m *DocumentSetContent) GetFileName()(*string) {
     if m == nil {
         return nil
@@ -133,7 +133,7 @@ func (m *DocumentSetContent) SetContentType(value ContentTypeInfoable)() {
         m.contentType = value
     }
 }
-// SetFileName sets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
+// SetFileName sets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set
 func (m *DocumentSetContent) SetFileName(value *string)() {
     if m != nil {
         m.fileName = value

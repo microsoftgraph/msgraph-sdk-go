@@ -13,14 +13,12 @@ type GetEmailActivityUserDetailWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetEmailActivityUserDetailWithPeriodRequestBuilderGetOptions options for Get
-type GetEmailActivityUserDetailWithPeriodRequestBuilderGetOptions struct {
+// GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetEmailActivityUserDetailWithPeriodRequestBuilderInternal instantiates a new GetEmailActivityUserDetailWithPeriodRequestBuilder and sets the default values.
 func NewGetEmailActivityUserDetailWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetEmailActivityUserDetailWithPeriodRequestBuilder) {
@@ -45,29 +43,32 @@ func NewGetEmailActivityUserDetailWithPeriodRequestBuilder(rawUrl string, reques
     return NewGetEmailActivityUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getEmailActivityUserDetail
-func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetEmailActivityUserDetailWithPeriodRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration invoke function getEmailActivityUserDetail
+func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get invoke function getEmailActivityUserDetail
-func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) Get(options *GetEmailActivityUserDetailWithPeriodRequestBuilderGetOptions)(GetEmailActivityUserDetailWithPeriodResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) Get()(GetEmailActivityUserDetailWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler invoke function getEmailActivityUserDetail
+func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailActivityUserDetailWithPeriodResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEmailActivityUserDetailWithPeriodResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEmailActivityUserDetailWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

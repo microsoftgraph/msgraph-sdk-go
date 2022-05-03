@@ -23,12 +23,14 @@ type Site struct {
     error PublicErrorable
     // The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
     externalColumns []ColumnDefinitionable
-    // Used to address any item contained in this site. This collection can't be enumerated.
+    // Used to address any item contained in this site. This collection cannot be enumerated.
     items []BaseItemable
     // The collection of lists under this site.
     lists []Listable
     // Calls the OneNote service for notebook related operations.
     onenote Onenoteable
+    // The collection of long running operations for the site.
+    operations []RichLongRunningOperationable
     // The permissions associated with the site. Nullable.
     permissions []Permissionable
     // If present, indicates that this is the root site in the site collection. Read-only.
@@ -252,6 +254,20 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRichLongRunningOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RichLongRunningOperationable, len(val))
+            for i, v := range val {
+                res[i] = v.(RichLongRunningOperationable)
+            }
+            m.SetOperations(res)
+        }
+        return nil
+    }
     res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
         if err != nil {
@@ -312,7 +328,7 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetItems gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
+// GetItems gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) GetItems()([]BaseItemable) {
     if m == nil {
         return nil
@@ -334,6 +350,14 @@ func (m *Site) GetOnenote()(Onenoteable) {
         return nil
     } else {
         return m.onenote
+    }
+}
+// GetOperations gets the operations property value. The collection of long running operations for the site.
+func (m *Site) GetOperations()([]RichLongRunningOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
     }
 }
 // GetPermissions gets the permissions property value. The permissions associated with the site. Nullable.
@@ -472,6 +496,16 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetOperations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
+        for i, v := range m.GetOperations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
         for i, v := range m.GetPermissions() {
@@ -560,7 +594,7 @@ func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
         m.externalColumns = value
     }
 }
-// SetItems sets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
+// SetItems sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) SetItems(value []BaseItemable)() {
     if m != nil {
         m.items = value
@@ -576,6 +610,12 @@ func (m *Site) SetLists(value []Listable)() {
 func (m *Site) SetOnenote(value Onenoteable)() {
     if m != nil {
         m.onenote = value
+    }
+}
+// SetOperations sets the operations property value. The collection of long running operations for the site.
+func (m *Site) SetOperations(value []RichLongRunningOperationable)() {
+    if m != nil {
+        m.operations = value
     }
 }
 // SetPermissions sets the permissions property value. The permissions associated with the site. Nullable.

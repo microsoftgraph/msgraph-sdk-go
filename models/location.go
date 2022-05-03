@@ -16,7 +16,7 @@ type Location struct {
     displayName *string
     // Optional email address of the location.
     locationEmailAddress *string
-    // The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+    // The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
     locationType *LocationType
     // Optional URI representing the location.
     locationUri *string
@@ -161,7 +161,7 @@ func (m *Location) GetLocationEmailAddress()(*string) {
         return m.locationEmailAddress
     }
 }
-// GetLocationType gets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+// GetLocationType gets the locationType property value. The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
 func (m *Location) GetLocationType()(*LocationType) {
     if m == nil {
         return nil
@@ -283,7 +283,7 @@ func (m *Location) SetLocationEmailAddress(value *string)() {
         m.locationEmailAddress = value
     }
 }
-// SetLocationType sets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+// SetLocationType sets the locationType property value. The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
 func (m *Location) SetLocationType(value *LocationType)() {
     if m != nil {
         m.locationType = value

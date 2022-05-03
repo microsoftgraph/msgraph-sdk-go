@@ -16,13 +16,13 @@ type ConnectedOrganization struct {
     displayName *string
     // Nullable.
     externalSponsors []DirectoryObjectable
-    // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+    // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
     identitySources []IdentitySourceable
     // Nullable.
     internalSponsors []DirectoryObjectable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
+    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
     state *ConnectedOrganizationState
 }
 // NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
@@ -165,7 +165,7 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
 func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
         return m.modifiedDateTime
     }
 }
-// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
+// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
     if m == nil {
         return nil
@@ -290,7 +290,7 @@ func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObjectable)
         m.externalSponsors = value
     }
 }
-// SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+// SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
 func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySourceable)() {
     if m != nil {
         m.identitySources = value
@@ -308,7 +308,7 @@ func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe
         m.modifiedDateTime = value
     }
 }
-// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
+// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
     if m != nil {
         m.state = value

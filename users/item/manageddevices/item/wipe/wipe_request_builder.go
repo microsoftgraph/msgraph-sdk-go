@@ -13,16 +13,12 @@ type WipeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WipeRequestBuilderPostOptions options for Post
-type WipeRequestBuilderPostOptions struct {
-    // 
-    Body WipeRequestBodyable
+// WipeRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type WipeRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewWipeRequestBuilderInternal instantiates a new WipeRequestBuilder and sets the default values.
 func NewWipeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WipeRequestBuilder) {
@@ -44,30 +40,33 @@ func NewWipeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewWipeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation wipe a device
-func (m *WipeRequestBuilder) CreatePostRequestInformation(options *WipeRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WipeRequestBuilder) CreatePostRequestInformation(body WipeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration wipe a device
+func (m *WipeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipeRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post wipe a device
-func (m *WipeRequestBuilder) Post(options *WipeRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *WipeRequestBuilder) Post(body WipeRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler wipe a device
+func (m *WipeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WipeRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

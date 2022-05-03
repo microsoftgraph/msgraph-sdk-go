@@ -12,7 +12,7 @@ type AccessReviewScheduleDefinition struct {
     additionalNotificationRecipients []AccessReviewNotificationRecipientItemable
     // User who created this review. Read-only.
     createdBy UserIdentityable
-    // Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
+    // Timestamp when the access review series was created. Supports $select. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description provided by review creators to provide more context of the review to admins. Supports $select.
     descriptionForAdmins *string
@@ -20,17 +20,17 @@ type AccessReviewScheduleDefinition struct {
     descriptionForReviewers *string
     // Name of the access review series. Supports $select and $orderBy. Required on create.
     displayName *string
-    // This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
+    // This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.
     fallbackReviewers []AccessReviewReviewerScopeable
     // This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
     instanceEnumerationScope AccessReviewScopeable
-    // If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
+    // Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
     instances []AccessReviewInstanceable
     // Timestamp when the access review series was last modified. Supports $select. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+    // This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
     reviewers []AccessReviewReviewerScopeable
-    // Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
+    // Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
     scope AccessReviewScopeable
     // The settings for an access review series, see type definition below. Supports $select. Required on create.
     settings AccessReviewScheduleSettingsable
@@ -64,7 +64,7 @@ func (m *AccessReviewScheduleDefinition) GetCreatedBy()(UserIdentityable) {
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp when the access review series was created. Supports $select. Read-only.
 func (m *AccessReviewScheduleDefinition) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *AccessReviewScheduleDefinition) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
+// GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.
 func (m *AccessReviewScheduleDefinition) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
     if m == nil {
         return nil
@@ -273,7 +273,7 @@ func (m *AccessReviewScheduleDefinition) GetInstanceEnumerationScope()(AccessRev
         return m.instanceEnumerationScope
     }
 }
-// GetInstances gets the instances property value. If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
+// GetInstances gets the instances property value. Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
 func (m *AccessReviewScheduleDefinition) GetInstances()([]AccessReviewInstanceable) {
     if m == nil {
         return nil
@@ -289,7 +289,7 @@ func (m *AccessReviewScheduleDefinition) GetLastModifiedDateTime()(*i336074805fc
         return m.lastModifiedDateTime
     }
 }
-// GetReviewers gets the reviewers property value. This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+// GetReviewers gets the reviewers property value. This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
 func (m *AccessReviewScheduleDefinition) GetReviewers()([]AccessReviewReviewerScopeable) {
     if m == nil {
         return nil
@@ -297,7 +297,7 @@ func (m *AccessReviewScheduleDefinition) GetReviewers()([]AccessReviewReviewerSc
         return m.reviewers
     }
 }
-// GetScope gets the scope property value. Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
+// GetScope gets the scope property value. Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
 func (m *AccessReviewScheduleDefinition) GetScope()(AccessReviewScopeable) {
     if m == nil {
         return nil
@@ -441,7 +441,7 @@ func (m *AccessReviewScheduleDefinition) SetCreatedBy(value UserIdentityable)() 
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp when the access review series was created. Supports $select. Read-only.
 func (m *AccessReviewScheduleDefinition) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
@@ -465,7 +465,7 @@ func (m *AccessReviewScheduleDefinition) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
+// SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.
 func (m *AccessReviewScheduleDefinition) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
     if m != nil {
         m.fallbackReviewers = value
@@ -477,7 +477,7 @@ func (m *AccessReviewScheduleDefinition) SetInstanceEnumerationScope(value Acces
         m.instanceEnumerationScope = value
     }
 }
-// SetInstances sets the instances property value. If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
+// SetInstances sets the instances property value. Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
 func (m *AccessReviewScheduleDefinition) SetInstances(value []AccessReviewInstanceable)() {
     if m != nil {
         m.instances = value
@@ -489,13 +489,13 @@ func (m *AccessReviewScheduleDefinition) SetLastModifiedDateTime(value *i3360748
         m.lastModifiedDateTime = value
     }
 }
-// SetReviewers sets the reviewers property value. This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+// SetReviewers sets the reviewers property value. This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
 func (m *AccessReviewScheduleDefinition) SetReviewers(value []AccessReviewReviewerScopeable)() {
     if m != nil {
         m.reviewers = value
     }
 }
-// SetScope sets the scope property value. Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
+// SetScope sets the scope property value. Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
 func (m *AccessReviewScheduleDefinition) SetScope(value AccessReviewScopeable)() {
     if m != nil {
         m.scope = value

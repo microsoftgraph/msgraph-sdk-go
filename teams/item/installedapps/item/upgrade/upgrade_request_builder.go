@@ -13,14 +13,12 @@ type UpgradeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UpgradeRequestBuilderPostOptions options for Post
-type UpgradeRequestBuilderPostOptions struct {
+// UpgradeRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type UpgradeRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewUpgradeRequestBuilderInternal instantiates a new UpgradeRequestBuilder and sets the default values.
 func NewUpgradeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UpgradeRequestBuilder) {
@@ -42,29 +40,32 @@ func NewUpgradeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewUpgradeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action upgrade
-func (m *UpgradeRequestBuilder) CreatePostRequestInformation(options *UpgradeRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpgradeRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action upgrade
+func (m *UpgradeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UpgradeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action upgrade
-func (m *UpgradeRequestBuilder) Post(options *UpgradeRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *UpgradeRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action upgrade
+func (m *UpgradeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *UpgradeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

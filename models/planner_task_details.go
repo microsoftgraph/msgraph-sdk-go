@@ -11,7 +11,7 @@ type PlannerTaskDetails struct {
     checklist PlannerChecklistItemsable
     // Description of the task.
     description *string
-    // This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
+    // This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
     previewType *PlannerPreviewType
     // The collection of references on the task.
     references PlannerExternalReferencesable
@@ -88,7 +88,7 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
+// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
 func (m *PlannerTaskDetails) GetPreviewType()(*PlannerPreviewType) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *PlannerTaskDetails) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
+// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
 func (m *PlannerTaskDetails) SetPreviewType(value *PlannerPreviewType)() {
     if m != nil {
         m.previewType = value

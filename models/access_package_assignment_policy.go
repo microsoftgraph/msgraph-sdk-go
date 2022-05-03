@@ -8,25 +8,25 @@ import (
 // AccessPackageAssignmentPolicy 
 type AccessPackageAssignmentPolicy struct {
     Entity
-    // Access package containing this policy. Read-only.
+    // The access package with this policy. Read-only. Nullable. Supports $expand.
     accessPackage AccessPackageable
     // Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
     allowedTargetScope *AllowedTargetScope
     // Catalog of the access package containing this policy. Read-only.
     catalog AccessPackageCatalogable
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the policy.
     description *string
-    // The display name of the policy.
+    // The display name of the policy. Supports $filter (eq).
     displayName *string
     // The expiration date for assignments created in this policy.
     expiration ExpirationPatternable
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
+    // Who must approve requests for access package in this policy.
     requestApprovalSettings AccessPackageAssignmentApprovalSettingsable
-    // Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
+    // Who can request this access package from this policy.
     requestorSettings AccessPackageAssignmentRequestorSettingsable
     // Settings for access reviews of assignments through this policy.
     reviewSettings AccessPackageAssignmentReviewSettingsable
@@ -44,7 +44,7 @@ func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
 func CreateAccessPackageAssignmentPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentPolicy(), nil
 }
-// GetAccessPackage gets the accessPackage property value. Access package containing this policy. Read-only.
+// GetAccessPackage gets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *AccessPackageAssignmentPolicy) GetCatalog()(AccessPackageCatalogable) {
         return m.catalog
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *AccessPackageAssignmentPolicy) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the policy.
+// GetDisplayName gets the displayName property value. The display name of the policy. Supports $filter (eq).
 func (m *AccessPackageAssignmentPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -229,7 +229,7 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -237,7 +237,7 @@ func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc85398
         return m.modifiedDateTime
     }
 }
-// GetRequestApprovalSettings gets the requestApprovalSettings property value. Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
+// GetRequestApprovalSettings gets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
 func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(AccessPackageAssignmentApprovalSettingsable) {
     if m == nil {
         return nil
@@ -245,7 +245,7 @@ func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(AccessPacka
         return m.requestApprovalSettings
     }
 }
-// GetRequestorSettings gets the requestorSettings property value. Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
+// GetRequestorSettings gets the requestorSettings property value. Who can request this access package from this policy.
 func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(AccessPackageAssignmentRequestorSettingsable) {
     if m == nil {
         return nil
@@ -354,7 +354,7 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAccessPackage sets the accessPackage property value. Access package containing this policy. Read-only.
+// SetAccessPackage sets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable)() {
     if m != nil {
         m.accessPackage = value
@@ -372,7 +372,7 @@ func (m *AccessPackageAssignmentPolicy) SetCatalog(value AccessPackageCatalogabl
         m.catalog = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
@@ -384,7 +384,7 @@ func (m *AccessPackageAssignmentPolicy) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the policy.
+// SetDisplayName sets the displayName property value. The display name of the policy. Supports $filter (eq).
 func (m *AccessPackageAssignmentPolicy) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -396,19 +396,19 @@ func (m *AccessPackageAssignmentPolicy) SetExpiration(value ExpirationPatternabl
         m.expiration = value
     }
 }
-// SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.modifiedDateTime = value
     }
 }
-// SetRequestApprovalSettings sets the requestApprovalSettings property value. Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
+// SetRequestApprovalSettings sets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
 func (m *AccessPackageAssignmentPolicy) SetRequestApprovalSettings(value AccessPackageAssignmentApprovalSettingsable)() {
     if m != nil {
         m.requestApprovalSettings = value
     }
 }
-// SetRequestorSettings sets the requestorSettings property value. Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
+// SetRequestorSettings sets the requestorSettings property value. Who can request this access package from this policy.
 func (m *AccessPackageAssignmentPolicy) SetRequestorSettings(value AccessPackageAssignmentRequestorSettingsable)() {
     if m != nil {
         m.requestorSettings = value

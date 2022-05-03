@@ -35,7 +35,7 @@ type DeviceManagement struct {
     exchangeConnectors []DeviceManagementExchangeConnectorable
     // Collection of imported Windows autopilot devices.
     importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentityable
-    // Intune Account Id for given tenant
+    // Intune Account ID for given tenant
     intuneAccountId *string
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     intuneBrand IntuneBrandable
@@ -652,7 +652,7 @@ func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]Impor
         return m.importedWindowsAutopilotDeviceIdentities
     }
 }
-// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
+// GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
 func (m *DeviceManagement) GetIntuneAccountId()(*string) {
     if m == nil {
         return nil
@@ -1219,7 +1219,7 @@ func (m *DeviceManagement) SetImportedWindowsAutopilotDeviceIdentities(value []I
         m.importedWindowsAutopilotDeviceIdentities = value
     }
 }
-// SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
+// SetIntuneAccountId sets the intuneAccountId property value. Intune Account ID for given tenant
 func (m *DeviceManagement) SetIntuneAccountId(value *string)() {
     if m != nil {
         m.intuneAccountId = value

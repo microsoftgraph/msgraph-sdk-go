@@ -13,14 +13,12 @@ type AllowedCalendarSharingRolesWithUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AllowedCalendarSharingRolesWithUserRequestBuilderGetOptions options for Get
-type AllowedCalendarSharingRolesWithUserRequestBuilderGetOptions struct {
+// AllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type AllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal instantiates a new AllowedCalendarSharingRolesWithUserRequestBuilder and sets the default values.
 func NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, user *string)(*AllowedCalendarSharingRolesWithUserRequestBuilder) {
@@ -45,29 +43,32 @@ func NewAllowedCalendarSharingRolesWithUserRequestBuilder(rawUrl string, request
     return NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function allowedCalendarSharingRoles
-func (m *AllowedCalendarSharingRolesWithUserRequestBuilder) CreateGetRequestInformation(options *AllowedCalendarSharingRolesWithUserRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AllowedCalendarSharingRolesWithUserRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration invoke function allowedCalendarSharingRoles
+func (m *AllowedCalendarSharingRolesWithUserRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get invoke function allowedCalendarSharingRoles
-func (m *AllowedCalendarSharingRolesWithUserRequestBuilder) Get(options *AllowedCalendarSharingRolesWithUserRequestBuilderGetOptions)(AllowedCalendarSharingRolesWithUserResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *AllowedCalendarSharingRolesWithUserRequestBuilder) Get()(AllowedCalendarSharingRolesWithUserResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler invoke function allowedCalendarSharingRoles
+func (m *AllowedCalendarSharingRolesWithUserRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AllowedCalendarSharingRolesWithUserResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAllowedCalendarSharingRolesWithUserResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAllowedCalendarSharingRolesWithUserResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

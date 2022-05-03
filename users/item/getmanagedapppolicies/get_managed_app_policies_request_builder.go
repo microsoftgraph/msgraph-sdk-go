@@ -13,14 +13,12 @@ type GetManagedAppPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetManagedAppPoliciesRequestBuilderGetOptions options for Get
-type GetManagedAppPoliciesRequestBuilderGetOptions struct {
+// GetManagedAppPoliciesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetManagedAppPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetManagedAppPoliciesRequestBuilderInternal instantiates a new GetManagedAppPoliciesRequestBuilder and sets the default values.
 func NewGetManagedAppPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetManagedAppPoliciesRequestBuilder) {
@@ -42,29 +40,32 @@ func NewGetManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewGetManagedAppPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation gets app restrictions for a given user.
-func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformation(options *GetManagedAppPoliciesRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration gets app restrictions for a given user.
+func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get gets app restrictions for a given user.
-func (m *GetManagedAppPoliciesRequestBuilder) Get(options *GetManagedAppPoliciesRequestBuilderGetOptions)(GetManagedAppPoliciesResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *GetManagedAppPoliciesRequestBuilder) Get()(GetManagedAppPoliciesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler gets app restrictions for a given user.
+func (m *GetManagedAppPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetManagedAppPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppPoliciesResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedAppPoliciesResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedAppPoliciesResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

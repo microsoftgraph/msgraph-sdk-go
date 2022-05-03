@@ -8,9 +8,9 @@ import (
 type BookingQuestionAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The ID of the custom question.
-    isRequired *bool
     // Indicates whether it is mandatory to answer the custom question.
+    isRequired *bool
+    // If it is mandatory to answer the custom question.
     questionId *string
 }
 // NewBookingQuestionAssignment instantiates a new bookingQuestionAssignment and sets the default values.
@@ -57,7 +57,7 @@ func (m *BookingQuestionAssignment) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetIsRequired gets the isRequired property value. The ID of the custom question.
+// GetIsRequired gets the isRequired property value. Indicates whether it is mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) GetIsRequired()(*bool) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *BookingQuestionAssignment) GetIsRequired()(*bool) {
         return m.isRequired
     }
 }
-// GetQuestionId gets the questionId property value. Indicates whether it is mandatory to answer the custom question.
+// GetQuestionId gets the questionId property value. If it is mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) GetQuestionId()(*string) {
     if m == nil {
         return nil
@@ -101,13 +101,13 @@ func (m *BookingQuestionAssignment) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetIsRequired sets the isRequired property value. The ID of the custom question.
+// SetIsRequired sets the isRequired property value. Indicates whether it is mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) SetIsRequired(value *bool)() {
     if m != nil {
         m.isRequired = value
     }
 }
-// SetQuestionId sets the questionId property value. Indicates whether it is mandatory to answer the custom question.
+// SetQuestionId sets the questionId property value. If it is mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) SetQuestionId(value *string)() {
     if m != nil {
         m.questionId = value

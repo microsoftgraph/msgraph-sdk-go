@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.22.0] - 2022-05-03
+
+### Changed
+
+- Breaking: the parameters have been changed to request body, request configuration(query parameters, options, headers), response handler for a better experience.
+- Upgraded JSON reference to fix multiple JSON serialization issues.
+
 ## [0.21.0] - 2022-04-28
 
 ### Changed

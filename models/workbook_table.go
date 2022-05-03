@@ -31,7 +31,7 @@ type WorkbookTable struct {
     showTotals *bool
     // Represents the sorting for the table. Read-only.
     sort WorkbookTableSortable
-    // Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+    // Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
     style *string
     // The worksheet containing the current table. Read-only.
     worksheet WorkbookWorksheetable
@@ -296,7 +296,7 @@ func (m *WorkbookTable) GetSort()(WorkbookTableSortable) {
         return m.sort
     }
 }
-// GetStyle gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// GetStyle gets the style property value. Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) GetStyle()(*string) {
     if m == nil {
         return nil
@@ -484,7 +484,7 @@ func (m *WorkbookTable) SetSort(value WorkbookTableSortable)() {
         m.sort = value
     }
 }
-// SetStyle sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// SetStyle sets the style property value. Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) SetStyle(value *string)() {
     if m != nil {
         m.style = value

@@ -9,19 +9,19 @@ type RbacApplication struct {
     Entity
     // Resource to grant access to users or groups.
     roleAssignments []UnifiedRoleAssignmentable
-    // The roleAssignmentScheduleInstances property
+    // Instances for active role assignments.
     roleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstanceable
-    // The roleAssignmentScheduleRequests property
+    // Requests for active role assignments to principals through PIM.
     roleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequestable
-    // The roleAssignmentSchedules property
+    // Schedules for active role assignment operations.
     roleAssignmentSchedules []UnifiedRoleAssignmentScheduleable
     // Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
     roleDefinitions []UnifiedRoleDefinitionable
-    // The roleEligibilityScheduleInstances property
+    // Instances for role eligibility requests.
     roleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstanceable
-    // The roleEligibilityScheduleRequests property
+    // Requests for role eligibilities for principals through PIM.
     roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestable
-    // The roleEligibilitySchedules property
+    // Schedules for role eligibility operations.
     roleEligibilitySchedules []UnifiedRoleEligibilityScheduleable
 }
 // NewRbacApplication instantiates a new rbacApplication and sets the default values.
@@ -160,7 +160,7 @@ func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentable) {
         return m.roleAssignments
     }
 }
-// GetRoleAssignmentScheduleInstances gets the roleAssignmentScheduleInstances property value. The roleAssignmentScheduleInstances property
+// GetRoleAssignmentScheduleInstances gets the roleAssignmentScheduleInstances property value. Instances for active role assignments.
 func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssignmentScheduleInstanceable) {
     if m == nil {
         return nil
@@ -168,7 +168,7 @@ func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssi
         return m.roleAssignmentScheduleInstances
     }
 }
-// GetRoleAssignmentScheduleRequests gets the roleAssignmentScheduleRequests property value. The roleAssignmentScheduleRequests property
+// GetRoleAssignmentScheduleRequests gets the roleAssignmentScheduleRequests property value. Requests for active role assignments to principals through PIM.
 func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssignmentScheduleRequestable) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssig
         return m.roleAssignmentScheduleRequests
     }
 }
-// GetRoleAssignmentSchedules gets the roleAssignmentSchedules property value. The roleAssignmentSchedules property
+// GetRoleAssignmentSchedules gets the roleAssignmentSchedules property value. Schedules for active role assignment operations.
 func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentScheduleable) {
     if m == nil {
         return nil
@@ -192,7 +192,7 @@ func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
         return m.roleDefinitions
     }
 }
-// GetRoleEligibilityScheduleInstances gets the roleEligibilityScheduleInstances property value. The roleEligibilityScheduleInstances property
+// GetRoleEligibilityScheduleInstances gets the roleEligibilityScheduleInstances property value. Instances for role eligibility requests.
 func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEligibilityScheduleInstanceable) {
     if m == nil {
         return nil
@@ -200,7 +200,7 @@ func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEli
         return m.roleEligibilityScheduleInstances
     }
 }
-// GetRoleEligibilityScheduleRequests gets the roleEligibilityScheduleRequests property value. The roleEligibilityScheduleRequests property
+// GetRoleEligibilityScheduleRequests gets the roleEligibilityScheduleRequests property value. Requests for role eligibilities for principals through PIM.
 func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleEligibilityScheduleRequestable) {
     if m == nil {
         return nil
@@ -208,7 +208,7 @@ func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleElig
         return m.roleEligibilityScheduleRequests
     }
 }
-// GetRoleEligibilitySchedules gets the roleEligibilitySchedules property value. The roleEligibilitySchedules property
+// GetRoleEligibilitySchedules gets the roleEligibilitySchedules property value. Schedules for role eligibility operations.
 func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibilityScheduleable) {
     if m == nil {
         return nil
@@ -310,19 +310,19 @@ func (m *RbacApplication) SetRoleAssignments(value []UnifiedRoleAssignmentable)(
         m.roleAssignments = value
     }
 }
-// SetRoleAssignmentScheduleInstances sets the roleAssignmentScheduleInstances property value. The roleAssignmentScheduleInstances property
+// SetRoleAssignmentScheduleInstances sets the roleAssignmentScheduleInstances property value. Instances for active role assignments.
 func (m *RbacApplication) SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstanceable)() {
     if m != nil {
         m.roleAssignmentScheduleInstances = value
     }
 }
-// SetRoleAssignmentScheduleRequests sets the roleAssignmentScheduleRequests property value. The roleAssignmentScheduleRequests property
+// SetRoleAssignmentScheduleRequests sets the roleAssignmentScheduleRequests property value. Requests for active role assignments to principals through PIM.
 func (m *RbacApplication) SetRoleAssignmentScheduleRequests(value []UnifiedRoleAssignmentScheduleRequestable)() {
     if m != nil {
         m.roleAssignmentScheduleRequests = value
     }
 }
-// SetRoleAssignmentSchedules sets the roleAssignmentSchedules property value. The roleAssignmentSchedules property
+// SetRoleAssignmentSchedules sets the roleAssignmentSchedules property value. Schedules for active role assignment operations.
 func (m *RbacApplication) SetRoleAssignmentSchedules(value []UnifiedRoleAssignmentScheduleable)() {
     if m != nil {
         m.roleAssignmentSchedules = value
@@ -334,19 +334,19 @@ func (m *RbacApplication) SetRoleDefinitions(value []UnifiedRoleDefinitionable)(
         m.roleDefinitions = value
     }
 }
-// SetRoleEligibilityScheduleInstances sets the roleEligibilityScheduleInstances property value. The roleEligibilityScheduleInstances property
+// SetRoleEligibilityScheduleInstances sets the roleEligibilityScheduleInstances property value. Instances for role eligibility requests.
 func (m *RbacApplication) SetRoleEligibilityScheduleInstances(value []UnifiedRoleEligibilityScheduleInstanceable)() {
     if m != nil {
         m.roleEligibilityScheduleInstances = value
     }
 }
-// SetRoleEligibilityScheduleRequests sets the roleEligibilityScheduleRequests property value. The roleEligibilityScheduleRequests property
+// SetRoleEligibilityScheduleRequests sets the roleEligibilityScheduleRequests property value. Requests for role eligibilities for principals through PIM.
 func (m *RbacApplication) SetRoleEligibilityScheduleRequests(value []UnifiedRoleEligibilityScheduleRequestable)() {
     if m != nil {
         m.roleEligibilityScheduleRequests = value
     }
 }
-// SetRoleEligibilitySchedules sets the roleEligibilitySchedules property value. The roleEligibilitySchedules property
+// SetRoleEligibilitySchedules sets the roleEligibilitySchedules property value. Schedules for role eligibility operations.
 func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibilityScheduleable)() {
     if m != nil {
         m.roleEligibilitySchedules = value

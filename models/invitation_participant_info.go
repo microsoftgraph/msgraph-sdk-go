@@ -16,7 +16,7 @@ type InvitationParticipantInfo struct {
     participantId *string
     // The removeFromDefaultAudioRoutingGroup property
     removeFromDefaultAudioRoutingGroup *bool
-    // Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
+    // Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
     replacesCallId *string
 }
 // NewInvitationParticipantInfo instantiates a new invitationParticipantInfo and sets the default values.
@@ -125,7 +125,7 @@ func (m *InvitationParticipantInfo) GetRemoveFromDefaultAudioRoutingGroup()(*boo
         return m.removeFromDefaultAudioRoutingGroup
     }
 }
-// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
+// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
 func (m *InvitationParticipantInfo) GetReplacesCallId()(*string) {
     if m == nil {
         return nil
@@ -203,7 +203,7 @@ func (m *InvitationParticipantInfo) SetRemoveFromDefaultAudioRoutingGroup(value 
         m.removeFromDefaultAudioRoutingGroup = value
     }
 }
-// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
+// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
 func (m *InvitationParticipantInfo) SetReplacesCallId(value *string)() {
     if m != nil {
         m.replacesCallId = value

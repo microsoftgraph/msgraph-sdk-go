@@ -7,7 +7,7 @@ import (
 // TeamworkUserIdentity 
 type TeamworkUserIdentity struct {
     Identity
-    // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
+    // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and emailUser.
     userIdentityType *TeamworkUserIdentityType
 }
 // NewTeamworkUserIdentity instantiates a new teamworkUserIdentity and sets the default values.
@@ -36,7 +36,7 @@ func (m *TeamworkUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
+// GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and emailUser.
 func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *TeamworkUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
+// SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and emailUser.
 func (m *TeamworkUserIdentity) SetUserIdentityType(value *TeamworkUserIdentityType)() {
     if m != nil {
         m.userIdentityType = value
