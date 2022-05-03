@@ -43,8 +43,8 @@ func NewGetYammerGroupsActivityDetailWithPeriodRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerGroupsActivityDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getYammerGroupsActivityDetail
-func (m *GetYammerGroupsActivityDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getYammerGroupsActivityDetail
+func (m *GetYammerGroupsActivityDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getYammerGroupsActivityDetail
@@ -59,12 +59,12 @@ func (m *GetYammerGroupsActivityDetailWithPeriodRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getYammerGroupsActivityDetail
-func (m *GetYammerGroupsActivityDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetYammerGroupsActivityDetailWithPeriodRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getYammerGroupsActivityDetail
+func (m *GetYammerGroupsActivityDetailWithPeriodRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getYammerGroupsActivityDetail
-func (m *GetYammerGroupsActivityDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetYammerGroupsActivityDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getYammerGroupsActivityDetail
+func (m *GetYammerGroupsActivityDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetYammerGroupsActivityDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

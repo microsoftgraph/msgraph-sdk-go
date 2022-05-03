@@ -42,8 +42,8 @@ func NewGetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewGetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getMailboxUsageQuotaStatusMailboxCounts
-func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getMailboxUsageQuotaStatusMailboxCounts
+func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getMailboxUsageQuotaStatusMailboxCounts
@@ -58,12 +58,12 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getMailboxUsageQuotaStatusMailboxCounts
-func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getMailboxUsageQuotaStatusMailboxCounts
+func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) Get()(GetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getMailboxUsageQuotaStatusMailboxCounts
-func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getMailboxUsageQuotaStatusMailboxCounts
+func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailboxUsageQuotaStatusMailboxCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

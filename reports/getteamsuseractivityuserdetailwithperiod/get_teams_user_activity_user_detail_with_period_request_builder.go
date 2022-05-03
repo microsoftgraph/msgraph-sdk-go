@@ -42,8 +42,8 @@ func NewGetTeamsUserActivityUserDetailWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getTeamsUserActivityUserDetail
+func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsUserActivityUserDetail
@@ -58,12 +58,12 @@ func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTeamsUserActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(GetTeamsUserActivityUserDetailWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getTeamsUserActivityUserDetail
+func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) Get()(GetTeamsUserActivityUserDetailWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTeamsUserActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsUserActivityUserDetailWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getTeamsUserActivityUserDetail
+func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsUserActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsUserActivityUserDetailWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

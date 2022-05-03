@@ -39,8 +39,8 @@ func NewGetMemberGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewGetMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getMemberGroups
-func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMemberGroupsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getMemberGroups
+func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformation(body GetMemberGroupsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getMemberGroups
@@ -56,12 +56,12 @@ func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getMemberGroups
-func (m *GetMemberGroupsRequestBuilder) PostWithResponseHandler(body GetMemberGroupsRequestBodyable, requestConfiguration *GetMemberGroupsRequestBuilderPostRequestConfiguration)(GetMemberGroupsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getMemberGroups
+func (m *GetMemberGroupsRequestBuilder) Post(body GetMemberGroupsRequestBodyable)(GetMemberGroupsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getMemberGroups
-func (m *GetMemberGroupsRequestBuilder) PostWithResponseHandler(body GetMemberGroupsRequestBodyable, requestConfiguration *GetMemberGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberGroupsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getMemberGroups
+func (m *GetMemberGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMemberGroupsRequestBodyable, requestConfiguration *GetMemberGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberGroupsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

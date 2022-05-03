@@ -39,8 +39,8 @@ func NewGetReportFiltersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewGetReportFiltersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getReportFilters
-func (m *GetReportFiltersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetReportFiltersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getReportFilters
+func (m *GetReportFiltersRequestBuilder) CreatePostRequestInformation(body GetReportFiltersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getReportFilters
@@ -56,12 +56,12 @@ func (m *GetReportFiltersRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getReportFilters
-func (m *GetReportFiltersRequestBuilder) PostWithResponseHandler(body GetReportFiltersRequestBodyable, requestConfiguration *GetReportFiltersRequestBuilderPostRequestConfiguration)(GetReportFiltersResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getReportFilters
+func (m *GetReportFiltersRequestBuilder) Post(body GetReportFiltersRequestBodyable)(GetReportFiltersResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getReportFilters
-func (m *GetReportFiltersRequestBuilder) PostWithResponseHandler(body GetReportFiltersRequestBodyable, requestConfiguration *GetReportFiltersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetReportFiltersResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getReportFilters
+func (m *GetReportFiltersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetReportFiltersRequestBodyable, requestConfiguration *GetReportFiltersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetReportFiltersResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

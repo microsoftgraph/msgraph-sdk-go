@@ -42,8 +42,8 @@ func NewGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getEmailAppUsageAppsUserCounts
-func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getEmailAppUsageAppsUserCounts
+func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getEmailAppUsageAppsUserCounts
@@ -58,12 +58,12 @@ func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getEmailAppUsageAppsUserCounts
-func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetEmailAppUsageAppsUserCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getEmailAppUsageAppsUserCounts
+func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) Get()(GetEmailAppUsageAppsUserCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getEmailAppUsageAppsUserCounts
-func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailAppUsageAppsUserCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getEmailAppUsageAppsUserCounts
+func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailAppUsageAppsUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

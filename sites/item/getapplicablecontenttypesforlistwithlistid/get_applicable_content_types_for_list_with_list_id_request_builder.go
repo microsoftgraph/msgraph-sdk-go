@@ -42,8 +42,8 @@ func NewGetApplicableContentTypesForListWithListIdRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewGetApplicableContentTypesForListWithListIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getApplicableContentTypesForList
-func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getApplicableContentTypesForList
+func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getApplicableContentTypesForList
@@ -58,12 +58,12 @@ func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getApplicableContentTypesForList
-func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) GetWithResponseHandler(requestConfiguration *GetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(GetApplicableContentTypesForListWithListIdResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getApplicableContentTypesForList
+func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) Get()(GetApplicableContentTypesForListWithListIdResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getApplicableContentTypesForList
-func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) GetWithResponseHandler(requestConfiguration *GetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetApplicableContentTypesForListWithListIdResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getApplicableContentTypesForList
+func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetApplicableContentTypesForListWithListIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

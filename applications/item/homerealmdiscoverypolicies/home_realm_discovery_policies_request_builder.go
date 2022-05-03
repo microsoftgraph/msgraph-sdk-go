@@ -67,8 +67,8 @@ func NewHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapter i
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Count()(*i9403f2966154900b82f3ba4891bee0f59f41e6ede23c4d59c8d30438f363d122.CountRequestBuilder) {
     return i9403f2966154900b82f3ba4891bee0f59f41e6ede23c4d59c8d30438f363d122.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get homeRealmDiscoveryPolicies from applications
-func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get homeRealmDiscoveryPolicies from applications
+func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get homeRealmDiscoveryPolicies from applications
@@ -86,12 +86,12 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get homeRealmDiscoveryPolicies from applications
-func (m *HomeRealmDiscoveryPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get homeRealmDiscoveryPolicies from applications
+func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get homeRealmDiscoveryPolicies from applications
-func (m *HomeRealmDiscoveryPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get homeRealmDiscoveryPolicies from applications
+func (m *HomeRealmDiscoveryPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

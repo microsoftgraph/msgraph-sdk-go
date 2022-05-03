@@ -39,8 +39,8 @@ func NewWindowsDefenderUpdateSignaturesRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDefenderUpdateSignaturesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action windowsDefenderUpdateSignatures
-func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action windowsDefenderUpdateSignatures
+func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action windowsDefenderUpdateSignatures
@@ -55,12 +55,12 @@ func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action windowsDefenderUpdateSignatures
-func (m *WindowsDefenderUpdateSignaturesRequestBuilder) PostWithResponseHandler(requestConfiguration *WindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action windowsDefenderUpdateSignatures
+func (m *WindowsDefenderUpdateSignaturesRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action windowsDefenderUpdateSignatures
-func (m *WindowsDefenderUpdateSignaturesRequestBuilder) PostWithResponseHandler(requestConfiguration *WindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action windowsDefenderUpdateSignatures
+func (m *WindowsDefenderUpdateSignaturesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

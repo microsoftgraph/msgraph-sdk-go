@@ -50,8 +50,8 @@ func NewIdentityProviderItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the identity providers included in the user flow.
-func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the identity providers included in the user flow.
+func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the identity providers included in the user flow.
@@ -69,12 +69,12 @@ func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the identity providers included in the user flow.
-func (m *IdentityProviderItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the identity providers included in the user flow.
+func (m *IdentityProviderItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the identity providers included in the user flow.
-func (m *IdentityProviderItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
+// GetWithRequestConfigurationAndResponseHandler the identity providers included in the user flow.
+func (m *IdentityProviderItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

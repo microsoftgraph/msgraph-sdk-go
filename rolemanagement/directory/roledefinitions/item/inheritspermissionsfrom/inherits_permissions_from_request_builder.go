@@ -74,8 +74,8 @@ func NewInheritsPermissionsFromRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *InheritsPermissionsFromRequestBuilder) Count()(*i32755bbec1c53eecb46e129b2c3f7f307d9a71584006de15e5ad90a5c0d2cd13.CountRequestBuilder) {
     return i32755bbec1c53eecb46e129b2c3f7f307d9a71584006de15e5ad90a5c0d2cd13.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
-func (m *InheritsPermissionsFromRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+func (m *InheritsPermissionsFromRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -93,8 +93,8 @@ func (m *InheritsPermissionsFromRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to inheritsPermissionsFrom for roleManagement
-func (m *InheritsPermissionsFromRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to inheritsPermissionsFrom for roleManagement
+func (m *InheritsPermissionsFromRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -110,12 +110,12 @@ func (m *InheritsPermissionsFromRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
-func (m *InheritsPermissionsFromRequestBuilder) GetWithResponseHandler(requestConfiguration *InheritsPermissionsFromRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+func (m *InheritsPermissionsFromRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
-func (m *InheritsPermissionsFromRequestBuilder) GetWithResponseHandler(requestConfiguration *InheritsPermissionsFromRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+func (m *InheritsPermissionsFromRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *InheritsPermissionsFromRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *InheritsPermissionsFromRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to inheritsPermissionsFrom for roleManagement
-func (m *InheritsPermissionsFromRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, requestConfiguration *InheritsPermissionsFromRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to inheritsPermissionsFrom for roleManagement
+func (m *InheritsPermissionsFromRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to inheritsPermissionsFrom for roleManagement
-func (m *InheritsPermissionsFromRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, requestConfiguration *InheritsPermissionsFromRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to inheritsPermissionsFrom for roleManagement
+func (m *InheritsPermissionsFromRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, requestConfiguration *InheritsPermissionsFromRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

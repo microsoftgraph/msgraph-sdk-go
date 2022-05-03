@@ -39,8 +39,8 @@ func NewFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action favorite
-func (m *FavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body FavoriteRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action favorite
+func (m *FavoriteRequestBuilder) CreatePostRequestInformation(body FavoriteRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action favorite
@@ -56,12 +56,12 @@ func (m *FavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action favorite
-func (m *FavoriteRequestBuilder) PostWithResponseHandler(body FavoriteRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration)(FavoriteResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action favorite
+func (m *FavoriteRequestBuilder) Post(body FavoriteRequestBodyable)(FavoriteResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action favorite
-func (m *FavoriteRequestBuilder) PostWithResponseHandler(body FavoriteRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FavoriteResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action favorite
+func (m *FavoriteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body FavoriteRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FavoriteResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

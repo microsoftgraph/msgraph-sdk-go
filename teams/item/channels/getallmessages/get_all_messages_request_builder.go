@@ -39,8 +39,8 @@ func NewGetAllMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getAllMessages
-func (m *GetAllMessagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getAllMessages
+func (m *GetAllMessagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getAllMessages
@@ -55,12 +55,12 @@ func (m *GetAllMessagesRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getAllMessages
-func (m *GetAllMessagesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAllMessagesRequestBuilderGetRequestConfiguration)(GetAllMessagesResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getAllMessages
+func (m *GetAllMessagesRequestBuilder) Get()(GetAllMessagesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getAllMessages
-func (m *GetAllMessagesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAllMessagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAllMessagesResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getAllMessages
+func (m *GetAllMessagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetAllMessagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAllMessagesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

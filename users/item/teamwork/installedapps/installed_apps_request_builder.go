@@ -74,8 +74,8 @@ func NewInstalledAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *InstalledAppsRequestBuilder) Count()(*i4a56f7dd1cf20ea13e41d1cb453455f87bcb9eda99ce5f8d260faca68b3f69dc.CountRequestBuilder) {
     return i4a56f7dd1cf20ea13e41d1cb453455f87bcb9eda99ce5f8d260faca68b3f69dc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the apps installed in the personal scope of this user.
-func (m *InstalledAppsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the apps installed in the personal scope of this user.
+func (m *InstalledAppsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the apps installed in the personal scope of this user.
@@ -93,8 +93,8 @@ func (m *InstalledAppsRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to installedApps for users
-func (m *InstalledAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to installedApps for users
+func (m *InstalledAppsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to installedApps for users
@@ -110,12 +110,12 @@ func (m *InstalledAppsRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the apps installed in the personal scope of this user.
-func (m *InstalledAppsRequestBuilder) GetWithResponseHandler(requestConfiguration *InstalledAppsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the apps installed in the personal scope of this user.
+func (m *InstalledAppsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the apps installed in the personal scope of this user.
-func (m *InstalledAppsRequestBuilder) GetWithResponseHandler(requestConfiguration *InstalledAppsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the apps installed in the personal scope of this user.
+func (m *InstalledAppsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *InstalledAppsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *InstalledAppsRequestBuilder) GetWithResponseHandler(requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to installedApps for users
-func (m *InstalledAppsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, requestConfiguration *InstalledAppsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to installedApps for users
+func (m *InstalledAppsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to installedApps for users
-func (m *InstalledAppsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, requestConfiguration *InstalledAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to installedApps for users
+func (m *InstalledAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, requestConfiguration *InstalledAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

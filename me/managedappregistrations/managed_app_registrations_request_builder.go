@@ -67,8 +67,8 @@ func NewManagedAppRegistrationsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ManagedAppRegistrationsRequestBuilder) Count()(*i5c4e3b73d174b1711bbe4e42e2428c2fc38331829defc2c534c958fa8ef18bc3.CountRequestBuilder) {
     return i5c4e3b73d174b1711bbe4e42e2428c2fc38331829defc2c534c958fa8ef18bc3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation zero or more managed app registrations that belong to the user.
+func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration zero or more managed app registrations that belong to the user.
@@ -86,12 +86,12 @@ func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get zero or more managed app registrations that belong to the user.
+func (m *ManagedAppRegistrationsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler zero or more managed app registrations that belong to the user.
+func (m *ManagedAppRegistrationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -64,8 +64,8 @@ func NewConditionalAccessSettingsRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property conditionalAccessSettings for deviceManagement
-func (m *ConditionalAccessSettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property conditionalAccessSettings for deviceManagement
+func (m *ConditionalAccessSettingsRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property conditionalAccessSettings for deviceManagement
@@ -80,8 +80,8 @@ func (m *ConditionalAccessSettingsRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-func (m *ConditionalAccessSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+func (m *ConditionalAccessSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
@@ -99,8 +99,8 @@ func (m *ConditionalAccessSettingsRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property conditionalAccessSettings in deviceManagement
-func (m *ConditionalAccessSettingsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property conditionalAccessSettings in deviceManagement
+func (m *ConditionalAccessSettingsRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property conditionalAccessSettings in deviceManagement
@@ -116,12 +116,12 @@ func (m *ConditionalAccessSettingsRequestBuilder) CreatePatchRequestInformationW
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property conditionalAccessSettings for deviceManagement
-func (m *ConditionalAccessSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ConditionalAccessSettingsRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property conditionalAccessSettings for deviceManagement
+func (m *ConditionalAccessSettingsRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property conditionalAccessSettings for deviceManagement
-func (m *ConditionalAccessSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ConditionalAccessSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property conditionalAccessSettings for deviceManagement
+func (m *ConditionalAccessSettingsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ConditionalAccessSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ConditionalAccessSettingsRequestBuilder) DeleteWithResponseHandler(requ
     }
     return nil
 }
-// GetWithResponseHandler the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-func (m *ConditionalAccessSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *ConditionalAccessSettingsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+func (m *ConditionalAccessSettingsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-func (m *ConditionalAccessSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *ConditionalAccessSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable, error) {
+// GetWithRequestConfigurationAndResponseHandler the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+func (m *ConditionalAccessSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConditionalAccessSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ConditionalAccessSettingsRequestBuilder) GetWithResponseHandler(request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable), nil
 }
-// PatchWithResponseHandler update the navigation property conditionalAccessSettings in deviceManagement
-func (m *ConditionalAccessSettingsRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable, requestConfiguration *ConditionalAccessSettingsRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property conditionalAccessSettings in deviceManagement
+func (m *ConditionalAccessSettingsRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property conditionalAccessSettings in deviceManagement
-func (m *ConditionalAccessSettingsRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable, requestConfiguration *ConditionalAccessSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property conditionalAccessSettings in deviceManagement
+func (m *ConditionalAccessSettingsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesConditionalAccessSettingsable, requestConfiguration *ConditionalAccessSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

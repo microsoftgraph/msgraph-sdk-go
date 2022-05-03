@@ -67,8 +67,8 @@ func NewCreatedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *CreatedObjectsRequestBuilder) Count()(*ifac3282a3c50d49f76c442db5baecb5369ae48cc5038c1cfcd168b04a998796e.CountRequestBuilder) {
     return ifac3282a3c50d49f76c442db5baecb5369ae48cc5038c1cfcd168b04a998796e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration directory objects created by this service principal. Read-only. Nullable.
-func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation directory objects created by this service principal. Read-only. Nullable.
+func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration directory objects created by this service principal. Read-only. Nullable.
@@ -86,12 +86,12 @@ func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler directory objects created by this service principal. Read-only. Nullable.
-func (m *CreatedObjectsRequestBuilder) GetWithResponseHandler(requestConfiguration *CreatedObjectsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get directory objects created by this service principal. Read-only. Nullable.
+func (m *CreatedObjectsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler directory objects created by this service principal. Read-only. Nullable.
-func (m *CreatedObjectsRequestBuilder) GetWithResponseHandler(requestConfiguration *CreatedObjectsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler directory objects created by this service principal. Read-only. Nullable.
+func (m *CreatedObjectsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CreatedObjectsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

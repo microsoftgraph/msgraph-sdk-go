@@ -47,8 +47,8 @@ func NewContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get content for the navigation property versions from drives
-func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get content for the navigation property versions from drives
+func (m *ContentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get content for the navigation property versions from drives
@@ -63,8 +63,8 @@ func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformationWithRequestConfiguration update content for the navigation property versions in drives
-func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation update content for the navigation property versions in drives
+func (m *ContentRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePutRequestInformationWithRequestConfiguration update content for the navigation property versions in drives
@@ -80,12 +80,12 @@ func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get content for the navigation property versions from drives
-func (m *ContentRequestBuilder) GetWithResponseHandler(requestConfiguration *ContentRequestBuilderGetRequestConfiguration)([]byte, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get content for the navigation property versions from drives
+func (m *ContentRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get content for the navigation property versions from drives
-func (m *ContentRequestBuilder) GetWithResponseHandler(requestConfiguration *ContentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+// GetWithRequestConfigurationAndResponseHandler get content for the navigation property versions from drives
+func (m *ContentRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,12 +100,12 @@ func (m *ContentRequestBuilder) GetWithResponseHandler(requestConfiguration *Con
     }
     return res.([]byte), nil
 }
-// PutWithResponseHandler update content for the navigation property versions in drives
-func (m *ContentRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration)(error) {
-    return m.PutWithResponseHandler(body, requestConfiguration, nil);
+// Put update content for the navigation property versions in drives
+func (m *ContentRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithResponseHandler update content for the navigation property versions in drives
-func (m *ContentRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PutWithRequestConfigurationAndResponseHandler update content for the navigation property versions in drives
+func (m *ContentRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

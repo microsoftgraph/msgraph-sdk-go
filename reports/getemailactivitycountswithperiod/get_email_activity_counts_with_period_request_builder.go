@@ -42,8 +42,8 @@ func NewGetEmailActivityCountsWithPeriodRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetEmailActivityCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getEmailActivityCounts
-func (m *GetEmailActivityCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getEmailActivityCounts
+func (m *GetEmailActivityCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getEmailActivityCounts
@@ -58,12 +58,12 @@ func (m *GetEmailActivityCountsWithPeriodRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getEmailActivityCounts
-func (m *GetEmailActivityCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEmailActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetEmailActivityCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getEmailActivityCounts
+func (m *GetEmailActivityCountsWithPeriodRequestBuilder) Get()(GetEmailActivityCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getEmailActivityCounts
-func (m *GetEmailActivityCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEmailActivityCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailActivityCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getEmailActivityCounts
+func (m *GetEmailActivityCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEmailActivityCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailActivityCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

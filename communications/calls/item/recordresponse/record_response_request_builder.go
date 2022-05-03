@@ -40,8 +40,8 @@ func NewRecordResponseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRecordResponseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action recordResponse
-func (m *RecordResponseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RecordResponseRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action recordResponse
+func (m *RecordResponseRequestBuilder) CreatePostRequestInformation(body RecordResponseRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action recordResponse
@@ -57,12 +57,12 @@ func (m *RecordResponseRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action recordResponse
-func (m *RecordResponseRequestBuilder) PostWithResponseHandler(body RecordResponseRequestBodyable, requestConfiguration *RecordResponseRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RecordOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action recordResponse
+func (m *RecordResponseRequestBuilder) Post(body RecordResponseRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RecordOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action recordResponse
-func (m *RecordResponseRequestBuilder) PostWithResponseHandler(body RecordResponseRequestBodyable, requestConfiguration *RecordResponseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RecordOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action recordResponse
+func (m *RecordResponseRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RecordResponseRequestBodyable, requestConfiguration *RecordResponseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RecordOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

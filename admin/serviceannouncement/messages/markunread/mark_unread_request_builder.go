@@ -39,8 +39,8 @@ func NewMarkUnreadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewMarkUnreadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action markUnread
-func (m *MarkUnreadRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkUnreadRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action markUnread
+func (m *MarkUnreadRequestBuilder) CreatePostRequestInformation(body MarkUnreadRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action markUnread
@@ -56,12 +56,12 @@ func (m *MarkUnreadRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action markUnread
-func (m *MarkUnreadRequestBuilder) PostWithResponseHandler(body MarkUnreadRequestBodyable, requestConfiguration *MarkUnreadRequestBuilderPostRequestConfiguration)(MarkUnreadResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action markUnread
+func (m *MarkUnreadRequestBuilder) Post(body MarkUnreadRequestBodyable)(MarkUnreadResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action markUnread
-func (m *MarkUnreadRequestBuilder) PostWithResponseHandler(body MarkUnreadRequestBodyable, requestConfiguration *MarkUnreadRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(MarkUnreadResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action markUnread
+func (m *MarkUnreadRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MarkUnreadRequestBodyable, requestConfiguration *MarkUnreadRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(MarkUnreadResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -39,8 +39,8 @@ func NewSetPresenceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewSetPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action setPresence
-func (m *SetPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetPresenceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action setPresence
+func (m *SetPresenceRequestBuilder) CreatePostRequestInformation(body SetPresenceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setPresence
@@ -56,12 +56,12 @@ func (m *SetPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action setPresence
-func (m *SetPresenceRequestBuilder) PostWithResponseHandler(body SetPresenceRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action setPresence
+func (m *SetPresenceRequestBuilder) Post(body SetPresenceRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action setPresence
-func (m *SetPresenceRequestBuilder) PostWithResponseHandler(body SetPresenceRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action setPresence
+func (m *SetPresenceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetPresenceRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

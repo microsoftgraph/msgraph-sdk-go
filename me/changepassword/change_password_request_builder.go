@@ -39,8 +39,8 @@ func NewChangePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewChangePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action changePassword
-func (m *ChangePasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangePasswordRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action changePassword
+func (m *ChangePasswordRequestBuilder) CreatePostRequestInformation(body ChangePasswordRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action changePassword
@@ -56,12 +56,12 @@ func (m *ChangePasswordRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action changePassword
-func (m *ChangePasswordRequestBuilder) PostWithResponseHandler(body ChangePasswordRequestBodyable, requestConfiguration *ChangePasswordRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action changePassword
+func (m *ChangePasswordRequestBuilder) Post(body ChangePasswordRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action changePassword
-func (m *ChangePasswordRequestBuilder) PostWithResponseHandler(body ChangePasswordRequestBodyable, requestConfiguration *ChangePasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action changePassword
+func (m *ChangePasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChangePasswordRequestBodyable, requestConfiguration *ChangePasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

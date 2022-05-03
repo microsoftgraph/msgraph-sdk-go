@@ -40,8 +40,8 @@ func NewMoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewMoveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action move
-func (m *MoveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MoveRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action move
+func (m *MoveRequestBuilder) CreatePostRequestInformation(body MoveRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action move
@@ -57,12 +57,12 @@ func (m *MoveRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action move
-func (m *MoveRequestBuilder) PostWithResponseHandler(body MoveRequestBodyable, requestConfiguration *MoveRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action move
+func (m *MoveRequestBuilder) Post(body MoveRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action move
-func (m *MoveRequestBuilder) PostWithResponseHandler(body MoveRequestBodyable, requestConfiguration *MoveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action move
+func (m *MoveRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MoveRequestBodyable, requestConfiguration *MoveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

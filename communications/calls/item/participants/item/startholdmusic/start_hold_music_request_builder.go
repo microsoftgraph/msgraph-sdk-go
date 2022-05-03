@@ -40,8 +40,8 @@ func NewStartHoldMusicRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewStartHoldMusicRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action startHoldMusic
-func (m *StartHoldMusicRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body StartHoldMusicRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action startHoldMusic
+func (m *StartHoldMusicRequestBuilder) CreatePostRequestInformation(body StartHoldMusicRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action startHoldMusic
@@ -57,12 +57,12 @@ func (m *StartHoldMusicRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action startHoldMusic
-func (m *StartHoldMusicRequestBuilder) PostWithResponseHandler(body StartHoldMusicRequestBodyable, requestConfiguration *StartHoldMusicRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StartHoldMusicOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action startHoldMusic
+func (m *StartHoldMusicRequestBuilder) Post(body StartHoldMusicRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StartHoldMusicOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action startHoldMusic
-func (m *StartHoldMusicRequestBuilder) PostWithResponseHandler(body StartHoldMusicRequestBodyable, requestConfiguration *StartHoldMusicRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StartHoldMusicOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action startHoldMusic
+func (m *StartHoldMusicRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body StartHoldMusicRequestBodyable, requestConfiguration *StartHoldMusicRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StartHoldMusicOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,8 +40,8 @@ func NewMuteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewMuteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action mute
-func (m *MuteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MuteRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action mute
+func (m *MuteRequestBuilder) CreatePostRequestInformation(body MuteRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action mute
@@ -57,12 +57,12 @@ func (m *MuteRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action mute
-func (m *MuteRequestBuilder) PostWithResponseHandler(body MuteRequestBodyable, requestConfiguration *MuteRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MuteParticipantOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action mute
+func (m *MuteRequestBuilder) Post(body MuteRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MuteParticipantOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action mute
-func (m *MuteRequestBuilder) PostWithResponseHandler(body MuteRequestBodyable, requestConfiguration *MuteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MuteParticipantOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action mute
+func (m *MuteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MuteRequestBodyable, requestConfiguration *MuteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MuteParticipantOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

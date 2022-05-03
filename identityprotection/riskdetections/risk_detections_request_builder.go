@@ -74,8 +74,8 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *RiskDetectionsRequestBuilder) Count()(*i5708f6be5bc2b089b82fc80cb35fc3d3da0cbfe8bf78c3edf5a5760ad20450c9.CountRequestBuilder) {
     return i5708f6be5bc2b089b82fc80cb35fc3d3da0cbfe8bf78c3edf5a5760ad20450c9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration risk detection in Azure AD Identity Protection and the associated information about the detection.
-func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation risk detection in Azure AD Identity Protection and the associated information about the detection.
+func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration risk detection in Azure AD Identity Protection and the associated information about the detection.
@@ -93,8 +93,8 @@ func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to riskDetections for identityProtection
-func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to riskDetections for identityProtection
+func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to riskDetections for identityProtection
@@ -110,12 +110,12 @@ func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler risk detection in Azure AD Identity Protection and the associated information about the detection.
-func (m *RiskDetectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get risk detection in Azure AD Identity Protection and the associated information about the detection.
+func (m *RiskDetectionsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler risk detection in Azure AD Identity Protection and the associated information about the detection.
-func (m *RiskDetectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler risk detection in Azure AD Identity Protection and the associated information about the detection.
+func (m *RiskDetectionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *RiskDetectionsRequestBuilder) GetWithResponseHandler(requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to riskDetections for identityProtection
-func (m *RiskDetectionsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable, requestConfiguration *RiskDetectionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to riskDetections for identityProtection
+func (m *RiskDetectionsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to riskDetections for identityProtection
-func (m *RiskDetectionsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable, requestConfiguration *RiskDetectionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to riskDetections for identityProtection
+func (m *RiskDetectionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable, requestConfiguration *RiskDetectionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

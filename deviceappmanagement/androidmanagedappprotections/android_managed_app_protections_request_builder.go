@@ -74,8 +74,8 @@ func NewAndroidManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter
 func (m *AndroidManagedAppProtectionsRequestBuilder) Count()(*i62ae96d1c3a9dafa231537f0505bda2e4d4956dafd9f78142d978157e110a8e2.CountRequestBuilder) {
     return i62ae96d1c3a9dafa231537f0505bda2e4d4956dafd9f78142d978157e110a8e2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration android managed app policies.
-func (m *AndroidManagedAppProtectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation android managed app policies.
+func (m *AndroidManagedAppProtectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration android managed app policies.
@@ -93,8 +93,8 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to androidManagedAppProtections for deviceAppManagement
-func (m *AndroidManagedAppProtectionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to androidManagedAppProtections for deviceAppManagement
+func (m *AndroidManagedAppProtectionsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to androidManagedAppProtections for deviceAppManagement
@@ -110,12 +110,12 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler android managed app policies.
-func (m *AndroidManagedAppProtectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidManagedAppProtectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get android managed app policies.
+func (m *AndroidManagedAppProtectionsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler android managed app policies.
-func (m *AndroidManagedAppProtectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidManagedAppProtectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler android managed app policies.
+func (m *AndroidManagedAppProtectionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidManagedAppProtectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to androidManagedAppProtections for deviceAppManagement
-func (m *AndroidManagedAppProtectionsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, requestConfiguration *AndroidManagedAppProtectionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to androidManagedAppProtections for deviceAppManagement
+func (m *AndroidManagedAppProtectionsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to androidManagedAppProtections for deviceAppManagement
-func (m *AndroidManagedAppProtectionsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, requestConfiguration *AndroidManagedAppProtectionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to androidManagedAppProtections for deviceAppManagement
+func (m *AndroidManagedAppProtectionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, requestConfiguration *AndroidManagedAppProtectionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

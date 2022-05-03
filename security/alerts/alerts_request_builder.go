@@ -74,8 +74,8 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *AlertsRequestBuilder) Count()(*i1a01fb8511a50259effce667795c9ad4f6aad15b1d752bbd8bacf4d7780fc38c.CountRequestBuilder) {
     return i1a01fb8511a50259effce667795c9ad4f6aad15b1d752bbd8bacf4d7780fc38c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration notifications for suspicious or potential security issues in a customer’s tenant.
-func (m *AlertsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation notifications for suspicious or potential security issues in a customer’s tenant.
+func (m *AlertsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration notifications for suspicious or potential security issues in a customer’s tenant.
@@ -93,8 +93,8 @@ func (m *AlertsRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to alerts for security
-func (m *AlertsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to alerts for security
+func (m *AlertsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to alerts for security
@@ -110,12 +110,12 @@ func (m *AlertsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler notifications for suspicious or potential security issues in a customer’s tenant.
-func (m *AlertsRequestBuilder) GetWithResponseHandler(requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AlertCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get notifications for suspicious or potential security issues in a customer’s tenant.
+func (m *AlertsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AlertCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler notifications for suspicious or potential security issues in a customer’s tenant.
-func (m *AlertsRequestBuilder) GetWithResponseHandler(requestConfiguration *AlertsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AlertCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler notifications for suspicious or potential security issues in a customer’s tenant.
+func (m *AlertsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AlertsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AlertCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AlertsRequestBuilder) GetWithResponseHandler(requestConfiguration *Aler
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AlertCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to alerts for security
-func (m *AlertsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable, requestConfiguration *AlertsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to alerts for security
+func (m *AlertsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to alerts for security
-func (m *AlertsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable, requestConfiguration *AlertsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to alerts for security
+func (m *AlertsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable, requestConfiguration *AlertsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

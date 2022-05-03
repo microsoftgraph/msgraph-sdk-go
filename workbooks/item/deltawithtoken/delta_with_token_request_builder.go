@@ -42,8 +42,8 @@ func NewDeltaWithTokenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewDeltaWithTokenRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function delta
-func (m *DeltaWithTokenRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function delta
+func (m *DeltaWithTokenRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function delta
@@ -58,12 +58,12 @@ func (m *DeltaWithTokenRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function delta
-func (m *DeltaWithTokenRequestBuilder) GetWithResponseHandler(requestConfiguration *DeltaWithTokenRequestBuilderGetRequestConfiguration)(DeltaWithTokenResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function delta
+func (m *DeltaWithTokenRequestBuilder) Get()(DeltaWithTokenResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function delta
-func (m *DeltaWithTokenRequestBuilder) GetWithResponseHandler(requestConfiguration *DeltaWithTokenRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DeltaWithTokenResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function delta
+func (m *DeltaWithTokenRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeltaWithTokenRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DeltaWithTokenResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

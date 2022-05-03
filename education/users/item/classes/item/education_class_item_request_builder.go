@@ -50,8 +50,8 @@ func NewEducationClassItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewEducationClassItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration classes to which the user belongs. Nullable.
-func (m *EducationClassItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation classes to which the user belongs. Nullable.
+func (m *EducationClassItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration classes to which the user belongs. Nullable.
@@ -69,12 +69,12 @@ func (m *EducationClassItemRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler classes to which the user belongs. Nullable.
-func (m *EducationClassItemRequestBuilder) GetWithResponseHandler(requestConfiguration *EducationClassItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get classes to which the user belongs. Nullable.
+func (m *EducationClassItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler classes to which the user belongs. Nullable.
-func (m *EducationClassItemRequestBuilder) GetWithResponseHandler(requestConfiguration *EducationClassItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {
+// GetWithRequestConfigurationAndResponseHandler classes to which the user belongs. Nullable.
+func (m *EducationClassItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EducationClassItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

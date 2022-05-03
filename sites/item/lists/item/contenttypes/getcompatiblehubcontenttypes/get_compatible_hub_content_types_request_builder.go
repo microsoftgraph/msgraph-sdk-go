@@ -39,8 +39,8 @@ func NewGetCompatibleHubContentTypesRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewGetCompatibleHubContentTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getCompatibleHubContentTypes
-func (m *GetCompatibleHubContentTypesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getCompatibleHubContentTypes
+func (m *GetCompatibleHubContentTypesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getCompatibleHubContentTypes
@@ -55,12 +55,12 @@ func (m *GetCompatibleHubContentTypesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getCompatibleHubContentTypes
-func (m *GetCompatibleHubContentTypesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(GetCompatibleHubContentTypesResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getCompatibleHubContentTypes
+func (m *GetCompatibleHubContentTypesRequestBuilder) Get()(GetCompatibleHubContentTypesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getCompatibleHubContentTypes
-func (m *GetCompatibleHubContentTypesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompatibleHubContentTypesResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getCompatibleHubContentTypes
+func (m *GetCompatibleHubContentTypesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompatibleHubContentTypesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

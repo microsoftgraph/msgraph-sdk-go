@@ -74,8 +74,8 @@ func NewWindowsHelloForBusinessMethodsRequestBuilder(rawUrl string, requestAdapt
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) Count()(*i565db20118a99136fb7eb79c97ff44c769eb6df930bec31d4fd7c5b9ec38de79.CountRequestBuilder) {
     return i565db20118a99136fb7eb79c97ff44c769eb6df930bec31d4fd7c5b9ec38de79.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the Windows Hello for Business authentication method registered to a user for authentication.
-func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents the Windows Hello for Business authentication method registered to a user for authentication.
+func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents the Windows Hello for Business authentication method registered to a user for authentication.
@@ -93,8 +93,8 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to windowsHelloForBusinessMethods for users
-func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to windowsHelloForBusinessMethods for users
+func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to windowsHelloForBusinessMethods for users
@@ -110,12 +110,12 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler represents the Windows Hello for Business authentication method registered to a user for authentication.
-func (m *WindowsHelloForBusinessMethodsRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents the Windows Hello for Business authentication method registered to a user for authentication.
+func (m *WindowsHelloForBusinessMethodsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents the Windows Hello for Business authentication method registered to a user for authentication.
-func (m *WindowsHelloForBusinessMethodsRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents the Windows Hello for Business authentication method registered to a user for authentication.
+func (m *WindowsHelloForBusinessMethodsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) GetWithResponseHandler(re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to windowsHelloForBusinessMethods for users
-func (m *WindowsHelloForBusinessMethodsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable, requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to windowsHelloForBusinessMethods for users
+func (m *WindowsHelloForBusinessMethodsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to windowsHelloForBusinessMethods for users
-func (m *WindowsHelloForBusinessMethodsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable, requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to windowsHelloForBusinessMethods for users
+func (m *WindowsHelloForBusinessMethodsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable, requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

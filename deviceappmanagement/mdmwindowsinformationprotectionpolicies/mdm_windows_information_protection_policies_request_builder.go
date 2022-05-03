@@ -74,8 +74,8 @@ func NewMdmWindowsInformationProtectionPoliciesRequestBuilder(rawUrl string, req
 func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) Count()(*ic68e7de6753a6b0f8a47797da9fa8c6bba1442fae80d21f782eb2ff9d2ec301c.CountRequestBuilder) {
     return ic68e7de6753a6b0f8a47797da9fa8c6bba1442fae80d21f782eb2ff9d2ec301c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration windows information protection for apps running on devices which are MDM enrolled.
-func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation windows information protection for apps running on devices which are MDM enrolled.
+func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration windows information protection for apps running on devices which are MDM enrolled.
@@ -93,8 +93,8 @@ func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
-func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
+func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
@@ -110,12 +110,12 @@ func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) CreatePostReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler windows information protection for apps running on devices which are MDM enrolled.
-func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get windows information protection for apps running on devices which are MDM enrolled.
+func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler windows information protection for apps running on devices which are MDM enrolled.
-func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler windows information protection for apps running on devices which are MDM enrolled.
+func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) GetWithResponseH
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
-func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable, requestConfiguration *MdmWindowsInformationProtectionPoliciesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
+func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
-func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable, requestConfiguration *MdmWindowsInformationProtectionPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
+func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable, requestConfiguration *MdmWindowsInformationProtectionPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MdmWindowsInformationProtectionPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -39,8 +39,8 @@ func NewTransferRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewTransferRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action transfer
-func (m *TransferRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TransferRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action transfer
+func (m *TransferRequestBuilder) CreatePostRequestInformation(body TransferRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action transfer
@@ -56,12 +56,12 @@ func (m *TransferRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action transfer
-func (m *TransferRequestBuilder) PostWithResponseHandler(body TransferRequestBodyable, requestConfiguration *TransferRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action transfer
+func (m *TransferRequestBuilder) Post(body TransferRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action transfer
-func (m *TransferRequestBuilder) PostWithResponseHandler(body TransferRequestBodyable, requestConfiguration *TransferRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action transfer
+func (m *TransferRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TransferRequestBodyable, requestConfiguration *TransferRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -209,8 +209,8 @@ func (m *GroupItemRequestBuilder) ConversationsById(id string)(*ice1094b94e12d64
     }
     return ice1094b94e12d6484840204756982a958170f3c66b8047a166bf39c98320acc7.NewConversationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from groups
-func (m *GroupItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from groups
+func (m *GroupItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from groups
@@ -229,8 +229,8 @@ func (m *GroupItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfi
 func (m *GroupItemRequestBuilder) CreatedOnBehalfOf()(*i4c27f6ecf21cb0236a018e5fdf6e4c5a14a02dfb90e5d46f78219b25b861f9d4.CreatedOnBehalfOfRequestBuilder) {
     return i4c27f6ecf21cb0236a018e5fdf6e4c5a14a02dfb90e5d46f78219b25b861f9d4.NewCreatedOnBehalfOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from groups by key
-func (m *GroupItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from groups by key
+func (m *GroupItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from groups by key
@@ -248,8 +248,8 @@ func (m *GroupItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in groups
-func (m *GroupItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in groups
+func (m *GroupItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in groups
@@ -265,12 +265,12 @@ func (m *GroupItemRequestBuilder) CreatePatchRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete entity from groups
-func (m *GroupItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GroupItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from groups
+func (m *GroupItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from groups
-func (m *GroupItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GroupItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from groups
+func (m *GroupItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -334,6 +334,10 @@ func (m *GroupItemRequestBuilder) ExtensionsById(id string)(*iddc33c1a3316b503c0
     }
     return iddc33c1a3316b503c055f30aa899183e7ab6a6cd014c230bef3258364feeaf7c.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Get get entity from groups by key
+func (m *GroupItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetMemberGroups the getMemberGroups property
 func (m *GroupItemRequestBuilder) GetMemberGroups()(*i8e118fccf5aaa007f65dd345e24db21251fa3341071cca2ac34246fe0ca92cce.GetMemberGroupsRequestBuilder) {
     return i8e118fccf5aaa007f65dd345e24db21251fa3341071cca2ac34246fe0ca92cce.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -342,12 +346,8 @@ func (m *GroupItemRequestBuilder) GetMemberGroups()(*i8e118fccf5aaa007f65dd345e2
 func (m *GroupItemRequestBuilder) GetMemberObjects()(*i5b3cd370da540ada436e22f24ba1fd3b79f4345a6a464bafb2d3ac2e3f6c5f45.GetMemberObjectsRequestBuilder) {
     return i5b3cd370da540ada436e22f24ba1fd3b79f4345a6a464bafb2d3ac2e3f6c5f45.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entity from groups by key
-func (m *GroupItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entity from groups by key
-func (m *GroupItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from groups by key
+func (m *GroupItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -441,12 +441,12 @@ func (m *GroupItemRequestBuilder) OwnersById(id string)(*i2d2215ed73fcbca88b8f88
     }
     return i2d2215ed73fcbca88b8f88969d7acd610a9c72b3ee0a78abf1772fe8334332c0.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update entity in groups
-func (m *GroupItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, requestConfiguration *GroupItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in groups
+func (m *GroupItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in groups
-func (m *GroupItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, requestConfiguration *GroupItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in groups
+func (m *GroupItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, requestConfiguration *GroupItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

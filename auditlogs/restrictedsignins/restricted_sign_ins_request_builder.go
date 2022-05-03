@@ -74,8 +74,8 @@ func NewRestrictedSignInsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *RestrictedSignInsRequestBuilder) Count()(*i7a6f3ac818a46099fa064daf1ec919cb5f1fc4d9803b0ea32dc200e8e5e97f64.CountRequestBuilder) {
     return i7a6f3ac818a46099fa064daf1ec919cb5f1fc4d9803b0ea32dc200e8e5e97f64.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get restrictedSignIns from auditLogs
-func (m *RestrictedSignInsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get restrictedSignIns from auditLogs
+func (m *RestrictedSignInsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get restrictedSignIns from auditLogs
@@ -93,8 +93,8 @@ func (m *RestrictedSignInsRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to restrictedSignIns for auditLogs
-func (m *RestrictedSignInsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to restrictedSignIns for auditLogs
+func (m *RestrictedSignInsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to restrictedSignIns for auditLogs
@@ -110,12 +110,12 @@ func (m *RestrictedSignInsRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get restrictedSignIns from auditLogs
-func (m *RestrictedSignInsRequestBuilder) GetWithResponseHandler(requestConfiguration *RestrictedSignInsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get restrictedSignIns from auditLogs
+func (m *RestrictedSignInsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get restrictedSignIns from auditLogs
-func (m *RestrictedSignInsRequestBuilder) GetWithResponseHandler(requestConfiguration *RestrictedSignInsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get restrictedSignIns from auditLogs
+func (m *RestrictedSignInsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RestrictedSignInsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *RestrictedSignInsRequestBuilder) GetWithResponseHandler(requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to restrictedSignIns for auditLogs
-func (m *RestrictedSignInsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable, requestConfiguration *RestrictedSignInsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to restrictedSignIns for auditLogs
+func (m *RestrictedSignInsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to restrictedSignIns for auditLogs
-func (m *RestrictedSignInsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable, requestConfiguration *RestrictedSignInsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to restrictedSignIns for auditLogs
+func (m *RestrictedSignInsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable, requestConfiguration *RestrictedSignInsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestrictedSignInable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

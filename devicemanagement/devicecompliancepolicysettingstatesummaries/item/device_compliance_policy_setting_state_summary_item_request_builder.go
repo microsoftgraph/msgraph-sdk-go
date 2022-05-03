@@ -66,8 +66,8 @@ func NewDeviceCompliancePolicySettingStateSummaryItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePolicySettingStateSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
@@ -82,8 +82,8 @@ func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreateDele
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the summary states of compliance policy settings for this account.
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the summary states of compliance policy settings for this account.
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the summary states of compliance policy settings for this account.
@@ -101,8 +101,8 @@ func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
@@ -118,12 +118,12 @@ func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) CreatePatc
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) DeviceComp
     }
     return i526f8febb10205573c5dd2e17b0c9f845b7b7aa8f86cebe17e6e7b83e19bbf56.NewDeviceComplianceSettingStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler the summary states of compliance policy settings for this account.
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the summary states of compliance policy settings for this account.
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the summary states of compliance policy settings for this account.
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler the summary states of compliance policy settings for this account.
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) GetWithRes
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable), nil
 }
-// PatchWithResponseHandler update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable, requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
-func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable, requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable, requestConfiguration *DeviceCompliancePolicySettingStateSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

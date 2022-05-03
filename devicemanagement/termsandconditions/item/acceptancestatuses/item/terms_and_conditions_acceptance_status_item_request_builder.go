@@ -65,8 +65,8 @@ func NewTermsAndConditionsAcceptanceStatusItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property acceptanceStatuses for deviceManagement
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property acceptanceStatuses for deviceManagement
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property acceptanceStatuses for deviceManagement
@@ -81,8 +81,8 @@ func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of acceptance statuses for this T&C policy.
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of acceptance statuses for this T&C policy.
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of acceptance statuses for this T&C policy.
@@ -100,8 +100,8 @@ func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property acceptanceStatuses in deviceManagement
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property acceptanceStatuses in deviceManagement
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property acceptanceStatuses in deviceManagement
@@ -117,12 +117,12 @@ func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property acceptanceStatuses for deviceManagement
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property acceptanceStatuses for deviceManagement
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property acceptanceStatuses for deviceManagement
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property acceptanceStatuses for deviceManagement
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) DeleteWithRespons
     }
     return nil
 }
-// GetWithResponseHandler the list of acceptance statuses for this T&C policy.
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of acceptance statuses for this T&C policy.
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of acceptance statuses for this T&C policy.
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of acceptance statuses for this T&C policy.
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -157,12 +157,12 @@ func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) GetWithResponseHa
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable), nil
 }
-// PatchWithResponseHandler update the navigation property acceptanceStatuses in deviceManagement
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property acceptanceStatuses in deviceManagement
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property acceptanceStatuses in deviceManagement
-func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property acceptanceStatuses in deviceManagement
+func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, requestConfiguration *TermsAndConditionsAcceptanceStatusItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -40,8 +40,8 @@ func NewGenerateDownloadUriRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewGenerateDownloadUriRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action generateDownloadUri
-func (m *GenerateDownloadUriRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action generateDownloadUri
+func (m *GenerateDownloadUriRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action generateDownloadUri
@@ -56,12 +56,12 @@ func (m *GenerateDownloadUriRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action generateDownloadUri
-func (m *GenerateDownloadUriRequestBuilder) PostWithResponseHandler(requestConfiguration *GenerateDownloadUriRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action generateDownloadUri
+func (m *GenerateDownloadUriRequestBuilder) Post()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action generateDownloadUri
-func (m *GenerateDownloadUriRequestBuilder) PostWithResponseHandler(requestConfiguration *GenerateDownloadUriRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action generateDownloadUri
+func (m *GenerateDownloadUriRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *GenerateDownloadUriRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

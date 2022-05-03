@@ -39,8 +39,8 @@ func NewShareRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewShareRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action share
-func (m *ShareRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ShareRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action share
+func (m *ShareRequestBuilder) CreatePostRequestInformation(body ShareRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action share
@@ -56,12 +56,12 @@ func (m *ShareRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action share
-func (m *ShareRequestBuilder) PostWithResponseHandler(body ShareRequestBodyable, requestConfiguration *ShareRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action share
+func (m *ShareRequestBuilder) Post(body ShareRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action share
-func (m *ShareRequestBuilder) PostWithResponseHandler(body ShareRequestBodyable, requestConfiguration *ShareRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action share
+func (m *ShareRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ShareRequestBodyable, requestConfiguration *ShareRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

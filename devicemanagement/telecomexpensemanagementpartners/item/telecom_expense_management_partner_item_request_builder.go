@@ -64,8 +64,8 @@ func NewTelecomExpenseManagementPartnerItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewTelecomExpenseManagementPartnerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property telecomExpenseManagementPartners for deviceManagement
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property telecomExpenseManagementPartners for deviceManagement
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property telecomExpenseManagementPartners for deviceManagement
@@ -80,8 +80,8 @@ func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the telecom expense management partners.
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the telecom expense management partners.
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the telecom expense management partners.
@@ -99,8 +99,8 @@ func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property telecomExpenseManagementPartners in deviceManagement
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property telecomExpenseManagementPartners in deviceManagement
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property telecomExpenseManagementPartners in deviceManagement
@@ -116,12 +116,12 @@ func (m *TelecomExpenseManagementPartnerItemRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property telecomExpenseManagementPartners for deviceManagement
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property telecomExpenseManagementPartners for deviceManagement
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property telecomExpenseManagementPartners for deviceManagement
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property telecomExpenseManagementPartners for deviceManagement
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *TelecomExpenseManagementPartnerItemRequestBuilder) DeleteWithResponseHa
     }
     return nil
 }
-// GetWithResponseHandler the telecom expense management partners.
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the telecom expense management partners.
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the telecom expense management partners.
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, error) {
+// GetWithRequestConfigurationAndResponseHandler the telecom expense management partners.
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *TelecomExpenseManagementPartnerItemRequestBuilder) GetWithResponseHandl
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable), nil
 }
-// PatchWithResponseHandler update the navigation property telecomExpenseManagementPartners in deviceManagement
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property telecomExpenseManagementPartners in deviceManagement
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property telecomExpenseManagementPartners in deviceManagement
-func (m *TelecomExpenseManagementPartnerItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property telecomExpenseManagementPartners in deviceManagement
+func (m *TelecomExpenseManagementPartnerItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, requestConfiguration *TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

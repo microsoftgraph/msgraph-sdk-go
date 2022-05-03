@@ -39,8 +39,8 @@ func NewTargetAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewTargetAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action targetApps
-func (m *TargetAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TargetAppsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action targetApps
+func (m *TargetAppsRequestBuilder) CreatePostRequestInformation(body TargetAppsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action targetApps
@@ -56,12 +56,12 @@ func (m *TargetAppsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action targetApps
-func (m *TargetAppsRequestBuilder) PostWithResponseHandler(body TargetAppsRequestBodyable, requestConfiguration *TargetAppsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action targetApps
+func (m *TargetAppsRequestBuilder) Post(body TargetAppsRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action targetApps
-func (m *TargetAppsRequestBuilder) PostWithResponseHandler(body TargetAppsRequestBodyable, requestConfiguration *TargetAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action targetApps
+func (m *TargetAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TargetAppsRequestBodyable, requestConfiguration *TargetAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

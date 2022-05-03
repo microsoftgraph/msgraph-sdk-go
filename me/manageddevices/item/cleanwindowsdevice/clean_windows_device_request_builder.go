@@ -39,8 +39,8 @@ func NewCleanWindowsDeviceRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewCleanWindowsDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration clean Windows device
-func (m *CleanWindowsDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CleanWindowsDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation clean Windows device
+func (m *CleanWindowsDeviceRequestBuilder) CreatePostRequestInformation(body CleanWindowsDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration clean Windows device
@@ -56,12 +56,12 @@ func (m *CleanWindowsDeviceRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler clean Windows device
-func (m *CleanWindowsDeviceRequestBuilder) PostWithResponseHandler(body CleanWindowsDeviceRequestBodyable, requestConfiguration *CleanWindowsDeviceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post clean Windows device
+func (m *CleanWindowsDeviceRequestBuilder) Post(body CleanWindowsDeviceRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler clean Windows device
-func (m *CleanWindowsDeviceRequestBuilder) PostWithResponseHandler(body CleanWindowsDeviceRequestBodyable, requestConfiguration *CleanWindowsDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler clean Windows device
+func (m *CleanWindowsDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CleanWindowsDeviceRequestBodyable, requestConfiguration *CleanWindowsDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

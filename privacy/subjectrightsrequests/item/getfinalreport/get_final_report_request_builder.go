@@ -39,8 +39,8 @@ func NewGetFinalReportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewGetFinalReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getFinalReport
-func (m *GetFinalReportRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getFinalReport
+func (m *GetFinalReportRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getFinalReport
@@ -55,12 +55,12 @@ func (m *GetFinalReportRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getFinalReport
-func (m *GetFinalReportRequestBuilder) GetWithResponseHandler(requestConfiguration *GetFinalReportRequestBuilderGetRequestConfiguration)(GetFinalReportResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getFinalReport
+func (m *GetFinalReportRequestBuilder) Get()(GetFinalReportResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getFinalReport
-func (m *GetFinalReportRequestBuilder) GetWithResponseHandler(requestConfiguration *GetFinalReportRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetFinalReportResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getFinalReport
+func (m *GetFinalReportRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetFinalReportRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetFinalReportResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

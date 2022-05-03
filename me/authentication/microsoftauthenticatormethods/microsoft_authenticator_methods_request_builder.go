@@ -74,8 +74,8 @@ func NewMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, requestAdapte
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Count()(*ida28e7a3f6828811655e8c22f66fda55087bbb9b8f3e8b43d9b618dad78c2ac6.CountRequestBuilder) {
     return ida28e7a3f6828811655e8c22f66fda55087bbb9b8f3e8b43d9b618dad78c2ac6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the details of the Microsoft Authenticator app registered to a user for authentication.
-func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the details of the Microsoft Authenticator app registered to a user for authentication.
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the details of the Microsoft Authenticator app registered to a user for authentication.
@@ -93,8 +93,8 @@ func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to microsoftAuthenticatorMethods for me
-func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to microsoftAuthenticatorMethods for me
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to microsoftAuthenticatorMethods for me
@@ -110,12 +110,12 @@ func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the details of the Microsoft Authenticator app registered to a user for authentication.
-func (m *MicrosoftAuthenticatorMethodsRequestBuilder) GetWithResponseHandler(requestConfiguration *MicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the details of the Microsoft Authenticator app registered to a user for authentication.
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the details of the Microsoft Authenticator app registered to a user for authentication.
-func (m *MicrosoftAuthenticatorMethodsRequestBuilder) GetWithResponseHandler(requestConfiguration *MicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the details of the Microsoft Authenticator app registered to a user for authentication.
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MicrosoftAuthenticatorMethodsRequestBuilder) GetWithResponseHandler(req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to microsoftAuthenticatorMethods for me
-func (m *MicrosoftAuthenticatorMethodsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable, requestConfiguration *MicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to microsoftAuthenticatorMethods for me
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to microsoftAuthenticatorMethods for me
-func (m *MicrosoftAuthenticatorMethodsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable, requestConfiguration *MicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to microsoftAuthenticatorMethods for me
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable, requestConfiguration *MicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MicrosoftAuthenticatorAuthenticationMethodable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

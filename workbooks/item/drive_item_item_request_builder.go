@@ -128,8 +128,8 @@ func (m *DriveItemItemRequestBuilder) Content()(*icf1df6087ee055e0d82133b727f46f
 func (m *DriveItemItemRequestBuilder) Copy()(*i30c63e24788689962791595cb53052ff09bcee5b947bdcad4bdf76549580e375.CopyRequestBuilder) {
     return i30c63e24788689962791595cb53052ff09bcee5b947bdcad4bdf76549580e375.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from workbooks
-func (m *DriveItemItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from workbooks
+func (m *DriveItemItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from workbooks
@@ -144,8 +144,8 @@ func (m *DriveItemItemRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from workbooks by key
-func (m *DriveItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from workbooks by key
+func (m *DriveItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from workbooks by key
@@ -167,8 +167,8 @@ func (m *DriveItemItemRequestBuilder) CreateGetRequestInformationWithRequestConf
 func (m *DriveItemItemRequestBuilder) CreateLink()(*i52d55698f37207ae8cfc4d0581661790447acf0fa06972a6c6079678d1716c3e.CreateLinkRequestBuilder) {
     return i52d55698f37207ae8cfc4d0581661790447acf0fa06972a6c6079678d1716c3e.NewCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in workbooks
-func (m *DriveItemItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in workbooks
+func (m *DriveItemItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in workbooks
@@ -188,12 +188,12 @@ func (m *DriveItemItemRequestBuilder) CreatePatchRequestInformationWithRequestCo
 func (m *DriveItemItemRequestBuilder) CreateUploadSession()(*i8322282da8aba85dea7f464f9817c042833a1e61796c1743fab901ceb2b9e0bf.CreateUploadSessionRequestBuilder) {
     return i8322282da8aba85dea7f464f9817c042833a1e61796c1743fab901ceb2b9e0bf.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete entity from workbooks
-func (m *DriveItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DriveItemItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from workbooks
+func (m *DriveItemItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from workbooks
-func (m *DriveItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DriveItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from workbooks
+func (m *DriveItemItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DriveItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -220,6 +220,10 @@ func (m *DriveItemItemRequestBuilder) DeltaWithToken(token *string)(*i0b91669df3
 func (m *DriveItemItemRequestBuilder) Follow()(*id47f3cd96ac62060cd4706158e84ca804380b00ffa0deb0c987cbd9861fdc941.FollowRequestBuilder) {
     return id47f3cd96ac62060cd4706158e84ca804380b00ffa0deb0c987cbd9861fdc941.NewFollowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Get get entity from workbooks by key
+func (m *DriveItemItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
 func (m *DriveItemItemRequestBuilder) GetActivitiesByInterval()(*ifbb48734282372c41bb9bbc447d9984c550ba21aaa310f937681aa66356ddde6.GetActivitiesByIntervalRequestBuilder) {
     return ifbb48734282372c41bb9bbc447d9984c550ba21aaa310f937681aa66356ddde6.NewGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -228,12 +232,8 @@ func (m *DriveItemItemRequestBuilder) GetActivitiesByInterval()(*ifbb48734282372
 func (m *DriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ib121a556cf3e26404fc08358679728faa63ad120d407307b65b8fe2f5ae147c4.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     return ib121a556cf3e26404fc08358679728faa63ad120d407307b65b8fe2f5ae147c4.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
 }
-// GetWithResponseHandler get entity from workbooks by key
-func (m *DriveItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DriveItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entity from workbooks by key
-func (m *DriveItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DriveItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from workbooks by key
+func (m *DriveItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DriveItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -256,12 +256,12 @@ func (m *DriveItemItemRequestBuilder) Invite()(*i4a1b5cb316219ccd2b0d5274ee44a68
 func (m *DriveItemItemRequestBuilder) ListItem()(*i19c8a435e35f3a91440869da89a429da57fcd7561f3e38373a0760184ece7ee5.ListItemRequestBuilder) {
     return i19c8a435e35f3a91440869da89a429da57fcd7561f3e38373a0760184ece7ee5.NewListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update entity in workbooks
-func (m *DriveItemItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, requestConfiguration *DriveItemItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in workbooks
+func (m *DriveItemItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in workbooks
-func (m *DriveItemItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, requestConfiguration *DriveItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in workbooks
+func (m *DriveItemItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, requestConfiguration *DriveItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

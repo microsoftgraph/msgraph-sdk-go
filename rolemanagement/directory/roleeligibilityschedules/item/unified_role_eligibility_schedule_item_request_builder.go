@@ -64,8 +64,8 @@ func NewUnifiedRoleEligibilityScheduleItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleEligibilityScheduleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property roleEligibilitySchedules for roleManagement
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property roleEligibilitySchedules for roleManagement
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property roleEligibilitySchedules for roleManagement
@@ -80,8 +80,8 @@ func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration schedules for role eligibility operations.
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation schedules for role eligibility operations.
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration schedules for role eligibility operations.
@@ -99,8 +99,8 @@ func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property roleEligibilitySchedules in roleManagement
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property roleEligibilitySchedules in roleManagement
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property roleEligibilitySchedules in roleManagement
@@ -116,12 +116,12 @@ func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property roleEligibilitySchedules for roleManagement
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property roleEligibilitySchedules for roleManagement
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property roleEligibilitySchedules for roleManagement
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property roleEligibilitySchedules for roleManagement
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) DeleteWithResponseHan
     }
     return nil
 }
-// GetWithResponseHandler schedules for role eligibility operations.
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get schedules for role eligibility operations.
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler schedules for role eligibility operations.
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, error) {
+// GetWithRequestConfigurationAndResponseHandler schedules for role eligibility operations.
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) GetWithResponseHandle
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable), nil
 }
-// PatchWithResponseHandler update the navigation property roleEligibilitySchedules in roleManagement
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property roleEligibilitySchedules in roleManagement
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property roleEligibilitySchedules in roleManagement
-func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property roleEligibilitySchedules in roleManagement
+func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

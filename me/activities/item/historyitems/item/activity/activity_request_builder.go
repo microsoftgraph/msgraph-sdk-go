@@ -50,8 +50,8 @@ func NewActivityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewActivityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration optional. NavigationProperty/Containment; navigation property to the associated activity.
-func (m *ActivityRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation optional. NavigationProperty/Containment; navigation property to the associated activity.
+func (m *ActivityRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration optional. NavigationProperty/Containment; navigation property to the associated activity.
@@ -69,12 +69,12 @@ func (m *ActivityRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler optional. NavigationProperty/Containment; navigation property to the associated activity.
-func (m *ActivityRequestBuilder) GetWithResponseHandler(requestConfiguration *ActivityRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get optional. NavigationProperty/Containment; navigation property to the associated activity.
+func (m *ActivityRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler optional. NavigationProperty/Containment; navigation property to the associated activity.
-func (m *ActivityRequestBuilder) GetWithResponseHandler(requestConfiguration *ActivityRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable, error) {
+// GetWithRequestConfigurationAndResponseHandler optional. NavigationProperty/Containment; navigation property to the associated activity.
+func (m *ActivityRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ActivityRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

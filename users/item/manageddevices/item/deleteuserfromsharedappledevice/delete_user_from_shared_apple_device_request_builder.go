@@ -39,8 +39,8 @@ func NewDeleteUserFromSharedAppleDeviceRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewDeleteUserFromSharedAppleDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration delete user from shared Apple device
-func (m *DeleteUserFromSharedAppleDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeleteUserFromSharedAppleDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation delete user from shared Apple device
+func (m *DeleteUserFromSharedAppleDeviceRequestBuilder) CreatePostRequestInformation(body DeleteUserFromSharedAppleDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration delete user from shared Apple device
@@ -56,12 +56,12 @@ func (m *DeleteUserFromSharedAppleDeviceRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler delete user from shared Apple device
-func (m *DeleteUserFromSharedAppleDeviceRequestBuilder) PostWithResponseHandler(body DeleteUserFromSharedAppleDeviceRequestBodyable, requestConfiguration *DeleteUserFromSharedAppleDeviceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post delete user from shared Apple device
+func (m *DeleteUserFromSharedAppleDeviceRequestBuilder) Post(body DeleteUserFromSharedAppleDeviceRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler delete user from shared Apple device
-func (m *DeleteUserFromSharedAppleDeviceRequestBuilder) PostWithResponseHandler(body DeleteUserFromSharedAppleDeviceRequestBodyable, requestConfiguration *DeleteUserFromSharedAppleDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler delete user from shared Apple device
+func (m *DeleteUserFromSharedAppleDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeleteUserFromSharedAppleDeviceRequestBodyable, requestConfiguration *DeleteUserFromSharedAppleDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

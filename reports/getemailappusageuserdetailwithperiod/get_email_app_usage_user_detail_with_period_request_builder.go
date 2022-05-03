@@ -42,8 +42,8 @@ func NewGetEmailAppUsageUserDetailWithPeriodRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewGetEmailAppUsageUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getEmailAppUsageUserDetail
-func (m *GetEmailAppUsageUserDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getEmailAppUsageUserDetail
+func (m *GetEmailAppUsageUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getEmailAppUsageUserDetail
@@ -58,12 +58,12 @@ func (m *GetEmailAppUsageUserDetailWithPeriodRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getEmailAppUsageUserDetail
-func (m *GetEmailAppUsageUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEmailAppUsageUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(GetEmailAppUsageUserDetailWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getEmailAppUsageUserDetail
+func (m *GetEmailAppUsageUserDetailWithPeriodRequestBuilder) Get()(GetEmailAppUsageUserDetailWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getEmailAppUsageUserDetail
-func (m *GetEmailAppUsageUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEmailAppUsageUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailAppUsageUserDetailWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getEmailAppUsageUserDetail
+func (m *GetEmailAppUsageUserDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEmailAppUsageUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailAppUsageUserDetailWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

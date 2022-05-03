@@ -39,8 +39,8 @@ func NewGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getByIds
-func (m *GetByIdsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetByIdsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getByIds
+func (m *GetByIdsRequestBuilder) CreatePostRequestInformation(body GetByIdsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getByIds
@@ -56,12 +56,12 @@ func (m *GetByIdsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getByIds
-func (m *GetByIdsRequestBuilder) PostWithResponseHandler(body GetByIdsRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(GetByIdsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getByIds
+func (m *GetByIdsRequestBuilder) Post(body GetByIdsRequestBodyable)(GetByIdsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getByIds
-func (m *GetByIdsRequestBuilder) PostWithResponseHandler(body GetByIdsRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetByIdsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getByIds
+func (m *GetByIdsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetByIdsRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetByIdsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

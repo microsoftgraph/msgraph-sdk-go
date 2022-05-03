@@ -74,8 +74,8 @@ func NewLicenseDetailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *LicenseDetailsRequestBuilder) Count()(*i318a3997f61226659d2d2830fa011d72bd80793d2c6c8cac6f0c29c31cede02e.CountRequestBuilder) {
     return i318a3997f61226659d2d2830fa011d72bd80793d2c6c8cac6f0c29c31cede02e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of this user's license details. Read-only.
-func (m *LicenseDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a collection of this user's license details. Read-only.
+func (m *LicenseDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a collection of this user's license details. Read-only.
@@ -93,8 +93,8 @@ func (m *LicenseDetailsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to licenseDetails for users
-func (m *LicenseDetailsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to licenseDetails for users
+func (m *LicenseDetailsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to licenseDetails for users
@@ -110,12 +110,12 @@ func (m *LicenseDetailsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a collection of this user's license details. Read-only.
-func (m *LicenseDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *LicenseDetailsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a collection of this user's license details. Read-only.
+func (m *LicenseDetailsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a collection of this user's license details. Read-only.
-func (m *LicenseDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *LicenseDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a collection of this user's license details. Read-only.
+func (m *LicenseDetailsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LicenseDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *LicenseDetailsRequestBuilder) GetWithResponseHandler(requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to licenseDetails for users
-func (m *LicenseDetailsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable, requestConfiguration *LicenseDetailsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to licenseDetails for users
+func (m *LicenseDetailsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to licenseDetails for users
-func (m *LicenseDetailsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable, requestConfiguration *LicenseDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to licenseDetails for users
+func (m *LicenseDetailsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable, requestConfiguration *LicenseDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -50,8 +50,8 @@ func NewLastSharedMethodRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewLastSharedMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get lastSharedMethod from users
-func (m *LastSharedMethodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get lastSharedMethod from users
+func (m *LastSharedMethodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get lastSharedMethod from users
@@ -69,12 +69,12 @@ func (m *LastSharedMethodRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get lastSharedMethod from users
-func (m *LastSharedMethodRequestBuilder) GetWithResponseHandler(requestConfiguration *LastSharedMethodRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get lastSharedMethod from users
+func (m *LastSharedMethodRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get lastSharedMethod from users
-func (m *LastSharedMethodRequestBuilder) GetWithResponseHandler(requestConfiguration *LastSharedMethodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable, error) {
+// GetWithRequestConfigurationAndResponseHandler get lastSharedMethod from users
+func (m *LastSharedMethodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LastSharedMethodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -74,8 +74,8 @@ func NewSingleValueExtendedPropertiesRequestBuilder(rawUrl string, requestAdapte
 func (m *SingleValueExtendedPropertiesRequestBuilder) Count()(*i3d6972cb64bb37c16ae2429510e9528f3a6751e15569bd2a14e668c0d029208e.CountRequestBuilder) {
     return i3d6972cb64bb37c16ae2429510e9528f3a6751e15569bd2a14e668c0d029208e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of single-value extended properties defined for the event. Read-only. Nullable.
-func (m *SingleValueExtendedPropertiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of single-value extended properties defined for the event. Read-only. Nullable.
+func (m *SingleValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of single-value extended properties defined for the event. Read-only. Nullable.
@@ -93,8 +93,8 @@ func (m *SingleValueExtendedPropertiesRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to singleValueExtendedProperties for groups
-func (m *SingleValueExtendedPropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to singleValueExtendedProperties for groups
+func (m *SingleValueExtendedPropertiesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to singleValueExtendedProperties for groups
@@ -110,12 +110,12 @@ func (m *SingleValueExtendedPropertiesRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of single-value extended properties defined for the event. Read-only. Nullable.
-func (m *SingleValueExtendedPropertiesRequestBuilder) GetWithResponseHandler(requestConfiguration *SingleValueExtendedPropertiesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of single-value extended properties defined for the event. Read-only. Nullable.
+func (m *SingleValueExtendedPropertiesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of single-value extended properties defined for the event. Read-only. Nullable.
-func (m *SingleValueExtendedPropertiesRequestBuilder) GetWithResponseHandler(requestConfiguration *SingleValueExtendedPropertiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of single-value extended properties defined for the event. Read-only. Nullable.
+func (m *SingleValueExtendedPropertiesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SingleValueExtendedPropertiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *SingleValueExtendedPropertiesRequestBuilder) GetWithResponseHandler(req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to singleValueExtendedProperties for groups
-func (m *SingleValueExtendedPropertiesRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable, requestConfiguration *SingleValueExtendedPropertiesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to singleValueExtendedProperties for groups
+func (m *SingleValueExtendedPropertiesRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to singleValueExtendedProperties for groups
-func (m *SingleValueExtendedPropertiesRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable, requestConfiguration *SingleValueExtendedPropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to singleValueExtendedProperties for groups
+func (m *SingleValueExtendedPropertiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable, requestConfiguration *SingleValueExtendedPropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SingleValueLegacyExtendedPropertyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

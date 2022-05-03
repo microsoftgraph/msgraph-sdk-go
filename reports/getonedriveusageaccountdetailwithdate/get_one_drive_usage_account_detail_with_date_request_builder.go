@@ -44,8 +44,8 @@ func NewGetOneDriveUsageAccountDetailWithDateRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewGetOneDriveUsageAccountDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOneDriveUsageAccountDetail
-func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOneDriveUsageAccountDetail
+func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOneDriveUsageAccountDetail
@@ -60,12 +60,12 @@ func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOneDriveUsageAccountDetail
-func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOneDriveUsageAccountDetailWithDateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOneDriveUsageAccountDetail
+func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOneDriveUsageAccountDetail
-func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOneDriveUsageAccountDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOneDriveUsageAccountDetail
+func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOneDriveUsageAccountDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

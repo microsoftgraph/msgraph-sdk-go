@@ -39,8 +39,8 @@ func NewUpdateDevicePropertiesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateDevicePropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration updates properties on Autopilot devices.
-func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateDevicePropertiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation updates properties on Autopilot devices.
+func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformation(body UpdateDevicePropertiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration updates properties on Autopilot devices.
@@ -56,12 +56,12 @@ func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler updates properties on Autopilot devices.
-func (m *UpdateDevicePropertiesRequestBuilder) PostWithResponseHandler(body UpdateDevicePropertiesRequestBodyable, requestConfiguration *UpdateDevicePropertiesRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post updates properties on Autopilot devices.
+func (m *UpdateDevicePropertiesRequestBuilder) Post(body UpdateDevicePropertiesRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler updates properties on Autopilot devices.
-func (m *UpdateDevicePropertiesRequestBuilder) PostWithResponseHandler(body UpdateDevicePropertiesRequestBodyable, requestConfiguration *UpdateDevicePropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler updates properties on Autopilot devices.
+func (m *UpdateDevicePropertiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateDevicePropertiesRequestBodyable, requestConfiguration *UpdateDevicePropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

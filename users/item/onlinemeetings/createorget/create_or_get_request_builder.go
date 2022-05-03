@@ -40,8 +40,8 @@ func NewCreateOrGetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewCreateOrGetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action createOrGet
-func (m *CreateOrGetRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateOrGetRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action createOrGet
+func (m *CreateOrGetRequestBuilder) CreatePostRequestInformation(body CreateOrGetRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createOrGet
@@ -57,12 +57,12 @@ func (m *CreateOrGetRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action createOrGet
-func (m *CreateOrGetRequestBuilder) PostWithResponseHandler(body CreateOrGetRequestBodyable, requestConfiguration *CreateOrGetRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action createOrGet
+func (m *CreateOrGetRequestBuilder) Post(body CreateOrGetRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action createOrGet
-func (m *CreateOrGetRequestBuilder) PostWithResponseHandler(body CreateOrGetRequestBodyable, requestConfiguration *CreateOrGetRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action createOrGet
+func (m *CreateOrGetRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateOrGetRequestBodyable, requestConfiguration *CreateOrGetRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

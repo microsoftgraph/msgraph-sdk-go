@@ -39,8 +39,8 @@ func NewSendTestMessageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewSendTestMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration sends test message using the specified notificationMessageTemplate in the default locale
-func (m *SendTestMessageRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation sends test message using the specified notificationMessageTemplate in the default locale
+func (m *SendTestMessageRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration sends test message using the specified notificationMessageTemplate in the default locale
@@ -55,12 +55,12 @@ func (m *SendTestMessageRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler sends test message using the specified notificationMessageTemplate in the default locale
-func (m *SendTestMessageRequestBuilder) PostWithResponseHandler(requestConfiguration *SendTestMessageRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post sends test message using the specified notificationMessageTemplate in the default locale
+func (m *SendTestMessageRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler sends test message using the specified notificationMessageTemplate in the default locale
-func (m *SendTestMessageRequestBuilder) PostWithResponseHandler(requestConfiguration *SendTestMessageRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler sends test message using the specified notificationMessageTemplate in the default locale
+func (m *SendTestMessageRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *SendTestMessageRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

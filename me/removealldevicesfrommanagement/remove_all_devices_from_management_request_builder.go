@@ -39,8 +39,8 @@ func NewRemoveAllDevicesFromManagementRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveAllDevicesFromManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration retire all devices from management for this user
-func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation retire all devices from management for this user
+func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration retire all devices from management for this user
@@ -55,12 +55,12 @@ func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler retire all devices from management for this user
-func (m *RemoveAllDevicesFromManagementRequestBuilder) PostWithResponseHandler(requestConfiguration *RemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post retire all devices from management for this user
+func (m *RemoveAllDevicesFromManagementRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler retire all devices from management for this user
-func (m *RemoveAllDevicesFromManagementRequestBuilder) PostWithResponseHandler(requestConfiguration *RemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler retire all devices from management for this user
+func (m *RemoveAllDevicesFromManagementRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *RemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

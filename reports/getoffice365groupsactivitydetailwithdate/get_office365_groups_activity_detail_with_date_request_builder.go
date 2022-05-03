@@ -44,8 +44,8 @@ func NewGetOffice365GroupsActivityDetailWithDateRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365GroupsActivityDetail
-func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOffice365GroupsActivityDetail
+func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365GroupsActivityDetail
@@ -60,12 +60,12 @@ func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOffice365GroupsActivityDetail
-func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOffice365GroupsActivityDetail
+func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOffice365GroupsActivityDetail
-func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOffice365GroupsActivityDetail
+func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

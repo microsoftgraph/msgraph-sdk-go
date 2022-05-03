@@ -43,8 +43,8 @@ func NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getRecentNotebooks
-func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getRecentNotebooks
+func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getRecentNotebooks
@@ -59,12 +59,12 @@ func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getRecentNotebooks
-func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetRequestConfiguration)(GetRecentNotebooksWithIncludePersonalNotebooksResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getRecentNotebooks
+func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) Get()(GetRecentNotebooksWithIncludePersonalNotebooksResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getRecentNotebooks
-func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRecentNotebooksWithIncludePersonalNotebooksResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getRecentNotebooks
+func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRecentNotebooksWithIncludePersonalNotebooksResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

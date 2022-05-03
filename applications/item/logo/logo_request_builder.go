@@ -47,8 +47,8 @@ func NewLogoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewLogoRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the main logo for the application. Not nullable.
+func (m *LogoRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the main logo for the application. Not nullable.
@@ -63,8 +63,8 @@ func (m *LogoRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformationWithRequestConfiguration the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation the main logo for the application. Not nullable.
+func (m *LogoRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePutRequestInformationWithRequestConfiguration the main logo for the application. Not nullable.
@@ -80,12 +80,12 @@ func (m *LogoRequestBuilder) CreatePutRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) GetWithResponseHandler(requestConfiguration *LogoRequestBuilderGetRequestConfiguration)([]byte, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the main logo for the application. Not nullable.
+func (m *LogoRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) GetWithResponseHandler(requestConfiguration *LogoRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+// GetWithRequestConfigurationAndResponseHandler the main logo for the application. Not nullable.
+func (m *LogoRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LogoRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,12 +100,12 @@ func (m *LogoRequestBuilder) GetWithResponseHandler(requestConfiguration *LogoRe
     }
     return res.([]byte), nil
 }
-// PutWithResponseHandler the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *LogoRequestBuilderPutRequestConfiguration)(error) {
-    return m.PutWithResponseHandler(body, requestConfiguration, nil);
+// Put the main logo for the application. Not nullable.
+func (m *LogoRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithResponseHandler the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *LogoRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PutWithRequestConfigurationAndResponseHandler the main logo for the application. Not nullable.
+func (m *LogoRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *LogoRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

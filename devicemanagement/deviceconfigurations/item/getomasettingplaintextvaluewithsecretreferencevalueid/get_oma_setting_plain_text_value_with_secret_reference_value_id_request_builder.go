@@ -42,8 +42,8 @@ func NewGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOmaSettingPlainTextValue
-func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOmaSettingPlainTextValue
+func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOmaSettingPlainTextValue
@@ -58,12 +58,12 @@ func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOmaSettingPlainTextValue
-func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderGetRequestConfiguration)(GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOmaSettingPlainTextValue
+func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) Get()(GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOmaSettingPlainTextValue
-func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOmaSettingPlainTextValue
+func (m *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

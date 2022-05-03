@@ -50,8 +50,8 @@ func NewManagedAppRegistrationItemRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation zero or more managed app registrations that belong to the user.
+func (m *ManagedAppRegistrationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration zero or more managed app registrations that belong to the user.
@@ -69,12 +69,12 @@ func (m *ManagedAppRegistrationItemRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get zero or more managed app registrations that belong to the user.
+func (m *ManagedAppRegistrationItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, error) {
+// GetWithRequestConfigurationAndResponseHandler zero or more managed app registrations that belong to the user.
+func (m *ManagedAppRegistrationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -75,8 +75,8 @@ func NewAccessPackageAssignmentApprovalsRequestBuilder(rawUrl string, requestAda
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) Count()(*ic41bfe078537c68f179f24357a35d8604aa37b37489f1403c83169437a7f47c2.CountRequestBuilder) {
     return ic41bfe078537c68f179f24357a35d8604aa37b37489f1403c83169437a7f47c2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration approval stages for assignment requests.
-func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation approval stages for assignment requests.
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration approval stages for assignment requests.
@@ -94,8 +94,8 @@ func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackageAssignmentApprovals for identityGovernance
-func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to accessPackageAssignmentApprovals for identityGovernance
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackageAssignmentApprovals for identityGovernance
@@ -115,12 +115,12 @@ func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreatePostRequestInform
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ia71d5a5b6b3ea77f765bc2b0175ea2dbe4bccb5b112d222630b4264a2bd127e5.FilterByCurrentUserWithOnRequestBuilder) {
     return ia71d5a5b6b3ea77f765bc2b0175ea2dbe4bccb5b112d222630b4264a2bd127e5.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// GetWithResponseHandler approval stages for assignment requests.
-func (m *AccessPackageAssignmentApprovalsRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get approval stages for assignment requests.
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler approval stages for assignment requests.
-func (m *AccessPackageAssignmentApprovalsRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler approval stages for assignment requests.
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *AccessPackageAssignmentApprovalsRequestBuilder) GetWithResponseHandler(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to accessPackageAssignmentApprovals for identityGovernance
-func (m *AccessPackageAssignmentApprovalsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable, requestConfiguration *AccessPackageAssignmentApprovalsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to accessPackageAssignmentApprovals for identityGovernance
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to accessPackageAssignmentApprovals for identityGovernance
-func (m *AccessPackageAssignmentApprovalsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable, requestConfiguration *AccessPackageAssignmentApprovalsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to accessPackageAssignmentApprovals for identityGovernance
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable, requestConfiguration *AccessPackageAssignmentApprovalsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

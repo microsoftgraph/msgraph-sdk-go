@@ -39,8 +39,8 @@ func NewGetSettingNonComplianceReportRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewGetSettingNonComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getSettingNonComplianceReport
-func (m *GetSettingNonComplianceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetSettingNonComplianceReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getSettingNonComplianceReport
+func (m *GetSettingNonComplianceReportRequestBuilder) CreatePostRequestInformation(body GetSettingNonComplianceReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getSettingNonComplianceReport
@@ -56,12 +56,12 @@ func (m *GetSettingNonComplianceReportRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getSettingNonComplianceReport
-func (m *GetSettingNonComplianceReportRequestBuilder) PostWithResponseHandler(body GetSettingNonComplianceReportRequestBodyable, requestConfiguration *GetSettingNonComplianceReportRequestBuilderPostRequestConfiguration)(GetSettingNonComplianceReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getSettingNonComplianceReport
+func (m *GetSettingNonComplianceReportRequestBuilder) Post(body GetSettingNonComplianceReportRequestBodyable)(GetSettingNonComplianceReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getSettingNonComplianceReport
-func (m *GetSettingNonComplianceReportRequestBuilder) PostWithResponseHandler(body GetSettingNonComplianceReportRequestBodyable, requestConfiguration *GetSettingNonComplianceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSettingNonComplianceReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getSettingNonComplianceReport
+func (m *GetSettingNonComplianceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetSettingNonComplianceReportRequestBodyable, requestConfiguration *GetSettingNonComplianceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSettingNonComplianceReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

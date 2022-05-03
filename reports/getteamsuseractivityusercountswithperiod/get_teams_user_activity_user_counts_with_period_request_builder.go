@@ -42,8 +42,8 @@ func NewGetTeamsUserActivityUserCountsWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsUserActivityUserCounts
-func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getTeamsUserActivityUserCounts
+func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsUserActivityUserCounts
@@ -58,12 +58,12 @@ func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getTeamsUserActivityUserCounts
-func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTeamsUserActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetTeamsUserActivityUserCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getTeamsUserActivityUserCounts
+func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) Get()(GetTeamsUserActivityUserCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getTeamsUserActivityUserCounts
-func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTeamsUserActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsUserActivityUserCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getTeamsUserActivityUserCounts
+func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsUserActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsUserActivityUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

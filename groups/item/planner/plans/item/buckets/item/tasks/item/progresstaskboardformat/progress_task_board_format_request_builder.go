@@ -64,8 +64,8 @@ func NewProgressTaskBoardFormatRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewProgressTaskBoardFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property progressTaskBoardFormat for groups
-func (m *ProgressTaskBoardFormatRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property progressTaskBoardFormat for groups
+func (m *ProgressTaskBoardFormatRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property progressTaskBoardFormat for groups
@@ -80,8 +80,8 @@ func (m *ProgressTaskBoardFormatRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-func (m *ProgressTaskBoardFormatRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+func (m *ProgressTaskBoardFormatRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
@@ -99,8 +99,8 @@ func (m *ProgressTaskBoardFormatRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property progressTaskBoardFormat in groups
-func (m *ProgressTaskBoardFormatRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property progressTaskBoardFormat in groups
+func (m *ProgressTaskBoardFormatRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property progressTaskBoardFormat in groups
@@ -116,12 +116,12 @@ func (m *ProgressTaskBoardFormatRequestBuilder) CreatePatchRequestInformationWit
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property progressTaskBoardFormat for groups
-func (m *ProgressTaskBoardFormatRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property progressTaskBoardFormat for groups
+func (m *ProgressTaskBoardFormatRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property progressTaskBoardFormat for groups
-func (m *ProgressTaskBoardFormatRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property progressTaskBoardFormat for groups
+func (m *ProgressTaskBoardFormatRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ProgressTaskBoardFormatRequestBuilder) DeleteWithResponseHandler(reques
     }
     return nil
 }
-// GetWithResponseHandler read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-func (m *ProgressTaskBoardFormatRequestBuilder) GetWithResponseHandler(requestConfiguration *ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+func (m *ProgressTaskBoardFormatRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-func (m *ProgressTaskBoardFormatRequestBuilder) GetWithResponseHandler(requestConfiguration *ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+func (m *ProgressTaskBoardFormatRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ProgressTaskBoardFormatRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable), nil
 }
-// PatchWithResponseHandler update the navigation property progressTaskBoardFormat in groups
-func (m *ProgressTaskBoardFormatRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property progressTaskBoardFormat in groups
+func (m *ProgressTaskBoardFormatRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property progressTaskBoardFormat in groups
-func (m *ProgressTaskBoardFormatRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property progressTaskBoardFormat in groups
+func (m *ProgressTaskBoardFormatRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

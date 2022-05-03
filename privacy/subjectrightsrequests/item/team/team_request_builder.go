@@ -50,8 +50,8 @@ func NewTeamRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewTeamRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration information about the Microsoft Teams team that was created for the request.
-func (m *TeamRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation information about the Microsoft Teams team that was created for the request.
+func (m *TeamRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration information about the Microsoft Teams team that was created for the request.
@@ -69,12 +69,12 @@ func (m *TeamRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler information about the Microsoft Teams team that was created for the request.
-func (m *TeamRequestBuilder) GetWithResponseHandler(requestConfiguration *TeamRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get information about the Microsoft Teams team that was created for the request.
+func (m *TeamRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler information about the Microsoft Teams team that was created for the request.
-func (m *TeamRequestBuilder) GetWithResponseHandler(requestConfiguration *TeamRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
+// GetWithRequestConfigurationAndResponseHandler information about the Microsoft Teams team that was created for the request.
+func (m *TeamRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TeamRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

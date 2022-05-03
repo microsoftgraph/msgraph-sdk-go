@@ -39,8 +39,8 @@ func NewGetHistoricalReportRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewGetHistoricalReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetHistoricalReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getHistoricalReport
+func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformation(body GetHistoricalReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getHistoricalReport
@@ -56,12 +56,12 @@ func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) PostWithResponseHandler(body GetHistoricalReportRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration)(GetHistoricalReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getHistoricalReport
+func (m *GetHistoricalReportRequestBuilder) Post(body GetHistoricalReportRequestBodyable)(GetHistoricalReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) PostWithResponseHandler(body GetHistoricalReportRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetHistoricalReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getHistoricalReport
+func (m *GetHistoricalReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetHistoricalReportRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetHistoricalReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

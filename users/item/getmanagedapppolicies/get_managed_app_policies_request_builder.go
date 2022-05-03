@@ -39,8 +39,8 @@ func NewGetManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagedAppPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration gets app restrictions for a given user.
-func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation gets app restrictions for a given user.
+func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration gets app restrictions for a given user.
@@ -55,12 +55,12 @@ func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler gets app restrictions for a given user.
-func (m *GetManagedAppPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(GetManagedAppPoliciesResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get gets app restrictions for a given user.
+func (m *GetManagedAppPoliciesRequestBuilder) Get()(GetManagedAppPoliciesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler gets app restrictions for a given user.
-func (m *GetManagedAppPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedAppPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppPoliciesResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler gets app restrictions for a given user.
+func (m *GetManagedAppPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetManagedAppPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppPoliciesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,8 +40,8 @@ func NewAddKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewAddKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addKey
-func (m *AddKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body KeyCredentialRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addKey
+func (m *AddKeyRequestBuilder) CreatePostRequestInformation(body KeyCredentialRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addKey
@@ -57,12 +57,12 @@ func (m *AddKeyRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addKey
-func (m *AddKeyRequestBuilder) PostWithResponseHandler(body KeyCredentialRequestBodyable, requestConfiguration *AddKeyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addKey
+func (m *AddKeyRequestBuilder) Post(body KeyCredentialRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addKey
-func (m *AddKeyRequestBuilder) PostWithResponseHandler(body KeyCredentialRequestBodyable, requestConfiguration *AddKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addKey
+func (m *AddKeyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body KeyCredentialRequestBodyable, requestConfiguration *AddKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -39,8 +39,8 @@ func NewGetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewGetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getSchedule
-func (m *GetScheduleRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetScheduleRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getSchedule
+func (m *GetScheduleRequestBuilder) CreatePostRequestInformation(body GetScheduleRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getSchedule
@@ -56,12 +56,12 @@ func (m *GetScheduleRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getSchedule
-func (m *GetScheduleRequestBuilder) PostWithResponseHandler(body GetScheduleRequestBodyable, requestConfiguration *GetScheduleRequestBuilderPostRequestConfiguration)(GetScheduleResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getSchedule
+func (m *GetScheduleRequestBuilder) Post(body GetScheduleRequestBodyable)(GetScheduleResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getSchedule
-func (m *GetScheduleRequestBuilder) PostWithResponseHandler(body GetScheduleRequestBodyable, requestConfiguration *GetScheduleRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetScheduleResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getSchedule
+func (m *GetScheduleRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetScheduleRequestBodyable, requestConfiguration *GetScheduleRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetScheduleResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

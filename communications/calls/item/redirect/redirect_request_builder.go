@@ -39,8 +39,8 @@ func NewRedirectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewRedirectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action redirect
-func (m *RedirectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RedirectRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action redirect
+func (m *RedirectRequestBuilder) CreatePostRequestInformation(body RedirectRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action redirect
@@ -56,12 +56,12 @@ func (m *RedirectRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action redirect
-func (m *RedirectRequestBuilder) PostWithResponseHandler(body RedirectRequestBodyable, requestConfiguration *RedirectRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action redirect
+func (m *RedirectRequestBuilder) Post(body RedirectRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action redirect
-func (m *RedirectRequestBuilder) PostWithResponseHandler(body RedirectRequestBodyable, requestConfiguration *RedirectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action redirect
+func (m *RedirectRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RedirectRequestBodyable, requestConfiguration *RedirectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

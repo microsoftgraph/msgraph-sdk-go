@@ -39,8 +39,8 @@ func NewGrantRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action grant
-func (m *GrantRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GrantRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action grant
+func (m *GrantRequestBuilder) CreatePostRequestInformation(body GrantRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action grant
@@ -56,12 +56,12 @@ func (m *GrantRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action grant
-func (m *GrantRequestBuilder) PostWithResponseHandler(body GrantRequestBodyable, requestConfiguration *GrantRequestBuilderPostRequestConfiguration)(GrantResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action grant
+func (m *GrantRequestBuilder) Post(body GrantRequestBodyable)(GrantResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action grant
-func (m *GrantRequestBuilder) PostWithResponseHandler(body GrantRequestBodyable, requestConfiguration *GrantRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GrantResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action grant
+func (m *GrantRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GrantRequestBodyable, requestConfiguration *GrantRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GrantResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

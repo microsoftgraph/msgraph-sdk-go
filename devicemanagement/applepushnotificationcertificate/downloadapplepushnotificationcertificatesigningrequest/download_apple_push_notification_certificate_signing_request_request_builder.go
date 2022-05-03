@@ -39,8 +39,8 @@ func NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration download Apple push notification certificate signing request
-func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation download Apple push notification certificate signing request
+func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration download Apple push notification certificate signing request
@@ -55,12 +55,12 @@ func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) C
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler download Apple push notification certificate signing request
-func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) GetWithResponseHandler(requestConfiguration *DownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration)(DownloadApplePushNotificationCertificateSigningRequestResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get download Apple push notification certificate signing request
+func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) Get()(DownloadApplePushNotificationCertificateSigningRequestResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler download Apple push notification certificate signing request
-func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) GetWithResponseHandler(requestConfiguration *DownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DownloadApplePushNotificationCertificateSigningRequestResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler download Apple push notification certificate signing request
+func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DownloadApplePushNotificationCertificateSigningRequestResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

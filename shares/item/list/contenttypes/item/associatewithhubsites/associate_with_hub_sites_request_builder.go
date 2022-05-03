@@ -39,8 +39,8 @@ func NewAssociateWithHubSitesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewAssociateWithHubSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action associateWithHubSites
-func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssociateWithHubSitesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action associateWithHubSites
+func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformation(body AssociateWithHubSitesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action associateWithHubSites
@@ -56,12 +56,12 @@ func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action associateWithHubSites
-func (m *AssociateWithHubSitesRequestBuilder) PostWithResponseHandler(body AssociateWithHubSitesRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action associateWithHubSites
+func (m *AssociateWithHubSitesRequestBuilder) Post(body AssociateWithHubSitesRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action associateWithHubSites
-func (m *AssociateWithHubSitesRequestBuilder) PostWithResponseHandler(body AssociateWithHubSitesRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action associateWithHubSites
+func (m *AssociateWithHubSitesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssociateWithHubSitesRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

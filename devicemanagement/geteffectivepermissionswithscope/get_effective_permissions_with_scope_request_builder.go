@@ -42,8 +42,8 @@ func NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetEffectivePermissionsWithScopeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration retrieves the effective permissions of the currently authenticated user
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation retrieves the effective permissions of the currently authenticated user
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration retrieves the effective permissions of the currently authenticated user
@@ -58,12 +58,12 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler retrieves the effective permissions of the currently authenticated user
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get retrieves the effective permissions of the currently authenticated user
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get()(GetEffectivePermissionsWithScopeResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler retrieves the effective permissions of the currently authenticated user
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectivePermissionsWithScopeResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler retrieves the effective permissions of the currently authenticated user
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectivePermissionsWithScopeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

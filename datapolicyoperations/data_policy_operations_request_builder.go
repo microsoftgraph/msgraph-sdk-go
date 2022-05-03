@@ -74,8 +74,8 @@ func NewDataPolicyOperationsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *DataPolicyOperationsRequestBuilder) Count()(*iebdaa68b6b67fc866f2aa4ab793037f20ef0d4d0326ba80a46c74d64e5ed7d2c.CountRequestBuilder) {
     return iebdaa68b6b67fc866f2aa4ab793037f20ef0d4d0326ba80a46c74d64e5ed7d2c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from dataPolicyOperations
-func (m *DataPolicyOperationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from dataPolicyOperations
+func (m *DataPolicyOperationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from dataPolicyOperations
@@ -93,8 +93,8 @@ func (m *DataPolicyOperationsRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to dataPolicyOperations
-func (m *DataPolicyOperationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to dataPolicyOperations
+func (m *DataPolicyOperationsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to dataPolicyOperations
@@ -110,12 +110,12 @@ func (m *DataPolicyOperationsRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from dataPolicyOperations
-func (m *DataPolicyOperationsRequestBuilder) GetWithResponseHandler(requestConfiguration *DataPolicyOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from dataPolicyOperations
+func (m *DataPolicyOperationsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from dataPolicyOperations
-func (m *DataPolicyOperationsRequestBuilder) GetWithResponseHandler(requestConfiguration *DataPolicyOperationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from dataPolicyOperations
+func (m *DataPolicyOperationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DataPolicyOperationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DataPolicyOperationsRequestBuilder) GetWithResponseHandler(requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to dataPolicyOperations
-func (m *DataPolicyOperationsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, requestConfiguration *DataPolicyOperationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to dataPolicyOperations
+func (m *DataPolicyOperationsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to dataPolicyOperations
-func (m *DataPolicyOperationsRequestBuilder) PostWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, requestConfiguration *DataPolicyOperationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to dataPolicyOperations
+func (m *DataPolicyOperationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, requestConfiguration *DataPolicyOperationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

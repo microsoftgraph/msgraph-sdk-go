@@ -40,8 +40,8 @@ func NewAddTokenSigningCertificateRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewAddTokenSigningCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addTokenSigningCertificate
-func (m *AddTokenSigningCertificateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SelfSignedCertificateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addTokenSigningCertificate
+func (m *AddTokenSigningCertificateRequestBuilder) CreatePostRequestInformation(body SelfSignedCertificateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addTokenSigningCertificate
@@ -57,12 +57,12 @@ func (m *AddTokenSigningCertificateRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addTokenSigningCertificate
-func (m *AddTokenSigningCertificateRequestBuilder) PostWithResponseHandler(body SelfSignedCertificateRequestBodyable, requestConfiguration *AddTokenSigningCertificateRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SelfSignedCertificateable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addTokenSigningCertificate
+func (m *AddTokenSigningCertificateRequestBuilder) Post(body SelfSignedCertificateRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SelfSignedCertificateable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addTokenSigningCertificate
-func (m *AddTokenSigningCertificateRequestBuilder) PostWithResponseHandler(body SelfSignedCertificateRequestBodyable, requestConfiguration *AddTokenSigningCertificateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SelfSignedCertificateable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addTokenSigningCertificate
+func (m *AddTokenSigningCertificateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SelfSignedCertificateRequestBodyable, requestConfiguration *AddTokenSigningCertificateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SelfSignedCertificateable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

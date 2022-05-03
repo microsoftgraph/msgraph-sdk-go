@@ -64,8 +64,8 @@ func NewBotRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     urlParams["request-raw-url"] = rawUrl
     return NewBotRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property bot for appCatalogs
-func (m *BotRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property bot for appCatalogs
+func (m *BotRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property bot for appCatalogs
@@ -80,8 +80,8 @@ func (m *BotRequestBuilder) CreateDeleteRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the details of the bot specified in the Teams app manifest.
-func (m *BotRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the details of the bot specified in the Teams app manifest.
+func (m *BotRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the details of the bot specified in the Teams app manifest.
@@ -99,8 +99,8 @@ func (m *BotRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property bot in appCatalogs
-func (m *BotRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property bot in appCatalogs
+func (m *BotRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property bot in appCatalogs
@@ -116,12 +116,12 @@ func (m *BotRequestBuilder) CreatePatchRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property bot for appCatalogs
-func (m *BotRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BotRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property bot for appCatalogs
+func (m *BotRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property bot for appCatalogs
-func (m *BotRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BotRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property bot for appCatalogs
+func (m *BotRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *BotRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *BotRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BotR
     }
     return nil
 }
-// GetWithResponseHandler the details of the bot specified in the Teams app manifest.
-func (m *BotRequestBuilder) GetWithResponseHandler(requestConfiguration *BotRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the details of the bot specified in the Teams app manifest.
+func (m *BotRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the details of the bot specified in the Teams app manifest.
-func (m *BotRequestBuilder) GetWithResponseHandler(requestConfiguration *BotRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable, error) {
+// GetWithRequestConfigurationAndResponseHandler the details of the bot specified in the Teams app manifest.
+func (m *BotRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BotRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *BotRequestBuilder) GetWithResponseHandler(requestConfiguration *BotRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable), nil
 }
-// PatchWithResponseHandler update the navigation property bot in appCatalogs
-func (m *BotRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable, requestConfiguration *BotRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property bot in appCatalogs
+func (m *BotRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property bot in appCatalogs
-func (m *BotRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable, requestConfiguration *BotRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property bot in appCatalogs
+func (m *BotRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable, requestConfiguration *BotRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

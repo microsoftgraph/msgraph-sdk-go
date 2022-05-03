@@ -50,8 +50,8 @@ func NewColumnDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-func (m *ColumnDefinitionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+func (m *ColumnDefinitionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
@@ -69,12 +69,12 @@ func (m *ColumnDefinitionItemRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-func (m *ColumnDefinitionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ColumnDefinitionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+func (m *ColumnDefinitionItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-func (m *ColumnDefinitionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ColumnDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+func (m *ColumnDefinitionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ColumnDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

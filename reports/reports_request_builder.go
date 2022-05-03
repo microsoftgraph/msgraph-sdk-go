@@ -159,8 +159,8 @@ func NewReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get reports
-func (m *ReportsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get reports
+func (m *ReportsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get reports
@@ -178,8 +178,8 @@ func (m *ReportsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update reports
-func (m *ReportsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update reports
+func (m *ReportsRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update reports
@@ -232,6 +232,10 @@ func (m *ReportsRequestBuilder) DeviceConfigurationDeviceActivity()(*i39d4923038
 // DeviceConfigurationUserActivity provides operations to call the deviceConfigurationUserActivity method.
 func (m *ReportsRequestBuilder) DeviceConfigurationUserActivity()(*i251d35954b406eaf53009c768700ddbf5c49cf2961b8eba3836e2905c19fe73a.DeviceConfigurationUserActivityRequestBuilder) {
     return i251d35954b406eaf53009c768700ddbf5c49cf2961b8eba3836e2905c19fe73a.NewDeviceConfigurationUserActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Get get reports
+func (m *ReportsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetEmailActivityCountsWithPeriod provides operations to call the getEmailActivityCounts method.
 func (m *ReportsRequestBuilder) GetEmailActivityCountsWithPeriod(period *string)(*ieef21740e587e5f9d695c0f6753ee2fd4da00a0ced4e73355cae511e81a4e3cf.GetEmailActivityCountsWithPeriodRequestBuilder) {
@@ -529,12 +533,8 @@ func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithPeriod(period 
 func (m *ReportsRequestBuilder) GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, userId *string)(*iafadefc9c12601a3611573bb976b73b251f9ea476a68e3bdc9ceab9e0d5cc308.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return iafadefc9c12601a3611573bb976b73b251f9ea476a68e3bdc9ceab9e0d5cc308.NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime, userId);
 }
-// GetWithResponseHandler get reports
-func (m *ReportsRequestBuilder) GetWithResponseHandler(requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get reports
-func (m *ReportsRequestBuilder) GetWithResponseHandler(requestConfiguration *ReportsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, error) {
+// GetWithRequestConfigurationAndResponseHandler get reports
+func (m *ReportsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ReportsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -643,12 +643,12 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*if4346a9
     }
     return if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update reports
-func (m *ReportsRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update reports
+func (m *ReportsRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update reports
-func (m *ReportsRequestBuilder) PatchWithResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update reports
+func (m *ReportsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
