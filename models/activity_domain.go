@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the findMeetingTimes method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ActivityDomain) String() string {
-    return []string{"UNKNOWN", "WORK", "PERSONAL", "UNRESTRICTED"}[i]
+    return []string{"unknown", "work", "personal", "unrestricted"}[i]
 }
 func ParseActivityDomain(v string) (interface{}, error) {
     result := UNKNOWN_ACTIVITYDOMAIN
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_ACTIVITYDOMAIN
-        case "WORK":
+        case "work":
             result = WORK_ACTIVITYDOMAIN
-        case "PERSONAL":
+        case "personal":
             result = PERSONAL_ACTIVITYDOMAIN
-        case "UNRESTRICTED":
+        case "unrestricted":
             result = UNRESTRICTED_ACTIVITYDOMAIN
         default:
             return 0, errors.New("Unknown ActivityDomain value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the changeScreenSharingRole method.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i ScreenSharingRole) String() string {
-    return []string{"VIEWER", "SHARER"}[i]
+    return []string{"viewer", "sharer"}[i]
 }
 func ParseScreenSharingRole(v string) (interface{}, error) {
     result := VIEWER_SCREENSHARINGROLE
-    switch strings.ToUpper(v) {
-        case "VIEWER":
+    switch v {
+        case "viewer":
             result = VIEWER_SCREENSHARINGROLE
-        case "SHARER":
+        case "sharer":
             result = SHARER_SCREENSHARINGROLE
         default:
             return 0, errors.New("Unknown ScreenSharingRole value: " + v)

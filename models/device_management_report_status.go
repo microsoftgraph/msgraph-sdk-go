@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementReportStatus int
 
 const (
+    // Report generation status is unknown
     UNKNOWN_DEVICEMANAGEMENTREPORTSTATUS DeviceManagementReportStatus = iota
+    // Report generation has not started
     NOTSTARTED_DEVICEMANAGEMENTREPORTSTATUS
+    // Report generation is in progress
     INPROGRESS_DEVICEMANAGEMENTREPORTSTATUS
+    // Report generation is completed
     COMPLETED_DEVICEMANAGEMENTREPORTSTATUS
+    // Report generation has failed
     FAILED_DEVICEMANAGEMENTREPORTSTATUS
 )
 
 func (i DeviceManagementReportStatus) String() string {
-    return []string{"UNKNOWN", "NOTSTARTED", "INPROGRESS", "COMPLETED", "FAILED"}[i]
+    return []string{"unknown", "notStarted", "inProgress", "completed", "failed"}[i]
 }
 func ParseDeviceManagementReportStatus(v string) (interface{}, error) {
     result := UNKNOWN_DEVICEMANAGEMENTREPORTSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_DEVICEMANAGEMENTREPORTSTATUS
-        case "NOTSTARTED":
+        case "notStarted":
             result = NOTSTARTED_DEVICEMANAGEMENTREPORTSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_DEVICEMANAGEMENTREPORTSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_DEVICEMANAGEMENTREPORTSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_DEVICEMANAGEMENTREPORTSTATUS
         default:
             return 0, errors.New("Unknown DeviceManagementReportStatus value: " + v)

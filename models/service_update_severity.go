@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ServiceUpdateSeverity) String() string {
-    return []string{"NORMAL", "HIGH", "CRITICAL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"normal", "high", "critical", "unknownFutureValue"}[i]
 }
 func ParseServiceUpdateSeverity(v string) (interface{}, error) {
     result := NORMAL_SERVICEUPDATESEVERITY
-    switch strings.ToUpper(v) {
-        case "NORMAL":
+    switch v {
+        case "normal":
             result = NORMAL_SERVICEUPDATESEVERITY
-        case "HIGH":
+        case "high":
             result = HIGH_SERVICEUPDATESEVERITY
-        case "CRITICAL":
+        case "critical":
             result = CRITICAL_SERVICEUPDATESEVERITY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEUPDATESEVERITY
         default:
             return 0, errors.New("Unknown ServiceUpdateSeverity value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i MediaDirection) String() string {
-    return []string{"INACTIVE", "SENDONLY", "RECEIVEONLY", "SENDRECEIVE"}[i]
+    return []string{"inactive", "sendOnly", "receiveOnly", "sendReceive"}[i]
 }
 func ParseMediaDirection(v string) (interface{}, error) {
     result := INACTIVE_MEDIADIRECTION
-    switch strings.ToUpper(v) {
-        case "INACTIVE":
+    switch v {
+        case "inactive":
             result = INACTIVE_MEDIADIRECTION
-        case "SENDONLY":
+        case "sendOnly":
             result = SENDONLY_MEDIADIRECTION
-        case "RECEIVEONLY":
+        case "receiveOnly":
             result = RECEIVEONLY_MEDIADIRECTION
-        case "SENDRECEIVE":
+        case "sendReceive":
             result = SENDRECEIVE_MEDIADIRECTION
         default:
             return 0, errors.New("Unknown MediaDirection value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i GroupType) String() string {
-    return []string{"UNIFIEDGROUPS", "AZUREAD", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unifiedGroups", "azureAD", "unknownFutureValue"}[i]
 }
 func ParseGroupType(v string) (interface{}, error) {
     result := UNIFIEDGROUPS_GROUPTYPE
-    switch strings.ToUpper(v) {
-        case "UNIFIEDGROUPS":
+    switch v {
+        case "unifiedGroups":
             result = UNIFIEDGROUPS_GROUPTYPE
-        case "AZUREAD":
+        case "azureAD":
             result = AZUREAD_GROUPTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GROUPTYPE
         default:
             return 0, errors.New("Unknown GroupType value: " + v)

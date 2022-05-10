@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i RecordingStatus) String() string {
-    return []string{"UNKNOWN", "NOTRECORDING", "RECORDING", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "notRecording", "recording", "failed", "unknownFutureValue"}[i]
 }
 func ParseRecordingStatus(v string) (interface{}, error) {
     result := UNKNOWN_RECORDINGSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_RECORDINGSTATUS
-        case "NOTRECORDING":
+        case "notRecording":
             result = NOTRECORDING_RECORDINGSTATUS
-        case "RECORDING":
+        case "recording":
             result = RECORDING_RECORDINGSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_RECORDINGSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECORDINGSTATUS
         default:
             return 0, errors.New("Unknown RecordingStatus value: " + v)

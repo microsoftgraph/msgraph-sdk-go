@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type RecurrencePatternType int
 
 const (
@@ -16,22 +15,22 @@ const (
 )
 
 func (i RecurrencePatternType) String() string {
-    return []string{"DAILY", "WEEKLY", "ABSOLUTEMONTHLY", "RELATIVEMONTHLY", "ABSOLUTEYEARLY", "RELATIVEYEARLY"}[i]
+    return []string{"daily", "weekly", "absoluteMonthly", "relativeMonthly", "absoluteYearly", "relativeYearly"}[i]
 }
 func ParseRecurrencePatternType(v string) (interface{}, error) {
     result := DAILY_RECURRENCEPATTERNTYPE
-    switch strings.ToUpper(v) {
-        case "DAILY":
+    switch v {
+        case "daily":
             result = DAILY_RECURRENCEPATTERNTYPE
-        case "WEEKLY":
+        case "weekly":
             result = WEEKLY_RECURRENCEPATTERNTYPE
-        case "ABSOLUTEMONTHLY":
+        case "absoluteMonthly":
             result = ABSOLUTEMONTHLY_RECURRENCEPATTERNTYPE
-        case "RELATIVEMONTHLY":
+        case "relativeMonthly":
             result = RELATIVEMONTHLY_RECURRENCEPATTERNTYPE
-        case "ABSOLUTEYEARLY":
+        case "absoluteYearly":
             result = ABSOLUTEYEARLY_RECURRENCEPATTERNTYPE
-        case "RELATIVEYEARLY":
+        case "relativeYearly":
             result = RELATIVEYEARLY_RECURRENCEPATTERNTYPE
         default:
             return 0, errors.New("Unknown RecurrencePatternType value: " + v)

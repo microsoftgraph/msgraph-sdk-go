@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i IdentityUserFlowAttributeInputType) String() string {
-    return []string{"TEXTBOX", "DATETIMEDROPDOWN", "RADIOSINGLESELECT", "DROPDOWNSINGLESELECT", "EMAILBOX", "CHECKBOXMULTISELECT"}[i]
+    return []string{"textBox", "dateTimeDropdown", "radioSingleSelect", "dropdownSingleSelect", "emailBox", "checkboxMultiSelect"}[i]
 }
 func ParseIdentityUserFlowAttributeInputType(v string) (interface{}, error) {
     result := TEXTBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
-    switch strings.ToUpper(v) {
-        case "TEXTBOX":
+    switch v {
+        case "textBox":
             result = TEXTBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
-        case "DATETIMEDROPDOWN":
+        case "dateTimeDropdown":
             result = DATETIMEDROPDOWN_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
-        case "RADIOSINGLESELECT":
+        case "radioSingleSelect":
             result = RADIOSINGLESELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
-        case "DROPDOWNSINGLESELECT":
+        case "dropdownSingleSelect":
             result = DROPDOWNSINGLESELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
-        case "EMAILBOX":
+        case "emailBox":
             result = EMAILBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
-        case "CHECKBOXMULTISELECT":
+        case "checkboxMultiSelect":
             result = CHECKBOXMULTISELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
         default:
             return 0, errors.New("Unknown IdentityUserFlowAttributeInputType value: " + v)

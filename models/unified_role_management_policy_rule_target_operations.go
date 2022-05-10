@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the policyRoot singleton.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i UnifiedRoleManagementPolicyRuleTargetOperations) String() string {
-    return []string{"ALL", "ACTIVATE", "DEACTIVATE", "ASSIGN", "UPDATE", "REMOVE", "EXTEND", "RENEW", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"all", "activate", "deactivate", "assign", "update", "remove", "extend", "renew", "unknownFutureValue"}[i]
 }
 func ParseUnifiedRoleManagementPolicyRuleTargetOperations(v string) (interface{}, error) {
     result := ALL_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-    switch strings.ToUpper(v) {
-        case "ALL":
+    switch v {
+        case "all":
             result = ALL_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-        case "ACTIVATE":
+        case "activate":
             result = ACTIVATE_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-        case "DEACTIVATE":
+        case "deactivate":
             result = DEACTIVATE_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-        case "ASSIGN":
+        case "assign":
             result = ASSIGN_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-        case "UPDATE":
+        case "update":
             result = UPDATE_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-        case "REMOVE":
+        case "remove":
             result = REMOVE_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-        case "EXTEND":
+        case "extend":
             result = EXTEND_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-        case "RENEW":
+        case "renew":
             result = RENEW_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
         default:
             return 0, errors.New("Unknown UnifiedRoleManagementPolicyRuleTargetOperations value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i WorkforceIntegrationSupportedEntities) String() string {
-    return []string{"NONE", "SHIFT", "SWAPREQUEST", "USERSHIFTPREFERENCES", "OPENSHIFT", "OPENSHIFTREQUEST", "OFFERSHIFTREQUEST", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "shift", "swapRequest", "userShiftPreferences", "openShift", "openShiftRequest", "offerShiftRequest", "unknownFutureValue"}[i]
 }
 func ParseWorkforceIntegrationSupportedEntities(v string) (interface{}, error) {
     result := NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "SHIFT":
+        case "shift":
             result = SHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "SWAPREQUEST":
+        case "swapRequest":
             result = SWAPREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "USERSHIFTPREFERENCES":
+        case "userShiftPreferences":
             result = USERSHIFTPREFERENCES_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "OPENSHIFT":
+        case "openShift":
             result = OPENSHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "OPENSHIFTREQUEST":
+        case "openShiftRequest":
             result = OPENSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "OFFERSHIFTREQUEST":
+        case "offerShiftRequest":
             result = OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
         default:
             return 0, errors.New("Unknown WorkforceIntegrationSupportedEntities value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i MediaState) String() string {
-    return []string{"ACTIVE", "INACTIVE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"active", "inactive", "unknownFutureValue"}[i]
 }
 func ParseMediaState(v string) (interface{}, error) {
     result := ACTIVE_MEDIASTATE
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "active":
             result = ACTIVE_MEDIASTATE
-        case "INACTIVE":
+        case "inactive":
             result = INACTIVE_MEDIASTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEDIASTATE
         default:
             return 0, errors.New("Unknown MediaState value: " + v)

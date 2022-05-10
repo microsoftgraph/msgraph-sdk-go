@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type FreeBusyStatus int
 
 const (
@@ -16,22 +15,22 @@ const (
 )
 
 func (i FreeBusyStatus) String() string {
-    return []string{"UNKNOWN", "FREE", "TENTATIVE", "BUSY", "OOF", "WORKINGELSEWHERE"}[i]
+    return []string{"unknown", "free", "tentative", "busy", "oof", "workingElsewhere"}[i]
 }
 func ParseFreeBusyStatus(v string) (interface{}, error) {
     result := UNKNOWN_FREEBUSYSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_FREEBUSYSTATUS
-        case "FREE":
+        case "free":
             result = FREE_FREEBUSYSTATUS
-        case "TENTATIVE":
+        case "tentative":
             result = TENTATIVE_FREEBUSYSTATUS
-        case "BUSY":
+        case "busy":
             result = BUSY_FREEBUSYSTATUS
-        case "OOF":
+        case "oof":
             result = OOF_FREEBUSYSTATUS
-        case "WORKINGELSEWHERE":
+        case "workingElsewhere":
             result = WORKINGELSEWHERE_FREEBUSYSTATUS
         default:
             return 0, errors.New("Unknown FreeBusyStatus value: " + v)

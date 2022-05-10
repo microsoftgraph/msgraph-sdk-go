@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of organization entities.
 type MdmAuthority int
 
 const (
+    // Unknown
     UNKNOWN_MDMAUTHORITY MdmAuthority = iota
+    // Intune
     INTUNE_MDMAUTHORITY
+    // SCCM
     SCCM_MDMAUTHORITY
+    // Office365
     OFFICE365_MDMAUTHORITY
 )
 
 func (i MdmAuthority) String() string {
-    return []string{"UNKNOWN", "INTUNE", "SCCM", "OFFICE365"}[i]
+    return []string{"unknown", "intune", "sccm", "office365"}[i]
 }
 func ParseMdmAuthority(v string) (interface{}, error) {
     result := UNKNOWN_MDMAUTHORITY
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_MDMAUTHORITY
-        case "INTUNE":
+        case "intune":
             result = INTUNE_MDMAUTHORITY
-        case "SCCM":
+        case "sccm":
             result = SCCM_MDMAUTHORITY
-        case "OFFICE365":
+        case "office365":
             result = OFFICE365_MDMAUTHORITY
         default:
             return 0, errors.New("Unknown MdmAuthority value: " + v)

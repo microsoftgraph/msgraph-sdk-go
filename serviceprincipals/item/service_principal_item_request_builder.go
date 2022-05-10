@@ -60,7 +60,7 @@ type ServicePrincipalItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServicePrincipalItemRequestBuilderGetQueryParameters get entity from servicePrincipals by key
+// ServicePrincipalItemRequestBuilderGetQueryParameters get servicePrincipal
 type ServicePrincipalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -167,11 +167,11 @@ func NewServicePrincipalItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete entity from servicePrincipals
+// CreateDeleteRequestInformation delete servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from servicePrincipals
+// CreateDeleteRequestInformationWithRequestConfiguration delete servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ServicePrincipalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -198,11 +198,11 @@ func (m *ServicePrincipalItemRequestBuilder) CreatedObjectsById(id string)(*i2e9
     }
     return i2e9c412d7776dbbef6b295067f85a1c21e3fd42b4d7846e1174dfd55eb8d8811.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateGetRequestInformation get entity from servicePrincipals by key
+// CreateGetRequestInformation get servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from servicePrincipals by key
+// CreateGetRequestInformationWithRequestConfiguration get servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ServicePrincipalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -217,11 +217,11 @@ func (m *ServicePrincipalItemRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update entity in servicePrincipals
+// CreatePatchRequestInformation assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
 func (m *ServicePrincipalItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in servicePrincipals
+// CreatePatchRequestInformationWithRequestConfiguration assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
 func (m *ServicePrincipalItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable, requestConfiguration *ServicePrincipalItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -249,11 +249,11 @@ func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassificationsB
     }
     return i38c5edd99af7364922d88fc2b49de45f320d11c5fa36e8234c12f1d863cbea73.NewDelegatedPermissionClassificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete delete entity from servicePrincipals
+// Delete delete servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete entity from servicePrincipals
+// DeleteWithRequestConfigurationAndResponseHandler delete servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ServicePrincipalItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -284,7 +284,7 @@ func (m *ServicePrincipalItemRequestBuilder) EndpointsById(id string)(*iae6f1167
     }
     return iae6f1167638ef01ba227e18af033b58e9203edca74b4641453bc1cec1de3aa91.NewEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get entity from servicePrincipals by key
+// Get get servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -296,7 +296,7 @@ func (m *ServicePrincipalItemRequestBuilder) GetMemberGroups()(*iaa2be345892fc13
 func (m *ServicePrincipalItemRequestBuilder) GetMemberObjects()(*i2c910a3074da68d087d5c6fc96ab8be3cf4e54ef4ec7985acd4e132e52d42137.GetMemberObjectsRequestBuilder) {
     return i2c910a3074da68d087d5c6fc96ab8be3cf4e54ef4ec7985acd4e132e52d42137.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get entity from servicePrincipals by key
+// GetWithRequestConfigurationAndResponseHandler get servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ServicePrincipalItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -387,11 +387,11 @@ func (m *ServicePrincipalItemRequestBuilder) OwnersById(id string)(*ie10051a8bcf
     }
     return ie10051a8bcf74fee28b7346347c913cf4c35b13dc5337d6b1877c19ead0529ae.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update entity in servicePrincipals
+// Patch assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
 func (m *ServicePrincipalItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update entity in servicePrincipals
+// PatchWithRequestConfigurationAndResponseHandler assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
 func (m *ServicePrincipalItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable, requestConfiguration *ServicePrincipalItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

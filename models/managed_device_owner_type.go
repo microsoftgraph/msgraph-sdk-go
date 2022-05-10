@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of drive entities.
 type ManagedDeviceOwnerType int
 
 const (
+    // Unknown.
     UNKNOWN_MANAGEDDEVICEOWNERTYPE ManagedDeviceOwnerType = iota
+    // Owned by company.
     COMPANY_MANAGEDDEVICEOWNERTYPE
+    // Owned by person.
     PERSONAL_MANAGEDDEVICEOWNERTYPE
 )
 
 func (i ManagedDeviceOwnerType) String() string {
-    return []string{"UNKNOWN", "COMPANY", "PERSONAL"}[i]
+    return []string{"unknown", "company", "personal"}[i]
 }
 func ParseManagedDeviceOwnerType(v string) (interface{}, error) {
     result := UNKNOWN_MANAGEDDEVICEOWNERTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_MANAGEDDEVICEOWNERTYPE
-        case "COMPANY":
+        case "company":
             result = COMPANY_MANAGEDDEVICEOWNERTYPE
-        case "PERSONAL":
+        case "personal":
             result = PERSONAL_MANAGEDDEVICEOWNERTYPE
         default:
             return 0, errors.New("Unknown ManagedDeviceOwnerType value: " + v)

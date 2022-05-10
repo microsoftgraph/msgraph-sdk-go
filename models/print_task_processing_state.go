@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i PrintTaskProcessingState) String() string {
-    return []string{"PENDING", "PROCESSING", "COMPLETED", "ABORTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"pending", "processing", "completed", "aborted", "unknownFutureValue"}[i]
 }
 func ParsePrintTaskProcessingState(v string) (interface{}, error) {
     result := PENDING_PRINTTASKPROCESSINGSTATE
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_PRINTTASKPROCESSINGSTATE
-        case "PROCESSING":
+        case "processing":
             result = PROCESSING_PRINTTASKPROCESSINGSTATE
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_PRINTTASKPROCESSINGSTATE
-        case "ABORTED":
+        case "aborted":
             result = ABORTED_PRINTTASKPROCESSINGSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTTASKPROCESSINGSTATE
         default:
             return 0, errors.New("Unknown PrintTaskProcessingState value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of orgContact entities.
@@ -20,30 +19,30 @@ const (
 )
 
 func (i PhoneType) String() string {
-    return []string{"HOME", "BUSINESS", "MOBILE", "OTHER", "ASSISTANT", "HOMEFAX", "BUSINESSFAX", "OTHERFAX", "PAGER", "RADIO"}[i]
+    return []string{"home", "business", "mobile", "other", "assistant", "homeFax", "businessFax", "otherFax", "pager", "radio"}[i]
 }
 func ParsePhoneType(v string) (interface{}, error) {
     result := HOME_PHONETYPE
-    switch strings.ToUpper(v) {
-        case "HOME":
+    switch v {
+        case "home":
             result = HOME_PHONETYPE
-        case "BUSINESS":
+        case "business":
             result = BUSINESS_PHONETYPE
-        case "MOBILE":
+        case "mobile":
             result = MOBILE_PHONETYPE
-        case "OTHER":
+        case "other":
             result = OTHER_PHONETYPE
-        case "ASSISTANT":
+        case "assistant":
             result = ASSISTANT_PHONETYPE
-        case "HOMEFAX":
+        case "homeFax":
             result = HOMEFAX_PHONETYPE
-        case "BUSINESSFAX":
+        case "businessFax":
             result = BUSINESSFAX_PHONETYPE
-        case "OTHERFAX":
+        case "otherFax":
             result = OTHERFAX_PHONETYPE
-        case "PAGER":
+        case "pager":
             result = PAGER_PHONETYPE
-        case "RADIO":
+        case "radio":
             result = RADIO_PHONETYPE
         default:
             return 0, errors.New("Unknown PhoneType value: " + v)

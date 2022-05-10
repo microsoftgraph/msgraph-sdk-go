@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i IdentityUserFlowAttributeDataType) String() string {
-    return []string{"STRING", "BOOLEAN", "INT64", "STRINGCOLLECTION", "DATETIME", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"string", "boolean", "int64", "stringCollection", "dateTime", "unknownFutureValue"}[i]
 }
 func ParseIdentityUserFlowAttributeDataType(v string) (interface{}, error) {
     result := STRING_IDENTITYUSERFLOWATTRIBUTEDATATYPE
-    switch strings.ToUpper(v) {
-        case "STRING":
+    switch v {
+        case "string":
             result = STRING_IDENTITYUSERFLOWATTRIBUTEDATATYPE
-        case "BOOLEAN":
+        case "boolean":
             result = BOOLEAN_IDENTITYUSERFLOWATTRIBUTEDATATYPE
-        case "INT64":
+        case "int64":
             result = INT64_IDENTITYUSERFLOWATTRIBUTEDATATYPE
-        case "STRINGCOLLECTION":
+        case "stringCollection":
             result = STRINGCOLLECTION_IDENTITYUSERFLOWATTRIBUTEDATATYPE
-        case "DATETIME":
+        case "dateTime":
             result = DATETIME_IDENTITYUSERFLOWATTRIBUTEDATATYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IDENTITYUSERFLOWATTRIBUTEDATATYPE
         default:
             return 0, errors.New("Unknown IdentityUserFlowAttributeDataType value: " + v)

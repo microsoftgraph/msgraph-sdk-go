@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppPinCharacterSet int
 
 const (
+    // Numeric characters
     NUMERIC_MANAGEDAPPPINCHARACTERSET ManagedAppPinCharacterSet = iota
+    // Alphanumeric and symbolic characters
     ALPHANUMERICANDSYMBOL_MANAGEDAPPPINCHARACTERSET
 )
 
 func (i ManagedAppPinCharacterSet) String() string {
-    return []string{"NUMERIC", "ALPHANUMERICANDSYMBOL"}[i]
+    return []string{"numeric", "alphanumericAndSymbol"}[i]
 }
 func ParseManagedAppPinCharacterSet(v string) (interface{}, error) {
     result := NUMERIC_MANAGEDAPPPINCHARACTERSET
-    switch strings.ToUpper(v) {
-        case "NUMERIC":
+    switch v {
+        case "numeric":
             result = NUMERIC_MANAGEDAPPPINCHARACTERSET
-        case "ALPHANUMERICANDSYMBOL":
+        case "alphanumericAndSymbol":
             result = ALPHANUMERICANDSYMBOL_MANAGEDAPPPINCHARACTERSET
         default:
             return 0, errors.New("Unknown ManagedAppPinCharacterSet value: " + v)

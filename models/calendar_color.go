@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type CalendarColor int
 
 const (
@@ -21,32 +20,32 @@ const (
 )
 
 func (i CalendarColor) String() string {
-    return []string{"AUTO", "LIGHTBLUE", "LIGHTGREEN", "LIGHTORANGE", "LIGHTGRAY", "LIGHTYELLOW", "LIGHTTEAL", "LIGHTPINK", "LIGHTBROWN", "LIGHTRED", "MAXCOLOR"}[i]
+    return []string{"auto", "lightBlue", "lightGreen", "lightOrange", "lightGray", "lightYellow", "lightTeal", "lightPink", "lightBrown", "lightRed", "maxColor"}[i]
 }
 func ParseCalendarColor(v string) (interface{}, error) {
     result := AUTO_CALENDARCOLOR
-    switch strings.ToUpper(v) {
-        case "AUTO":
+    switch v {
+        case "auto":
             result = AUTO_CALENDARCOLOR
-        case "LIGHTBLUE":
+        case "lightBlue":
             result = LIGHTBLUE_CALENDARCOLOR
-        case "LIGHTGREEN":
+        case "lightGreen":
             result = LIGHTGREEN_CALENDARCOLOR
-        case "LIGHTORANGE":
+        case "lightOrange":
             result = LIGHTORANGE_CALENDARCOLOR
-        case "LIGHTGRAY":
+        case "lightGray":
             result = LIGHTGRAY_CALENDARCOLOR
-        case "LIGHTYELLOW":
+        case "lightYellow":
             result = LIGHTYELLOW_CALENDARCOLOR
-        case "LIGHTTEAL":
+        case "lightTeal":
             result = LIGHTTEAL_CALENDARCOLOR
-        case "LIGHTPINK":
+        case "lightPink":
             result = LIGHTPINK_CALENDARCOLOR
-        case "LIGHTBROWN":
+        case "lightBrown":
             result = LIGHTBROWN_CALENDARCOLOR
-        case "LIGHTRED":
+        case "lightRed":
             result = LIGHTRED_CALENDARCOLOR
-        case "MAXCOLOR":
+        case "maxColor":
             result = MAXCOLOR_CALENDARCOLOR
         default:
             return 0, errors.New("Unknown CalendarColor value: " + v)

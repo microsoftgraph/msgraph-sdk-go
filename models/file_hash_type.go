@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i FileHashType) String() string {
-    return []string{"UNKNOWN", "SHA1", "SHA256", "MD5", "AUTHENTICODEHASH256", "LSHASH", "CTPH", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "sha1", "sha256", "md5", "authenticodeHash256", "lsHash", "ctph", "unknownFutureValue"}[i]
 }
 func ParseFileHashType(v string) (interface{}, error) {
     result := UNKNOWN_FILEHASHTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_FILEHASHTYPE
-        case "SHA1":
+        case "sha1":
             result = SHA1_FILEHASHTYPE
-        case "SHA256":
+        case "sha256":
             result = SHA256_FILEHASHTYPE
-        case "MD5":
+        case "md5":
             result = MD5_FILEHASHTYPE
-        case "AUTHENTICODEHASH256":
+        case "authenticodeHash256":
             result = AUTHENTICODEHASH256_FILEHASHTYPE
-        case "LSHASH":
+        case "lsHash":
             result = LSHASH_FILEHASHTYPE
-        case "CTPH":
+        case "ctph":
             result = CTPH_FILEHASHTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FILEHASHTYPE
         default:
             return 0, errors.New("Unknown FileHashType value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the authenticationMethodsPolicy singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AdvancedConfigState) String() string {
-    return []string{"DEFAULT_ESCAPED", "ENABLED", "DISABLED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"default", "enabled", "disabled", "unknownFutureValue"}[i]
 }
 func ParseAdvancedConfigState(v string) (interface{}, error) {
     result := DEFAULT_ESCAPED_ADVANCEDCONFIGSTATE
-    switch strings.ToUpper(v) {
-        case "DEFAULT_ESCAPED":
+    switch v {
+        case "default":
             result = DEFAULT_ESCAPED_ADVANCEDCONFIGSTATE
-        case "ENABLED":
+        case "enabled":
             result = ENABLED_ADVANCEDCONFIGSTATE
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_ADVANCEDCONFIGSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ADVANCEDCONFIGSTATE
         default:
             return 0, errors.New("Unknown AdvancedConfigState value: " + v)

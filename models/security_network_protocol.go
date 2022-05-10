@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -34,58 +33,58 @@ const (
 )
 
 func (i SecurityNetworkProtocol) String() string {
-    return []string{"UNKNOWN", "IP", "ICMP", "IGMP", "GGP", "IPV4", "TCP", "PUP", "UDP", "IDP", "IPV6", "IPV6ROUTINGHEADER", "IPV6FRAGMENTHEADER", "IPSECENCAPSULATINGSECURITYPAYLOAD", "IPSECAUTHENTICATIONHEADER", "ICMPV6", "IPV6NONEXTHEADER", "IPV6DESTINATIONOPTIONS", "ND", "RAW", "IPX", "SPX", "SPXII", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "ip", "icmp", "igmp", "ggp", "ipv4", "tcp", "pup", "udp", "idp", "ipv6", "ipv6RoutingHeader", "ipv6FragmentHeader", "ipSecEncapsulatingSecurityPayload", "ipSecAuthenticationHeader", "icmpV6", "ipv6NoNextHeader", "ipv6DestinationOptions", "nd", "raw", "ipx", "spx", "spxII", "unknownFutureValue"}[i]
 }
 func ParseSecurityNetworkProtocol(v string) (interface{}, error) {
     result := UNKNOWN_SECURITYNETWORKPROTOCOL
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_SECURITYNETWORKPROTOCOL
-        case "IP":
+        case "ip":
             result = IP_SECURITYNETWORKPROTOCOL
-        case "ICMP":
+        case "icmp":
             result = ICMP_SECURITYNETWORKPROTOCOL
-        case "IGMP":
+        case "igmp":
             result = IGMP_SECURITYNETWORKPROTOCOL
-        case "GGP":
+        case "ggp":
             result = GGP_SECURITYNETWORKPROTOCOL
-        case "IPV4":
+        case "ipv4":
             result = IPV4_SECURITYNETWORKPROTOCOL
-        case "TCP":
+        case "tcp":
             result = TCP_SECURITYNETWORKPROTOCOL
-        case "PUP":
+        case "pup":
             result = PUP_SECURITYNETWORKPROTOCOL
-        case "UDP":
+        case "udp":
             result = UDP_SECURITYNETWORKPROTOCOL
-        case "IDP":
+        case "idp":
             result = IDP_SECURITYNETWORKPROTOCOL
-        case "IPV6":
+        case "ipv6":
             result = IPV6_SECURITYNETWORKPROTOCOL
-        case "IPV6ROUTINGHEADER":
+        case "ipv6RoutingHeader":
             result = IPV6ROUTINGHEADER_SECURITYNETWORKPROTOCOL
-        case "IPV6FRAGMENTHEADER":
+        case "ipv6FragmentHeader":
             result = IPV6FRAGMENTHEADER_SECURITYNETWORKPROTOCOL
-        case "IPSECENCAPSULATINGSECURITYPAYLOAD":
+        case "ipSecEncapsulatingSecurityPayload":
             result = IPSECENCAPSULATINGSECURITYPAYLOAD_SECURITYNETWORKPROTOCOL
-        case "IPSECAUTHENTICATIONHEADER":
+        case "ipSecAuthenticationHeader":
             result = IPSECAUTHENTICATIONHEADER_SECURITYNETWORKPROTOCOL
-        case "ICMPV6":
+        case "icmpV6":
             result = ICMPV6_SECURITYNETWORKPROTOCOL
-        case "IPV6NONEXTHEADER":
+        case "ipv6NoNextHeader":
             result = IPV6NONEXTHEADER_SECURITYNETWORKPROTOCOL
-        case "IPV6DESTINATIONOPTIONS":
+        case "ipv6DestinationOptions":
             result = IPV6DESTINATIONOPTIONS_SECURITYNETWORKPROTOCOL
-        case "ND":
+        case "nd":
             result = ND_SECURITYNETWORKPROTOCOL
-        case "RAW":
+        case "raw":
             result = RAW_SECURITYNETWORKPROTOCOL
-        case "IPX":
+        case "ipx":
             result = IPX_SECURITYNETWORKPROTOCOL
-        case "SPX":
+        case "spx":
             result = SPX_SECURITYNETWORKPROTOCOL
-        case "SPXII":
+        case "spxII":
             result = SPXII_SECURITYNETWORKPROTOCOL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SECURITYNETWORKPROTOCOL
         default:
             return 0, errors.New("Unknown SecurityNetworkProtocol value: " + v)

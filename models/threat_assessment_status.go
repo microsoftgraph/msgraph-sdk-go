@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the informationProtection singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i ThreatAssessmentStatus) String() string {
-    return []string{"PENDING", "COMPLETED"}[i]
+    return []string{"pending", "completed"}[i]
 }
 func ParseThreatAssessmentStatus(v string) (interface{}, error) {
     result := PENDING_THREATASSESSMENTSTATUS
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_THREATASSESSMENTSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_THREATASSESSMENTSTATUS
         default:
             return 0, errors.New("Unknown ThreatAssessmentStatus value: " + v)

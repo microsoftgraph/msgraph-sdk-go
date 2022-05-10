@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type AttendeeType int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AttendeeType) String() string {
-    return []string{"REQUIRED", "OPTIONAL", "RESOURCE"}[i]
+    return []string{"required", "optional", "resource"}[i]
 }
 func ParseAttendeeType(v string) (interface{}, error) {
     result := REQUIRED_ATTENDEETYPE
-    switch strings.ToUpper(v) {
-        case "REQUIRED":
+    switch v {
+        case "required":
             result = REQUIRED_ATTENDEETYPE
-        case "OPTIONAL":
+        case "optional":
             result = OPTIONAL_ATTENDEETYPE
-        case "RESOURCE":
+        case "resource":
             result = RESOURCE_ATTENDEETYPE
         default:
             return 0, errors.New("Unknown AttendeeType value: " + v)

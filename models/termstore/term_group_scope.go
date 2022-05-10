@@ -1,9 +1,8 @@
 package termstore
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type TermGroupScope int
 
 const (
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TermGroupScope) String() string {
-    return []string{"GLOBAL", "SYSTEM", "SITECOLLECTION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"global", "system", "siteCollection", "unknownFutureValue"}[i]
 }
 func ParseTermGroupScope(v string) (interface{}, error) {
     result := GLOBAL_TERMGROUPSCOPE
-    switch strings.ToUpper(v) {
-        case "GLOBAL":
+    switch v {
+        case "global":
             result = GLOBAL_TERMGROUPSCOPE
-        case "SYSTEM":
+        case "system":
             result = SYSTEM_TERMGROUPSCOPE
-        case "SITECOLLECTION":
+        case "siteCollection":
             result = SITECOLLECTION_TERMGROUPSCOPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TERMGROUPSCOPE
         default:
             return 0, errors.New("Unknown TermGroupScope value: " + v)

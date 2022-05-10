@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of chat entities.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i TeamworkUserIdentityType) String() string {
-    return []string{"AADUSER", "ONPREMISEAADUSER", "ANONYMOUSGUEST", "FEDERATEDUSER", "PERSONALMICROSOFTACCOUNTUSER", "SKYPEUSER", "PHONEUSER", "UNKNOWNFUTUREVALUE", "EMAILUSER"}[i]
+    return []string{"aadUser", "onPremiseAadUser", "anonymousGuest", "federatedUser", "personalMicrosoftAccountUser", "skypeUser", "phoneUser", "unknownFutureValue", "emailUser"}[i]
 }
 func ParseTeamworkUserIdentityType(v string) (interface{}, error) {
     result := AADUSER_TEAMWORKUSERIDENTITYTYPE
-    switch strings.ToUpper(v) {
-        case "AADUSER":
+    switch v {
+        case "aadUser":
             result = AADUSER_TEAMWORKUSERIDENTITYTYPE
-        case "ONPREMISEAADUSER":
+        case "onPremiseAadUser":
             result = ONPREMISEAADUSER_TEAMWORKUSERIDENTITYTYPE
-        case "ANONYMOUSGUEST":
+        case "anonymousGuest":
             result = ANONYMOUSGUEST_TEAMWORKUSERIDENTITYTYPE
-        case "FEDERATEDUSER":
+        case "federatedUser":
             result = FEDERATEDUSER_TEAMWORKUSERIDENTITYTYPE
-        case "PERSONALMICROSOFTACCOUNTUSER":
+        case "personalMicrosoftAccountUser":
             result = PERSONALMICROSOFTACCOUNTUSER_TEAMWORKUSERIDENTITYTYPE
-        case "SKYPEUSER":
+        case "skypeUser":
             result = SKYPEUSER_TEAMWORKUSERIDENTITYTYPE
-        case "PHONEUSER":
+        case "phoneUser":
             result = PHONEUSER_TEAMWORKUSERIDENTITYTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKUSERIDENTITYTYPE
-        case "EMAILUSER":
+        case "emailUser":
             result = EMAILUSER_TEAMWORKUSERIDENTITYTYPE
         default:
             return 0, errors.New("Unknown TeamworkUserIdentityType value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i BroadcastMeetingAudience) String() string {
-    return []string{"ROLEISATTENDEE", "ORGANIZATION", "EVERYONE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"roleIsAttendee", "organization", "everyone", "unknownFutureValue"}[i]
 }
 func ParseBroadcastMeetingAudience(v string) (interface{}, error) {
     result := ROLEISATTENDEE_BROADCASTMEETINGAUDIENCE
-    switch strings.ToUpper(v) {
-        case "ROLEISATTENDEE":
+    switch v {
+        case "roleIsAttendee":
             result = ROLEISATTENDEE_BROADCASTMEETINGAUDIENCE
-        case "ORGANIZATION":
+        case "organization":
             result = ORGANIZATION_BROADCASTMEETINGAUDIENCE
-        case "EVERYONE":
+        case "everyone":
             result = EVERYONE_BROADCASTMEETINGAUDIENCE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROADCASTMEETINGAUDIENCE
         default:
             return 0, errors.New("Unknown BroadcastMeetingAudience value: " + v)

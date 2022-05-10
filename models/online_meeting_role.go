@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i OnlineMeetingRole) String() string {
-    return []string{"ATTENDEE", "PRESENTER", "UNKNOWNFUTUREVALUE", "PRODUCER"}[i]
+    return []string{"attendee", "presenter", "unknownFutureValue", "producer"}[i]
 }
 func ParseOnlineMeetingRole(v string) (interface{}, error) {
     result := ATTENDEE_ONLINEMEETINGROLE
-    switch strings.ToUpper(v) {
-        case "ATTENDEE":
+    switch v {
+        case "attendee":
             result = ATTENDEE_ONLINEMEETINGROLE
-        case "PRESENTER":
+        case "presenter":
             result = PRESENTER_ONLINEMEETINGROLE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ONLINEMEETINGROLE
-        case "PRODUCER":
+        case "producer":
             result = PRODUCER_ONLINEMEETINGROLE
         default:
             return 0, errors.New("Unknown OnlineMeetingRole value: " + v)

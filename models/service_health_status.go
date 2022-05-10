@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -28,46 +27,46 @@ const (
 )
 
 func (i ServiceHealthStatus) String() string {
-    return []string{"SERVICEOPERATIONAL", "INVESTIGATING", "RESTORINGSERVICE", "VERIFYINGSERVICE", "SERVICERESTORED", "POSTINCIDENTREVIEWPUBLISHED", "SERVICEDEGRADATION", "SERVICEINTERRUPTION", "EXTENDEDRECOVERY", "FALSEPOSITIVE", "INVESTIGATIONSUSPENDED", "RESOLVED", "MITIGATEDEXTERNAL", "MITIGATED", "RESOLVEDEXTERNAL", "CONFIRMED", "REPORTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"serviceOperational", "investigating", "restoringService", "verifyingService", "serviceRestored", "postIncidentReviewPublished", "serviceDegradation", "serviceInterruption", "extendedRecovery", "falsePositive", "investigationSuspended", "resolved", "mitigatedExternal", "mitigated", "resolvedExternal", "confirmed", "reported", "unknownFutureValue"}[i]
 }
 func ParseServiceHealthStatus(v string) (interface{}, error) {
     result := SERVICEOPERATIONAL_SERVICEHEALTHSTATUS
-    switch strings.ToUpper(v) {
-        case "SERVICEOPERATIONAL":
+    switch v {
+        case "serviceOperational":
             result = SERVICEOPERATIONAL_SERVICEHEALTHSTATUS
-        case "INVESTIGATING":
+        case "investigating":
             result = INVESTIGATING_SERVICEHEALTHSTATUS
-        case "RESTORINGSERVICE":
+        case "restoringService":
             result = RESTORINGSERVICE_SERVICEHEALTHSTATUS
-        case "VERIFYINGSERVICE":
+        case "verifyingService":
             result = VERIFYINGSERVICE_SERVICEHEALTHSTATUS
-        case "SERVICERESTORED":
+        case "serviceRestored":
             result = SERVICERESTORED_SERVICEHEALTHSTATUS
-        case "POSTINCIDENTREVIEWPUBLISHED":
+        case "postIncidentReviewPublished":
             result = POSTINCIDENTREVIEWPUBLISHED_SERVICEHEALTHSTATUS
-        case "SERVICEDEGRADATION":
+        case "serviceDegradation":
             result = SERVICEDEGRADATION_SERVICEHEALTHSTATUS
-        case "SERVICEINTERRUPTION":
+        case "serviceInterruption":
             result = SERVICEINTERRUPTION_SERVICEHEALTHSTATUS
-        case "EXTENDEDRECOVERY":
+        case "extendedRecovery":
             result = EXTENDEDRECOVERY_SERVICEHEALTHSTATUS
-        case "FALSEPOSITIVE":
+        case "falsePositive":
             result = FALSEPOSITIVE_SERVICEHEALTHSTATUS
-        case "INVESTIGATIONSUSPENDED":
+        case "investigationSuspended":
             result = INVESTIGATIONSUSPENDED_SERVICEHEALTHSTATUS
-        case "RESOLVED":
+        case "resolved":
             result = RESOLVED_SERVICEHEALTHSTATUS
-        case "MITIGATEDEXTERNAL":
+        case "mitigatedExternal":
             result = MITIGATEDEXTERNAL_SERVICEHEALTHSTATUS
-        case "MITIGATED":
+        case "mitigated":
             result = MITIGATED_SERVICEHEALTHSTATUS
-        case "RESOLVEDEXTERNAL":
+        case "resolvedExternal":
             result = RESOLVEDEXTERNAL_SERVICEHEALTHSTATUS
-        case "CONFIRMED":
+        case "confirmed":
             result = CONFIRMED_SERVICEHEALTHSTATUS
-        case "REPORTED":
+        case "reported":
             result = REPORTED_SERVICEHEALTHSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEHEALTHSTATUS
         default:
             return 0, errors.New("Unknown ServiceHealthStatus value: " + v)

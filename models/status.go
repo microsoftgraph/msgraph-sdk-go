@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type Status int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i Status) String() string {
-    return []string{"ACTIVE", "UPDATED", "DELETED", "IGNORED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"active", "updated", "deleted", "ignored", "unknownFutureValue"}[i]
 }
 func ParseStatus(v string) (interface{}, error) {
     result := ACTIVE_STATUS
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "active":
             result = ACTIVE_STATUS
-        case "UPDATED":
+        case "updated":
             result = UPDATED_STATUS
-        case "DELETED":
+        case "deleted":
             result = DELETED_STATUS
-        case "IGNORED":
+        case "ignored":
             result = IGNORED_STATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_STATUS
         default:
             return 0, errors.New("Unknown Status value: " + v)

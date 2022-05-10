@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i EducationSubmissionStatus) String() string {
-    return []string{"WORKING", "SUBMITTED", "RELEASED", "RETURNED", "UNKNOWNFUTUREVALUE", "REASSIGNED"}[i]
+    return []string{"working", "submitted", "released", "returned", "unknownFutureValue", "reassigned"}[i]
 }
 func ParseEducationSubmissionStatus(v string) (interface{}, error) {
     result := WORKING_EDUCATIONSUBMISSIONSTATUS
-    switch strings.ToUpper(v) {
-        case "WORKING":
+    switch v {
+        case "working":
             result = WORKING_EDUCATIONSUBMISSIONSTATUS
-        case "SUBMITTED":
+        case "submitted":
             result = SUBMITTED_EDUCATIONSUBMISSIONSTATUS
-        case "RELEASED":
+        case "released":
             result = RELEASED_EDUCATIONSUBMISSIONSTATUS
-        case "RETURNED":
+        case "returned":
             result = RETURNED_EDUCATIONSUBMISSIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONSUBMISSIONSTATUS
-        case "REASSIGNED":
+        case "reassigned":
             result = REASSIGNED_EDUCATIONSUBMISSIONSTATUS
         default:
             return 0, errors.New("Unknown EducationSubmissionStatus value: " + v)

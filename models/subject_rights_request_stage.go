@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the privacy singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i SubjectRightsRequestStage) String() string {
-    return []string{"CONTENTRETRIEVAL", "CONTENTREVIEW", "GENERATEREPORT", "CONTENTDELETION", "CASERESOLVED", "CONTENTESTIMATE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"contentRetrieval", "contentReview", "generateReport", "contentDeletion", "caseResolved", "contentEstimate", "unknownFutureValue"}[i]
 }
 func ParseSubjectRightsRequestStage(v string) (interface{}, error) {
     result := CONTENTRETRIEVAL_SUBJECTRIGHTSREQUESTSTAGE
-    switch strings.ToUpper(v) {
-        case "CONTENTRETRIEVAL":
+    switch v {
+        case "contentRetrieval":
             result = CONTENTRETRIEVAL_SUBJECTRIGHTSREQUESTSTAGE
-        case "CONTENTREVIEW":
+        case "contentReview":
             result = CONTENTREVIEW_SUBJECTRIGHTSREQUESTSTAGE
-        case "GENERATEREPORT":
+        case "generateReport":
             result = GENERATEREPORT_SUBJECTRIGHTSREQUESTSTAGE
-        case "CONTENTDELETION":
+        case "contentDeletion":
             result = CONTENTDELETION_SUBJECTRIGHTSREQUESTSTAGE
-        case "CASERESOLVED":
+        case "caseResolved":
             result = CASERESOLVED_SUBJECTRIGHTSREQUESTSTAGE
-        case "CONTENTESTIMATE":
+        case "contentEstimate":
             result = CONTENTESTIMATE_SUBJECTRIGHTSREQUESTSTAGE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTAGE
         default:
             return 0, errors.New("Unknown SubjectRightsRequestStage value: " + v)

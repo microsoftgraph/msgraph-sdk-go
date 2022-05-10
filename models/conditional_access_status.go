@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ConditionalAccessStatus) String() string {
-    return []string{"SUCCESS", "FAILURE", "NOTAPPLIED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"success", "failure", "notApplied", "unknownFutureValue"}[i]
 }
 func ParseConditionalAccessStatus(v string) (interface{}, error) {
     result := SUCCESS_CONDITIONALACCESSSTATUS
-    switch strings.ToUpper(v) {
-        case "SUCCESS":
+    switch v {
+        case "success":
             result = SUCCESS_CONDITIONALACCESSSTATUS
-        case "FAILURE":
+        case "failure":
             result = FAILURE_CONDITIONALACCESSSTATUS
-        case "NOTAPPLIED":
+        case "notApplied":
             result = NOTAPPLIED_CONDITIONALACCESSSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSSTATUS
         default:
             return 0, errors.New("Unknown ConditionalAccessStatus value: " + v)

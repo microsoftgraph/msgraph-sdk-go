@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ConnectedOrganizationState) String() string {
-    return []string{"CONFIGURED", "PROPOSED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"configured", "proposed", "unknownFutureValue"}[i]
 }
 func ParseConnectedOrganizationState(v string) (interface{}, error) {
     result := CONFIGURED_CONNECTEDORGANIZATIONSTATE
-    switch strings.ToUpper(v) {
-        case "CONFIGURED":
+    switch v {
+        case "configured":
             result = CONFIGURED_CONNECTEDORGANIZATIONSTATE
-        case "PROPOSED":
+        case "proposed":
             result = PROPOSED_CONNECTEDORGANIZATIONSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTEDORGANIZATIONSTATE
         default:
             return 0, errors.New("Unknown ConnectedOrganizationState value: " + v)

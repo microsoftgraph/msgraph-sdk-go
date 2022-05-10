@@ -44,7 +44,7 @@ type ChatMessage struct {
     policyViolation ChatMessagePolicyViolationable
     // Reactions for this chat message (for example, Like).
     reactions []ChatMessageReactionable
-    // Replies for a specified message.
+    // Replies for a specified message. Supports $expand for channel messages.
     replies []ChatMessageable
     // Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
     replyToId *string
@@ -465,7 +465,7 @@ func (m *ChatMessage) GetReactions()([]ChatMessageReactionable) {
         return m.reactions
     }
 }
-// GetReplies gets the replies property value. Replies for a specified message.
+// GetReplies gets the replies property value. Replies for a specified message. Supports $expand for channel messages.
 func (m *ChatMessage) GetReplies()([]ChatMessageable) {
     if m == nil {
         return nil
@@ -781,7 +781,7 @@ func (m *ChatMessage) SetReactions(value []ChatMessageReactionable)() {
         m.reactions = value
     }
 }
-// SetReplies sets the replies property value. Replies for a specified message.
+// SetReplies sets the replies property value. Replies for a specified message. Supports $expand for channel messages.
 func (m *ChatMessage) SetReplies(value []ChatMessageable)() {
     if m != nil {
         m.replies = value

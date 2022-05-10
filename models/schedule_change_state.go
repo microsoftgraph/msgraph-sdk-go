@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type ScheduleChangeState int
 
 const (
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ScheduleChangeState) String() string {
-    return []string{"PENDING", "APPROVED", "DECLINED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"pending", "approved", "declined", "unknownFutureValue"}[i]
 }
 func ParseScheduleChangeState(v string) (interface{}, error) {
     result := PENDING_SCHEDULECHANGESTATE
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_SCHEDULECHANGESTATE
-        case "APPROVED":
+        case "approved":
             result = APPROVED_SCHEDULECHANGESTATE
-        case "DECLINED":
+        case "declined":
             result = DECLINED_SCHEDULECHANGESTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCHEDULECHANGESTATE
         default:
             return 0, errors.New("Unknown ScheduleChangeState value: " + v)

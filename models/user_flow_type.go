@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i UserFlowType) String() string {
-    return []string{"SIGNUP", "SIGNIN", "SIGNUPORSIGNIN", "PASSWORDRESET", "PROFILEUPDATE", "RESOURCEOWNER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"signUp", "signIn", "signUpOrSignIn", "passwordReset", "profileUpdate", "resourceOwner", "unknownFutureValue"}[i]
 }
 func ParseUserFlowType(v string) (interface{}, error) {
     result := SIGNUP_USERFLOWTYPE
-    switch strings.ToUpper(v) {
-        case "SIGNUP":
+    switch v {
+        case "signUp":
             result = SIGNUP_USERFLOWTYPE
-        case "SIGNIN":
+        case "signIn":
             result = SIGNIN_USERFLOWTYPE
-        case "SIGNUPORSIGNIN":
+        case "signUpOrSignIn":
             result = SIGNUPORSIGNIN_USERFLOWTYPE
-        case "PASSWORDRESET":
+        case "passwordReset":
             result = PASSWORDRESET_USERFLOWTYPE
-        case "PROFILEUPDATE":
+        case "profileUpdate":
             result = PROFILEUPDATE_USERFLOWTYPE
-        case "RESOURCEOWNER":
+        case "resourceOwner":
             result = RESOURCEOWNER_USERFLOWTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERFLOWTYPE
         default:
             return 0, errors.New("Unknown UserFlowType value: " + v)

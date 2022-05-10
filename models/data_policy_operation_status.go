@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of dataPolicyOperation entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i DataPolicyOperationStatus) String() string {
-    return []string{"NOTSTARTED", "RUNNING", "COMPLETE", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notStarted", "running", "complete", "failed", "unknownFutureValue"}[i]
 }
 func ParseDataPolicyOperationStatus(v string) (interface{}, error) {
     result := NOTSTARTED_DATAPOLICYOPERATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "notStarted":
             result = NOTSTARTED_DATAPOLICYOPERATIONSTATUS
-        case "RUNNING":
+        case "running":
             result = RUNNING_DATAPOLICYOPERATIONSTATUS
-        case "COMPLETE":
+        case "complete":
             result = COMPLETE_DATAPOLICYOPERATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_DATAPOLICYOPERATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATAPOLICYOPERATIONSTATUS
         default:
             return 0, errors.New("Unknown DataPolicyOperationStatus value: " + v)

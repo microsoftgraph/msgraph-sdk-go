@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i NetworkConnectionType) String() string {
-    return []string{"UNKNOWN", "WIRED", "WIFI", "MOBILE", "TUNNEL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "wired", "wifi", "mobile", "tunnel", "unknownFutureValue"}[i]
 }
 func ParseNetworkConnectionType(v string) (interface{}, error) {
     result := UNKNOWN_NETWORKCONNECTIONTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_NETWORKCONNECTIONTYPE
-        case "WIRED":
+        case "wired":
             result = WIRED_NETWORKCONNECTIONTYPE
-        case "WIFI":
+        case "wifi":
             result = WIFI_NETWORKCONNECTIONTYPE
-        case "MOBILE":
+        case "mobile":
             result = MOBILE_NETWORKCONNECTIONTYPE
-        case "TUNNEL":
+        case "tunnel":
             result = TUNNEL_NETWORKCONNECTIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NETWORKCONNECTIONTYPE
         default:
             return 0, errors.New("Unknown NetworkConnectionType value: " + v)

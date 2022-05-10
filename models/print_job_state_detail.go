@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i PrintJobStateDetail) String() string {
-    return []string{"UPLOADPENDING", "TRANSFORMING", "COMPLETEDSUCCESSFULLY", "COMPLETEDWITHWARNINGS", "COMPLETEDWITHERRORS", "RELEASEWAIT", "INTERPRETING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"uploadPending", "transforming", "completedSuccessfully", "completedWithWarnings", "completedWithErrors", "releaseWait", "interpreting", "unknownFutureValue"}[i]
 }
 func ParsePrintJobStateDetail(v string) (interface{}, error) {
     result := UPLOADPENDING_PRINTJOBSTATEDETAIL
-    switch strings.ToUpper(v) {
-        case "UPLOADPENDING":
+    switch v {
+        case "uploadPending":
             result = UPLOADPENDING_PRINTJOBSTATEDETAIL
-        case "TRANSFORMING":
+        case "transforming":
             result = TRANSFORMING_PRINTJOBSTATEDETAIL
-        case "COMPLETEDSUCCESSFULLY":
+        case "completedSuccessfully":
             result = COMPLETEDSUCCESSFULLY_PRINTJOBSTATEDETAIL
-        case "COMPLETEDWITHWARNINGS":
+        case "completedWithWarnings":
             result = COMPLETEDWITHWARNINGS_PRINTJOBSTATEDETAIL
-        case "COMPLETEDWITHERRORS":
+        case "completedWithErrors":
             result = COMPLETEDWITHERRORS_PRINTJOBSTATEDETAIL
-        case "RELEASEWAIT":
+        case "releaseWait":
             result = RELEASEWAIT_PRINTJOBSTATEDETAIL
-        case "INTERPRETING":
+        case "interpreting":
             result = INTERPRETING_PRINTJOBSTATEDETAIL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTJOBSTATEDETAIL
         default:
             return 0, errors.New("Unknown PrintJobStateDetail value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i CloudAppSecuritySessionControlType) String() string {
-    return []string{"MCASCONFIGURED", "MONITORONLY", "BLOCKDOWNLOADS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"mcasConfigured", "monitorOnly", "blockDownloads", "unknownFutureValue"}[i]
 }
 func ParseCloudAppSecuritySessionControlType(v string) (interface{}, error) {
     result := MCASCONFIGURED_CLOUDAPPSECURITYSESSIONCONTROLTYPE
-    switch strings.ToUpper(v) {
-        case "MCASCONFIGURED":
+    switch v {
+        case "mcasConfigured":
             result = MCASCONFIGURED_CLOUDAPPSECURITYSESSIONCONTROLTYPE
-        case "MONITORONLY":
+        case "monitorOnly":
             result = MONITORONLY_CLOUDAPPSECURITYSESSIONCONTROLTYPE
-        case "BLOCKDOWNLOADS":
+        case "blockDownloads":
             result = BLOCKDOWNLOADS_CLOUDAPPSECURITYSESSIONCONTROLTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDAPPSECURITYSESSIONCONTROLTYPE
         default:
             return 0, errors.New("Unknown CloudAppSecuritySessionControlType value: " + v)

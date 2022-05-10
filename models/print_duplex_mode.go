@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PrintDuplexMode) String() string {
-    return []string{"FLIPONLONGEDGE", "FLIPONSHORTEDGE", "ONESIDED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"flipOnLongEdge", "flipOnShortEdge", "oneSided", "unknownFutureValue"}[i]
 }
 func ParsePrintDuplexMode(v string) (interface{}, error) {
     result := FLIPONLONGEDGE_PRINTDUPLEXMODE
-    switch strings.ToUpper(v) {
-        case "FLIPONLONGEDGE":
+    switch v {
+        case "flipOnLongEdge":
             result = FLIPONLONGEDGE_PRINTDUPLEXMODE
-        case "FLIPONSHORTEDGE":
+        case "flipOnShortEdge":
             result = FLIPONSHORTEDGE_PRINTDUPLEXMODE
-        case "ONESIDED":
+        case "oneSided":
             result = ONESIDED_PRINTDUPLEXMODE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTDUPLEXMODE
         default:
             return 0, errors.New("Unknown PrintDuplexMode value: " + v)

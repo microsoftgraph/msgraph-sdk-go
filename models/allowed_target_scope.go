@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -20,30 +19,30 @@ const (
 )
 
 func (i AllowedTargetScope) String() string {
-    return []string{"NOTSPECIFIED", "SPECIFICDIRECTORYUSERS", "SPECIFICCONNECTEDORGANIZATIONUSERS", "SPECIFICDIRECTORYSERVICEPRINCIPALS", "ALLMEMBERUSERS", "ALLDIRECTORYUSERS", "ALLDIRECTORYSERVICEPRINCIPALS", "ALLCONFIGUREDCONNECTEDORGANIZATIONUSERS", "ALLEXTERNALUSERS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notSpecified", "specificDirectoryUsers", "specificConnectedOrganizationUsers", "specificDirectoryServicePrincipals", "allMemberUsers", "allDirectoryUsers", "allDirectoryServicePrincipals", "allConfiguredConnectedOrganizationUsers", "allExternalUsers", "unknownFutureValue"}[i]
 }
 func ParseAllowedTargetScope(v string) (interface{}, error) {
     result := NOTSPECIFIED_ALLOWEDTARGETSCOPE
-    switch strings.ToUpper(v) {
-        case "NOTSPECIFIED":
+    switch v {
+        case "notSpecified":
             result = NOTSPECIFIED_ALLOWEDTARGETSCOPE
-        case "SPECIFICDIRECTORYUSERS":
+        case "specificDirectoryUsers":
             result = SPECIFICDIRECTORYUSERS_ALLOWEDTARGETSCOPE
-        case "SPECIFICCONNECTEDORGANIZATIONUSERS":
+        case "specificConnectedOrganizationUsers":
             result = SPECIFICCONNECTEDORGANIZATIONUSERS_ALLOWEDTARGETSCOPE
-        case "SPECIFICDIRECTORYSERVICEPRINCIPALS":
+        case "specificDirectoryServicePrincipals":
             result = SPECIFICDIRECTORYSERVICEPRINCIPALS_ALLOWEDTARGETSCOPE
-        case "ALLMEMBERUSERS":
+        case "allMemberUsers":
             result = ALLMEMBERUSERS_ALLOWEDTARGETSCOPE
-        case "ALLDIRECTORYUSERS":
+        case "allDirectoryUsers":
             result = ALLDIRECTORYUSERS_ALLOWEDTARGETSCOPE
-        case "ALLDIRECTORYSERVICEPRINCIPALS":
+        case "allDirectoryServicePrincipals":
             result = ALLDIRECTORYSERVICEPRINCIPALS_ALLOWEDTARGETSCOPE
-        case "ALLCONFIGUREDCONNECTEDORGANIZATIONUSERS":
+        case "allConfiguredConnectedOrganizationUsers":
             result = ALLCONFIGUREDCONNECTEDORGANIZATIONUSERS_ALLOWEDTARGETSCOPE
-        case "ALLEXTERNALUSERS":
+        case "allExternalUsers":
             result = ALLEXTERNALUSERS_ALLOWEDTARGETSCOPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALLOWEDTARGETSCOPE
         default:
             return 0, errors.New("Unknown AllowedTargetScope value: " + v)

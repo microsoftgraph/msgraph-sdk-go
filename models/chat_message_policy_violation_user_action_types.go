@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of chat entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ChatMessagePolicyViolationUserActionTypes) String() string {
-    return []string{"NONE", "OVERRIDE", "REPORTFALSEPOSITIVE"}[i]
+    return []string{"none", "override", "reportFalsePositive"}[i]
 }
 func ParseChatMessagePolicyViolationUserActionTypes(v string) (interface{}, error) {
     result := NONE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
-        case "OVERRIDE":
+        case "override":
             result = OVERRIDE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
-        case "REPORTFALSEPOSITIVE":
+        case "reportFalsePositive":
             result = REPORTFALSEPOSITIVE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
         default:
             return 0, errors.New("Unknown ChatMessagePolicyViolationUserActionTypes value: " + v)

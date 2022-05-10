@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i EducationUserRole) String() string {
-    return []string{"STUDENT", "TEACHER", "NONE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"student", "teacher", "none", "unknownFutureValue"}[i]
 }
 func ParseEducationUserRole(v string) (interface{}, error) {
     result := STUDENT_EDUCATIONUSERROLE
-    switch strings.ToUpper(v) {
-        case "STUDENT":
+    switch v {
+        case "student":
             result = STUDENT_EDUCATIONUSERROLE
-        case "TEACHER":
+        case "teacher":
             result = TEACHER_EDUCATIONUSERROLE
-        case "NONE":
+        case "none":
             result = NONE_EDUCATIONUSERROLE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONUSERROLE
         default:
             return 0, errors.New("Unknown EducationUserRole value: " + v)

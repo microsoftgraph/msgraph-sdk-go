@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of externalConnection entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AccessType) String() string {
-    return []string{"GRANT", "DENY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"grant", "deny", "unknownFutureValue"}[i]
 }
 func ParseAccessType(v string) (interface{}, error) {
     result := GRANT_ACCESSTYPE
-    switch strings.ToUpper(v) {
-        case "GRANT":
+    switch v {
+        case "grant":
             result = GRANT_ACCESSTYPE
-        case "DENY":
+        case "deny":
             result = DENY_ACCESSTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSTYPE
         default:
             return 0, errors.New("Unknown AccessType value: " + v)

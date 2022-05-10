@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AccessPackageSubjectType) String() string {
-    return []string{"NOTSPECIFIED", "USER", "SERVICEPRINCIPAL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notSpecified", "user", "servicePrincipal", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageSubjectType(v string) (interface{}, error) {
     result := NOTSPECIFIED_ACCESSPACKAGESUBJECTTYPE
-    switch strings.ToUpper(v) {
-        case "NOTSPECIFIED":
+    switch v {
+        case "notSpecified":
             result = NOTSPECIFIED_ACCESSPACKAGESUBJECTTYPE
-        case "USER":
+        case "user":
             result = USER_ACCESSPACKAGESUBJECTTYPE
-        case "SERVICEPRINCIPAL":
+        case "servicePrincipal":
             result = SERVICEPRINCIPAL_ACCESSPACKAGESUBJECTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGESUBJECTTYPE
         default:
             return 0, errors.New("Unknown AccessPackageSubjectType value: " + v)

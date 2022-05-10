@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type WorkbookOperationStatus int
 
 const (
@@ -14,18 +13,18 @@ const (
 )
 
 func (i WorkbookOperationStatus) String() string {
-    return []string{"NOTSTARTED", "RUNNING", "SUCCEEDED", "FAILED"}[i]
+    return []string{"notStarted", "running", "succeeded", "failed"}[i]
 }
 func ParseWorkbookOperationStatus(v string) (interface{}, error) {
     result := NOTSTARTED_WORKBOOKOPERATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "notStarted":
             result = NOTSTARTED_WORKBOOKOPERATIONSTATUS
-        case "RUNNING":
+        case "running":
             result = RUNNING_WORKBOOKOPERATIONSTATUS
-        case "SUCCEEDED":
+        case "succeeded":
             result = SUCCEEDED_WORKBOOKOPERATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_WORKBOOKOPERATIONSTATUS
         default:
             return 0, errors.New("Unknown WorkbookOperationStatus value: " + v)

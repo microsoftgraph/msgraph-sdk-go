@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i WifiBand) String() string {
-    return []string{"UNKNOWN", "FREQUENCY24GHZ", "FREQUENCY50GHZ", "FREQUENCY60GHZ", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "frequency24GHz", "frequency50GHz", "frequency60GHz", "unknownFutureValue"}[i]
 }
 func ParseWifiBand(v string) (interface{}, error) {
     result := UNKNOWN_WIFIBAND
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_WIFIBAND
-        case "FREQUENCY24GHZ":
+        case "frequency24GHz":
             result = FREQUENCY24GHZ_WIFIBAND
-        case "FREQUENCY50GHZ":
+        case "frequency50GHz":
             result = FREQUENCY50GHZ_WIFIBAND
-        case "FREQUENCY60GHZ":
+        case "frequency60GHz":
             result = FREQUENCY60GHZ_WIFIBAND
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WIFIBAND
         default:
             return 0, errors.New("Unknown WifiBand value: " + v)

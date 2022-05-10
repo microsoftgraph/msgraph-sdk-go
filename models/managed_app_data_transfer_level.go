@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppDataTransferLevel int
 
 const (
+    // All apps.
     ALLAPPS_MANAGEDAPPDATATRANSFERLEVEL ManagedAppDataTransferLevel = iota
+    // Managed apps.
     MANAGEDAPPS_MANAGEDAPPDATATRANSFERLEVEL
+    // No apps.
     NONE_MANAGEDAPPDATATRANSFERLEVEL
 )
 
 func (i ManagedAppDataTransferLevel) String() string {
-    return []string{"ALLAPPS", "MANAGEDAPPS", "NONE"}[i]
+    return []string{"allApps", "managedApps", "none"}[i]
 }
 func ParseManagedAppDataTransferLevel(v string) (interface{}, error) {
     result := ALLAPPS_MANAGEDAPPDATATRANSFERLEVEL
-    switch strings.ToUpper(v) {
-        case "ALLAPPS":
+    switch v {
+        case "allApps":
             result = ALLAPPS_MANAGEDAPPDATATRANSFERLEVEL
-        case "MANAGEDAPPS":
+        case "managedApps":
             result = MANAGEDAPPS_MANAGEDAPPDATATRANSFERLEVEL
-        case "NONE":
+        case "none":
             result = NONE_MANAGEDAPPDATATRANSFERLEVEL
         default:
             return 0, errors.New("Unknown ManagedAppDataTransferLevel value: " + v)

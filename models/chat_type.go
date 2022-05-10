@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of chat entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ChatType) String() string {
-    return []string{"ONEONONE", "GROUP", "MEETING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"oneOnOne", "group", "meeting", "unknownFutureValue"}[i]
 }
 func ParseChatType(v string) (interface{}, error) {
     result := ONEONONE_CHATTYPE
-    switch strings.ToUpper(v) {
-        case "ONEONONE":
+    switch v {
+        case "oneOnOne":
             result = ONEONONE_CHATTYPE
-        case "GROUP":
+        case "group":
             result = GROUP_CHATTYPE
-        case "MEETING":
+        case "meeting":
             result = MEETING_CHATTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CHATTYPE
         default:
             return 0, errors.New("Unknown ChatType value: " + v)

@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type LongRunningOperationStatus int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i LongRunningOperationStatus) String() string {
-    return []string{"NOTSTARTED", "RUNNING", "SUCCEEDED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notStarted", "running", "succeeded", "failed", "unknownFutureValue"}[i]
 }
 func ParseLongRunningOperationStatus(v string) (interface{}, error) {
     result := NOTSTARTED_LONGRUNNINGOPERATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "notStarted":
             result = NOTSTARTED_LONGRUNNINGOPERATIONSTATUS
-        case "RUNNING":
+        case "running":
             result = RUNNING_LONGRUNNINGOPERATIONSTATUS
-        case "SUCCEEDED":
+        case "succeeded":
             result = SUCCEEDED_LONGRUNNINGOPERATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_LONGRUNNINGOPERATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LONGRUNNINGOPERATIONSTATUS
         default:
             return 0, errors.New("Unknown LongRunningOperationStatus value: " + v)

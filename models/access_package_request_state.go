@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -20,30 +19,30 @@ const (
 )
 
 func (i AccessPackageRequestState) String() string {
-    return []string{"SUBMITTED", "PENDINGAPPROVAL", "DELIVERING", "DELIVERED", "DELIVERYFAILED", "DENIED", "SCHEDULED", "CANCELED", "PARTIALLYDELIVERED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"submitted", "pendingApproval", "delivering", "delivered", "deliveryFailed", "denied", "scheduled", "canceled", "partiallyDelivered", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageRequestState(v string) (interface{}, error) {
     result := SUBMITTED_ACCESSPACKAGEREQUESTSTATE
-    switch strings.ToUpper(v) {
-        case "SUBMITTED":
+    switch v {
+        case "submitted":
             result = SUBMITTED_ACCESSPACKAGEREQUESTSTATE
-        case "PENDINGAPPROVAL":
+        case "pendingApproval":
             result = PENDINGAPPROVAL_ACCESSPACKAGEREQUESTSTATE
-        case "DELIVERING":
+        case "delivering":
             result = DELIVERING_ACCESSPACKAGEREQUESTSTATE
-        case "DELIVERED":
+        case "delivered":
             result = DELIVERED_ACCESSPACKAGEREQUESTSTATE
-        case "DELIVERYFAILED":
+        case "deliveryFailed":
             result = DELIVERYFAILED_ACCESSPACKAGEREQUESTSTATE
-        case "DENIED":
+        case "denied":
             result = DENIED_ACCESSPACKAGEREQUESTSTATE
-        case "SCHEDULED":
+        case "scheduled":
             result = SCHEDULED_ACCESSPACKAGEREQUESTSTATE
-        case "CANCELED":
+        case "canceled":
             result = CANCELED_ACCESSPACKAGEREQUESTSTATE
-        case "PARTIALLYDELIVERED":
+        case "partiallyDelivered":
             result = PARTIALLYDELIVERED_ACCESSPACKAGEREQUESTSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEREQUESTSTATE
         default:
             return 0, errors.New("Unknown AccessPackageRequestState value: " + v)

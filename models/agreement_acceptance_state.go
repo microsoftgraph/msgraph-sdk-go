@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of agreement entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AgreementAcceptanceState) String() string {
-    return []string{"ACCEPTED", "DECLINED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"accepted", "declined", "unknownFutureValue"}[i]
 }
 func ParseAgreementAcceptanceState(v string) (interface{}, error) {
     result := ACCEPTED_AGREEMENTACCEPTANCESTATE
-    switch strings.ToUpper(v) {
-        case "ACCEPTED":
+    switch v {
+        case "accepted":
             result = ACCEPTED_AGREEMENTACCEPTANCESTATE
-        case "DECLINED":
+        case "declined":
             result = DECLINED_AGREEMENTACCEPTANCESTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AGREEMENTACCEPTANCESTATE
         default:
             return 0, errors.New("Unknown AgreementAcceptanceState value: " + v)

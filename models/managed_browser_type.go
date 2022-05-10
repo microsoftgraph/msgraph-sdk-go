@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedBrowserType int
 
 const (
+    // Not configured
     NOTCONFIGURED_MANAGEDBROWSERTYPE ManagedBrowserType = iota
+    // Microsoft Edge
     MICROSOFTEDGE_MANAGEDBROWSERTYPE
 )
 
 func (i ManagedBrowserType) String() string {
-    return []string{"NOTCONFIGURED", "MICROSOFTEDGE"}[i]
+    return []string{"notConfigured", "microsoftEdge"}[i]
 }
 func ParseManagedBrowserType(v string) (interface{}, error) {
     result := NOTCONFIGURED_MANAGEDBROWSERTYPE
-    switch strings.ToUpper(v) {
-        case "NOTCONFIGURED":
+    switch v {
+        case "notConfigured":
             result = NOTCONFIGURED_MANAGEDBROWSERTYPE
-        case "MICROSOFTEDGE":
+        case "microsoftEdge":
             result = MICROSOFTEDGE_MANAGEDBROWSERTYPE
         default:
             return 0, errors.New("Unknown ManagedBrowserType value: " + v)

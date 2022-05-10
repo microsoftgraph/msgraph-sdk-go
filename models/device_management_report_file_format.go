@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementReportFileFormat int
 
 const (
+    // Comma-separated values
     CSV_DEVICEMANAGEMENTREPORTFILEFORMAT DeviceManagementReportFileFormat = iota
+    // Portable Document Format
     PDF_DEVICEMANAGEMENTREPORTFILEFORMAT
 )
 
 func (i DeviceManagementReportFileFormat) String() string {
-    return []string{"CSV", "PDF"}[i]
+    return []string{"csv", "pdf"}[i]
 }
 func ParseDeviceManagementReportFileFormat(v string) (interface{}, error) {
     result := CSV_DEVICEMANAGEMENTREPORTFILEFORMAT
-    switch strings.ToUpper(v) {
-        case "CSV":
+    switch v {
+        case "csv":
             result = CSV_DEVICEMANAGEMENTREPORTFILEFORMAT
-        case "PDF":
+        case "pdf":
             result = PDF_DEVICEMANAGEMENTREPORTFILEFORMAT
         default:
             return 0, errors.New("Unknown DeviceManagementReportFileFormat value: " + v)

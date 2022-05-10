@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type ColumnTypes int
 
 const (
@@ -29,48 +28,48 @@ const (
 )
 
 func (i ColumnTypes) String() string {
-    return []string{"NOTE", "TEXT", "CHOICE", "MULTICHOICE", "NUMBER", "CURRENCY", "DATETIME", "LOOKUP", "BOOLEAN", "USER", "URL", "CALCULATED", "LOCATION", "GEOLOCATION", "TERM", "MULTITERM", "THUMBNAIL", "APPROVALSTATUS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"note", "text", "choice", "multichoice", "number", "currency", "dateTime", "lookup", "boolean", "user", "url", "calculated", "location", "geolocation", "term", "multiterm", "thumbnail", "approvalStatus", "unknownFutureValue"}[i]
 }
 func ParseColumnTypes(v string) (interface{}, error) {
     result := NOTE_COLUMNTYPES
-    switch strings.ToUpper(v) {
-        case "NOTE":
+    switch v {
+        case "note":
             result = NOTE_COLUMNTYPES
-        case "TEXT":
+        case "text":
             result = TEXT_COLUMNTYPES
-        case "CHOICE":
+        case "choice":
             result = CHOICE_COLUMNTYPES
-        case "MULTICHOICE":
+        case "multichoice":
             result = MULTICHOICE_COLUMNTYPES
-        case "NUMBER":
+        case "number":
             result = NUMBER_COLUMNTYPES
-        case "CURRENCY":
+        case "currency":
             result = CURRENCY_COLUMNTYPES
-        case "DATETIME":
+        case "dateTime":
             result = DATETIME_COLUMNTYPES
-        case "LOOKUP":
+        case "lookup":
             result = LOOKUP_COLUMNTYPES
-        case "BOOLEAN":
+        case "boolean":
             result = BOOLEAN_COLUMNTYPES
-        case "USER":
+        case "user":
             result = USER_COLUMNTYPES
-        case "URL":
+        case "url":
             result = URL_COLUMNTYPES
-        case "CALCULATED":
+        case "calculated":
             result = CALCULATED_COLUMNTYPES
-        case "LOCATION":
+        case "location":
             result = LOCATION_COLUMNTYPES
-        case "GEOLOCATION":
+        case "geolocation":
             result = GEOLOCATION_COLUMNTYPES
-        case "TERM":
+        case "term":
             result = TERM_COLUMNTYPES
-        case "MULTITERM":
+        case "multiterm":
             result = MULTITERM_COLUMNTYPES
-        case "THUMBNAIL":
+        case "thumbnail":
             result = THUMBNAIL_COLUMNTYPES
-        case "APPROVALSTATUS":
+        case "approvalStatus":
             result = APPROVALSTATUS_COLUMNTYPES
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_COLUMNTYPES
         default:
             return 0, errors.New("Unknown ColumnTypes value: " + v)

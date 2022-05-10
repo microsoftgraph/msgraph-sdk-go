@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i EmailRole) String() string {
-    return []string{"UNKNOWN", "SENDER", "RECIPIENT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "sender", "recipient", "unknownFutureValue"}[i]
 }
 func ParseEmailRole(v string) (interface{}, error) {
     result := UNKNOWN_EMAILROLE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_EMAILROLE
-        case "SENDER":
+        case "sender":
             result = SENDER_EMAILROLE
-        case "RECIPIENT":
+        case "recipient":
             result = RECIPIENT_EMAILROLE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EMAILROLE
         default:
             return 0, errors.New("Unknown EmailRole value: " + v)

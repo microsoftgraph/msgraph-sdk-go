@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i EducationAddedStudentAction) String() string {
-    return []string{"NONE", "ASSIGNIFOPEN", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "assignIfOpen", "unknownFutureValue"}[i]
 }
 func ParseEducationAddedStudentAction(v string) (interface{}, error) {
     result := NONE_EDUCATIONADDEDSTUDENTACTION
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_EDUCATIONADDEDSTUDENTACTION
-        case "ASSIGNIFOPEN":
+        case "assignIfOpen":
             result = ASSIGNIFOPEN_EDUCATIONADDEDSTUDENTACTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONADDEDSTUDENTACTION
         default:
             return 0, errors.New("Unknown EducationAddedStudentAction value: " + v)

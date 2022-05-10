@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the privacy singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i SubjectRightsRequestType) String() string {
-    return []string{"EXPORT", "DELETE", "ACCESS", "TAGFORACTION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"export", "delete", "access", "tagForAction", "unknownFutureValue"}[i]
 }
 func ParseSubjectRightsRequestType(v string) (interface{}, error) {
     result := EXPORT_SUBJECTRIGHTSREQUESTTYPE
-    switch strings.ToUpper(v) {
-        case "EXPORT":
+    switch v {
+        case "export":
             result = EXPORT_SUBJECTRIGHTSREQUESTTYPE
-        case "DELETE":
+        case "delete":
             result = DELETE_SUBJECTRIGHTSREQUESTTYPE
-        case "ACCESS":
+        case "access":
             result = ACCESS_SUBJECTRIGHTSREQUESTTYPE
-        case "TAGFORACTION":
+        case "tagForAction":
             result = TAGFORACTION_SUBJECTRIGHTSREQUESTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTTYPE
         default:
             return 0, errors.New("Unknown SubjectRightsRequestType value: " + v)

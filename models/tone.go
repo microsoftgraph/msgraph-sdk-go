@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -27,44 +26,44 @@ const (
 )
 
 func (i Tone) String() string {
-    return []string{"TONE0", "TONE1", "TONE2", "TONE3", "TONE4", "TONE5", "TONE6", "TONE7", "TONE8", "TONE9", "STAR", "POUND", "A", "B", "C", "D", "FLASH"}[i]
+    return []string{"tone0", "tone1", "tone2", "tone3", "tone4", "tone5", "tone6", "tone7", "tone8", "tone9", "star", "pound", "a", "b", "c", "d", "flash"}[i]
 }
 func ParseTone(v string) (interface{}, error) {
     result := TONE0_TONE
-    switch strings.ToUpper(v) {
-        case "TONE0":
+    switch v {
+        case "tone0":
             result = TONE0_TONE
-        case "TONE1":
+        case "tone1":
             result = TONE1_TONE
-        case "TONE2":
+        case "tone2":
             result = TONE2_TONE
-        case "TONE3":
+        case "tone3":
             result = TONE3_TONE
-        case "TONE4":
+        case "tone4":
             result = TONE4_TONE
-        case "TONE5":
+        case "tone5":
             result = TONE5_TONE
-        case "TONE6":
+        case "tone6":
             result = TONE6_TONE
-        case "TONE7":
+        case "tone7":
             result = TONE7_TONE
-        case "TONE8":
+        case "tone8":
             result = TONE8_TONE
-        case "TONE9":
+        case "tone9":
             result = TONE9_TONE
-        case "STAR":
+        case "star":
             result = STAR_TONE
-        case "POUND":
+        case "pound":
             result = POUND_TONE
-        case "A":
+        case "a":
             result = A_TONE
-        case "B":
+        case "b":
             result = B_TONE
-        case "C":
+        case "c":
             result = C_TONE
-        case "D":
+        case "d":
             result = D_TONE
-        case "FLASH":
+        case "flash":
             result = FLASH_TONE
         default:
             return 0, errors.New("Unknown Tone value: " + v)

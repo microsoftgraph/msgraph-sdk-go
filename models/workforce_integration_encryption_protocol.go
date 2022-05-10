@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i WorkforceIntegrationEncryptionProtocol) String() string {
-    return []string{"SHAREDSECRET", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"sharedSecret", "unknownFutureValue"}[i]
 }
 func ParseWorkforceIntegrationEncryptionProtocol(v string) (interface{}, error) {
     result := SHAREDSECRET_WORKFORCEINTEGRATIONENCRYPTIONPROTOCOL
-    switch strings.ToUpper(v) {
-        case "SHAREDSECRET":
+    switch v {
+        case "sharedSecret":
             result = SHAREDSECRET_WORKFORCEINTEGRATIONENCRYPTIONPROTOCOL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONENCRYPTIONPROTOCOL
         default:
             return 0, errors.New("Unknown WorkforceIntegrationEncryptionProtocol value: " + v)

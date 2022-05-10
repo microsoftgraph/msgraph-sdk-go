@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityProtectionRoot singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i RiskDetectionTimingType) String() string {
-    return []string{"NOTDEFINED", "REALTIME", "NEARREALTIME", "OFFLINE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notDefined", "realtime", "nearRealtime", "offline", "unknownFutureValue"}[i]
 }
 func ParseRiskDetectionTimingType(v string) (interface{}, error) {
     result := NOTDEFINED_RISKDETECTIONTIMINGTYPE
-    switch strings.ToUpper(v) {
-        case "NOTDEFINED":
+    switch v {
+        case "notDefined":
             result = NOTDEFINED_RISKDETECTIONTIMINGTYPE
-        case "REALTIME":
+        case "realtime":
             result = REALTIME_RISKDETECTIONTIMINGTYPE
-        case "NEARREALTIME":
+        case "nearRealtime":
             result = NEARREALTIME_RISKDETECTIONTIMINGTYPE
-        case "OFFLINE":
+        case "offline":
             result = OFFLINE_RISKDETECTIONTIMINGTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RISKDETECTIONTIMINGTYPE
         default:
             return 0, errors.New("Unknown RiskDetectionTimingType value: " + v)

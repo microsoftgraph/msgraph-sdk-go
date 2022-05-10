@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i MediaStreamDirection) String() string {
-    return []string{"CALLERTOCALLEE", "CALLEETOCALLER"}[i]
+    return []string{"callerToCallee", "calleeToCaller"}[i]
 }
 func ParseMediaStreamDirection(v string) (interface{}, error) {
     result := CALLERTOCALLEE_MEDIASTREAMDIRECTION
-    switch strings.ToUpper(v) {
-        case "CALLERTOCALLEE":
+    switch v {
+        case "callerToCallee":
             result = CALLERTOCALLEE_MEDIASTREAMDIRECTION
-        case "CALLEETOCALLER":
+        case "calleeToCaller":
             result = CALLEETOCALLER_MEDIASTREAMDIRECTION
         default:
             return 0, errors.New("Unknown MediaStreamDirection value: " + v)

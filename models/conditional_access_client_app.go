@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i ConditionalAccessClientApp) String() string {
-    return []string{"ALL", "BROWSER", "MOBILEAPPSANDDESKTOPCLIENTS", "EXCHANGEACTIVESYNC", "EASSUPPORTED", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"all", "browser", "mobileAppsAndDesktopClients", "exchangeActiveSync", "easSupported", "other", "unknownFutureValue"}[i]
 }
 func ParseConditionalAccessClientApp(v string) (interface{}, error) {
     result := ALL_CONDITIONALACCESSCLIENTAPP
-    switch strings.ToUpper(v) {
-        case "ALL":
+    switch v {
+        case "all":
             result = ALL_CONDITIONALACCESSCLIENTAPP
-        case "BROWSER":
+        case "browser":
             result = BROWSER_CONDITIONALACCESSCLIENTAPP
-        case "MOBILEAPPSANDDESKTOPCLIENTS":
+        case "mobileAppsAndDesktopClients":
             result = MOBILEAPPSANDDESKTOPCLIENTS_CONDITIONALACCESSCLIENTAPP
-        case "EXCHANGEACTIVESYNC":
+        case "exchangeActiveSync":
             result = EXCHANGEACTIVESYNC_CONDITIONALACCESSCLIENTAPP
-        case "EASSUPPORTED":
+        case "easSupported":
             result = EASSUPPORTED_CONDITIONALACCESSCLIENTAPP
-        case "OTHER":
+        case "other":
             result = OTHER_CONDITIONALACCESSCLIENTAPP
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSCLIENTAPP
         default:
             return 0, errors.New("Unknown ConditionalAccessClientApp value: " + v)

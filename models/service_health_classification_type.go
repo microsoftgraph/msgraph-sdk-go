@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ServiceHealthClassificationType) String() string {
-    return []string{"ADVISORY", "INCIDENT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"advisory", "incident", "unknownFutureValue"}[i]
 }
 func ParseServiceHealthClassificationType(v string) (interface{}, error) {
     result := ADVISORY_SERVICEHEALTHCLASSIFICATIONTYPE
-    switch strings.ToUpper(v) {
-        case "ADVISORY":
+    switch v {
+        case "advisory":
             result = ADVISORY_SERVICEHEALTHCLASSIFICATIONTYPE
-        case "INCIDENT":
+        case "incident":
             result = INCIDENT_SERVICEHEALTHCLASSIFICATIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEHEALTHCLASSIFICATIONTYPE
         default:
             return 0, errors.New("Unknown ServiceHealthClassificationType value: " + v)

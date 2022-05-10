@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type ChannelMembershipType int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ChannelMembershipType) String() string {
-    return []string{"STANDARD", "PRIVATE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"standard", "private", "unknownFutureValue"}[i]
 }
 func ParseChannelMembershipType(v string) (interface{}, error) {
     result := STANDARD_CHANNELMEMBERSHIPTYPE
-    switch strings.ToUpper(v) {
-        case "STANDARD":
+    switch v {
+        case "standard":
             result = STANDARD_CHANNELMEMBERSHIPTYPE
-        case "PRIVATE":
+        case "private":
             result = PRIVATE_CHANNELMEMBERSHIPTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CHANNELMEMBERSHIPTYPE
         default:
             return 0, errors.New("Unknown ChannelMembershipType value: " + v)

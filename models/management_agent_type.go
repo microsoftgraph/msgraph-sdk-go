@@ -1,58 +1,69 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of drive entities.
 type ManagementAgentType int
 
 const (
+    // The device is managed by Exchange server.
     EAS_MANAGEMENTAGENTTYPE ManagementAgentType = iota
+    // The device is managed by Intune MDM.
     MDM_MANAGEMENTAGENTTYPE
+    // The device is managed by both Exchange server and Intune MDM.
     EASMDM_MANAGEMENTAGENTTYPE
+    // Intune client managed.
     INTUNECLIENT_MANAGEMENTAGENTTYPE
+    // The device is EAS and Intune client dual managed.
     EASINTUNECLIENT_MANAGEMENTAGENTTYPE
+    // The device is managed by Configuration Manager.
     CONFIGURATIONMANAGERCLIENT_MANAGEMENTAGENTTYPE
+    // The device is managed by Configuration Manager and MDM.
     CONFIGURATIONMANAGERCLIENTMDM_MANAGEMENTAGENTTYPE
+    // The device is managed by Configuration Manager, MDM and Eas.
     CONFIGURATIONMANAGERCLIENTMDMEAS_MANAGEMENTAGENTTYPE
+    // Unknown management agent type.
     UNKNOWN_MANAGEMENTAGENTTYPE
+    // The device attributes are fetched from Jamf.
     JAMF_MANAGEMENTAGENTTYPE
+    // The device is managed by Google's CloudDPC.
     GOOGLECLOUDDEVICEPOLICYCONTROLLER_MANAGEMENTAGENTTYPE
+    // This device is managed by Microsoft 365 through Intune.
     MICROSOFT365MANAGEDMDM_MANAGEMENTAGENTTYPE
     MSSENSE_MANAGEMENTAGENTTYPE
 )
 
 func (i ManagementAgentType) String() string {
-    return []string{"EAS", "MDM", "EASMDM", "INTUNECLIENT", "EASINTUNECLIENT", "CONFIGURATIONMANAGERCLIENT", "CONFIGURATIONMANAGERCLIENTMDM", "CONFIGURATIONMANAGERCLIENTMDMEAS", "UNKNOWN", "JAMF", "GOOGLECLOUDDEVICEPOLICYCONTROLLER", "MICROSOFT365MANAGEDMDM", "MSSENSE"}[i]
+    return []string{"eas", "mdm", "easMdm", "intuneClient", "easIntuneClient", "configurationManagerClient", "configurationManagerClientMdm", "configurationManagerClientMdmEas", "unknown", "jamf", "googleCloudDevicePolicyController", "microsoft365ManagedMdm", "msSense"}[i]
 }
 func ParseManagementAgentType(v string) (interface{}, error) {
     result := EAS_MANAGEMENTAGENTTYPE
-    switch strings.ToUpper(v) {
-        case "EAS":
+    switch v {
+        case "eas":
             result = EAS_MANAGEMENTAGENTTYPE
-        case "MDM":
+        case "mdm":
             result = MDM_MANAGEMENTAGENTTYPE
-        case "EASMDM":
+        case "easMdm":
             result = EASMDM_MANAGEMENTAGENTTYPE
-        case "INTUNECLIENT":
+        case "intuneClient":
             result = INTUNECLIENT_MANAGEMENTAGENTTYPE
-        case "EASINTUNECLIENT":
+        case "easIntuneClient":
             result = EASINTUNECLIENT_MANAGEMENTAGENTTYPE
-        case "CONFIGURATIONMANAGERCLIENT":
+        case "configurationManagerClient":
             result = CONFIGURATIONMANAGERCLIENT_MANAGEMENTAGENTTYPE
-        case "CONFIGURATIONMANAGERCLIENTMDM":
+        case "configurationManagerClientMdm":
             result = CONFIGURATIONMANAGERCLIENTMDM_MANAGEMENTAGENTTYPE
-        case "CONFIGURATIONMANAGERCLIENTMDMEAS":
+        case "configurationManagerClientMdmEas":
             result = CONFIGURATIONMANAGERCLIENTMDMEAS_MANAGEMENTAGENTTYPE
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_MANAGEMENTAGENTTYPE
-        case "JAMF":
+        case "jamf":
             result = JAMF_MANAGEMENTAGENTTYPE
-        case "GOOGLECLOUDDEVICEPOLICYCONTROLLER":
+        case "googleCloudDevicePolicyController":
             result = GOOGLECLOUDDEVICEPOLICYCONTROLLER_MANAGEMENTAGENTTYPE
-        case "MICROSOFT365MANAGEDMDM":
+        case "microsoft365ManagedMdm":
             result = MICROSOFT365MANAGEDMDM_MANAGEMENTAGENTTYPE
-        case "MSSENSE":
+        case "msSense":
             result = MSSENSE_MANAGEMENTAGENTTYPE
         default:
             return 0, errors.New("Unknown ManagementAgentType value: " + v)

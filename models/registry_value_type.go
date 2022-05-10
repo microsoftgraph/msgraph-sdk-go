@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -23,36 +22,36 @@ const (
 )
 
 func (i RegistryValueType) String() string {
-    return []string{"UNKNOWN", "BINARY", "DWORD", "DWORDLITTLEENDIAN", "DWORDBIGENDIAN", "EXPANDSZ", "LINK", "MULTISZ", "NONE", "QWORD", "QWORDLITTLEENDIAN", "SZ", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "binary", "dword", "dwordLittleEndian", "dwordBigEndian", "expandSz", "link", "multiSz", "none", "qword", "qwordlittleEndian", "sz", "unknownFutureValue"}[i]
 }
 func ParseRegistryValueType(v string) (interface{}, error) {
     result := UNKNOWN_REGISTRYVALUETYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_REGISTRYVALUETYPE
-        case "BINARY":
+        case "binary":
             result = BINARY_REGISTRYVALUETYPE
-        case "DWORD":
+        case "dword":
             result = DWORD_REGISTRYVALUETYPE
-        case "DWORDLITTLEENDIAN":
+        case "dwordLittleEndian":
             result = DWORDLITTLEENDIAN_REGISTRYVALUETYPE
-        case "DWORDBIGENDIAN":
+        case "dwordBigEndian":
             result = DWORDBIGENDIAN_REGISTRYVALUETYPE
-        case "EXPANDSZ":
+        case "expandSz":
             result = EXPANDSZ_REGISTRYVALUETYPE
-        case "LINK":
+        case "link":
             result = LINK_REGISTRYVALUETYPE
-        case "MULTISZ":
+        case "multiSz":
             result = MULTISZ_REGISTRYVALUETYPE
-        case "NONE":
+        case "none":
             result = NONE_REGISTRYVALUETYPE
-        case "QWORD":
+        case "qword":
             result = QWORD_REGISTRYVALUETYPE
-        case "QWORDLITTLEENDIAN":
+        case "qwordlittleEndian":
             result = QWORDLITTLEENDIAN_REGISTRYVALUETYPE
-        case "SZ":
+        case "sz":
             result = SZ_REGISTRYVALUETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGISTRYVALUETYPE
         default:
             return 0, errors.New("Unknown RegistryValueType value: " + v)

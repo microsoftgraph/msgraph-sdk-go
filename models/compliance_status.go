@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i ComplianceStatus) String() string {
-    return []string{"UNKNOWN", "NOTAPPLICABLE", "COMPLIANT", "REMEDIATED", "NONCOMPLIANT", "ERROR", "CONFLICT", "NOTASSIGNED"}[i]
+    return []string{"unknown", "notApplicable", "compliant", "remediated", "nonCompliant", "error", "conflict", "notAssigned"}[i]
 }
 func ParseComplianceStatus(v string) (interface{}, error) {
     result := UNKNOWN_COMPLIANCESTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_COMPLIANCESTATUS
-        case "NOTAPPLICABLE":
+        case "notApplicable":
             result = NOTAPPLICABLE_COMPLIANCESTATUS
-        case "COMPLIANT":
+        case "compliant":
             result = COMPLIANT_COMPLIANCESTATUS
-        case "REMEDIATED":
+        case "remediated":
             result = REMEDIATED_COMPLIANCESTATUS
-        case "NONCOMPLIANT":
+        case "nonCompliant":
             result = NONCOMPLIANT_COMPLIANCESTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_COMPLIANCESTATUS
-        case "CONFLICT":
+        case "conflict":
             result = CONFLICT_COMPLIANCESTATUS
-        case "NOTASSIGNED":
+        case "notAssigned":
             result = NOTASSIGNED_COMPLIANCESTATUS
         default:
             return 0, errors.New("Unknown ComplianceStatus value: " + v)

@@ -20,7 +20,7 @@ type DirectoryRolesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DirectoryRolesRequestBuilderGetQueryParameters get entities from directoryRoles
+// DirectoryRolesRequestBuilderGetQueryParameters list directoryRoles
 type DirectoryRolesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,11 +76,11 @@ func NewDirectoryRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *DirectoryRolesRequestBuilder) Count()(*i2a93ad836768ad49d953d9dfcefa9cac543730d20058b421e20bc27251dc8156.CountRequestBuilder) {
     return i2a93ad836768ad49d953d9dfcefa9cac543730d20058b421e20bc27251dc8156.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from directoryRoles
+// CreateGetRequestInformation list directoryRoles
 func (m *DirectoryRolesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from directoryRoles
+// CreateGetRequestInformationWithRequestConfiguration list directoryRoles
 func (m *DirectoryRolesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryRolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *DirectoryRolesRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation add new entity to directoryRoles
+// CreatePostRequestInformation activate directoryRole
 func (m *DirectoryRolesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to directoryRoles
+// CreatePostRequestInformationWithRequestConfiguration activate directoryRole
 func (m *DirectoryRolesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, requestConfiguration *DirectoryRolesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,7 +116,7 @@ func (m *DirectoryRolesRequestBuilder) CreatePostRequestInformationWithRequestCo
 func (m *DirectoryRolesRequestBuilder) Delta()(*id178ea9892b7517ea8099dc2841e11c78f3dfdc11a8a6c2abd1433ac224172e1.DeltaRequestBuilder) {
     return id178ea9892b7517ea8099dc2841e11c78f3dfdc11a8a6c2abd1433ac224172e1.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get entities from directoryRoles
+// Get list directoryRoles
 func (m *DirectoryRolesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -128,7 +128,7 @@ func (m *DirectoryRolesRequestBuilder) GetAvailableExtensionProperties()(*ia4917
 func (m *DirectoryRolesRequestBuilder) GetByIds()(*ia87332b05b41e0506ca217464387e3ed5c7d91dea72449a3a8af52c972c79b03.GetByIdsRequestBuilder) {
     return ia87332b05b41e0506ca217464387e3ed5c7d91dea72449a3a8af52c972c79b03.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from directoryRoles
+// GetWithRequestConfigurationAndResponseHandler list directoryRoles
 func (m *DirectoryRolesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryRolesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -144,11 +144,11 @@ func (m *DirectoryRolesRequestBuilder) GetWithRequestConfigurationAndResponseHan
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleCollectionResponseable), nil
 }
-// Post add new entity to directoryRoles
+// Post activate directoryRole
 func (m *DirectoryRolesRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler add new entity to directoryRoles
+// PostWithRequestConfigurationAndResponseHandler activate directoryRole
 func (m *DirectoryRolesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, requestConfiguration *DirectoryRolesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

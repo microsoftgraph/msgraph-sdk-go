@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i ContactRelationship) String() string {
-    return []string{"PARENT", "RELATIVE", "AIDE", "DOCTOR", "GUARDIAN", "CHILD", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"parent", "relative", "aide", "doctor", "guardian", "child", "other", "unknownFutureValue"}[i]
 }
 func ParseContactRelationship(v string) (interface{}, error) {
     result := PARENT_CONTACTRELATIONSHIP
-    switch strings.ToUpper(v) {
-        case "PARENT":
+    switch v {
+        case "parent":
             result = PARENT_CONTACTRELATIONSHIP
-        case "RELATIVE":
+        case "relative":
             result = RELATIVE_CONTACTRELATIONSHIP
-        case "AIDE":
+        case "aide":
             result = AIDE_CONTACTRELATIONSHIP
-        case "DOCTOR":
+        case "doctor":
             result = DOCTOR_CONTACTRELATIONSHIP
-        case "GUARDIAN":
+        case "guardian":
             result = GUARDIAN_CONTACTRELATIONSHIP
-        case "CHILD":
+        case "child":
             result = CHILD_CONTACTRELATIONSHIP
-        case "OTHER":
+        case "other":
             result = OTHER_CONTACTRELATIONSHIP
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONTACTRELATIONSHIP
         default:
             return 0, errors.New("Unknown ContactRelationship value: " + v)

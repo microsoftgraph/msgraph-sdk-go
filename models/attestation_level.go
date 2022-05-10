@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type AttestationLevel int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AttestationLevel) String() string {
-    return []string{"ATTESTED", "NOTATTESTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"attested", "notAttested", "unknownFutureValue"}[i]
 }
 func ParseAttestationLevel(v string) (interface{}, error) {
     result := ATTESTED_ATTESTATIONLEVEL
-    switch strings.ToUpper(v) {
-        case "ATTESTED":
+    switch v {
+        case "attested":
             result = ATTESTED_ATTESTATIONLEVEL
-        case "NOTATTESTED":
+        case "notAttested":
             result = NOTATTESTED_ATTESTATIONLEVEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ATTESTATIONLEVEL
         default:
             return 0, errors.New("Unknown AttestationLevel value: " + v)

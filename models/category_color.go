@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type CategoryColor int
 
 const (
@@ -36,62 +35,62 @@ const (
 )
 
 func (i CategoryColor) String() string {
-    return []string{"NONE", "PRESET0", "PRESET1", "PRESET2", "PRESET3", "PRESET4", "PRESET5", "PRESET6", "PRESET7", "PRESET8", "PRESET9", "PRESET10", "PRESET11", "PRESET12", "PRESET13", "PRESET14", "PRESET15", "PRESET16", "PRESET17", "PRESET18", "PRESET19", "PRESET20", "PRESET21", "PRESET22", "PRESET23", "PRESET24"}[i]
+    return []string{"none", "preset0", "preset1", "preset2", "preset3", "preset4", "preset5", "preset6", "preset7", "preset8", "preset9", "preset10", "preset11", "preset12", "preset13", "preset14", "preset15", "preset16", "preset17", "preset18", "preset19", "preset20", "preset21", "preset22", "preset23", "preset24"}[i]
 }
 func ParseCategoryColor(v string) (interface{}, error) {
     result := NONE_CATEGORYCOLOR
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CATEGORYCOLOR
-        case "PRESET0":
+        case "preset0":
             result = PRESET0_CATEGORYCOLOR
-        case "PRESET1":
+        case "preset1":
             result = PRESET1_CATEGORYCOLOR
-        case "PRESET2":
+        case "preset2":
             result = PRESET2_CATEGORYCOLOR
-        case "PRESET3":
+        case "preset3":
             result = PRESET3_CATEGORYCOLOR
-        case "PRESET4":
+        case "preset4":
             result = PRESET4_CATEGORYCOLOR
-        case "PRESET5":
+        case "preset5":
             result = PRESET5_CATEGORYCOLOR
-        case "PRESET6":
+        case "preset6":
             result = PRESET6_CATEGORYCOLOR
-        case "PRESET7":
+        case "preset7":
             result = PRESET7_CATEGORYCOLOR
-        case "PRESET8":
+        case "preset8":
             result = PRESET8_CATEGORYCOLOR
-        case "PRESET9":
+        case "preset9":
             result = PRESET9_CATEGORYCOLOR
-        case "PRESET10":
+        case "preset10":
             result = PRESET10_CATEGORYCOLOR
-        case "PRESET11":
+        case "preset11":
             result = PRESET11_CATEGORYCOLOR
-        case "PRESET12":
+        case "preset12":
             result = PRESET12_CATEGORYCOLOR
-        case "PRESET13":
+        case "preset13":
             result = PRESET13_CATEGORYCOLOR
-        case "PRESET14":
+        case "preset14":
             result = PRESET14_CATEGORYCOLOR
-        case "PRESET15":
+        case "preset15":
             result = PRESET15_CATEGORYCOLOR
-        case "PRESET16":
+        case "preset16":
             result = PRESET16_CATEGORYCOLOR
-        case "PRESET17":
+        case "preset17":
             result = PRESET17_CATEGORYCOLOR
-        case "PRESET18":
+        case "preset18":
             result = PRESET18_CATEGORYCOLOR
-        case "PRESET19":
+        case "preset19":
             result = PRESET19_CATEGORYCOLOR
-        case "PRESET20":
+        case "preset20":
             result = PRESET20_CATEGORYCOLOR
-        case "PRESET21":
+        case "preset21":
             result = PRESET21_CATEGORYCOLOR
-        case "PRESET22":
+        case "preset22":
             result = PRESET22_CATEGORYCOLOR
-        case "PRESET23":
+        case "preset23":
             result = PRESET23_CATEGORYCOLOR
-        case "PRESET24":
+        case "preset24":
             result = PRESET24_CATEGORYCOLOR
         default:
             return 0, errors.New("Unknown CategoryColor value: " + v)

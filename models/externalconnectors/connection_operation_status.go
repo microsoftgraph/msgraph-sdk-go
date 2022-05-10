@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of externalConnection entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ConnectionOperationStatus) String() string {
-    return []string{"UNSPECIFIED", "INPROGRESS", "COMPLETED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unspecified", "inprogress", "completed", "failed", "unknownFutureValue"}[i]
 }
 func ParseConnectionOperationStatus(v string) (interface{}, error) {
     result := UNSPECIFIED_CONNECTIONOPERATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "UNSPECIFIED":
+    switch v {
+        case "unspecified":
             result = UNSPECIFIED_CONNECTIONOPERATIONSTATUS
-        case "INPROGRESS":
+        case "inprogress":
             result = INPROGRESS_CONNECTIONOPERATIONSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_CONNECTIONOPERATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_CONNECTIONOPERATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIONOPERATIONSTATUS
         default:
             return 0, errors.New("Unknown ConnectionOperationStatus value: " + v)

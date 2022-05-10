@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type TaskStatus int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i TaskStatus) String() string {
-    return []string{"NOTSTARTED", "INPROGRESS", "COMPLETED", "WAITINGONOTHERS", "DEFERRED"}[i]
+    return []string{"notStarted", "inProgress", "completed", "waitingOnOthers", "deferred"}[i]
 }
 func ParseTaskStatus(v string) (interface{}, error) {
     result := NOTSTARTED_TASKSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "notStarted":
             result = NOTSTARTED_TASKSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_TASKSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_TASKSTATUS
-        case "WAITINGONOTHERS":
+        case "waitingOnOthers":
             result = WAITINGONOTHERS_TASKSTATUS
-        case "DEFERRED":
+        case "deferred":
             result = DEFERRED_TASKSTATUS
         default:
             return 0, errors.New("Unknown TaskStatus value: " + v)

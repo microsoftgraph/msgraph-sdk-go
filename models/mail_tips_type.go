@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getMailTips method.
@@ -20,30 +19,30 @@ const (
 )
 
 func (i MailTipsType) String() string {
-    return []string{"AUTOMATICREPLIES", "MAILBOXFULLSTATUS", "CUSTOMMAILTIP", "EXTERNALMEMBERCOUNT", "TOTALMEMBERCOUNT", "MAXMESSAGESIZE", "DELIVERYRESTRICTION", "MODERATIONSTATUS", "RECIPIENTSCOPE", "RECIPIENTSUGGESTIONS"}[i]
+    return []string{"automaticReplies", "mailboxFullStatus", "customMailTip", "externalMemberCount", "totalMemberCount", "maxMessageSize", "deliveryRestriction", "moderationStatus", "recipientScope", "recipientSuggestions"}[i]
 }
 func ParseMailTipsType(v string) (interface{}, error) {
     result := AUTOMATICREPLIES_MAILTIPSTYPE
-    switch strings.ToUpper(v) {
-        case "AUTOMATICREPLIES":
+    switch v {
+        case "automaticReplies":
             result = AUTOMATICREPLIES_MAILTIPSTYPE
-        case "MAILBOXFULLSTATUS":
+        case "mailboxFullStatus":
             result = MAILBOXFULLSTATUS_MAILTIPSTYPE
-        case "CUSTOMMAILTIP":
+        case "customMailTip":
             result = CUSTOMMAILTIP_MAILTIPSTYPE
-        case "EXTERNALMEMBERCOUNT":
+        case "externalMemberCount":
             result = EXTERNALMEMBERCOUNT_MAILTIPSTYPE
-        case "TOTALMEMBERCOUNT":
+        case "totalMemberCount":
             result = TOTALMEMBERCOUNT_MAILTIPSTYPE
-        case "MAXMESSAGESIZE":
+        case "maxMessageSize":
             result = MAXMESSAGESIZE_MAILTIPSTYPE
-        case "DELIVERYRESTRICTION":
+        case "deliveryRestriction":
             result = DELIVERYRESTRICTION_MAILTIPSTYPE
-        case "MODERATIONSTATUS":
+        case "moderationStatus":
             result = MODERATIONSTATUS_MAILTIPSTYPE
-        case "RECIPIENTSCOPE":
+        case "recipientScope":
             result = RECIPIENTSCOPE_MAILTIPSTYPE
-        case "RECIPIENTSUGGESTIONS":
+        case "recipientSuggestions":
             result = RECIPIENTSUGGESTIONS_MAILTIPSTYPE
         default:
             return 0, errors.New("Unknown MailTipsType value: " + v)

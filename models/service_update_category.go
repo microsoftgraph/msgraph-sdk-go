@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ServiceUpdateCategory) String() string {
-    return []string{"PREVENTORFIXISSUE", "PLANFORCHANGE", "STAYINFORMED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"preventOrFixIssue", "planForChange", "stayInformed", "unknownFutureValue"}[i]
 }
 func ParseServiceUpdateCategory(v string) (interface{}, error) {
     result := PREVENTORFIXISSUE_SERVICEUPDATECATEGORY
-    switch strings.ToUpper(v) {
-        case "PREVENTORFIXISSUE":
+    switch v {
+        case "preventOrFixIssue":
             result = PREVENTORFIXISSUE_SERVICEUPDATECATEGORY
-        case "PLANFORCHANGE":
+        case "planForChange":
             result = PLANFORCHANGE_SERVICEUPDATECATEGORY
-        case "STAYINFORMED":
+        case "stayInformed":
             result = STAYINFORMED_SERVICEUPDATECATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEUPDATECATEGORY
         default:
             return 0, errors.New("Unknown ServiceUpdateCategory value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i BodyType) String() string {
-    return []string{"TEXT", "HTML"}[i]
+    return []string{"text", "html"}[i]
 }
 func ParseBodyType(v string) (interface{}, error) {
     result := TEXT_BODYTYPE
-    switch strings.ToUpper(v) {
-        case "TEXT":
+    switch v {
+        case "text":
             result = TEXT_BODYTYPE
-        case "HTML":
+        case "html":
             result = HTML_BODYTYPE
         default:
             return 0, errors.New("Unknown BodyType value: " + v)

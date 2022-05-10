@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AccessReviewHistoryDecisionFilter) String() string {
-    return []string{"APPROVE", "DENY", "NOTREVIEWED", "DONTKNOW", "NOTNOTIFIED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"approve", "deny", "notReviewed", "dontKnow", "notNotified", "unknownFutureValue"}[i]
 }
 func ParseAccessReviewHistoryDecisionFilter(v string) (interface{}, error) {
     result := APPROVE_ACCESSREVIEWHISTORYDECISIONFILTER
-    switch strings.ToUpper(v) {
-        case "APPROVE":
+    switch v {
+        case "approve":
             result = APPROVE_ACCESSREVIEWHISTORYDECISIONFILTER
-        case "DENY":
+        case "deny":
             result = DENY_ACCESSREVIEWHISTORYDECISIONFILTER
-        case "NOTREVIEWED":
+        case "notReviewed":
             result = NOTREVIEWED_ACCESSREVIEWHISTORYDECISIONFILTER
-        case "DONTKNOW":
+        case "dontKnow":
             result = DONTKNOW_ACCESSREVIEWHISTORYDECISIONFILTER
-        case "NOTNOTIFIED":
+        case "notNotified":
             result = NOTNOTIFIED_ACCESSREVIEWHISTORYDECISIONFILTER
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSREVIEWHISTORYDECISIONFILTER
         default:
             return 0, errors.New("Unknown AccessReviewHistoryDecisionFilter value: " + v)

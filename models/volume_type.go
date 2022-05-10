@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the informationProtection singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i VolumeType) String() string {
-    return []string{"OPERATINGSYSTEMVOLUME", "FIXEDDATAVOLUME", "REMOVABLEDATAVOLUME", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"operatingSystemVolume", "fixedDataVolume", "removableDataVolume", "unknownFutureValue"}[i]
 }
 func ParseVolumeType(v string) (interface{}, error) {
     result := OPERATINGSYSTEMVOLUME_VOLUMETYPE
-    switch strings.ToUpper(v) {
-        case "OPERATINGSYSTEMVOLUME":
+    switch v {
+        case "operatingSystemVolume":
             result = OPERATINGSYSTEMVOLUME_VOLUMETYPE
-        case "FIXEDDATAVOLUME":
+        case "fixedDataVolume":
             result = FIXEDDATAVOLUME_VOLUMETYPE
-        case "REMOVABLEDATAVOLUME":
+        case "removableDataVolume":
             result = REMOVABLEDATAVOLUME_VOLUMETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VOLUMETYPE
         default:
             return 0, errors.New("Unknown VolumeType value: " + v)

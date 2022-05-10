@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getMailTips method.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i RecipientScopeType) String() string {
-    return []string{"NONE", "INTERNAL", "EXTERNAL", "EXTERNALPARTNER", "EXTERNALNONPARTNER"}[i]
+    return []string{"none", "internal", "external", "externalPartner", "externalNonPartner"}[i]
 }
 func ParseRecipientScopeType(v string) (interface{}, error) {
     result := NONE_RECIPIENTSCOPETYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_RECIPIENTSCOPETYPE
-        case "INTERNAL":
+        case "internal":
             result = INTERNAL_RECIPIENTSCOPETYPE
-        case "EXTERNAL":
+        case "external":
             result = EXTERNAL_RECIPIENTSCOPETYPE
-        case "EXTERNALPARTNER":
+        case "externalPartner":
             result = EXTERNALPARTNER_RECIPIENTSCOPETYPE
-        case "EXTERNALNONPARTNER":
+        case "externalNonPartner":
             result = EXTERNALNONPARTNER_RECIPIENTSCOPETYPE
         default:
             return 0, errors.New("Unknown RecipientScopeType value: " + v)

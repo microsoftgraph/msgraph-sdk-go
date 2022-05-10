@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the reject method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i RejectReason) String() string {
-    return []string{"NONE", "BUSY", "FORBIDDEN", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "busy", "forbidden", "unknownFutureValue"}[i]
 }
 func ParseRejectReason(v string) (interface{}, error) {
     result := NONE_REJECTREASON
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_REJECTREASON
-        case "BUSY":
+        case "busy":
             result = BUSY_REJECTREASON
-        case "FORBIDDEN":
+        case "forbidden":
             result = FORBIDDEN_REJECTREASON
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REJECTREASON
         default:
             return 0, errors.New("Unknown RejectReason value: " + v)

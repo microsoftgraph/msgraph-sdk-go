@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i MeetingChatMode) String() string {
-    return []string{"ENABLED", "DISABLED", "LIMITED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"enabled", "disabled", "limited", "unknownFutureValue"}[i]
 }
 func ParseMeetingChatMode(v string) (interface{}, error) {
     result := ENABLED_MEETINGCHATMODE
-    switch strings.ToUpper(v) {
-        case "ENABLED":
+    switch v {
+        case "enabled":
             result = ENABLED_MEETINGCHATMODE
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_MEETINGCHATMODE
-        case "LIMITED":
+        case "limited":
             result = LIMITED_MEETINGCHATMODE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEETINGCHATMODE
         default:
             return 0, errors.New("Unknown MeetingChatMode value: " + v)

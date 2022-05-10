@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of authenticationMethodConfiguration entities.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i AuthenticationMethodState) String() string {
-    return []string{"ENABLED", "DISABLED"}[i]
+    return []string{"enabled", "disabled"}[i]
 }
 func ParseAuthenticationMethodState(v string) (interface{}, error) {
     result := ENABLED_AUTHENTICATIONMETHODSTATE
-    switch strings.ToUpper(v) {
-        case "ENABLED":
+    switch v {
+        case "enabled":
             result = ENABLED_AUTHENTICATIONMETHODSTATE
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_AUTHENTICATIONMETHODSTATE
         default:
             return 0, errors.New("Unknown AuthenticationMethodState value: " + v)

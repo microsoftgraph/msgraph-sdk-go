@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the informationProtection singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ThreatAssessmentRequestSource) String() string {
-    return []string{"UNDEFINED", "USER", "ADMINISTRATOR"}[i]
+    return []string{"undefined", "user", "administrator"}[i]
 }
 func ParseThreatAssessmentRequestSource(v string) (interface{}, error) {
     result := UNDEFINED_THREATASSESSMENTREQUESTSOURCE
-    switch strings.ToUpper(v) {
-        case "UNDEFINED":
+    switch v {
+        case "undefined":
             result = UNDEFINED_THREATASSESSMENTREQUESTSOURCE
-        case "USER":
+        case "user":
             result = USER_THREATASSESSMENTREQUESTSOURCE
-        case "ADMINISTRATOR":
+        case "administrator":
             result = ADMINISTRATOR_THREATASSESSMENTREQUESTSOURCE
         default:
             return 0, errors.New("Unknown ThreatAssessmentRequestSource value: " + v)

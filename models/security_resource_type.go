@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i SecurityResourceType) String() string {
-    return []string{"UNKNOWN", "ATTACKED", "RELATED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "attacked", "related", "unknownFutureValue"}[i]
 }
 func ParseSecurityResourceType(v string) (interface{}, error) {
     result := UNKNOWN_SECURITYRESOURCETYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_SECURITYRESOURCETYPE
-        case "ATTACKED":
+        case "attacked":
             result = ATTACKED_SECURITYRESOURCETYPE
-        case "RELATED":
+        case "related":
             result = RELATED_SECURITYRESOURCETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SECURITYRESOURCETYPE
         default:
             return 0, errors.New("Unknown SecurityResourceType value: " + v)

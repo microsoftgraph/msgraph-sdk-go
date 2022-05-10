@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i UserAccountSecurityType) String() string {
-    return []string{"UNKNOWN", "STANDARD", "POWER", "ADMINISTRATOR", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "standard", "power", "administrator", "unknownFutureValue"}[i]
 }
 func ParseUserAccountSecurityType(v string) (interface{}, error) {
     result := UNKNOWN_USERACCOUNTSECURITYTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_USERACCOUNTSECURITYTYPE
-        case "STANDARD":
+        case "standard":
             result = STANDARD_USERACCOUNTSECURITYTYPE
-        case "POWER":
+        case "power":
             result = POWER_USERACCOUNTSECURITYTYPE
-        case "ADMINISTRATOR":
+        case "administrator":
             result = ADMINISTRATOR_USERACCOUNTSECURITYTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERACCOUNTSECURITYTYPE
         default:
             return 0, errors.New("Unknown UserAccountSecurityType value: " + v)

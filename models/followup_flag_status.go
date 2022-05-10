@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type FollowupFlagStatus int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i FollowupFlagStatus) String() string {
-    return []string{"NOTFLAGGED", "COMPLETE", "FLAGGED"}[i]
+    return []string{"notFlagged", "complete", "flagged"}[i]
 }
 func ParseFollowupFlagStatus(v string) (interface{}, error) {
     result := NOTFLAGGED_FOLLOWUPFLAGSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTFLAGGED":
+    switch v {
+        case "notFlagged":
             result = NOTFLAGGED_FOLLOWUPFLAGSTATUS
-        case "COMPLETE":
+        case "complete":
             result = COMPLETE_FOLLOWUPFLAGSTATUS
-        case "FLAGGED":
+        case "flagged":
             result = FLAGGED_FOLLOWUPFLAGSTATUS
         default:
             return 0, errors.New("Unknown FollowupFlagStatus value: " + v)

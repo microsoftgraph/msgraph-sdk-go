@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type WindowsInformationProtectionPinCharacterRequirements int
 
 const (
+    // Not allow
     NOTALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS WindowsInformationProtectionPinCharacterRequirements = iota
+    // Require atleast one
     REQUIREATLEASTONE_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
+    // Allow any number
     ALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
 )
 
 func (i WindowsInformationProtectionPinCharacterRequirements) String() string {
-    return []string{"NOTALLOW", "REQUIREATLEASTONE", "ALLOW"}[i]
+    return []string{"notAllow", "requireAtLeastOne", "allow"}[i]
 }
 func ParseWindowsInformationProtectionPinCharacterRequirements(v string) (interface{}, error) {
     result := NOTALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
-    switch strings.ToUpper(v) {
-        case "NOTALLOW":
+    switch v {
+        case "notAllow":
             result = NOTALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
-        case "REQUIREATLEASTONE":
+        case "requireAtLeastOne":
             result = REQUIREATLEASTONE_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
-        case "ALLOW":
+        case "allow":
             result = ALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
         default:
             return 0, errors.New("Unknown WindowsInformationProtectionPinCharacterRequirements value: " + v)

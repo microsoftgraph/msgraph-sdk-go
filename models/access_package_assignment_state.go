@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AccessPackageAssignmentState) String() string {
-    return []string{"DELIVERING", "PARTIALLYDELIVERED", "DELIVERED", "EXPIRED", "DELIVERYFAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"delivering", "partiallyDelivered", "delivered", "expired", "deliveryFailed", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageAssignmentState(v string) (interface{}, error) {
     result := DELIVERING_ACCESSPACKAGEASSIGNMENTSTATE
-    switch strings.ToUpper(v) {
-        case "DELIVERING":
+    switch v {
+        case "delivering":
             result = DELIVERING_ACCESSPACKAGEASSIGNMENTSTATE
-        case "PARTIALLYDELIVERED":
+        case "partiallyDelivered":
             result = PARTIALLYDELIVERED_ACCESSPACKAGEASSIGNMENTSTATE
-        case "DELIVERED":
+        case "delivered":
             result = DELIVERED_ACCESSPACKAGEASSIGNMENTSTATE
-        case "EXPIRED":
+        case "expired":
             result = EXPIRED_ACCESSPACKAGEASSIGNMENTSTATE
-        case "DELIVERYFAILED":
+        case "deliveryFailed":
             result = DELIVERYFAILED_ACCESSPACKAGEASSIGNMENTSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEASSIGNMENTSTATE
         default:
             return 0, errors.New("Unknown AccessPackageAssignmentState value: " + v)

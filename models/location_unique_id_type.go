@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type LocationUniqueIdType int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i LocationUniqueIdType) String() string {
-    return []string{"UNKNOWN", "LOCATIONSTORE", "DIRECTORY", "PRIVATE", "BING"}[i]
+    return []string{"unknown", "locationStore", "directory", "private", "bing"}[i]
 }
 func ParseLocationUniqueIdType(v string) (interface{}, error) {
     result := UNKNOWN_LOCATIONUNIQUEIDTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_LOCATIONUNIQUEIDTYPE
-        case "LOCATIONSTORE":
+        case "locationStore":
             result = LOCATIONSTORE_LOCATIONUNIQUEIDTYPE
-        case "DIRECTORY":
+        case "directory":
             result = DIRECTORY_LOCATIONUNIQUEIDTYPE
-        case "PRIVATE":
+        case "private":
             result = PRIVATE_LOCATIONUNIQUEIDTYPE
-        case "BING":
+        case "bing":
             result = BING_LOCATIONUNIQUEIDTYPE
         default:
             return 0, errors.New("Unknown LocationUniqueIdType value: " + v)

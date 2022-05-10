@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i ConditionalAccessGrantControl) String() string {
-    return []string{"BLOCK", "MFA", "COMPLIANTDEVICE", "DOMAINJOINEDDEVICE", "APPROVEDAPPLICATION", "COMPLIANTAPPLICATION", "PASSWORDCHANGE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"block", "mfa", "compliantDevice", "domainJoinedDevice", "approvedApplication", "compliantApplication", "passwordChange", "unknownFutureValue"}[i]
 }
 func ParseConditionalAccessGrantControl(v string) (interface{}, error) {
     result := BLOCK_CONDITIONALACCESSGRANTCONTROL
-    switch strings.ToUpper(v) {
-        case "BLOCK":
+    switch v {
+        case "block":
             result = BLOCK_CONDITIONALACCESSGRANTCONTROL
-        case "MFA":
+        case "mfa":
             result = MFA_CONDITIONALACCESSGRANTCONTROL
-        case "COMPLIANTDEVICE":
+        case "compliantDevice":
             result = COMPLIANTDEVICE_CONDITIONALACCESSGRANTCONTROL
-        case "DOMAINJOINEDDEVICE":
+        case "domainJoinedDevice":
             result = DOMAINJOINEDDEVICE_CONDITIONALACCESSGRANTCONTROL
-        case "APPROVEDAPPLICATION":
+        case "approvedApplication":
             result = APPROVEDAPPLICATION_CONDITIONALACCESSGRANTCONTROL
-        case "COMPLIANTAPPLICATION":
+        case "compliantApplication":
             result = COMPLIANTAPPLICATION_CONDITIONALACCESSGRANTCONTROL
-        case "PASSWORDCHANGE":
+        case "passwordChange":
             result = PASSWORDCHANGE_CONDITIONALACCESSGRANTCONTROL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSGRANTCONTROL
         default:
             return 0, errors.New("Unknown ConditionalAccessGrantControl value: " + v)

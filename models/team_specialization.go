@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type TeamSpecialization int
 
 const (
@@ -18,26 +17,26 @@ const (
 )
 
 func (i TeamSpecialization) String() string {
-    return []string{"NONE", "EDUCATIONSTANDARD", "EDUCATIONCLASS", "EDUCATIONPROFESSIONALLEARNINGCOMMUNITY", "EDUCATIONSTAFF", "HEALTHCARESTANDARD", "HEALTHCARECARECOORDINATION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "educationStandard", "educationClass", "educationProfessionalLearningCommunity", "educationStaff", "healthcareStandard", "healthcareCareCoordination", "unknownFutureValue"}[i]
 }
 func ParseTeamSpecialization(v string) (interface{}, error) {
     result := NONE_TEAMSPECIALIZATION
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_TEAMSPECIALIZATION
-        case "EDUCATIONSTANDARD":
+        case "educationStandard":
             result = EDUCATIONSTANDARD_TEAMSPECIALIZATION
-        case "EDUCATIONCLASS":
+        case "educationClass":
             result = EDUCATIONCLASS_TEAMSPECIALIZATION
-        case "EDUCATIONPROFESSIONALLEARNINGCOMMUNITY":
+        case "educationProfessionalLearningCommunity":
             result = EDUCATIONPROFESSIONALLEARNINGCOMMUNITY_TEAMSPECIALIZATION
-        case "EDUCATIONSTAFF":
+        case "educationStaff":
             result = EDUCATIONSTAFF_TEAMSPECIALIZATION
-        case "HEALTHCARESTANDARD":
+        case "healthcareStandard":
             result = HEALTHCARESTANDARD_TEAMSPECIALIZATION
-        case "HEALTHCARECARECOORDINATION":
+        case "healthcareCareCoordination":
             result = HEALTHCARECARECOORDINATION_TEAMSPECIALIZATION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSPECIALIZATION
         default:
             return 0, errors.New("Unknown TeamSpecialization value: " + v)

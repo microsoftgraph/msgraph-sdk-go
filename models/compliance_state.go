@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of drive entities.
 type ComplianceState int
 
 const (
+    // Unknown.
     UNKNOWN_COMPLIANCESTATE ComplianceState = iota
+    // Compliant.
     COMPLIANT_COMPLIANCESTATE
+    // Device is non-compliant and is blocked from corporate resources.
     NONCOMPLIANT_COMPLIANCESTATE
+    // Conflict with other rules.
     CONFLICT_COMPLIANCESTATE
+    // Error.
     ERROR_COMPLIANCESTATE
+    // Device is non-compliant but still has access to corporate resources
     INGRACEPERIOD_COMPLIANCESTATE
+    // Managed by Config Manager
     CONFIGMANAGER_COMPLIANCESTATE
 )
 
 func (i ComplianceState) String() string {
-    return []string{"UNKNOWN", "COMPLIANT", "NONCOMPLIANT", "CONFLICT", "ERROR", "INGRACEPERIOD", "CONFIGMANAGER"}[i]
+    return []string{"unknown", "compliant", "noncompliant", "conflict", "error", "inGracePeriod", "configManager"}[i]
 }
 func ParseComplianceState(v string) (interface{}, error) {
     result := UNKNOWN_COMPLIANCESTATE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_COMPLIANCESTATE
-        case "COMPLIANT":
+        case "compliant":
             result = COMPLIANT_COMPLIANCESTATE
-        case "NONCOMPLIANT":
+        case "noncompliant":
             result = NONCOMPLIANT_COMPLIANCESTATE
-        case "CONFLICT":
+        case "conflict":
             result = CONFLICT_COMPLIANCESTATE
-        case "ERROR":
+        case "error":
             result = ERROR_COMPLIANCESTATE
-        case "INGRACEPERIOD":
+        case "inGracePeriod":
             result = INGRACEPERIOD_COMPLIANCESTATE
-        case "CONFIGMANAGER":
+        case "configManager":
             result = CONFIGMANAGER_COMPLIANCESTATE
         default:
             return 0, errors.New("Unknown ComplianceState value: " + v)

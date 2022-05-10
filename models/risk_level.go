@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i RiskLevel) String() string {
-    return []string{"LOW", "MEDIUM", "HIGH", "HIDDEN", "NONE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"low", "medium", "high", "hidden", "none", "unknownFutureValue"}[i]
 }
 func ParseRiskLevel(v string) (interface{}, error) {
     result := LOW_RISKLEVEL
-    switch strings.ToUpper(v) {
-        case "LOW":
+    switch v {
+        case "low":
             result = LOW_RISKLEVEL
-        case "MEDIUM":
+        case "medium":
             result = MEDIUM_RISKLEVEL
-        case "HIGH":
+        case "high":
             result = HIGH_RISKLEVEL
-        case "HIDDEN":
+        case "hidden":
             result = HIDDEN_RISKLEVEL
-        case "NONE":
+        case "none":
             result = NONE_RISKLEVEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RISKLEVEL
         default:
             return 0, errors.New("Unknown RiskLevel value: " + v)

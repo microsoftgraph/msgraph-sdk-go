@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the onenotePatchContent method.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i OnenotePatchInsertPosition) String() string {
-    return []string{"AFTER", "BEFORE"}[i]
+    return []string{"After", "Before"}[i]
 }
 func ParseOnenotePatchInsertPosition(v string) (interface{}, error) {
     result := AFTER_ONENOTEPATCHINSERTPOSITION
-    switch strings.ToUpper(v) {
-        case "AFTER":
+    switch v {
+        case "After":
             result = AFTER_ONENOTEPATCHINSERTPOSITION
-        case "BEFORE":
+        case "Before":
             result = BEFORE_ONENOTEPATCHINSERTPOSITION
         default:
             return 0, errors.New("Unknown OnenotePatchInsertPosition value: " + v)

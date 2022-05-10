@@ -23,7 +23,7 @@ type AuditLogsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AuditLogsRequestBuilderGetQueryParameters get auditLogs
+// AuditLogsRequestBuilderGetQueryParameters auditLogRoot resource type
 type AuditLogsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,11 +65,11 @@ func NewAuditLogsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewAuditLogsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get auditLogs
+// CreateGetRequestInformation auditLogRoot resource type
 func (m *AuditLogsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get auditLogs
+// CreateGetRequestInformationWithRequestConfiguration auditLogRoot resource type
 func (m *AuditLogsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AuditLogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,11 +116,11 @@ func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*i8ab9c44a4a415
     }
     return i8ab9c44a4a415e76c346c3f6eda2e19ce5ffba6ea1f21df106cb58013b2ec53f.NewDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get auditLogs
+// Get auditLogRoot resource type
 func (m *AuditLogsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditLogRootable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get auditLogs
+// GetWithRequestConfigurationAndResponseHandler auditLogRoot resource type
 func (m *AuditLogsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AuditLogsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditLogRootable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

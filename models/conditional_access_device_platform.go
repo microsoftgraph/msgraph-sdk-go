@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i ConditionalAccessDevicePlatform) String() string {
-    return []string{"ANDROID", "IOS", "WINDOWS", "WINDOWSPHONE", "MACOS", "ALL", "UNKNOWNFUTUREVALUE", "LINUX"}[i]
+    return []string{"android", "iOS", "windows", "windowsPhone", "macOS", "all", "unknownFutureValue", "linux"}[i]
 }
 func ParseConditionalAccessDevicePlatform(v string) (interface{}, error) {
     result := ANDROID_CONDITIONALACCESSDEVICEPLATFORM
-    switch strings.ToUpper(v) {
-        case "ANDROID":
+    switch v {
+        case "android":
             result = ANDROID_CONDITIONALACCESSDEVICEPLATFORM
-        case "IOS":
+        case "iOS":
             result = IOS_CONDITIONALACCESSDEVICEPLATFORM
-        case "WINDOWS":
+        case "windows":
             result = WINDOWS_CONDITIONALACCESSDEVICEPLATFORM
-        case "WINDOWSPHONE":
+        case "windowsPhone":
             result = WINDOWSPHONE_CONDITIONALACCESSDEVICEPLATFORM
-        case "MACOS":
+        case "macOS":
             result = MACOS_CONDITIONALACCESSDEVICEPLATFORM
-        case "ALL":
+        case "all":
             result = ALL_CONDITIONALACCESSDEVICEPLATFORM
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSDEVICEPLATFORM
-        case "LINUX":
+        case "linux":
             result = LINUX_CONDITIONALACCESSDEVICEPLATFORM
         default:
             return 0, errors.New("Unknown ConditionalAccessDevicePlatform value: " + v)

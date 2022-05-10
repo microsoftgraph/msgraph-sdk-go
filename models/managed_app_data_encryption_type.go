@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppDataEncryptionType int
 
 const (
+    // App data is encrypted based on the default settings on the device.
     USEDEVICESETTINGS_MANAGEDAPPDATAENCRYPTIONTYPE ManagedAppDataEncryptionType = iota
+    // App data is encrypted when the device is restarted.
     AFTERDEVICERESTART_MANAGEDAPPDATAENCRYPTIONTYPE
+    // App data associated with this policy is encrypted when the device is locked, except data in files that are open
     WHENDEVICELOCKEDEXCEPTOPENFILES_MANAGEDAPPDATAENCRYPTIONTYPE
+    // App data associated with this policy is encrypted when the device is locked
     WHENDEVICELOCKED_MANAGEDAPPDATAENCRYPTIONTYPE
 )
 
 func (i ManagedAppDataEncryptionType) String() string {
-    return []string{"USEDEVICESETTINGS", "AFTERDEVICERESTART", "WHENDEVICELOCKEDEXCEPTOPENFILES", "WHENDEVICELOCKED"}[i]
+    return []string{"useDeviceSettings", "afterDeviceRestart", "whenDeviceLockedExceptOpenFiles", "whenDeviceLocked"}[i]
 }
 func ParseManagedAppDataEncryptionType(v string) (interface{}, error) {
     result := USEDEVICESETTINGS_MANAGEDAPPDATAENCRYPTIONTYPE
-    switch strings.ToUpper(v) {
-        case "USEDEVICESETTINGS":
+    switch v {
+        case "useDeviceSettings":
             result = USEDEVICESETTINGS_MANAGEDAPPDATAENCRYPTIONTYPE
-        case "AFTERDEVICERESTART":
+        case "afterDeviceRestart":
             result = AFTERDEVICERESTART_MANAGEDAPPDATAENCRYPTIONTYPE
-        case "WHENDEVICELOCKEDEXCEPTOPENFILES":
+        case "whenDeviceLockedExceptOpenFiles":
             result = WHENDEVICELOCKEDEXCEPTOPENFILES_MANAGEDAPPDATAENCRYPTIONTYPE
-        case "WHENDEVICELOCKED":
+        case "whenDeviceLocked":
             result = WHENDEVICELOCKED_MANAGEDAPPDATAENCRYPTIONTYPE
         default:
             return 0, errors.New("Unknown ManagedAppDataEncryptionType value: " + v)

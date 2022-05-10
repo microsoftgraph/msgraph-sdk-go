@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of chat entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ChatMessagePolicyViolationDlpActionTypes) String() string {
-    return []string{"NONE", "NOTIFYSENDER", "BLOCKACCESS", "BLOCKACCESSEXTERNAL"}[i]
+    return []string{"none", "notifySender", "blockAccess", "blockAccessExternal"}[i]
 }
 func ParseChatMessagePolicyViolationDlpActionTypes(v string) (interface{}, error) {
     result := NONE_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
-        case "NOTIFYSENDER":
+        case "notifySender":
             result = NOTIFYSENDER_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
-        case "BLOCKACCESS":
+        case "blockAccess":
             result = BLOCKACCESS_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
-        case "BLOCKACCESSEXTERNAL":
+        case "blockAccessExternal":
             result = BLOCKACCESSEXTERNAL_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
         default:
             return 0, errors.New("Unknown ChatMessagePolicyViolationDlpActionTypes value: " + v)

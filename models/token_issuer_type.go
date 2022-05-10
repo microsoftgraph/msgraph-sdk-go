@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityProtectionRoot singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i TokenIssuerType) String() string {
-    return []string{"AZUREAD", "ADFEDERATIONSERVICES", "UNKNOWNFUTUREVALUE", "AZUREADBACKUPAUTH", "ADFEDERATIONSERVICESMFAADAPTER", "NPSEXTENSION"}[i]
+    return []string{"AzureAD", "ADFederationServices", "UnknownFutureValue", "AzureADBackupAuth", "ADFederationServicesMFAAdapter", "NPSExtension"}[i]
 }
 func ParseTokenIssuerType(v string) (interface{}, error) {
     result := AZUREAD_TOKENISSUERTYPE
-    switch strings.ToUpper(v) {
-        case "AZUREAD":
+    switch v {
+        case "AzureAD":
             result = AZUREAD_TOKENISSUERTYPE
-        case "ADFEDERATIONSERVICES":
+        case "ADFederationServices":
             result = ADFEDERATIONSERVICES_TOKENISSUERTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "UnknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TOKENISSUERTYPE
-        case "AZUREADBACKUPAUTH":
+        case "AzureADBackupAuth":
             result = AZUREADBACKUPAUTH_TOKENISSUERTYPE
-        case "ADFEDERATIONSERVICESMFAADAPTER":
+        case "ADFederationServicesMFAAdapter":
             result = ADFEDERATIONSERVICESMFAADAPTER_TOKENISSUERTYPE
-        case "NPSEXTENSION":
+        case "NPSExtension":
             result = NPSEXTENSION_TOKENISSUERTYPE
         default:
             return 0, errors.New("Unknown TokenIssuerType value: " + v)

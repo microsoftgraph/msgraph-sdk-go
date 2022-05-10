@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type WindowsInformationProtectionEnforcementLevel int
 
 const (
+    // No protection enforcement
     NOPROTECTION_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL WindowsInformationProtectionEnforcementLevel = iota
+    // Encrypt and Audit only
     ENCRYPTANDAUDITONLY_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
+    // Encrypt, Audit and Prompt
     ENCRYPTAUDITANDPROMPT_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
+    // Encrypt, Audit and Block
     ENCRYPTAUDITANDBLOCK_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
 )
 
 func (i WindowsInformationProtectionEnforcementLevel) String() string {
-    return []string{"NOPROTECTION", "ENCRYPTANDAUDITONLY", "ENCRYPTAUDITANDPROMPT", "ENCRYPTAUDITANDBLOCK"}[i]
+    return []string{"noProtection", "encryptAndAuditOnly", "encryptAuditAndPrompt", "encryptAuditAndBlock"}[i]
 }
 func ParseWindowsInformationProtectionEnforcementLevel(v string) (interface{}, error) {
     result := NOPROTECTION_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
-    switch strings.ToUpper(v) {
-        case "NOPROTECTION":
+    switch v {
+        case "noProtection":
             result = NOPROTECTION_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
-        case "ENCRYPTANDAUDITONLY":
+        case "encryptAndAuditOnly":
             result = ENCRYPTANDAUDITONLY_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
-        case "ENCRYPTAUDITANDPROMPT":
+        case "encryptAuditAndPrompt":
             result = ENCRYPTAUDITANDPROMPT_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
-        case "ENCRYPTAUDITANDBLOCK":
+        case "encryptAuditAndBlock":
             result = ENCRYPTAUDITANDBLOCK_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
         default:
             return 0, errors.New("Unknown WindowsInformationProtectionEnforcementLevel value: " + v)

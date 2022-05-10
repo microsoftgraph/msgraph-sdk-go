@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the query method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i SearchAlterationType) String() string {
-    return []string{"SUGGESTION", "MODIFICATION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"suggestion", "modification", "unknownFutureValue"}[i]
 }
 func ParseSearchAlterationType(v string) (interface{}, error) {
     result := SUGGESTION_SEARCHALTERATIONTYPE
-    switch strings.ToUpper(v) {
-        case "SUGGESTION":
+    switch v {
+        case "suggestion":
             result = SUGGESTION_SEARCHALTERATIONTYPE
-        case "MODIFICATION":
+        case "modification":
             result = MODIFICATION_SEARCHALTERATIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SEARCHALTERATIONTYPE
         default:
             return 0, errors.New("Unknown SearchAlterationType value: " + v)

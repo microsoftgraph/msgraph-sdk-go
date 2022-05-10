@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -30,50 +29,50 @@ const (
 )
 
 func (i PrintFinishing) String() string {
-    return []string{"NONE", "STAPLE", "PUNCH", "COVER", "BIND", "SADDLESTITCH", "STITCHEDGE", "STAPLETOPLEFT", "STAPLEBOTTOMLEFT", "STAPLETOPRIGHT", "STAPLEBOTTOMRIGHT", "STITCHLEFTEDGE", "STITCHTOPEDGE", "STITCHRIGHTEDGE", "STITCHBOTTOMEDGE", "STAPLEDUALLEFT", "STAPLEDUALTOP", "STAPLEDUALRIGHT", "STAPLEDUALBOTTOM", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "staple", "punch", "cover", "bind", "saddleStitch", "stitchEdge", "stapleTopLeft", "stapleBottomLeft", "stapleTopRight", "stapleBottomRight", "stitchLeftEdge", "stitchTopEdge", "stitchRightEdge", "stitchBottomEdge", "stapleDualLeft", "stapleDualTop", "stapleDualRight", "stapleDualBottom", "unknownFutureValue"}[i]
 }
 func ParsePrintFinishing(v string) (interface{}, error) {
     result := NONE_PRINTFINISHING
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_PRINTFINISHING
-        case "STAPLE":
+        case "staple":
             result = STAPLE_PRINTFINISHING
-        case "PUNCH":
+        case "punch":
             result = PUNCH_PRINTFINISHING
-        case "COVER":
+        case "cover":
             result = COVER_PRINTFINISHING
-        case "BIND":
+        case "bind":
             result = BIND_PRINTFINISHING
-        case "SADDLESTITCH":
+        case "saddleStitch":
             result = SADDLESTITCH_PRINTFINISHING
-        case "STITCHEDGE":
+        case "stitchEdge":
             result = STITCHEDGE_PRINTFINISHING
-        case "STAPLETOPLEFT":
+        case "stapleTopLeft":
             result = STAPLETOPLEFT_PRINTFINISHING
-        case "STAPLEBOTTOMLEFT":
+        case "stapleBottomLeft":
             result = STAPLEBOTTOMLEFT_PRINTFINISHING
-        case "STAPLETOPRIGHT":
+        case "stapleTopRight":
             result = STAPLETOPRIGHT_PRINTFINISHING
-        case "STAPLEBOTTOMRIGHT":
+        case "stapleBottomRight":
             result = STAPLEBOTTOMRIGHT_PRINTFINISHING
-        case "STITCHLEFTEDGE":
+        case "stitchLeftEdge":
             result = STITCHLEFTEDGE_PRINTFINISHING
-        case "STITCHTOPEDGE":
+        case "stitchTopEdge":
             result = STITCHTOPEDGE_PRINTFINISHING
-        case "STITCHRIGHTEDGE":
+        case "stitchRightEdge":
             result = STITCHRIGHTEDGE_PRINTFINISHING
-        case "STITCHBOTTOMEDGE":
+        case "stitchBottomEdge":
             result = STITCHBOTTOMEDGE_PRINTFINISHING
-        case "STAPLEDUALLEFT":
+        case "stapleDualLeft":
             result = STAPLEDUALLEFT_PRINTFINISHING
-        case "STAPLEDUALTOP":
+        case "stapleDualTop":
             result = STAPLEDUALTOP_PRINTFINISHING
-        case "STAPLEDUALRIGHT":
+        case "stapleDualRight":
             result = STAPLEDUALRIGHT_PRINTFINISHING
-        case "STAPLEDUALBOTTOM":
+        case "stapleDualBottom":
             result = STAPLEDUALBOTTOM_PRINTFINISHING
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTFINISHING
         default:
             return 0, errors.New("Unknown PrintFinishing value: " + v)

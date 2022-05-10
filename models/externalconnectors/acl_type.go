@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of externalConnection entities.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AclType) String() string {
-    return []string{"USER", "GROUP", "EVERYONE", "EVERYONEEXCEPTGUESTS", "EXTERNALGROUP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"user", "group", "everyone", "everyoneExceptGuests", "externalGroup", "unknownFutureValue"}[i]
 }
 func ParseAclType(v string) (interface{}, error) {
     result := USER_ACLTYPE
-    switch strings.ToUpper(v) {
-        case "USER":
+    switch v {
+        case "user":
             result = USER_ACLTYPE
-        case "GROUP":
+        case "group":
             result = GROUP_ACLTYPE
-        case "EVERYONE":
+        case "everyone":
             result = EVERYONE_ACLTYPE
-        case "EVERYONEEXCEPTGUESTS":
+        case "everyoneExceptGuests":
             result = EVERYONEEXCEPTGUESTS_ACLTYPE
-        case "EXTERNALGROUP":
+        case "externalGroup":
             result = EXTERNALGROUP_ACLTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACLTYPE
         default:
             return 0, errors.New("Unknown AclType value: " + v)

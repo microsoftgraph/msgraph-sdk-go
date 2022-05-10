@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i RegistryHive) String() string {
-    return []string{"UNKNOWN", "CURRENTCONFIG", "CURRENTUSER", "LOCALMACHINESAM", "LOCALMACHINESECURITY", "LOCALMACHINESOFTWARE", "LOCALMACHINESYSTEM", "USERSDEFAULT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "currentConfig", "currentUser", "localMachineSam", "localMachineSecurity", "localMachineSoftware", "localMachineSystem", "usersDefault", "unknownFutureValue"}[i]
 }
 func ParseRegistryHive(v string) (interface{}, error) {
     result := UNKNOWN_REGISTRYHIVE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_REGISTRYHIVE
-        case "CURRENTCONFIG":
+        case "currentConfig":
             result = CURRENTCONFIG_REGISTRYHIVE
-        case "CURRENTUSER":
+        case "currentUser":
             result = CURRENTUSER_REGISTRYHIVE
-        case "LOCALMACHINESAM":
+        case "localMachineSam":
             result = LOCALMACHINESAM_REGISTRYHIVE
-        case "LOCALMACHINESECURITY":
+        case "localMachineSecurity":
             result = LOCALMACHINESECURITY_REGISTRYHIVE
-        case "LOCALMACHINESOFTWARE":
+        case "localMachineSoftware":
             result = LOCALMACHINESOFTWARE_REGISTRYHIVE
-        case "LOCALMACHINESYSTEM":
+        case "localMachineSystem":
             result = LOCALMACHINESYSTEM_REGISTRYHIVE
-        case "USERSDEFAULT":
+        case "usersDefault":
             result = USERSDEFAULT_REGISTRYHIVE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGISTRYHIVE
         default:
             return 0, errors.New("Unknown RegistryHive value: " + v)

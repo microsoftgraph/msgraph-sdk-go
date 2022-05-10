@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of externalConnection entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i IdentityType) String() string {
-    return []string{"USER", "GROUP", "EXTERNALGROUP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"user", "group", "externalGroup", "unknownFutureValue"}[i]
 }
 func ParseIdentityType(v string) (interface{}, error) {
     result := USER_IDENTITYTYPE
-    switch strings.ToUpper(v) {
-        case "USER":
+    switch v {
+        case "user":
             result = USER_IDENTITYTYPE
-        case "GROUP":
+        case "group":
             result = GROUP_IDENTITYTYPE
-        case "EXTERNALGROUP":
+        case "externalGroup":
             result = EXTERNALGROUP_IDENTITYTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IDENTITYTYPE
         default:
             return 0, errors.New("Unknown IdentityType value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the appCatalogs singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TeamsAppDistributionMethod) String() string {
-    return []string{"STORE", "ORGANIZATION", "SIDELOADED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"store", "organization", "sideloaded", "unknownFutureValue"}[i]
 }
 func ParseTeamsAppDistributionMethod(v string) (interface{}, error) {
     result := STORE_TEAMSAPPDISTRIBUTIONMETHOD
-    switch strings.ToUpper(v) {
-        case "STORE":
+    switch v {
+        case "store":
             result = STORE_TEAMSAPPDISTRIBUTIONMETHOD
-        case "ORGANIZATION":
+        case "organization":
             result = ORGANIZATION_TEAMSAPPDISTRIBUTIONMETHOD
-        case "SIDELOADED":
+        case "sideloaded":
             result = SIDELOADED_TEAMSAPPDISTRIBUTIONMETHOD
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSAPPDISTRIBUTIONMETHOD
         default:
             return 0, errors.New("Unknown TeamsAppDistributionMethod value: " + v)

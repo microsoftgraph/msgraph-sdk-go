@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the authenticationMethodsPolicy singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AuthenticationMethodTargetType) String() string {
-    return []string{"USER", "GROUP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"user", "group", "unknownFutureValue"}[i]
 }
 func ParseAuthenticationMethodTargetType(v string) (interface{}, error) {
     result := USER_AUTHENTICATIONMETHODTARGETTYPE
-    switch strings.ToUpper(v) {
-        case "USER":
+    switch v {
+        case "user":
             result = USER_AUTHENTICATIONMETHODTARGETTYPE
-        case "GROUP":
+        case "group":
             result = GROUP_AUTHENTICATIONMETHODTARGETTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODTARGETTYPE
         default:
             return 0, errors.New("Unknown AuthenticationMethodTargetType value: " + v)

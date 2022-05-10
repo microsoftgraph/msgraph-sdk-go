@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppFlaggedReason int
 
 const (
+    // No issue.
     NONE_MANAGEDAPPFLAGGEDREASON ManagedAppFlaggedReason = iota
+    // The app registration is running on a rooted/unlocked device.
     ROOTEDDEVICE_MANAGEDAPPFLAGGEDREASON
 )
 
 func (i ManagedAppFlaggedReason) String() string {
-    return []string{"NONE", "ROOTEDDEVICE"}[i]
+    return []string{"none", "rootedDevice"}[i]
 }
 func ParseManagedAppFlaggedReason(v string) (interface{}, error) {
     result := NONE_MANAGEDAPPFLAGGEDREASON
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_MANAGEDAPPFLAGGEDREASON
-        case "ROOTEDDEVICE":
+        case "rootedDevice":
             result = ROOTEDDEVICE_MANAGEDAPPFLAGGEDREASON
         default:
             return 0, errors.New("Unknown ManagedAppFlaggedReason value: " + v)

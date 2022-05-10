@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i AccessReviewHistoryStatus) String() string {
-    return []string{"DONE", "INPROGRESS", "ERROR", "REQUESTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"done", "inprogress", "error", "requested", "unknownFutureValue"}[i]
 }
 func ParseAccessReviewHistoryStatus(v string) (interface{}, error) {
     result := DONE_ACCESSREVIEWHISTORYSTATUS
-    switch strings.ToUpper(v) {
-        case "DONE":
+    switch v {
+        case "done":
             result = DONE_ACCESSREVIEWHISTORYSTATUS
-        case "INPROGRESS":
+        case "inprogress":
             result = INPROGRESS_ACCESSREVIEWHISTORYSTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_ACCESSREVIEWHISTORYSTATUS
-        case "REQUESTED":
+        case "requested":
             result = REQUESTED_ACCESSREVIEWHISTORYSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSREVIEWHISTORYSTATUS
         default:
             return 0, errors.New("Unknown AccessReviewHistoryStatus value: " + v)

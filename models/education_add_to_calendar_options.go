@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i EducationAddToCalendarOptions) String() string {
-    return []string{"NONE", "STUDENTSANDPUBLISHER", "STUDENTSANDTEAMOWNERS", "UNKNOWNFUTUREVALUE", "STUDENTSONLY"}[i]
+    return []string{"none", "studentsAndPublisher", "studentsAndTeamOwners", "unknownFutureValue", "studentsOnly"}[i]
 }
 func ParseEducationAddToCalendarOptions(v string) (interface{}, error) {
     result := NONE_EDUCATIONADDTOCALENDAROPTIONS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_EDUCATIONADDTOCALENDAROPTIONS
-        case "STUDENTSANDPUBLISHER":
+        case "studentsAndPublisher":
             result = STUDENTSANDPUBLISHER_EDUCATIONADDTOCALENDAROPTIONS
-        case "STUDENTSANDTEAMOWNERS":
+        case "studentsAndTeamOwners":
             result = STUDENTSANDTEAMOWNERS_EDUCATIONADDTOCALENDAROPTIONS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONADDTOCALENDAROPTIONS
-        case "STUDENTSONLY":
+        case "studentsOnly":
             result = STUDENTSONLY_EDUCATIONADDTOCALENDAROPTIONS
         default:
             return 0, errors.New("Unknown EducationAddToCalendarOptions value: " + v)

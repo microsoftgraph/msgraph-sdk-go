@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i LobbyBypassScope) String() string {
-    return []string{"ORGANIZER", "ORGANIZATION", "ORGANIZATIONANDFEDERATED", "EVERYONE", "UNKNOWNFUTUREVALUE", "INVITED", "ORGANIZATIONEXCLUDINGGUESTS"}[i]
+    return []string{"organizer", "organization", "organizationAndFederated", "everyone", "unknownFutureValue", "invited", "organizationExcludingGuests"}[i]
 }
 func ParseLobbyBypassScope(v string) (interface{}, error) {
     result := ORGANIZER_LOBBYBYPASSSCOPE
-    switch strings.ToUpper(v) {
-        case "ORGANIZER":
+    switch v {
+        case "organizer":
             result = ORGANIZER_LOBBYBYPASSSCOPE
-        case "ORGANIZATION":
+        case "organization":
             result = ORGANIZATION_LOBBYBYPASSSCOPE
-        case "ORGANIZATIONANDFEDERATED":
+        case "organizationAndFederated":
             result = ORGANIZATIONANDFEDERATED_LOBBYBYPASSSCOPE
-        case "EVERYONE":
+        case "everyone":
             result = EVERYONE_LOBBYBYPASSSCOPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LOBBYBYPASSSCOPE
-        case "INVITED":
+        case "invited":
             result = INVITED_LOBBYBYPASSSCOPE
-        case "ORGANIZATIONEXCLUDINGGUESTS":
+        case "organizationExcludingGuests":
             result = ORGANIZATIONEXCLUDINGGUESTS_LOBBYBYPASSSCOPE
         default:
             return 0, errors.New("Unknown LobbyBypassScope value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ProvisioningResult) String() string {
-    return []string{"SUCCESS", "FAILURE", "SKIPPED", "WARNING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"success", "failure", "skipped", "warning", "unknownFutureValue"}[i]
 }
 func ParseProvisioningResult(v string) (interface{}, error) {
     result := SUCCESS_PROVISIONINGRESULT
-    switch strings.ToUpper(v) {
-        case "SUCCESS":
+    switch v {
+        case "success":
             result = SUCCESS_PROVISIONINGRESULT
-        case "FAILURE":
+        case "failure":
             result = FAILURE_PROVISIONINGRESULT
-        case "SKIPPED":
+        case "skipped":
             result = SKIPPED_PROVISIONINGRESULT
-        case "WARNING":
+        case "warning":
             result = WARNING_PROVISIONINGRESULT
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROVISIONINGRESULT
         default:
             return 0, errors.New("Unknown ProvisioningResult value: " + v)

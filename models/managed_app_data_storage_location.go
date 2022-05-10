@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppDataStorageLocation int
 
 const (
+    // OneDrive for business
     ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION ManagedAppDataStorageLocation = iota
+    // SharePoint
     SHAREPOINT_MANAGEDAPPDATASTORAGELOCATION
+    // Box
     BOX_MANAGEDAPPDATASTORAGELOCATION
+    // Local storage on the device
     LOCALSTORAGE_MANAGEDAPPDATASTORAGELOCATION
 )
 
 func (i ManagedAppDataStorageLocation) String() string {
-    return []string{"ONEDRIVEFORBUSINESS", "SHAREPOINT", "BOX", "LOCALSTORAGE"}[i]
+    return []string{"oneDriveForBusiness", "sharePoint", "box", "localStorage"}[i]
 }
 func ParseManagedAppDataStorageLocation(v string) (interface{}, error) {
     result := ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION
-    switch strings.ToUpper(v) {
-        case "ONEDRIVEFORBUSINESS":
+    switch v {
+        case "oneDriveForBusiness":
             result = ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION
-        case "SHAREPOINT":
+        case "sharePoint":
             result = SHAREPOINT_MANAGEDAPPDATASTORAGELOCATION
-        case "BOX":
+        case "box":
             result = BOX_MANAGEDAPPDATASTORAGELOCATION
-        case "LOCALSTORAGE":
+        case "localStorage":
             result = LOCALSTORAGE_MANAGEDAPPDATASTORAGELOCATION
         default:
             return 0, errors.New("Unknown ManagedAppDataStorageLocation value: " + v)

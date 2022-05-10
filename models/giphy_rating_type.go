@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type GiphyRatingType int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i GiphyRatingType) String() string {
-    return []string{"STRICT", "MODERATE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"strict", "moderate", "unknownFutureValue"}[i]
 }
 func ParseGiphyRatingType(v string) (interface{}, error) {
     result := STRICT_GIPHYRATINGTYPE
-    switch strings.ToUpper(v) {
-        case "STRICT":
+    switch v {
+        case "strict":
             result = STRICT_GIPHYRATINGTYPE
-        case "MODERATE":
+        case "moderate":
             result = MODERATE_GIPHYRATINGTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GIPHYRATINGTYPE
         default:
             return 0, errors.New("Unknown GiphyRatingType value: " + v)

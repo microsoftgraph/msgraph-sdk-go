@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementExportJobLocalizationType int
 
 const (
+    // Configures the export job to expose localized values as an additional column
     LOCALIZEDVALUESASADDITIONALCOLUMN_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE DeviceManagementExportJobLocalizationType = iota
+    // Configures the export job to replace enumerable values with their localized values
     REPLACELOCALIZABLEVALUES_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
 )
 
 func (i DeviceManagementExportJobLocalizationType) String() string {
-    return []string{"LOCALIZEDVALUESASADDITIONALCOLUMN", "REPLACELOCALIZABLEVALUES"}[i]
+    return []string{"localizedValuesAsAdditionalColumn", "replaceLocalizableValues"}[i]
 }
 func ParseDeviceManagementExportJobLocalizationType(v string) (interface{}, error) {
     result := LOCALIZEDVALUESASADDITIONALCOLUMN_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
-    switch strings.ToUpper(v) {
-        case "LOCALIZEDVALUESASADDITIONALCOLUMN":
+    switch v {
+        case "localizedValuesAsAdditionalColumn":
             result = LOCALIZEDVALUESASADDITIONALCOLUMN_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
-        case "REPLACELOCALIZABLEVALUES":
+        case "replaceLocalizableValues":
             result = REPLACELOCALIZABLEVALUES_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
         default:
             return 0, errors.New("Unknown DeviceManagementExportJobLocalizationType value: " + v)

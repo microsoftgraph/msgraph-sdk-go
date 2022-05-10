@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the informationProtection singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ThreatAssessmentContentType) String() string {
-    return []string{"MAIL", "URL", "FILE"}[i]
+    return []string{"mail", "url", "file"}[i]
 }
 func ParseThreatAssessmentContentType(v string) (interface{}, error) {
     result := MAIL_THREATASSESSMENTCONTENTTYPE
-    switch strings.ToUpper(v) {
-        case "MAIL":
+    switch v {
+        case "mail":
             result = MAIL_THREATASSESSMENTCONTENTTYPE
-        case "URL":
+        case "url":
             result = URL_THREATASSESSMENTCONTENTTYPE
-        case "FILE":
+        case "file":
             result = FILE_THREATASSESSMENTCONTENTTYPE
         default:
             return 0, errors.New("Unknown ThreatAssessmentContentType value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AccessPackageExternalUserLifecycleAction) String() string {
-    return []string{"NONE", "BLOCKSIGNIN", "BLOCKSIGNINANDDELETE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "blockSignIn", "blockSignInAndDelete", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageExternalUserLifecycleAction(v string) (interface{}, error) {
     result := NONE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
-        case "BLOCKSIGNIN":
+        case "blockSignIn":
             result = BLOCKSIGNIN_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
-        case "BLOCKSIGNINANDDELETE":
+        case "blockSignInAndDelete":
             result = BLOCKSIGNINANDDELETE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
         default:
             return 0, errors.New("Unknown AccessPackageExternalUserLifecycleAction value: " + v)

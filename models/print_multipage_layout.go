@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i PrintMultipageLayout) String() string {
-    return []string{"CLOCKWISEFROMTOPLEFT", "COUNTERCLOCKWISEFROMTOPLEFT", "COUNTERCLOCKWISEFROMTOPRIGHT", "CLOCKWISEFROMTOPRIGHT", "COUNTERCLOCKWISEFROMBOTTOMLEFT", "CLOCKWISEFROMBOTTOMLEFT", "COUNTERCLOCKWISEFROMBOTTOMRIGHT", "CLOCKWISEFROMBOTTOMRIGHT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"clockwiseFromTopLeft", "counterclockwiseFromTopLeft", "counterclockwiseFromTopRight", "clockwiseFromTopRight", "counterclockwiseFromBottomLeft", "clockwiseFromBottomLeft", "counterclockwiseFromBottomRight", "clockwiseFromBottomRight", "unknownFutureValue"}[i]
 }
 func ParsePrintMultipageLayout(v string) (interface{}, error) {
     result := CLOCKWISEFROMTOPLEFT_PRINTMULTIPAGELAYOUT
-    switch strings.ToUpper(v) {
-        case "CLOCKWISEFROMTOPLEFT":
+    switch v {
+        case "clockwiseFromTopLeft":
             result = CLOCKWISEFROMTOPLEFT_PRINTMULTIPAGELAYOUT
-        case "COUNTERCLOCKWISEFROMTOPLEFT":
+        case "counterclockwiseFromTopLeft":
             result = COUNTERCLOCKWISEFROMTOPLEFT_PRINTMULTIPAGELAYOUT
-        case "COUNTERCLOCKWISEFROMTOPRIGHT":
+        case "counterclockwiseFromTopRight":
             result = COUNTERCLOCKWISEFROMTOPRIGHT_PRINTMULTIPAGELAYOUT
-        case "CLOCKWISEFROMTOPRIGHT":
+        case "clockwiseFromTopRight":
             result = CLOCKWISEFROMTOPRIGHT_PRINTMULTIPAGELAYOUT
-        case "COUNTERCLOCKWISEFROMBOTTOMLEFT":
+        case "counterclockwiseFromBottomLeft":
             result = COUNTERCLOCKWISEFROMBOTTOMLEFT_PRINTMULTIPAGELAYOUT
-        case "CLOCKWISEFROMBOTTOMLEFT":
+        case "clockwiseFromBottomLeft":
             result = CLOCKWISEFROMBOTTOMLEFT_PRINTMULTIPAGELAYOUT
-        case "COUNTERCLOCKWISEFROMBOTTOMRIGHT":
+        case "counterclockwiseFromBottomRight":
             result = COUNTERCLOCKWISEFROMBOTTOMRIGHT_PRINTMULTIPAGELAYOUT
-        case "CLOCKWISEFROMBOTTOMRIGHT":
+        case "clockwiseFromBottomRight":
             result = CLOCKWISEFROMBOTTOMRIGHT_PRINTMULTIPAGELAYOUT
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTMULTIPAGELAYOUT
         default:
             return 0, errors.New("Unknown PrintMultipageLayout value: " + v)
