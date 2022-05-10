@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type TeamsAsyncOperationStatus int
 
 const (
@@ -16,22 +15,22 @@ const (
 )
 
 func (i TeamsAsyncOperationStatus) String() string {
-    return []string{"INVALID", "NOTSTARTED", "INPROGRESS", "SUCCEEDED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"invalid", "notStarted", "inProgress", "succeeded", "failed", "unknownFutureValue"}[i]
 }
 func ParseTeamsAsyncOperationStatus(v string) (interface{}, error) {
     result := INVALID_TEAMSASYNCOPERATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "INVALID":
+    switch v {
+        case "invalid":
             result = INVALID_TEAMSASYNCOPERATIONSTATUS
-        case "NOTSTARTED":
+        case "notStarted":
             result = NOTSTARTED_TEAMSASYNCOPERATIONSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_TEAMSASYNCOPERATIONSTATUS
-        case "SUCCEEDED":
+        case "succeeded":
             result = SUCCEEDED_TEAMSASYNCOPERATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_TEAMSASYNCOPERATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSASYNCOPERATIONSTATUS
         default:
             return 0, errors.New("Unknown TeamsAsyncOperationStatus value: " + v)

@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    id5e70cd225929fc405c398d65480ccc5d364a56ae8ac3811b0cd5c6e9190d393 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignmentcategories/delta"
     if8a9424f1fa1eee1652b4b54501d594cfadb14c4815b85847e5754f7843a8be7 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignmentcategories/count"
 )
 
@@ -109,6 +110,10 @@ func (m *AssignmentCategoriesRequestBuilder) CreatePostRequestInformationWithReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Delta provides operations to call the delta method.
+func (m *AssignmentCategoriesRequestBuilder) Delta()(*id5e70cd225929fc405c398d65480ccc5d364a56ae8ac3811b0cd5c6e9190d393.DeltaRequestBuilder) {
+    return id5e70cd225929fc405c398d65480ccc5d364a56ae8ac3811b0cd5c6e9190d393.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get all categories associated with this class. Nullable.
 func (m *AssignmentCategoriesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryCollectionResponseable, error) {

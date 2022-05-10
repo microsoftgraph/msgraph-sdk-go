@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i ProvisioningStepType) String() string {
-    return []string{"IMPORT_ESCAPED", "SCOPING", "MATCHING", "PROCESSING", "REFERENCERESOLUTION", "EXPORT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"import", "scoping", "matching", "processing", "referenceResolution", "export", "unknownFutureValue"}[i]
 }
 func ParseProvisioningStepType(v string) (interface{}, error) {
     result := IMPORT_ESCAPED_PROVISIONINGSTEPTYPE
-    switch strings.ToUpper(v) {
-        case "IMPORT_ESCAPED":
+    switch v {
+        case "import":
             result = IMPORT_ESCAPED_PROVISIONINGSTEPTYPE
-        case "SCOPING":
+        case "scoping":
             result = SCOPING_PROVISIONINGSTEPTYPE
-        case "MATCHING":
+        case "matching":
             result = MATCHING_PROVISIONINGSTEPTYPE
-        case "PROCESSING":
+        case "processing":
             result = PROCESSING_PROVISIONINGSTEPTYPE
-        case "REFERENCERESOLUTION":
+        case "referenceResolution":
             result = REFERENCERESOLUTION_PROVISIONINGSTEPTYPE
-        case "EXPORT":
+        case "export":
             result = EXPORT_PROVISIONINGSTEPTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROVISIONINGSTEPTYPE
         default:
             return 0, errors.New("Unknown ProvisioningStepType value: " + v)

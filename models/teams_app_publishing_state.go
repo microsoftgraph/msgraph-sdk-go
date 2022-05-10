@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the appCatalogs singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TeamsAppPublishingState) String() string {
-    return []string{"SUBMITTED", "REJECTED", "PUBLISHED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"submitted", "rejected", "published", "unknownFutureValue"}[i]
 }
 func ParseTeamsAppPublishingState(v string) (interface{}, error) {
     result := SUBMITTED_TEAMSAPPPUBLISHINGSTATE
-    switch strings.ToUpper(v) {
-        case "SUBMITTED":
+    switch v {
+        case "submitted":
             result = SUBMITTED_TEAMSAPPPUBLISHINGSTATE
-        case "REJECTED":
+        case "rejected":
             result = REJECTED_TEAMSAPPPUBLISHINGSTATE
-        case "PUBLISHED":
+        case "published":
             result = PUBLISHED_TEAMSAPPPUBLISHINGSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSAPPPUBLISHINGSTATE
         default:
             return 0, errors.New("Unknown TeamsAppPublishingState value: " + v)

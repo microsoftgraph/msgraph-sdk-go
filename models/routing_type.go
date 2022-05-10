@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i RoutingType) String() string {
-    return []string{"FORWARDED", "LOOKUP", "SELFFORK", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"forwarded", "lookup", "selfFork", "unknownFutureValue"}[i]
 }
 func ParseRoutingType(v string) (interface{}, error) {
     result := FORWARDED_ROUTINGTYPE
-    switch strings.ToUpper(v) {
-        case "FORWARDED":
+    switch v {
+        case "forwarded":
             result = FORWARDED_ROUTINGTYPE
-        case "LOOKUP":
+        case "lookup":
             result = LOOKUP_ROUTINGTYPE
-        case "SELFFORK":
+        case "selfFork":
             result = SELFFORK_ROUTINGTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ROUTINGTYPE
         default:
             return 0, errors.New("Unknown RoutingType value: " + v)

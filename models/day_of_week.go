@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type DayOfWeek int
 
 const (
@@ -17,24 +16,24 @@ const (
 )
 
 func (i DayOfWeek) String() string {
-    return []string{"SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"}[i]
+    return []string{"sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"}[i]
 }
 func ParseDayOfWeek(v string) (interface{}, error) {
     result := SUNDAY_DAYOFWEEK
-    switch strings.ToUpper(v) {
-        case "SUNDAY":
+    switch v {
+        case "sunday":
             result = SUNDAY_DAYOFWEEK
-        case "MONDAY":
+        case "monday":
             result = MONDAY_DAYOFWEEK
-        case "TUESDAY":
+        case "tuesday":
             result = TUESDAY_DAYOFWEEK
-        case "WEDNESDAY":
+        case "wednesday":
             result = WEDNESDAY_DAYOFWEEK
-        case "THURSDAY":
+        case "thursday":
             result = THURSDAY_DAYOFWEEK
-        case "FRIDAY":
+        case "friday":
             result = FRIDAY_DAYOFWEEK
-        case "SATURDAY":
+        case "saturday":
             result = SATURDAY_DAYOFWEEK
         default:
             return 0, errors.New("Unknown DayOfWeek value: " + v)

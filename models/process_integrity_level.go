@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i ProcessIntegrityLevel) String() string {
-    return []string{"UNKNOWN", "UNTRUSTED", "LOW", "MEDIUM", "HIGH", "SYSTEM", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "untrusted", "low", "medium", "high", "system", "unknownFutureValue"}[i]
 }
 func ParseProcessIntegrityLevel(v string) (interface{}, error) {
     result := UNKNOWN_PROCESSINTEGRITYLEVEL
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_PROCESSINTEGRITYLEVEL
-        case "UNTRUSTED":
+        case "untrusted":
             result = UNTRUSTED_PROCESSINTEGRITYLEVEL
-        case "LOW":
+        case "low":
             result = LOW_PROCESSINTEGRITYLEVEL
-        case "MEDIUM":
+        case "medium":
             result = MEDIUM_PROCESSINTEGRITYLEVEL
-        case "HIGH":
+        case "high":
             result = HIGH_PROCESSINTEGRITYLEVEL
-        case "SYSTEM":
+        case "system":
             result = SYSTEM_PROCESSINTEGRITYLEVEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROCESSINTEGRITYLEVEL
         default:
             return 0, errors.New("Unknown ProcessIntegrityLevel value: " + v)

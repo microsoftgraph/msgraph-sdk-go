@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of externalConnection entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ExternalItemContentType) String() string {
-    return []string{"TEXT", "HTML", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"text", "html", "unknownFutureValue"}[i]
 }
 func ParseExternalItemContentType(v string) (interface{}, error) {
     result := TEXT_EXTERNALITEMCONTENTTYPE
-    switch strings.ToUpper(v) {
-        case "TEXT":
+    switch v {
+        case "text":
             result = TEXT_EXTERNALITEMCONTENTTYPE
-        case "HTML":
+        case "html":
             result = HTML_EXTERNALITEMCONTENTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EXTERNALITEMCONTENTTYPE
         default:
             return 0, errors.New("Unknown ExternalItemContentType value: " + v)

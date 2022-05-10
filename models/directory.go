@@ -11,6 +11,8 @@ type Directory struct {
     administrativeUnits []AdministrativeUnitable
     // Recently deleted items. Read-only. Nullable.
     deletedItems []DirectoryObjectable
+    // Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+    federationConfigurations []IdentityProviderBaseable
 }
 // NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {
@@ -37,6 +39,14 @@ func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
         return nil
     } else {
         return m.deletedItems
+    }
+}
+// GetFederationConfigurations gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.federationConfigurations
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -70,6 +80,20 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["federationConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IdentityProviderBaseable, len(val))
+            for i, v := range val {
+                res[i] = v.(IdentityProviderBaseable)
+            }
+            m.SetFederationConfigurations(res)
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object
@@ -98,6 +122,16 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetFederationConfigurations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFederationConfigurations()))
+        for i, v := range m.GetFederationConfigurations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("federationConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
@@ -110,5 +144,11 @@ func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnitable)() {
 func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
     if m != nil {
         m.deletedItems = value
+    }
+}
+// SetFederationConfigurations sets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+func (m *Directory) SetFederationConfigurations(value []IdentityProviderBaseable)() {
+    if m != nil {
+        m.federationConfigurations = value
     }
 }

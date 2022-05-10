@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type MobileAppPublishingState int
 
 const (
+    // The app is not yet published.
     NOTPUBLISHED_MOBILEAPPPUBLISHINGSTATE MobileAppPublishingState = iota
+    // The app is pending service-side processing.
     PROCESSING_MOBILEAPPPUBLISHINGSTATE
+    // The app is published.
     PUBLISHED_MOBILEAPPPUBLISHINGSTATE
 )
 
 func (i MobileAppPublishingState) String() string {
-    return []string{"NOTPUBLISHED", "PROCESSING", "PUBLISHED"}[i]
+    return []string{"notPublished", "processing", "published"}[i]
 }
 func ParseMobileAppPublishingState(v string) (interface{}, error) {
     result := NOTPUBLISHED_MOBILEAPPPUBLISHINGSTATE
-    switch strings.ToUpper(v) {
-        case "NOTPUBLISHED":
+    switch v {
+        case "notPublished":
             result = NOTPUBLISHED_MOBILEAPPPUBLISHINGSTATE
-        case "PROCESSING":
+        case "processing":
             result = PROCESSING_MOBILEAPPPUBLISHINGSTATE
-        case "PUBLISHED":
+        case "published":
             result = PUBLISHED_MOBILEAPPPUBLISHINGSTATE
         default:
             return 0, errors.New("Unknown MobileAppPublishingState value: " + v)

@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type ApplicationType int
 
 const (
+    // The windows universal application
     UNIVERSAL_APPLICATIONTYPE ApplicationType = iota
+    // The windows desktop application
     DESKTOP_APPLICATIONTYPE
 )
 
 func (i ApplicationType) String() string {
-    return []string{"UNIVERSAL", "DESKTOP"}[i]
+    return []string{"universal", "desktop"}[i]
 }
 func ParseApplicationType(v string) (interface{}, error) {
     result := UNIVERSAL_APPLICATIONTYPE
-    switch strings.ToUpper(v) {
-        case "UNIVERSAL":
+    switch v {
+        case "universal":
             result = UNIVERSAL_APPLICATIONTYPE
-        case "DESKTOP":
+        case "desktop":
             result = DESKTOP_APPLICATIONTYPE
         default:
             return 0, errors.New("Unknown ApplicationType value: " + v)

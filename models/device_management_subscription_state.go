@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementSubscriptionState int
 
 const (
+    // Pending
     PENDING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE DeviceManagementSubscriptionState = iota
+    // Active
     ACTIVE_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
+    // Warning
     WARNING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
+    // Disabled
     DISABLED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
+    // Deleted
     DELETED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
+    // Blocked
     BLOCKED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
+    // LockedOut
     LOCKEDOUT_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
 )
 
 func (i DeviceManagementSubscriptionState) String() string {
-    return []string{"PENDING", "ACTIVE", "WARNING", "DISABLED", "DELETED", "BLOCKED", "LOCKEDOUT"}[i]
+    return []string{"pending", "active", "warning", "disabled", "deleted", "blocked", "lockedOut"}[i]
 }
 func ParseDeviceManagementSubscriptionState(v string) (interface{}, error) {
     result := PENDING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
-        case "WARNING":
+        case "warning":
             result = WARNING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
-        case "DELETED":
+        case "deleted":
             result = DELETED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
-        case "BLOCKED":
+        case "blocked":
             result = BLOCKED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
-        case "LOCKEDOUT":
+        case "lockedOut":
             result = LOCKEDOUT_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
         default:
             return 0, errors.New("Unknown DeviceManagementSubscriptionState value: " + v)

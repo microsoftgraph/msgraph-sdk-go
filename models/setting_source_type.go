@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of drive entities.
 type SettingSourceType int
 
 const (
@@ -12,14 +11,14 @@ const (
 )
 
 func (i SettingSourceType) String() string {
-    return []string{"DEVICECONFIGURATION", "DEVICEINTENT"}[i]
+    return []string{"deviceConfiguration", "deviceIntent"}[i]
 }
 func ParseSettingSourceType(v string) (interface{}, error) {
     result := DEVICECONFIGURATION_SETTINGSOURCETYPE
-    switch strings.ToUpper(v) {
-        case "DEVICECONFIGURATION":
+    switch v {
+        case "deviceConfiguration":
             result = DEVICECONFIGURATION_SETTINGSOURCETYPE
-        case "DEVICEINTENT":
+        case "deviceIntent":
             result = DEVICEINTENT_SETTINGSOURCETYPE
         default:
             return 0, errors.New("Unknown SettingSourceType value: " + v)

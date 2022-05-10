@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i EndpointType) String() string {
-    return []string{"DEFAULT_ESCAPED", "VOICEMAIL", "SKYPEFORBUSINESS", "SKYPEFORBUSINESSVOIPPHONE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"default", "voicemail", "skypeForBusiness", "skypeForBusinessVoipPhone", "unknownFutureValue"}[i]
 }
 func ParseEndpointType(v string) (interface{}, error) {
     result := DEFAULT_ESCAPED_ENDPOINTTYPE
-    switch strings.ToUpper(v) {
-        case "DEFAULT_ESCAPED":
+    switch v {
+        case "default":
             result = DEFAULT_ESCAPED_ENDPOINTTYPE
-        case "VOICEMAIL":
+        case "voicemail":
             result = VOICEMAIL_ENDPOINTTYPE
-        case "SKYPEFORBUSINESS":
+        case "skypeForBusiness":
             result = SKYPEFORBUSINESS_ENDPOINTTYPE
-        case "SKYPEFORBUSINESSVOIPPHONE":
+        case "skypeForBusinessVoipPhone":
             result = SKYPEFORBUSINESSVOIPPHONE_ENDPOINTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ENDPOINTTYPE
         default:
             return 0, errors.New("Unknown EndpointType value: " + v)

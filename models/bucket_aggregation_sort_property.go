@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the query method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i BucketAggregationSortProperty) String() string {
-    return []string{"COUNT", "KEYASSTRING", "KEYASNUMBER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"count", "keyAsString", "keyAsNumber", "unknownFutureValue"}[i]
 }
 func ParseBucketAggregationSortProperty(v string) (interface{}, error) {
     result := COUNT_BUCKETAGGREGATIONSORTPROPERTY
-    switch strings.ToUpper(v) {
-        case "COUNT":
+    switch v {
+        case "count":
             result = COUNT_BUCKETAGGREGATIONSORTPROPERTY
-        case "KEYASSTRING":
+        case "keyAsString":
             result = KEYASSTRING_BUCKETAGGREGATIONSORTPROPERTY
-        case "KEYASNUMBER":
+        case "keyAsNumber":
             result = KEYASNUMBER_BUCKETAGGREGATIONSORTPROPERTY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BUCKETAGGREGATIONSORTPROPERTY
         default:
             return 0, errors.New("Unknown BucketAggregationSortProperty value: " + v)

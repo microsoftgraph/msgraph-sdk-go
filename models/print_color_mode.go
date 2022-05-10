@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i PrintColorMode) String() string {
-    return []string{"BLACKANDWHITE", "GRAYSCALE", "COLOR", "AUTO", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"blackAndWhite", "grayscale", "color", "auto", "unknownFutureValue"}[i]
 }
 func ParsePrintColorMode(v string) (interface{}, error) {
     result := BLACKANDWHITE_PRINTCOLORMODE
-    switch strings.ToUpper(v) {
-        case "BLACKANDWHITE":
+    switch v {
+        case "blackAndWhite":
             result = BLACKANDWHITE_PRINTCOLORMODE
-        case "GRAYSCALE":
+        case "grayscale":
             result = GRAYSCALE_PRINTCOLORMODE
-        case "COLOR":
+        case "color":
             result = COLOR_PRINTCOLORMODE
-        case "AUTO":
+        case "auto":
             result = AUTO_PRINTCOLORMODE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTCOLORMODE
         default:
             return 0, errors.New("Unknown PrintColorMode value: " + v)

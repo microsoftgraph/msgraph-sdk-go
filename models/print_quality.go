@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PrintQuality) String() string {
-    return []string{"LOW", "MEDIUM", "HIGH", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"low", "medium", "high", "unknownFutureValue"}[i]
 }
 func ParsePrintQuality(v string) (interface{}, error) {
     result := LOW_PRINTQUALITY
-    switch strings.ToUpper(v) {
-        case "LOW":
+    switch v {
+        case "low":
             result = LOW_PRINTQUALITY
-        case "MEDIUM":
+        case "medium":
             result = MEDIUM_PRINTQUALITY
-        case "HIGH":
+        case "high":
             result = HIGH_PRINTQUALITY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTQUALITY
         default:
             return 0, errors.New("Unknown PrintQuality value: " + v)

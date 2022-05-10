@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type OnlineMeetingProviderType int
 
 const (
@@ -14,18 +13,18 @@ const (
 )
 
 func (i OnlineMeetingProviderType) String() string {
-    return []string{"UNKNOWN", "SKYPEFORBUSINESS", "SKYPEFORCONSUMER", "TEAMSFORBUSINESS"}[i]
+    return []string{"unknown", "skypeForBusiness", "skypeForConsumer", "teamsForBusiness"}[i]
 }
 func ParseOnlineMeetingProviderType(v string) (interface{}, error) {
     result := UNKNOWN_ONLINEMEETINGPROVIDERTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_ONLINEMEETINGPROVIDERTYPE
-        case "SKYPEFORBUSINESS":
+        case "skypeForBusiness":
             result = SKYPEFORBUSINESS_ONLINEMEETINGPROVIDERTYPE
-        case "SKYPEFORCONSUMER":
+        case "skypeForConsumer":
             result = SKYPEFORCONSUMER_ONLINEMEETINGPROVIDERTYPE
-        case "TEAMSFORBUSINESS":
+        case "teamsForBusiness":
             result = TEAMSFORBUSINESS_ONLINEMEETINGPROVIDERTYPE
         default:
             return 0, errors.New("Unknown OnlineMeetingProviderType value: " + v)

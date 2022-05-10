@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the informationProtection singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ThreatCategory) String() string {
-    return []string{"UNDEFINED", "SPAM", "PHISHING", "MALWARE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"undefined", "spam", "phishing", "malware", "unknownFutureValue"}[i]
 }
 func ParseThreatCategory(v string) (interface{}, error) {
     result := UNDEFINED_THREATCATEGORY
-    switch strings.ToUpper(v) {
-        case "UNDEFINED":
+    switch v {
+        case "undefined":
             result = UNDEFINED_THREATCATEGORY
-        case "SPAM":
+        case "spam":
             result = SPAM_THREATCATEGORY
-        case "PHISHING":
+        case "phishing":
             result = PHISHING_THREATCATEGORY
-        case "MALWARE":
+        case "malware":
             result = MALWARE_THREATCATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_THREATCATEGORY
         default:
             return 0, errors.New("Unknown ThreatCategory value: " + v)

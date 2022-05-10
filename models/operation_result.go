@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i OperationResult) String() string {
-    return []string{"SUCCESS", "FAILURE", "TIMEOUT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"success", "failure", "timeout", "unknownFutureValue"}[i]
 }
 func ParseOperationResult(v string) (interface{}, error) {
     result := SUCCESS_OPERATIONRESULT
-    switch strings.ToUpper(v) {
-        case "SUCCESS":
+    switch v {
+        case "success":
             result = SUCCESS_OPERATIONRESULT
-        case "FAILURE":
+        case "failure":
             result = FAILURE_OPERATIONRESULT
-        case "TIMEOUT":
+        case "timeout":
             result = TIMEOUT_OPERATIONRESULT
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPERATIONRESULT
         default:
             return 0, errors.New("Unknown OperationResult value: " + v)

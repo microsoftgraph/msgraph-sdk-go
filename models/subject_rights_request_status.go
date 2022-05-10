@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the privacy singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i SubjectRightsRequestStatus) String() string {
-    return []string{"ACTIVE", "CLOSED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"active", "closed", "unknownFutureValue"}[i]
 }
 func ParseSubjectRightsRequestStatus(v string) (interface{}, error) {
     result := ACTIVE_SUBJECTRIGHTSREQUESTSTATUS
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "active":
             result = ACTIVE_SUBJECTRIGHTSREQUESTSTATUS
-        case "CLOSED":
+        case "closed":
             result = CLOSED_SUBJECTRIGHTSREQUESTSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTATUS
         default:
             return 0, errors.New("Unknown SubjectRightsRequestStatus value: " + v)

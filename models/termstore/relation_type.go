@@ -1,9 +1,8 @@
 package termstore
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type RelationType int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i RelationType) String() string {
-    return []string{"PIN", "REUSE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"pin", "reuse", "unknownFutureValue"}[i]
 }
 func ParseRelationType(v string) (interface{}, error) {
     result := PIN_RELATIONTYPE
-    switch strings.ToUpper(v) {
-        case "PIN":
+    switch v {
+        case "pin":
             result = PIN_RELATIONTYPE
-        case "REUSE":
+        case "reuse":
             result = REUSE_RELATIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RELATIONTYPE
         default:
             return 0, errors.New("Unknown RelationType value: " + v)

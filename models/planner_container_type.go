@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type PlannerContainerType int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i PlannerContainerType) String() string {
-    return []string{"GROUP", "UNKNOWNFUTUREVALUE", "ROSTER"}[i]
+    return []string{"group", "unknownFutureValue", "roster"}[i]
 }
 func ParsePlannerContainerType(v string) (interface{}, error) {
     result := GROUP_PLANNERCONTAINERTYPE
-    switch strings.ToUpper(v) {
-        case "GROUP":
+    switch v {
+        case "group":
             result = GROUP_PLANNERCONTAINERTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
-        case "ROSTER":
+        case "roster":
             result = ROSTER_PLANNERCONTAINERTYPE
         default:
             return 0, errors.New("Unknown PlannerContainerType value: " + v)

@@ -19,7 +19,7 @@ type GroupSettingTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GroupSettingTemplatesRequestBuilderGetQueryParameters get entities from groupSettingTemplates
+// GroupSettingTemplatesRequestBuilderGetQueryParameters list groupSettingTemplates
 type GroupSettingTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewGroupSettingTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *GroupSettingTemplatesRequestBuilder) Count()(*ie2feb4ec9a72c319a82ed8b82d8ae3403e819512010e7c6dd097f3426e334809.CountRequestBuilder) {
     return ie2feb4ec9a72c319a82ed8b82d8ae3403e819512010e7c6dd097f3426e334809.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from groupSettingTemplates
+// CreateGetRequestInformation list groupSettingTemplates
 func (m *GroupSettingTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from groupSettingTemplates
+// CreateGetRequestInformationWithRequestConfiguration list groupSettingTemplates
 func (m *GroupSettingTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GroupSettingTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *GroupSettingTemplatesRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get get entities from groupSettingTemplates
+// Get list groupSettingTemplates
 func (m *GroupSettingTemplatesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -125,7 +125,7 @@ func (m *GroupSettingTemplatesRequestBuilder) GetAvailableExtensionProperties()(
 func (m *GroupSettingTemplatesRequestBuilder) GetByIds()(*iccb6d65dafe6f1cf697180a62c7210b026edfb6f165ab42626bb6c7cf8a7836a.GetByIdsRequestBuilder) {
     return iccb6d65dafe6f1cf697180a62c7210b026edfb6f165ab42626bb6c7cf8a7836a.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from groupSettingTemplates
+// GetWithRequestConfigurationAndResponseHandler list groupSettingTemplates
 func (m *GroupSettingTemplatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupSettingTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

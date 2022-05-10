@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type ScheduleChangeRequestActor int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ScheduleChangeRequestActor) String() string {
-    return []string{"SENDER", "RECIPIENT", "MANAGER", "SYSTEM", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"sender", "recipient", "manager", "system", "unknownFutureValue"}[i]
 }
 func ParseScheduleChangeRequestActor(v string) (interface{}, error) {
     result := SENDER_SCHEDULECHANGEREQUESTACTOR
-    switch strings.ToUpper(v) {
-        case "SENDER":
+    switch v {
+        case "sender":
             result = SENDER_SCHEDULECHANGEREQUESTACTOR
-        case "RECIPIENT":
+        case "recipient":
             result = RECIPIENT_SCHEDULECHANGEREQUESTACTOR
-        case "MANAGER":
+        case "manager":
             result = MANAGER_SCHEDULECHANGEREQUESTACTOR
-        case "SYSTEM":
+        case "system":
             result = SYSTEM_SCHEDULECHANGEREQUESTACTOR
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCHEDULECHANGEREQUESTACTOR
         default:
             return 0, errors.New("Unknown ScheduleChangeRequestActor value: " + v)

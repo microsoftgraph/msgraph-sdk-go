@@ -1,46 +1,53 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the solutionsRoot singleton.
 type BookingPriceType int
 
 const (
+    // The price of the service is not defined.
     UNDEFINED_BOOKINGPRICETYPE BookingPriceType = iota
+    // The price of the service is fixed.
     FIXEDPRICE_BOOKINGPRICETYPE
+    // The price of the service starts with a particular value, but can be higher based on the final services performed.
     STARTINGAT_BOOKINGPRICETYPE
+    // The price of the service depends on the number of hours a staff member works on the service.
     HOURLY_BOOKINGPRICETYPE
+    // The service is free.
     FREE_BOOKINGPRICETYPE
+    // The price of the service varies.
     PRICEVARIES_BOOKINGPRICETYPE
+    // The price of the service is not listed.
     CALLUS_BOOKINGPRICETYPE
+    // The price of the service is not set.
     NOTSET_BOOKINGPRICETYPE
     UNKNOWNFUTUREVALUE_BOOKINGPRICETYPE
 )
 
 func (i BookingPriceType) String() string {
-    return []string{"UNDEFINED", "FIXEDPRICE", "STARTINGAT", "HOURLY", "FREE", "PRICEVARIES", "CALLUS", "NOTSET", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"undefined", "fixedPrice", "startingAt", "hourly", "free", "priceVaries", "callUs", "notSet", "unknownFutureValue"}[i]
 }
 func ParseBookingPriceType(v string) (interface{}, error) {
     result := UNDEFINED_BOOKINGPRICETYPE
-    switch strings.ToUpper(v) {
-        case "UNDEFINED":
+    switch v {
+        case "undefined":
             result = UNDEFINED_BOOKINGPRICETYPE
-        case "FIXEDPRICE":
+        case "fixedPrice":
             result = FIXEDPRICE_BOOKINGPRICETYPE
-        case "STARTINGAT":
+        case "startingAt":
             result = STARTINGAT_BOOKINGPRICETYPE
-        case "HOURLY":
+        case "hourly":
             result = HOURLY_BOOKINGPRICETYPE
-        case "FREE":
+        case "free":
             result = FREE_BOOKINGPRICETYPE
-        case "PRICEVARIES":
+        case "priceVaries":
             result = PRICEVARIES_BOOKINGPRICETYPE
-        case "CALLUS":
+        case "callUs":
             result = CALLUS_BOOKINGPRICETYPE
-        case "NOTSET":
+        case "notSet":
             result = NOTSET_BOOKINGPRICETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BOOKINGPRICETYPE
         default:
             return 0, errors.New("Unknown BookingPriceType value: " + v)

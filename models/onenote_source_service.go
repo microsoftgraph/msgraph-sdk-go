@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getRecentNotebooks method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i OnenoteSourceService) String() string {
-    return []string{"UNKNOWN", "ONEDRIVE", "ONEDRIVEFORBUSINESS", "ONPREMONEDRIVEFORBUSINESS"}[i]
+    return []string{"Unknown", "OneDrive", "OneDriveForBusiness", "OnPremOneDriveForBusiness"}[i]
 }
 func ParseOnenoteSourceService(v string) (interface{}, error) {
     result := UNKNOWN_ONENOTESOURCESERVICE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "Unknown":
             result = UNKNOWN_ONENOTESOURCESERVICE
-        case "ONEDRIVE":
+        case "OneDrive":
             result = ONEDRIVE_ONENOTESOURCESERVICE
-        case "ONEDRIVEFORBUSINESS":
+        case "OneDriveForBusiness":
             result = ONEDRIVEFORBUSINESS_ONENOTESOURCESERVICE
-        case "ONPREMONEDRIVEFORBUSINESS":
+        case "OnPremOneDriveForBusiness":
             result = ONPREMONEDRIVEFORBUSINESS_ONENOTESOURCESERVICE
         default:
             return 0, errors.New("Unknown OnenoteSourceService value: " + v)

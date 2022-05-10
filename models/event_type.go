@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type EventType int
 
 const (
@@ -14,18 +13,18 @@ const (
 )
 
 func (i EventType) String() string {
-    return []string{"SINGLEINSTANCE", "OCCURRENCE", "EXCEPTION", "SERIESMASTER"}[i]
+    return []string{"singleInstance", "occurrence", "exception", "seriesMaster"}[i]
 }
 func ParseEventType(v string) (interface{}, error) {
     result := SINGLEINSTANCE_EVENTTYPE
-    switch strings.ToUpper(v) {
-        case "SINGLEINSTANCE":
+    switch v {
+        case "singleInstance":
             result = SINGLEINSTANCE_EVENTTYPE
-        case "OCCURRENCE":
+        case "occurrence":
             result = OCCURRENCE_EVENTTYPE
-        case "EXCEPTION":
+        case "exception":
             result = EXCEPTION_EVENTTYPE
-        case "SERIESMASTER":
+        case "seriesMaster":
             result = SERIESMASTER_EVENTTYPE
         default:
             return 0, errors.New("Unknown EventType value: " + v)

@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type SelectionLikelihoodInfo int
 
 const (
@@ -12,14 +11,14 @@ const (
 )
 
 func (i SelectionLikelihoodInfo) String() string {
-    return []string{"NOTSPECIFIED", "HIGH"}[i]
+    return []string{"notSpecified", "high"}[i]
 }
 func ParseSelectionLikelihoodInfo(v string) (interface{}, error) {
     result := NOTSPECIFIED_SELECTIONLIKELIHOODINFO
-    switch strings.ToUpper(v) {
-        case "NOTSPECIFIED":
+    switch v {
+        case "notSpecified":
             result = NOTSPECIFIED_SELECTIONLIKELIHOODINFO
-        case "HIGH":
+        case "high":
             result = HIGH_SELECTIONLIKELIHOODINFO
         default:
             return 0, errors.New("Unknown SelectionLikelihoodInfo value: " + v)

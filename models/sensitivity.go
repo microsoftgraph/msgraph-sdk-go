@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type Sensitivity int
 
 const (
@@ -14,18 +13,18 @@ const (
 )
 
 func (i Sensitivity) String() string {
-    return []string{"NORMAL", "PERSONAL", "PRIVATE", "CONFIDENTIAL"}[i]
+    return []string{"normal", "personal", "private", "confidential"}[i]
 }
 func ParseSensitivity(v string) (interface{}, error) {
     result := NORMAL_SENSITIVITY
-    switch strings.ToUpper(v) {
-        case "NORMAL":
+    switch v {
+        case "normal":
             result = NORMAL_SENSITIVITY
-        case "PERSONAL":
+        case "personal":
             result = PERSONAL_SENSITIVITY
-        case "PRIVATE":
+        case "private":
             result = PRIVATE_SENSITIVITY
-        case "CONFIDENTIAL":
+        case "confidential":
             result = CONFIDENTIAL_SENSITIVITY
         default:
             return 0, errors.New("Unknown Sensitivity value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AccessPackageCatalogType) String() string {
-    return []string{"USERMANAGED", "SERVICEDEFAULT", "SERVICEMANAGED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"userManaged", "serviceDefault", "serviceManaged", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageCatalogType(v string) (interface{}, error) {
     result := USERMANAGED_ACCESSPACKAGECATALOGTYPE
-    switch strings.ToUpper(v) {
-        case "USERMANAGED":
+    switch v {
+        case "userManaged":
             result = USERMANAGED_ACCESSPACKAGECATALOGTYPE
-        case "SERVICEDEFAULT":
+        case "serviceDefault":
             result = SERVICEDEFAULT_ACCESSPACKAGECATALOGTYPE
-        case "SERVICEMANAGED":
+        case "serviceManaged":
             result = SERVICEMANAGED_ACCESSPACKAGECATALOGTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGECATALOGTYPE
         default:
             return 0, errors.New("Unknown AccessPackageCatalogType value: " + v)

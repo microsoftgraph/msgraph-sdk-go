@@ -16,7 +16,7 @@ type ApplicationTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ApplicationTemplatesRequestBuilderGetQueryParameters get entities from applicationTemplates
+// ApplicationTemplatesRequestBuilderGetQueryParameters list applicationTemplates
 type ApplicationTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewApplicationTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ApplicationTemplatesRequestBuilder) Count()(*i21c83a641a9ac172f89b5392b58b099fe453b7e98a6f6a39d8b8ca94a4adee1e.CountRequestBuilder) {
     return i21c83a641a9ac172f89b5392b58b099fe453b7e98a6f6a39d8b8ca94a4adee1e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from applicationTemplates
+// CreateGetRequestInformation list applicationTemplates
 func (m *ApplicationTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from applicationTemplates
+// CreateGetRequestInformationWithRequestConfiguration list applicationTemplates
 func (m *ApplicationTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *ApplicationTemplatesRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Get get entities from applicationTemplates
+// Get list applicationTemplates
 func (m *ApplicationTemplatesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from applicationTemplates
+// GetWithRequestConfigurationAndResponseHandler list applicationTemplates
 func (m *ApplicationTemplatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

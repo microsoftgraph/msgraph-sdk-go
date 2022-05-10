@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type OnenoteUserRole int
 
 const (
@@ -14,18 +13,18 @@ const (
 )
 
 func (i OnenoteUserRole) String() string {
-    return []string{"NONE", "OWNER", "CONTRIBUTOR", "READER"}[i]
+    return []string{"None", "Owner", "Contributor", "Reader"}[i]
 }
 func ParseOnenoteUserRole(v string) (interface{}, error) {
     result := NONE_ONENOTEUSERROLE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "None":
             result = NONE_ONENOTEUSERROLE
-        case "OWNER":
+        case "Owner":
             result = OWNER_ONENOTEUSERROLE
-        case "CONTRIBUTOR":
+        case "Contributor":
             result = CONTRIBUTOR_ONENOTEUSERROLE
-        case "READER":
+        case "Reader":
             result = READER_ONENOTEUSERROLE
         default:
             return 0, errors.New("Unknown OnenoteUserRole value: " + v)

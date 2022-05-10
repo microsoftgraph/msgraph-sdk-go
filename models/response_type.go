@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type ResponseType int
 
 const (
@@ -16,22 +15,22 @@ const (
 )
 
 func (i ResponseType) String() string {
-    return []string{"NONE", "ORGANIZER", "TENTATIVELYACCEPTED", "ACCEPTED", "DECLINED", "NOTRESPONDED"}[i]
+    return []string{"none", "organizer", "tentativelyAccepted", "accepted", "declined", "notResponded"}[i]
 }
 func ParseResponseType(v string) (interface{}, error) {
     result := NONE_RESPONSETYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_RESPONSETYPE
-        case "ORGANIZER":
+        case "organizer":
             result = ORGANIZER_RESPONSETYPE
-        case "TENTATIVELYACCEPTED":
+        case "tentativelyAccepted":
             result = TENTATIVELYACCEPTED_RESPONSETYPE
-        case "ACCEPTED":
+        case "accepted":
             result = ACCEPTED_RESPONSETYPE
-        case "DECLINED":
+        case "declined":
             result = DECLINED_RESPONSETYPE
-        case "NOTRESPONDED":
+        case "notResponded":
             result = NOTRESPONDED_RESPONSETYPE
         default:
             return 0, errors.New("Unknown ResponseType value: " + v)

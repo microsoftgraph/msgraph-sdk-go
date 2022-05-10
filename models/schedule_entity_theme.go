@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type ScheduleEntityTheme int
 
 const (
@@ -23,36 +22,36 @@ const (
 )
 
 func (i ScheduleEntityTheme) String() string {
-    return []string{"WHITE", "BLUE", "GREEN", "PURPLE", "PINK", "YELLOW", "GRAY", "DARKBLUE", "DARKGREEN", "DARKPURPLE", "DARKPINK", "DARKYELLOW", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"white", "blue", "green", "purple", "pink", "yellow", "gray", "darkBlue", "darkGreen", "darkPurple", "darkPink", "darkYellow", "unknownFutureValue"}[i]
 }
 func ParseScheduleEntityTheme(v string) (interface{}, error) {
     result := WHITE_SCHEDULEENTITYTHEME
-    switch strings.ToUpper(v) {
-        case "WHITE":
+    switch v {
+        case "white":
             result = WHITE_SCHEDULEENTITYTHEME
-        case "BLUE":
+        case "blue":
             result = BLUE_SCHEDULEENTITYTHEME
-        case "GREEN":
+        case "green":
             result = GREEN_SCHEDULEENTITYTHEME
-        case "PURPLE":
+        case "purple":
             result = PURPLE_SCHEDULEENTITYTHEME
-        case "PINK":
+        case "pink":
             result = PINK_SCHEDULEENTITYTHEME
-        case "YELLOW":
+        case "yellow":
             result = YELLOW_SCHEDULEENTITYTHEME
-        case "GRAY":
+        case "gray":
             result = GRAY_SCHEDULEENTITYTHEME
-        case "DARKBLUE":
+        case "darkBlue":
             result = DARKBLUE_SCHEDULEENTITYTHEME
-        case "DARKGREEN":
+        case "darkGreen":
             result = DARKGREEN_SCHEDULEENTITYTHEME
-        case "DARKPURPLE":
+        case "darkPurple":
             result = DARKPURPLE_SCHEDULEENTITYTHEME
-        case "DARKPINK":
+        case "darkPink":
             result = DARKPINK_SCHEDULEENTITYTHEME
-        case "DARKYELLOW":
+        case "darkYellow":
             result = DARKYELLOW_SCHEDULEENTITYTHEME
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCHEDULEENTITYTHEME
         default:
             return 0, errors.New("Unknown ScheduleEntityTheme value: " + v)

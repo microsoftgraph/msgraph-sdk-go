@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -22,34 +21,34 @@ const (
 )
 
 func (i AccessPackageRequestType) String() string {
-    return []string{"NOTSPECIFIED", "USERADD", "USERUPDATE", "USERREMOVE", "ADMINADD", "ADMINUPDATE", "ADMINREMOVE", "SYSTEMADD", "SYSTEMUPDATE", "SYSTEMREMOVE", "ONBEHALFADD", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notSpecified", "userAdd", "userUpdate", "userRemove", "adminAdd", "adminUpdate", "adminRemove", "systemAdd", "systemUpdate", "systemRemove", "onBehalfAdd", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageRequestType(v string) (interface{}, error) {
     result := NOTSPECIFIED_ACCESSPACKAGEREQUESTTYPE
-    switch strings.ToUpper(v) {
-        case "NOTSPECIFIED":
+    switch v {
+        case "notSpecified":
             result = NOTSPECIFIED_ACCESSPACKAGEREQUESTTYPE
-        case "USERADD":
+        case "userAdd":
             result = USERADD_ACCESSPACKAGEREQUESTTYPE
-        case "USERUPDATE":
+        case "userUpdate":
             result = USERUPDATE_ACCESSPACKAGEREQUESTTYPE
-        case "USERREMOVE":
+        case "userRemove":
             result = USERREMOVE_ACCESSPACKAGEREQUESTTYPE
-        case "ADMINADD":
+        case "adminAdd":
             result = ADMINADD_ACCESSPACKAGEREQUESTTYPE
-        case "ADMINUPDATE":
+        case "adminUpdate":
             result = ADMINUPDATE_ACCESSPACKAGEREQUESTTYPE
-        case "ADMINREMOVE":
+        case "adminRemove":
             result = ADMINREMOVE_ACCESSPACKAGEREQUESTTYPE
-        case "SYSTEMADD":
+        case "systemAdd":
             result = SYSTEMADD_ACCESSPACKAGEREQUESTTYPE
-        case "SYSTEMUPDATE":
+        case "systemUpdate":
             result = SYSTEMUPDATE_ACCESSPACKAGEREQUESTTYPE
-        case "SYSTEMREMOVE":
+        case "systemRemove":
             result = SYSTEMREMOVE_ACCESSPACKAGEREQUESTTYPE
-        case "ONBEHALFADD":
+        case "onBehalfAdd":
             result = ONBEHALFADD_ACCESSPACKAGEREQUESTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEREQUESTTYPE
         default:
             return 0, errors.New("Unknown AccessPackageRequestType value: " + v)

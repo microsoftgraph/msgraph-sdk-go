@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ConnectionDirection) String() string {
-    return []string{"UNKNOWN", "INBOUND", "OUTBOUND", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "inbound", "outbound", "unknownFutureValue"}[i]
 }
 func ParseConnectionDirection(v string) (interface{}, error) {
     result := UNKNOWN_CONNECTIONDIRECTION
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_CONNECTIONDIRECTION
-        case "INBOUND":
+        case "inbound":
             result = INBOUND_CONNECTIONDIRECTION
-        case "OUTBOUND":
+        case "outbound":
             result = OUTBOUND_CONNECTIONDIRECTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIONDIRECTION
         default:
             return 0, errors.New("Unknown ConnectionDirection value: " + v)

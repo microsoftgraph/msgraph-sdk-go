@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementPartnerAppType int
 
 const (
+    // Partner App type is unknown.
     UNKNOWN_DEVICEMANAGEMENTPARTNERAPPTYPE DeviceManagementPartnerAppType = iota
+    // Partner App is Single tenant in AAD.
     SINGLETENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE
+    // Partner App is Multi tenant in AAD.
     MULTITENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE
 )
 
 func (i DeviceManagementPartnerAppType) String() string {
-    return []string{"UNKNOWN", "SINGLETENANTAPP", "MULTITENANTAPP"}[i]
+    return []string{"unknown", "singleTenantApp", "multiTenantApp"}[i]
 }
 func ParseDeviceManagementPartnerAppType(v string) (interface{}, error) {
     result := UNKNOWN_DEVICEMANAGEMENTPARTNERAPPTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_DEVICEMANAGEMENTPARTNERAPPTYPE
-        case "SINGLETENANTAPP":
+        case "singleTenantApp":
             result = SINGLETENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE
-        case "MULTITENANTAPP":
+        case "multiTenantApp":
             result = MULTITENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE
         default:
             return 0, errors.New("Unknown DeviceManagementPartnerAppType value: " + v)

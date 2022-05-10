@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementExchangeConnectorStatus int
 
 const (
+    // No Connector exists.
     NONE_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS DeviceManagementExchangeConnectorStatus = iota
+    // Pending Connection to the Exchange Environment.
     CONNECTIONPENDING_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
+    // Connected to the Exchange Environment
     CONNECTED_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
+    // Disconnected from the Exchange Environment
     DISCONNECTED_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
 )
 
 func (i DeviceManagementExchangeConnectorStatus) String() string {
-    return []string{"NONE", "CONNECTIONPENDING", "CONNECTED", "DISCONNECTED"}[i]
+    return []string{"none", "connectionPending", "connected", "disconnected"}[i]
 }
 func ParseDeviceManagementExchangeConnectorStatus(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
-        case "CONNECTIONPENDING":
+        case "connectionPending":
             result = CONNECTIONPENDING_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
-        case "CONNECTED":
+        case "connected":
             result = CONNECTED_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
-        case "DISCONNECTED":
+        case "disconnected":
             result = DISCONNECTED_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
         default:
             return 0, errors.New("Unknown DeviceManagementExchangeConnectorStatus value: " + v)

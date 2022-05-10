@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type MessageActionFlag int
 
 const (
@@ -21,32 +20,32 @@ const (
 )
 
 func (i MessageActionFlag) String() string {
-    return []string{"ANY", "CALL", "DONOTFORWARD", "FOLLOWUP", "FYI", "FORWARD", "NORESPONSENECESSARY", "READ", "REPLY", "REPLYTOALL", "REVIEW"}[i]
+    return []string{"any", "call", "doNotForward", "followUp", "fyi", "forward", "noResponseNecessary", "read", "reply", "replyToAll", "review"}[i]
 }
 func ParseMessageActionFlag(v string) (interface{}, error) {
     result := ANY_MESSAGEACTIONFLAG
-    switch strings.ToUpper(v) {
-        case "ANY":
+    switch v {
+        case "any":
             result = ANY_MESSAGEACTIONFLAG
-        case "CALL":
+        case "call":
             result = CALL_MESSAGEACTIONFLAG
-        case "DONOTFORWARD":
+        case "doNotForward":
             result = DONOTFORWARD_MESSAGEACTIONFLAG
-        case "FOLLOWUP":
+        case "followUp":
             result = FOLLOWUP_MESSAGEACTIONFLAG
-        case "FYI":
+        case "fyi":
             result = FYI_MESSAGEACTIONFLAG
-        case "FORWARD":
+        case "forward":
             result = FORWARD_MESSAGEACTIONFLAG
-        case "NORESPONSENECESSARY":
+        case "noResponseNecessary":
             result = NORESPONSENECESSARY_MESSAGEACTIONFLAG
-        case "READ":
+        case "read":
             result = READ_MESSAGEACTIONFLAG
-        case "REPLY":
+        case "reply":
             result = REPLY_MESSAGEACTIONFLAG
-        case "REPLYTOALL":
+        case "replyToAll":
             result = REPLYTOALL_MESSAGEACTIONFLAG
-        case "REVIEW":
+        case "review":
             result = REVIEW_MESSAGEACTIONFLAG
         default:
             return 0, errors.New("Unknown MessageActionFlag value: " + v)

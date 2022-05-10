@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the targetApps method.
 type TargetedManagedAppGroupType int
 
 const (
+    // Target the collection of apps manually selected by the admin.
     SELECTEDPUBLICAPPS_TARGETEDMANAGEDAPPGROUPTYPE TargetedManagedAppGroupType = iota
+    // Target the core set of Microsoft apps (Office, Edge, etc).
     ALLCOREMICROSOFTAPPS_TARGETEDMANAGEDAPPGROUPTYPE
+    // Target all apps with Microsoft as publisher.
     ALLMICROSOFTAPPS_TARGETEDMANAGEDAPPGROUPTYPE
+    // Target all apps with an available assignment.
     ALLAPPS_TARGETEDMANAGEDAPPGROUPTYPE
 )
 
 func (i TargetedManagedAppGroupType) String() string {
-    return []string{"SELECTEDPUBLICAPPS", "ALLCOREMICROSOFTAPPS", "ALLMICROSOFTAPPS", "ALLAPPS"}[i]
+    return []string{"selectedPublicApps", "allCoreMicrosoftApps", "allMicrosoftApps", "allApps"}[i]
 }
 func ParseTargetedManagedAppGroupType(v string) (interface{}, error) {
     result := SELECTEDPUBLICAPPS_TARGETEDMANAGEDAPPGROUPTYPE
-    switch strings.ToUpper(v) {
-        case "SELECTEDPUBLICAPPS":
+    switch v {
+        case "selectedPublicApps":
             result = SELECTEDPUBLICAPPS_TARGETEDMANAGEDAPPGROUPTYPE
-        case "ALLCOREMICROSOFTAPPS":
+        case "allCoreMicrosoftApps":
             result = ALLCOREMICROSOFTAPPS_TARGETEDMANAGEDAPPGROUPTYPE
-        case "ALLMICROSOFTAPPS":
+        case "allMicrosoftApps":
             result = ALLMICROSOFTAPPS_TARGETEDMANAGEDAPPGROUPTYPE
-        case "ALLAPPS":
+        case "allApps":
             result = ALLAPPS_TARGETEDMANAGEDAPPGROUPTYPE
         default:
             return 0, errors.New("Unknown TargetedManagedAppGroupType value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i CallTranscriptionState) String() string {
-    return []string{"NOTSTARTED", "ACTIVE", "INACTIVE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notStarted", "active", "inactive", "unknownFutureValue"}[i]
 }
 func ParseCallTranscriptionState(v string) (interface{}, error) {
     result := NOTSTARTED_CALLTRANSCRIPTIONSTATE
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "notStarted":
             result = NOTSTARTED_CALLTRANSCRIPTIONSTATE
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_CALLTRANSCRIPTIONSTATE
-        case "INACTIVE":
+        case "inactive":
             result = INACTIVE_CALLTRANSCRIPTIONSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CALLTRANSCRIPTIONSTATE
         default:
             return 0, errors.New("Unknown CallTranscriptionState value: " + v)

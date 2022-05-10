@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i FilterMode) String() string {
-    return []string{"INCLUDE", "EXCLUDE"}[i]
+    return []string{"include", "exclude"}[i]
 }
 func ParseFilterMode(v string) (interface{}, error) {
     result := INCLUDE_FILTERMODE
-    switch strings.ToUpper(v) {
-        case "INCLUDE":
+    switch v {
+        case "include":
             result = INCLUDE_FILTERMODE
-        case "EXCLUDE":
+        case "exclude":
             result = EXCLUDE_FILTERMODE
         default:
             return 0, errors.New("Unknown FilterMode value: " + v)

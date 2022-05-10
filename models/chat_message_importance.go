@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of chat entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ChatMessageImportance) String() string {
-    return []string{"NORMAL", "HIGH", "URGENT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"normal", "high", "urgent", "unknownFutureValue"}[i]
 }
 func ParseChatMessageImportance(v string) (interface{}, error) {
     result := NORMAL_CHATMESSAGEIMPORTANCE
-    switch strings.ToUpper(v) {
-        case "NORMAL":
+    switch v {
+        case "normal":
             result = NORMAL_CHATMESSAGEIMPORTANCE
-        case "HIGH":
+        case "high":
             result = HIGH_CHATMESSAGEIMPORTANCE
-        case "URGENT":
+        case "urgent":
             result = URGENT_CHATMESSAGEIMPORTANCE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CHATMESSAGEIMPORTANCE
         default:
             return 0, errors.New("Unknown ChatMessageImportance value: " + v)

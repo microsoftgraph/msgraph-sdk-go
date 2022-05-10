@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the clone method.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ClonableTeamParts) String() string {
-    return []string{"APPS", "TABS", "SETTINGS", "CHANNELS", "MEMBERS"}[i]
+    return []string{"apps", "tabs", "settings", "channels", "members"}[i]
 }
 func ParseClonableTeamParts(v string) (interface{}, error) {
     result := APPS_CLONABLETEAMPARTS
-    switch strings.ToUpper(v) {
-        case "APPS":
+    switch v {
+        case "apps":
             result = APPS_CLONABLETEAMPARTS
-        case "TABS":
+        case "tabs":
             result = TABS_CLONABLETEAMPARTS
-        case "SETTINGS":
+        case "settings":
             result = SETTINGS_CLONABLETEAMPARTS
-        case "CHANNELS":
+        case "channels":
             result = CHANNELS_CLONABLETEAMPARTS
-        case "MEMBERS":
+        case "members":
             result = MEMBERS_CLONABLETEAMPARTS
         default:
             return 0, errors.New("Unknown ClonableTeamParts value: " + v)

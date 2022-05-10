@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of chat entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ChatMessagePolicyViolationVerdictDetailsTypes) String() string {
-    return []string{"NONE", "ALLOWFALSEPOSITIVEOVERRIDE", "ALLOWOVERRIDEWITHOUTJUSTIFICATION", "ALLOWOVERRIDEWITHJUSTIFICATION"}[i]
+    return []string{"none", "allowFalsePositiveOverride", "allowOverrideWithoutJustification", "allowOverrideWithJustification"}[i]
 }
 func ParseChatMessagePolicyViolationVerdictDetailsTypes(v string) (interface{}, error) {
     result := NONE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
-        case "ALLOWFALSEPOSITIVEOVERRIDE":
+        case "allowFalsePositiveOverride":
             result = ALLOWFALSEPOSITIVEOVERRIDE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
-        case "ALLOWOVERRIDEWITHOUTJUSTIFICATION":
+        case "allowOverrideWithoutJustification":
             result = ALLOWOVERRIDEWITHOUTJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
-        case "ALLOWOVERRIDEWITHJUSTIFICATION":
+        case "allowOverrideWithJustification":
             result = ALLOWOVERRIDEWITHJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
         default:
             return 0, errors.New("Unknown ChatMessagePolicyViolationVerdictDetailsTypes value: " + v)

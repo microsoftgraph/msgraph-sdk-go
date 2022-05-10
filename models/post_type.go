@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PostType) String() string {
-    return []string{"REGULAR", "QUICK", "STRATEGIC", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"regular", "quick", "strategic", "unknownFutureValue"}[i]
 }
 func ParsePostType(v string) (interface{}, error) {
     result := REGULAR_POSTTYPE
-    switch strings.ToUpper(v) {
-        case "REGULAR":
+    switch v {
+        case "regular":
             result = REGULAR_POSTTYPE
-        case "QUICK":
+        case "quick":
             result = QUICK_POSTTYPE
-        case "STRATEGIC":
+        case "strategic":
             result = STRATEGIC_POSTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_POSTTYPE
         default:
             return 0, errors.New("Unknown PostType value: " + v)

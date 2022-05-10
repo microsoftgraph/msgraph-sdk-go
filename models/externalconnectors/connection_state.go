@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of externalConnection entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ConnectionState) String() string {
-    return []string{"DRAFT", "READY", "OBSOLETE", "LIMITEXCEEDED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"draft", "ready", "obsolete", "limitExceeded", "unknownFutureValue"}[i]
 }
 func ParseConnectionState(v string) (interface{}, error) {
     result := DRAFT_CONNECTIONSTATE
-    switch strings.ToUpper(v) {
-        case "DRAFT":
+    switch v {
+        case "draft":
             result = DRAFT_CONNECTIONSTATE
-        case "READY":
+        case "ready":
             result = READY_CONNECTIONSTATE
-        case "OBSOLETE":
+        case "obsolete":
             result = OBSOLETE_CONNECTIONSTATE
-        case "LIMITEXCEEDED":
+        case "limitExceeded":
             result = LIMITEXCEEDED_CONNECTIONSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIONSTATE
         default:
             return 0, errors.New("Unknown ConnectionState value: " + v)

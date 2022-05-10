@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i ConnectionStatus) String() string {
-    return []string{"UNKNOWN", "ATTEMPTED", "SUCCEEDED", "BLOCKED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "attempted", "succeeded", "blocked", "failed", "unknownFutureValue"}[i]
 }
 func ParseConnectionStatus(v string) (interface{}, error) {
     result := UNKNOWN_CONNECTIONSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_CONNECTIONSTATUS
-        case "ATTEMPTED":
+        case "attempted":
             result = ATTEMPTED_CONNECTIONSTATUS
-        case "SUCCEEDED":
+        case "succeeded":
             result = SUCCEEDED_CONNECTIONSTATUS
-        case "BLOCKED":
+        case "blocked":
             result = BLOCKED_CONNECTIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_CONNECTIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIONSTATUS
         default:
             return 0, errors.New("Unknown ConnectionStatus value: " + v)

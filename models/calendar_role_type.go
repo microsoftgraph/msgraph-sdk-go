@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type CalendarRoleType int
 
 const (
@@ -18,26 +17,26 @@ const (
 )
 
 func (i CalendarRoleType) String() string {
-    return []string{"NONE", "FREEBUSYREAD", "LIMITEDREAD", "READ", "WRITE", "DELEGATEWITHOUTPRIVATEEVENTACCESS", "DELEGATEWITHPRIVATEEVENTACCESS", "CUSTOM"}[i]
+    return []string{"none", "freeBusyRead", "limitedRead", "read", "write", "delegateWithoutPrivateEventAccess", "delegateWithPrivateEventAccess", "custom"}[i]
 }
 func ParseCalendarRoleType(v string) (interface{}, error) {
     result := NONE_CALENDARROLETYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CALENDARROLETYPE
-        case "FREEBUSYREAD":
+        case "freeBusyRead":
             result = FREEBUSYREAD_CALENDARROLETYPE
-        case "LIMITEDREAD":
+        case "limitedRead":
             result = LIMITEDREAD_CALENDARROLETYPE
-        case "READ":
+        case "read":
             result = READ_CALENDARROLETYPE
-        case "WRITE":
+        case "write":
             result = WRITE_CALENDARROLETYPE
-        case "DELEGATEWITHOUTPRIVATEEVENTACCESS":
+        case "delegateWithoutPrivateEventAccess":
             result = DELEGATEWITHOUTPRIVATEEVENTACCESS_CALENDARROLETYPE
-        case "DELEGATEWITHPRIVATEEVENTACCESS":
+        case "delegateWithPrivateEventAccess":
             result = DELEGATEWITHPRIVATEEVENTACCESS_CALENDARROLETYPE
-        case "CUSTOM":
+        case "custom":
             result = CUSTOM_CALENDARROLETYPE
         default:
             return 0, errors.New("Unknown CalendarRoleType value: " + v)

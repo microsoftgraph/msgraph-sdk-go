@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i Modality) String() string {
-    return []string{"AUDIO", "VIDEO", "VIDEOBASEDSCREENSHARING", "DATA", "SCREENSHARING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"audio", "video", "videoBasedScreenSharing", "data", "screenSharing", "unknownFutureValue"}[i]
 }
 func ParseModality(v string) (interface{}, error) {
     result := AUDIO_MODALITY
-    switch strings.ToUpper(v) {
-        case "AUDIO":
+    switch v {
+        case "audio":
             result = AUDIO_MODALITY
-        case "VIDEO":
+        case "video":
             result = VIDEO_MODALITY
-        case "VIDEOBASEDSCREENSHARING":
+        case "videoBasedScreenSharing":
             result = VIDEOBASEDSCREENSHARING_MODALITY
-        case "DATA":
+        case "data":
             result = DATA_MODALITY
-        case "SCREENSHARING":
+        case "screenSharing":
             result = SCREENSHARING_MODALITY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MODALITY
         default:
             return 0, errors.New("Unknown Modality value: " + v)

@@ -12,11 +12,11 @@ type InvitationParticipantInfo struct {
     hidden *bool
     // The identity property
     identity IdentitySetable
-    // The participantId property
+    // Optional. The ID of the target participant.
     participantId *string
     // The removeFromDefaultAudioRoutingGroup property
     removeFromDefaultAudioRoutingGroup *bool
-    // Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+    // Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
     replacesCallId *string
 }
 // NewInvitationParticipantInfo instantiates a new invitationParticipantInfo and sets the default values.
@@ -109,7 +109,7 @@ func (m *InvitationParticipantInfo) GetIdentity()(IdentitySetable) {
         return m.identity
     }
 }
-// GetParticipantId gets the participantId property value. The participantId property
+// GetParticipantId gets the participantId property value. Optional. The ID of the target participant.
 func (m *InvitationParticipantInfo) GetParticipantId()(*string) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *InvitationParticipantInfo) GetRemoveFromDefaultAudioRoutingGroup()(*boo
         return m.removeFromDefaultAudioRoutingGroup
     }
 }
-// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 func (m *InvitationParticipantInfo) GetReplacesCallId()(*string) {
     if m == nil {
         return nil
@@ -191,7 +191,7 @@ func (m *InvitationParticipantInfo) SetIdentity(value IdentitySetable)() {
         m.identity = value
     }
 }
-// SetParticipantId sets the participantId property value. The participantId property
+// SetParticipantId sets the participantId property value. Optional. The ID of the target participant.
 func (m *InvitationParticipantInfo) SetParticipantId(value *string)() {
     if m != nil {
         m.participantId = value
@@ -203,7 +203,7 @@ func (m *InvitationParticipantInfo) SetRemoveFromDefaultAudioRoutingGroup(value 
         m.removeFromDefaultAudioRoutingGroup = value
     }
 }
-// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 func (m *InvitationParticipantInfo) SetReplacesCallId(value *string)() {
     if m != nil {
         m.replacesCallId = value

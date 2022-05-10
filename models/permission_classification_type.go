@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the instantiate method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PermissionClassificationType) String() string {
-    return []string{"LOW", "MEDIUM", "HIGH", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"low", "medium", "high", "unknownFutureValue"}[i]
 }
 func ParsePermissionClassificationType(v string) (interface{}, error) {
     result := LOW_PERMISSIONCLASSIFICATIONTYPE
-    switch strings.ToUpper(v) {
-        case "LOW":
+    switch v {
+        case "low":
             result = LOW_PERMISSIONCLASSIFICATIONTYPE
-        case "MEDIUM":
+        case "medium":
             result = MEDIUM_PERMISSIONCLASSIFICATIONTYPE
-        case "HIGH":
+        case "high":
             result = HIGH_PERMISSIONCLASSIFICATIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERMISSIONCLASSIFICATIONTYPE
         default:
             return 0, errors.New("Unknown PermissionClassificationType value: " + v)

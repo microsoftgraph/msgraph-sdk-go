@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppClipboardSharingLevel int
 
 const (
+    // Sharing is allowed between all apps, managed or not
     ALLAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL ManagedAppClipboardSharingLevel = iota
+    // Sharing is allowed between all managed apps with paste in enabled
     MANAGEDAPPSWITHPASTEIN_MANAGEDAPPCLIPBOARDSHARINGLEVEL
+    // Sharing is allowed between all managed apps
     MANAGEDAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL
+    // Sharing between apps is disabled
     BLOCKED_MANAGEDAPPCLIPBOARDSHARINGLEVEL
 )
 
 func (i ManagedAppClipboardSharingLevel) String() string {
-    return []string{"ALLAPPS", "MANAGEDAPPSWITHPASTEIN", "MANAGEDAPPS", "BLOCKED"}[i]
+    return []string{"allApps", "managedAppsWithPasteIn", "managedApps", "blocked"}[i]
 }
 func ParseManagedAppClipboardSharingLevel(v string) (interface{}, error) {
     result := ALLAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL
-    switch strings.ToUpper(v) {
-        case "ALLAPPS":
+    switch v {
+        case "allApps":
             result = ALLAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL
-        case "MANAGEDAPPSWITHPASTEIN":
+        case "managedAppsWithPasteIn":
             result = MANAGEDAPPSWITHPASTEIN_MANAGEDAPPCLIPBOARDSHARINGLEVEL
-        case "MANAGEDAPPS":
+        case "managedApps":
             result = MANAGEDAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL
-        case "BLOCKED":
+        case "blocked":
             result = BLOCKED_MANAGEDAPPCLIPBOARDSHARINGLEVEL
         default:
             return 0, errors.New("Unknown ManagedAppClipboardSharingLevel value: " + v)

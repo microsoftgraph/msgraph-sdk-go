@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -25,40 +24,40 @@ const (
 )
 
 func (i RiskEventType) String() string {
-    return []string{"UNLIKELYTRAVEL", "ANONYMIZEDIPADDRESS", "MALICIOUSIPADDRESS", "UNFAMILIARFEATURES", "MALWAREINFECTEDIPADDRESS", "SUSPICIOUSIPADDRESS", "LEAKEDCREDENTIALS", "INVESTIGATIONSTHREATINTELLIGENCE", "GENERIC", "ADMINCONFIRMEDUSERCOMPROMISED", "MCASIMPOSSIBLETRAVEL", "MCASSUSPICIOUSINBOXMANIPULATIONRULES", "INVESTIGATIONSTHREATINTELLIGENCESIGNINLINKED", "MALICIOUSIPADDRESSVALIDCREDENTIALSBLOCKEDIP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unlikelyTravel", "anonymizedIPAddress", "maliciousIPAddress", "unfamiliarFeatures", "malwareInfectedIPAddress", "suspiciousIPAddress", "leakedCredentials", "investigationsThreatIntelligence", "generic", "adminConfirmedUserCompromised", "mcasImpossibleTravel", "mcasSuspiciousInboxManipulationRules", "investigationsThreatIntelligenceSigninLinked", "maliciousIPAddressValidCredentialsBlockedIP", "unknownFutureValue"}[i]
 }
 func ParseRiskEventType(v string) (interface{}, error) {
     result := UNLIKELYTRAVEL_RISKEVENTTYPE
-    switch strings.ToUpper(v) {
-        case "UNLIKELYTRAVEL":
+    switch v {
+        case "unlikelyTravel":
             result = UNLIKELYTRAVEL_RISKEVENTTYPE
-        case "ANONYMIZEDIPADDRESS":
+        case "anonymizedIPAddress":
             result = ANONYMIZEDIPADDRESS_RISKEVENTTYPE
-        case "MALICIOUSIPADDRESS":
+        case "maliciousIPAddress":
             result = MALICIOUSIPADDRESS_RISKEVENTTYPE
-        case "UNFAMILIARFEATURES":
+        case "unfamiliarFeatures":
             result = UNFAMILIARFEATURES_RISKEVENTTYPE
-        case "MALWAREINFECTEDIPADDRESS":
+        case "malwareInfectedIPAddress":
             result = MALWAREINFECTEDIPADDRESS_RISKEVENTTYPE
-        case "SUSPICIOUSIPADDRESS":
+        case "suspiciousIPAddress":
             result = SUSPICIOUSIPADDRESS_RISKEVENTTYPE
-        case "LEAKEDCREDENTIALS":
+        case "leakedCredentials":
             result = LEAKEDCREDENTIALS_RISKEVENTTYPE
-        case "INVESTIGATIONSTHREATINTELLIGENCE":
+        case "investigationsThreatIntelligence":
             result = INVESTIGATIONSTHREATINTELLIGENCE_RISKEVENTTYPE
-        case "GENERIC":
+        case "generic":
             result = GENERIC_RISKEVENTTYPE
-        case "ADMINCONFIRMEDUSERCOMPROMISED":
+        case "adminConfirmedUserCompromised":
             result = ADMINCONFIRMEDUSERCOMPROMISED_RISKEVENTTYPE
-        case "MCASIMPOSSIBLETRAVEL":
+        case "mcasImpossibleTravel":
             result = MCASIMPOSSIBLETRAVEL_RISKEVENTTYPE
-        case "MCASSUSPICIOUSINBOXMANIPULATIONRULES":
+        case "mcasSuspiciousInboxManipulationRules":
             result = MCASSUSPICIOUSINBOXMANIPULATIONRULES_RISKEVENTTYPE
-        case "INVESTIGATIONSTHREATINTELLIGENCESIGNINLINKED":
+        case "investigationsThreatIntelligenceSigninLinked":
             result = INVESTIGATIONSTHREATINTELLIGENCESIGNINLINKED_RISKEVENTTYPE
-        case "MALICIOUSIPADDRESSVALIDCREDENTIALSBLOCKEDIP":
+        case "maliciousIPAddressValidCredentialsBlockedIP":
             result = MALICIOUSIPADDRESSVALIDCREDENTIALSBLOCKEDIP_RISKEVENTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RISKEVENTTYPE
         default:
             return 0, errors.New("Unknown RiskEventType value: " + v)

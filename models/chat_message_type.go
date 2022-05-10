@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of chat entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ChatMessageType) String() string {
-    return []string{"MESSAGE", "CHATEVENT", "TYPING", "UNKNOWNFUTUREVALUE", "SYSTEMEVENTMESSAGE"}[i]
+    return []string{"message", "chatEvent", "typing", "unknownFutureValue", "systemEventMessage"}[i]
 }
 func ParseChatMessageType(v string) (interface{}, error) {
     result := MESSAGE_CHATMESSAGETYPE
-    switch strings.ToUpper(v) {
-        case "MESSAGE":
+    switch v {
+        case "message":
             result = MESSAGE_CHATMESSAGETYPE
-        case "CHATEVENT":
+        case "chatEvent":
             result = CHATEVENT_CHATMESSAGETYPE
-        case "TYPING":
+        case "typing":
             result = TYPING_CHATMESSAGETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CHATMESSAGETYPE
-        case "SYSTEMEVENTMESSAGE":
+        case "systemEventMessage":
             result = SYSTEMEVENTMESSAGE_CHATMESSAGETYPE
         default:
             return 0, errors.New("Unknown ChatMessageType value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AccessPackageCatalogState) String() string {
-    return []string{"UNPUBLISHED", "PUBLISHED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unpublished", "published", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageCatalogState(v string) (interface{}, error) {
     result := UNPUBLISHED_ACCESSPACKAGECATALOGSTATE
-    switch strings.ToUpper(v) {
-        case "UNPUBLISHED":
+    switch v {
+        case "unpublished":
             result = UNPUBLISHED_ACCESSPACKAGECATALOGSTATE
-        case "PUBLISHED":
+        case "published":
             result = PUBLISHED_ACCESSPACKAGECATALOGSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGECATALOGSTATE
         default:
             return 0, errors.New("Unknown AccessPackageCatalogState value: " + v)

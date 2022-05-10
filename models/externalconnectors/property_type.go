@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of externalConnection entities.
@@ -20,30 +19,30 @@ const (
 )
 
 func (i PropertyType) String() string {
-    return []string{"STRING", "INT64", "DOUBLE", "DATETIME", "BOOLEAN", "STRINGCOLLECTION", "INT64COLLECTION", "DOUBLECOLLECTION", "DATETIMECOLLECTION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"string", "int64", "double", "dateTime", "boolean", "stringCollection", "int64Collection", "doubleCollection", "dateTimeCollection", "unknownFutureValue"}[i]
 }
 func ParsePropertyType(v string) (interface{}, error) {
     result := STRING_PROPERTYTYPE
-    switch strings.ToUpper(v) {
-        case "STRING":
+    switch v {
+        case "string":
             result = STRING_PROPERTYTYPE
-        case "INT64":
+        case "int64":
             result = INT64_PROPERTYTYPE
-        case "DOUBLE":
+        case "double":
             result = DOUBLE_PROPERTYTYPE
-        case "DATETIME":
+        case "dateTime":
             result = DATETIME_PROPERTYTYPE
-        case "BOOLEAN":
+        case "boolean":
             result = BOOLEAN_PROPERTYTYPE
-        case "STRINGCOLLECTION":
+        case "stringCollection":
             result = STRINGCOLLECTION_PROPERTYTYPE
-        case "INT64COLLECTION":
+        case "int64Collection":
             result = INT64COLLECTION_PROPERTYTYPE
-        case "DOUBLECOLLECTION":
+        case "doubleCollection":
             result = DOUBLECOLLECTION_PROPERTYTYPE
-        case "DATETIMECOLLECTION":
+        case "dateTimeCollection":
             result = DATETIMECOLLECTION_PROPERTYTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROPERTYTYPE
         default:
             return 0, errors.New("Unknown PropertyType value: " + v)

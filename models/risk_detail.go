@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -22,34 +21,34 @@ const (
 )
 
 func (i RiskDetail) String() string {
-    return []string{"NONE", "ADMINGENERATEDTEMPORARYPASSWORD", "USERPERFORMEDSECUREDPASSWORDCHANGE", "USERPERFORMEDSECUREDPASSWORDRESET", "ADMINCONFIRMEDSIGNINSAFE", "AICONFIRMEDSIGNINSAFE", "USERPASSEDMFADRIVENBYRISKBASEDPOLICY", "ADMINDISMISSEDALLRISKFORUSER", "ADMINCONFIRMEDSIGNINCOMPROMISED", "HIDDEN", "ADMINCONFIRMEDUSERCOMPROMISED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue"}[i]
 }
 func ParseRiskDetail(v string) (interface{}, error) {
     result := NONE_RISKDETAIL
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_RISKDETAIL
-        case "ADMINGENERATEDTEMPORARYPASSWORD":
+        case "adminGeneratedTemporaryPassword":
             result = ADMINGENERATEDTEMPORARYPASSWORD_RISKDETAIL
-        case "USERPERFORMEDSECUREDPASSWORDCHANGE":
+        case "userPerformedSecuredPasswordChange":
             result = USERPERFORMEDSECUREDPASSWORDCHANGE_RISKDETAIL
-        case "USERPERFORMEDSECUREDPASSWORDRESET":
+        case "userPerformedSecuredPasswordReset":
             result = USERPERFORMEDSECUREDPASSWORDRESET_RISKDETAIL
-        case "ADMINCONFIRMEDSIGNINSAFE":
+        case "adminConfirmedSigninSafe":
             result = ADMINCONFIRMEDSIGNINSAFE_RISKDETAIL
-        case "AICONFIRMEDSIGNINSAFE":
+        case "aiConfirmedSigninSafe":
             result = AICONFIRMEDSIGNINSAFE_RISKDETAIL
-        case "USERPASSEDMFADRIVENBYRISKBASEDPOLICY":
+        case "userPassedMFADrivenByRiskBasedPolicy":
             result = USERPASSEDMFADRIVENBYRISKBASEDPOLICY_RISKDETAIL
-        case "ADMINDISMISSEDALLRISKFORUSER":
+        case "adminDismissedAllRiskForUser":
             result = ADMINDISMISSEDALLRISKFORUSER_RISKDETAIL
-        case "ADMINCONFIRMEDSIGNINCOMPROMISED":
+        case "adminConfirmedSigninCompromised":
             result = ADMINCONFIRMEDSIGNINCOMPROMISED_RISKDETAIL
-        case "HIDDEN":
+        case "hidden":
             result = HIDDEN_RISKDETAIL
-        case "ADMINCONFIRMEDUSERCOMPROMISED":
+        case "adminConfirmedUserCompromised":
             result = ADMINCONFIRMEDUSERCOMPROMISED_RISKDETAIL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RISKDETAIL
         default:
             return 0, errors.New("Unknown RiskDetail value: " + v)

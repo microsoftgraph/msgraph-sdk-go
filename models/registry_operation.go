@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i RegistryOperation) String() string {
-    return []string{"UNKNOWN", "CREATE", "MODIFY", "DELETE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "create", "modify", "delete", "unknownFutureValue"}[i]
 }
 func ParseRegistryOperation(v string) (interface{}, error) {
     result := UNKNOWN_REGISTRYOPERATION
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_REGISTRYOPERATION
-        case "CREATE":
+        case "create":
             result = CREATE_REGISTRYOPERATION
-        case "MODIFY":
+        case "modify":
             result = MODIFY_REGISTRYOPERATION
-        case "DELETE":
+        case "delete":
             result = DELETE_REGISTRYOPERATION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGISTRYOPERATION
         default:
             return 0, errors.New("Unknown RegistryOperation value: " + v)

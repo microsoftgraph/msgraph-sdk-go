@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type ExternalAudienceScope int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ExternalAudienceScope) String() string {
-    return []string{"NONE", "CONTACTSONLY", "ALL"}[i]
+    return []string{"none", "contactsOnly", "all"}[i]
 }
 func ParseExternalAudienceScope(v string) (interface{}, error) {
     result := NONE_EXTERNALAUDIENCESCOPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_EXTERNALAUDIENCESCOPE
-        case "CONTACTSONLY":
+        case "contactsOnly":
             result = CONTACTSONLY_EXTERNALAUDIENCESCOPE
-        case "ALL":
+        case "all":
             result = ALL_EXTERNALAUDIENCESCOPE
         default:
             return 0, errors.New("Unknown ExternalAudienceScope value: " + v)

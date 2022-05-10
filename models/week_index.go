@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type WeekIndex int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i WeekIndex) String() string {
-    return []string{"FIRST", "SECOND", "THIRD", "FOURTH", "LAST"}[i]
+    return []string{"first", "second", "third", "fourth", "last"}[i]
 }
 func ParseWeekIndex(v string) (interface{}, error) {
     result := FIRST_WEEKINDEX
-    switch strings.ToUpper(v) {
-        case "FIRST":
+    switch v {
+        case "first":
             result = FIRST_WEEKINDEX
-        case "SECOND":
+        case "second":
             result = SECOND_WEEKINDEX
-        case "THIRD":
+        case "third":
             result = THIRD_WEEKINDEX
-        case "FOURTH":
+        case "fourth":
             result = FOURTH_WEEKINDEX
-        case "LAST":
+        case "last":
             result = LAST_WEEKINDEX
         default:
             return 0, errors.New("Unknown WeekIndex value: " + v)

@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type RecurrenceRangeType int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i RecurrenceRangeType) String() string {
-    return []string{"ENDDATE", "NOEND", "NUMBERED"}[i]
+    return []string{"endDate", "noEnd", "numbered"}[i]
 }
 func ParseRecurrenceRangeType(v string) (interface{}, error) {
     result := ENDDATE_RECURRENCERANGETYPE
-    switch strings.ToUpper(v) {
-        case "ENDDATE":
+    switch v {
+        case "endDate":
             result = ENDDATE_RECURRENCERANGETYPE
-        case "NOEND":
+        case "noEnd":
             result = NOEND_RECURRENCERANGETYPE
-        case "NUMBERED":
+        case "numbered":
             result = NUMBERED_RECURRENCERANGETYPE
         default:
             return 0, errors.New("Unknown RecurrenceRangeType value: " + v)

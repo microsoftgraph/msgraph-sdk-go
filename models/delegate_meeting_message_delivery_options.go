@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type DelegateMeetingMessageDeliveryOptions int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i DelegateMeetingMessageDeliveryOptions) String() string {
-    return []string{"SENDTODELEGATEANDINFORMATIONTOPRINCIPAL", "SENDTODELEGATEANDPRINCIPAL", "SENDTODELEGATEONLY"}[i]
+    return []string{"sendToDelegateAndInformationToPrincipal", "sendToDelegateAndPrincipal", "sendToDelegateOnly"}[i]
 }
 func ParseDelegateMeetingMessageDeliveryOptions(v string) (interface{}, error) {
     result := SENDTODELEGATEANDINFORMATIONTOPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
-    switch strings.ToUpper(v) {
-        case "SENDTODELEGATEANDINFORMATIONTOPRINCIPAL":
+    switch v {
+        case "sendToDelegateAndInformationToPrincipal":
             result = SENDTODELEGATEANDINFORMATIONTOPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
-        case "SENDTODELEGATEANDPRINCIPAL":
+        case "sendToDelegateAndPrincipal":
             result = SENDTODELEGATEANDPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
-        case "SENDTODELEGATEONLY":
+        case "sendToDelegateOnly":
             result = SENDTODELEGATEONLY_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
         default:
             return 0, errors.New("Unknown DelegateMeetingMessageDeliveryOptions value: " + v)

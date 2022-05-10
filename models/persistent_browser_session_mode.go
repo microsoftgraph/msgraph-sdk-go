@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i PersistentBrowserSessionMode) String() string {
-    return []string{"ALWAYS", "NEVER"}[i]
+    return []string{"always", "never"}[i]
 }
 func ParsePersistentBrowserSessionMode(v string) (interface{}, error) {
     result := ALWAYS_PERSISTENTBROWSERSESSIONMODE
-    switch strings.ToUpper(v) {
-        case "ALWAYS":
+    switch v {
+        case "always":
             result = ALWAYS_PERSISTENTBROWSERSESSIONMODE
-        case "NEVER":
+        case "never":
             result = NEVER_PERSISTENTBROWSERSESSIONMODE
         default:
             return 0, errors.New("Unknown PersistentBrowserSessionMode value: " + v)

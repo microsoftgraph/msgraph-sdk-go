@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i InitiatorType) String() string {
-    return []string{"USER", "APPLICATION", "SYSTEM", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"user", "application", "system", "unknownFutureValue"}[i]
 }
 func ParseInitiatorType(v string) (interface{}, error) {
     result := USER_INITIATORTYPE
-    switch strings.ToUpper(v) {
-        case "USER":
+    switch v {
+        case "user":
             result = USER_INITIATORTYPE
-        case "APPLICATION":
+        case "application":
             result = APPLICATION_INITIATORTYPE
-        case "SYSTEM":
+        case "system":
             result = SYSTEM_INITIATORTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INITIATORTYPE
         default:
             return 0, errors.New("Unknown InitiatorType value: " + v)

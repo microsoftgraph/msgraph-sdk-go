@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type MobileThreatPartnerTenantState int
 
 const (
+    // Partner is unavailable.
     UNAVAILABLE_MOBILETHREATPARTNERTENANTSTATE MobileThreatPartnerTenantState = iota
+    // Partner is available.
     AVAILABLE_MOBILETHREATPARTNERTENANTSTATE
+    // Partner is enabled.
     ENABLED_MOBILETHREATPARTNERTENANTSTATE
+    // Partner is unresponsive.
     UNRESPONSIVE_MOBILETHREATPARTNERTENANTSTATE
 )
 
 func (i MobileThreatPartnerTenantState) String() string {
-    return []string{"UNAVAILABLE", "AVAILABLE", "ENABLED", "UNRESPONSIVE"}[i]
+    return []string{"unavailable", "available", "enabled", "unresponsive"}[i]
 }
 func ParseMobileThreatPartnerTenantState(v string) (interface{}, error) {
     result := UNAVAILABLE_MOBILETHREATPARTNERTENANTSTATE
-    switch strings.ToUpper(v) {
-        case "UNAVAILABLE":
+    switch v {
+        case "unavailable":
             result = UNAVAILABLE_MOBILETHREATPARTNERTENANTSTATE
-        case "AVAILABLE":
+        case "available":
             result = AVAILABLE_MOBILETHREATPARTNERTENANTSTATE
-        case "ENABLED":
+        case "enabled":
             result = ENABLED_MOBILETHREATPARTNERTENANTSTATE
-        case "UNRESPONSIVE":
+        case "unresponsive":
             result = UNRESPONSIVE_MOBILETHREATPARTNERTENANTSTATE
         default:
             return 0, errors.New("Unknown MobileThreatPartnerTenantState value: " + v)

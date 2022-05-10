@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type TimeOffReasonIconType int
 
 const (
@@ -32,54 +31,54 @@ const (
 )
 
 func (i TimeOffReasonIconType) String() string {
-    return []string{"NONE", "CAR", "CALENDAR", "RUNNING", "PLANE", "FIRSTAID", "DOCTOR", "NOTWORKING", "CLOCK", "JURYDUTY", "GLOBE", "CUP", "PHONE", "WEATHER", "UMBRELLA", "PIGGYBANK", "DOG", "CAKE", "TRAFFICCONE", "PIN", "SUNNY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "car", "calendar", "running", "plane", "firstAid", "doctor", "notWorking", "clock", "juryDuty", "globe", "cup", "phone", "weather", "umbrella", "piggyBank", "dog", "cake", "trafficCone", "pin", "sunny", "unknownFutureValue"}[i]
 }
 func ParseTimeOffReasonIconType(v string) (interface{}, error) {
     result := NONE_TIMEOFFREASONICONTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_TIMEOFFREASONICONTYPE
-        case "CAR":
+        case "car":
             result = CAR_TIMEOFFREASONICONTYPE
-        case "CALENDAR":
+        case "calendar":
             result = CALENDAR_TIMEOFFREASONICONTYPE
-        case "RUNNING":
+        case "running":
             result = RUNNING_TIMEOFFREASONICONTYPE
-        case "PLANE":
+        case "plane":
             result = PLANE_TIMEOFFREASONICONTYPE
-        case "FIRSTAID":
+        case "firstAid":
             result = FIRSTAID_TIMEOFFREASONICONTYPE
-        case "DOCTOR":
+        case "doctor":
             result = DOCTOR_TIMEOFFREASONICONTYPE
-        case "NOTWORKING":
+        case "notWorking":
             result = NOTWORKING_TIMEOFFREASONICONTYPE
-        case "CLOCK":
+        case "clock":
             result = CLOCK_TIMEOFFREASONICONTYPE
-        case "JURYDUTY":
+        case "juryDuty":
             result = JURYDUTY_TIMEOFFREASONICONTYPE
-        case "GLOBE":
+        case "globe":
             result = GLOBE_TIMEOFFREASONICONTYPE
-        case "CUP":
+        case "cup":
             result = CUP_TIMEOFFREASONICONTYPE
-        case "PHONE":
+        case "phone":
             result = PHONE_TIMEOFFREASONICONTYPE
-        case "WEATHER":
+        case "weather":
             result = WEATHER_TIMEOFFREASONICONTYPE
-        case "UMBRELLA":
+        case "umbrella":
             result = UMBRELLA_TIMEOFFREASONICONTYPE
-        case "PIGGYBANK":
+        case "piggyBank":
             result = PIGGYBANK_TIMEOFFREASONICONTYPE
-        case "DOG":
+        case "dog":
             result = DOG_TIMEOFFREASONICONTYPE
-        case "CAKE":
+        case "cake":
             result = CAKE_TIMEOFFREASONICONTYPE
-        case "TRAFFICCONE":
+        case "trafficCone":
             result = TRAFFICCONE_TIMEOFFREASONICONTYPE
-        case "PIN":
+        case "pin":
             result = PIN_TIMEOFFREASONICONTYPE
-        case "SUNNY":
+        case "sunny":
             result = SUNNY_TIMEOFFREASONICONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TIMEOFFREASONICONTYPE
         default:
             return 0, errors.New("Unknown TimeOffReasonIconType value: " + v)

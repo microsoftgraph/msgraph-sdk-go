@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type WebsiteType int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i WebsiteType) String() string {
-    return []string{"OTHER", "HOME", "WORK", "BLOG", "PROFILE"}[i]
+    return []string{"other", "home", "work", "blog", "profile"}[i]
 }
 func ParseWebsiteType(v string) (interface{}, error) {
     result := OTHER_WEBSITETYPE
-    switch strings.ToUpper(v) {
-        case "OTHER":
+    switch v {
+        case "other":
             result = OTHER_WEBSITETYPE
-        case "HOME":
+        case "home":
             result = HOME_WEBSITETYPE
-        case "WORK":
+        case "work":
             result = WORK_WEBSITETYPE
-        case "BLOG":
+        case "blog":
             result = BLOG_WEBSITETYPE
-        case "PROFILE":
+        case "profile":
             result = PROFILE_WEBSITETYPE
         default:
             return 0, errors.New("Unknown WebsiteType value: " + v)

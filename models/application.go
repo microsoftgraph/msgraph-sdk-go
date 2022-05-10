@@ -64,7 +64,7 @@ type Application struct {
     publisherDomain *string
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccessable
-    // The serviceManagementReference property
+    // References application or service contact information from a Service or Asset Management database. Nullable.
     serviceManagementReference *string
     // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
     signInAudience *string
@@ -741,7 +741,7 @@ func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccessable) 
         return m.requiredResourceAccess
     }
 }
-// GetServiceManagementReference gets the serviceManagementReference property value. The serviceManagementReference property
+// GetServiceManagementReference gets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.
 func (m *Application) GetServiceManagementReference()(*string) {
     if m == nil {
         return nil
@@ -1251,7 +1251,7 @@ func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccessab
         m.requiredResourceAccess = value
     }
 }
-// SetServiceManagementReference sets the serviceManagementReference property value. The serviceManagementReference property
+// SetServiceManagementReference sets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.
 func (m *Application) SetServiceManagementReference(value *string)() {
     if m != nil {
         m.serviceManagementReference = value

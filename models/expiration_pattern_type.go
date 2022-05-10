@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ExpirationPatternType) String() string {
-    return []string{"NOTSPECIFIED", "NOEXPIRATION", "AFTERDATETIME", "AFTERDURATION"}[i]
+    return []string{"notSpecified", "noExpiration", "afterDateTime", "afterDuration"}[i]
 }
 func ParseExpirationPatternType(v string) (interface{}, error) {
     result := NOTSPECIFIED_EXPIRATIONPATTERNTYPE
-    switch strings.ToUpper(v) {
-        case "NOTSPECIFIED":
+    switch v {
+        case "notSpecified":
             result = NOTSPECIFIED_EXPIRATIONPATTERNTYPE
-        case "NOEXPIRATION":
+        case "noExpiration":
             result = NOEXPIRATION_EXPIRATIONPATTERNTYPE
-        case "AFTERDATETIME":
+        case "afterDateTime":
             result = AFTERDATETIME_EXPIRATIONPATTERNTYPE
-        case "AFTERDURATION":
+        case "afterDuration":
             result = AFTERDURATION_EXPIRATIONPATTERNTYPE
         default:
             return 0, errors.New("Unknown ExpirationPatternType value: " + v)

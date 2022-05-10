@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i FailureStage) String() string {
-    return []string{"UNKNOWN", "CALLSETUP", "MIDCALL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "callSetup", "midcall", "unknownFutureValue"}[i]
 }
 func ParseFailureStage(v string) (interface{}, error) {
     result := UNKNOWN_FAILURESTAGE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_FAILURESTAGE
-        case "CALLSETUP":
+        case "callSetup":
             result = CALLSETUP_FAILURESTAGE
-        case "MIDCALL":
+        case "midcall":
             result = MIDCALL_FAILURESTAGE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FAILURESTAGE
         default:
             return 0, errors.New("Unknown FailureStage value: " + v)

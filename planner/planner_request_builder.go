@@ -21,7 +21,7 @@ type PlannerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PlannerRequestBuilderGetQueryParameters get planner
+// PlannerRequestBuilderGetQueryParameters planner resource type
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,11 +78,11 @@ func NewPlannerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get planner
+// CreateGetRequestInformation planner resource type
 func (m *PlannerRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get planner
+// CreateGetRequestInformationWithRequestConfiguration planner resource type
 func (m *PlannerRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,11 +114,11 @@ func (m *PlannerRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get planner
+// Get planner resource type
 func (m *PlannerRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Plannerable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get planner
+// GetWithRequestConfigurationAndResponseHandler planner resource type
 func (m *PlannerRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PlannerRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Plannerable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

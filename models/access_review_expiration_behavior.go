@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AccessReviewExpirationBehavior) String() string {
-    return []string{"KEEPACCESS", "REMOVEACCESS", "ACCEPTACCESSRECOMMENDATION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"keepAccess", "removeAccess", "acceptAccessRecommendation", "unknownFutureValue"}[i]
 }
 func ParseAccessReviewExpirationBehavior(v string) (interface{}, error) {
     result := KEEPACCESS_ACCESSREVIEWEXPIRATIONBEHAVIOR
-    switch strings.ToUpper(v) {
-        case "KEEPACCESS":
+    switch v {
+        case "keepAccess":
             result = KEEPACCESS_ACCESSREVIEWEXPIRATIONBEHAVIOR
-        case "REMOVEACCESS":
+        case "removeAccess":
             result = REMOVEACCESS_ACCESSREVIEWEXPIRATIONBEHAVIOR
-        case "ACCEPTACCESSRECOMMENDATION":
+        case "acceptAccessRecommendation":
             result = ACCEPTACCESSRECOMMENDATION_ACCESSREVIEWEXPIRATIONBEHAVIOR
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSREVIEWEXPIRATIONBEHAVIOR
         default:
             return 0, errors.New("Unknown AccessReviewExpirationBehavior value: " + v)

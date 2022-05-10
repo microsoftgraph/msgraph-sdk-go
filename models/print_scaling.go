@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i PrintScaling) String() string {
-    return []string{"AUTO", "SHRINKTOFIT", "FILL", "FIT", "NONE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"auto", "shrinkToFit", "fill", "fit", "none", "unknownFutureValue"}[i]
 }
 func ParsePrintScaling(v string) (interface{}, error) {
     result := AUTO_PRINTSCALING
-    switch strings.ToUpper(v) {
-        case "AUTO":
+    switch v {
+        case "auto":
             result = AUTO_PRINTSCALING
-        case "SHRINKTOFIT":
+        case "shrinkToFit":
             result = SHRINKTOFIT_PRINTSCALING
-        case "FILL":
+        case "fill":
             result = FILL_PRINTSCALING
-        case "FIT":
+        case "fit":
             result = FIT_PRINTSCALING
-        case "NONE":
+        case "none":
             result = NONE_PRINTSCALING
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTSCALING
         default:
             return 0, errors.New("Unknown PrintScaling value: " + v)

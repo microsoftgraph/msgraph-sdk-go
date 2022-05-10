@@ -15,7 +15,7 @@ type SubscribedSkusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SubscribedSkusRequestBuilderGetQueryParameters get entities from subscribedSkus
+// SubscribedSkusRequestBuilderGetQueryParameters list subscribedSkus
 type SubscribedSkusRequestBuilderGetQueryParameters struct {
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
@@ -59,11 +59,11 @@ func NewSubscribedSkusRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewSubscribedSkusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get entities from subscribedSkus
+// CreateGetRequestInformation list subscribedSkus
 func (m *SubscribedSkusRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from subscribedSkus
+// CreateGetRequestInformationWithRequestConfiguration list subscribedSkus
 func (m *SubscribedSkusRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SubscribedSkusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *SubscribedSkusRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get get entities from subscribedSkus
+// Get list subscribedSkus
 func (m *SubscribedSkusRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from subscribedSkus
+// GetWithRequestConfigurationAndResponseHandler list subscribedSkus
 func (m *SubscribedSkusRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SubscribedSkusRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

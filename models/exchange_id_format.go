@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the translateExchangeIds method.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ExchangeIdFormat) String() string {
-    return []string{"ENTRYID", "EWSID", "IMMUTABLEENTRYID", "RESTID", "RESTIMMUTABLEENTRYID"}[i]
+    return []string{"entryId", "ewsId", "immutableEntryId", "restId", "restImmutableEntryId"}[i]
 }
 func ParseExchangeIdFormat(v string) (interface{}, error) {
     result := ENTRYID_EXCHANGEIDFORMAT
-    switch strings.ToUpper(v) {
-        case "ENTRYID":
+    switch v {
+        case "entryId":
             result = ENTRYID_EXCHANGEIDFORMAT
-        case "EWSID":
+        case "ewsId":
             result = EWSID_EXCHANGEIDFORMAT
-        case "IMMUTABLEENTRYID":
+        case "immutableEntryId":
             result = IMMUTABLEENTRYID_EXCHANGEIDFORMAT
-        case "RESTID":
+        case "restId":
             result = RESTID_EXCHANGEIDFORMAT
-        case "RESTIMMUTABLEENTRYID":
+        case "restImmutableEntryId":
             result = RESTIMMUTABLEENTRYID_EXCHANGEIDFORMAT
         default:
             return 0, errors.New("Unknown ExchangeIdFormat value: " + v)

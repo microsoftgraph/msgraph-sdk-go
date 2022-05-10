@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the privacy singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i SubjectRightsRequestStageStatus) String() string {
-    return []string{"NOTSTARTED", "CURRENT", "COMPLETED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notStarted", "current", "completed", "failed", "unknownFutureValue"}[i]
 }
 func ParseSubjectRightsRequestStageStatus(v string) (interface{}, error) {
     result := NOTSTARTED_SUBJECTRIGHTSREQUESTSTAGESTATUS
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "notStarted":
             result = NOTSTARTED_SUBJECTRIGHTSREQUESTSTAGESTATUS
-        case "CURRENT":
+        case "current":
             result = CURRENT_SUBJECTRIGHTSREQUESTSTAGESTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_SUBJECTRIGHTSREQUESTSTAGESTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_SUBJECTRIGHTSREQUESTSTAGESTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTAGESTATUS
         default:
             return 0, errors.New("Unknown SubjectRightsRequestStageStatus value: " + v)

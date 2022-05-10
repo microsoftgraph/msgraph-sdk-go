@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i OperationStatus) String() string {
-    return []string{"NOTSTARTED", "RUNNING", "COMPLETED", "FAILED"}[i]
+    return []string{"NotStarted", "Running", "Completed", "Failed"}[i]
 }
 func ParseOperationStatus(v string) (interface{}, error) {
     result := NOTSTARTED_OPERATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "NotStarted":
             result = NOTSTARTED_OPERATIONSTATUS
-        case "RUNNING":
+        case "Running":
             result = RUNNING_OPERATIONSTATUS
-        case "COMPLETED":
+        case "Completed":
             result = COMPLETED_OPERATIONSTATUS
-        case "FAILED":
+        case "Failed":
             result = FAILED_OPERATIONSTATUS
         default:
             return 0, errors.New("Unknown OperationStatus value: " + v)

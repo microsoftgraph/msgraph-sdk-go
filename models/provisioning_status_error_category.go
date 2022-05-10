@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ProvisioningStatusErrorCategory) String() string {
-    return []string{"FAILURE", "NONSERVICEFAILURE", "SUCCESS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"failure", "nonServiceFailure", "success", "unknownFutureValue"}[i]
 }
 func ParseProvisioningStatusErrorCategory(v string) (interface{}, error) {
     result := FAILURE_PROVISIONINGSTATUSERRORCATEGORY
-    switch strings.ToUpper(v) {
-        case "FAILURE":
+    switch v {
+        case "failure":
             result = FAILURE_PROVISIONINGSTATUSERRORCATEGORY
-        case "NONSERVICEFAILURE":
+        case "nonServiceFailure":
             result = NONSERVICEFAILURE_PROVISIONINGSTATUSERRORCATEGORY
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_PROVISIONINGSTATUSERRORCATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROVISIONINGSTATUSERRORCATEGORY
         default:
             return 0, errors.New("Unknown ProvisioningStatusErrorCategory value: " + v)

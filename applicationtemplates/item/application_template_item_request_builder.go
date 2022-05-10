@@ -23,7 +23,7 @@ type ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplicationTemplateItemRequestBuilderGetQueryParameters get entity from applicationTemplates by key
+// ApplicationTemplateItemRequestBuilderGetQueryParameters get applicationTemplate
 type ApplicationTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *ApplicationTemplateItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get entity from applicationTemplates by key
+// CreateGetRequestInformation get applicationTemplate
 func (m *ApplicationTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from applicationTemplates by key
+// CreateGetRequestInformationWithRequestConfiguration get applicationTemplate
 func (m *ApplicationTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ApplicationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ApplicationTemplateItemRequestBuilder) DeleteWithRequestConfigurationAn
     }
     return nil
 }
-// Get get entity from applicationTemplates by key
+// Get get applicationTemplate
 func (m *ApplicationTemplateItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entity from applicationTemplates by key
+// GetWithRequestConfigurationAndResponseHandler get applicationTemplate
 func (m *ApplicationTemplateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

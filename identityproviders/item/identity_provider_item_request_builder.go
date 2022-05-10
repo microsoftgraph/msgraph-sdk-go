@@ -22,7 +22,7 @@ type IdentityProviderItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentityProviderItemRequestBuilderGetQueryParameters get entity from identityProviders by key
+// IdentityProviderItemRequestBuilderGetQueryParameters get identityProvider (deprecated)
 type IdentityProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,11 +64,11 @@ func NewIdentityProviderItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete entity from identityProviders
+// CreateDeleteRequestInformation delete identityProvider (deprecated)
 func (m *IdentityProviderItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from identityProviders
+// CreateDeleteRequestInformationWithRequestConfiguration delete identityProvider (deprecated)
 func (m *IdentityProviderItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *IdentityProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -80,11 +80,11 @@ func (m *IdentityProviderItemRequestBuilder) CreateDeleteRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get entity from identityProviders by key
+// CreateGetRequestInformation get identityProvider (deprecated)
 func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from identityProviders by key
+// CreateGetRequestInformationWithRequestConfiguration get identityProvider (deprecated)
 func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,11 +116,11 @@ func (m *IdentityProviderItemRequestBuilder) CreatePatchRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Delete delete entity from identityProviders
+// Delete delete identityProvider (deprecated)
 func (m *IdentityProviderItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete entity from identityProviders
+// DeleteWithRequestConfigurationAndResponseHandler delete identityProvider (deprecated)
 func (m *IdentityProviderItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentityProviderItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -136,11 +136,11 @@ func (m *IdentityProviderItemRequestBuilder) DeleteWithRequestConfigurationAndRe
     }
     return nil
 }
-// Get get entity from identityProviders by key
+// Get get identityProvider (deprecated)
 func (m *IdentityProviderItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entity from identityProviders by key
+// GetWithRequestConfigurationAndResponseHandler get identityProvider (deprecated)
 func (m *IdentityProviderItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AlertStatus) String() string {
-    return []string{"UNKNOWN", "NEWALERT", "INPROGRESS", "RESOLVED", "DISMISSED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "newAlert", "inProgress", "resolved", "dismissed", "unknownFutureValue"}[i]
 }
 func ParseAlertStatus(v string) (interface{}, error) {
     result := UNKNOWN_ALERTSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_ALERTSTATUS
-        case "NEWALERT":
+        case "newAlert":
             result = NEWALERT_ALERTSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_ALERTSTATUS
-        case "RESOLVED":
+        case "resolved":
             result = RESOLVED_ALERTSTATUS
-        case "DISMISSED":
+        case "dismissed":
             result = DISMISSED_ALERTSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALERTSTATUS
         default:
             return 0, errors.New("Unknown AlertStatus value: " + v)

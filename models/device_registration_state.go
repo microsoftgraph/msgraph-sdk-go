@@ -1,43 +1,50 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of drive entities.
 type DeviceRegistrationState int
 
 const (
+    // The device is not registered.
     NOTREGISTERED_DEVICEREGISTRATIONSTATE DeviceRegistrationState = iota
+    // The device is registered.
     REGISTERED_DEVICEREGISTRATIONSTATE
+    // The device has been blocked, wiped or retired.
     REVOKED_DEVICEREGISTRATIONSTATE
+    // The device has a key conflict.
     KEYCONFLICT_DEVICEREGISTRATIONSTATE
+    // The device is pending approval.
     APPROVALPENDING_DEVICEREGISTRATIONSTATE
+    // The device certificate has been reset.
     CERTIFICATERESET_DEVICEREGISTRATIONSTATE
+    // The device is not registered and pending enrollment.
     NOTREGISTEREDPENDINGENROLLMENT_DEVICEREGISTRATIONSTATE
+    // The device registration status is unknown.
     UNKNOWN_DEVICEREGISTRATIONSTATE
 )
 
 func (i DeviceRegistrationState) String() string {
-    return []string{"NOTREGISTERED", "REGISTERED", "REVOKED", "KEYCONFLICT", "APPROVALPENDING", "CERTIFICATERESET", "NOTREGISTEREDPENDINGENROLLMENT", "UNKNOWN"}[i]
+    return []string{"notRegistered", "registered", "revoked", "keyConflict", "approvalPending", "certificateReset", "notRegisteredPendingEnrollment", "unknown"}[i]
 }
 func ParseDeviceRegistrationState(v string) (interface{}, error) {
     result := NOTREGISTERED_DEVICEREGISTRATIONSTATE
-    switch strings.ToUpper(v) {
-        case "NOTREGISTERED":
+    switch v {
+        case "notRegistered":
             result = NOTREGISTERED_DEVICEREGISTRATIONSTATE
-        case "REGISTERED":
+        case "registered":
             result = REGISTERED_DEVICEREGISTRATIONSTATE
-        case "REVOKED":
+        case "revoked":
             result = REVOKED_DEVICEREGISTRATIONSTATE
-        case "KEYCONFLICT":
+        case "keyConflict":
             result = KEYCONFLICT_DEVICEREGISTRATIONSTATE
-        case "APPROVALPENDING":
+        case "approvalPending":
             result = APPROVALPENDING_DEVICEREGISTRATIONSTATE
-        case "CERTIFICATERESET":
+        case "certificateReset":
             result = CERTIFICATERESET_DEVICEREGISTRATIONSTATE
-        case "NOTREGISTEREDPENDINGENROLLMENT":
+        case "notRegisteredPendingEnrollment":
             result = NOTREGISTEREDPENDINGENROLLMENT_DEVICEREGISTRATIONSTATE
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_DEVICEREGISTRATIONSTATE
         default:
             return 0, errors.New("Unknown DeviceRegistrationState value: " + v)

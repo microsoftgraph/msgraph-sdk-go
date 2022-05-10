@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the print singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i PrintEvent) String() string {
-    return []string{"JOBSTARTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"jobStarted", "unknownFutureValue"}[i]
 }
 func ParsePrintEvent(v string) (interface{}, error) {
     result := JOBSTARTED_PRINTEVENT
-    switch strings.ToUpper(v) {
-        case "JOBSTARTED":
+    switch v {
+        case "jobStarted":
             result = JOBSTARTED_PRINTEVENT
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTEVENT
         default:
             return 0, errors.New("Unknown PrintEvent value: " + v)

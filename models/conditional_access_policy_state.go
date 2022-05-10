@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ConditionalAccessPolicyState) String() string {
-    return []string{"ENABLED", "DISABLED", "ENABLEDFORREPORTINGBUTNOTENFORCED"}[i]
+    return []string{"enabled", "disabled", "enabledForReportingButNotEnforced"}[i]
 }
 func ParseConditionalAccessPolicyState(v string) (interface{}, error) {
     result := ENABLED_CONDITIONALACCESSPOLICYSTATE
-    switch strings.ToUpper(v) {
-        case "ENABLED":
+    switch v {
+        case "enabled":
             result = ENABLED_CONDITIONALACCESSPOLICYSTATE
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_CONDITIONALACCESSPOLICYSTATE
-        case "ENABLEDFORREPORTINGBUTNOTENFORCED":
+        case "enabledForReportingButNotEnforced":
             result = ENABLEDFORREPORTINGBUTNOTENFORCED_CONDITIONALACCESSPOLICYSTATE
         default:
             return 0, errors.New("Unknown ConditionalAccessPolicyState value: " + v)

@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of drive entities.
 type DeviceManagementExchangeAccessState int
 
 const (
+    // No access state discovered from Exchange
     NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATE DeviceManagementExchangeAccessState = iota
+    // Device access state to Exchange is unknown
     UNKNOWN_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
+    // Device has access to Exchange
     ALLOWED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
+    // Device is Blocked in Exchange
     BLOCKED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
+    // Device is Quarantined in Exchange
     QUARANTINED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
 )
 
 func (i DeviceManagementExchangeAccessState) String() string {
-    return []string{"NONE", "UNKNOWN", "ALLOWED", "BLOCKED", "QUARANTINED"}[i]
+    return []string{"none", "unknown", "allowed", "blocked", "quarantined"}[i]
 }
 func ParseDeviceManagementExchangeAccessState(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
-        case "ALLOWED":
+        case "allowed":
             result = ALLOWED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
-        case "BLOCKED":
+        case "blocked":
             result = BLOCKED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
-        case "QUARANTINED":
+        case "quarantined":
             result = QUARANTINED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
         default:
             return 0, errors.New("Unknown DeviceManagementExchangeAccessState value: " + v)

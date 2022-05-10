@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the policyRoot singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i PermissionType) String() string {
-    return []string{"APPLICATION", "DELEGATED", "DELEGATEDUSERCONSENTABLE"}[i]
+    return []string{"application", "delegated", "delegatedUserConsentable"}[i]
 }
 func ParsePermissionType(v string) (interface{}, error) {
     result := APPLICATION_PERMISSIONTYPE
-    switch strings.ToUpper(v) {
-        case "APPLICATION":
+    switch v {
+        case "application":
             result = APPLICATION_PERMISSIONTYPE
-        case "DELEGATED":
+        case "delegated":
             result = DELEGATED_PERMISSIONTYPE
-        case "DELEGATEDUSERCONSENTABLE":
+        case "delegatedUserConsentable":
             result = DELEGATEDUSERCONSENTABLE_PERMISSIONTYPE
         default:
             return 0, errors.New("Unknown PermissionType value: " + v)

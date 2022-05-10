@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the solutionsRoot singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AnswerInputType) String() string {
-    return []string{"TEXT", "RADIOBUTTON", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"text", "radioButton", "unknownFutureValue"}[i]
 }
 func ParseAnswerInputType(v string) (interface{}, error) {
     result := TEXT_ANSWERINPUTTYPE
-    switch strings.ToUpper(v) {
-        case "TEXT":
+    switch v {
+        case "text":
             result = TEXT_ANSWERINPUTTYPE
-        case "RADIOBUTTON":
+        case "radioButton":
             result = RADIOBUTTON_ANSWERINPUTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANSWERINPUTTYPE
         default:
             return 0, errors.New("Unknown AnswerInputType value: " + v)

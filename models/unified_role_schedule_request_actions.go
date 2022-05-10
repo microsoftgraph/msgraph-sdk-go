@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the roleManagement singleton.
@@ -20,30 +19,30 @@ const (
 )
 
 func (i UnifiedRoleScheduleRequestActions) String() string {
-    return []string{"ADMINASSIGN", "ADMINUPDATE", "ADMINREMOVE", "SELFACTIVATE", "SELFDEACTIVATE", "ADMINEXTEND", "ADMINRENEW", "SELFEXTEND", "SELFRENEW", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"adminAssign", "adminUpdate", "adminRemove", "selfActivate", "selfDeactivate", "adminExtend", "adminRenew", "selfExtend", "selfRenew", "unknownFutureValue"}[i]
 }
 func ParseUnifiedRoleScheduleRequestActions(v string) (interface{}, error) {
     result := ADMINASSIGN_UNIFIEDROLESCHEDULEREQUESTACTIONS
-    switch strings.ToUpper(v) {
-        case "ADMINASSIGN":
+    switch v {
+        case "adminAssign":
             result = ADMINASSIGN_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "ADMINUPDATE":
+        case "adminUpdate":
             result = ADMINUPDATE_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "ADMINREMOVE":
+        case "adminRemove":
             result = ADMINREMOVE_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "SELFACTIVATE":
+        case "selfActivate":
             result = SELFACTIVATE_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "SELFDEACTIVATE":
+        case "selfDeactivate":
             result = SELFDEACTIVATE_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "ADMINEXTEND":
+        case "adminExtend":
             result = ADMINEXTEND_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "ADMINRENEW":
+        case "adminRenew":
             result = ADMINRENEW_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "SELFEXTEND":
+        case "selfExtend":
             result = SELFEXTEND_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "SELFRENEW":
+        case "selfRenew":
             result = SELFRENEW_UNIFIEDROLESCHEDULEREQUESTACTIONS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_UNIFIEDROLESCHEDULEREQUESTACTIONS
         default:
             return 0, errors.New("Unknown UnifiedRoleScheduleRequestActions value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the policyRoot singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i StagedFeatureName) String() string {
-    return []string{"PASSTHROUGHAUTHENTICATION", "SEAMLESSSSO", "PASSWORDHASHSYNC", "EMAILASALTERNATEID", "UNKNOWNFUTUREVALUE", "CERTIFICATEBASEDAUTHENTICATION", "MULTIFACTORAUTHENTICATION"}[i]
+    return []string{"passthroughAuthentication", "seamlessSso", "passwordHashSync", "emailAsAlternateId", "unknownFutureValue", "certificateBasedAuthentication", "multiFactorAuthentication"}[i]
 }
 func ParseStagedFeatureName(v string) (interface{}, error) {
     result := PASSTHROUGHAUTHENTICATION_STAGEDFEATURENAME
-    switch strings.ToUpper(v) {
-        case "PASSTHROUGHAUTHENTICATION":
+    switch v {
+        case "passthroughAuthentication":
             result = PASSTHROUGHAUTHENTICATION_STAGEDFEATURENAME
-        case "SEAMLESSSSO":
+        case "seamlessSso":
             result = SEAMLESSSSO_STAGEDFEATURENAME
-        case "PASSWORDHASHSYNC":
+        case "passwordHashSync":
             result = PASSWORDHASHSYNC_STAGEDFEATURENAME
-        case "EMAILASALTERNATEID":
+        case "emailAsAlternateId":
             result = EMAILASALTERNATEID_STAGEDFEATURENAME
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_STAGEDFEATURENAME
-        case "CERTIFICATEBASEDAUTHENTICATION":
+        case "certificateBasedAuthentication":
             result = CERTIFICATEBASEDAUTHENTICATION_STAGEDFEATURENAME
-        case "MULTIFACTORAUTHENTICATION":
+        case "multiFactorAuthentication":
             result = MULTIFACTORAUTHENTICATION_STAGEDFEATURENAME
         default:
             return 0, errors.New("Unknown StagedFeatureName value: " + v)

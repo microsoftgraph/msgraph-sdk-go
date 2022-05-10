@@ -64,11 +64,11 @@ func NewSchemaExtensionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewSchemaExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete entity from schemaExtensions
+// CreateDeleteRequestInformation delete schemaExtension
 func (m *SchemaExtensionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from schemaExtensions
+// CreateDeleteRequestInformationWithRequestConfiguration delete schemaExtension
 func (m *SchemaExtensionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *SchemaExtensionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,11 +116,11 @@ func (m *SchemaExtensionItemRequestBuilder) CreatePatchRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Delete delete entity from schemaExtensions
+// Delete delete schemaExtension
 func (m *SchemaExtensionItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete entity from schemaExtensions
+// DeleteWithRequestConfigurationAndResponseHandler delete schemaExtension
 func (m *SchemaExtensionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SchemaExtensionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

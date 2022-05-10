@@ -16,7 +16,7 @@ type DrivesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DrivesRequestBuilderGetQueryParameters get entities from drives
+// DrivesRequestBuilderGetQueryParameters helpers (examples that aren't included in the docs)
 type DrivesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *DrivesRequestBuilder) Count()(*i0cb260266bdf7e3cce4c9295cf8e5cbdd36d6572f41cd4255a1f5ec6ea3b2eff.CountRequestBuilder) {
     return i0cb260266bdf7e3cce4c9295cf8e5cbdd36d6572f41cd4255a1f5ec6ea3b2eff.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from drives
+// CreateGetRequestInformation helpers (examples that aren't included in the docs)
 func (m *DrivesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from drives
+// CreateGetRequestInformationWithRequestConfiguration helpers (examples that aren't included in the docs)
 func (m *DrivesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *DrivesRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get get entities from drives
+// Get helpers (examples that aren't included in the docs)
 func (m *DrivesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from drives
+// GetWithRequestConfigurationAndResponseHandler helpers (examples that aren't included in the docs)
 func (m *DrivesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DrivesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the sendActivityNotification method.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i TeamworkActivityTopicSource) String() string {
-    return []string{"ENTITYURL", "TEXT"}[i]
+    return []string{"entityUrl", "text"}[i]
 }
 func ParseTeamworkActivityTopicSource(v string) (interface{}, error) {
     result := ENTITYURL_TEAMWORKACTIVITYTOPICSOURCE
-    switch strings.ToUpper(v) {
-        case "ENTITYURL":
+    switch v {
+        case "entityUrl":
             result = ENTITYURL_TEAMWORKACTIVITYTOPICSOURCE
-        case "TEXT":
+        case "text":
             result = TEXT_TEAMWORKACTIVITYTOPICSOURCE
         default:
             return 0, errors.New("Unknown TeamworkActivityTopicSource value: " + v)

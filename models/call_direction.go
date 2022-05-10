@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i CallDirection) String() string {
-    return []string{"INCOMING", "OUTGOING"}[i]
+    return []string{"incoming", "outgoing"}[i]
 }
 func ParseCallDirection(v string) (interface{}, error) {
     result := INCOMING_CALLDIRECTION
-    switch strings.ToUpper(v) {
-        case "INCOMING":
+    switch v {
+        case "incoming":
             result = INCOMING_CALLDIRECTION
-        case "OUTGOING":
+        case "outgoing":
             result = OUTGOING_CALLDIRECTION
         default:
             return 0, errors.New("Unknown CallDirection value: " + v)

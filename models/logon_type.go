@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i LogonType) String() string {
-    return []string{"UNKNOWN", "INTERACTIVE", "REMOTEINTERACTIVE", "NETWORK", "BATCH", "SERVICE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "interactive", "remoteInteractive", "network", "batch", "service", "unknownFutureValue"}[i]
 }
 func ParseLogonType(v string) (interface{}, error) {
     result := UNKNOWN_LOGONTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_LOGONTYPE
-        case "INTERACTIVE":
+        case "interactive":
             result = INTERACTIVE_LOGONTYPE
-        case "REMOTEINTERACTIVE":
+        case "remoteInteractive":
             result = REMOTEINTERACTIVE_LOGONTYPE
-        case "NETWORK":
+        case "network":
             result = NETWORK_LOGONTYPE
-        case "BATCH":
+        case "batch":
             result = BATCH_LOGONTYPE
-        case "SERVICE":
+        case "service":
             result = SERVICE_LOGONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LOGONTYPE
         default:
             return 0, errors.New("Unknown LogonType value: " + v)

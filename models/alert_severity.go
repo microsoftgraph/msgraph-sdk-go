@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AlertSeverity) String() string {
-    return []string{"UNKNOWN", "INFORMATIONAL", "LOW", "MEDIUM", "HIGH", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "informational", "low", "medium", "high", "unknownFutureValue"}[i]
 }
 func ParseAlertSeverity(v string) (interface{}, error) {
     result := UNKNOWN_ALERTSEVERITY
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_ALERTSEVERITY
-        case "INFORMATIONAL":
+        case "informational":
             result = INFORMATIONAL_ALERTSEVERITY
-        case "LOW":
+        case "low":
             result = LOW_ALERTSEVERITY
-        case "MEDIUM":
+        case "medium":
             result = MEDIUM_ALERTSEVERITY
-        case "HIGH":
+        case "high":
             result = HIGH_ALERTSEVERITY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALERTSEVERITY
         default:
             return 0, errors.New("Unknown AlertSeverity value: " + v)

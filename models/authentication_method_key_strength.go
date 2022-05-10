@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type AuthenticationMethodKeyStrength int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AuthenticationMethodKeyStrength) String() string {
-    return []string{"NORMAL", "WEAK", "UNKNOWN"}[i]
+    return []string{"normal", "weak", "unknown"}[i]
 }
 func ParseAuthenticationMethodKeyStrength(v string) (interface{}, error) {
     result := NORMAL_AUTHENTICATIONMETHODKEYSTRENGTH
-    switch strings.ToUpper(v) {
-        case "NORMAL":
+    switch v {
+        case "normal":
             result = NORMAL_AUTHENTICATIONMETHODKEYSTRENGTH
-        case "WEAK":
+        case "weak":
             result = WEAK_AUTHENTICATIONMETHODKEYSTRENGTH
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_AUTHENTICATIONMETHODKEYSTRENGTH
         default:
             return 0, errors.New("Unknown AuthenticationMethodKeyStrength value: " + v)

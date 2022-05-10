@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i WifiRadioType) String() string {
-    return []string{"UNKNOWN", "WIFI80211A", "WIFI80211B", "WIFI80211G", "WIFI80211N", "WIFI80211AC", "WIFI80211AX", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "wifi80211a", "wifi80211b", "wifi80211g", "wifi80211n", "wifi80211ac", "wifi80211ax", "unknownFutureValue"}[i]
 }
 func ParseWifiRadioType(v string) (interface{}, error) {
     result := UNKNOWN_WIFIRADIOTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_WIFIRADIOTYPE
-        case "WIFI80211A":
+        case "wifi80211a":
             result = WIFI80211A_WIFIRADIOTYPE
-        case "WIFI80211B":
+        case "wifi80211b":
             result = WIFI80211B_WIFIRADIOTYPE
-        case "WIFI80211G":
+        case "wifi80211g":
             result = WIFI80211G_WIFIRADIOTYPE
-        case "WIFI80211N":
+        case "wifi80211n":
             result = WIFI80211N_WIFIRADIOTYPE
-        case "WIFI80211AC":
+        case "wifi80211ac":
             result = WIFI80211AC_WIFIRADIOTYPE
-        case "WIFI80211AX":
+        case "wifi80211ax":
             result = WIFI80211AX_WIFIRADIOTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WIFIRADIOTYPE
         default:
             return 0, errors.New("Unknown WifiRadioType value: " + v)

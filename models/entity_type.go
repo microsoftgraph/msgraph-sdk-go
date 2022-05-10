@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the query method.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i EntityType) String() string {
-    return []string{"EVENT", "MESSAGE", "DRIVEITEM", "EXTERNALITEM", "SITE", "LIST", "LISTITEM", "DRIVE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"event", "message", "driveItem", "externalItem", "site", "list", "listItem", "drive", "unknownFutureValue"}[i]
 }
 func ParseEntityType(v string) (interface{}, error) {
     result := EVENT_ENTITYTYPE
-    switch strings.ToUpper(v) {
-        case "EVENT":
+    switch v {
+        case "event":
             result = EVENT_ENTITYTYPE
-        case "MESSAGE":
+        case "message":
             result = MESSAGE_ENTITYTYPE
-        case "DRIVEITEM":
+        case "driveItem":
             result = DRIVEITEM_ENTITYTYPE
-        case "EXTERNALITEM":
+        case "externalItem":
             result = EXTERNALITEM_ENTITYTYPE
-        case "SITE":
+        case "site":
             result = SITE_ENTITYTYPE
-        case "LIST":
+        case "list":
             result = LIST_ENTITYTYPE
-        case "LISTITEM":
+        case "listItem":
             result = LISTITEM_ENTITYTYPE
-        case "DRIVE":
+        case "drive":
             result = DRIVE_ENTITYTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ENTITYTYPE
         default:
             return 0, errors.New("Unknown EntityType value: " + v)

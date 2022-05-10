@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type PlannerPreviewType int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i PlannerPreviewType) String() string {
-    return []string{"AUTOMATIC", "NOPREVIEW", "CHECKLIST", "DESCRIPTION", "REFERENCE"}[i]
+    return []string{"automatic", "noPreview", "checklist", "description", "reference"}[i]
 }
 func ParsePlannerPreviewType(v string) (interface{}, error) {
     result := AUTOMATIC_PLANNERPREVIEWTYPE
-    switch strings.ToUpper(v) {
-        case "AUTOMATIC":
+    switch v {
+        case "automatic":
             result = AUTOMATIC_PLANNERPREVIEWTYPE
-        case "NOPREVIEW":
+        case "noPreview":
             result = NOPREVIEW_PLANNERPREVIEWTYPE
-        case "CHECKLIST":
+        case "checklist":
             result = CHECKLIST_PLANNERPREVIEWTYPE
-        case "DESCRIPTION":
+        case "description":
             result = DESCRIPTION_PLANNERPREVIEWTYPE
-        case "REFERENCE":
+        case "reference":
             result = REFERENCE_PLANNERPREVIEWTYPE
         default:
             return 0, errors.New("Unknown PlannerPreviewType value: " + v)

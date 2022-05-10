@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type VppTokenState int
 
 const (
+    // Default state.
     UNKNOWN_VPPTOKENSTATE VppTokenState = iota
+    // Token is valid.
     VALID_VPPTOKENSTATE
+    // Token is expired.
     EXPIRED_VPPTOKENSTATE
+    // Token is invalid.
     INVALID_VPPTOKENSTATE
+    // Token is managed by another MDM Service.
     ASSIGNEDTOEXTERNALMDM_VPPTOKENSTATE
 )
 
 func (i VppTokenState) String() string {
-    return []string{"UNKNOWN", "VALID", "EXPIRED", "INVALID", "ASSIGNEDTOEXTERNALMDM"}[i]
+    return []string{"unknown", "valid", "expired", "invalid", "assignedToExternalMDM"}[i]
 }
 func ParseVppTokenState(v string) (interface{}, error) {
     result := UNKNOWN_VPPTOKENSTATE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_VPPTOKENSTATE
-        case "VALID":
+        case "valid":
             result = VALID_VPPTOKENSTATE
-        case "EXPIRED":
+        case "expired":
             result = EXPIRED_VPPTOKENSTATE
-        case "INVALID":
+        case "invalid":
             result = INVALID_VPPTOKENSTATE
-        case "ASSIGNEDTOEXTERNALMDM":
+        case "assignedToExternalMDM":
             result = ASSIGNEDTOEXTERNALMDM_VPPTOKENSTATE
         default:
             return 0, errors.New("Unknown VppTokenState value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityProtectionRoot singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ActivityType) String() string {
-    return []string{"SIGNIN", "USER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"signin", "user", "unknownFutureValue"}[i]
 }
 func ParseActivityType(v string) (interface{}, error) {
     result := SIGNIN_ACTIVITYTYPE
-    switch strings.ToUpper(v) {
-        case "SIGNIN":
+    switch v {
+        case "signin":
             result = SIGNIN_ACTIVITYTYPE
-        case "USER":
+        case "user":
             result = USER_ACTIVITYTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACTIVITYTYPE
         default:
             return 0, errors.New("Unknown ActivityType value: " + v)

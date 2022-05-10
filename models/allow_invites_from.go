@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the policyRoot singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i AllowInvitesFrom) String() string {
-    return []string{"NONE", "ADMINSANDGUESTINVITERS", "ADMINSGUESTINVITERSANDALLMEMBERS", "EVERYONE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "adminsAndGuestInviters", "adminsGuestInvitersAndAllMembers", "everyone", "unknownFutureValue"}[i]
 }
 func ParseAllowInvitesFrom(v string) (interface{}, error) {
     result := NONE_ALLOWINVITESFROM
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_ALLOWINVITESFROM
-        case "ADMINSANDGUESTINVITERS":
+        case "adminsAndGuestInviters":
             result = ADMINSANDGUESTINVITERS_ALLOWINVITESFROM
-        case "ADMINSGUESTINVITERSANDALLMEMBERS":
+        case "adminsGuestInvitersAndAllMembers":
             result = ADMINSGUESTINVITERSANDALLMEMBERS_ALLOWINVITESFROM
-        case "EVERYONE":
+        case "everyone":
             result = EVERYONE_ALLOWINVITESFROM
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALLOWINVITESFROM
         default:
             return 0, errors.New("Unknown AllowInvitesFrom value: " + v)

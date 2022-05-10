@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityContainer singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i SigninFrequencyType) String() string {
-    return []string{"DAYS", "HOURS"}[i]
+    return []string{"days", "hours"}[i]
 }
 func ParseSigninFrequencyType(v string) (interface{}, error) {
     result := DAYS_SIGNINFREQUENCYTYPE
-    switch strings.ToUpper(v) {
-        case "DAYS":
+    switch v {
+        case "days":
             result = DAYS_SIGNINFREQUENCYTYPE
-        case "HOURS":
+        case "hours":
             result = HOURS_SIGNINFREQUENCYTYPE
         default:
             return 0, errors.New("Unknown SigninFrequencyType value: " + v)

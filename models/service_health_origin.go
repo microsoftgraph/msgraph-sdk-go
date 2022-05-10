@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ServiceHealthOrigin) String() string {
-    return []string{"MICROSOFT", "THIRDPARTY", "CUSTOMER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"microsoft", "thirdParty", "customer", "unknownFutureValue"}[i]
 }
 func ParseServiceHealthOrigin(v string) (interface{}, error) {
     result := MICROSOFT_SERVICEHEALTHORIGIN
-    switch strings.ToUpper(v) {
-        case "MICROSOFT":
+    switch v {
+        case "microsoft":
             result = MICROSOFT_SERVICEHEALTHORIGIN
-        case "THIRDPARTY":
+        case "thirdParty":
             result = THIRDPARTY_SERVICEHEALTHORIGIN
-        case "CUSTOMER":
+        case "customer":
             result = CUSTOMER_SERVICEHEALTHORIGIN
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEHEALTHORIGIN
         default:
             return 0, errors.New("Unknown ServiceHealthOrigin value: " + v)

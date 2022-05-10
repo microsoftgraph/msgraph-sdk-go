@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the privacy singleton.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i DataSubjectType) String() string {
-    return []string{"CUSTOMER", "CURRENTEMPLOYEE", "FORMEREMPLOYEE", "PROSPECTIVEEMPLOYEE", "STUDENT", "TEACHER", "FACULTY", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"customer", "currentEmployee", "formerEmployee", "prospectiveEmployee", "student", "teacher", "faculty", "other", "unknownFutureValue"}[i]
 }
 func ParseDataSubjectType(v string) (interface{}, error) {
     result := CUSTOMER_DATASUBJECTTYPE
-    switch strings.ToUpper(v) {
-        case "CUSTOMER":
+    switch v {
+        case "customer":
             result = CUSTOMER_DATASUBJECTTYPE
-        case "CURRENTEMPLOYEE":
+        case "currentEmployee":
             result = CURRENTEMPLOYEE_DATASUBJECTTYPE
-        case "FORMEREMPLOYEE":
+        case "formerEmployee":
             result = FORMEREMPLOYEE_DATASUBJECTTYPE
-        case "PROSPECTIVEEMPLOYEE":
+        case "prospectiveEmployee":
             result = PROSPECTIVEEMPLOYEE_DATASUBJECTTYPE
-        case "STUDENT":
+        case "student":
             result = STUDENT_DATASUBJECTTYPE
-        case "TEACHER":
+        case "teacher":
             result = TEACHER_DATASUBJECTTYPE
-        case "FACULTY":
+        case "faculty":
             result = FACULTY_DATASUBJECTTYPE
-        case "OTHER":
+        case "other":
             result = OTHER_DATASUBJECTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATASUBJECTTYPE
         default:
             return 0, errors.New("Unknown DataSubjectType value: " + v)

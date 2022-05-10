@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of chat entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TeamworkConversationIdentityType) String() string {
-    return []string{"TEAM", "CHANNEL", "CHAT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"team", "channel", "chat", "unknownFutureValue"}[i]
 }
 func ParseTeamworkConversationIdentityType(v string) (interface{}, error) {
     result := TEAM_TEAMWORKCONVERSATIONIDENTITYTYPE
-    switch strings.ToUpper(v) {
-        case "TEAM":
+    switch v {
+        case "team":
             result = TEAM_TEAMWORKCONVERSATIONIDENTITYTYPE
-        case "CHANNEL":
+        case "channel":
             result = CHANNEL_TEAMWORKCONVERSATIONIDENTITYTYPE
-        case "CHAT":
+        case "chat":
             result = CHAT_TEAMWORKCONVERSATIONIDENTITYTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKCONVERSATIONIDENTITYTYPE
         default:
             return 0, errors.New("Unknown TeamworkConversationIdentityType value: " + v)

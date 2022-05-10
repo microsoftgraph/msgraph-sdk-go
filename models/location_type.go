@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the drive singleton.
+// Provides operations to manage the collection of drive entities.
 type LocationType int
 
 const (
@@ -20,30 +19,30 @@ const (
 )
 
 func (i LocationType) String() string {
-    return []string{"DEFAULT_ESCAPED", "CONFERENCEROOM", "HOMEADDRESS", "BUSINESSADDRESS", "GEOCOORDINATES", "STREETADDRESS", "HOTEL", "RESTAURANT", "LOCALBUSINESS", "POSTALADDRESS"}[i]
+    return []string{"default", "conferenceRoom", "homeAddress", "businessAddress", "geoCoordinates", "streetAddress", "hotel", "restaurant", "localBusiness", "postalAddress"}[i]
 }
 func ParseLocationType(v string) (interface{}, error) {
     result := DEFAULT_ESCAPED_LOCATIONTYPE
-    switch strings.ToUpper(v) {
-        case "DEFAULT_ESCAPED":
+    switch v {
+        case "default":
             result = DEFAULT_ESCAPED_LOCATIONTYPE
-        case "CONFERENCEROOM":
+        case "conferenceRoom":
             result = CONFERENCEROOM_LOCATIONTYPE
-        case "HOMEADDRESS":
+        case "homeAddress":
             result = HOMEADDRESS_LOCATIONTYPE
-        case "BUSINESSADDRESS":
+        case "businessAddress":
             result = BUSINESSADDRESS_LOCATIONTYPE
-        case "GEOCOORDINATES":
+        case "geoCoordinates":
             result = GEOCOORDINATES_LOCATIONTYPE
-        case "STREETADDRESS":
+        case "streetAddress":
             result = STREETADDRESS_LOCATIONTYPE
-        case "HOTEL":
+        case "hotel":
             result = HOTEL_LOCATIONTYPE
-        case "RESTAURANT":
+        case "restaurant":
             result = RESTAURANT_LOCATIONTYPE
-        case "LOCALBUSINESS":
+        case "localBusiness":
             result = LOCALBUSINESS_LOCATIONTYPE
-        case "POSTALADDRESS":
+        case "postalAddress":
             result = POSTALADDRESS_LOCATIONTYPE
         default:
             return 0, errors.New("Unknown LocationType value: " + v)

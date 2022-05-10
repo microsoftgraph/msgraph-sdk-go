@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the informationProtection singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i ThreatExpectedAssessment) String() string {
-    return []string{"BLOCK", "UNBLOCK"}[i]
+    return []string{"block", "unblock"}[i]
 }
 func ParseThreatExpectedAssessment(v string) (interface{}, error) {
     result := BLOCK_THREATEXPECTEDASSESSMENT
-    switch strings.ToUpper(v) {
-        case "BLOCK":
+    switch v {
+        case "block":
             result = BLOCK_THREATEXPECTEDASSESSMENT
-        case "UNBLOCK":
+        case "unblock":
             result = UNBLOCK_THREATEXPECTEDASSESSMENT
         default:
             return 0, errors.New("Unknown ThreatExpectedAssessment value: " + v)

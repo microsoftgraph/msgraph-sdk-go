@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i EducationGender) String() string {
-    return []string{"FEMALE", "MALE", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"female", "male", "other", "unknownFutureValue"}[i]
 }
 func ParseEducationGender(v string) (interface{}, error) {
     result := FEMALE_EDUCATIONGENDER
-    switch strings.ToUpper(v) {
-        case "FEMALE":
+    switch v {
+        case "female":
             result = FEMALE_EDUCATIONGENDER
-        case "MALE":
+        case "male":
             result = MALE_EDUCATIONGENDER
-        case "OTHER":
+        case "other":
             result = OTHER_EDUCATIONGENDER
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONGENDER
         default:
             return 0, errors.New("Unknown EducationGender value: " + v)

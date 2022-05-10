@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type ImportedWindowsAutopilotDeviceIdentityImportStatus int
 
 const (
+    // Unknown status.
     UNKNOWN_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS ImportedWindowsAutopilotDeviceIdentityImportStatus = iota
+    // Pending status.
     PENDING_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
+    // Partial status.
     PARTIAL_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
+    // Complete status.
     COMPLETE_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
+    // Error status.
     ERROR_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
 )
 
 func (i ImportedWindowsAutopilotDeviceIdentityImportStatus) String() string {
-    return []string{"UNKNOWN", "PENDING", "PARTIAL", "COMPLETE", "ERROR"}[i]
+    return []string{"unknown", "pending", "partial", "complete", "error"}[i]
 }
 func ParseImportedWindowsAutopilotDeviceIdentityImportStatus(v string) (interface{}, error) {
     result := UNKNOWN_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
-        case "PENDING":
+        case "pending":
             result = PENDING_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
-        case "PARTIAL":
+        case "partial":
             result = PARTIAL_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
-        case "COMPLETE":
+        case "complete":
             result = COMPLETE_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
         default:
             return 0, errors.New("Unknown ImportedWindowsAutopilotDeviceIdentityImportStatus value: " + v)

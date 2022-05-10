@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i RiskState) String() string {
-    return []string{"NONE", "CONFIRMEDSAFE", "REMEDIATED", "DISMISSED", "ATRISK", "CONFIRMEDCOMPROMISED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "confirmedSafe", "remediated", "dismissed", "atRisk", "confirmedCompromised", "unknownFutureValue"}[i]
 }
 func ParseRiskState(v string) (interface{}, error) {
     result := NONE_RISKSTATE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_RISKSTATE
-        case "CONFIRMEDSAFE":
+        case "confirmedSafe":
             result = CONFIRMEDSAFE_RISKSTATE
-        case "REMEDIATED":
+        case "remediated":
             result = REMEDIATED_RISKSTATE
-        case "DISMISSED":
+        case "dismissed":
             result = DISMISSED_RISKSTATE
-        case "ATRISK":
+        case "atRisk":
             result = ATRISK_RISKSTATE
-        case "CONFIRMEDCOMPROMISED":
+        case "confirmedCompromised":
             result = CONFIRMEDCOMPROMISED_RISKSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RISKSTATE
         default:
             return 0, errors.New("Unknown RiskState value: " + v)

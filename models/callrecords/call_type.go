@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudCommunications singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i CallType) String() string {
-    return []string{"UNKNOWN", "GROUPCALL", "PEERTOPEER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "groupCall", "peerToPeer", "unknownFutureValue"}[i]
 }
 func ParseCallType(v string) (interface{}, error) {
     result := UNKNOWN_CALLTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_CALLTYPE
-        case "GROUPCALL":
+        case "groupCall":
             result = GROUPCALL_CALLTYPE
-        case "PEERTOPEER":
+        case "peerToPeer":
             result = PEERTOPEER_CALLTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CALLTYPE
         default:
             return 0, errors.New("Unknown CallType value: " + v)

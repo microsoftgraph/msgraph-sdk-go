@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the security singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i AlertFeedback) String() string {
-    return []string{"UNKNOWN", "TRUEPOSITIVE", "FALSEPOSITIVE", "BENIGNPOSITIVE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "truePositive", "falsePositive", "benignPositive", "unknownFutureValue"}[i]
 }
 func ParseAlertFeedback(v string) (interface{}, error) {
     result := UNKNOWN_ALERTFEEDBACK
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_ALERTFEEDBACK
-        case "TRUEPOSITIVE":
+        case "truePositive":
             result = TRUEPOSITIVE_ALERTFEEDBACK
-        case "FALSEPOSITIVE":
+        case "falsePositive":
             result = FALSEPOSITIVE_ALERTFEEDBACK
-        case "BENIGNPOSITIVE":
+        case "benignPositive":
             result = BENIGNPOSITIVE_ALERTFEEDBACK
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALERTFEEDBACK
         default:
             return 0, errors.New("Unknown AlertFeedback value: " + v)

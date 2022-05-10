@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the createUploadSession method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AttachmentType) String() string {
-    return []string{"FILE", "ITEM", "REFERENCE"}[i]
+    return []string{"file", "item", "reference"}[i]
 }
 func ParseAttachmentType(v string) (interface{}, error) {
     result := FILE_ATTACHMENTTYPE
-    switch strings.ToUpper(v) {
-        case "FILE":
+    switch v {
+        case "file":
             result = FILE_ATTACHMENTTYPE
-        case "ITEM":
+        case "item":
             result = ITEM_ATTACHMENTTYPE
-        case "REFERENCE":
+        case "reference":
             result = REFERENCE_ATTACHMENTTYPE
         default:
             return 0, errors.New("Unknown AttachmentType value: " + v)

@@ -5,7 +5,9 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     i47420a6f1d93f934067d08aecf791436625344c23db8a5ebf8ac8c6aa35228f5 "github.com/microsoftgraph/msgraph-sdk-go/directory/administrativeunits"
     i608270f0d53df54d261f336ae52901ae79654f5ed54338f92dab3b2188e27aeb "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems"
+    i6a6db966e62dddb8d891e081b28d43a4d103521831d4e6129c1dd2ac8e69b9ec "github.com/microsoftgraph/msgraph-sdk-go/directory/federationconfigurations"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i9ae5ec30df8eb6fe81d483055e3d12a0be1414778bad0e35f406a2127c7a27a5 "github.com/microsoftgraph/msgraph-sdk-go/directory/federationconfigurations/item"
     ib6eef29306489af3d4867139be6f8c0d2f07e27cc972bbe619040834fd6bc53c "github.com/microsoftgraph/msgraph-sdk-go/directory/administrativeunits/item"
     ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item"
 )
@@ -126,6 +128,21 @@ func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ic11656dccc6289d4
         urlTplParams["directoryObject%2Did"] = id
     }
     return ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// FederationConfigurations the federationConfigurations property
+func (m *DirectoryRequestBuilder) FederationConfigurations()(*i6a6db966e62dddb8d891e081b28d43a4d103521831d4e6129c1dd2ac8e69b9ec.FederationConfigurationsRequestBuilder) {
+    return i6a6db966e62dddb8d891e081b28d43a4d103521831d4e6129c1dd2ac8e69b9ec.NewFederationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// FederationConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.federationConfigurations.item collection
+func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*i9ae5ec30df8eb6fe81d483055e3d12a0be1414778bad0e35f406a2127c7a27a5.IdentityProviderBaseItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["identityProviderBase%2Did"] = id
+    }
+    return i9ae5ec30df8eb6fe81d483055e3d12a0be1414778bad0e35f406a2127c7a27a5.NewIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get directory
 func (m *DirectoryRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable, error) {

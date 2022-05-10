@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the onenotePatchContent method.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i OnenotePatchActionType) String() string {
-    return []string{"REPLACE", "APPEND", "DELETE", "INSERT", "PREPEND"}[i]
+    return []string{"Replace", "Append", "Delete", "Insert", "Prepend"}[i]
 }
 func ParseOnenotePatchActionType(v string) (interface{}, error) {
     result := REPLACE_ONENOTEPATCHACTIONTYPE
-    switch strings.ToUpper(v) {
-        case "REPLACE":
+    switch v {
+        case "Replace":
             result = REPLACE_ONENOTEPATCHACTIONTYPE
-        case "APPEND":
+        case "Append":
             result = APPEND_ONENOTEPATCHACTIONTYPE
-        case "DELETE":
+        case "Delete":
             result = DELETE_ONENOTEPATCHACTIONTYPE
-        case "INSERT":
+        case "Insert":
             result = INSERT_ONENOTEPATCHACTIONTYPE
-        case "PREPEND":
+        case "Prepend":
             result = PREPEND_ONENOTEPATCHACTIONTYPE
         default:
             return 0, errors.New("Unknown OnenotePatchActionType value: " + v)

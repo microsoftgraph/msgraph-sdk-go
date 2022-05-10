@@ -1,67 +1,82 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of drive entities.
 type DeviceManagementExchangeAccessStateReason int
 
 const (
+    // No access state reason discovered from Exchange
     NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON DeviceManagementExchangeAccessStateReason = iota
+    // Unknown access state reason
     UNKNOWN_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state determined by Exchange Global rule
     EXCHANGEGLOBALRULE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state determined by Exchange Individual rule
     EXCHANGEINDIVIDUALRULE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state determined by Exchange Device rule
     EXCHANGEDEVICERULE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state due to Exchange upgrade
     EXCHANGEUPGRADE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state determined by Exchange Mailbox Policy
     EXCHANGEMAILBOXPOLICY_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state determined by Exchange
     OTHER_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state granted by compliance challenge
     COMPLIANT_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state revoked by compliance challenge
     NOTCOMPLIANT_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state revoked by management challenge
     NOTENROLLED_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state due to unknown location
     UNKNOWNLOCATION_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state due to MFA challenge
     MFAREQUIRED_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access State revoked by AAD Access Policy
     AZUREADBLOCKDUETOACCESSPOLICY_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access State revoked by compromised password
     COMPROMISEDPASSWORD_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
+    // Access state revoked by managed application challenge
     DEVICENOTKNOWNWITHMANAGEDAPP_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
 )
 
 func (i DeviceManagementExchangeAccessStateReason) String() string {
-    return []string{"NONE", "UNKNOWN", "EXCHANGEGLOBALRULE", "EXCHANGEINDIVIDUALRULE", "EXCHANGEDEVICERULE", "EXCHANGEUPGRADE", "EXCHANGEMAILBOXPOLICY", "OTHER", "COMPLIANT", "NOTCOMPLIANT", "NOTENROLLED", "UNKNOWNLOCATION", "MFAREQUIRED", "AZUREADBLOCKDUETOACCESSPOLICY", "COMPROMISEDPASSWORD", "DEVICENOTKNOWNWITHMANAGEDAPP"}[i]
+    return []string{"none", "unknown", "exchangeGlobalRule", "exchangeIndividualRule", "exchangeDeviceRule", "exchangeUpgrade", "exchangeMailboxPolicy", "other", "compliant", "notCompliant", "notEnrolled", "unknownLocation", "mfaRequired", "azureADBlockDueToAccessPolicy", "compromisedPassword", "deviceNotKnownWithManagedApp"}[i]
 }
 func ParseDeviceManagementExchangeAccessStateReason(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "EXCHANGEGLOBALRULE":
+        case "exchangeGlobalRule":
             result = EXCHANGEGLOBALRULE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "EXCHANGEINDIVIDUALRULE":
+        case "exchangeIndividualRule":
             result = EXCHANGEINDIVIDUALRULE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "EXCHANGEDEVICERULE":
+        case "exchangeDeviceRule":
             result = EXCHANGEDEVICERULE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "EXCHANGEUPGRADE":
+        case "exchangeUpgrade":
             result = EXCHANGEUPGRADE_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "EXCHANGEMAILBOXPOLICY":
+        case "exchangeMailboxPolicy":
             result = EXCHANGEMAILBOXPOLICY_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "OTHER":
+        case "other":
             result = OTHER_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "COMPLIANT":
+        case "compliant":
             result = COMPLIANT_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "NOTCOMPLIANT":
+        case "notCompliant":
             result = NOTCOMPLIANT_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "NOTENROLLED":
+        case "notEnrolled":
             result = NOTENROLLED_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "UNKNOWNLOCATION":
+        case "unknownLocation":
             result = UNKNOWNLOCATION_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "MFAREQUIRED":
+        case "mfaRequired":
             result = MFAREQUIRED_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "AZUREADBLOCKDUETOACCESSPOLICY":
+        case "azureADBlockDueToAccessPolicy":
             result = AZUREADBLOCKDUETOACCESSPOLICY_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "COMPROMISEDPASSWORD":
+        case "compromisedPassword":
             result = COMPROMISEDPASSWORD_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
-        case "DEVICENOTKNOWNWITHMANAGEDAPP":
+        case "deviceNotKnownWithManagedApp":
             result = DEVICENOTKNOWNWITHMANAGEDAPP_DEVICEMANAGEMENTEXCHANGEACCESSSTATEREASON
         default:
             return 0, errors.New("Unknown DeviceManagementExchangeAccessStateReason value: " + v)
