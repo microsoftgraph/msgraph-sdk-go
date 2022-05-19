@@ -59,18 +59,18 @@ func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) CreateGetReques
     return requestInfo, nil
 }
 // Get invoke function getTeamsUserActivityUserCounts
-func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) Get()(GetTeamsUserActivityUserCountsWithPeriodResponseable, error) {
+func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getTeamsUserActivityUserCounts
-func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsUserActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsUserActivityUserCountsWithPeriodResponseable, error) {
+func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsUserActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetTeamsUserActivityUserCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetTeamsUserActivityUserCountsWithPeriodResponseable), nil
+    return res.([]byte), nil
 }

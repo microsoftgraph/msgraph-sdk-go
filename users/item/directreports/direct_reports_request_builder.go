@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i02afae5fabd1aed6aaa5e7debb2719c918008889d92ca91ed1eb9e67422ab475 "github.com/microsoftgraph/msgraph-sdk-go/users/item/directreports/user"
+    i394707619cec75603b5c1b6935cd30cd774abac3f8380e65a054d37a03f148c7 "github.com/microsoftgraph/msgraph-sdk-go/users/item/directreports/orgcontact"
     id0460423c7c7c26de43679373f101419acf61800ef3065047991a45c948dc7f7 "github.com/microsoftgraph/msgraph-sdk-go/users/item/directreports/count"
 )
 
@@ -105,4 +107,12 @@ func (m *DirectReportsRequestBuilder) GetWithRequestConfigurationAndResponseHand
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// OrgContact the orgContact property
+func (m *DirectReportsRequestBuilder) OrgContact()(*i394707619cec75603b5c1b6935cd30cd774abac3f8380e65a054d37a03f148c7.OrgContactRequestBuilder) {
+    return i394707619cec75603b5c1b6935cd30cd774abac3f8380e65a054d37a03f148c7.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *DirectReportsRequestBuilder) User()(*i02afae5fabd1aed6aaa5e7debb2719c918008889d92ca91ed1eb9e67422ab475.UserRequestBuilder) {
+    return i02afae5fabd1aed6aaa5e7debb2719c918008889d92ca91ed1eb9e67422ab475.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

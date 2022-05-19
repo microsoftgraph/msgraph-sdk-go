@@ -22,7 +22,7 @@ type SubscribedSkuItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SubscribedSkuItemRequestBuilderGetQueryParameters get subscribedSku
+// SubscribedSkuItemRequestBuilderGetQueryParameters get a specific commercial subscription that an organization has acquired.
 type SubscribedSkuItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -78,11 +78,11 @@ func (m *SubscribedSkuItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get subscribedSku
+// CreateGetRequestInformation get a specific commercial subscription that an organization has acquired.
 func (m *SubscribedSkuItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get subscribedSku
+// CreateGetRequestInformationWithRequestConfiguration get a specific commercial subscription that an organization has acquired.
 func (m *SubscribedSkuItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SubscribedSkuItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,11 +134,11 @@ func (m *SubscribedSkuItemRequestBuilder) DeleteWithRequestConfigurationAndRespo
     }
     return nil
 }
-// Get get subscribedSku
+// Get get a specific commercial subscription that an organization has acquired.
 func (m *SubscribedSkuItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get subscribedSku
+// GetWithRequestConfigurationAndResponseHandler get a specific commercial subscription that an organization has acquired.
 func (m *SubscribedSkuItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SubscribedSkuItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

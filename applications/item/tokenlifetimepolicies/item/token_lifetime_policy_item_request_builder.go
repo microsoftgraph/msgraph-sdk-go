@@ -2,11 +2,10 @@ package item
 
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i80529903f30596b9525e13a1aa37d54aee16ff347921c7a964b197b73c66805f "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenlifetimepolicies/item/ref"
 )
 
-// TokenLifetimePolicyItemRequestBuilder provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.application entity.
+// TokenLifetimePolicyItemRequestBuilder builds and executes requests for operations under \applications\{application-id}\tokenLifetimePolicies\{tokenLifetimePolicy-id}
 type TokenLifetimePolicyItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -15,27 +14,11 @@ type TokenLifetimePolicyItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TokenLifetimePolicyItemRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this application. Supports $expand.
-type TokenLifetimePolicyItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
-    // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
-}
-// TokenLifetimePolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type TokenLifetimePolicyItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *TokenLifetimePolicyItemRequestBuilderGetQueryParameters
-}
 // NewTokenLifetimePolicyItemRequestBuilderInternal instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
 func NewTokenLifetimePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TokenLifetimePolicyItemRequestBuilder) {
     m := &TokenLifetimePolicyItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -50,42 +33,7 @@ func NewTokenLifetimePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the tokenLifetimePolicies assigned to this application. Supports $expand.
-func (m *TokenLifetimePolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the tokenLifetimePolicies assigned to this application. Supports $expand.
-func (m *TokenLifetimePolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TokenLifetimePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// Get the tokenLifetimePolicies assigned to this application. Supports $expand.
-func (m *TokenLifetimePolicyItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler the tokenLifetimePolicies assigned to this application. Supports $expand.
-func (m *TokenLifetimePolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TokenLifetimePolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTokenLifetimePolicyFromDiscriminatorValue, responseHandler, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable), nil
+// Ref the ref property
+func (m *TokenLifetimePolicyItemRequestBuilder) Ref()(*i80529903f30596b9525e13a1aa37d54aee16ff347921c7a964b197b73c66805f.RefRequestBuilder) {
+    return i80529903f30596b9525e13a1aa37d54aee16ff347921c7a964b197b73c66805f.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

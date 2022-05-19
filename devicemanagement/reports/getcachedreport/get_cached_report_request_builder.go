@@ -40,11 +40,11 @@ func NewGetCachedReportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewGetCachedReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getCachedReport
-func (m *GetCachedReportRequestBuilder) CreatePostRequestInformation(body GetCachedReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetCachedReportRequestBuilder) CreatePostRequestInformation(body GetCachedReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getCachedReport
-func (m *GetCachedReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCachedReportRequestBodyable, requestConfiguration *GetCachedReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetCachedReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCachedReportPostRequestBodyable, requestConfiguration *GetCachedReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetCachedReportRequestBuilder) CreatePostRequestInformationWithRequestC
     return requestInfo, nil
 }
 // Post invoke action getCachedReport
-func (m *GetCachedReportRequestBuilder) Post(body GetCachedReportRequestBodyable)(GetCachedReportResponseable, error) {
+func (m *GetCachedReportRequestBuilder) Post(body GetCachedReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getCachedReport
-func (m *GetCachedReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCachedReportRequestBodyable, requestConfiguration *GetCachedReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCachedReportResponseable, error) {
+func (m *GetCachedReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCachedReportPostRequestBodyable, requestConfiguration *GetCachedReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetCachedReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetCachedReportResponseable), nil
+    return res.([]byte), nil
 }

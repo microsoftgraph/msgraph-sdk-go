@@ -19,7 +19,7 @@ type Property struct {
     // Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
     isSearchable *bool
     // Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.
-    labels []Label
+    labels []string
     // The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
     name *string
     // The data type of the property. Possible values are: string, int64, double, dateTime, boolean, stringCollection, int64Collection, doubleCollection, dateTimeCollection, unknownFutureValue. Required.
@@ -110,14 +110,14 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseLabel)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Label, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Label))
+                res[i] = *(v.(*string))
             }
             m.SetLabels(res)
         }
@@ -178,7 +178,7 @@ func (m *Property) GetIsSearchable()(*bool) {
     }
 }
 // GetLabels gets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.
-func (m *Property) GetLabels()([]Label) {
+func (m *Property) GetLabels()([]string) {
     if m == nil {
         return nil
     } else {
@@ -234,7 +234,7 @@ func (m *Property) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetLabels() != nil {
-        err := writer.WriteCollectionOfStringValues("labels", SerializeLabel(m.GetLabels()))
+        err := writer.WriteCollectionOfStringValues("labels", m.GetLabels())
         if err != nil {
             return err
         }
@@ -297,7 +297,7 @@ func (m *Property) SetIsSearchable(value *bool)() {
     }
 }
 // SetLabels sets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.
-func (m *Property) SetLabels(value []Label)() {
+func (m *Property) SetLabels(value []string)() {
     if m != nil {
         m.labels = value
     }

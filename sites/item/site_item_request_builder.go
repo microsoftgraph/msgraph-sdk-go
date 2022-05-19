@@ -43,7 +43,7 @@ type SiteItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SiteItemRequestBuilderGetQueryParameters get a site resource
+// SiteItemRequestBuilderGetQueryParameters retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
 type SiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -119,11 +119,11 @@ func (m *SiteItemRequestBuilder) ContentTypesById(id string)(*if642ca98ef1cfea5e
     }
     return if642ca98ef1cfea5e51e56e879548fde41cf1297f3ce162d09a6224e659bc1f8.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateGetRequestInformation get a site resource
+// CreateGetRequestInformation retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
 func (m *SiteItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get a site resource
+// CreateGetRequestInformationWithRequestConfiguration retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
 func (m *SiteItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -189,7 +189,7 @@ func (m *SiteItemRequestBuilder) ExternalColumnsById(id string)(*ib0bdd659558cc9
     }
     return ib0bdd659558cc945118844ad67edcde17d87d06cec11209f3e35fd2264b9821c.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get a site resource
+// Get retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
 func (m *SiteItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -209,7 +209,7 @@ func (m *SiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(list
 func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*i4ffbbec24206153c780835b7a43a03ed6b772efe99d5161b43d3a4ba10302a0a.GetByPathWithPathRequestBuilder) {
     return i4ffbbec24206153c780835b7a43a03ed6b772efe99d5161b43d3a4ba10302a0a.NewGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path);
 }
-// GetWithRequestConfigurationAndResponseHandler get a site resource
+// GetWithRequestConfigurationAndResponseHandler retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
 func (m *SiteItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

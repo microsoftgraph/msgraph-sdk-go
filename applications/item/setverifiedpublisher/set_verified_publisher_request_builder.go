@@ -40,11 +40,11 @@ func NewSetVerifiedPublisherRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewSetVerifiedPublisherRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action setVerifiedPublisher
-func (m *SetVerifiedPublisherRequestBuilder) CreatePostRequestInformation(body SetVerifiedPublisherRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetVerifiedPublisherRequestBuilder) CreatePostRequestInformation(body SetVerifiedPublisherPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setVerifiedPublisher
-func (m *SetVerifiedPublisherRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetVerifiedPublisherRequestBodyable, requestConfiguration *SetVerifiedPublisherRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetVerifiedPublisherRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetVerifiedPublisherPostRequestBodyable, requestConfiguration *SetVerifiedPublisherRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SetVerifiedPublisherRequestBuilder) CreatePostRequestInformationWithReq
     return requestInfo, nil
 }
 // Post invoke action setVerifiedPublisher
-func (m *SetVerifiedPublisherRequestBuilder) Post(body SetVerifiedPublisherRequestBodyable)(error) {
+func (m *SetVerifiedPublisherRequestBuilder) Post(body SetVerifiedPublisherPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action setVerifiedPublisher
-func (m *SetVerifiedPublisherRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetVerifiedPublisherRequestBodyable, requestConfiguration *SetVerifiedPublisherRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SetVerifiedPublisherRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetVerifiedPublisherPostRequestBodyable, requestConfiguration *SetVerifiedPublisherRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

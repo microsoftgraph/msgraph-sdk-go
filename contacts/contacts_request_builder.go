@@ -20,7 +20,7 @@ type ContactsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ContactsRequestBuilderGetQueryParameters list orgContacts
+// ContactsRequestBuilderGetQueryParameters get the list of organizational contacts for this organization.
 type ContactsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,11 +78,11 @@ func NewContactsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ContactsRequestBuilder) Count()(*i3c25de93fe491a45d1028201d9a97a3867c994bf94910fbb23c75589f3064367.CountRequestBuilder) {
     return i3c25de93fe491a45d1028201d9a97a3867c994bf94910fbb23c75589f3064367.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list orgContacts
+// CreateGetRequestInformation get the list of organizational contacts for this organization.
 func (m *ContactsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list orgContacts
+// CreateGetRequestInformationWithRequestConfiguration get the list of organizational contacts for this organization.
 func (m *ContactsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *ContactsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 func (m *ContactsRequestBuilder) Delta()(*id6a5f8a255008661c4f3891226b4705b4315a990d81bf1bdc10e110af7ce62f9.DeltaRequestBuilder) {
     return id6a5f8a255008661c4f3891226b4705b4315a990d81bf1bdc10e110af7ce62f9.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get list orgContacts
+// Get get the list of organizational contacts for this organization.
 func (m *ContactsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -130,7 +130,7 @@ func (m *ContactsRequestBuilder) GetAvailableExtensionProperties()(*icd7c2e08bbb
 func (m *ContactsRequestBuilder) GetByIds()(*ibd6b6137a854fdc0082d98413fd3f4475189c1b69ecd839ed41d01e72ef32af8.GetByIdsRequestBuilder) {
     return ibd6b6137a854fdc0082d98413fd3f4475189c1b69ecd839ed41d01e72ef32af8.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler list orgContacts
+// GetWithRequestConfigurationAndResponseHandler get the list of organizational contacts for this organization.
 func (m *ContactsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContactsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

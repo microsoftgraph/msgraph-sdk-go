@@ -5,6 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     ia06c236a7f5077be7d0e8b7befc60817495891cbc6824fe0d96315aaf59a3799 "github.com/microsoftgraph/msgraph-sdk-go/directory/administrativeunits/item/members/count"
+    ifc82e34929252e43b26961c4aa1341cdd29b763a4e341c8bd7002b8d7770e3ec "github.com/microsoftgraph/msgraph-sdk-go/directory/administrativeunits/item/members/ref"
 )
 
 // MembersRequestBuilder provides operations to manage the members property of the microsoft.graph.administrativeUnit entity.
@@ -105,4 +106,8 @@ func (m *MembersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *MembersRequestBuilder) Ref()(*ifc82e34929252e43b26961c4aa1341cdd29b763a4e341c8bd7002b8d7770e3ec.RefRequestBuilder) {
+    return ifc82e34929252e43b26961c4aa1341cdd29b763a4e341c8bd7002b8d7770e3ec.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

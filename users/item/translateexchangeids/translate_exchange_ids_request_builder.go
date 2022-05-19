@@ -40,11 +40,11 @@ func NewTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewTranslateExchangeIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action translateExchangeIds
-func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformation(body TranslateExchangeIdsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformation(body TranslateExchangeIdsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action translateExchangeIds
-func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TranslateExchangeIdsRequestBodyable, requestConfiguration *TranslateExchangeIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TranslateExchangeIdsPostRequestBodyable, requestConfiguration *TranslateExchangeIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformationWithReq
     return requestInfo, nil
 }
 // Post invoke action translateExchangeIds
-func (m *TranslateExchangeIdsRequestBuilder) Post(body TranslateExchangeIdsRequestBodyable)(TranslateExchangeIdsResponseable, error) {
+func (m *TranslateExchangeIdsRequestBuilder) Post(body TranslateExchangeIdsPostRequestBodyable)(TranslateExchangeIdsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action translateExchangeIds
-func (m *TranslateExchangeIdsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TranslateExchangeIdsRequestBodyable, requestConfiguration *TranslateExchangeIdsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(TranslateExchangeIdsResponseable, error) {
+func (m *TranslateExchangeIdsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TranslateExchangeIdsPostRequestBodyable, requestConfiguration *TranslateExchangeIdsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(TranslateExchangeIdsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

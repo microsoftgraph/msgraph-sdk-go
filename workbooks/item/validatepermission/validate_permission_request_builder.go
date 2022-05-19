@@ -40,11 +40,11 @@ func NewValidatePermissionRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewValidatePermissionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action validatePermission
-func (m *ValidatePermissionRequestBuilder) CreatePostRequestInformation(body ValidatePermissionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ValidatePermissionRequestBuilder) CreatePostRequestInformation(body ValidatePermissionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action validatePermission
-func (m *ValidatePermissionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidatePermissionRequestBodyable, requestConfiguration *ValidatePermissionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ValidatePermissionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidatePermissionPostRequestBodyable, requestConfiguration *ValidatePermissionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ValidatePermissionRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post invoke action validatePermission
-func (m *ValidatePermissionRequestBuilder) Post(body ValidatePermissionRequestBodyable)(error) {
+func (m *ValidatePermissionRequestBuilder) Post(body ValidatePermissionPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action validatePermission
-func (m *ValidatePermissionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidatePermissionRequestBodyable, requestConfiguration *ValidatePermissionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ValidatePermissionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidatePermissionPostRequestBodyable, requestConfiguration *ValidatePermissionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

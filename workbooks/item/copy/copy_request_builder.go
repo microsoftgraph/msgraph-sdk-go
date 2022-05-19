@@ -41,11 +41,11 @@ func NewCopyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action copy
-func (m *CopyRequestBuilder) CreatePostRequestInformation(body CopyRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CopyRequestBuilder) CreatePostRequestInformation(body CopyPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action copy
-func (m *CopyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyRequestBodyable, requestConfiguration *CopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CopyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyPostRequestBodyable, requestConfiguration *CopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *CopyRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     return requestInfo, nil
 }
 // Post invoke action copy
-func (m *CopyRequestBuilder) Post(body CopyRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
+func (m *CopyRequestBuilder) Post(body CopyPostRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action copy
-func (m *CopyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CopyRequestBodyable, requestConfiguration *CopyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
+func (m *CopyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CopyPostRequestBodyable, requestConfiguration *CopyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

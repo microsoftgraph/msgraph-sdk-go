@@ -41,11 +41,11 @@ func NewSubscribeToToneRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewSubscribeToToneRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action subscribeToTone
-func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformation(body SubscribeToToneRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformation(body SubscribeToTonePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action subscribeToTone
-func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SubscribeToToneRequestBodyable, requestConfiguration *SubscribeToToneRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SubscribeToTonePostRequestBodyable, requestConfiguration *SubscribeToToneRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformationWithRequestC
     return requestInfo, nil
 }
 // Post invoke action subscribeToTone
-func (m *SubscribeToToneRequestBuilder) Post(body SubscribeToToneRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribeToToneOperationable, error) {
+func (m *SubscribeToToneRequestBuilder) Post(body SubscribeToTonePostRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribeToToneOperationable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action subscribeToTone
-func (m *SubscribeToToneRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SubscribeToToneRequestBodyable, requestConfiguration *SubscribeToToneRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribeToToneOperationable, error) {
+func (m *SubscribeToToneRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SubscribeToTonePostRequestBodyable, requestConfiguration *SubscribeToToneRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribeToToneOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingBusiness 
+// BookingBusiness represents a Microsot Bookings Business.
 type BookingBusiness struct {
     Entity
     // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.

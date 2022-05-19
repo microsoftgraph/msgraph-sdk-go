@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppStatus 
+// ManagedAppStatus represents app protection and configuration status for the organization.
 type ManagedAppStatus struct {
     Entity
     // Friendly name of the status report.
@@ -21,6 +21,25 @@ func NewManagedAppStatus()(*ManagedAppStatus) {
 }
 // CreateManagedAppStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedAppStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.managedAppStatus":
+                        return NewManagedAppStatus(), nil
+                }
+            }
+        }
+    }
     return NewManagedAppStatus(), nil
 }
 // GetDisplayName gets the displayName property value. Friendly name of the status report.

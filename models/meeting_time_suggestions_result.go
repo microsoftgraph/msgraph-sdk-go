@@ -13,7 +13,7 @@ type MeetingTimeSuggestionsResult struct {
     // An array of meeting suggestions.
     meetingTimeSuggestions []MeetingTimeSuggestionable
 }
-// NewMeetingTimeSuggestionsResult instantiates a new meetingTimeSuggestionsResult and sets the default values.
+// NewMeetingTimeSuggestionsResult instantiates a new MeetingTimeSuggestionsResult and sets the default values.
 func NewMeetingTimeSuggestionsResult()(*MeetingTimeSuggestionsResult) {
     m := &MeetingTimeSuggestionsResult{
     }

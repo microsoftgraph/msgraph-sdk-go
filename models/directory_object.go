@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryObject 
+// DirectoryObject provides operations to manage the collection of application entities.
 type DirectoryObject struct {
     Entity
     // Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -20,6 +20,25 @@ func NewDirectoryObject()(*DirectoryObject) {
 }
 // CreateDirectoryObjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.directoryObject":
+                        return NewDirectoryObject(), nil
+                }
+            }
+        }
+    }
     return NewDirectoryObject(), nil
 }
 // GetDeletedDateTime gets the deletedDateTime property value. Date and time when this object was deleted. Always null when the object hasn't been deleted.

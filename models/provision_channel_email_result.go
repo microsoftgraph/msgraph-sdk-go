@@ -11,7 +11,7 @@ type ProvisionChannelEmailResult struct {
     // Represents the provisioned email address.
     email *string
 }
-// NewProvisionChannelEmailResult instantiates a new provisionChannelEmailResult and sets the default values.
+// NewProvisionChannelEmailResult instantiates a new ProvisionChannelEmailResult and sets the default values.
 func NewProvisionChannelEmailResult()(*ProvisionChannelEmailResult) {
     m := &ProvisionChannelEmailResult{
     }

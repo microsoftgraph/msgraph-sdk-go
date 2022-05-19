@@ -40,11 +40,11 @@ func NewRemoveKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewRemoveKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action removeKey
-func (m *RemoveKeyRequestBuilder) CreatePostRequestInformation(body RemoveKeyRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveKeyRequestBuilder) CreatePostRequestInformation(body RemoveKeyPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removeKey
-func (m *RemoveKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveKeyRequestBodyable, requestConfiguration *RemoveKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveKeyPostRequestBodyable, requestConfiguration *RemoveKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RemoveKeyRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     return requestInfo, nil
 }
 // Post invoke action removeKey
-func (m *RemoveKeyRequestBuilder) Post(body RemoveKeyRequestBodyable)(error) {
+func (m *RemoveKeyRequestBuilder) Post(body RemoveKeyPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action removeKey
-func (m *RemoveKeyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveKeyRequestBodyable, requestConfiguration *RemoveKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *RemoveKeyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveKeyPostRequestBodyable, requestConfiguration *RemoveKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -11,7 +11,7 @@ type Report struct {
     // Report content; details vary by report type.
     content []byte
 }
-// NewReport instantiates a new report and sets the default values.
+// NewReport instantiates a new Report and sets the default values.
 func NewReport()(*Report) {
     m := &Report{
     }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkHostedContent 
+// TeamworkHostedContent provides operations to manage the collection of chat entities.
 type TeamworkHostedContent struct {
     Entity
     // Write only. Bytes for the hosted content (such as images).
@@ -21,6 +21,25 @@ func NewTeamworkHostedContent()(*TeamworkHostedContent) {
 }
 // CreateTeamworkHostedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTeamworkHostedContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.teamworkHostedContent":
+                        return NewTeamworkHostedContent(), nil
+                }
+            }
+        }
+    }
     return NewTeamworkHostedContent(), nil
 }
 // GetContentBytes gets the contentBytes property value. Write only. Bytes for the hosted content (such as images).

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosManagedAppProtection 
+// IosManagedAppProtection policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
 type IosManagedAppProtection struct {
     TargetedManagedAppProtection
     // Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.

@@ -4,7 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i01f23acda21fbab4878fd68794c77fc4b40af367d7a5b2c449d68d0637f03232 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item/device/registeredusers/serviceprincipal"
+    i204d6f500221aef044863536e9b0d0deec0def51d40e66f7e006a2e3de09ceac "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item/device/registeredusers/user"
     i2794a1473ba42345204449cadbc6b596c062643a2a52fb8ac73a58bfb9f56ac1 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item/device/registeredusers/count"
+    i4e2441dd82ccc677601124c522f836c09ed805f5850b03b16c5162c7d7d9abef "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item/device/registeredusers/endpoint"
+    ic345b5f6c874e9acc90b7d0083940bfea879132083dd717008f0e797b76637c2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item/device/registeredusers/approleassignment"
 )
 
 // RegisteredUsersRequestBuilder provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
@@ -43,6 +47,10 @@ type RegisteredUsersRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *RegisteredUsersRequestBuilderGetQueryParameters
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *RegisteredUsersRequestBuilder) AppRoleAssignment()(*ic345b5f6c874e9acc90b7d0083940bfea879132083dd717008f0e797b76637c2.AppRoleAssignmentRequestBuilder) {
+    return ic345b5f6c874e9acc90b7d0083940bfea879132083dd717008f0e797b76637c2.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewRegisteredUsersRequestBuilderInternal instantiates a new RegisteredUsersRequestBuilder and sets the default values.
 func NewRegisteredUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RegisteredUsersRequestBuilder) {
@@ -86,6 +94,10 @@ func (m *RegisteredUsersRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *RegisteredUsersRequestBuilder) Endpoint()(*i4e2441dd82ccc677601124c522f836c09ed805f5850b03b16c5162c7d7d9abef.EndpointRequestBuilder) {
+    return i4e2441dd82ccc677601124c522f836c09ed805f5850b03b16c5162c7d7d9abef.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *RegisteredUsersRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -105,4 +117,12 @@ func (m *RegisteredUsersRequestBuilder) GetWithRequestConfigurationAndResponseHa
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// ServicePrincipal the servicePrincipal property
+func (m *RegisteredUsersRequestBuilder) ServicePrincipal()(*i01f23acda21fbab4878fd68794c77fc4b40af367d7a5b2c449d68d0637f03232.ServicePrincipalRequestBuilder) {
+    return i01f23acda21fbab4878fd68794c77fc4b40af367d7a5b2c449d68d0637f03232.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *RegisteredUsersRequestBuilder) User()(*i204d6f500221aef044863536e9b0d0deec0def51d40e66f7e006a2e3de09ceac.UserRequestBuilder) {
+    return i204d6f500221aef044863536e9b0d0deec0def51d40e66f7e006a2e3de09ceac.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

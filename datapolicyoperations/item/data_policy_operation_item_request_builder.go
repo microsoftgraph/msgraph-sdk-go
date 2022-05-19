@@ -22,7 +22,7 @@ type DataPolicyOperationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DataPolicyOperationItemRequestBuilderGetQueryParameters get dataPolicyOperation
+// DataPolicyOperationItemRequestBuilderGetQueryParameters retrieve the properties of the dataPolicyOperation object.
 type DataPolicyOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *DataPolicyOperationItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get dataPolicyOperation
+// CreateGetRequestInformation retrieve the properties of the dataPolicyOperation object.
 func (m *DataPolicyOperationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get dataPolicyOperation
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of the dataPolicyOperation object.
 func (m *DataPolicyOperationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DataPolicyOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -136,11 +136,11 @@ func (m *DataPolicyOperationItemRequestBuilder) DeleteWithRequestConfigurationAn
     }
     return nil
 }
-// Get get dataPolicyOperation
+// Get retrieve the properties of the dataPolicyOperation object.
 func (m *DataPolicyOperationItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get dataPolicyOperation
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties of the dataPolicyOperation object.
 func (m *DataPolicyOperationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DataPolicyOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

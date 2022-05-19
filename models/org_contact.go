@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrgContact 
+// OrgContact provides operations to manage the collection of orgContact entities.
 type OrgContact struct {
     DirectoryObject
     // Postal addresses for this organizational contact. For now a contact can only have one physical address.
@@ -38,7 +38,7 @@ type OrgContact struct {
     onPremisesSyncEnabled *bool
     // List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
     phones []Phoneable
-    // For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).
+    // For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
     proxyAddresses []string
     // Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
     surname *string
@@ -389,7 +389,7 @@ func (m *OrgContact) GetPhones()([]Phoneable) {
         return m.phones
     }
 }
-// GetProxyAddresses gets the proxyAddresses property value. For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).
+// GetProxyAddresses gets the proxyAddresses property value. For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
 func (m *OrgContact) GetProxyAddresses()([]string) {
     if m == nil {
         return nil
@@ -643,7 +643,7 @@ func (m *OrgContact) SetPhones(value []Phoneable)() {
         m.phones = value
     }
 }
-// SetProxyAddresses sets the proxyAddresses property value. For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).
+// SetProxyAddresses sets the proxyAddresses property value. For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
 func (m *OrgContact) SetProxyAddresses(value []string)() {
     if m != nil {
         m.proxyAddresses = value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileThreatDefenseConnector 
+// MobileThreatDefenseConnector entity which represents a connection to Mobile threat defense partner.
 type MobileThreatDefenseConnector struct {
     Entity
     // For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant

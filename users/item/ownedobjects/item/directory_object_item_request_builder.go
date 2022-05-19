@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i0be62c470c4ee8b321693cb17d58df736d2868ed860f1c0c14f66bca7e8bfc11 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/item/serviceprincipal"
+    i66adf14455c6da2dcec3b091adb6798ae0436a07d298ce2f48b7fba3efc67bc7 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/item/application"
+    if52bf1dbb7bb36adc1f24c4be81fdc7a4542810f4ee83fd126d680ecf4473f42 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/item/group"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the ownedObjects property of the microsoft.graph.user entity.
@@ -30,6 +33,10 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
+}
+// Application the application property
+func (m *DirectoryObjectItemRequestBuilder) Application()(*i66adf14455c6da2dcec3b091adb6798ae0436a07d298ce2f48b7fba3efc67bc7.ApplicationRequestBuilder) {
+    return i66adf14455c6da2dcec3b091adb6798ae0436a07d298ce2f48b7fba3efc67bc7.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
@@ -88,4 +95,12 @@ func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndRespon
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// Group the group property
+func (m *DirectoryObjectItemRequestBuilder) Group()(*if52bf1dbb7bb36adc1f24c4be81fdc7a4542810f4ee83fd126d680ecf4473f42.GroupRequestBuilder) {
+    return if52bf1dbb7bb36adc1f24c4be81fdc7a4542810f4ee83fd126d680ecf4473f42.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*i0be62c470c4ee8b321693cb17d58df736d2868ed860f1c0c14f66bca7e8bfc11.ServicePrincipalRequestBuilder) {
+    return i0be62c470c4ee8b321693cb17d58df736d2868ed860f1c0c14f66bca7e8bfc11.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

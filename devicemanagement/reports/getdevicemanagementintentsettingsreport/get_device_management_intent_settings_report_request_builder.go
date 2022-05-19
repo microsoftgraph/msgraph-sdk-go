@@ -40,11 +40,11 @@ func NewGetDeviceManagementIntentSettingsReportRequestBuilder(rawUrl string, req
     return NewGetDeviceManagementIntentSettingsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getDeviceManagementIntentSettingsReport
-func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) CreatePostRequestInformation(body GetDeviceManagementIntentSettingsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) CreatePostRequestInformation(body GetDeviceManagementIntentSettingsReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getDeviceManagementIntentSettingsReport
-func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceManagementIntentSettingsReportRequestBodyable, requestConfiguration *GetDeviceManagementIntentSettingsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceManagementIntentSettingsReportPostRequestBodyable, requestConfiguration *GetDeviceManagementIntentSettingsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) CreatePostReques
     return requestInfo, nil
 }
 // Post invoke action getDeviceManagementIntentSettingsReport
-func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) Post(body GetDeviceManagementIntentSettingsReportRequestBodyable)(GetDeviceManagementIntentSettingsReportResponseable, error) {
+func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) Post(body GetDeviceManagementIntentSettingsReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getDeviceManagementIntentSettingsReport
-func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetDeviceManagementIntentSettingsReportRequestBodyable, requestConfiguration *GetDeviceManagementIntentSettingsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDeviceManagementIntentSettingsReportResponseable, error) {
+func (m *GetDeviceManagementIntentSettingsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetDeviceManagementIntentSettingsReportPostRequestBodyable, requestConfiguration *GetDeviceManagementIntentSettingsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetDeviceManagementIntentSettingsReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetDeviceManagementIntentSettingsReportResponseable), nil
+    return res.([]byte), nil
 }

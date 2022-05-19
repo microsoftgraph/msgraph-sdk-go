@@ -41,11 +41,11 @@ func NewPlayPromptRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewPlayPromptRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action playPrompt
-func (m *PlayPromptRequestBuilder) CreatePostRequestInformation(body PlayPromptRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PlayPromptRequestBuilder) CreatePostRequestInformation(body PlayPromptPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action playPrompt
-func (m *PlayPromptRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PlayPromptRequestBodyable, requestConfiguration *PlayPromptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PlayPromptRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PlayPromptPostRequestBodyable, requestConfiguration *PlayPromptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *PlayPromptRequestBuilder) CreatePostRequestInformationWithRequestConfig
     return requestInfo, nil
 }
 // Post invoke action playPrompt
-func (m *PlayPromptRequestBuilder) Post(body PlayPromptRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlayPromptOperationable, error) {
+func (m *PlayPromptRequestBuilder) Post(body PlayPromptPostRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlayPromptOperationable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action playPrompt
-func (m *PlayPromptRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body PlayPromptRequestBodyable, requestConfiguration *PlayPromptRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlayPromptOperationable, error) {
+func (m *PlayPromptRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body PlayPromptPostRequestBodyable, requestConfiguration *PlayPromptRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlayPromptOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,11 +40,11 @@ func NewShareRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewShareRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action share
-func (m *ShareRequestBuilder) CreatePostRequestInformation(body ShareRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ShareRequestBuilder) CreatePostRequestInformation(body SharePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action share
-func (m *ShareRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ShareRequestBodyable, requestConfiguration *ShareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ShareRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SharePostRequestBodyable, requestConfiguration *ShareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ShareRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     return requestInfo, nil
 }
 // Post invoke action share
-func (m *ShareRequestBuilder) Post(body ShareRequestBodyable)(error) {
+func (m *ShareRequestBuilder) Post(body SharePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action share
-func (m *ShareRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ShareRequestBodyable, requestConfiguration *ShareRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ShareRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SharePostRequestBodyable, requestConfiguration *ShareRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -40,11 +40,11 @@ func NewCheckMemberObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewCheckMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action checkMemberObjects
-func (m *CheckMemberObjectsRequestBuilder) CreatePostRequestInformation(body CheckMemberObjectsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CheckMemberObjectsRequestBuilder) CreatePostRequestInformation(body CheckMemberObjectsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action checkMemberObjects
-func (m *CheckMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CheckMemberObjectsRequestBodyable, requestConfiguration *CheckMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CheckMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CheckMemberObjectsPostRequestBodyable, requestConfiguration *CheckMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *CheckMemberObjectsRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post invoke action checkMemberObjects
-func (m *CheckMemberObjectsRequestBuilder) Post(body CheckMemberObjectsRequestBodyable)(CheckMemberObjectsResponseable, error) {
+func (m *CheckMemberObjectsRequestBuilder) Post(body CheckMemberObjectsPostRequestBodyable)(CheckMemberObjectsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action checkMemberObjects
-func (m *CheckMemberObjectsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CheckMemberObjectsRequestBodyable, requestConfiguration *CheckMemberObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CheckMemberObjectsResponseable, error) {
+func (m *CheckMemberObjectsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CheckMemberObjectsPostRequestBodyable, requestConfiguration *CheckMemberObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CheckMemberObjectsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Onenote 
+// Onenote casts the previous resource to user.
 type Onenote struct {
     Entity
     // The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.

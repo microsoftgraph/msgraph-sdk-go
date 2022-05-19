@@ -5,6 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i773bddf8cfd7135db02016a3a15abbfbf590a28c3cb15d018b017f0b0157ea2f "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/claimsmappingpolicies/count"
+    ie96b10b05fa092aeda21c6fbf2ab8c04052ed6d7e1492222a2227051af1098d4 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/claimsmappingpolicies/ref"
 )
 
 // ClaimsMappingPoliciesRequestBuilder provides operations to manage the claimsMappingPolicies property of the microsoft.graph.servicePrincipal entity.
@@ -105,4 +106,8 @@ func (m *ClaimsMappingPoliciesRequestBuilder) GetWithRequestConfigurationAndResp
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *ClaimsMappingPoliciesRequestBuilder) Ref()(*ie96b10b05fa092aeda21c6fbf2ab8c04052ed6d7e1492222a2227051af1098d4.RefRequestBuilder) {
+    return ie96b10b05fa092aeda21c6fbf2ab8c04052ed6d7e1492222a2227051af1098d4.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

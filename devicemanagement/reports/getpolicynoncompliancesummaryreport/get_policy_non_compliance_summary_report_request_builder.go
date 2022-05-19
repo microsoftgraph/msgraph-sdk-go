@@ -40,11 +40,11 @@ func NewGetPolicyNonComplianceSummaryReportRequestBuilder(rawUrl string, request
     return NewGetPolicyNonComplianceSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getPolicyNonComplianceSummaryReport
-func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformation(body GetPolicyNonComplianceSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformation(body GetPolicyNonComplianceSummaryReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getPolicyNonComplianceSummaryReport
-func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPolicyNonComplianceSummaryReportPostRequestBodyable, requestConfiguration *GetPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInf
     return requestInfo, nil
 }
 // Post invoke action getPolicyNonComplianceSummaryReport
-func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) Post(body GetPolicyNonComplianceSummaryReportRequestBodyable)(GetPolicyNonComplianceSummaryReportResponseable, error) {
+func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) Post(body GetPolicyNonComplianceSummaryReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getPolicyNonComplianceSummaryReport
-func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPolicyNonComplianceSummaryReportResponseable, error) {
+func (m *GetPolicyNonComplianceSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPolicyNonComplianceSummaryReportPostRequestBodyable, requestConfiguration *GetPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetPolicyNonComplianceSummaryReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetPolicyNonComplianceSummaryReportResponseable), nil
+    return res.([]byte), nil
 }

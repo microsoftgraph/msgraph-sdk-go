@@ -23,7 +23,7 @@ type ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplicationTemplateItemRequestBuilderGetQueryParameters get applicationTemplate
+// ApplicationTemplateItemRequestBuilderGetQueryParameters retrieve the properties of an [applicationTemplate](../resources/applicationtemplate.md) object.
 type ApplicationTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *ApplicationTemplateItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get applicationTemplate
+// CreateGetRequestInformation retrieve the properties of an [applicationTemplate](../resources/applicationtemplate.md) object.
 func (m *ApplicationTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get applicationTemplate
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of an [applicationTemplate](../resources/applicationtemplate.md) object.
 func (m *ApplicationTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ApplicationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ApplicationTemplateItemRequestBuilder) DeleteWithRequestConfigurationAn
     }
     return nil
 }
-// Get get applicationTemplate
+// Get retrieve the properties of an [applicationTemplate](../resources/applicationtemplate.md) object.
 func (m *ApplicationTemplateItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get applicationTemplate
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties of an [applicationTemplate](../resources/applicationtemplate.md) object.
 func (m *ApplicationTemplateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

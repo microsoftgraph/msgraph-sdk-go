@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartAxis 
+// WorkbookChartAxis casts the previous resource to user.
 type WorkbookChartAxis struct {
     Entity
     // Represents the formatting of a chart object, which includes line and font formatting. Read-only.

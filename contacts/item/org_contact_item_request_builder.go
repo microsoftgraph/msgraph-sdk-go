@@ -34,7 +34,7 @@ type OrgContactItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OrgContactItemRequestBuilderGetQueryParameters get orgContact
+// OrgContactItemRequestBuilderGetQueryParameters get the properties and relationships of an organizational contact object.
 type OrgContactItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -100,11 +100,11 @@ func (m *OrgContactItemRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get orgContact
+// CreateGetRequestInformation get the properties and relationships of an organizational contact object.
 func (m *OrgContactItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get orgContact
+// CreateGetRequestInformationWithRequestConfiguration get the properties and relationships of an organizational contact object.
 func (m *OrgContactItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OrgContactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -171,7 +171,7 @@ func (m *OrgContactItemRequestBuilder) DirectReportsById(id string)(*i334f74d587
     }
     return i334f74d58761225d35a308cd57cea9169133186ab28a294f59b928e984bfa1c4.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get orgContact
+// Get get the properties and relationships of an organizational contact object.
 func (m *OrgContactItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -183,7 +183,7 @@ func (m *OrgContactItemRequestBuilder) GetMemberGroups()(*i15c3213b1d34c79d32039
 func (m *OrgContactItemRequestBuilder) GetMemberObjects()(*ifff3f2949bd5013659a326ca1cde357b44996411a8f259036c89d4ee51051f34.GetMemberObjectsRequestBuilder) {
     return ifff3f2949bd5013659a326ca1cde357b44996411a8f259036c89d4ee51051f34.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get orgContact
+// GetWithRequestConfigurationAndResponseHandler get the properties and relationships of an organizational contact object.
 func (m *OrgContactItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OrgContactItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

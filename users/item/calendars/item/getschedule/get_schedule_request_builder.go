@@ -40,11 +40,11 @@ func NewGetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewGetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getSchedule
-func (m *GetScheduleRequestBuilder) CreatePostRequestInformation(body GetScheduleRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetScheduleRequestBuilder) CreatePostRequestInformation(body GetSchedulePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getSchedule
-func (m *GetScheduleRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetScheduleRequestBodyable, requestConfiguration *GetScheduleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetScheduleRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetSchedulePostRequestBodyable, requestConfiguration *GetScheduleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetScheduleRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action getSchedule
-func (m *GetScheduleRequestBuilder) Post(body GetScheduleRequestBodyable)(GetScheduleResponseable, error) {
+func (m *GetScheduleRequestBuilder) Post(body GetSchedulePostRequestBodyable)(GetScheduleResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getSchedule
-func (m *GetScheduleRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetScheduleRequestBodyable, requestConfiguration *GetScheduleRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetScheduleResponseable, error) {
+func (m *GetScheduleRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetSchedulePostRequestBodyable, requestConfiguration *GetScheduleRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetScheduleResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

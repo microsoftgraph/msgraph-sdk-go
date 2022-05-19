@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequest 
+// SubjectRightsRequest provides operations to manage the privacy singleton.
 type SubjectRightsRequest struct {
     Entity
     // Identity that the request is assigned to.
@@ -34,13 +34,13 @@ type SubjectRightsRequest struct {
     lastModifiedBy IdentitySetable
     // The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // List of notes associcated with the request.
+    // List of notes associated with the request.
     notes []AuthoredNoteable
     // List of regulations that this request will fulfill.
     regulations []string
     // Information about the different stages for the request.
     stages []SubjectRightsRequestStageDetailable
-    // The status of the request.. Possible values are: active, closed, unknownFutureValue.
+    // The status of the request. Possible values are: active, closed, unknownFutureValue.
     status *SubjectRightsRequestStatus
     // Information about the Microsoft Teams team that was created for the request.
     team Teamable
@@ -373,7 +373,7 @@ func (m *SubjectRightsRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6
         return m.lastModifiedDateTime
     }
 }
-// GetNotes gets the notes property value. List of notes associcated with the request.
+// GetNotes gets the notes property value. List of notes associated with the request.
 func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
     if m == nil {
         return nil
@@ -397,7 +397,7 @@ func (m *SubjectRightsRequest) GetStages()([]SubjectRightsRequestStageDetailable
         return m.stages
     }
 }
-// GetStatus gets the status property value. The status of the request.. Possible values are: active, closed, unknownFutureValue.
+// GetStatus gets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequestStatus) {
     if m == nil {
         return nil
@@ -636,7 +636,7 @@ func (m *SubjectRightsRequest) SetLastModifiedDateTime(value *i336074805fc853987
         m.lastModifiedDateTime = value
     }
 }
-// SetNotes sets the notes property value. List of notes associcated with the request.
+// SetNotes sets the notes property value. List of notes associated with the request.
 func (m *SubjectRightsRequest) SetNotes(value []AuthoredNoteable)() {
     if m != nil {
         m.notes = value
@@ -654,7 +654,7 @@ func (m *SubjectRightsRequest) SetStages(value []SubjectRightsRequestStageDetail
         m.stages = value
     }
 }
-// SetStatus sets the status property value. The status of the request.. Possible values are: active, closed, unknownFutureValue.
+// SetStatus sets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequestStatus)() {
     if m != nil {
         m.status = value

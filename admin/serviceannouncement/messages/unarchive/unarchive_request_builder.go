@@ -40,11 +40,11 @@ func NewUnarchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action unarchive
-func (m *UnarchiveRequestBuilder) CreatePostRequestInformation(body UnarchiveRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnarchiveRequestBuilder) CreatePostRequestInformation(body UnarchivePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action unarchive
-func (m *UnarchiveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnarchiveRequestBodyable, requestConfiguration *UnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnarchiveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnarchivePostRequestBodyable, requestConfiguration *UnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UnarchiveRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     return requestInfo, nil
 }
 // Post invoke action unarchive
-func (m *UnarchiveRequestBuilder) Post(body UnarchiveRequestBodyable)(UnarchiveResponseable, error) {
+func (m *UnarchiveRequestBuilder) Post(body UnarchivePostRequestBodyable)(UnarchiveResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action unarchive
-func (m *UnarchiveRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UnarchiveRequestBodyable, requestConfiguration *UnarchiveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UnarchiveResponseable, error) {
+func (m *UnarchiveRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UnarchivePostRequestBodyable, requestConfiguration *UnarchiveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UnarchiveResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

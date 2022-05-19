@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationState 
+// DeviceConfigurationState device Configuration State for a given device.
 type DeviceConfigurationState struct {
     Entity
     // The name of the policy for this policyBase

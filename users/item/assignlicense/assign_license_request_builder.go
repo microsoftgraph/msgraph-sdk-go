@@ -41,11 +41,11 @@ func NewAssignLicenseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewAssignLicenseRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action assignLicense
-func (m *AssignLicenseRequestBuilder) CreatePostRequestInformation(body AssignLicenseRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignLicenseRequestBuilder) CreatePostRequestInformation(body AssignLicensePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action assignLicense
-func (m *AssignLicenseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignLicenseRequestBodyable, requestConfiguration *AssignLicenseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignLicenseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignLicensePostRequestBodyable, requestConfiguration *AssignLicenseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *AssignLicenseRequestBuilder) CreatePostRequestInformationWithRequestCon
     return requestInfo, nil
 }
 // Post invoke action assignLicense
-func (m *AssignLicenseRequestBuilder) Post(body AssignLicenseRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
+func (m *AssignLicenseRequestBuilder) Post(body AssignLicensePostRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action assignLicense
-func (m *AssignLicenseRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssignLicenseRequestBodyable, requestConfiguration *AssignLicenseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
+func (m *AssignLicenseRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssignLicensePostRequestBodyable, requestConfiguration *AssignLicenseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

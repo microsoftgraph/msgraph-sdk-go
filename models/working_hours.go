@@ -9,7 +9,7 @@ type WorkingHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The days of the week on which the user works.
-    daysOfWeek []DayOfWeek
+    daysOfWeek []string
     // The time of the day that the user stops working.
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The time of the day that the user starts working.
@@ -37,7 +37,7 @@ func (m *WorkingHours) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDaysOfWeek gets the daysOfWeek property value. The days of the week on which the user works.
-func (m *WorkingHours) GetDaysOfWeek()([]DayOfWeek) {
+func (m *WorkingHours) GetDaysOfWeek()([]string) {
     if m == nil {
         return nil
     } else {
@@ -56,14 +56,14 @@ func (m *WorkingHours) GetEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 func (m *WorkingHours) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["daysOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseDayOfWeek)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DayOfWeek, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DayOfWeek))
+                res[i] = *(v.(*string))
             }
             m.SetDaysOfWeek(res)
         }
@@ -120,7 +120,7 @@ func (m *WorkingHours) GetTimeZone()(TimeZoneBaseable) {
 // Serialize serializes information the current object
 func (m *WorkingHours) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetDaysOfWeek() != nil {
-        err := writer.WriteCollectionOfStringValues("daysOfWeek", SerializeDayOfWeek(m.GetDaysOfWeek()))
+        err := writer.WriteCollectionOfStringValues("daysOfWeek", m.GetDaysOfWeek())
         if err != nil {
             return err
         }
@@ -158,7 +158,7 @@ func (m *WorkingHours) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDaysOfWeek sets the daysOfWeek property value. The days of the week on which the user works.
-func (m *WorkingHours) SetDaysOfWeek(value []DayOfWeek)() {
+func (m *WorkingHours) SetDaysOfWeek(value []string)() {
     if m != nil {
         m.daysOfWeek = value
     }

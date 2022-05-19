@@ -40,11 +40,11 @@ func NewAssociateWithHubSitesRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewAssociateWithHubSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action associateWithHubSites
-func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformation(body AssociateWithHubSitesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformation(body AssociateWithHubSitesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action associateWithHubSites
-func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssociateWithHubSitesRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssociateWithHubSitesPostRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformationWithRe
     return requestInfo, nil
 }
 // Post invoke action associateWithHubSites
-func (m *AssociateWithHubSitesRequestBuilder) Post(body AssociateWithHubSitesRequestBodyable)(error) {
+func (m *AssociateWithHubSitesRequestBuilder) Post(body AssociateWithHubSitesPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action associateWithHubSites
-func (m *AssociateWithHubSitesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssociateWithHubSitesRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *AssociateWithHubSitesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssociateWithHubSitesPostRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

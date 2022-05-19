@@ -5,6 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i291ff03133de15263bbbb9161ec52a9fd3780244fb39767c57a0d3b944a877bb "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/count"
+    i9be808779624fafbf1ab48016999de8af7668ec9c3d03a9ba21e6fa0fb30642c "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/ref"
 )
 
 // AppliesToRequestBuilder provides operations to manage the appliesTo property of the microsoft.graph.featureRolloutPolicy entity.
@@ -149,4 +150,8 @@ func (m *AppliesToRequestBuilder) PostWithRequestConfigurationAndResponseHandler
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// Ref the ref property
+func (m *AppliesToRequestBuilder) Ref()(*i9be808779624fafbf1ab48016999de8af7668ec9c3d03a9ba21e6fa0fb30642c.RefRequestBuilder) {
+    return i9be808779624fafbf1ab48016999de8af7668ec9c3d03a9ba21e6fa0fb30642c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

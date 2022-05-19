@@ -15,7 +15,7 @@ type SubscriptionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SubscriptionsRequestBuilderGetQueryParameters list subscriptions
+// SubscriptionsRequestBuilderGetQueryParameters retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the [Permissions](#permissions) section.
 type SubscriptionsRequestBuilderGetQueryParameters struct {
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
@@ -57,11 +57,11 @@ func NewSubscriptionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewSubscriptionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation list subscriptions
+// CreateGetRequestInformation retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the [Permissions](#permissions) section.
 func (m *SubscriptionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list subscriptions
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the [Permissions](#permissions) section.
 func (m *SubscriptionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SubscriptionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -76,11 +76,11 @@ func (m *SubscriptionsRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation change notifications for Outlook resources in Microsoft Graph
+// CreatePostRequestInformation there is a maximum limit of 1000 active subscriptions for Outlook resources per mailbox for all applications. You can subscribe to changes in contacts, events, or messages in the mailbox.
 func (m *SubscriptionsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration change notifications for Outlook resources in Microsoft Graph
+// CreatePostRequestInformationWithRequestConfiguration there is a maximum limit of 1000 active subscriptions for Outlook resources per mailbox for all applications. You can subscribe to changes in contacts, events, or messages in the mailbox.
 func (m *SubscriptionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, requestConfiguration *SubscriptionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,11 +93,11 @@ func (m *SubscriptionsRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get list subscriptions
+// Get retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the [Permissions](#permissions) section.
 func (m *SubscriptionsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscriptionCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler list subscriptions
+// GetWithRequestConfigurationAndResponseHandler retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the [Permissions](#permissions) section.
 func (m *SubscriptionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SubscriptionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscriptionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -113,11 +113,11 @@ func (m *SubscriptionsRequestBuilder) GetWithRequestConfigurationAndResponseHand
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscriptionCollectionResponseable), nil
 }
-// Post change notifications for Outlook resources in Microsoft Graph
+// Post there is a maximum limit of 1000 active subscriptions for Outlook resources per mailbox for all applications. You can subscribe to changes in contacts, events, or messages in the mailbox.
 func (m *SubscriptionsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler change notifications for Outlook resources in Microsoft Graph
+// PostWithRequestConfigurationAndResponseHandler there is a maximum limit of 1000 active subscriptions for Outlook resources per mailbox for all applications. You can subscribe to changes in contacts, events, or messages in the mailbox.
 func (m *SubscriptionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, requestConfiguration *SubscriptionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

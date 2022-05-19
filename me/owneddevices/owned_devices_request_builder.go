@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i2fa5782fd1e7f38ba8a5740355fbfa7e8d920abcc35255b8e04927467d7094a8 "github.com/microsoftgraph/msgraph-sdk-go/me/owneddevices/endpoint"
+    i622bb27f3e3b795f5825bf562e76acd49951cfe27b98420952bed3a640f875f8 "github.com/microsoftgraph/msgraph-sdk-go/me/owneddevices/device"
+    ia9847cef2752fa6526b8edfd0d9e0c8bc1bda772b96715c0026cacc9b8061e0a "github.com/microsoftgraph/msgraph-sdk-go/me/owneddevices/approleassignment"
     ibbf3bf8a68958b4caea8f9049039b0a3fea7c5502d8caf5b04faf3a68b819295 "github.com/microsoftgraph/msgraph-sdk-go/me/owneddevices/count"
 )
 
@@ -43,6 +46,10 @@ type OwnedDevicesRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *OwnedDevicesRequestBuilderGetQueryParameters
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *OwnedDevicesRequestBuilder) AppRoleAssignment()(*ia9847cef2752fa6526b8edfd0d9e0c8bc1bda772b96715c0026cacc9b8061e0a.AppRoleAssignmentRequestBuilder) {
+    return ia9847cef2752fa6526b8edfd0d9e0c8bc1bda772b96715c0026cacc9b8061e0a.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewOwnedDevicesRequestBuilderInternal instantiates a new OwnedDevicesRequestBuilder and sets the default values.
 func NewOwnedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnedDevicesRequestBuilder) {
@@ -85,6 +92,14 @@ func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformationWithRequestConfi
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Device the device property
+func (m *OwnedDevicesRequestBuilder) Device()(*i622bb27f3e3b795f5825bf562e76acd49951cfe27b98420952bed3a640f875f8.DeviceRequestBuilder) {
+    return i622bb27f3e3b795f5825bf562e76acd49951cfe27b98420952bed3a640f875f8.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Endpoint the endpoint property
+func (m *OwnedDevicesRequestBuilder) Endpoint()(*i2fa5782fd1e7f38ba8a5740355fbfa7e8d920abcc35255b8e04927467d7094a8.EndpointRequestBuilder) {
+    return i2fa5782fd1e7f38ba8a5740355fbfa7e8d920abcc35255b8e04927467d7094a8.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *OwnedDevicesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {

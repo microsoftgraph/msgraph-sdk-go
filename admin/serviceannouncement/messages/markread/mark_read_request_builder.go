@@ -40,11 +40,11 @@ func NewMarkReadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewMarkReadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action markRead
-func (m *MarkReadRequestBuilder) CreatePostRequestInformation(body MarkReadRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MarkReadRequestBuilder) CreatePostRequestInformation(body MarkReadPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action markRead
-func (m *MarkReadRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkReadRequestBodyable, requestConfiguration *MarkReadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MarkReadRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkReadPostRequestBodyable, requestConfiguration *MarkReadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *MarkReadRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     return requestInfo, nil
 }
 // Post invoke action markRead
-func (m *MarkReadRequestBuilder) Post(body MarkReadRequestBodyable)(MarkReadResponseable, error) {
+func (m *MarkReadRequestBuilder) Post(body MarkReadPostRequestBodyable)(MarkReadResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action markRead
-func (m *MarkReadRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MarkReadRequestBodyable, requestConfiguration *MarkReadRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(MarkReadResponseable, error) {
+func (m *MarkReadRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MarkReadPostRequestBodyable, requestConfiguration *MarkReadRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(MarkReadResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

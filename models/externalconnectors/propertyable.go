@@ -13,7 +13,7 @@ type Propertyable interface {
     GetIsRefinable()(*bool)
     GetIsRetrievable()(*bool)
     GetIsSearchable()(*bool)
-    GetLabels()([]Label)
+    GetLabels()([]string)
     GetName()(*string)
     GetType()(*PropertyType)
     SetAliases(value []string)()
@@ -21,7 +21,7 @@ type Propertyable interface {
     SetIsRefinable(value *bool)()
     SetIsRetrievable(value *bool)()
     SetIsSearchable(value *bool)()
-    SetLabels(value []Label)()
+    SetLabels(value []string)()
     SetName(value *string)()
     SetType(value *PropertyType)()
 }

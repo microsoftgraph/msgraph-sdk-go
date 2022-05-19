@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    id20c3905d7a7467940d387722a803c1f234cf901c0e4292bbbdb03031b5df7c9 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/createdobjects/item/serviceprincipal"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
@@ -88,4 +89,8 @@ func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndRespon
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// ServicePrincipal the servicePrincipal property
+func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*id20c3905d7a7467940d387722a803c1f234cf901c0e4292bbbdb03031b5df7c9.ServicePrincipalRequestBuilder) {
+    return id20c3905d7a7467940d387722a803c1f234cf901c0e4292bbbdb03031b5df7c9.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -40,11 +40,11 @@ func NewCopyToDefaultContentLocationRequestBuilder(rawUrl string, requestAdapter
     return NewCopyToDefaultContentLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action copyToDefaultContentLocation
-func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformation(body CopyToDefaultContentLocationRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformation(body CopyToDefaultContentLocationPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action copyToDefaultContentLocation
-func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyToDefaultContentLocationRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformatio
     return requestInfo, nil
 }
 // Post invoke action copyToDefaultContentLocation
-func (m *CopyToDefaultContentLocationRequestBuilder) Post(body CopyToDefaultContentLocationRequestBodyable)(error) {
+func (m *CopyToDefaultContentLocationRequestBuilder) Post(body CopyToDefaultContentLocationPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action copyToDefaultContentLocation
-func (m *CopyToDefaultContentLocationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CopyToDefaultContentLocationRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *CopyToDefaultContentLocationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -40,11 +40,11 @@ func NewGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(rawUrl st
     return NewGetConfigurationPolicyNonComplianceSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getConfigurationPolicyNonComplianceSummaryReport
-func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationPolicyNonComplianceSummaryReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationPolicyNonComplianceSummaryReport
-func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationPolicyNonComplianceSummaryReportPostRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) CreateP
     return requestInfo, nil
 }
 // Post invoke action getConfigurationPolicyNonComplianceSummaryReport
-func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) Post(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable)(GetConfigurationPolicyNonComplianceSummaryReportResponseable, error) {
+func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) Post(body GetConfigurationPolicyNonComplianceSummaryReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getConfigurationPolicyNonComplianceSummaryReport
-func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationPolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationPolicyNonComplianceSummaryReportResponseable, error) {
+func (m *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationPolicyNonComplianceSummaryReportPostRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigurationPolicyNonComplianceSummaryReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetConfigurationPolicyNonComplianceSummaryReportResponseable), nil
+    return res.([]byte), nil
 }

@@ -2,11 +2,10 @@ package item
 
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i083d9ad14fa1e44957def936929cba5238351218462d4ad39a246ee0bc99ba4a "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenissuancepolicies/item/ref"
 )
 
-// TokenIssuancePolicyItemRequestBuilder provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.application entity.
+// TokenIssuancePolicyItemRequestBuilder builds and executes requests for operations under \applications\{application-id}\tokenIssuancePolicies\{tokenIssuancePolicy-id}
 type TokenIssuancePolicyItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -15,27 +14,11 @@ type TokenIssuancePolicyItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TokenIssuancePolicyItemRequestBuilderGetQueryParameters get tokenIssuancePolicies from applications
-type TokenIssuancePolicyItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
-    // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
-}
-// TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *TokenIssuancePolicyItemRequestBuilderGetQueryParameters
-}
 // NewTokenIssuancePolicyItemRequestBuilderInternal instantiates a new TokenIssuancePolicyItemRequestBuilder and sets the default values.
 func NewTokenIssuancePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TokenIssuancePolicyItemRequestBuilder) {
     m := &TokenIssuancePolicyItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies/{tokenIssuancePolicy%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies/{tokenIssuancePolicy%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -50,42 +33,7 @@ func NewTokenIssuancePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get tokenIssuancePolicies from applications
-func (m *TokenIssuancePolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get tokenIssuancePolicies from applications
-func (m *TokenIssuancePolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// Get get tokenIssuancePolicies from applications
-func (m *TokenIssuancePolicyItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler get tokenIssuancePolicies from applications
-func (m *TokenIssuancePolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTokenIssuancePolicyFromDiscriminatorValue, responseHandler, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable), nil
+// Ref the ref property
+func (m *TokenIssuancePolicyItemRequestBuilder) Ref()(*i083d9ad14fa1e44957def936929cba5238351218462d4ad39a246ee0bc99ba4a.RefRequestBuilder) {
+    return i083d9ad14fa1e44957def936929cba5238351218462d4ad39a246ee0bc99ba4a.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

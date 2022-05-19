@@ -27,7 +27,7 @@ type DirectoryRoleTemplateItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DirectoryRoleTemplateItemRequestBuilderGetQueryParameters get directoryRoleTemplate
+// DirectoryRoleTemplateItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a directoryroletemplate object.
 type DirectoryRoleTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -93,11 +93,11 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get directoryRoleTemplate
+// CreateGetRequestInformation retrieve the properties and relationships of a directoryroletemplate object.
 func (m *DirectoryRoleTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get directoryRoleTemplate
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of a directoryroletemplate object.
 func (m *DirectoryRoleTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryRoleTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,7 +149,7 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) DeleteWithRequestConfiguration
     }
     return nil
 }
-// Get get directoryRoleTemplate
+// Get retrieve the properties and relationships of a directoryroletemplate object.
 func (m *DirectoryRoleTemplateItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -161,7 +161,7 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberGroups()(*iec1a8ab976
 func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberObjects()(*iaa01455e2185fdd184cd4993202a2e1f3eec805d38e4ba431cce0c3144cca8f4.GetMemberObjectsRequestBuilder) {
     return iaa01455e2185fdd184cd4993202a2e1f3eec805d38e4ba431cce0c3144cca8f4.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get directoryRoleTemplate
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of a directoryroletemplate object.
 func (m *DirectoryRoleTemplateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryRoleTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

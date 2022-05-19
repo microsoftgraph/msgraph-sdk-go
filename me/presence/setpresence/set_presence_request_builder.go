@@ -40,11 +40,11 @@ func NewSetPresenceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewSetPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action setPresence
-func (m *SetPresenceRequestBuilder) CreatePostRequestInformation(body SetPresenceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetPresenceRequestBuilder) CreatePostRequestInformation(body SetPresencePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setPresence
-func (m *SetPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetPresenceRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetPresencePostRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SetPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action setPresence
-func (m *SetPresenceRequestBuilder) Post(body SetPresenceRequestBodyable)(error) {
+func (m *SetPresenceRequestBuilder) Post(body SetPresencePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action setPresence
-func (m *SetPresenceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetPresenceRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SetPresenceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetPresencePostRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

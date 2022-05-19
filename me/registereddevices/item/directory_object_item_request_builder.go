@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i1ac2ba0c203793e64ea816ae3345b8bbec3200ea47265b525eed61d9d45fd87a "github.com/microsoftgraph/msgraph-sdk-go/me/registereddevices/item/device"
+    i3f0c9c9742ab1e3d9ba0752582399dfaa92696b80261361b6059b4a04420c4c6 "github.com/microsoftgraph/msgraph-sdk-go/me/registereddevices/item/endpoint"
+    if92d9c95f3aef0bdc86ea9a85c8fbd64e97cb4bfac5ca0806090ed9da9aeadc9 "github.com/microsoftgraph/msgraph-sdk-go/me/registereddevices/item/approleassignment"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
@@ -30,6 +33,10 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *DirectoryObjectItemRequestBuilder) AppRoleAssignment()(*if92d9c95f3aef0bdc86ea9a85c8fbd64e97cb4bfac5ca0806090ed9da9aeadc9.AppRoleAssignmentRequestBuilder) {
+    return if92d9c95f3aef0bdc86ea9a85c8fbd64e97cb4bfac5ca0806090ed9da9aeadc9.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
@@ -68,6 +75,14 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Device the device property
+func (m *DirectoryObjectItemRequestBuilder) Device()(*i1ac2ba0c203793e64ea816ae3345b8bbec3200ea47265b525eed61d9d45fd87a.DeviceRequestBuilder) {
+    return i1ac2ba0c203793e64ea816ae3345b8bbec3200ea47265b525eed61d9d45fd87a.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Endpoint the endpoint property
+func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i3f0c9c9742ab1e3d9ba0752582399dfaa92696b80261361b6059b4a04420c4c6.EndpointRequestBuilder) {
+    return i3f0c9c9742ab1e3d9ba0752582399dfaa92696b80261361b6059b4a04420c4c6.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *DirectoryObjectItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {

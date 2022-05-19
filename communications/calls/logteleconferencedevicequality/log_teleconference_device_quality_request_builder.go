@@ -40,11 +40,11 @@ func NewLogTeleconferenceDeviceQualityRequestBuilder(rawUrl string, requestAdapt
     return NewLogTeleconferenceDeviceQualityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action logTeleconferenceDeviceQuality
-func (m *LogTeleconferenceDeviceQualityRequestBuilder) CreatePostRequestInformation(body LogTeleconferenceDeviceQualityRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LogTeleconferenceDeviceQualityRequestBuilder) CreatePostRequestInformation(body LogTeleconferenceDeviceQualityPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action logTeleconferenceDeviceQuality
-func (m *LogTeleconferenceDeviceQualityRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body LogTeleconferenceDeviceQualityRequestBodyable, requestConfiguration *LogTeleconferenceDeviceQualityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LogTeleconferenceDeviceQualityRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body LogTeleconferenceDeviceQualityPostRequestBodyable, requestConfiguration *LogTeleconferenceDeviceQualityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *LogTeleconferenceDeviceQualityRequestBuilder) CreatePostRequestInformat
     return requestInfo, nil
 }
 // Post invoke action logTeleconferenceDeviceQuality
-func (m *LogTeleconferenceDeviceQualityRequestBuilder) Post(body LogTeleconferenceDeviceQualityRequestBodyable)(error) {
+func (m *LogTeleconferenceDeviceQualityRequestBuilder) Post(body LogTeleconferenceDeviceQualityPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action logTeleconferenceDeviceQuality
-func (m *LogTeleconferenceDeviceQualityRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body LogTeleconferenceDeviceQualityRequestBodyable, requestConfiguration *LogTeleconferenceDeviceQualityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *LogTeleconferenceDeviceQualityRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body LogTeleconferenceDeviceQualityPostRequestBodyable, requestConfiguration *LogTeleconferenceDeviceQualityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

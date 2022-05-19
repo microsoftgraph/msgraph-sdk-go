@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppConfiguration 
+// ManagedAppConfiguration configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
     // A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
@@ -19,6 +19,25 @@ func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
 }
 // CreateManagedAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.managedAppConfiguration":
+                        return NewManagedAppConfiguration(), nil
+                }
+            }
+        }
+    }
     return NewManagedAppConfiguration(), nil
 }
 // GetCustomSettings gets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service

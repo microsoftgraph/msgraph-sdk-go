@@ -40,11 +40,11 @@ func NewCloneRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewCloneRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action clone
-func (m *CloneRequestBuilder) CreatePostRequestInformation(body CloneRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CloneRequestBuilder) CreatePostRequestInformation(body ClonePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action clone
-func (m *CloneRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CloneRequestBodyable, requestConfiguration *CloneRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CloneRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClonePostRequestBodyable, requestConfiguration *CloneRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *CloneRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     return requestInfo, nil
 }
 // Post invoke action clone
-func (m *CloneRequestBuilder) Post(body CloneRequestBodyable)(error) {
+func (m *CloneRequestBuilder) Post(body ClonePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action clone
-func (m *CloneRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CloneRequestBodyable, requestConfiguration *CloneRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *CloneRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ClonePostRequestBodyable, requestConfiguration *CloneRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

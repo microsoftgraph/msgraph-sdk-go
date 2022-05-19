@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserInstallStateSummary 
+// UserInstallStateSummary contains properties for the installation state summary for a user.
 type UserInstallStateSummary struct {
     Entity
     // The install state of the eBook.

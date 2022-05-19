@@ -15,7 +15,7 @@ type ItemPreviewInfo struct {
     // The postUrl property
     postUrl *string
 }
-// NewItemPreviewInfo instantiates a new itemPreviewInfo and sets the default values.
+// NewItemPreviewInfo instantiates a new ItemPreviewInfo and sets the default values.
 func NewItemPreviewInfo()(*ItemPreviewInfo) {
     m := &ItemPreviewInfo{
     }

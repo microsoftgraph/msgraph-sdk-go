@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i0d33aa4aace2d959eeb9c1a354c9c1714a438f7f0c21b98b9ff6916742279b18 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/directreports/item/user"
+    i9a6be4adc55728bbb028f4d5d5ad0db5777a5bf109af7045d1451f7ae8d13a51 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/directreports/item/orgcontact"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
@@ -88,4 +90,12 @@ func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndRespon
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// OrgContact the orgContact property
+func (m *DirectoryObjectItemRequestBuilder) OrgContact()(*i9a6be4adc55728bbb028f4d5d5ad0db5777a5bf109af7045d1451f7ae8d13a51.OrgContactRequestBuilder) {
+    return i9a6be4adc55728bbb028f4d5d5ad0db5777a5bf109af7045d1451f7ae8d13a51.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *DirectoryObjectItemRequestBuilder) User()(*i0d33aa4aace2d959eeb9c1a354c9c1714a438f7f0c21b98b9ff6916742279b18.UserRequestBuilder) {
+    return i0d33aa4aace2d959eeb9c1a354c9c1714a438f7f0c21b98b9ff6916742279b18.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

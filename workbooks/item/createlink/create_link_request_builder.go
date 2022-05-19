@@ -41,11 +41,11 @@ func NewCreateLinkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewCreateLinkRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action createLink
-func (m *CreateLinkRequestBuilder) CreatePostRequestInformation(body CreateLinkRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateLinkRequestBuilder) CreatePostRequestInformation(body CreateLinkPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createLink
-func (m *CreateLinkRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateLinkRequestBodyable, requestConfiguration *CreateLinkRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateLinkRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateLinkPostRequestBodyable, requestConfiguration *CreateLinkRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *CreateLinkRequestBuilder) CreatePostRequestInformationWithRequestConfig
     return requestInfo, nil
 }
 // Post invoke action createLink
-func (m *CreateLinkRequestBuilder) Post(body CreateLinkRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
+func (m *CreateLinkRequestBuilder) Post(body CreateLinkPostRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action createLink
-func (m *CreateLinkRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateLinkRequestBodyable, requestConfiguration *CreateLinkRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
+func (m *CreateLinkRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateLinkPostRequestBodyable, requestConfiguration *CreateLinkRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

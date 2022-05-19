@@ -19,7 +19,7 @@ type PrinterDefaults struct {
     // The default duplex (double-sided) configuration to use when printing a document. Valid values are described in the following table.
     duplexMode *PrintDuplexMode
     // The default set of finishings to apply to print jobs. Valid values are described in the following table.
-    finishings []PrintFinishing
+    finishings []string
     // The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
     fitPdfToPage *bool
     // The default input bin that serves as the paper source.
@@ -156,14 +156,14 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrintFinishing, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintFinishing))
+                res[i] = *(v.(*string))
             }
             m.SetFinishings(res)
         }
@@ -282,7 +282,7 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFinishings gets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
-func (m *PrinterDefaults) GetFinishings()([]PrintFinishing) {
+func (m *PrinterDefaults) GetFinishings()([]string) {
     if m == nil {
         return nil
     } else {
@@ -412,7 +412,7 @@ func (m *PrinterDefaults) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
+        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
         if err != nil {
             return err
         }
@@ -532,7 +532,7 @@ func (m *PrinterDefaults) SetDuplexMode(value *PrintDuplexMode)() {
     }
 }
 // SetFinishings sets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
-func (m *PrinterDefaults) SetFinishings(value []PrintFinishing)() {
+func (m *PrinterDefaults) SetFinishings(value []string)() {
     if m != nil {
         m.finishings = value
     }

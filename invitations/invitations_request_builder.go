@@ -93,11 +93,11 @@ func (m *InvitationsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups
+// CreatePostRequestInformation let's assume that you've granted access to external users (also called *guest users*) to resources in your organization through Microsoft 365 groups. This tutorial will guide you to review their access to the Microsoft 365 groups in your tenant.
 func (m *InvitationsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups
+// CreatePostRequestInformationWithRequestConfiguration let's assume that you've granted access to external users (also called *guest users*) to resources in your organization through Microsoft 365 groups. This tutorial will guide you to review their access to the Microsoft 365 groups in your tenant.
 func (m *InvitationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, requestConfiguration *InvitationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,11 +130,11 @@ func (m *InvitationsRequestBuilder) GetWithRequestConfigurationAndResponseHandle
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InvitationCollectionResponseable), nil
 }
-// Post tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups
+// Post let's assume that you've granted access to external users (also called *guest users*) to resources in your organization through Microsoft 365 groups. This tutorial will guide you to review their access to the Microsoft 365 groups in your tenant.
 func (m *InvitationsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups
+// PostWithRequestConfigurationAndResponseHandler let's assume that you've granted access to external users (also called *guest users*) to resources in your organization through Microsoft 365 groups. This tutorial will guide you to review their access to the Microsoft 365 groups in your tenant.
 func (m *InvitationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, requestConfiguration *InvitationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

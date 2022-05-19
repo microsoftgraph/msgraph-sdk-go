@@ -40,11 +40,11 @@ func NewGetReportFiltersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewGetReportFiltersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getReportFilters
-func (m *GetReportFiltersRequestBuilder) CreatePostRequestInformation(body GetReportFiltersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetReportFiltersRequestBuilder) CreatePostRequestInformation(body GetReportFiltersPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getReportFilters
-func (m *GetReportFiltersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetReportFiltersRequestBodyable, requestConfiguration *GetReportFiltersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetReportFiltersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetReportFiltersPostRequestBodyable, requestConfiguration *GetReportFiltersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetReportFiltersRequestBuilder) CreatePostRequestInformationWithRequest
     return requestInfo, nil
 }
 // Post invoke action getReportFilters
-func (m *GetReportFiltersRequestBuilder) Post(body GetReportFiltersRequestBodyable)(GetReportFiltersResponseable, error) {
+func (m *GetReportFiltersRequestBuilder) Post(body GetReportFiltersPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getReportFilters
-func (m *GetReportFiltersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetReportFiltersRequestBodyable, requestConfiguration *GetReportFiltersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetReportFiltersResponseable, error) {
+func (m *GetReportFiltersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetReportFiltersPostRequestBodyable, requestConfiguration *GetReportFiltersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetReportFiltersResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetReportFiltersResponseable), nil
+    return res.([]byte), nil
 }

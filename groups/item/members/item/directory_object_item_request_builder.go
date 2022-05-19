@@ -2,11 +2,16 @@ package item
 
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i3024d5fb5e98d595fa699297ee7859a5760e8b0d247c03a1de15be6e9cd4b47e "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/item/serviceprincipal"
+    i4511ccf77c999c33a307743400000d916b8ef6f73b6ce5b8618995d9057a9b20 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/item/ref"
+    i5537b56aece055af280278a8530d48680880ab267a0d8bd8c079bf40aefe7579 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/item/device"
+    i886d422bd918de0b2928aca7f6f80bdcbbc0707096cbfb6c36af837178c4f2bb "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/item/orgcontact"
+    i95c21ccf661796cd8e94a65125227983436c27288e57f178d0a9ea7e201cb62d "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/item/user"
+    iefa34d46d801a95d0fed5bdd1aa528e120037e065245037862a34a4c39e5b6ca "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/item/application"
+    if26fe6278b9799c8a3493f5e61e5d6b3bc3a629544bcfc96a440c979cf445852 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/item/group"
 )
 
-// DirectoryObjectItemRequestBuilder provides operations to manage the members property of the microsoft.graph.group entity.
+// DirectoryObjectItemRequestBuilder builds and executes requests for operations under \groups\{group-id}\members\{directoryObject-id}
 type DirectoryObjectItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -15,27 +20,15 @@ type DirectoryObjectItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DirectoryObjectItemRequestBuilderGetQueryParameters members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-type DirectoryObjectItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
-    // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
-}
-// DirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
+// Application the application property
+func (m *DirectoryObjectItemRequestBuilder) Application()(*iefa34d46d801a95d0fed5bdd1aa528e120037e065245037862a34a4c39e5b6ca.ApplicationRequestBuilder) {
+    return iefa34d46d801a95d0fed5bdd1aa528e120037e065245037862a34a4c39e5b6ca.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
     m := &DirectoryObjectItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/members/{directoryObject%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/members/{directoryObject%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -50,42 +43,27 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+// Device the device property
+func (m *DirectoryObjectItemRequestBuilder) Device()(*i5537b56aece055af280278a8530d48680880ab267a0d8bd8c079bf40aefe7579.DeviceRequestBuilder) {
+    return i5537b56aece055af280278a8530d48680880ab267a0d8bd8c079bf40aefe7579.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
+// Group the group property
+func (m *DirectoryObjectItemRequestBuilder) Group()(*if26fe6278b9799c8a3493f5e61e5d6b3bc3a629544bcfc96a440c979cf445852.GroupRequestBuilder) {
+    return if26fe6278b9799c8a3493f5e61e5d6b3bc3a629544bcfc96a440c979cf445852.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-func (m *DirectoryObjectItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+// OrgContact the orgContact property
+func (m *DirectoryObjectItemRequestBuilder) OrgContact()(*i886d422bd918de0b2928aca7f6f80bdcbbc0707096cbfb6c36af837178c4f2bb.OrgContactRequestBuilder) {
+    return i886d422bd918de0b2928aca7f6f80bdcbbc0707096cbfb6c36af837178c4f2bb.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectFromDiscriminatorValue, responseHandler, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+// Ref the ref property
+func (m *DirectoryObjectItemRequestBuilder) Ref()(*i4511ccf77c999c33a307743400000d916b8ef6f73b6ce5b8618995d9057a9b20.RefRequestBuilder) {
+    return i4511ccf77c999c33a307743400000d916b8ef6f73b6ce5b8618995d9057a9b20.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*i3024d5fb5e98d595fa699297ee7859a5760e8b0d247c03a1de15be6e9cd4b47e.ServicePrincipalRequestBuilder) {
+    return i3024d5fb5e98d595fa699297ee7859a5760e8b0d247c03a1de15be6e9cd4b47e.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *DirectoryObjectItemRequestBuilder) User()(*i95c21ccf661796cd8e94a65125227983436c27288e57f178d0a9ea7e201cb62d.UserRequestBuilder) {
+    return i95c21ccf661796cd8e94a65125227983436c27288e57f178d0a9ea7e201cb62d.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

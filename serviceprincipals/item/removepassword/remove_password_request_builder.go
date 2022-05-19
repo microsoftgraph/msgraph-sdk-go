@@ -40,11 +40,11 @@ func NewRemovePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewRemovePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action removePassword
-func (m *RemovePasswordRequestBuilder) CreatePostRequestInformation(body RemovePasswordRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemovePasswordRequestBuilder) CreatePostRequestInformation(body RemovePasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removePassword
-func (m *RemovePasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemovePasswordRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemovePasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemovePasswordPostRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RemovePasswordRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action removePassword
-func (m *RemovePasswordRequestBuilder) Post(body RemovePasswordRequestBodyable)(error) {
+func (m *RemovePasswordRequestBuilder) Post(body RemovePasswordPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action removePassword
-func (m *RemovePasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemovePasswordRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *RemovePasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemovePasswordPostRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

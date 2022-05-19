@@ -40,11 +40,11 @@ func NewCancelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation cancels the giving booking appointment, sending a message to the involved parties.
-func (m *CancelRequestBuilder) CreatePostRequestInformation(body CancelRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CancelRequestBuilder) CreatePostRequestInformation(body CancelPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration cancels the giving booking appointment, sending a message to the involved parties.
-func (m *CancelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CancelRequestBodyable, requestConfiguration *CancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CancelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CancelPostRequestBodyable, requestConfiguration *CancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *CancelRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     return requestInfo, nil
 }
 // Post cancels the giving booking appointment, sending a message to the involved parties.
-func (m *CancelRequestBuilder) Post(body CancelRequestBodyable)(error) {
+func (m *CancelRequestBuilder) Post(body CancelPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler cancels the giving booking appointment, sending a message to the involved parties.
-func (m *CancelRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CancelRequestBodyable, requestConfiguration *CancelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *CancelRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CancelPostRequestBodyable, requestConfiguration *CancelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

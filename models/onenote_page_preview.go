@@ -13,7 +13,7 @@ type OnenotePagePreview struct {
     // The previewText property
     previewText *string
 }
-// NewOnenotePagePreview instantiates a new onenotePagePreview and sets the default values.
+// NewOnenotePagePreview instantiates a new OnenotePagePreview and sets the default values.
 func NewOnenotePagePreview()(*OnenotePagePreview) {
     m := &OnenotePagePreview{
     }

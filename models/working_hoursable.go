@@ -8,11 +8,11 @@ import (
 type WorkingHoursable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDaysOfWeek()([]DayOfWeek)
+    GetDaysOfWeek()([]string)
     GetEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetTimeZone()(TimeZoneBaseable)
-    SetDaysOfWeek(value []DayOfWeek)()
+    SetDaysOfWeek(value []string)()
     SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
     SetStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
     SetTimeZone(value TimeZoneBaseable)()

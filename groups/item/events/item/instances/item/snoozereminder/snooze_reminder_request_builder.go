@@ -40,11 +40,11 @@ func NewSnoozeReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action snoozeReminder
-func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformation(body SnoozeReminderRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformation(body SnoozeReminderPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action snoozeReminder
-func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SnoozeReminderRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SnoozeReminderPostRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action snoozeReminder
-func (m *SnoozeReminderRequestBuilder) Post(body SnoozeReminderRequestBodyable)(error) {
+func (m *SnoozeReminderRequestBuilder) Post(body SnoozeReminderPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action snoozeReminder
-func (m *SnoozeReminderRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SnoozeReminderRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SnoozeReminderRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SnoozeReminderPostRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

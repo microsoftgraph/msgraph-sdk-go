@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TermsOfUseContainer 
+// TermsOfUseContainer provides operations to manage the identityGovernance singleton.
 type TermsOfUseContainer struct {
     Entity
     // Represents the current status of a user's response to a company's customizable terms of use agreement.

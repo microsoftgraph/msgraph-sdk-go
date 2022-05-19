@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceScheduledActionForRule 
+// DeviceComplianceScheduledActionForRule scheduled Action for Rule
 type DeviceComplianceScheduledActionForRule struct {
     Entity
     // Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.

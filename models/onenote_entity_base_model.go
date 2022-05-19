@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntityBaseModel 
+// OnenoteEntityBaseModel casts the previous resource to user.
 type OnenoteEntityBaseModel struct {
     Entity
     // The endpoint where you can get details about the page. Read-only.
@@ -19,6 +19,25 @@ func NewOnenoteEntityBaseModel()(*OnenoteEntityBaseModel) {
 }
 // CreateOnenoteEntityBaseModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOnenoteEntityBaseModelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.onenoteEntityBaseModel":
+                        return NewOnenoteEntityBaseModel(), nil
+                }
+            }
+        }
+    }
     return NewOnenoteEntityBaseModel(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model

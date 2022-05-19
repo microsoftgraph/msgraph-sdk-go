@@ -59,18 +59,18 @@ func (m *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) CreateGetRequest
     return requestInfo, nil
 }
 // Get invoke function getTeamsDeviceUsageUserCounts
-func (m *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) Get()(GetTeamsDeviceUsageUserCountsWithPeriodResponseable, error) {
+func (m *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getTeamsDeviceUsageUserCounts
-func (m *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsDeviceUsageUserCountsWithPeriodResponseable, error) {
+func (m *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetTeamsDeviceUsageUserCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetTeamsDeviceUsageUserCountsWithPeriodResponseable), nil
+    return res.([]byte), nil
 }

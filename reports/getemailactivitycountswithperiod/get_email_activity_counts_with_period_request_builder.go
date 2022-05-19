@@ -59,18 +59,18 @@ func (m *GetEmailActivityCountsWithPeriodRequestBuilder) CreateGetRequestInforma
     return requestInfo, nil
 }
 // Get invoke function getEmailActivityCounts
-func (m *GetEmailActivityCountsWithPeriodRequestBuilder) Get()(GetEmailActivityCountsWithPeriodResponseable, error) {
+func (m *GetEmailActivityCountsWithPeriodRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getEmailActivityCounts
-func (m *GetEmailActivityCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEmailActivityCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEmailActivityCountsWithPeriodResponseable, error) {
+func (m *GetEmailActivityCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEmailActivityCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEmailActivityCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetEmailActivityCountsWithPeriodResponseable), nil
+    return res.([]byte), nil
 }

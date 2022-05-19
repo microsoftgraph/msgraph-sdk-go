@@ -17,7 +17,7 @@ type SearchRequest struct {
     // This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
     enableTopResults *bool
     // One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-    entityTypes []EntityType
+    entityTypes []string
     // Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
     fields []string
     // Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
@@ -85,7 +85,7 @@ func (m *SearchRequest) GetEnableTopResults()(*bool) {
     }
 }
 // GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-func (m *SearchRequest) GetEntityTypes()([]EntityType) {
+func (m *SearchRequest) GetEntityTypes()([]string) {
     if m == nil {
         return nil
     } else {
@@ -148,14 +148,14 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["entityTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseEntityType)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EntityType, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EntityType))
+                res[i] = *(v.(*string))
             }
             m.SetEntityTypes(res)
         }
@@ -328,7 +328,7 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetEntityTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("entityTypes", SerializeEntityType(m.GetEntityTypes()))
+        err := writer.WriteCollectionOfStringValues("entityTypes", m.GetEntityTypes())
         if err != nil {
             return err
         }
@@ -418,7 +418,7 @@ func (m *SearchRequest) SetEnableTopResults(value *bool)() {
     }
 }
 // SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
+func (m *SearchRequest) SetEntityTypes(value []string)() {
     if m != nil {
         m.entityTypes = value
     }

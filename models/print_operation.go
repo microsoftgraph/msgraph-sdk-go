@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintOperation 
+// PrintOperation provides operations to manage the print singleton.
 type PrintOperation struct {
     Entity
     // The DateTimeOffset when the operation was created. Read-only.
@@ -22,6 +22,25 @@ func NewPrintOperation()(*PrintOperation) {
 }
 // CreatePrintOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrintOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.printOperation":
+                        return NewPrintOperation(), nil
+                }
+            }
+        }
+    }
     return NewPrintOperation(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The DateTimeOffset when the operation was created. Read-only.
