@@ -4,6 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i00f3a2ff604fd8a0f0a4c67efc0b7bfbd5bcaa0b875db9617b4123652ad275bf "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/microsoftauthenticatormethods/item/device/registeredusers/item/endpoint"
+    i0f45cdf4d4cdcfba1135b77f27add6b0a277c101ef2087991482700c6188dc37 "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/microsoftauthenticatormethods/item/device/registeredusers/item/serviceprincipal"
+    i4ce81bb3e1b54ddb9714b0446e9484fca63eccaf9ec840f2c41b1e0948678f4e "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/microsoftauthenticatormethods/item/device/registeredusers/item/approleassignment"
+    i817d2baf0128ce97f743b0bc00839ffce524906c154a877d7afe052914060045 "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/microsoftauthenticatormethods/item/device/registeredusers/item/user"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
@@ -30,6 +34,10 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *DirectoryObjectItemRequestBuilder) AppRoleAssignment()(*i4ce81bb3e1b54ddb9714b0446e9484fca63eccaf9ec840f2c41b1e0948678f4e.AppRoleAssignmentRequestBuilder) {
+    return i4ce81bb3e1b54ddb9714b0446e9484fca63eccaf9ec840f2c41b1e0948678f4e.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
@@ -69,6 +77,10 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i00f3a2ff604fd8a0f0a4c67efc0b7bfbd5bcaa0b875db9617b4123652ad275bf.EndpointRequestBuilder) {
+    return i00f3a2ff604fd8a0f0a4c67efc0b7bfbd5bcaa0b875db9617b4123652ad275bf.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *DirectoryObjectItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -88,4 +100,12 @@ func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndRespon
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// ServicePrincipal the servicePrincipal property
+func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*i0f45cdf4d4cdcfba1135b77f27add6b0a277c101ef2087991482700c6188dc37.ServicePrincipalRequestBuilder) {
+    return i0f45cdf4d4cdcfba1135b77f27add6b0a277c101ef2087991482700c6188dc37.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *DirectoryObjectItemRequestBuilder) User()(*i817d2baf0128ce97f743b0bc00839ffce524906c154a877d7afe052914060045.UserRequestBuilder) {
+    return i817d2baf0128ce97f743b0bc00839ffce524906c154a877d7afe052914060045.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

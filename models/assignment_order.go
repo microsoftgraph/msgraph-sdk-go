@@ -11,7 +11,7 @@ type AssignmentOrder struct {
     // A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
     order []string
 }
-// NewAssignmentOrder instantiates a new assignmentOrder and sets the default values.
+// NewAssignmentOrder instantiates a new AssignmentOrder and sets the default values.
 func NewAssignmentOrder()(*AssignmentOrder) {
     m := &AssignmentOrder{
     }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingCurrency 
+// BookingCurrency provides operations to manage the solutionsRoot singleton.
 type BookingCurrency struct {
     Entity
     // The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.

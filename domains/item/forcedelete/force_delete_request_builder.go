@@ -40,11 +40,11 @@ func NewForceDeleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewForceDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action forceDelete
-func (m *ForceDeleteRequestBuilder) CreatePostRequestInformation(body ForceDeleteRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ForceDeleteRequestBuilder) CreatePostRequestInformation(body ForceDeletePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action forceDelete
-func (m *ForceDeleteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ForceDeleteRequestBodyable, requestConfiguration *ForceDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ForceDeleteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ForceDeletePostRequestBodyable, requestConfiguration *ForceDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ForceDeleteRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action forceDelete
-func (m *ForceDeleteRequestBuilder) Post(body ForceDeleteRequestBodyable)(error) {
+func (m *ForceDeleteRequestBuilder) Post(body ForceDeletePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action forceDelete
-func (m *ForceDeleteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ForceDeleteRequestBodyable, requestConfiguration *ForceDeleteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ForceDeleteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ForceDeletePostRequestBodyable, requestConfiguration *ForceDeleteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

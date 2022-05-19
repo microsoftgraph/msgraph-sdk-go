@@ -22,7 +22,7 @@ type GroupSettingItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// GroupSettingItemRequestBuilderGetQueryParameters get groupSetting
+// GroupSettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 type GroupSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,11 +64,11 @@ func NewGroupSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewGroupSettingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete a group setting
+// CreateDeleteRequestInformation delete a tenant-level or group-specific [groupSetting](../resources/groupsetting.md) object.
 func (m *GroupSettingItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete a group setting
+// CreateDeleteRequestInformationWithRequestConfiguration delete a tenant-level or group-specific [groupSetting](../resources/groupsetting.md) object.
 func (m *GroupSettingItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *GroupSettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -80,11 +80,11 @@ func (m *GroupSettingItemRequestBuilder) CreateDeleteRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get groupSetting
+// CreateGetRequestInformation retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 func (m *GroupSettingItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get groupSetting
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 func (m *GroupSettingItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GroupSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,11 +99,11 @@ func (m *GroupSettingItemRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update groupSetting
+// CreatePatchRequestInformation update the properties of a [groupSetting](../resources/groupsetting.md) object for tenant-wide [group](../resources/group.md) settings or a specific group setting.
 func (m *GroupSettingItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update groupSetting
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a [groupSetting](../resources/groupsetting.md) object for tenant-wide [group](../resources/group.md) settings or a specific group setting.
 func (m *GroupSettingItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, requestConfiguration *GroupSettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,11 +116,11 @@ func (m *GroupSettingItemRequestBuilder) CreatePatchRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Delete delete a group setting
+// Delete delete a tenant-level or group-specific [groupSetting](../resources/groupsetting.md) object.
 func (m *GroupSettingItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete a group setting
+// DeleteWithRequestConfigurationAndResponseHandler delete a tenant-level or group-specific [groupSetting](../resources/groupsetting.md) object.
 func (m *GroupSettingItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupSettingItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -136,11 +136,11 @@ func (m *GroupSettingItemRequestBuilder) DeleteWithRequestConfigurationAndRespon
     }
     return nil
 }
-// Get get groupSetting
+// Get retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 func (m *GroupSettingItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get groupSetting
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 func (m *GroupSettingItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupSettingItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -156,11 +156,11 @@ func (m *GroupSettingItemRequestBuilder) GetWithRequestConfigurationAndResponseH
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable), nil
 }
-// Patch update groupSetting
+// Patch update the properties of a [groupSetting](../resources/groupsetting.md) object for tenant-wide [group](../resources/group.md) settings or a specific group setting.
 func (m *GroupSettingItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update groupSetting
+// PatchWithRequestConfigurationAndResponseHandler update the properties of a [groupSetting](../resources/groupsetting.md) object for tenant-wide [group](../resources/group.md) settings or a specific group setting.
 func (m *GroupSettingItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, requestConfiguration *GroupSettingItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

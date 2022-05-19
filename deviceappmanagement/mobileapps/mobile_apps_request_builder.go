@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i0abc631e125255709ac3cbf389c1dc71b4a65fe90e63cb355832a8152e077c33 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/mobilelobapp"
+    i65c97242e620fd0c9d68e46ec0eb75ba451a85c8c9d174114234d9d7649f77a6 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/managedmobilelobapp"
     id7d2fdbffd5a25c50c69d0cd0badc4edba2ed341c20ce4e6350391399d9239b2 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/count"
 )
 
@@ -129,6 +131,14 @@ func (m *MobileAppsRequestBuilder) GetWithRequestConfigurationAndResponseHandler
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCollectionResponseable), nil
+}
+// ManagedMobileLobApp the managedMobileLobApp property
+func (m *MobileAppsRequestBuilder) ManagedMobileLobApp()(*i65c97242e620fd0c9d68e46ec0eb75ba451a85c8c9d174114234d9d7649f77a6.ManagedMobileLobAppRequestBuilder) {
+    return i65c97242e620fd0c9d68e46ec0eb75ba451a85c8c9d174114234d9d7649f77a6.NewManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MobileLobApp the mobileLobApp property
+func (m *MobileAppsRequestBuilder) MobileLobApp()(*i0abc631e125255709ac3cbf389c1dc71b4a65fe90e63cb355832a8152e077c33.MobileLobAppRequestBuilder) {
+    return i0abc631e125255709ac3cbf389c1dc71b4a65fe90e63cb355832a8152e077c33.NewMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create new navigation property to mobileApps for deviceAppManagement
 func (m *MobileAppsRequestBuilder) Post(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {

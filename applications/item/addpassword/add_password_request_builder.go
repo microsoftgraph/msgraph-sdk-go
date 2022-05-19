@@ -41,11 +41,11 @@ func NewAddPasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewAddPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action addPassword
-func (m *AddPasswordRequestBuilder) CreatePostRequestInformation(body PasswordCredentialRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddPasswordRequestBuilder) CreatePostRequestInformation(body PasswordCredentialPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addPassword
-func (m *AddPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PasswordCredentialRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PasswordCredentialPostRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *AddPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action addPassword
-func (m *AddPasswordRequestBuilder) Post(body PasswordCredentialRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable, error) {
+func (m *AddPasswordRequestBuilder) Post(body PasswordCredentialPostRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action addPassword
-func (m *AddPasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body PasswordCredentialRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable, error) {
+func (m *AddPasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body PasswordCredentialPostRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,11 +40,11 @@ func NewBatchRecordDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewBatchRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action batchRecordDecisions
-func (m *BatchRecordDecisionsRequestBuilder) CreatePostRequestInformation(body BatchRecordDecisionsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BatchRecordDecisionsRequestBuilder) CreatePostRequestInformation(body BatchRecordDecisionsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action batchRecordDecisions
-func (m *BatchRecordDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BatchRecordDecisionsRequestBodyable, requestConfiguration *BatchRecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BatchRecordDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BatchRecordDecisionsPostRequestBodyable, requestConfiguration *BatchRecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *BatchRecordDecisionsRequestBuilder) CreatePostRequestInformationWithReq
     return requestInfo, nil
 }
 // Post invoke action batchRecordDecisions
-func (m *BatchRecordDecisionsRequestBuilder) Post(body BatchRecordDecisionsRequestBodyable)(error) {
+func (m *BatchRecordDecisionsRequestBuilder) Post(body BatchRecordDecisionsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action batchRecordDecisions
-func (m *BatchRecordDecisionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body BatchRecordDecisionsRequestBodyable, requestConfiguration *BatchRecordDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *BatchRecordDecisionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body BatchRecordDecisionsPostRequestBodyable, requestConfiguration *BatchRecordDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i3618d16e9f96f71930e05a5ffd7e9f975dcd6f084db12a5aa1f82e13193cea4f "github.com/microsoftgraph/msgraph-sdk-go/print/shares/item/allowedgroups/ref"
     i647e3e8ba60d13ec826f53bdc5dfa381dbef8b36e6db3d906684d954ea2532b3 "github.com/microsoftgraph/msgraph-sdk-go/print/shares/item/allowedgroups/count"
 )
 
@@ -105,4 +106,8 @@ func (m *AllowedGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHand
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *AllowedGroupsRequestBuilder) Ref()(*i3618d16e9f96f71930e05a5ffd7e9f975dcd6f084db12a5aa1f82e13193cea4f.RefRequestBuilder) {
+    return i3618d16e9f96f71930e05a5ffd7e9f975dcd6f084db12a5aa1f82e13193cea4f.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

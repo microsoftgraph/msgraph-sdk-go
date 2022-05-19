@@ -40,11 +40,11 @@ func NewScheduleActionsForRulesRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewScheduleActionsForRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action scheduleActionsForRules
-func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformation(body ScheduleActionsForRulesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformation(body ScheduleActionsForRulesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action scheduleActionsForRules
-func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ScheduleActionsForRulesRequestBodyable, requestConfiguration *ScheduleActionsForRulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ScheduleActionsForRulesPostRequestBodyable, requestConfiguration *ScheduleActionsForRulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformationWith
     return requestInfo, nil
 }
 // Post invoke action scheduleActionsForRules
-func (m *ScheduleActionsForRulesRequestBuilder) Post(body ScheduleActionsForRulesRequestBodyable)(error) {
+func (m *ScheduleActionsForRulesRequestBuilder) Post(body ScheduleActionsForRulesPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action scheduleActionsForRules
-func (m *ScheduleActionsForRulesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ScheduleActionsForRulesRequestBodyable, requestConfiguration *ScheduleActionsForRulesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ScheduleActionsForRulesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ScheduleActionsForRulesPostRequestBodyable, requestConfiguration *ScheduleActionsForRulesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

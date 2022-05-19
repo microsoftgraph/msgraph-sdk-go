@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityApiConnector 
+// IdentityApiConnector provides operations to manage the identityContainer singleton.
 type IdentityApiConnector struct {
     Entity
     // The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.

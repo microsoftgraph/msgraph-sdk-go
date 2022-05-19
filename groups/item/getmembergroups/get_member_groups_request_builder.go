@@ -40,11 +40,11 @@ func NewGetMemberGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewGetMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getMemberGroups
-func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformation(body GetMemberGroupsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformation(body GetMemberGroupsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getMemberGroups
-func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMemberGroupsRequestBodyable, requestConfiguration *GetMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMemberGroupsPostRequestBodyable, requestConfiguration *GetMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformationWithRequestC
     return requestInfo, nil
 }
 // Post invoke action getMemberGroups
-func (m *GetMemberGroupsRequestBuilder) Post(body GetMemberGroupsRequestBodyable)(GetMemberGroupsResponseable, error) {
+func (m *GetMemberGroupsRequestBuilder) Post(body GetMemberGroupsPostRequestBodyable)(GetMemberGroupsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getMemberGroups
-func (m *GetMemberGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMemberGroupsRequestBodyable, requestConfiguration *GetMemberGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberGroupsResponseable, error) {
+func (m *GetMemberGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMemberGroupsPostRequestBodyable, requestConfiguration *GetMemberGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberGroupsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

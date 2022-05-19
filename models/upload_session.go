@@ -16,7 +16,7 @@ type UploadSession struct {
     // The URL endpoint that accepts PUT requests for byte ranges of the file.
     uploadUrl *string
 }
-// NewUploadSession instantiates a new uploadSession and sets the default values.
+// NewUploadSession instantiates a new UploadSession and sets the default values.
 func NewUploadSession()(*UploadSession) {
     m := &UploadSession{
     }

@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i8cd80185bf60b606677a5e8f2580c697ae92fb037c7a74850a546591b6150420 "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item/rubric/ref"
 )
 
 // RubricRequestBuilder provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
@@ -175,4 +176,8 @@ func (m *RubricRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(b
         return err
     }
     return nil
+}
+// Ref the ref property
+func (m *RubricRequestBuilder) Ref()(*i8cd80185bf60b606677a5e8f2580c697ae92fb037c7a74850a546591b6150420.RefRequestBuilder) {
+    return i8cd80185bf60b606677a5e8f2580c697ae92fb037c7a74850a546591b6150420.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

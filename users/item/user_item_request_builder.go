@@ -119,7 +119,7 @@ type UserItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserItemRequestBuilderGetQueryParameters helpers (examples that aren't included in the docs)
+// UserItemRequestBuilderGetQueryParameters 
 type UserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -320,11 +320,11 @@ func (m *UserItemRequestBuilder) ContactsById(id string)(*i88e2c30b78a734ede88b9
     }
     return i88e2c30b78a734ede88b94c583c45b04ce07232920ad9d7b2366b4278bfae360.NewContactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformation tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// CreateDeleteRequestInformation in this tutorial, a fictitious company called Contoso Limited wishes to have its IT Helpdesk manage the lifecycle of employees’ access. The company has identified the Azure AD User Administrator role as the appropriate privileged role required by IT Helpdesk, and will use the PIM API to assign the role. You'll create a role-assignable security group for IT Helpdesk and using the PIM API, assign the security group eligibility to the User Administrator role. By assigning the eligible role to a security group, Contoso has a more efficient way to manage administrator access to resources such as Azure AD roles. For example: Assigning eligibility instead of a persistently active User Administrator privilege allows the company to enforce **just-in-time access**, which grants temporary permissions to carry out the privileged tasks. After defining the role eligibility, the eligible group member then activates their assignment for a temporary period. All records of role activations will be auditable by the company.
 func (m *UserItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// CreateDeleteRequestInformationWithRequestConfiguration in this tutorial, a fictitious company called Contoso Limited wishes to have its IT Helpdesk manage the lifecycle of employees’ access. The company has identified the Azure AD User Administrator role as the appropriate privileged role required by IT Helpdesk, and will use the PIM API to assign the role. You'll create a role-assignable security group for IT Helpdesk and using the PIM API, assign the security group eligibility to the User Administrator role. By assigning the eligible role to a security group, Contoso has a more efficient way to manage administrator access to resources such as Azure AD roles. For example: Assigning eligibility instead of a persistently active User Administrator privilege allows the company to enforce **just-in-time access**, which grants temporary permissions to carry out the privileged tasks. After defining the role eligibility, the eligible group member then activates their assignment for a temporary period. All records of role activations will be auditable by the company.
 func (m *UserItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *UserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -351,11 +351,9 @@ func (m *UserItemRequestBuilder) CreatedObjectsById(id string)(*id3793eb5f17f42e
     }
     return id3793eb5f17f42ec0817eacc0b999985de40ba38c196a38c7bd6b0c736c5345f.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateGetRequestInformation helpers (examples that aren't included in the docs)
 func (m *UserItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration helpers (examples that aren't included in the docs)
 func (m *UserItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -370,11 +368,11 @@ func (m *UserItemRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
+// CreatePatchRequestInformation this article provides examples of how to assign, update, or remove different types of custom security attributes for users and applications (service principals). Custom security attributes can be assigned or updated only through a `PATCH` operation in an [Update user](/graph/api/user-update?view=graph-rest-beta&preserve-view=true) or [Update servicePrincipal](/graph/api/serviceprincipal-update?view=graph-rest-beta&preserve-view=true) request.
 func (m *UserItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
+// CreatePatchRequestInformationWithRequestConfiguration this article provides examples of how to assign, update, or remove different types of custom security attributes for users and applications (service principals). Custom security attributes can be assigned or updated only through a `PATCH` operation in an [Update user](/graph/api/user-update?view=graph-rest-beta&preserve-view=true) or [Update servicePrincipal](/graph/api/serviceprincipal-update?view=graph-rest-beta&preserve-view=true) request.
 func (m *UserItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, requestConfiguration *UserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -387,11 +385,11 @@ func (m *UserItemRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Delete tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// Delete in this tutorial, a fictitious company called Contoso Limited wishes to have its IT Helpdesk manage the lifecycle of employees’ access. The company has identified the Azure AD User Administrator role as the appropriate privileged role required by IT Helpdesk, and will use the PIM API to assign the role. You'll create a role-assignable security group for IT Helpdesk and using the PIM API, assign the security group eligibility to the User Administrator role. By assigning the eligible role to a security group, Contoso has a more efficient way to manage administrator access to resources such as Azure AD roles. For example: Assigning eligibility instead of a persistently active User Administrator privilege allows the company to enforce **just-in-time access**, which grants temporary permissions to carry out the privileged tasks. After defining the role eligibility, the eligible group member then activates their assignment for a temporary period. All records of role activations will be auditable by the company.
 func (m *UserItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// DeleteWithRequestConfigurationAndResponseHandler in this tutorial, a fictitious company called Contoso Limited wishes to have its IT Helpdesk manage the lifecycle of employees’ access. The company has identified the Azure AD User Administrator role as the appropriate privileged role required by IT Helpdesk, and will use the PIM API to assign the role. You'll create a role-assignable security group for IT Helpdesk and using the PIM API, assign the security group eligibility to the User Administrator role. By assigning the eligible role to a security group, Contoso has a more efficient way to manage administrator access to resources such as Azure AD roles. For example: Assigning eligibility instead of a persistently active User Administrator privilege allows the company to enforce **just-in-time access**, which grants temporary permissions to carry out the privileged tasks. After defining the role eligibility, the eligible group member then activates their assignment for a temporary period. All records of role activations will be auditable by the company.
 func (m *UserItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -509,7 +507,6 @@ func (m *UserItemRequestBuilder) FollowedSitesById(id string)(*id761928b5250e3d3
     }
     return id761928b5250e3d39114f0e3b14e8ea044e71e53b81f38c27c8e5836522b3e1b.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get helpers (examples that aren't included in the docs)
 func (m *UserItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -533,7 +530,6 @@ func (m *UserItemRequestBuilder) GetMemberGroups()(*i54c28e8ec50e0dd4eeee8073ed7
 func (m *UserItemRequestBuilder) GetMemberObjects()(*ide0a33943859ca09b2034a1804f60d32a108dc09bf7012d68e5d3c63ac617ddb.GetMemberObjectsRequestBuilder) {
     return ide0a33943859ca09b2034a1804f60d32a108dc09bf7012d68e5d3c63ac617ddb.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler helpers (examples that aren't included in the docs)
 func (m *UserItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -734,11 +730,11 @@ func (m *UserItemRequestBuilder) OwnedObjectsById(id string)(*if1c7e6e4f2864e681
     }
     return if1c7e6e4f2864e681dc58961189ef8bfe8cee67a94c24f3b9f32c1ffafdd2aa2.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
+// Patch this article provides examples of how to assign, update, or remove different types of custom security attributes for users and applications (service principals). Custom security attributes can be assigned or updated only through a `PATCH` operation in an [Update user](/graph/api/user-update?view=graph-rest-beta&preserve-view=true) or [Update servicePrincipal](/graph/api/serviceprincipal-update?view=graph-rest-beta&preserve-view=true) request.
 func (m *UserItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
+// PatchWithRequestConfigurationAndResponseHandler this article provides examples of how to assign, update, or remove different types of custom security attributes for users and applications (service principals). Custom security attributes can be assigned or updated only through a `PATCH` operation in an [Update user](/graph/api/user-update?view=graph-rest-beta&preserve-view=true) or [Update servicePrincipal](/graph/api/serviceprincipal-update?view=graph-rest-beta&preserve-view=true) request.
 func (m *UserItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, requestConfiguration *UserItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

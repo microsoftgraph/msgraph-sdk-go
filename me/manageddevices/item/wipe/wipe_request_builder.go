@@ -40,11 +40,11 @@ func NewWipeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewWipeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation wipe a device
-func (m *WipeRequestBuilder) CreatePostRequestInformation(body WipeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WipeRequestBuilder) CreatePostRequestInformation(body WipePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration wipe a device
-func (m *WipeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipeRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WipeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipePostRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *WipeRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     return requestInfo, nil
 }
 // Post wipe a device
-func (m *WipeRequestBuilder) Post(body WipeRequestBodyable)(error) {
+func (m *WipeRequestBuilder) Post(body WipePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler wipe a device
-func (m *WipeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WipeRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *WipeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WipePostRequestBodyable, requestConfiguration *WipeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

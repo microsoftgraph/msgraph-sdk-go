@@ -40,11 +40,11 @@ func NewSetOrderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewSetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action setOrder
-func (m *SetOrderRequestBuilder) CreatePostRequestInformation(body SetOrderRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetOrderRequestBuilder) CreatePostRequestInformation(body SetOrderPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setOrder
-func (m *SetOrderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetOrderRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetOrderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetOrderPostRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SetOrderRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     return requestInfo, nil
 }
 // Post invoke action setOrder
-func (m *SetOrderRequestBuilder) Post(body SetOrderRequestBodyable)(error) {
+func (m *SetOrderRequestBuilder) Post(body SetOrderPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action setOrder
-func (m *SetOrderRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetOrderRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SetOrderRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetOrderPostRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

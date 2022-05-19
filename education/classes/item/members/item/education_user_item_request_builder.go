@@ -2,11 +2,10 @@ package item
 
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    iaf3f774c418df7a4a182c2b68a28beea75f8b4458bab203a08f3f5dd3637b7c9 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/members/item/ref"
 )
 
-// EducationUserItemRequestBuilder provides operations to manage the members property of the microsoft.graph.educationClass entity.
+// EducationUserItemRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\members\{educationUser-id}
 type EducationUserItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -15,27 +14,11 @@ type EducationUserItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EducationUserItemRequestBuilderGetQueryParameters all users in the class. Nullable.
-type EducationUserItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
-    // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
-}
-// EducationUserItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type EducationUserItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *EducationUserItemRequestBuilderGetQueryParameters
-}
 // NewEducationUserItemRequestBuilderInternal instantiates a new EducationUserItemRequestBuilder and sets the default values.
 func NewEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationUserItemRequestBuilder) {
     m := &EducationUserItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/members/{educationUser%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/members/{educationUser%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -50,42 +33,7 @@ func NewEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation all users in the class. Nullable.
-func (m *EducationUserItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration all users in the class. Nullable.
-func (m *EducationUserItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EducationUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// Get all users in the class. Nullable.
-func (m *EducationUserItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler all users in the class. Nullable.
-func (m *EducationUserItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EducationUserItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEducationUserFromDiscriminatorValue, responseHandler, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable), nil
+// Ref the ref property
+func (m *EducationUserItemRequestBuilder) Ref()(*iaf3f774c418df7a4a182c2b68a28beea75f8b4458bab203a08f3f5dd3637b7c9.RefRequestBuilder) {
+    return iaf3f774c418df7a4a182c2b68a28beea75f8b4458bab203a08f3f5dd3637b7c9.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

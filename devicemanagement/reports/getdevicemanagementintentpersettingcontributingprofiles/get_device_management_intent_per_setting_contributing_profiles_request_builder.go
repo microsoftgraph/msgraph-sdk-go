@@ -40,11 +40,11 @@ func NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(ra
     return NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getDeviceManagementIntentPerSettingContributingProfiles
-func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) CreatePostRequestInformation(body GetDeviceManagementIntentPerSettingContributingProfilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) CreatePostRequestInformation(body GetDeviceManagementIntentPerSettingContributingProfilesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getDeviceManagementIntentPerSettingContributingProfiles
-func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceManagementIntentPerSettingContributingProfilesRequestBodyable, requestConfiguration *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceManagementIntentPerSettingContributingProfilesPostRequestBodyable, requestConfiguration *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) 
     return requestInfo, nil
 }
 // Post invoke action getDeviceManagementIntentPerSettingContributingProfiles
-func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) Post(body GetDeviceManagementIntentPerSettingContributingProfilesRequestBodyable)(GetDeviceManagementIntentPerSettingContributingProfilesResponseable, error) {
+func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) Post(body GetDeviceManagementIntentPerSettingContributingProfilesPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getDeviceManagementIntentPerSettingContributingProfiles
-func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetDeviceManagementIntentPerSettingContributingProfilesRequestBodyable, requestConfiguration *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDeviceManagementIntentPerSettingContributingProfilesResponseable, error) {
+func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetDeviceManagementIntentPerSettingContributingProfilesPostRequestBodyable, requestConfiguration *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetDeviceManagementIntentPerSettingContributingProfilesResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetDeviceManagementIntentPerSettingContributingProfilesResponseable), nil
+    return res.([]byte), nil
 }

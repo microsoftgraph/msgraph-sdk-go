@@ -5,6 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i880bb46770a047cd20259c2ceb994c8031f774bcd4a705e353f11f9ba9a18001 "github.com/microsoftgraph/msgraph-sdk-go/directoryroles/item/members/count"
+    ib1a07bcd313a696054e8f98522bf52c4d946fdda956eda86dec0afb5df4ef19b "github.com/microsoftgraph/msgraph-sdk-go/directoryroles/item/members/ref"
 )
 
 // MembersRequestBuilder provides operations to manage the members property of the microsoft.graph.directoryRole entity.
@@ -105,4 +106,8 @@ func (m *MembersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *MembersRequestBuilder) Ref()(*ib1a07bcd313a696054e8f98522bf52c4d946fdda956eda86dec0afb5df4ef19b.RefRequestBuilder) {
+    return ib1a07bcd313a696054e8f98522bf52c4d946fdda956eda86dec0afb5df4ef19b.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

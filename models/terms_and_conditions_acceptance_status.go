@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TermsAndConditionsAcceptanceStatus 
+// TermsAndConditionsAcceptanceStatus a termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
 type TermsAndConditionsAcceptanceStatus struct {
     Entity
     // DateTime when the terms were last accepted by the user.

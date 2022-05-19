@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i78be2dccc03dc1bbcca378330257e84178f160c4e7c9c66eb2adceda60418d63 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/createdobjects/serviceprincipal"
     ifac3282a3c50d49f76c442db5baecb5369ae48cc5038c1cfcd168b04a998796e "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/createdobjects/count"
 )
 
@@ -105,4 +106,8 @@ func (m *CreatedObjectsRequestBuilder) GetWithRequestConfigurationAndResponseHan
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// ServicePrincipal the servicePrincipal property
+func (m *CreatedObjectsRequestBuilder) ServicePrincipal()(*i78be2dccc03dc1bbcca378330257e84178f160c4e7c9c66eb2adceda60418d63.ServicePrincipalRequestBuilder) {
+    return i78be2dccc03dc1bbcca378330257e84178f160c4e7c9c66eb2adceda60418d63.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

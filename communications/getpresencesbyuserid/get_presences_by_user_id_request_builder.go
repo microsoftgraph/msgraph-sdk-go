@@ -40,11 +40,11 @@ func NewGetPresencesByUserIdRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewGetPresencesByUserIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getPresencesByUserId
-func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformation(body GetPresencesByUserIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformation(body GetPresencesByUserIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getPresencesByUserId
-func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPresencesByUserIdRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformationWithReq
     return requestInfo, nil
 }
 // Post invoke action getPresencesByUserId
-func (m *GetPresencesByUserIdRequestBuilder) Post(body GetPresencesByUserIdRequestBodyable)(GetPresencesByUserIdResponseable, error) {
+func (m *GetPresencesByUserIdRequestBuilder) Post(body GetPresencesByUserIdPostRequestBodyable)(GetPresencesByUserIdResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getPresencesByUserId
-func (m *GetPresencesByUserIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPresencesByUserIdRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPresencesByUserIdResponseable, error) {
+func (m *GetPresencesByUserIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPresencesByUserIdResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application 
+// Application provides operations to manage the collection of application entities.
 type Application struct {
     DirectoryObject
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
@@ -28,7 +28,7 @@ type Application struct {
     disabledByMicrosoftStatus *string
     // The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string
-    // Read-only. Nullable.
+    // Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
     extensionProperties []ExtensionPropertyable
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string
@@ -174,7 +174,7 @@ func (m *Application) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable.
+// GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     if m == nil {
         return nil
@@ -1143,7 +1143,7 @@ func (m *Application) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable.
+// SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) SetExtensionProperties(value []ExtensionPropertyable)() {
     if m != nil {
         m.extensionProperties = value

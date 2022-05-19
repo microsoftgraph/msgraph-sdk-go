@@ -4,7 +4,14 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i00889486dac3934978a99d8748dcd819aded9de67792784727a21eb08855d421 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/orgcontact"
+    i016e4d6b6da76cf3891ad04b07a3aefb156c8c1a05ddf1dc0cc71bdff83020ca "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/application"
+    i12e900b7863a530abb96344b2b364579136e814fd983663c5e21b9ef49ebc17c "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/ref"
+    i425cbef62da0ca6bd55549fd715a8e2d5a002b68479cb44a959d46ff4b53195b "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/user"
+    i7645bde648239f0a83e41332f0d46978f518babb2fcccb4f37aad18bd120f5ae "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/serviceprincipal"
     i819cbd5f3c989b4705fbafa07eff5a10397df1f7a3143fc77561710ad50430a3 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/count"
+    icf485d88350fd6a8f4a8781f23e95e361c9b59f52510406c32121387a3edb467 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/group"
+    iea34c95e06fc88b5aa637c42561062dba26018c8f549b2630e930189661808c8 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/device"
 )
 
 // MembersRequestBuilder provides operations to manage the members property of the microsoft.graph.group entity.
@@ -43,6 +50,10 @@ type MembersRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *MembersRequestBuilderGetQueryParameters
+}
+// Application the application property
+func (m *MembersRequestBuilder) Application()(*i016e4d6b6da76cf3891ad04b07a3aefb156c8c1a05ddf1dc0cc71bdff83020ca.ApplicationRequestBuilder) {
+    return i016e4d6b6da76cf3891ad04b07a3aefb156c8c1a05ddf1dc0cc71bdff83020ca.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MembersRequestBuilder) {
@@ -86,6 +97,10 @@ func (m *MembersRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
+// Device the device property
+func (m *MembersRequestBuilder) Device()(*iea34c95e06fc88b5aa637c42561062dba26018c8f549b2630e930189661808c8.DeviceRequestBuilder) {
+    return iea34c95e06fc88b5aa637c42561062dba26018c8f549b2630e930189661808c8.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 func (m *MembersRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -105,4 +120,24 @@ func (m *MembersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// Group the group property
+func (m *MembersRequestBuilder) Group()(*icf485d88350fd6a8f4a8781f23e95e361c9b59f52510406c32121387a3edb467.GroupRequestBuilder) {
+    return icf485d88350fd6a8f4a8781f23e95e361c9b59f52510406c32121387a3edb467.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OrgContact the orgContact property
+func (m *MembersRequestBuilder) OrgContact()(*i00889486dac3934978a99d8748dcd819aded9de67792784727a21eb08855d421.OrgContactRequestBuilder) {
+    return i00889486dac3934978a99d8748dcd819aded9de67792784727a21eb08855d421.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Ref the ref property
+func (m *MembersRequestBuilder) Ref()(*i12e900b7863a530abb96344b2b364579136e814fd983663c5e21b9ef49ebc17c.RefRequestBuilder) {
+    return i12e900b7863a530abb96344b2b364579136e814fd983663c5e21b9ef49ebc17c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *MembersRequestBuilder) ServicePrincipal()(*i7645bde648239f0a83e41332f0d46978f518babb2fcccb4f37aad18bd120f5ae.ServicePrincipalRequestBuilder) {
+    return i7645bde648239f0a83e41332f0d46978f518babb2fcccb4f37aad18bd120f5ae.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *MembersRequestBuilder) User()(*i425cbef62da0ca6bd55549fd715a8e2d5a002b68479cb44a959d46ff4b53195b.UserRequestBuilder) {
+    return i425cbef62da0ca6bd55549fd715a8e2d5a002b68479cb44a959d46ff4b53195b.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

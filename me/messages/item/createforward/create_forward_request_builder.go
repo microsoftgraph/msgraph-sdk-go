@@ -41,11 +41,11 @@ func NewCreateForwardRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewCreateForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action createForward
-func (m *CreateForwardRequestBuilder) CreatePostRequestInformation(body CreateForwardRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateForwardRequestBuilder) CreatePostRequestInformation(body CreateForwardPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createForward
-func (m *CreateForwardRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateForwardRequestBodyable, requestConfiguration *CreateForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateForwardRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateForwardPostRequestBodyable, requestConfiguration *CreateForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *CreateForwardRequestBuilder) CreatePostRequestInformationWithRequestCon
     return requestInfo, nil
 }
 // Post invoke action createForward
-func (m *CreateForwardRequestBuilder) Post(body CreateForwardRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
+func (m *CreateForwardRequestBuilder) Post(body CreateForwardPostRequestBodyable)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action createForward
-func (m *CreateForwardRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateForwardRequestBodyable, requestConfiguration *CreateForwardRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
+func (m *CreateForwardRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateForwardPostRequestBodyable, requestConfiguration *CreateForwardRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -5,13 +5,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask 
+// TodoTask casts the previous resource to user.
 type TodoTask struct {
     Entity
     // The task body that typically contains information about the task.
     body ItemBodyable
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     bodyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The categories property
+    categories []string
+    // The checklistItems property
+    checklistItems []ChecklistItemable
     // The date in the specified time zone that the task was finished.
     completedDateTime DateTimeTimeZoneable
     // The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -62,6 +66,22 @@ func (m *TodoTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return nil
     } else {
         return m.bodyLastModifiedDateTime
+    }
+}
+// GetCategories gets the categories property value. The categories property
+func (m *TodoTask) GetCategories()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.categories
+    }
+}
+// GetChecklistItems gets the checklistItems property value. The checklistItems property
+func (m *TodoTask) GetChecklistItems()([]ChecklistItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.checklistItems
     }
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date in the specified time zone that the task was finished.
@@ -116,6 +136,34 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetBodyLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCategories(res)
+        }
+        return nil
+    }
+    res["checklistItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateChecklistItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ChecklistItemable, len(val))
+            for i, v := range val {
+                res[i] = v.(ChecklistItemable)
+            }
+            m.SetChecklistItems(res)
         }
         return nil
     }
@@ -331,6 +379,22 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetCategories() != nil {
+        err = writer.WriteCollectionOfStringValues("categories", m.GetCategories())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetChecklistItems() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChecklistItems()))
+        for i, v := range m.GetChecklistItems() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("checklistItems", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("completedDateTime", m.GetCompletedDateTime())
         if err != nil {
@@ -425,6 +489,18 @@ func (m *TodoTask) SetBody(value ItemBodyable)() {
 func (m *TodoTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.bodyLastModifiedDateTime = value
+    }
+}
+// SetCategories sets the categories property value. The categories property
+func (m *TodoTask) SetCategories(value []string)() {
+    if m != nil {
+        m.categories = value
+    }
+}
+// SetChecklistItems sets the checklistItems property value. The checklistItems property
+func (m *TodoTask) SetChecklistItems(value []ChecklistItemable)() {
+    if m != nil {
+        m.checklistItems = value
     }
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date in the specified time zone that the task was finished.

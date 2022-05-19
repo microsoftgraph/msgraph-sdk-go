@@ -40,11 +40,11 @@ func NewFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action favorite
-func (m *FavoriteRequestBuilder) CreatePostRequestInformation(body FavoriteRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *FavoriteRequestBuilder) CreatePostRequestInformation(body FavoritePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action favorite
-func (m *FavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body FavoriteRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *FavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body FavoritePostRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *FavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     return requestInfo, nil
 }
 // Post invoke action favorite
-func (m *FavoriteRequestBuilder) Post(body FavoriteRequestBodyable)(FavoriteResponseable, error) {
+func (m *FavoriteRequestBuilder) Post(body FavoritePostRequestBodyable)(FavoriteResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action favorite
-func (m *FavoriteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body FavoriteRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FavoriteResponseable, error) {
+func (m *FavoriteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body FavoritePostRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FavoriteResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

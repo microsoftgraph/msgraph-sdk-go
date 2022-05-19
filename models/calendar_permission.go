@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CalendarPermission 
+// CalendarPermission casts the previous resource to user.
 type CalendarPermission struct {
     Entity
     // List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
-    allowedRoles []CalendarRoleType
+    allowedRoles []string
     // Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
     emailAddress EmailAddressable
     // True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
@@ -30,7 +30,7 @@ func CreateCalendarPermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewCalendarPermission(), nil
 }
 // GetAllowedRoles gets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
-func (m *CalendarPermission) GetAllowedRoles()([]CalendarRoleType) {
+func (m *CalendarPermission) GetAllowedRoles()([]string) {
     if m == nil {
         return nil
     } else {
@@ -49,14 +49,14 @@ func (m *CalendarPermission) GetEmailAddress()(EmailAddressable) {
 func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseCalendarRoleType)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CalendarRoleType, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CalendarRoleType))
+                res[i] = *(v.(*string))
             }
             m.SetAllowedRoles(res)
         }
@@ -135,7 +135,7 @@ func (m *CalendarPermission) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     if m.GetAllowedRoles() != nil {
-        err = writer.WriteCollectionOfStringValues("allowedRoles", SerializeCalendarRoleType(m.GetAllowedRoles()))
+        err = writer.WriteCollectionOfStringValues("allowedRoles", m.GetAllowedRoles())
         if err != nil {
             return err
         }
@@ -168,7 +168,7 @@ func (m *CalendarPermission) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAllowedRoles sets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
-func (m *CalendarPermission) SetAllowedRoles(value []CalendarRoleType)() {
+func (m *CalendarPermission) SetAllowedRoles(value []string)() {
     if m != nil {
         m.allowedRoles = value
     }

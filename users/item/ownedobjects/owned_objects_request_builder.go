@@ -4,7 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i130b841d1cd622a18391c4403686cd392d1844ae2f381736341df3a0293943b8 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/group"
+    i23889d9d194c24cd57a08da14f4810a69614a159d22832276d1ac92db919b3b2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/serviceprincipal"
     i65d3e2e545a5d62f08f6a5043f1a77498aa36138c44aa4af06c4689c6932a041 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/count"
+    icab71a76861246bad42a677cdbd9e5a82a925717df64045fadd38b1ea3535c59 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/application"
 )
 
 // OwnedObjectsRequestBuilder provides operations to manage the ownedObjects property of the microsoft.graph.user entity.
@@ -43,6 +46,10 @@ type OwnedObjectsRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *OwnedObjectsRequestBuilderGetQueryParameters
+}
+// Application the application property
+func (m *OwnedObjectsRequestBuilder) Application()(*icab71a76861246bad42a677cdbd9e5a82a925717df64045fadd38b1ea3535c59.ApplicationRequestBuilder) {
+    return icab71a76861246bad42a677cdbd9e5a82a925717df64045fadd38b1ea3535c59.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewOwnedObjectsRequestBuilderInternal instantiates a new OwnedObjectsRequestBuilder and sets the default values.
 func NewOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnedObjectsRequestBuilder) {
@@ -105,4 +112,12 @@ func (m *OwnedObjectsRequestBuilder) GetWithRequestConfigurationAndResponseHandl
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// Group the group property
+func (m *OwnedObjectsRequestBuilder) Group()(*i130b841d1cd622a18391c4403686cd392d1844ae2f381736341df3a0293943b8.GroupRequestBuilder) {
+    return i130b841d1cd622a18391c4403686cd392d1844ae2f381736341df3a0293943b8.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *OwnedObjectsRequestBuilder) ServicePrincipal()(*i23889d9d194c24cd57a08da14f4810a69614a159d22832276d1ac92db919b3b2.ServicePrincipalRequestBuilder) {
+    return i23889d9d194c24cd57a08da14f4810a69614a159d22832276d1ac92db919b3b2.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

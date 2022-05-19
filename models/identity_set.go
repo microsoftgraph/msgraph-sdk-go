@@ -8,11 +8,11 @@ import (
 type IdentitySet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Optional. The application associated with this action.
+    // The Identity of the Application. This property is read-only.
     application Identityable
-    // Optional. The device associated with this action.
+    // The Identity of the Device. This property is read-only.
     device Identityable
-    // Optional. The user associated with this action.
+    // The Identity of the User. This property is read-only.
     user Identityable
 }
 // NewIdentitySet instantiates a new identitySet and sets the default values.
@@ -34,7 +34,7 @@ func (m *IdentitySet) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetApplication gets the application property value. Optional. The application associated with this action.
+// GetApplication gets the application property value. The Identity of the Application. This property is read-only.
 func (m *IdentitySet) GetApplication()(Identityable) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *IdentitySet) GetApplication()(Identityable) {
         return m.application
     }
 }
-// GetDevice gets the device property value. Optional. The device associated with this action.
+// GetDevice gets the device property value. The Identity of the Device. This property is read-only.
 func (m *IdentitySet) GetDevice()(Identityable) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetUser gets the user property value. Optional. The user associated with this action.
+// GetUser gets the user property value. The Identity of the User. This property is read-only.
 func (m *IdentitySet) GetUser()(Identityable) {
     if m == nil {
         return nil
@@ -127,19 +127,19 @@ func (m *IdentitySet) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetApplication sets the application property value. Optional. The application associated with this action.
+// SetApplication sets the application property value. The Identity of the Application. This property is read-only.
 func (m *IdentitySet) SetApplication(value Identityable)() {
     if m != nil {
         m.application = value
     }
 }
-// SetDevice sets the device property value. Optional. The device associated with this action.
+// SetDevice sets the device property value. The Identity of the Device. This property is read-only.
 func (m *IdentitySet) SetDevice(value Identityable)() {
     if m != nil {
         m.device = value
     }
 }
-// SetUser sets the user property value. Optional. The user associated with this action.
+// SetUser sets the user property value. The Identity of the User. This property is read-only.
 func (m *IdentitySet) SetUser(value Identityable)() {
     if m != nil {
         m.user = value

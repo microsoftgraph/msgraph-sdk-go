@@ -5,6 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i7cde53fdd27d3c52de1397fbf09d573d2a212c717c2f77a0375b017610e29055 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/users/count"
+    ic327da12e449e718a7f8621c6bbb8e4a73d11e9a5e8cffa482f6b87f54be6370 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/users/ref"
 )
 
 // UsersRequestBuilder provides operations to manage the users property of the microsoft.graph.educationSchool entity.
@@ -105,4 +106,8 @@ func (m *UsersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requ
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *UsersRequestBuilder) Ref()(*ic327da12e449e718a7f8621c6bbb8e4a73d11e9a5e8cffa482f6b87f54be6370.RefRequestBuilder) {
+    return ic327da12e449e718a7f8621c6bbb8e4a73d11e9a5e8cffa482f6b87f54be6370.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

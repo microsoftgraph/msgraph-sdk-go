@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignIn 
+// SignIn provides operations to manage the auditLogRoot singleton.
 type SignIn struct {
     Entity
     // The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
@@ -37,7 +37,7 @@ type SignIn struct {
     // The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
     riskDetail *RiskDetail
     // Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
-    riskEventTypes []RiskEventType
+    riskEventTypes []string
     // The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
     riskEventTypes_v2 []string
     // The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
@@ -64,6 +64,25 @@ func NewSignIn()(*SignIn) {
 }
 // CreateSignInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.signIn":
+                        return NewSignIn(), nil
+                }
+            }
+        }
+    }
     return NewSignIn(), nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
@@ -278,14 +297,14 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["riskEventTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRiskEventType)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RiskEventType, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RiskEventType))
+                res[i] = *(v.(*string))
             }
             m.SetRiskEventTypes(res)
         }
@@ -426,7 +445,7 @@ func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     }
 }
 // GetRiskEventTypes gets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
-func (m *SignIn) GetRiskEventTypes()([]RiskEventType) {
+func (m *SignIn) GetRiskEventTypes()([]string) {
     if m == nil {
         return nil
     } else {
@@ -594,7 +613,7 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     if m.GetRiskEventTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("riskEventTypes", SerializeRiskEventType(m.GetRiskEventTypes()))
+        err = writer.WriteCollectionOfStringValues("riskEventTypes", m.GetRiskEventTypes())
         if err != nil {
             return err
         }
@@ -737,7 +756,7 @@ func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
     }
 }
 // SetRiskEventTypes sets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
-func (m *SignIn) SetRiskEventTypes(value []RiskEventType)() {
+func (m *SignIn) SetRiskEventTypes(value []string)() {
     if m != nil {
         m.riskEventTypes = value
     }

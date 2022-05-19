@@ -40,11 +40,11 @@ func NewRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) CreatePostRequestInformation(body RemoveGroupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveGroupRequestBuilder) CreatePostRequestInformation(body RemoveGroupPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveGroupRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveGroupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveGroupPostRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RemoveGroupRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) Post(body RemoveGroupRequestBodyable)(RemoveGroupResponseable, error) {
+func (m *RemoveGroupRequestBuilder) Post(body RemoveGroupPostRequestBodyable)(RemoveGroupResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveGroupRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RemoveGroupResponseable, error) {
+func (m *RemoveGroupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveGroupPostRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RemoveGroupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

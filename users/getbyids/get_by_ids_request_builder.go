@@ -40,11 +40,11 @@ func NewGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getByIds
-func (m *GetByIdsRequestBuilder) CreatePostRequestInformation(body GetByIdsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetByIdsRequestBuilder) CreatePostRequestInformation(body GetByIdsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getByIds
-func (m *GetByIdsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetByIdsRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetByIdsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetByIdsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     return requestInfo, nil
 }
 // Post invoke action getByIds
-func (m *GetByIdsRequestBuilder) Post(body GetByIdsRequestBodyable)(GetByIdsResponseable, error) {
+func (m *GetByIdsRequestBuilder) Post(body GetByIdsPostRequestBodyable)(GetByIdsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getByIds
-func (m *GetByIdsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetByIdsRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetByIdsResponseable, error) {
+func (m *GetByIdsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetByIdsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,11 +40,11 @@ func NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilder(rawUrl strin
     return NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getCompliancePolicyNonComplianceSummaryReport
-func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformation(body GetCompliancePolicyNonComplianceSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformation(body GetCompliancePolicyNonComplianceSummaryReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getCompliancePolicyNonComplianceSummaryReport
-func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCompliancePolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCompliancePolicyNonComplianceSummaryReportPostRequestBodyable, requestConfiguration *GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) CreatePost
     return requestInfo, nil
 }
 // Post invoke action getCompliancePolicyNonComplianceSummaryReport
-func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) Post(body GetCompliancePolicyNonComplianceSummaryReportRequestBodyable)(GetCompliancePolicyNonComplianceSummaryReportResponseable, error) {
+func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) Post(body GetCompliancePolicyNonComplianceSummaryReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getCompliancePolicyNonComplianceSummaryReport
-func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCompliancePolicyNonComplianceSummaryReportRequestBodyable, requestConfiguration *GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompliancePolicyNonComplianceSummaryReportResponseable, error) {
+func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCompliancePolicyNonComplianceSummaryReportPostRequestBodyable, requestConfiguration *GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetCompliancePolicyNonComplianceSummaryReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetCompliancePolicyNonComplianceSummaryReportResponseable), nil
+    return res.([]byte), nil
 }

@@ -40,11 +40,11 @@ func NewGetMemberObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformation(body GetMemberObjectsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformation(body GetMemberObjectsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMemberObjectsRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMemberObjectsPostRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequest
     return requestInfo, nil
 }
 // Post invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) Post(body GetMemberObjectsRequestBodyable)(GetMemberObjectsResponseable, error) {
+func (m *GetMemberObjectsRequestBuilder) Post(body GetMemberObjectsPostRequestBodyable)(GetMemberObjectsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMemberObjectsRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberObjectsResponseable, error) {
+func (m *GetMemberObjectsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMemberObjectsPostRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberObjectsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

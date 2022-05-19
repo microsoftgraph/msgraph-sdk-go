@@ -21,7 +21,7 @@ type PlannerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PlannerRequestBuilderGetQueryParameters planner resource type
+// PlannerRequestBuilderGetQueryParameters the **planner** resource is the entry point for the Planner object model. It returns a singleton **planner** resource.  It doesn't contain any usable properties.
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,11 +78,11 @@ func NewPlannerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation planner resource type
+// CreateGetRequestInformation the **planner** resource is the entry point for the Planner object model. It returns a singleton **planner** resource.  It doesn't contain any usable properties.
 func (m *PlannerRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration planner resource type
+// CreateGetRequestInformationWithRequestConfiguration the **planner** resource is the entry point for the Planner object model. It returns a singleton **planner** resource.  It doesn't contain any usable properties.
 func (m *PlannerRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,11 +114,11 @@ func (m *PlannerRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get planner resource type
+// Get the **planner** resource is the entry point for the Planner object model. It returns a singleton **planner** resource.  It doesn't contain any usable properties.
 func (m *PlannerRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Plannerable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler planner resource type
+// GetWithRequestConfigurationAndResponseHandler the **planner** resource is the entry point for the Planner object model. It returns a singleton **planner** resource.  It doesn't contain any usable properties.
 func (m *PlannerRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PlannerRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Plannerable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

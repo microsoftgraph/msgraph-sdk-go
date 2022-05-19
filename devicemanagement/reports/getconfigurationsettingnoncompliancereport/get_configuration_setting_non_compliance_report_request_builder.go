@@ -40,11 +40,11 @@ func NewGetConfigurationSettingNonComplianceReportRequestBuilder(rawUrl string, 
     return NewGetConfigurationSettingNonComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getConfigurationSettingNonComplianceReport
-func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationSettingNonComplianceReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationSettingNonComplianceReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationSettingNonComplianceReport
-func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationSettingNonComplianceReportRequestBodyable, requestConfiguration *GetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationSettingNonComplianceReportPostRequestBodyable, requestConfiguration *GetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostReq
     return requestInfo, nil
 }
 // Post invoke action getConfigurationSettingNonComplianceReport
-func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) Post(body GetConfigurationSettingNonComplianceReportRequestBodyable)(GetConfigurationSettingNonComplianceReportResponseable, error) {
+func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) Post(body GetConfigurationSettingNonComplianceReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getConfigurationSettingNonComplianceReport
-func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationSettingNonComplianceReportRequestBodyable, requestConfiguration *GetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationSettingNonComplianceReportResponseable, error) {
+func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationSettingNonComplianceReportPostRequestBodyable, requestConfiguration *GetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigurationSettingNonComplianceReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetConfigurationSettingNonComplianceReportResponseable), nil
+    return res.([]byte), nil
 }

@@ -40,11 +40,11 @@ func NewUpdateWindowsDeviceAccountRequestBuilder(rawUrl string, requestAdapter i
     return NewUpdateWindowsDeviceAccountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateWindowsDeviceAccount
-func (m *UpdateWindowsDeviceAccountRequestBuilder) CreatePostRequestInformation(body UpdateWindowsDeviceAccountRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateWindowsDeviceAccountRequestBuilder) CreatePostRequestInformation(body UpdateWindowsDeviceAccountPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateWindowsDeviceAccount
-func (m *UpdateWindowsDeviceAccountRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateWindowsDeviceAccountRequestBodyable, requestConfiguration *UpdateWindowsDeviceAccountRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateWindowsDeviceAccountRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateWindowsDeviceAccountPostRequestBodyable, requestConfiguration *UpdateWindowsDeviceAccountRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateWindowsDeviceAccountRequestBuilder) CreatePostRequestInformationW
     return requestInfo, nil
 }
 // Post invoke action updateWindowsDeviceAccount
-func (m *UpdateWindowsDeviceAccountRequestBuilder) Post(body UpdateWindowsDeviceAccountRequestBodyable)(error) {
+func (m *UpdateWindowsDeviceAccountRequestBuilder) Post(body UpdateWindowsDeviceAccountPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateWindowsDeviceAccount
-func (m *UpdateWindowsDeviceAccountRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateWindowsDeviceAccountRequestBodyable, requestConfiguration *UpdateWindowsDeviceAccountRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateWindowsDeviceAccountRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateWindowsDeviceAccountPostRequestBodyable, requestConfiguration *UpdateWindowsDeviceAccountRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

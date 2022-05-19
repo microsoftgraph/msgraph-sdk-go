@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// B2xIdentityUserFlow 
+// B2xIdentityUserFlow provides operations to manage the identityContainer singleton.
 type B2xIdentityUserFlow struct {
     IdentityUserFlow
     // Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.

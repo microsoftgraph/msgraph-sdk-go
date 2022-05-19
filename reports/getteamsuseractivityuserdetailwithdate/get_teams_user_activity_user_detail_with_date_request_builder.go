@@ -60,18 +60,18 @@ func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) CreateGetRequestI
     return requestInfo, nil
 }
 // Get invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) Get()(GetTeamsUserActivityUserDetailWithDateResponseable, error) {
+func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getTeamsUserActivityUserDetail
-func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsUserActivityUserDetailWithDateResponseable, error) {
+func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetTeamsUserActivityUserDetailWithDateResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetTeamsUserActivityUserDetailWithDateResponseable), nil
+    return res.([]byte), nil
 }

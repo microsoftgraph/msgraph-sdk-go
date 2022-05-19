@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Device 
+// Device casts the previous resource to user.
 type Device struct {
     DirectoryObject
     // true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
@@ -42,7 +42,7 @@ type Device struct {
     operatingSystem *string
     // Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
     operatingSystemVersion *string
-    // For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+    // For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
     physicalIds []string
     // The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
     profileType *string
@@ -50,7 +50,7 @@ type Device struct {
     registeredOwners []DirectoryObjectable
     // Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
     registeredUsers []DirectoryObjectable
-    // List of labels applied to the device by the system.
+    // List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
     systemLabels []string
     // Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
     transitiveMemberOf []DirectoryObjectable
@@ -481,7 +481,7 @@ func (m *Device) GetOperatingSystemVersion()(*string) {
         return m.operatingSystemVersion
     }
 }
-// GetPhysicalIds gets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+// GetPhysicalIds gets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
 func (m *Device) GetPhysicalIds()([]string) {
     if m == nil {
         return nil
@@ -513,7 +513,7 @@ func (m *Device) GetRegisteredUsers()([]DirectoryObjectable) {
         return m.registeredUsers
     }
 }
-// GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system.
+// GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
 func (m *Device) GetSystemLabels()([]string) {
     if m == nil {
         return nil
@@ -815,7 +815,7 @@ func (m *Device) SetOperatingSystemVersion(value *string)() {
         m.operatingSystemVersion = value
     }
 }
-// SetPhysicalIds sets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+// SetPhysicalIds sets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
 func (m *Device) SetPhysicalIds(value []string)() {
     if m != nil {
         m.physicalIds = value
@@ -839,7 +839,7 @@ func (m *Device) SetRegisteredUsers(value []DirectoryObjectable)() {
         m.registeredUsers = value
     }
 }
-// SetSystemLabels sets the systemLabels property value. List of labels applied to the device by the system.
+// SetSystemLabels sets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
 func (m *Device) SetSystemLabels(value []string)() {
     if m != nil {
         m.systemLabels = value

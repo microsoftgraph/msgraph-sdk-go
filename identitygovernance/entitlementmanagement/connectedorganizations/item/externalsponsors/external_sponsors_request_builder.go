@@ -5,6 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     ia251373d77add160c436f9217f5f9433a4c524c145be9e94c9cb03181c9a1c45 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/externalsponsors/count"
+    id167466353efea4b0c493edfe4558f5b2e21849a0a97e4983e926a18deca523b "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/externalsponsors/ref"
 )
 
 // ExternalSponsorsRequestBuilder provides operations to manage the externalSponsors property of the microsoft.graph.connectedOrganization entity.
@@ -149,4 +150,8 @@ func (m *ExternalSponsorsRequestBuilder) PostWithRequestConfigurationAndResponse
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// Ref the ref property
+func (m *ExternalSponsorsRequestBuilder) Ref()(*id167466353efea4b0c493edfe4558f5b2e21849a0a97e4983e926a18deca523b.RefRequestBuilder) {
+    return id167466353efea4b0c493edfe4558f5b2e21849a0a97e4983e926a18deca523b.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

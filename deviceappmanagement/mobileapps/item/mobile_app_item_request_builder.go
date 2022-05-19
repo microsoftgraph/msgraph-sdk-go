@@ -4,8 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i2cc7373f113e6256f8bab4bd026afe7eb8a105efd5eb4af01666b2b9ee37f8b3 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/managedmobilelobapp"
     i41e6a4f5d8af8cbec70d9d8c4f48278ff47465e70b23d4ee2bbdcafa93bae975 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/assignments"
     i52247cde4874402d4eaf161fa2c9ec2cc4a9257f52df96b9bbbcdf47e1f167f9 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/categories"
+    i59d1537c9b2e1e0cc4e54cceaeaf58a6dbac9c90fe11404ab007d5fe7ebe4ea6 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/mobilelobapp"
     ia9cfc52616110c9bb721b0f95f47d861e5afa2655ecff28a0fc66beb7ba78fe2 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/assign"
     i1de44916490eb612ae701336a2eae5f89d836e0eaae6829aa711a57c559453e1 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/assignments/item"
     i2d1f6abd3c9d6201219162619b1ea91782688f08584c687565b81c2be79dadc0 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/categories/item"
@@ -194,6 +196,14 @@ func (m *MobileAppItemRequestBuilder) GetWithRequestConfigurationAndResponseHand
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable), nil
+}
+// ManagedMobileLobApp the managedMobileLobApp property
+func (m *MobileAppItemRequestBuilder) ManagedMobileLobApp()(*i2cc7373f113e6256f8bab4bd026afe7eb8a105efd5eb4af01666b2b9ee37f8b3.ManagedMobileLobAppRequestBuilder) {
+    return i2cc7373f113e6256f8bab4bd026afe7eb8a105efd5eb4af01666b2b9ee37f8b3.NewManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MobileLobApp the mobileLobApp property
+func (m *MobileAppItemRequestBuilder) MobileLobApp()(*i59d1537c9b2e1e0cc4e54cceaeaf58a6dbac9c90fe11404ab007d5fe7ebe4ea6.MobileLobAppRequestBuilder) {
+    return i59d1537c9b2e1e0cc4e54cceaeaf58a6dbac9c90fe11404ab007d5fe7ebe4ea6.NewMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable)(error) {

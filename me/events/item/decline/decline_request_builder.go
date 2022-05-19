@@ -40,11 +40,11 @@ func NewDeclineRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewDeclineRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action decline
-func (m *DeclineRequestBuilder) CreatePostRequestInformation(body DeclineRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DeclineRequestBuilder) CreatePostRequestInformation(body DeclinePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action decline
-func (m *DeclineRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeclineRequestBodyable, requestConfiguration *DeclineRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DeclineRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeclinePostRequestBodyable, requestConfiguration *DeclineRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *DeclineRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     return requestInfo, nil
 }
 // Post invoke action decline
-func (m *DeclineRequestBuilder) Post(body DeclineRequestBodyable)(error) {
+func (m *DeclineRequestBuilder) Post(body DeclinePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action decline
-func (m *DeclineRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeclineRequestBodyable, requestConfiguration *DeclineRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *DeclineRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeclinePostRequestBodyable, requestConfiguration *DeclineRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

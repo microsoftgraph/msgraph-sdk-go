@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OAuth2PermissionGrant 
+// OAuth2PermissionGrant provides operations to call the instantiate method.
 type OAuth2PermissionGrant struct {
     Entity
     // The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).

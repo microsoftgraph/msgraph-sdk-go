@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Provides operations to manage the collection of drive entities.
+// Casts the previous resource to user.
 type TermGroupScope int
 
 const (

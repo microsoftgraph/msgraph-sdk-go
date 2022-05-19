@@ -40,11 +40,11 @@ func NewArchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action archive
-func (m *ArchiveRequestBuilder) CreatePostRequestInformation(body ArchiveRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ArchiveRequestBuilder) CreatePostRequestInformation(body ArchivePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action archive
-func (m *ArchiveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ArchiveRequestBodyable, requestConfiguration *ArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ArchiveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ArchivePostRequestBodyable, requestConfiguration *ArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ArchiveRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     return requestInfo, nil
 }
 // Post invoke action archive
-func (m *ArchiveRequestBuilder) Post(body ArchiveRequestBodyable)(ArchiveResponseable, error) {
+func (m *ArchiveRequestBuilder) Post(body ArchivePostRequestBodyable)(ArchiveResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action archive
-func (m *ArchiveRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ArchiveRequestBodyable, requestConfiguration *ArchiveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ArchiveResponseable, error) {
+func (m *ArchiveRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ArchivePostRequestBodyable, requestConfiguration *ArchiveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ArchiveResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

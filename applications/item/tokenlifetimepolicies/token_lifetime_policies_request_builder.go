@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i2de0ad36b23b2ab3c0df45c69cfbf292f5bd5c823098b73b381d75abdf91cd30 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenlifetimepolicies/ref"
     i7d6a2fb75b39419afbedb635c76349a1a51d1d5700403c8ff841675329881daa "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenlifetimepolicies/count"
 )
 
@@ -105,4 +106,8 @@ func (m *TokenLifetimePoliciesRequestBuilder) GetWithRequestConfigurationAndResp
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *TokenLifetimePoliciesRequestBuilder) Ref()(*i2de0ad36b23b2ab3c0df45c69cfbf292f5bd5c823098b73b381d75abdf91cd30.RefRequestBuilder) {
+    return i2de0ad36b23b2ab3c0df45c69cfbf292f5bd5c823098b73b381d75abdf91cd30.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

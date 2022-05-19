@@ -40,11 +40,11 @@ func NewGetConfigurationPolicyNonComplianceReportRequestBuilder(rawUrl string, r
     return NewGetConfigurationPolicyNonComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getConfigurationPolicyNonComplianceReport
-func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationPolicyNonComplianceReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationPolicyNonComplianceReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationPolicyNonComplianceReport
-func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationPolicyNonComplianceReportRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationPolicyNonComplianceReportPostRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) CreatePostRequ
     return requestInfo, nil
 }
 // Post invoke action getConfigurationPolicyNonComplianceReport
-func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) Post(body GetConfigurationPolicyNonComplianceReportRequestBodyable)(GetConfigurationPolicyNonComplianceReportResponseable, error) {
+func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) Post(body GetConfigurationPolicyNonComplianceReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getConfigurationPolicyNonComplianceReport
-func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationPolicyNonComplianceReportRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationPolicyNonComplianceReportResponseable, error) {
+func (m *GetConfigurationPolicyNonComplianceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationPolicyNonComplianceReportPostRequestBodyable, requestConfiguration *GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigurationPolicyNonComplianceReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetConfigurationPolicyNonComplianceReportResponseable), nil
+    return res.([]byte), nil
 }

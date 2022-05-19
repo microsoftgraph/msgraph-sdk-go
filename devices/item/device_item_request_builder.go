@@ -37,7 +37,7 @@ type DeviceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceItemRequestBuilderGetQueryParameters get device
+// DeviceItemRequestBuilderGetQueryParameters get the properties and relationships of a device object. Since the **device** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
 type DeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -87,11 +87,11 @@ func NewDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete device
+// CreateDeleteRequestInformation delete a registered device.
 func (m *DeviceItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete device
+// CreateDeleteRequestInformationWithRequestConfiguration delete a registered device.
 func (m *DeviceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *DeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,11 +103,11 @@ func (m *DeviceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get device
+// CreateGetRequestInformation get the properties and relationships of a device object. Since the **device** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
 func (m *DeviceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get device
+// CreateGetRequestInformationWithRequestConfiguration get the properties and relationships of a device object. Since the **device** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
 func (m *DeviceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,11 +122,11 @@ func (m *DeviceItemRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update device
+// CreatePatchRequestInformation update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
 func (m *DeviceItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update device
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
 func (m *DeviceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, requestConfiguration *DeviceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,11 +139,11 @@ func (m *DeviceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Delete delete device
+// Delete delete a registered device.
 func (m *DeviceItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete device
+// DeleteWithRequestConfigurationAndResponseHandler delete a registered device.
 func (m *DeviceItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -174,7 +174,7 @@ func (m *DeviceItemRequestBuilder) ExtensionsById(id string)(*ib133a87f1f6aa8250
     }
     return ib133a87f1f6aa82508a13fd26e99937ae943d6e84c9447f4c022ffc647194620.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get device
+// Get get the properties and relationships of a device object. Since the **device** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
 func (m *DeviceItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -186,7 +186,7 @@ func (m *DeviceItemRequestBuilder) GetMemberGroups()(*ifad36aa7c4e70f6ef3f9d729b
 func (m *DeviceItemRequestBuilder) GetMemberObjects()(*i802cbfeae38ef2d92747a6d0a312423fd41be33f3e3fb965305e643ae538adfa.GetMemberObjectsRequestBuilder) {
     return i802cbfeae38ef2d92747a6d0a312423fd41be33f3e3fb965305e643ae538adfa.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get device
+// GetWithRequestConfigurationAndResponseHandler get the properties and relationships of a device object. Since the **device** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
 func (m *DeviceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -217,11 +217,11 @@ func (m *DeviceItemRequestBuilder) MemberOfById(id string)(*i3510737f0d62ae10281
     }
     return i3510737f0d62ae1028132f9eb8460789b2745e3f0425ffac6d00ba945e3ad462.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update device
+// Patch update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
 func (m *DeviceItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update device
+// PatchWithRequestConfigurationAndResponseHandler update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
 func (m *DeviceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, requestConfiguration *DeviceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

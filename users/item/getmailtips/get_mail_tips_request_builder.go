@@ -40,11 +40,11 @@ func NewGetMailTipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewGetMailTipsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getMailTips
-func (m *GetMailTipsRequestBuilder) CreatePostRequestInformation(body GetMailTipsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetMailTipsRequestBuilder) CreatePostRequestInformation(body GetMailTipsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getMailTips
-func (m *GetMailTipsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMailTipsRequestBodyable, requestConfiguration *GetMailTipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetMailTipsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMailTipsPostRequestBodyable, requestConfiguration *GetMailTipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetMailTipsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action getMailTips
-func (m *GetMailTipsRequestBuilder) Post(body GetMailTipsRequestBodyable)(GetMailTipsResponseable, error) {
+func (m *GetMailTipsRequestBuilder) Post(body GetMailTipsPostRequestBodyable)(GetMailTipsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getMailTips
-func (m *GetMailTipsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMailTipsRequestBodyable, requestConfiguration *GetMailTipsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailTipsResponseable, error) {
+func (m *GetMailTipsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMailTipsPostRequestBodyable, requestConfiguration *GetMailTipsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMailTipsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

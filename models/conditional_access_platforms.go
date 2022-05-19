@@ -9,9 +9,9 @@ type ConditionalAccessPlatforms struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.
-    excludePlatforms []ConditionalAccessDevicePlatform
+    excludePlatforms []string
     // Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.
-    includePlatforms []ConditionalAccessDevicePlatform
+    includePlatforms []string
 }
 // NewConditionalAccessPlatforms instantiates a new conditionalAccessPlatforms and sets the default values.
 func NewConditionalAccessPlatforms()(*ConditionalAccessPlatforms) {
@@ -33,7 +33,7 @@ func (m *ConditionalAccessPlatforms) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetExcludePlatforms gets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.
-func (m *ConditionalAccessPlatforms) GetExcludePlatforms()([]ConditionalAccessDevicePlatform) {
+func (m *ConditionalAccessPlatforms) GetExcludePlatforms()([]string) {
     if m == nil {
         return nil
     } else {
@@ -44,28 +44,28 @@ func (m *ConditionalAccessPlatforms) GetExcludePlatforms()([]ConditionalAccessDe
 func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["excludePlatforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessDevicePlatform)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConditionalAccessDevicePlatform, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConditionalAccessDevicePlatform))
+                res[i] = *(v.(*string))
             }
             m.SetExcludePlatforms(res)
         }
         return nil
     }
     res["includePlatforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessDevicePlatform)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConditionalAccessDevicePlatform, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConditionalAccessDevicePlatform))
+                res[i] = *(v.(*string))
             }
             m.SetIncludePlatforms(res)
         }
@@ -74,7 +74,7 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetIncludePlatforms gets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.
-func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]ConditionalAccessDevicePlatform) {
+func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]string) {
     if m == nil {
         return nil
     } else {
@@ -84,13 +84,13 @@ func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]ConditionalAccessDe
 // Serialize serializes information the current object
 func (m *ConditionalAccessPlatforms) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetExcludePlatforms() != nil {
-        err := writer.WriteCollectionOfStringValues("excludePlatforms", SerializeConditionalAccessDevicePlatform(m.GetExcludePlatforms()))
+        err := writer.WriteCollectionOfStringValues("excludePlatforms", m.GetExcludePlatforms())
         if err != nil {
             return err
         }
     }
     if m.GetIncludePlatforms() != nil {
-        err := writer.WriteCollectionOfStringValues("includePlatforms", SerializeConditionalAccessDevicePlatform(m.GetIncludePlatforms()))
+        err := writer.WriteCollectionOfStringValues("includePlatforms", m.GetIncludePlatforms())
         if err != nil {
             return err
         }
@@ -110,13 +110,13 @@ func (m *ConditionalAccessPlatforms) SetAdditionalData(value map[string]interfac
     }
 }
 // SetExcludePlatforms sets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.
-func (m *ConditionalAccessPlatforms) SetExcludePlatforms(value []ConditionalAccessDevicePlatform)() {
+func (m *ConditionalAccessPlatforms) SetExcludePlatforms(value []string)() {
     if m != nil {
         m.excludePlatforms = value
     }
 }
 // SetIncludePlatforms sets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.
-func (m *ConditionalAccessPlatforms) SetIncludePlatforms(value []ConditionalAccessDevicePlatform)() {
+func (m *ConditionalAccessPlatforms) SetIncludePlatforms(value []string)() {
     if m != nil {
         m.includePlatforms = value
     }

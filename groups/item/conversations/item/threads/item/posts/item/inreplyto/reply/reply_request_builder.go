@@ -40,11 +40,11 @@ func NewReplyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewReplyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action reply
-func (m *ReplyRequestBuilder) CreatePostRequestInformation(body ReplyRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReplyRequestBuilder) CreatePostRequestInformation(body ReplyPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action reply
-func (m *ReplyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ReplyRequestBodyable, requestConfiguration *ReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReplyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ReplyPostRequestBodyable, requestConfiguration *ReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ReplyRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     return requestInfo, nil
 }
 // Post invoke action reply
-func (m *ReplyRequestBuilder) Post(body ReplyRequestBodyable)(error) {
+func (m *ReplyRequestBuilder) Post(body ReplyPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action reply
-func (m *ReplyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ReplyRequestBodyable, requestConfiguration *ReplyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ReplyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ReplyPostRequestBodyable, requestConfiguration *ReplyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -4,7 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i24e3e639b9f5b06148c9ec40d1d11974c2ee1dbd8182f991533e15fb20dbb9ee "github.com/microsoftgraph/msgraph-sdk-go/users/item/registereddevices/device"
     i274eb2c99a6073f368e48449fad87a320ad578ec991c48ae7df3005f922c0350 "github.com/microsoftgraph/msgraph-sdk-go/users/item/registereddevices/count"
+    i3ca670a56332cf26c92419001b7da9370dce9185612ec29584dc6a5affa20aa1 "github.com/microsoftgraph/msgraph-sdk-go/users/item/registereddevices/approleassignment"
+    ib80af5593da2ad299e2c660a7b282b160f877f832195f3ae92a57cc844a6ef2f "github.com/microsoftgraph/msgraph-sdk-go/users/item/registereddevices/endpoint"
 )
 
 // RegisteredDevicesRequestBuilder provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
@@ -43,6 +46,10 @@ type RegisteredDevicesRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *RegisteredDevicesRequestBuilderGetQueryParameters
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *RegisteredDevicesRequestBuilder) AppRoleAssignment()(*i3ca670a56332cf26c92419001b7da9370dce9185612ec29584dc6a5affa20aa1.AppRoleAssignmentRequestBuilder) {
+    return i3ca670a56332cf26c92419001b7da9370dce9185612ec29584dc6a5affa20aa1.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewRegisteredDevicesRequestBuilderInternal instantiates a new RegisteredDevicesRequestBuilder and sets the default values.
 func NewRegisteredDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RegisteredDevicesRequestBuilder) {
@@ -85,6 +92,14 @@ func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformationWithRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Device the device property
+func (m *RegisteredDevicesRequestBuilder) Device()(*i24e3e639b9f5b06148c9ec40d1d11974c2ee1dbd8182f991533e15fb20dbb9ee.DeviceRequestBuilder) {
+    return i24e3e639b9f5b06148c9ec40d1d11974c2ee1dbd8182f991533e15fb20dbb9ee.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Endpoint the endpoint property
+func (m *RegisteredDevicesRequestBuilder) Endpoint()(*ib80af5593da2ad299e2c660a7b282b160f877f832195f3ae92a57cc844a6ef2f.EndpointRequestBuilder) {
+    return ib80af5593da2ad299e2c660a7b282b160f877f832195f3ae92a57cc844a6ef2f.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {

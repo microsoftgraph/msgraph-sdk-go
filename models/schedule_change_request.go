@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ScheduleChangeRequest 
+// ScheduleChangeRequest casts the previous resource to user.
 type ScheduleChangeRequest struct {
     ChangeTrackedEntity
     // The assignedTo property
@@ -34,6 +34,25 @@ func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
 }
 // CreateScheduleChangeRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.scheduleChangeRequest":
+                        return NewScheduleChangeRequest(), nil
+                }
+            }
+        }
+    }
     return NewScheduleChangeRequest(), nil
 }
 // GetAssignedTo gets the assignedTo property value. The assignedTo property

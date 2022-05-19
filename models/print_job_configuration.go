@@ -21,7 +21,7 @@ type PrintJobConfiguration struct {
     // The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
     feedOrientation *PrinterFeedOrientation
     // Finishing processes to use when printing.
-    finishings []PrintFinishing
+    finishings []string
     // The fitPdfToPage property
     fitPdfToPage *bool
     // The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
@@ -178,14 +178,14 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrintFinishing, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintFinishing))
+                res[i] = *(v.(*string))
             }
             m.SetFinishings(res)
         }
@@ -318,7 +318,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetFinishings gets the finishings property value. Finishing processes to use when printing.
-func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
+func (m *PrintJobConfiguration) GetFinishings()([]string) {
     if m == nil {
         return nil
     } else {
@@ -463,7 +463,7 @@ func (m *PrintJobConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
+        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
         if err != nil {
             return err
         }
@@ -599,7 +599,7 @@ func (m *PrintJobConfiguration) SetFeedOrientation(value *PrinterFeedOrientation
     }
 }
 // SetFinishings sets the finishings property value. Finishing processes to use when printing.
-func (m *PrintJobConfiguration) SetFinishings(value []PrintFinishing)() {
+func (m *PrintJobConfiguration) SetFinishings(value []string)() {
     if m != nil {
         m.finishings = value
     }

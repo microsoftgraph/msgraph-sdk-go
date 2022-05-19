@@ -17,7 +17,7 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
     // The level for the policy rule target. Allowed values are: Eligibility, Assignment.
     level *string
     // The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-    operations []UnifiedRoleManagementPolicyRuleTargetOperations
+    operations []string
     // The targetObjects property
     targetObjects []DirectoryObjectable
 }
@@ -108,14 +108,14 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
         return nil
     }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseUnifiedRoleManagementPolicyRuleTargetOperations)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UnifiedRoleManagementPolicyRuleTargetOperations, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleManagementPolicyRuleTargetOperations))
+                res[i] = *(v.(*string))
             }
             m.SetOperations(res)
         }
@@ -154,7 +154,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
     }
 }
 // GetOperations gets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]UnifiedRoleManagementPolicyRuleTargetOperations) {
+func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]string) {
     if m == nil {
         return nil
     } else {
@@ -196,7 +196,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i878a80d2330e89
         }
     }
     if m.GetOperations() != nil {
-        err := writer.WriteCollectionOfStringValues("operations", SerializeUnifiedRoleManagementPolicyRuleTargetOperations(m.GetOperations()))
+        err := writer.WriteCollectionOfStringValues("operations", m.GetOperations())
         if err != nil {
             return err
         }
@@ -250,7 +250,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) SetLevel(value *string)() {
     }
 }
 // SetOperations sets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []UnifiedRoleManagementPolicyRuleTargetOperations)() {
+func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []string)() {
     if m != nil {
         m.operations = value
     }

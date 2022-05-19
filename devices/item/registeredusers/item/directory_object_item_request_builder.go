@@ -4,6 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i1ffe55cce332576c431d068f5edc2b74dcc1998a450d67cb2c9f54bf1dbefb0c "github.com/microsoftgraph/msgraph-sdk-go/devices/item/registeredusers/item/user"
+    i38f12b1aebe81494a6a07bad3a0b78d4cb368693ed78e5a8b33bbdb42cacc646 "github.com/microsoftgraph/msgraph-sdk-go/devices/item/registeredusers/item/serviceprincipal"
+    i9021fae8d6185a515641e7d60966501c1cf50a2810101628024c8b772cfbd50d "github.com/microsoftgraph/msgraph-sdk-go/devices/item/registeredusers/item/endpoint"
+    ib0af9d80dcfcc12778b769d158fe155ea6e8226740f1dc320e7c2c816271b4be "github.com/microsoftgraph/msgraph-sdk-go/devices/item/registeredusers/item/approleassignment"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
@@ -30,6 +34,10 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *DirectoryObjectItemRequestBuilder) AppRoleAssignment()(*ib0af9d80dcfcc12778b769d158fe155ea6e8226740f1dc320e7c2c816271b4be.AppRoleAssignmentRequestBuilder) {
+    return ib0af9d80dcfcc12778b769d158fe155ea6e8226740f1dc320e7c2c816271b4be.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
@@ -69,6 +77,10 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i9021fae8d6185a515641e7d60966501c1cf50a2810101628024c8b772cfbd50d.EndpointRequestBuilder) {
+    return i9021fae8d6185a515641e7d60966501c1cf50a2810101628024c8b772cfbd50d.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *DirectoryObjectItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -88,4 +100,12 @@ func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndRespon
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// ServicePrincipal the servicePrincipal property
+func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*i38f12b1aebe81494a6a07bad3a0b78d4cb368693ed78e5a8b33bbdb42cacc646.ServicePrincipalRequestBuilder) {
+    return i38f12b1aebe81494a6a07bad3a0b78d4cb368693ed78e5a8b33bbdb42cacc646.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *DirectoryObjectItemRequestBuilder) User()(*i1ffe55cce332576c431d068f5edc2b74dcc1998a450d67cb2c9f54bf1dbefb0c.UserRequestBuilder) {
+    return i1ffe55cce332576c431d068f5edc2b74dcc1998a450d67cb2c9f54bf1dbefb0c.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

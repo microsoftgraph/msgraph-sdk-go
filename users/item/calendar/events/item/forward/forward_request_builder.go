@@ -40,11 +40,11 @@ func NewForwardRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action forward
-func (m *ForwardRequestBuilder) CreatePostRequestInformation(body ForwardRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ForwardRequestBuilder) CreatePostRequestInformation(body ForwardPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action forward
-func (m *ForwardRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ForwardRequestBodyable, requestConfiguration *ForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ForwardRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ForwardPostRequestBodyable, requestConfiguration *ForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ForwardRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     return requestInfo, nil
 }
 // Post invoke action forward
-func (m *ForwardRequestBuilder) Post(body ForwardRequestBodyable)(error) {
+func (m *ForwardRequestBuilder) Post(body ForwardPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action forward
-func (m *ForwardRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ForwardRequestBodyable, requestConfiguration *ForwardRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ForwardRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ForwardPostRequestBodyable, requestConfiguration *ForwardRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

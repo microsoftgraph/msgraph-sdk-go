@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppCategory 
+// MobileAppCategory contains properties for a single Intune app category.
 type MobileAppCategory struct {
     Entity
     // The name of the app category.

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppProtection 
+// ManagedAppProtection policy used to configure detailed management settings for a specified set of apps
 type ManagedAppProtection struct {
     ManagedAppPolicy
     // Data storage locations where a user may store managed data.
-    allowedDataStorageLocations []ManagedAppDataStorageLocation
+    allowedDataStorageLocations []string
     // Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
     allowedInboundDataTransferSources *ManagedAppDataTransferLevel
     // The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
@@ -71,10 +71,29 @@ func NewManagedAppProtection()(*ManagedAppProtection) {
 }
 // CreateManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.managedAppProtection":
+                        return NewManagedAppProtection(), nil
+                }
+            }
+        }
+    }
     return NewManagedAppProtection(), nil
 }
 // GetAllowedDataStorageLocations gets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
-func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]ManagedAppDataStorageLocation) {
+func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]string) {
     if m == nil {
         return nil
     } else {
@@ -141,14 +160,14 @@ func (m *ManagedAppProtection) GetDisableAppPinIfDevicePinIsSet()(*bool) {
 func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
     res["allowedDataStorageLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseManagedAppDataStorageLocation)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedAppDataStorageLocation, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedAppDataStorageLocation))
+                res[i] = *(v.(*string))
             }
             m.SetAllowedDataStorageLocations(res)
         }
@@ -575,7 +594,7 @@ func (m *ManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     if m.GetAllowedDataStorageLocations() != nil {
-        err = writer.WriteCollectionOfStringValues("allowedDataStorageLocations", SerializeManagedAppDataStorageLocation(m.GetAllowedDataStorageLocations()))
+        err = writer.WriteCollectionOfStringValues("allowedDataStorageLocations", m.GetAllowedDataStorageLocations())
         if err != nil {
             return err
         }
@@ -744,7 +763,7 @@ func (m *ManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAllowedDataStorageLocations sets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
-func (m *ManagedAppProtection) SetAllowedDataStorageLocations(value []ManagedAppDataStorageLocation)() {
+func (m *ManagedAppProtection) SetAllowedDataStorageLocations(value []string)() {
     if m != nil {
         m.allowedDataStorageLocations = value
     }

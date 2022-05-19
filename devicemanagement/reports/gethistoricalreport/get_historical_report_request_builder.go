@@ -40,11 +40,11 @@ func NewGetHistoricalReportRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewGetHistoricalReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformation(body GetHistoricalReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformation(body GetHistoricalReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetHistoricalReportRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetHistoricalReportPostRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) Post(body GetHistoricalReportRequestBodyable)(GetHistoricalReportResponseable, error) {
+func (m *GetHistoricalReportRequestBuilder) Post(body GetHistoricalReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetHistoricalReportRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetHistoricalReportResponseable, error) {
+func (m *GetHistoricalReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetHistoricalReportPostRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetHistoricalReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetHistoricalReportResponseable), nil
+    return res.([]byte), nil
 }

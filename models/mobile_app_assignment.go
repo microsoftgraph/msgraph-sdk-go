@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppAssignment 
+// MobileAppAssignment a class containing the properties used for Group Assignment of a Mobile App.
 type MobileAppAssignment struct {
     Entity
     // The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.

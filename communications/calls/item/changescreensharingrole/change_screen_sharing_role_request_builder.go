@@ -40,11 +40,11 @@ func NewChangeScreenSharingRoleRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewChangeScreenSharingRoleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action changeScreenSharingRole
-func (m *ChangeScreenSharingRoleRequestBuilder) CreatePostRequestInformation(body ChangeScreenSharingRoleRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangeScreenSharingRoleRequestBuilder) CreatePostRequestInformation(body ChangeScreenSharingRolePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action changeScreenSharingRole
-func (m *ChangeScreenSharingRoleRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeScreenSharingRoleRequestBodyable, requestConfiguration *ChangeScreenSharingRoleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangeScreenSharingRoleRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeScreenSharingRolePostRequestBodyable, requestConfiguration *ChangeScreenSharingRoleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ChangeScreenSharingRoleRequestBuilder) CreatePostRequestInformationWith
     return requestInfo, nil
 }
 // Post invoke action changeScreenSharingRole
-func (m *ChangeScreenSharingRoleRequestBuilder) Post(body ChangeScreenSharingRoleRequestBodyable)(error) {
+func (m *ChangeScreenSharingRoleRequestBuilder) Post(body ChangeScreenSharingRolePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action changeScreenSharingRole
-func (m *ChangeScreenSharingRoleRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChangeScreenSharingRoleRequestBodyable, requestConfiguration *ChangeScreenSharingRoleRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ChangeScreenSharingRoleRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChangeScreenSharingRolePostRequestBodyable, requestConfiguration *ChangeScreenSharingRoleRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of drive entities.
+// Casts the previous resource to user.
 type DeviceEnrollmentType int
 
 const (

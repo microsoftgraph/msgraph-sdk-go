@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i3577f12d6939a9efd6b194f918ab1fd6d46898a934bd925187054f1a999c2010 "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/assignments/item/categories/ref"
     i79fe2f4ee0dac754bdd601fa829bf80d8518247e3e29e434e6a6f426b1c51f97 "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/assignments/item/categories/count"
     i9a51977037f94eed424a28a6585958f523372767c221a0d94221974080e04aba "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/assignments/item/categories/delta"
 )
@@ -154,4 +155,8 @@ func (m *CategoriesRequestBuilder) PostWithRequestConfigurationAndResponseHandle
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable), nil
+}
+// Ref the ref property
+func (m *CategoriesRequestBuilder) Ref()(*i3577f12d6939a9efd6b194f918ab1fd6d46898a934bd925187054f1a999c2010.RefRequestBuilder) {
+    return i3577f12d6939a9efd6b194f918ab1fd6d46898a934bd925187054f1a999c2010.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

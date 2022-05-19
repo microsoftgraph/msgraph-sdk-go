@@ -40,11 +40,11 @@ func NewSendMailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewSendMailRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action sendMail
-func (m *SendMailRequestBuilder) CreatePostRequestInformation(body SendMailRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SendMailRequestBuilder) CreatePostRequestInformation(body SendMailPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action sendMail
-func (m *SendMailRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SendMailRequestBodyable, requestConfiguration *SendMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SendMailRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SendMailPostRequestBodyable, requestConfiguration *SendMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SendMailRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     return requestInfo, nil
 }
 // Post invoke action sendMail
-func (m *SendMailRequestBuilder) Post(body SendMailRequestBodyable)(error) {
+func (m *SendMailRequestBuilder) Post(body SendMailPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action sendMail
-func (m *SendMailRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SendMailRequestBodyable, requestConfiguration *SendMailRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SendMailRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SendMailPostRequestBodyable, requestConfiguration *SendMailRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceMobileAppConfigurationAssignment 
+// ManagedDeviceMobileAppConfigurationAssignment contains the properties used to assign an MDM app configuration to a group.
 type ManagedDeviceMobileAppConfigurationAssignment struct {
     Entity
     // Assignment target that the T&C policy is assigned to.

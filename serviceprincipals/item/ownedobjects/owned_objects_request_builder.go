@@ -4,7 +4,12 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i17b02e26889fb0f080604a4de66ce6fd380d546f8c196280db674e7b7cd97f48 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects/endpoint"
+    i32bc732ebd661320e929f285389b8d78cd33a237e87cd32d59d98a4ce77be380 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects/serviceprincipal"
     i3bd45a7989145bacecf06a82a4bf204177f08a7d528fa9fa7c7793c38d76c6f6 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects/count"
+    ic3da8a993087f20f550c11ecd9ef2a6e63ba2afd8289604927f1186658f3fd97 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects/application"
+    ie13636b5ae2b4b848c8e6999da44a02f263a358d521250880031e785e6a673a2 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects/approleassignment"
+    if4d65e73dedc21559f062dc84d7e5b84a8fd8a7e20959d667f30a36c4d3273fd "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects/group"
 )
 
 // OwnedObjectsRequestBuilder provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.
@@ -43,6 +48,14 @@ type OwnedObjectsRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *OwnedObjectsRequestBuilderGetQueryParameters
+}
+// Application the application property
+func (m *OwnedObjectsRequestBuilder) Application()(*ic3da8a993087f20f550c11ecd9ef2a6e63ba2afd8289604927f1186658f3fd97.ApplicationRequestBuilder) {
+    return ic3da8a993087f20f550c11ecd9ef2a6e63ba2afd8289604927f1186658f3fd97.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *OwnedObjectsRequestBuilder) AppRoleAssignment()(*ie13636b5ae2b4b848c8e6999da44a02f263a358d521250880031e785e6a673a2.AppRoleAssignmentRequestBuilder) {
+    return ie13636b5ae2b4b848c8e6999da44a02f263a358d521250880031e785e6a673a2.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewOwnedObjectsRequestBuilderInternal instantiates a new OwnedObjectsRequestBuilder and sets the default values.
 func NewOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnedObjectsRequestBuilder) {
@@ -86,6 +99,10 @@ func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *OwnedObjectsRequestBuilder) Endpoint()(*i17b02e26889fb0f080604a4de66ce6fd380d546f8c196280db674e7b7cd97f48.EndpointRequestBuilder) {
+    return i17b02e26889fb0f080604a4de66ce6fd380d546f8c196280db674e7b7cd97f48.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
 func (m *OwnedObjectsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -105,4 +122,12 @@ func (m *OwnedObjectsRequestBuilder) GetWithRequestConfigurationAndResponseHandl
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// Group the group property
+func (m *OwnedObjectsRequestBuilder) Group()(*if4d65e73dedc21559f062dc84d7e5b84a8fd8a7e20959d667f30a36c4d3273fd.GroupRequestBuilder) {
+    return if4d65e73dedc21559f062dc84d7e5b84a8fd8a7e20959d667f30a36c4d3273fd.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *OwnedObjectsRequestBuilder) ServicePrincipal()(*i32bc732ebd661320e929f285389b8d78cd33a237e87cd32d59d98a4ce77be380.ServicePrincipalRequestBuilder) {
+    return i32bc732ebd661320e929f285389b8d78cd33a237e87cd32d59d98a4ce77be380.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

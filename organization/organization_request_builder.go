@@ -19,7 +19,7 @@ type OrganizationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OrganizationRequestBuilderGetQueryParameters list organization
+// OrganizationRequestBuilderGetQueryParameters retrieve a list of organization objects.
 type OrganizationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewOrganizationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *OrganizationRequestBuilder) Count()(*i394fe01fc6498533dec0dd5f0bdb875868a544a6bbcf9935b40656b4573d7053.CountRequestBuilder) {
     return i394fe01fc6498533dec0dd5f0bdb875868a544a6bbcf9935b40656b4573d7053.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list organization
+// CreateGetRequestInformation retrieve a list of organization objects.
 func (m *OrganizationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list organization
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of organization objects.
 func (m *OrganizationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *OrganizationRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get list organization
+// Get retrieve a list of organization objects.
 func (m *OrganizationRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -125,7 +125,7 @@ func (m *OrganizationRequestBuilder) GetAvailableExtensionProperties()(*i0abaee8
 func (m *OrganizationRequestBuilder) GetByIds()(*i18ef64004d4e7ee2e8b15bbed5d6f937fc44f7035c463548e93e34e31361ffa4.GetByIdsRequestBuilder) {
     return i18ef64004d4e7ee2e8b15bbed5d6f937fc44f7035c463548e93e34e31361ffa4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler list organization
+// GetWithRequestConfigurationAndResponseHandler retrieve a list of organization objects.
 func (m *OrganizationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -4,7 +4,13 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i0dab4ab5d03cdb1e2bc2146c8f8f393369639cf2951df17099c75880b3405169 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/memberswithlicenseerrors/group"
+    i38d5613daf6a74842f466cb5f7e1d5e1b49776cadcc1ccffe3f985c86669b1ba "github.com/microsoftgraph/msgraph-sdk-go/groups/item/memberswithlicenseerrors/user"
+    i44b96843de9edb7831feeb7753f66dad8edcd1bbfaeea1ff3b97835638702ed8 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/memberswithlicenseerrors/device"
+    i9eee8ca196107e21e220b940811218fe3f0c4bfce89d18b327b903b1f1fa451c "github.com/microsoftgraph/msgraph-sdk-go/groups/item/memberswithlicenseerrors/application"
+    ia0ddb948c0200f3efec2048b85c5e412b832549e67625f1bde2d7930f12a7216 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/memberswithlicenseerrors/orgcontact"
     ia742a37f75ffa85a15c52758b54a8cfbacdcae12597cc38b77fd0f412aaa1e32 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/memberswithlicenseerrors/count"
+    iddc54b8e85093999a061b74455c42139479196ec70c7ff2077c4332c3635da87 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/memberswithlicenseerrors/serviceprincipal"
 )
 
 // MembersWithLicenseErrorsRequestBuilder provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
@@ -43,6 +49,10 @@ type MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *MembersWithLicenseErrorsRequestBuilderGetQueryParameters
+}
+// Application the application property
+func (m *MembersWithLicenseErrorsRequestBuilder) Application()(*i9eee8ca196107e21e220b940811218fe3f0c4bfce89d18b327b903b1f1fa451c.ApplicationRequestBuilder) {
+    return i9eee8ca196107e21e220b940811218fe3f0c4bfce89d18b327b903b1f1fa451c.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMembersWithLicenseErrorsRequestBuilderInternal instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.
 func NewMembersWithLicenseErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MembersWithLicenseErrorsRequestBuilder) {
@@ -86,6 +96,10 @@ func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
+// Device the device property
+func (m *MembersWithLicenseErrorsRequestBuilder) Device()(*i44b96843de9edb7831feeb7753f66dad8edcd1bbfaeea1ff3b97835638702ed8.DeviceRequestBuilder) {
+    return i44b96843de9edb7831feeb7753f66dad8edcd1bbfaeea1ff3b97835638702ed8.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *MembersWithLicenseErrorsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -105,4 +119,20 @@ func (m *MembersWithLicenseErrorsRequestBuilder) GetWithRequestConfigurationAndR
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// Group the group property
+func (m *MembersWithLicenseErrorsRequestBuilder) Group()(*i0dab4ab5d03cdb1e2bc2146c8f8f393369639cf2951df17099c75880b3405169.GroupRequestBuilder) {
+    return i0dab4ab5d03cdb1e2bc2146c8f8f393369639cf2951df17099c75880b3405169.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OrgContact the orgContact property
+func (m *MembersWithLicenseErrorsRequestBuilder) OrgContact()(*ia0ddb948c0200f3efec2048b85c5e412b832549e67625f1bde2d7930f12a7216.OrgContactRequestBuilder) {
+    return ia0ddb948c0200f3efec2048b85c5e412b832549e67625f1bde2d7930f12a7216.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *MembersWithLicenseErrorsRequestBuilder) ServicePrincipal()(*iddc54b8e85093999a061b74455c42139479196ec70c7ff2077c4332c3635da87.ServicePrincipalRequestBuilder) {
+    return iddc54b8e85093999a061b74455c42139479196ec70c7ff2077c4332c3635da87.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *MembersWithLicenseErrorsRequestBuilder) User()(*i38d5613daf6a74842f466cb5f7e1d5e1b49776cadcc1ccffe3f985c86669b1ba.UserRequestBuilder) {
+    return i38d5613daf6a74842f466cb5f7e1d5e1b49776cadcc1ccffe3f985c86669b1ba.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -40,11 +40,11 @@ func NewGetAvailableExtensionPropertiesRequestBuilder(rawUrl string, requestAdap
     return NewGetAvailableExtensionPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getAvailableExtensionProperties
-func (m *GetAvailableExtensionPropertiesRequestBuilder) CreatePostRequestInformation(body GetAvailableExtensionPropertiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetAvailableExtensionPropertiesRequestBuilder) CreatePostRequestInformation(body GetAvailableExtensionPropertiesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getAvailableExtensionProperties
-func (m *GetAvailableExtensionPropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetAvailableExtensionPropertiesRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetAvailableExtensionPropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetAvailableExtensionPropertiesRequestBuilder) CreatePostRequestInforma
     return requestInfo, nil
 }
 // Post invoke action getAvailableExtensionProperties
-func (m *GetAvailableExtensionPropertiesRequestBuilder) Post(body GetAvailableExtensionPropertiesRequestBodyable)(GetAvailableExtensionPropertiesResponseable, error) {
+func (m *GetAvailableExtensionPropertiesRequestBuilder) Post(body GetAvailableExtensionPropertiesPostRequestBodyable)(GetAvailableExtensionPropertiesResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getAvailableExtensionProperties
-func (m *GetAvailableExtensionPropertiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetAvailableExtensionPropertiesRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAvailableExtensionPropertiesResponseable, error) {
+func (m *GetAvailableExtensionPropertiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAvailableExtensionPropertiesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

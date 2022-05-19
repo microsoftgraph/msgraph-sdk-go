@@ -4,6 +4,12 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i18c6cfdf5bb78c2cd84f1ed3a2eaf2d75f610031f0030a212a1b60fb8df92594 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/user"
+    i362972e85ac31087cef0b95d1089fe2d7d42e71352bb05120d64c0f28b924248 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/serviceprincipal"
+    i364b4877f1c0aed94616371f3fa7a1a78316f9b0f9ebd2347e23125af1dc641a "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/group"
+    i45f92b5ebb3c301d1219cd9c21eb9732b1bae2c6f9a3113c0085206ccdf21542 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/orgcontact"
+    i5d449587467d81f36dc1ab393ed391230ec7f08d20a2250c93a62391e94e469a "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/device"
+    i736d61974be9aedaa8009017ad19f62f35625a45dc3a5a8b56b15b583838711f "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/application"
     ief89c212bb34a0eb54fe4cbb1db9e342fecc50d23976834d4a222dd9959b7c71 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/count"
 )
 
@@ -43,6 +49,10 @@ type TransitiveMemberOfRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *TransitiveMemberOfRequestBuilderGetQueryParameters
+}
+// Application the application property
+func (m *TransitiveMemberOfRequestBuilder) Application()(*i736d61974be9aedaa8009017ad19f62f35625a45dc3a5a8b56b15b583838711f.ApplicationRequestBuilder) {
+    return i736d61974be9aedaa8009017ad19f62f35625a45dc3a5a8b56b15b583838711f.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewTransitiveMemberOfRequestBuilderInternal instantiates a new TransitiveMemberOfRequestBuilder and sets the default values.
 func NewTransitiveMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TransitiveMemberOfRequestBuilder) {
@@ -86,6 +96,10 @@ func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
+// Device the device property
+func (m *TransitiveMemberOfRequestBuilder) Device()(*i5d449587467d81f36dc1ab393ed391230ec7f08d20a2250c93a62391e94e469a.DeviceRequestBuilder) {
+    return i5d449587467d81f36dc1ab393ed391230ec7f08d20a2250c93a62391e94e469a.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get get transitiveMemberOf from contacts
 func (m *TransitiveMemberOfRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -105,4 +119,20 @@ func (m *TransitiveMemberOfRequestBuilder) GetWithRequestConfigurationAndRespons
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// Group the group property
+func (m *TransitiveMemberOfRequestBuilder) Group()(*i364b4877f1c0aed94616371f3fa7a1a78316f9b0f9ebd2347e23125af1dc641a.GroupRequestBuilder) {
+    return i364b4877f1c0aed94616371f3fa7a1a78316f9b0f9ebd2347e23125af1dc641a.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OrgContact the orgContact property
+func (m *TransitiveMemberOfRequestBuilder) OrgContact()(*i45f92b5ebb3c301d1219cd9c21eb9732b1bae2c6f9a3113c0085206ccdf21542.OrgContactRequestBuilder) {
+    return i45f92b5ebb3c301d1219cd9c21eb9732b1bae2c6f9a3113c0085206ccdf21542.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *TransitiveMemberOfRequestBuilder) ServicePrincipal()(*i362972e85ac31087cef0b95d1089fe2d7d42e71352bb05120d64c0f28b924248.ServicePrincipalRequestBuilder) {
+    return i362972e85ac31087cef0b95d1089fe2d7d42e71352bb05120d64c0f28b924248.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *TransitiveMemberOfRequestBuilder) User()(*i18c6cfdf5bb78c2cd84f1ed3a2eaf2d75f610031f0030a212a1b60fb8df92594.UserRequestBuilder) {
+    return i18c6cfdf5bb78c2cd84f1ed3a2eaf2d75f610031f0030a212a1b60fb8df92594.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
