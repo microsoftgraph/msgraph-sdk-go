@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/microsoft/kiota-abstractions-go v0.7.0
 	github.com/microsoft/kiota-serialization-json-go v0.4.0
-	github.com/microsoft/kiota-serialization-text-go v0.2.0
+	github.com/microsoft/kiota-serialization-text-go v0.3.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v0.25.0
 )
 
