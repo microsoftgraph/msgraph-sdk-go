@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to user.
+// Provides operations to manage the deviceManagement singleton.
 type DeviceRegistrationState int
 
 const (
