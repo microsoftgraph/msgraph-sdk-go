@@ -81,7 +81,7 @@ After you have a **GraphServiceClient** that is authenticated, you can begin mak
 To retrieve the user's drive:
 
 ```Golang
-result, err := client.Me().Drive().Get(nil)
+result, err := client.Me().Drive().Get()
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
 }
