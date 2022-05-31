@@ -30,7 +30,7 @@ func NewSearchWithQRequestBuilderInternal(pathParameters map[string]string, requ
         urlTplParams[idx] = item
     }
     if q != nil {
-        urlTplParams[""] = *q
+        urlTplParams["q"] = *q
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

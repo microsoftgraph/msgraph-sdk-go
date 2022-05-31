@@ -4,7 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i076b4d9eb99dd795c0be380924e0942143034514e4c3294240aa5d16de47fe59 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/registeredowners/approleassignment"
+    i6318d4931285879d58cd10b898fc166374c49bff07b3858ec95d71af07395d73 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/registeredowners/serviceprincipal"
     i86ca775089c090dbb79535b24c808841466d54b46c310cb5284d7e5171f6d888 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/registeredowners/ref"
+    i9266a4740988e73a9a75ce43632ad37cf2462d7f938b8d9aa23e01922b315c49 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/registeredowners/endpoint"
+    ibeecdc9e77f2567f9020c51f0cc3db27ed6bde821c8222da0811112bdcaa8553 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/registeredowners/user"
     ic1b98c367edf6f12b8d27b8e9d6a4d7776e3612c08637900886e4c25a33bff3a "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/registeredowners/count"
 )
 
@@ -44,6 +48,10 @@ type RegisteredOwnersRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *RegisteredOwnersRequestBuilderGetQueryParameters
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *RegisteredOwnersRequestBuilder) AppRoleAssignment()(*i076b4d9eb99dd795c0be380924e0942143034514e4c3294240aa5d16de47fe59.AppRoleAssignmentRequestBuilder) {
+    return i076b4d9eb99dd795c0be380924e0942143034514e4c3294240aa5d16de47fe59.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewRegisteredOwnersRequestBuilderInternal instantiates a new RegisteredOwnersRequestBuilder and sets the default values.
 func NewRegisteredOwnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RegisteredOwnersRequestBuilder) {
@@ -87,6 +95,10 @@ func (m *RegisteredOwnersRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *RegisteredOwnersRequestBuilder) Endpoint()(*i9266a4740988e73a9a75ce43632ad37cf2462d7f938b8d9aa23e01922b315c49.EndpointRequestBuilder) {
+    return i9266a4740988e73a9a75ce43632ad37cf2462d7f938b8d9aa23e01922b315c49.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 func (m *RegisteredOwnersRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -110,4 +122,12 @@ func (m *RegisteredOwnersRequestBuilder) GetWithRequestConfigurationAndResponseH
 // Ref the ref property
 func (m *RegisteredOwnersRequestBuilder) Ref()(*i86ca775089c090dbb79535b24c808841466d54b46c310cb5284d7e5171f6d888.RefRequestBuilder) {
     return i86ca775089c090dbb79535b24c808841466d54b46c310cb5284d7e5171f6d888.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *RegisteredOwnersRequestBuilder) ServicePrincipal()(*i6318d4931285879d58cd10b898fc166374c49bff07b3858ec95d71af07395d73.ServicePrincipalRequestBuilder) {
+    return i6318d4931285879d58cd10b898fc166374c49bff07b3858ec95d71af07395d73.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *RegisteredOwnersRequestBuilder) User()(*ibeecdc9e77f2567f9020c51f0cc3db27ed6bde821c8222da0811112bdcaa8553.UserRequestBuilder) {
+    return ibeecdc9e77f2567f9020c51f0cc3db27ed6bde821c8222da0811112bdcaa8553.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

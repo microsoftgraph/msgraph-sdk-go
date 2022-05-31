@@ -30,7 +30,7 @@ func NewGetApplicableContentTypesForListWithListIdRequestBuilderInternal(pathPar
         urlTplParams[idx] = item
     }
     if listId != nil {
-        urlTplParams[""] = *listId
+        urlTplParams["listId"] = *listId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

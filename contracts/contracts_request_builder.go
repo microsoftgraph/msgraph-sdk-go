@@ -19,7 +19,7 @@ type ContractsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ContractsRequestBuilderGetQueryParameters retrieve a list of [contract](../resources/contract.md) objects associated to a partner tenant.
+// ContractsRequestBuilderGetQueryParameters retrieve a list of contract objects associated to a partner tenant.
 type ContractsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewContractsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *ContractsRequestBuilder) Count()(*i867b02a599e2fe4975957837e47f1f3770752b7acb3571d09e7f6f35afd50812.CountRequestBuilder) {
     return i867b02a599e2fe4975957837e47f1f3770752b7acb3571d09e7f6f35afd50812.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve a list of [contract](../resources/contract.md) objects associated to a partner tenant.
+// CreateGetRequestInformation retrieve a list of contract objects associated to a partner tenant.
 func (m *ContractsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of [contract](../resources/contract.md) objects associated to a partner tenant.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of contract objects associated to a partner tenant.
 func (m *ContractsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContractsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ContractsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get retrieve a list of [contract](../resources/contract.md) objects associated to a partner tenant.
+// Get retrieve a list of contract objects associated to a partner tenant.
 func (m *ContractsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContractCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -125,7 +125,7 @@ func (m *ContractsRequestBuilder) GetAvailableExtensionProperties()(*ie41bc0d7fc
 func (m *ContractsRequestBuilder) GetByIds()(*if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.GetByIdsRequestBuilder) {
     return if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler retrieve a list of [contract](../resources/contract.md) objects associated to a partner tenant.
+// GetWithRequestConfigurationAndResponseHandler retrieve a list of contract objects associated to a partner tenant.
 func (m *ContractsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContractsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContractCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

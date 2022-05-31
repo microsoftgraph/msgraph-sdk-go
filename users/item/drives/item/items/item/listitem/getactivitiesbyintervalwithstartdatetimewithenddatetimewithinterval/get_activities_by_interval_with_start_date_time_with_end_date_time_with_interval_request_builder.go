@@ -30,13 +30,13 @@ func NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalReque
         urlTplParams[idx] = item
     }
     if endDateTime != nil {
-        urlTplParams[""] = *endDateTime
+        urlTplParams["endDateTime"] = *endDateTime
     }
     if interval != nil {
-        urlTplParams[""] = *interval
+        urlTplParams["interval"] = *interval
     }
     if startDateTime != nil {
-        urlTplParams[""] = *startDateTime
+        urlTplParams["startDateTime"] = *startDateTime
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -31,7 +31,7 @@ func NewGetOneDriveActivityUserDetailWithPeriodRequestBuilderInternal(pathParame
         urlTplParams[idx] = item
     }
     if period != nil {
-        urlTplParams[""] = *period
+        urlTplParams["period"] = *period
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

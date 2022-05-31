@@ -5,6 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i060d05043ef21a20bca5bba0cf1bf9d4437b1d91d3a0d0ae6c97389d4d00694e "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/count"
+    i1b94d5383a8ca1e829f2c48b74c036b65d5c7cacb4223e5d4d65ae184d162718 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/approleassignment"
+    i4481ae29272b90e51b803d7ad16e7fa37075d7b4688b9c3d4f259f1c3b71d79b "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/endpoint"
+    i9d70f273879b63f77ee24edf5ec9817b23b4568da6e6c8a7d96eac4aba1f6139 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/serviceprincipal"
+    iaad2cc02c08e8ffbe0158ad9cce1d33313e353802c2a6aa54e7e7b1c9ee4ab64 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/user"
     if16d68f8f5e29587f2c3f4904b28d4809aef9ba1ded5e7526612370ed1a35458 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/ref"
 )
 
@@ -44,6 +48,10 @@ type OwnersRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *OwnersRequestBuilderGetQueryParameters
+}
+// AppRoleAssignment the appRoleAssignment property
+func (m *OwnersRequestBuilder) AppRoleAssignment()(*i1b94d5383a8ca1e829f2c48b74c036b65d5c7cacb4223e5d4d65ae184d162718.AppRoleAssignmentRequestBuilder) {
+    return i1b94d5383a8ca1e829f2c48b74c036b65d5c7cacb4223e5d4d65ae184d162718.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewOwnersRequestBuilderInternal instantiates a new OwnersRequestBuilder and sets the default values.
 func NewOwnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnersRequestBuilder) {
@@ -87,6 +95,10 @@ func (m *OwnersRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *OwnersRequestBuilder) Endpoint()(*i4481ae29272b90e51b803d7ad16e7fa37075d7b4688b9c3d4f259f1c3b71d79b.EndpointRequestBuilder) {
+    return i4481ae29272b90e51b803d7ad16e7fa37075d7b4688b9c3d4f259f1c3b71d79b.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
 func (m *OwnersRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -110,4 +122,12 @@ func (m *OwnersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(req
 // Ref the ref property
 func (m *OwnersRequestBuilder) Ref()(*if16d68f8f5e29587f2c3f4904b28d4809aef9ba1ded5e7526612370ed1a35458.RefRequestBuilder) {
     return if16d68f8f5e29587f2c3f4904b28d4809aef9ba1ded5e7526612370ed1a35458.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *OwnersRequestBuilder) ServicePrincipal()(*i9d70f273879b63f77ee24edf5ec9817b23b4568da6e6c8a7d96eac4aba1f6139.ServicePrincipalRequestBuilder) {
+    return i9d70f273879b63f77ee24edf5ec9817b23b4568da6e6c8a7d96eac4aba1f6139.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *OwnersRequestBuilder) User()(*iaad2cc02c08e8ffbe0158ad9cce1d33313e353802c2a6aa54e7e7b1c9ee4ab64.UserRequestBuilder) {
+    return iaad2cc02c08e8ffbe0158ad9cce1d33313e353802c2a6aa54e7e7b1c9ee4ab64.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

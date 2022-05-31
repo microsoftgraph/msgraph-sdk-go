@@ -30,7 +30,7 @@ func NewGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderInter
         urlTplParams[idx] = item
     }
     if secretReferenceValueId != nil {
-        urlTplParams[""] = *secretReferenceValueId
+        urlTplParams["secretReferenceValueId"] = *secretReferenceValueId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -31,13 +31,13 @@ func NewGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime
         urlTplParams[idx] = item
     }
     if endDateTime != nil {
-        urlTplParams[""] = (*endDateTime).String()
+        urlTplParams["endDateTime"] = (*endDateTime).String()
     }
     if printerId != nil {
-        urlTplParams[""] = *printerId
+        urlTplParams["printerId"] = *printerId
     }
     if startDateTime != nil {
-        urlTplParams[""] = (*startDateTime).String()
+        urlTplParams["startDateTime"] = (*startDateTime).String()
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

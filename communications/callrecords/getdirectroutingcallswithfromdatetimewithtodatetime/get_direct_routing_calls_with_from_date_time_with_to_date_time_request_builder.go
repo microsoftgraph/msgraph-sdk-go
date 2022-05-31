@@ -31,10 +31,10 @@ func NewGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderInterna
         urlTplParams[idx] = item
     }
     if fromDateTime != nil {
-        urlTplParams[""] = (*fromDateTime).String()
+        urlTplParams["fromDateTime"] = (*fromDateTime).String()
     }
     if toDateTime != nil {
-        urlTplParams[""] = (*toDateTime).String()
+        urlTplParams["toDateTime"] = (*toDateTime).String()
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

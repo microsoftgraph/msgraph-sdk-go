@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of orgContact entities.
+// Casts the previous resource to user.
 type PhoneType int
 
 const (

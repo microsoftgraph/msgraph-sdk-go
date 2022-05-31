@@ -32,16 +32,16 @@ func NewManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTo
         urlTplParams[idx] = item
     }
     if filter != nil {
-        urlTplParams[""] = *filter
+        urlTplParams["filter"] = *filter
     }
     if skip != nil {
-        urlTplParams[""] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(*skip), 10)
+        urlTplParams["skip"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(*skip), 10)
     }
     if skipToken != nil {
-        urlTplParams[""] = *skipToken
+        urlTplParams["skipToken"] = *skipToken
     }
     if top != nil {
-        urlTplParams[""] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(*top), 10)
+        urlTplParams["top"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(*top), 10)
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
