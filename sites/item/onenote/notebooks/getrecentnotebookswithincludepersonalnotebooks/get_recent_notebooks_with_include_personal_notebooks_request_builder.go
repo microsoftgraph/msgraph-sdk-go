@@ -31,7 +31,7 @@ func NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(pat
         urlTplParams[idx] = item
     }
     if includePersonalNotebooks != nil {
-        urlTplParams[""] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatBool(*includePersonalNotebooks)
+        urlTplParams["includePersonalNotebooks"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatBool(*includePersonalNotebooks)
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

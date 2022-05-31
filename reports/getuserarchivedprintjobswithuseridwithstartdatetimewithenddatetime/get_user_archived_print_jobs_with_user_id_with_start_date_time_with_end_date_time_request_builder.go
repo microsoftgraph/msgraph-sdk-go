@@ -31,13 +31,13 @@ func NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeReques
         urlTplParams[idx] = item
     }
     if endDateTime != nil {
-        urlTplParams[""] = (*endDateTime).String()
+        urlTplParams["endDateTime"] = (*endDateTime).String()
     }
     if startDateTime != nil {
-        urlTplParams[""] = (*startDateTime).String()
+        urlTplParams["startDateTime"] = (*startDateTime).String()
     }
     if userId != nil {
-        urlTplParams[""] = *userId
+        urlTplParams["userId"] = *userId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

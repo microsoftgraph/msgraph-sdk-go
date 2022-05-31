@@ -31,7 +31,7 @@ func NewGetByPathWithPathRequestBuilderInternal(pathParameters map[string]string
         urlTplParams[idx] = item
     }
     if path != nil {
-        urlTplParams[""] = *path
+        urlTplParams["path"] = *path
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

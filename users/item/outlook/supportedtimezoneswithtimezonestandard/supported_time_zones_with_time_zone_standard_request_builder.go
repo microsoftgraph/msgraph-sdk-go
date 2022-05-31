@@ -30,7 +30,7 @@ func NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(pathParamet
         urlTplParams[idx] = item
     }
     if timeZoneStandard != nil {
-        urlTplParams[""] = *timeZoneStandard
+        urlTplParams["TimeZoneStandard"] = *timeZoneStandard
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

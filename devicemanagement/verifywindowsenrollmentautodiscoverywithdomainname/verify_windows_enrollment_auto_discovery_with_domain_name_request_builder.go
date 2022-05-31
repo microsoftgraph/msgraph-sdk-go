@@ -30,7 +30,7 @@ func NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal
         urlTplParams[idx] = item
     }
     if domainName != nil {
-        urlTplParams[""] = *domainName
+        urlTplParams["domainName"] = *domainName
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

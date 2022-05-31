@@ -30,7 +30,7 @@ func NewDeltaWithTokenRequestBuilderInternal(pathParameters map[string]string, r
         urlTplParams[idx] = item
     }
     if token != nil {
-        urlTplParams[""] = *token
+        urlTplParams["token"] = *token
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

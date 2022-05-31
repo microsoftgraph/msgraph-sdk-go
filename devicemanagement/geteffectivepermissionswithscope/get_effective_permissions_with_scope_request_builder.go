@@ -30,7 +30,7 @@ func NewGetEffectivePermissionsWithScopeRequestBuilderInternal(pathParameters ma
         urlTplParams[idx] = item
     }
     if scope != nil {
-        urlTplParams[""] = *scope
+        urlTplParams["scope"] = *scope
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -17,7 +17,7 @@ type AssignmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AssignmentsRequestBuilderGetQueryParameters represents the grant of an access package to a subject (user or group).
+// AssignmentsRequestBuilderGetQueryParameters the assignment of an access package to a subject for a period of time.
 type AssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AssignmentsRequestBuilder) Count()(*i0e5136c0f28ac569c377cc4d2a93cb9e56919b44cbb4308c0e61faebe1623854.CountRequestBuilder) {
     return i0e5136c0f28ac569c377cc4d2a93cb9e56919b44cbb4308c0e61faebe1623854.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the grant of an access package to a subject (user or group).
+// CreateGetRequestInformation the assignment of an access package to a subject for a period of time.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the grant of an access package to a subject (user or group).
+// CreateGetRequestInformationWithRequestConfiguration the assignment of an access package to a subject for a period of time.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,11 +115,11 @@ func (m *AssignmentsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 func (m *AssignmentsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i730df316bf527836f62f151426a18d11f4f8585c1d7354b69a03f2dca3b6f555.FilterByCurrentUserWithOnRequestBuilder) {
     return i730df316bf527836f62f151426a18d11f4f8585c1d7354b69a03f2dca3b6f555.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get represents the grant of an access package to a subject (user or group).
+// Get the assignment of an access package to a subject for a period of time.
 func (m *AssignmentsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents the grant of an access package to a subject (user or group).
+// GetWithRequestConfigurationAndResponseHandler the assignment of an access package to a subject for a period of time.
 func (m *AssignmentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -30,10 +30,10 @@ func NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathP
         urlTplParams[idx] = item
     }
     if endDateTime != nil {
-        urlTplParams[""] = *endDateTime
+        urlTplParams["EndDateTime"] = *endDateTime
     }
     if startDateTime != nil {
-        urlTplParams[""] = *startDateTime
+        urlTplParams["StartDateTime"] = *startDateTime
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -30,7 +30,7 @@ func NewFilterByCurrentUserWithOnRequestBuilderInternal(pathParameters map[strin
         urlTplParams[idx] = item
     }
     if on != nil {
-        urlTplParams[""] = *on
+        urlTplParams["on"] = *on
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -30,7 +30,7 @@ func NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(pathParameters
         urlTplParams[idx] = item
     }
     if user != nil {
-        urlTplParams[""] = *user
+        urlTplParams["User"] = *user
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

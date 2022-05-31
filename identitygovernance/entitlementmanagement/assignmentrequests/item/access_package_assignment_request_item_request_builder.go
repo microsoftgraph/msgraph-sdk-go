@@ -27,7 +27,7 @@ type AccessPackageAssignmentRequestItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters represents access package assignment requests created by or on behalf of a user.
+// AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters access package assignment requests created by or on behalf of a subject.
 type AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -97,11 +97,11 @@ func (m *AccessPackageAssignmentRequestItemRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents access package assignment requests created by or on behalf of a user.
+// CreateGetRequestInformation access package assignment requests created by or on behalf of a subject.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents access package assignment requests created by or on behalf of a user.
+// CreateGetRequestInformationWithRequestConfiguration access package assignment requests created by or on behalf of a subject.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackageAssignmentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -153,11 +153,11 @@ func (m *AccessPackageAssignmentRequestItemRequestBuilder) DeleteWithRequestConf
     }
     return nil
 }
-// Get represents access package assignment requests created by or on behalf of a user.
+// Get access package assignment requests created by or on behalf of a subject.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentRequestable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents access package assignment requests created by or on behalf of a user.
+// GetWithRequestConfigurationAndResponseHandler access package assignment requests created by or on behalf of a subject.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

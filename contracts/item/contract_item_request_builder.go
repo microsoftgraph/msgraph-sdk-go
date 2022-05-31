@@ -27,7 +27,7 @@ type ContractItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ContractItemRequestBuilderGetQueryParameters retrieve the properties and relationships of [contract](../resources/contract.md) object.
+// ContractItemRequestBuilderGetQueryParameters retrieve the properties and relationships of contract object.
 type ContractItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -93,11 +93,11 @@ func (m *ContractItemRequestBuilder) CreateDeleteRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation retrieve the properties and relationships of [contract](../resources/contract.md) object.
+// CreateGetRequestInformation retrieve the properties and relationships of contract object.
 func (m *ContractItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of [contract](../resources/contract.md) object.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of contract object.
 func (m *ContractItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContractItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,7 +149,7 @@ func (m *ContractItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHa
     }
     return nil
 }
-// Get retrieve the properties and relationships of [contract](../resources/contract.md) object.
+// Get retrieve the properties and relationships of contract object.
 func (m *ContractItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contractable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -161,7 +161,7 @@ func (m *ContractItemRequestBuilder) GetMemberGroups()(*iabffea946aaf9953004feea
 func (m *ContractItemRequestBuilder) GetMemberObjects()(*i68d315812c96beaf0bb656713cc7f6ec30a202d0bd23957081408380e1e7c72b.GetMemberObjectsRequestBuilder) {
     return i68d315812c96beaf0bb656713cc7f6ec30a202d0bd23957081408380e1e7c72b.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of [contract](../resources/contract.md) object.
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of contract object.
 func (m *ContractItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContractItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contractable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
