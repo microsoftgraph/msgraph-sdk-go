@@ -12,9 +12,9 @@ type TodoTask struct {
     body ItemBodyable
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     bodyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The categories property
+    // The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
     categories []string
-    // The checklistItems property
+    // A collection of smaller subtasks linked to the more complex parent task.
     checklistItems []ChecklistItemable
     // The date in the specified time zone that the task was finished.
     completedDateTime DateTimeTimeZoneable
@@ -68,7 +68,7 @@ func (m *TodoTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.bodyLastModifiedDateTime
     }
 }
-// GetCategories gets the categories property value. The categories property
+// GetCategories gets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
 func (m *TodoTask) GetCategories()([]string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *TodoTask) GetCategories()([]string) {
         return m.categories
     }
 }
-// GetChecklistItems gets the checklistItems property value. The checklistItems property
+// GetChecklistItems gets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
 func (m *TodoTask) GetChecklistItems()([]ChecklistItemable) {
     if m == nil {
         return nil
@@ -491,13 +491,13 @@ func (m *TodoTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe
         m.bodyLastModifiedDateTime = value
     }
 }
-// SetCategories sets the categories property value. The categories property
+// SetCategories sets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
 func (m *TodoTask) SetCategories(value []string)() {
     if m != nil {
         m.categories = value
     }
 }
-// SetChecklistItems sets the checklistItems property value. The checklistItems property
+// SetChecklistItems sets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
 func (m *TodoTask) SetChecklistItems(value []ChecklistItemable)() {
     if m != nil {
         m.checklistItems = value

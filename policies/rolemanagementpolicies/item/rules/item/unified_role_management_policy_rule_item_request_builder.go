@@ -22,7 +22,7 @@ type UnifiedRoleManagementPolicyRuleItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UnifiedRoleManagementPolicyRuleItemRequestBuilderGetQueryParameters the collection of rules like approval rules and expiration rules.
+// UnifiedRoleManagementPolicyRuleItemRequestBuilderGetQueryParameters the collection of rules like approval rules and expiration rules. Supports $expand.
 type UnifiedRoleManagementPolicyRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,16 +80,17 @@ func (m *UnifiedRoleManagementPolicyRuleItemRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of rules like approval rules and expiration rules.
+// CreateGetRequestInformation the collection of rules like approval rules and expiration rules. Supports $expand.
 func (m *UnifiedRoleManagementPolicyRuleItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of rules like approval rules and expiration rules.
+// CreateGetRequestInformationWithRequestConfiguration the collection of rules like approval rules and expiration rules. Supports $expand.
 func (m *UnifiedRoleManagementPolicyRuleItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -136,11 +137,11 @@ func (m *UnifiedRoleManagementPolicyRuleItemRequestBuilder) DeleteWithRequestCon
     }
     return nil
 }
-// Get the collection of rules like approval rules and expiration rules.
+// Get the collection of rules like approval rules and expiration rules. Supports $expand.
 func (m *UnifiedRoleManagementPolicyRuleItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyRuleable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of rules like approval rules and expiration rules.
+// GetWithRequestConfigurationAndResponseHandler the collection of rules like approval rules and expiration rules. Supports $expand.
 func (m *UnifiedRoleManagementPolicyRuleItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyRuleable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

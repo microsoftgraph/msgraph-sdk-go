@@ -15,7 +15,7 @@ type RoleDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RoleDefinitionRequestBuilderGetQueryParameters property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+// RoleDefinitionRequestBuilderGetQueryParameters detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,16 +50,17 @@ func NewRoleDefinitionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+// CreateGetRequestInformation detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+// CreateGetRequestInformationWithRequestConfiguration detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RoleDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -69,11 +70,11 @@ func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+// Get detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 func (m *RoleDefinitionRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+// GetWithRequestConfigurationAndResponseHandler detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 func (m *RoleDefinitionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleDefinitionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

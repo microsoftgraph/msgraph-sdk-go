@@ -12,7 +12,7 @@ type Request struct {
     approvalId *string
     // The request completion date time.
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The user who created this request.
+    // The principal that created the request.
     createdBy IdentitySetable
     // The request creation date time.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -67,7 +67,7 @@ func (m *Request) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.completedDateTime
     }
 }
-// GetCreatedBy gets the createdBy property value. The user who created this request.
+// GetCreatedBy gets the createdBy property value. The principal that created the request.
 func (m *Request) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *Request) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         m.completedDateTime = value
     }
 }
-// SetCreatedBy sets the createdBy property value. The user who created this request.
+// SetCreatedBy sets the createdBy property value. The principal that created the request.
 func (m *Request) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value

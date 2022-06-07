@@ -5,6 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     i96dc26d0aeeaa176ce5a9a2e4c3a41f16bf45597d0b76d3726430be9a966acb8 "github.com/microsoftgraph/msgraph-sdk-go/places/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    ied3560dba7640bac9d9d8075828556e424213b7810da04eab3db0272bbb513d6 "github.com/microsoftgraph/msgraph-sdk-go/places/room"
 )
 
 // PlacesRequestBuilder provides operations to manage the collection of place entities.
@@ -84,6 +85,7 @@ func (m *PlacesRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -103,6 +105,7 @@ func (m *PlacesRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -149,4 +152,8 @@ func (m *PlacesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(bo
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable), nil
+}
+// Room the room property
+func (m *PlacesRequestBuilder) Room()(*ied3560dba7640bac9d9d8075828556e424213b7810da04eab3db0272bbb513d6.RoomRequestBuilder) {
+    return ied3560dba7640bac9d9d8075828556e424213b7810da04eab3db0272bbb513d6.NewRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

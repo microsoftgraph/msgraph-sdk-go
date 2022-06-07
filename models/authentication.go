@@ -13,6 +13,8 @@ type Authentication struct {
     methods []AuthenticationMethodable
     // The details of the Microsoft Authenticator app registered to a user for authentication.
     microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethodable
+    // Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+    temporaryAccessPassMethods []TemporaryAccessPassAuthenticationMethodable
     // Represents the Windows Hello for Business authentication method registered to a user for authentication.
     windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethodable
 }
@@ -80,6 +82,20 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["temporaryAccessPassMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TemporaryAccessPassAuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(TemporaryAccessPassAuthenticationMethodable)
+            }
+            m.SetTemporaryAccessPassMethods(res)
+        }
+        return nil
+    }
     res["windowsHelloForBusinessMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsHelloForBusinessAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
@@ -110,6 +126,14 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
         return nil
     } else {
         return m.microsoftAuthenticatorMethods
+    }
+}
+// GetTemporaryAccessPassMethods gets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+func (m *Authentication) GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.temporaryAccessPassMethods
     }
 }
 // GetWindowsHelloForBusinessMethods gets the windowsHelloForBusinessMethods property value. Represents the Windows Hello for Business authentication method registered to a user for authentication.
@@ -156,6 +180,16 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetTemporaryAccessPassMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemporaryAccessPassMethods()))
+        for i, v := range m.GetTemporaryAccessPassMethods() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("temporaryAccessPassMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWindowsHelloForBusinessMethods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsHelloForBusinessMethods()))
         for i, v := range m.GetWindowsHelloForBusinessMethods() {
@@ -184,6 +218,12 @@ func (m *Authentication) SetMethods(value []AuthenticationMethodable)() {
 func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethodable)() {
     if m != nil {
         m.microsoftAuthenticatorMethods = value
+    }
+}
+// SetTemporaryAccessPassMethods sets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+func (m *Authentication) SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)() {
+    if m != nil {
+        m.temporaryAccessPassMethods = value
     }
 }
 // SetWindowsHelloForBusinessMethods sets the windowsHelloForBusinessMethods property value. Represents the Windows Hello for Business authentication method registered to a user for authentication.

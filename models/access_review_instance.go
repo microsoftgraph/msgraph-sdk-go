@@ -20,6 +20,8 @@ type AccessReviewInstance struct {
     reviewers []AccessReviewReviewerScopeable
     // Created based on scope and instanceEnumerationScope at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports $select and $filter (contains only). Read-only.
     scope AccessReviewScopeable
+    // If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
+    stages []AccessReviewStageable
     // DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
@@ -147,6 +149,20 @@ func (m *AccessReviewInstance) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["stages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewStageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewStageable, len(val))
+            for i, v := range val {
+                res[i] = v.(AccessReviewStageable)
+            }
+            m.SetStages(res)
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -183,6 +199,14 @@ func (m *AccessReviewInstance) GetScope()(AccessReviewScopeable) {
         return nil
     } else {
         return m.scope
+    }
+}
+// GetStages gets the stages property value. If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
+func (m *AccessReviewInstance) GetStages()([]AccessReviewStageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stages
     }
 }
 // GetStartDateTime gets the startDateTime property value. DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
@@ -259,6 +283,16 @@ func (m *AccessReviewInstance) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetStages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStages()))
+        for i, v := range m.GetStages() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("stages", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
         if err != nil {
@@ -307,6 +341,12 @@ func (m *AccessReviewInstance) SetReviewers(value []AccessReviewReviewerScopeabl
 func (m *AccessReviewInstance) SetScope(value AccessReviewScopeable)() {
     if m != nil {
         m.scope = value
+    }
+}
+// SetStages sets the stages property value. If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
+func (m *AccessReviewInstance) SetStages(value []AccessReviewStageable)() {
+    if m != nil {
+        m.stages = value
     }
 }
 // SetStartDateTime sets the startDateTime property value. DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.

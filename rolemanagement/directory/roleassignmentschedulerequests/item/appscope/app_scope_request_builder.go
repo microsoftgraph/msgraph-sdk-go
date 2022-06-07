@@ -15,7 +15,7 @@ type AppScopeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AppScopeRequestBuilderGetQueryParameters read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+// AppScopeRequestBuilderGetQueryParameters read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
 type AppScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,16 +50,17 @@ func NewAppScopeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewAppScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+// CreateGetRequestInformation read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
 func (m *AppScopeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+// CreateGetRequestInformationWithRequestConfiguration read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
 func (m *AppScopeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -69,11 +70,11 @@ func (m *AppScopeRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+// Get read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
 func (m *AppScopeRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppScopeable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+// GetWithRequestConfigurationAndResponseHandler read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
 func (m *AppScopeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppScopeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppScopeable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

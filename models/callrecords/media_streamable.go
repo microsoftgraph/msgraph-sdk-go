@@ -9,6 +9,7 @@ import (
 type MediaStreamable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAudioCodec()(*AudioCodec)
     GetAverageAudioDegradation()(*float32)
     GetAverageAudioNetworkJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetAverageBandwidthEstimate()(*int64)
@@ -33,7 +34,9 @@ type MediaStreamable interface {
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStreamDirection()(*MediaStreamDirection)
     GetStreamId()(*string)
+    GetVideoCodec()(*VideoCodec)
     GetWasMediaBypassed()(*bool)
+    SetAudioCodec(value *AudioCodec)()
     SetAverageAudioDegradation(value *float32)()
     SetAverageAudioNetworkJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetAverageBandwidthEstimate(value *int64)()
@@ -58,5 +61,6 @@ type MediaStreamable interface {
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStreamDirection(value *MediaStreamDirection)()
     SetStreamId(value *string)()
+    SetVideoCodec(value *VideoCodec)()
     SetWasMediaBypassed(value *bool)()
 }

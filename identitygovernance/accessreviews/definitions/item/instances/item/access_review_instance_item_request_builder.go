@@ -8,12 +8,14 @@ import (
     i3011b416e1fbf818fb42fe3d7de3bb3ea3136fb606994268b64ee1859c2b3229 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/stop"
     i354cbd130706e9e98deafc9f1d5a9b5cef510bfe73b8928151750e8dc965ff4b "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/sendreminder"
     i5451506c6a51cc37c7bd81ab078505ae9728ac07623e29e52b6897a016d027b2 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/acceptrecommendations"
+    i570245405b4d6c39b5331aa62c7f2d77bb694d5897cd110fc4e36ffceab1ed08 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/stages"
     i5e1ccb1ad78906f2443f054f53d5d0547e9eceac11b87f43d7d1e7073c4dbfcd "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/batchrecorddecisions"
     iaba5c5f8866d817198badccdab50ac168445b09d85f789a8f760044ae410a919 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/decisions"
     ibef71d2452748b7a1d404bef412390f9d6f26c7062269a40f953a67d2d0bd44e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/contactedreviewers"
     icc113f5eb4a8c739b83f1517b406812dfa71ea84b8eb7fb9a3ca0629d5b5320a "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/applydecisions"
     ia5228e75938f6cab481e6dee19c7eeb8666192ef9a8d846054e182dcf31deb9e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/decisions/item"
     idbe515597f9c38cd733993c3ed77612e84f59bbc489b0a78f8c8a2160b9ac50d "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/contactedreviewers/item"
+    ie5ba6f5395d27d911edefb7e9d1b2003707f831840974e3ada7efae77f0723f0 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/stages/item"
 )
 
 // AccessReviewInstanceItemRequestBuilder provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
@@ -127,6 +129,7 @@ func (m *AccessReviewInstanceItemRequestBuilder) CreateGetRequestInformationWith
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -235,6 +238,21 @@ func (m *AccessReviewInstanceItemRequestBuilder) ResetDecisions()(*i294ddceafef4
 // SendReminder the sendReminder property
 func (m *AccessReviewInstanceItemRequestBuilder) SendReminder()(*i354cbd130706e9e98deafc9f1d5a9b5cef510bfe73b8928151750e8dc965ff4b.SendReminderRequestBuilder) {
     return i354cbd130706e9e98deafc9f1d5a9b5cef510bfe73b8928151750e8dc965ff4b.NewSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Stages the stages property
+func (m *AccessReviewInstanceItemRequestBuilder) Stages()(*i570245405b4d6c39b5331aa62c7f2d77bb694d5897cd110fc4e36ffceab1ed08.StagesRequestBuilder) {
+    return i570245405b4d6c39b5331aa62c7f2d77bb694d5897cd110fc4e36ffceab1ed08.NewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// StagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.stages.item collection
+func (m *AccessReviewInstanceItemRequestBuilder) StagesById(id string)(*ie5ba6f5395d27d911edefb7e9d1b2003707f831840974e3ada7efae77f0723f0.AccessReviewStageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessReviewStage%2Did"] = id
+    }
+    return ie5ba6f5395d27d911edefb7e9d1b2003707f831840974e3ada7efae77f0723f0.NewAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Stop the stop property
 func (m *AccessReviewInstanceItemRequestBuilder) Stop()(*i3011b416e1fbf818fb42fe3d7de3bb3ea3136fb606994268b64ee1859c2b3229.StopRequestBuilder) {
