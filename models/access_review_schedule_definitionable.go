@@ -22,6 +22,7 @@ type AccessReviewScheduleDefinitionable interface {
     GetReviewers()([]AccessReviewReviewerScopeable)
     GetScope()(AccessReviewScopeable)
     GetSettings()(AccessReviewScheduleSettingsable)
+    GetStageSettings()([]AccessReviewStageSettingsable)
     GetStatus()(*string)
     SetAdditionalNotificationRecipients(value []AccessReviewNotificationRecipientItemable)()
     SetCreatedBy(value UserIdentityable)()
@@ -36,5 +37,6 @@ type AccessReviewScheduleDefinitionable interface {
     SetReviewers(value []AccessReviewReviewerScopeable)()
     SetScope(value AccessReviewScopeable)()
     SetSettings(value AccessReviewScheduleSettingsable)()
+    SetStageSettings(value []AccessReviewStageSettingsable)()
     SetStatus(value *string)()
 }

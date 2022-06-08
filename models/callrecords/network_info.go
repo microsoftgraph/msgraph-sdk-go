@@ -24,6 +24,8 @@ type NetworkInfo struct {
     linkSpeed *int64
     // The media access control (MAC) address of the media endpoint's network device.
     macAddress *string
+    // Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.
+    networkTransportProtocol *NetworkTransportProtocol
     // Network port number used by media endpoint.
     port *int32
     // Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
@@ -38,6 +40,8 @@ type NetworkInfo struct {
     sentQualityEventRatio *float32
     // Subnet used for media stream by the media endpoint.
     subnet *string
+    // List of network trace route hops collected for this media stream.
+    traceRouteHops []TraceRouteHopable
     // WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
     wifiBand *WifiBand
     // Estimated remaining battery charge in percentage reported by the media endpoint.
@@ -199,6 +203,16 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["networkTransportProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseNetworkTransportProtocol)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNetworkTransportProtocol(val.(*NetworkTransportProtocol))
+        }
+        return nil
+    }
     res["port"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -266,6 +280,20 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetSubnet(val)
+        }
+        return nil
+    }
+    res["traceRouteHops"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTraceRouteHopFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TraceRouteHopable, len(val))
+            for i, v := range val {
+                res[i] = v.(TraceRouteHopable)
+            }
+            m.SetTraceRouteHops(res)
         }
         return nil
     }
@@ -385,6 +413,14 @@ func (m *NetworkInfo) GetMacAddress()(*string) {
         return m.macAddress
     }
 }
+// GetNetworkTransportProtocol gets the networkTransportProtocol property value. Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.
+func (m *NetworkInfo) GetNetworkTransportProtocol()(*NetworkTransportProtocol) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkTransportProtocol
+    }
+}
 // GetPort gets the port property value. Network port number used by media endpoint.
 func (m *NetworkInfo) GetPort()(*int32) {
     if m == nil {
@@ -439,6 +475,14 @@ func (m *NetworkInfo) GetSubnet()(*string) {
         return nil
     } else {
         return m.subnet
+    }
+}
+// GetTraceRouteHops gets the traceRouteHops property value. List of network trace route hops collected for this media stream.
+func (m *NetworkInfo) GetTraceRouteHops()([]TraceRouteHopable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.traceRouteHops
     }
 }
 // GetWifiBand gets the wifiBand property value. WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
@@ -564,6 +608,13 @@ func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetNetworkTransportProtocol() != nil {
+        cast := (*m.GetNetworkTransportProtocol()).String()
+        err := writer.WriteStringValue("networkTransportProtocol", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteInt32Value("port", m.GetPort())
         if err != nil {
@@ -602,6 +653,16 @@ func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("subnet", m.GetSubnet())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTraceRouteHops() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTraceRouteHops()))
+        for i, v := range m.GetTraceRouteHops() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("traceRouteHops", cast)
         if err != nil {
             return err
         }
@@ -724,6 +785,12 @@ func (m *NetworkInfo) SetMacAddress(value *string)() {
         m.macAddress = value
     }
 }
+// SetNetworkTransportProtocol sets the networkTransportProtocol property value. Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.
+func (m *NetworkInfo) SetNetworkTransportProtocol(value *NetworkTransportProtocol)() {
+    if m != nil {
+        m.networkTransportProtocol = value
+    }
+}
 // SetPort sets the port property value. Network port number used by media endpoint.
 func (m *NetworkInfo) SetPort(value *int32)() {
     if m != nil {
@@ -764,6 +831,12 @@ func (m *NetworkInfo) SetSentQualityEventRatio(value *float32)() {
 func (m *NetworkInfo) SetSubnet(value *string)() {
     if m != nil {
         m.subnet = value
+    }
+}
+// SetTraceRouteHops sets the traceRouteHops property value. List of network trace route hops collected for this media stream.
+func (m *NetworkInfo) SetTraceRouteHops(value []TraceRouteHopable)() {
+    if m != nil {
+        m.traceRouteHops = value
     }
 }
 // SetWifiBand sets the wifiBand property value. WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.

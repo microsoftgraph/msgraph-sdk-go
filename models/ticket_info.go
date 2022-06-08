@@ -8,9 +8,9 @@ import (
 type TicketInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Ticket number meta data
+    // The ticket number.
     ticketNumber *string
-    // Ticket system meta data
+    // The description of the ticket system.
     ticketSystem *string
 }
 // NewTicketInfo instantiates a new ticketInfo and sets the default values.
@@ -57,7 +57,7 @@ func (m *TicketInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetTicketNumber gets the ticketNumber property value. Ticket number meta data
+// GetTicketNumber gets the ticketNumber property value. The ticket number.
 func (m *TicketInfo) GetTicketNumber()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *TicketInfo) GetTicketNumber()(*string) {
         return m.ticketNumber
     }
 }
-// GetTicketSystem gets the ticketSystem property value. Ticket system meta data
+// GetTicketSystem gets the ticketSystem property value. The description of the ticket system.
 func (m *TicketInfo) GetTicketSystem()(*string) {
     if m == nil {
         return nil
@@ -101,13 +101,13 @@ func (m *TicketInfo) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetTicketNumber sets the ticketNumber property value. Ticket number meta data
+// SetTicketNumber sets the ticketNumber property value. The ticket number.
 func (m *TicketInfo) SetTicketNumber(value *string)() {
     if m != nil {
         m.ticketNumber = value
     }
 }
-// SetTicketSystem sets the ticketSystem property value. Ticket system meta data
+// SetTicketSystem sets the ticketSystem property value. The description of the ticket system.
 func (m *TicketInfo) SetTicketSystem(value *string)() {
     if m != nil {
         m.ticketSystem = value

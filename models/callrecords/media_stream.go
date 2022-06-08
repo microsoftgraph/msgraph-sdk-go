@@ -9,6 +9,8 @@ import (
 type MediaStream struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRTA, unknownFutureValue.
+    audioCodec *AudioCodec
     // Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
     averageAudioDegradation *float32
     // Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
@@ -57,6 +59,8 @@ type MediaStream struct {
     streamDirection *MediaStreamDirection
     // Unique identifier for the stream.
     streamId *string
+    // Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
+    videoCodec *VideoCodec
     // True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.
     wasMediaBypassed *bool
 }
@@ -77,6 +81,14 @@ func (m *MediaStream) GetAdditionalData()(map[string]interface{}) {
         return nil
     } else {
         return m.additionalData
+    }
+}
+// GetAudioCodec gets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRTA, unknownFutureValue.
+func (m *MediaStream) GetAudioCodec()(*AudioCodec) {
+    if m == nil {
+        return nil
+    } else {
+        return m.audioCodec
     }
 }
 // GetAverageAudioDegradation gets the averageAudioDegradation property value. Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
@@ -178,6 +190,16 @@ func (m *MediaStream) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["audioCodec"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAudioCodec)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAudioCodec(val.(*AudioCodec))
+        }
+        return nil
+    }
     res["averageAudioDegradation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
@@ -418,6 +440,16 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["videoCodec"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseVideoCodec)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVideoCodec(val.(*VideoCodec))
+        }
+        return nil
+    }
     res["wasMediaBypassed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -526,6 +558,14 @@ func (m *MediaStream) GetStreamId()(*string) {
         return m.streamId
     }
 }
+// GetVideoCodec gets the videoCodec property value. Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
+func (m *MediaStream) GetVideoCodec()(*VideoCodec) {
+    if m == nil {
+        return nil
+    } else {
+        return m.videoCodec
+    }
+}
 // GetWasMediaBypassed gets the wasMediaBypassed property value. True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.
 func (m *MediaStream) GetWasMediaBypassed()(*bool) {
     if m == nil {
@@ -536,6 +576,13 @@ func (m *MediaStream) GetWasMediaBypassed()(*bool) {
 }
 // Serialize serializes information the current object
 func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAudioCodec() != nil {
+        cast := (*m.GetAudioCodec()).String()
+        err := writer.WriteStringValue("audioCodec", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteFloat32Value("averageAudioDegradation", m.GetAverageAudioDegradation())
         if err != nil {
@@ -681,6 +728,13 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetVideoCodec() != nil {
+        cast := (*m.GetVideoCodec()).String()
+        err := writer.WriteStringValue("videoCodec", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteBoolValue("wasMediaBypassed", m.GetWasMediaBypassed())
         if err != nil {
@@ -699,6 +753,12 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *MediaStream) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetAudioCodec sets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRTA, unknownFutureValue.
+func (m *MediaStream) SetAudioCodec(value *AudioCodec)() {
+    if m != nil {
+        m.audioCodec = value
     }
 }
 // SetAverageAudioDegradation sets the averageAudioDegradation property value. Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
@@ -843,6 +903,12 @@ func (m *MediaStream) SetStreamDirection(value *MediaStreamDirection)() {
 func (m *MediaStream) SetStreamId(value *string)() {
     if m != nil {
         m.streamId = value
+    }
+}
+// SetVideoCodec sets the videoCodec property value. Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
+func (m *MediaStream) SetVideoCodec(value *VideoCodec)() {
+    if m != nil {
+        m.videoCodec = value
     }
 }
 // SetWasMediaBypassed sets the wasMediaBypassed property value. True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.

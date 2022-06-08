@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the cloudCommunications singleton.
+// Casts the previous resource to user.
 type OnlineMeetingRole int
 
 const (

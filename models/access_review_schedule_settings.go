@@ -12,6 +12,8 @@ type AccessReviewScheduleSettings struct {
     applyActions []AccessReviewApplyActionable
     // Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
     autoApplyDecisionsEnabled *bool
+    // Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
+    decisionHistoriesForReviewersEnabled *bool
     // Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
     defaultDecision *string
     // Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
@@ -64,6 +66,14 @@ func (m *AccessReviewScheduleSettings) GetAutoApplyDecisionsEnabled()(*bool) {
         return m.autoApplyDecisionsEnabled
     }
 }
+// GetDecisionHistoriesForReviewersEnabled gets the decisionHistoriesForReviewersEnabled property value. Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
+func (m *AccessReviewScheduleSettings) GetDecisionHistoriesForReviewersEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.decisionHistoriesForReviewersEnabled
+    }
+}
 // GetDefaultDecision gets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
 func (m *AccessReviewScheduleSettings) GetDefaultDecision()(*string) {
     if m == nil {
@@ -104,6 +114,16 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetAutoApplyDecisionsEnabled(val)
+        }
+        return nil
+    }
+    res["decisionHistoriesForReviewersEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDecisionHistoriesForReviewersEnabled(val)
         }
         return nil
     }
@@ -256,6 +276,12 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err := writer.WriteBoolValue("decisionHistoriesForReviewersEnabled", m.GetDecisionHistoriesForReviewersEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("defaultDecision", m.GetDefaultDecision())
         if err != nil {
             return err
@@ -327,6 +353,12 @@ func (m *AccessReviewScheduleSettings) SetApplyActions(value []AccessReviewApply
 func (m *AccessReviewScheduleSettings) SetAutoApplyDecisionsEnabled(value *bool)() {
     if m != nil {
         m.autoApplyDecisionsEnabled = value
+    }
+}
+// SetDecisionHistoriesForReviewersEnabled sets the decisionHistoriesForReviewersEnabled property value. Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
+func (m *AccessReviewScheduleSettings) SetDecisionHistoriesForReviewersEnabled(value *bool)() {
+    if m != nil {
+        m.decisionHistoriesForReviewersEnabled = value
     }
 }
 // SetDefaultDecision sets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.

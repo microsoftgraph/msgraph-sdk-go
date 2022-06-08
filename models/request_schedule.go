@@ -9,11 +9,11 @@ import (
 type RequestSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // When the access should expire.
+    // In entitlement management, when the access should expire.
     expiration ExpirationPatternable
-    // For recurring access. Not used at present.
+    // For recurring access, or eligible or active assignment. This property is currently unsupported in both PIM and entitlement management.
     recurrence PatternedRecurrenceable
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewRequestSchedule instantiates a new requestSchedule and sets the default values.
@@ -35,7 +35,7 @@ func (m *RequestSchedule) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetExpiration gets the expiration property value. When the access should expire.
+// GetExpiration gets the expiration property value. In entitlement management, when the access should expire.
 func (m *RequestSchedule) GetExpiration()(ExpirationPatternable) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *RequestSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetRecurrence gets the recurrence property value. For recurring access. Not used at present.
+// GetRecurrence gets the recurrence property value. For recurring access, or eligible or active assignment. This property is currently unsupported in both PIM and entitlement management.
 func (m *RequestSchedule) GetRecurrence()(PatternedRecurrenceable) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *RequestSchedule) GetRecurrence()(PatternedRecurrenceable) {
         return m.recurrence
     }
 }
-// GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.
 func (m *RequestSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -128,19 +128,19 @@ func (m *RequestSchedule) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetExpiration sets the expiration property value. When the access should expire.
+// SetExpiration sets the expiration property value. In entitlement management, when the access should expire.
 func (m *RequestSchedule) SetExpiration(value ExpirationPatternable)() {
     if m != nil {
         m.expiration = value
     }
 }
-// SetRecurrence sets the recurrence property value. For recurring access. Not used at present.
+// SetRecurrence sets the recurrence property value. For recurring access, or eligible or active assignment. This property is currently unsupported in both PIM and entitlement management.
 func (m *RequestSchedule) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.
 func (m *RequestSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startDateTime = value

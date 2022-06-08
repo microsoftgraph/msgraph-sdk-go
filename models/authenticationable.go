@@ -11,9 +11,11 @@ type Authenticationable interface {
     GetFido2Methods()([]Fido2AuthenticationMethodable)
     GetMethods()([]AuthenticationMethodable)
     GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethodable)
+    GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable)
     GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethodable)
     SetFido2Methods(value []Fido2AuthenticationMethodable)()
     SetMethods(value []AuthenticationMethodable)()
     SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethodable)()
+    SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)()
     SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethodable)()
 }

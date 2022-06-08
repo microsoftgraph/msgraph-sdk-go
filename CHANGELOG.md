@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.26.0] - 2022-06-08
+
+### Changed
+
+- Weekly generation
+- Updated kiota references to solve for YAML dependency security bulletin.
+
 ## [0.25.0] - 2022-05-31
 
 ### Changed

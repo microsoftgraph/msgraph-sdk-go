@@ -8,10 +8,12 @@ import (
     i36d51fdd7beea498cf790dc7e6370ee500c1ae341f5d8a4c36d081226f91ee96 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/methods"
     i3d41e7ad8d690559b414262fba543314187fe0d02cf0420f778314c36a9270af "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods"
     i96e8d458309e5631e00b3cbc4d031fbc1d45f1137d2f6149c3e103603bd3dcf2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods"
+    if1ee18a3da4e8e27c6078dd6a39fae3b6b567ea5f3ebfaab6b86da5d3c9a22b3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/temporaryaccesspassmethods"
     i33902446e72a35eb92a8d90a86021f50ebf6a7badd666e5dd29d39829615e81f "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item"
     i4f5c6f02fac27458fe06277174a65fe094c80b096c7dceec66f3bc6ab61be13b "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/fido2methods/item"
     i9204deeb9308a81051ecfbd988907f606e6330dbfc4b953a713d2803d2d5735a "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item"
     ia6b9ba2f6ac4b661e1925c06219918528114879cf86ac1234330ab29aa5c8f58 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/methods/item"
+    iaafaaf5d5b20e6d3863c502a3d1a4bb1a58d82360807d327e71876b1c02f0d7e "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/temporaryaccesspassmethods/item"
 )
 
 // AuthenticationRequestBuilder provides operations to manage the authentication property of the microsoft.graph.user entity.
@@ -98,6 +100,7 @@ func (m *AuthenticationRequestBuilder) CreateGetRequestInformationWithRequestCon
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -228,6 +231,21 @@ func (m *AuthenticationRequestBuilder) PatchWithRequestConfigurationAndResponseH
         return err
     }
     return nil
+}
+// TemporaryAccessPassMethods the temporaryAccessPassMethods property
+func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethods()(*if1ee18a3da4e8e27c6078dd6a39fae3b6b567ea5f3ebfaab6b86da5d3c9a22b3.TemporaryAccessPassMethodsRequestBuilder) {
+    return if1ee18a3da4e8e27c6078dd6a39fae3b6b567ea5f3ebfaab6b86da5d3c9a22b3.NewTemporaryAccessPassMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TemporaryAccessPassMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.temporaryAccessPassMethods.item collection
+func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethodsById(id string)(*iaafaaf5d5b20e6d3863c502a3d1a4bb1a58d82360807d327e71876b1c02f0d7e.TemporaryAccessPassAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["temporaryAccessPassAuthenticationMethod%2Did"] = id
+    }
+    return iaafaaf5d5b20e6d3863c502a3d1a4bb1a58d82360807d327e71876b1c02f0d7e.NewTemporaryAccessPassAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsHelloForBusinessMethods the windowsHelloForBusinessMethods property
 func (m *AuthenticationRequestBuilder) WindowsHelloForBusinessMethods()(*i3d41e7ad8d690559b414262fba543314187fe0d02cf0420f778314c36a9270af.WindowsHelloForBusinessMethodsRequestBuilder) {
