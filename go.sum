@@ -11,8 +11,8 @@ github.com/microsoft/kiota-http-go v0.5.1 h1:8QLZBfvPRvISUO+qWvv6fBrxaBH5n0V/Ven
 github.com/microsoft/kiota-http-go v0.5.1/go.mod h1:WqEFNw3rMEatymG4Xh3rLSTxaKq80rJdQ/CSSh7m6jI=
 github.com/microsoft/kiota-serialization-json-go v0.5.2 h1:9L2IRD/xfrgq3r2Eoz9u95t9sb9STOZmlP9RDSVZ0OU=
 github.com/microsoft/kiota-serialization-json-go v0.5.2/go.mod h1:GI9vrssO1EvqzDtvMKuhjALn40phZOWkeeaMgtCk6xE=
-github.com/microsoft/kiota-serialization-text-go v0.4.0 h1:jJd5+yjej/KeJtHSMvNNeoIuXtEhiq5p89oRh0v0bW4=
-github.com/microsoft/kiota-serialization-text-go v0.4.0/go.mod h1:jysZ8wwuFHcwI6YhJKVINisrTfQ7VBuly7oiVsd+gHg=
+github.com/microsoft/kiota-serialization-text-go v0.4.1 h1:6QPH7+geUPCpaSZkKCQw0Scngx2IF0vKodrvvWWiu2A=
+github.com/microsoft/kiota-serialization-text-go v0.4.1/go.mod h1:DsriFnVBDCc4D84qxG3j8q/1Sxu16JILfhxMZm3kdfw=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.26.1 h1:wzEoPk6uyd+SkBur9NpzpPfKseUQYT1yjFkDUueLpfk=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.26.1/go.mod h1:cKWHZ9CfJnSvBJxzXnAXRA+SSy8JeAbS+4kOn3uyOIY=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
