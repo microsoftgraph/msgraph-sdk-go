@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i08ce94f7ef942e94b5ccec1a7bd4cc4651f06d3fa3149cfe197355f8b7039a98 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/sites/remove"
+    ia640a0bc772ba2f19a28669d7884406da08a0c55dd9923e579e57b372aafc5be "github.com/microsoftgraph/msgraph-sdk-go/groups/item/sites/add"
     if6cf0b03baaff43a8e3f983a475e7700e1332b3538b3528a74e87950a79a1280 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/sites/count"
 )
 
@@ -50,6 +52,10 @@ type SitesRequestBuilderPostRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Add the add property
+func (m *SitesRequestBuilder) Add()(*ia640a0bc772ba2f19a28669d7884406da08a0c55dd9923e579e57b372aafc5be.AddRequestBuilder) {
+    return ia640a0bc772ba2f19a28669d7884406da08a0c55dd9923e579e57b372aafc5be.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SitesRequestBuilder) {
@@ -151,4 +157,8 @@ func (m *SitesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(bod
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable), nil
+}
+// Remove the remove property
+func (m *SitesRequestBuilder) Remove()(*i08ce94f7ef942e94b5ccec1a7bd4cc4651f06d3fa3149cfe197355f8b7039a98.RemoveRequestBuilder) {
+    return i08ce94f7ef942e94b5ccec1a7bd4cc4651f06d3fa3149cfe197355f8b7039a98.NewRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

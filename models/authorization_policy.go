@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthorizationPolicy provides operations to manage the policyRoot singleton.
+// AuthorizationPolicy 
 type AuthorizationPolicy struct {
     PolicyBase
     // Indicates whether users can sign up for email based subscriptions.
@@ -22,7 +22,7 @@ type AuthorizationPolicy struct {
     // Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
     guestUserRoleId *string
 }
-// NewAuthorizationPolicy instantiates a new authorizationPolicy and sets the default values.
+// NewAuthorizationPolicy instantiates a new AuthorizationPolicy and sets the default values.
 func NewAuthorizationPolicy()(*AuthorizationPolicy) {
     m := &AuthorizationPolicy{
         PolicyBase: *NewPolicyBase(),

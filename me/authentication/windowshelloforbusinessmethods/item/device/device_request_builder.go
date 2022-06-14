@@ -6,8 +6,13 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i02f11ba276c0654b01548d69faebb0c77900168eb0641b68226993bf4e352627 "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/registeredowners"
     i2d3ed20798c35789c760a72a8a3cff923a717203a8f55c8703d063849bae61c9 "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/transitivememberof"
+    i33025793d0aacd49bd32f4cd2b9e2882d1dd9ea5700bc896d03d3b5e8293136e "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/checkmembergroups"
+    i651d750ffbc03cf07a84a51f07bae69ea6f8e0aced63a35750bb362f22818ee2 "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/getmemberobjects"
     i8863c21e280ef32e5445c2b728af5fbcbb71c005cbf858df118b8ed1f88f53a5 "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/memberof"
+    ib0a36e9601fdfbfc151fb56662cad92b05e0534ba45c3b00911b77f8843a312c "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/getmembergroups"
     id777e348b88248f5da3d11b2a2524ae92ecf373d040697797a24f5fafc73ccec "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/registeredusers"
+    idd076584090ed99989ac681eb9439f2b2bd24e71c13469a33ce7dcbf745be6eb "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/restore"
+    ie7e46888ff05101fe75bb8cceb061bca8a91233767f6ec2f236efa3fffa4004f "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/checkmemberobjects"
     if3271ea0beb260c0136b8041947b3fabf07eb5c61529b72bf2165e70ddd5ee8a "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/extensions"
     i124bc1a2abc2ae5d3383f13c8ca5eba415dcb0a9702d7930770b07e06244958b "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/memberof/item"
     i2a7d0d988b8e6e11414ca2b5a2d0d798269995d56f7279e62a56a57578a2bed6 "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/registeredowners/item"
@@ -54,6 +59,14 @@ type DeviceRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CheckMemberGroups the checkMemberGroups property
+func (m *DeviceRequestBuilder) CheckMemberGroups()(*i33025793d0aacd49bd32f4cd2b9e2882d1dd9ea5700bc896d03d3b5e8293136e.CheckMemberGroupsRequestBuilder) {
+    return i33025793d0aacd49bd32f4cd2b9e2882d1dd9ea5700bc896d03d3b5e8293136e.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CheckMemberObjects the checkMemberObjects property
+func (m *DeviceRequestBuilder) CheckMemberObjects()(*ie7e46888ff05101fe75bb8cceb061bca8a91233767f6ec2f236efa3fffa4004f.CheckMemberObjectsRequestBuilder) {
+    return ie7e46888ff05101fe75bb8cceb061bca8a91233767f6ec2f236efa3fffa4004f.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDeviceRequestBuilderInternal instantiates a new DeviceRequestBuilder and sets the default values.
 func NewDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceRequestBuilder) {
@@ -166,6 +179,14 @@ func (m *DeviceRequestBuilder) ExtensionsById(id string)(*i66f2c54f642cba3e3d4ef
 func (m *DeviceRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetMemberGroups the getMemberGroups property
+func (m *DeviceRequestBuilder) GetMemberGroups()(*ib0a36e9601fdfbfc151fb56662cad92b05e0534ba45c3b00911b77f8843a312c.GetMemberGroupsRequestBuilder) {
+    return ib0a36e9601fdfbfc151fb56662cad92b05e0534ba45c3b00911b77f8843a312c.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetMemberObjects the getMemberObjects property
+func (m *DeviceRequestBuilder) GetMemberObjects()(*i651d750ffbc03cf07a84a51f07bae69ea6f8e0aced63a35750bb362f22818ee2.GetMemberObjectsRequestBuilder) {
+    return i651d750ffbc03cf07a84a51f07bae69ea6f8e0aced63a35750bb362f22818ee2.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler the registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 func (m *DeviceRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -246,6 +267,10 @@ func (m *DeviceRequestBuilder) RegisteredUsersById(id string)(*i5d95cd71373e2e78
         urlTplParams["directoryObject%2Did"] = id
     }
     return i5d95cd71373e2e78ad60d009bead769a40e126e26f3eba8633c5e4fd90ac2d9c.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Restore the restore property
+func (m *DeviceRequestBuilder) Restore()(*idd076584090ed99989ac681eb9439f2b2bd24e71c13469a33ce7dcbf745be6eb.RestoreRequestBuilder) {
+    return idd076584090ed99989ac681eb9439f2b2bd24e71c13469a33ce7dcbf745be6eb.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TransitiveMemberOf the transitiveMemberOf property
 func (m *DeviceRequestBuilder) TransitiveMemberOf()(*i2d3ed20798c35789c760a72a8a3cff923a717203a8f55c8703d063849bae61c9.TransitiveMemberOfRequestBuilder) {

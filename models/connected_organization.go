@@ -14,11 +14,11 @@ type ConnectedOrganization struct {
     description *string
     // The display name of the connected organization. Supports $filter (eq).
     displayName *string
-    // Nullable.
+    // The externalSponsors property
     externalSponsors []DirectoryObjectable
     // The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
     identitySources []IdentitySourceable
-    // Nullable.
+    // The internalSponsors property
     internalSponsors []DirectoryObjectable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -60,7 +60,7 @@ func (m *ConnectedOrganization) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExternalSponsors gets the externalSponsors property value. Nullable.
+// GetExternalSponsors gets the externalSponsors property value. The externalSponsors property
 func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
         return m.identitySources
     }
 }
-// GetInternalSponsors gets the internalSponsors property value. Nullable.
+// GetInternalSponsors gets the internalSponsors property value. The internalSponsors property
 func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -284,7 +284,7 @@ func (m *ConnectedOrganization) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExternalSponsors sets the externalSponsors property value. Nullable.
+// SetExternalSponsors sets the externalSponsors property value. The externalSponsors property
 func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObjectable)() {
     if m != nil {
         m.externalSponsors = value
@@ -296,7 +296,7 @@ func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySourceable)()
         m.identitySources = value
     }
 }
-// SetInternalSponsors sets the internalSponsors property value. Nullable.
+// SetInternalSponsors sets the internalSponsors property value. The internalSponsors property
 func (m *ConnectedOrganization) SetInternalSponsors(value []DirectoryObjectable)() {
     if m != nil {
         m.internalSponsors = value

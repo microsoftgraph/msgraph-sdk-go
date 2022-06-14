@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// User casts the previous resource to user.
+// User 
 type User struct {
     DirectoryObject
     // A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -24,7 +24,7 @@ type User struct {
     assignedLicenses []AssignedLicenseable
     // The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
     assignedPlans []AssignedPlanable
-    // TODO: Add Description
+    // The authentication methods that are supported for the user.
     authentication Authenticationable
     // The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
     birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -102,7 +102,7 @@ type User struct {
     imAddresses []string
     // Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
     inferenceClassification InferenceClassificationable
-    // Read-only. Nullable.
+    // The insights property
     insights OfficeGraphInsightsable
     // A list for the user to describe their interests. Returned only on $select.
     interests []string
@@ -146,7 +146,7 @@ type User struct {
     oauth2PermissionGrants []OAuth2PermissionGrantable
     // The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     officeLocation *string
-    // Read-only.
+    // The onenote property
     onenote Onenoteable
     // The onlineMeetings property
     onlineMeetings []OnlineMeetingable
@@ -188,7 +188,7 @@ type User struct {
     people []Personable
     // The user's profile photo. Read-only.
     photo ProfilePhotoable
-    // Read-only. Nullable.
+    // The photos property
     photos []ProfilePhotoable
     // Selective Planner services available to the user. Read-only. Nullable.
     planner PlannerUserable
@@ -214,7 +214,7 @@ type User struct {
     schools []string
     // The scoped-role administrative unit memberships for this user. Read-only. Nullable.
     scopedRoleMemberOf []ScopedRoleMembershipable
-    // Read-only. Nullable.
+    // The settings property
     settings UserSettingsable
     // Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
     showInAddressList *bool
@@ -241,7 +241,7 @@ type User struct {
     // A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
     userType *string
 }
-// NewUser instantiates a new user and sets the default values.
+// NewUser instantiates a new User and sets the default values.
 func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),
@@ -316,7 +316,7 @@ func (m *User) GetAssignedPlans()([]AssignedPlanable) {
         return m.assignedPlans
     }
 }
-// GetAuthentication gets the authentication property value. TODO: Add Description
+// GetAuthentication gets the authentication property value. The authentication methods that are supported for the user.
 func (m *User) GetAuthentication()(Authenticationable) {
     if m == nil {
         return nil
@@ -1981,7 +1981,7 @@ func (m *User) GetInferenceClassification()(InferenceClassificationable) {
         return m.inferenceClassification
     }
 }
-// GetInsights gets the insights property value. Read-only. Nullable.
+// GetInsights gets the insights property value. The insights property
 func (m *User) GetInsights()(OfficeGraphInsightsable) {
     if m == nil {
         return nil
@@ -2157,7 +2157,7 @@ func (m *User) GetOfficeLocation()(*string) {
         return m.officeLocation
     }
 }
-// GetOnenote gets the onenote property value. Read-only.
+// GetOnenote gets the onenote property value. The onenote property
 func (m *User) GetOnenote()(Onenoteable) {
     if m == nil {
         return nil
@@ -2325,7 +2325,7 @@ func (m *User) GetPhoto()(ProfilePhotoable) {
         return m.photo
     }
 }
-// GetPhotos gets the photos property value. Read-only. Nullable.
+// GetPhotos gets the photos property value. The photos property
 func (m *User) GetPhotos()([]ProfilePhotoable) {
     if m == nil {
         return nil
@@ -2429,7 +2429,7 @@ func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
         return m.scopedRoleMemberOf
     }
 }
-// GetSettings gets the settings property value. Read-only. Nullable.
+// GetSettings gets the settings property value. The settings property
 func (m *User) GetSettings()(UserSettingsable) {
     if m == nil {
         return nil
@@ -3437,7 +3437,7 @@ func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
         m.assignedPlans = value
     }
 }
-// SetAuthentication sets the authentication property value. TODO: Add Description
+// SetAuthentication sets the authentication property value. The authentication methods that are supported for the user.
 func (m *User) SetAuthentication(value Authenticationable)() {
     if m != nil {
         m.authentication = value
@@ -3671,7 +3671,7 @@ func (m *User) SetInferenceClassification(value InferenceClassificationable)() {
         m.inferenceClassification = value
     }
 }
-// SetInsights sets the insights property value. Read-only. Nullable.
+// SetInsights sets the insights property value. The insights property
 func (m *User) SetInsights(value OfficeGraphInsightsable)() {
     if m != nil {
         m.insights = value
@@ -3803,7 +3803,7 @@ func (m *User) SetOfficeLocation(value *string)() {
         m.officeLocation = value
     }
 }
-// SetOnenote sets the onenote property value. Read-only.
+// SetOnenote sets the onenote property value. The onenote property
 func (m *User) SetOnenote(value Onenoteable)() {
     if m != nil {
         m.onenote = value
@@ -3929,7 +3929,7 @@ func (m *User) SetPhoto(value ProfilePhotoable)() {
         m.photo = value
     }
 }
-// SetPhotos sets the photos property value. Read-only. Nullable.
+// SetPhotos sets the photos property value. The photos property
 func (m *User) SetPhotos(value []ProfilePhotoable)() {
     if m != nil {
         m.photos = value
@@ -4007,7 +4007,7 @@ func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
         m.scopedRoleMemberOf = value
     }
 }
-// SetSettings sets the settings property value. Read-only. Nullable.
+// SetSettings sets the settings property value. The settings property
 func (m *User) SetSettings(value UserSettingsable)() {
     if m != nil {
         m.settings = value

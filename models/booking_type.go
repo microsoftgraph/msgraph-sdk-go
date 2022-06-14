@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to room.
+// Provides operations to manage the collection of place entities.
 type BookingType int
 
 const (

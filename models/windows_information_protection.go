@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtection policy for Windows information protection to configure detailed management settings
+// WindowsInformationProtection 
 type WindowsInformationProtection struct {
     ManagedAppPolicy
     // Navigation property to list of security groups targeted for policy.
@@ -58,7 +58,7 @@ type WindowsInformationProtection struct {
     // Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
     smbAutoEncryptedFileExtensions []WindowsInformationProtectionResourceCollectionable
 }
-// NewWindowsInformationProtection instantiates a new windowsInformationProtection and sets the default values.
+// NewWindowsInformationProtection instantiates a new WindowsInformationProtection and sets the default values.
 func NewWindowsInformationProtection()(*WindowsInformationProtection) {
     m := &WindowsInformationProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
@@ -80,8 +80,10 @@ func CreateWindowsInformationProtectionFromDiscriminatorValue(parseNode i878a80d
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.windowsInformationProtection":
-                        return NewWindowsInformationProtection(), nil
+                    case "#microsoft.graph.mdmWindowsInformationProtectionPolicy":
+                        return NewMdmWindowsInformationProtectionPolicy(), nil
+                    case "#microsoft.graph.windowsInformationProtectionPolicy":
+                        return NewWindowsInformationProtectionPolicy(), nil
                 }
             }
         }

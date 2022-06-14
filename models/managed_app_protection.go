@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppProtection policy used to configure detailed management settings for a specified set of apps
+// ManagedAppProtection 
 type ManagedAppProtection struct {
     ManagedAppPolicy
     // Data storage locations where a user may store managed data.
@@ -62,7 +62,7 @@ type ManagedAppProtection struct {
     // Indicates whether simplePin is blocked.
     simplePinBlocked *bool
 }
-// NewManagedAppProtection instantiates a new managedAppProtection and sets the default values.
+// NewManagedAppProtection instantiates a new ManagedAppProtection and sets the default values.
 func NewManagedAppProtection()(*ManagedAppProtection) {
     m := &ManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
@@ -84,8 +84,10 @@ func CreateManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.managedAppProtection":
-                        return NewManagedAppProtection(), nil
+                    case "#microsoft.graph.defaultManagedAppProtection":
+                        return NewDefaultManagedAppProtection(), nil
+                    case "#microsoft.graph.targetedManagedAppProtection":
+                        return NewTargetedManagedAppProtection(), nil
                 }
             }
         }

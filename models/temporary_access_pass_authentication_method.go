@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TemporaryAccessPassAuthenticationMethod casts the previous resource to user.
+// TemporaryAccessPassAuthenticationMethod 
 type TemporaryAccessPassAuthenticationMethod struct {
     AuthenticationMethod
     // The date and time when the temporaryAccessPass was created.
@@ -23,7 +23,7 @@ type TemporaryAccessPassAuthenticationMethod struct {
     // The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
     temporaryAccessPass *string
 }
-// NewTemporaryAccessPassAuthenticationMethod instantiates a new temporaryAccessPassAuthenticationMethod and sets the default values.
+// NewTemporaryAccessPassAuthenticationMethod instantiates a new TemporaryAccessPassAuthenticationMethod and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethod()(*TemporaryAccessPassAuthenticationMethod) {
     m := &TemporaryAccessPassAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

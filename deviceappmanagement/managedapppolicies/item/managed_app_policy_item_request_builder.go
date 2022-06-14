@@ -4,9 +4,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    i3683ba7627b8cfd708db5823cf7d88bd969d10b57d9160ad4fa9a4c365901758 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedapppolicies/item/windowsinformationprotection"
-    ib18aa17be07a21575f3dc1461c70fa5b8c65d4d6a8fd95cc3441984879664e20 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedapppolicies/item/targetedmanagedappprotection"
-    ibab033c1a8b48bed14f99450a0356d81369bc62e3c8a8198133c8b5ead2c5d4a "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedapppolicies/item/managedappprotection"
     iece8e7ddbf399451514e3763c1358d8aada93c5bf96f4c2a68c0c6db1146ba76 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedapppolicies/item/targetapps"
 )
 
@@ -161,10 +158,6 @@ func (m *ManagedAppPolicyItemRequestBuilder) GetWithRequestConfigurationAndRespo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyable), nil
 }
-// ManagedAppProtection the managedAppProtection property
-func (m *ManagedAppPolicyItemRequestBuilder) ManagedAppProtection()(*ibab033c1a8b48bed14f99450a0356d81369bc62e3c8a8198133c8b5ead2c5d4a.ManagedAppProtectionRequestBuilder) {
-    return ibab033c1a8b48bed14f99450a0356d81369bc62e3c8a8198133c8b5ead2c5d4a.NewManagedAppProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Patch update the navigation property managedAppPolicies in deviceAppManagement
 func (m *ManagedAppPolicyItemRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
@@ -188,12 +181,4 @@ func (m *ManagedAppPolicyItemRequestBuilder) PatchWithRequestConfigurationAndRes
 // TargetApps the targetApps property
 func (m *ManagedAppPolicyItemRequestBuilder) TargetApps()(*iece8e7ddbf399451514e3763c1358d8aada93c5bf96f4c2a68c0c6db1146ba76.TargetAppsRequestBuilder) {
     return iece8e7ddbf399451514e3763c1358d8aada93c5bf96f4c2a68c0c6db1146ba76.NewTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// TargetedManagedAppProtection the targetedManagedAppProtection property
-func (m *ManagedAppPolicyItemRequestBuilder) TargetedManagedAppProtection()(*ib18aa17be07a21575f3dc1461c70fa5b8c65d4d6a8fd95cc3441984879664e20.TargetedManagedAppProtectionRequestBuilder) {
-    return ib18aa17be07a21575f3dc1461c70fa5b8c65d4d6a8fd95cc3441984879664e20.NewTargetedManagedAppProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// WindowsInformationProtection the windowsInformationProtection property
-func (m *ManagedAppPolicyItemRequestBuilder) WindowsInformationProtection()(*i3683ba7627b8cfd708db5823cf7d88bd969d10b57d9160ad4fa9a4c365901758.WindowsInformationProtectionRequestBuilder) {
-    return i3683ba7627b8cfd708db5823cf7d88bd969d10b57d9160ad4fa9a4c365901758.NewWindowsInformationProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

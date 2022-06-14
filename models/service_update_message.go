@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceUpdateMessage provides operations to manage the admin singleton.
+// ServiceUpdateMessage 
 type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
     // The expected deadline of the action for the message.
@@ -31,7 +31,7 @@ type ServiceUpdateMessage struct {
     // Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
     viewPoint ServiceUpdateMessageViewpointable
 }
-// NewServiceUpdateMessage instantiates a new serviceUpdateMessage and sets the default values.
+// NewServiceUpdateMessage instantiates a new ServiceUpdateMessage and sets the default values.
 func NewServiceUpdateMessage()(*ServiceUpdateMessage) {
     m := &ServiceUpdateMessage{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),

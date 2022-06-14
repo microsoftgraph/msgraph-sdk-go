@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    iefa2d87f0daffd3425686a80f08eb2e621fc6f090b90101d098ba6c37677e38e "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/getallmessages"
     ifef025f0d0787f76563e1d25fb6accd04c3cab03366c772f62656707801affda "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/count"
 )
 
@@ -115,6 +116,10 @@ func (m *JoinedTeamsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 // Get the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 func (m *JoinedTeamsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetAllMessages provides operations to call the getAllMessages method.
+func (m *JoinedTeamsRequestBuilder) GetAllMessages()(*iefa2d87f0daffd3425686a80f08eb2e621fc6f090b90101d098ba6c37677e38e.GetAllMessagesRequestBuilder) {
+    return iefa2d87f0daffd3425686a80f08eb2e621fc6f090b90101d098ba6c37677e38e.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetWithRequestConfigurationAndResponseHandler the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 func (m *JoinedTeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable, error) {

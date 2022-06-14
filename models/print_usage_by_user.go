@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintUsageByUser provides operations to manage the reportRoot singleton.
+// PrintUsageByUser 
 type PrintUsageByUser struct {
     PrintUsage
     // The UPN of the user represented by these statistics.
     userPrincipalName *string
 }
-// NewPrintUsageByUser instantiates a new printUsageByUser and sets the default values.
+// NewPrintUsageByUser instantiates a new PrintUsageByUser and sets the default values.
 func NewPrintUsageByUser()(*PrintUsageByUser) {
     m := &PrintUsageByUser{
         PrintUsage: *NewPrintUsage(),

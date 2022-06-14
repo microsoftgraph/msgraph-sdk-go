@@ -38,8 +38,10 @@ func CreatePlaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.place":
-                        return NewPlace(), nil
+                    case "#microsoft.graph.room":
+                        return NewRoom(), nil
+                    case "#microsoft.graph.roomList":
+                        return NewRoomList(), nil
                 }
             }
         }

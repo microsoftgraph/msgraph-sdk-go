@@ -48,8 +48,10 @@ func CreatePrinterBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.printerBase":
-                        return NewPrinterBase(), nil
+                    case "#microsoft.graph.printer":
+                        return NewPrinter(), nil
+                    case "#microsoft.graph.printerShare":
+                        return NewPrinterShare(), nil
                 }
             }
         }

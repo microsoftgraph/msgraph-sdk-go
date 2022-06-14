@@ -30,8 +30,8 @@ func CreateBookingStaffMemberBaseFromDiscriminatorValue(parseNode i878a80d2330e8
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.bookingStaffMemberBase":
-                        return NewBookingStaffMemberBase(), nil
+                    case "#microsoft.graph.bookingStaffMember":
+                        return NewBookingStaffMember(), nil
                 }
             }
         }

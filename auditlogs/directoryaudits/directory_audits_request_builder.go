@@ -16,7 +16,7 @@ type DirectoryAuditsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DirectoryAuditsRequestBuilderGetQueryParameters read-only. Nullable.
+// DirectoryAuditsRequestBuilderGetQueryParameters get directoryAudits from auditLogs
 type DirectoryAuditsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewDirectoryAuditsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *DirectoryAuditsRequestBuilder) Count()(*ife7664223b3ee54348c23c0284f781e54945760039c67473846fc45e2fc2a52e.CountRequestBuilder) {
     return ife7664223b3ee54348c23c0284f781e54945760039c67473846fc45e2fc2a52e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get directoryAudits from auditLogs
 func (m *DirectoryAuditsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get directoryAudits from auditLogs
 func (m *DirectoryAuditsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryAuditsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *DirectoryAuditsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get directoryAudits from auditLogs
 func (m *DirectoryAuditsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryAuditCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get directoryAudits from auditLogs
 func (m *DirectoryAuditsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryAuditsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryAuditCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

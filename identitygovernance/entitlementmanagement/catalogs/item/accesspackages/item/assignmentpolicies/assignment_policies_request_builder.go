@@ -16,7 +16,7 @@ type AssignmentPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AssignmentPoliciesRequestBuilderGetQueryParameters read-only. Nullable.
+// AssignmentPoliciesRequestBuilderGetQueryParameters get assignmentPolicies from identityGovernance
 type AssignmentPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewAssignmentPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *AssignmentPoliciesRequestBuilder) Count()(*i021efdc9124ac9273fee6514318374dabeb4e4e9b857882b9051087b18c87076.CountRequestBuilder) {
     return i021efdc9124ac9273fee6514318374dabeb4e4e9b857882b9051087b18c87076.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get assignmentPolicies from identityGovernance
 func (m *AssignmentPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get assignmentPolicies from identityGovernance
 func (m *AssignmentPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AssignmentPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *AssignmentPoliciesRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get assignmentPolicies from identityGovernance
 func (m *AssignmentPoliciesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentPolicyCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get assignmentPolicies from identityGovernance
 func (m *AssignmentPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

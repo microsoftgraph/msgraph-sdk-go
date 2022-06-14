@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftAuthenticatorAuthenticationMethod casts the previous resource to user.
+// MicrosoftAuthenticatorAuthenticationMethod 
 type MicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
     // The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
@@ -19,7 +19,7 @@ type MicrosoftAuthenticatorAuthenticationMethod struct {
     // Numerical version of this instance of the Authenticator app.
     phoneAppVersion *string
 }
-// NewMicrosoftAuthenticatorAuthenticationMethod instantiates a new microsoftAuthenticatorAuthenticationMethod and sets the default values.
+// NewMicrosoftAuthenticatorAuthenticationMethod instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethod()(*MicrosoftAuthenticatorAuthenticationMethod) {
     m := &MicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

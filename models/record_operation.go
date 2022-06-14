@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RecordOperation provides operations to call the recordResponse method.
+// RecordOperation 
 type RecordOperation struct {
     CommsOperation
     // The access token required to retrieve the recording.
@@ -12,7 +12,7 @@ type RecordOperation struct {
     // The location where the recording is located.
     recordingLocation *string
 }
-// NewRecordOperation instantiates a new recordOperation and sets the default values.
+// NewRecordOperation instantiates a new RecordOperation and sets the default values.
 func NewRecordOperation()(*RecordOperation) {
     m := &RecordOperation{
         CommsOperation: *NewCommsOperation(),

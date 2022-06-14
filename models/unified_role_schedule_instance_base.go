@@ -46,8 +46,10 @@ func CreateUnifiedRoleScheduleInstanceBaseFromDiscriminatorValue(parseNode i878a
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.unifiedRoleScheduleInstanceBase":
-                        return NewUnifiedRoleScheduleInstanceBase(), nil
+                    case "#microsoft.graph.unifiedRoleAssignmentScheduleInstance":
+                        return NewUnifiedRoleAssignmentScheduleInstance(), nil
+                    case "#microsoft.graph.unifiedRoleEligibilityScheduleInstance":
+                        return NewUnifiedRoleEligibilityScheduleInstance(), nil
                 }
             }
         }

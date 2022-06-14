@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ScheduleChangeRequest casts the previous resource to user.
+// ScheduleChangeRequest 
 type ScheduleChangeRequest struct {
     ChangeTrackedEntity
     // The assignedTo property
@@ -25,7 +25,7 @@ type ScheduleChangeRequest struct {
     // The state property
     state *ScheduleChangeState
 }
-// NewScheduleChangeRequest instantiates a new scheduleChangeRequest and sets the default values.
+// NewScheduleChangeRequest instantiates a new ScheduleChangeRequest and sets the default values.
 func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
     m := &ScheduleChangeRequest{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -47,8 +47,12 @@ func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.scheduleChangeRequest":
-                        return NewScheduleChangeRequest(), nil
+                    case "#microsoft.graph.offerShiftRequest":
+                        return NewOfferShiftRequest(), nil
+                    case "#microsoft.graph.openShiftChangeRequest":
+                        return NewOpenShiftChangeRequest(), nil
+                    case "#microsoft.graph.timeOffRequest":
+                        return NewTimeOffRequest(), nil
                 }
             }
         }

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UpdateRecordingStatusOperation provides operations to call the updateRecordingStatus method.
+// UpdateRecordingStatusOperation 
 type UpdateRecordingStatusOperation struct {
     CommsOperation
 }
-// NewUpdateRecordingStatusOperation instantiates a new updateRecordingStatusOperation and sets the default values.
+// NewUpdateRecordingStatusOperation instantiates a new UpdateRecordingStatusOperation and sets the default values.
 func NewUpdateRecordingStatusOperation()(*UpdateRecordingStatusOperation) {
     m := &UpdateRecordingStatusOperation{
         CommsOperation: *NewCommsOperation(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Fido2AuthenticationMethod casts the previous resource to user.
+// Fido2AuthenticationMethod 
 type Fido2AuthenticationMethod struct {
     AuthenticationMethod
     // Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
@@ -21,7 +21,7 @@ type Fido2AuthenticationMethod struct {
     // The manufacturer-assigned model of the FIDO2 security key.
     model *string
 }
-// NewFido2AuthenticationMethod instantiates a new fido2AuthenticationMethod and sets the default values.
+// NewFido2AuthenticationMethod instantiates a new Fido2AuthenticationMethod and sets the default values.
 func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
     m := &Fido2AuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

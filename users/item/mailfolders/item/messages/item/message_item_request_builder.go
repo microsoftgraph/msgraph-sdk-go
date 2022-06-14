@@ -6,7 +6,6 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i062a3ff4d1d6529c88f923d81d7a2d73cc91a7aee2ce785d6ea82b627d35e210 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messages/item/move"
     i19224a4e273490c542daba438c5ae16a7a3f0e0c07160c68599fe9e49e6d6db5 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messages/item/replyall"
-    i2dfc35da4c65425a2b10fff308a7173c784eb400aa7a77530c2b84b758ca6d16 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messages/item/calendarsharingmessage"
     i325c2d93beaffbeb094ac9cd1175734c42683a7c63d9419aadcd8a0a9a992575 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messages/item/attachments"
     i5de64d7ba319e004e4fad5389782964371cfeaa2956093290434d9564c85bcab "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messages/item/createreply"
     i6ad07a59d46ab03d44f649d85e219feb09f1b9de5800cb7b9590ff92347ff356 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messages/item/createforward"
@@ -78,10 +77,6 @@ func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*iaaf4ea6378bf11c
         urlTplParams["attachment%2Did"] = id
     }
     return iaaf4ea6378bf11c338d473c01fe02eb0bcbab7e0785a2c2b63a8d33693b642b7.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CalendarSharingMessage the calendarSharingMessage property
-func (m *MessageItemRequestBuilder) CalendarSharingMessage()(*i2dfc35da4c65425a2b10fff308a7173c784eb400aa7a77530c2b84b758ca6d16.CalendarSharingMessageRequestBuilder) {
-    return i2dfc35da4c65425a2b10fff308a7173c784eb400aa7a77530c2b84b758ca6d16.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageItemRequestBuilder) {

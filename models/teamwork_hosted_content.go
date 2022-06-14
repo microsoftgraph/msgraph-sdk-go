@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkHostedContent provides operations to manage the collection of chat entities.
+// TeamworkHostedContent provides operations to manage the collection of application entities.
 type TeamworkHostedContent struct {
     Entity
     // Write only. Bytes for the hosted content (such as images).
@@ -34,8 +34,8 @@ func CreateTeamworkHostedContentFromDiscriminatorValue(parseNode i878a80d2330e89
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.teamworkHostedContent":
-                        return NewTeamworkHostedContent(), nil
+                    case "#microsoft.graph.chatMessageHostedContent":
+                        return NewChatMessageHostedContent(), nil
                 }
             }
         }

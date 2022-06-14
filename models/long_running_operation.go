@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LongRunningOperation casts the previous resource to user.
+// LongRunningOperation provides operations to manage the collection of application entities.
 type LongRunningOperation struct {
     Entity
     // The createdDateTime property
@@ -41,8 +41,8 @@ func CreateLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.longRunningOperation":
-                        return NewLongRunningOperation(), nil
+                    case "#microsoft.graph.richLongRunningOperation":
+                        return NewRichLongRunningOperation(), nil
                 }
             }
         }

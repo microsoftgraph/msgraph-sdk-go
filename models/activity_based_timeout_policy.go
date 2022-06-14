@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActivityBasedTimeoutPolicy provides operations to manage the policyRoot singleton.
+// ActivityBasedTimeoutPolicy 
 type ActivityBasedTimeoutPolicy struct {
     StsPolicy
 }
-// NewActivityBasedTimeoutPolicy instantiates a new activityBasedTimeoutPolicy and sets the default values.
+// NewActivityBasedTimeoutPolicy instantiates a new ActivityBasedTimeoutPolicy and sets the default values.
 func NewActivityBasedTimeoutPolicy()(*ActivityBasedTimeoutPolicy) {
     m := &ActivityBasedTimeoutPolicy{
         StsPolicy: *NewStsPolicy(),

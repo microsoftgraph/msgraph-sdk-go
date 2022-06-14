@@ -16,7 +16,7 @@ type OutcomesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OutcomesRequestBuilderGetQueryParameters read-Write. Nullable.
+// OutcomesRequestBuilderGetQueryParameters get outcomes from education
 type OutcomesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewOutcomesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *OutcomesRequestBuilder) Count()(*i21cab19164ef6fd1bde159c1c1610c6c03d6979d8b8250dea1399b7dfe71943e.CountRequestBuilder) {
     return i21cab19164ef6fd1bde159c1c1610c6c03d6979d8b8250dea1399b7dfe71943e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-Write. Nullable.
+// CreateGetRequestInformation get outcomes from education
 func (m *OutcomesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-Write. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get outcomes from education
 func (m *OutcomesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OutcomesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *OutcomesRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get read-Write. Nullable.
+// Get get outcomes from education
 func (m *OutcomesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationOutcomeCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-Write. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get outcomes from education
 func (m *OutcomesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OutcomesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationOutcomeCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

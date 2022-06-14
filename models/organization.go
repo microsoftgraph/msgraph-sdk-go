@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Organization provides operations to manage the collection of organization entities.
+// Organization 
 type Organization struct {
     DirectoryObject
     // The collection of service plans associated with the tenant. Not nullable.
@@ -59,7 +59,7 @@ type Organization struct {
     // The collection of domains associated with this tenant. Not nullable.
     verifiedDomains []VerifiedDomainable
 }
-// NewOrganization instantiates a new organization and sets the default values.
+// NewOrganization instantiates a new Organization and sets the default values.
 func NewOrganization()(*Organization) {
     m := &Organization{
         DirectoryObject: *NewDirectoryObject(),

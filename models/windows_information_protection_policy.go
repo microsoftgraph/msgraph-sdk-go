@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionPolicy policy for Windows information protection without MDM
+// WindowsInformationProtectionPolicy 
 type WindowsInformationProtectionPolicy struct {
     WindowsInformationProtection
     // Offline interval before app data is wiped (days)
@@ -32,7 +32,7 @@ type WindowsInformationProtectionPolicy struct {
     // Boolean value that sets Windows Hello for Business as a method for signing into Windows.
     windowsHelloForBusinessBlocked *bool
 }
-// NewWindowsInformationProtectionPolicy instantiates a new windowsInformationProtectionPolicy and sets the default values.
+// NewWindowsInformationProtectionPolicy instantiates a new WindowsInformationProtectionPolicy and sets the default values.
 func NewWindowsInformationProtectionPolicy()(*WindowsInformationProtectionPolicy) {
     m := &WindowsInformationProtectionPolicy{
         WindowsInformationProtection: *NewWindowsInformationProtection(),

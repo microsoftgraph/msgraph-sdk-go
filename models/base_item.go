@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseItem casts the previous resource to user.
+// BaseItem provides operations to manage the collection of application entities.
 type BaseItem struct {
     Entity
     // Identity of the user, device, or application which created the item. Read-only.
@@ -53,8 +53,18 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.baseItem":
-                        return NewBaseItem(), nil
+                    case "#microsoft.graph.drive":
+                        return NewDrive(), nil
+                    case "#microsoft.graph.driveItem":
+                        return NewDriveItem(), nil
+                    case "#microsoft.graph.list":
+                        return NewList(), nil
+                    case "#microsoft.graph.listItem":
+                        return NewListItem(), nil
+                    case "#microsoft.graph.sharedDriveItem":
+                        return NewSharedDriveItem(), nil
+                    case "#microsoft.graph.site":
+                        return NewSite(), nil
                 }
             }
         }

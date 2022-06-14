@@ -32,8 +32,16 @@ func CreateUnifiedRoleManagementPolicyRuleFromDiscriminatorValue(parseNode i878a
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.unifiedRoleManagementPolicyRule":
-                        return NewUnifiedRoleManagementPolicyRule(), nil
+                    case "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule":
+                        return NewUnifiedRoleManagementPolicyApprovalRule(), nil
+                    case "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule":
+                        return NewUnifiedRoleManagementPolicyAuthenticationContextRule(), nil
+                    case "#microsoft.graph.unifiedRoleManagementPolicyEnablementRule":
+                        return NewUnifiedRoleManagementPolicyEnablementRule(), nil
+                    case "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule":
+                        return NewUnifiedRoleManagementPolicyExpirationRule(), nil
+                    case "#microsoft.graph.unifiedRoleManagementPolicyNotificationRule":
+                        return NewUnifiedRoleManagementPolicyNotificationRule(), nil
                 }
             }
         }

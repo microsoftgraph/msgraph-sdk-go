@@ -47,8 +47,14 @@ func CreateThreatAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.threatAssessmentRequest":
-                        return NewThreatAssessmentRequest(), nil
+                    case "#microsoft.graph.emailFileAssessmentRequest":
+                        return NewEmailFileAssessmentRequest(), nil
+                    case "#microsoft.graph.fileAssessmentRequest":
+                        return NewFileAssessmentRequest(), nil
+                    case "#microsoft.graph.mailAssessmentRequest":
+                        return NewMailAssessmentRequest(), nil
+                    case "#microsoft.graph.urlAssessmentRequest":
+                        return NewUrlAssessmentRequest(), nil
                 }
             }
         }

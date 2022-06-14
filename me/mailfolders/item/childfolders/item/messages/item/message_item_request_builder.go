@@ -12,7 +12,6 @@ import (
     i553ef424821113114cf1bc00225a9efe230ddc93aac8ccea07cc5de2136cb379 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/childfolders/item/messages/item/copy"
     i64834a2d56614b2ccb2a2dfc49e862606287bf27d77b1b38ab337ddef0b01e97 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/childfolders/item/messages/item/createforward"
     i6d444f26eccd9ca30baa64d941f503616edab9063dae46f04fd9dab7dca6f9c0 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/childfolders/item/messages/item/forward"
-    i8ea05ca4c255f2fa771004c317a56aadaa95a79915bfd074b340e8433ce02866 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/childfolders/item/messages/item/calendarsharingmessage"
     i93ccc038f4b6b4b4fdf5758a718edbfb235d2b09795924a7702496b0bb31228e "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/childfolders/item/messages/item/move"
     i94e02ca6bbe876584f943372d42c52338e0a50742eb8982f9f877828e71aa6c0 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/childfolders/item/messages/item/reply"
     iabf9f4f32d766802607eeef47bf943c667b9d8615b64e3702e5f46d8fa33d716 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/childfolders/item/messages/item/send"
@@ -78,10 +77,6 @@ func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*i1d3ed8cbd0f9ab9
         urlTplParams["attachment%2Did"] = id
     }
     return i1d3ed8cbd0f9ab9222cdb9b103733cc535f404c80df689179f38989c88730cdd.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CalendarSharingMessage the calendarSharingMessage property
-func (m *MessageItemRequestBuilder) CalendarSharingMessage()(*i8ea05ca4c255f2fa771004c317a56aadaa95a79915bfd074b340e8433ce02866.CalendarSharingMessageRequestBuilder) {
-    return i8ea05ca4c255f2fa771004c317a56aadaa95a79915bfd074b340e8433ce02866.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageItemRequestBuilder) {

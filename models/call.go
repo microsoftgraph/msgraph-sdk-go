@@ -7,7 +7,7 @@ import (
 // Call provides operations to manage the cloudCommunications singleton.
 type Call struct {
     Entity
-    // Read-only. Nullable.
+    // The audioRoutingGroups property
     audioRoutingGroups []AudioRoutingGroupable
     // The callback URL on which callbacks will be delivered. Must be https.
     callbackUri *string
@@ -31,9 +31,9 @@ type Call struct {
     meetingInfo MeetingInfoable
     // The myParticipantId property
     myParticipantId *string
-    // Read-only. Nullable.
+    // The operations property
     operations []CommsOperationable
-    // Read-only. Nullable.
+    // The participants property
     participants []Participantable
     // The requestedModalities property
     requestedModalities []string
@@ -65,7 +65,7 @@ func NewCall()(*Call) {
 func CreateCallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCall(), nil
 }
-// GetAudioRoutingGroups gets the audioRoutingGroups property value. Read-only. Nullable.
+// GetAudioRoutingGroups gets the audioRoutingGroups property value. The audioRoutingGroups property
 func (m *Call) GetAudioRoutingGroups()([]AudioRoutingGroupable) {
     if m == nil {
         return nil
@@ -420,7 +420,7 @@ func (m *Call) GetMyParticipantId()(*string) {
         return m.myParticipantId
     }
 }
-// GetOperations gets the operations property value. Read-only. Nullable.
+// GetOperations gets the operations property value. The operations property
 func (m *Call) GetOperations()([]CommsOperationable) {
     if m == nil {
         return nil
@@ -428,7 +428,7 @@ func (m *Call) GetOperations()([]CommsOperationable) {
         return m.operations
     }
 }
-// GetParticipants gets the participants property value. Read-only. Nullable.
+// GetParticipants gets the participants property value. The participants property
 func (m *Call) GetParticipants()([]Participantable) {
     if m == nil {
         return nil
@@ -676,7 +676,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAudioRoutingGroups sets the audioRoutingGroups property value. Read-only. Nullable.
+// SetAudioRoutingGroups sets the audioRoutingGroups property value. The audioRoutingGroups property
 func (m *Call) SetAudioRoutingGroups(value []AudioRoutingGroupable)() {
     if m != nil {
         m.audioRoutingGroups = value
@@ -748,13 +748,13 @@ func (m *Call) SetMyParticipantId(value *string)() {
         m.myParticipantId = value
     }
 }
-// SetOperations sets the operations property value. Read-only. Nullable.
+// SetOperations sets the operations property value. The operations property
 func (m *Call) SetOperations(value []CommsOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
-// SetParticipants sets the participants property value. Read-only. Nullable.
+// SetParticipants sets the participants property value. The participants property
 func (m *Call) SetParticipants(value []Participantable)() {
     if m != nil {
         m.participants = value

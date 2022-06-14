@@ -5,6 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i4d1bf18e56196e791d87578c574613a05df9ef75e9796ab3f3dd1c9129724ddb "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/count"
+    ic1d6a52c5abc942086091b9065ce2ffede433748aca9e10df7afc71aa826b709 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/getallmessages"
 )
 
 // ChatsRequestBuilder provides operations to manage the chats property of the microsoft.graph.user entity.
@@ -115,6 +116,10 @@ func (m *ChatsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
 // Get get chats from users
 func (m *ChatsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetAllMessages provides operations to call the getAllMessages method.
+func (m *ChatsRequestBuilder) GetAllMessages()(*ic1d6a52c5abc942086091b9065ce2ffede433748aca9e10df7afc71aa826b709.GetAllMessagesRequestBuilder) {
+    return ic1d6a52c5abc942086091b9065ce2ffede433748aca9e10df7afc71aa826b709.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetWithRequestConfigurationAndResponseHandler get chats from users
 func (m *ChatsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChatsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable, error) {

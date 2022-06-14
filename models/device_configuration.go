@@ -53,8 +53,54 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceConfiguration":
-                        return NewDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidCustomConfiguration":
+                        return NewAndroidCustomConfiguration(), nil
+                    case "#microsoft.graph.androidGeneralDeviceConfiguration":
+                        return NewAndroidGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfileCustomConfiguration":
+                        return NewAndroidWorkProfileCustomConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration":
+                        return NewAndroidWorkProfileGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.appleDeviceFeaturesConfigurationBase":
+                        return NewAppleDeviceFeaturesConfigurationBase(), nil
+                    case "#microsoft.graph.editionUpgradeConfiguration":
+                        return NewEditionUpgradeConfiguration(), nil
+                    case "#microsoft.graph.iosCertificateProfile":
+                        return NewIosCertificateProfile(), nil
+                    case "#microsoft.graph.iosCustomConfiguration":
+                        return NewIosCustomConfiguration(), nil
+                    case "#microsoft.graph.iosGeneralDeviceConfiguration":
+                        return NewIosGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.iosUpdateConfiguration":
+                        return NewIosUpdateConfiguration(), nil
+                    case "#microsoft.graph.macOSCustomConfiguration":
+                        return NewMacOSCustomConfiguration(), nil
+                    case "#microsoft.graph.macOSGeneralDeviceConfiguration":
+                        return NewMacOSGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.sharedPCConfiguration":
+                        return NewSharedPCConfiguration(), nil
+                    case "#microsoft.graph.windows10CustomConfiguration":
+                        return NewWindows10CustomConfiguration(), nil
+                    case "#microsoft.graph.windows10EndpointProtectionConfiguration":
+                        return NewWindows10EndpointProtectionConfiguration(), nil
+                    case "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration":
+                        return NewWindows10EnterpriseModernAppManagementConfiguration(), nil
+                    case "#microsoft.graph.windows10GeneralConfiguration":
+                        return NewWindows10GeneralConfiguration(), nil
+                    case "#microsoft.graph.windows10SecureAssessmentConfiguration":
+                        return NewWindows10SecureAssessmentConfiguration(), nil
+                    case "#microsoft.graph.windows10TeamGeneralConfiguration":
+                        return NewWindows10TeamGeneralConfiguration(), nil
+                    case "#microsoft.graph.windows81GeneralConfiguration":
+                        return NewWindows81GeneralConfiguration(), nil
+                    case "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration":
+                        return NewWindowsDefenderAdvancedThreatProtectionConfiguration(), nil
+                    case "#microsoft.graph.windowsPhone81CustomConfiguration":
+                        return NewWindowsPhone81CustomConfiguration(), nil
+                    case "#microsoft.graph.windowsPhone81GeneralConfiguration":
+                        return NewWindowsPhone81GeneralConfiguration(), nil
+                    case "#microsoft.graph.windowsUpdateForBusinessConfiguration":
+                        return NewWindowsUpdateForBusinessConfiguration(), nil
                 }
             }
         }

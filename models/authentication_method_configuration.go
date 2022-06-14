@@ -32,8 +32,14 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.authenticationMethodConfiguration":
-                        return NewAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.emailAuthenticationMethodConfiguration":
+                        return NewEmailAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.fido2AuthenticationMethodConfiguration":
+                        return NewFido2AuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration":
+                        return NewMicrosoftAuthenticatorAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration":
+                        return NewTemporaryAccessPassAuthenticationMethodConfiguration(), nil
                 }
             }
         }

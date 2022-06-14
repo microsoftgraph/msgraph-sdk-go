@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InviteParticipantsOperation provides operations to call the invite method.
+// InviteParticipantsOperation 
 type InviteParticipantsOperation struct {
     CommsOperation
     // The participants to invite.
     participants []InvitationParticipantInfoable
 }
-// NewInviteParticipantsOperation instantiates a new inviteParticipantsOperation and sets the default values.
+// NewInviteParticipantsOperation instantiates a new InviteParticipantsOperation and sets the default values.
 func NewInviteParticipantsOperation()(*InviteParticipantsOperation) {
     m := &InviteParticipantsOperation{
         CommsOperation: *NewCommsOperation(),

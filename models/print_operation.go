@@ -35,8 +35,8 @@ func CreatePrintOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.printOperation":
-                        return NewPrintOperation(), nil
+                    case "#microsoft.graph.printerCreateOperation":
+                        return NewPrinterCreateOperation(), nil
                 }
             }
         }

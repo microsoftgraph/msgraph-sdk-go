@@ -36,8 +36,26 @@ func CreateCommsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.commsOperation":
-                        return NewCommsOperation(), nil
+                    case "#microsoft.graph.cancelMediaProcessingOperation":
+                        return NewCancelMediaProcessingOperation(), nil
+                    case "#microsoft.graph.inviteParticipantsOperation":
+                        return NewInviteParticipantsOperation(), nil
+                    case "#microsoft.graph.muteParticipantOperation":
+                        return NewMuteParticipantOperation(), nil
+                    case "#microsoft.graph.playPromptOperation":
+                        return NewPlayPromptOperation(), nil
+                    case "#microsoft.graph.recordOperation":
+                        return NewRecordOperation(), nil
+                    case "#microsoft.graph.startHoldMusicOperation":
+                        return NewStartHoldMusicOperation(), nil
+                    case "#microsoft.graph.stopHoldMusicOperation":
+                        return NewStopHoldMusicOperation(), nil
+                    case "#microsoft.graph.subscribeToToneOperation":
+                        return NewSubscribeToToneOperation(), nil
+                    case "#microsoft.graph.unmuteParticipantOperation":
+                        return NewUnmuteParticipantOperation(), nil
+                    case "#microsoft.graph.updateRecordingStatusOperation":
+                        return NewUpdateRecordingStatusOperation(), nil
                 }
             }
         }

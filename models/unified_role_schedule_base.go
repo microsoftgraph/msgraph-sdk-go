@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleScheduleBase provides operations to manage the roleManagement singleton.
+// UnifiedRoleScheduleBase provides operations to manage the identityGovernance singleton.
 type UnifiedRoleScheduleBase struct {
     Entity
     // Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
@@ -55,8 +55,10 @@ func CreateUnifiedRoleScheduleBaseFromDiscriminatorValue(parseNode i878a80d2330e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.unifiedRoleScheduleBase":
-                        return NewUnifiedRoleScheduleBase(), nil
+                    case "#microsoft.graph.unifiedRoleAssignmentSchedule":
+                        return NewUnifiedRoleAssignmentSchedule(), nil
+                    case "#microsoft.graph.unifiedRoleEligibilitySchedule":
+                        return NewUnifiedRoleEligibilitySchedule(), nil
                 }
             }
         }

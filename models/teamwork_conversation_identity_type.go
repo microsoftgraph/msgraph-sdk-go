@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of chat entities.
+// Provides operations to manage the collection of application entities.
 type TeamworkConversationIdentityType int
 
 const (

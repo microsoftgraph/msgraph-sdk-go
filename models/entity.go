@@ -8,7 +8,7 @@ import (
 type Entity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Read-only.
+    // The id property
     id *string
 }
 // NewEntity instantiates a new entity and sets the default values.
@@ -45,7 +45,7 @@ func (m *Entity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetId gets the id property value. Read-only.
+// GetId gets the id property value. The id property
 func (m *Entity) GetId()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *Entity) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetId sets the id property value. Read-only.
+// SetId sets the id property value. The id property
 func (m *Entity) SetId(value *string)() {
     if m != nil {
         m.id = value

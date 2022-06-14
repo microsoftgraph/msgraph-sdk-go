@@ -20,7 +20,7 @@ type SecureScore struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Tenant current attained score on specified date.
     currentScore *float64
-    // Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
+    // Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).
     enabledServices []string
     // Licensed user count of the given tenant.
     licensedUserCount *int32
@@ -88,7 +88,7 @@ func (m *SecureScore) GetCurrentScore()(*float64) {
         return m.currentScore
     }
 }
-// GetEnabledServices gets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
+// GetEnabledServices gets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).
 func (m *SecureScore) GetEnabledServices()([]string) {
     if m == nil {
         return nil
@@ -349,7 +349,7 @@ func (m *SecureScore) SetCurrentScore(value *float64)() {
         m.currentScore = value
     }
 }
-// SetEnabledServices sets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
+// SetEnabledServices sets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).
 func (m *SecureScore) SetEnabledServices(value []string)() {
     if m != nil {
         m.enabledServices = value

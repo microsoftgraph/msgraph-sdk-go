@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfferShiftRequest casts the previous resource to user.
+// OfferShiftRequest 
 type OfferShiftRequest struct {
     ScheduleChangeRequest
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -17,7 +17,7 @@ type OfferShiftRequest struct {
     // User id of the sender of the offer shift request.
     senderShiftId *string
 }
-// NewOfferShiftRequest instantiates a new offerShiftRequest and sets the default values.
+// NewOfferShiftRequest instantiates a new OfferShiftRequest and sets the default values.
 func NewOfferShiftRequest()(*OfferShiftRequest) {
     m := &OfferShiftRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),
@@ -39,8 +39,8 @@ func CreateOfferShiftRequestFromDiscriminatorValue(parseNode i878a80d2330e89d268
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.offerShiftRequest":
-                        return NewOfferShiftRequest(), nil
+                    case "#microsoft.graph.swapShiftsChangeRequest":
+                        return NewSwapShiftsChangeRequest(), nil
                 }
             }
         }

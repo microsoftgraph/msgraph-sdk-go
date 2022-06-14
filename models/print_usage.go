@@ -38,8 +38,10 @@ func CreatePrintUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.printUsage":
-                        return NewPrintUsage(), nil
+                    case "#microsoft.graph.printUsageByPrinter":
+                        return NewPrintUsageByPrinter(), nil
+                    case "#microsoft.graph.printUsageByUser":
+                        return NewPrintUsageByUser(), nil
                 }
             }
         }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntityHierarchyModel casts the previous resource to user.
+// OnenoteEntityHierarchyModel 
 type OnenoteEntityHierarchyModel struct {
     OnenoteEntitySchemaObjectModel
     // Identity of the user, device, and application which created the item. Read-only.
@@ -17,7 +17,7 @@ type OnenoteEntityHierarchyModel struct {
     // The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewOnenoteEntityHierarchyModel instantiates a new onenoteEntityHierarchyModel and sets the default values.
+// NewOnenoteEntityHierarchyModel instantiates a new OnenoteEntityHierarchyModel and sets the default values.
 func NewOnenoteEntityHierarchyModel()(*OnenoteEntityHierarchyModel) {
     m := &OnenoteEntityHierarchyModel{
         OnenoteEntitySchemaObjectModel: *NewOnenoteEntitySchemaObjectModel(),
@@ -39,8 +39,12 @@ func CreateOnenoteEntityHierarchyModelFromDiscriminatorValue(parseNode i878a80d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.onenoteEntityHierarchyModel":
-                        return NewOnenoteEntityHierarchyModel(), nil
+                    case "#microsoft.graph.notebook":
+                        return NewNotebook(), nil
+                    case "#microsoft.graph.onenoteSection":
+                        return NewOnenoteSection(), nil
+                    case "#microsoft.graph.sectionGroup":
+                        return NewSectionGroup(), nil
                 }
             }
         }

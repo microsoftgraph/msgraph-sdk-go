@@ -4,10 +4,13 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i26bf19300aed5efb255319d7da9911edd0ae7ca03e6fdfddef4a2f6581682ca5 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/recent"
     i3959fc5f718498a64f7b4bcc9ac4b4bfc74564f1973213366e5ba756fa3b6cf1 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/bundles"
+    ia43c04139e040bccd3c51a3e13b89c5bd9f4493722f732499431ccd547e8a502 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/sharedwithme"
     iaaf4d433dad634780d17407e36381b8dbd65675f4ec7d040609d686c17e54c3c "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/items"
     iaceacb7c57c6e0cab9dfe9f00f869b5f5e1fcd6265e7550db1cab9f5e1e6953b "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/root"
     ic8094ec71dba1b039d40e34e48be10142245be65d5fbc5c57c4f20f6af133ef2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/following"
+    id96c6d741d51026adde933e1dc250eb7ed8ddf087f1f2a9235bcf77ad3f95e68 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/searchwithq"
     if8ffbadcd14d06fa791c22b60b93c57cf0043e5bd611c797b0956a4d1c513322 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list"
     ifa64565d61311e1ff82b220f60ec0b00f6578cc52d806aed6adb3e97fe080314 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/special"
     i4dccdff9f8dcdf668768e001e5a27186fe4bf619c82ddb04a7646de52b9311fd "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/items/item"
@@ -236,9 +239,21 @@ func (m *DriveItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandle
     }
     return nil
 }
+// Recent provides operations to call the recent method.
+func (m *DriveItemRequestBuilder) Recent()(*i26bf19300aed5efb255319d7da9911edd0ae7ca03e6fdfddef4a2f6581682ca5.RecentRequestBuilder) {
+    return i26bf19300aed5efb255319d7da9911edd0ae7ca03e6fdfddef4a2f6581682ca5.NewRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Root the root property
 func (m *DriveItemRequestBuilder) Root()(*iaceacb7c57c6e0cab9dfe9f00f869b5f5e1fcd6265e7550db1cab9f5e1e6953b.RootRequestBuilder) {
     return iaceacb7c57c6e0cab9dfe9f00f869b5f5e1fcd6265e7550db1cab9f5e1e6953b.NewRootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SearchWithQ provides operations to call the search method.
+func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*id96c6d741d51026adde933e1dc250eb7ed8ddf087f1f2a9235bcf77ad3f95e68.SearchWithQRequestBuilder) {
+    return id96c6d741d51026adde933e1dc250eb7ed8ddf087f1f2a9235bcf77ad3f95e68.NewSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
+}
+// SharedWithMe provides operations to call the sharedWithMe method.
+func (m *DriveItemRequestBuilder) SharedWithMe()(*ia43c04139e040bccd3c51a3e13b89c5bd9f4493722f732499431ccd547e8a502.SharedWithMeRequestBuilder) {
+    return ia43c04139e040bccd3c51a3e13b89c5bd9f4493722f732499431ccd547e8a502.NewSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Special the special property
 func (m *DriveItemRequestBuilder) Special()(*ifa64565d61311e1ff82b220f60ec0b00f6578cc52d806aed6adb3e97fe080314.SpecialRequestBuilder) {

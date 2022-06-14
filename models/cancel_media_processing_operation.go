@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CancelMediaProcessingOperation provides operations to call the cancelMediaProcessing method.
+// CancelMediaProcessingOperation 
 type CancelMediaProcessingOperation struct {
     CommsOperation
 }
-// NewCancelMediaProcessingOperation instantiates a new cancelMediaProcessingOperation and sets the default values.
+// NewCancelMediaProcessingOperation instantiates a new CancelMediaProcessingOperation and sets the default values.
 func NewCancelMediaProcessingOperation()(*CancelMediaProcessingOperation) {
     m := &CancelMediaProcessingOperation{
         CommsOperation: *NewCommsOperation(),

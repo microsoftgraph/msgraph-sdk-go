@@ -5,13 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntitySchemaObjectModel casts the previous resource to user.
+// OnenoteEntitySchemaObjectModel 
 type OnenoteEntitySchemaObjectModel struct {
     OnenoteEntityBaseModel
     // The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewOnenoteEntitySchemaObjectModel instantiates a new onenoteEntitySchemaObjectModel and sets the default values.
+// NewOnenoteEntitySchemaObjectModel instantiates a new OnenoteEntitySchemaObjectModel and sets the default values.
 func NewOnenoteEntitySchemaObjectModel()(*OnenoteEntitySchemaObjectModel) {
     m := &OnenoteEntitySchemaObjectModel{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),
@@ -33,8 +33,10 @@ func CreateOnenoteEntitySchemaObjectModelFromDiscriminatorValue(parseNode i878a8
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.onenoteEntitySchemaObjectModel":
-                        return NewOnenoteEntitySchemaObjectModel(), nil
+                    case "#microsoft.graph.onenoteEntityHierarchyModel":
+                        return NewOnenoteEntityHierarchyModel(), nil
+                    case "#microsoft.graph.onenotePage":
+                        return NewOnenotePage(), nil
                 }
             }
         }

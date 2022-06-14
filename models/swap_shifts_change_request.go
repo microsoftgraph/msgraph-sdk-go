@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SwapShiftsChangeRequest casts the previous resource to user.
+// SwapShiftsChangeRequest 
 type SwapShiftsChangeRequest struct {
     OfferShiftRequest
     // Shift ID for the recipient user with whom the request is to swap.
     recipientShiftId *string
 }
-// NewSwapShiftsChangeRequest instantiates a new swapShiftsChangeRequest and sets the default values.
+// NewSwapShiftsChangeRequest instantiates a new SwapShiftsChangeRequest and sets the default values.
 func NewSwapShiftsChangeRequest()(*SwapShiftsChangeRequest) {
     m := &SwapShiftsChangeRequest{
         OfferShiftRequest: *NewOfferShiftRequest(),

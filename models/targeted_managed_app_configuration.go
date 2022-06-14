@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TargetedManagedAppConfiguration configuration used to deliver a set of custom settings as-is to all users in the targeted security group
+// TargetedManagedAppConfiguration 
 type TargetedManagedAppConfiguration struct {
     ManagedAppConfiguration
     // List of apps to which the policy is deployed.
@@ -18,7 +18,7 @@ type TargetedManagedAppConfiguration struct {
     // Indicates if the policy is deployed to any inclusion groups or not.
     isAssigned *bool
 }
-// NewTargetedManagedAppConfiguration instantiates a new targetedManagedAppConfiguration and sets the default values.
+// NewTargetedManagedAppConfiguration instantiates a new TargetedManagedAppConfiguration and sets the default values.
 func NewTargetedManagedAppConfiguration()(*TargetedManagedAppConfiguration) {
     m := &TargetedManagedAppConfiguration{
         ManagedAppConfiguration: *NewManagedAppConfiguration(),

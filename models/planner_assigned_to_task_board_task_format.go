@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerAssignedToTaskBoardTaskFormat casts the previous resource to user.
+// PlannerAssignedToTaskBoardTaskFormat provides operations to manage the collection of application entities.
 type PlannerAssignedToTaskBoardTaskFormat struct {
     Entity
     // Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Notebook casts the previous resource to user.
+// Notebook 
 type Notebook struct {
     OnenoteEntityHierarchyModel
     // Indicates whether this is the user's default notebook. Read-only.
@@ -24,7 +24,7 @@ type Notebook struct {
     // Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
     userRole *OnenoteUserRole
 }
-// NewNotebook instantiates a new notebook and sets the default values.
+// NewNotebook instantiates a new Notebook and sets the default values.
 func NewNotebook()(*Notebook) {
     m := &Notebook{
         OnenoteEntityHierarchyModel: *NewOnenoteEntityHierarchyModel(),

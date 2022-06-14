@@ -41,8 +41,12 @@ func CreateManagedAppPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d2689
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.managedAppPolicy":
-                        return NewManagedAppPolicy(), nil
+                    case "#microsoft.graph.managedAppConfiguration":
+                        return NewManagedAppConfiguration(), nil
+                    case "#microsoft.graph.managedAppProtection":
+                        return NewManagedAppProtection(), nil
+                    case "#microsoft.graph.windowsInformationProtection":
+                        return NewWindowsInformationProtection(), nil
                 }
             }
         }

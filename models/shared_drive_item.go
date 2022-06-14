@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedDriveItem provides operations to manage the collection of sharedDriveItem entities.
+// SharedDriveItem 
 type SharedDriveItem struct {
     BaseItem
     // Used to access the underlying driveItem
@@ -24,7 +24,7 @@ type SharedDriveItem struct {
     // Used to access the underlying site
     site Siteable
 }
-// NewSharedDriveItem instantiates a new sharedDriveItem and sets the default values.
+// NewSharedDriveItem instantiates a new SharedDriveItem and sets the default values.
 func NewSharedDriveItem()(*SharedDriveItem) {
     m := &SharedDriveItem{
         BaseItem: *NewBaseItem(),

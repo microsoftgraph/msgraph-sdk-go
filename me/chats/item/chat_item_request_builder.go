@@ -7,6 +7,7 @@ import (
     i2ea8718568dd68e4db5b0c9b13edefe941431dfb1541af1606f4bc0a7d2db21c "github.com/microsoftgraph/msgraph-sdk-go/me/chats/item/installedapps"
     i88a4f2f2a7c4ae16c306dfc70fe5cfa8f9175e29138583b1d60f25decd49e6d9 "github.com/microsoftgraph/msgraph-sdk-go/me/chats/item/messages"
     ibfa184694112defc7dad34dc61131fc41730c513148b28b61ceae4b917fc813b "github.com/microsoftgraph/msgraph-sdk-go/me/chats/item/members"
+    ic48531e217b5a3e24c10e42f0363211f421bdab3ff973fab2c2ccbbb3e67f8c3 "github.com/microsoftgraph/msgraph-sdk-go/me/chats/item/sendactivitynotification"
     id387b678bda7815af798dc5b19d04d6775c9e30340b77735c65b245e5bae6867 "github.com/microsoftgraph/msgraph-sdk-go/me/chats/item/tabs"
     i25a5bc17ba5983e7d43d8a128bba975fd3706b2f2204b481e7864fe0ae9d5030 "github.com/microsoftgraph/msgraph-sdk-go/me/chats/item/tabs/item"
     i2febef273a5d29b65dd84845ed6389ff6349f765563d2c8edcf94919833a9f49 "github.com/microsoftgraph/msgraph-sdk-go/me/chats/item/members/item"
@@ -229,6 +230,10 @@ func (m *ChatItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler
         return err
     }
     return nil
+}
+// SendActivityNotification the sendActivityNotification property
+func (m *ChatItemRequestBuilder) SendActivityNotification()(*ic48531e217b5a3e24c10e42f0363211f421bdab3ff973fab2c2ccbbb3e67f8c3.SendActivityNotificationRequestBuilder) {
+    return ic48531e217b5a3e24c10e42f0363211f421bdab3ff973fab2c2ccbbb3e67f8c3.NewSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Tabs the tabs property
 func (m *ChatItemRequestBuilder) Tabs()(*id387b678bda7815af798dc5b19d04d6775c9e30340b77735c65b245e5bae6867.TabsRequestBuilder) {

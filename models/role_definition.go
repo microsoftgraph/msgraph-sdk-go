@@ -40,8 +40,8 @@ func CreateRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.roleDefinition":
-                        return NewRoleDefinition(), nil
+                    case "#microsoft.graph.deviceAndAppManagementRoleDefinition":
+                        return NewDeviceAndAppManagementRoleDefinition(), nil
                 }
             }
         }

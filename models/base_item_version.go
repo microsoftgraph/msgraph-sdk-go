@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseItemVersion casts the previous resource to user.
+// BaseItemVersion provides operations to manage the collection of application entities.
 type BaseItemVersion struct {
     Entity
     // Identity of the user which last modified the version. Read-only.
@@ -37,8 +37,10 @@ func CreateBaseItemVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.baseItemVersion":
-                        return NewBaseItemVersion(), nil
+                    case "#microsoft.graph.driveItemVersion":
+                        return NewDriveItemVersion(), nil
+                    case "#microsoft.graph.listItemVersion":
+                        return NewListItemVersion(), nil
                 }
             }
         }

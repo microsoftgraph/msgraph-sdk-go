@@ -35,8 +35,12 @@ func CreateEducationOutcomeFromDiscriminatorValue(parseNode i878a80d2330e89d2689
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.educationOutcome":
-                        return NewEducationOutcome(), nil
+                    case "#microsoft.graph.educationFeedbackOutcome":
+                        return NewEducationFeedbackOutcome(), nil
+                    case "#microsoft.graph.educationPointsOutcome":
+                        return NewEducationPointsOutcome(), nil
+                    case "#microsoft.graph.educationRubricOutcome":
+                        return NewEducationRubricOutcome(), nil
                 }
             }
         }

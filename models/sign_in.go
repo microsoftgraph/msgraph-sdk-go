@@ -77,8 +77,8 @@ func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.signIn":
-                        return NewSignIn(), nil
+                    case "#microsoft.graph.restrictedSignIn":
+                        return NewRestrictedSignIn(), nil
                 }
             }
         }

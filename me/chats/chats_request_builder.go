@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i58eca7b0448a35d407d9e18a625f546b474524f2b0edbbbe8c0846aac6804be8 "github.com/microsoftgraph/msgraph-sdk-go/me/chats/getallmessages"
     i6fcfe00f427d5955614f1a04fce3791bede0bc3325d70d57c29afeaef9eab1df "github.com/microsoftgraph/msgraph-sdk-go/me/chats/count"
 )
 
@@ -115,6 +116,10 @@ func (m *ChatsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
 // Get get chats from me
 func (m *ChatsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetAllMessages provides operations to call the getAllMessages method.
+func (m *ChatsRequestBuilder) GetAllMessages()(*i58eca7b0448a35d407d9e18a625f546b474524f2b0edbbbe8c0846aac6804be8.GetAllMessagesRequestBuilder) {
+    return i58eca7b0448a35d407d9e18a625f546b474524f2b0edbbbe8c0846aac6804be8.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetWithRequestConfigurationAndResponseHandler get chats from me
 func (m *ChatsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChatsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable, error) {

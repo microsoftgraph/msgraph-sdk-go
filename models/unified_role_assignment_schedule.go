@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignmentSchedule provides operations to manage the roleManagement singleton.
+// UnifiedRoleAssignmentSchedule 
 type UnifiedRoleAssignmentSchedule struct {
     UnifiedRoleScheduleBase
     // If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
@@ -16,7 +16,7 @@ type UnifiedRoleAssignmentSchedule struct {
     // The period of the role assignment. It can represent a single occurrence or multiple recurrences.
     scheduleInfo RequestScheduleable
 }
-// NewUnifiedRoleAssignmentSchedule instantiates a new unifiedRoleAssignmentSchedule and sets the default values.
+// NewUnifiedRoleAssignmentSchedule instantiates a new UnifiedRoleAssignmentSchedule and sets the default values.
 func NewUnifiedRoleAssignmentSchedule()(*UnifiedRoleAssignmentSchedule) {
     m := &UnifiedRoleAssignmentSchedule{
         UnifiedRoleScheduleBase: *NewUnifiedRoleScheduleBase(),

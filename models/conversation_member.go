@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConversationMember provides operations to manage the collection of chat entities.
+// ConversationMember provides operations to manage the collection of application entities.
 type ConversationMember struct {
     Entity
     // The display name of the user.
@@ -37,8 +37,8 @@ func CreateConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.conversationMember":
-                        return NewConversationMember(), nil
+                    case "#microsoft.graph.aadUserConversationMember":
+                        return NewAadUserConversationMember(), nil
                 }
             }
         }

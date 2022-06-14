@@ -57,8 +57,8 @@ func CreateManagedEBookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.managedEBook":
-                        return NewManagedEBook(), nil
+                    case "#microsoft.graph.iosVppEBook":
+                        return NewIosVppEBook(), nil
                 }
             }
         }

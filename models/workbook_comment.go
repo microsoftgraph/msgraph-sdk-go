@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookComment casts the previous resource to user.
+// WorkbookComment provides operations to manage the collection of application entities.
 type WorkbookComment struct {
     Entity
     // The content of the comment.
     content *string
     // Indicates the type for the comment.
     contentType *string
-    // Read-only. Nullable.
+    // The replies property
     replies []WorkbookCommentReplyable
 }
 // NewWorkbookComment instantiates a new workbookComment and sets the default values.
@@ -80,7 +80,7 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetReplies gets the replies property value. Read-only. Nullable.
+// GetReplies gets the replies property value. The replies property
 func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
     if m == nil {
         return nil
@@ -130,7 +130,7 @@ func (m *WorkbookComment) SetContentType(value *string)() {
         m.contentType = value
     }
 }
-// SetReplies sets the replies property value. Read-only. Nullable.
+// SetReplies sets the replies property value. The replies property
 func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
     if m != nil {
         m.replies = value
