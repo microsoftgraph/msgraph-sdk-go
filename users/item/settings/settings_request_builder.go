@@ -23,7 +23,7 @@ type SettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SettingsRequestBuilderGetQueryParameters read-only. Nullable.
+// SettingsRequestBuilderGetQueryParameters get settings from users
 type SettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *SettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get settings from users
 func (m *SettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get settings from users
 func (m *SettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *SettingsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandle
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get get settings from users
 func (m *SettingsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserSettingsable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get settings from users
 func (m *SettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

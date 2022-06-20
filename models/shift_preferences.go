@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ShiftPreferences casts the previous resource to user.
+// ShiftPreferences 
 type ShiftPreferences struct {
     ChangeTrackedEntity
     // Availability of the user to be scheduled for work and its recurrence pattern.
     availability []ShiftAvailabilityable
 }
-// NewShiftPreferences instantiates a new shiftPreferences and sets the default values.
+// NewShiftPreferences instantiates a new ShiftPreferences and sets the default values.
 func NewShiftPreferences()(*ShiftPreferences) {
     m := &ShiftPreferences{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

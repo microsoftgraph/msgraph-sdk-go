@@ -15,7 +15,6 @@ import (
     i83f515fce5f469eba14ae8086d23694bda995238a9cf6aeda9e4a77f60d46e51 "github.com/microsoftgraph/msgraph-sdk-go/me/messages/item/createreplyall"
     i9a10feb98b69df8b4be73cf64661437fb8eba6c417528ea15e3fa7f97690cf45 "github.com/microsoftgraph/msgraph-sdk-go/me/messages/item/createreply"
     ia12ddc34b64b94dfc125c48cb2ce271ab4c81b4e234623928b468956f0ac7218 "github.com/microsoftgraph/msgraph-sdk-go/me/messages/item/singlevalueextendedproperties"
-    iac1ed303e6357b3776696be9bf22be9bc234c3414b61d5a3e53b788b022c3b55 "github.com/microsoftgraph/msgraph-sdk-go/me/messages/item/calendarsharingmessage"
     id541c444118e749467445e6ddae5eccd7ce1bcbde5376a875eb7a6ac14639c51 "github.com/microsoftgraph/msgraph-sdk-go/me/messages/item/extensions"
     iee30ea951ebbeb52a3eefc3847404284a2701aa3eee3ab7b930e1466e6871b06 "github.com/microsoftgraph/msgraph-sdk-go/me/messages/item/forward"
     ifb4c655ccae06417a7b44976ed7bbc4f45bb8f773bda157b976061d66736f4c7 "github.com/microsoftgraph/msgraph-sdk-go/me/messages/item/move"
@@ -76,10 +75,6 @@ func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*i6e6c8882e6f0705
         urlTplParams["attachment%2Did"] = id
     }
     return i6e6c8882e6f07057df4c3ec98b0922cb303131fe0d4d661ef64ab6392a2c2221.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CalendarSharingMessage the calendarSharingMessage property
-func (m *MessageItemRequestBuilder) CalendarSharingMessage()(*iac1ed303e6357b3776696be9bf22be9bc234c3414b61d5a3e53b788b022c3b55.CalendarSharingMessageRequestBuilder) {
-    return iac1ed303e6357b3776696be9bf22be9bc234c3414b61d5a3e53b788b022c3b55.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageItemRequestBuilder) {

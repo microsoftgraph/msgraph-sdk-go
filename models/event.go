@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Event casts the previous resource to user.
+// Event 
 type Event struct {
     OutlookItem
     // true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
@@ -93,7 +93,7 @@ type Event struct {
     // The webLink property
     webLink *string
 }
-// NewEvent instantiates a new event and sets the default values.
+// NewEvent instantiates a new Event and sets the default values.
 func NewEvent()(*Event) {
     m := &Event{
         OutlookItem: *NewOutlookItem(),

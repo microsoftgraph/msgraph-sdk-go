@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignmentScheduleRequest provides operations to manage the roleManagement singleton.
+// UnifiedRoleAssignmentScheduleRequest 
 type UnifiedRoleAssignmentScheduleRequest struct {
     Request
     // Represents the type of the operation on the role assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign roles to principals.adminRemove: For administrators to remove principals from roles. adminUpdate: For administrators to change existing role assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.selfExtend: For principals to request to extend their expiring assignments.selfRenew: For principals to request to renew their expired assignments.
@@ -40,7 +40,7 @@ type UnifiedRoleAssignmentScheduleRequest struct {
     // Ticket details linked to the role assignment request including details of the ticket number and ticket system.
     ticketInfo TicketInfoable
 }
-// NewUnifiedRoleAssignmentScheduleRequest instantiates a new unifiedRoleAssignmentScheduleRequest and sets the default values.
+// NewUnifiedRoleAssignmentScheduleRequest instantiates a new UnifiedRoleAssignmentScheduleRequest and sets the default values.
 func NewUnifiedRoleAssignmentScheduleRequest()(*UnifiedRoleAssignmentScheduleRequest) {
     m := &UnifiedRoleAssignmentScheduleRequest{
         Request: *NewRequest(),

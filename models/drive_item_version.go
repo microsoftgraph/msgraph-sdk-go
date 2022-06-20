@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DriveItemVersion casts the previous resource to user.
+// DriveItemVersion 
 type DriveItemVersion struct {
     BaseItemVersion
     // The content property
@@ -12,7 +12,7 @@ type DriveItemVersion struct {
     // Indicates the size of the content stream for this version of the item.
     size *int64
 }
-// NewDriveItemVersion instantiates a new driveItemVersion and sets the default values.
+// NewDriveItemVersion instantiates a new DriveItemVersion and sets the default values.
 func NewDriveItemVersion()(*DriveItemVersion) {
     m := &DriveItemVersion{
         BaseItemVersion: *NewBaseItemVersion(),

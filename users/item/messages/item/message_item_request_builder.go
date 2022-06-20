@@ -8,7 +8,6 @@ import (
     i122ff3868c47eff36e63f27e4a5b59d68ad9c0ac6f599d0365b5b2a23664fef8 "github.com/microsoftgraph/msgraph-sdk-go/users/item/messages/item/attachments"
     i21a12f3061b5040c42eeb7a6e4e887142ebaa674b6c8e349ad4d27e4203799f5 "github.com/microsoftgraph/msgraph-sdk-go/users/item/messages/item/value"
     i21ac64590aeb4ea4de81e9f5c0bdb9af91b5615ed8258947f1983a17be31a12a "github.com/microsoftgraph/msgraph-sdk-go/users/item/messages/item/createreply"
-    i288e98553df56b30f05fcd3093c61b8bf5395192fb8c9a2825f62bc5afe55a0e "github.com/microsoftgraph/msgraph-sdk-go/users/item/messages/item/calendarsharingmessage"
     i29ffc4815578e16ff0a35471a241efa71e25f9fce417e2ea2e64b556ae6b4084 "github.com/microsoftgraph/msgraph-sdk-go/users/item/messages/item/copy"
     i4382614991ffa5cffd77c6a25c626b3b88a33b415d02b39342eb5f3a52cb881e "github.com/microsoftgraph/msgraph-sdk-go/users/item/messages/item/multivalueextendedproperties"
     i505c2e3f7a924493aa1390d23de4d48964764a251a918b6c13839c1b7c1aaf20 "github.com/microsoftgraph/msgraph-sdk-go/users/item/messages/item/replyall"
@@ -76,10 +75,6 @@ func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*i569e8a41910c91a
         urlTplParams["attachment%2Did"] = id
     }
     return i569e8a41910c91a566eb55ee03be3b95dad61f13affae3df81e08c5093475576.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CalendarSharingMessage the calendarSharingMessage property
-func (m *MessageItemRequestBuilder) CalendarSharingMessage()(*i288e98553df56b30f05fcd3093c61b8bf5395192fb8c9a2825f62bc5afe55a0e.CalendarSharingMessageRequestBuilder) {
-    return i288e98553df56b30f05fcd3093c61b8bf5395192fb8c9a2825f62bc5afe55a0e.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageItemRequestBuilder) {

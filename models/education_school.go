@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSchool provides operations to manage the educationRoot singleton.
+// EducationSchool 
 type EducationSchool struct {
     EducationOrganization
     // Address of the school.
@@ -36,7 +36,7 @@ type EducationSchool struct {
     // Users in the school. Nullable.
     users []EducationUserable
 }
-// NewEducationSchool instantiates a new educationSchool and sets the default values.
+// NewEducationSchool instantiates a new EducationSchool and sets the default values.
 func NewEducationSchool()(*EducationSchool) {
     m := &EducationSchool{
         EducationOrganization: *NewEducationOrganization(),

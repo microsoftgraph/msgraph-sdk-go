@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgreementFile provides operations to manage the collection of agreement entities.
+// AgreementFile 
 type AgreementFile struct {
     AgreementFileProperties
     // The localized version of the terms of use agreement files attached to the agreement.
     localizations []AgreementFileLocalizationable
 }
-// NewAgreementFile instantiates a new agreementFile and sets the default values.
+// NewAgreementFile instantiates a new AgreementFile and sets the default values.
 func NewAgreementFile()(*AgreementFile) {
     m := &AgreementFile{
         AgreementFileProperties: *NewAgreementFileProperties(),

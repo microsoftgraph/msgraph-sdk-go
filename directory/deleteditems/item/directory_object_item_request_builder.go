@@ -4,8 +4,13 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i079bf466e05ae34533f811d7672ccc7aa9cee8f84eefb95236f2f94509d2b952 "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item/checkmembergroups"
+    i0f33816a68bca6966b79b1d509805c314fdfb245845970917448f1386199f41c "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item/getmemberobjects"
+    i24ae2a8f875109921c863f4771ca16b1934845f00a4e105754496ecca4d1fae2 "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item/restore"
+    i2eead1ab623aad8054272d02002ec8230620a30f7ef2984b425acf8fd2a4f22f "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item/getmembergroups"
     iae381aff0335af9a992dec68bda21fb40c84998fd93a15b4363e9e9f84b986f6 "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item/user"
     ic3cb923f28c8af38dc681096a049595d619a3b42daadc4809e2100ec63713a20 "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item/group"
+    id3b15aa66870c785d0177adebe1ed6b7bc7532d40fb6fdfb983472381987fe6c "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item/checkmemberobjects"
     ie26febca7c941dad47e84ed4be26c7e1981cabbc8593889e7082db4d481cfb81 "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item/application"
 )
 
@@ -51,6 +56,14 @@ type DirectoryObjectItemRequestBuilderPatchRequestConfiguration struct {
 // Application the application property
 func (m *DirectoryObjectItemRequestBuilder) Application()(*ie26febca7c941dad47e84ed4be26c7e1981cabbc8593889e7082db4d481cfb81.ApplicationRequestBuilder) {
     return ie26febca7c941dad47e84ed4be26c7e1981cabbc8593889e7082db4d481cfb81.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CheckMemberGroups the checkMemberGroups property
+func (m *DirectoryObjectItemRequestBuilder) CheckMemberGroups()(*i079bf466e05ae34533f811d7672ccc7aa9cee8f84eefb95236f2f94509d2b952.CheckMemberGroupsRequestBuilder) {
+    return i079bf466e05ae34533f811d7672ccc7aa9cee8f84eefb95236f2f94509d2b952.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CheckMemberObjects the checkMemberObjects property
+func (m *DirectoryObjectItemRequestBuilder) CheckMemberObjects()(*id3b15aa66870c785d0177adebe1ed6b7bc7532d40fb6fdfb983472381987fe6c.CheckMemberObjectsRequestBuilder) {
+    return id3b15aa66870c785d0177adebe1ed6b7bc7532d40fb6fdfb983472381987fe6c.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
@@ -148,6 +161,14 @@ func (m *DirectoryObjectItemRequestBuilder) DeleteWithRequestConfigurationAndRes
 func (m *DirectoryObjectItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetMemberGroups the getMemberGroups property
+func (m *DirectoryObjectItemRequestBuilder) GetMemberGroups()(*i2eead1ab623aad8054272d02002ec8230620a30f7ef2984b425acf8fd2a4f22f.GetMemberGroupsRequestBuilder) {
+    return i2eead1ab623aad8054272d02002ec8230620a30f7ef2984b425acf8fd2a4f22f.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetMemberObjects the getMemberObjects property
+func (m *DirectoryObjectItemRequestBuilder) GetMemberObjects()(*i0f33816a68bca6966b79b1d509805c314fdfb245845970917448f1386199f41c.GetMemberObjectsRequestBuilder) {
+    return i0f33816a68bca6966b79b1d509805c314fdfb245845970917448f1386199f41c.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler recently deleted items. Read-only. Nullable.
 func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -187,6 +208,10 @@ func (m *DirectoryObjectItemRequestBuilder) PatchWithRequestConfigurationAndResp
         return err
     }
     return nil
+}
+// Restore the restore property
+func (m *DirectoryObjectItemRequestBuilder) Restore()(*i24ae2a8f875109921c863f4771ca16b1934845f00a4e105754496ecca4d1fae2.RestoreRequestBuilder) {
+    return i24ae2a8f875109921c863f4771ca16b1934845f00a4e105754496ecca4d1fae2.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // User the user property
 func (m *DirectoryObjectItemRequestBuilder) User()(*iae381aff0335af9a992dec68bda21fb40c84998fd93a15b4363e9e9f84b986f6.UserRequestBuilder) {

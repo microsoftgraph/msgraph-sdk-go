@@ -8,9 +8,9 @@ import (
 // AccessPackage provides operations to manage the identityGovernance singleton.
 type AccessPackage struct {
     Entity
-    // Read-only. Nullable.
+    // The assignmentPolicies property
     assignmentPolicies []AccessPackageAssignmentPolicyable
-    // Read-only. Nullable.
+    // The catalog property
     catalog AccessPackageCatalogable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -34,7 +34,7 @@ func NewAccessPackage()(*AccessPackage) {
 func CreateAccessPackageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackage(), nil
 }
-// GetAssignmentPolicies gets the assignmentPolicies property value. Read-only. Nullable.
+// GetAssignmentPolicies gets the assignmentPolicies property value. The assignmentPolicies property
 func (m *AccessPackage) GetAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *AccessPackage) GetAssignmentPolicies()([]AccessPackageAssignmentPolicya
         return m.assignmentPolicies
     }
 }
-// GetCatalog gets the catalog property value. Read-only. Nullable.
+// GetCatalog gets the catalog property value. The catalog property
 func (m *AccessPackage) GetCatalog()(AccessPackageCatalogable) {
     if m == nil {
         return nil
@@ -223,13 +223,13 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAssignmentPolicies sets the assignmentPolicies property value. Read-only. Nullable.
+// SetAssignmentPolicies sets the assignmentPolicies property value. The assignmentPolicies property
 func (m *AccessPackage) SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
     if m != nil {
         m.assignmentPolicies = value
     }
 }
-// SetCatalog sets the catalog property value. Read-only. Nullable.
+// SetCatalog sets the catalog property value. The catalog property
 func (m *AccessPackage) SetCatalog(value AccessPackageCatalogable)() {
     if m != nil {
         m.catalog = value

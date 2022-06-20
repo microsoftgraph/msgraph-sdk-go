@@ -32,7 +32,7 @@ type AuthenticationRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationRequestBuilderGetQueryParameters tODO: Add Description
+// AuthenticationRequestBuilderGetQueryParameters the authentication methods that are supported for the user.
 type AuthenticationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,11 +90,11 @@ func (m *AuthenticationRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation tODO: Add Description
+// CreateGetRequestInformation the authentication methods that are supported for the user.
 func (m *AuthenticationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration tODO: Add Description
+// CreateGetRequestInformationWithRequestConfiguration the authentication methods that are supported for the user.
 func (m *AuthenticationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AuthenticationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,11 +162,11 @@ func (m *AuthenticationRequestBuilder) Fido2MethodsById(id string)(*id52d22a8f89
     }
     return id52d22a8f89e6b3eaca8d0a4bf66b74846ed7c246fc3b1528ed62713ddb3c100.NewFido2AuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get tODO: Add Description
+// Get the authentication methods that are supported for the user.
 func (m *AuthenticationRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Authenticationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler tODO: Add Description
+// GetWithRequestConfigurationAndResponseHandler the authentication methods that are supported for the user.
 func (m *AuthenticationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AuthenticationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Authenticationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

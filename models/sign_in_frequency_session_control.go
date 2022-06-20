@@ -7,7 +7,7 @@ import (
 // SignInFrequencySessionControl provides operations to manage the identityContainer singleton.
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
-    // Possible values are: days, hours.
+    // Possible values are: days, hours, or null if frequencyInterval is everyTime .
     type_escaped *SigninFrequencyType
     // The number of days or hours.
     value *int32
@@ -48,7 +48,7 @@ func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetType gets the type property value. Possible values are: days, hours.
+// GetType gets the type property value. Possible values are: days, hours, or null if frequencyInterval is everyTime .
 func (m *SignInFrequencySessionControl) GetType()(*SigninFrequencyType) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *SignInFrequencySessionControl) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetType sets the type property value. Possible values are: days, hours.
+// SetType sets the type property value. Possible values are: days, hours, or null if frequencyInterval is everyTime .
 func (m *SignInFrequencySessionControl) SetType(value *SigninFrequencyType)() {
     if m != nil {
         m.type_escaped = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionGrantPolicy provides operations to manage the policyRoot singleton.
+// PermissionGrantPolicy 
 type PermissionGrantPolicy struct {
     PolicyBase
     // Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
@@ -12,7 +12,7 @@ type PermissionGrantPolicy struct {
     // Condition sets which are included in this permission grant policy. Automatically expanded on GET.
     includes []PermissionGrantConditionSetable
 }
-// NewPermissionGrantPolicy instantiates a new permissionGrantPolicy and sets the default values.
+// NewPermissionGrantPolicy instantiates a new PermissionGrantPolicy and sets the default values.
 func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {
     m := &PermissionGrantPolicy{
         PolicyBase: *NewPolicyBase(),

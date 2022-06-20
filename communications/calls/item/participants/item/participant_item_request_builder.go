@@ -25,7 +25,7 @@ type ParticipantItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ParticipantItemRequestBuilderGetQueryParameters read-only. Nullable.
+// ParticipantItemRequestBuilderGetQueryParameters get participants from communications
 type ParticipantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -83,11 +83,11 @@ func (m *ParticipantItemRequestBuilder) CreateDeleteRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get participants from communications
 func (m *ParticipantItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get participants from communications
 func (m *ParticipantItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ParticipantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,11 +140,11 @@ func (m *ParticipantItemRequestBuilder) DeleteWithRequestConfigurationAndRespons
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get get participants from communications
 func (m *ParticipantItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get participants from communications
 func (m *ParticipantItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ParticipantItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

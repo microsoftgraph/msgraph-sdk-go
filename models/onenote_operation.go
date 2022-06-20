@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteOperation casts the previous resource to user.
+// OnenoteOperation 
 type OnenoteOperation struct {
     Operation
     // The error returned by the operation.
@@ -16,7 +16,7 @@ type OnenoteOperation struct {
     // The resource URI for the object. For example, the resource URI for a copied page or section.
     resourceLocation *string
 }
-// NewOnenoteOperation instantiates a new onenoteOperation and sets the default values.
+// NewOnenoteOperation instantiates a new OnenoteOperation and sets the default values.
 func NewOnenoteOperation()(*OnenoteOperation) {
     m := &OnenoteOperation{
         Operation: *NewOperation(),

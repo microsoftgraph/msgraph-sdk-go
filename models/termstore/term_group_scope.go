@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Casts the previous resource to user.
+// Provides operations to manage the collection of application entities.
 type TermGroupScope int
 
 const (

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TargetedManagedAppProtection policy used to configure detailed management settings targeted to specific security groups
+// TargetedManagedAppProtection 
 type TargetedManagedAppProtection struct {
     ManagedAppProtection
     // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
@@ -12,7 +12,7 @@ type TargetedManagedAppProtection struct {
     // Indicates if the policy is deployed to any inclusion groups or not.
     isAssigned *bool
 }
-// NewTargetedManagedAppProtection instantiates a new targetedManagedAppProtection and sets the default values.
+// NewTargetedManagedAppProtection instantiates a new TargetedManagedAppProtection and sets the default values.
 func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
     m := &TargetedManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
@@ -34,8 +34,10 @@ func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.targetedManagedAppProtection":
-                        return NewTargetedManagedAppProtection(), nil
+                    case "#microsoft.graph.androidManagedAppProtection":
+                        return NewAndroidManagedAppProtection(), nil
+                    case "#microsoft.graph.iosManagedAppProtection":
+                        return NewIosManagedAppProtection(), nil
                 }
             }
         }

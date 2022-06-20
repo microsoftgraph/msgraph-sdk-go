@@ -38,7 +38,7 @@ type DirectoryRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DirectoryRequestBuilderGetQueryParameters read-only. Nullable.
+// DirectoryRequestBuilderGetQueryParameters get directory from roleManagement
 type DirectoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -96,11 +96,11 @@ func (m *DirectoryRequestBuilder) CreateDeleteRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get directory from roleManagement
 func (m *DirectoryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get directory from roleManagement
 func (m *DirectoryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -153,11 +153,11 @@ func (m *DirectoryRequestBuilder) DeleteWithRequestConfigurationAndResponseHandl
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get get directory from roleManagement
 func (m *DirectoryRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RbacApplicationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get directory from roleManagement
 func (m *DirectoryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RbacApplicationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

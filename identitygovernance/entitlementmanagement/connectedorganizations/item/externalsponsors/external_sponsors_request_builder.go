@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i41016cceeff842ed9a006c661821c6b48641a95c280b56f894c38b38b4f338a8 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/externalsponsors/validateproperties"
+    i4efeeddbbfa57da208dfa7b863ad9067cfc0c816854dd71cb5a6ca38c8a184b6 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/externalsponsors/getbyids"
+    i5780e326fb3af6db2938c8ca9c539e53f905ef00146f0fb0131233caaa460917 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/externalsponsors/getavailableextensionproperties"
     ia251373d77add160c436f9217f5f9433a4c524c145be9e94c9cb03181c9a1c45 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/externalsponsors/count"
     id167466353efea4b0c493edfe4558f5b2e21849a0a97e4983e926a18deca523b "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/externalsponsors/ref"
 )
@@ -17,7 +20,7 @@ type ExternalSponsorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExternalSponsorsRequestBuilderGetQueryParameters nullable.
+// ExternalSponsorsRequestBuilderGetQueryParameters get externalSponsors from identityGovernance
 type ExternalSponsorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +78,11 @@ func NewExternalSponsorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ExternalSponsorsRequestBuilder) Count()(*ia251373d77add160c436f9217f5f9433a4c524c145be9e94c9cb03181c9a1c45.CountRequestBuilder) {
     return ia251373d77add160c436f9217f5f9433a4c524c145be9e94c9cb03181c9a1c45.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation nullable.
+// CreateGetRequestInformation get externalSponsors from identityGovernance
 func (m *ExternalSponsorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration nullable.
+// CreateGetRequestInformationWithRequestConfiguration get externalSponsors from identityGovernance
 func (m *ExternalSponsorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExternalSponsorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,11 +116,19 @@ func (m *ExternalSponsorsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get nullable.
+// Get get externalSponsors from identityGovernance
 func (m *ExternalSponsorsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler nullable.
+// GetAvailableExtensionProperties the getAvailableExtensionProperties property
+func (m *ExternalSponsorsRequestBuilder) GetAvailableExtensionProperties()(*i5780e326fb3af6db2938c8ca9c539e53f905ef00146f0fb0131233caaa460917.GetAvailableExtensionPropertiesRequestBuilder) {
+    return i5780e326fb3af6db2938c8ca9c539e53f905ef00146f0fb0131233caaa460917.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetByIds the getByIds property
+func (m *ExternalSponsorsRequestBuilder) GetByIds()(*i4efeeddbbfa57da208dfa7b863ad9067cfc0c816854dd71cb5a6ca38c8a184b6.GetByIdsRequestBuilder) {
+    return i4efeeddbbfa57da208dfa7b863ad9067cfc0c816854dd71cb5a6ca38c8a184b6.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetWithRequestConfigurationAndResponseHandler get externalSponsors from identityGovernance
 func (m *ExternalSponsorsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExternalSponsorsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -156,4 +167,8 @@ func (m *ExternalSponsorsRequestBuilder) PostWithRequestConfigurationAndResponse
 // Ref the ref property
 func (m *ExternalSponsorsRequestBuilder) Ref()(*id167466353efea4b0c493edfe4558f5b2e21849a0a97e4983e926a18deca523b.RefRequestBuilder) {
     return id167466353efea4b0c493edfe4558f5b2e21849a0a97e4983e926a18deca523b.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ValidateProperties the validateProperties property
+func (m *ExternalSponsorsRequestBuilder) ValidateProperties()(*i41016cceeff842ed9a006c661821c6b48641a95c280b56f894c38b38b4f338a8.ValidatePropertiesRequestBuilder) {
+    return i41016cceeff842ed9a006c661821c6b48641a95c280b56f894c38b38b4f338a8.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

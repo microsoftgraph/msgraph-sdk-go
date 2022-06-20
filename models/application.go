@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application provides operations to manage the collection of application entities.
+// Application provides operations to call the instantiate method.
 type Application struct {
     DirectoryObject
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
@@ -18,9 +18,11 @@ type Application struct {
     applicationTemplateId *string
     // The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
     appRoles []AppRoleable
+    // Specifies the certification status of the application.
+    certification Certificationable
     // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Read-only.
+    // The createdOnBehalfOf property
     createdOnBehalfOf DirectoryObjectable
     // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string
@@ -134,6 +136,14 @@ func (m *Application) GetAppRoles()([]AppRoleable) {
         return m.appRoles
     }
 }
+// GetCertification gets the certification property value. Specifies the certification status of the application.
+func (m *Application) GetCertification()(Certificationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.certification
+    }
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
 func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -142,7 +152,7 @@ func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.createdDateTime
     }
 }
-// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. Read-only.
+// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. The createdOnBehalfOf property
 func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     if m == nil {
         return nil
@@ -240,6 +250,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 res[i] = v.(AppRoleable)
             }
             m.SetAppRoles(res)
+        }
+        return nil
+    }
+    res["certification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCertificationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertification(val.(Certificationable))
         }
         return nil
     }
@@ -858,6 +878,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("certification", m.GetCertification())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
             return err
@@ -1113,13 +1139,19 @@ func (m *Application) SetAppRoles(value []AppRoleable)() {
         m.appRoles = value
     }
 }
+// SetCertification sets the certification property value. Specifies the certification status of the application.
+func (m *Application) SetCertification(value Certificationable)() {
+    if m != nil {
+        m.certification = value
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
 func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. Read-only.
+// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The createdOnBehalfOf property
 func (m *Application) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
     if m != nil {
         m.createdOnBehalfOf = value

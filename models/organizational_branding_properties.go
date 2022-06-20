@@ -50,8 +50,10 @@ func CreateOrganizationalBrandingPropertiesFromDiscriminatorValue(parseNode i878
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.organizationalBrandingProperties":
-                        return NewOrganizationalBrandingProperties(), nil
+                    case "#microsoft.graph.organizationalBranding":
+                        return NewOrganizationalBranding(), nil
+                    case "#microsoft.graph.organizationalBrandingLocalization":
+                        return NewOrganizationalBrandingLocalization(), nil
                 }
             }
         }

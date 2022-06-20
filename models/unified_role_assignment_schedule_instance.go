@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignmentScheduleInstance provides operations to manage the roleManagement singleton.
+// UnifiedRoleAssignmentScheduleInstance 
 type UnifiedRoleAssignmentScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
     // If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
@@ -23,7 +23,7 @@ type UnifiedRoleAssignmentScheduleInstance struct {
     // When this instance starts.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewUnifiedRoleAssignmentScheduleInstance instantiates a new unifiedRoleAssignmentScheduleInstance and sets the default values.
+// NewUnifiedRoleAssignmentScheduleInstance instantiates a new UnifiedRoleAssignmentScheduleInstance and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleInstance) {
     m := &UnifiedRoleAssignmentScheduleInstance{
         UnifiedRoleScheduleInstanceBase: *NewUnifiedRoleScheduleInstanceBase(),

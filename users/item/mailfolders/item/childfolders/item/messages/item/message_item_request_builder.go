@@ -13,7 +13,6 @@ import (
     i601006ca5c8d4a2bd32a308480c958aa565af8b7eef89ca92de125fddcd8df37 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/childfolders/item/messages/item/createreply"
     i8bf596c0443d82bd098088cf313820c77518a4903e0996592bf7aa9bb0fc6204 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/childfolders/item/messages/item/forward"
     ia2b7d74de2d2ae40f811c9f5ca231ae8bcd6383bd423cbdadabf72fbdbfb6e62 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/childfolders/item/messages/item/replyall"
-    ia3fdc47a4b68aebb3754bf14fd0396a90c0336bfcb6d210afc93388c25c3f2df "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/childfolders/item/messages/item/calendarsharingmessage"
     ia7dce7bbbad8834f61a47bf8d2d11a325ca6cb60f92e7e712275f7e8c25fc693 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/childfolders/item/messages/item/reply"
     ib2ca11a51f3340d7f385f534ea5827066380a80aa53f7fb73586d468aad2cf61 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/childfolders/item/messages/item/createreplyall"
     id3a837a6f0f6a0a991f73cd274bed4374b20b7ab621b89f0c8b54728f1438971 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/childfolders/item/messages/item/copy"
@@ -78,10 +77,6 @@ func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*ie43dfbb21dca013
         urlTplParams["attachment%2Did"] = id
     }
     return ie43dfbb21dca01399bcbaa4461736852466b5a2f62ecd895499c91d040c14a01.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CalendarSharingMessage the calendarSharingMessage property
-func (m *MessageItemRequestBuilder) CalendarSharingMessage()(*ia3fdc47a4b68aebb3754bf14fd0396a90c0336bfcb6d210afc93388c25c3f2df.CalendarSharingMessageRequestBuilder) {
-    return ia3fdc47a4b68aebb3754bf14fd0396a90c0336bfcb6d210afc93388c25c3f2df.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageItemRequestBuilder) {

@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    icbbdd8e82a162f87ff3b18d19d59e39378c0bdacd075bdfea9d8a93c812d5251 "github.com/microsoftgraph/msgraph-sdk-go/shares/item/list/subscriptions/item/reauthorize"
 )
 
 // SubscriptionItemRequestBuilder provides operations to manage the subscriptions property of the microsoft.graph.list entity.
@@ -176,4 +177,8 @@ func (m *SubscriptionItemRequestBuilder) PatchWithRequestConfigurationAndRespons
         return err
     }
     return nil
+}
+// Reauthorize the reauthorize property
+func (m *SubscriptionItemRequestBuilder) Reauthorize()(*icbbdd8e82a162f87ff3b18d19d59e39378c0bdacd075bdfea9d8a93c812d5251.ReauthorizeRequestBuilder) {
+    return icbbdd8e82a162f87ff3b18d19d59e39378c0bdacd075bdfea9d8a93c812d5251.NewReauthorizeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

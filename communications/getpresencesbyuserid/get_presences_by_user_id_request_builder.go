@@ -2,6 +2,7 @@ package getpresencesbyuserid
 
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
 // GetPresencesByUserIdRequestBuilder provides operations to call the getPresencesByUserId method.
@@ -67,7 +68,11 @@ func (m *GetPresencesByUserIdRequestBuilder) PostWithRequestConfigurationAndResp
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetPresencesByUserIdResponseFromDiscriminatorValue, responseHandler, nil)
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetPresencesByUserIdResponseFromDiscriminatorValue, responseHandler, errorMapping)
     if err != nil {
         return nil, err
     }

@@ -38,8 +38,8 @@ func CreateEducationOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.educationOrganization":
-                        return NewEducationOrganization(), nil
+                    case "#microsoft.graph.educationSchool":
+                        return NewEducationSchool(), nil
                 }
             }
         }

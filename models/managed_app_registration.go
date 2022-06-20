@@ -61,8 +61,10 @@ func CreateManagedAppRegistrationFromDiscriminatorValue(parseNode i878a80d2330e8
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.managedAppRegistration":
-                        return NewManagedAppRegistration(), nil
+                    case "#microsoft.graph.androidManagedAppRegistration":
+                        return NewAndroidManagedAppRegistration(), nil
+                    case "#microsoft.graph.iosManagedAppRegistration":
+                        return NewIosManagedAppRegistration(), nil
                 }
             }
         }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimeOff casts the previous resource to user.
+// TimeOff 
 type TimeOff struct {
     ChangeTrackedEntity
     // The draft version of this timeOff that is viewable by managers. Required.
@@ -14,7 +14,7 @@ type TimeOff struct {
     // ID of the user assigned to the timeOff. Required.
     userId *string
 }
-// NewTimeOff instantiates a new timeOff and sets the default values.
+// NewTimeOff instantiates a new TimeOff and sets the default values.
 func NewTimeOff()(*TimeOff) {
     m := &TimeOff{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlanDetails casts the previous resource to user.
+// PlannerPlanDetails provides operations to manage the collection of application entities.
 type PlannerPlanDetails struct {
     Entity
     // An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan

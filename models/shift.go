@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Shift casts the previous resource to user.
+// Shift 
 type Shift struct {
     ChangeTrackedEntity
     // The draft version of this shift that is viewable by managers. Required.
@@ -16,7 +16,7 @@ type Shift struct {
     // ID of the user assigned to the shift. Required.
     userId *string
 }
-// NewShift instantiates a new shift and sets the default values.
+// NewShift instantiates a new Shift and sets the default values.
 func NewShift()(*Shift) {
     m := &Shift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

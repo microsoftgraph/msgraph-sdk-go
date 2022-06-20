@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAppInstallation provides operations to manage the collection of chat entities.
+// TeamsAppInstallation provides operations to manage the collection of application entities.
 type TeamsAppInstallation struct {
     Entity
     // The app that is installed.
@@ -34,8 +34,8 @@ func CreateTeamsAppInstallationFromDiscriminatorValue(parseNode i878a80d2330e89d
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.teamsAppInstallation":
-                        return NewTeamsAppInstallation(), nil
+                    case "#microsoft.graph.userScopeTeamsAppInstallation":
+                        return NewUserScopeTeamsAppInstallation(), nil
                 }
             }
         }

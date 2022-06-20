@@ -43,8 +43,12 @@ func CreateRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.request":
-                        return NewRequest(), nil
+                    case "#microsoft.graph.unifiedRoleAssignmentScheduleRequest":
+                        return NewUnifiedRoleAssignmentScheduleRequest(), nil
+                    case "#microsoft.graph.unifiedRoleEligibilityScheduleRequest":
+                        return NewUnifiedRoleEligibilityScheduleRequest(), nil
+                    case "#microsoft.graph.userConsentRequest":
+                        return NewUserConsentRequest(), nil
                 }
             }
         }

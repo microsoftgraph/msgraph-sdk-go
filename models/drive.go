@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Drive casts the previous resource to user.
+// Drive 
 type Drive struct {
     BaseItem
     // Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
@@ -30,7 +30,7 @@ type Drive struct {
     // If present, indicates that this is a system-managed drive. Read-only.
     system SystemFacetable
 }
-// NewDrive instantiates a new drive and sets the default values.
+// NewDrive instantiates a new Drive and sets the default values.
 func NewDrive()(*Drive) {
     m := &Drive{
         BaseItem: *NewBaseItem(),

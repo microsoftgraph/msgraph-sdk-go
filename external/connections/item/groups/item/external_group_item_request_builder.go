@@ -24,7 +24,7 @@ type ExternalGroupItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExternalGroupItemRequestBuilderGetQueryParameters read-only. Nullable.
+// ExternalGroupItemRequestBuilderGetQueryParameters get groups from external
 type ExternalGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *ExternalGroupItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get groups from external
 func (m *ExternalGroupItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get groups from external
 func (m *ExternalGroupItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExternalGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,11 +139,11 @@ func (m *ExternalGroupItemRequestBuilder) DeleteWithRequestConfigurationAndRespo
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get get groups from external
 func (m *ExternalGroupItemRequestBuilder) Get()(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get groups from external
 func (m *ExternalGroupItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExternalGroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

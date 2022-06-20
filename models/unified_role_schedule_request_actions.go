@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the roleManagement singleton.
+// Provides operations to manage the identityGovernance singleton.
 type UnifiedRoleScheduleRequestActions int
 
 const (

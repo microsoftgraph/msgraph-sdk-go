@@ -6,10 +6,15 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i04a148e32be31a86cd21b897c8b55a4508d63dbae47a02eaeb122662dbd2ff9b "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/template"
     i5cc953f63726e53531e5d00c609bd14469e1ce23944c22b6aea0986c18fb0043 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/primarychannel"
+    i6bdaa0e5d28581a8a1e2d235e3e781f04d9c598ddc6abab4f4f4482948b402c4 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/clone"
+    i85d270c8e10c233ea48f496d72490ff86a9da2a715ff50b98d9bb49990543826 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/completemigration"
     i8a1cdbeac728d5d9d3409d0d7085c53384ad37435e0292d966ed94bbc4155a05 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/group"
     i9fa0e9d329dc2b42ce0cc0330991bb8f8e864efaaef5061789d895e28321a6b2 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/operations"
+    iaaf6381de60bdbb052122028b1440af6c015d4e8c24cf971f1c3968b5a4f3c6b "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/archive"
     icf925d6e8373dd15bb408b246595c1d2598e1881b555a62a02a76300fc5b7cd2 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/installedapps"
     id463d65124ba412b3980ec713bebe8eb90e4a925515f5f993cd79d5b01b70907 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/channels"
+    ie8c9d4ba2aa39351cc5580d10d45b8717b93a5d75b46c5be678a969e9175bcc6 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/sendactivitynotification"
+    if5e128abdd6cb9303edd6d603805cc08bcb3a30eb8ff5fabd66714b2846349ee "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/unarchive"
     ifc923048eff969ef232f17cdaf6c11e18676c5c9e2918bc19001d30cbdc4b5c1 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/members"
     ifd53534f50d40567e607c2213e794582e29aa46a0c07e2d406db231a42a0140a "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/schedule"
     i03b2a35397701f29dd92bcf0dd549e252ab75a1bd539b1b1ca11a58738ba2c51 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/members/item"
@@ -57,6 +62,10 @@ type TeamItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Archive the archive property
+func (m *TeamItemRequestBuilder) Archive()(*iaaf6381de60bdbb052122028b1440af6c015d4e8c24cf971f1c3968b5a4f3c6b.ArchiveRequestBuilder) {
+    return iaaf6381de60bdbb052122028b1440af6c015d4e8c24cf971f1c3968b5a4f3c6b.NewArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Channels the channels property
 func (m *TeamItemRequestBuilder) Channels()(*id463d65124ba412b3980ec713bebe8eb90e4a925515f5f993cd79d5b01b70907.ChannelsRequestBuilder) {
     return id463d65124ba412b3980ec713bebe8eb90e4a925515f5f993cd79d5b01b70907.NewChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -71,6 +80,14 @@ func (m *TeamItemRequestBuilder) ChannelsById(id string)(*id12792e5e45c250abd3ec
         urlTplParams["channel%2Did"] = id
     }
     return id12792e5e45c250abd3ecec9bbc023cd6dc63edea08efc7907dcad0da46a8a0d.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Clone the clone property
+func (m *TeamItemRequestBuilder) Clone()(*i6bdaa0e5d28581a8a1e2d235e3e781f04d9c598ddc6abab4f4f4482948b402c4.CloneRequestBuilder) {
+    return i6bdaa0e5d28581a8a1e2d235e3e781f04d9c598ddc6abab4f4f4482948b402c4.NewCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CompleteMigration the completeMigration property
+func (m *TeamItemRequestBuilder) CompleteMigration()(*i85d270c8e10c233ea48f496d72490ff86a9da2a715ff50b98d9bb49990543826.CompleteMigrationRequestBuilder) {
+    return i85d270c8e10c233ea48f496d72490ff86a9da2a715ff50b98d9bb49990543826.NewCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewTeamItemRequestBuilderInternal instantiates a new TeamItemRequestBuilder and sets the default values.
 func NewTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamItemRequestBuilder) {
@@ -261,7 +278,15 @@ func (m *TeamItemRequestBuilder) PrimaryChannel()(*i5cc953f63726e53531e5d00c609b
 func (m *TeamItemRequestBuilder) Schedule()(*ifd53534f50d40567e607c2213e794582e29aa46a0c07e2d406db231a42a0140a.ScheduleRequestBuilder) {
     return ifd53534f50d40567e607c2213e794582e29aa46a0c07e2d406db231a42a0140a.NewScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SendActivityNotification the sendActivityNotification property
+func (m *TeamItemRequestBuilder) SendActivityNotification()(*ie8c9d4ba2aa39351cc5580d10d45b8717b93a5d75b46c5be678a969e9175bcc6.SendActivityNotificationRequestBuilder) {
+    return ie8c9d4ba2aa39351cc5580d10d45b8717b93a5d75b46c5be678a969e9175bcc6.NewSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Template the template property
 func (m *TeamItemRequestBuilder) Template()(*i04a148e32be31a86cd21b897c8b55a4508d63dbae47a02eaeb122662dbd2ff9b.TemplateRequestBuilder) {
     return i04a148e32be31a86cd21b897c8b55a4508d63dbae47a02eaeb122662dbd2ff9b.NewTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Unarchive the unarchive property
+func (m *TeamItemRequestBuilder) Unarchive()(*if5e128abdd6cb9303edd6d603805cc08bcb3a30eb8ff5fabd66714b2846349ee.UnarchiveRequestBuilder) {
+    return if5e128abdd6cb9303edd6d603805cc08bcb3a30eb8ff5fabd66714b2846349ee.NewUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

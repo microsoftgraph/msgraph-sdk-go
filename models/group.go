@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Group casts the previous resource to user.
+// Group provides operations to manage the collection of application entities.
 type Group struct {
     DirectoryObject
     // The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
@@ -80,7 +80,7 @@ type Group struct {
     membershipRuleProcessingState *string
     // A list of group members with license errors from this group-based license assignment. Read-only.
     membersWithLicenseErrors []DirectoryObjectable
-    // Read-only.
+    // The onenote property
     onenote Onenoteable
     // Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
     onPremisesDomainName *string
@@ -1193,7 +1193,7 @@ func (m *Group) GetMembersWithLicenseErrors()([]DirectoryObjectable) {
         return m.membersWithLicenseErrors
     }
 }
-// GetOnenote gets the onenote property value. Read-only.
+// GetOnenote gets the onenote property value. The onenote property
 func (m *Group) GetOnenote()(Onenoteable) {
     if m == nil {
         return nil
@@ -2131,7 +2131,7 @@ func (m *Group) SetMembersWithLicenseErrors(value []DirectoryObjectable)() {
         m.membersWithLicenseErrors = value
     }
 }
-// SetOnenote sets the onenote property value. Read-only.
+// SetOnenote sets the onenote property value. The onenote property
 func (m *Group) SetOnenote(value Onenoteable)() {
     if m != nil {
         m.onenote = value

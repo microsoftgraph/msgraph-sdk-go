@@ -16,7 +16,7 @@ type ItemsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ItemsRequestBuilderGetQueryParameters read-only. Nullable.
+// ItemsRequestBuilderGetQueryParameters get items from connections
 type ItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *ItemsRequestBuilder) Count()(*i6f8e6e6cb7042b894fe513714c1bac8c971e05069b5d18b9eb16e083e82261fa.CountRequestBuilder) {
     return i6f8e6e6cb7042b894fe513714c1bac8c971e05069b5d18b9eb16e083e82261fa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get items from connections
 func (m *ItemsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get items from connections
 func (m *ItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ItemsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get items from connections
 func (m *ItemsRequestBuilder) Get()(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get items from connections
 func (m *ItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

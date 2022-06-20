@@ -28,7 +28,7 @@ type InsightsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// InsightsRequestBuilderGetQueryParameters read-only. Nullable.
+// InsightsRequestBuilderGetQueryParameters get insights from users
 type InsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -86,11 +86,11 @@ func (m *InsightsRequestBuilder) CreateDeleteRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get insights from users
 func (m *InsightsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get insights from users
 func (m *InsightsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *InsightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,11 +143,11 @@ func (m *InsightsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandle
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get get insights from users
 func (m *InsightsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfficeGraphInsightsable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get insights from users
 func (m *InsightsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *InsightsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfficeGraphInsightsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

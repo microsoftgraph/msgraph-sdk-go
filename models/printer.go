@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Printer provides operations to manage the print singleton.
+// Printer 
 type Printer struct {
     PrinterBase
     // The connectors that are associated with the printer.
@@ -23,7 +23,7 @@ type Printer struct {
     // A list of task triggers that are associated with the printer.
     taskTriggers []PrintTaskTriggerable
 }
-// NewPrinter instantiates a new printer and sets the default values.
+// NewPrinter instantiates a new Printer and sets the default values.
 func NewPrinter()(*Printer) {
     m := &Printer{
         PrinterBase: *NewPrinterBase(),

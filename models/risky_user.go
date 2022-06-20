@@ -49,8 +49,8 @@ func CreateRiskyUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.riskyUser":
-                        return NewRiskyUser(), nil
+                    case "#microsoft.graph.riskyUserHistoryItem":
+                        return NewRiskyUserHistoryItem(), nil
                 }
             }
         }

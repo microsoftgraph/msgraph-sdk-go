@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubscribeToToneOperation provides operations to call the subscribeToTone method.
+// SubscribeToToneOperation 
 type SubscribeToToneOperation struct {
     CommsOperation
 }
-// NewSubscribeToToneOperation instantiates a new subscribeToToneOperation and sets the default values.
+// NewSubscribeToToneOperation instantiates a new SubscribeToToneOperation and sets the default values.
 func NewSubscribeToToneOperation()(*SubscribeToToneOperation) {
     m := &SubscribeToToneOperation{
         CommsOperation: *NewCommsOperation(),

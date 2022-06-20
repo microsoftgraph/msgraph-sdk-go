@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedApp abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
+// ManagedApp 
 type ManagedApp struct {
     MobileApp
     // The Application's availability. Possible values are: global, lineOfBusiness.
@@ -12,7 +12,7 @@ type ManagedApp struct {
     // The Application's version.
     version *string
 }
-// NewManagedApp instantiates a new managedApp and sets the default values.
+// NewManagedApp instantiates a new ManagedApp and sets the default values.
 func NewManagedApp()(*ManagedApp) {
     m := &ManagedApp{
         MobileApp: *NewMobileApp(),
@@ -34,8 +34,12 @@ func CreateManagedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.managedApp":
-                        return NewManagedApp(), nil
+                    case "#microsoft.graph.managedAndroidStoreApp":
+                        return NewManagedAndroidStoreApp(), nil
+                    case "#microsoft.graph.managedIOSStoreApp":
+                        return NewManagedIOSStoreApp(), nil
+                    case "#microsoft.graph.managedMobileLobApp":
+                        return NewManagedMobileLobApp(), nil
                 }
             }
         }

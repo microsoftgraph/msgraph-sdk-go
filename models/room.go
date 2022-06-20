@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Room casts the previous resource to room.
+// Room 
 type Room struct {
     Place
     // Specifies the name of the audio device in the room.
@@ -34,7 +34,7 @@ type Room struct {
     // Specifies the name of the video device in the room.
     videoDeviceName *string
 }
-// NewRoom instantiates a new room and sets the default values.
+// NewRoom instantiates a new Room and sets the default values.
 func NewRoom()(*Room) {
     m := &Room{
         Place: *NewPlace(),

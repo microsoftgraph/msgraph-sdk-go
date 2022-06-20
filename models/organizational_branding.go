@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizationalBranding provides operations to manage the organizationalBranding singleton.
+// OrganizationalBranding 
 type OrganizationalBranding struct {
     OrganizationalBrandingProperties
     // Add different branding based on a locale.
     localizations []OrganizationalBrandingLocalizationable
 }
-// NewOrganizationalBranding instantiates a new organizationalBranding and sets the default values.
+// NewOrganizationalBranding instantiates a new OrganizationalBranding and sets the default values.
 func NewOrganizationalBranding()(*OrganizationalBranding) {
     m := &OrganizationalBranding{
         OrganizationalBrandingProperties: *NewOrganizationalBrandingProperties(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChangeTrackedEntity casts the previous resource to user.
+// ChangeTrackedEntity provides operations to manage the collection of application entities.
 type ChangeTrackedEntity struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -37,8 +37,22 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.changeTrackedEntity":
-                        return NewChangeTrackedEntity(), nil
+                    case "#microsoft.graph.openShift":
+                        return NewOpenShift(), nil
+                    case "#microsoft.graph.scheduleChangeRequest":
+                        return NewScheduleChangeRequest(), nil
+                    case "#microsoft.graph.schedulingGroup":
+                        return NewSchedulingGroup(), nil
+                    case "#microsoft.graph.shift":
+                        return NewShift(), nil
+                    case "#microsoft.graph.shiftPreferences":
+                        return NewShiftPreferences(), nil
+                    case "#microsoft.graph.timeOff":
+                        return NewTimeOff(), nil
+                    case "#microsoft.graph.timeOffReason":
+                        return NewTimeOffReason(), nil
+                    case "#microsoft.graph.workforceIntegration":
+                        return NewWorkforceIntegration(), nil
                 }
             }
         }

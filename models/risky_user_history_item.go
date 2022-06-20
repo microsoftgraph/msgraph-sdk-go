@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyUserHistoryItem provides operations to manage the identityProtectionRoot singleton.
+// RiskyUserHistoryItem 
 type RiskyUserHistoryItem struct {
     RiskyUser
     // The activity related to user risk level change.
@@ -14,7 +14,7 @@ type RiskyUserHistoryItem struct {
     // The id of the user.
     userId *string
 }
-// NewRiskyUserHistoryItem instantiates a new riskyUserHistoryItem and sets the default values.
+// NewRiskyUserHistoryItem instantiates a new RiskyUserHistoryItem and sets the default values.
 func NewRiskyUserHistoryItem()(*RiskyUserHistoryItem) {
     m := &RiskyUserHistoryItem{
         RiskyUser: *NewRiskyUser(),

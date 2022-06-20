@@ -4,8 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i01b7156a2542039015b03b4c145895442723775d50760476d6a858e7a38c0229 "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/getavailableextensionproperties"
     i291ff03133de15263bbbb9161ec52a9fd3780244fb39767c57a0d3b944a877bb "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/count"
+    i5fcc1cbba281bf089e86d1f0fd053b72254efdc576b56f07f5f474773e8f4e0b "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/getbyids"
     i9be808779624fafbf1ab48016999de8af7668ec9c3d03a9ba21e6fa0fb30642c "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/ref"
+    ibb1e01f7e6a4c02e7b91f4bf4b3d9806fdaa9391df8c9da069d523afca17ae59 "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/validateproperties"
 )
 
 // AppliesToRequestBuilder provides operations to manage the appliesTo property of the microsoft.graph.featureRolloutPolicy entity.
@@ -117,6 +120,14 @@ func (m *AppliesToRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 func (m *AppliesToRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetAvailableExtensionProperties the getAvailableExtensionProperties property
+func (m *AppliesToRequestBuilder) GetAvailableExtensionProperties()(*i01b7156a2542039015b03b4c145895442723775d50760476d6a858e7a38c0229.GetAvailableExtensionPropertiesRequestBuilder) {
+    return i01b7156a2542039015b03b4c145895442723775d50760476d6a858e7a38c0229.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetByIds the getByIds property
+func (m *AppliesToRequestBuilder) GetByIds()(*i5fcc1cbba281bf089e86d1f0fd053b72254efdc576b56f07f5f474773e8f4e0b.GetByIdsRequestBuilder) {
+    return i5fcc1cbba281bf089e86d1f0fd053b72254efdc576b56f07f5f474773e8f4e0b.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *AppliesToRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -156,4 +167,8 @@ func (m *AppliesToRequestBuilder) PostWithRequestConfigurationAndResponseHandler
 // Ref the ref property
 func (m *AppliesToRequestBuilder) Ref()(*i9be808779624fafbf1ab48016999de8af7668ec9c3d03a9ba21e6fa0fb30642c.RefRequestBuilder) {
     return i9be808779624fafbf1ab48016999de8af7668ec9c3d03a9ba21e6fa0fb30642c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ValidateProperties the validateProperties property
+func (m *AppliesToRequestBuilder) ValidateProperties()(*ibb1e01f7e6a4c02e7b91f4bf4b3d9806fdaa9391df8c9da069d523afca17ae59.ValidatePropertiesRequestBuilder) {
+    return ibb1e01f7e6a4c02e7b91f4bf4b3d9806fdaa9391df8c9da069d523afca17ae59.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

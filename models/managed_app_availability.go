@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to managedMobileLobApp.
+// Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppAvailability int
 
 const (

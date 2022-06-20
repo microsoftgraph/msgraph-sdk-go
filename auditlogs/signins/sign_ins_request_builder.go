@@ -16,7 +16,7 @@ type SignInsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SignInsRequestBuilderGetQueryParameters read-only. Nullable.
+// SignInsRequestBuilderGetQueryParameters get signIns from auditLogs
 type SignInsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewSignInsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *SignInsRequestBuilder) Count()(*i58d269ed60fb21b00fe0c1437b746e8bfa3cee74d58a9636fa22d4d8770e4534.CountRequestBuilder) {
     return i58d269ed60fb21b00fe0c1437b746e8bfa3cee74d58a9636fa22d4d8770e4534.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get signIns from auditLogs
 func (m *SignInsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get signIns from auditLogs
 func (m *SignInsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SignInsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *SignInsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get signIns from auditLogs
 func (m *SignInsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SignInCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get signIns from auditLogs
 func (m *SignInsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SignInsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SignInCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

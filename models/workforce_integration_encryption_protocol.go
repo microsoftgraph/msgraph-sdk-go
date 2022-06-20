@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the teamwork singleton.
+// Provides operations to manage the collection of application entities.
 type WorkforceIntegrationEncryptionProtocol int
 
 const (

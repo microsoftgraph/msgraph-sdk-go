@@ -16,7 +16,7 @@ type ResourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ResourcesRequestBuilderGetQueryParameters nullable.
+// ResourcesRequestBuilderGetQueryParameters get resources from education
 type ResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *ResourcesRequestBuilder) Count()(*ida28b4b4d219c252aef138b921c1e1ce2726d5e26cfdb9a98075f8b61a0bca3c.CountRequestBuilder) {
     return ida28b4b4d219c252aef138b921c1e1ce2726d5e26cfdb9a98075f8b61a0bca3c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation nullable.
+// CreateGetRequestInformation get resources from education
 func (m *ResourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration nullable.
+// CreateGetRequestInformationWithRequestConfiguration get resources from education
 func (m *ResourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ResourcesRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get nullable.
+// Get get resources from education
 func (m *ResourcesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionResourceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler nullable.
+// GetWithRequestConfigurationAndResponseHandler get resources from education
 func (m *ResourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ResourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionResourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

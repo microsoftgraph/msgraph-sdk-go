@@ -41,8 +41,10 @@ func CreateServiceAnnouncementBaseFromDiscriminatorValue(parseNode i878a80d2330e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.serviceAnnouncementBase":
-                        return NewServiceAnnouncementBase(), nil
+                    case "#microsoft.graph.serviceHealthIssue":
+                        return NewServiceHealthIssue(), nil
+                    case "#microsoft.graph.serviceUpdateMessage":
+                        return NewServiceUpdateMessage(), nil
                 }
             }
         }

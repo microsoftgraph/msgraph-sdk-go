@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentitySecurityDefaultsEnforcementPolicy provides operations to manage the policyRoot singleton.
+// IdentitySecurityDefaultsEnforcementPolicy 
 type IdentitySecurityDefaultsEnforcementPolicy struct {
     PolicyBase
     // If set to true, Azure Active Directory security defaults is enabled for the tenant.
     isEnabled *bool
 }
-// NewIdentitySecurityDefaultsEnforcementPolicy instantiates a new identitySecurityDefaultsEnforcementPolicy and sets the default values.
+// NewIdentitySecurityDefaultsEnforcementPolicy instantiates a new IdentitySecurityDefaultsEnforcementPolicy and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnforcementPolicy) {
     m := &IdentitySecurityDefaultsEnforcementPolicy{
         PolicyBase: *NewPolicyBase(),

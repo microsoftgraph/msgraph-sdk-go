@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteResource casts the previous resource to user.
+// OnenoteResource 
 type OnenoteResource struct {
     OnenoteEntityBaseModel
     // The content stream
@@ -12,7 +12,7 @@ type OnenoteResource struct {
     // The URL for downloading the content
     contentUrl *string
 }
-// NewOnenoteResource instantiates a new onenoteResource and sets the default values.
+// NewOnenoteResource instantiates a new OnenoteResource and sets the default values.
 func NewOnenoteResource()(*OnenoteResource) {
     m := &OnenoteResource{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),

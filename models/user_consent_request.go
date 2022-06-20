@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserConsentRequest provides operations to manage the identityGovernance singleton.
+// UserConsentRequest 
 type UserConsentRequest struct {
     Request
     // Approval decisions associated with a request.
@@ -12,7 +12,7 @@ type UserConsentRequest struct {
     // The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
     reason *string
 }
-// NewUserConsentRequest instantiates a new userConsentRequest and sets the default values.
+// NewUserConsentRequest instantiates a new UserConsentRequest and sets the default values.
 func NewUserConsentRequest()(*UserConsentRequest) {
     m := &UserConsentRequest{
         Request: *NewRequest(),

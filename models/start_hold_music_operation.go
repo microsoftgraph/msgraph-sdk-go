@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// StartHoldMusicOperation provides operations to call the startHoldMusic method.
+// StartHoldMusicOperation 
 type StartHoldMusicOperation struct {
     CommsOperation
 }
-// NewStartHoldMusicOperation instantiates a new startHoldMusicOperation and sets the default values.
+// NewStartHoldMusicOperation instantiates a new StartHoldMusicOperation and sets the default values.
 func NewStartHoldMusicOperation()(*StartHoldMusicOperation) {
     m := &StartHoldMusicOperation{
         CommsOperation: *NewCommsOperation(),

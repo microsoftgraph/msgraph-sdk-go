@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// StsPolicy provides operations to manage the collection of application entities.
+// StsPolicy 
 type StsPolicy struct {
     PolicyBase
     // The appliesTo property
@@ -14,7 +14,7 @@ type StsPolicy struct {
     // If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
     isOrganizationDefault *bool
 }
-// NewStsPolicy instantiates a new stsPolicy and sets the default values.
+// NewStsPolicy instantiates a new StsPolicy and sets the default values.
 func NewStsPolicy()(*StsPolicy) {
     m := &StsPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -36,8 +36,16 @@ func CreateStsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.stsPolicy":
-                        return NewStsPolicy(), nil
+                    case "#microsoft.graph.activityBasedTimeoutPolicy":
+                        return NewActivityBasedTimeoutPolicy(), nil
+                    case "#microsoft.graph.claimsMappingPolicy":
+                        return NewClaimsMappingPolicy(), nil
+                    case "#microsoft.graph.homeRealmDiscoveryPolicy":
+                        return NewHomeRealmDiscoveryPolicy(), nil
+                    case "#microsoft.graph.tokenIssuancePolicy":
+                        return NewTokenIssuancePolicy(), nil
+                    case "#microsoft.graph.tokenLifetimePolicy":
+                        return NewTokenLifetimePolicy(), nil
                 }
             }
         }

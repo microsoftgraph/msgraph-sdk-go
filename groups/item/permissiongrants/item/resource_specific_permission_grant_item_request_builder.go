@@ -4,6 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i19946ba2912d2f0fe7fb67ea88902b412872bb94525035a0c5d210bc0c606205 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/permissiongrants/item/checkmembergroups"
+    i459f1a6666ed9b68b0d977a60d4fd5808662fc6513dad2863f6fa01077872675 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/permissiongrants/item/getmembergroups"
+    i4827aac6da6f85edd4260e543232b2cdf0466b9e5ecdb8629e3dbc2e16ee446b "github.com/microsoftgraph/msgraph-sdk-go/groups/item/permissiongrants/item/restore"
+    i500719106d5be311d3dbff2b4b0ed8d0169303b5c1ab2838937ebaaae8dc90b9 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/permissiongrants/item/getmemberobjects"
+    iac587c88e5a2f42d1fd9853ae3ecf6ab12c847f08e84e0b749e55dc7352630b2 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/permissiongrants/item/checkmemberobjects"
 )
 
 // ResourceSpecificPermissionGrantItemRequestBuilder provides operations to manage the permissionGrants property of the microsoft.graph.group entity.
@@ -44,6 +49,14 @@ type ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration 
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CheckMemberGroups the checkMemberGroups property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CheckMemberGroups()(*i19946ba2912d2f0fe7fb67ea88902b412872bb94525035a0c5d210bc0c606205.CheckMemberGroupsRequestBuilder) {
+    return i19946ba2912d2f0fe7fb67ea88902b412872bb94525035a0c5d210bc0c606205.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CheckMemberObjects the checkMemberObjects property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CheckMemberObjects()(*iac587c88e5a2f42d1fd9853ae3ecf6ab12c847f08e84e0b749e55dc7352630b2.CheckMemberObjectsRequestBuilder) {
+    return iac587c88e5a2f42d1fd9853ae3ecf6ab12c847f08e84e0b749e55dc7352630b2.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewResourceSpecificPermissionGrantItemRequestBuilderInternal instantiates a new ResourceSpecificPermissionGrantItemRequestBuilder and sets the default values.
 func NewResourceSpecificPermissionGrantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceSpecificPermissionGrantItemRequestBuilder) {
@@ -141,6 +154,14 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) DeleteWithRequestCon
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetMemberGroups the getMemberGroups property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberGroups()(*i459f1a6666ed9b68b0d977a60d4fd5808662fc6513dad2863f6fa01077872675.GetMemberGroupsRequestBuilder) {
+    return i459f1a6666ed9b68b0d977a60d4fd5808662fc6513dad2863f6fa01077872675.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetMemberObjects the getMemberObjects property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberObjects()(*i500719106d5be311d3dbff2b4b0ed8d0169303b5c1ab2838937ebaaae8dc90b9.GetMemberObjectsRequestBuilder) {
+    return i500719106d5be311d3dbff2b4b0ed8d0169303b5c1ab2838937ebaaae8dc90b9.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler the permissions that have been granted for a group to a specific application. Supports $expand.
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -176,4 +197,8 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) PatchWithRequestConf
         return err
     }
     return nil
+}
+// Restore the restore property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Restore()(*i4827aac6da6f85edd4260e543232b2cdf0466b9e5ecdb8629e3dbc2e16ee446b.RestoreRequestBuilder) {
+    return i4827aac6da6f85edd4260e543232b2cdf0466b9e5ecdb8629e3dbc2e16ee446b.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RichLongRunningOperation casts the previous resource to user.
+// RichLongRunningOperation 
 type RichLongRunningOperation struct {
     LongRunningOperation
     // Error due to which the operation failed.
@@ -16,7 +16,7 @@ type RichLongRunningOperation struct {
     // Type of the operation.
     type_escaped *string
 }
-// NewRichLongRunningOperation instantiates a new richLongRunningOperation and sets the default values.
+// NewRichLongRunningOperation instantiates a new RichLongRunningOperation and sets the default values.
 func NewRichLongRunningOperation()(*RichLongRunningOperation) {
     m := &RichLongRunningOperation{
         LongRunningOperation: *NewLongRunningOperation(),

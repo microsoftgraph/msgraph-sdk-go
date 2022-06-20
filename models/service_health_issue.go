@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceHealthIssue provides operations to manage the admin singleton.
+// ServiceHealthIssue 
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
     // The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
@@ -26,7 +26,7 @@ type ServiceHealthIssue struct {
     // The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
     status *ServiceHealthStatus
 }
-// NewServiceHealthIssue instantiates a new serviceHealthIssue and sets the default values.
+// NewServiceHealthIssue instantiates a new ServiceHealthIssue and sets the default values.
 func NewServiceHealthIssue()(*ServiceHealthIssue) {
     m := &ServiceHealthIssue{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),

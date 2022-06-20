@@ -8,7 +8,7 @@ import (
 type RoleManagement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Read-only. Nullable.
+    // The directory property
     directory RbacApplicationable
     // Container for roles and assignments for entitlement management resources.
     entitlementManagement RbacApplicationable
@@ -32,7 +32,7 @@ func (m *RoleManagement) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDirectory gets the directory property value. Read-only. Nullable.
+// GetDirectory gets the directory property value. The directory property
 func (m *RoleManagement) GetDirectory()(RbacApplicationable) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *RoleManagement) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetDirectory sets the directory property value. Read-only. Nullable.
+// SetDirectory sets the directory property value. The directory property
 func (m *RoleManagement) SetDirectory(value RbacApplicationable)() {
     if m != nil {
         m.directory = value

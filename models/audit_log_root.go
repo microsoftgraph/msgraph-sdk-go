@@ -7,13 +7,13 @@ import (
 // AuditLogRoot provides operations to manage the auditLogRoot singleton.
 type AuditLogRoot struct {
     Entity
-    // Read-only. Nullable.
+    // The directoryAudits property
     directoryAudits []DirectoryAuditable
     // The provisioning property
     provisioning []ProvisioningObjectSummaryable
     // The restrictedSignIns property
     restrictedSignIns []RestrictedSignInable
-    // Read-only. Nullable.
+    // The signIns property
     signIns []SignInable
 }
 // NewAuditLogRoot instantiates a new auditLogRoot and sets the default values.
@@ -27,7 +27,7 @@ func NewAuditLogRoot()(*AuditLogRoot) {
 func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditLogRoot(), nil
 }
-// GetDirectoryAudits gets the directoryAudits property value. Read-only. Nullable.
+// GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *AuditLogRoot) GetRestrictedSignIns()([]RestrictedSignInable) {
         return m.restrictedSignIns
     }
 }
-// GetSignIns gets the signIns property value. Read-only. Nullable.
+// GetSignIns gets the signIns property value. The signIns property
 func (m *AuditLogRoot) GetSignIns()([]SignInable) {
     if m == nil {
         return nil
@@ -168,7 +168,7 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetDirectoryAudits sets the directoryAudits property value. Read-only. Nullable.
+// SetDirectoryAudits sets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {
     if m != nil {
         m.directoryAudits = value
@@ -186,7 +186,7 @@ func (m *AuditLogRoot) SetRestrictedSignIns(value []RestrictedSignInable)() {
         m.restrictedSignIns = value
     }
 }
-// SetSignIns sets the signIns property value. Read-only. Nullable.
+// SetSignIns sets the signIns property value. The signIns property
 func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
     if m != nil {
         m.signIns = value

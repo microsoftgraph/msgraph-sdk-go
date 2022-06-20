@@ -4,7 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i34cc44f2000950b9f8b47997f99c99d1ae27bb35bc86cb44b9593abae249a97d "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/internalsponsors/ref"
+    i6c6ee8847320ede3412bc8992aca7f3cbdd47de5a7e14011d6078f0ccb33b9d6 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/internalsponsors/getbyids"
     i9e8a8d07dd5fe27e4521498cc553f9be7a34d37d286f715b64fb7fa1d6166ce8 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/internalsponsors/count"
+    ib7ea0857d4a9ed2280396412308213bdaa23b8a1c263fe8515e98d0b85b35ede "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/internalsponsors/validateproperties"
+    ibe3c68382400e43720838e6007c1444aab7a6f83affe99b50bdd4d9c93e311e1 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/internalsponsors/getavailableextensionproperties"
 )
 
 // InternalSponsorsRequestBuilder provides operations to manage the internalSponsors property of the microsoft.graph.connectedOrganization entity.
@@ -16,7 +20,7 @@ type InternalSponsorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// InternalSponsorsRequestBuilderGetQueryParameters nullable.
+// InternalSponsorsRequestBuilderGetQueryParameters get internalSponsors from identityGovernance
 type InternalSponsorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +78,11 @@ func NewInternalSponsorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *InternalSponsorsRequestBuilder) Count()(*i9e8a8d07dd5fe27e4521498cc553f9be7a34d37d286f715b64fb7fa1d6166ce8.CountRequestBuilder) {
     return i9e8a8d07dd5fe27e4521498cc553f9be7a34d37d286f715b64fb7fa1d6166ce8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation nullable.
+// CreateGetRequestInformation get internalSponsors from identityGovernance
 func (m *InternalSponsorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration nullable.
+// CreateGetRequestInformationWithRequestConfiguration get internalSponsors from identityGovernance
 func (m *InternalSponsorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *InternalSponsorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +116,19 @@ func (m *InternalSponsorsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get nullable.
+// Get get internalSponsors from identityGovernance
 func (m *InternalSponsorsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler nullable.
+// GetAvailableExtensionProperties the getAvailableExtensionProperties property
+func (m *InternalSponsorsRequestBuilder) GetAvailableExtensionProperties()(*ibe3c68382400e43720838e6007c1444aab7a6f83affe99b50bdd4d9c93e311e1.GetAvailableExtensionPropertiesRequestBuilder) {
+    return ibe3c68382400e43720838e6007c1444aab7a6f83affe99b50bdd4d9c93e311e1.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetByIds the getByIds property
+func (m *InternalSponsorsRequestBuilder) GetByIds()(*i6c6ee8847320ede3412bc8992aca7f3cbdd47de5a7e14011d6078f0ccb33b9d6.GetByIdsRequestBuilder) {
+    return i6c6ee8847320ede3412bc8992aca7f3cbdd47de5a7e14011d6078f0ccb33b9d6.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetWithRequestConfigurationAndResponseHandler get internalSponsors from identityGovernance
 func (m *InternalSponsorsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *InternalSponsorsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -151,4 +163,12 @@ func (m *InternalSponsorsRequestBuilder) PostWithRequestConfigurationAndResponse
         return nil, err
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// Ref the ref property
+func (m *InternalSponsorsRequestBuilder) Ref()(*i34cc44f2000950b9f8b47997f99c99d1ae27bb35bc86cb44b9593abae249a97d.RefRequestBuilder) {
+    return i34cc44f2000950b9f8b47997f99c99d1ae27bb35bc86cb44b9593abae249a97d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ValidateProperties the validateProperties property
+func (m *InternalSponsorsRequestBuilder) ValidateProperties()(*ib7ea0857d4a9ed2280396412308213bdaa23b8a1c263fe8515e98d0b85b35ede.ValidatePropertiesRequestBuilder) {
+    return ib7ea0857d4a9ed2280396412308213bdaa23b8a1c263fe8515e98d0b85b35ede.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

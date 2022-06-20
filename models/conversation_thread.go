@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConversationThread casts the previous resource to user.
+// ConversationThread provides operations to manage the collection of application entities.
 type ConversationThread struct {
     Entity
     // The Cc: recipients for the thread. Returned only on $select.
@@ -16,7 +16,7 @@ type ConversationThread struct {
     isLocked *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
     lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Read-only. Nullable.
+    // The posts property
     posts []Postable
     // A short summary from the body of the latest post in this conversation. Returned by default.
     preview *string
@@ -181,7 +181,7 @@ func (m *ConversationThread) GetLastDeliveredDateTime()(*i336074805fc853987abe6f
         return m.lastDeliveredDateTime
     }
 }
-// GetPosts gets the posts property value. Read-only. Nullable.
+// GetPosts gets the posts property value. The posts property
 func (m *ConversationThread) GetPosts()([]Postable) {
     if m == nil {
         return nil
@@ -319,7 +319,7 @@ func (m *ConversationThread) SetLastDeliveredDateTime(value *i336074805fc853987a
         m.lastDeliveredDateTime = value
     }
 }
-// SetPosts sets the posts property value. Read-only. Nullable.
+// SetPosts sets the posts property value. The posts property
 func (m *ConversationThread) SetPosts(value []Postable)() {
     if m != nil {
         m.posts = value

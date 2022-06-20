@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsHelloForBusinessAuthenticationMethod casts the previous resource to user.
+// WindowsHelloForBusinessAuthenticationMethod 
 type WindowsHelloForBusinessAuthenticationMethod struct {
     AuthenticationMethod
     // The date and time that this Windows Hello for Business key was registered.
@@ -17,7 +17,7 @@ type WindowsHelloForBusinessAuthenticationMethod struct {
     // Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
     keyStrength *AuthenticationMethodKeyStrength
 }
-// NewWindowsHelloForBusinessAuthenticationMethod instantiates a new windowsHelloForBusinessAuthenticationMethod and sets the default values.
+// NewWindowsHelloForBusinessAuthenticationMethod instantiates a new WindowsHelloForBusinessAuthenticationMethod and sets the default values.
 func NewWindowsHelloForBusinessAuthenticationMethod()(*WindowsHelloForBusinessAuthenticationMethod) {
     m := &WindowsHelloForBusinessAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

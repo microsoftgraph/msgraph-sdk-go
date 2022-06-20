@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkforceIntegration provides operations to manage the teamwork singleton.
+// WorkforceIntegration 
 type WorkforceIntegration struct {
     ChangeTrackedEntity
     // API version for the call back URL. Start with 1.
@@ -20,7 +20,7 @@ type WorkforceIntegration struct {
     // Workforce Integration URL for callbacks from the Shifts service.
     url *string
 }
-// NewWorkforceIntegration instantiates a new workforceIntegration and sets the default values.
+// NewWorkforceIntegration instantiates a new WorkforceIntegration and sets the default values.
 func NewWorkforceIntegration()(*WorkforceIntegration) {
     m := &WorkforceIntegration{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

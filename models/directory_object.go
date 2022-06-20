@@ -33,8 +33,42 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.directoryObject":
-                        return NewDirectoryObject(), nil
+                    case "#microsoft.graph.administrativeUnit":
+                        return NewAdministrativeUnit(), nil
+                    case "#microsoft.graph.application":
+                        return NewApplication(), nil
+                    case "#microsoft.graph.appRoleAssignment":
+                        return NewAppRoleAssignment(), nil
+                    case "#microsoft.graph.contract":
+                        return NewContract(), nil
+                    case "#microsoft.graph.device":
+                        return NewDevice(), nil
+                    case "#microsoft.graph.directoryObjectPartnerReference":
+                        return NewDirectoryObjectPartnerReference(), nil
+                    case "#microsoft.graph.directoryRole":
+                        return NewDirectoryRole(), nil
+                    case "#microsoft.graph.directoryRoleTemplate":
+                        return NewDirectoryRoleTemplate(), nil
+                    case "#microsoft.graph.endpoint":
+                        return NewEndpoint(), nil
+                    case "#microsoft.graph.extensionProperty":
+                        return NewExtensionProperty(), nil
+                    case "#microsoft.graph.group":
+                        return NewGroup(), nil
+                    case "#microsoft.graph.groupSettingTemplate":
+                        return NewGroupSettingTemplate(), nil
+                    case "#microsoft.graph.organization":
+                        return NewOrganization(), nil
+                    case "#microsoft.graph.orgContact":
+                        return NewOrgContact(), nil
+                    case "#microsoft.graph.policyBase":
+                        return NewPolicyBase(), nil
+                    case "#microsoft.graph.resourceSpecificPermissionGrant":
+                        return NewResourceSpecificPermissionGrant(), nil
+                    case "#microsoft.graph.servicePrincipal":
+                        return NewServicePrincipal(), nil
+                    case "#microsoft.graph.user":
+                        return NewUser(), nil
                 }
             }
         }
