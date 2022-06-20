@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.27.0] - 2022-06-20
+
+### Changed
+
+- Weekly generation
+- Added missing error mappings for OData actions/functions.
+
 ## [0.26.0] - 2022-06-08
 
 ### Changed
