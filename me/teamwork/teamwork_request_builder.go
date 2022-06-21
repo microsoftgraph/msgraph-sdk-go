@@ -6,6 +6,8 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i263b4599502c23f3dd9df71834ee70ad65c989c6762ee23030f88648549e3b36 "github.com/microsoftgraph/msgraph-sdk-go/me/teamwork/sendactivitynotification"
     i82e4938eebb0f1f3b3ab5df9811549921c7228dca4f6c8d8ff37d7937c4dedb8 "github.com/microsoftgraph/msgraph-sdk-go/me/teamwork/installedapps"
+    ie38b47167535ef3384b8f7294108a04fe7be62cd08709347a0c07759b60b09b5 "github.com/microsoftgraph/msgraph-sdk-go/me/teamwork/associatedteams"
+    i02c603ee2380240b853d76aa887eba4ebfa924a56a6e2a4de9e87781ce672800 "github.com/microsoftgraph/msgraph-sdk-go/me/teamwork/associatedteams/item"
     i6f2f4be9580b67290cc415b4f8c6378d961b002fbc22ad36883310556039daae "github.com/microsoftgraph/msgraph-sdk-go/me/teamwork/installedapps/item"
 )
 
@@ -47,6 +49,21 @@ type TeamworkRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AssociatedTeams the associatedTeams property
+func (m *TeamworkRequestBuilder) AssociatedTeams()(*ie38b47167535ef3384b8f7294108a04fe7be62cd08709347a0c07759b60b09b5.AssociatedTeamsRequestBuilder) {
+    return ie38b47167535ef3384b8f7294108a04fe7be62cd08709347a0c07759b60b09b5.NewAssociatedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssociatedTeamsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.teamwork.associatedTeams.item collection
+func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*i02c603ee2380240b853d76aa887eba4ebfa924a56a6e2a4de9e87781ce672800.AssociatedTeamInfoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["associatedTeamInfo%2Did"] = id
+    }
+    return i02c603ee2380240b853d76aa887eba4ebfa924a56a6e2a4de9e87781ce672800.NewAssociatedTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTeamworkRequestBuilderInternal instantiates a new TeamworkRequestBuilder and sets the default values.
 func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamworkRequestBuilder) {

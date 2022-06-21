@@ -8,7 +8,7 @@ import (
 type PreAuthorizedApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The unique identifier for the application.
+    // The unique identifier for the client application.
     appId *string
     // The unique identifier for the oauth2PermissionScopes the application requires.
     delegatedPermissionIds []string
@@ -32,7 +32,7 @@ func (m *PreAuthorizedApplication) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAppId gets the appId property value. The unique identifier for the application.
+// GetAppId gets the appId property value. The unique identifier for the client application.
 func (m *PreAuthorizedApplication) GetAppId()(*string) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *PreAuthorizedApplication) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetAppId sets the appId property value. The unique identifier for the application.
+// SetAppId sets the appId property value. The unique identifier for the client application.
 func (m *PreAuthorizedApplication) SetAppId(value *string)() {
     if m != nil {
         m.appId = value

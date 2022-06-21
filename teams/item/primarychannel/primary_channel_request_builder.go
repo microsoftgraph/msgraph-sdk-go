@@ -7,13 +7,16 @@ import (
     i1e4013461c5123188ab7ccd33dd297c0d5a7865ba9fea8e6c138306141eeec4a "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/completemigration"
     i26a22db42badb207f51d6bdd9193eccfdc7cad972de53c3620609a905e198f7a "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/removeemail"
     i4785692a9d61d4a8638d06fe97e1daa4feb18f7b743e7ae34ff3f07f3d9425b4 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/messages"
+    i6093a5b7b609cfa10a7aee9a44ffd2db461382a56d5f3817bbb86584ec07b126 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/sharedwithteams"
     i977f2dd26da5a2e1880df87bd5372aa7a19a14868a426678151d974f360c2a01 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/members"
     i9cea999ed45be284a8003fe37addd7bac8685c5b60e557f3adc8dc8bcf2d27b5 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/provisionemail"
     ib05faad6285a5d11c891d13f0450d43dfbe0ddb57be2fa94177f219559ef0527 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/tabs"
+    ic6b0e2c3047fbd89f2f43272a2b1e10dbdb2052bb6a442f9243790aabc0009f4 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/doesuserhaveaccesswithuseridwithtenantidwithuserprincipalname"
     id169406704fae3a188bcd329b3cbae975ed48842ae13c31a260f221158f8516a "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/filesfolder"
     i0193f7b86687af396beaaecb295b77e66ded553cf49127c0d06bc79b38a4d93f "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/tabs/item"
     ib00fe6f5242d43b4e0cf713930bcfb1828c83941d27088c19568b60fa6e113d8 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/messages/item"
     ie734300e5bedd84acd036f8be309a4094f66ee9a58c5ec5b270079e8efc64674 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/members/item"
+    if0ea137f3825c0b8efcf099d1486febfa9d0dd12f02b49b849bd50671902b8d8 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/sharedwithteams/item"
 )
 
 // PrimaryChannelRequestBuilder provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
@@ -151,6 +154,10 @@ func (m *PrimaryChannelRequestBuilder) DeleteWithRequestConfigurationAndResponse
     }
     return nil
 }
+// DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName provides operations to call the doesUserHaveAccess method.
+func (m *PrimaryChannelRequestBuilder) DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName()(*ic6b0e2c3047fbd89f2f43272a2b1e10dbdb2052bb6a442f9243790aabc0009f4.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder) {
+    return ic6b0e2c3047fbd89f2f43272a2b1e10dbdb2052bb6a442f9243790aabc0009f4.NewDoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // FilesFolder the filesFolder property
 func (m *PrimaryChannelRequestBuilder) FilesFolder()(*id169406704fae3a188bcd329b3cbae975ed48842ae13c31a260f221158f8516a.FilesFolderRequestBuilder) {
     return id169406704fae3a188bcd329b3cbae975ed48842ae13c31a260f221158f8516a.NewFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -232,6 +239,21 @@ func (m *PrimaryChannelRequestBuilder) ProvisionEmail()(*i9cea999ed45be284a8003f
 // RemoveEmail the removeEmail property
 func (m *PrimaryChannelRequestBuilder) RemoveEmail()(*i26a22db42badb207f51d6bdd9193eccfdc7cad972de53c3620609a905e198f7a.RemoveEmailRequestBuilder) {
     return i26a22db42badb207f51d6bdd9193eccfdc7cad972de53c3620609a905e198f7a.NewRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SharedWithTeams the sharedWithTeams property
+func (m *PrimaryChannelRequestBuilder) SharedWithTeams()(*i6093a5b7b609cfa10a7aee9a44ffd2db461382a56d5f3817bbb86584ec07b126.SharedWithTeamsRequestBuilder) {
+    return i6093a5b7b609cfa10a7aee9a44ffd2db461382a56d5f3817bbb86584ec07b126.NewSharedWithTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SharedWithTeamsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.primaryChannel.sharedWithTeams.item collection
+func (m *PrimaryChannelRequestBuilder) SharedWithTeamsById(id string)(*if0ea137f3825c0b8efcf099d1486febfa9d0dd12f02b49b849bd50671902b8d8.SharedWithChannelTeamInfoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["sharedWithChannelTeamInfo%2Did"] = id
+    }
+    return if0ea137f3825c0b8efcf099d1486febfa9d0dd12f02b49b849bd50671902b8d8.NewSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tabs the tabs property
 func (m *PrimaryChannelRequestBuilder) Tabs()(*ib05faad6285a5d11c891d13f0450d43dfbe0ddb57be2fa94177f219559ef0527.TabsRequestBuilder) {
