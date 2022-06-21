@@ -7,6 +7,8 @@ import (
 // UserTeamwork provides operations to manage the collection of application entities.
 type UserTeamwork struct {
     Entity
+    // The list of associatedTeamInfo objects that a user is associated with.
+    associatedTeams []AssociatedTeamInfoable
     // The apps installed in the personal scope of this user.
     installedApps []UserScopeTeamsAppInstallationable
 }
@@ -21,9 +23,31 @@ func NewUserTeamwork()(*UserTeamwork) {
 func CreateUserTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserTeamwork(), nil
 }
+// GetAssociatedTeams gets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
+func (m *UserTeamwork) GetAssociatedTeams()([]AssociatedTeamInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.associatedTeams
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["associatedTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAssociatedTeamInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AssociatedTeamInfoable, len(val))
+            for i, v := range val {
+                res[i] = v.(AssociatedTeamInfoable)
+            }
+            m.SetAssociatedTeams(res)
+        }
+        return nil
+    }
     res["installedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserScopeTeamsAppInstallationFromDiscriminatorValue)
         if err != nil {
@@ -54,6 +78,16 @@ func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if err != nil {
         return err
     }
+    if m.GetAssociatedTeams() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssociatedTeams()))
+        for i, v := range m.GetAssociatedTeams() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("associatedTeams", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetInstalledApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInstalledApps()))
         for i, v := range m.GetInstalledApps() {
@@ -65,6 +99,12 @@ func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     return nil
+}
+// SetAssociatedTeams sets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
+func (m *UserTeamwork) SetAssociatedTeams(value []AssociatedTeamInfoable)() {
+    if m != nil {
+        m.associatedTeams = value
+    }
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in the personal scope of this user.
 func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallationable)() {

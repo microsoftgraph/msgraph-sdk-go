@@ -10,7 +10,7 @@ type ConversationMember struct {
     Entity
     // The display name of the user.
     displayName *string
-    // The roles for that user.
+    // The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
     roles []string
     // The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
     visibleHistoryStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -92,7 +92,7 @@ func (m *ConversationMember) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetRoles gets the roles property value. The roles for that user.
+// GetRoles gets the roles property value. The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
 func (m *ConversationMember) GetRoles()([]string) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *ConversationMember) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetRoles sets the roles property value. The roles for that user.
+// SetRoles sets the roles property value. The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
 func (m *ConversationMember) SetRoles(value []string)() {
     if m != nil {
         m.roles = value

@@ -26,8 +26,12 @@ type Channel struct {
     membershipType *ChannelMembershipType
     // A collection of all the messages in the channel. A navigation property. Nullable.
     messages []ChatMessageable
+    // A collection of teams with which a channel is shared.
+    sharedWithTeams []SharedWithChannelTeamInfoable
     // A collection of all the tabs in the channel. A navigation property.
     tabs []TeamsTabable
+    // The ID of the Azure Active Directory tenant.
+    tenantId *string
     // A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
     webUrl *string
 }
@@ -175,6 +179,20 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["sharedWithTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSharedWithChannelTeamInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SharedWithChannelTeamInfoable, len(val))
+            for i, v := range val {
+                res[i] = v.(SharedWithChannelTeamInfoable)
+            }
+            m.SetSharedWithTeams(res)
+        }
+        return nil
+    }
     res["tabs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue)
         if err != nil {
@@ -186,6 +204,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
                 res[i] = v.(TeamsTabable)
             }
             m.SetTabs(res)
+        }
+        return nil
+    }
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantId(val)
         }
         return nil
     }
@@ -241,12 +269,28 @@ func (m *Channel) GetMessages()([]ChatMessageable) {
         return m.messages
     }
 }
+// GetSharedWithTeams gets the sharedWithTeams property value. A collection of teams with which a channel is shared.
+func (m *Channel) GetSharedWithTeams()([]SharedWithChannelTeamInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharedWithTeams
+    }
+}
 // GetTabs gets the tabs property value. A collection of all the tabs in the channel. A navigation property.
 func (m *Channel) GetTabs()([]TeamsTabable) {
     if m == nil {
         return nil
     } else {
         return m.tabs
+    }
+}
+// GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
+func (m *Channel) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
     }
 }
 // GetWebUrl gets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
@@ -326,12 +370,28 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetSharedWithTeams() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedWithTeams()))
+        for i, v := range m.GetSharedWithTeams() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("sharedWithTeams", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTabs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTabs()))
         for i, v := range m.GetTabs() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tabs", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
         }
@@ -398,10 +458,22 @@ func (m *Channel) SetMessages(value []ChatMessageable)() {
         m.messages = value
     }
 }
+// SetSharedWithTeams sets the sharedWithTeams property value. A collection of teams with which a channel is shared.
+func (m *Channel) SetSharedWithTeams(value []SharedWithChannelTeamInfoable)() {
+    if m != nil {
+        m.sharedWithTeams = value
+    }
+}
 // SetTabs sets the tabs property value. A collection of all the tabs in the channel. A navigation property.
 func (m *Channel) SetTabs(value []TeamsTabable)() {
     if m != nil {
         m.tabs = value
+    }
+}
+// SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
+func (m *Channel) SetTenantId(value *string)() {
+    if m != nil {
+        m.tenantId = value
     }
 }
 // SetWebUrl sets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.

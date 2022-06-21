@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the directory singleton.
+// Provides operations to manage the collection of domain entities.
 type FederatedIdpMfaBehavior int
 
 const (

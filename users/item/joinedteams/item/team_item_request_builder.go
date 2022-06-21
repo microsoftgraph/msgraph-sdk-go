@@ -13,12 +13,16 @@ import (
     i8f24546b063616adb950ffa448f634e2722a9ef55b17354a587109842784dc87 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/clone"
     i95a7fa386ac768e6cf2f520a17857a2cdde3f6c2daf61c03b795675a411b4a10 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/unarchive"
     ib1deb2599b9a847d5026bfa2b1b44e59f2a829010f536668074417c636ce36db "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/channels"
+    ic07997e8175d4979dbf6a5fdc175868456c576f787269936469ca3cbe98bf07e "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/allchannels"
     ic44d4f0e5acd07f5481d8f8b84a79cab11dfbee059cf6770fd4e2b23db0c1a93 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/group"
     ic914f26c893a65c2d7a0c81250eacc4c0f9d860f64ab1b1cf1c364c6743699a8 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/installedapps"
+    iccac5382005a5ca2eac80d35c6684f5a5d2a95fd6a785277685abb4bca00f086 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/incomingchannels"
     ie7bd69bc163dd5d2c6dbbe5978d8c7eab2d6a90de4ac1a9c005cb73477cec6bb "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/sendactivitynotification"
     ief730b7100e12b3385f77770a9d755bebd575023d52fdbb9414e8c86230b027d "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/members"
+    i317663812c69a7c8ef4e5e9c721877170ab1423cef01deb27befa0de404a522b "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/allchannels/item"
     i6d038dcd104603d7281b4eac363006d79b67e92eca3e8c364b49d02b84649d79 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/channels/item"
     i98b219e6f0357bddb879690365c172b8f5fa9226021c11592a8062b6d8a9415e "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/members/item"
+    ic36d8fd750746e0ef3bba4a0ac0d5869787d2d7347af1b8a0ff929a9af209bf4 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/incomingchannels/item"
     ie5af489748d2fc36f15958b988ad08901566118f084112092561d1d1b446b768 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/installedapps/item"
     ie78978d46a3704a561b7ecbd9e66a5ee9be50b99960e26229ec758c80ee98271 "github.com/microsoftgraph/msgraph-sdk-go/users/item/joinedteams/item/operations/item"
 )
@@ -61,6 +65,21 @@ type TeamItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AllChannels the allChannels property
+func (m *TeamItemRequestBuilder) AllChannels()(*ic07997e8175d4979dbf6a5fdc175868456c576f787269936469ca3cbe98bf07e.AllChannelsRequestBuilder) {
+    return ic07997e8175d4979dbf6a5fdc175868456c576f787269936469ca3cbe98bf07e.NewAllChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AllChannelsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.allChannels.item collection
+func (m *TeamItemRequestBuilder) AllChannelsById(id string)(*i317663812c69a7c8ef4e5e9c721877170ab1423cef01deb27befa0de404a522b.ChannelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["channel%2Did"] = id
+    }
+    return i317663812c69a7c8ef4e5e9c721877170ab1423cef01deb27befa0de404a522b.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Archive the archive property
 func (m *TeamItemRequestBuilder) Archive()(*i66dfe7a7c3387fa20a0d979d3bfba6fd40a47368ae24042ec7def4c570e011bb.ArchiveRequestBuilder) {
@@ -204,6 +223,21 @@ func (m *TeamItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(r
 // Group the group property
 func (m *TeamItemRequestBuilder) Group()(*ic44d4f0e5acd07f5481d8f8b84a79cab11dfbee059cf6770fd4e2b23db0c1a93.GroupRequestBuilder) {
     return ic44d4f0e5acd07f5481d8f8b84a79cab11dfbee059cf6770fd4e2b23db0c1a93.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// IncomingChannels the incomingChannels property
+func (m *TeamItemRequestBuilder) IncomingChannels()(*iccac5382005a5ca2eac80d35c6684f5a5d2a95fd6a785277685abb4bca00f086.IncomingChannelsRequestBuilder) {
+    return iccac5382005a5ca2eac80d35c6684f5a5d2a95fd6a785277685abb4bca00f086.NewIncomingChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// IncomingChannelsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.incomingChannels.item collection
+func (m *TeamItemRequestBuilder) IncomingChannelsById(id string)(*ic36d8fd750746e0ef3bba4a0ac0d5869787d2d7347af1b8a0ff929a9af209bf4.ChannelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["channel%2Did"] = id
+    }
+    return ic36d8fd750746e0ef3bba4a0ac0d5869787d2d7347af1b8a0ff929a9af209bf4.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // InstalledApps the installedApps property
 func (m *TeamItemRequestBuilder) InstalledApps()(*ic914f26c893a65c2d7a0c81250eacc4c0f9d860f64ab1b1cf1c364c6743699a8.InstalledAppsRequestBuilder) {
