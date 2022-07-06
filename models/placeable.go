@@ -12,8 +12,10 @@ type Placeable interface {
     GetDisplayName()(*string)
     GetGeoCoordinates()(OutlookGeoCoordinatesable)
     GetPhone()(*string)
+    GetType()(*string)
     SetAddress(value PhysicalAddressable)()
     SetDisplayName(value *string)()
     SetGeoCoordinates(value OutlookGeoCoordinatesable)()
     SetPhone(value *string)()
+    SetType(value *string)()
 }

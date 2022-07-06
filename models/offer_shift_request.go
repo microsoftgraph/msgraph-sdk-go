@@ -16,6 +16,8 @@ type OfferShiftRequest struct {
     recipientUserId *string
     // User id of the sender of the offer shift request.
     senderShiftId *string
+    // The type property
+    type_escaped *string
 }
 // NewOfferShiftRequest instantiates a new OfferShiftRequest and sets the default values.
 func NewOfferShiftRequest()(*OfferShiftRequest) {
@@ -90,6 +92,16 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetRecipientActionDateTime gets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -124,6 +136,14 @@ func (m *OfferShiftRequest) GetSenderShiftId()(*string) {
         return m.senderShiftId
     }
 }
+// GetType gets the type property value. The type property
+func (m *OfferShiftRequest) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *OfferShiftRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.ScheduleChangeRequest.Serialize(writer)
@@ -154,6 +174,12 @@ func (m *OfferShiftRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetRecipientActionDateTime sets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -178,5 +204,11 @@ func (m *OfferShiftRequest) SetRecipientUserId(value *string)() {
 func (m *OfferShiftRequest) SetSenderShiftId(value *string)() {
     if m != nil {
         m.senderShiftId = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *OfferShiftRequest) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

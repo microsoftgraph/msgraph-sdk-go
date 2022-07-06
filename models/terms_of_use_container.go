@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TermsOfUseContainer provides operations to manage the identityGovernance singleton.
+// TermsOfUseContainer 
 type TermsOfUseContainer struct {
     Entity
     // Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -12,7 +12,7 @@ type TermsOfUseContainer struct {
     // Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
     agreements []Agreementable
 }
-// NewTermsOfUseContainer instantiates a new termsOfUseContainer and sets the default values.
+// NewTermsOfUseContainer instantiates a new TermsOfUseContainer and sets the default values.
 func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     m := &TermsOfUseContainer{
         Entity: *NewEntity(),

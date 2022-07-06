@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttendeeBase provides operations to manage the collection of application entities.
+// AttendeeBase 
 type AttendeeBase struct {
     Recipient
     // The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
     type_escaped *AttendeeType
 }
-// NewAttendeeBase instantiates a new attendeeBase and sets the default values.
+// NewAttendeeBase instantiates a new AttendeeBase and sets the default values.
 func NewAttendeeBase()(*AttendeeBase) {
     m := &AttendeeBase{
         Recipient: *NewRecipient(),
@@ -19,6 +19,25 @@ func NewAttendeeBase()(*AttendeeBase) {
 }
 // CreateAttendeeBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAttendeeBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.attendee":
+                        return NewAttendee(), nil
+                }
+            }
+        }
+    }
     return NewAttendeeBase(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model

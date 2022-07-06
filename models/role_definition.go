@@ -17,6 +17,8 @@ type RoleDefinition struct {
     roleAssignments []RoleAssignmentable
     // List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
     rolePermissions []RolePermissionable
+    // The type property
+    type_escaped *string
 }
 // NewRoleDefinition instantiates a new roleDefinition and sets the default values.
 func NewRoleDefinition()(*RoleDefinition) {
@@ -125,6 +127,16 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
@@ -149,6 +161,14 @@ func (m *RoleDefinition) GetRolePermissions()([]RolePermissionable) {
         return nil
     } else {
         return m.rolePermissions
+    }
+}
+// GetType gets the type property value. The type property
+func (m *RoleDefinition) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -195,6 +215,12 @@ func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. Description of the Role definition.
@@ -225,5 +251,11 @@ func (m *RoleDefinition) SetRoleAssignments(value []RoleAssignmentable)() {
 func (m *RoleDefinition) SetRolePermissions(value []RolePermissionable)() {
     if m != nil {
         m.rolePermissions = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *RoleDefinition) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

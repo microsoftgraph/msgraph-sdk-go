@@ -13,9 +13,11 @@ type SamlOrWsFedProviderable interface {
     GetPassiveSignInUri()(*string)
     GetPreferredAuthenticationProtocol()(*AuthenticationProtocol)
     GetSigningCertificate()(*string)
+    GetType()(*string)
     SetIssuerUri(value *string)()
     SetMetadataExchangeUri(value *string)()
     SetPassiveSignInUri(value *string)()
     SetPreferredAuthenticationProtocol(value *AuthenticationProtocol)()
     SetSigningCertificate(value *string)()
+    SetType(value *string)()
 }

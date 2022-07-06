@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DomainDnsRecord provides operations to manage the collection of domainDnsRecord entities.
+// DomainDnsRecord provides operations to manage the collection of agreementAcceptance entities.
 type DomainDnsRecord struct {
     Entity
     // If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
@@ -17,6 +17,8 @@ type DomainDnsRecord struct {
     supportedService *string
     // Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
     ttl *int32
+    // The type property
+    type_escaped *string
 }
 // NewDomainDnsRecord instantiates a new domainDnsRecord and sets the default values.
 func NewDomainDnsRecord()(*DomainDnsRecord) {
@@ -109,6 +111,16 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsOptional gets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
@@ -151,6 +163,14 @@ func (m *DomainDnsRecord) GetTtl()(*int32) {
         return m.ttl
     }
 }
+// GetType gets the type property value. The type property
+func (m *DomainDnsRecord) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *DomainDnsRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -187,6 +207,12 @@ func (m *DomainDnsRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetIsOptional sets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
@@ -217,5 +243,11 @@ func (m *DomainDnsRecord) SetSupportedService(value *string)() {
 func (m *DomainDnsRecord) SetTtl(value *int32)() {
     if m != nil {
         m.ttl = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DomainDnsRecord) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

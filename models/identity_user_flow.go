@@ -4,15 +4,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlow provides operations to manage the identityContainer singleton.
+// IdentityUserFlow 
 type IdentityUserFlow struct {
     Entity
+    // The type property
+    type_escaped *string
     // The userFlowType property
     userFlowType *UserFlowType
     // The userFlowTypeVersion property
     userFlowTypeVersion *float32
 }
-// NewIdentityUserFlow instantiates a new identityUserFlow and sets the default values.
+// NewIdentityUserFlow instantiates a new IdentityUserFlow and sets the default values.
 func NewIdentityUserFlow()(*IdentityUserFlow) {
     m := &IdentityUserFlow{
         Entity: *NewEntity(),
@@ -45,6 +47,16 @@ func CreateIdentityUserFlowFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userFlowType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserFlowType)
         if err != nil {
@@ -66,6 +78,14 @@ func (m *IdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *IdentityUserFlow) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // GetUserFlowType gets the userFlowType property value. The userFlowType property
 func (m *IdentityUserFlow) GetUserFlowType()(*UserFlowType) {
@@ -89,6 +109,12 @@ func (m *IdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserFlowType() != nil {
         cast := (*m.GetUserFlowType()).String()
         err = writer.WriteStringValue("userFlowType", &cast)
@@ -103,6 +129,12 @@ func (m *IdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     return nil
+}
+// SetType sets the type property value. The type property
+func (m *IdentityUserFlow) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUserFlowType sets the userFlowType property value. The userFlowType property
 func (m *IdentityUserFlow) SetUserFlowType(value *UserFlowType)() {

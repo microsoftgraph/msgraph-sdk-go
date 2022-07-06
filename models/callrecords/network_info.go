@@ -40,7 +40,7 @@ type NetworkInfo struct {
     sentQualityEventRatio *float32
     // Subnet used for media stream by the media endpoint.
     subnet *string
-    // List of network trace route hops collected for this media stream.
+    // List of network trace route hops collected for this media stream.*
     traceRouteHops []TraceRouteHopable
     // WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
     wifiBand *WifiBand
@@ -477,7 +477,7 @@ func (m *NetworkInfo) GetSubnet()(*string) {
         return m.subnet
     }
 }
-// GetTraceRouteHops gets the traceRouteHops property value. List of network trace route hops collected for this media stream.
+// GetTraceRouteHops gets the traceRouteHops property value. List of network trace route hops collected for this media stream.*
 func (m *NetworkInfo) GetTraceRouteHops()([]TraceRouteHopable) {
     if m == nil {
         return nil
@@ -833,7 +833,7 @@ func (m *NetworkInfo) SetSubnet(value *string)() {
         m.subnet = value
     }
 }
-// SetTraceRouteHops sets the traceRouteHops property value. List of network trace route hops collected for this media stream.
+// SetTraceRouteHops sets the traceRouteHops property value. List of network trace route hops collected for this media stream.*
 func (m *NetworkInfo) SetTraceRouteHops(value []TraceRouteHopable)() {
     if m != nil {
         m.traceRouteHops = value

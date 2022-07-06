@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Invitation provides operations to manage the collection of invitation entities.
+// Invitation 
 type Invitation struct {
     Entity
     // The user created as part of the invitation creation. Read-Only
@@ -26,7 +26,7 @@ type Invitation struct {
     // The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error
     status *string
 }
-// NewInvitation instantiates a new invitation and sets the default values.
+// NewInvitation instantiates a new Invitation and sets the default values.
 func NewInvitation()(*Invitation) {
     m := &Invitation{
         Entity: *NewEntity(),

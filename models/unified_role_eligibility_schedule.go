@@ -4,10 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleEligibilitySchedule provides operations to manage the identityGovernance singleton.
+// UnifiedRoleEligibilitySchedule provides operations to manage the collection of agreementAcceptance entities.
 type UnifiedRoleEligibilitySchedule struct {
     UnifiedRoleScheduleBase
-    // Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
+    // Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
     memberType *string
     // The schedule object of the eligible role assignment request.
     scheduleInfo RequestScheduleable
@@ -48,7 +48,7 @@ func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetMemberType gets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
+// GetMemberType gets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
 func (m *UnifiedRoleEligibilitySchedule) GetMemberType()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetMemberType sets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
+// SetMemberType sets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
 func (m *UnifiedRoleEligibilitySchedule) SetMemberType(value *string)() {
     if m != nil {
         m.memberType = value

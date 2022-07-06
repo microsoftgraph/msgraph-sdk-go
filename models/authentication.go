@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Authentication provides operations to manage the collection of application entities.
+// Authentication provides operations to manage the collection of agreementAcceptance entities.
 type Authentication struct {
     Entity
     // Represents the FIDO2 security keys registered to a user for authentication.
@@ -13,6 +13,10 @@ type Authentication struct {
     methods []AuthenticationMethodable
     // The details of the Microsoft Authenticator app registered to a user for authentication.
     microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethodable
+    // The operations property
+    operations []LongRunningOperationable
+    // Represents the details of the password authentication method registered to a user for authentication.
+    passwordMethods []PasswordAuthenticationMethodable
     // Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
     temporaryAccessPassMethods []TemporaryAccessPassAuthenticationMethodable
     // Represents the Windows Hello for Business authentication method registered to a user for authentication.
@@ -82,6 +86,34 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateLongRunningOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]LongRunningOperationable, len(val))
+            for i, v := range val {
+                res[i] = v.(LongRunningOperationable)
+            }
+            m.SetOperations(res)
+        }
+        return nil
+    }
+    res["passwordMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePasswordAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PasswordAuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(PasswordAuthenticationMethodable)
+            }
+            m.SetPasswordMethods(res)
+        }
+        return nil
+    }
     res["temporaryAccessPassMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
@@ -126,6 +158,22 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
         return nil
     } else {
         return m.microsoftAuthenticatorMethods
+    }
+}
+// GetOperations gets the operations property value. The operations property
+func (m *Authentication) GetOperations()([]LongRunningOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
+    }
+}
+// GetPasswordMethods gets the passwordMethods property value. Represents the details of the password authentication method registered to a user for authentication.
+func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passwordMethods
     }
 }
 // GetTemporaryAccessPassMethods gets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
@@ -180,6 +228,26 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetOperations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
+        for i, v := range m.GetOperations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPasswordMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPasswordMethods()))
+        for i, v := range m.GetPasswordMethods() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("passwordMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTemporaryAccessPassMethods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemporaryAccessPassMethods()))
         for i, v := range m.GetTemporaryAccessPassMethods() {
@@ -218,6 +286,18 @@ func (m *Authentication) SetMethods(value []AuthenticationMethodable)() {
 func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethodable)() {
     if m != nil {
         m.microsoftAuthenticatorMethods = value
+    }
+}
+// SetOperations sets the operations property value. The operations property
+func (m *Authentication) SetOperations(value []LongRunningOperationable)() {
+    if m != nil {
+        m.operations = value
+    }
+}
+// SetPasswordMethods sets the passwordMethods property value. Represents the details of the password authentication method registered to a user for authentication.
+func (m *Authentication) SetPasswordMethods(value []PasswordAuthenticationMethodable)() {
+    if m != nil {
+        m.passwordMethods = value
     }
 }
 // SetTemporaryAccessPassMethods sets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.

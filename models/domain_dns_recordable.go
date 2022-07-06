@@ -13,9 +13,11 @@ type DomainDnsRecordable interface {
     GetRecordType()(*string)
     GetSupportedService()(*string)
     GetTtl()(*int32)
+    GetType()(*string)
     SetIsOptional(value *bool)()
     SetLabel(value *string)()
     SetRecordType(value *string)()
     SetSupportedService(value *string)()
     SetTtl(value *int32)()
+    SetType(value *string)()
 }

@@ -15,6 +15,7 @@ import (
     i60f4aa5edd1e35c0b5a11cc9ce9afe3a692e2aef2b419b5d6bb6c9bd8c0c2561 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/transitivememberof"
     i6265425e2a2080afde3979740ad79538958bd2d2ab7ce003f7d0a624b06989bc "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/checkmemberobjects"
     i93153ff64f35a046ae51130f6dbc11813af572bf8610f8142e2bebbb77269190 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/approleassignments"
+    ia00f02ec828d1cde18fd3c57cbb652c714b1969177279cebabf663d95c33bc3b "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/federatedidentitycredentials"
     ia161e203c4876e46996f4ce25080c383320b3f90c23f41a4644fabc41a122c2c "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/owners"
     ia329fbf2e4e7682fe90bdfc6bf4cc749c189487202d60eefa0fdec3b62b0b7c3 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects"
     ia47ff52d5020404c6eaea0bc5dbd4bbafaa1e0c73dbc6d4dcfee263b2245b53e "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/tokenlifetimepolicies"
@@ -35,6 +36,7 @@ import (
     i56e2c3bd7faf41b227bd7eb65043ee578bb4d1dc5df7c395a2d64d2ed4af7fce "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/memberof/item"
     i80395ca3a6452268f5c4d3e92f315d7c92e78fef9911bf32e289ea47d6968415 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/approleassignments/item"
     i83568fd90c133e34217ad0e8f925c320323fb270d334badf13c19b1a8ac14daa "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/oauth2permissiongrants/item"
+    i95f92838ebc80aae4c8aab6abf963c7f08af6c7a1a9f89f588ef56b22a03e718 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/federatedidentitycredentials/item"
     i9fe3c2224826dcb0cde6e1f06bdfb308132901afdafc77fa24614124022a183b "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects/item"
     iae6f1167638ef01ba227e18af033b58e9203edca74b4641453bc1cec1de3aa91 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/endpoints/item"
     ib95837107c1a1d541878efdf1d0902a7c67b80de5fc97d771d55c403ab043621 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/transitivememberof/item"
@@ -284,6 +286,21 @@ func (m *ServicePrincipalItemRequestBuilder) EndpointsById(id string)(*iae6f1167
         urlTplParams["endpoint%2Did"] = id
     }
     return iae6f1167638ef01ba227e18af033b58e9203edca74b4641453bc1cec1de3aa91.NewEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// FederatedIdentityCredentials the federatedIdentityCredentials property
+func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentials()(*ia00f02ec828d1cde18fd3c57cbb652c714b1969177279cebabf663d95c33bc3b.FederatedIdentityCredentialsRequestBuilder) {
+    return ia00f02ec828d1cde18fd3c57cbb652c714b1969177279cebabf663d95c33bc3b.NewFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// FederatedIdentityCredentialsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.federatedIdentityCredentials.item collection
+func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentialsById(id string)(*i95f92838ebc80aae4c8aab6abf963c7f08af6c7a1a9f89f588ef56b22a03e718.FederatedIdentityCredentialItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["federatedIdentityCredential%2Did"] = id
+    }
+    return i95f92838ebc80aae4c8aab6abf963c7f08af6c7a1a9f89f588ef56b22a03e718.NewFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get retrieve the properties and relationships of a servicePrincipal object.
 func (m *ServicePrincipalItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable, error) {

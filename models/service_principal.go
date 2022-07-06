@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipal provides operations to call the instantiate method.
+// ServicePrincipal casts the previous resource to servicePrincipal.
 type ServicePrincipal struct {
     DirectoryObject
     // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
@@ -45,6 +45,8 @@ type ServicePrincipal struct {
     displayName *string
     // Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
     endpoints []Endpointable
+    // The federatedIdentityCredentials property
+    federatedIdentityCredentials []FederatedIdentityCredentialable
     // Home page or landing page of the application.
     homepage *string
     // The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
@@ -261,6 +263,14 @@ func (m *ServicePrincipal) GetEndpoints()([]Endpointable) {
         return nil
     } else {
         return m.endpoints
+    }
+}
+// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. The federatedIdentityCredentials property
+func (m *ServicePrincipal) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.federatedIdentityCredentials
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -489,6 +499,20 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 res[i] = v.(Endpointable)
             }
             m.SetEndpoints(res)
+        }
+        return nil
+    }
+    res["federatedIdentityCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateFederatedIdentityCredentialFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]FederatedIdentityCredentialable, len(val))
+            for i, v := range val {
+                res[i] = v.(FederatedIdentityCredentialable)
+            }
+            m.SetFederatedIdentityCredentials(res)
         }
         return nil
     }
@@ -1196,6 +1220,16 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetFederatedIdentityCredentials() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFederatedIdentityCredentials()))
+        for i, v := range m.GetFederatedIdentityCredentials() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("federatedIdentityCredentials", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("homepage", m.GetHomepage())
         if err != nil {
@@ -1520,6 +1554,12 @@ func (m *ServicePrincipal) SetDisplayName(value *string)() {
 func (m *ServicePrincipal) SetEndpoints(value []Endpointable)() {
     if m != nil {
         m.endpoints = value
+    }
+}
+// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. The federatedIdentityCredentials property
+func (m *ServicePrincipal) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
+    if m != nil {
+        m.federatedIdentityCredentials = value
     }
 }
 // SetHomepage sets the homepage property value. Home page or landing page of the application.

@@ -14,6 +14,8 @@ type OmaSetting struct {
     displayName *string
     // OMA.
     omaUri *string
+    // The type property
+    type_escaped *string
 }
 // NewOmaSetting instantiates a new omaSetting and sets the default values.
 func NewOmaSetting()(*OmaSetting) {
@@ -24,6 +26,37 @@ func NewOmaSetting()(*OmaSetting) {
 }
 // CreateOmaSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOmaSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.omaSettingBase64":
+                        return NewOmaSettingBase64(), nil
+                    case "#microsoft.graph.omaSettingBoolean":
+                        return NewOmaSettingBoolean(), nil
+                    case "#microsoft.graph.omaSettingDateTime":
+                        return NewOmaSettingDateTime(), nil
+                    case "#microsoft.graph.omaSettingFloatingPoint":
+                        return NewOmaSettingFloatingPoint(), nil
+                    case "#microsoft.graph.omaSettingInteger":
+                        return NewOmaSettingInteger(), nil
+                    case "#microsoft.graph.omaSettingString":
+                        return NewOmaSettingString(), nil
+                    case "#microsoft.graph.omaSettingStringXml":
+                        return NewOmaSettingStringXml(), nil
+                }
+            }
+        }
+    }
     return NewOmaSetting(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -83,6 +116,16 @@ func (m *OmaSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOmaUri gets the omaUri property value. OMA.
@@ -91,6 +134,14 @@ func (m *OmaSetting) GetOmaUri()(*string) {
         return nil
     } else {
         return m.omaUri
+    }
+}
+// GetType gets the type property value. The type property
+func (m *OmaSetting) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -109,6 +160,12 @@ func (m *OmaSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err := writer.WriteStringValue("omaUri", m.GetOmaUri())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -143,5 +200,11 @@ func (m *OmaSetting) SetDisplayName(value *string)() {
 func (m *OmaSetting) SetOmaUri(value *string)() {
     if m != nil {
         m.omaUri = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *OmaSetting) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

@@ -17,6 +17,8 @@ type SamlOrWsFedProvider struct {
     preferredAuthenticationProtocol *AuthenticationProtocol
     // Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
     signingCertificate *string
+    // The type property
+    type_escaped *string
 }
 // NewSamlOrWsFedProvider instantiates a new SamlOrWsFedProvider and sets the default values.
 func NewSamlOrWsFedProvider()(*SamlOrWsFedProvider) {
@@ -103,6 +105,16 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIssuerUri gets the issuerUri property value. Issuer URI of the federation server.
@@ -145,6 +157,14 @@ func (m *SamlOrWsFedProvider) GetSigningCertificate()(*string) {
         return m.signingCertificate
     }
 }
+// GetType gets the type property value. The type property
+func (m *SamlOrWsFedProvider) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *SamlOrWsFedProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.IdentityProviderBase.Serialize(writer)
@@ -182,6 +202,12 @@ func (m *SamlOrWsFedProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetIssuerUri sets the issuerUri property value. Issuer URI of the federation server.
@@ -212,5 +238,11 @@ func (m *SamlOrWsFedProvider) SetPreferredAuthenticationProtocol(value *Authenti
 func (m *SamlOrWsFedProvider) SetSigningCertificate(value *string)() {
     if m != nil {
         m.signingCertificate = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *SamlOrWsFedProvider) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

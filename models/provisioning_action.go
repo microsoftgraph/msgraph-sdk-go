@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the auditLogRoot singleton.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type ProvisioningAction int
 
 const (

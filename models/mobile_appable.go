@@ -24,6 +24,7 @@ type MobileAppable interface {
     GetPrivacyInformationUrl()(*string)
     GetPublisher()(*string)
     GetPublishingState()(*MobileAppPublishingState)
+    GetType()(*string)
     SetAssignments(value []MobileAppAssignmentable)()
     SetCategories(value []MobileAppCategoryable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -39,4 +40,5 @@ type MobileAppable interface {
     SetPrivacyInformationUrl(value *string)()
     SetPublisher(value *string)()
     SetPublishingState(value *MobileAppPublishingState)()
+    SetType(value *string)()
 }

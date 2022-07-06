@@ -8,7 +8,7 @@ import (
 type TraceRouteHop struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The network path count of this hop that was used to compute the RTT.
+    // The network path count of this hop that was used to compute the round-trip time.
     hopCount *int32
     // IP address used for this hop in the network trace.
     ipAddress *string
@@ -69,7 +69,7 @@ func (m *TraceRouteHop) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetHopCount gets the hopCount property value. The network path count of this hop that was used to compute the RTT.
+// GetHopCount gets the hopCount property value. The network path count of this hop that was used to compute the round-trip time.
 func (m *TraceRouteHop) GetHopCount()(*int32) {
     if m == nil {
         return nil
@@ -127,7 +127,7 @@ func (m *TraceRouteHop) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetHopCount sets the hopCount property value. The network path count of this hop that was used to compute the RTT.
+// SetHopCount sets the hopCount property value. The network path count of this hop that was used to compute the round-trip time.
 func (m *TraceRouteHop) SetHopCount(value *int32)() {
     if m != nil {
         m.hopCount = value

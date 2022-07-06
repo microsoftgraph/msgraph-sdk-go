@@ -10,7 +10,7 @@ type ExtensionSchemaProperty struct {
     additionalData map[string]interface{}
     // The name of the strongly typed property defined as part of a schema extension.
     name *string
-    // The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
+    // The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
     type_escaped *string
 }
 // NewExtensionSchemaProperty instantiates a new extensionSchemaProperty and sets the default values.
@@ -65,7 +65,7 @@ func (m *ExtensionSchemaProperty) GetName()(*string) {
         return m.name
     }
 }
-// GetType gets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
+// GetType gets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
 func (m *ExtensionSchemaProperty) GetType()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *ExtensionSchemaProperty) SetName(value *string)() {
         m.name = value
     }
 }
-// SetType sets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
+// SetType sets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
 func (m *ExtensionSchemaProperty) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

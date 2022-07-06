@@ -19,6 +19,7 @@ type BaseItemable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetParentReference()(ItemReferenceable)
+    GetType()(*string)
     GetWebUrl()(*string)
     SetCreatedBy(value IdentitySetable)()
     SetCreatedByUser(value Userable)()
@@ -30,5 +31,6 @@ type BaseItemable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
     SetParentReference(value ItemReferenceable)()
+    SetType(value *string)()
     SetWebUrl(value *string)()
 }

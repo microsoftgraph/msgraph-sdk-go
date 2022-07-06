@@ -17,6 +17,7 @@ type OrganizationalBrandingPropertiesable interface {
     GetSignInPageText()(*string)
     GetSquareLogo()([]byte)
     GetSquareLogoRelativeUrl()(*string)
+    GetType()(*string)
     GetUsernameHintText()(*string)
     SetBackgroundColor(value *string)()
     SetBackgroundImage(value []byte)()
@@ -27,5 +28,6 @@ type OrganizationalBrandingPropertiesable interface {
     SetSignInPageText(value *string)()
     SetSquareLogo(value []byte)()
     SetSquareLogoRelativeUrl(value *string)()
+    SetType(value *string)()
     SetUsernameHintText(value *string)()
 }

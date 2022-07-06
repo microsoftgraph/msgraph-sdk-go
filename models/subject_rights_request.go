@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequest provides operations to manage the privacy singleton.
+// SubjectRightsRequest 
 type SubjectRightsRequest struct {
     Entity
     // Identity that the request is assigned to.
@@ -47,7 +47,7 @@ type SubjectRightsRequest struct {
     // The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
     type_escaped *SubjectRightsRequestType
 }
-// NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
+// NewSubjectRightsRequest instantiates a new SubjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     m := &SubjectRightsRequest{
         Entity: *NewEntity(),

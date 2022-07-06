@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConversationMember provides operations to manage the collection of application entities.
+// ConversationMember provides operations to manage the collection of agreementAcceptance entities.
 type ConversationMember struct {
     Entity
     // The display name of the user.
     displayName *string
     // The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
     roles []string
+    // The type property
+    type_escaped *string
     // The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
     visibleHistoryStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -80,6 +82,16 @@ func (m *ConversationMember) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["visibleHistoryStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -98,6 +110,14 @@ func (m *ConversationMember) GetRoles()([]string) {
         return nil
     } else {
         return m.roles
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ConversationMember) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetVisibleHistoryStartDateTime gets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
@@ -127,6 +147,12 @@ func (m *ConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("visibleHistoryStartDateTime", m.GetVisibleHistoryStartDateTime())
         if err != nil {
             return err
@@ -144,6 +170,12 @@ func (m *ConversationMember) SetDisplayName(value *string)() {
 func (m *ConversationMember) SetRoles(value []string)() {
     if m != nil {
         m.roles = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ConversationMember) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetVisibleHistoryStartDateTime sets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.

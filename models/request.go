@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Request provides operations to manage the identityGovernance singleton.
+// Request provides operations to manage the collection of agreementAcceptance entities.
 type Request struct {
     Entity
     // The identifier of the approval of the request.
@@ -20,6 +20,8 @@ type Request struct {
     customData *string
     // The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
     status *string
+    // The type property
+    type_escaped *string
 }
 // NewRequest instantiates a new request and sets the default values.
 func NewRequest()(*Request) {
@@ -158,6 +160,16 @@ func (m *Request) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetStatus gets the status property value. The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
@@ -166,6 +178,14 @@ func (m *Request) GetStatus()(*string) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Request) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -210,6 +230,12 @@ func (m *Request) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApprovalId sets the approvalId property value. The identifier of the approval of the request.
@@ -246,5 +272,11 @@ func (m *Request) SetCustomData(value *string)() {
 func (m *Request) SetStatus(value *string)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Request) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

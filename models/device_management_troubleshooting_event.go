@@ -12,6 +12,8 @@ type DeviceManagementTroubleshootingEvent struct {
     correlationId *string
     // Time when the event occurred .
     eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
 }
 // NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {
@@ -82,7 +84,25 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementTroubleshootingEvent) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,6 +122,12 @@ func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCorrelationId sets the correlationId property value. Id used for tracing the failure in the service.
@@ -114,5 +140,11 @@ func (m *DeviceManagementTroubleshootingEvent) SetCorrelationId(value *string)()
 func (m *DeviceManagementTroubleshootingEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.eventDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementTroubleshootingEvent) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

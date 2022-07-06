@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileApp an abstract class containing the base properties for Intune mobile apps.
+// MobileApp 
 type MobileApp struct {
     Entity
     // The list of group assignments for this mobile app.
@@ -38,8 +38,10 @@ type MobileApp struct {
     publisher *string
     // The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
     publishingState *MobileAppPublishingState
+    // The type property
+    type_escaped *string
 }
-// NewMobileApp instantiates a new mobileApp and sets the default values.
+// NewMobileApp instantiates a new MobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {
     m := &MobileApp{
         Entity: *NewEntity(),
@@ -292,6 +294,16 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInformationUrl gets the informationUrl property value. The more information Url.
@@ -364,6 +376,14 @@ func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
         return nil
     } else {
         return m.publishingState
+    }
+}
+// GetType gets the type property value. The type property
+func (m *MobileApp) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -471,6 +491,12 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for this mobile app.
@@ -561,5 +587,11 @@ func (m *MobileApp) SetPublisher(value *string)() {
 func (m *MobileApp) SetPublishingState(value *MobileAppPublishingState)() {
     if m != nil {
         m.publishingState = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MobileApp) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

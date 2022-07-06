@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseItem provides operations to manage the collection of application entities.
+// BaseItem provides operations to manage the collection of agreementAcceptance entities.
 type BaseItem struct {
     Entity
     // Identity of the user, device, or application which created the item. Read-only.
@@ -28,6 +28,8 @@ type BaseItem struct {
     name *string
     // Parent information, if the item has a parent. Read-write.
     parentReference ItemReferenceable
+    // The type property
+    type_escaped *string
     // URL that displays the resource in the browser. Read-only.
     webUrl *string
 }
@@ -214,6 +216,16 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -264,6 +276,14 @@ func (m *BaseItem) GetParentReference()(ItemReferenceable) {
         return nil
     } else {
         return m.parentReference
+    }
+}
+// GetType gets the type property value. The type property
+func (m *BaseItem) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetWebUrl gets the webUrl property value. URL that displays the resource in the browser. Read-only.
@@ -341,6 +361,12 @@ func (m *BaseItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("webUrl", m.GetWebUrl())
         if err != nil {
             return err
@@ -406,6 +432,12 @@ func (m *BaseItem) SetName(value *string)() {
 func (m *BaseItem) SetParentReference(value ItemReferenceable)() {
     if m != nil {
         m.parentReference = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *BaseItem) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetWebUrl sets the webUrl property value. URL that displays the resource in the browser. Read-only.

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyRule provides operations to manage the policyRoot singleton.
+// UnifiedRoleManagementPolicyRule provides operations to manage the collection of agreementAcceptance entities.
 type UnifiedRoleManagementPolicyRule struct {
     Entity
     // Not implemented. Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
     target UnifiedRoleManagementPolicyRuleTargetable
+    // The type property
+    type_escaped *string
 }
 // NewUnifiedRoleManagementPolicyRule instantiates a new unifiedRoleManagementPolicyRule and sets the default values.
 func NewUnifiedRoleManagementPolicyRule()(*UnifiedRoleManagementPolicyRule) {
@@ -61,6 +63,16 @@ func (m *UnifiedRoleManagementPolicyRule) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetTarget gets the target property value. Not implemented. Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
@@ -69,6 +81,14 @@ func (m *UnifiedRoleManagementPolicyRule) GetTarget()(UnifiedRoleManagementPolic
         return nil
     } else {
         return m.target
+    }
+}
+// GetType gets the type property value. The type property
+func (m *UnifiedRoleManagementPolicyRule) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -83,11 +103,23 @@ func (m *UnifiedRoleManagementPolicyRule) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetTarget sets the target property value. Not implemented. Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementPolicyRule) SetTarget(value UnifiedRoleManagementPolicyRuleTargetable)() {
     if m != nil {
         m.target = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *UnifiedRoleManagementPolicyRule) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

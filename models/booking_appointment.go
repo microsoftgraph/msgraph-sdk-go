@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingAppointment represents a booked appointment of a service by a customer in a business.
+// BookingAppointment 
 type BookingAppointment struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
@@ -54,7 +54,7 @@ type BookingAppointment struct {
     // The startDateTime property
     startDateTime DateTimeTimeZoneable
 }
-// NewBookingAppointment instantiates a new bookingAppointment and sets the default values.
+// NewBookingAppointment instantiates a new BookingAppointment and sets the default values.
 func NewBookingAppointment()(*BookingAppointment) {
     m := &BookingAppointment{
         Entity: *NewEntity(),

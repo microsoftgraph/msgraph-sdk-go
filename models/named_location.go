@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NamedLocation provides operations to manage the identityContainer singleton.
+// NamedLocation provides operations to manage the collection of agreementAcceptance entities.
 type NamedLocation struct {
     Entity
     // The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -14,6 +14,8 @@ type NamedLocation struct {
     displayName *string
     // The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
 }
 // NewNamedLocation instantiates a new namedLocation and sets the default values.
 func NewNamedLocation()(*NamedLocation) {
@@ -96,6 +98,16 @@ func (m *NamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -104,6 +116,14 @@ func (m *NamedLocation) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return nil
     } else {
         return m.modifiedDateTime
+    }
+}
+// GetType gets the type property value. The type property
+func (m *NamedLocation) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -130,6 +150,12 @@ func (m *NamedLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -148,5 +174,11 @@ func (m *NamedLocation) SetDisplayName(value *string)() {
 func (m *NamedLocation) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.modifiedDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *NamedLocation) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

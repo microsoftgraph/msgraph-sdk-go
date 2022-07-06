@@ -33,6 +33,7 @@ type WindowsInformationProtectionable interface {
     GetRevokeOnUnenrollDisabled()(*bool)
     GetRightsManagementServicesTemplateId()(*string)
     GetSmbAutoEncryptedFileExtensions()([]WindowsInformationProtectionResourceCollectionable)
+    GetType()(*string)
     SetAssignments(value []TargetedManagedAppPolicyAssignmentable)()
     SetAzureRightsManagementServicesAllowed(value *bool)()
     SetDataRecoveryCertificate(value WindowsInformationProtectionDataRecoveryCertificateable)()
@@ -58,4 +59,5 @@ type WindowsInformationProtectionable interface {
     SetRevokeOnUnenrollDisabled(value *bool)()
     SetRightsManagementServicesTemplateId(value *string)()
     SetSmbAutoEncryptedFileExtensions(value []WindowsInformationProtectionResourceCollectionable)()
+    SetType(value *string)()
 }

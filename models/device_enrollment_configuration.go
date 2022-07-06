@@ -20,6 +20,8 @@ type DeviceEnrollmentConfiguration struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
     priority *int32
+    // The type property
+    type_escaped *string
     // The version of the device enrollment configuration
     version *int32
 }
@@ -156,6 +158,16 @@ func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -182,6 +194,14 @@ func (m *DeviceEnrollmentConfiguration) GetPriority()(*int32) {
         return nil
     } else {
         return m.priority
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceEnrollmentConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetVersion gets the version property value. The version of the device enrollment configuration
@@ -239,6 +259,12 @@ func (m *DeviceEnrollmentConfiguration) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("version", m.GetVersion())
         if err != nil {
             return err
@@ -280,6 +306,12 @@ func (m *DeviceEnrollmentConfiguration) SetLastModifiedDateTime(value *i33607480
 func (m *DeviceEnrollmentConfiguration) SetPriority(value *int32)() {
     if m != nil {
         m.priority = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceEnrollmentConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetVersion sets the version property value. The version of the device enrollment configuration

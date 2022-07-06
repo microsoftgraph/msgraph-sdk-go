@@ -9,6 +9,8 @@ type ManagedAppConfiguration struct {
     ManagedAppPolicy
     // A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
     customSettings []KeyValuePairable
+    // The type property
+    type_escaped *string
 }
 // NewManagedAppConfiguration instantiates a new ManagedAppConfiguration and sets the default values.
 func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
@@ -65,7 +67,25 @@ func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *ManagedAppConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *ManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,11 +103,23 @@ func (m *ManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCustomSettings sets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePairable)() {
     if m != nil {
         m.customSettings = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ManagedAppConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

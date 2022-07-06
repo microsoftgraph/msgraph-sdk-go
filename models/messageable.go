@@ -37,6 +37,7 @@ type Messageable interface {
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     GetSubject()(*string)
     GetToRecipients()([]Recipientable)
+    GetType()(*string)
     GetUniqueBody()(ItemBodyable)
     GetWebLink()(*string)
     SetAttachments(value []Attachmentable)()
@@ -67,6 +68,7 @@ type Messageable interface {
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
     SetSubject(value *string)()
     SetToRecipients(value []Recipientable)()
+    SetType(value *string)()
     SetUniqueBody(value ItemBodyable)()
     SetWebLink(value *string)()
 }

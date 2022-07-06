@@ -22,6 +22,8 @@ type AgreementFileProperties struct {
     isMajorVersion *bool
     // The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
     language *string
+    // The type property
+    type_escaped *string
 }
 // NewAgreementFileProperties instantiates a new agreementFileProperties and sets the default values.
 func NewAgreementFileProperties()(*AgreementFileProperties) {
@@ -146,6 +148,16 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFileData gets the fileData property value. Data that represents the terms of use PDF document. Read-only.
@@ -186,6 +198,14 @@ func (m *AgreementFileProperties) GetLanguage()(*string) {
         return nil
     } else {
         return m.language
+    }
+}
+// GetType gets the type property value. The type property
+func (m *AgreementFileProperties) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -236,6 +256,12 @@ func (m *AgreementFileProperties) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -278,5 +304,11 @@ func (m *AgreementFileProperties) SetIsMajorVersion(value *bool)() {
 func (m *AgreementFileProperties) SetLanguage(value *string)() {
     if m != nil {
         m.language = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AgreementFileProperties) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

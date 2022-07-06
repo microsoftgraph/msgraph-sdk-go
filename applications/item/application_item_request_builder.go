@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i02dc3442cb07e14dd6564850055582daa12c5271c29402a2eacef3296ce0336a "github.com/microsoftgraph/msgraph-sdk-go/applications/item/federatedidentitycredentials"
     i0b84a273ded1e6669385f95709d9a7cf84a87df5fd73dc8c7af3710571de2128 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/unsetverifiedpublisher"
     i1a8360833e23698ad94af084d2df35cce4a1972916936379ed6648bfa6ba57ec "github.com/microsoftgraph/msgraph-sdk-go/applications/item/logo"
     i1afcec2f462ce9653f6d9c178d0d0542f5684412e62323ab5a3f979e1b79b5b8 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenissuancepolicies"
@@ -22,6 +23,7 @@ import (
     ib5b5951df8af6837ed6ea3344f5688d5f2483d29ea1c165d2d219ec5edf941da "github.com/microsoftgraph/msgraph-sdk-go/applications/item/restore"
     id3ff5385c48c1f8ddd4e5f53452e89d8e30d638f1b87dc3265bf1f8adb5d3078 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/addpassword"
     ida306ab63547733b6e18148e7f72a169be3442196d415312a52cbd9978ab6961 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/extensionproperties"
+    i07ab470de2cf9d615c15406822a9ab9154633fa9ed5641ce1d97bbfbb1863560 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/federatedidentitycredentials/item"
     i2af67e5b951d866dcb390e8cdd53a703b8d1613ab54b5b0b111652d63e7426e3 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/homerealmdiscoverypolicies/item"
     i97c12a9c6c5e3dabf4cee7a203250908050ed917a949921ccf7e4f24cf095d25 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenlifetimepolicies/item"
     id5f0be733c94801a6e075b5b4e84614f608f9c7a8ece0f49a59084244eff9f56 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/item"
@@ -194,6 +196,21 @@ func (m *ApplicationItemRequestBuilder) ExtensionPropertiesById(id string)(*ie9d
         urlTplParams["extensionProperty%2Did"] = id
     }
     return ie9db136445b8a8e3d0b048cc9910b564635f65b63edab67c97c083c411010b77.NewExtensionPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// FederatedIdentityCredentials the federatedIdentityCredentials property
+func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentials()(*i02dc3442cb07e14dd6564850055582daa12c5271c29402a2eacef3296ce0336a.FederatedIdentityCredentialsRequestBuilder) {
+    return i02dc3442cb07e14dd6564850055582daa12c5271c29402a2eacef3296ce0336a.NewFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// FederatedIdentityCredentialsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.federatedIdentityCredentials.item collection
+func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentialsById(id string)(*i07ab470de2cf9d615c15406822a9ab9154633fa9ed5641ce1d97bbfbb1863560.FederatedIdentityCredentialItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["federatedIdentityCredential%2Did"] = id
+    }
+    return i07ab470de2cf9d615c15406822a9ab9154633fa9ed5641ce1d97bbfbb1863560.NewFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get the properties and relationships of an application object.
 func (m *ApplicationItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, error) {

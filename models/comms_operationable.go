@@ -11,7 +11,9 @@ type CommsOperationable interface {
     GetClientContext()(*string)
     GetResultInfo()(ResultInfoable)
     GetStatus()(*OperationStatus)
+    GetType()(*string)
     SetClientContext(value *string)()
     SetResultInfo(value ResultInfoable)()
     SetStatus(value *OperationStatus)()
+    SetType(value *string)()
 }

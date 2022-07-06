@@ -11,9 +11,11 @@ type IdentityUserFlowAttributeable interface {
     GetDataType()(*IdentityUserFlowAttributeDataType)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetType()(*string)
     GetUserFlowAttributeType()(*IdentityUserFlowAttributeType)
     SetDataType(value *IdentityUserFlowAttributeDataType)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetType(value *string)()
     SetUserFlowAttributeType(value *IdentityUserFlowAttributeType)()
 }

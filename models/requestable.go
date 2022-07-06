@@ -15,10 +15,12 @@ type Requestable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomData()(*string)
     GetStatus()(*string)
+    GetType()(*string)
     SetApprovalId(value *string)()
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomData(value *string)()
     SetStatus(value *string)()
+    SetType(value *string)()
 }

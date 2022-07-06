@@ -11,7 +11,9 @@ type TeamInfoable interface {
     GetDisplayName()(*string)
     GetTeam()(Teamable)
     GetTenantId()(*string)
+    GetType()(*string)
     SetDisplayName(value *string)()
     SetTeam(value Teamable)()
     SetTenantId(value *string)()
+    SetType(value *string)()
 }

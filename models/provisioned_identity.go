@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisionedIdentity provides operations to manage the auditLogRoot singleton.
+// ProvisionedIdentity 
 type ProvisionedIdentity struct {
     Identity
     // Details of the identity.
@@ -12,7 +12,7 @@ type ProvisionedIdentity struct {
     // Type of identity that has been provisioned, such as 'user' or 'group'.
     identityType *string
 }
-// NewProvisionedIdentity instantiates a new provisionedIdentity and sets the default values.
+// NewProvisionedIdentity instantiates a new ProvisionedIdentity and sets the default values.
 func NewProvisionedIdentity()(*ProvisionedIdentity) {
     m := &ProvisionedIdentity{
         Identity: *NewIdentity(),

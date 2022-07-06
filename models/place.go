@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Place provides operations to manage the collection of place entities.
+// Place 
 type Place struct {
     Entity
     // The street address of the place.
@@ -15,8 +15,10 @@ type Place struct {
     geoCoordinates OutlookGeoCoordinatesable
     // The phone number of the place.
     phone *string
+    // The type property
+    type_escaped *string
 }
-// NewPlace instantiates a new place and sets the default values.
+// NewPlace instantiates a new Place and sets the default values.
 func NewPlace()(*Place) {
     m := &Place{
         Entity: *NewEntity(),
@@ -107,6 +109,16 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
@@ -123,6 +135,14 @@ func (m *Place) GetPhone()(*string) {
         return nil
     } else {
         return m.phone
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Place) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -155,6 +175,12 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAddress sets the address property value. The street address of the place.
@@ -179,5 +205,11 @@ func (m *Place) SetGeoCoordinates(value OutlookGeoCoordinatesable)() {
 func (m *Place) SetPhone(value *string)() {
     if m != nil {
         m.phone = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Place) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

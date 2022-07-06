@@ -16,6 +16,7 @@ type UnifiedRoleScheduleInstanceBaseable interface {
     GetPrincipalId()(*string)
     GetRoleDefinition()(UnifiedRoleDefinitionable)
     GetRoleDefinitionId()(*string)
+    GetType()(*string)
     SetAppScope(value AppScopeable)()
     SetAppScopeId(value *string)()
     SetDirectoryScope(value DirectoryObjectable)()
@@ -24,4 +25,5 @@ type UnifiedRoleScheduleInstanceBaseable interface {
     SetPrincipalId(value *string)()
     SetRoleDefinition(value UnifiedRoleDefinitionable)()
     SetRoleDefinitionId(value *string)()
+    SetType(value *string)()
 }

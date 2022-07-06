@@ -20,6 +20,8 @@ type Location struct {
     locationType *LocationType
     // Optional URI representing the location.
     locationUri *string
+    // The type property
+    type_escaped *string
     // For internal use only.
     uniqueId *string
     // For internal use only.
@@ -34,6 +36,25 @@ func NewLocation()(*Location) {
 }
 // CreateLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.locationConstraintItem":
+                        return NewLocationConstraintItem(), nil
+                }
+            }
+        }
+    }
     return NewLocation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -131,6 +152,16 @@ func (m *Location) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["uniqueId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -175,6 +206,14 @@ func (m *Location) GetLocationUri()(*string) {
         return nil
     } else {
         return m.locationUri
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Location) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUniqueId gets the uniqueId property value. For internal use only.
@@ -228,6 +267,12 @@ func (m *Location) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err := writer.WriteStringValue("locationUri", m.GetLocationUri())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -293,6 +338,12 @@ func (m *Location) SetLocationType(value *LocationType)() {
 func (m *Location) SetLocationUri(value *string)() {
     if m != nil {
         m.locationUri = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Location) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUniqueId sets the uniqueId property value. For internal use only.

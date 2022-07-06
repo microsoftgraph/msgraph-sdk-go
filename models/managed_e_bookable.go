@@ -21,6 +21,7 @@ type ManagedEBookable interface {
     GetPrivacyInformationUrl()(*string)
     GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPublisher()(*string)
+    GetType()(*string)
     GetUserStateSummary()([]UserInstallStateSummaryable)
     SetAssignments(value []ManagedEBookAssignmentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -34,5 +35,6 @@ type ManagedEBookable interface {
     SetPrivacyInformationUrl(value *string)()
     SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPublisher(value *string)()
+    SetType(value *string)()
     SetUserStateSummary(value []UserInstallStateSummaryable)()
 }

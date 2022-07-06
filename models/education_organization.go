@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationOrganization provides operations to manage the educationRoot singleton.
+// EducationOrganization provides operations to manage the collection of agreementAcceptance entities.
 type EducationOrganization struct {
     Entity
     // Organization description.
@@ -15,6 +15,8 @@ type EducationOrganization struct {
     externalSource *EducationExternalSource
     // The name of the external source this resources was generated from.
     externalSourceDetail *string
+    // The type property
+    type_escaped *string
 }
 // NewEducationOrganization instantiates a new educationOrganization and sets the default values.
 func NewEducationOrganization()(*EducationOrganization) {
@@ -121,7 +123,25 @@ func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *EducationOrganization) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *EducationOrganization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -154,6 +174,12 @@ func (m *EducationOrganization) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. Organization description.
@@ -178,5 +204,11 @@ func (m *EducationOrganization) SetExternalSource(value *EducationExternalSource
 func (m *EducationOrganization) SetExternalSourceDetail(value *string)() {
     if m != nil {
         m.externalSourceDetail = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *EducationOrganization) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

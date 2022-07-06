@@ -24,6 +24,8 @@ type ManagedDeviceMobileAppConfiguration struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // the associated app.
     targetedMobileApps []string
+    // The type property
+    type_escaped *string
     // List of ManagedDeviceMobileAppConfigurationUserStatus.
     userStatuses []ManagedDeviceMobileAppConfigurationUserStatusable
     // App configuration user status summary.
@@ -204,6 +206,16 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationUserStatusFromDiscriminatorValue)
         if err != nil {
@@ -254,6 +266,14 @@ func (m *ManagedDeviceMobileAppConfiguration) GetTargetedMobileApps()([]string) 
         return nil
     } else {
         return m.targetedMobileApps
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ManagedDeviceMobileAppConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserStatuses gets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.
@@ -342,6 +362,12 @@ func (m *ManagedDeviceMobileAppConfiguration) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
@@ -412,6 +438,12 @@ func (m *ManagedDeviceMobileAppConfiguration) SetLastModifiedDateTime(value *i33
 func (m *ManagedDeviceMobileAppConfiguration) SetTargetedMobileApps(value []string)() {
     if m != nil {
         m.targetedMobileApps = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ManagedDeviceMobileAppConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserStatuses sets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.

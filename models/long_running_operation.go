@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LongRunningOperation provides operations to manage the collection of application entities.
+// LongRunningOperation provides operations to manage the collection of agreementAcceptance entities.
 type LongRunningOperation struct {
     Entity
     // The createdDateTime property
@@ -18,6 +18,8 @@ type LongRunningOperation struct {
     status *LongRunningOperationStatus
     // The statusDetail property
     statusDetail *string
+    // The type property
+    type_escaped *string
 }
 // NewLongRunningOperation instantiates a new longRunningOperation and sets the default values.
 func NewLongRunningOperation()(*LongRunningOperation) {
@@ -110,6 +112,16 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
@@ -142,6 +154,14 @@ func (m *LongRunningOperation) GetStatusDetail()(*string) {
         return nil
     } else {
         return m.statusDetail
+    }
+}
+// GetType gets the type property value. The type property
+func (m *LongRunningOperation) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -181,6 +201,12 @@ func (m *LongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
@@ -211,5 +237,11 @@ func (m *LongRunningOperation) SetStatus(value *LongRunningOperationStatus)() {
 func (m *LongRunningOperation) SetStatusDetail(value *string)() {
     if m != nil {
         m.statusDetail = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *LongRunningOperation) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

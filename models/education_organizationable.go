@@ -12,8 +12,10 @@ type EducationOrganizationable interface {
     GetDisplayName()(*string)
     GetExternalSource()(*EducationExternalSource)
     GetExternalSourceDetail()(*string)
+    GetType()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetExternalSource(value *EducationExternalSource)()
     SetExternalSourceDetail(value *string)()
+    SetType(value *string)()
 }

@@ -11,6 +11,8 @@ type TargetedManagedAppProtection struct {
     assignments []TargetedManagedAppPolicyAssignmentable
     // Indicates if the policy is deployed to any inclusion groups or not.
     isAssigned *bool
+    // The type property
+    type_escaped *string
 }
 // NewTargetedManagedAppProtection instantiates a new TargetedManagedAppProtection and sets the default values.
 func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
@@ -79,6 +81,16 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
@@ -87,6 +99,14 @@ func (m *TargetedManagedAppProtection) GetIsAssigned()(*bool) {
         return nil
     } else {
         return m.isAssigned
+    }
+}
+// GetType gets the type property value. The type property
+func (m *TargetedManagedAppProtection) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -111,6 +131,12 @@ func (m *TargetedManagedAppProtection) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
@@ -123,5 +149,11 @@ func (m *TargetedManagedAppProtection) SetAssignments(value []TargetedManagedApp
 func (m *TargetedManagedAppProtection) SetIsAssigned(value *bool)() {
     if m != nil {
         m.isAssigned = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *TargetedManagedAppProtection) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

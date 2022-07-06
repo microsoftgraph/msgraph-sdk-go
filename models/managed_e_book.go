@@ -32,6 +32,8 @@ type ManagedEBook struct {
     publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Publisher.
     publisher *string
+    // The type property
+    type_escaped *string
     // The list of installation states for this eBook.
     userStateSummary []UserInstallStateSummaryable
 }
@@ -236,6 +238,16 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserInstallStateSummaryFromDiscriminatorValue)
         if err != nil {
@@ -306,6 +318,14 @@ func (m *ManagedEBook) GetPublisher()(*string) {
         return nil
     } else {
         return m.publisher
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ManagedEBook) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserStateSummary gets the userStateSummary property value. The list of installation states for this eBook.
@@ -402,6 +422,12 @@ func (m *ManagedEBook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserStateSummary() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserStateSummary()))
         for i, v := range m.GetUserStateSummary() {
@@ -484,6 +510,12 @@ func (m *ManagedEBook) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad
 func (m *ManagedEBook) SetPublisher(value *string)() {
     if m != nil {
         m.publisher = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ManagedEBook) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserStateSummary sets the userStateSummary property value. The list of installation states for this eBook.

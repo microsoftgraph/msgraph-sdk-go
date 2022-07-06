@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InformationProtection provides operations to manage the informationProtection singleton.
+// InformationProtection 
 type InformationProtection struct {
     Entity
     // The bitlocker property
@@ -12,7 +12,7 @@ type InformationProtection struct {
     // The threatAssessmentRequests property
     threatAssessmentRequests []ThreatAssessmentRequestable
 }
-// NewInformationProtection instantiates a new informationProtection and sets the default values.
+// NewInformationProtection instantiates a new InformationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
     m := &InformationProtection{
         Entity: *NewEntity(),

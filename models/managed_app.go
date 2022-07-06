@@ -9,6 +9,8 @@ type ManagedApp struct {
     MobileApp
     // The Application's availability. Possible values are: global, lineOfBusiness.
     appAvailability *ManagedAppAvailability
+    // The type property
+    type_escaped *string
     // The Application's version.
     version *string
 }
@@ -67,6 +69,16 @@ func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -78,6 +90,14 @@ func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *ManagedApp) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // GetVersion gets the version property value. The Application's version.
 func (m *ManagedApp) GetVersion()(*string) {
@@ -101,6 +121,12 @@ func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
@@ -112,6 +138,12 @@ func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 func (m *ManagedApp) SetAppAvailability(value *ManagedAppAvailability)() {
     if m != nil {
         m.appAvailability = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ManagedApp) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetVersion sets the version property value. The Application's version.

@@ -18,6 +18,8 @@ type ServiceAnnouncementBase struct {
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The title of the service event.
     title *string
+    // The type property
+    type_escaped *string
 }
 // NewServiceAnnouncementBase instantiates a new serviceAnnouncementBase and sets the default values.
 func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {
@@ -124,6 +126,16 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified time of the service event.
@@ -148,6 +160,14 @@ func (m *ServiceAnnouncementBase) GetTitle()(*string) {
         return nil
     } else {
         return m.title
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ServiceAnnouncementBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -190,6 +210,12 @@ func (m *ServiceAnnouncementBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDetails sets the details property value. Additional details about service event. This property doesn't support filters.
@@ -220,5 +246,11 @@ func (m *ServiceAnnouncementBase) SetStartDateTime(value *i336074805fc853987abe6
 func (m *ServiceAnnouncementBase) SetTitle(value *string)() {
     if m != nil {
         m.title = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ServiceAnnouncementBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

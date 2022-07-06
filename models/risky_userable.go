@@ -16,6 +16,7 @@ type RiskyUserable interface {
     GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRiskLevel()(*RiskLevel)
     GetRiskState()(*RiskState)
+    GetType()(*string)
     GetUserDisplayName()(*string)
     GetUserPrincipalName()(*string)
     SetHistory(value []RiskyUserHistoryItemable)()
@@ -25,6 +26,7 @@ type RiskyUserable interface {
     SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRiskLevel(value *RiskLevel)()
     SetRiskState(value *RiskState)()
+    SetType(value *string)()
     SetUserDisplayName(value *string)()
     SetUserPrincipalName(value *string)()
 }

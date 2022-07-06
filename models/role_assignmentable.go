@@ -12,8 +12,10 @@ type RoleAssignmentable interface {
     GetDisplayName()(*string)
     GetResourceScopes()([]string)
     GetRoleDefinition()(RoleDefinitionable)
+    GetType()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetResourceScopes(value []string)()
     SetRoleDefinition(value RoleDefinitionable)()
+    SetType(value *string)()
 }

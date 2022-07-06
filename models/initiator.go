@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Initiator provides operations to manage the auditLogRoot singleton.
+// Initiator 
 type Initiator struct {
     Identity
     // Type of initiator. Possible values are: user, application, system, unknownFutureValue.
     initiatorType *InitiatorType
 }
-// NewInitiator instantiates a new initiator and sets the default values.
+// NewInitiator instantiates a new Initiator and sets the default values.
 func NewInitiator()(*Initiator) {
     m := &Initiator{
         Identity: *NewIdentity(),

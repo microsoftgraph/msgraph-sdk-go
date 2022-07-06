@@ -22,6 +22,7 @@ type ManagedAppRegistrationable interface {
     GetManagementSdkVersion()(*string)
     GetOperations()([]ManagedAppOperationable)
     GetPlatformVersion()(*string)
+    GetType()(*string)
     GetUserId()(*string)
     GetVersion()(*string)
     SetAppIdentifier(value MobileAppIdentifierable)()
@@ -37,6 +38,7 @@ type ManagedAppRegistrationable interface {
     SetManagementSdkVersion(value *string)()
     SetOperations(value []ManagedAppOperationable)()
     SetPlatformVersion(value *string)()
+    SetType(value *string)()
     SetUserId(value *string)()
     SetVersion(value *string)()
 }

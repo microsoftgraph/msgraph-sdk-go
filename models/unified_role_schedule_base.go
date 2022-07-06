@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleScheduleBase provides operations to manage the identityGovernance singleton.
+// UnifiedRoleScheduleBase provides operations to manage the collection of agreementAcceptance entities.
 type UnifiedRoleScheduleBase struct {
     Entity
     // Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
@@ -32,6 +32,8 @@ type UnifiedRoleScheduleBase struct {
     roleDefinitionId *string
     // The status of the role assignment or eligibility request.
     status *string
+    // The type property
+    type_escaped *string
 }
 // NewUnifiedRoleScheduleBase instantiates a new unifiedRoleScheduleBase and sets the default values.
 func NewUnifiedRoleScheduleBase()(*UnifiedRoleScheduleBase) {
@@ -236,6 +238,16 @@ func (m *UnifiedRoleScheduleBase) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. When the schedule was last modified.
@@ -284,6 +296,14 @@ func (m *UnifiedRoleScheduleBase) GetStatus()(*string) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *UnifiedRoleScheduleBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -364,6 +384,12 @@ func (m *UnifiedRoleScheduleBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
@@ -436,5 +462,11 @@ func (m *UnifiedRoleScheduleBase) SetRoleDefinitionId(value *string)() {
 func (m *UnifiedRoleScheduleBase) SetStatus(value *string)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *UnifiedRoleScheduleBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

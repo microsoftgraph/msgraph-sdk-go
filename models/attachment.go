@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Attachment provides operations to manage the collection of application entities.
+// Attachment provides operations to manage the collection of agreementAcceptance entities.
 type Attachment struct {
     Entity
     // The MIME type.
@@ -18,6 +18,8 @@ type Attachment struct {
     name *string
     // The length of the attachment in bytes.
     size *int32
+    // The type property
+    type_escaped *string
 }
 // NewAttachment instantiates a new attachment and sets the default values.
 func NewAttachment()(*Attachment) {
@@ -114,6 +116,16 @@ func (m *Attachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsInline gets the isInline property value. true if the attachment is an inline attachment; otherwise, false.
@@ -146,6 +158,14 @@ func (m *Attachment) GetSize()(*int32) {
         return nil
     } else {
         return m.size
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Attachment) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -184,6 +204,12 @@ func (m *Attachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContentType sets the contentType property value. The MIME type.
@@ -214,5 +240,11 @@ func (m *Attachment) SetName(value *string)() {
 func (m *Attachment) SetSize(value *int32)() {
     if m != nil {
         m.size = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Attachment) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

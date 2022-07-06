@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamInfo provides operations to manage the collection of application entities.
+// TeamInfo provides operations to manage the collection of agreementAcceptance entities.
 type TeamInfo struct {
     Entity
     // The name of the team.
@@ -13,6 +13,8 @@ type TeamInfo struct {
     team Teamable
     // The ID of the Azure Active Directory tenant.
     tenantId *string
+    // The type property
+    type_escaped *string
 }
 // NewTeamInfo instantiates a new teamInfo and sets the default values.
 func NewTeamInfo()(*TeamInfo) {
@@ -87,6 +89,16 @@ func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetTeam gets the team property value. The team property
@@ -103,6 +115,14 @@ func (m *TeamInfo) GetTenantId()(*string) {
         return nil
     } else {
         return m.tenantId
+    }
+}
+// GetType gets the type property value. The type property
+func (m *TeamInfo) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -129,6 +149,12 @@ func (m *TeamInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The name of the team.
@@ -147,5 +173,11 @@ func (m *TeamInfo) SetTeam(value Teamable)() {
 func (m *TeamInfo) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *TeamInfo) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

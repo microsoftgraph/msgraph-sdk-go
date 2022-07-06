@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the solutionsRoot singleton.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type BookingStaffRole int
 
 const (

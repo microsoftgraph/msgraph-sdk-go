@@ -24,6 +24,8 @@ type DeviceConfiguration struct {
     displayName *string
     // DateTime the object was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
     // Device configuration installation status by user.
     userStatuses []DeviceConfigurationUserStatusable
     // Device Configuration users status overview
@@ -258,6 +260,16 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationUserStatusFromDiscriminatorValue)
         if err != nil {
@@ -300,6 +312,14 @@ func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f
         return nil
     } else {
         return m.lastModifiedDateTime
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
@@ -392,6 +412,12 @@ func (m *DeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
@@ -462,6 +488,12 @@ func (m *DeviceConfiguration) SetDisplayName(value *string)() {
 func (m *DeviceConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserStatuses sets the userStatuses property value. Device configuration installation status by user.

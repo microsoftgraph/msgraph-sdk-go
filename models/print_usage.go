@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintUsage provides operations to manage the reportRoot singleton.
+// PrintUsage provides operations to manage the collection of agreementAcceptance entities.
 type PrintUsage struct {
     Entity
     // The completedBlackAndWhiteJobCount property
@@ -13,6 +13,8 @@ type PrintUsage struct {
     completedColorJobCount *int64
     // The incompleteJobCount property
     incompleteJobCount *int64
+    // The type property
+    type_escaped *string
     // The usageDate property
     usageDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
@@ -97,6 +99,16 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["usageDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
@@ -115,6 +127,14 @@ func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
         return nil
     } else {
         return m.incompleteJobCount
+    }
+}
+// GetType gets the type property value. The type property
+func (m *PrintUsage) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUsageDate gets the usageDate property value. The usageDate property
@@ -150,6 +170,12 @@ func (m *PrintUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteDateOnlyValue("usageDate", m.GetUsageDate())
         if err != nil {
             return err
@@ -173,6 +199,12 @@ func (m *PrintUsage) SetCompletedColorJobCount(value *int64)() {
 func (m *PrintUsage) SetIncompleteJobCount(value *int64)() {
     if m != nil {
         m.incompleteJobCount = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *PrintUsage) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUsageDate sets the usageDate property value. The usageDate property

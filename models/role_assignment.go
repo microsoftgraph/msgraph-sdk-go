@@ -15,6 +15,8 @@ type RoleAssignment struct {
     resourceScopes []string
     // Role definition this assignment is part of.
     roleDefinition RoleDefinitionable
+    // The type property
+    type_escaped *string
 }
 // NewRoleAssignment instantiates a new roleAssignment and sets the default values.
 func NewRoleAssignment()(*RoleAssignment) {
@@ -109,6 +111,16 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetResourceScopes gets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
@@ -125,6 +137,14 @@ func (m *RoleAssignment) GetRoleDefinition()(RoleDefinitionable) {
         return nil
     } else {
         return m.roleDefinition
+    }
+}
+// GetType gets the type property value. The type property
+func (m *RoleAssignment) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -157,6 +177,12 @@ func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. Description of the Role Assignment.
@@ -181,5 +207,11 @@ func (m *RoleAssignment) SetResourceScopes(value []string)() {
 func (m *RoleAssignment) SetRoleDefinition(value RoleDefinitionable)() {
     if m != nil {
         m.roleDefinition = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *RoleAssignment) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

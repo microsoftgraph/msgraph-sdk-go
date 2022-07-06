@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of domain entities.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type FederatedIdpMfaBehavior int
 
 const (

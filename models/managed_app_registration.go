@@ -34,6 +34,8 @@ type ManagedAppRegistration struct {
     operations []ManagedAppOperationable
     // Operating System version
     platformVersion *string
+    // The type property
+    type_escaped *string
     // The user Id to who this app registration belongs.
     userId *string
     // Version of the entity.
@@ -276,6 +278,16 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -344,6 +356,14 @@ func (m *ManagedAppRegistration) GetPlatformVersion()(*string) {
         return nil
     } else {
         return m.platformVersion
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ManagedAppRegistration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserId gets the userId property value. The user Id to who this app registration belongs.
@@ -459,6 +479,12 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
@@ -548,6 +574,12 @@ func (m *ManagedAppRegistration) SetOperations(value []ManagedAppOperationable)(
 func (m *ManagedAppRegistration) SetPlatformVersion(value *string)() {
     if m != nil {
         m.platformVersion = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ManagedAppRegistration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserId sets the userId property value. The user Id to who this app registration belongs.

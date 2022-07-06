@@ -11,7 +11,9 @@ type StsPolicyable interface {
     GetAppliesTo()([]DirectoryObjectable)
     GetDefinition()([]string)
     GetIsOrganizationDefault()(*bool)
+    GetType()(*string)
     SetAppliesTo(value []DirectoryObjectable)()
     SetDefinition(value []string)()
     SetIsOrganizationDefault(value *bool)()
+    SetType(value *string)()
 }

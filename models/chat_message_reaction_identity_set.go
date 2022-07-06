@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessageReactionIdentitySet provides operations to manage the collection of application entities.
+// ChatMessageReactionIdentitySet 
 type ChatMessageReactionIdentitySet struct {
     IdentitySet
 }
-// NewChatMessageReactionIdentitySet instantiates a new chatMessageReactionIdentitySet and sets the default values.
+// NewChatMessageReactionIdentitySet instantiates a new ChatMessageReactionIdentitySet and sets the default values.
 func NewChatMessageReactionIdentitySet()(*ChatMessageReactionIdentitySet) {
     m := &ChatMessageReactionIdentitySet{
         IdentitySet: *NewIdentitySet(),

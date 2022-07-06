@@ -64,6 +64,8 @@ type Message struct {
     subject *string
     // The toRecipients property
     toRecipients []Recipientable
+    // The type property
+    type_escaped *string
     // The uniqueBody property
     uniqueBody ItemBodyable
     // The webLink property
@@ -484,6 +486,16 @@ func (m *Message) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["uniqueBody"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
@@ -664,6 +676,14 @@ func (m *Message) GetToRecipients()([]Recipientable) {
         return nil
     } else {
         return m.toRecipients
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Message) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUniqueBody gets the uniqueBody property value. The uniqueBody property
@@ -895,6 +915,12 @@ func (m *Message) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("uniqueBody", m.GetUniqueBody())
         if err != nil {
             return err
@@ -1074,6 +1100,12 @@ func (m *Message) SetSubject(value *string)() {
 func (m *Message) SetToRecipients(value []Recipientable)() {
     if m != nil {
         m.toRecipients = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Message) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUniqueBody sets the uniqueBody property value. The uniqueBody property

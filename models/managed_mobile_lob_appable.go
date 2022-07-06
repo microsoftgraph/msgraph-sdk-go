@@ -12,8 +12,10 @@ type ManagedMobileLobAppable interface {
     GetContentVersions()([]MobileAppContentable)
     GetFileName()(*string)
     GetSize()(*int64)
+    GetType()(*string)
     SetCommittedContentVersion(value *string)()
     SetContentVersions(value []MobileAppContentable)()
     SetFileName(value *string)()
     SetSize(value *int64)()
+    SetType(value *string)()
 }

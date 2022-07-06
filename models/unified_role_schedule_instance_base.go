@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleScheduleInstanceBase provides operations to manage the roleManagement singleton.
+// UnifiedRoleScheduleInstanceBase provides operations to manage the collection of agreementAcceptance entities.
 type UnifiedRoleScheduleInstanceBase struct {
     Entity
     // Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.
@@ -23,6 +23,8 @@ type UnifiedRoleScheduleInstanceBase struct {
     roleDefinition UnifiedRoleDefinitionable
     // Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that the principal is eligible for.
     roleDefinitionId *string
+    // The type property
+    type_escaped *string
 }
 // NewUnifiedRoleScheduleInstanceBase instantiates a new unifiedRoleScheduleInstanceBase and sets the default values.
 func NewUnifiedRoleScheduleInstanceBase()(*UnifiedRoleScheduleInstanceBase) {
@@ -171,6 +173,16 @@ func (m *UnifiedRoleScheduleInstanceBase) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetPrincipal gets the principal property value. The principal that's getting a role assignment or role eligibility through the request.
@@ -203,6 +215,14 @@ func (m *UnifiedRoleScheduleInstanceBase) GetRoleDefinitionId()(*string) {
         return nil
     } else {
         return m.roleDefinitionId
+    }
+}
+// GetType gets the type property value. The type property
+func (m *UnifiedRoleScheduleInstanceBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -259,6 +279,12 @@ func (m *UnifiedRoleScheduleInstanceBase) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.
@@ -307,5 +333,11 @@ func (m *UnifiedRoleScheduleInstanceBase) SetRoleDefinition(value UnifiedRoleDef
 func (m *UnifiedRoleScheduleInstanceBase) SetRoleDefinitionId(value *string)() {
     if m != nil {
         m.roleDefinitionId = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *UnifiedRoleScheduleInstanceBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

@@ -17,6 +17,7 @@ type ThreatAssessmentRequestable interface {
     GetRequestSource()(*ThreatAssessmentRequestSource)
     GetResults()([]ThreatAssessmentResultable)
     GetStatus()(*ThreatAssessmentStatus)
+    GetType()(*string)
     SetCategory(value *ThreatCategory)()
     SetContentType(value *ThreatAssessmentContentType)()
     SetCreatedBy(value IdentitySetable)()
@@ -25,4 +26,5 @@ type ThreatAssessmentRequestable interface {
     SetRequestSource(value *ThreatAssessmentRequestSource)()
     SetResults(value []ThreatAssessmentResultable)()
     SetStatus(value *ThreatAssessmentStatus)()
+    SetType(value *string)()
 }

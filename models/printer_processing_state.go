@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the print singleton.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type PrinterProcessingState int
 
 const (

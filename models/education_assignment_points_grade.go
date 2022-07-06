@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentPointsGrade provides operations to manage the educationRoot singleton.
+// EducationAssignmentPointsGrade 
 type EducationAssignmentPointsGrade struct {
     EducationAssignmentGrade
     // Number of points a teacher is giving this submission object.
     points *float32
 }
-// NewEducationAssignmentPointsGrade instantiates a new educationAssignmentPointsGrade and sets the default values.
+// NewEducationAssignmentPointsGrade instantiates a new EducationAssignmentPointsGrade and sets the default values.
 func NewEducationAssignmentPointsGrade()(*EducationAssignmentPointsGrade) {
     m := &EducationAssignmentPointsGrade{
         EducationAssignmentGrade: *NewEducationAssignmentGrade(),

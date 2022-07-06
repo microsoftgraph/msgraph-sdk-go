@@ -22,7 +22,7 @@ type TransitiveMembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TransitiveMembersRequestBuilderGetQueryParameters get transitiveMembers from groups
+// TransitiveMembersRequestBuilderGetQueryParameters the direct and transitive members of a group. Nullable.
 type TransitiveMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewTransitiveMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *TransitiveMembersRequestBuilder) Count()(*i781807388bd7de0f338a2206afb969a3d310830b4eeccd08cb6380a0bd5013a6.CountRequestBuilder) {
     return i781807388bd7de0f338a2206afb969a3d310830b4eeccd08cb6380a0bd5013a6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get transitiveMembers from groups
+// CreateGetRequestInformation the direct and transitive members of a group. Nullable.
 func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get transitiveMembers from groups
+// CreateGetRequestInformationWithRequestConfiguration the direct and transitive members of a group. Nullable.
 func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TransitiveMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,11 +101,11 @@ func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformationWithRequest
 func (m *TransitiveMembersRequestBuilder) Device()(*ib4252bc1b5260565f25f5386665bc3f6473de29f04739bb1907f79500765ade2.DeviceRequestBuilder) {
     return ib4252bc1b5260565f25f5386665bc3f6473de29f04739bb1907f79500765ade2.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get transitiveMembers from groups
+// Get the direct and transitive members of a group. Nullable.
 func (m *TransitiveMembersRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get transitiveMembers from groups
+// GetWithRequestConfigurationAndResponseHandler the direct and transitive members of a group. Nullable.
 func (m *TransitiveMembersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TransitiveMembersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

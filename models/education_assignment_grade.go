@@ -13,6 +13,8 @@ type EducationAssignmentGrade struct {
     gradedBy IdentitySetable
     // Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     gradedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
 }
 // NewEducationAssignmentGrade instantiates a new educationAssignmentGrade and sets the default values.
 func NewEducationAssignmentGrade()(*EducationAssignmentGrade) {
@@ -23,6 +25,25 @@ func NewEducationAssignmentGrade()(*EducationAssignmentGrade) {
 }
 // CreateEducationAssignmentGradeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationAssignmentGradeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.educationAssignmentPointsGrade":
+                        return NewEducationAssignmentPointsGrade(), nil
+                }
+            }
+        }
+    }
     return NewEducationAssignmentGrade(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -56,6 +77,16 @@ func (m *EducationAssignmentGrade) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGradedBy gets the gradedBy property value. User who did the grading.
@@ -74,6 +105,14 @@ func (m *EducationAssignmentGrade) GetGradedDateTime()(*i336074805fc853987abe6f7
         return m.gradedDateTime
     }
 }
+// GetType gets the type property value. The type property
+func (m *EducationAssignmentGrade) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *EducationAssignmentGrade) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -84,6 +123,12 @@ func (m *EducationAssignmentGrade) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteTimeValue("gradedDateTime", m.GetGradedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -112,5 +157,11 @@ func (m *EducationAssignmentGrade) SetGradedBy(value IdentitySetable)() {
 func (m *EducationAssignmentGrade) SetGradedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.gradedDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *EducationAssignmentGrade) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

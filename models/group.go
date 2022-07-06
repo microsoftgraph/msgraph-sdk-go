@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Group provides operations to manage the collection of application entities.
+// Group provides operations to manage the collection of agreementAcceptance entities.
 type Group struct {
     DirectoryObject
     // The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
@@ -34,7 +34,7 @@ type Group struct {
     createdOnBehalfOf DirectoryObjectable
     // An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string
-    // The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+    // The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string
     // The group's default drive. Read-only.
     drive Driveable
@@ -72,7 +72,7 @@ type Group struct {
     mailNickname *string
     // Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
     memberOf []DirectoryObjectable
-    // Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
+    // Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
     members []DirectoryObjectable
     // The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
     membershipRule *string
@@ -130,13 +130,13 @@ type Group struct {
     theme *string
     // The group's conversation threads. Nullable.
     threads []ConversationThreadable
-    // The transitiveMemberOf property
+    // The groups that a group is a member of, either directly and through nested membership. Nullable.
     transitiveMemberOf []DirectoryObjectable
-    // The transitiveMembers property
+    // The direct and transitive members of a group. Nullable.
     transitiveMembers []DirectoryObjectable
     // Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     unseenCount *int32
-    // Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+    // Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
     visibility *string
 }
 // NewGroup instantiates a new group and sets the default values.
@@ -254,7 +254,7 @@ func (m *Group) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// GetDisplayName gets the displayName property value. The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Group) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -1161,7 +1161,7 @@ func (m *Group) GetMemberOf()([]DirectoryObjectable) {
         return m.memberOf
     }
 }
-// GetMembers gets the members property value. Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
+// GetMembers gets the members property value. Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 func (m *Group) GetMembers()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -1393,7 +1393,7 @@ func (m *Group) GetThreads()([]ConversationThreadable) {
         return m.threads
     }
 }
-// GetTransitiveMemberOf gets the transitiveMemberOf property value. The transitiveMemberOf property
+// GetTransitiveMemberOf gets the transitiveMemberOf property value. The groups that a group is a member of, either directly and through nested membership. Nullable.
 func (m *Group) GetTransitiveMemberOf()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -1401,7 +1401,7 @@ func (m *Group) GetTransitiveMemberOf()([]DirectoryObjectable) {
         return m.transitiveMemberOf
     }
 }
-// GetTransitiveMembers gets the transitiveMembers property value. The transitiveMembers property
+// GetTransitiveMembers gets the transitiveMembers property value. The direct and transitive members of a group. Nullable.
 func (m *Group) GetTransitiveMembers()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -1417,7 +1417,7 @@ func (m *Group) GetUnseenCount()(*int32) {
         return m.unseenCount
     }
 }
-// GetVisibility gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+// GetVisibility gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
 func (m *Group) GetVisibility()(*string) {
     if m == nil {
         return nil
@@ -1993,7 +1993,7 @@ func (m *Group) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// SetDisplayName sets the displayName property value. The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Group) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -2107,7 +2107,7 @@ func (m *Group) SetMemberOf(value []DirectoryObjectable)() {
         m.memberOf = value
     }
 }
-// SetMembers sets the members property value. Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
+// SetMembers sets the members property value. Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 func (m *Group) SetMembers(value []DirectoryObjectable)() {
     if m != nil {
         m.members = value
@@ -2281,13 +2281,13 @@ func (m *Group) SetThreads(value []ConversationThreadable)() {
         m.threads = value
     }
 }
-// SetTransitiveMemberOf sets the transitiveMemberOf property value. The transitiveMemberOf property
+// SetTransitiveMemberOf sets the transitiveMemberOf property value. The groups that a group is a member of, either directly and through nested membership. Nullable.
 func (m *Group) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     if m != nil {
         m.transitiveMemberOf = value
     }
 }
-// SetTransitiveMembers sets the transitiveMembers property value. The transitiveMembers property
+// SetTransitiveMembers sets the transitiveMembers property value. The direct and transitive members of a group. Nullable.
 func (m *Group) SetTransitiveMembers(value []DirectoryObjectable)() {
     if m != nil {
         m.transitiveMembers = value
@@ -2299,7 +2299,7 @@ func (m *Group) SetUnseenCount(value *int32)() {
         m.unseenCount = value
     }
 }
-// SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+// SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
 func (m *Group) SetVisibility(value *string)() {
     if m != nil {
         m.visibility = value

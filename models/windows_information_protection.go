@@ -57,6 +57,8 @@ type WindowsInformationProtection struct {
     rightsManagementServicesTemplateId *string
     // Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
     smbAutoEncryptedFileExtensions []WindowsInformationProtectionResourceCollectionable
+    // The type property
+    type_escaped *string
 }
 // NewWindowsInformationProtection instantiates a new WindowsInformationProtection and sets the default values.
 func NewWindowsInformationProtection()(*WindowsInformationProtection) {
@@ -515,6 +517,16 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIconsVisible gets the iconsVisible property value. Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu. Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app
@@ -595,6 +607,14 @@ func (m *WindowsInformationProtection) GetSmbAutoEncryptedFileExtensions()([]Win
         return nil
     } else {
         return m.smbAutoEncryptedFileExtensions
+    }
+}
+// GetType gets the type property value. The type property
+func (m *WindowsInformationProtection) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -806,6 +826,12 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignments sets the assignments property value. Navigation property to list of security groups targeted for policy.
@@ -956,5 +982,11 @@ func (m *WindowsInformationProtection) SetRightsManagementServicesTemplateId(val
 func (m *WindowsInformationProtection) SetSmbAutoEncryptedFileExtensions(value []WindowsInformationProtectionResourceCollectionable)() {
     if m != nil {
         m.smbAutoEncryptedFileExtensions = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsInformationProtection) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

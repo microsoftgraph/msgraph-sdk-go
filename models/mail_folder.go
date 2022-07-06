@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MailFolder provides operations to manage the collection of application entities.
+// MailFolder provides operations to manage the collection of agreementAcceptance entities.
 type MailFolder struct {
     Entity
     // The number of immediate child mailFolders in the current mailFolder.
@@ -27,6 +27,8 @@ type MailFolder struct {
     singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The number of items in the mailFolder.
     totalItemCount *int32
+    // The type property
+    type_escaped *string
     // The number of items in the mailFolder marked as unread.
     unreadItemCount *int32
 }
@@ -207,6 +209,16 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["unreadItemCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -273,6 +285,14 @@ func (m *MailFolder) GetTotalItemCount()(*int32) {
         return nil
     } else {
         return m.totalItemCount
+    }
+}
+// GetType gets the type property value. The type property
+func (m *MailFolder) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUnreadItemCount gets the unreadItemCount property value. The number of items in the mailFolder marked as unread.
@@ -370,6 +390,12 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("unreadItemCount", m.GetUnreadItemCount())
         if err != nil {
             return err
@@ -435,6 +461,12 @@ func (m *MailFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyE
 func (m *MailFolder) SetTotalItemCount(value *int32)() {
     if m != nil {
         m.totalItemCount = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MailFolder) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUnreadItemCount sets the unreadItemCount property value. The number of items in the mailFolder marked as unread.

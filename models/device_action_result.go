@@ -17,6 +17,8 @@ type DeviceActionResult struct {
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Time the action was initiated
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
 }
 // NewDeviceActionResult instantiates a new deviceActionResult and sets the default values.
 func NewDeviceActionResult()(*DeviceActionResult) {
@@ -27,6 +29,33 @@ func NewDeviceActionResult()(*DeviceActionResult) {
 }
 // CreateDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult":
+                        return NewDeleteUserFromSharedAppleDeviceActionResult(), nil
+                    case "#microsoft.graph.locateDeviceActionResult":
+                        return NewLocateDeviceActionResult(), nil
+                    case "#microsoft.graph.remoteLockActionResult":
+                        return NewRemoteLockActionResult(), nil
+                    case "#microsoft.graph.resetPasscodeActionResult":
+                        return NewResetPasscodeActionResult(), nil
+                    case "#microsoft.graph.windowsDefenderScanActionResult":
+                        return NewWindowsDefenderScanActionResult(), nil
+                }
+            }
+        }
+    }
     return NewDeviceActionResult(), nil
 }
 // GetActionName gets the actionName property value. Action name
@@ -96,6 +125,16 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the action state was last updated
@@ -112,6 +151,14 @@ func (m *DeviceActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97
         return nil
     } else {
         return m.startDateTime
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceActionResult) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -137,6 +184,12 @@ func (m *DeviceActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -177,5 +230,11 @@ func (m *DeviceActionResult) SetLastUpdatedDateTime(value *i336074805fc853987abe
 func (m *DeviceActionResult) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceActionResult) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

@@ -14,9 +14,11 @@ type LongRunningOperationable interface {
     GetResourceLocation()(*string)
     GetStatus()(*LongRunningOperationStatus)
     GetStatusDetail()(*string)
+    GetType()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetResourceLocation(value *string)()
     SetStatus(value *LongRunningOperationStatus)()
     SetStatusDetail(value *string)()
+    SetType(value *string)()
 }

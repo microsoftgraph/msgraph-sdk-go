@@ -61,6 +61,8 @@ type ManagedAppProtection struct {
     saveAsBlocked *bool
     // Indicates whether simplePin is blocked.
     simplePinBlocked *bool
+    // The type property
+    type_escaped *string
 }
 // NewManagedAppProtection instantiates a new ManagedAppProtection and sets the default values.
 func NewManagedAppProtection()(*ManagedAppProtection) {
@@ -435,6 +437,16 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFingerprintBlocked gets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
@@ -587,6 +599,14 @@ func (m *ManagedAppProtection) GetSimplePinBlocked()(*bool) {
         return nil
     } else {
         return m.simplePinBlocked
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ManagedAppProtection) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -762,6 +782,12 @@ func (m *ManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowedDataStorageLocations sets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
@@ -924,5 +950,11 @@ func (m *ManagedAppProtection) SetSaveAsBlocked(value *bool)() {
 func (m *ManagedAppProtection) SetSimplePinBlocked(value *bool)() {
     if m != nil {
         m.simplePinBlocked = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ManagedAppProtection) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

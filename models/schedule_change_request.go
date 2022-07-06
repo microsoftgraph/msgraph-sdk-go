@@ -24,6 +24,8 @@ type ScheduleChangeRequest struct {
     senderUserId *string
     // The state property
     state *ScheduleChangeState
+    // The type property
+    type_escaped *string
 }
 // NewScheduleChangeRequest instantiates a new ScheduleChangeRequest and sets the default values.
 func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
@@ -150,6 +152,16 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetManagerActionDateTime gets the managerActionDateTime property value. The managerActionDateTime property
@@ -208,6 +220,14 @@ func (m *ScheduleChangeRequest) GetState()(*ScheduleChangeState) {
         return m.state
     }
 }
+// GetType gets the type property value. The type property
+func (m *ScheduleChangeRequest) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.ChangeTrackedEntity.Serialize(writer)
@@ -264,6 +284,12 @@ func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignedTo sets the assignedTo property value. The assignedTo property
@@ -312,5 +338,11 @@ func (m *ScheduleChangeRequest) SetSenderUserId(value *string)() {
 func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {
     if m != nil {
         m.state = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ScheduleChangeRequest) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

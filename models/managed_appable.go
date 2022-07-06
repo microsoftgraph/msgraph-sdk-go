@@ -9,7 +9,9 @@ type ManagedAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppAvailability()(*ManagedAppAvailability)
+    GetType()(*string)
     GetVersion()(*string)
     SetAppAvailability(value *ManagedAppAvailability)()
+    SetType(value *string)()
     SetVersion(value *string)()
 }

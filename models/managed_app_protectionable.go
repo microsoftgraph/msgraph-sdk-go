@@ -35,6 +35,7 @@ type ManagedAppProtectionable interface {
     GetPrintBlocked()(*bool)
     GetSaveAsBlocked()(*bool)
     GetSimplePinBlocked()(*bool)
+    GetType()(*string)
     SetAllowedDataStorageLocations(value []string)()
     SetAllowedInboundDataTransferSources(value *ManagedAppDataTransferLevel)()
     SetAllowedOutboundClipboardSharingLevel(value *ManagedAppClipboardSharingLevel)()
@@ -62,4 +63,5 @@ type ManagedAppProtectionable interface {
     SetPrintBlocked(value *bool)()
     SetSaveAsBlocked(value *bool)()
     SetSimplePinBlocked(value *bool)()
+    SetType(value *string)()
 }

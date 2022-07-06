@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommsOperation provides operations to manage the cloudCommunications singleton.
+// CommsOperation provides operations to manage the collection of agreementAcceptance entities.
 type CommsOperation struct {
     Entity
     // Unique Client Context string. Max limit is 256 chars.
@@ -13,6 +13,8 @@ type CommsOperation struct {
     resultInfo ResultInfoable
     // Possible values are: notStarted, running, completed, failed. Read-only.
     status *OperationStatus
+    // The type property
+    type_escaped *string
 }
 // NewCommsOperation instantiates a new commsOperation and sets the default values.
 func NewCommsOperation()(*CommsOperation) {
@@ -103,6 +105,16 @@ func (m *CommsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetResultInfo gets the resultInfo property value. The result information. Read-only.
@@ -119,6 +131,14 @@ func (m *CommsOperation) GetStatus()(*OperationStatus) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *CommsOperation) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -146,6 +166,12 @@ func (m *CommsOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetClientContext sets the clientContext property value. Unique Client Context string. Max limit is 256 chars.
@@ -164,5 +190,11 @@ func (m *CommsOperation) SetResultInfo(value ResultInfoable)() {
 func (m *CommsOperation) SetStatus(value *OperationStatus)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *CommsOperation) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

@@ -15,6 +15,8 @@ type ManagedMobileLobApp struct {
     fileName *string
     // The total size, including all uploaded files.
     size *int64
+    // The type property
+    type_escaped *string
 }
 // NewManagedMobileLobApp instantiates a new ManagedMobileLobApp and sets the default values.
 func NewManagedMobileLobApp()(*ManagedMobileLobApp) {
@@ -111,6 +113,16 @@ func (m *ManagedMobileLobApp) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFileName gets the fileName property value. The name of the main Lob application file.
@@ -127,6 +139,14 @@ func (m *ManagedMobileLobApp) GetSize()(*int64) {
         return nil
     } else {
         return m.size
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ManagedMobileLobApp) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -163,6 +183,12 @@ func (m *ManagedMobileLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCommittedContentVersion sets the committedContentVersion property value. The internal committed content version.
@@ -187,5 +213,11 @@ func (m *ManagedMobileLobApp) SetFileName(value *string)() {
 func (m *ManagedMobileLobApp) SetSize(value *int64)() {
     if m != nil {
         m.size = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ManagedMobileLobApp) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

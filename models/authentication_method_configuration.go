@@ -4,13 +4,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodConfiguration provides operations to manage the collection of authenticationMethodConfiguration entities.
+// AuthenticationMethodConfiguration 
 type AuthenticationMethodConfiguration struct {
     Entity
     // The state of the policy. Possible values are: enabled, disabled.
     state *AuthenticationMethodState
+    // The type property
+    type_escaped *string
 }
-// NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
+// NewAuthenticationMethodConfiguration instantiates a new AuthenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
     m := &AuthenticationMethodConfiguration{
         Entity: *NewEntity(),
@@ -59,6 +61,16 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
@@ -67,6 +79,14 @@ func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodStat
         return nil
     } else {
         return m.state
+    }
+}
+// GetType gets the type property value. The type property
+func (m *AuthenticationMethodConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -82,11 +102,23 @@ func (m *AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
     if m != nil {
         m.state = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AuthenticationMethodConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

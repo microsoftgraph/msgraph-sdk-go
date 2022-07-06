@@ -18,6 +18,7 @@ type MailFolderable interface {
     GetParentFolderId()(*string)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     GetTotalItemCount()(*int32)
+    GetType()(*string)
     GetUnreadItemCount()(*int32)
     SetChildFolderCount(value *int32)()
     SetChildFolders(value []MailFolderable)()
@@ -29,5 +30,6 @@ type MailFolderable interface {
     SetParentFolderId(value *string)()
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
     SetTotalItemCount(value *int32)()
+    SetType(value *string)()
     SetUnreadItemCount(value *int32)()
 }

@@ -11,7 +11,9 @@ type ShiftItemable interface {
     GetActivities()([]ShiftActivityable)
     GetDisplayName()(*string)
     GetNotes()(*string)
+    GetType()(*string)
     SetActivities(value []ShiftActivityable)()
     SetDisplayName(value *string)()
     SetNotes(value *string)()
+    SetType(value *string)()
 }

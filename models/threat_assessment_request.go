@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ThreatAssessmentRequest provides operations to manage the informationProtection singleton.
+// ThreatAssessmentRequest provides operations to manage the collection of agreementAcceptance entities.
 type ThreatAssessmentRequest struct {
     Entity
     // The threat category. Possible values are: spam, phishing, malware.
@@ -24,6 +24,8 @@ type ThreatAssessmentRequest struct {
     results []ThreatAssessmentResultable
     // The assessment process status. Possible values are: pending, completed.
     status *ThreatAssessmentStatus
+    // The type property
+    type_escaped *string
 }
 // NewThreatAssessmentRequest instantiates a new threatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
@@ -188,6 +190,16 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: user, administrator.
@@ -212,6 +224,14 @@ func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ThreatAssessmentRequest) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -277,6 +297,12 @@ func (m *ThreatAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCategory sets the category property value. The threat category. Possible values are: spam, phishing, malware.
@@ -325,5 +351,11 @@ func (m *ThreatAssessmentRequest) SetResults(value []ThreatAssessmentResultable)
 func (m *ThreatAssessmentRequest) SetStatus(value *ThreatAssessmentStatus)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ThreatAssessmentRequest) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

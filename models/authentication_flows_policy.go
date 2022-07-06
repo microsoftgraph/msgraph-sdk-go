@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationFlowsPolicy provides operations to manage the policyRoot singleton.
+// AuthenticationFlowsPolicy provides operations to manage the collection of agreementAcceptance entities.
 type AuthenticationFlowsPolicy struct {
     Entity
     // Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
