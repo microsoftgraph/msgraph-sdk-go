@@ -34,6 +34,8 @@ type UserRequestBuilderGetQueryParameters struct {
     Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
+    // SkipToken
+    SkipToken *string `uriparametername:"%24skiptoken"`
 }
 // UserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserRequestBuilderGetRequestConfiguration struct {
@@ -48,7 +50,7 @@ type UserRequestBuilderGetRequestConfiguration struct {
 func NewUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserRequestBuilder) {
     m := &UserRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/memberOf/microsoft.graph.user{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/memberOf/microsoft.graph.user{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand,%24skiptoken}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
