@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the policyRoot singleton.
+// Provides operations to manage the admin singleton.
 type StagedFeatureName int
 
 const (

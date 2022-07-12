@@ -16,7 +16,7 @@ type RelatedContact struct {
     emailAddress *string
     // Mobile phone number of the contact.
     mobilePhone *string
-    // Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
+    // The relationship property
     relationship *ContactRelationship
 }
 // NewRelatedContact instantiates a new relatedContact and sets the default values.
@@ -125,7 +125,7 @@ func (m *RelatedContact) GetMobilePhone()(*string) {
         return m.mobilePhone
     }
 }
-// GetRelationship gets the relationship property value. Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
+// GetRelationship gets the relationship property value. The relationship property
 func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
     if m == nil {
         return nil
@@ -204,7 +204,7 @@ func (m *RelatedContact) SetMobilePhone(value *string)() {
         m.mobilePhone = value
     }
 }
-// SetRelationship sets the relationship property value. Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
+// SetRelationship sets the relationship property value. The relationship property
 func (m *RelatedContact) SetRelationship(value *ContactRelationship)() {
     if m != nil {
         m.relationship = value

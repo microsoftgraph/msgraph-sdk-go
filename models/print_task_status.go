@@ -10,7 +10,7 @@ type PrintTaskStatus struct {
     additionalData map[string]interface{}
     // A human-readable description of the current processing state of the printTask.
     description *string
-    // The current processing state of the printTask. Valid values are described in the following table.
+    // The state property
     state *PrintTaskProcessingState
 }
 // NewPrintTaskStatus instantiates a new printTaskStatus and sets the default values.
@@ -65,7 +65,7 @@ func (m *PrintTaskStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetState gets the state property value. The current processing state of the printTask. Valid values are described in the following table.
+// GetState gets the state property value. The state property
 func (m *PrintTaskStatus) GetState()(*PrintTaskProcessingState) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *PrintTaskStatus) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetState sets the state property value. The current processing state of the printTask. Valid values are described in the following table.
+// SetState sets the state property value. The state property
 func (m *PrintTaskStatus) SetState(value *PrintTaskProcessingState)() {
     if m != nil {
         m.state = value

@@ -10,7 +10,7 @@ type Win32LobAppReturnCode struct {
     additionalData map[string]interface{}
     // Return code.
     returnCode *int32
-    // The type of return code. Possible values are: failed, success, softReboot, hardReboot, retry.
+    // Indicates the type of return code.
     type_escaped *Win32LobAppReturnCodeType
 }
 // NewWin32LobAppReturnCode instantiates a new win32LobAppReturnCode and sets the default values.
@@ -65,7 +65,7 @@ func (m *Win32LobAppReturnCode) GetReturnCode()(*int32) {
         return m.returnCode
     }
 }
-// GetType gets the type property value. The type of return code. Possible values are: failed, success, softReboot, hardReboot, retry.
+// GetType gets the type property value. Indicates the type of return code.
 func (m *Win32LobAppReturnCode) GetType()(*Win32LobAppReturnCodeType) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *Win32LobAppReturnCode) SetReturnCode(value *int32)() {
         m.returnCode = value
     }
 }
-// SetType sets the type property value. The type of return code. Possible values are: failed, success, softReboot, hardReboot, retry.
+// SetType sets the type property value. Indicates the type of return code.
 func (m *Win32LobAppReturnCode) SetType(value *Win32LobAppReturnCodeType)() {
     if m != nil {
         m.type_escaped = value

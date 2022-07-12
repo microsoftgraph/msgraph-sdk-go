@@ -8,9 +8,9 @@ import (
 type MediaContentRatingUnitedKingdom struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Movies rating selected for United Kingdom. Possible values are: allAllowed, allBlocked, general, universalChildren, parentalGuidance, agesAbove12Video, agesAbove12Cinema, agesAbove15, adults.
+    // Movies rating labels in United Kingdom
     movieRating *RatingUnitedKingdomMoviesType
-    // TV rating selected for United Kingdom. Possible values are: allAllowed, allBlocked, caution.
+    // TV content rating labels in United Kingdom
     tvRating *RatingUnitedKingdomTelevisionType
 }
 // NewMediaContentRatingUnitedKingdom instantiates a new mediaContentRatingUnitedKingdom and sets the default values.
@@ -57,7 +57,7 @@ func (m *MediaContentRatingUnitedKingdom) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetMovieRating gets the movieRating property value. Movies rating selected for United Kingdom. Possible values are: allAllowed, allBlocked, general, universalChildren, parentalGuidance, agesAbove12Video, agesAbove12Cinema, agesAbove15, adults.
+// GetMovieRating gets the movieRating property value. Movies rating labels in United Kingdom
 func (m *MediaContentRatingUnitedKingdom) GetMovieRating()(*RatingUnitedKingdomMoviesType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *MediaContentRatingUnitedKingdom) GetMovieRating()(*RatingUnitedKingdomM
         return m.movieRating
     }
 }
-// GetTvRating gets the tvRating property value. TV rating selected for United Kingdom. Possible values are: allAllowed, allBlocked, caution.
+// GetTvRating gets the tvRating property value. TV content rating labels in United Kingdom
 func (m *MediaContentRatingUnitedKingdom) GetTvRating()(*RatingUnitedKingdomTelevisionType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *MediaContentRatingUnitedKingdom) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetMovieRating sets the movieRating property value. Movies rating selected for United Kingdom. Possible values are: allAllowed, allBlocked, general, universalChildren, parentalGuidance, agesAbove12Video, agesAbove12Cinema, agesAbove15, adults.
+// SetMovieRating sets the movieRating property value. Movies rating labels in United Kingdom
 func (m *MediaContentRatingUnitedKingdom) SetMovieRating(value *RatingUnitedKingdomMoviesType)() {
     if m != nil {
         m.movieRating = value
     }
 }
-// SetTvRating sets the tvRating property value. TV rating selected for United Kingdom. Possible values are: allAllowed, allBlocked, caution.
+// SetTvRating sets the tvRating property value. TV content rating labels in United Kingdom
 func (m *MediaContentRatingUnitedKingdom) SetTvRating(value *RatingUnitedKingdomTelevisionType)() {
     if m != nil {
         m.tvRating = value

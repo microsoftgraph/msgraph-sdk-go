@@ -12,7 +12,7 @@ type SettingSource struct {
     displayName *string
     // Not yet documented
     id *string
-    // Not yet documented. Possible values are: deviceConfiguration, deviceIntent.
+    // The sourceType property
     sourceType *SettingSourceType
 }
 // NewSettingSource instantiates a new settingSource and sets the default values.
@@ -85,7 +85,7 @@ func (m *SettingSource) GetId()(*string) {
         return m.id
     }
 }
-// GetSourceType gets the sourceType property value. Not yet documented. Possible values are: deviceConfiguration, deviceIntent.
+// GetSourceType gets the sourceType property value. The sourceType property
 func (m *SettingSource) GetSourceType()(*SettingSourceType) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *SettingSource) SetId(value *string)() {
         m.id = value
     }
 }
-// SetSourceType sets the sourceType property value. Not yet documented. Possible values are: deviceConfiguration, deviceIntent.
+// SetSourceType sets the sourceType property value. The sourceType property
 func (m *SettingSource) SetSourceType(value *SettingSourceType)() {
     if m != nil {
         m.sourceType = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttributeAssignment provides operations to manage the identityContainer singleton.
+// IdentityUserFlowAttributeAssignment provides operations to manage the admin singleton.
 type IdentityUserFlowAttributeAssignment struct {
     Entity
     // The display name of the identityUserFlowAttribute within a user flow.
@@ -17,7 +17,7 @@ type IdentityUserFlowAttributeAssignment struct {
     userAttribute IdentityUserFlowAttributeable
     // The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
     userAttributeValues []UserAttributeValuesItemable
-    // The input type of the user flow attribute. Possible values are: textBox, dateTimeDropdown, radioSingleSelect, dropdownSingleSelect, emailBox, checkboxMultiSelect.
+    // The userInputType property
     userInputType *IdentityUserFlowAttributeInputType
 }
 // NewIdentityUserFlowAttributeAssignment instantiates a new identityUserFlowAttributeAssignment and sets the default values.
@@ -140,7 +140,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetUserAttributeValues()([]UserAtt
         return m.userAttributeValues
     }
 }
-// GetUserInputType gets the userInputType property value. The input type of the user flow attribute. Possible values are: textBox, dateTimeDropdown, radioSingleSelect, dropdownSingleSelect, emailBox, checkboxMultiSelect.
+// GetUserInputType gets the userInputType property value. The userInputType property
 func (m *IdentityUserFlowAttributeAssignment) GetUserInputType()(*IdentityUserFlowAttributeInputType) {
     if m == nil {
         return nil
@@ -227,7 +227,7 @@ func (m *IdentityUserFlowAttributeAssignment) SetUserAttributeValues(value []Use
         m.userAttributeValues = value
     }
 }
-// SetUserInputType sets the userInputType property value. The input type of the user flow attribute. Possible values are: textBox, dateTimeDropdown, radioSingleSelect, dropdownSingleSelect, emailBox, checkboxMultiSelect.
+// SetUserInputType sets the userInputType property value. The userInputType property
 func (m *IdentityUserFlowAttributeAssignment) SetUserInputType(value *IdentityUserFlowAttributeInputType)() {
     if m != nil {
         m.userInputType = value

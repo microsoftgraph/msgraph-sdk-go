@@ -36,7 +36,7 @@ type MobileApp struct {
     privacyInformationUrl *string
     // The publisher of the app.
     publisher *string
-    // The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+    // Indicates the publishing state of an app.
     publishingState *MobileAppPublishingState
 }
 // NewMobileApp instantiates a new mobileApp and sets the default values.
@@ -44,6 +44,8 @@ func NewMobileApp()(*MobileApp) {
     m := &MobileApp{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.mobileApp";
+    m.SetType(&typeValue);
     return m
 }
 // CreateMobileAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -358,7 +360,7 @@ func (m *MobileApp) GetPublisher()(*string) {
         return m.publisher
     }
 }
-// GetPublishingState gets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+// GetPublishingState gets the publishingState property value. Indicates the publishing state of an app.
 func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
     if m == nil {
         return nil
@@ -557,7 +559,7 @@ func (m *MobileApp) SetPublisher(value *string)() {
         m.publisher = value
     }
 }
-// SetPublishingState sets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+// SetPublishingState sets the publishingState property value. Indicates the publishing state of an app.
 func (m *MobileApp) SetPublishingState(value *MobileAppPublishingState)() {
     if m != nil {
         m.publishingState = value

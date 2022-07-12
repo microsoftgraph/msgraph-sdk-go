@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessage provides operations to manage the collection of application entities.
+// ChatMessage provides operations to manage the admin singleton.
 type ChatMessage struct {
     Entity
     // References to attached objects like files, tabs, meetings etc.
@@ -28,7 +28,7 @@ type ChatMessage struct {
     from ChatMessageFromIdentitySetable
     // Content in a message hosted by Microsoft Teams - for example, images or code snippets.
     hostedContents []ChatMessageHostedContentable
-    // The importance of the chat message. The possible values are: normal, high, urgent.
+    // The importance property
     importance *ChatMessageImportance
     // Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
     lastEditedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -38,7 +38,7 @@ type ChatMessage struct {
     locale *string
     // List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
     mentions []ChatMessageMentionable
-    // The type of chat message. The possible values are: message, chatEvent, typing, unknownFutureValue, systemEventMessage. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: systemEventMessage.
+    // The messageType property
     messageType *ChatMessageType
     // Defines the properties of a policy violation set by a data loss prevention (DLP) application.
     policyViolation ChatMessagePolicyViolationable
@@ -401,7 +401,7 @@ func (m *ChatMessage) GetHostedContents()([]ChatMessageHostedContentable) {
         return m.hostedContents
     }
 }
-// GetImportance gets the importance property value. The importance of the chat message. The possible values are: normal, high, urgent.
+// GetImportance gets the importance property value. The importance property
 func (m *ChatMessage) GetImportance()(*ChatMessageImportance) {
     if m == nil {
         return nil
@@ -441,7 +441,7 @@ func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
         return m.mentions
     }
 }
-// GetMessageType gets the messageType property value. The type of chat message. The possible values are: message, chatEvent, typing, unknownFutureValue, systemEventMessage. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: systemEventMessage.
+// GetMessageType gets the messageType property value. The messageType property
 func (m *ChatMessage) GetMessageType()(*ChatMessageType) {
     if m == nil {
         return nil
@@ -733,7 +733,7 @@ func (m *ChatMessage) SetHostedContents(value []ChatMessageHostedContentable)() 
         m.hostedContents = value
     }
 }
-// SetImportance sets the importance property value. The importance of the chat message. The possible values are: normal, high, urgent.
+// SetImportance sets the importance property value. The importance property
 func (m *ChatMessage) SetImportance(value *ChatMessageImportance)() {
     if m != nil {
         m.importance = value
@@ -763,7 +763,7 @@ func (m *ChatMessage) SetMentions(value []ChatMessageMentionable)() {
         m.mentions = value
     }
 }
-// SetMessageType sets the messageType property value. The type of chat message. The possible values are: message, chatEvent, typing, unknownFutureValue, systemEventMessage. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: systemEventMessage.
+// SetMessageType sets the messageType property value. The messageType property
 func (m *ChatMessage) SetMessageType(value *ChatMessageType)() {
     if m != nil {
         m.messageType = value

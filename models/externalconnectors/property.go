@@ -22,7 +22,7 @@ type Property struct {
     labels []string
     // The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
     name *string
-    // The data type of the property. Possible values are: string, int64, double, dateTime, boolean, stringCollection, int64Collection, doubleCollection, dateTimeCollection, unknownFutureValue. Required.
+    // The type property
     type_escaped *PropertyType
 }
 // NewProperty instantiates a new property and sets the default values.
@@ -193,7 +193,7 @@ func (m *Property) GetName()(*string) {
         return m.name
     }
 }
-// GetType gets the type property value. The data type of the property. Possible values are: string, int64, double, dateTime, boolean, stringCollection, int64Collection, doubleCollection, dateTimeCollection, unknownFutureValue. Required.
+// GetType gets the type property value. The type property
 func (m *Property) GetType()(*PropertyType) {
     if m == nil {
         return nil
@@ -308,7 +308,7 @@ func (m *Property) SetName(value *string)() {
         m.name = value
     }
 }
-// SetType sets the type property value. The data type of the property. Possible values are: string, int64, double, dateTime, boolean, stringCollection, int64Collection, doubleCollection, dateTimeCollection, unknownFutureValue. Required.
+// SetType sets the type property value. The type property
 func (m *Property) SetType(value *PropertyType)() {
     if m != nil {
         m.type_escaped = value

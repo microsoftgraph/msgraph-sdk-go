@@ -18,7 +18,7 @@ type ManagedDevice struct {
     azureADRegistered *bool
     // The DateTime when device compliance grace period expires. This property is read-only.
     complianceGracePeriodExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.
+    // Compliance state.
     complianceState *ComplianceState
     // ConfigrMgr client enabled features. This property is read-only.
     configurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeaturesable
@@ -32,13 +32,13 @@ type ManagedDevice struct {
     deviceCompliancePolicyStates []DeviceCompliancePolicyStateable
     // Device configuration states for this device.
     deviceConfigurationStates []DeviceConfigurationStateable
-    // Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+    // Possible ways of adding a mobile device to management.
     deviceEnrollmentType *DeviceEnrollmentType
     // The device health attestation state. This property is read-only.
     deviceHealthAttestationState DeviceHealthAttestationStateable
     // Name of the device. This property is read-only.
     deviceName *string
-    // Device registration state. This property is read-only. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
+    // Device registration status.
     deviceRegistrationState *DeviceRegistrationState
     // Whether the device is Exchange ActiveSync activated. This property is read-only.
     easActivated *bool
@@ -52,9 +52,9 @@ type ManagedDevice struct {
     enrolledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Ethernet MAC. This property is read-only.
     ethernetMacAddress *string
-    // The Access State of the device in Exchange. This property is read-only. Possible values are: none, unknown, allowed, blocked, quarantined.
+    // Device Exchange Access State.
     exchangeAccessState *DeviceManagementExchangeAccessState
-    // The reason for the device's access state in Exchange. This property is read-only. Possible values are: none, unknown, exchangeGlobalRule, exchangeIndividualRule, exchangeDeviceRule, exchangeUpgrade, exchangeMailboxPolicy, other, compliant, notCompliant, notEnrolled, unknownLocation, mfaRequired, azureADBlockDueToAccessPolicy, compromisedPassword, deviceNotKnownWithManagedApp.
+    // Device Exchange Access State Reason.
     exchangeAccessStateReason *DeviceManagementExchangeAccessStateReason
     // Last time the device contacted Exchange. This property is read-only.
     exchangeLastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -74,9 +74,9 @@ type ManagedDevice struct {
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Automatically generated name to identify a device. Can be overwritten to a user friendly name.
     managedDeviceName *string
-    // Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
+    // Owner type of device.
     managedDeviceOwnerType *ManagedDeviceOwnerType
-    // Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+    // The managementAgent property
     managementAgent *ManagementAgentType
     // Manufacturer of the device. This property is read-only.
     manufacturer *string
@@ -90,7 +90,7 @@ type ManagedDevice struct {
     operatingSystem *string
     // Operating system version of the device. This property is read-only.
     osVersion *string
-    // Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.
+    // Available health states for the Device Health API
     partnerReportedThreatState *ManagedDevicePartnerReportedHealthState
     // Phone number of the device. This property is read-only.
     phoneNumber *string
@@ -168,7 +168,7 @@ func (m *ManagedDevice) GetComplianceGracePeriodExpirationDateTime()(*i336074805
         return m.complianceGracePeriodExpirationDateTime
     }
 }
-// GetComplianceState gets the complianceState property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.
+// GetComplianceState gets the complianceState property value. Compliance state.
 func (m *ManagedDevice) GetComplianceState()(*ComplianceState) {
     if m == nil {
         return nil
@@ -224,7 +224,7 @@ func (m *ManagedDevice) GetDeviceConfigurationStates()([]DeviceConfigurationStat
         return m.deviceConfigurationStates
     }
 }
-// GetDeviceEnrollmentType gets the deviceEnrollmentType property value. Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+// GetDeviceEnrollmentType gets the deviceEnrollmentType property value. Possible ways of adding a mobile device to management.
 func (m *ManagedDevice) GetDeviceEnrollmentType()(*DeviceEnrollmentType) {
     if m == nil {
         return nil
@@ -248,7 +248,7 @@ func (m *ManagedDevice) GetDeviceName()(*string) {
         return m.deviceName
     }
 }
-// GetDeviceRegistrationState gets the deviceRegistrationState property value. Device registration state. This property is read-only. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
+// GetDeviceRegistrationState gets the deviceRegistrationState property value. Device registration status.
 func (m *ManagedDevice) GetDeviceRegistrationState()(*DeviceRegistrationState) {
     if m == nil {
         return nil
@@ -304,7 +304,7 @@ func (m *ManagedDevice) GetEthernetMacAddress()(*string) {
         return m.ethernetMacAddress
     }
 }
-// GetExchangeAccessState gets the exchangeAccessState property value. The Access State of the device in Exchange. This property is read-only. Possible values are: none, unknown, allowed, blocked, quarantined.
+// GetExchangeAccessState gets the exchangeAccessState property value. Device Exchange Access State.
 func (m *ManagedDevice) GetExchangeAccessState()(*DeviceManagementExchangeAccessState) {
     if m == nil {
         return nil
@@ -312,7 +312,7 @@ func (m *ManagedDevice) GetExchangeAccessState()(*DeviceManagementExchangeAccess
         return m.exchangeAccessState
     }
 }
-// GetExchangeAccessStateReason gets the exchangeAccessStateReason property value. The reason for the device's access state in Exchange. This property is read-only. Possible values are: none, unknown, exchangeGlobalRule, exchangeIndividualRule, exchangeDeviceRule, exchangeUpgrade, exchangeMailboxPolicy, other, compliant, notCompliant, notEnrolled, unknownLocation, mfaRequired, azureADBlockDueToAccessPolicy, compromisedPassword, deviceNotKnownWithManagedApp.
+// GetExchangeAccessStateReason gets the exchangeAccessStateReason property value. Device Exchange Access State Reason.
 func (m *ManagedDevice) GetExchangeAccessStateReason()(*DeviceManagementExchangeAccessStateReason) {
     if m == nil {
         return nil
@@ -949,7 +949,7 @@ func (m *ManagedDevice) GetManagedDeviceName()(*string) {
         return m.managedDeviceName
     }
 }
-// GetManagedDeviceOwnerType gets the managedDeviceOwnerType property value. Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
+// GetManagedDeviceOwnerType gets the managedDeviceOwnerType property value. Owner type of device.
 func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
     if m == nil {
         return nil
@@ -957,7 +957,7 @@ func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
         return m.managedDeviceOwnerType
     }
 }
-// GetManagementAgent gets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+// GetManagementAgent gets the managementAgent property value. The managementAgent property
 func (m *ManagedDevice) GetManagementAgent()(*ManagementAgentType) {
     if m == nil {
         return nil
@@ -1013,7 +1013,7 @@ func (m *ManagedDevice) GetOsVersion()(*string) {
         return m.osVersion
     }
 }
-// GetPartnerReportedThreatState gets the partnerReportedThreatState property value. Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.
+// GetPartnerReportedThreatState gets the partnerReportedThreatState property value. Available health states for the Device Health API
 func (m *ManagedDevice) GetPartnerReportedThreatState()(*ManagedDevicePartnerReportedHealthState) {
     if m == nil {
         return nil
@@ -1499,7 +1499,7 @@ func (m *ManagedDevice) SetComplianceGracePeriodExpirationDateTime(value *i33607
         m.complianceGracePeriodExpirationDateTime = value
     }
 }
-// SetComplianceState sets the complianceState property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.
+// SetComplianceState sets the complianceState property value. Compliance state.
 func (m *ManagedDevice) SetComplianceState(value *ComplianceState)() {
     if m != nil {
         m.complianceState = value
@@ -1541,7 +1541,7 @@ func (m *ManagedDevice) SetDeviceConfigurationStates(value []DeviceConfiguration
         m.deviceConfigurationStates = value
     }
 }
-// SetDeviceEnrollmentType sets the deviceEnrollmentType property value. Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+// SetDeviceEnrollmentType sets the deviceEnrollmentType property value. Possible ways of adding a mobile device to management.
 func (m *ManagedDevice) SetDeviceEnrollmentType(value *DeviceEnrollmentType)() {
     if m != nil {
         m.deviceEnrollmentType = value
@@ -1559,7 +1559,7 @@ func (m *ManagedDevice) SetDeviceName(value *string)() {
         m.deviceName = value
     }
 }
-// SetDeviceRegistrationState sets the deviceRegistrationState property value. Device registration state. This property is read-only. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
+// SetDeviceRegistrationState sets the deviceRegistrationState property value. Device registration status.
 func (m *ManagedDevice) SetDeviceRegistrationState(value *DeviceRegistrationState)() {
     if m != nil {
         m.deviceRegistrationState = value
@@ -1601,13 +1601,13 @@ func (m *ManagedDevice) SetEthernetMacAddress(value *string)() {
         m.ethernetMacAddress = value
     }
 }
-// SetExchangeAccessState sets the exchangeAccessState property value. The Access State of the device in Exchange. This property is read-only. Possible values are: none, unknown, allowed, blocked, quarantined.
+// SetExchangeAccessState sets the exchangeAccessState property value. Device Exchange Access State.
 func (m *ManagedDevice) SetExchangeAccessState(value *DeviceManagementExchangeAccessState)() {
     if m != nil {
         m.exchangeAccessState = value
     }
 }
-// SetExchangeAccessStateReason sets the exchangeAccessStateReason property value. The reason for the device's access state in Exchange. This property is read-only. Possible values are: none, unknown, exchangeGlobalRule, exchangeIndividualRule, exchangeDeviceRule, exchangeUpgrade, exchangeMailboxPolicy, other, compliant, notCompliant, notEnrolled, unknownLocation, mfaRequired, azureADBlockDueToAccessPolicy, compromisedPassword, deviceNotKnownWithManagedApp.
+// SetExchangeAccessStateReason sets the exchangeAccessStateReason property value. Device Exchange Access State Reason.
 func (m *ManagedDevice) SetExchangeAccessStateReason(value *DeviceManagementExchangeAccessStateReason)() {
     if m != nil {
         m.exchangeAccessStateReason = value
@@ -1667,13 +1667,13 @@ func (m *ManagedDevice) SetManagedDeviceName(value *string)() {
         m.managedDeviceName = value
     }
 }
-// SetManagedDeviceOwnerType sets the managedDeviceOwnerType property value. Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
+// SetManagedDeviceOwnerType sets the managedDeviceOwnerType property value. Owner type of device.
 func (m *ManagedDevice) SetManagedDeviceOwnerType(value *ManagedDeviceOwnerType)() {
     if m != nil {
         m.managedDeviceOwnerType = value
     }
 }
-// SetManagementAgent sets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+// SetManagementAgent sets the managementAgent property value. The managementAgent property
 func (m *ManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
     if m != nil {
         m.managementAgent = value
@@ -1715,7 +1715,7 @@ func (m *ManagedDevice) SetOsVersion(value *string)() {
         m.osVersion = value
     }
 }
-// SetPartnerReportedThreatState sets the partnerReportedThreatState property value. Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.
+// SetPartnerReportedThreatState sets the partnerReportedThreatState property value. Available health states for the Device Health API
 func (m *ManagedDevice) SetPartnerReportedThreatState(value *ManagedDevicePartnerReportedHealthState)() {
     if m != nil {
         m.partnerReportedThreatState = value

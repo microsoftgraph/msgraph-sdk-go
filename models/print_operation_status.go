@@ -10,7 +10,7 @@ type PrintOperationStatus struct {
     additionalData map[string]interface{}
     // A human-readable description of the printOperation's current processing state. Read-only.
     description *string
-    // The printOperation's current processing state. Valid values are described in the following table. Read-only.
+    // The state property
     state *PrintOperationProcessingState
 }
 // NewPrintOperationStatus instantiates a new printOperationStatus and sets the default values.
@@ -65,7 +65,7 @@ func (m *PrintOperationStatus) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetState gets the state property value. The printOperation's current processing state. Valid values are described in the following table. Read-only.
+// GetState gets the state property value. The state property
 func (m *PrintOperationStatus) GetState()(*PrintOperationProcessingState) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *PrintOperationStatus) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetState sets the state property value. The printOperation's current processing state. Valid values are described in the following table. Read-only.
+// SetState sets the state property value. The state property
 func (m *PrintOperationStatus) SetState(value *PrintOperationProcessingState)() {
     if m != nil {
         m.state = value

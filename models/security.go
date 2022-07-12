@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Security provides operations to manage the security singleton.
+// Security 
 type Security struct {
     Entity
     // Notifications for suspicious or potential security issues in a customer’s tenant.
@@ -14,7 +14,7 @@ type Security struct {
     // The secureScores property
     secureScores []SecureScoreable
 }
-// NewSecurity instantiates a new security and sets the default values.
+// NewSecurity instantiates a new Security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
         Entity: *NewEntity(),

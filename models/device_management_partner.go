@@ -14,9 +14,9 @@ type DeviceManagementPartner struct {
     isConfigured *bool
     // Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
     lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
+    // Partner App Type.
     partnerAppType *DeviceManagementPartnerAppType
-    // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+    // Partner state of this tenant.
     partnerState *DeviceManagementPartnerTenantState
     // Partner Single tenant App id
     singleTenantAppId *string
@@ -145,7 +145,7 @@ func (m *DeviceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987
         return m.lastHeartbeatDateTime
     }
 }
-// GetPartnerAppType gets the partnerAppType property value. Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
+// GetPartnerAppType gets the partnerAppType property value. Partner App Type.
 func (m *DeviceManagementPartner) GetPartnerAppType()(*DeviceManagementPartnerAppType) {
     if m == nil {
         return nil
@@ -153,7 +153,7 @@ func (m *DeviceManagementPartner) GetPartnerAppType()(*DeviceManagementPartnerAp
         return m.partnerAppType
     }
 }
-// GetPartnerState gets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *DeviceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
     if m == nil {
         return nil
@@ -261,13 +261,13 @@ func (m *DeviceManagementPartner) SetLastHeartbeatDateTime(value *i336074805fc85
         m.lastHeartbeatDateTime = value
     }
 }
-// SetPartnerAppType sets the partnerAppType property value. Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
+// SetPartnerAppType sets the partnerAppType property value. Partner App Type.
 func (m *DeviceManagementPartner) SetPartnerAppType(value *DeviceManagementPartnerAppType)() {
     if m != nil {
         m.partnerAppType = value
     }
 }
-// SetPartnerState sets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *DeviceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
     if m != nil {
         m.partnerState = value

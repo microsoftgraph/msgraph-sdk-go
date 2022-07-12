@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharePointIdentity provides operations to manage the collection of application entities.
+// SharePointIdentity 
 type SharePointIdentity struct {
     Identity
     // The sign in name of the SharePoint identity.
     loginName *string
 }
-// NewSharePointIdentity instantiates a new sharePointIdentity and sets the default values.
+// NewSharePointIdentity instantiates a new SharePointIdentity and sets the default values.
 func NewSharePointIdentity()(*SharePointIdentity) {
     m := &SharePointIdentity{
         Identity: *NewIdentity(),

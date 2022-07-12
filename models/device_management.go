@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagement singleton entity that acts as a container for all device management functionality.
+// DeviceManagement 
 type DeviceManagement struct {
     Entity
     // Apple push notification certificate.
@@ -63,7 +63,7 @@ type DeviceManagement struct {
     settings DeviceManagementSettingsable
     // The software update status summary.
     softwareUpdateStatusSummary SoftwareUpdateStatusSummaryable
-    // Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+    // Tenant mobile device management subscription state.
     subscriptionState *DeviceManagementSubscriptionState
     // The telecom expense management partners.
     telecomExpenseManagementPartners []TelecomExpenseManagementPartnerable
@@ -78,7 +78,7 @@ type DeviceManagement struct {
     // The windows information protection network learning summaries.
     windowsInformationProtectionNetworkLearningSummaries []WindowsInformationProtectionNetworkLearningSummaryable
 }
-// NewDeviceManagement instantiates a new deviceManagement and sets the default values.
+// NewDeviceManagement instantiates a new DeviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
     m := &DeviceManagement{
         Entity: *NewEntity(),
@@ -764,7 +764,7 @@ func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(SoftwareUpdateStatus
         return m.softwareUpdateStatusSummary
     }
 }
-// GetSubscriptionState gets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+// GetSubscriptionState gets the subscriptionState property value. Tenant mobile device management subscription state.
 func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionState) {
     if m == nil {
         return nil
@@ -1303,7 +1303,7 @@ func (m *DeviceManagement) SetSoftwareUpdateStatusSummary(value SoftwareUpdateSt
         m.softwareUpdateStatusSummary = value
     }
 }
-// SetSubscriptionState sets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+// SetSubscriptionState sets the subscriptionState property value. Tenant mobile device management subscription state.
 func (m *DeviceManagement) SetSubscriptionState(value *DeviceManagementSubscriptionState)() {
     if m != nil {
         m.subscriptionState = value

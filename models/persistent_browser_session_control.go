@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersistentBrowserSessionControl provides operations to manage the identityContainer singleton.
+// PersistentBrowserSessionControl 
 type PersistentBrowserSessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: always, never.
     mode *PersistentBrowserSessionMode
 }
-// NewPersistentBrowserSessionControl instantiates a new persistentBrowserSessionControl and sets the default values.
+// NewPersistentBrowserSessionControl instantiates a new PersistentBrowserSessionControl and sets the default values.
 func NewPersistentBrowserSessionControl()(*PersistentBrowserSessionControl) {
     m := &PersistentBrowserSessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),

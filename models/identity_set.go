@@ -12,6 +12,8 @@ type IdentitySet struct {
     application Identityable
     // Optional. The device associated with this action.
     device Identityable
+    // The type property
+    type_escaped *string
     // Optional. The user associated with this action.
     user Identityable
 }
@@ -20,10 +22,37 @@ func NewIdentitySet()(*IdentitySet) {
     m := &IdentitySet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.identitySet";
+    m.SetType(&typeValue);
     return m
 }
 // CreateIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.chatMessageFromIdentitySet":
+                        return NewChatMessageFromIdentitySet(), nil
+                    case "#microsoft.graph.chatMessageMentionedIdentitySet":
+                        return NewChatMessageMentionedIdentitySet(), nil
+                    case "#microsoft.graph.chatMessageReactionIdentitySet":
+                        return NewChatMessageReactionIdentitySet(), nil
+                    case "#microsoft.graph.sharePointIdentitySet":
+                        return NewSharePointIdentitySet(), nil
+                }
+            }
+        }
+    }
     return NewIdentitySet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -73,6 +102,16 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
@@ -84,6 +123,14 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *IdentitySet) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // GetUser gets the user property value. Optional. The user associated with this action.
 func (m *IdentitySet) GetUser()(Identityable) {
@@ -103,6 +150,12 @@ func (m *IdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteObjectValue("device", m.GetDevice())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -137,6 +190,12 @@ func (m *IdentitySet) SetApplication(value Identityable)() {
 func (m *IdentitySet) SetDevice(value Identityable)() {
     if m != nil {
         m.device = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *IdentitySet) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUser sets the user property value. Optional. The user associated with this action.

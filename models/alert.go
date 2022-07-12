@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Alert provides operations to manage the security singleton.
+// Alert provides operations to manage the admin singleton.
 type Alert struct {
     Entity
     // Name or alias of the activity group (attacker) this alert is attributed to.
@@ -66,11 +66,11 @@ type Alert struct {
     registryKeyStates []RegistryKeyStateable
     // Resources related to current alert. For example, for some alerts this can have the Azure Resource value.
     securityResources []SecurityResourceable
-    // Alert severity - set by vendor/provider. Possible values are: unknown, informational, low, medium, high. Required.
+    // The severity property
     severity *AlertSeverity
     // Hyperlinks (URIs) to the source material related to the alert, for example, provider's user interface for alerts or log search, etc.
     sourceMaterials []string
-    // Alert lifecycle status (stage). Possible values are: unknown, newAlert, inProgress, resolved. (supports update). Required.
+    // The status property
     status *AlertStatus
     // User-definable labels that can be applied to an alert and can serve as filter conditions (for example 'HVA', 'SAW', etc.) (supports update).
     tags []string
@@ -813,7 +813,7 @@ func (m *Alert) GetSecurityResources()([]SecurityResourceable) {
         return m.securityResources
     }
 }
-// GetSeverity gets the severity property value. Alert severity - set by vendor/provider. Possible values are: unknown, informational, low, medium, high. Required.
+// GetSeverity gets the severity property value. The severity property
 func (m *Alert) GetSeverity()(*AlertSeverity) {
     if m == nil {
         return nil
@@ -829,7 +829,7 @@ func (m *Alert) GetSourceMaterials()([]string) {
         return m.sourceMaterials
     }
 }
-// GetStatus gets the status property value. Alert lifecycle status (stage). Possible values are: unknown, newAlert, inProgress, resolved. (supports update). Required.
+// GetStatus gets the status property value. The status property
 func (m *Alert) GetStatus()(*AlertStatus) {
     if m == nil {
         return nil
@@ -1376,7 +1376,7 @@ func (m *Alert) SetSecurityResources(value []SecurityResourceable)() {
         m.securityResources = value
     }
 }
-// SetSeverity sets the severity property value. Alert severity - set by vendor/provider. Possible values are: unknown, informational, low, medium, high. Required.
+// SetSeverity sets the severity property value. The severity property
 func (m *Alert) SetSeverity(value *AlertSeverity)() {
     if m != nil {
         m.severity = value
@@ -1388,7 +1388,7 @@ func (m *Alert) SetSourceMaterials(value []string)() {
         m.sourceMaterials = value
     }
 }
-// SetStatus sets the status property value. Alert lifecycle status (stage). Possible values are: unknown, newAlert, inProgress, resolved. (supports update). Required.
+// SetStatus sets the status property value. The status property
 func (m *Alert) SetStatus(value *AlertStatus)() {
     if m != nil {
         m.status = value

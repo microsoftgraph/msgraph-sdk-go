@@ -7,7 +7,7 @@ import (
 // MicrosoftAuthenticatorAuthenticationMethodTarget 
 type MicrosoftAuthenticatorAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
-    // Determines which types of notifications can be used for sign-in. The possible values are: deviceBasedPush (passwordless only), push, and any.
+    // The authenticationMode property
     authenticationMode *MicrosoftAuthenticatorAuthenticationMode
 }
 // NewMicrosoftAuthenticatorAuthenticationMethodTarget instantiates a new MicrosoftAuthenticatorAuthenticationMethodTarget and sets the default values.
@@ -21,7 +21,7 @@ func NewMicrosoftAuthenticatorAuthenticationMethodTarget()(*MicrosoftAuthenticat
 func CreateMicrosoftAuthenticatorAuthenticationMethodTargetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftAuthenticatorAuthenticationMethodTarget(), nil
 }
-// GetAuthenticationMode gets the authenticationMode property value. Determines which types of notifications can be used for sign-in. The possible values are: deviceBasedPush (passwordless only), push, and any.
+// GetAuthenticationMode gets the authenticationMode property value. The authenticationMode property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetAuthenticationMode()(*MicrosoftAuthenticatorAuthenticationMode) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) Serialize(writer i878
     }
     return nil
 }
-// SetAuthenticationMode sets the authenticationMode property value. Determines which types of notifications can be used for sign-in. The possible values are: deviceBasedPush (passwordless only), push, and any.
+// SetAuthenticationMode sets the authenticationMode property value. The authenticationMode property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) SetAuthenticationMode(value *MicrosoftAuthenticatorAuthenticationMode)() {
     if m != nil {
         m.authenticationMode = value

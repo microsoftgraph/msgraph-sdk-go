@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask provides operations to manage the collection of application entities.
+// TodoTask provides operations to manage the admin singleton.
 type TodoTask struct {
     Entity
     // The task body that typically contains information about the task.
@@ -24,7 +24,7 @@ type TodoTask struct {
     dueDateTime DateTimeTimeZoneable
     // The collection of open extensions defined for the task. Nullable.
     extensions []Extensionable
-    // The importance of the task. Possible values are: low, normal, high.
+    // The importance property
     importance *Importance
     // Set to true if an alert is set to remind the user of the task.
     isReminderOn *bool
@@ -36,7 +36,7 @@ type TodoTask struct {
     recurrence PatternedRecurrenceable
     // The date and time for a reminder alert of the task to occur.
     reminderDateTime DateTimeTimeZoneable
-    // Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
+    // The status property
     status *TaskStatus
     // A brief description of the task.
     title *string
@@ -297,7 +297,7 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetImportance gets the importance property value. The importance of the task. Possible values are: low, normal, high.
+// GetImportance gets the importance property value. The importance property
 func (m *TodoTask) GetImportance()(*Importance) {
     if m == nil {
         return nil
@@ -345,7 +345,7 @@ func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
         return m.reminderDateTime
     }
 }
-// GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
+// GetStatus gets the status property value. The status property
 func (m *TodoTask) GetStatus()(*TaskStatus) {
     if m == nil {
         return nil
@@ -527,7 +527,7 @@ func (m *TodoTask) SetExtensions(value []Extensionable)() {
         m.extensions = value
     }
 }
-// SetImportance sets the importance property value. The importance of the task. Possible values are: low, normal, high.
+// SetImportance sets the importance property value. The importance property
 func (m *TodoTask) SetImportance(value *Importance)() {
     if m != nil {
         m.importance = value
@@ -563,7 +563,7 @@ func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
         m.reminderDateTime = value
     }
 }
-// SetStatus sets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
+// SetStatus sets the status property value. The status property
 func (m *TodoTask) SetStatus(value *TaskStatus)() {
     if m != nil {
         m.status = value

@@ -12,7 +12,7 @@ type NetworkInfo struct {
     bandwidthLowEventRatio *float32
     // The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
     basicServiceSetIdentifier *string
-    // Type of network used by the media endpoint. Possible values are: unknown, wired, wifi, mobile, tunnel, unknownFutureValue.
+    // The connectionType property
     connectionType *NetworkConnectionType
     // Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
     delayEventRatio *float32
@@ -24,7 +24,7 @@ type NetworkInfo struct {
     linkSpeed *int64
     // The media access control (MAC) address of the media endpoint's network device.
     macAddress *string
-    // Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.
+    // The networkTransportProtocol property
     networkTransportProtocol *NetworkTransportProtocol
     // Network port number used by media endpoint.
     port *int32
@@ -40,9 +40,9 @@ type NetworkInfo struct {
     sentQualityEventRatio *float32
     // Subnet used for media stream by the media endpoint.
     subnet *string
-    // List of network trace route hops collected for this media stream.
+    // List of network trace route hops collected for this media stream.*
     traceRouteHops []TraceRouteHopable
-    // WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
+    // The wifiBand property
     wifiBand *WifiBand
     // Estimated remaining battery charge in percentage reported by the media endpoint.
     wifiBatteryCharge *int32
@@ -52,7 +52,7 @@ type NetworkInfo struct {
     wifiMicrosoftDriver *string
     // Version of the Microsoft WiFi driver used by the media endpoint.
     wifiMicrosoftDriverVersion *string
-    // Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.
+    // The wifiRadioType property
     wifiRadioType *WifiRadioType
     // WiFi signal strength in percentage reported by the media endpoint.
     wifiSignalStrength *int32
@@ -96,7 +96,7 @@ func (m *NetworkInfo) GetBasicServiceSetIdentifier()(*string) {
         return m.basicServiceSetIdentifier
     }
 }
-// GetConnectionType gets the connectionType property value. Type of network used by the media endpoint. Possible values are: unknown, wired, wifi, mobile, tunnel, unknownFutureValue.
+// GetConnectionType gets the connectionType property value. The connectionType property
 func (m *NetworkInfo) GetConnectionType()(*NetworkConnectionType) {
     if m == nil {
         return nil
@@ -413,7 +413,7 @@ func (m *NetworkInfo) GetMacAddress()(*string) {
         return m.macAddress
     }
 }
-// GetNetworkTransportProtocol gets the networkTransportProtocol property value. Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.
+// GetNetworkTransportProtocol gets the networkTransportProtocol property value. The networkTransportProtocol property
 func (m *NetworkInfo) GetNetworkTransportProtocol()(*NetworkTransportProtocol) {
     if m == nil {
         return nil
@@ -477,7 +477,7 @@ func (m *NetworkInfo) GetSubnet()(*string) {
         return m.subnet
     }
 }
-// GetTraceRouteHops gets the traceRouteHops property value. List of network trace route hops collected for this media stream.
+// GetTraceRouteHops gets the traceRouteHops property value. List of network trace route hops collected for this media stream.*
 func (m *NetworkInfo) GetTraceRouteHops()([]TraceRouteHopable) {
     if m == nil {
         return nil
@@ -485,7 +485,7 @@ func (m *NetworkInfo) GetTraceRouteHops()([]TraceRouteHopable) {
         return m.traceRouteHops
     }
 }
-// GetWifiBand gets the wifiBand property value. WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
+// GetWifiBand gets the wifiBand property value. The wifiBand property
 func (m *NetworkInfo) GetWifiBand()(*WifiBand) {
     if m == nil {
         return nil
@@ -525,7 +525,7 @@ func (m *NetworkInfo) GetWifiMicrosoftDriverVersion()(*string) {
         return m.wifiMicrosoftDriverVersion
     }
 }
-// GetWifiRadioType gets the wifiRadioType property value. Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.
+// GetWifiRadioType gets the wifiRadioType property value. The wifiRadioType property
 func (m *NetworkInfo) GetWifiRadioType()(*WifiRadioType) {
     if m == nil {
         return nil
@@ -749,7 +749,7 @@ func (m *NetworkInfo) SetBasicServiceSetIdentifier(value *string)() {
         m.basicServiceSetIdentifier = value
     }
 }
-// SetConnectionType sets the connectionType property value. Type of network used by the media endpoint. Possible values are: unknown, wired, wifi, mobile, tunnel, unknownFutureValue.
+// SetConnectionType sets the connectionType property value. The connectionType property
 func (m *NetworkInfo) SetConnectionType(value *NetworkConnectionType)() {
     if m != nil {
         m.connectionType = value
@@ -785,7 +785,7 @@ func (m *NetworkInfo) SetMacAddress(value *string)() {
         m.macAddress = value
     }
 }
-// SetNetworkTransportProtocol sets the networkTransportProtocol property value. Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.
+// SetNetworkTransportProtocol sets the networkTransportProtocol property value. The networkTransportProtocol property
 func (m *NetworkInfo) SetNetworkTransportProtocol(value *NetworkTransportProtocol)() {
     if m != nil {
         m.networkTransportProtocol = value
@@ -833,13 +833,13 @@ func (m *NetworkInfo) SetSubnet(value *string)() {
         m.subnet = value
     }
 }
-// SetTraceRouteHops sets the traceRouteHops property value. List of network trace route hops collected for this media stream.
+// SetTraceRouteHops sets the traceRouteHops property value. List of network trace route hops collected for this media stream.*
 func (m *NetworkInfo) SetTraceRouteHops(value []TraceRouteHopable)() {
     if m != nil {
         m.traceRouteHops = value
     }
 }
-// SetWifiBand sets the wifiBand property value. WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
+// SetWifiBand sets the wifiBand property value. The wifiBand property
 func (m *NetworkInfo) SetWifiBand(value *WifiBand)() {
     if m != nil {
         m.wifiBand = value
@@ -869,7 +869,7 @@ func (m *NetworkInfo) SetWifiMicrosoftDriverVersion(value *string)() {
         m.wifiMicrosoftDriverVersion = value
     }
 }
-// SetWifiRadioType sets the wifiRadioType property value. Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.
+// SetWifiRadioType sets the wifiRadioType property value. The wifiRadioType property
 func (m *NetworkInfo) SetWifiRadioType(value *WifiRadioType)() {
     if m != nil {
         m.wifiRadioType = value

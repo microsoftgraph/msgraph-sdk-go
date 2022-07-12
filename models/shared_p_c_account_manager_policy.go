@@ -6,7 +6,7 @@ import (
 
 // SharedPCAccountManagerPolicy sharedPC Account Manager Policy. Only applies when the account manager is enabled.
 type SharedPCAccountManagerPolicy struct {
-    // Configures when accounts are deleted. Possible values are: immediate, diskSpaceThreshold, diskSpaceThresholdOrInactiveThreshold.
+    // Possible values for when accounts are deleted on a shared PC.
     accountDeletionPolicy *SharedPCAccountDeletionPolicyType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -28,7 +28,7 @@ func NewSharedPCAccountManagerPolicy()(*SharedPCAccountManagerPolicy) {
 func CreateSharedPCAccountManagerPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharedPCAccountManagerPolicy(), nil
 }
-// GetAccountDeletionPolicy gets the accountDeletionPolicy property value. Configures when accounts are deleted. Possible values are: immediate, diskSpaceThreshold, diskSpaceThresholdOrInactiveThreshold.
+// GetAccountDeletionPolicy gets the accountDeletionPolicy property value. Possible values for when accounts are deleted on a shared PC.
 func (m *SharedPCAccountManagerPolicy) GetAccountDeletionPolicy()(*SharedPCAccountDeletionPolicyType) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *SharedPCAccountManagerPolicy) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAccountDeletionPolicy sets the accountDeletionPolicy property value. Configures when accounts are deleted. Possible values are: immediate, diskSpaceThreshold, diskSpaceThresholdOrInactiveThreshold.
+// SetAccountDeletionPolicy sets the accountDeletionPolicy property value. Possible values for when accounts are deleted on a shared PC.
 func (m *SharedPCAccountManagerPolicy) SetAccountDeletionPolicy(value *SharedPCAccountDeletionPolicyType)() {
     if m != nil {
         m.accountDeletionPolicy = value

@@ -12,7 +12,7 @@ type RemoteAssistancePartner struct {
     displayName *string
     // Timestamp of the last request sent to Intune by the TEM partner.
     lastConnectionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+    // The current TeamViewer connector status
     onboardingStatus *RemoteAssistanceOnboardingStatus
     // URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
     onboardingUrl *string
@@ -89,7 +89,7 @@ func (m *RemoteAssistancePartner) GetLastConnectionDateTime()(*i336074805fc85398
         return m.lastConnectionDateTime
     }
 }
-// GetOnboardingStatus gets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+// GetOnboardingStatus gets the onboardingStatus property value. The current TeamViewer connector status
 func (m *RemoteAssistancePartner) GetOnboardingStatus()(*RemoteAssistanceOnboardingStatus) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *RemoteAssistancePartner) SetLastConnectionDateTime(value *i336074805fc8
         m.lastConnectionDateTime = value
     }
 }
-// SetOnboardingStatus sets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+// SetOnboardingStatus sets the onboardingStatus property value. The current TeamViewer connector status
 func (m *RemoteAssistancePartner) SetOnboardingStatus(value *RemoteAssistanceOnboardingStatus)() {
     if m != nil {
         m.onboardingStatus = value

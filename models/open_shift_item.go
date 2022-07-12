@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenShiftItem provides operations to manage the collection of application entities.
+// OpenShiftItem 
 type OpenShiftItem struct {
     ShiftItem
     // Count of the number of slots for the given open shift.
     openSlotCount *int32
 }
-// NewOpenShiftItem instantiates a new openShiftItem and sets the default values.
+// NewOpenShiftItem instantiates a new OpenShiftItem and sets the default values.
 func NewOpenShiftItem()(*OpenShiftItem) {
     m := &OpenShiftItem{
         ShiftItem: *NewShiftItem(),

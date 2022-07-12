@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewStage provides operations to manage the identityGovernance singleton.
+// AccessReviewStage provides operations to manage the admin singleton.
 type AccessReviewStage struct {
     Entity
     // Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.

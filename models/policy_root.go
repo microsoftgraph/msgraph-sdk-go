@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicyRoot provides operations to manage the policyRoot singleton.
+// PolicyRoot 
 type PolicyRoot struct {
     Entity
     // The policy that controls the idle time out for web sessions for applications.
@@ -21,6 +21,8 @@ type PolicyRoot struct {
     claimsMappingPolicies []ClaimsMappingPolicyable
     // The custom rules that define an access scenario.
     conditionalAccessPolicies []ConditionalAccessPolicyable
+    // The custom rules that define an access scenario when interacting with external Azure AD tenants.
+    crossTenantAccessPolicy CrossTenantAccessPolicyable
     // The feature rollout policy associated with a directory object.
     featureRolloutPolicies []FeatureRolloutPolicyable
     // The policy to control Azure AD authentication behavior for federated users.
@@ -38,7 +40,7 @@ type PolicyRoot struct {
     // The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
     tokenLifetimePolicies []TokenLifetimePolicyable
 }
-// NewPolicyRoot instantiates a new policyRoot and sets the default values.
+// NewPolicyRoot instantiates a new PolicyRoot and sets the default values.
 func NewPolicyRoot()(*PolicyRoot) {
     m := &PolicyRoot{
         Entity: *NewEntity(),
@@ -103,6 +105,14 @@ func (m *PolicyRoot) GetConditionalAccessPolicies()([]ConditionalAccessPolicyabl
         return nil
     } else {
         return m.conditionalAccessPolicies
+    }
+}
+// GetCrossTenantAccessPolicy gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+func (m *PolicyRoot) GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.crossTenantAccessPolicy
     }
 }
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
@@ -195,6 +205,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
                 res[i] = v.(ConditionalAccessPolicyable)
             }
             m.SetConditionalAccessPolicies(res)
+        }
+        return nil
+    }
+    res["crossTenantAccessPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCrossTenantAccessPolicy(val.(CrossTenantAccessPolicyable))
         }
         return nil
     }
@@ -424,6 +444,12 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("crossTenantAccessPolicy", m.GetCrossTenantAccessPolicy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetFeatureRolloutPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
@@ -542,6 +568,12 @@ func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
 func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)() {
     if m != nil {
         m.conditionalAccessPolicies = value
+    }
+}
+// SetCrossTenantAccessPolicy sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)() {
+    if m != nil {
+        m.crossTenantAccessPolicy = value
     }
 }
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.

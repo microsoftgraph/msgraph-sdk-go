@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharePointIdentitySet provides operations to manage the collection of application entities.
+// SharePointIdentitySet 
 type SharePointIdentitySet struct {
     IdentitySet
     // The group associated with this action. Optional.
@@ -14,7 +14,7 @@ type SharePointIdentitySet struct {
     // The SharePoint user associated with this action. Optional.
     siteUser SharePointIdentityable
 }
-// NewSharePointIdentitySet instantiates a new sharePointIdentitySet and sets the default values.
+// NewSharePointIdentitySet instantiates a new SharePointIdentitySet and sets the default values.
 func NewSharePointIdentitySet()(*SharePointIdentitySet) {
     m := &SharePointIdentitySet{
         IdentitySet: *NewIdentitySet(),

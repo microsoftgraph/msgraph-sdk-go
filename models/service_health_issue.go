@@ -7,7 +7,7 @@ import (
 // ServiceHealthIssue 
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
-    // The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
+    // The classification property
     classification *ServiceHealthClassificationType
     // The feature name of the service issue.
     feature *string
@@ -17,13 +17,13 @@ type ServiceHealthIssue struct {
     impactDescription *string
     // Indicates whether the issue is resolved.
     isResolved *bool
-    // Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
+    // The origin property
     origin *ServiceHealthOrigin
     // Collection of historical posts for the service issue.
     posts []ServiceHealthIssuePostable
     // Indicates the service affected by the issue.
     service *string
-    // The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+    // The status property
     status *ServiceHealthStatus
 }
 // NewServiceHealthIssue instantiates a new ServiceHealthIssue and sets the default values.
@@ -37,7 +37,7 @@ func NewServiceHealthIssue()(*ServiceHealthIssue) {
 func CreateServiceHealthIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceHealthIssue(), nil
 }
-// GetClassification gets the classification property value. The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
+// GetClassification gets the classification property value. The classification property
 func (m *ServiceHealthIssue) GetClassification()(*ServiceHealthClassificationType) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *ServiceHealthIssue) GetIsResolved()(*bool) {
         return m.isResolved
     }
 }
-// GetOrigin gets the origin property value. Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
+// GetOrigin gets the origin property value. The origin property
 func (m *ServiceHealthIssue) GetOrigin()(*ServiceHealthOrigin) {
     if m == nil {
         return nil
@@ -200,7 +200,7 @@ func (m *ServiceHealthIssue) GetService()(*string) {
         return m.service
     }
 }
-// GetStatus gets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+// GetStatus gets the status property value. The status property
 func (m *ServiceHealthIssue) GetStatus()(*ServiceHealthStatus) {
     if m == nil {
         return nil
@@ -277,7 +277,7 @@ func (m *ServiceHealthIssue) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetClassification sets the classification property value. The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
+// SetClassification sets the classification property value. The classification property
 func (m *ServiceHealthIssue) SetClassification(value *ServiceHealthClassificationType)() {
     if m != nil {
         m.classification = value
@@ -307,7 +307,7 @@ func (m *ServiceHealthIssue) SetIsResolved(value *bool)() {
         m.isResolved = value
     }
 }
-// SetOrigin sets the origin property value. Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
+// SetOrigin sets the origin property value. The origin property
 func (m *ServiceHealthIssue) SetOrigin(value *ServiceHealthOrigin)() {
     if m != nil {
         m.origin = value
@@ -325,7 +325,7 @@ func (m *ServiceHealthIssue) SetService(value *string)() {
         m.service = value
     }
 }
-// SetStatus sets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+// SetStatus sets the status property value. The status property
 func (m *ServiceHealthIssue) SetStatus(value *ServiceHealthStatus)() {
     if m != nil {
         m.status = value

@@ -9,9 +9,9 @@ type EnrollmentTroubleshootingEvent struct {
     DeviceManagementTroubleshootingEvent
     // Azure AD device identifier.
     deviceId *string
-    // Type of the enrollment. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+    // Possible ways of adding a mobile device to management.
     enrollmentType *DeviceEnrollmentType
-    // Highlevel failure category. Possible values are: unknown, authentication, authorization, accountValidation, userValidation, deviceNotSupported, inMaintenance, badRequest, featureNotSupported, enrollmentRestrictionsEnforced, clientDisconnected, userAbandonment.
+    // Top level failure categories for enrollment.
     failureCategory *DeviceEnrollmentFailureReason
     // Detailed failure reason.
     failureReason *string
@@ -43,7 +43,7 @@ func (m *EnrollmentTroubleshootingEvent) GetDeviceId()(*string) {
         return m.deviceId
     }
 }
-// GetEnrollmentType gets the enrollmentType property value. Type of the enrollment. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+// GetEnrollmentType gets the enrollmentType property value. Possible ways of adding a mobile device to management.
 func (m *EnrollmentTroubleshootingEvent) GetEnrollmentType()(*DeviceEnrollmentType) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *EnrollmentTroubleshootingEvent) GetEnrollmentType()(*DeviceEnrollmentTy
         return m.enrollmentType
     }
 }
-// GetFailureCategory gets the failureCategory property value. Highlevel failure category. Possible values are: unknown, authentication, authorization, accountValidation, userValidation, deviceNotSupported, inMaintenance, badRequest, featureNotSupported, enrollmentRestrictionsEnforced, clientDisconnected, userAbandonment.
+// GetFailureCategory gets the failureCategory property value. Top level failure categories for enrollment.
 func (m *EnrollmentTroubleshootingEvent) GetFailureCategory()(*DeviceEnrollmentFailureReason) {
     if m == nil {
         return nil
@@ -248,13 +248,13 @@ func (m *EnrollmentTroubleshootingEvent) SetDeviceId(value *string)() {
         m.deviceId = value
     }
 }
-// SetEnrollmentType sets the enrollmentType property value. Type of the enrollment. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+// SetEnrollmentType sets the enrollmentType property value. Possible ways of adding a mobile device to management.
 func (m *EnrollmentTroubleshootingEvent) SetEnrollmentType(value *DeviceEnrollmentType)() {
     if m != nil {
         m.enrollmentType = value
     }
 }
-// SetFailureCategory sets the failureCategory property value. Highlevel failure category. Possible values are: unknown, authentication, authorization, accountValidation, userValidation, deviceNotSupported, inMaintenance, badRequest, featureNotSupported, enrollmentRestrictionsEnforced, clientDisconnected, userAbandonment.
+// SetFailureCategory sets the failureCategory property value. Top level failure categories for enrollment.
 func (m *EnrollmentTroubleshootingEvent) SetFailureCategory(value *DeviceEnrollmentFailureReason)() {
     if m != nil {
         m.failureCategory = value

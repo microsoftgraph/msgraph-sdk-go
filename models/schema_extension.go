@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SchemaExtension provides operations to manage the collection of schemaExtension entities.
+// SchemaExtension 
 type SchemaExtension struct {
     Entity
     // Description for the schema extension. Supports $filter (eq).
@@ -13,12 +13,12 @@ type SchemaExtension struct {
     owner *string
     // The collection of property names and types that make up the schema extension definition.
     properties []ExtensionSchemaPropertyable
-    // The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
+    // The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).
     status *string
-    // Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
+    // Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
     targetTypes []string
 }
-// NewSchemaExtension instantiates a new schemaExtension and sets the default values.
+// NewSchemaExtension instantiates a new SchemaExtension and sets the default values.
 func NewSchemaExtension()(*SchemaExtension) {
     m := &SchemaExtension{
         Entity: *NewEntity(),
@@ -116,7 +116,7 @@ func (m *SchemaExtension) GetProperties()([]ExtensionSchemaPropertyable) {
         return m.properties
     }
 }
-// GetStatus gets the status property value. The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
+// GetStatus gets the status property value. The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).
 func (m *SchemaExtension) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *SchemaExtension) GetStatus()(*string) {
         return m.status
     }
 }
-// GetTargetTypes gets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
+// GetTargetTypes gets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
 func (m *SchemaExtension) GetTargetTypes()([]string) {
     if m == nil {
         return nil
@@ -192,13 +192,13 @@ func (m *SchemaExtension) SetProperties(value []ExtensionSchemaPropertyable)() {
         m.properties = value
     }
 }
-// SetStatus sets the status property value. The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
+// SetStatus sets the status property value. The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).
 func (m *SchemaExtension) SetStatus(value *string)() {
     if m != nil {
         m.status = value
     }
 }
-// SetTargetTypes sets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
+// SetTargetTypes sets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
 func (m *SchemaExtension) SetTargetTypes(value []string)() {
     if m != nil {
         m.targetTypes = value

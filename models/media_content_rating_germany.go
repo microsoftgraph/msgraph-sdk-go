@@ -8,9 +8,9 @@ import (
 type MediaContentRatingGermany struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Movies rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
+    // Movies rating labels in Germany
     movieRating *RatingGermanyMoviesType
-    // TV rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
+    // TV content rating labels in Germany
     tvRating *RatingGermanyTelevisionType
 }
 // NewMediaContentRatingGermany instantiates a new mediaContentRatingGermany and sets the default values.
@@ -57,7 +57,7 @@ func (m *MediaContentRatingGermany) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetMovieRating gets the movieRating property value. Movies rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
+// GetMovieRating gets the movieRating property value. Movies rating labels in Germany
 func (m *MediaContentRatingGermany) GetMovieRating()(*RatingGermanyMoviesType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *MediaContentRatingGermany) GetMovieRating()(*RatingGermanyMoviesType) {
         return m.movieRating
     }
 }
-// GetTvRating gets the tvRating property value. TV rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
+// GetTvRating gets the tvRating property value. TV content rating labels in Germany
 func (m *MediaContentRatingGermany) GetTvRating()(*RatingGermanyTelevisionType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *MediaContentRatingGermany) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetMovieRating sets the movieRating property value. Movies rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
+// SetMovieRating sets the movieRating property value. Movies rating labels in Germany
 func (m *MediaContentRatingGermany) SetMovieRating(value *RatingGermanyMoviesType)() {
     if m != nil {
         m.movieRating = value
     }
 }
-// SetTvRating sets the tvRating property value. TV rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
+// SetTvRating sets the tvRating property value. TV content rating labels in Germany
 func (m *MediaContentRatingGermany) SetTvRating(value *RatingGermanyTelevisionType)() {
     if m != nil {
         m.tvRating = value

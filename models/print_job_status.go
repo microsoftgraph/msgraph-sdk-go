@@ -14,7 +14,7 @@ type PrintJobStatus struct {
     details []string
     // True if the job was acknowledged by a printer; false otherwise. Read-only.
     isAcquiredByPrinter *bool
-    // The print job's current processing state. Valid values are described in the following table. Read-only.
+    // The state property
     state *PrintJobProcessingState
 }
 // NewPrintJobStatus instantiates a new printJobStatus and sets the default values.
@@ -109,7 +109,7 @@ func (m *PrintJobStatus) GetIsAcquiredByPrinter()(*bool) {
         return m.isAcquiredByPrinter
     }
 }
-// GetState gets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
+// GetState gets the state property value. The state property
 func (m *PrintJobStatus) GetState()(*PrintJobProcessingState) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *PrintJobStatus) SetIsAcquiredByPrinter(value *bool)() {
         m.isAcquiredByPrinter = value
     }
 }
-// SetState sets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
+// SetState sets the state property value. The state property
 func (m *PrintJobStatus) SetState(value *PrintJobProcessingState)() {
     if m != nil {
         m.state = value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application provides operations to call the instantiate method.
+// Application provides operations to manage the collection of application entities.
 type Application struct {
     DirectoryObject
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
@@ -32,6 +32,8 @@ type Application struct {
     displayName *string
     // Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
     extensionProperties []ExtensionPropertyable
+    // Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+    federatedIdentityCredentials []FederatedIdentityCredentialable
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string
     // The homeRealmDiscoveryPolicies property
@@ -192,6 +194,14 @@ func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
         return m.extensionProperties
     }
 }
+// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.federatedIdentityCredentials
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
@@ -324,6 +334,20 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 res[i] = v.(ExtensionPropertyable)
             }
             m.SetExtensionProperties(res)
+        }
+        return nil
+    }
+    res["federatedIdentityCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateFederatedIdentityCredentialFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]FederatedIdentityCredentialable, len(val))
+            for i, v := range val {
+                res[i] = v.(FederatedIdentityCredentialable)
+            }
+            m.SetFederatedIdentityCredentials(res)
         }
         return nil
     }
@@ -923,6 +947,16 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetFederatedIdentityCredentials() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFederatedIdentityCredentials()))
+        for i, v := range m.GetFederatedIdentityCredentials() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("federatedIdentityCredentials", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("groupMembershipClaims", m.GetGroupMembershipClaims())
         if err != nil {
@@ -1179,6 +1213,12 @@ func (m *Application) SetDisplayName(value *string)() {
 func (m *Application) SetExtensionProperties(value []ExtensionPropertyable)() {
     if m != nil {
         m.extensionProperties = value
+    }
+}
+// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
+    if m != nil {
+        m.federatedIdentityCredentials = value
     }
 }
 // SetGroupMembershipClaims sets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).

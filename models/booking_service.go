@@ -17,7 +17,7 @@ type BookingService struct {
     defaultLocation Locationable
     // The default monetary price for the service.
     defaultPrice *float64
-    // The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
+    // Represents the type of pricing of a booking service.
     defaultPriceType *BookingPriceType
     // The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
     defaultReminders []BookingReminderable
@@ -97,7 +97,7 @@ func (m *BookingService) GetDefaultPrice()(*float64) {
         return m.defaultPrice
     }
 }
-// GetDefaultPriceType gets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
+// GetDefaultPriceType gets the defaultPriceType property value. Represents the type of pricing of a booking service.
 func (m *BookingService) GetDefaultPriceType()(*BookingPriceType) {
     if m == nil {
         return nil
@@ -577,7 +577,7 @@ func (m *BookingService) SetDefaultPrice(value *float64)() {
         m.defaultPrice = value
     }
 }
-// SetDefaultPriceType sets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
+// SetDefaultPriceType sets the defaultPriceType property value. Represents the type of pricing of a booking service.
 func (m *BookingService) SetDefaultPriceType(value *BookingPriceType)() {
     if m != nil {
         m.defaultPriceType = value

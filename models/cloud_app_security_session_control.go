@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudAppSecuritySessionControl provides operations to manage the identityContainer singleton.
+// CloudAppSecuritySessionControl 
 type CloudAppSecuritySessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: mcasConfigured, monitorOnly, blockDownloads. To learn more about these values, Deploy Conditional Access App Control for featured apps.
     cloudAppSecurityType *CloudAppSecuritySessionControlType
 }
-// NewCloudAppSecuritySessionControl instantiates a new cloudAppSecuritySessionControl and sets the default values.
+// NewCloudAppSecuritySessionControl instantiates a new CloudAppSecuritySessionControl and sets the default values.
 func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
     m := &CloudAppSecuritySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),

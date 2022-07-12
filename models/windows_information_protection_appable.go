@@ -13,9 +13,11 @@ type WindowsInformationProtectionAppable interface {
     GetDisplayName()(*string)
     GetProductName()(*string)
     GetPublisherName()(*string)
+    GetType()(*string)
     SetDenied(value *bool)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetProductName(value *string)()
     SetPublisherName(value *string)()
+    SetType(value *string)()
 }

@@ -8,7 +8,7 @@ import (
 type Windows10NetworkProxyServer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Address to the proxy server. Specify an address in the format <server>[':'<port>]
+    // Address to the proxy server. Specify an address in the format [':']
     address *string
     // Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
     exceptions []string
@@ -34,7 +34,7 @@ func (m *Windows10NetworkProxyServer) GetAdditionalData()(map[string]interface{}
         return m.additionalData
     }
 }
-// GetAddress gets the address property value. Address to the proxy server. Specify an address in the format <server>[':'<port>]
+// GetAddress gets the address property value. Address to the proxy server. Specify an address in the format [':']
 func (m *Windows10NetworkProxyServer) GetAddress()(*string) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *Windows10NetworkProxyServer) SetAdditionalData(value map[string]interfa
         m.additionalData = value
     }
 }
-// SetAddress sets the address property value. Address to the proxy server. Specify an address in the format <server>[':'<port>]
+// SetAddress sets the address property value. Address to the proxy server. Specify an address in the format [':']
 func (m *Windows10NetworkProxyServer) SetAddress(value *string)() {
     if m != nil {
         m.address = value

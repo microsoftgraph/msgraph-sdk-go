@@ -8,9 +8,9 @@ import (
 type MediaContentRatingAustralia struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Movies rating selected for Australia. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove15, agesAbove18.
+    // Movies rating labels in Australia
     movieRating *RatingAustraliaMoviesType
-    // TV rating selected for Australia. Possible values are: allAllowed, allBlocked, preschoolers, children, general, parentalGuidance, mature, agesAbove15, agesAbove15AdultViolence.
+    // TV content rating labels in Australia
     tvRating *RatingAustraliaTelevisionType
 }
 // NewMediaContentRatingAustralia instantiates a new mediaContentRatingAustralia and sets the default values.
@@ -57,7 +57,7 @@ func (m *MediaContentRatingAustralia) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetMovieRating gets the movieRating property value. Movies rating selected for Australia. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove15, agesAbove18.
+// GetMovieRating gets the movieRating property value. Movies rating labels in Australia
 func (m *MediaContentRatingAustralia) GetMovieRating()(*RatingAustraliaMoviesType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *MediaContentRatingAustralia) GetMovieRating()(*RatingAustraliaMoviesTyp
         return m.movieRating
     }
 }
-// GetTvRating gets the tvRating property value. TV rating selected for Australia. Possible values are: allAllowed, allBlocked, preschoolers, children, general, parentalGuidance, mature, agesAbove15, agesAbove15AdultViolence.
+// GetTvRating gets the tvRating property value. TV content rating labels in Australia
 func (m *MediaContentRatingAustralia) GetTvRating()(*RatingAustraliaTelevisionType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *MediaContentRatingAustralia) SetAdditionalData(value map[string]interfa
         m.additionalData = value
     }
 }
-// SetMovieRating sets the movieRating property value. Movies rating selected for Australia. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove15, agesAbove18.
+// SetMovieRating sets the movieRating property value. Movies rating labels in Australia
 func (m *MediaContentRatingAustralia) SetMovieRating(value *RatingAustraliaMoviesType)() {
     if m != nil {
         m.movieRating = value
     }
 }
-// SetTvRating sets the tvRating property value. TV rating selected for Australia. Possible values are: allAllowed, allBlocked, preschoolers, children, general, parentalGuidance, mature, agesAbove15, agesAbove15AdultViolence.
+// SetTvRating sets the tvRating property value. TV content rating labels in Australia
 func (m *MediaContentRatingAustralia) SetTvRating(value *RatingAustraliaTelevisionType)() {
     if m != nil {
         m.tvRating = value

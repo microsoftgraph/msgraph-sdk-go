@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplicationEnforcedRestrictionsSessionControl provides operations to manage the identityContainer singleton.
+// ApplicationEnforcedRestrictionsSessionControl 
 type ApplicationEnforcedRestrictionsSessionControl struct {
     ConditionalAccessSessionControl
 }
-// NewApplicationEnforcedRestrictionsSessionControl instantiates a new applicationEnforcedRestrictionsSessionControl and sets the default values.
+// NewApplicationEnforcedRestrictionsSessionControl instantiates a new ApplicationEnforcedRestrictionsSessionControl and sets the default values.
 func NewApplicationEnforcedRestrictionsSessionControl()(*ApplicationEnforcedRestrictionsSessionControl) {
     m := &ApplicationEnforcedRestrictionsSessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),

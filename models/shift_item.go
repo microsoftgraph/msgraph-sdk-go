@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ShiftItem provides operations to manage the collection of application entities.
+// ShiftItem 
 type ShiftItem struct {
     ScheduleEntity
     // An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
@@ -14,15 +14,36 @@ type ShiftItem struct {
     // The shift notes for the shiftItem.
     notes *string
 }
-// NewShiftItem instantiates a new shiftItem and sets the default values.
+// NewShiftItem instantiates a new ShiftItem and sets the default values.
 func NewShiftItem()(*ShiftItem) {
     m := &ShiftItem{
         ScheduleEntity: *NewScheduleEntity(),
     }
+    typeValue := "#microsoft.graph.shiftItem";
+    m.SetType(&typeValue);
     return m
 }
 // CreateShiftItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateShiftItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.openShiftItem":
+                        return NewOpenShiftItem(), nil
+                }
+            }
+        }
+    }
     return NewShiftItem(), nil
 }
 // GetActivities gets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.

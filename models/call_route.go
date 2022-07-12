@@ -12,7 +12,7 @@ type CallRoute struct {
     final IdentitySetable
     // The original property
     original IdentitySetable
-    // Possible values are: forwarded, lookup, selfFork.
+    // The routingType property
     routingType *RoutingType
 }
 // NewCallRoute instantiates a new callRoute and sets the default values.
@@ -85,7 +85,7 @@ func (m *CallRoute) GetOriginal()(IdentitySetable) {
         return m.original
     }
 }
-// GetRoutingType gets the routingType property value. Possible values are: forwarded, lookup, selfFork.
+// GetRoutingType gets the routingType property value. The routingType property
 func (m *CallRoute) GetRoutingType()(*RoutingType) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *CallRoute) SetOriginal(value IdentitySetable)() {
         m.original = value
     }
 }
-// SetRoutingType sets the routingType property value. Possible values are: forwarded, lookup, selfFork.
+// SetRoutingType sets the routingType property value. The routingType property
 func (m *CallRoute) SetRoutingType(value *RoutingType)() {
     if m != nil {
         m.routingType = value

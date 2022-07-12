@@ -9,7 +9,7 @@ type AuthenticationMethodTarget struct {
     Entity
     // Determines if the user is enforced to register the authentication method.
     isRegistrationRequired *bool
-    // Possible values are: user, group, and unknownFutureValue.
+    // The targetType property
     targetType *AuthenticationMethodTargetType
 }
 // NewAuthenticationMethodTarget instantiates a new authenticationMethodTarget and sets the default values.
@@ -17,6 +17,8 @@ func NewAuthenticationMethodTarget()(*AuthenticationMethodTarget) {
     m := &AuthenticationMethodTarget{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.authenticationMethodTarget";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAuthenticationMethodTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +77,7 @@ func (m *AuthenticationMethodTarget) GetIsRegistrationRequired()(*bool) {
         return m.isRegistrationRequired
     }
 }
-// GetTargetType gets the targetType property value. Possible values are: user, group, and unknownFutureValue.
+// GetTargetType gets the targetType property value. The targetType property
 func (m *AuthenticationMethodTarget) GetTargetType()(*AuthenticationMethodTargetType) {
     if m == nil {
         return nil
@@ -110,7 +112,7 @@ func (m *AuthenticationMethodTarget) SetIsRegistrationRequired(value *bool)() {
         m.isRegistrationRequired = value
     }
 }
-// SetTargetType sets the targetType property value. Possible values are: user, group, and unknownFutureValue.
+// SetTargetType sets the targetType property value. The targetType property
 func (m *AuthenticationMethodTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
     if m != nil {
         m.targetType = value

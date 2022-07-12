@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisioningSystem provides operations to manage the auditLogRoot singleton.
+// ProvisioningSystem 
 type ProvisioningSystem struct {
     Identity
     // Details of the system.
     details DetailsInfoable
 }
-// NewProvisioningSystem instantiates a new provisioningSystem and sets the default values.
+// NewProvisioningSystem instantiates a new ProvisioningSystem and sets the default values.
 func NewProvisioningSystem()(*ProvisioningSystem) {
     m := &ProvisioningSystem{
         Identity: *NewIdentity(),

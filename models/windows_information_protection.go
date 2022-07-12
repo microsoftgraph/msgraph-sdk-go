@@ -13,7 +13,7 @@ type WindowsInformationProtection struct {
     azureRightsManagementServicesAllowed *bool
     // Specifies a recovery certificate that can be used for data recovery of encrypted files. This is the same as the data recovery agent(DRA) certificate for encrypting file system(EFS)
     dataRecoveryCertificate WindowsInformationProtectionDataRecoveryCertificateable
-    // WIP enforcement level.See the Enum definition for supported values. Possible values are: noProtection, encryptAndAuditOnly, encryptAuditAndPrompt, encryptAuditAndBlock.
+    // Possible values for WIP Protection enforcement levels
     enforcementLevel *WindowsInformationProtectionEnforcementLevel
     // Primary enterprise domain
     enterpriseDomain *string
@@ -63,6 +63,8 @@ func NewWindowsInformationProtection()(*WindowsInformationProtection) {
     m := &WindowsInformationProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
+    typeValue := "#microsoft.graph.windowsInformationProtection";
+    m.SetType(&typeValue);
     return m
 }
 // CreateWindowsInformationProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -114,7 +116,7 @@ func (m *WindowsInformationProtection) GetDataRecoveryCertificate()(WindowsInfor
         return m.dataRecoveryCertificate
     }
 }
-// GetEnforcementLevel gets the enforcementLevel property value. WIP enforcement level.See the Enum definition for supported values. Possible values are: noProtection, encryptAndAuditOnly, encryptAuditAndPrompt, encryptAuditAndBlock.
+// GetEnforcementLevel gets the enforcementLevel property value. Possible values for WIP Protection enforcement levels
 func (m *WindowsInformationProtection) GetEnforcementLevel()(*WindowsInformationProtectionEnforcementLevel) {
     if m == nil {
         return nil
@@ -826,7 +828,7 @@ func (m *WindowsInformationProtection) SetDataRecoveryCertificate(value WindowsI
         m.dataRecoveryCertificate = value
     }
 }
-// SetEnforcementLevel sets the enforcementLevel property value. WIP enforcement level.See the Enum definition for supported values. Possible values are: noProtection, encryptAndAuditOnly, encryptAuditAndPrompt, encryptAuditAndBlock.
+// SetEnforcementLevel sets the enforcementLevel property value. Possible values for WIP Protection enforcement levels
 func (m *WindowsInformationProtection) SetEnforcementLevel(value *WindowsInformationProtectionEnforcementLevel)() {
     if m != nil {
         m.enforcementLevel = value

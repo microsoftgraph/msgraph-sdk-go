@@ -9,7 +9,7 @@ type SharedPCConfiguration struct {
     DeviceConfiguration
     // Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.
     accountManagerPolicy SharedPCAccountManagerPolicyable
-    // Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
+    // Type of accounts that are allowed to share the PC.
     allowedAccounts *SharedPCAllowedAccountType
     // Specifies whether local storage is allowed on a shared PC.
     allowLocalStorage *bool
@@ -51,7 +51,7 @@ func (m *SharedPCConfiguration) GetAccountManagerPolicy()(SharedPCAccountManager
         return m.accountManagerPolicy
     }
 }
-// GetAllowedAccounts gets the allowedAccounts property value. Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
+// GetAllowedAccounts gets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
 func (m *SharedPCConfiguration) GetAllowedAccounts()(*SharedPCAllowedAccountType) {
     if m == nil {
         return nil
@@ -351,7 +351,7 @@ func (m *SharedPCConfiguration) SetAccountManagerPolicy(value SharedPCAccountMan
         m.accountManagerPolicy = value
     }
 }
-// SetAllowedAccounts sets the allowedAccounts property value. Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
+// SetAllowedAccounts sets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
 func (m *SharedPCConfiguration) SetAllowedAccounts(value *SharedPCAllowedAccountType)() {
     if m != nil {
         m.allowedAccounts = value

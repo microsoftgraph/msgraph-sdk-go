@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Place provides operations to manage the collection of place entities.
+// Place 
 type Place struct {
     Entity
     // The street address of the place.
@@ -16,11 +16,13 @@ type Place struct {
     // The phone number of the place.
     phone *string
 }
-// NewPlace instantiates a new place and sets the default values.
+// NewPlace instantiates a new Place and sets the default values.
 func NewPlace()(*Place) {
     m := &Place{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.place";
+    m.SetType(&typeValue);
     return m
 }
 // CreatePlaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

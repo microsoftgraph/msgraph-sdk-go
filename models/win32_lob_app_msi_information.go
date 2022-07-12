@@ -8,7 +8,7 @@ import (
 type Win32LobAppMsiInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The MSI package type. Possible values are: perMachine, perUser, dualPurpose.
+    // Indicates the package type of an MSI Win32LobApp.
     packageType *Win32LobAppMsiPackageType
     // The MSI product code.
     productCode *string
@@ -117,7 +117,7 @@ func (m *Win32LobAppMsiInformation) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetPackageType gets the packageType property value. The MSI package type. Possible values are: perMachine, perUser, dualPurpose.
+// GetPackageType gets the packageType property value. Indicates the package type of an MSI Win32LobApp.
 func (m *Win32LobAppMsiInformation) GetPackageType()(*Win32LobAppMsiPackageType) {
     if m == nil {
         return nil
@@ -232,7 +232,7 @@ func (m *Win32LobAppMsiInformation) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetPackageType sets the packageType property value. The MSI package type. Possible values are: perMachine, perUser, dualPurpose.
+// SetPackageType sets the packageType property value. Indicates the package type of an MSI Win32LobApp.
 func (m *Win32LobAppMsiInformation) SetPackageType(value *Win32LobAppMsiPackageType)() {
     if m != nil {
         m.packageType = value

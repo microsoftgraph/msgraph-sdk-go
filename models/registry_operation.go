@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the security singleton.
+// Provides operations to manage the admin singleton.
 type RegistryOperation int
 
 const (

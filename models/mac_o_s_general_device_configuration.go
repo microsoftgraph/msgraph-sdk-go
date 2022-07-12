@@ -7,7 +7,7 @@ import (
 // MacOSGeneralDeviceConfiguration 
 type MacOSGeneralDeviceConfiguration struct {
     DeviceConfiguration
-    // List that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+    // Possible values of the compliance app list.
     compliantAppListType *AppListType
     // List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
     compliantAppsList []AppListItemable
@@ -29,7 +29,7 @@ type MacOSGeneralDeviceConfiguration struct {
     passwordPreviousPasswordBlockCount *int32
     // Whether or not to require a password.
     passwordRequired *bool
-    // Type of password that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
 }
 // NewMacOSGeneralDeviceConfiguration instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
@@ -43,7 +43,7 @@ func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
 func CreateMacOSGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSGeneralDeviceConfiguration(), nil
 }
-// GetCompliantAppListType gets the compliantAppListType property value. List that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *MacOSGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
     if m == nil {
         return nil
@@ -264,7 +264,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Type of password that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -358,7 +358,7 @@ func (m *MacOSGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetCompliantAppListType sets the compliantAppListType property value. List that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// SetCompliantAppListType sets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *MacOSGeneralDeviceConfiguration) SetCompliantAppListType(value *AppListType)() {
     if m != nil {
         m.compliantAppListType = value
@@ -424,7 +424,7 @@ func (m *MacOSGeneralDeviceConfiguration) SetPasswordRequired(value *bool)() {
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Type of password that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value

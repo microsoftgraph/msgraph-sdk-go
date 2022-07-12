@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppConsentApprovalRoute provides operations to manage the identityGovernance singleton.
+// AppConsentApprovalRoute 
 type AppConsentApprovalRoute struct {
     Entity
     // A collection of userConsentRequest objects for a specific application.
     appConsentRequests []AppConsentRequestable
 }
-// NewAppConsentApprovalRoute instantiates a new appConsentApprovalRoute and sets the default values.
+// NewAppConsentApprovalRoute instantiates a new AppConsentApprovalRoute and sets the default values.
 func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
     m := &AppConsentApprovalRoute{
         Entity: *NewEntity(),

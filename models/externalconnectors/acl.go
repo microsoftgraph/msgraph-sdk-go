@@ -6,11 +6,11 @@ import (
 
 // Acl 
 type Acl struct {
-    // The access granted to the identity. Possible values are: grant, deny.
+    // The accessType property
     accessType *AccessType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests if the identitySource is azureActiveDirectory and just group if the identitySource is external.
+    // The type property
     type_escaped *AclType
     // The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
     value *string
@@ -26,7 +26,7 @@ func NewAcl()(*Acl) {
 func CreateAclFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAcl(), nil
 }
-// GetAccessType gets the accessType property value. The access granted to the identity. Possible values are: grant, deny.
+// GetAccessType gets the accessType property value. The accessType property
 func (m *Acl) GetAccessType()(*AccessType) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     }
     return res
 }
-// GetType gets the type property value. The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests if the identitySource is azureActiveDirectory and just group if the identitySource is external.
+// GetType gets the type property value. The type property
 func (m *Acl) GetType()(*AclType) {
     if m == nil {
         return nil
@@ -123,7 +123,7 @@ func (m *Acl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     }
     return nil
 }
-// SetAccessType sets the accessType property value. The access granted to the identity. Possible values are: grant, deny.
+// SetAccessType sets the accessType property value. The accessType property
 func (m *Acl) SetAccessType(value *AccessType)() {
     if m != nil {
         m.accessType = value
@@ -135,7 +135,7 @@ func (m *Acl) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests if the identitySource is azureActiveDirectory and just group if the identitySource is external.
+// SetType sets the type property value. The type property
 func (m *Acl) SetType(value *AclType)() {
     if m != nil {
         m.type_escaped = value

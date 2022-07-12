@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationDeviceStatus provides operations to manage the deviceManagement singleton.
+// DeviceConfigurationDeviceStatus provides operations to manage the admin singleton.
 type DeviceConfigurationDeviceStatus struct {
     Entity
     // The DateTime when device compliance grace period expires
@@ -16,7 +16,7 @@ type DeviceConfigurationDeviceStatus struct {
     deviceModel *string
     // Last modified date time of the policy report.
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The status property
     status *ComplianceStatus
     // The User Name that is being reported
     userName *string
@@ -141,7 +141,7 @@ func (m *DeviceConfigurationDeviceStatus) GetLastReportedDateTime()(*i336074805f
         return m.lastReportedDateTime
     }
 }
-// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetStatus gets the status property value. The status property
 func (m *DeviceConfigurationDeviceStatus) GetStatus()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *DeviceConfigurationDeviceStatus) SetLastReportedDateTime(value *i336074
         m.lastReportedDateTime = value
     }
 }
-// SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetStatus sets the status property value. The status property
 func (m *DeviceConfigurationDeviceStatus) SetStatus(value *ComplianceStatus)() {
     if m != nil {
         m.status = value

@@ -55,7 +55,7 @@ type MediaStream struct {
     postForwardErrorCorrectionPacketLossRate *float32
     // UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Indicates the direction of the media stream. Possible values are: callerToCallee, calleeToCaller.
+    // The streamDirection property
     streamDirection *MediaStreamDirection
     // Unique identifier for the stream.
     streamId *string
@@ -542,7 +542,7 @@ func (m *MediaStream) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.startDateTime
     }
 }
-// GetStreamDirection gets the streamDirection property value. Indicates the direction of the media stream. Possible values are: callerToCallee, calleeToCaller.
+// GetStreamDirection gets the streamDirection property value. The streamDirection property
 func (m *MediaStream) GetStreamDirection()(*MediaStreamDirection) {
     if m == nil {
         return nil
@@ -893,7 +893,7 @@ func (m *MediaStream) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         m.startDateTime = value
     }
 }
-// SetStreamDirection sets the streamDirection property value. Indicates the direction of the media stream. Possible values are: callerToCallee, calleeToCaller.
+// SetStreamDirection sets the streamDirection property value. The streamDirection property
 func (m *MediaStream) SetStreamDirection(value *MediaStreamDirection)() {
     if m != nil {
         m.streamDirection = value

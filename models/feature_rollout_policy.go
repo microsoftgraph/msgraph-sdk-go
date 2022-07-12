@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FeatureRolloutPolicy provides operations to manage the policyRoot singleton.
+// FeatureRolloutPolicy provides operations to manage the admin singleton.
 type FeatureRolloutPolicy struct {
     Entity
     // Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -13,7 +13,7 @@ type FeatureRolloutPolicy struct {
     description *string
     // The display name for this  feature rollout policy.
     displayName *string
-    // Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
+    // The feature property
     feature *StagedFeatureName
     // Indicates whether this feature rollout policy should be applied to the entire organization.
     isAppliedToOrganization *bool
@@ -55,7 +55,7 @@ func (m *FeatureRolloutPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetFeature gets the feature property value. Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
+// GetFeature gets the feature property value. The feature property
 func (m *FeatureRolloutPolicy) GetFeature()(*StagedFeatureName) {
     if m == nil {
         return nil
@@ -215,7 +215,7 @@ func (m *FeatureRolloutPolicy) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetFeature sets the feature property value. Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
+// SetFeature sets the feature property value. The feature property
 func (m *FeatureRolloutPolicy) SetFeature(value *StagedFeatureName)() {
     if m != nil {
         m.feature = value

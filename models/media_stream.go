@@ -8,11 +8,11 @@ import (
 type MediaStream struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.
+    // The direction property
     direction *MediaDirection
     // The media stream label.
     label *string
-    // The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
+    // The mediaType property
     mediaType *Modality
     // Indicates whether the media is muted by the server.
     serverMuted *bool
@@ -38,7 +38,7 @@ func (m *MediaStream) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDirection gets the direction property value. The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.
+// GetDirection gets the direction property value. The direction property
 func (m *MediaStream) GetDirection()(*MediaDirection) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *MediaStream) GetLabel()(*string) {
         return m.label
     }
 }
-// GetMediaType gets the mediaType property value. The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
+// GetMediaType gets the mediaType property value. The mediaType property
 func (m *MediaStream) GetMediaType()(*Modality) {
     if m == nil {
         return nil
@@ -181,7 +181,7 @@ func (m *MediaStream) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetDirection sets the direction property value. The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.
+// SetDirection sets the direction property value. The direction property
 func (m *MediaStream) SetDirection(value *MediaDirection)() {
     if m != nil {
         m.direction = value
@@ -193,7 +193,7 @@ func (m *MediaStream) SetLabel(value *string)() {
         m.label = value
     }
 }
-// SetMediaType sets the mediaType property value. The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
+// SetMediaType sets the mediaType property value. The mediaType property
 func (m *MediaStream) SetMediaType(value *Modality)() {
     if m != nil {
         m.mediaType = value

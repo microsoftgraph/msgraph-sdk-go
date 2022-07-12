@@ -9,7 +9,7 @@ type WindowsInformationProtectionAppLearningSummary struct {
     Entity
     // Application Name
     applicationName *string
-    // Application Type. Possible values are: universal, desktop.
+    // Possible types of Application
     applicationType *ApplicationType
     // Device Count
     deviceCount *int32
@@ -33,7 +33,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationName()(*s
         return m.applicationName
     }
 }
-// GetApplicationType gets the applicationType property value. Application Type. Possible values are: universal, desktop.
+// GetApplicationType gets the applicationType property value. Possible types of Application
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationType()(*ApplicationType) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationName(valu
         m.applicationName = value
     }
 }
-// SetApplicationType sets the applicationType property value. Application Type. Possible values are: universal, desktop.
+// SetApplicationType sets the applicationType property value. Possible types of Application
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationType(value *ApplicationType)() {
     if m != nil {
         m.applicationType = value

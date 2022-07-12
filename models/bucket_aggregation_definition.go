@@ -16,7 +16,7 @@ type BucketAggregationDefinition struct {
     prefixFilter *string
     // Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
     ranges []BucketAggregationRangeable
-    // The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
+    // The sortBy property
     sortBy *BucketAggregationSortProperty
 }
 // NewBucketAggregationDefinition instantiates a new bucketAggregationDefinition and sets the default values.
@@ -129,7 +129,7 @@ func (m *BucketAggregationDefinition) GetRanges()([]BucketAggregationRangeable) 
         return m.ranges
     }
 }
-// GetSortBy gets the sortBy property value. The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
+// GetSortBy gets the sortBy property value. The sortBy property
 func (m *BucketAggregationDefinition) GetSortBy()(*BucketAggregationSortProperty) {
     if m == nil {
         return nil
@@ -212,7 +212,7 @@ func (m *BucketAggregationDefinition) SetRanges(value []BucketAggregationRangeab
         m.ranges = value
     }
 }
-// SetSortBy sets the sortBy property value. The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
+// SetSortBy sets the sortBy property value. The sortBy property
 func (m *BucketAggregationDefinition) SetSortBy(value *BucketAggregationSortProperty)() {
     if m != nil {
         m.sortBy = value
