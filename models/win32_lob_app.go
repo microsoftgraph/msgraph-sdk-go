@@ -7,7 +7,7 @@ import (
 // Win32LobApp 
 type Win32LobApp struct {
     MobileLobApp
-    // The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+    // Contains properties for Windows architecture.
     applicableArchitectures *WindowsArchitecture
     // The command line to install this app
     installCommandLine *string
@@ -45,7 +45,7 @@ func NewWin32LobApp()(*Win32LobApp) {
 func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobApp(), nil
 }
-// GetApplicableArchitectures gets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *Win32LobApp) GetApplicableArchitectures()(*WindowsArchitecture) {
     if m == nil {
         return nil
@@ -387,7 +387,7 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetApplicableArchitectures sets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// SetApplicableArchitectures sets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *Win32LobApp) SetApplicableArchitectures(value *WindowsArchitecture)() {
     if m != nil {
         m.applicableArchitectures = value

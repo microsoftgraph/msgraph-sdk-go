@@ -11,9 +11,7 @@ type IdentityProviderable interface {
     GetClientId()(*string)
     GetClientSecret()(*string)
     GetName()(*string)
-    GetType()(*string)
     SetClientId(value *string)()
     SetClientSecret(value *string)()
     SetName(value *string)()
-    SetType(value *string)()
 }

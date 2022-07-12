@@ -20,7 +20,7 @@ type DeviceComplianceSettingState struct {
     setting *string
     // The Setting Name that is being reported
     settingName *string
-    // The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The state property
     state *ComplianceStatus
     // The User email address that is being reported
     userEmail *string
@@ -205,7 +205,7 @@ func (m *DeviceComplianceSettingState) GetSettingName()(*string) {
         return m.settingName
     }
 }
-// GetState gets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetState gets the state property value. The state property
 func (m *DeviceComplianceSettingState) GetState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -356,7 +356,7 @@ func (m *DeviceComplianceSettingState) SetSettingName(value *string)() {
         m.settingName = value
     }
 }
-// SetState sets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetState sets the state property value. The state property
 func (m *DeviceComplianceSettingState) SetState(value *ComplianceStatus)() {
     if m != nil {
         m.state = value

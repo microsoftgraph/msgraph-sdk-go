@@ -11,7 +11,7 @@ type ServiceHealth struct {
     issues []ServiceHealthIssueable
     // The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
     service *string
-    // Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+    // The status property
     status *ServiceHealthStatus
 }
 // NewServiceHealth instantiates a new serviceHealth and sets the default values.
@@ -80,7 +80,7 @@ func (m *ServiceHealth) GetService()(*string) {
         return m.service
     }
 }
-// GetStatus gets the status property value. Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+// GetStatus gets the status property value. The status property
 func (m *ServiceHealth) GetStatus()(*ServiceHealthStatus) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *ServiceHealth) SetService(value *string)() {
         m.service = value
     }
 }
-// SetStatus sets the status property value. Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+// SetStatus sets the status property value. The status property
 func (m *ServiceHealth) SetStatus(value *ServiceHealthStatus)() {
     if m != nil {
         m.status = value

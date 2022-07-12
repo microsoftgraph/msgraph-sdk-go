@@ -24,6 +24,8 @@ func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {
     m := &ServiceAnnouncementBase{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.serviceAnnouncementBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateServiceAnnouncementBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

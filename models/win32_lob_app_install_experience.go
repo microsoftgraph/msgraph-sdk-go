@@ -8,9 +8,9 @@ import (
 type Win32LobAppInstallExperience struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Device restart behavior. Possible values are: basedOnReturnCode, allow, suppress, force.
+    // Indicates the type of restart action.
     deviceRestartBehavior *Win32LobAppRestartBehavior
-    // Indicates the type of execution context the app runs in. Possible values are: system, user.
+    // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
 }
 // NewWin32LobAppInstallExperience instantiates a new win32LobAppInstallExperience and sets the default values.
@@ -32,7 +32,7 @@ func (m *Win32LobAppInstallExperience) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetDeviceRestartBehavior gets the deviceRestartBehavior property value. Device restart behavior. Possible values are: basedOnReturnCode, allow, suppress, force.
+// GetDeviceRestartBehavior gets the deviceRestartBehavior property value. Indicates the type of restart action.
 func (m *Win32LobAppInstallExperience) GetDeviceRestartBehavior()(*Win32LobAppRestartBehavior) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in. Possible values are: system, user.
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *Win32LobAppInstallExperience) GetRunAsAccount()(*RunAsAccountType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *Win32LobAppInstallExperience) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetDeviceRestartBehavior sets the deviceRestartBehavior property value. Device restart behavior. Possible values are: basedOnReturnCode, allow, suppress, force.
+// SetDeviceRestartBehavior sets the deviceRestartBehavior property value. Indicates the type of restart action.
 func (m *Win32LobAppInstallExperience) SetDeviceRestartBehavior(value *Win32LobAppRestartBehavior)() {
     if m != nil {
         m.deviceRestartBehavior = value
     }
 }
-// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in. Possible values are: system, user.
+// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *Win32LobAppInstallExperience) SetRunAsAccount(value *RunAsAccountType)() {
     if m != nil {
         m.runAsAccount = value

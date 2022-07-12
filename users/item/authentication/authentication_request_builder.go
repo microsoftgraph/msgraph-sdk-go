@@ -7,10 +7,14 @@ import (
     i17beca6845c8590a7993cf25977350ea5aff5795257953969bade065fb0a8c8e "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/fido2methods"
     i36d51fdd7beea498cf790dc7e6370ee500c1ae341f5d8a4c36d081226f91ee96 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/methods"
     i3d41e7ad8d690559b414262fba543314187fe0d02cf0420f778314c36a9270af "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods"
+    i50a4dcc03253ad4d1a2378ba69f2c88826d5fdd0f9425f4e28c70575cac71416 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/operations"
     i96e8d458309e5631e00b3cbc4d031fbc1d45f1137d2f6149c3e103603bd3dcf2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods"
+    ibf3d8b3b514222b0d1e0f731908a1dec434e70451a9c69a400c95a8636070ad7 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/passwordmethods"
     if1ee18a3da4e8e27c6078dd6a39fae3b6b567ea5f3ebfaab6b86da5d3c9a22b3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/temporaryaccesspassmethods"
     i33902446e72a35eb92a8d90a86021f50ebf6a7badd666e5dd29d39829615e81f "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item"
+    i35d593a027a6734cd04363b64e4ec23b3994926e2a5637f26d36b76f7d3c43a3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/passwordmethods/item"
     i4f5c6f02fac27458fe06277174a65fe094c80b096c7dceec66f3bc6ab61be13b "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/fido2methods/item"
+    i84363a3b3ece14c5cf90a56909346b46410bd8cea98a319ba3b31fdc29a3fad5 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/operations/item"
     i9204deeb9308a81051ecfbd988907f606e6330dbfc4b953a713d2803d2d5735a "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item"
     ia6b9ba2f6ac4b661e1925c06219918528114879cf86ac1234330ab29aa5c8f58 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/methods/item"
     iaafaaf5d5b20e6d3863c502a3d1a4bb1a58d82360807d327e71876b1c02f0d7e "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/temporaryaccesspassmethods/item"
@@ -211,6 +215,36 @@ func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethodsById(id stri
         urlTplParams["microsoftAuthenticatorAuthenticationMethod%2Did"] = id
     }
     return i33902446e72a35eb92a8d90a86021f50ebf6a7badd666e5dd29d39829615e81f.NewMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Operations the operations property
+func (m *AuthenticationRequestBuilder) Operations()(*i50a4dcc03253ad4d1a2378ba69f2c88826d5fdd0f9425f4e28c70575cac71416.OperationsRequestBuilder) {
+    return i50a4dcc03253ad4d1a2378ba69f2c88826d5fdd0f9425f4e28c70575cac71416.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.operations.item collection
+func (m *AuthenticationRequestBuilder) OperationsById(id string)(*i84363a3b3ece14c5cf90a56909346b46410bd8cea98a319ba3b31fdc29a3fad5.LongRunningOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["longRunningOperation%2Did"] = id
+    }
+    return i84363a3b3ece14c5cf90a56909346b46410bd8cea98a319ba3b31fdc29a3fad5.NewLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// PasswordMethods the passwordMethods property
+func (m *AuthenticationRequestBuilder) PasswordMethods()(*ibf3d8b3b514222b0d1e0f731908a1dec434e70451a9c69a400c95a8636070ad7.PasswordMethodsRequestBuilder) {
+    return ibf3d8b3b514222b0d1e0f731908a1dec434e70451a9c69a400c95a8636070ad7.NewPasswordMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// PasswordMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.passwordMethods.item collection
+func (m *AuthenticationRequestBuilder) PasswordMethodsById(id string)(*i35d593a027a6734cd04363b64e4ec23b3994926e2a5637f26d36b76f7d3c43a3.PasswordAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["passwordAuthenticationMethod%2Did"] = id
+    }
+    return i35d593a027a6734cd04363b64e4ec23b3994926e2a5637f26d36b76f7d3c43a3.NewPasswordAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property authentication in users
 func (m *AuthenticationRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Authenticationable)(error) {

@@ -8,11 +8,11 @@ import (
 // WindowsUpdateForBusinessConfiguration 
 type WindowsUpdateForBusinessConfiguration struct {
     DeviceConfiguration
-    // Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.
+    // Possible values for automatic update mode.
     automaticUpdateMode *AutomaticUpdateMode
-    // Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly, windowsInsiderBuildFast, windowsInsiderBuildSlow, windowsInsiderBuildRelease.
+    // Which branch devices will receive their updates from
     businessReadyUpdatesOnly *WindowsUpdateType
-    // Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+    // Delivery optimization mode for peer distribution
     deliveryOptimizationMode *WindowsDeliveryOptimizationMode
     // Exclude Windows update Drivers
     driversExcluded *bool
@@ -26,7 +26,7 @@ type WindowsUpdateForBusinessConfiguration struct {
     installationSchedule WindowsUpdateInstallScheduleTypeable
     // Allow Microsoft Update Service
     microsoftUpdateServiceAllowed *bool
-    // The pre-release features. Possible values are: userDefined, settingsOnly, settingsAndExperimentations, notAllowed.
+    // Possible values for pre-release features.
     prereleaseFeatures *PrereleaseFeatures
     // Defer Quality Updates by these many days
     qualityUpdatesDeferralPeriodInDays *int32
@@ -46,7 +46,7 @@ func NewWindowsUpdateForBusinessConfiguration()(*WindowsUpdateForBusinessConfigu
 func CreateWindowsUpdateForBusinessConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUpdateForBusinessConfiguration(), nil
 }
-// GetAutomaticUpdateMode gets the automaticUpdateMode property value. Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.
+// GetAutomaticUpdateMode gets the automaticUpdateMode property value. Possible values for automatic update mode.
 func (m *WindowsUpdateForBusinessConfiguration) GetAutomaticUpdateMode()(*AutomaticUpdateMode) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetAutomaticUpdateMode()(*Automa
         return m.automaticUpdateMode
     }
 }
-// GetBusinessReadyUpdatesOnly gets the businessReadyUpdatesOnly property value. Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly, windowsInsiderBuildFast, windowsInsiderBuildSlow, windowsInsiderBuildRelease.
+// GetBusinessReadyUpdatesOnly gets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
 func (m *WindowsUpdateForBusinessConfiguration) GetBusinessReadyUpdatesOnly()(*WindowsUpdateType) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetBusinessReadyUpdatesOnly()(*W
         return m.businessReadyUpdatesOnly
     }
 }
-// GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+// GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsUpdateForBusinessConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
     if m == nil {
         return nil
@@ -253,7 +253,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetMicrosoftUpdateServiceAllowed
         return m.microsoftUpdateServiceAllowed
     }
 }
-// GetPrereleaseFeatures gets the prereleaseFeatures property value. The pre-release features. Possible values are: userDefined, settingsOnly, settingsAndExperimentations, notAllowed.
+// GetPrereleaseFeatures gets the prereleaseFeatures property value. Possible values for pre-release features.
 func (m *WindowsUpdateForBusinessConfiguration) GetPrereleaseFeatures()(*PrereleaseFeatures) {
     if m == nil {
         return nil
@@ -375,19 +375,19 @@ func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetAutomaticUpdateMode sets the automaticUpdateMode property value. Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.
+// SetAutomaticUpdateMode sets the automaticUpdateMode property value. Possible values for automatic update mode.
 func (m *WindowsUpdateForBusinessConfiguration) SetAutomaticUpdateMode(value *AutomaticUpdateMode)() {
     if m != nil {
         m.automaticUpdateMode = value
     }
 }
-// SetBusinessReadyUpdatesOnly sets the businessReadyUpdatesOnly property value. Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly, windowsInsiderBuildFast, windowsInsiderBuildSlow, windowsInsiderBuildRelease.
+// SetBusinessReadyUpdatesOnly sets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
 func (m *WindowsUpdateForBusinessConfiguration) SetBusinessReadyUpdatesOnly(value *WindowsUpdateType)() {
     if m != nil {
         m.businessReadyUpdatesOnly = value
     }
 }
-// SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+// SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsUpdateForBusinessConfiguration) SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)() {
     if m != nil {
         m.deliveryOptimizationMode = value
@@ -429,7 +429,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetMicrosoftUpdateServiceAllowed
         m.microsoftUpdateServiceAllowed = value
     }
 }
-// SetPrereleaseFeatures sets the prereleaseFeatures property value. The pre-release features. Possible values are: userDefined, settingsOnly, settingsAndExperimentations, notAllowed.
+// SetPrereleaseFeatures sets the prereleaseFeatures property value. Possible values for pre-release features.
 func (m *WindowsUpdateForBusinessConfiguration) SetPrereleaseFeatures(value *PrereleaseFeatures)() {
     if m != nil {
         m.prereleaseFeatures = value

@@ -7,7 +7,7 @@ import (
 // ManagedApp 
 type ManagedApp struct {
     MobileApp
-    // The Application's availability. Possible values are: global, lineOfBusiness.
+    // A managed (MAM) application's availability.
     appAvailability *ManagedAppAvailability
     // The Application's version.
     version *string
@@ -17,6 +17,8 @@ func NewManagedApp()(*ManagedApp) {
     m := &ManagedApp{
         MobileApp: *NewMobileApp(),
     }
+    typeValue := "#microsoft.graph.managedApp";
+    m.SetType(&typeValue);
     return m
 }
 // CreateManagedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +48,7 @@ func CreateManagedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     }
     return NewManagedApp(), nil
 }
-// GetAppAvailability gets the appAvailability property value. The Application's availability. Possible values are: global, lineOfBusiness.
+// GetAppAvailability gets the appAvailability property value. A managed (MAM) application's availability.
 func (m *ManagedApp) GetAppAvailability()(*ManagedAppAvailability) {
     if m == nil {
         return nil
@@ -108,7 +110,7 @@ func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetAppAvailability sets the appAvailability property value. The Application's availability. Possible values are: global, lineOfBusiness.
+// SetAppAvailability sets the appAvailability property value. A managed (MAM) application's availability.
 func (m *ManagedApp) SetAppAvailability(value *ManagedAppAvailability)() {
     if m != nil {
         m.appAvailability = value

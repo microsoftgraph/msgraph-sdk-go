@@ -19,6 +19,7 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     ic72674a7b815c6dfc1c4fcd42f7ca9ca5d4b8ea0c1a65ea7317905471fa20a0f "github.com/microsoftgraph/msgraph-sdk-go/policies/adminconsentrequestpolicy"
     iebb445e03b5a1725abc955bb63d1192b435aa40b5fee4976b801435c3fc9ec06 "github.com/microsoftgraph/msgraph-sdk-go/policies/tokenlifetimepolicies"
+    ifc08343a031e849b74e359a9f87e4aa9d0ae860bdb89c5f9131d85756a69debb "github.com/microsoftgraph/msgraph-sdk-go/policies/crosstenantaccesspolicy"
     i15708f9856db4407ccc78f2397a412ca44ce57d9fbe9dd3e17f7bf4747b8cf71 "github.com/microsoftgraph/msgraph-sdk-go/policies/rolemanagementpolicies/item"
     i569717b3ca8408936df0d0a4e253024a8a7b041522350cb7c8977c2c62a9b9d6 "github.com/microsoftgraph/msgraph-sdk-go/policies/tokenlifetimepolicies/item"
     i75b801e9d4a8913922e67e9e75dd091c9280212e449c4d8e76d13ab572b48c86 "github.com/microsoftgraph/msgraph-sdk-go/policies/activitybasedtimeoutpolicies/item"
@@ -179,6 +180,10 @@ func (m *PoliciesRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// CrossTenantAccessPolicy the crossTenantAccessPolicy property
+func (m *PoliciesRequestBuilder) CrossTenantAccessPolicy()(*ifc08343a031e849b74e359a9f87e4aa9d0ae860bdb89c5f9131d85756a69debb.CrossTenantAccessPolicyRequestBuilder) {
+    return ifc08343a031e849b74e359a9f87e4aa9d0ae860bdb89c5f9131d85756a69debb.NewCrossTenantAccessPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FeatureRolloutPolicies the featureRolloutPolicies property
 func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*i598aadab7f9532dcd78b5237b03ae7e6ac9390b26cc04cb85038bcb797fcb4e3.FeatureRolloutPoliciesRequestBuilder) {

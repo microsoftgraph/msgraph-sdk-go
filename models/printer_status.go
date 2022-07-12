@@ -12,7 +12,7 @@ type PrinterStatus struct {
     description *string
     // The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
     details []string
-    // The current processing state. Valid values are described in the following table. Read-only.
+    // The state property
     state *PrinterProcessingState
 }
 // NewPrinterStatus instantiates a new printerStatus and sets the default values.
@@ -89,7 +89,7 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetState gets the state property value. The current processing state. Valid values are described in the following table. Read-only.
+// GetState gets the state property value. The state property
 func (m *PrinterStatus) GetState()(*PrinterProcessingState) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *PrinterStatus) SetDetails(value []string)() {
         m.details = value
     }
 }
-// SetState sets the state property value. The current processing state. Valid values are described in the following table. Read-only.
+// SetState sets the state property value. The state property
 func (m *PrinterStatus) SetState(value *PrinterProcessingState)() {
     if m != nil {
         m.state = value

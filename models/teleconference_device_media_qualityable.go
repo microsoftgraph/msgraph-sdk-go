@@ -29,6 +29,7 @@ type TeleconferenceDeviceMediaQualityable interface {
     GetOutboundPackets()(*int64)
     GetRemoteIPAddress()(*string)
     GetRemotePort()(*int32)
+    GetType()(*string)
     SetAverageInboundJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetAverageInboundPacketLossRateInPercentage(value *float64)()
     SetAverageInboundRoundTripDelay(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
@@ -50,4 +51,5 @@ type TeleconferenceDeviceMediaQualityable interface {
     SetOutboundPackets(value *int64)()
     SetRemoteIPAddress(value *string)()
     SetRemotePort(value *int32)()
+    SetType(value *string)()
 }

@@ -12,7 +12,7 @@ type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
     id *string
     // The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
     targetedAuthenticationMethod *string
-    // The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+    // The targetType property
     targetType *AuthenticationMethodTargetType
 }
 // NewAuthenticationMethodsRegistrationCampaignIncludeTarget instantiates a new authenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
@@ -85,7 +85,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetedAuth
         return m.targetedAuthenticationMethod
     }
 }
-// GetTargetType gets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+// GetTargetType gets the targetType property value. The targetType property
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetType()(*AuthenticationMethodTargetType) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetedAuth
         m.targetedAuthenticationMethod = value
     }
 }
-// SetTargetType sets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+// SetTargetType sets the targetType property value. The targetType property
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
     if m != nil {
         m.targetType = value

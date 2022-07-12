@@ -19,7 +19,7 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
     passwordMinutesOfInactivityBeforeScreenTimeout *int32
     // Number of previous passwords to block. Valid values 0 to 24
     passwordPreviousPasswordBlockCount *int32
-    // Type of password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
+    // Android Work Profile required password type.
     passwordRequiredType *AndroidWorkProfileRequiredPasswordType
     // Number of sign in failures allowed before factory reset. Valid values 1 to 16
     passwordSignInFailureCountBeforeFactoryReset *int32
@@ -41,9 +41,9 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
     workProfileBlockScreenCapture *bool
     // Allow bluetooth devices to access enterprise contacts.
     workProfileBluetoothEnableContactSharing *bool
-    // Type of data sharing that is allowed. Possible values are: deviceDefault, preventAny, allowPersonalToWork, noRestrictions.
+    // Android Work Profile cross profile data sharing type.
     workProfileDataSharingType *AndroidWorkProfileCrossProfileDataSharingType
-    // Type of password that is required. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
+    // Android Work Profile default app permission policy type.
     workProfileDefaultAppPermissionPolicy *AndroidWorkProfileDefaultAppPermissionPolicyType
     // Indicates whether or not to block fingerprint unlock for work profile.
     workProfilePasswordBlockFingerprintUnlock *bool
@@ -69,7 +69,7 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
     workProfilePasswordMinutesOfInactivityBeforeScreenTimeout *int32
     // Number of previous work profile passwords to block. Valid values 0 to 24
     workProfilePasswordPreviousPasswordBlockCount *int32
-    // Type of work profile password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
+    // Android Work Profile required password type.
     workProfilePasswordRequiredType *AndroidWorkProfileRequiredPasswordType
     // Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
     workProfilePasswordSignInFailureCountBeforeFactoryReset *int32
@@ -480,7 +480,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetPasswordPreviousPasswo
         return m.passwordPreviousPasswordBlockCount
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Type of password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Android Work Profile required password type.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidWorkProfileRequiredPasswordType) {
     if m == nil {
         return nil
@@ -568,7 +568,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfileBluetoothEn
         return m.workProfileBluetoothEnableContactSharing
     }
 }
-// GetWorkProfileDataSharingType gets the workProfileDataSharingType property value. Type of data sharing that is allowed. Possible values are: deviceDefault, preventAny, allowPersonalToWork, noRestrictions.
+// GetWorkProfileDataSharingType gets the workProfileDataSharingType property value. Android Work Profile cross profile data sharing type.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfileDataSharingType()(*AndroidWorkProfileCrossProfileDataSharingType) {
     if m == nil {
         return nil
@@ -576,7 +576,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfileDataSharing
         return m.workProfileDataSharingType
     }
 }
-// GetWorkProfileDefaultAppPermissionPolicy gets the workProfileDefaultAppPermissionPolicy property value. Type of password that is required. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
+// GetWorkProfileDefaultAppPermissionPolicy gets the workProfileDefaultAppPermissionPolicy property value. Android Work Profile default app permission policy type.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfileDefaultAppPermissionPolicy()(*AndroidWorkProfileDefaultAppPermissionPolicyType) {
     if m == nil {
         return nil
@@ -680,7 +680,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfilePasswordPre
         return m.workProfilePasswordPreviousPasswordBlockCount
     }
 }
-// GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Type of work profile password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
+// GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Android Work Profile required password type.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidWorkProfileRequiredPasswordType) {
     if m == nil {
         return nil
@@ -956,7 +956,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetPasswordPreviousPasswo
         m.passwordPreviousPasswordBlockCount = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Type of password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Android Work Profile required password type.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidWorkProfileRequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value
@@ -1022,13 +1022,13 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfileBluetoothEn
         m.workProfileBluetoothEnableContactSharing = value
     }
 }
-// SetWorkProfileDataSharingType sets the workProfileDataSharingType property value. Type of data sharing that is allowed. Possible values are: deviceDefault, preventAny, allowPersonalToWork, noRestrictions.
+// SetWorkProfileDataSharingType sets the workProfileDataSharingType property value. Android Work Profile cross profile data sharing type.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfileDataSharingType(value *AndroidWorkProfileCrossProfileDataSharingType)() {
     if m != nil {
         m.workProfileDataSharingType = value
     }
 }
-// SetWorkProfileDefaultAppPermissionPolicy sets the workProfileDefaultAppPermissionPolicy property value. Type of password that is required. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
+// SetWorkProfileDefaultAppPermissionPolicy sets the workProfileDefaultAppPermissionPolicy property value. Android Work Profile default app permission policy type.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfileDefaultAppPermissionPolicy(value *AndroidWorkProfileDefaultAppPermissionPolicyType)() {
     if m != nil {
         m.workProfileDefaultAppPermissionPolicy = value
@@ -1106,7 +1106,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfilePasswordPre
         m.workProfilePasswordPreviousPasswordBlockCount = value
     }
 }
-// SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Type of work profile password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
+// SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Android Work Profile required password type.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfilePasswordRequiredType(value *AndroidWorkProfileRequiredPasswordType)() {
     if m != nil {
         m.workProfilePasswordRequiredType = value

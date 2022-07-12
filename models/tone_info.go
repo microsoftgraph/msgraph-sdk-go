@@ -10,7 +10,7 @@ type ToneInfo struct {
     additionalData map[string]interface{}
     // An incremental identifier used for ordering DTMF events.
     sequenceId *int64
-    // Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
+    // The tone property
     tone *Tone
 }
 // NewToneInfo instantiates a new toneInfo and sets the default values.
@@ -65,7 +65,7 @@ func (m *ToneInfo) GetSequenceId()(*int64) {
         return m.sequenceId
     }
 }
-// GetTone gets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
+// GetTone gets the tone property value. The tone property
 func (m *ToneInfo) GetTone()(*Tone) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *ToneInfo) SetSequenceId(value *int64)() {
         m.sequenceId = value
     }
 }
-// SetTone sets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
+// SetTone sets the tone property value. The tone property
 func (m *ToneInfo) SetTone(value *Tone)() {
     if m != nil {
         m.tone = value

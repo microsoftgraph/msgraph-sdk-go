@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of application entities.
+// Provides operations to manage the collection of chat entities.
 type ChatMessagePolicyViolationVerdictDetailsTypes int
 
 const (

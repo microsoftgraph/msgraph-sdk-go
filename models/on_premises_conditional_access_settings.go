@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesConditionalAccessSettings singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
+// OnPremisesConditionalAccessSettings 
 type OnPremisesConditionalAccessSettings struct {
     Entity
     // Indicates if on premises conditional access is enabled for this organization
@@ -16,7 +16,7 @@ type OnPremisesConditionalAccessSettings struct {
     // Override the default access rule when allowing a device to ensure access is granted.
     overrideDefaultRule *bool
 }
-// NewOnPremisesConditionalAccessSettings instantiates a new onPremisesConditionalAccessSettings and sets the default values.
+// NewOnPremisesConditionalAccessSettings instantiates a new OnPremisesConditionalAccessSettings and sets the default values.
 func NewOnPremisesConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {
     m := &OnPremisesConditionalAccessSettings{
         Entity: *NewEntity(),

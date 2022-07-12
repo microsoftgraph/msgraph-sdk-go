@@ -19,6 +19,8 @@ func NewStsPolicy()(*StsPolicy) {
     m := &StsPolicy{
         PolicyBase: *NewPolicyBase(),
     }
+    typeValue := "#microsoft.graph.stsPolicy";
+    m.SetType(&typeValue);
     return m
 }
 // CreateStsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

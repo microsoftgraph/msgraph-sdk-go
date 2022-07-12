@@ -8,7 +8,7 @@ import (
 type ConditionalAccessFilter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Mode to use for the filter. Possible values are include or exclude.
+    // The mode property
     mode *FilterMode
     // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
     rule *string
@@ -57,7 +57,7 @@ func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetMode gets the mode property value. Mode to use for the filter. Possible values are include or exclude.
+// GetMode gets the mode property value. The mode property
 func (m *ConditionalAccessFilter) GetMode()(*FilterMode) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *ConditionalAccessFilter) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetMode sets the mode property value. Mode to use for the filter. Possible values are include or exclude.
+// SetMode sets the mode property value. The mode property
 func (m *ConditionalAccessFilter) SetMode(value *FilterMode)() {
     if m != nil {
         m.mode = value

@@ -7,7 +7,7 @@ import (
 // ManagedEBookAssignment contains properties used to assign a eBook to a group.
 type ManagedEBookAssignment struct {
     Entity
-    // The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+    // Possible values for the install intent chosen by the admin.
     installIntent *InstallIntent
     // The assignment target for eBook.
     target DeviceAndAppManagementAssignmentTargetable
@@ -17,6 +17,8 @@ func NewManagedEBookAssignment()(*ManagedEBookAssignment) {
     m := &ManagedEBookAssignment{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.managedEBookAssignment";
+    m.SetType(&typeValue);
     return m
 }
 // CreateManagedEBookAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,7 +69,7 @@ func (m *ManagedEBookAssignment) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetInstallIntent gets the installIntent property value. The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+// GetInstallIntent gets the installIntent property value. Possible values for the install intent chosen by the admin.
 func (m *ManagedEBookAssignment) GetInstallIntent()(*InstallIntent) {
     if m == nil {
         return nil
@@ -104,7 +106,7 @@ func (m *ManagedEBookAssignment) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetInstallIntent sets the installIntent property value. The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+// SetInstallIntent sets the installIntent property value. Possible values for the install intent chosen by the admin.
 func (m *ManagedEBookAssignment) SetInstallIntent(value *InstallIntent)() {
     if m != nil {
         m.installIntent = value

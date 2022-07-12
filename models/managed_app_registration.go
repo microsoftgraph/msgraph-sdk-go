@@ -44,6 +44,8 @@ func NewManagedAppRegistration()(*ManagedAppRegistration) {
     m := &ManagedAppRegistration{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.managedAppRegistration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateManagedAppRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

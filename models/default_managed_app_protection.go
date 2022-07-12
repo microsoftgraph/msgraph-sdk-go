@@ -7,7 +7,7 @@ import (
 // DefaultManagedAppProtection 
 type DefaultManagedAppProtection struct {
     ManagedAppProtection
-    // Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
+    // Represents the level to which app data is encrypted for managed apps
     appDataEncryptionType *ManagedAppDataEncryptionType
     // List of apps to which the policy is deployed.
     apps []ManagedMobileAppable
@@ -43,7 +43,7 @@ func NewDefaultManagedAppProtection()(*DefaultManagedAppProtection) {
 func CreateDefaultManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDefaultManagedAppProtection(), nil
 }
-// GetAppDataEncryptionType gets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
+// GetAppDataEncryptionType gets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *DefaultManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncryptionType) {
     if m == nil {
         return nil
@@ -361,7 +361,7 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAppDataEncryptionType sets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
+// SetAppDataEncryptionType sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *DefaultManagedAppProtection) SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)() {
     if m != nil {
         m.appDataEncryptionType = value

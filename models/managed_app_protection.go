@@ -9,11 +9,11 @@ type ManagedAppProtection struct {
     ManagedAppPolicy
     // Data storage locations where a user may store managed data.
     allowedDataStorageLocations []string
-    // Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
+    // Data can be transferred from/to these classes of apps
     allowedInboundDataTransferSources *ManagedAppDataTransferLevel
-    // The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
+    // Represents the level to which the device's clipboard may be shared between apps
     allowedOutboundClipboardSharingLevel *ManagedAppClipboardSharingLevel
-    // Destinations to which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
+    // Data can be transferred from/to these classes of apps
     allowedOutboundDataTransferDestinations *ManagedAppDataTransferLevel
     // Indicates whether contacts can be synced to the user's device.
     contactSyncBlocked *bool
@@ -25,7 +25,7 @@ type ManagedAppProtection struct {
     disableAppPinIfDevicePinIsSet *bool
     // Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
     fingerprintBlocked *bool
-    // Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
+    // Type of managed browser
     managedBrowser *ManagedBrowserType
     // Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
     managedBrowserToOpenLinksRequired *bool
@@ -51,7 +51,7 @@ type ManagedAppProtection struct {
     periodOfflineBeforeWipeIsEnforced *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The period after which access is checked when the device is connected to the internet.
     periodOnlineBeforeAccessCheck *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
+    // Character set which is to be used for a user's app PIN
     pinCharacterSet *ManagedAppPinCharacterSet
     // Indicates whether an app-level pin is required.
     pinRequired *bool
@@ -67,6 +67,8 @@ func NewManagedAppProtection()(*ManagedAppProtection) {
     m := &ManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
+    typeValue := "#microsoft.graph.managedAppProtection";
+    m.SetType(&typeValue);
     return m
 }
 // CreateManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -102,7 +104,7 @@ func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]string) {
         return m.allowedDataStorageLocations
     }
 }
-// GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
+// GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
 func (m *ManagedAppProtection) GetAllowedInboundDataTransferSources()(*ManagedAppDataTransferLevel) {
     if m == nil {
         return nil
@@ -110,7 +112,7 @@ func (m *ManagedAppProtection) GetAllowedInboundDataTransferSources()(*ManagedAp
         return m.allowedInboundDataTransferSources
     }
 }
-// GetAllowedOutboundClipboardSharingLevel gets the allowedOutboundClipboardSharingLevel property value. The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
+// GetAllowedOutboundClipboardSharingLevel gets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
 func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(*ManagedAppClipboardSharingLevel) {
     if m == nil {
         return nil
@@ -118,7 +120,7 @@ func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(*Manage
         return m.allowedOutboundClipboardSharingLevel
     }
 }
-// GetAllowedOutboundDataTransferDestinations gets the allowedOutboundDataTransferDestinations property value. Destinations to which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
+// GetAllowedOutboundDataTransferDestinations gets the allowedOutboundDataTransferDestinations property value. Data can be transferred from/to these classes of apps
 func (m *ManagedAppProtection) GetAllowedOutboundDataTransferDestinations()(*ManagedAppDataTransferLevel) {
     if m == nil {
         return nil
@@ -445,7 +447,7 @@ func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
         return m.fingerprintBlocked
     }
 }
-// GetManagedBrowser gets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
+// GetManagedBrowser gets the managedBrowser property value. Type of managed browser
 func (m *ManagedAppProtection) GetManagedBrowser()(*ManagedBrowserType) {
     if m == nil {
         return nil
@@ -549,7 +551,7 @@ func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*i878a80d2330e
         return m.periodOnlineBeforeAccessCheck
     }
 }
-// GetPinCharacterSet gets the pinCharacterSet property value. Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
+// GetPinCharacterSet gets the pinCharacterSet property value. Character set which is to be used for a user's app PIN
 func (m *ManagedAppProtection) GetPinCharacterSet()(*ManagedAppPinCharacterSet) {
     if m == nil {
         return nil
@@ -770,19 +772,19 @@ func (m *ManagedAppProtection) SetAllowedDataStorageLocations(value []string)() 
         m.allowedDataStorageLocations = value
     }
 }
-// SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
+// SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
 func (m *ManagedAppProtection) SetAllowedInboundDataTransferSources(value *ManagedAppDataTransferLevel)() {
     if m != nil {
         m.allowedInboundDataTransferSources = value
     }
 }
-// SetAllowedOutboundClipboardSharingLevel sets the allowedOutboundClipboardSharingLevel property value. The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
+// SetAllowedOutboundClipboardSharingLevel sets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
 func (m *ManagedAppProtection) SetAllowedOutboundClipboardSharingLevel(value *ManagedAppClipboardSharingLevel)() {
     if m != nil {
         m.allowedOutboundClipboardSharingLevel = value
     }
 }
-// SetAllowedOutboundDataTransferDestinations sets the allowedOutboundDataTransferDestinations property value. Destinations to which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
+// SetAllowedOutboundDataTransferDestinations sets the allowedOutboundDataTransferDestinations property value. Data can be transferred from/to these classes of apps
 func (m *ManagedAppProtection) SetAllowedOutboundDataTransferDestinations(value *ManagedAppDataTransferLevel)() {
     if m != nil {
         m.allowedOutboundDataTransferDestinations = value
@@ -818,7 +820,7 @@ func (m *ManagedAppProtection) SetFingerprintBlocked(value *bool)() {
         m.fingerprintBlocked = value
     }
 }
-// SetManagedBrowser sets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
+// SetManagedBrowser sets the managedBrowser property value. Type of managed browser
 func (m *ManagedAppProtection) SetManagedBrowser(value *ManagedBrowserType)() {
     if m != nil {
         m.managedBrowser = value
@@ -896,7 +898,7 @@ func (m *ManagedAppProtection) SetPeriodOnlineBeforeAccessCheck(value *i878a80d2
         m.periodOnlineBeforeAccessCheck = value
     }
 }
-// SetPinCharacterSet sets the pinCharacterSet property value. Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
+// SetPinCharacterSet sets the pinCharacterSet property value. Character set which is to be used for a user's app PIN
 func (m *ManagedAppProtection) SetPinCharacterSet(value *ManagedAppPinCharacterSet)() {
     if m != nil {
         m.pinCharacterSet = value

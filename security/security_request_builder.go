@@ -7,6 +7,7 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     ic55f4c3693b3458d37f169972d41697131ecfdb31a625c4fae6e024f02167222 "github.com/microsoftgraph/msgraph-sdk-go/security/alerts"
     ie4328a6e5437e25d06c50bee3076698796ad30481e9e114d704c631aad9b6f5b "github.com/microsoftgraph/msgraph-sdk-go/security/securescorecontrolprofiles"
+    ifd8140bc5c892f85e2edd387a9c4f1aa051c63a62f5cbae31abf9d061b8b7b59 "github.com/microsoftgraph/msgraph-sdk-go/security/cases"
     i341438a13fe09ad4284380c5f498c991d5debd415f26d3ad4445315402edc168 "github.com/microsoftgraph/msgraph-sdk-go/security/securescorecontrolprofiles/item"
     i935eca4ee55c30c68a1ba6558e201935fcaf58fd82c8f8076c82de8f806aac5b "github.com/microsoftgraph/msgraph-sdk-go/security/securescores/item"
     i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000 "github.com/microsoftgraph/msgraph-sdk-go/security/alerts/item"
@@ -58,6 +59,10 @@ func (m *SecurityRequestBuilder) AlertsById(id string)(*i9f4cc7fe9832e758c23f51e
         urlTplParams["alert%2Did"] = id
     }
     return i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000.NewAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Cases the cases property
+func (m *SecurityRequestBuilder) Cases()(*ifd8140bc5c892f85e2edd387a9c4f1aa051c63a62f5cbae31abf9d061b8b7b59.CasesRequestBuilder) {
+    return ifd8140bc5c892f85e2edd387a9c4f1aa051c63a62f5cbae31abf9d061b8b7b59.NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewSecurityRequestBuilderInternal instantiates a new SecurityRequestBuilder and sets the default values.
 func NewSecurityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityRequestBuilder) {

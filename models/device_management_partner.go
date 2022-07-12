@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementPartner entity which represents a connection to device management partner.
+// DeviceManagementPartner 
 type DeviceManagementPartner struct {
     Entity
     // Partner display name
@@ -14,9 +14,9 @@ type DeviceManagementPartner struct {
     isConfigured *bool
     // Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
     lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
+    // Partner App Type.
     partnerAppType *DeviceManagementPartnerAppType
-    // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+    // Partner state of this tenant.
     partnerState *DeviceManagementPartnerTenantState
     // Partner Single tenant App id
     singleTenantAppId *string
@@ -25,7 +25,7 @@ type DeviceManagementPartner struct {
     // DateTime in UTC when PartnerDevices will be removed
     whenPartnerDevicesWillBeRemovedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewDeviceManagementPartner instantiates a new deviceManagementPartner and sets the default values.
+// NewDeviceManagementPartner instantiates a new DeviceManagementPartner and sets the default values.
 func NewDeviceManagementPartner()(*DeviceManagementPartner) {
     m := &DeviceManagementPartner{
         Entity: *NewEntity(),
@@ -145,7 +145,7 @@ func (m *DeviceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987
         return m.lastHeartbeatDateTime
     }
 }
-// GetPartnerAppType gets the partnerAppType property value. Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
+// GetPartnerAppType gets the partnerAppType property value. Partner App Type.
 func (m *DeviceManagementPartner) GetPartnerAppType()(*DeviceManagementPartnerAppType) {
     if m == nil {
         return nil
@@ -153,7 +153,7 @@ func (m *DeviceManagementPartner) GetPartnerAppType()(*DeviceManagementPartnerAp
         return m.partnerAppType
     }
 }
-// GetPartnerState gets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *DeviceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
     if m == nil {
         return nil
@@ -261,13 +261,13 @@ func (m *DeviceManagementPartner) SetLastHeartbeatDateTime(value *i336074805fc85
         m.lastHeartbeatDateTime = value
     }
 }
-// SetPartnerAppType sets the partnerAppType property value. Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
+// SetPartnerAppType sets the partnerAppType property value. Partner App Type.
 func (m *DeviceManagementPartner) SetPartnerAppType(value *DeviceManagementPartnerAppType)() {
     if m != nil {
         m.partnerAppType = value
     }
 }
-// SetPartnerState sets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *DeviceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
     if m != nil {
         m.partnerState = value

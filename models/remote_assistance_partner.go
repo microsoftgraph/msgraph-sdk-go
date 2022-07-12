@@ -5,19 +5,19 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RemoteAssistancePartner remoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
+// RemoteAssistancePartner 
 type RemoteAssistancePartner struct {
     Entity
     // Display name of the partner.
     displayName *string
     // Timestamp of the last request sent to Intune by the TEM partner.
     lastConnectionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+    // The current TeamViewer connector status
     onboardingStatus *RemoteAssistanceOnboardingStatus
     // URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
     onboardingUrl *string
 }
-// NewRemoteAssistancePartner instantiates a new remoteAssistancePartner and sets the default values.
+// NewRemoteAssistancePartner instantiates a new RemoteAssistancePartner and sets the default values.
 func NewRemoteAssistancePartner()(*RemoteAssistancePartner) {
     m := &RemoteAssistancePartner{
         Entity: *NewEntity(),
@@ -89,7 +89,7 @@ func (m *RemoteAssistancePartner) GetLastConnectionDateTime()(*i336074805fc85398
         return m.lastConnectionDateTime
     }
 }
-// GetOnboardingStatus gets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+// GetOnboardingStatus gets the onboardingStatus property value. The current TeamViewer connector status
 func (m *RemoteAssistancePartner) GetOnboardingStatus()(*RemoteAssistanceOnboardingStatus) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *RemoteAssistancePartner) SetLastConnectionDateTime(value *i336074805fc8
         m.lastConnectionDateTime = value
     }
 }
-// SetOnboardingStatus sets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+// SetOnboardingStatus sets the onboardingStatus property value. The current TeamViewer connector status
 func (m *RemoteAssistancePartner) SetOnboardingStatus(value *RemoteAssistanceOnboardingStatus)() {
     if m != nil {
         m.onboardingStatus = value

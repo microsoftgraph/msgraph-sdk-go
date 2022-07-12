@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RbacApplication provides operations to manage the roleManagement singleton.
+// RbacApplication 
 type RbacApplication struct {
     Entity
     // Resource to grant access to users or groups.
@@ -24,7 +24,7 @@ type RbacApplication struct {
     // Schedules for role eligibility operations.
     roleEligibilitySchedules []UnifiedRoleEligibilityScheduleable
 }
-// NewRbacApplication instantiates a new rbacApplication and sets the default values.
+// NewRbacApplication instantiates a new RbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {
     m := &RbacApplication{
         Entity: *NewEntity(),

@@ -24,7 +24,7 @@ type MobileAppContentFile struct {
     size *int64
     // The size of the file after encryption.
     sizeEncrypted *int64
-    // The state of the current upload request. Possible values are: success, transientError, error, unknown, azureStorageUriRequestSuccess, azureStorageUriRequestPending, azureStorageUriRequestFailed, azureStorageUriRequestTimedOut, azureStorageUriRenewalSuccess, azureStorageUriRenewalPending, azureStorageUriRenewalFailed, azureStorageUriRenewalTimedOut, commitFileSuccess, commitFilePending, commitFileFailed, commitFileTimedOut.
+    // Contains properties for upload request states.
     uploadState *MobileAppContentFileUploadState
 }
 // NewMobileAppContentFile instantiates a new mobileAppContentFile and sets the default values.
@@ -197,7 +197,7 @@ func (m *MobileAppContentFile) GetSizeEncrypted()(*int64) {
         return m.sizeEncrypted
     }
 }
-// GetUploadState gets the uploadState property value. The state of the current upload request. Possible values are: success, transientError, error, unknown, azureStorageUriRequestSuccess, azureStorageUriRequestPending, azureStorageUriRequestFailed, azureStorageUriRequestTimedOut, azureStorageUriRenewalSuccess, azureStorageUriRenewalPending, azureStorageUriRenewalFailed, azureStorageUriRenewalTimedOut, commitFileSuccess, commitFilePending, commitFileFailed, commitFileTimedOut.
+// GetUploadState gets the uploadState property value. Contains properties for upload request states.
 func (m *MobileAppContentFile) GetUploadState()(*MobileAppContentFileUploadState) {
     if m == nil {
         return nil
@@ -316,7 +316,7 @@ func (m *MobileAppContentFile) SetSizeEncrypted(value *int64)() {
         m.sizeEncrypted = value
     }
 }
-// SetUploadState sets the uploadState property value. The state of the current upload request. Possible values are: success, transientError, error, unknown, azureStorageUriRequestSuccess, azureStorageUriRequestPending, azureStorageUriRequestFailed, azureStorageUriRequestTimedOut, azureStorageUriRenewalSuccess, azureStorageUriRenewalPending, azureStorageUriRenewalFailed, azureStorageUriRenewalTimedOut, commitFileSuccess, commitFilePending, commitFileFailed, commitFileTimedOut.
+// SetUploadState sets the uploadState property value. Contains properties for upload request states.
 func (m *MobileAppContentFile) SetUploadState(value *MobileAppContentFileUploadState)() {
     if m != nil {
         m.uploadState = value

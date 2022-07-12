@@ -23,7 +23,7 @@ type Windows10TeamGeneralConfiguration struct {
     maintenanceWindowStartTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // Indicates whether or not to Block wireless projection.
     miracastBlocked *bool
-    // The channel. Possible values are: userDefined, one, two, three, four, five, six, seven, eight, nine, ten, eleven, thirtySix, forty, fortyFour, fortyEight, oneHundredFortyNine, oneHundredFiftyThree, oneHundredFiftySeven, oneHundredSixtyOne, oneHundredSixtyFive.
+    // Possible values for Miracast channel.
     miracastChannel *MiracastChannel
     // Indicates whether or not to require a pin for wireless projection.
     miracastRequirePin *bool
@@ -45,7 +45,7 @@ type Windows10TeamGeneralConfiguration struct {
     welcomeScreenBackgroundImageUrl *string
     // Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
     welcomeScreenBlockAutomaticWakeUp *bool
-    // The welcome screen meeting information shown. Possible values are: userDefined, showOrganizerAndTimeOnly, showOrganizerAndTimeAndSubject.
+    // Possible values for welcome screen meeting information.
     welcomeScreenMeetingInformation *WelcomeScreenMeetingInformation
 }
 // NewWindows10TeamGeneralConfiguration instantiates a new Windows10TeamGeneralConfiguration and sets the default values.
@@ -328,7 +328,7 @@ func (m *Windows10TeamGeneralConfiguration) GetMiracastBlocked()(*bool) {
         return m.miracastBlocked
     }
 }
-// GetMiracastChannel gets the miracastChannel property value. The channel. Possible values are: userDefined, one, two, three, four, five, six, seven, eight, nine, ten, eleven, thirtySix, forty, fortyFour, fortyEight, oneHundredFortyNine, oneHundredFiftyThree, oneHundredFiftySeven, oneHundredSixtyOne, oneHundredSixtyFive.
+// GetMiracastChannel gets the miracastChannel property value. Possible values for Miracast channel.
 func (m *Windows10TeamGeneralConfiguration) GetMiracastChannel()(*MiracastChannel) {
     if m == nil {
         return nil
@@ -416,7 +416,7 @@ func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenBlockAutomaticWakeUp
         return m.welcomeScreenBlockAutomaticWakeUp
     }
 }
-// GetWelcomeScreenMeetingInformation gets the welcomeScreenMeetingInformation property value. The welcome screen meeting information shown. Possible values are: userDefined, showOrganizerAndTimeOnly, showOrganizerAndTimeAndSubject.
+// GetWelcomeScreenMeetingInformation gets the welcomeScreenMeetingInformation property value. Possible values for welcome screen meeting information.
 func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenMeetingInformation()(*WelcomeScreenMeetingInformation) {
     if m == nil {
         return nil
@@ -602,7 +602,7 @@ func (m *Windows10TeamGeneralConfiguration) SetMiracastBlocked(value *bool)() {
         m.miracastBlocked = value
     }
 }
-// SetMiracastChannel sets the miracastChannel property value. The channel. Possible values are: userDefined, one, two, three, four, five, six, seven, eight, nine, ten, eleven, thirtySix, forty, fortyFour, fortyEight, oneHundredFortyNine, oneHundredFiftyThree, oneHundredFiftySeven, oneHundredSixtyOne, oneHundredSixtyFive.
+// SetMiracastChannel sets the miracastChannel property value. Possible values for Miracast channel.
 func (m *Windows10TeamGeneralConfiguration) SetMiracastChannel(value *MiracastChannel)() {
     if m != nil {
         m.miracastChannel = value
@@ -668,7 +668,7 @@ func (m *Windows10TeamGeneralConfiguration) SetWelcomeScreenBlockAutomaticWakeUp
         m.welcomeScreenBlockAutomaticWakeUp = value
     }
 }
-// SetWelcomeScreenMeetingInformation sets the welcomeScreenMeetingInformation property value. The welcome screen meeting information shown. Possible values are: userDefined, showOrganizerAndTimeOnly, showOrganizerAndTimeAndSubject.
+// SetWelcomeScreenMeetingInformation sets the welcomeScreenMeetingInformation property value. Possible values for welcome screen meeting information.
 func (m *Windows10TeamGeneralConfiguration) SetWelcomeScreenMeetingInformation(value *WelcomeScreenMeetingInformation)() {
     if m != nil {
         m.welcomeScreenMeetingInformation = value

@@ -11,7 +11,7 @@ type CallTranscriptionInfo struct {
     additionalData map[string]interface{}
     // The state modified time in UTC.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Possible values are: notStarted, active, inactive.
+    // The state property
     state *CallTranscriptionState
 }
 // NewCallTranscriptionInfo instantiates a new callTranscriptionInfo and sets the default values.
@@ -66,7 +66,7 @@ func (m *CallTranscriptionInfo) GetLastModifiedDateTime()(*i336074805fc853987abe
         return m.lastModifiedDateTime
     }
 }
-// GetState gets the state property value. Possible values are: notStarted, active, inactive.
+// GetState gets the state property value. The state property
 func (m *CallTranscriptionInfo) GetState()(*CallTranscriptionState) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *CallTranscriptionInfo) SetLastModifiedDateTime(value *i336074805fc85398
         m.lastModifiedDateTime = value
     }
 }
-// SetState sets the state property value. Possible values are: notStarted, active, inactive.
+// SetState sets the state property value. The state property
 func (m *CallTranscriptionInfo) SetState(value *CallTranscriptionState)() {
     if m != nil {
         m.state = value

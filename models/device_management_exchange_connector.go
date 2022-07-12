@@ -5,14 +5,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExchangeConnector entity which represents a connection to an Exchange environment.
+// DeviceManagementExchangeConnector 
 type DeviceManagementExchangeConnector struct {
     Entity
     // The name of the server hosting the Exchange Connector.
     connectorServerName *string
     // An alias assigned to the Exchange server
     exchangeAlias *string
-    // The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.
+    // The type of Exchange Connector.
     exchangeConnectorType *DeviceManagementExchangeConnectorType
     // Exchange Organization to the Exchange server
     exchangeOrganization *string
@@ -22,12 +22,12 @@ type DeviceManagementExchangeConnector struct {
     primarySmtpAddress *string
     // The name of the Exchange server.
     serverName *string
-    // Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
+    // The current status of the Exchange Connector.
     status *DeviceManagementExchangeConnectorStatus
     // The version of the ExchangeConnectorAgent
     version *string
 }
-// NewDeviceManagementExchangeConnector instantiates a new deviceManagementExchangeConnector and sets the default values.
+// NewDeviceManagementExchangeConnector instantiates a new DeviceManagementExchangeConnector and sets the default values.
 func NewDeviceManagementExchangeConnector()(*DeviceManagementExchangeConnector) {
     m := &DeviceManagementExchangeConnector{
         Entity: *NewEntity(),
@@ -54,7 +54,7 @@ func (m *DeviceManagementExchangeConnector) GetExchangeAlias()(*string) {
         return m.exchangeAlias
     }
 }
-// GetExchangeConnectorType gets the exchangeConnectorType property value. The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.
+// GetExchangeConnectorType gets the exchangeConnectorType property value. The type of Exchange Connector.
 func (m *DeviceManagementExchangeConnector) GetExchangeConnectorType()(*DeviceManagementExchangeConnectorType) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *DeviceManagementExchangeConnector) GetServerName()(*string) {
         return m.serverName
     }
 }
-// GetStatus gets the status property value. Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
+// GetStatus gets the status property value. The current status of the Exchange Connector.
 func (m *DeviceManagementExchangeConnector) GetStatus()(*DeviceManagementExchangeConnectorStatus) {
     if m == nil {
         return nil
@@ -281,7 +281,7 @@ func (m *DeviceManagementExchangeConnector) SetExchangeAlias(value *string)() {
         m.exchangeAlias = value
     }
 }
-// SetExchangeConnectorType sets the exchangeConnectorType property value. The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.
+// SetExchangeConnectorType sets the exchangeConnectorType property value. The type of Exchange Connector.
 func (m *DeviceManagementExchangeConnector) SetExchangeConnectorType(value *DeviceManagementExchangeConnectorType)() {
     if m != nil {
         m.exchangeConnectorType = value
@@ -311,7 +311,7 @@ func (m *DeviceManagementExchangeConnector) SetServerName(value *string)() {
         m.serverName = value
     }
 }
-// SetStatus sets the status property value. Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
+// SetStatus sets the status property value. The current status of the Exchange Connector.
 func (m *DeviceManagementExchangeConnector) SetStatus(value *DeviceManagementExchangeConnectorStatus)() {
     if m != nil {
         m.status = value

@@ -37,7 +37,7 @@ type IosGeneralDeviceConfiguration struct {
     appStoreRequirePassword *bool
     // List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.
     appsVisibilityList []AppListItemable
-    // Type of list that is in the AppsVisibilityList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+    // Possible values of the compliance app list.
     appsVisibilityListType *AppListType
     // Indicates whether or not to allow modification of Bluetooth settings when the device is in supervised mode (iOS 10.0 and later).
     bluetoothBlockModification *bool
@@ -59,7 +59,7 @@ type IosGeneralDeviceConfiguration struct {
     classroomAppBlockRemoteScreenObservation *bool
     // Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting when the device is in supervised mode.
     classroomAppForceUnpromptedScreenObservation *bool
-    // List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+    // Possible values of the compliance app list.
     compliantAppListType *AppListType
     // List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
     compliantAppsList []AppListItemable
@@ -181,7 +181,7 @@ type IosGeneralDeviceConfiguration struct {
     lockScreenBlockPassbook *bool
     // Indicates whether or not to block the user from using the Today View on the lock screen.
     lockScreenBlockTodayView *bool
-    // Media content rating settings for Apps. Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.
+    // Apps rating as in media content
     mediaContentRatingApps *RatingAppsType
     // Media content rating settings for Australia
     mediaContentRatingAustralia MediaContentRatingAustraliaable
@@ -229,7 +229,7 @@ type IosGeneralDeviceConfiguration struct {
     passcodePreviousPasscodeBlockCount *int32
     // Indicates whether or not to require a passcode.
     passcodeRequired *bool
-    // Type of passcode that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passcodeRequiredType *RequiredPasswordType
     // Number of sign in failures allowed before wiping the device. Valid values 2 to 11
     passcodeSignInFailureCountBeforeWipe *int32
@@ -243,7 +243,7 @@ type IosGeneralDeviceConfiguration struct {
     safariBlockJavaScript *bool
     // Indicates whether or not to block popups in Safari.
     safariBlockPopups *bool
-    // Cookie settings for Safari. Possible values are: browserDefault, blockAlways, allowCurrentWebSite, allowFromWebsitesVisited, allowAlways.
+    // Web Browser Cookie Settings.
     safariCookieSettings *WebBrowserCookieSettings
     // URLs matching the patterns listed here will be considered managed.
     safariManagedDomains []string
@@ -401,7 +401,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppsVisibilityList()([]AppListItemabl
         return m.appsVisibilityList
     }
 }
-// GetAppsVisibilityListType gets the appsVisibilityListType property value. Type of list that is in the AppsVisibilityList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// GetAppsVisibilityListType gets the appsVisibilityListType property value. Possible values of the compliance app list.
 func (m *IosGeneralDeviceConfiguration) GetAppsVisibilityListType()(*AppListType) {
     if m == nil {
         return nil
@@ -489,7 +489,7 @@ func (m *IosGeneralDeviceConfiguration) GetClassroomAppForceUnpromptedScreenObse
         return m.classroomAppForceUnpromptedScreenObservation
     }
 }
-// GetCompliantAppListType gets the compliantAppListType property value. List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *IosGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
     if m == nil {
         return nil
@@ -2320,7 +2320,7 @@ func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockTodayView()(*bool) {
         return m.lockScreenBlockTodayView
     }
 }
-// GetMediaContentRatingApps gets the mediaContentRatingApps property value. Media content rating settings for Apps. Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.
+// GetMediaContentRatingApps gets the mediaContentRatingApps property value. Apps rating as in media content
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingApps()(*RatingAppsType) {
     if m == nil {
         return nil
@@ -2512,7 +2512,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeRequired()(*bool) {
         return m.passcodeRequired
     }
 }
-// GetPasscodeRequiredType gets the passcodeRequiredType property value. Type of passcode that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasscodeRequiredType gets the passcodeRequiredType property value. Possible values of required passwords.
 func (m *IosGeneralDeviceConfiguration) GetPasscodeRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -2568,7 +2568,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariBlockPopups()(*bool) {
         return m.safariBlockPopups
     }
 }
-// GetSafariCookieSettings gets the safariCookieSettings property value. Cookie settings for Safari. Possible values are: browserDefault, blockAlways, allowCurrentWebSite, allowFromWebsitesVisited, allowAlways.
+// GetSafariCookieSettings gets the safariCookieSettings property value. Web Browser Cookie Settings.
 func (m *IosGeneralDeviceConfiguration) GetSafariCookieSettings()(*WebBrowserCookieSettings) {
     if m == nil {
         return nil
@@ -3577,7 +3577,7 @@ func (m *IosGeneralDeviceConfiguration) SetAppsVisibilityList(value []AppListIte
         m.appsVisibilityList = value
     }
 }
-// SetAppsVisibilityListType sets the appsVisibilityListType property value. Type of list that is in the AppsVisibilityList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// SetAppsVisibilityListType sets the appsVisibilityListType property value. Possible values of the compliance app list.
 func (m *IosGeneralDeviceConfiguration) SetAppsVisibilityListType(value *AppListType)() {
     if m != nil {
         m.appsVisibilityListType = value
@@ -3643,7 +3643,7 @@ func (m *IosGeneralDeviceConfiguration) SetClassroomAppForceUnpromptedScreenObse
         m.classroomAppForceUnpromptedScreenObservation = value
     }
 }
-// SetCompliantAppListType sets the compliantAppListType property value. List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// SetCompliantAppListType sets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *IosGeneralDeviceConfiguration) SetCompliantAppListType(value *AppListType)() {
     if m != nil {
         m.compliantAppListType = value
@@ -4009,7 +4009,7 @@ func (m *IosGeneralDeviceConfiguration) SetLockScreenBlockTodayView(value *bool)
         m.lockScreenBlockTodayView = value
     }
 }
-// SetMediaContentRatingApps sets the mediaContentRatingApps property value. Media content rating settings for Apps. Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.
+// SetMediaContentRatingApps sets the mediaContentRatingApps property value. Apps rating as in media content
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingApps(value *RatingAppsType)() {
     if m != nil {
         m.mediaContentRatingApps = value
@@ -4153,7 +4153,7 @@ func (m *IosGeneralDeviceConfiguration) SetPasscodeRequired(value *bool)() {
         m.passcodeRequired = value
     }
 }
-// SetPasscodeRequiredType sets the passcodeRequiredType property value. Type of passcode that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasscodeRequiredType sets the passcodeRequiredType property value. Possible values of required passwords.
 func (m *IosGeneralDeviceConfiguration) SetPasscodeRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passcodeRequiredType = value
@@ -4195,7 +4195,7 @@ func (m *IosGeneralDeviceConfiguration) SetSafariBlockPopups(value *bool)() {
         m.safariBlockPopups = value
     }
 }
-// SetSafariCookieSettings sets the safariCookieSettings property value. Cookie settings for Safari. Possible values are: browserDefault, blockAlways, allowCurrentWebSite, allowFromWebsitesVisited, allowAlways.
+// SetSafariCookieSettings sets the safariCookieSettings property value. Web Browser Cookie Settings.
 func (m *IosGeneralDeviceConfiguration) SetSafariCookieSettings(value *WebBrowserCookieSettings)() {
     if m != nil {
         m.safariCookieSettings = value

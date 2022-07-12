@@ -12,7 +12,7 @@ type DeviceConfigurationUserStatus struct {
     devicesCount *int32
     // Last modified date time of the policy report.
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The status property
     status *ComplianceStatus
     // User name of the DevicePolicyStatus.
     userDisplayName *string
@@ -101,7 +101,7 @@ func (m *DeviceConfigurationUserStatus) GetLastReportedDateTime()(*i336074805fc8
         return m.lastReportedDateTime
     }
 }
-// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetStatus gets the status property value. The status property
 func (m *DeviceConfigurationUserStatus) GetStatus()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *DeviceConfigurationUserStatus) SetLastReportedDateTime(value *i33607480
         m.lastReportedDateTime = value
     }
 }
-// SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetStatus sets the status property value. The status property
 func (m *DeviceConfigurationUserStatus) SetStatus(value *ComplianceStatus)() {
     if m != nil {
         m.status = value

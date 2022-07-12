@@ -10,7 +10,7 @@ type ExcludeTarget struct {
     additionalData map[string]interface{}
     // The object identifier of an Azure AD user or group.
     id *string
-    // The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+    // The targetType property
     targetType *AuthenticationMethodTargetType
 }
 // NewExcludeTarget instantiates a new excludeTarget and sets the default values.
@@ -65,7 +65,7 @@ func (m *ExcludeTarget) GetId()(*string) {
         return m.id
     }
 }
-// GetTargetType gets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+// GetTargetType gets the targetType property value. The targetType property
 func (m *ExcludeTarget) GetTargetType()(*AuthenticationMethodTargetType) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *ExcludeTarget) SetId(value *string)() {
         m.id = value
     }
 }
-// SetTargetType sets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+// SetTargetType sets the targetType property value. The targetType property
 func (m *ExcludeTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
     if m != nil {
         m.targetType = value

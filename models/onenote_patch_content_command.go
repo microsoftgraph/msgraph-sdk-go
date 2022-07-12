@@ -6,7 +6,7 @@ import (
 
 // OnenotePatchContentCommand 
 type OnenotePatchContentCommand struct {
-    // The action to perform on the target element. Possible values are: replace, append, delete, insert, or prepend.
+    // The action property
     action *OnenotePatchActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -28,7 +28,7 @@ func NewOnenotePatchContentCommand()(*OnenotePatchContentCommand) {
 func CreateOnenotePatchContentCommandFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenotePatchContentCommand(), nil
 }
-// GetAction gets the action property value. The action to perform on the target element. Possible values are: replace, append, delete, insert, or prepend.
+// GetAction gets the action property value. The action property
 func (m *OnenotePatchContentCommand) GetAction()(*OnenotePatchActionType) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *OnenotePatchContentCommand) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAction sets the action property value. The action to perform on the target element. Possible values are: replace, append, delete, insert, or prepend.
+// SetAction sets the action property value. The action property
 func (m *OnenotePatchContentCommand) SetAction(value *OnenotePatchActionType)() {
     if m != nil {
         m.action = value

@@ -8,7 +8,7 @@ import (
 type BookingWorkHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+    // The day property
     day *DayOfWeek
     // A list of start/end times during a day.
     timeSlots []BookingWorkTimeSlotable
@@ -32,7 +32,7 @@ func (m *BookingWorkHours) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDay gets the day property value. The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// GetDay gets the day property value. The day property
 func (m *BookingWorkHours) GetDay()(*DayOfWeek) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *BookingWorkHours) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetDay sets the day property value. The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// SetDay sets the day property value. The day property
 func (m *BookingWorkHours) SetDay(value *DayOfWeek)() {
     if m != nil {
         m.day = value

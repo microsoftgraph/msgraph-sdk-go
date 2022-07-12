@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceOverview summary data for managed devices
+// ManagedDeviceOverview 
 type ManagedDeviceOverview struct {
     Entity
     // Distribution of Exchange Access State in Intune
@@ -18,7 +18,7 @@ type ManagedDeviceOverview struct {
     // The number of devices enrolled in MDM
     mdmEnrolledCount *int32
 }
-// NewManagedDeviceOverview instantiates a new managedDeviceOverview and sets the default values.
+// NewManagedDeviceOverview instantiates a new ManagedDeviceOverview and sets the default values.
 func NewManagedDeviceOverview()(*ManagedDeviceOverview) {
     m := &ManagedDeviceOverview{
         Entity: *NewEntity(),

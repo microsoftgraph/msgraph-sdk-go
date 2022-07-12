@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ThreatAssessmentRequest provides operations to manage the informationProtection singleton.
+// ThreatAssessmentRequest provides operations to manage the admin singleton.
 type ThreatAssessmentRequest struct {
     Entity
-    // The threat category. Possible values are: spam, phishing, malware.
+    // The category property
     category *ThreatCategory
     // The content type of threat assessment. Possible values are: mail, url, file.
     contentType *ThreatAssessmentContentType
@@ -16,7 +16,7 @@ type ThreatAssessmentRequest struct {
     createdBy IdentitySetable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The expected assessment from submitter. Possible values are: block, unblock.
+    // The expectedAssessment property
     expectedAssessment *ThreatExpectedAssessment
     // The source of the threat assessment request. Possible values are: user, administrator.
     requestSource *ThreatAssessmentRequestSource
@@ -30,6 +30,8 @@ func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
     m := &ThreatAssessmentRequest{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.threatAssessmentRequest";
+    m.SetType(&typeValue);
     return m
 }
 // CreateThreatAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +63,7 @@ func CreateThreatAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e
     }
     return NewThreatAssessmentRequest(), nil
 }
-// GetCategory gets the category property value. The threat category. Possible values are: spam, phishing, malware.
+// GetCategory gets the category property value. The category property
 func (m *ThreatAssessmentRequest) GetCategory()(*ThreatCategory) {
     if m == nil {
         return nil
@@ -93,7 +95,7 @@ func (m *ThreatAssessmentRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7
         return m.createdDateTime
     }
 }
-// GetExpectedAssessment gets the expectedAssessment property value. The expected assessment from submitter. Possible values are: block, unblock.
+// GetExpectedAssessment gets the expectedAssessment property value. The expectedAssessment property
 func (m *ThreatAssessmentRequest) GetExpectedAssessment()(*ThreatExpectedAssessment) {
     if m == nil {
         return nil
@@ -279,7 +281,7 @@ func (m *ThreatAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetCategory sets the category property value. The threat category. Possible values are: spam, phishing, malware.
+// SetCategory sets the category property value. The category property
 func (m *ThreatAssessmentRequest) SetCategory(value *ThreatCategory)() {
     if m != nil {
         m.category = value
@@ -303,7 +305,7 @@ func (m *ThreatAssessmentRequest) SetCreatedDateTime(value *i336074805fc853987ab
         m.createdDateTime = value
     }
 }
-// SetExpectedAssessment sets the expectedAssessment property value. The expected assessment from submitter. Possible values are: block, unblock.
+// SetExpectedAssessment sets the expectedAssessment property value. The expectedAssessment property
 func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAssessment)() {
     if m != nil {
         m.expectedAssessment = value

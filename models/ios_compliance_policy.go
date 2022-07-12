@@ -9,7 +9,7 @@ type IosCompliancePolicy struct {
     DeviceCompliancePolicy
     // Require that devices have enabled device threat protection .
     deviceThreatProtectionEnabled *bool
-    // Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     deviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Indicates whether or not to require a managed email profile.
     managedEmailProfileRequired *bool
@@ -31,7 +31,7 @@ type IosCompliancePolicy struct {
     passcodePreviousPasscodeBlockCount *int32
     // Indicates whether or not to require a passcode.
     passcodeRequired *bool
-    // The required passcode type. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passcodeRequiredType *RequiredPasswordType
     // Devices must not be jailbroken or rooted.
     securityBlockJailbrokenDevices *bool
@@ -55,7 +55,7 @@ func (m *IosCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
         return m.deviceThreatProtectionEnabled
     }
 }
-// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *IosCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -288,7 +288,7 @@ func (m *IosCompliancePolicy) GetPasscodeRequired()(*bool) {
         return m.passcodeRequired
     }
 }
-// GetPasscodeRequiredType gets the passcodeRequiredType property value. The required passcode type. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasscodeRequiredType gets the passcodeRequiredType property value. Possible values of required passwords.
 func (m *IosCompliancePolicy) GetPasscodeRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -404,7 +404,7 @@ func (m *IosCompliancePolicy) SetDeviceThreatProtectionEnabled(value *bool)() {
         m.deviceThreatProtectionEnabled = value
     }
 }
-// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *IosCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.deviceThreatProtectionRequiredSecurityLevel = value
@@ -470,7 +470,7 @@ func (m *IosCompliancePolicy) SetPasscodeRequired(value *bool)() {
         m.passcodeRequired = value
     }
 }
-// SetPasscodeRequiredType sets the passcodeRequiredType property value. The required passcode type. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasscodeRequiredType sets the passcodeRequiredType property value. Possible values of required passwords.
 func (m *IosCompliancePolicy) SetPasscodeRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passcodeRequiredType = value

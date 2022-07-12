@@ -9,7 +9,7 @@ type AndroidCompliancePolicy struct {
     DeviceCompliancePolicy
     // Require that devices have enabled device threat protection.
     deviceThreatProtectionEnabled *bool
-    // Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     deviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Minimum Android security patch level.
     minAndroidSecurityPatchLevel *string
@@ -27,7 +27,7 @@ type AndroidCompliancePolicy struct {
     passwordPreviousPasswordBlockCount *int32
     // Require a password to unlock device.
     passwordRequired *bool
-    // Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+    // Android required password type.
     passwordRequiredType *AndroidRequiredPasswordType
     // Devices must not be jailbroken or rooted.
     securityBlockJailbrokenDevices *bool
@@ -69,7 +69,7 @@ func (m *AndroidCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
         return m.deviceThreatProtectionEnabled
     }
 }
-// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -356,7 +356,7 @@ func (m *AndroidCompliancePolicy) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Android required password type.
 func (m *AndroidCompliancePolicy) GetPasswordRequiredType()(*AndroidRequiredPasswordType) {
     if m == nil {
         return nil
@@ -586,7 +586,7 @@ func (m *AndroidCompliancePolicy) SetDeviceThreatProtectionEnabled(value *bool)(
         m.deviceThreatProtectionEnabled = value
     }
 }
-// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.deviceThreatProtectionRequiredSecurityLevel = value
@@ -640,7 +640,7 @@ func (m *AndroidCompliancePolicy) SetPasswordRequired(value *bool)() {
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Android required password type.
 func (m *AndroidCompliancePolicy) SetPasswordRequiredType(value *AndroidRequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value

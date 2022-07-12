@@ -25,8 +25,6 @@ type EventMessage struct {
     recurrence PatternedRecurrenceable
     // The startDateTime property
     startDateTime DateTimeTimeZoneable
-    // The type property
-    type_escaped *EventType
 }
 // NewEventMessage instantiates a new EventMessage and sets the default values.
 func NewEventMessage()(*EventMessage) {
@@ -169,16 +167,6 @@ func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEventType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val.(*EventType))
-        }
-        return nil
-    }
     return res
 }
 // GetIsAllDay gets the isAllDay property value. The isAllDay property
@@ -235,14 +223,6 @@ func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
         return nil
     } else {
         return m.startDateTime
-    }
-}
-// GetType gets the type property value. The type property
-func (m *EventMessage) GetType()(*EventType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -306,13 +286,6 @@ func (m *EventMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
-        err = writer.WriteStringValue("type", &cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetEndDateTime sets the endDateTime property value. The end time of the requested meeting.
@@ -367,11 +340,5 @@ func (m *EventMessage) SetRecurrence(value PatternedRecurrenceable)() {
 func (m *EventMessage) SetStartDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.startDateTime = value
-    }
-}
-// SetType sets the type property value. The type property
-func (m *EventMessage) SetType(value *EventType)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i7422f0b728832761417494f97cc9b3017468f8e09463e2da9f658cb0cfce97fc "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/methods/item/resetpassword"
 )
 
 // AuthenticationMethodItemRequestBuilder provides operations to manage the methods property of the microsoft.graph.authentication entity.
@@ -176,4 +177,8 @@ func (m *AuthenticationMethodItemRequestBuilder) PatchWithRequestConfigurationAn
         return err
     }
     return nil
+}
+// ResetPassword the resetPassword property
+func (m *AuthenticationMethodItemRequestBuilder) ResetPassword()(*i7422f0b728832761417494f97cc9b3017468f8e09463e2da9f658cb0cfce97fc.ResetPasswordRequestBuilder) {
+    return i7422f0b728832761417494f97cc9b3017468f8e09463e2da9f658cb0cfce97fc.NewResetPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

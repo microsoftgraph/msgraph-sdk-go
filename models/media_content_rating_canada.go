@@ -8,9 +8,9 @@ import (
 type MediaContentRatingCanada struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Movies rating selected for Canada. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove14, agesAbove18, restricted.
+    // Movies rating labels in Canada
     movieRating *RatingCanadaMoviesType
-    // TV rating selected for Canada. Possible values are: allAllowed, allBlocked, children, childrenAbove8, general, parentalGuidance, agesAbove14, agesAbove18.
+    // TV content rating labels in Canada
     tvRating *RatingCanadaTelevisionType
 }
 // NewMediaContentRatingCanada instantiates a new mediaContentRatingCanada and sets the default values.
@@ -57,7 +57,7 @@ func (m *MediaContentRatingCanada) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetMovieRating gets the movieRating property value. Movies rating selected for Canada. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove14, agesAbove18, restricted.
+// GetMovieRating gets the movieRating property value. Movies rating labels in Canada
 func (m *MediaContentRatingCanada) GetMovieRating()(*RatingCanadaMoviesType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *MediaContentRatingCanada) GetMovieRating()(*RatingCanadaMoviesType) {
         return m.movieRating
     }
 }
-// GetTvRating gets the tvRating property value. TV rating selected for Canada. Possible values are: allAllowed, allBlocked, children, childrenAbove8, general, parentalGuidance, agesAbove14, agesAbove18.
+// GetTvRating gets the tvRating property value. TV content rating labels in Canada
 func (m *MediaContentRatingCanada) GetTvRating()(*RatingCanadaTelevisionType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *MediaContentRatingCanada) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetMovieRating sets the movieRating property value. Movies rating selected for Canada. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove14, agesAbove18, restricted.
+// SetMovieRating sets the movieRating property value. Movies rating labels in Canada
 func (m *MediaContentRatingCanada) SetMovieRating(value *RatingCanadaMoviesType)() {
     if m != nil {
         m.movieRating = value
     }
 }
-// SetTvRating sets the tvRating property value. TV rating selected for Canada. Possible values are: allAllowed, allBlocked, children, childrenAbove8, general, parentalGuidance, agesAbove14, agesAbove18.
+// SetTvRating sets the tvRating property value. TV content rating labels in Canada
 func (m *MediaContentRatingCanada) SetTvRating(value *RatingCanadaTelevisionType)() {
     if m != nil {
         m.tvRating = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ResourceSpecificPermissionGrant provides operations to manage the collection of application entities.
+// ResourceSpecificPermissionGrant casts the previous resource to group.
 type ResourceSpecificPermissionGrant struct {
     DirectoryObject
     // ID of the service principal of the Azure AD app that has been granted access. Read-only.

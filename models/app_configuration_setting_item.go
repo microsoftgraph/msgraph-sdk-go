@@ -10,7 +10,7 @@ type AppConfigurationSettingItem struct {
     additionalData map[string]interface{}
     // app configuration key.
     appConfigKey *string
-    // app configuration key type. Possible values are: stringType, integerType, realType, booleanType, tokenType.
+    // App configuration key types.
     appConfigKeyType *MdmAppConfigKeyType
     // app configuration key value.
     appConfigKeyValue *string
@@ -42,7 +42,7 @@ func (m *AppConfigurationSettingItem) GetAppConfigKey()(*string) {
         return m.appConfigKey
     }
 }
-// GetAppConfigKeyType gets the appConfigKeyType property value. app configuration key type. Possible values are: stringType, integerType, realType, booleanType, tokenType.
+// GetAppConfigKeyType gets the appConfigKeyType property value. App configuration key types.
 func (m *AppConfigurationSettingItem) GetAppConfigKeyType()(*MdmAppConfigKeyType) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *AppConfigurationSettingItem) SetAppConfigKey(value *string)() {
         m.appConfigKey = value
     }
 }
-// SetAppConfigKeyType sets the appConfigKeyType property value. app configuration key type. Possible values are: stringType, integerType, realType, booleanType, tokenType.
+// SetAppConfigKeyType sets the appConfigKeyType property value. App configuration key types.
 func (m *AppConfigurationSettingItem) SetAppConfigKeyType(value *MdmAppConfigKeyType)() {
     if m != nil {
         m.appConfigKeyType = value

@@ -14,7 +14,7 @@ type DeviceInstallState struct {
     deviceName *string
     // The error code for install failures.
     errorCode *string
-    // The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
+    // Possible values for install state.
     installState *InstallState
     // Last sync date and time.
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -145,7 +145,7 @@ func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetInstallState gets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
+// GetInstallState gets the installState property value. Possible values for install state.
 func (m *DeviceInstallState) GetInstallState()(*InstallState) {
     if m == nil {
         return nil
@@ -260,7 +260,7 @@ func (m *DeviceInstallState) SetErrorCode(value *string)() {
         m.errorCode = value
     }
 }
-// SetInstallState sets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
+// SetInstallState sets the installState property value. Possible values for install state.
 func (m *DeviceInstallState) SetInstallState(value *InstallState)() {
     if m != nil {
         m.installState = value

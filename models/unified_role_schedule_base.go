@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleScheduleBase provides operations to manage the identityGovernance singleton.
+// UnifiedRoleScheduleBase 
 type UnifiedRoleScheduleBase struct {
     Entity
     // Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
@@ -38,6 +38,8 @@ func NewUnifiedRoleScheduleBase()(*UnifiedRoleScheduleBase) {
     m := &UnifiedRoleScheduleBase{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.unifiedRoleScheduleBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateUnifiedRoleScheduleBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

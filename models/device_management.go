@@ -63,7 +63,7 @@ type DeviceManagement struct {
     settings DeviceManagementSettingsable
     // The software update status summary.
     softwareUpdateStatusSummary SoftwareUpdateStatusSummaryable
-    // Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+    // Tenant mobile device management subscription state.
     subscriptionState *DeviceManagementSubscriptionState
     // The telecom expense management partners.
     telecomExpenseManagementPartners []TelecomExpenseManagementPartnerable
@@ -764,7 +764,7 @@ func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(SoftwareUpdateStatus
         return m.softwareUpdateStatusSummary
     }
 }
-// GetSubscriptionState gets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+// GetSubscriptionState gets the subscriptionState property value. Tenant mobile device management subscription state.
 func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionState) {
     if m == nil {
         return nil
@@ -1303,7 +1303,7 @@ func (m *DeviceManagement) SetSoftwareUpdateStatusSummary(value SoftwareUpdateSt
         m.softwareUpdateStatusSummary = value
     }
 }
-// SetSubscriptionState sets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+// SetSubscriptionState sets the subscriptionState property value. Tenant mobile device management subscription state.
 func (m *DeviceManagement) SetSubscriptionState(value *DeviceManagementSubscriptionState)() {
     if m != nil {
         m.subscriptionState = value

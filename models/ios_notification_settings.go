@@ -8,7 +8,7 @@ import (
 type IosNotificationSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.
+    // Notification Settings Alert Type.
     alertType *IosNotificationAlertType
     // Application name to be associated with the bundleID.
     appName *string
@@ -46,7 +46,7 @@ func (m *IosNotificationSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAlertType gets the alertType property value. Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.
+// GetAlertType gets the alertType property value. Notification Settings Alert Type.
 func (m *IosNotificationSettings) GetAlertType()(*IosNotificationAlertType) {
     if m == nil {
         return nil
@@ -284,7 +284,7 @@ func (m *IosNotificationSettings) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetAlertType sets the alertType property value. Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.
+// SetAlertType sets the alertType property value. Notification Settings Alert Type.
 func (m *IosNotificationSettings) SetAlertType(value *IosNotificationAlertType)() {
     if m != nil {
         m.alertType = value

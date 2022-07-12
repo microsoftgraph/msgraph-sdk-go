@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SoftwareUpdateStatusSummary provides operations to manage the deviceManagement singleton.
+// SoftwareUpdateStatusSummary 
 type SoftwareUpdateStatusSummary struct {
     Entity
     // Number of compliant devices.
@@ -38,7 +38,7 @@ type SoftwareUpdateStatusSummary struct {
     // Number of unknown users.
     unknownUserCount *int32
 }
-// NewSoftwareUpdateStatusSummary instantiates a new softwareUpdateStatusSummary and sets the default values.
+// NewSoftwareUpdateStatusSummary instantiates a new SoftwareUpdateStatusSummary and sets the default values.
 func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
     m := &SoftwareUpdateStatusSummary{
         Entity: *NewEntity(),

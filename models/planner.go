@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Planner provides operations to manage the planner singleton.
+// Planner 
 type Planner struct {
     Entity
     // Read-only. Nullable. Returns a collection of the specified buckets
@@ -14,7 +14,7 @@ type Planner struct {
     // Read-only. Nullable. Returns a collection of the specified tasks
     tasks []PlannerTaskable
 }
-// NewPlanner instantiates a new planner and sets the default values.
+// NewPlanner instantiates a new Planner and sets the default values.
 func NewPlanner()(*Planner) {
     m := &Planner{
         Entity: *NewEntity(),

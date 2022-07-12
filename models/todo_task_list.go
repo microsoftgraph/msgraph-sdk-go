@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTaskList provides operations to manage the collection of application entities.
+// TodoTaskList provides operations to manage the admin singleton.
 type TodoTaskList struct {
     Entity
     // The name of the task list.
@@ -17,7 +17,7 @@ type TodoTaskList struct {
     isShared *bool
     // The tasks in this task list. Read-only. Nullable.
     tasks []TodoTaskable
-    // Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
+    // The wellknownListName property
     wellknownListName *WellknownListName
 }
 // NewTodoTaskList instantiates a new todoTaskList and sets the default values.
@@ -144,7 +144,7 @@ func (m *TodoTaskList) GetTasks()([]TodoTaskable) {
         return m.tasks
     }
 }
-// GetWellknownListName gets the wellknownListName property value. Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
+// GetWellknownListName gets the wellknownListName property value. The wellknownListName property
 func (m *TodoTaskList) GetWellknownListName()(*WellknownListName) {
     if m == nil {
         return nil
@@ -235,7 +235,7 @@ func (m *TodoTaskList) SetTasks(value []TodoTaskable)() {
         m.tasks = value
     }
 }
-// SetWellknownListName sets the wellknownListName property value. Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
+// SetWellknownListName sets the wellknownListName property value. The wellknownListName property
 func (m *TodoTaskList) SetWellknownListName(value *WellknownListName)() {
     if m != nil {
         m.wellknownListName = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EntitlementManagement provides operations to manage the identityGovernance singleton.
+// EntitlementManagement 
 type EntitlementManagement struct {
     Entity
     // Approval stages for decisions associated with access package assignment requests.
@@ -24,7 +24,7 @@ type EntitlementManagement struct {
     // Represents the settings that control the behavior of Azure AD entitlement management.
     settings EntitlementManagementSettingsable
 }
-// NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
+// NewEntitlementManagement instantiates a new EntitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {
     m := &EntitlementManagement{
         Entity: *NewEntity(),

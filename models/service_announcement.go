@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceAnnouncement provides operations to manage the admin singleton.
+// ServiceAnnouncement 
 type ServiceAnnouncement struct {
     Entity
     // A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
@@ -14,7 +14,7 @@ type ServiceAnnouncement struct {
     // A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
     messages []ServiceUpdateMessageable
 }
-// NewServiceAnnouncement instantiates a new serviceAnnouncement and sets the default values.
+// NewServiceAnnouncement instantiates a new ServiceAnnouncement and sets the default values.
 func NewServiceAnnouncement()(*ServiceAnnouncement) {
     m := &ServiceAnnouncement{
         Entity: *NewEntity(),

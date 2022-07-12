@@ -17,6 +17,8 @@ func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
     m := &TargetedManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
     }
+    typeValue := "#microsoft.graph.targetedManagedAppProtection";
+    m.SetType(&typeValue);
     return m
 }
 // CreateTargetedManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
