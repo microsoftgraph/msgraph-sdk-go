@@ -25,7 +25,7 @@ type Windows81CompliancePolicy struct {
     passwordPreviousPasswordBlockCount *int32
     // Require a password to unlock Windows device.
     passwordRequired *bool
-    // The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
     // Indicates whether or not to require encryption on a windows 8.1 device.
     storageRequireEncryption *bool
@@ -228,7 +228,7 @@ func (m *Windows81CompliancePolicy) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows81CompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -373,7 +373,7 @@ func (m *Windows81CompliancePolicy) SetPasswordRequired(value *bool)() {
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows81CompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value

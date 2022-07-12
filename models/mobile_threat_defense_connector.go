@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileThreatDefenseConnector entity which represents a connection to Mobile threat defense partner.
+// MobileThreatDefenseConnector 
 type MobileThreatDefenseConnector struct {
     Entity
     // For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
@@ -18,14 +18,14 @@ type MobileThreatDefenseConnector struct {
     iosEnabled *bool
     // DateTime of last Heartbeat recieved from the Data Sync Partner
     lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+    // Partner state of this tenant.
     partnerState *MobileThreatPartnerTenantState
     // Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
     partnerUnresponsivenessThresholdInDays *int32
     // Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
     partnerUnsupportedOsVersionBlocked *bool
 }
-// NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
+// NewMobileThreatDefenseConnector instantiates a new MobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     m := &MobileThreatDefenseConnector{
         Entity: *NewEntity(),
@@ -161,7 +161,7 @@ func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc8
         return m.lastHeartbeatDateTime
     }
 }
-// GetPartnerState gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+// GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
     if m == nil {
         return nil
@@ -272,7 +272,7 @@ func (m *MobileThreatDefenseConnector) SetLastHeartbeatDateTime(value *i33607480
         m.lastHeartbeatDateTime = value
     }
 }
-// SetPartnerState sets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+// SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *MobileThreatDefenseConnector) SetPartnerState(value *MobileThreatPartnerTenantState)() {
     if m != nil {
         m.partnerState = value

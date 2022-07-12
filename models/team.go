@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Team provides operations to manage the collection of application entities.
+// Team 
 type Team struct {
     Entity
     // List of channels either hosted in or shared with the team (incoming channels).
@@ -48,6 +48,8 @@ type Team struct {
     schedule Scheduleable
     // Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
     specialization *TeamSpecialization
+    // Contains summary information about the team, including number of owners, members, and guests.
+    summary TeamSummaryable
     // The template this team was created from. See available templates.
     template TeamsTemplateable
     // The ID of the Azure Active Directory tenant.
@@ -343,6 +345,16 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSummary(val.(TeamSummaryable))
+        }
+        return nil
+    }
     res["template"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamsTemplateFromDiscriminatorValue)
         if err != nil {
@@ -495,6 +507,14 @@ func (m *Team) GetSpecialization()(*TeamSpecialization) {
         return nil
     } else {
         return m.specialization
+    }
+}
+// GetSummary gets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
+func (m *Team) GetSummary()(TeamSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.summary
     }
 }
 // GetTemplate gets the template property value. The template this team was created from. See available templates.
@@ -681,6 +701,12 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("summary", m.GetSummary())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("template", m.GetTemplate())
         if err != nil {
             return err
@@ -825,6 +851,12 @@ func (m *Team) SetSchedule(value Scheduleable)() {
 func (m *Team) SetSpecialization(value *TeamSpecialization)() {
     if m != nil {
         m.specialization = value
+    }
+}
+// SetSummary sets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
+func (m *Team) SetSummary(value TeamSummaryable)() {
+    if m != nil {
+        m.summary = value
     }
 }
 // SetTemplate sets the template property value. The template this team was created from. See available templates.

@@ -17,7 +17,7 @@ type WindowsPhone81GeneralConfiguration struct {
     cameraBlocked *bool
     // Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.
     cellularBlockWifiTethering *bool
-    // List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+    // Possible values of the compliance app list.
     compliantAppListType *AppListType
     // List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
     compliantAppsList []AppListItemable
@@ -45,7 +45,7 @@ type WindowsPhone81GeneralConfiguration struct {
     passwordPreviousPasswordBlockCount *int32
     // Indicates whether or not to require a password.
     passwordRequired *bool
-    // Password type that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
     // Number of sign in failures allowed before factory reset.
     passwordSignInFailureCountBeforeFactoryReset *int32
@@ -117,7 +117,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetCellularBlockWifiTethering()(*bo
         return m.cellularBlockWifiTethering
     }
 }
-// GetCompliantAppListType gets the compliantAppListType property value. List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *WindowsPhone81GeneralConfiguration) GetCompliantAppListType()(*AppListType) {
     if m == nil {
         return nil
@@ -528,7 +528,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Password type that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -826,7 +826,7 @@ func (m *WindowsPhone81GeneralConfiguration) SetCellularBlockWifiTethering(value
         m.cellularBlockWifiTethering = value
     }
 }
-// SetCompliantAppListType sets the compliantAppListType property value. List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// SetCompliantAppListType sets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *WindowsPhone81GeneralConfiguration) SetCompliantAppListType(value *AppListType)() {
     if m != nil {
         m.compliantAppListType = value
@@ -910,7 +910,7 @@ func (m *WindowsPhone81GeneralConfiguration) SetPasswordRequired(value *bool)() 
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Password type that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value

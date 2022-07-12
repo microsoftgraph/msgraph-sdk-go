@@ -8,7 +8,7 @@ import (
 type ExternalItemContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type of content in the value property. Possible values are text and html. These are the content types that the indexer supports, and not the file extension types allowed. Required.
+    // The type property
     type_escaped *ExternalItemContentType
     // The content for the externalItem. Required.
     value *string
@@ -57,7 +57,7 @@ func (m *ExternalItemContent) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetType gets the type property value. The type of content in the value property. Possible values are text and html. These are the content types that the indexer supports, and not the file extension types allowed. Required.
+// GetType gets the type property value. The type property
 func (m *ExternalItemContent) GetType()(*ExternalItemContentType) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *ExternalItemContent) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type of content in the value property. Possible values are text and html. These are the content types that the indexer supports, and not the file extension types allowed. Required.
+// SetType sets the type property value. The type property
 func (m *ExternalItemContent) SetType(value *ExternalItemContentType)() {
     if m != nil {
         m.type_escaped = value

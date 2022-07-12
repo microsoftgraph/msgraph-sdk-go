@@ -10,8 +10,10 @@ type IdentitySetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplication()(Identityable)
     GetDevice()(Identityable)
+    GetType()(*string)
     GetUser()(Identityable)
     SetApplication(value Identityable)()
     SetDevice(value Identityable)()
+    SetType(value *string)()
     SetUser(value Identityable)()
 }

@@ -8,9 +8,9 @@ import (
 type ConditionalAccessApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The list of application IDs explicitly excluded from the policy.
+    // Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
     excludeApplications []string
-    // The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
+    // Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
     includeApplications []string
     // Authentication context class references include. Supported values are c1 through c25.
     includeAuthenticationContextClassReferences []string
@@ -36,7 +36,7 @@ func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetExcludeApplications gets the excludeApplications property value. The list of application IDs explicitly excluded from the policy.
+// GetExcludeApplications gets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
 func (m *ConditionalAccessApplications) GetExcludeApplications()([]string) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetIncludeApplications gets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
+// GetIncludeApplications gets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
 func (m *ConditionalAccessApplications) GetIncludeApplications()([]string) {
     if m == nil {
         return nil
@@ -169,13 +169,13 @@ func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetExcludeApplications sets the excludeApplications property value. The list of application IDs explicitly excluded from the policy.
+// SetExcludeApplications sets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
 func (m *ConditionalAccessApplications) SetExcludeApplications(value []string)() {
     if m != nil {
         m.excludeApplications = value
     }
 }
-// SetIncludeApplications sets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
+// SetIncludeApplications sets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
 func (m *ConditionalAccessApplications) SetIncludeApplications(value []string)() {
     if m != nil {
         m.includeApplications = value

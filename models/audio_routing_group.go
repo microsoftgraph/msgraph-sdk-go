@@ -9,7 +9,7 @@ type AudioRoutingGroup struct {
     Entity
     // List of receiving participant ids.
     receivers []string
-    // Routing group mode.  Possible values are: oneToOne, multicast.
+    // The routingMode property
     routingMode *RoutingMode
     // List of source participant ids.
     sources []string
@@ -76,7 +76,7 @@ func (m *AudioRoutingGroup) GetReceivers()([]string) {
         return m.receivers
     }
 }
-// GetRoutingMode gets the routingMode property value. Routing group mode.  Possible values are: oneToOne, multicast.
+// GetRoutingMode gets the routingMode property value. The routingMode property
 func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *AudioRoutingGroup) SetReceivers(value []string)() {
         m.receivers = value
     }
 }
-// SetRoutingMode sets the routingMode property value. Routing group mode.  Possible values are: oneToOne, multicast.
+// SetRoutingMode sets the routingMode property value. The routingMode property
 func (m *AudioRoutingGroup) SetRoutingMode(value *RoutingMode)() {
     if m != nil {
         m.routingMode = value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationUser provides operations to manage the educationRoot singleton.
+// EducationUser provides operations to manage the admin singleton.
 type EducationUser struct {
     Entity
     // True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.
@@ -52,7 +52,7 @@ type EducationUser struct {
     passwordProfile PasswordProfileable
     // The preferred language for the user. Should follow ISO 639-1 Code; for example, 'en-US'.
     preferredLanguage *string
-    // Default role for a user. The user's role might be different in an individual class. Possible values are: student, teacher, faculty. Supports /$filter.
+    // The primaryRole property
     primaryRole *EducationUserRole
     // The plans that are provisioned for the user. Read-only. Not nullable.
     provisionedPlans []ProvisionedPlanable
@@ -697,7 +697,7 @@ func (m *EducationUser) GetPreferredLanguage()(*string) {
         return m.preferredLanguage
     }
 }
-// GetPrimaryRole gets the primaryRole property value. Default role for a user. The user's role might be different in an individual class. Possible values are: student, teacher, faculty. Supports /$filter.
+// GetPrimaryRole gets the primaryRole property value. The primaryRole property
 func (m *EducationUser) GetPrimaryRole()(*EducationUserRole) {
     if m == nil {
         return nil
@@ -1231,7 +1231,7 @@ func (m *EducationUser) SetPreferredLanguage(value *string)() {
         m.preferredLanguage = value
     }
 }
-// SetPrimaryRole sets the primaryRole property value. Default role for a user. The user's role might be different in an individual class. Possible values are: student, teacher, faculty. Supports /$filter.
+// SetPrimaryRole sets the primaryRole property value. The primaryRole property
 func (m *EducationUser) SetPrimaryRole(value *EducationUserRole)() {
     if m != nil {
         m.primaryRole = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Attendee provides operations to manage the collection of application entities.
+// Attendee 
 type Attendee struct {
     AttendeeBase
     // An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.
@@ -12,7 +12,7 @@ type Attendee struct {
     // The attendee's response (none, accepted, declined, etc.) for the event and date-time that the response was sent.
     status ResponseStatusable
 }
-// NewAttendee instantiates a new attendee and sets the default values.
+// NewAttendee instantiates a new Attendee and sets the default values.
 func NewAttendee()(*Attendee) {
     m := &Attendee{
         AttendeeBase: *NewAttendeeBase(),

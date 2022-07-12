@@ -16,6 +16,8 @@ func NewOnenoteEntitySchemaObjectModel()(*OnenoteEntitySchemaObjectModel) {
     m := &OnenoteEntitySchemaObjectModel{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),
     }
+    typeValue := "#microsoft.graph.onenoteEntitySchemaObjectModel";
+    m.SetType(&typeValue);
     return m
 }
 // CreateOnenoteEntitySchemaObjectModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

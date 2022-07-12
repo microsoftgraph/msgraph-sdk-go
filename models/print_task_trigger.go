@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintTaskTrigger provides operations to manage the print singleton.
+// PrintTaskTrigger provides operations to manage the admin singleton.
 type PrintTaskTrigger struct {
     Entity
     // The definition property
     definition PrintTaskDefinitionable
-    // The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
+    // The event property
     event *PrintEvent
 }
 // NewPrintTaskTrigger instantiates a new printTaskTrigger and sets the default values.
@@ -31,7 +31,7 @@ func (m *PrintTaskTrigger) GetDefinition()(PrintTaskDefinitionable) {
         return m.definition
     }
 }
-// GetEvent gets the event property value. The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
+// GetEvent gets the event property value. The event property
 func (m *PrintTaskTrigger) GetEvent()(*PrintEvent) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *PrintTaskTrigger) SetDefinition(value PrintTaskDefinitionable)() {
         m.definition = value
     }
 }
-// SetEvent sets the event property value. The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
+// SetEvent sets the event property value. The event property
 func (m *PrintTaskTrigger) SetEvent(value *PrintEvent)() {
     if m != nil {
         m.event = value

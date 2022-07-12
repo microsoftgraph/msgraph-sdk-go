@@ -18,16 +18,41 @@ type WindowsInformationProtectionApp struct {
     productName *string
     // The publisher name
     publisherName *string
+    // The type property
+    type_escaped *string
 }
 // NewWindowsInformationProtectionApp instantiates a new windowsInformationProtectionApp and sets the default values.
 func NewWindowsInformationProtectionApp()(*WindowsInformationProtectionApp) {
     m := &WindowsInformationProtectionApp{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.windowsInformationProtectionApp";
+    m.SetType(&typeValue);
     return m
 }
 // CreateWindowsInformationProtectionAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsInformationProtectionAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.windowsInformationProtectionDesktopApp":
+                        return NewWindowsInformationProtectionDesktopApp(), nil
+                    case "#microsoft.graph.windowsInformationProtectionStoreApp":
+                        return NewWindowsInformationProtectionStoreApp(), nil
+                }
+            }
+        }
+    }
     return NewWindowsInformationProtectionApp(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -115,6 +140,16 @@ func (m *WindowsInformationProtectionApp) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetProductName gets the productName property value. The product name.
@@ -131,6 +166,14 @@ func (m *WindowsInformationProtectionApp) GetPublisherName()(*string) {
         return nil
     } else {
         return m.publisherName
+    }
+}
+// GetType gets the type property value. The type property
+func (m *WindowsInformationProtectionApp) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -161,6 +204,12 @@ func (m *WindowsInformationProtectionApp) Serialize(writer i878a80d2330e89d26896
     }
     {
         err := writer.WriteStringValue("publisherName", m.GetPublisherName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -207,5 +256,11 @@ func (m *WindowsInformationProtectionApp) SetProductName(value *string)() {
 func (m *WindowsInformationProtectionApp) SetPublisherName(value *string)() {
     if m != nil {
         m.publisherName = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsInformationProtectionApp) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

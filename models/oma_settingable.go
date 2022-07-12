@@ -11,7 +11,9 @@ type OmaSettingable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetOmaUri()(*string)
+    GetType()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetOmaUri(value *string)()
+    SetType(value *string)()
 }

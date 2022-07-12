@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkConversationIdentity provides operations to manage the collection of application entities.
+// TeamworkConversationIdentity 
 type TeamworkConversationIdentity struct {
     Identity
     // Type of conversation. Possible values are: team, channel, and chat.
     conversationIdentityType *TeamworkConversationIdentityType
 }
-// NewTeamworkConversationIdentity instantiates a new teamworkConversationIdentity and sets the default values.
+// NewTeamworkConversationIdentity instantiates a new TeamworkConversationIdentity and sets the default values.
 func NewTeamworkConversationIdentity()(*TeamworkConversationIdentity) {
     m := &TeamworkConversationIdentity{
         Identity: *NewIdentity(),

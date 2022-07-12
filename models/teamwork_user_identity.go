@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkUserIdentity provides operations to manage the collection of application entities.
+// TeamworkUserIdentity 
 type TeamworkUserIdentity struct {
     Identity
     // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and emailUser.
     userIdentityType *TeamworkUserIdentityType
 }
-// NewTeamworkUserIdentity instantiates a new teamworkUserIdentity and sets the default values.
+// NewTeamworkUserIdentity instantiates a new TeamworkUserIdentity and sets the default values.
 func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {
     m := &TeamworkUserIdentity{
         Identity: *NewIdentity(),

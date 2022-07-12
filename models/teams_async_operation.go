@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAsyncOperation provides operations to manage the collection of application entities.
+// TeamsAsyncOperation casts the previous resource to group.
 type TeamsAsyncOperation struct {
     Entity
     // Number of times the operation was attempted before being marked successful or failed.
@@ -16,9 +16,9 @@ type TeamsAsyncOperation struct {
     error OperationErrorable
     // Time when the async operation was last updated.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Denotes the type of operation being described.
+    // The operationType property
     operationType *TeamsAsyncOperationType
-    // Operation status.
+    // The status property
     status *TeamsAsyncOperationStatus
     // The ID of the object that's created or modified as result of this async operation, typically a team.
     targetResourceId *string
@@ -153,7 +153,7 @@ func (m *TeamsAsyncOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7f
         return m.lastActionDateTime
     }
 }
-// GetOperationType gets the operationType property value. Denotes the type of operation being described.
+// GetOperationType gets the operationType property value. The operationType property
 func (m *TeamsAsyncOperation) GetOperationType()(*TeamsAsyncOperationType) {
     if m == nil {
         return nil
@@ -161,7 +161,7 @@ func (m *TeamsAsyncOperation) GetOperationType()(*TeamsAsyncOperationType) {
         return m.operationType
     }
 }
-// GetStatus gets the status property value. Operation status.
+// GetStatus gets the status property value. The status property
 func (m *TeamsAsyncOperation) GetStatus()(*TeamsAsyncOperationStatus) {
     if m == nil {
         return nil
@@ -267,13 +267,13 @@ func (m *TeamsAsyncOperation) SetLastActionDateTime(value *i336074805fc853987abe
         m.lastActionDateTime = value
     }
 }
-// SetOperationType sets the operationType property value. Denotes the type of operation being described.
+// SetOperationType sets the operationType property value. The operationType property
 func (m *TeamsAsyncOperation) SetOperationType(value *TeamsAsyncOperationType)() {
     if m != nil {
         m.operationType = value
     }
 }
-// SetStatus sets the status property value. Operation status.
+// SetStatus sets the status property value. The status property
 func (m *TeamsAsyncOperation) SetStatus(value *TeamsAsyncOperationStatus)() {
     if m != nil {
         m.status = value

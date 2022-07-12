@@ -12,9 +12,9 @@ type DeviceManagementExportJob struct {
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Filters applied on the report
     filter *string
-    // Format of the exported report. Possible values are: csv, pdf.
+    // Possible values for the file format of a report
     format *DeviceManagementReportFileFormat
-    // Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.
+    // Configures how the requested export job is localized
     localizationType *DeviceManagementExportJobLocalizationType
     // Name of the report
     reportName *string
@@ -24,7 +24,7 @@ type DeviceManagementExportJob struct {
     select_escaped []string
     // A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
     snapshotId *string
-    // Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.
+    // Possible statuses associated with a generated report
     status *DeviceManagementReportStatus
     // Temporary location of the exported report
     url *string
@@ -165,7 +165,7 @@ func (m *DeviceManagementExportJob) GetFilter()(*string) {
         return m.filter
     }
 }
-// GetFormat gets the format property value. Format of the exported report. Possible values are: csv, pdf.
+// GetFormat gets the format property value. Possible values for the file format of a report
 func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileFormat) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileForma
         return m.format
     }
 }
-// GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.
+// GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized
 func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExportJobLocalizationType) {
     if m == nil {
         return nil
@@ -213,7 +213,7 @@ func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
         return m.snapshotId
     }
 }
-// GetStatus gets the status property value. Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.
+// GetStatus gets the status property value. Possible statuses associated with a generated report
 func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
     if m == nil {
         return nil
@@ -312,13 +312,13 @@ func (m *DeviceManagementExportJob) SetFilter(value *string)() {
         m.filter = value
     }
 }
-// SetFormat sets the format property value. Format of the exported report. Possible values are: csv, pdf.
+// SetFormat sets the format property value. Possible values for the file format of a report
 func (m *DeviceManagementExportJob) SetFormat(value *DeviceManagementReportFileFormat)() {
     if m != nil {
         m.format = value
     }
 }
-// SetLocalizationType sets the localizationType property value. Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.
+// SetLocalizationType sets the localizationType property value. Configures how the requested export job is localized
 func (m *DeviceManagementExportJob) SetLocalizationType(value *DeviceManagementExportJobLocalizationType)() {
     if m != nil {
         m.localizationType = value
@@ -348,7 +348,7 @@ func (m *DeviceManagementExportJob) SetSnapshotId(value *string)() {
         m.snapshotId = value
     }
 }
-// SetStatus sets the status property value. Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.
+// SetStatus sets the status property value. Possible statuses associated with a generated report
 func (m *DeviceManagementExportJob) SetStatus(value *DeviceManagementReportStatus)() {
     if m != nil {
         m.status = value

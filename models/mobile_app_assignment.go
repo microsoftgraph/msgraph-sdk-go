@@ -7,7 +7,7 @@ import (
 // MobileAppAssignment a class containing the properties used for Group Assignment of a Mobile App.
 type MobileAppAssignment struct {
     Entity
-    // The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+    // Possible values for the install intent chosen by the admin.
     intent *InstallIntent
     // The settings for target assignment defined by the admin.
     settings MobileAppAssignmentSettingsable
@@ -60,7 +60,7 @@ func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIntent gets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+// GetIntent gets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *MobileAppAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetIntent sets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+// SetIntent sets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppAssignment) SetIntent(value *InstallIntent)() {
     if m != nil {
         m.intent = value

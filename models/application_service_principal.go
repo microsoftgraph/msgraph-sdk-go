@@ -13,7 +13,7 @@ type ApplicationServicePrincipal struct {
     // The servicePrincipal property
     servicePrincipal ServicePrincipalable
 }
-// NewApplicationServicePrincipal instantiates a new ApplicationServicePrincipal and sets the default values.
+// NewApplicationServicePrincipal instantiates a new applicationServicePrincipal and sets the default values.
 func NewApplicationServicePrincipal()(*ApplicationServicePrincipal) {
     m := &ApplicationServicePrincipal{
     }

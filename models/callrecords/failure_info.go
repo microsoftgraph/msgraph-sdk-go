@@ -10,7 +10,7 @@ type FailureInfo struct {
     additionalData map[string]interface{}
     // Classification of why a call or portion of a call failed.
     reason *string
-    // The stage when the failure occurred. Possible values are: unknown, callSetup, midcall, unknownFutureValue.
+    // The stage property
     stage *FailureStage
 }
 // NewFailureInfo instantiates a new failureInfo and sets the default values.
@@ -65,7 +65,7 @@ func (m *FailureInfo) GetReason()(*string) {
         return m.reason
     }
 }
-// GetStage gets the stage property value. The stage when the failure occurred. Possible values are: unknown, callSetup, midcall, unknownFutureValue.
+// GetStage gets the stage property value. The stage property
 func (m *FailureInfo) GetStage()(*FailureStage) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *FailureInfo) SetReason(value *string)() {
         m.reason = value
     }
 }
-// SetStage sets the stage property value. The stage when the failure occurred. Possible values are: unknown, callSetup, midcall, unknownFutureValue.
+// SetStage sets the stage property value. The stage property
 func (m *FailureInfo) SetStage(value *FailureStage)() {
     if m != nil {
         m.stage = value

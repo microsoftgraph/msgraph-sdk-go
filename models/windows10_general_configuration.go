@@ -11,7 +11,7 @@ type Windows10GeneralConfiguration struct {
     accountsBlockAddingNonMicrosoftAccountEmail *bool
     // Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
     antiTheftModeBlocked *bool
-    // Indicates whether apps from AppX packages signed with a trusted certificate can be side loaded. Possible values are: notConfigured, blocked, allowed.
+    // State Management Setting.
     appsAllowTrustedAppsSideloading *StateManagementSetting
     // Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.
     appsBlockWindowsStoreOriginatedApps *bool
@@ -43,7 +43,7 @@ type Windows10GeneralConfiguration struct {
     cortanaBlocked *bool
     // Whether or not to block end user access to Defender.
     defenderBlockEndUserAccess *bool
-    // Specifies the level of cloud-delivered protection. Possible values are: notConfigured, high, highPlus, zeroTolerance.
+    // Possible values of Cloud Block Level
     defenderCloudBlockLevel *DefenderCloudBlockLevelType
     // Number of days before deleting quarantined malware. Valid values 0 to 90
     defenderDaysBeforeDeletingQuarantinedMalware *int32
@@ -53,11 +53,11 @@ type Windows10GeneralConfiguration struct {
     defenderFileExtensionsToExclude []string
     // Files and folder to exclude from scans and real time protection.
     defenderFilesAndFoldersToExclude []string
-    // Value for monitoring file activity. Possible values are: userDefined, disable, monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
+    // Possible values for monitoring file activity.
     defenderMonitorFileActivity *DefenderMonitorFileActivity
     // Processes to exclude from scans and real time protection.
     defenderProcessesToExclude []string
-    // The configuration for how to prompt user for sample submission. Possible values are: userDefined, alwaysPrompt, promptBeforeSendingPersonalData, neverSendData, sendAllDataWithoutPrompting.
+    // Possible values for prompting user for samples submission.
     defenderPromptForSampleSubmission *DefenderPromptForSampleSubmission
     // Indicates whether or not to require behavior monitoring.
     defenderRequireBehaviorMonitoring *bool
@@ -83,7 +83,7 @@ type Windows10GeneralConfiguration struct {
     defenderScanRemovableDrivesDuringFullScan *bool
     // Indicates whether or not to scan scripts loaded in Internet Explorer browser.
     defenderScanScriptsLoadedInInternetExplorer *bool
-    // The defender system scan type. Possible values are: userDefined, disabled, quick, full.
+    // Possible values for system scan type.
     defenderScanType *DefenderScanType
     // The time to perform a daily quick scan.
     defenderScheduledQuickScanTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
@@ -91,15 +91,15 @@ type Windows10GeneralConfiguration struct {
     defenderScheduledScanTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24
     defenderSignatureUpdateIntervalInHours *int32
-    // Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+    // Possible values for a weekly schedule.
     defenderSystemScanSchedule *WeeklySchedule
-    // Indicates whether or not to allow developer unlock. Possible values are: notConfigured, blocked, allowed.
+    // State Management Setting.
     developerUnlockSetting *StateManagementSetting
     // Indicates whether or not to Block the user from resetting their phone.
     deviceManagementBlockFactoryResetOnMobile *bool
     // Indicates whether or not to Block the user from doing manual un-enrollment from device management.
     deviceManagementBlockManualUnenroll *bool
-    // Gets or sets a value allowing the device to send diagnostic and usage telemetry data, such as Watson. Possible values are: userDefined, none, basic, enhanced, full.
+    // Allow the device to send diagnostic and usage telemetry data, such as Watson.
     diagnosticsDataSubmissionMode *DiagnosticDataSubmissionMode
     // Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
     edgeAllowStartPagesModification *bool
@@ -135,7 +135,7 @@ type Windows10GeneralConfiguration struct {
     edgeBlockSendingIntranetTrafficToInternetExplorer *bool
     // Clear browsing data on exiting Microsoft Edge.
     edgeClearBrowsingDataOnExit *bool
-    // Indicates which cookies to block in the Edge browser. Possible values are: userDefined, allow, blockThirdParty, blockAll.
+    // Possible values to specify which cookies are allowed in Microsoft Edge.
     edgeCookiePolicy *EdgeCookiePolicy
     // Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.
     edgeDisableFirstRunPage *bool
@@ -219,7 +219,7 @@ type Windows10GeneralConfiguration struct {
     passwordPreviousPasswordBlockCount *int32
     // Indicates whether or not to require the user to have a password.
     passwordRequired *bool
-    // The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
     // Indicates whether or not to require a password upon resuming from an idle state.
     passwordRequireWhenResumeFromIdleState *bool
@@ -229,7 +229,7 @@ type Windows10GeneralConfiguration struct {
     personalizationDesktopImageUrl *string
     // A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.
     personalizationLockScreenImageUrl *string
-    // Enables or disables the use of advertising ID. Added in Windows 10, version 1607. Possible values are: notConfigured, blocked, allowed.
+    // State Management Setting.
     privacyAdvertisingId *StateManagementSetting
     // Indicates whether or not to allow the automatic acceptance of the pairing and privacy user consent dialog when launching apps.
     privacyAutoAcceptPairingAndConsentPrompts *bool
@@ -237,7 +237,7 @@ type Windows10GeneralConfiguration struct {
     privacyBlockInputPersonalization *bool
     // Indicates whether or not to Block the user from reset protection mode.
     resetProtectionModeBlocked *bool
-    // Specifies what filter level of safe search is required. Possible values are: userDefined, strict, moderate.
+    // Specifies what level of safe search (filtering adult content) is required
     safeSearchFilter *SafeSearchFilterType
     // Indicates whether or not to Block the user from taking Screenshots.
     screenCaptureBlocked *bool
@@ -303,7 +303,7 @@ type Windows10GeneralConfiguration struct {
     smartScreenEnableAppInstallControl *bool
     // Indicates whether or not to block the user from unpinning apps from taskbar.
     startBlockUnpinningAppsFromTaskbar *bool
-    // Setting the value of this collapses the app list, removes the app list entirely, or disables the corresponding toggle in the Settings app. Possible values are: userDefined, collapse, remove, disableSettingsApp.
+    // Type of start menu app list visibility.
     startMenuAppListVisibility *WindowsStartMenuAppListVisibilityType
     // Enabling this policy hides the change account setting from appearing in the user tile in the start menu.
     startMenuHideChangeAccountSettings *bool
@@ -335,27 +335,27 @@ type Windows10GeneralConfiguration struct {
     startMenuLayoutEdgeAssetsXml []byte
     // Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.
     startMenuLayoutXml []byte
-    // Allows admins to decide how the Start menu is displayed. Possible values are: userDefined, fullScreen, nonFullScreen.
+    // Type of display modes for the start menu.
     startMenuMode *WindowsStartMenuModeType
-    // Enforces the visibility (Show/Hide) of the Documents folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderDocuments *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the Downloads folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderDownloads *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the FileExplorer shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderFileExplorer *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the HomeGroup folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderHomeGroup *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the Music folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderMusic *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the Network folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderNetwork *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the PersonalFolder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderPersonalFolder *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the Pictures folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderPictures *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the Settings folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderSettings *VisibilitySetting
-    // Enforces the visibility (Show/Hide) of the Videos folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+    // Generic visibility state.
     startMenuPinnedFolderVideos *VisibilitySetting
     // Indicates whether or not to Block the user from using removable storage.
     storageBlockRemovableStorage *bool
@@ -395,7 +395,7 @@ type Windows10GeneralConfiguration struct {
     windowsSpotlightBlockWelcomeExperience *bool
     // Allows IT admins to turn off the popup of Windows Tips.
     windowsSpotlightBlockWindowsTips *bool
-    // Specifies the type of Spotlight. Possible values are: notConfigured, disabled, enabled.
+    // Allows IT admind to set a predefined default search engine for MDM-Controlled devices
     windowsSpotlightConfigureOnLockScreen *WindowsSpotlightEnablementSettings
     // Indicates whether or not to block automatic update of apps from Windows Store.
     windowsStoreBlockAutoUpdate *bool
@@ -437,7 +437,7 @@ func (m *Windows10GeneralConfiguration) GetAntiTheftModeBlocked()(*bool) {
         return m.antiTheftModeBlocked
     }
 }
-// GetAppsAllowTrustedAppsSideloading gets the appsAllowTrustedAppsSideloading property value. Indicates whether apps from AppX packages signed with a trusted certificate can be side loaded. Possible values are: notConfigured, blocked, allowed.
+// GetAppsAllowTrustedAppsSideloading gets the appsAllowTrustedAppsSideloading property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) GetAppsAllowTrustedAppsSideloading()(*StateManagementSetting) {
     if m == nil {
         return nil
@@ -565,7 +565,7 @@ func (m *Windows10GeneralConfiguration) GetDefenderBlockEndUserAccess()(*bool) {
         return m.defenderBlockEndUserAccess
     }
 }
-// GetDefenderCloudBlockLevel gets the defenderCloudBlockLevel property value. Specifies the level of cloud-delivered protection. Possible values are: notConfigured, high, highPlus, zeroTolerance.
+// GetDefenderCloudBlockLevel gets the defenderCloudBlockLevel property value. Possible values of Cloud Block Level
 func (m *Windows10GeneralConfiguration) GetDefenderCloudBlockLevel()(*DefenderCloudBlockLevelType) {
     if m == nil {
         return nil
@@ -605,7 +605,7 @@ func (m *Windows10GeneralConfiguration) GetDefenderFilesAndFoldersToExclude()([]
         return m.defenderFilesAndFoldersToExclude
     }
 }
-// GetDefenderMonitorFileActivity gets the defenderMonitorFileActivity property value. Value for monitoring file activity. Possible values are: userDefined, disable, monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
+// GetDefenderMonitorFileActivity gets the defenderMonitorFileActivity property value. Possible values for monitoring file activity.
 func (m *Windows10GeneralConfiguration) GetDefenderMonitorFileActivity()(*DefenderMonitorFileActivity) {
     if m == nil {
         return nil
@@ -621,7 +621,7 @@ func (m *Windows10GeneralConfiguration) GetDefenderProcessesToExclude()([]string
         return m.defenderProcessesToExclude
     }
 }
-// GetDefenderPromptForSampleSubmission gets the defenderPromptForSampleSubmission property value. The configuration for how to prompt user for sample submission. Possible values are: userDefined, alwaysPrompt, promptBeforeSendingPersonalData, neverSendData, sendAllDataWithoutPrompting.
+// GetDefenderPromptForSampleSubmission gets the defenderPromptForSampleSubmission property value. Possible values for prompting user for samples submission.
 func (m *Windows10GeneralConfiguration) GetDefenderPromptForSampleSubmission()(*DefenderPromptForSampleSubmission) {
     if m == nil {
         return nil
@@ -725,7 +725,7 @@ func (m *Windows10GeneralConfiguration) GetDefenderScanScriptsLoadedInInternetEx
         return m.defenderScanScriptsLoadedInInternetExplorer
     }
 }
-// GetDefenderScanType gets the defenderScanType property value. The defender system scan type. Possible values are: userDefined, disabled, quick, full.
+// GetDefenderScanType gets the defenderScanType property value. Possible values for system scan type.
 func (m *Windows10GeneralConfiguration) GetDefenderScanType()(*DefenderScanType) {
     if m == nil {
         return nil
@@ -757,7 +757,7 @@ func (m *Windows10GeneralConfiguration) GetDefenderSignatureUpdateIntervalInHour
         return m.defenderSignatureUpdateIntervalInHours
     }
 }
-// GetDefenderSystemScanSchedule gets the defenderSystemScanSchedule property value. Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+// GetDefenderSystemScanSchedule gets the defenderSystemScanSchedule property value. Possible values for a weekly schedule.
 func (m *Windows10GeneralConfiguration) GetDefenderSystemScanSchedule()(*WeeklySchedule) {
     if m == nil {
         return nil
@@ -765,7 +765,7 @@ func (m *Windows10GeneralConfiguration) GetDefenderSystemScanSchedule()(*WeeklyS
         return m.defenderSystemScanSchedule
     }
 }
-// GetDeveloperUnlockSetting gets the developerUnlockSetting property value. Indicates whether or not to allow developer unlock. Possible values are: notConfigured, blocked, allowed.
+// GetDeveloperUnlockSetting gets the developerUnlockSetting property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) GetDeveloperUnlockSetting()(*StateManagementSetting) {
     if m == nil {
         return nil
@@ -789,7 +789,7 @@ func (m *Windows10GeneralConfiguration) GetDeviceManagementBlockManualUnenroll()
         return m.deviceManagementBlockManualUnenroll
     }
 }
-// GetDiagnosticsDataSubmissionMode gets the diagnosticsDataSubmissionMode property value. Gets or sets a value allowing the device to send diagnostic and usage telemetry data, such as Watson. Possible values are: userDefined, none, basic, enhanced, full.
+// GetDiagnosticsDataSubmissionMode gets the diagnosticsDataSubmissionMode property value. Allow the device to send diagnostic and usage telemetry data, such as Watson.
 func (m *Windows10GeneralConfiguration) GetDiagnosticsDataSubmissionMode()(*DiagnosticDataSubmissionMode) {
     if m == nil {
         return nil
@@ -933,7 +933,7 @@ func (m *Windows10GeneralConfiguration) GetEdgeClearBrowsingDataOnExit()(*bool) 
         return m.edgeClearBrowsingDataOnExit
     }
 }
-// GetEdgeCookiePolicy gets the edgeCookiePolicy property value. Indicates which cookies to block in the Edge browser. Possible values are: userDefined, allow, blockThirdParty, blockAll.
+// GetEdgeCookiePolicy gets the edgeCookiePolicy property value. Possible values to specify which cookies are allowed in Microsoft Edge.
 func (m *Windows10GeneralConfiguration) GetEdgeCookiePolicy()(*EdgeCookiePolicy) {
     if m == nil {
         return nil
@@ -3304,7 +3304,7 @@ func (m *Windows10GeneralConfiguration) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10GeneralConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -3344,7 +3344,7 @@ func (m *Windows10GeneralConfiguration) GetPersonalizationLockScreenImageUrl()(*
         return m.personalizationLockScreenImageUrl
     }
 }
-// GetPrivacyAdvertisingId gets the privacyAdvertisingId property value. Enables or disables the use of advertising ID. Added in Windows 10, version 1607. Possible values are: notConfigured, blocked, allowed.
+// GetPrivacyAdvertisingId gets the privacyAdvertisingId property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) GetPrivacyAdvertisingId()(*StateManagementSetting) {
     if m == nil {
         return nil
@@ -3376,7 +3376,7 @@ func (m *Windows10GeneralConfiguration) GetResetProtectionModeBlocked()(*bool) {
         return m.resetProtectionModeBlocked
     }
 }
-// GetSafeSearchFilter gets the safeSearchFilter property value. Specifies what filter level of safe search is required. Possible values are: userDefined, strict, moderate.
+// GetSafeSearchFilter gets the safeSearchFilter property value. Specifies what level of safe search (filtering adult content) is required
 func (m *Windows10GeneralConfiguration) GetSafeSearchFilter()(*SafeSearchFilterType) {
     if m == nil {
         return nil
@@ -3640,7 +3640,7 @@ func (m *Windows10GeneralConfiguration) GetStartBlockUnpinningAppsFromTaskbar()(
         return m.startBlockUnpinningAppsFromTaskbar
     }
 }
-// GetStartMenuAppListVisibility gets the startMenuAppListVisibility property value. Setting the value of this collapses the app list, removes the app list entirely, or disables the corresponding toggle in the Settings app. Possible values are: userDefined, collapse, remove, disableSettingsApp.
+// GetStartMenuAppListVisibility gets the startMenuAppListVisibility property value. Type of start menu app list visibility.
 func (m *Windows10GeneralConfiguration) GetStartMenuAppListVisibility()(*WindowsStartMenuAppListVisibilityType) {
     if m == nil {
         return nil
@@ -3768,7 +3768,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuLayoutXml()([]byte) {
         return m.startMenuLayoutXml
     }
 }
-// GetStartMenuMode gets the startMenuMode property value. Allows admins to decide how the Start menu is displayed. Possible values are: userDefined, fullScreen, nonFullScreen.
+// GetStartMenuMode gets the startMenuMode property value. Type of display modes for the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuMode()(*WindowsStartMenuModeType) {
     if m == nil {
         return nil
@@ -3776,7 +3776,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuMode()(*WindowsStartMenuMode
         return m.startMenuMode
     }
 }
-// GetStartMenuPinnedFolderDocuments gets the startMenuPinnedFolderDocuments property value. Enforces the visibility (Show/Hide) of the Documents folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderDocuments gets the startMenuPinnedFolderDocuments property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderDocuments()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3784,7 +3784,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderDocuments()(*Vis
         return m.startMenuPinnedFolderDocuments
     }
 }
-// GetStartMenuPinnedFolderDownloads gets the startMenuPinnedFolderDownloads property value. Enforces the visibility (Show/Hide) of the Downloads folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderDownloads gets the startMenuPinnedFolderDownloads property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderDownloads()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3792,7 +3792,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderDownloads()(*Vis
         return m.startMenuPinnedFolderDownloads
     }
 }
-// GetStartMenuPinnedFolderFileExplorer gets the startMenuPinnedFolderFileExplorer property value. Enforces the visibility (Show/Hide) of the FileExplorer shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderFileExplorer gets the startMenuPinnedFolderFileExplorer property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderFileExplorer()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3800,7 +3800,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderFileExplorer()(*
         return m.startMenuPinnedFolderFileExplorer
     }
 }
-// GetStartMenuPinnedFolderHomeGroup gets the startMenuPinnedFolderHomeGroup property value. Enforces the visibility (Show/Hide) of the HomeGroup folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderHomeGroup gets the startMenuPinnedFolderHomeGroup property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderHomeGroup()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3808,7 +3808,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderHomeGroup()(*Vis
         return m.startMenuPinnedFolderHomeGroup
     }
 }
-// GetStartMenuPinnedFolderMusic gets the startMenuPinnedFolderMusic property value. Enforces the visibility (Show/Hide) of the Music folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderMusic gets the startMenuPinnedFolderMusic property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderMusic()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3816,7 +3816,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderMusic()(*Visibil
         return m.startMenuPinnedFolderMusic
     }
 }
-// GetStartMenuPinnedFolderNetwork gets the startMenuPinnedFolderNetwork property value. Enforces the visibility (Show/Hide) of the Network folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderNetwork gets the startMenuPinnedFolderNetwork property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderNetwork()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3824,7 +3824,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderNetwork()(*Visib
         return m.startMenuPinnedFolderNetwork
     }
 }
-// GetStartMenuPinnedFolderPersonalFolder gets the startMenuPinnedFolderPersonalFolder property value. Enforces the visibility (Show/Hide) of the PersonalFolder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderPersonalFolder gets the startMenuPinnedFolderPersonalFolder property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderPersonalFolder()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3832,7 +3832,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderPersonalFolder()
         return m.startMenuPinnedFolderPersonalFolder
     }
 }
-// GetStartMenuPinnedFolderPictures gets the startMenuPinnedFolderPictures property value. Enforces the visibility (Show/Hide) of the Pictures folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderPictures gets the startMenuPinnedFolderPictures property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderPictures()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3840,7 +3840,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderPictures()(*Visi
         return m.startMenuPinnedFolderPictures
     }
 }
-// GetStartMenuPinnedFolderSettings gets the startMenuPinnedFolderSettings property value. Enforces the visibility (Show/Hide) of the Settings folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderSettings gets the startMenuPinnedFolderSettings property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderSettings()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -3848,7 +3848,7 @@ func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderSettings()(*Visi
         return m.startMenuPinnedFolderSettings
     }
 }
-// GetStartMenuPinnedFolderVideos gets the startMenuPinnedFolderVideos property value. Enforces the visibility (Show/Hide) of the Videos folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// GetStartMenuPinnedFolderVideos gets the startMenuPinnedFolderVideos property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderVideos()(*VisibilitySetting) {
     if m == nil {
         return nil
@@ -4008,7 +4008,7 @@ func (m *Windows10GeneralConfiguration) GetWindowsSpotlightBlockWindowsTips()(*b
         return m.windowsSpotlightBlockWindowsTips
     }
 }
-// GetWindowsSpotlightConfigureOnLockScreen gets the windowsSpotlightConfigureOnLockScreen property value. Specifies the type of Spotlight. Possible values are: notConfigured, disabled, enabled.
+// GetWindowsSpotlightConfigureOnLockScreen gets the windowsSpotlightConfigureOnLockScreen property value. Allows IT admind to set a predefined default search engine for MDM-Controlled devices
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightConfigureOnLockScreen()(*WindowsSpotlightEnablementSettings) {
     if m == nil {
         return nil
@@ -5315,7 +5315,7 @@ func (m *Windows10GeneralConfiguration) SetAntiTheftModeBlocked(value *bool)() {
         m.antiTheftModeBlocked = value
     }
 }
-// SetAppsAllowTrustedAppsSideloading sets the appsAllowTrustedAppsSideloading property value. Indicates whether apps from AppX packages signed with a trusted certificate can be side loaded. Possible values are: notConfigured, blocked, allowed.
+// SetAppsAllowTrustedAppsSideloading sets the appsAllowTrustedAppsSideloading property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) SetAppsAllowTrustedAppsSideloading(value *StateManagementSetting)() {
     if m != nil {
         m.appsAllowTrustedAppsSideloading = value
@@ -5411,7 +5411,7 @@ func (m *Windows10GeneralConfiguration) SetDefenderBlockEndUserAccess(value *boo
         m.defenderBlockEndUserAccess = value
     }
 }
-// SetDefenderCloudBlockLevel sets the defenderCloudBlockLevel property value. Specifies the level of cloud-delivered protection. Possible values are: notConfigured, high, highPlus, zeroTolerance.
+// SetDefenderCloudBlockLevel sets the defenderCloudBlockLevel property value. Possible values of Cloud Block Level
 func (m *Windows10GeneralConfiguration) SetDefenderCloudBlockLevel(value *DefenderCloudBlockLevelType)() {
     if m != nil {
         m.defenderCloudBlockLevel = value
@@ -5441,7 +5441,7 @@ func (m *Windows10GeneralConfiguration) SetDefenderFilesAndFoldersToExclude(valu
         m.defenderFilesAndFoldersToExclude = value
     }
 }
-// SetDefenderMonitorFileActivity sets the defenderMonitorFileActivity property value. Value for monitoring file activity. Possible values are: userDefined, disable, monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
+// SetDefenderMonitorFileActivity sets the defenderMonitorFileActivity property value. Possible values for monitoring file activity.
 func (m *Windows10GeneralConfiguration) SetDefenderMonitorFileActivity(value *DefenderMonitorFileActivity)() {
     if m != nil {
         m.defenderMonitorFileActivity = value
@@ -5453,7 +5453,7 @@ func (m *Windows10GeneralConfiguration) SetDefenderProcessesToExclude(value []st
         m.defenderProcessesToExclude = value
     }
 }
-// SetDefenderPromptForSampleSubmission sets the defenderPromptForSampleSubmission property value. The configuration for how to prompt user for sample submission. Possible values are: userDefined, alwaysPrompt, promptBeforeSendingPersonalData, neverSendData, sendAllDataWithoutPrompting.
+// SetDefenderPromptForSampleSubmission sets the defenderPromptForSampleSubmission property value. Possible values for prompting user for samples submission.
 func (m *Windows10GeneralConfiguration) SetDefenderPromptForSampleSubmission(value *DefenderPromptForSampleSubmission)() {
     if m != nil {
         m.defenderPromptForSampleSubmission = value
@@ -5531,7 +5531,7 @@ func (m *Windows10GeneralConfiguration) SetDefenderScanScriptsLoadedInInternetEx
         m.defenderScanScriptsLoadedInInternetExplorer = value
     }
 }
-// SetDefenderScanType sets the defenderScanType property value. The defender system scan type. Possible values are: userDefined, disabled, quick, full.
+// SetDefenderScanType sets the defenderScanType property value. Possible values for system scan type.
 func (m *Windows10GeneralConfiguration) SetDefenderScanType(value *DefenderScanType)() {
     if m != nil {
         m.defenderScanType = value
@@ -5555,13 +5555,13 @@ func (m *Windows10GeneralConfiguration) SetDefenderSignatureUpdateIntervalInHour
         m.defenderSignatureUpdateIntervalInHours = value
     }
 }
-// SetDefenderSystemScanSchedule sets the defenderSystemScanSchedule property value. Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+// SetDefenderSystemScanSchedule sets the defenderSystemScanSchedule property value. Possible values for a weekly schedule.
 func (m *Windows10GeneralConfiguration) SetDefenderSystemScanSchedule(value *WeeklySchedule)() {
     if m != nil {
         m.defenderSystemScanSchedule = value
     }
 }
-// SetDeveloperUnlockSetting sets the developerUnlockSetting property value. Indicates whether or not to allow developer unlock. Possible values are: notConfigured, blocked, allowed.
+// SetDeveloperUnlockSetting sets the developerUnlockSetting property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) SetDeveloperUnlockSetting(value *StateManagementSetting)() {
     if m != nil {
         m.developerUnlockSetting = value
@@ -5579,7 +5579,7 @@ func (m *Windows10GeneralConfiguration) SetDeviceManagementBlockManualUnenroll(v
         m.deviceManagementBlockManualUnenroll = value
     }
 }
-// SetDiagnosticsDataSubmissionMode sets the diagnosticsDataSubmissionMode property value. Gets or sets a value allowing the device to send diagnostic and usage telemetry data, such as Watson. Possible values are: userDefined, none, basic, enhanced, full.
+// SetDiagnosticsDataSubmissionMode sets the diagnosticsDataSubmissionMode property value. Allow the device to send diagnostic and usage telemetry data, such as Watson.
 func (m *Windows10GeneralConfiguration) SetDiagnosticsDataSubmissionMode(value *DiagnosticDataSubmissionMode)() {
     if m != nil {
         m.diagnosticsDataSubmissionMode = value
@@ -5687,7 +5687,7 @@ func (m *Windows10GeneralConfiguration) SetEdgeClearBrowsingDataOnExit(value *bo
         m.edgeClearBrowsingDataOnExit = value
     }
 }
-// SetEdgeCookiePolicy sets the edgeCookiePolicy property value. Indicates which cookies to block in the Edge browser. Possible values are: userDefined, allow, blockThirdParty, blockAll.
+// SetEdgeCookiePolicy sets the edgeCookiePolicy property value. Possible values to specify which cookies are allowed in Microsoft Edge.
 func (m *Windows10GeneralConfiguration) SetEdgeCookiePolicy(value *EdgeCookiePolicy)() {
     if m != nil {
         m.edgeCookiePolicy = value
@@ -5939,7 +5939,7 @@ func (m *Windows10GeneralConfiguration) SetPasswordRequired(value *bool)() {
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10GeneralConfiguration) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value
@@ -5969,7 +5969,7 @@ func (m *Windows10GeneralConfiguration) SetPersonalizationLockScreenImageUrl(val
         m.personalizationLockScreenImageUrl = value
     }
 }
-// SetPrivacyAdvertisingId sets the privacyAdvertisingId property value. Enables or disables the use of advertising ID. Added in Windows 10, version 1607. Possible values are: notConfigured, blocked, allowed.
+// SetPrivacyAdvertisingId sets the privacyAdvertisingId property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) SetPrivacyAdvertisingId(value *StateManagementSetting)() {
     if m != nil {
         m.privacyAdvertisingId = value
@@ -5993,7 +5993,7 @@ func (m *Windows10GeneralConfiguration) SetResetProtectionModeBlocked(value *boo
         m.resetProtectionModeBlocked = value
     }
 }
-// SetSafeSearchFilter sets the safeSearchFilter property value. Specifies what filter level of safe search is required. Possible values are: userDefined, strict, moderate.
+// SetSafeSearchFilter sets the safeSearchFilter property value. Specifies what level of safe search (filtering adult content) is required
 func (m *Windows10GeneralConfiguration) SetSafeSearchFilter(value *SafeSearchFilterType)() {
     if m != nil {
         m.safeSearchFilter = value
@@ -6191,7 +6191,7 @@ func (m *Windows10GeneralConfiguration) SetStartBlockUnpinningAppsFromTaskbar(va
         m.startBlockUnpinningAppsFromTaskbar = value
     }
 }
-// SetStartMenuAppListVisibility sets the startMenuAppListVisibility property value. Setting the value of this collapses the app list, removes the app list entirely, or disables the corresponding toggle in the Settings app. Possible values are: userDefined, collapse, remove, disableSettingsApp.
+// SetStartMenuAppListVisibility sets the startMenuAppListVisibility property value. Type of start menu app list visibility.
 func (m *Windows10GeneralConfiguration) SetStartMenuAppListVisibility(value *WindowsStartMenuAppListVisibilityType)() {
     if m != nil {
         m.startMenuAppListVisibility = value
@@ -6287,67 +6287,67 @@ func (m *Windows10GeneralConfiguration) SetStartMenuLayoutXml(value []byte)() {
         m.startMenuLayoutXml = value
     }
 }
-// SetStartMenuMode sets the startMenuMode property value. Allows admins to decide how the Start menu is displayed. Possible values are: userDefined, fullScreen, nonFullScreen.
+// SetStartMenuMode sets the startMenuMode property value. Type of display modes for the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuMode(value *WindowsStartMenuModeType)() {
     if m != nil {
         m.startMenuMode = value
     }
 }
-// SetStartMenuPinnedFolderDocuments sets the startMenuPinnedFolderDocuments property value. Enforces the visibility (Show/Hide) of the Documents folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderDocuments sets the startMenuPinnedFolderDocuments property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderDocuments(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderDocuments = value
     }
 }
-// SetStartMenuPinnedFolderDownloads sets the startMenuPinnedFolderDownloads property value. Enforces the visibility (Show/Hide) of the Downloads folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderDownloads sets the startMenuPinnedFolderDownloads property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderDownloads(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderDownloads = value
     }
 }
-// SetStartMenuPinnedFolderFileExplorer sets the startMenuPinnedFolderFileExplorer property value. Enforces the visibility (Show/Hide) of the FileExplorer shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderFileExplorer sets the startMenuPinnedFolderFileExplorer property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderFileExplorer(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderFileExplorer = value
     }
 }
-// SetStartMenuPinnedFolderHomeGroup sets the startMenuPinnedFolderHomeGroup property value. Enforces the visibility (Show/Hide) of the HomeGroup folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderHomeGroup sets the startMenuPinnedFolderHomeGroup property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderHomeGroup(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderHomeGroup = value
     }
 }
-// SetStartMenuPinnedFolderMusic sets the startMenuPinnedFolderMusic property value. Enforces the visibility (Show/Hide) of the Music folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderMusic sets the startMenuPinnedFolderMusic property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderMusic(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderMusic = value
     }
 }
-// SetStartMenuPinnedFolderNetwork sets the startMenuPinnedFolderNetwork property value. Enforces the visibility (Show/Hide) of the Network folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderNetwork sets the startMenuPinnedFolderNetwork property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderNetwork(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderNetwork = value
     }
 }
-// SetStartMenuPinnedFolderPersonalFolder sets the startMenuPinnedFolderPersonalFolder property value. Enforces the visibility (Show/Hide) of the PersonalFolder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderPersonalFolder sets the startMenuPinnedFolderPersonalFolder property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderPersonalFolder(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderPersonalFolder = value
     }
 }
-// SetStartMenuPinnedFolderPictures sets the startMenuPinnedFolderPictures property value. Enforces the visibility (Show/Hide) of the Pictures folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderPictures sets the startMenuPinnedFolderPictures property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderPictures(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderPictures = value
     }
 }
-// SetStartMenuPinnedFolderSettings sets the startMenuPinnedFolderSettings property value. Enforces the visibility (Show/Hide) of the Settings folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderSettings sets the startMenuPinnedFolderSettings property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderSettings(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderSettings = value
     }
 }
-// SetStartMenuPinnedFolderVideos sets the startMenuPinnedFolderVideos property value. Enforces the visibility (Show/Hide) of the Videos folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.
+// SetStartMenuPinnedFolderVideos sets the startMenuPinnedFolderVideos property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderVideos(value *VisibilitySetting)() {
     if m != nil {
         m.startMenuPinnedFolderVideos = value
@@ -6467,7 +6467,7 @@ func (m *Windows10GeneralConfiguration) SetWindowsSpotlightBlockWindowsTips(valu
         m.windowsSpotlightBlockWindowsTips = value
     }
 }
-// SetWindowsSpotlightConfigureOnLockScreen sets the windowsSpotlightConfigureOnLockScreen property value. Specifies the type of Spotlight. Possible values are: notConfigured, disabled, enabled.
+// SetWindowsSpotlightConfigureOnLockScreen sets the windowsSpotlightConfigureOnLockScreen property value. Allows IT admind to set a predefined default search engine for MDM-Controlled devices
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightConfigureOnLockScreen(value *WindowsSpotlightEnablementSettings)() {
     if m != nil {
         m.windowsSpotlightConfigureOnLockScreen = value

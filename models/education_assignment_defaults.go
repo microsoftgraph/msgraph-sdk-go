@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentDefaults provides operations to manage the educationRoot singleton.
+// EducationAssignmentDefaults 
 type EducationAssignmentDefaults struct {
     Entity
     // Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
@@ -16,7 +16,7 @@ type EducationAssignmentDefaults struct {
     // Default Teams channel to which notifications will be sent. Default value is null.
     notificationChannelUrl *string
 }
-// NewEducationAssignmentDefaults instantiates a new educationAssignmentDefaults and sets the default values.
+// NewEducationAssignmentDefaults instantiates a new EducationAssignmentDefaults and sets the default values.
 func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {
     m := &EducationAssignmentDefaults{
         Entity: *NewEntity(),

@@ -10,7 +10,7 @@ type RecordingInfo struct {
     additionalData map[string]interface{}
     // The identities of recording initiator.
     initiator IdentitySetable
-    // Possible values are: unknown, notRecording, recording, or failed.
+    // The recordingStatus property
     recordingStatus *RecordingStatus
 }
 // NewRecordingInfo instantiates a new recordingInfo and sets the default values.
@@ -65,7 +65,7 @@ func (m *RecordingInfo) GetInitiator()(IdentitySetable) {
         return m.initiator
     }
 }
-// GetRecordingStatus gets the recordingStatus property value. Possible values are: unknown, notRecording, recording, or failed.
+// GetRecordingStatus gets the recordingStatus property value. The recordingStatus property
 func (m *RecordingInfo) GetRecordingStatus()(*RecordingStatus) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *RecordingInfo) SetInitiator(value IdentitySetable)() {
         m.initiator = value
     }
 }
-// SetRecordingStatus sets the recordingStatus property value. Possible values are: unknown, notRecording, recording, or failed.
+// SetRecordingStatus sets the recordingStatus property value. The recordingStatus property
 func (m *RecordingInfo) SetRecordingStatus(value *RecordingStatus)() {
     if m != nil {
         m.recordingStatus = value

@@ -37,7 +37,7 @@ type Windows10CompliancePolicy struct {
     passwordRequired *bool
     // Require a password to unlock an idle device.
     passwordRequiredToUnlockFromIdle *bool
-    // The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
     // Require devices to be reported as healthy by Windows Device Health Attestation.
     requireHealthyDeviceReport *bool
@@ -372,7 +372,7 @@ func (m *Windows10CompliancePolicy) GetPasswordRequiredToUnlockFromIdle()(*bool)
         return m.passwordRequiredToUnlockFromIdle
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10CompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -617,7 +617,7 @@ func (m *Windows10CompliancePolicy) SetPasswordRequiredToUnlockFromIdle(value *b
         m.passwordRequiredToUnlockFromIdle = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10CompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value

@@ -4,16 +4,16 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttribute provides operations to manage the identityContainer singleton.
+// IdentityUserFlowAttribute 
 type IdentityUserFlowAttribute struct {
     Entity
-    // The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
+    // The dataType property
     dataType *IdentityUserFlowAttributeDataType
     // The description of the user flow attribute that's shown to the user at the time of sign-up.
     description *string
     // The display name of the user flow attribute.
     displayName *string
-    // The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
+    // The userFlowAttributeType property
     userFlowAttributeType *IdentityUserFlowAttributeType
 }
 // NewIdentityUserFlowAttribute instantiates a new identityUserFlowAttribute and sets the default values.
@@ -21,6 +21,8 @@ func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {
     m := &IdentityUserFlowAttribute{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.identityUserFlowAttribute";
+    m.SetType(&typeValue);
     return m
 }
 // CreateIdentityUserFlowAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +50,7 @@ func CreateIdentityUserFlowAttributeFromDiscriminatorValue(parseNode i878a80d233
     }
     return NewIdentityUserFlowAttribute(), nil
 }
-// GetDataType gets the dataType property value. The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
+// GetDataType gets the dataType property value. The dataType property
 func (m *IdentityUserFlowAttribute) GetDataType()(*IdentityUserFlowAttributeDataType) {
     if m == nil {
         return nil
@@ -117,7 +119,7 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetUserFlowAttributeType gets the userFlowAttributeType property value. The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
+// GetUserFlowAttributeType gets the userFlowAttributeType property value. The userFlowAttributeType property
 func (m *IdentityUserFlowAttribute) GetUserFlowAttributeType()(*IdentityUserFlowAttributeType) {
     if m == nil {
         return nil
@@ -159,7 +161,7 @@ func (m *IdentityUserFlowAttribute) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetDataType sets the dataType property value. The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
+// SetDataType sets the dataType property value. The dataType property
 func (m *IdentityUserFlowAttribute) SetDataType(value *IdentityUserFlowAttributeDataType)() {
     if m != nil {
         m.dataType = value
@@ -177,7 +179,7 @@ func (m *IdentityUserFlowAttribute) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetUserFlowAttributeType sets the userFlowAttributeType property value. The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
+// SetUserFlowAttributeType sets the userFlowAttributeType property value. The userFlowAttributeType property
 func (m *IdentityUserFlowAttribute) SetUserFlowAttributeType(value *IdentityUserFlowAttributeType)() {
     if m != nil {
         m.userFlowAttributeType = value

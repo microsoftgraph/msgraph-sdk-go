@@ -19,7 +19,7 @@ type DeviceCompliancePolicySettingStateSummary struct {
     nonCompliantDeviceCount *int32
     // Number of not applicable devices
     notApplicableDeviceCount *int32
-    // Setting platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+    // Supported platform types for policies.
     platformType *PolicyPlatformType
     // Number of remediated devices
     remediatedDeviceCount *int32
@@ -208,7 +208,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount(
         return m.notApplicableDeviceCount
     }
 }
-// GetPlatformType gets the platformType property value. Setting platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+// GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicySettingStateSummary) GetPlatformType()(*PolicyPlatformType) {
     if m == nil {
         return nil
@@ -363,7 +363,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) SetNotApplicableDeviceCount(
         m.notApplicableDeviceCount = value
     }
 }
-// SetPlatformType sets the platformType property value. Setting platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+// SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPlatformType(value *PolicyPlatformType)() {
     if m != nil {
         m.platformType = value

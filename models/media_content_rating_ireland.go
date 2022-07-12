@@ -8,9 +8,9 @@ import (
 type MediaContentRatingIreland struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Movies rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove12, agesAbove15, agesAbove16, adults.
+    // Movies rating labels in Ireland
     movieRating *RatingIrelandMoviesType
-    // TV rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, children, youngAdults, parentalSupervision, mature.
+    // TV content rating labels in Ireland
     tvRating *RatingIrelandTelevisionType
 }
 // NewMediaContentRatingIreland instantiates a new mediaContentRatingIreland and sets the default values.
@@ -57,7 +57,7 @@ func (m *MediaContentRatingIreland) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetMovieRating gets the movieRating property value. Movies rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove12, agesAbove15, agesAbove16, adults.
+// GetMovieRating gets the movieRating property value. Movies rating labels in Ireland
 func (m *MediaContentRatingIreland) GetMovieRating()(*RatingIrelandMoviesType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *MediaContentRatingIreland) GetMovieRating()(*RatingIrelandMoviesType) {
         return m.movieRating
     }
 }
-// GetTvRating gets the tvRating property value. TV rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, children, youngAdults, parentalSupervision, mature.
+// GetTvRating gets the tvRating property value. TV content rating labels in Ireland
 func (m *MediaContentRatingIreland) GetTvRating()(*RatingIrelandTelevisionType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *MediaContentRatingIreland) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetMovieRating sets the movieRating property value. Movies rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove12, agesAbove15, agesAbove16, adults.
+// SetMovieRating sets the movieRating property value. Movies rating labels in Ireland
 func (m *MediaContentRatingIreland) SetMovieRating(value *RatingIrelandMoviesType)() {
     if m != nil {
         m.movieRating = value
     }
 }
-// SetTvRating sets the tvRating property value. TV rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, children, youngAdults, parentalSupervision, mature.
+// SetTvRating sets the tvRating property value. TV content rating labels in Ireland
 func (m *MediaContentRatingIreland) SetTvRating(value *RatingIrelandTelevisionType)() {
     if m != nil {
         m.tvRating = value

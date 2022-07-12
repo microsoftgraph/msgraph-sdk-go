@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimeOffItem provides operations to manage the collection of application entities.
+// TimeOffItem 
 type TimeOffItem struct {
     ScheduleEntity
     // ID of the timeOffReason for this timeOffItem. Required.
     timeOffReasonId *string
 }
-// NewTimeOffItem instantiates a new timeOffItem and sets the default values.
+// NewTimeOffItem instantiates a new TimeOffItem and sets the default values.
 func NewTimeOffItem()(*TimeOffItem) {
     m := &TimeOffItem{
         ScheduleEntity: *NewScheduleEntity(),

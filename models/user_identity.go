@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserIdentity provides operations to manage the auditLogRoot singleton.
+// UserIdentity 
 type UserIdentity struct {
     Identity
     // Indicates the client IP address used by user performing the activity (audit log only).
@@ -12,7 +12,7 @@ type UserIdentity struct {
     // The userPrincipalName attribute of the user.
     userPrincipalName *string
 }
-// NewUserIdentity instantiates a new userIdentity and sets the default values.
+// NewUserIdentity instantiates a new UserIdentity and sets the default values.
 func NewUserIdentity()(*UserIdentity) {
     m := &UserIdentity{
         Identity: *NewIdentity(),

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the identityProtectionRoot singleton.
+// Provides operations to manage the admin singleton.
 type RiskDetectionTimingType int
 
 const (

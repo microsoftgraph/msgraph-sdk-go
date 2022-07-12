@@ -17,9 +17,9 @@ type Windows10EndpointProtectionConfiguration struct {
     applicationGuardAllowPrintToPDF *bool
     // Allow printing to XPS from Container
     applicationGuardAllowPrintToXPS *bool
-    // Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
+    // Possible values for applicationGuardBlockClipboardSharingType
     applicationGuardBlockClipboardSharing *ApplicationGuardBlockClipboardSharingType
-    // Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
+    // Possible values for applicationGuardBlockFileTransfer
     applicationGuardBlockFileTransfer *ApplicationGuardBlockFileTransferType
     // Block enterprise sites to load non-enterprise content, such as third party plug-ins
     applicationGuardBlockNonEnterpriseContent *bool
@@ -27,7 +27,7 @@ type Windows10EndpointProtectionConfiguration struct {
     applicationGuardEnabled *bool
     // Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
     applicationGuardForceAuditing *bool
-    // Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
+    // Possible values of AppLocker Application Control Types
     appLockerApplicationControl *AppLockerApplicationControlType
     // Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
     bitLockerDisableWarningForOtherDiskEncryption *bool
@@ -51,7 +51,7 @@ type Windows10EndpointProtectionConfiguration struct {
     defenderSecurityCenterBlockExploitProtectionOverride *bool
     // Blocks stateful FTP connections to the device
     firewallBlockStatefulFTP *bool
-    // Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
+    // Possible values for firewallCertificateRevocationListCheckMethod
     firewallCertificateRevocationListCheckMethod *FirewallCertificateRevocationListCheckMethodType
     // Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
     firewallIdleTimeoutForSecurityAssociationInSeconds *int32
@@ -65,9 +65,9 @@ type Windows10EndpointProtectionConfiguration struct {
     firewallIPSecExemptionsAllowRouterDiscovery *bool
     // If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
     firewallMergeKeyingModuleSettings *bool
-    // Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+    // Possible values for firewallPacketQueueingMethod
     firewallPacketQueueingMethod *FirewallPacketQueueingMethodType
-    // Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
+    // Possible values for firewallPreSharedKeyEncodingMethod
     firewallPreSharedKeyEncodingMethod *FirewallPreSharedKeyEncodingMethodType
     // Configures the firewall profile settings for domain networks
     firewallProfileDomain WindowsFirewallNetworkProfileable
@@ -131,7 +131,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrint
         return m.applicationGuardAllowPrintToXPS
     }
 }
-// GetApplicationGuardBlockClipboardSharing gets the applicationGuardBlockClipboardSharing property value. Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
+// GetApplicationGuardBlockClipboardSharing gets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockClipboardSharing()(*ApplicationGuardBlockClipboardSharingType) {
     if m == nil {
         return nil
@@ -139,7 +139,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockClipb
         return m.applicationGuardBlockClipboardSharing
     }
 }
-// GetApplicationGuardBlockFileTransfer gets the applicationGuardBlockFileTransfer property value. Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
+// GetApplicationGuardBlockFileTransfer gets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockFileTransfer()(*ApplicationGuardBlockFileTransferType) {
     if m == nil {
         return nil
@@ -171,7 +171,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardForceAudit
         return m.applicationGuardForceAuditing
     }
 }
-// GetAppLockerApplicationControl gets the appLockerApplicationControl property value. Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
+// GetAppLockerApplicationControl gets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
 func (m *Windows10EndpointProtectionConfiguration) GetAppLockerApplicationControl()(*AppLockerApplicationControlType) {
     if m == nil {
         return nil
@@ -644,7 +644,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallBlockStatefulFTP()
         return m.firewallBlockStatefulFTP
     }
 }
-// GetFirewallCertificateRevocationListCheckMethod gets the firewallCertificateRevocationListCheckMethod property value. Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
+// GetFirewallCertificateRevocationListCheckMethod gets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallCertificateRevocationListCheckMethod()(*FirewallCertificateRevocationListCheckMethodType) {
     if m == nil {
         return nil
@@ -700,7 +700,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallMergeKeyingModuleS
         return m.firewallMergeKeyingModuleSettings
     }
 }
-// GetFirewallPacketQueueingMethod gets the firewallPacketQueueingMethod property value. Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+// GetFirewallPacketQueueingMethod gets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPacketQueueingMethod()(*FirewallPacketQueueingMethodType) {
     if m == nil {
         return nil
@@ -708,7 +708,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallPacketQueueingMeth
         return m.firewallPacketQueueingMethod
     }
 }
-// GetFirewallPreSharedKeyEncodingMethod gets the firewallPreSharedKeyEncodingMethod property value. Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
+// GetFirewallPreSharedKeyEncodingMethod gets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPreSharedKeyEncodingMethod()(*FirewallPreSharedKeyEncodingMethodType) {
     if m == nil {
         return nil
@@ -1016,13 +1016,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrint
         m.applicationGuardAllowPrintToXPS = value
     }
 }
-// SetApplicationGuardBlockClipboardSharing sets the applicationGuardBlockClipboardSharing property value. Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
+// SetApplicationGuardBlockClipboardSharing sets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockClipboardSharing(value *ApplicationGuardBlockClipboardSharingType)() {
     if m != nil {
         m.applicationGuardBlockClipboardSharing = value
     }
 }
-// SetApplicationGuardBlockFileTransfer sets the applicationGuardBlockFileTransfer property value. Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
+// SetApplicationGuardBlockFileTransfer sets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockFileTransfer(value *ApplicationGuardBlockFileTransferType)() {
     if m != nil {
         m.applicationGuardBlockFileTransfer = value
@@ -1046,7 +1046,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardForceAudit
         m.applicationGuardForceAuditing = value
     }
 }
-// SetAppLockerApplicationControl sets the appLockerApplicationControl property value. Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
+// SetAppLockerApplicationControl sets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
 func (m *Windows10EndpointProtectionConfiguration) SetAppLockerApplicationControl(value *AppLockerApplicationControlType)() {
     if m != nil {
         m.appLockerApplicationControl = value
@@ -1118,7 +1118,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetFirewallBlockStatefulFTP(v
         m.firewallBlockStatefulFTP = value
     }
 }
-// SetFirewallCertificateRevocationListCheckMethod sets the firewallCertificateRevocationListCheckMethod property value. Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
+// SetFirewallCertificateRevocationListCheckMethod sets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallCertificateRevocationListCheckMethod(value *FirewallCertificateRevocationListCheckMethodType)() {
     if m != nil {
         m.firewallCertificateRevocationListCheckMethod = value
@@ -1160,13 +1160,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetFirewallMergeKeyingModuleS
         m.firewallMergeKeyingModuleSettings = value
     }
 }
-// SetFirewallPacketQueueingMethod sets the firewallPacketQueueingMethod property value. Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+// SetFirewallPacketQueueingMethod sets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallPacketQueueingMethod(value *FirewallPacketQueueingMethodType)() {
     if m != nil {
         m.firewallPacketQueueingMethod = value
     }
 }
-// SetFirewallPreSharedKeyEncodingMethod sets the firewallPreSharedKeyEncodingMethod property value. Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
+// SetFirewallPreSharedKeyEncodingMethod sets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallPreSharedKeyEncodingMethod(value *FirewallPreSharedKeyEncodingMethodType)() {
     if m != nil {
         m.firewallPreSharedKeyEncodingMethod = value

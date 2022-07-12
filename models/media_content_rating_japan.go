@@ -8,9 +8,9 @@ import (
 type MediaContentRatingJapan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Movies rating selected for Japan. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove15, agesAbove18.
+    // Movies rating labels in Japan
     movieRating *RatingJapanMoviesType
-    // TV rating selected for Japan. Possible values are: allAllowed, allBlocked, explicitAllowed.
+    // TV content rating labels in Japan
     tvRating *RatingJapanTelevisionType
 }
 // NewMediaContentRatingJapan instantiates a new mediaContentRatingJapan and sets the default values.
@@ -57,7 +57,7 @@ func (m *MediaContentRatingJapan) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetMovieRating gets the movieRating property value. Movies rating selected for Japan. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove15, agesAbove18.
+// GetMovieRating gets the movieRating property value. Movies rating labels in Japan
 func (m *MediaContentRatingJapan) GetMovieRating()(*RatingJapanMoviesType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *MediaContentRatingJapan) GetMovieRating()(*RatingJapanMoviesType) {
         return m.movieRating
     }
 }
-// GetTvRating gets the tvRating property value. TV rating selected for Japan. Possible values are: allAllowed, allBlocked, explicitAllowed.
+// GetTvRating gets the tvRating property value. TV content rating labels in Japan
 func (m *MediaContentRatingJapan) GetTvRating()(*RatingJapanTelevisionType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *MediaContentRatingJapan) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetMovieRating sets the movieRating property value. Movies rating selected for Japan. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove15, agesAbove18.
+// SetMovieRating sets the movieRating property value. Movies rating labels in Japan
 func (m *MediaContentRatingJapan) SetMovieRating(value *RatingJapanMoviesType)() {
     if m != nil {
         m.movieRating = value
     }
 }
-// SetTvRating sets the tvRating property value. TV rating selected for Japan. Possible values are: allAllowed, allBlocked, explicitAllowed.
+// SetTvRating sets the tvRating property value. TV content rating labels in Japan
 func (m *MediaContentRatingJapan) SetTvRating(value *RatingJapanTelevisionType)() {
     if m != nil {
         m.tvRating = value

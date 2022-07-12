@@ -7,9 +7,9 @@ import (
 // WindowsUniversalAppX 
 type WindowsUniversalAppX struct {
     MobileLobApp
-    // The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+    // Contains properties for Windows architecture.
     applicableArchitectures *WindowsArchitecture
-    // The Windows device type(s) for which this app can run on. Possible values are: none, desktop, mobile, holographic, team.
+    // Contains properties for Windows device type.
     applicableDeviceTypes *WindowsDeviceType
     // The Identity Name.
     identityName *string
@@ -35,7 +35,7 @@ func NewWindowsUniversalAppX()(*WindowsUniversalAppX) {
 func CreateWindowsUniversalAppXFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUniversalAppX(), nil
 }
-// GetApplicableArchitectures gets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *WindowsUniversalAppX) GetApplicableArchitectures()(*WindowsArchitecture) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *WindowsUniversalAppX) GetApplicableArchitectures()(*WindowsArchitecture
         return m.applicableArchitectures
     }
 }
-// GetApplicableDeviceTypes gets the applicableDeviceTypes property value. The Windows device type(s) for which this app can run on. Possible values are: none, desktop, mobile, holographic, team.
+// GetApplicableDeviceTypes gets the applicableDeviceTypes property value. Contains properties for Windows device type.
 func (m *WindowsUniversalAppX) GetApplicableDeviceTypes()(*WindowsDeviceType) {
     if m == nil {
         return nil
@@ -242,13 +242,13 @@ func (m *WindowsUniversalAppX) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetApplicableArchitectures sets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// SetApplicableArchitectures sets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *WindowsUniversalAppX) SetApplicableArchitectures(value *WindowsArchitecture)() {
     if m != nil {
         m.applicableArchitectures = value
     }
 }
-// SetApplicableDeviceTypes sets the applicableDeviceTypes property value. The Windows device type(s) for which this app can run on. Possible values are: none, desktop, mobile, holographic, team.
+// SetApplicableDeviceTypes sets the applicableDeviceTypes property value. Contains properties for Windows device type.
 func (m *WindowsUniversalAppX) SetApplicableDeviceTypes(value *WindowsDeviceType)() {
     if m != nil {
         m.applicableDeviceTypes = value

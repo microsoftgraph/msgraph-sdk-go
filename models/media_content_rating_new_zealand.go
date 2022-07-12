@@ -8,9 +8,9 @@ import (
 type MediaContentRatingNewZealand struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Movies rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove13, agesAbove15, agesAbove16, agesAbove18, restricted, agesAbove16Restricted.
+    // Movies rating labels in New Zealand
     movieRating *RatingNewZealandMoviesType
-    // TV rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, adults.
+    // TV content rating labels in New Zealand
     tvRating *RatingNewZealandTelevisionType
 }
 // NewMediaContentRatingNewZealand instantiates a new mediaContentRatingNewZealand and sets the default values.
@@ -57,7 +57,7 @@ func (m *MediaContentRatingNewZealand) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetMovieRating gets the movieRating property value. Movies rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove13, agesAbove15, agesAbove16, agesAbove18, restricted, agesAbove16Restricted.
+// GetMovieRating gets the movieRating property value. Movies rating labels in New Zealand
 func (m *MediaContentRatingNewZealand) GetMovieRating()(*RatingNewZealandMoviesType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *MediaContentRatingNewZealand) GetMovieRating()(*RatingNewZealandMoviesT
         return m.movieRating
     }
 }
-// GetTvRating gets the tvRating property value. TV rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, adults.
+// GetTvRating gets the tvRating property value. TV content rating labels in New Zealand
 func (m *MediaContentRatingNewZealand) GetTvRating()(*RatingNewZealandTelevisionType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *MediaContentRatingNewZealand) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetMovieRating sets the movieRating property value. Movies rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove13, agesAbove15, agesAbove16, agesAbove18, restricted, agesAbove16Restricted.
+// SetMovieRating sets the movieRating property value. Movies rating labels in New Zealand
 func (m *MediaContentRatingNewZealand) SetMovieRating(value *RatingNewZealandMoviesType)() {
     if m != nil {
         m.movieRating = value
     }
 }
-// SetTvRating sets the tvRating property value. TV rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, adults.
+// SetTvRating sets the tvRating property value. TV content rating labels in New Zealand
 func (m *MediaContentRatingNewZealand) SetTvRating(value *RatingNewZealandTelevisionType)() {
     if m != nil {
         m.tvRating = value

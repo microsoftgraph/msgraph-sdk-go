@@ -36,6 +36,8 @@ func NewManagedDeviceMobileAppConfiguration()(*ManagedDeviceMobileAppConfigurati
     m := &ManagedDeviceMobileAppConfiguration{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.managedDeviceMobileAppConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

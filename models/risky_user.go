@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyUser provides operations to manage the identityProtectionRoot singleton.
+// RiskyUser 
 type RiskyUser struct {
     Entity
     // The activity related to user risk level change
@@ -27,11 +27,13 @@ type RiskyUser struct {
     // Risky user principal name.
     userPrincipalName *string
 }
-// NewRiskyUser instantiates a new riskyUser and sets the default values.
+// NewRiskyUser instantiates a new RiskyUser and sets the default values.
 func NewRiskyUser()(*RiskyUser) {
     m := &RiskyUser{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.riskyUser";
+    m.SetType(&typeValue);
     return m
 }
 // CreateRiskyUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

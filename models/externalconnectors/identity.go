@@ -8,8 +8,6 @@ import (
 // Identity provides operations to manage the collection of externalConnection entities.
 type Identity struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
-    type_escaped *IdentityType
 }
 // NewIdentity instantiates a new identity and sets the default values.
 func NewIdentity()(*Identity) {
@@ -25,25 +23,7 @@ func CreateIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIdentityType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val.(*IdentityType))
-        }
-        return nil
-    }
     return res
-}
-// GetType gets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
-func (m *Identity) GetType()(*IdentityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
 }
 // Serialize serializes information the current object
 func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -51,18 +31,5 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
-        err = writer.WriteStringValue("type", &cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetType sets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
-func (m *Identity) SetType(value *IdentityType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
 }

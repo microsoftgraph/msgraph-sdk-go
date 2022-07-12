@@ -12,7 +12,7 @@ type ImportedWindowsAutopilotDeviceIdentityState struct {
     deviceErrorCode *int32
     // Device error name reported by Device Directory Service(DDS).
     deviceErrorName *string
-    // Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.
+    // The deviceImportStatus property
     deviceImportStatus *ImportedWindowsAutopilotDeviceIdentityImportStatus
     // Device Registration ID for successfully added device reported by Device Directory Service(DDS).
     deviceRegistrationId *string
@@ -52,7 +52,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceErrorName()(*stri
         return m.deviceErrorName
     }
 }
-// GetDeviceImportStatus gets the deviceImportStatus property value. Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.
+// GetDeviceImportStatus gets the deviceImportStatus property value. The deviceImportStatus property
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceImportStatus()(*ImportedWindowsAutopilotDeviceIdentityImportStatus) {
     if m == nil {
         return nil
@@ -166,7 +166,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceErrorName(value *
         m.deviceErrorName = value
     }
 }
-// SetDeviceImportStatus sets the deviceImportStatus property value. Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.
+// SetDeviceImportStatus sets the deviceImportStatus property value. The deviceImportStatus property
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceImportStatus(value *ImportedWindowsAutopilotDeviceIdentityImportStatus)() {
     if m != nil {
         m.deviceImportStatus = value

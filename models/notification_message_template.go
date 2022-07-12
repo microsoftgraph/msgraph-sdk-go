@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NotificationMessageTemplate notification messages are messages that are sent to end users who are determined to be not-compliant with the compliance policies defined by the administrator. Administrators choose notifications and configure them in the Intune Admin Console using the compliance policy creation page under the “Actions for non-compliance” section. Use the notificationMessageTemplate object to create your own custom notifications for administrators to choose while configuring actions for non-compliance.
+// NotificationMessageTemplate 
 type NotificationMessageTemplate struct {
     Entity
-    // The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
+    // Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
     brandingOptions *NotificationTemplateBrandingOptions
     // The default locale to fallback onto when the requested locale is not available.
     defaultLocale *string
@@ -19,7 +19,7 @@ type NotificationMessageTemplate struct {
     // The list of localized messages for this Notification Message Template.
     localizedNotificationMessages []LocalizedNotificationMessageable
 }
-// NewNotificationMessageTemplate instantiates a new notificationMessageTemplate and sets the default values.
+// NewNotificationMessageTemplate instantiates a new NotificationMessageTemplate and sets the default values.
 func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
     m := &NotificationMessageTemplate{
         Entity: *NewEntity(),
@@ -30,7 +30,7 @@ func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
 func CreateNotificationMessageTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotificationMessageTemplate(), nil
 }
-// GetBrandingOptions gets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
+// GetBrandingOptions gets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 func (m *NotificationMessageTemplate) GetBrandingOptions()(*NotificationTemplateBrandingOptions) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *NotificationMessageTemplate) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetBrandingOptions sets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
+// SetBrandingOptions sets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 func (m *NotificationMessageTemplate) SetBrandingOptions(value *NotificationTemplateBrandingOptions)() {
     if m != nil {
         m.brandingOptions = value

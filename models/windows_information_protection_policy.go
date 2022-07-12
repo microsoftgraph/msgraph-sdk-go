@@ -19,13 +19,13 @@ type WindowsInformationProtectionPolicy struct {
     passwordMaximumAttemptCount *int32
     // Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
     pinExpirationDays *int32
-    // Integer value that configures the use of lowercase letters in the Windows Hello for Business PIN. Default is NotAllow. Possible values are: notAllow, requireAtLeastOne, allow.
+    // Pin Character Requirements
     pinLowercaseLetters *WindowsInformationProtectionPinCharacterRequirements
     // Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
     pinMinimumLength *int32
-    // Integer value that configures the use of special characters in the Windows Hello for Business PIN. Valid special characters for Windows Hello for Business PIN gestures include: ! ' # $ % & ' ( )  + , - . / : ; < = > ? @ [ / ] ^  ` {
+    // Pin Character Requirements
     pinSpecialCharacters *WindowsInformationProtectionPinCharacterRequirements
-    // Integer value that configures the use of uppercase letters in the Windows Hello for Business PIN. Default is NotAllow. Possible values are: notAllow, requireAtLeastOne, allow.
+    // Pin Character Requirements
     pinUppercaseLetters *WindowsInformationProtectionPinCharacterRequirements
     // New property in RS2, pending documentation
     revokeOnMdmHandoffDisabled *bool
@@ -216,7 +216,7 @@ func (m *WindowsInformationProtectionPolicy) GetPinExpirationDays()(*int32) {
         return m.pinExpirationDays
     }
 }
-// GetPinLowercaseLetters gets the pinLowercaseLetters property value. Integer value that configures the use of lowercase letters in the Windows Hello for Business PIN. Default is NotAllow. Possible values are: notAllow, requireAtLeastOne, allow.
+// GetPinLowercaseLetters gets the pinLowercaseLetters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) GetPinLowercaseLetters()(*WindowsInformationProtectionPinCharacterRequirements) {
     if m == nil {
         return nil
@@ -232,7 +232,7 @@ func (m *WindowsInformationProtectionPolicy) GetPinMinimumLength()(*int32) {
         return m.pinMinimumLength
     }
 }
-// GetPinSpecialCharacters gets the pinSpecialCharacters property value. Integer value that configures the use of special characters in the Windows Hello for Business PIN. Valid special characters for Windows Hello for Business PIN gestures include: ! ' # $ % & ' ( )  + , - . / : ; < = > ? @ [ / ] ^  ` {
+// GetPinSpecialCharacters gets the pinSpecialCharacters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) GetPinSpecialCharacters()(*WindowsInformationProtectionPinCharacterRequirements) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *WindowsInformationProtectionPolicy) GetPinSpecialCharacters()(*WindowsI
         return m.pinSpecialCharacters
     }
 }
-// GetPinUppercaseLetters gets the pinUppercaseLetters property value. Integer value that configures the use of uppercase letters in the Windows Hello for Business PIN. Default is NotAllow. Possible values are: notAllow, requireAtLeastOne, allow.
+// GetPinUppercaseLetters gets the pinUppercaseLetters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) GetPinUppercaseLetters()(*WindowsInformationProtectionPinCharacterRequirements) {
     if m == nil {
         return nil
@@ -383,7 +383,7 @@ func (m *WindowsInformationProtectionPolicy) SetPinExpirationDays(value *int32)(
         m.pinExpirationDays = value
     }
 }
-// SetPinLowercaseLetters sets the pinLowercaseLetters property value. Integer value that configures the use of lowercase letters in the Windows Hello for Business PIN. Default is NotAllow. Possible values are: notAllow, requireAtLeastOne, allow.
+// SetPinLowercaseLetters sets the pinLowercaseLetters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) SetPinLowercaseLetters(value *WindowsInformationProtectionPinCharacterRequirements)() {
     if m != nil {
         m.pinLowercaseLetters = value
@@ -395,13 +395,13 @@ func (m *WindowsInformationProtectionPolicy) SetPinMinimumLength(value *int32)()
         m.pinMinimumLength = value
     }
 }
-// SetPinSpecialCharacters sets the pinSpecialCharacters property value. Integer value that configures the use of special characters in the Windows Hello for Business PIN. Valid special characters for Windows Hello for Business PIN gestures include: ! ' # $ % & ' ( )  + , - . / : ; < = > ? @ [ / ] ^  ` {
+// SetPinSpecialCharacters sets the pinSpecialCharacters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) SetPinSpecialCharacters(value *WindowsInformationProtectionPinCharacterRequirements)() {
     if m != nil {
         m.pinSpecialCharacters = value
     }
 }
-// SetPinUppercaseLetters sets the pinUppercaseLetters property value. Integer value that configures the use of uppercase letters in the Windows Hello for Business PIN. Default is NotAllow. Possible values are: notAllow, requireAtLeastOne, allow.
+// SetPinUppercaseLetters sets the pinUppercaseLetters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) SetPinUppercaseLetters(value *WindowsInformationProtectionPinCharacterRequirements)() {
     if m != nil {
         m.pinUppercaseLetters = value

@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementReports singleton entity that acts as a container for all reports functionality.
+// DeviceManagementReports 
 type DeviceManagementReports struct {
     Entity
     // Entity representing a job to export a report
     exportJobs []DeviceManagementExportJobable
 }
-// NewDeviceManagementReports instantiates a new deviceManagementReports and sets the default values.
+// NewDeviceManagementReports instantiates a new DeviceManagementReports and sets the default values.
 func NewDeviceManagementReports()(*DeviceManagementReports) {
     m := &DeviceManagementReports{
         Entity: *NewEntity(),

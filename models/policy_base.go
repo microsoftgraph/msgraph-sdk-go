@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicyBase provides operations to call the instantiate method.
+// PolicyBase provides operations to manage the collection of application entities.
 type PolicyBase struct {
     DirectoryObject
     // Description for this policy. Required.
@@ -17,6 +17,8 @@ func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),
     }
+    typeValue := "#microsoft.graph.policyBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreatePolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +38,8 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                 switch mappingStr {
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.crossTenantAccessPolicy":
+                        return NewCrossTenantAccessPolicy(), nil
                     case "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy":
                         return NewIdentitySecurityDefaultsEnforcementPolicy(), nil
                     case "#microsoft.graph.permissionGrantPolicy":

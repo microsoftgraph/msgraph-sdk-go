@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReportRoot the resource that represents an instance of Enrollment Failure Reports.
+// ReportRoot 
 type ReportRoot struct {
     Entity
     // The dailyPrintUsageByPrinter property
@@ -16,7 +16,7 @@ type ReportRoot struct {
     // The monthlyPrintUsageByUser property
     monthlyPrintUsageByUser []PrintUsageByUserable
 }
-// NewReportRoot instantiates a new reportRoot and sets the default values.
+// NewReportRoot instantiates a new ReportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
     m := &ReportRoot{
         Entity: *NewEntity(),

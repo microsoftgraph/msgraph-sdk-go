@@ -16,7 +16,7 @@ type ServiceUpdateMessage struct {
     attachmentsArchive []byte
     // The body property
     body ItemBodyable
-    // The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
+    // The category property
     category *ServiceUpdateCategory
     // Indicates whether the message has any attachment.
     hasAttachments *bool
@@ -24,7 +24,7 @@ type ServiceUpdateMessage struct {
     isMajorChange *bool
     // The affected services by the service message.
     services []string
-    // The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
+    // The severity property
     severity *ServiceUpdateSeverity
     // A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
     tags []string
@@ -74,7 +74,7 @@ func (m *ServiceUpdateMessage) GetBody()(ItemBodyable) {
         return m.body
     }
 }
-// GetCategory gets the category property value. The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
+// GetCategory gets the category property value. The category property
 func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
     if m == nil {
         return nil
@@ -233,7 +233,7 @@ func (m *ServiceUpdateMessage) GetServices()([]string) {
         return m.services
     }
 }
-// GetSeverity gets the severity property value. The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
+// GetSeverity gets the severity property value. The severity property
 func (m *ServiceUpdateMessage) GetSeverity()(*ServiceUpdateSeverity) {
     if m == nil {
         return nil
@@ -361,7 +361,7 @@ func (m *ServiceUpdateMessage) SetBody(value ItemBodyable)() {
         m.body = value
     }
 }
-// SetCategory sets the category property value. The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
+// SetCategory sets the category property value. The category property
 func (m *ServiceUpdateMessage) SetCategory(value *ServiceUpdateCategory)() {
     if m != nil {
         m.category = value
@@ -385,7 +385,7 @@ func (m *ServiceUpdateMessage) SetServices(value []string)() {
         m.services = value
     }
 }
-// SetSeverity sets the severity property value. The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
+// SetSeverity sets the severity property value. The severity property
 func (m *ServiceUpdateMessage) SetSeverity(value *ServiceUpdateSeverity)() {
     if m != nil {
         m.severity = value

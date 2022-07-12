@@ -13,7 +13,7 @@ type BookingStaffMember struct {
     displayName *string
     // The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
     emailAddress *string
-    // The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, unknownFutureValue, scheduler and member. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: scheduler, member. Required.
+    // The role property
     role *BookingStaffRole
     // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
     timeZone *string
@@ -136,7 +136,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetRole gets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, unknownFutureValue, scheduler and member. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: scheduler, member. Required.
+// GetRole gets the role property value. The role property
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
     if m == nil {
         return nil
@@ -241,7 +241,7 @@ func (m *BookingStaffMember) SetEmailAddress(value *string)() {
         m.emailAddress = value
     }
 }
-// SetRole sets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, unknownFutureValue, scheduler and member. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: scheduler, member. Required.
+// SetRole sets the role property value. The role property
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
     if m != nil {
         m.role = value

@@ -30,7 +30,7 @@ type Organization struct {
     extensions []Extensionable
     // Not nullable.
     marketingNotificationEmails []string
-    // Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
+    // Mobile device management authority.
     mobileDeviceManagementAuthority *MdmAuthority
     // The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -453,7 +453,7 @@ func (m *Organization) GetMarketingNotificationEmails()([]string) {
         return m.marketingNotificationEmails
     }
 }
-// GetMobileDeviceManagementAuthority gets the mobileDeviceManagementAuthority property value. Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
+// GetMobileDeviceManagementAuthority gets the mobileDeviceManagementAuthority property value. Mobile device management authority.
 func (m *Organization) GetMobileDeviceManagementAuthority()(*MdmAuthority) {
     if m == nil {
         return nil
@@ -810,7 +810,7 @@ func (m *Organization) SetMarketingNotificationEmails(value []string)() {
         m.marketingNotificationEmails = value
     }
 }
-// SetMobileDeviceManagementAuthority sets the mobileDeviceManagementAuthority property value. Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
+// SetMobileDeviceManagementAuthority sets the mobileDeviceManagementAuthority property value. Mobile device management authority.
 func (m *Organization) SetMobileDeviceManagementAuthority(value *MdmAuthority)() {
     if m != nil {
         m.mobileDeviceManagementAuthority = value

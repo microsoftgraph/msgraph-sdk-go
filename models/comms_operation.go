@@ -11,7 +11,7 @@ type CommsOperation struct {
     clientContext *string
     // The result information. Read-only.
     resultInfo ResultInfoable
-    // Possible values are: notStarted, running, completed, failed. Read-only.
+    // The status property
     status *OperationStatus
 }
 // NewCommsOperation instantiates a new commsOperation and sets the default values.
@@ -19,6 +19,8 @@ func NewCommsOperation()(*CommsOperation) {
     m := &CommsOperation{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.commsOperation";
+    m.SetType(&typeValue);
     return m
 }
 // CreateCommsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -113,7 +115,7 @@ func (m *CommsOperation) GetResultInfo()(ResultInfoable) {
         return m.resultInfo
     }
 }
-// GetStatus gets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
+// GetStatus gets the status property value. The status property
 func (m *CommsOperation) GetStatus()(*OperationStatus) {
     if m == nil {
         return nil
@@ -160,7 +162,7 @@ func (m *CommsOperation) SetResultInfo(value ResultInfoable)() {
         m.resultInfo = value
     }
 }
-// SetStatus sets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
+// SetStatus sets the status property value. The status property
 func (m *CommsOperation) SetStatus(value *OperationStatus)() {
     if m != nil {
         m.status = value

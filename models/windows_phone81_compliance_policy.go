@@ -25,7 +25,7 @@ type WindowsPhone81CompliancePolicy struct {
     passwordPreviousPasswordBlockCount *int32
     // Whether or not to require a password.
     passwordRequired *bool
-    // The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
     // Require encryption on windows phone devices.
     storageRequireEncryption *bool
@@ -228,7 +228,7 @@ func (m *WindowsPhone81CompliancePolicy) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *WindowsPhone81CompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -373,7 +373,7 @@ func (m *WindowsPhone81CompliancePolicy) SetPasswordRequired(value *bool)() {
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *WindowsPhone81CompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value

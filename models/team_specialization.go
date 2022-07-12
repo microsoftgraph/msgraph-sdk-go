@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of application entities.
+// Casts the previous resource to group.
 type TeamSpecialization int
 
 const (

@@ -4,17 +4,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionAppLearningSummary windows Information Protection AppLearning Summary entity.
+// WindowsInformationProtectionAppLearningSummary 
 type WindowsInformationProtectionAppLearningSummary struct {
     Entity
     // Application Name
     applicationName *string
-    // Application Type. Possible values are: universal, desktop.
+    // Possible types of Application
     applicationType *ApplicationType
     // Device Count
     deviceCount *int32
 }
-// NewWindowsInformationProtectionAppLearningSummary instantiates a new windowsInformationProtectionAppLearningSummary and sets the default values.
+// NewWindowsInformationProtectionAppLearningSummary instantiates a new WindowsInformationProtectionAppLearningSummary and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProtectionAppLearningSummary) {
     m := &WindowsInformationProtectionAppLearningSummary{
         Entity: *NewEntity(),
@@ -33,7 +33,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationName()(*s
         return m.applicationName
     }
 }
-// GetApplicationType gets the applicationType property value. Application Type. Possible values are: universal, desktop.
+// GetApplicationType gets the applicationType property value. Possible types of Application
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationType()(*ApplicationType) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationName(valu
         m.applicationName = value
     }
 }
-// SetApplicationType sets the applicationType property value. Application Type. Possible values are: universal, desktop.
+// SetApplicationType sets the applicationType property value. Possible types of Application
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationType(value *ApplicationType)() {
     if m != nil {
         m.applicationType = value
