@@ -20,8 +20,8 @@ func NewChangeTrackedEntity()(*ChangeTrackedEntity) {
     m := &ChangeTrackedEntity{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.changeTrackedEntity";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.changeTrackedEntity";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateChangeTrackedEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

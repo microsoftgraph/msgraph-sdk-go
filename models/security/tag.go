@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Tag provides operations to manage the admin singleton.
+// Tag provides operations to manage the collection of agreementAcceptance entities.
 type Tag struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The createdBy property
@@ -23,8 +23,8 @@ func NewTag()(*Tag) {
     m := &Tag{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    typeValue := "#microsoft.graph.security.tag";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.security.tag";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

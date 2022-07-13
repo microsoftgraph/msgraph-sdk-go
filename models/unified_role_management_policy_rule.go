@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyRule provides operations to manage the admin singleton.
+// UnifiedRoleManagementPolicyRule provides operations to manage the collection of agreementAcceptance entities.
 type UnifiedRoleManagementPolicyRule struct {
     Entity
     // Not implemented. Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
@@ -15,8 +15,8 @@ func NewUnifiedRoleManagementPolicyRule()(*UnifiedRoleManagementPolicyRule) {
     m := &UnifiedRoleManagementPolicyRule{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.unifiedRoleManagementPolicyRule";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.unifiedRoleManagementPolicyRule";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateUnifiedRoleManagementPolicyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RemoteAssistancePartner 
+// RemoteAssistancePartner remoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
 type RemoteAssistancePartner struct {
     Entity
     // Display name of the partner.
@@ -17,7 +17,7 @@ type RemoteAssistancePartner struct {
     // URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
     onboardingUrl *string
 }
-// NewRemoteAssistancePartner instantiates a new RemoteAssistancePartner and sets the default values.
+// NewRemoteAssistancePartner instantiates a new remoteAssistancePartner and sets the default values.
 func NewRemoteAssistancePartner()(*RemoteAssistancePartner) {
     m := &RemoteAssistancePartner{
         Entity: *NewEntity(),

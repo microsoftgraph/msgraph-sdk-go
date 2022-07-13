@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to group.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type GiphyRatingType int
 
 const (

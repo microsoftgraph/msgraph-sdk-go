@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LongRunningOperation provides operations to manage the admin singleton.
+// LongRunningOperation provides operations to manage the collection of agreementAcceptance entities.
 type LongRunningOperation struct {
     Entity
     // The createdDateTime property
@@ -24,8 +24,8 @@ func NewLongRunningOperation()(*LongRunningOperation) {
     m := &LongRunningOperation{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.longRunningOperation";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.longRunningOperation";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateLongRunningOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

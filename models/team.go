@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Team 
+// Team provides operations to manage the collection of agreementAcceptance entities.
 type Team struct {
     Entity
     // List of channels either hosted in or shared with the team (incoming channels).
@@ -42,6 +42,8 @@ type Team struct {
     messagingSettings TeamMessagingSettingsable
     // The async operations that ran or are running on this team.
     operations []TeamsAsyncOperationable
+    // The team photo.
+    photo ProfilePhotoable
     // The general channel for the team.
     primaryChannel Channelable
     // The schedule of shifts for this team.
@@ -315,6 +317,16 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["photo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProfilePhotoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPhoto(val.(ProfilePhotoable))
+        }
+        return nil
+    }
     res["primaryChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChannelFromDiscriminatorValue)
         if err != nil {
@@ -483,6 +495,14 @@ func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
         return nil
     } else {
         return m.operations
+    }
+}
+// GetPhoto gets the photo property value. The team photo.
+func (m *Team) GetPhoto()(ProfilePhotoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.photo
     }
 }
 // GetPrimaryChannel gets the primaryChannel property value. The general channel for the team.
@@ -682,6 +702,12 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("photo", m.GetPhoto())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("primaryChannel", m.GetPrimaryChannel())
         if err != nil {
             return err
@@ -833,6 +859,12 @@ func (m *Team) SetMessagingSettings(value TeamMessagingSettingsable)() {
 func (m *Team) SetOperations(value []TeamsAsyncOperationable)() {
     if m != nil {
         m.operations = value
+    }
+}
+// SetPhoto sets the photo property value. The team photo.
+func (m *Team) SetPhoto(value ProfilePhotoable)() {
+    if m != nil {
+        m.photo = value
     }
 }
 // SetPrimaryChannel sets the primaryChannel property value. The general channel for the team.

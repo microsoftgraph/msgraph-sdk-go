@@ -38,7 +38,7 @@ type SoftwareUpdateStatusSummary struct {
     // Number of unknown users.
     unknownUserCount *int32
 }
-// NewSoftwareUpdateStatusSummary instantiates a new SoftwareUpdateStatusSummary and sets the default values.
+// NewSoftwareUpdateStatusSummary instantiates a new softwareUpdateStatusSummary and sets the default values.
 func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
     m := &SoftwareUpdateStatusSummary{
         Entity: *NewEntity(),

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionNetworkLearningSummary 
+// WindowsInformationProtectionNetworkLearningSummary windows Information Protection Network learning Summary entity.
 type WindowsInformationProtectionNetworkLearningSummary struct {
     Entity
     // Device Count
@@ -12,7 +12,7 @@ type WindowsInformationProtectionNetworkLearningSummary struct {
     // Website url
     url *string
 }
-// NewWindowsInformationProtectionNetworkLearningSummary instantiates a new WindowsInformationProtectionNetworkLearningSummary and sets the default values.
+// NewWindowsInformationProtectionNetworkLearningSummary instantiates a new windowsInformationProtectionNetworkLearningSummary and sets the default values.
 func NewWindowsInformationProtectionNetworkLearningSummary()(*WindowsInformationProtectionNetworkLearningSummary) {
     m := &WindowsInformationProtectionNetworkLearningSummary{
         Entity: *NewEntity(),

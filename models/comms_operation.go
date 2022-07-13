@@ -19,8 +19,8 @@ func NewCommsOperation()(*CommsOperation) {
     m := &CommsOperation{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.commsOperation";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.commsOperation";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateCommsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

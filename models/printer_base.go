@@ -31,8 +31,8 @@ func NewPrinterBase()(*PrinterBase) {
     m := &PrinterBase{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.printerBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.printerBase";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreatePrinterBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

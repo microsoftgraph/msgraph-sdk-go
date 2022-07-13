@@ -15,8 +15,8 @@ func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) 
     m := &AuthenticationMethodConfiguration{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.authenticationMethodConfiguration";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.authenticationMethodConfiguration";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

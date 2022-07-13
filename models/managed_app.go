@@ -17,8 +17,8 @@ func NewManagedApp()(*ManagedApp) {
     m := &ManagedApp{
         MobileApp: *NewMobileApp(),
     }
-    typeValue := "#microsoft.graph.managedApp";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.managedApp";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateManagedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
