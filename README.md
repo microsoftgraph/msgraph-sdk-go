@@ -81,9 +81,30 @@ After you have a **GraphServiceClient** that is authenticated, you can begin mak
 To retrieve the user's drive:
 
 ```Golang
+import (
+    "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+)
+
+func printOdataError(err error) {
+	switch err.(type) {
+	case *odataerrors.ODataError:
+		typed := err.(*odataerrors.ODataError)
+		log.Println("error:", typed.Error())
+		if terr := typed.GetError(); terr != nil {
+			log.Printf("code: %s", *terr.GetCode())
+			log.Printf("msg: %s", *terr.GetMessage())
+		}
+	default:
+		log.Printf("%T > error: %#v", err, err)
+	}
+}
+
+...
+
 result, err := client.Me().Drive().Get()
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
+    printOdataError(err)
 }
 fmt.Printf("Found Drive : %v\n", *result.GetId())
 ```
@@ -101,11 +122,29 @@ import (
     msgraphcore "github.com/microsoftgraph/msgraph-sdk-go-core"
     "github.com/microsoftgraph/msgraph-sdk-go/users"
     "github.com/microsoftgraph/msgraph-sdk-go/models"
+    "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
+
+func printOdataError(err error) {
+        switch err.(type) {
+        case *odataerrors.ODataError:
+                typed := err.(*odataerrors.ODataError)
+                log.Println("error:", typed.Error())
+                if terr := typed.GetError(); terr != nil {
+                        log.Printf("code: %s", *terr.GetCode())
+                        log.Printf("msg: %s", *terr.GetMessage())
+                }
+        default:
+                log.Printf("%T > error: %#v", err, err)
+        }
+}
+
+...
 
 result, err := client.Users().Get(nil)
 if err != nil {
     fmt.Printf("Error getting users: %v\n", err)
+    printOdataError(err error)
     return err
 }
 
