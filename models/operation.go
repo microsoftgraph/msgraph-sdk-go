@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Operation provides operations to manage the admin singleton.
+// Operation provides operations to manage the collection of agreement entities.
 type Operation struct {
     Entity
     // The start time of the operation.
@@ -20,8 +20,8 @@ func NewOperation()(*Operation) {
     m := &Operation{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.operation";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.operation";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

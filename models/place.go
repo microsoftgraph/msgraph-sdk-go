@@ -21,8 +21,8 @@ func NewPlace()(*Place) {
     m := &Place{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.place";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.place";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreatePlaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

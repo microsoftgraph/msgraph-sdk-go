@@ -41,11 +41,11 @@ func (m *ReferenceUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
             return err
         }
         if val != nil {
-            m.SetOdataid(val)
+            m.SetId(val)
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,15 +57,15 @@ func (m *ReferenceUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataid gets the @odata.id property value. The id property
-func (m *ReferenceUpdate) GetOdataid()(*string) {
+// GetId gets the @odata.id property value. The id property
+func (m *ReferenceUpdate) GetId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.id
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *ReferenceUpdate) GetType()(*string) {
     if m == nil {
         return nil
@@ -76,13 +76,13 @@ func (m *ReferenceUpdate) GetType()(*string) {
 // Serialize serializes information the current object
 func (m *ReferenceUpdate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.id", m.GetOdataid())
+        err := writer.WriteStringValue("@odata.id", m.GetId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -101,13 +101,13 @@ func (m *ReferenceUpdate) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetOdataid sets the @odata.id property value. The id property
-func (m *ReferenceUpdate) SetOdataid(value *string)() {
+// SetId sets the @odata.id property value. The id property
+func (m *ReferenceUpdate) SetId(value *string)() {
     if m != nil {
         m.id = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *ReferenceUpdate) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

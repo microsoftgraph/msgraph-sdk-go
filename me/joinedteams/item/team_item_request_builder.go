@@ -13,6 +13,7 @@ import (
     i9fa0e9d329dc2b42ce0cc0330991bb8f8e864efaaef5061789d895e28321a6b2 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/operations"
     iaaf6381de60bdbb052122028b1440af6c015d4e8c24cf971f1c3968b5a4f3c6b "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/archive"
     ic08a09e622b3f3279dad3fb1dc0d9adf50886e9a08f52205e44e27965d46190a "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/allchannels"
+    ica5ec7aca95820534d087da722646ac0c0eb14565fc4c028141ff7080240b58d "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/photo"
     icf925d6e8373dd15bb408b246595c1d2598e1881b555a62a02a76300fc5b7cd2 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/installedapps"
     id463d65124ba412b3980ec713bebe8eb90e4a925515f5f993cd79d5b01b70907 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/channels"
     ie8c9d4ba2aa39351cc5580d10d45b8717b93a5d75b46c5be678a969e9175bcc6 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/sendactivitynotification"
@@ -303,6 +304,10 @@ func (m *TeamItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler
         return err
     }
     return nil
+}
+// Photo the photo property
+func (m *TeamItemRequestBuilder) Photo()(*ica5ec7aca95820534d087da722646ac0c0eb14565fc4c028141ff7080240b58d.PhotoRequestBuilder) {
+    return ica5ec7aca95820534d087da722646ac0c0eb14565fc4c028141ff7080240b58d.NewPhotoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PrimaryChannel the primaryChannel property
 func (m *TeamItemRequestBuilder) PrimaryChannel()(*i5cc953f63726e53531e5d00c609bd14469e1ce23944c22b6aea0986c18fb0043.PrimaryChannelRequestBuilder) {

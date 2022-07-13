@@ -68,6 +68,8 @@ type Application struct {
     publisherDomain *string
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccessable
+    // The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
+    samlMetadataUrl *string
     // References application or service contact information from a Service or Asset Management database. Nullable.
     serviceManagementReference *string
     // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
@@ -545,6 +547,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["samlMetadataUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSamlMetadataUrl(val)
+        }
+        return nil
+    }
     res["serviceManagementReference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -783,6 +795,14 @@ func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccessable) 
         return nil
     } else {
         return m.requiredResourceAccess
+    }
+}
+// GetSamlMetadataUrl gets the samlMetadataUrl property value. The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
+func (m *Application) GetSamlMetadataUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.samlMetadataUrl
     }
 }
 // GetServiceManagementReference gets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.
@@ -1080,6 +1100,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("samlMetadataUrl", m.GetSamlMetadataUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("serviceManagementReference", m.GetServiceManagementReference())
         if err != nil {
             return err
@@ -1321,6 +1347,12 @@ func (m *Application) SetPublisherDomain(value *string)() {
 func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccessable)() {
     if m != nil {
         m.requiredResourceAccess = value
+    }
+}
+// SetSamlMetadataUrl sets the samlMetadataUrl property value. The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
+func (m *Application) SetSamlMetadataUrl(value *string)() {
+    if m != nil {
+        m.samlMetadataUrl = value
     }
 }
 // SetServiceManagementReference sets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.

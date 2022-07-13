@@ -22,8 +22,8 @@ func NewIdentitySet()(*IdentitySet) {
     m := &IdentitySet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.identitySet";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.identitySet";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -102,7 +102,7 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *IdentitySet) GetType()(*string) {
     if m == nil {
         return nil
@@ -155,7 +155,7 @@ func (m *IdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -192,7 +192,7 @@ func (m *IdentitySet) SetDevice(value Identityable)() {
         m.device = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *IdentitySet) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

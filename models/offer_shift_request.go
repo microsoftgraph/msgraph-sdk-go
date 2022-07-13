@@ -22,8 +22,8 @@ func NewOfferShiftRequest()(*OfferShiftRequest) {
     m := &OfferShiftRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),
     }
-    typeValue := "#microsoft.graph.offerShiftRequest";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.offerShiftRequest";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateOfferShiftRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

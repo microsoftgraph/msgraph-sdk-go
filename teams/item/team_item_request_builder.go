@@ -6,6 +6,7 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i0d53f661bb96ea28364f561f24c6a15b30ee8383c8b828dac50eca27ee85d3fa "github.com/microsoftgraph/msgraph-sdk-go/teams/item/operations"
     i112483150813fdda19082d152401ea7792fc69e950a26fd2de0f70593b4e9aa3 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/schedule"
+    i149d801c662f9e963517ba3a6c49cb4845b36d355c160bcc1729479cd18d6107 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/photo"
     i15af31366dc887244693eaa3d3a5b29b322f057d84108b094ab85c131706bc4d "github.com/microsoftgraph/msgraph-sdk-go/teams/item/sendactivitynotification"
     i3ab10cbdf172c82da95d8c321e7ab0c74610f25b0a5df76707ecc483fe73c949 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/unarchive"
     i6b2db9d1ed1ca06816d98e7327f880f451780be7beb8380462b23278f4c949d8 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/archive"
@@ -303,6 +304,10 @@ func (m *TeamItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler
         return err
     }
     return nil
+}
+// Photo the photo property
+func (m *TeamItemRequestBuilder) Photo()(*i149d801c662f9e963517ba3a6c49cb4845b36d355c160bcc1729479cd18d6107.PhotoRequestBuilder) {
+    return i149d801c662f9e963517ba3a6c49cb4845b36d355c160bcc1729479cd18d6107.NewPhotoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PrimaryChannel the primaryChannel property
 func (m *TeamItemRequestBuilder) PrimaryChannel()(*i96200494e669e195393f509bc7a1b076f717becc8f2d0e85d3bdc73e820e2615.PrimaryChannelRequestBuilder) {

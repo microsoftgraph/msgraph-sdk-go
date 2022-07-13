@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizationalBrandingProperties provides operations to manage the organizationalBranding singleton.
+// OrganizationalBrandingProperties 
 type OrganizationalBrandingProperties struct {
     Entity
     // Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
@@ -33,8 +33,8 @@ func NewOrganizationalBrandingProperties()(*OrganizationalBrandingProperties) {
     m := &OrganizationalBrandingProperties{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.organizationalBrandingProperties";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.organizationalBrandingProperties";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateOrganizationalBrandingPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

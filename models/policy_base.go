@@ -17,8 +17,8 @@ func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),
     }
-    typeValue := "#microsoft.graph.policyBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.policyBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreatePolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

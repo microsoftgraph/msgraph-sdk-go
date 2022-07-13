@@ -21,8 +21,8 @@ func NewDataSet()(*DataSet) {
     m := &DataSet{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    typeValue := "#microsoft.graph.security.dataSet";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.security.dataSet";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDataSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

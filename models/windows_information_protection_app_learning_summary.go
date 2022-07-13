@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionAppLearningSummary 
+// WindowsInformationProtectionAppLearningSummary windows Information Protection AppLearning Summary entity.
 type WindowsInformationProtectionAppLearningSummary struct {
     Entity
     // Application Name
@@ -14,7 +14,7 @@ type WindowsInformationProtectionAppLearningSummary struct {
     // Device Count
     deviceCount *int32
 }
-// NewWindowsInformationProtectionAppLearningSummary instantiates a new WindowsInformationProtectionAppLearningSummary and sets the default values.
+// NewWindowsInformationProtectionAppLearningSummary instantiates a new windowsInformationProtectionAppLearningSummary and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProtectionAppLearningSummary) {
     m := &WindowsInformationProtectionAppLearningSummary{
         Entity: *NewEntity(),

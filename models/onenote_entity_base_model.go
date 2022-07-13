@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntityBaseModel provides operations to manage the admin singleton.
+// OnenoteEntityBaseModel provides operations to manage the collection of agreement entities.
 type OnenoteEntityBaseModel struct {
     Entity
     // The endpoint where you can get details about the page. Read-only.
@@ -15,8 +15,8 @@ func NewOnenoteEntityBaseModel()(*OnenoteEntityBaseModel) {
     m := &OnenoteEntityBaseModel{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.onenoteEntityBaseModel";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.onenoteEntityBaseModel";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateOnenoteEntityBaseModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

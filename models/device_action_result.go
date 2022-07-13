@@ -25,8 +25,8 @@ func NewDeviceActionResult()(*DeviceActionResult) {
     m := &DeviceActionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.deviceActionResult";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deviceActionResult";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -127,7 +127,7 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *DeviceActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.startDateTime
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *DeviceActionResult) GetType()(*string) {
     if m == nil {
         return nil
@@ -191,7 +191,7 @@ func (m *DeviceActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -234,7 +234,7 @@ func (m *DeviceActionResult) SetStartDateTime(value *i336074805fc853987abe6f7fe3
         m.startDateTime = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *DeviceActionResult) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

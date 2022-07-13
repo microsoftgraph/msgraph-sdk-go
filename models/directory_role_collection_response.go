@@ -41,7 +41,7 @@ func (m *DirectoryRoleCollectionResponse) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            m.SetOdatanextLink(val)
+            m.SetNextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *DirectoryRoleCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
-func (m *DirectoryRoleCollectionResponse) GetOdatanextLink()(*string) {
+// GetNextLink gets the @odata.nextLink property value. The nextLink property
+func (m *DirectoryRoleCollectionResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *DirectoryRoleCollectionResponse) GetValue()([]DirectoryRoleable) {
 // Serialize serializes information the current object
 func (m *DirectoryRoleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *DirectoryRoleCollectionResponse) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
-func (m *DirectoryRoleCollectionResponse) SetOdatanextLink(value *string)() {
+// SetNextLink sets the @odata.nextLink property value. The nextLink property
+func (m *DirectoryRoleCollectionResponse) SetNextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }
