@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentPolicy provides operations to manage the admin singleton.
+// AccessPackageAssignmentPolicy provides operations to manage the collection of agreement entities.
 type AccessPackageAssignmentPolicy struct {
     Entity
     // The access package with this policy. Read-only. Nullable. Supports $expand.
     accessPackage AccessPackageable
     // Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
     allowedTargetScope *AllowedTargetScope
+    // The automaticRequestSettings property
+    automaticRequestSettings AccessPackageAutomaticRequestSettingsable
     // Catalog of the access package containing this policy. Read-only.
     catalog AccessPackageCatalogable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -58,6 +60,14 @@ func (m *AccessPackageAssignmentPolicy) GetAllowedTargetScope()(*AllowedTargetSc
         return nil
     } else {
         return m.allowedTargetScope
+    }
+}
+// GetAutomaticRequestSettings gets the automaticRequestSettings property value. The automaticRequestSettings property
+func (m *AccessPackageAssignmentPolicy) GetAutomaticRequestSettings()(AccessPackageAutomaticRequestSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.automaticRequestSettings
     }
 }
 // GetCatalog gets the catalog property value. Catalog of the access package containing this policy. Read-only.
@@ -120,6 +130,16 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetAllowedTargetScope(val.(*AllowedTargetScope))
+        }
+        return nil
+    }
+    res["automaticRequestSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAccessPackageAutomaticRequestSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutomaticRequestSettings(val.(AccessPackageAutomaticRequestSettingsable))
         }
         return nil
     }
@@ -289,6 +309,12 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteObjectValue("automaticRequestSettings", m.GetAutomaticRequestSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("catalog", m.GetCatalog())
         if err != nil {
             return err
@@ -364,6 +390,12 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable
 func (m *AccessPackageAssignmentPolicy) SetAllowedTargetScope(value *AllowedTargetScope)() {
     if m != nil {
         m.allowedTargetScope = value
+    }
+}
+// SetAutomaticRequestSettings sets the automaticRequestSettings property value. The automaticRequestSettings property
+func (m *AccessPackageAssignmentPolicy) SetAutomaticRequestSettings(value AccessPackageAutomaticRequestSettingsable)() {
+    if m != nil {
+        m.automaticRequestSettings = value
     }
 }
 // SetCatalog sets the catalog property value. Catalog of the access package containing this policy. Read-only.

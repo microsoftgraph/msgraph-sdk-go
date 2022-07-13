@@ -23,8 +23,8 @@ func NewSamlOrWsFedProvider()(*SamlOrWsFedProvider) {
     m := &SamlOrWsFedProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
     }
-    typeValue := "#microsoft.graph.samlOrWsFedProvider";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.samlOrWsFedProvider";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateSamlOrWsFedProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

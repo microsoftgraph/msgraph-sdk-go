@@ -19,8 +19,8 @@ func NewAccessReviewQueryScope()(*AccessReviewQueryScope) {
     m := &AccessReviewQueryScope{
         AccessReviewScope: *NewAccessReviewScope(),
     }
-    typeValue := "#microsoft.graph.accessReviewQueryScope";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.accessReviewQueryScope";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateAccessReviewQueryScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

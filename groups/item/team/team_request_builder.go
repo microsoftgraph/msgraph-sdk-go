@@ -15,6 +15,7 @@ import (
     i7aee2305413b3b465064d02a6aa79c0f32df27bc874d76350b572847a880a22f "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/installedapps"
     i8f663f97c6eef0cee280b998b250f55e4d63fc289392b2a09af9c95210ca5d5d "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/channels"
     i9086fbb99e21665fd895070750ee43da3017e1397eaa8655faeb9701ad70d234 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/completemigration"
+    i946cc8c196bfeaf31caf19315aac4a6c73de740196dc6305506cfd9d4f440ddb "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/photo"
     i97dd0d985d4eaf1cbaeb3d771ef48c101ec691107d9a79dcd3f38213ccae863b "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/members"
     i9f6a3c1c4300552f4792a53f0d0fe603636d1b865d408ff28e1cdd722683ebe3 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/operations"
     iac2547e415c1013b90e41a271000fafc1a87da2e4529b1d8b5ba6f0aa631ab8c "github.com/microsoftgraph/msgraph-sdk-go/groups/item/team/archive"
@@ -303,6 +304,10 @@ func (m *TeamRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(bod
         return err
     }
     return nil
+}
+// Photo the photo property
+func (m *TeamRequestBuilder) Photo()(*i946cc8c196bfeaf31caf19315aac4a6c73de740196dc6305506cfd9d4f440ddb.PhotoRequestBuilder) {
+    return i946cc8c196bfeaf31caf19315aac4a6c73de740196dc6305506cfd9d4f440ddb.NewPhotoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PrimaryChannel the primaryChannel property
 func (m *TeamRequestBuilder) PrimaryChannel()(*i34294a7456473fba252b3ca961ed3381f55b7a770d74ee4720d752d9a45ad739.PrimaryChannelRequestBuilder) {

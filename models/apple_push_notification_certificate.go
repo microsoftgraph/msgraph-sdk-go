@@ -21,7 +21,7 @@ type ApplePushNotificationCertificate struct {
     // Topic Id.
     topicIdentifier *string
 }
-// NewApplePushNotificationCertificate instantiates a new ApplePushNotificationCertificate and sets the default values.
+// NewApplePushNotificationCertificate instantiates a new applePushNotificationCertificate and sets the default values.
 func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
     m := &ApplePushNotificationCertificate{
         Entity: *NewEntity(),

@@ -30,8 +30,8 @@ func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
     m := &ScheduleChangeRequest{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
-    typeValue := "#microsoft.graph.scheduleChangeRequest";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.scheduleChangeRequest";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateScheduleChangeRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

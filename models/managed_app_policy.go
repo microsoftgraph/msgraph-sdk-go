@@ -24,8 +24,8 @@ func NewManagedAppPolicy()(*ManagedAppPolicy) {
     m := &ManagedAppPolicy{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.managedAppPolicy";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.managedAppPolicy";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateManagedAppPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

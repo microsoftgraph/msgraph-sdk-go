@@ -18,8 +18,8 @@ func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingE
     m := &DeviceManagementTroubleshootingEvent{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.deviceManagementTroubleshootingEvent";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deviceManagementTroubleshootingEvent";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

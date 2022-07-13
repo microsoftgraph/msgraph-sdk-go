@@ -12,6 +12,7 @@ import (
     i9e67c37e4d7e393bcaa474ec71c4d548047669ab57e739c8fee48bfec1f9a6ad "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item/customquestions"
     ic2d5072df0f8d04e99de862f3a1d2feb5ded47db9ddb8fabf60b325a3045df1c "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item/appointments"
     ifaa3c3903221e665c7d867678d13a4a80d73f3c4698dc3b85c36793d3ae5e782 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item/publish"
+    iff1228112c3ef99b8f9131b112eff6095f2535886c2c76a9c32827e4a1d487dd "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item/getstaffavailability"
     i0c8d27942293fe15088aee376560cc63f01e0de684e17140e97deb80c8d67040 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item/customers/item"
     i13fa9f102f5550ee0debc695a8553b7bb18a56cacbb2474b92004bac21331107 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item/appointments/item"
     i1dac550ea6326e46204247bf797ccc6ac538b2fbe14da8d2f54928298a9ad4d6 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item/services/item"
@@ -214,6 +215,10 @@ func (m *BookingBusinessItemRequestBuilder) DeleteWithRequestConfigurationAndRes
 // Get get bookingBusinesses from solutions
 func (m *BookingBusinessItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetStaffAvailability the getStaffAvailability property
+func (m *BookingBusinessItemRequestBuilder) GetStaffAvailability()(*iff1228112c3ef99b8f9131b112eff6095f2535886c2c76a9c32827e4a1d487dd.GetStaffAvailabilityRequestBuilder) {
+    return iff1228112c3ef99b8f9131b112eff6095f2535886c2c76a9c32827e4a1d487dd.NewGetStaffAvailabilityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetWithRequestConfigurationAndResponseHandler get bookingBusinesses from solutions
 func (m *BookingBusinessItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BookingBusinessItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable, error) {

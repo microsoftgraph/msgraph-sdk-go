@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoleAssignment 
+// RoleAssignment the Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
 type RoleAssignment struct {
     Entity
     // Description of the Role Assignment.
@@ -16,13 +16,13 @@ type RoleAssignment struct {
     // Role definition this assignment is part of.
     roleDefinition RoleDefinitionable
 }
-// NewRoleAssignment instantiates a new RoleAssignment and sets the default values.
+// NewRoleAssignment instantiates a new roleAssignment and sets the default values.
 func NewRoleAssignment()(*RoleAssignment) {
     m := &RoleAssignment{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.roleAssignment";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.roleAssignment";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

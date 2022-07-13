@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationOrganization provides operations to manage the admin singleton.
+// EducationOrganization provides operations to manage the collection of agreement entities.
 type EducationOrganization struct {
     Entity
     // Organization description.
@@ -21,8 +21,8 @@ func NewEducationOrganization()(*EducationOrganization) {
     m := &EducationOrganization{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.educationOrganization";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.educationOrganization";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateEducationOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

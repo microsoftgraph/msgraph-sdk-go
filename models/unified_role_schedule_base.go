@@ -38,8 +38,8 @@ func NewUnifiedRoleScheduleBase()(*UnifiedRoleScheduleBase) {
     m := &UnifiedRoleScheduleBase{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.unifiedRoleScheduleBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.unifiedRoleScheduleBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateUnifiedRoleScheduleBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

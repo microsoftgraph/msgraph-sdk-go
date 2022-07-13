@@ -74,8 +74,8 @@ func NewMessage()(*Message) {
     m := &Message{
         OutlookItem: *NewOutlookItem(),
     }
-    typeValue := "#microsoft.graph.message";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.message";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
