@@ -99,7 +99,7 @@ func printOdataError(err error) {
 	}
 }
 
-...
+// omitted for brevity
 
 result, err := client.Me().Drive().Get()
 if err != nil {
