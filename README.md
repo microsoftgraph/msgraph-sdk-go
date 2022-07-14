@@ -81,11 +81,33 @@ After you have a **GraphServiceClient** that is authenticated, you can begin mak
 To retrieve the user's drive:
 
 ```Golang
+import (
+    "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+)
+
 result, err := client.Me().Drive().Get()
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
+    printOdataError(err)
 }
 fmt.Printf("Found Drive : %v\n", *result.GetId())
+
+// omitted for brevity
+
+func printOdataError(err error) {
+	switch err.(type) {
+	case *odataerrors.ODataError:
+		typed := err.(*odataerrors.ODataError)
+		fmt.Printf("error:", typed.Error())
+		if terr := typed.GetError(); terr != nil {
+			fmt.Printf("code: %s", *terr.GetCode())
+			fmt.Printf("msg: %s", *terr.GetMessage())
+		}
+	default:
+		fmt.Printf("%T > error: %#v", err, err)
+	}
+}
+
 ```
 
 ## 4. Getting results that span across multiple pages
@@ -101,11 +123,13 @@ import (
     msgraphcore "github.com/microsoftgraph/msgraph-sdk-go-core"
     "github.com/microsoftgraph/msgraph-sdk-go/users"
     "github.com/microsoftgraph/msgraph-sdk-go/models"
+    "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
 result, err := client.Users().Get(nil)
 if err != nil {
     fmt.Printf("Error getting users: %v\n", err)
+    printOdataError(err error)
     return err
 }
 
@@ -118,6 +142,23 @@ err = pageIterator.Iterate(func(pageItem interface{}) bool {
     // Return true to continue the iteration
     return true
 })
+
+// omitted for brevity
+
+func printOdataError(err error) {
+        switch err.(type) {
+        case *odataerrors.ODataError:
+                typed := err.(*odataerrors.ODataError)
+                fmt.Printf("error:", typed.Error())
+                if terr := typed.GetError(); terr != nil {
+                        fmt.Printf("code: %s", *terr.GetCode())
+                        fmt.Printf("msg: %s", *terr.GetMessage())
+                }
+        default:
+                fmt.Printf("%T > error: %#v", err, err)
+        }
+}
+
 ```
 
 ## 5. Documentation
