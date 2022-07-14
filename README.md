@@ -85,8 +85,6 @@ import (
     "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-// omitted for brevity
-
 result, err := client.Me().Drive().Get()
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
@@ -100,13 +98,13 @@ func printOdataError(err error) {
 	switch err.(type) {
 	case *odataerrors.ODataError:
 		typed := err.(*odataerrors.ODataError)
-		log.Println("error:", typed.Error())
+		fmt.Printf("error:", typed.Error())
 		if terr := typed.GetError(); terr != nil {
-			log.Printf("code: %s", *terr.GetCode())
-			log.Printf("msg: %s", *terr.GetMessage())
+			fmt.Printf("code: %s", *terr.GetCode())
+			fmt.Printf("msg: %s", *terr.GetMessage())
 		}
 	default:
-		log.Printf("%T > error: %#v", err, err)
+		fmt.Printf("%T > error: %#v", err, err)
 	}
 }
 
@@ -127,8 +125,6 @@ import (
     "github.com/microsoftgraph/msgraph-sdk-go/models"
     "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
-
-// omitted for brevity
 
 result, err := client.Users().Get(nil)
 if err != nil {
@@ -153,13 +149,13 @@ func printOdataError(err error) {
         switch err.(type) {
         case *odataerrors.ODataError:
                 typed := err.(*odataerrors.ODataError)
-                log.Println("error:", typed.Error())
+                fmt.Printf("error:", typed.Error())
                 if terr := typed.GetError(); terr != nil {
-                        log.Printf("code: %s", *terr.GetCode())
-                        log.Printf("msg: %s", *terr.GetMessage())
+                        fmt.Printf("code: %s", *terr.GetCode())
+                        fmt.Printf("msg: %s", *terr.GetMessage())
                 }
         default:
-                log.Printf("%T > error: %#v", err, err)
+                fmt.Printf("%T > error: %#v", err, err)
         }
 }
 
