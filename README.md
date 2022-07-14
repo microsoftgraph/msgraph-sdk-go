@@ -85,6 +85,17 @@ import (
     "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
+// omitted for brevity
+
+result, err := client.Me().Drive().Get()
+if err != nil {
+    fmt.Printf("Error getting the drive: %v\n", err)
+    printOdataError(err)
+}
+fmt.Printf("Found Drive : %v\n", *result.GetId())
+
+// omitted for brevity
+
 func printOdataError(err error) {
 	switch err.(type) {
 	case *odataerrors.ODataError:
@@ -99,14 +110,6 @@ func printOdataError(err error) {
 	}
 }
 
-// omitted for brevity
-
-result, err := client.Me().Drive().Get()
-if err != nil {
-    fmt.Printf("Error getting the drive: %v\n", err)
-    printOdataError(err)
-}
-fmt.Printf("Found Drive : %v\n", *result.GetId())
 ```
 
 ## 4. Getting results that span across multiple pages
@@ -125,21 +128,7 @@ import (
     "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-func printOdataError(err error) {
-        switch err.(type) {
-        case *odataerrors.ODataError:
-                typed := err.(*odataerrors.ODataError)
-                log.Println("error:", typed.Error())
-                if terr := typed.GetError(); terr != nil {
-                        log.Printf("code: %s", *terr.GetCode())
-                        log.Printf("msg: %s", *terr.GetMessage())
-                }
-        default:
-                log.Printf("%T > error: %#v", err, err)
-        }
-}
-
-...
+// omitted for brevity
 
 result, err := client.Users().Get(nil)
 if err != nil {
@@ -157,6 +146,23 @@ err = pageIterator.Iterate(func(pageItem interface{}) bool {
     // Return true to continue the iteration
     return true
 })
+
+// omitted for brevity
+
+func printOdataError(err error) {
+        switch err.(type) {
+        case *odataerrors.ODataError:
+                typed := err.(*odataerrors.ODataError)
+                log.Println("error:", typed.Error())
+                if terr := typed.GetError(); terr != nil {
+                        log.Printf("code: %s", *terr.GetCode())
+                        log.Printf("msg: %s", *terr.GetMessage())
+                }
+        default:
+                log.Printf("%T > error: %#v", err, err)
+        }
+}
+
 ```
 
 ## 5. Documentation
