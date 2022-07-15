@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, 1ES.Pool=1es-ubuntu-github-beta-sdk-go-compute-latest]
     env:
       relativePath: ./
     steps:
