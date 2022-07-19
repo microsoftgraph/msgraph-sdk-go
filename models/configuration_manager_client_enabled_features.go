@@ -16,6 +16,8 @@ type ConfigurationManagerClientEnabledFeatures struct {
     inventory *bool
     // Whether modern application is managed by Intune
     modernApps *bool
+    // The OdataType property
+    odataType *string
     // Whether resource access is managed by Intune
     resourceAccess *bool
     // Whether Windows Update for Business is managed by Intune
@@ -26,6 +28,8 @@ func NewConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientE
     m := &ConfigurationManagerClientEnabledFeatures{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.configurationManagerClientEnabledFeatures";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -99,6 +103,16 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resourceAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -135,6 +149,14 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetModernApps()(*bool) {
         return nil
     } else {
         return m.modernApps
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConfigurationManagerClientEnabledFeatures) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetResourceAccess gets the resourceAccess property value. Whether resource access is managed by Intune
@@ -175,6 +197,12 @@ func (m *ConfigurationManagerClientEnabledFeatures) Serialize(writer i878a80d233
     }
     {
         err := writer.WriteBoolValue("modernApps", m.GetModernApps())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -227,6 +255,12 @@ func (m *ConfigurationManagerClientEnabledFeatures) SetInventory(value *bool)() 
 func (m *ConfigurationManagerClientEnabledFeatures) SetModernApps(value *bool)() {
     if m != nil {
         m.modernApps = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConfigurationManagerClientEnabledFeatures) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetResourceAccess sets the resourceAccess property value. Whether resource access is managed by Intune

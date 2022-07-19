@@ -11,7 +11,9 @@ type CrossTenantAccessPolicyInboundTrustable interface {
     GetIsCompliantDeviceAccepted()(*bool)
     GetIsHybridAzureADJoinedDeviceAccepted()(*bool)
     GetIsMfaAccepted()(*bool)
+    GetOdataType()(*string)
     SetIsCompliantDeviceAccepted(value *bool)()
     SetIsHybridAzureADJoinedDeviceAccepted(value *bool)()
     SetIsMfaAccepted(value *bool)()
+    SetOdataType(value *string)()
 }

@@ -13,6 +13,8 @@ func NewExternalSponsors()(*ExternalSponsors) {
     m := &ExternalSponsors{
         SubjectSet: *NewSubjectSet(),
     }
+    odataTypeValue := "#microsoft.graph.externalSponsors";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalSponsorsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

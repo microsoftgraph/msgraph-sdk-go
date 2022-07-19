@@ -30,8 +30,8 @@ func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
     m := &ScheduleChangeRequest{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
-    odatatypeValue := "#microsoft.graph.scheduleChangeRequest";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.scheduleChangeRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateScheduleChangeRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +53,8 @@ func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89
                         return NewOfferShiftRequest(), nil
                     case "#microsoft.graph.openShiftChangeRequest":
                         return NewOpenShiftChangeRequest(), nil
+                    case "#microsoft.graph.swapShiftsChangeRequest":
+                        return NewSwapShiftsChangeRequest(), nil
                     case "#microsoft.graph.timeOffRequest":
                         return NewTimeOffRequest(), nil
                 }

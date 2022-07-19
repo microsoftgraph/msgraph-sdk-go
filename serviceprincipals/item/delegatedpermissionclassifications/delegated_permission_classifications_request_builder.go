@@ -70,7 +70,7 @@ func NewDelegatedPermissionClassificationsRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedPermissionClassificationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DelegatedPermissionClassificationsRequestBuilder) Count()(*ie6a1c02a1f907a4b6b557c05cc71da91dbf329e0005df35ff89c86d946cdfe8b.CountRequestBuilder) {
     return ie6a1c02a1f907a4b6b557c05cc71da91dbf329e0005df35ff89c86d946cdfe8b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -11,7 +11,9 @@ type SearchBucketable interface {
     GetAggregationFilterToken()(*string)
     GetCount()(*int32)
     GetKey()(*string)
+    GetOdataType()(*string)
     SetAggregationFilterToken(value *string)()
     SetCount(value *int32)()
     SetKey(value *string)()
+    SetOdataType(value *string)()
 }

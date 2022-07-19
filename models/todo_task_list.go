@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTaskList provides operations to manage the collection of agreement entities.
+// TodoTaskList provides operations to manage the admin singleton.
 type TodoTaskList struct {
     Entity
     // The name of the task list.
@@ -25,6 +25,8 @@ func NewTodoTaskList()(*TodoTaskList) {
     m := &TodoTaskList{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.todoTaskList";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTodoTaskListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

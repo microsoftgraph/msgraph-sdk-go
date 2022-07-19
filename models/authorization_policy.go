@@ -27,6 +27,8 @@ func NewAuthorizationPolicy()(*AuthorizationPolicy) {
     m := &AuthorizationPolicy{
         PolicyBase: *NewPolicyBase(),
     }
+    odataTypeValue := "#microsoft.graph.authorizationPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthorizationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

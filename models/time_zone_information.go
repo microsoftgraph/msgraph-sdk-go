@@ -12,12 +12,16 @@ type TimeZoneInformation struct {
     alias *string
     // A display string that represents the time zone.
     displayName *string
+    // The OdataType property
+    odataType *string
 }
 // NewTimeZoneInformation instantiates a new timeZoneInformation and sets the default values.
 func NewTimeZoneInformation()(*TimeZoneInformation) {
     m := &TimeZoneInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.timeZoneInformation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeZoneInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *TimeZoneInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeZoneInformation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *TimeZoneInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *TimeZoneInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *TimeZoneInformation) SetAlias(value *string)() {
 func (m *TimeZoneInformation) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeZoneInformation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

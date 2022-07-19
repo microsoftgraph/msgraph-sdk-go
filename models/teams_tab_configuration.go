@@ -12,6 +12,8 @@ type TeamsTabConfiguration struct {
     contentUrl *string
     // Identifier for the entity hosted by the tab provider.
     entityId *string
+    // The OdataType property
+    odataType *string
     // Url called by Teams client when a Tab is removed using the Teams Client.
     removeUrl *string
     // Url for showing tab contents outside of Teams.
@@ -22,6 +24,8 @@ func NewTeamsTabConfiguration()(*TeamsTabConfiguration) {
     m := &TeamsTabConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamsTabConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsTabConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["removeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -96,6 +110,14 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamsTabConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRemoveUrl gets the removeUrl property value. Url called by Teams client when a Tab is removed using the Teams Client.
 func (m *TeamsTabConfiguration) GetRemoveUrl()(*string) {
@@ -123,6 +145,12 @@ func (m *TeamsTabConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteStringValue("entityId", m.GetEntityId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -163,6 +191,12 @@ func (m *TeamsTabConfiguration) SetContentUrl(value *string)() {
 func (m *TeamsTabConfiguration) SetEntityId(value *string)() {
     if m != nil {
         m.entityId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamsTabConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRemoveUrl sets the removeUrl property value. Url called by Teams client when a Tab is removed using the Teams Client.

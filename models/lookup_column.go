@@ -16,6 +16,8 @@ type LookupColumn struct {
     columnName *string
     // The unique identifier of the lookup source list.
     listId *string
+    // The OdataType property
+    odataType *string
     // If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.
     primaryLookupColumnId *string
 }
@@ -24,6 +26,8 @@ func NewLookupColumn()(*LookupColumn) {
     m := &LookupColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.lookupColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLookupColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -105,6 +109,16 @@ func (m *LookupColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["primaryLookupColumnId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -123,6 +137,14 @@ func (m *LookupColumn) GetListId()(*string) {
         return nil
     } else {
         return m.listId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LookupColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPrimaryLookupColumnId gets the primaryLookupColumnId property value. If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.
@@ -155,6 +177,12 @@ func (m *LookupColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteStringValue("listId", m.GetListId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -201,6 +229,12 @@ func (m *LookupColumn) SetColumnName(value *string)() {
 func (m *LookupColumn) SetListId(value *string)() {
     if m != nil {
         m.listId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LookupColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPrimaryLookupColumnId sets the primaryLookupColumnId property value. If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.

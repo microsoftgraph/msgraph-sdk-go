@@ -15,12 +15,16 @@ type FileSystemInfo struct {
     lastAccessedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The UTC date and time the file was last modified on a client.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewFileSystemInfo instantiates a new fileSystemInfo and sets the default values.
 func NewFileSystemInfo()(*FileSystemInfo) {
     m := &FileSystemInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.fileSystemInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileSystemInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -76,6 +80,16 @@ func (m *FileSystemInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastAccessedDateTime gets the lastAccessedDateTime property value. The UTC date and time the file was last accessed. Available for the recent file list only.
@@ -94,6 +108,14 @@ func (m *FileSystemInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
         return m.lastModifiedDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *FileSystemInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *FileSystemInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -110,6 +132,12 @@ func (m *FileSystemInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -144,5 +172,11 @@ func (m *FileSystemInfo) SetLastAccessedDateTime(value *i336074805fc853987abe6f7
 func (m *FileSystemInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *FileSystemInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

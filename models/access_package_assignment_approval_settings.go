@@ -12,6 +12,8 @@ type AccessPackageAssignmentApprovalSettings struct {
     isApprovalRequiredForAdd *bool
     // If false, then approval is not required for updates to requests in this policy.
     isApprovalRequiredForUpdate *bool
+    // The OdataType property
+    odataType *string
     // If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
     stages []AccessPackageApprovalStageable
 }
@@ -20,6 +22,8 @@ func NewAccessPackageAssignmentApprovalSettings()(*AccessPackageAssignmentApprov
     m := &AccessPackageAssignmentApprovalSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessPackageAssignmentApprovalSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageAssignmentApprovalSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *AccessPackageAssignmentApprovalSettings) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["stages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageApprovalStageFromDiscriminatorValue)
         if err != nil {
@@ -89,6 +103,14 @@ func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForUpdate
         return m.isApprovalRequiredForUpdate
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentApprovalSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetStages gets the stages property value. If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
 func (m *AccessPackageAssignmentApprovalSettings) GetStages()([]AccessPackageApprovalStageable) {
     if m == nil {
@@ -107,6 +129,12 @@ func (m *AccessPackageAssignmentApprovalSettings) Serialize(writer i878a80d2330e
     }
     {
         err := writer.WriteBoolValue("isApprovalRequiredForUpdate", m.GetIsApprovalRequiredForUpdate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -145,6 +173,12 @@ func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForAdd(va
 func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForUpdate(value *bool)() {
     if m != nil {
         m.isApprovalRequiredForUpdate = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentApprovalSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStages sets the stages property value. If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.

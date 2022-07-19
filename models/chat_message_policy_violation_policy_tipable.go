@@ -11,7 +11,9 @@ type ChatMessagePolicyViolationPolicyTipable interface {
     GetComplianceUrl()(*string)
     GetGeneralText()(*string)
     GetMatchedConditionDescriptions()([]string)
+    GetOdataType()(*string)
     SetComplianceUrl(value *string)()
     SetGeneralText(value *string)()
     SetMatchedConditionDescriptions(value []string)()
+    SetOdataType(value *string)()
 }

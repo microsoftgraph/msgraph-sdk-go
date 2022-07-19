@@ -10,6 +10,8 @@ type ConditionalAccessFilter struct {
     additionalData map[string]interface{}
     // The mode property
     mode *FilterMode
+    // The OdataType property
+    odataType *string
     // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
     rule *string
 }
@@ -18,6 +20,8 @@ func NewConditionalAccessFilter()(*ConditionalAccessFilter) {
     m := &ConditionalAccessFilter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.conditionalAccessFilter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *ConditionalAccessFilter) GetMode()(*FilterMode) {
         return m.mode
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessFilter) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) GetRule()(*string) {
     if m == nil {
@@ -78,6 +100,12 @@ func (m *ConditionalAccessFilter) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetMode() != nil {
         cast := (*m.GetMode()).String()
         err := writer.WriteStringValue("mode", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *ConditionalAccessFilter) SetAdditionalData(value map[string]interface{}
 func (m *ConditionalAccessFilter) SetMode(value *FilterMode)() {
     if m != nil {
         m.mode = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessFilter) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions

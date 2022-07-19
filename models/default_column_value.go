@@ -10,6 +10,8 @@ type DefaultColumnValue struct {
     additionalData map[string]interface{}
     // The formula used to compute the default value for this column.
     formula *string
+    // The OdataType property
+    odataType *string
     // The direct value to use as the default value for this column.
     value *string
 }
@@ -18,6 +20,8 @@ func NewDefaultColumnValue()(*DefaultColumnValue) {
     m := &DefaultColumnValue{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.defaultColumnValue";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDefaultColumnValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *DefaultColumnValue) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *DefaultColumnValue) GetFormula()(*string) {
         return m.formula
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DefaultColumnValue) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetValue gets the value property value. The direct value to use as the default value for this column.
 func (m *DefaultColumnValue) GetValue()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *DefaultColumnValue) GetValue()(*string) {
 func (m *DefaultColumnValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("formula", m.GetFormula())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *DefaultColumnValue) SetAdditionalData(value map[string]interface{})() {
 func (m *DefaultColumnValue) SetFormula(value *string)() {
     if m != nil {
         m.formula = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DefaultColumnValue) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValue sets the value property value. The direct value to use as the default value for this column.

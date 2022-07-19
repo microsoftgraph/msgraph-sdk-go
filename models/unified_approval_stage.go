@@ -18,6 +18,8 @@ type UnifiedApprovalStage struct {
     isApproverJustificationRequired *bool
     // Indicates whether escalation if enabled.
     isEscalationEnabled *bool
+    // The OdataType property
+    odataType *string
     // The primary approvers of this stage.
     primaryApprovers []SubjectSetable
 }
@@ -26,6 +28,8 @@ func NewUnifiedApprovalStage()(*UnifiedApprovalStage) {
     m := &UnifiedApprovalStage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.unifiedApprovalStage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -121,6 +125,16 @@ func (m *UnifiedApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["primaryApprovers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSubjectSetFromDiscriminatorValue)
         if err != nil {
@@ -151,6 +165,14 @@ func (m *UnifiedApprovalStage) GetIsEscalationEnabled()(*bool) {
         return nil
     } else {
         return m.isEscalationEnabled
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedApprovalStage) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPrimaryApprovers gets the primaryApprovers property value. The primary approvers of this stage.
@@ -193,6 +215,12 @@ func (m *UnifiedApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteBoolValue("isEscalationEnabled", m.GetIsEscalationEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -249,6 +277,12 @@ func (m *UnifiedApprovalStage) SetIsApproverJustificationRequired(value *bool)()
 func (m *UnifiedApprovalStage) SetIsEscalationEnabled(value *bool)() {
     if m != nil {
         m.isEscalationEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedApprovalStage) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPrimaryApprovers sets the primaryApprovers property value. The primary approvers of this stage.

@@ -44,6 +44,8 @@ func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {
     m := &AccessReviewScheduleDefinition{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.accessReviewScheduleDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewScheduleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

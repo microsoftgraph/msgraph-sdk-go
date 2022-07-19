@@ -94,6 +94,8 @@ func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.application";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

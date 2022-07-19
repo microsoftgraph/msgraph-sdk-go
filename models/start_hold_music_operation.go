@@ -13,6 +13,8 @@ func NewStartHoldMusicOperation()(*StartHoldMusicOperation) {
     m := &StartHoldMusicOperation{
         CommsOperation: *NewCommsOperation(),
     }
+    odataTypeValue := "#microsoft.graph.startHoldMusicOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStartHoldMusicOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

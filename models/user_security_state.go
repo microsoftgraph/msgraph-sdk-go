@@ -29,6 +29,8 @@ type UserSecurityState struct {
     logonLocation *string
     // Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
     logonType *LogonType
+    // The OdataType property
+    odataType *string
     // Active Directory (on-premises) Security Identifier (SID) of the user.
     onPremisesSecurityIdentifier *string
     // Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
@@ -43,6 +45,8 @@ func NewUserSecurityState()(*UserSecurityState) {
     m := &UserSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userSecurityState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -192,6 +196,16 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["onPremisesSecurityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -280,6 +294,14 @@ func (m *UserSecurityState) GetLogonType()(*LogonType) {
         return nil
     } else {
         return m.logonType
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserSecurityState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Active Directory (on-premises) Security Identifier (SID) of the user.
@@ -374,6 +396,12 @@ func (m *UserSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetLogonType() != nil {
         cast := (*m.GetLogonType()).String()
         err := writer.WriteStringValue("logonType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -475,6 +503,12 @@ func (m *UserSecurityState) SetLogonLocation(value *string)() {
 func (m *UserSecurityState) SetLogonType(value *LogonType)() {
     if m != nil {
         m.logonType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserSecurityState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Active Directory (on-premises) Security Identifier (SID) of the user.

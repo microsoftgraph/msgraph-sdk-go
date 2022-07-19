@@ -31,6 +31,8 @@ type CopyNotebookModel struct {
     links NotebookLinksable
     // The name property
     name *string
+    // The OdataType property
+    odataType *string
     // The sectionGroupsUrl property
     sectionGroupsUrl *string
     // The sectionsUrl property
@@ -45,6 +47,8 @@ func NewCopyNotebookModel()(*CopyNotebookModel) {
     m := &CopyNotebookModel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.CopyNotebookModel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCopyNotebookModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -196,6 +200,16 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sectionGroupsUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -302,6 +316,14 @@ func (m *CopyNotebookModel) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CopyNotebookModel) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSectionGroupsUrl gets the sectionGroupsUrl property value. The sectionGroupsUrl property
 func (m *CopyNotebookModel) GetSectionGroupsUrl()(*string) {
     if m == nil {
@@ -398,6 +420,12 @@ func (m *CopyNotebookModel) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -505,6 +533,12 @@ func (m *CopyNotebookModel) SetLinks(value NotebookLinksable)() {
 func (m *CopyNotebookModel) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CopyNotebookModel) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSectionGroupsUrl sets the sectionGroupsUrl property value. The sectionGroupsUrl property

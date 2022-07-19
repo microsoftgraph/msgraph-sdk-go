@@ -11,7 +11,9 @@ type SearchAlterationable interface {
     GetAlteredHighlightedQueryString()(*string)
     GetAlteredQueryString()(*string)
     GetAlteredQueryTokens()([]AlteredQueryTokenable)
+    GetOdataType()(*string)
     SetAlteredHighlightedQueryString(value *string)()
     SetAlteredQueryString(value *string)()
     SetAlteredQueryTokens(value []AlteredQueryTokenable)()
+    SetOdataType(value *string)()
 }

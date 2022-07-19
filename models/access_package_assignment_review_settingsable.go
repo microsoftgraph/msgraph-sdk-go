@@ -14,6 +14,7 @@ type AccessPackageAssignmentReviewSettingsable interface {
     GetIsRecommendationEnabled()(*bool)
     GetIsReviewerJustificationRequired()(*bool)
     GetIsSelfReview()(*bool)
+    GetOdataType()(*string)
     GetPrimaryReviewers()([]SubjectSetable)
     GetSchedule()(EntitlementManagementScheduleable)
     SetExpirationBehavior(value *AccessReviewExpirationBehavior)()
@@ -22,6 +23,7 @@ type AccessPackageAssignmentReviewSettingsable interface {
     SetIsRecommendationEnabled(value *bool)()
     SetIsReviewerJustificationRequired(value *bool)()
     SetIsSelfReview(value *bool)()
+    SetOdataType(value *string)()
     SetPrimaryReviewers(value []SubjectSetable)()
     SetSchedule(value EntitlementManagementScheduleable)()
 }

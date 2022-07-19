@@ -11,7 +11,9 @@ type Fido2KeyRestrictionsable interface {
     GetAaGuids()([]string)
     GetEnforcementType()(*Fido2RestrictionEnforcementType)
     GetIsEnforced()(*bool)
+    GetOdataType()(*string)
     SetAaGuids(value []string)()
     SetEnforcementType(value *Fido2RestrictionEnforcementType)()
     SetIsEnforced(value *bool)()
+    SetOdataType(value *string)()
 }

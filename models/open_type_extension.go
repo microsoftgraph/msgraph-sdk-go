@@ -15,6 +15,8 @@ func NewOpenTypeExtension()(*OpenTypeExtension) {
     m := &OpenTypeExtension{
         Extension: *NewExtension(),
     }
+    odataTypeValue := "#microsoft.graph.openTypeExtension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOpenTypeExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

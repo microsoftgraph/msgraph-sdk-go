@@ -13,6 +13,8 @@ func NewWorkbookFunctions()(*WorkbookFunctions) {
     m := &WorkbookFunctions{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookFunctions";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookFunctionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

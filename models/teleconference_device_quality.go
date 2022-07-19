@@ -26,6 +26,8 @@ type TeleconferenceDeviceQuality struct {
     mediaLegId *string
     // The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
     mediaQualityList []TeleconferenceDeviceMediaQualityable
+    // The OdataType property
+    odataType *string
     // A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
     participantId *string
 }
@@ -34,6 +36,8 @@ func NewTeleconferenceDeviceQuality()(*TeleconferenceDeviceQuality) {
     m := &TeleconferenceDeviceQuality{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teleconferenceDeviceQuality";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeleconferenceDeviceQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -201,6 +205,16 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["participantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -227,6 +241,14 @@ func (m *TeleconferenceDeviceQuality) GetMediaQualityList()([]TeleconferenceDevi
         return nil
     } else {
         return m.mediaQualityList
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeleconferenceDeviceQuality) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetParticipantId gets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
@@ -293,6 +315,12 @@ func (m *TeleconferenceDeviceQuality) Serialize(writer i878a80d2330e89d26896388a
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("mediaQualityList", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -369,6 +397,12 @@ func (m *TeleconferenceDeviceQuality) SetMediaLegId(value *string)() {
 func (m *TeleconferenceDeviceQuality) SetMediaQualityList(value []TeleconferenceDeviceMediaQualityable)() {
     if m != nil {
         m.mediaQualityList = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeleconferenceDeviceQuality) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetParticipantId sets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.

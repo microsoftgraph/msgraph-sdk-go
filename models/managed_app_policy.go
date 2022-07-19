@@ -24,8 +24,8 @@ func NewManagedAppPolicy()(*ManagedAppPolicy) {
     m := &ManagedAppPolicy{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.managedAppPolicy";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.managedAppPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedAppPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,12 +43,26 @@ func CreateManagedAppPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d2689
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.androidManagedAppProtection":
+                        return NewAndroidManagedAppProtection(), nil
+                    case "#microsoft.graph.defaultManagedAppProtection":
+                        return NewDefaultManagedAppProtection(), nil
+                    case "#microsoft.graph.iosManagedAppProtection":
+                        return NewIosManagedAppProtection(), nil
                     case "#microsoft.graph.managedAppConfiguration":
                         return NewManagedAppConfiguration(), nil
                     case "#microsoft.graph.managedAppProtection":
                         return NewManagedAppProtection(), nil
+                    case "#microsoft.graph.mdmWindowsInformationProtectionPolicy":
+                        return NewMdmWindowsInformationProtectionPolicy(), nil
+                    case "#microsoft.graph.targetedManagedAppConfiguration":
+                        return NewTargetedManagedAppConfiguration(), nil
+                    case "#microsoft.graph.targetedManagedAppProtection":
+                        return NewTargetedManagedAppProtection(), nil
                     case "#microsoft.graph.windowsInformationProtection":
                         return NewWindowsInformationProtection(), nil
+                    case "#microsoft.graph.windowsInformationProtectionPolicy":
+                        return NewWindowsInformationProtectionPolicy(), nil
                 }
             }
         }

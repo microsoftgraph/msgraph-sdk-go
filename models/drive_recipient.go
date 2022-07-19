@@ -14,12 +14,16 @@ type DriveRecipient struct {
     email *string
     // The unique identifier for the recipient in the directory.
     objectId *string
+    // The OdataType property
+    odataType *string
 }
 // NewDriveRecipient instantiates a new driveRecipient and sets the default values.
 func NewDriveRecipient()(*DriveRecipient) {
     m := &DriveRecipient{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.driveRecipient";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDriveRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +87,16 @@ func (m *DriveRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetObjectId gets the objectId property value. The unique identifier for the recipient in the directory.
@@ -91,6 +105,14 @@ func (m *DriveRecipient) GetObjectId()(*string) {
         return nil
     } else {
         return m.objectId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DriveRecipient) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -109,6 +131,12 @@ func (m *DriveRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("objectId", m.GetObjectId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *DriveRecipient) SetEmail(value *string)() {
 func (m *DriveRecipient) SetObjectId(value *string)() {
     if m != nil {
         m.objectId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DriveRecipient) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -12,10 +12,12 @@ type EducationCourseable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetExternalId()(*string)
+    GetOdataType()(*string)
     GetSubject()(*string)
     SetCourseNumber(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetExternalId(value *string)()
+    SetOdataType(value *string)()
     SetSubject(value *string)()
 }

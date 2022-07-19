@@ -11,11 +11,13 @@ type ProvisioningStepable interface {
     GetDescription()(*string)
     GetDetails()(DetailsInfoable)
     GetName()(*string)
+    GetOdataType()(*string)
     GetProvisioningStepType()(*ProvisioningStepType)
     GetStatus()(*ProvisioningResult)
     SetDescription(value *string)()
     SetDetails(value DetailsInfoable)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetProvisioningStepType(value *ProvisioningStepType)()
     SetStatus(value *ProvisioningResult)()
 }

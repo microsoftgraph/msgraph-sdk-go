@@ -25,6 +25,8 @@ func NewEdiscoverySearch()(*EdiscoverySearch) {
     m := &EdiscoverySearch{
         Search: *NewSearch(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoverySearch";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoverySearchFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

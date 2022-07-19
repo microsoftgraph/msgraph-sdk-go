@@ -19,6 +19,8 @@ func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {
     m := &AuthenticationFlowsPolicy{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.authenticationFlowsPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationFlowsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

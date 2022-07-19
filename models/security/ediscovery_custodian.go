@@ -18,7 +18,7 @@ type EdiscoveryCustodian struct {
     siteSources []SiteSourceable
     // Data source entity for groups associated with the custodian.
     unifiedGroupSources []UnifiedGroupSourceable
-    // Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+    // Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
     userSources []UserSourceable
 }
 // NewEdiscoveryCustodian instantiates a new EdiscoveryCustodian and sets the default values.
@@ -26,6 +26,8 @@ func NewEdiscoveryCustodian()(*EdiscoveryCustodian) {
     m := &EdiscoveryCustodian{
         DataSourceContainer: *NewDataSourceContainer(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryCustodian";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryCustodianFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -149,7 +151,7 @@ func (m *EdiscoveryCustodian) GetUnifiedGroupSources()([]UnifiedGroupSourceable)
         return m.unifiedGroupSources
     }
 }
-// GetUserSources gets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// GetUserSources gets the userSources property value. Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *EdiscoveryCustodian) GetUserSources()([]UserSourceable) {
     if m == nil {
         return nil
@@ -243,7 +245,7 @@ func (m *EdiscoveryCustodian) SetUnifiedGroupSources(value []UnifiedGroupSourcea
         m.unifiedGroupSources = value
     }
 }
-// SetUserSources sets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// SetUserSources sets the userSources property value. Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *EdiscoveryCustodian) SetUserSources(value []UserSourceable)() {
     if m != nil {
         m.userSources = value

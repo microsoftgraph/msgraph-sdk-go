@@ -14,6 +14,8 @@ type SettingTemplateValue struct {
     description *string
     // Name of the setting. Read-only.
     name *string
+    // The OdataType property
+    odataType *string
     // Type of the setting. Read-only.
     type_escaped *string
 }
@@ -22,6 +24,8 @@ func NewSettingTemplateValue()(*SettingTemplateValue) {
     m := &SettingTemplateValue{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.settingTemplateValue";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSettingTemplateValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +89,16 @@ func (m *SettingTemplateValue) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -103,6 +117,14 @@ func (m *SettingTemplateValue) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SettingTemplateValue) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetType gets the type property value. Type of the setting. Read-only.
@@ -129,6 +151,12 @@ func (m *SettingTemplateValue) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *SettingTemplateValue) SetDescription(value *string)() {
 func (m *SettingTemplateValue) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SettingTemplateValue) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. Type of the setting. Read-only.

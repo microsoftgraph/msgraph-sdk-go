@@ -17,6 +17,8 @@ func NewEducationPointsOutcome()(*EducationPointsOutcome) {
     m := &EducationPointsOutcome{
         EducationOutcome: *NewEducationOutcome(),
     }
+    odataTypeValue := "#microsoft.graph.educationPointsOutcome";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationPointsOutcomeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

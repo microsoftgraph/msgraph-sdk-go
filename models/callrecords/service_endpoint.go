@@ -13,6 +13,8 @@ func NewServiceEndpoint()(*ServiceEndpoint) {
     m := &ServiceEndpoint{
         Endpoint: *NewEndpoint(),
     }
+    odataTypeValue := "#microsoft.graph.callRecords.serviceEndpoint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

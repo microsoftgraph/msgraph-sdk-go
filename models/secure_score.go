@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecureScore provides operations to manage the collection of agreement entities.
+// SecureScore provides operations to manage the admin singleton.
 type SecureScore struct {
     Entity
     // Active user count of the given tenant.
@@ -34,6 +34,8 @@ func NewSecureScore()(*SecureScore) {
     m := &SecureScore{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.secureScore";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecureScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

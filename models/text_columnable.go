@@ -12,10 +12,12 @@ type TextColumnable interface {
     GetAppendChangesToExistingText()(*bool)
     GetLinesForEditing()(*int32)
     GetMaxLength()(*int32)
+    GetOdataType()(*string)
     GetTextType()(*string)
     SetAllowMultipleLines(value *bool)()
     SetAppendChangesToExistingText(value *bool)()
     SetLinesForEditing(value *int32)()
     SetMaxLength(value *int32)()
+    SetOdataType(value *string)()
     SetTextType(value *string)()
 }

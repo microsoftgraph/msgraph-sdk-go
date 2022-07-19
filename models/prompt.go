@@ -8,16 +8,16 @@ import (
 type Prompt struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewPrompt instantiates a new prompt and sets the default values.
 func NewPrompt()(*Prompt) {
     m := &Prompt{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.prompt";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.prompt";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePromptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,24 +60,24 @@ func (m *Prompt) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *Prompt) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Prompt) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
 func (m *Prompt) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -96,9 +96,9 @@ func (m *Prompt) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *Prompt) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Prompt) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

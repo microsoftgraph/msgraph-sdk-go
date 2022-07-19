@@ -18,6 +18,8 @@ func NewSchema()(*Schema) {
     m := &Schema{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.externalConnectors.schema";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

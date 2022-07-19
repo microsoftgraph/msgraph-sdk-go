@@ -11,7 +11,9 @@ type IosNetworkUsageRuleable interface {
     GetCellularDataBlocked()(*bool)
     GetCellularDataBlockWhenRoaming()(*bool)
     GetManagedApps()([]AppListItemable)
+    GetOdataType()(*string)
     SetCellularDataBlocked(value *bool)()
     SetCellularDataBlockWhenRoaming(value *bool)()
     SetManagedApps(value []AppListItemable)()
+    SetOdataType(value *string)()
 }

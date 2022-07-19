@@ -64,6 +64,8 @@ func NewOrganization()(*Organization) {
     m := &Organization{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.organization";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

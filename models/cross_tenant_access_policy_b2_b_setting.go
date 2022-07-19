@@ -10,6 +10,8 @@ type CrossTenantAccessPolicyB2BSetting struct {
     additionalData map[string]interface{}
     // The list of applications targeted with your cross-tenant access policy.
     applications CrossTenantAccessPolicyTargetConfigurationable
+    // The OdataType property
+    odataType *string
     // The list of users and groups targeted with your cross-tenant access policy.
     usersAndGroups CrossTenantAccessPolicyTargetConfigurationable
 }
@@ -18,6 +20,8 @@ func NewCrossTenantAccessPolicyB2BSetting()(*CrossTenantAccessPolicyB2BSetting) 
     m := &CrossTenantAccessPolicyB2BSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyB2BSetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["usersAndGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyTargetConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -64,6 +78,14 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CrossTenantAccessPolicyB2BSetting) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUsersAndGroups gets the usersAndGroups property value. The list of users and groups targeted with your cross-tenant access policy.
 func (m *CrossTenantAccessPolicyB2BSetting) GetUsersAndGroups()(CrossTenantAccessPolicyTargetConfigurationable) {
@@ -77,6 +99,12 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetUsersAndGroups()(CrossTenantAcces
 func (m *CrossTenantAccessPolicyB2BSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("applications", m.GetApplications())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *CrossTenantAccessPolicyB2BSetting) SetAdditionalData(value map[string]i
 func (m *CrossTenantAccessPolicyB2BSetting) SetApplications(value CrossTenantAccessPolicyTargetConfigurationable)() {
     if m != nil {
         m.applications = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CrossTenantAccessPolicyB2BSetting) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUsersAndGroups sets the usersAndGroups property value. The list of users and groups targeted with your cross-tenant access policy.

@@ -10,6 +10,8 @@ type TimeConstraint struct {
     activityDomain *ActivityDomain
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The timeSlots property
     timeSlots []TimeSlotable
 }
@@ -18,6 +20,8 @@ func NewTimeConstraint()(*TimeConstraint) {
     m := &TimeConstraint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.timeConstraint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["timeSlots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTimeSlotFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeConstraint) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTimeSlots gets the timeSlots property value. The timeSlots property
 func (m *TimeConstraint) GetTimeSlots()([]TimeSlotable) {
     if m == nil {
@@ -82,6 +104,12 @@ func (m *TimeConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetActivityDomain() != nil {
         cast := (*m.GetActivityDomain()).String()
         err := writer.WriteStringValue("activityDomain", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -114,6 +142,12 @@ func (m *TimeConstraint) SetActivityDomain(value *ActivityDomain)() {
 func (m *TimeConstraint) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeConstraint) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTimeSlots sets the timeSlots property value. The timeSlots property

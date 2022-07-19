@@ -13,6 +13,8 @@ type UploadSession struct {
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
     nextExpectedRanges []string
+    // The OdataType property
+    odataType *string
     // The URL endpoint that accepts PUT requests for byte ranges of the file.
     uploadUrl *string
 }
@@ -21,6 +23,8 @@ func NewUploadSession()(*UploadSession) {
     m := &UploadSession{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.uploadSession";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUploadSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +74,16 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["uploadUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -90,6 +104,14 @@ func (m *UploadSession) GetNextExpectedRanges()([]string) {
         return m.nextExpectedRanges
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UploadSession) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUploadUrl gets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.
 func (m *UploadSession) GetUploadUrl()(*string) {
     if m == nil {
@@ -108,6 +130,12 @@ func (m *UploadSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     if m.GetNextExpectedRanges() != nil {
         err := writer.WriteCollectionOfStringValues("nextExpectedRanges", m.GetNextExpectedRanges())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -142,6 +170,12 @@ func (m *UploadSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3
 func (m *UploadSession) SetNextExpectedRanges(value []string)() {
     if m != nil {
         m.nextExpectedRanges = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UploadSession) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUploadUrl sets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.

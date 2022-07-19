@@ -8,11 +8,17 @@ import (
     i36d51fdd7beea498cf790dc7e6370ee500c1ae341f5d8a4c36d081226f91ee96 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/methods"
     i3d41e7ad8d690559b414262fba543314187fe0d02cf0420f778314c36a9270af "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods"
     i50a4dcc03253ad4d1a2378ba69f2c88826d5fdd0f9425f4e28c70575cac71416 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/operations"
+    i6430ca73853f3f695600e2a9f4e951ba2e344e4a2627154e62947ec642d87fd6 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/softwareoathmethods"
+    i90a80d7bdff82cdccc7ae0cf5840323e7a57f740d64043c727e023d114dba655 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/emailmethods"
     i96e8d458309e5631e00b3cbc4d031fbc1d45f1137d2f6149c3e103603bd3dcf2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods"
+    ia4b56c953a28a84d229122b7e1aac46eb680356d4c1224fba222ec4ef02edf28 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/phonemethods"
     ibf3d8b3b514222b0d1e0f731908a1dec434e70451a9c69a400c95a8636070ad7 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/passwordmethods"
     if1ee18a3da4e8e27c6078dd6a39fae3b6b567ea5f3ebfaab6b86da5d3c9a22b3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/temporaryaccesspassmethods"
+    i09344f5684814c94f5c0d49aa2a8a99853e6bd49c79b7af62c388b8280648cbe "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/emailmethods/item"
+    i1639e8fff03af17d5d09a810d83e6d720afc46c6adb8ed991b86ed9970fa512a "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/softwareoathmethods/item"
     i33902446e72a35eb92a8d90a86021f50ebf6a7badd666e5dd29d39829615e81f "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/microsoftauthenticatormethods/item"
     i35d593a027a6734cd04363b64e4ec23b3994926e2a5637f26d36b76f7d3c43a3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/passwordmethods/item"
+    i376648a3fdba15b5dceca58336d2fd7c6dbc0c092186670d9080f160e7b0323d "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/phonemethods/item"
     i4f5c6f02fac27458fe06277174a65fe094c80b096c7dceec66f3bc6ab61be13b "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/fido2methods/item"
     i84363a3b3ece14c5cf90a56909346b46410bd8cea98a319ba3b31fdc29a3fad5 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/operations/item"
     i9204deeb9308a81051ecfbd988907f606e6330dbfc4b953a713d2803d2d5735a "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item"
@@ -151,6 +157,21 @@ func (m *AuthenticationRequestBuilder) DeleteWithRequestConfigurationAndResponse
     }
     return nil
 }
+// EmailMethods the emailMethods property
+func (m *AuthenticationRequestBuilder) EmailMethods()(*i90a80d7bdff82cdccc7ae0cf5840323e7a57f740d64043c727e023d114dba655.EmailMethodsRequestBuilder) {
+    return i90a80d7bdff82cdccc7ae0cf5840323e7a57f740d64043c727e023d114dba655.NewEmailMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// EmailMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.emailMethods.item collection
+func (m *AuthenticationRequestBuilder) EmailMethodsById(id string)(*i09344f5684814c94f5c0d49aa2a8a99853e6bd49c79b7af62c388b8280648cbe.EmailAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["emailAuthenticationMethod%2Did"] = id
+    }
+    return i09344f5684814c94f5c0d49aa2a8a99853e6bd49c79b7af62c388b8280648cbe.NewEmailAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // Fido2Methods the fido2Methods property
 func (m *AuthenticationRequestBuilder) Fido2Methods()(*i17beca6845c8590a7993cf25977350ea5aff5795257953969bade065fb0a8c8e.Fido2MethodsRequestBuilder) {
     return i17beca6845c8590a7993cf25977350ea5aff5795257953969bade065fb0a8c8e.NewFido2MethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -265,6 +286,36 @@ func (m *AuthenticationRequestBuilder) PatchWithRequestConfigurationAndResponseH
         return err
     }
     return nil
+}
+// PhoneMethods the phoneMethods property
+func (m *AuthenticationRequestBuilder) PhoneMethods()(*ia4b56c953a28a84d229122b7e1aac46eb680356d4c1224fba222ec4ef02edf28.PhoneMethodsRequestBuilder) {
+    return ia4b56c953a28a84d229122b7e1aac46eb680356d4c1224fba222ec4ef02edf28.NewPhoneMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// PhoneMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.phoneMethods.item collection
+func (m *AuthenticationRequestBuilder) PhoneMethodsById(id string)(*i376648a3fdba15b5dceca58336d2fd7c6dbc0c092186670d9080f160e7b0323d.PhoneAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["phoneAuthenticationMethod%2Did"] = id
+    }
+    return i376648a3fdba15b5dceca58336d2fd7c6dbc0c092186670d9080f160e7b0323d.NewPhoneAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// SoftwareOathMethods the softwareOathMethods property
+func (m *AuthenticationRequestBuilder) SoftwareOathMethods()(*i6430ca73853f3f695600e2a9f4e951ba2e344e4a2627154e62947ec642d87fd6.SoftwareOathMethodsRequestBuilder) {
+    return i6430ca73853f3f695600e2a9f4e951ba2e344e4a2627154e62947ec642d87fd6.NewSoftwareOathMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SoftwareOathMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.softwareOathMethods.item collection
+func (m *AuthenticationRequestBuilder) SoftwareOathMethodsById(id string)(*i1639e8fff03af17d5d09a810d83e6d720afc46c6adb8ed991b86ed9970fa512a.SoftwareOathAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["softwareOathAuthenticationMethod%2Did"] = id
+    }
+    return i1639e8fff03af17d5d09a810d83e6d720afc46c6adb8ed991b86ed9970fa512a.NewSoftwareOathAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TemporaryAccessPassMethods the temporaryAccessPassMethods property
 func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethods()(*if1ee18a3da4e8e27c6078dd6a39fae3b6b567ea5f3ebfaab6b86da5d3c9a22b3.TemporaryAccessPassMethodsRequestBuilder) {

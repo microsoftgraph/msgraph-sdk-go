@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ColumnDefinition provides operations to manage the collection of agreement entities.
+// ColumnDefinition provides operations to manage the admin singleton.
 type ColumnDefinition struct {
     Entity
     // This column stores boolean values.
@@ -67,6 +67,8 @@ type ColumnDefinition struct {
     text TextColumnable
     // This column stores thumbnail values.
     thumbnail ThumbnailColumnable
+    // For site columns, the type of column. Read-only.
+    type_escaped *ColumnTypes
     // This column stores validation formula and message for the column.
     validation ColumnValidationable
 }
@@ -75,6 +77,8 @@ func NewColumnDefinition()(*ColumnDefinition) {
     m := &ColumnDefinition{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.columnDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateColumnDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -472,6 +476,16 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseColumnTypes)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val.(*ColumnTypes))
+        }
+        return nil
+    }
     res["validation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateColumnValidationFromDiscriminatorValue)
         if err != nil {
@@ -634,6 +648,14 @@ func (m *ColumnDefinition) GetThumbnail()(ThumbnailColumnable) {
         return nil
     } else {
         return m.thumbnail
+    }
+}
+// GetType gets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) GetType()(*ColumnTypes) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetValidation gets the validation property value. This column stores validation formula and message for the column.
@@ -830,6 +852,13 @@ func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetType() != nil {
+        cast := (*m.GetType()).String()
+        err = writer.WriteStringValue("type", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("validation", m.GetValidation())
         if err != nil {
@@ -1016,6 +1045,12 @@ func (m *ColumnDefinition) SetText(value TextColumnable)() {
 func (m *ColumnDefinition) SetThumbnail(value ThumbnailColumnable)() {
     if m != nil {
         m.thumbnail = value
+    }
+}
+// SetType sets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) SetType(value *ColumnTypes)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetValidation sets the validation property value. This column stores validation formula and message for the column.

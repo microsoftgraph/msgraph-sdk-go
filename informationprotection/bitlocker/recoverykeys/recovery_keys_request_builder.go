@@ -70,7 +70,7 @@ func NewRecoveryKeysRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewRecoveryKeysRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RecoveryKeysRequestBuilder) Count()(*i15f1920aef10f5777a09a79460eeb9b7291a3d2ab86aaf5d1c8e9e0665b75bb4.CountRequestBuilder) {
     return i15f1920aef10f5777a09a79460eeb9b7291a3d2ab86aaf5d1c8e9e0665b75bb4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

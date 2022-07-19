@@ -21,8 +21,8 @@ func NewTeleconferenceDeviceVideoQuality()(*TeleconferenceDeviceVideoQuality) {
     m := &TeleconferenceDeviceVideoQuality{
         TeleconferenceDeviceMediaQuality: *NewTeleconferenceDeviceMediaQuality(),
     }
-    odatatypeValue := "#microsoft.graph.teleconferenceDeviceVideoQuality";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.teleconferenceDeviceVideoQuality";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeleconferenceDeviceVideoQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type BookingReminder struct {
     additionalData map[string]interface{}
     // The message in the reminder.
     message *string
+    // The OdataType property
+    odataType *string
     // The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
     offset *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The recipients property
@@ -20,6 +22,8 @@ func NewBookingReminder()(*BookingReminder) {
     m := &BookingReminder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bookingReminder";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingReminderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *BookingReminder) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetMessage(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *BookingReminder) GetMessage()(*string) {
         return m.message
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingReminder) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOffset gets the offset property value. The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
 func (m *BookingReminder) GetOffset()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *BookingReminder) GetRecipients()(*BookingReminderRecipients) {
 func (m *BookingReminder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -132,6 +160,12 @@ func (m *BookingReminder) SetAdditionalData(value map[string]interface{})() {
 func (m *BookingReminder) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingReminder) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOffset sets the offset property value. The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.

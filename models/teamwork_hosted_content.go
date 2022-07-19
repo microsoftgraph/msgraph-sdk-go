@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkHostedContent provides operations to manage the collection of agreement entities.
+// TeamworkHostedContent provides operations to manage the admin singleton.
 type TeamworkHostedContent struct {
     Entity
     // Write only. Bytes for the hosted content (such as images).
@@ -17,8 +17,8 @@ func NewTeamworkHostedContent()(*TeamworkHostedContent) {
     m := &TeamworkHostedContent{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.teamworkHostedContent";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.teamworkHostedContent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkHostedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

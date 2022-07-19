@@ -70,7 +70,7 @@ func NewColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ColumnsRequestBuilder) Count()(*id9d12710399f7d3e8a8529aabd376568b134d426dfcacaff20b631c279d1730a.CountRequestBuilder) {
     return id9d12710399f7d3e8a8529aabd376568b134d426dfcacaff20b631c279d1730a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

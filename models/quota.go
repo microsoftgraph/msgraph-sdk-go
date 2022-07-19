@@ -10,6 +10,8 @@ type Quota struct {
     additionalData map[string]interface{}
     // Total space consumed by files in the recycle bin, in bytes. Read-only.
     deleted *int64
+    // The OdataType property
+    odataType *string
     // Total space remaining before reaching the quota limit, in bytes. Read-only.
     remaining *int64
     // Enumeration value that indicates the state of the storage space. Read-only.
@@ -26,6 +28,8 @@ func NewQuota()(*Quota) {
     m := &Quota{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.quota";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateQuotaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +62,16 @@ func (m *Quota) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetDeleted(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -113,6 +127,14 @@ func (m *Quota) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Quota) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRemaining gets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
 func (m *Quota) GetRemaining()(*int64) {
     if m == nil {
@@ -157,6 +179,12 @@ func (m *Quota) GetUsed()(*int64) {
 func (m *Quota) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt64Value("deleted", m.GetDeleted())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -209,6 +237,12 @@ func (m *Quota) SetAdditionalData(value map[string]interface{})() {
 func (m *Quota) SetDeleted(value *int64)() {
     if m != nil {
         m.deleted = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Quota) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRemaining sets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.

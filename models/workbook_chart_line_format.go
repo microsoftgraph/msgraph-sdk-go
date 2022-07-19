@@ -15,6 +15,8 @@ func NewWorkbookChartLineFormat()(*WorkbookChartLineFormat) {
     m := &WorkbookChartLineFormat{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartLineFormat";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartLineFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

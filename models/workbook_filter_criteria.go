@@ -20,6 +20,8 @@ type WorkbookFilterCriteria struct {
     filterOn *string
     // The icon property
     icon WorkbookIconable
+    // The OdataType property
+    odataType *string
     // The operator property
     operator *string
     // The values property
@@ -30,6 +32,8 @@ func NewWorkbookFilterCriteria()(*WorkbookFilterCriteria) {
     m := &WorkbookFilterCriteria{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.workbookFilterCriteria";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookFilterCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -139,6 +143,16 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -175,6 +189,14 @@ func (m *WorkbookFilterCriteria) GetIcon()(WorkbookIconable) {
         return nil
     } else {
         return m.icon
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookFilterCriteria) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOperator gets the operator property value. The operator property
@@ -227,6 +249,12 @@ func (m *WorkbookFilterCriteria) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteObjectValue("icon", m.GetIcon())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -291,6 +319,12 @@ func (m *WorkbookFilterCriteria) SetFilterOn(value *string)() {
 func (m *WorkbookFilterCriteria) SetIcon(value WorkbookIconable)() {
     if m != nil {
         m.icon = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookFilterCriteria) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperator sets the operator property value. The operator property

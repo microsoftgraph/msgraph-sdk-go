@@ -10,6 +10,8 @@ type BookingWorkHours struct {
     additionalData map[string]interface{}
     // The day property
     day *DayOfWeek
+    // The OdataType property
+    odataType *string
     // A list of start/end times during a day.
     timeSlots []BookingWorkTimeSlotable
 }
@@ -18,6 +20,8 @@ func NewBookingWorkHours()(*BookingWorkHours) {
     m := &BookingWorkHours{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bookingWorkHours";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingWorkHoursFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["timeSlots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingWorkTimeSlotFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingWorkHours) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTimeSlots gets the timeSlots property value. A list of start/end times during a day.
 func (m *BookingWorkHours) GetTimeSlots()([]BookingWorkTimeSlotable) {
     if m == nil {
@@ -82,6 +104,12 @@ func (m *BookingWorkHours) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetDay() != nil {
         cast := (*m.GetDay()).String()
         err := writer.WriteStringValue("day", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -114,6 +142,12 @@ func (m *BookingWorkHours) SetAdditionalData(value map[string]interface{})() {
 func (m *BookingWorkHours) SetDay(value *DayOfWeek)() {
     if m != nil {
         m.day = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingWorkHours) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTimeSlots sets the timeSlots property value. A list of start/end times during a day.

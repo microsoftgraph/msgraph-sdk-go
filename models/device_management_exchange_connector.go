@@ -32,6 +32,8 @@ func NewDeviceManagementExchangeConnector()(*DeviceManagementExchangeConnector) 
     m := &DeviceManagementExchangeConnector{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementExchangeConnector";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementExchangeConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

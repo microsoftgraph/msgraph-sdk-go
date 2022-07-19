@@ -19,6 +19,8 @@ func NewIosCustomConfiguration()(*IosCustomConfiguration) {
     m := &IosCustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.iosCustomConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosCustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

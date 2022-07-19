@@ -12,8 +12,10 @@ type DriveItemUploadablePropertiesable interface {
     GetFileSize()(*int64)
     GetFileSystemInfo()(FileSystemInfoable)
     GetName()(*string)
+    GetOdataType()(*string)
     SetDescription(value *string)()
     SetFileSize(value *int64)()
     SetFileSystemInfo(value FileSystemInfoable)()
     SetName(value *string)()
+    SetOdataType(value *string)()
 }

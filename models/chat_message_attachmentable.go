@@ -13,11 +13,13 @@ type ChatMessageAttachmentable interface {
     GetContentUrl()(*string)
     GetId()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetThumbnailUrl()(*string)
     SetContent(value *string)()
     SetContentType(value *string)()
     SetContentUrl(value *string)()
     SetId(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetThumbnailUrl(value *string)()
 }

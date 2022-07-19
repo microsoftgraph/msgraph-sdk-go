@@ -12,6 +12,8 @@ type ResultInfo struct {
     code *int32
     // The message.
     message *string
+    // The OdataType property
+    odataType *string
     // The result sub-code.
     subcode *int32
 }
@@ -20,6 +22,8 @@ func NewResultInfo()(*ResultInfo) {
     m := &ResultInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.resultInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResultInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *ResultInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["subcode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *ResultInfo) GetMessage()(*string) {
         return m.message
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ResultInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSubcode gets the subcode property value. The result sub-code.
 func (m *ResultInfo) GetSubcode()(*int32) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *ResultInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *ResultInfo) SetCode(value *int32)() {
 func (m *ResultInfo) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ResultInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSubcode sets the subcode property value. The result sub-code.

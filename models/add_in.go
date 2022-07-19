@@ -10,6 +10,8 @@ type AddIn struct {
     additionalData map[string]interface{}
     // The id property
     id *string
+    // The OdataType property
+    odataType *string
     // The properties property
     properties []KeyValueable
     // The type property
@@ -20,6 +22,8 @@ func NewAddIn()(*AddIn) {
     m := &AddIn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.addIn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAddInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -81,6 +95,14 @@ func (m *AddIn) GetId()(*string) {
         return m.id
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AddIn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProperties gets the properties property value. The properties property
 func (m *AddIn) GetProperties()([]KeyValueable) {
     if m == nil {
@@ -101,6 +123,12 @@ func (m *AddIn) GetType()(*string) {
 func (m *AddIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -139,6 +167,12 @@ func (m *AddIn) SetAdditionalData(value map[string]interface{})() {
 func (m *AddIn) SetId(value *string)() {
     if m != nil {
         m.id = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AddIn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProperties sets the properties property value. The properties property

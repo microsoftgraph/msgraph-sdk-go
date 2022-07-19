@@ -15,6 +15,8 @@ func NewUrlAssessmentRequest()(*UrlAssessmentRequest) {
     m := &UrlAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
     }
+    odataTypeValue := "#microsoft.graph.urlAssessmentRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUrlAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

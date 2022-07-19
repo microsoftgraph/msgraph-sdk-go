@@ -13,9 +13,11 @@ type VisualInfoable interface {
     GetContent()(Jsonable)
     GetDescription()(*string)
     GetDisplayText()(*string)
+    GetOdataType()(*string)
     SetAttribution(value ImageInfoable)()
     SetBackgroundColor(value *string)()
     SetContent(value Jsonable)()
     SetDescription(value *string)()
     SetDisplayText(value *string)()
+    SetOdataType(value *string)()
 }

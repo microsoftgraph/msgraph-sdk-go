@@ -17,6 +17,8 @@ func NewOnenoteResource()(*OnenoteResource) {
     m := &OnenoteResource{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),
     }
+    odataTypeValue := "#microsoft.graph.onenoteResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnenoteResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

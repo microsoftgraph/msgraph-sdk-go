@@ -24,6 +24,8 @@ type AccessReviewScheduleSettings struct {
     justificationRequiredOnApproval *bool
     // Indicates whether emails are enabled or disabled. Default value is false.
     mailNotificationsEnabled *bool
+    // The OdataType property
+    odataType *string
     // Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
     recommendationsEnabled *bool
     // Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
@@ -36,6 +38,8 @@ func NewAccessReviewScheduleSettings()(*AccessReviewScheduleSettings) {
     m := &AccessReviewScheduleSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessReviewScheduleSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -177,6 +181,16 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recommendationsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -231,6 +245,14 @@ func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
         return nil
     } else {
         return m.mailNotificationsEnabled
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewScheduleSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
@@ -307,6 +329,12 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteBoolValue("mailNotificationsEnabled", m.GetMailNotificationsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -389,6 +417,12 @@ func (m *AccessReviewScheduleSettings) SetJustificationRequiredOnApproval(value 
 func (m *AccessReviewScheduleSettings) SetMailNotificationsEnabled(value *bool)() {
     if m != nil {
         m.mailNotificationsEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewScheduleSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecommendationsEnabled sets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.

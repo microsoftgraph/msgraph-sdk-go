@@ -74,7 +74,7 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MembersRequestBuilder) Count()(*i819cbd5f3c989b4705fbafa07eff5a10397df1f7a3143fc77561710ad50430a3.CountRequestBuilder) {
     return i819cbd5f3c989b4705fbafa07eff5a10397df1f7a3143fc77561710ad50430a3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -130,7 +130,7 @@ func (m *MembersRequestBuilder) Group()(*icf485d88350fd6a8f4a8781f23e95e361c9b59
 func (m *MembersRequestBuilder) OrgContact()(*i00889486dac3934978a99d8748dcd819aded9de67792784727a21eb08855d421.OrgContactRequestBuilder) {
     return i00889486dac3934978a99d8748dcd819aded9de67792784727a21eb08855d421.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *MembersRequestBuilder) Ref()(*i12e900b7863a530abb96344b2b364579136e814fd983663c5e21b9ef49ebc17c.RefRequestBuilder) {
     return i12e900b7863a530abb96344b2b364579136e814fd983663c5e21b9ef49ebc17c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

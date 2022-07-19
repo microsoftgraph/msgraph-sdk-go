@@ -15,6 +15,8 @@ func NewServiceHostedMediaConfig()(*ServiceHostedMediaConfig) {
     m := &ServiceHostedMediaConfig{
         MediaConfig: *NewMediaConfig(),
     }
+    odataTypeValue := "#microsoft.graph.serviceHostedMediaConfig";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceHostedMediaConfigFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

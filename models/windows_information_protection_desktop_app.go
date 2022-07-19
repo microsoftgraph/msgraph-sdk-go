@@ -19,6 +19,8 @@ func NewWindowsInformationProtectionDesktopApp()(*WindowsInformationProtectionDe
     m := &WindowsInformationProtectionDesktopApp{
         WindowsInformationProtectionApp: *NewWindowsInformationProtectionApp(),
     }
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionDesktopApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionDesktopAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

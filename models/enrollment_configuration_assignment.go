@@ -15,6 +15,8 @@ func NewEnrollmentConfigurationAssignment()(*EnrollmentConfigurationAssignment) 
     m := &EnrollmentConfigurationAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.enrollmentConfigurationAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEnrollmentConfigurationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

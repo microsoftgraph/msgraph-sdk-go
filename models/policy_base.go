@@ -17,8 +17,8 @@ func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odatatypeValue := "#microsoft.graph.policyBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.policyBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,16 +36,26 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.activityBasedTimeoutPolicy":
+                        return NewActivityBasedTimeoutPolicy(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.claimsMappingPolicy":
+                        return NewClaimsMappingPolicy(), nil
                     case "#microsoft.graph.crossTenantAccessPolicy":
                         return NewCrossTenantAccessPolicy(), nil
+                    case "#microsoft.graph.homeRealmDiscoveryPolicy":
+                        return NewHomeRealmDiscoveryPolicy(), nil
                     case "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy":
                         return NewIdentitySecurityDefaultsEnforcementPolicy(), nil
                     case "#microsoft.graph.permissionGrantPolicy":
                         return NewPermissionGrantPolicy(), nil
                     case "#microsoft.graph.stsPolicy":
                         return NewStsPolicy(), nil
+                    case "#microsoft.graph.tokenIssuancePolicy":
+                        return NewTokenIssuancePolicy(), nil
+                    case "#microsoft.graph.tokenLifetimePolicy":
+                        return NewTokenLifetimePolicy(), nil
                 }
             }
         }

@@ -15,6 +15,7 @@ type AccessPackageApprovalStageable interface {
     GetFallbackPrimaryApprovers()([]SubjectSetable)
     GetIsApproverJustificationRequired()(*bool)
     GetIsEscalationEnabled()(*bool)
+    GetOdataType()(*string)
     GetPrimaryApprovers()([]SubjectSetable)
     SetDurationBeforeAutomaticDenial(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetDurationBeforeEscalation(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
@@ -23,5 +24,6 @@ type AccessPackageApprovalStageable interface {
     SetFallbackPrimaryApprovers(value []SubjectSetable)()
     SetIsApproverJustificationRequired(value *bool)()
     SetIsEscalationEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetPrimaryApprovers(value []SubjectSetable)()
 }

@@ -12,12 +12,16 @@ type ConditionalAccessLocations struct {
     excludeLocations []string
     // Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
     includeLocations []string
+    // The OdataType property
+    odataType *string
 }
 // NewConditionalAccessLocations instantiates a new conditionalAccessLocations and sets the default values.
 func NewConditionalAccessLocations()(*ConditionalAccessLocations) {
     m := &ConditionalAccessLocations{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.conditionalAccessLocations";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessLocationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +75,16 @@ func (m *ConditionalAccessLocations) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeLocations gets the includeLocations property value. Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
@@ -79,6 +93,14 @@ func (m *ConditionalAccessLocations) GetIncludeLocations()([]string) {
         return nil
     } else {
         return m.includeLocations
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessLocations) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -91,6 +113,12 @@ func (m *ConditionalAccessLocations) Serialize(writer i878a80d2330e89d26896388a3
     }
     if m.GetIncludeLocations() != nil {
         err := writer.WriteCollectionOfStringValues("includeLocations", m.GetIncludeLocations())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -119,5 +147,11 @@ func (m *ConditionalAccessLocations) SetExcludeLocations(value []string)() {
 func (m *ConditionalAccessLocations) SetIncludeLocations(value []string)() {
     if m != nil {
         m.includeLocations = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessLocations) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

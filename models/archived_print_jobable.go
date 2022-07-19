@@ -16,6 +16,7 @@ type ArchivedPrintJobable interface {
     GetCreatedBy()(UserIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetId()(*string)
+    GetOdataType()(*string)
     GetPrinterId()(*string)
     GetProcessingState()(*PrintJobProcessingState)
     SetAcquiredByPrinter(value *bool)()
@@ -25,6 +26,7 @@ type ArchivedPrintJobable interface {
     SetCreatedBy(value UserIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetId(value *string)()
+    SetOdataType(value *string)()
     SetPrinterId(value *string)()
     SetProcessingState(value *PrintJobProcessingState)()
 }

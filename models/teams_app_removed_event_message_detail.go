@@ -19,6 +19,8 @@ func NewTeamsAppRemovedEventMessageDetail()(*TeamsAppRemovedEventMessageDetail) 
     m := &TeamsAppRemovedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
+    odataTypeValue := "#microsoft.graph.teamsAppRemovedEventMessageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsAppRemovedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

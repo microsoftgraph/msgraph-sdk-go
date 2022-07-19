@@ -10,6 +10,8 @@ type PrivacyProfile struct {
     additionalData map[string]interface{}
     // A valid smtp email address for the privacy statement contact. Not required.
     contactEmail *string
+    // The OdataType property
+    odataType *string
     // A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
     statementUrl *string
 }
@@ -18,6 +20,8 @@ func NewPrivacyProfile()(*PrivacyProfile) {
     m := &PrivacyProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.privacyProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivacyProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *PrivacyProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["statementUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *PrivacyProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrivacyProfile) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStatementUrl gets the statementUrl property value. A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
 func (m *PrivacyProfile) GetStatementUrl()(*string) {
@@ -77,6 +99,12 @@ func (m *PrivacyProfile) GetStatementUrl()(*string) {
 func (m *PrivacyProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("contactEmail", m.GetContactEmail())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *PrivacyProfile) SetAdditionalData(value map[string]interface{})() {
 func (m *PrivacyProfile) SetContactEmail(value *string)() {
     if m != nil {
         m.contactEmail = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrivacyProfile) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStatementUrl sets the statementUrl property value. A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.

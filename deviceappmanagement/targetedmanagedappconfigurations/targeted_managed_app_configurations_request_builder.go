@@ -70,7 +70,7 @@ func NewTargetedManagedAppConfigurationsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewTargetedManagedAppConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TargetedManagedAppConfigurationsRequestBuilder) Count()(*ic98aa2001e4002d90f8972460657926635b5ec0c23be123a20f8db25bab43e54.CountRequestBuilder) {
     return ic98aa2001e4002d90f8972460657926635b5ec0c23be123a20f8db25bab43e54.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

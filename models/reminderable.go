@@ -15,6 +15,7 @@ type Reminderable interface {
     GetEventStartTime()(DateTimeTimeZoneable)
     GetEventSubject()(*string)
     GetEventWebLink()(*string)
+    GetOdataType()(*string)
     GetReminderFireTime()(DateTimeTimeZoneable)
     SetChangeKey(value *string)()
     SetEventEndTime(value DateTimeTimeZoneable)()
@@ -23,5 +24,6 @@ type Reminderable interface {
     SetEventStartTime(value DateTimeTimeZoneable)()
     SetEventSubject(value *string)()
     SetEventWebLink(value *string)()
+    SetOdataType(value *string)()
     SetReminderFireTime(value DateTimeTimeZoneable)()
 }

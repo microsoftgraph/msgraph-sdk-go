@@ -11,9 +11,11 @@ type SearchHitsContainerable interface {
     GetAggregations()([]SearchAggregationable)
     GetHits()([]SearchHitable)
     GetMoreResultsAvailable()(*bool)
+    GetOdataType()(*string)
     GetTotal()(*int32)
     SetAggregations(value []SearchAggregationable)()
     SetHits(value []SearchHitable)()
     SetMoreResultsAvailable(value *bool)()
+    SetOdataType(value *string)()
     SetTotal(value *int32)()
 }

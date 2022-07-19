@@ -12,18 +12,18 @@ type OmaSetting struct {
     description *string
     // Display Name.
     displayName *string
+    // The OdataType property
+    odataType *string
     // OMA.
     omaUri *string
-    // The type property
-    type_escaped *string
 }
 // NewOmaSetting instantiates a new omaSetting and sets the default values.
 func NewOmaSetting()(*OmaSetting) {
     m := &OmaSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.omaSetting";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.omaSetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOmaSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -108,6 +108,16 @@ func (m *OmaSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["omaUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -118,17 +128,15 @@ func (m *OmaSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OmaSetting) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOmaUri gets the omaUri property value. OMA.
 func (m *OmaSetting) GetOmaUri()(*string) {
@@ -136,14 +144,6 @@ func (m *OmaSetting) GetOmaUri()(*string) {
         return nil
     } else {
         return m.omaUri
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *OmaSetting) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -161,13 +161,13 @@ func (m *OmaSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteStringValue("omaUri", m.GetOmaUri())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("omaUri", m.GetOmaUri())
         if err != nil {
             return err
         }
@@ -198,15 +198,15 @@ func (m *OmaSetting) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OmaSetting) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetOmaUri sets the omaUri property value. OMA.
 func (m *OmaSetting) SetOmaUri(value *string)() {
     if m != nil {
         m.omaUri = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *OmaSetting) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

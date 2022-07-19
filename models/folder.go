@@ -10,6 +10,8 @@ type Folder struct {
     additionalData map[string]interface{}
     // Number of children contained immediately within this container.
     childCount *int32
+    // The OdataType property
+    odataType *string
     // A collection of properties defining the recommended view for the folder.
     view FolderViewable
 }
@@ -18,6 +20,8 @@ func NewFolder()(*Folder) {
     m := &Folder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.folder";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *Folder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["view"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFolderViewFromDiscriminatorValue)
         if err != nil {
@@ -64,6 +78,14 @@ func (m *Folder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Folder) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetView gets the view property value. A collection of properties defining the recommended view for the folder.
 func (m *Folder) GetView()(FolderViewable) {
@@ -77,6 +99,12 @@ func (m *Folder) GetView()(FolderViewable) {
 func (m *Folder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("childCount", m.GetChildCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *Folder) SetAdditionalData(value map[string]interface{})() {
 func (m *Folder) SetChildCount(value *int32)() {
     if m != nil {
         m.childCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Folder) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetView sets the view property value. A collection of properties defining the recommended view for the folder.

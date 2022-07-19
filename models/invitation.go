@@ -31,6 +31,8 @@ func NewInvitation()(*Invitation) {
     m := &Invitation{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.invitation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

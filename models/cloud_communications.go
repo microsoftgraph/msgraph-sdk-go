@@ -19,6 +19,8 @@ func NewCloudCommunications()(*CloudCommunications) {
     m := &CloudCommunications{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudCommunications";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudCommunicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

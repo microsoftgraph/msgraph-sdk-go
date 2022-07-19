@@ -25,6 +25,8 @@ func NewWin32LobAppRegistryRule()(*Win32LobAppRegistryRule) {
     m := &Win32LobAppRegistryRule{
         Win32LobAppRule: *NewWin32LobAppRule(),
     }
+    odataTypeValue := "#microsoft.graph.win32LobAppRegistryRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppRegistryRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -44,22 +44,22 @@ type TeleconferenceDeviceMediaQuality struct {
     mediaDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The network link speed in bytes
     networkLinkSpeedInBytes *int64
+    // The OdataType property
+    odataType *string
     // The total number of the outbound packets.
     outboundPackets *int64
     // The remote IP address for the media session.
     remoteIPAddress *string
     // The remote media port.
     remotePort *int32
-    // The type property
-    type_escaped *string
 }
 // NewTeleconferenceDeviceMediaQuality instantiates a new teleconferenceDeviceMediaQuality and sets the default values.
 func NewTeleconferenceDeviceMediaQuality()(*TeleconferenceDeviceMediaQuality) {
     m := &TeleconferenceDeviceMediaQuality{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.teleconferenceDeviceMediaQuality";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.teleconferenceDeviceMediaQuality";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +79,8 @@ func CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue(parseNode i878
                 switch mappingStr {
                     case "#microsoft.graph.teleconferenceDeviceAudioQuality":
                         return NewTeleconferenceDeviceAudioQuality(), nil
+                    case "#microsoft.graph.teleconferenceDeviceScreenSharingQuality":
+                        return NewTeleconferenceDeviceScreenSharingQuality(), nil
                     case "#microsoft.graph.teleconferenceDeviceVideoQuality":
                         return NewTeleconferenceDeviceVideoQuality(), nil
                 }
@@ -334,6 +336,16 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["outboundPackets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -361,16 +373,6 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetRemotePort(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
         }
         return nil
     }
@@ -464,6 +466,14 @@ func (m *TeleconferenceDeviceMediaQuality) GetNetworkLinkSpeedInBytes()(*int64) 
         return m.networkLinkSpeedInBytes
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeleconferenceDeviceMediaQuality) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOutboundPackets gets the outboundPackets property value. The total number of the outbound packets.
 func (m *TeleconferenceDeviceMediaQuality) GetOutboundPackets()(*int64) {
     if m == nil {
@@ -486,14 +496,6 @@ func (m *TeleconferenceDeviceMediaQuality) GetRemotePort()(*int32) {
         return nil
     } else {
         return m.remotePort
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *TeleconferenceDeviceMediaQuality) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -607,6 +609,12 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt64Value("outboundPackets", m.GetOutboundPackets())
         if err != nil {
             return err
@@ -620,12 +628,6 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i878a80d2330e89d2689
     }
     {
         err := writer.WriteInt32Value("remotePort", m.GetRemotePort())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -752,6 +754,12 @@ func (m *TeleconferenceDeviceMediaQuality) SetNetworkLinkSpeedInBytes(value *int
         m.networkLinkSpeedInBytes = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeleconferenceDeviceMediaQuality) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetOutboundPackets sets the outboundPackets property value. The total number of the outbound packets.
 func (m *TeleconferenceDeviceMediaQuality) SetOutboundPackets(value *int64)() {
     if m != nil {
@@ -768,11 +776,5 @@ func (m *TeleconferenceDeviceMediaQuality) SetRemoteIPAddress(value *string)() {
 func (m *TeleconferenceDeviceMediaQuality) SetRemotePort(value *int32)() {
     if m != nil {
         m.remotePort = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *TeleconferenceDeviceMediaQuality) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

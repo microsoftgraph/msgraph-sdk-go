@@ -19,6 +19,8 @@ func NewItemAnalytics()(*ItemAnalytics) {
     m := &ItemAnalytics{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.itemAnalytics";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemAnalyticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

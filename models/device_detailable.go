@@ -13,6 +13,7 @@ type DeviceDetailable interface {
     GetDisplayName()(*string)
     GetIsCompliant()(*bool)
     GetIsManaged()(*bool)
+    GetOdataType()(*string)
     GetOperatingSystem()(*string)
     GetTrustType()(*string)
     SetBrowser(value *string)()
@@ -20,6 +21,7 @@ type DeviceDetailable interface {
     SetDisplayName(value *string)()
     SetIsCompliant(value *bool)()
     SetIsManaged(value *bool)()
+    SetOdataType(value *string)()
     SetOperatingSystem(value *string)()
     SetTrustType(value *string)()
 }

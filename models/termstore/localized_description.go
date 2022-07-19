@@ -12,12 +12,16 @@ type LocalizedDescription struct {
     description *string
     // The language tag for the label.
     languageTag *string
+    // The OdataType property
+    odataType *string
 }
 // NewLocalizedDescription instantiates a new localizedDescription and sets the default values.
 func NewLocalizedDescription()(*LocalizedDescription) {
     m := &LocalizedDescription{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.termStore.localizedDescription";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocalizedDescriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *LocalizedDescription) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLanguageTag gets the languageTag property value. The language tag for the label.
@@ -71,6 +85,14 @@ func (m *LocalizedDescription) GetLanguageTag()(*string) {
         return nil
     } else {
         return m.languageTag
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LocalizedDescription) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *LocalizedDescription) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *LocalizedDescription) SetDescription(value *string)() {
 func (m *LocalizedDescription) SetLanguageTag(value *string)() {
     if m != nil {
         m.languageTag = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LocalizedDescription) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

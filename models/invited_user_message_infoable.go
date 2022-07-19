@@ -11,7 +11,9 @@ type InvitedUserMessageInfoable interface {
     GetCcRecipients()([]Recipientable)
     GetCustomizedMessageBody()(*string)
     GetMessageLanguage()(*string)
+    GetOdataType()(*string)
     SetCcRecipients(value []Recipientable)()
     SetCustomizedMessageBody(value *string)()
     SetMessageLanguage(value *string)()
+    SetOdataType(value *string)()
 }

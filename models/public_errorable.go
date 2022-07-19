@@ -12,10 +12,12 @@ type PublicErrorable interface {
     GetDetails()([]PublicErrorDetailable)
     GetInnerError()(PublicInnerErrorable)
     GetMessage()(*string)
+    GetOdataType()(*string)
     GetTarget()(*string)
     SetCode(value *string)()
     SetDetails(value []PublicErrorDetailable)()
     SetInnerError(value PublicInnerErrorable)()
     SetMessage(value *string)()
+    SetOdataType(value *string)()
     SetTarget(value *string)()
 }

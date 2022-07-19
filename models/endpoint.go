@@ -23,6 +23,8 @@ func NewEndpoint()(*Endpoint) {
     m := &Endpoint{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.endpoint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

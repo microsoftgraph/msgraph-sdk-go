@@ -14,6 +14,8 @@ type IdentityGovernance struct {
     appConsent AppConsentApprovalRouteable
     // The entitlementManagement property
     entitlementManagement EntitlementManagementable
+    // The OdataType property
+    odataType *string
     // The termsOfUse property
     termsOfUse TermsOfUseContainerable
 }
@@ -22,6 +24,8 @@ func NewIdentityGovernance()(*IdentityGovernance) {
     m := &IdentityGovernance{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.identityGovernance";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityGovernanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -93,6 +97,16 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["termsOfUse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTermsOfUseContainerFromDiscriminatorValue)
         if err != nil {
@@ -104,6 +118,14 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IdentityGovernance) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetTermsOfUse gets the termsOfUse property value. The termsOfUse property
 func (m *IdentityGovernance) GetTermsOfUse()(TermsOfUseContainerable) {
@@ -129,6 +151,12 @@ func (m *IdentityGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteObjectValue("entitlementManagement", m.GetEntitlementManagement())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *IdentityGovernance) SetAppConsent(value AppConsentApprovalRouteable)() 
 func (m *IdentityGovernance) SetEntitlementManagement(value EntitlementManagementable)() {
     if m != nil {
         m.entitlementManagement = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IdentityGovernance) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTermsOfUse sets the termsOfUse property value. The termsOfUse property

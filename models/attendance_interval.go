@@ -15,12 +15,16 @@ type AttendanceInterval struct {
     joinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The time the attendee left in UTC.
     leaveDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewAttendanceInterval instantiates a new attendanceInterval and sets the default values.
 func NewAttendanceInterval()(*AttendanceInterval) {
     m := &AttendanceInterval{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.attendanceInterval";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttendanceIntervalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -76,6 +80,16 @@ func (m *AttendanceInterval) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetJoinDateTime gets the joinDateTime property value. The time the attendee joined in UTC.
@@ -94,6 +108,14 @@ func (m *AttendanceInterval) GetLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.leaveDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttendanceInterval) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *AttendanceInterval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -110,6 +132,12 @@ func (m *AttendanceInterval) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteTimeValue("leaveDateTime", m.GetLeaveDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -144,5 +172,11 @@ func (m *AttendanceInterval) SetJoinDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *AttendanceInterval) SetLeaveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.leaveDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttendanceInterval) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

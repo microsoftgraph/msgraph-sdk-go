@@ -16,6 +16,7 @@ type Photoable interface {
     GetFNumber()(*float64)
     GetFocalLength()(*float64)
     GetIso()(*int32)
+    GetOdataType()(*string)
     GetOrientation()(*int32)
     GetTakenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetCameraMake(value *string)()
@@ -25,6 +26,7 @@ type Photoable interface {
     SetFNumber(value *float64)()
     SetFocalLength(value *float64)()
     SetIso(value *int32)()
+    SetOdataType(value *string)()
     SetOrientation(value *int32)()
     SetTakenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

@@ -11,9 +11,11 @@ type TopicModelingSettingsable interface {
     GetDynamicallyAdjustTopicCount()(*bool)
     GetIgnoreNumbers()(*bool)
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     GetTopicCount()(*int32)
     SetDynamicallyAdjustTopicCount(value *bool)()
     SetIgnoreNumbers(value *bool)()
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetTopicCount(value *int32)()
 }

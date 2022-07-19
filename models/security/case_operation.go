@@ -29,8 +29,8 @@ func NewCaseOperation()(*CaseOperation) {
     m := &CaseOperation{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.security.caseOperation";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.security.caseOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCaseOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

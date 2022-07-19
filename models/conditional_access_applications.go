@@ -16,12 +16,16 @@ type ConditionalAccessApplications struct {
     includeAuthenticationContextClassReferences []string
     // User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
     includeUserActions []string
+    // The OdataType property
+    odataType *string
 }
 // NewConditionalAccessApplications instantiates a new conditionalAccessApplications and sets the default values.
 func NewConditionalAccessApplications()(*ConditionalAccessApplications) {
     m := &ConditionalAccessApplications{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.conditionalAccessApplications";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -103,6 +107,16 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeApplications gets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
@@ -129,6 +143,14 @@ func (m *ConditionalAccessApplications) GetIncludeUserActions()([]string) {
         return m.includeUserActions
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessApplications) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetExcludeApplications() != nil {
@@ -151,6 +173,12 @@ func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d2689638
     }
     if m.GetIncludeUserActions() != nil {
         err := writer.WriteCollectionOfStringValues("includeUserActions", m.GetIncludeUserActions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -191,5 +219,11 @@ func (m *ConditionalAccessApplications) SetIncludeAuthenticationContextClassRefe
 func (m *ConditionalAccessApplications) SetIncludeUserActions(value []string)() {
     if m != nil {
         m.includeUserActions = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessApplications) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

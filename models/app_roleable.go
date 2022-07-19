@@ -13,6 +13,7 @@ type AppRoleable interface {
     GetDisplayName()(*string)
     GetId()(*string)
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     GetOrigin()(*string)
     GetValue()(*string)
     SetAllowedMemberTypes(value []string)()
@@ -20,6 +21,7 @@ type AppRoleable interface {
     SetDisplayName(value *string)()
     SetId(value *string)()
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetOrigin(value *string)()
     SetValue(value *string)()
 }

@@ -28,6 +28,8 @@ func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
     m := &AuthenticationMethodsPolicy{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.authenticationMethodsPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationMethodsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

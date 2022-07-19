@@ -16,6 +16,8 @@ type ItemReference struct {
     id *string
     // The name of the item being referenced. Read-only.
     name *string
+    // The OdataType property
+    odataType *string
     // Path that can be used to navigate to the item. Read-only.
     path *string
     // A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -30,6 +32,8 @@ func NewItemReference()(*ItemReference) {
     m := &ItemReference{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.itemReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -103,6 +107,16 @@ func (m *ItemReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["path"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -161,6 +175,14 @@ func (m *ItemReference) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ItemReference) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPath gets the path property value. Path that can be used to navigate to the item. Read-only.
 func (m *ItemReference) GetPath()(*string) {
     if m == nil {
@@ -215,6 +237,12 @@ func (m *ItemReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -279,6 +307,12 @@ func (m *ItemReference) SetId(value *string)() {
 func (m *ItemReference) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ItemReference) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPath sets the path property value. Path that can be used to navigate to the item. Read-only.

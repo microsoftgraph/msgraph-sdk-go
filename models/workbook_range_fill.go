@@ -15,6 +15,8 @@ func NewWorkbookRangeFill()(*WorkbookRangeFill) {
     m := &WorkbookRangeFill{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookRangeFill";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookRangeFillFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

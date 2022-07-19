@@ -36,8 +36,8 @@ func NewDeviceConfiguration()(*DeviceConfiguration) {
     m := &DeviceConfiguration{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.deviceConfiguration";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,12 +71,16 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewIosCertificateProfile(), nil
                     case "#microsoft.graph.iosCustomConfiguration":
                         return NewIosCustomConfiguration(), nil
+                    case "#microsoft.graph.iosDeviceFeaturesConfiguration":
+                        return NewIosDeviceFeaturesConfiguration(), nil
                     case "#microsoft.graph.iosGeneralDeviceConfiguration":
                         return NewIosGeneralDeviceConfiguration(), nil
                     case "#microsoft.graph.iosUpdateConfiguration":
                         return NewIosUpdateConfiguration(), nil
                     case "#microsoft.graph.macOSCustomConfiguration":
                         return NewMacOSCustomConfiguration(), nil
+                    case "#microsoft.graph.macOSDeviceFeaturesConfiguration":
+                        return NewMacOSDeviceFeaturesConfiguration(), nil
                     case "#microsoft.graph.macOSGeneralDeviceConfiguration":
                         return NewMacOSGeneralDeviceConfiguration(), nil
                     case "#microsoft.graph.sharedPCConfiguration":

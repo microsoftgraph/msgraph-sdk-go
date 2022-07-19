@@ -13,6 +13,8 @@ func NewUpdateRecordingStatusOperation()(*UpdateRecordingStatusOperation) {
     m := &UpdateRecordingStatusOperation{
         CommsOperation: *NewCommsOperation(),
     }
+    odataTypeValue := "#microsoft.graph.updateRecordingStatusOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUpdateRecordingStatusOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,9 +11,11 @@ type SharedPCAccountManagerPolicyable interface {
     GetAccountDeletionPolicy()(*SharedPCAccountDeletionPolicyType)
     GetCacheAccountsAboveDiskFreePercentage()(*int32)
     GetInactiveThresholdDays()(*int32)
+    GetOdataType()(*string)
     GetRemoveAccountsBelowDiskFreePercentage()(*int32)
     SetAccountDeletionPolicy(value *SharedPCAccountDeletionPolicyType)()
     SetCacheAccountsAboveDiskFreePercentage(value *int32)()
     SetInactiveThresholdDays(value *int32)()
+    SetOdataType(value *string)()
     SetRemoveAccountsBelowDiskFreePercentage(value *int32)()
 }

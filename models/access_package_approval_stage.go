@@ -22,6 +22,8 @@ type AccessPackageApprovalStage struct {
     isApproverJustificationRequired *bool
     // If true, then one or more escalationApprovers are configured in this approval stage.
     isEscalationEnabled *bool
+    // The OdataType property
+    odataType *string
     // The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
     primaryApprovers []SubjectSetable
 }
@@ -30,6 +32,8 @@ func NewAccessPackageApprovalStage()(*AccessPackageApprovalStage) {
     m := &AccessPackageApprovalStage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessPackageApprovalStage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -169,6 +173,16 @@ func (m *AccessPackageApprovalStage) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["primaryApprovers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSubjectSetFromDiscriminatorValue)
         if err != nil {
@@ -199,6 +213,14 @@ func (m *AccessPackageApprovalStage) GetIsEscalationEnabled()(*bool) {
         return nil
     } else {
         return m.isEscalationEnabled
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageApprovalStage) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPrimaryApprovers gets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
@@ -261,6 +283,12 @@ func (m *AccessPackageApprovalStage) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err := writer.WriteBoolValue("isEscalationEnabled", m.GetIsEscalationEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -329,6 +357,12 @@ func (m *AccessPackageApprovalStage) SetIsApproverJustificationRequired(value *b
 func (m *AccessPackageApprovalStage) SetIsEscalationEnabled(value *bool)() {
     if m != nil {
         m.isEscalationEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageApprovalStage) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPrimaryApprovers sets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.

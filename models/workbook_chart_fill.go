@@ -13,6 +13,8 @@ func NewWorkbookChartFill()(*WorkbookChartFill) {
     m := &WorkbookChartFill{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartFill";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartFillFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

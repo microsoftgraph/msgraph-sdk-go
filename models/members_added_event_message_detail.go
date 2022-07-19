@@ -20,6 +20,8 @@ func NewMembersAddedEventMessageDetail()(*MembersAddedEventMessageDetail) {
     m := &MembersAddedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
+    odataTypeValue := "#microsoft.graph.membersAddedEventMessageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMembersAddedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

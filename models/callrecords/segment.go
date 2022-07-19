@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Segment provides operations to manage the collection of agreement entities.
+// Segment provides operations to manage the admin singleton.
 type Segment struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Endpoint that answered this segment.
@@ -27,6 +27,8 @@ func NewSegment()(*Segment) {
     m := &Segment{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.callRecords.segment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

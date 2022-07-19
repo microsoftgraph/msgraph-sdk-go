@@ -29,6 +29,8 @@ func NewWin32LobAppPowerShellScriptRule()(*Win32LobAppPowerShellScriptRule) {
     m := &Win32LobAppPowerShellScriptRule{
         Win32LobAppRule: *NewWin32LobAppRule(),
     }
+    odataTypeValue := "#microsoft.graph.win32LobAppPowerShellScriptRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppPowerShellScriptRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

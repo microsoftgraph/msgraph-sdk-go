@@ -15,6 +15,8 @@ func NewIosLobAppAssignmentSettings()(*IosLobAppAssignmentSettings) {
     m := &IosLobAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
+    odataTypeValue := "#microsoft.graph.iosLobAppAssignmentSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosLobAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,10 +12,12 @@ type VerifiedDomainable interface {
     GetIsDefault()(*bool)
     GetIsInitial()(*bool)
     GetName()(*string)
+    GetOdataType()(*string)
     GetType()(*string)
     SetCapabilities(value *string)()
     SetIsDefault(value *bool)()
     SetIsInitial(value *bool)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetType(value *string)()
 }

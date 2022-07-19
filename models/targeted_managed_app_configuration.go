@@ -23,6 +23,8 @@ func NewTargetedManagedAppConfiguration()(*TargetedManagedAppConfiguration) {
     m := &TargetedManagedAppConfiguration{
         ManagedAppConfiguration: *NewManagedAppConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.targetedManagedAppConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTargetedManagedAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,12 +12,16 @@ type EducationItemBody struct {
     content *string
     // The contentType property
     contentType *BodyType
+    // The OdataType property
+    odataType *string
 }
 // NewEducationItemBody instantiates a new educationItemBody and sets the default values.
 func NewEducationItemBody()(*EducationItemBody) {
     m := &EducationItemBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.educationItemBody";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationItemBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *EducationItemBody) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationItemBody) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *EducationItemBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -84,6 +106,12 @@ func (m *EducationItemBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetContentType() != nil {
         cast := (*m.GetContentType()).String()
         err := writer.WriteStringValue("contentType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -112,5 +140,11 @@ func (m *EducationItemBody) SetContent(value *string)() {
 func (m *EducationItemBody) SetContentType(value *BodyType)() {
     if m != nil {
         m.contentType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationItemBody) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

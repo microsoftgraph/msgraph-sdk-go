@@ -19,6 +19,8 @@ func NewTimeOff()(*TimeOff) {
     m := &TimeOff{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    odataTypeValue := "#microsoft.graph.timeOff";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeOffFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,6 +12,8 @@ type EducationRoot struct {
     classes []EducationClassable
     // The me property
     me EducationUserable
+    // The OdataType property
+    odataType *string
     // The schools property
     schools []EducationSchoolable
     // The users property
@@ -22,6 +24,8 @@ func NewEducationRoot()(*EducationRoot) {
     m := &EducationRoot{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.educationRoot";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +75,16 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["schools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
@@ -109,6 +123,14 @@ func (m *EducationRoot) GetMe()(EducationUserable) {
         return m.me
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationRoot) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSchools gets the schools property value. The schools property
 func (m *EducationRoot) GetSchools()([]EducationSchoolable) {
     if m == nil {
@@ -139,6 +161,12 @@ func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteObjectValue("me", m.GetMe())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -187,6 +215,12 @@ func (m *EducationRoot) SetClasses(value []EducationClassable)() {
 func (m *EducationRoot) SetMe(value EducationUserable)() {
     if m != nil {
         m.me = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationRoot) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSchools sets the schools property value. The schools property

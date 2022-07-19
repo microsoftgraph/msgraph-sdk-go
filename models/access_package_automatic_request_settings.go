@@ -10,6 +10,8 @@ type AccessPackageAutomaticRequestSettings struct {
     additionalData map[string]interface{}
     // The gracePeriodBeforeAccessRemoval property
     gracePeriodBeforeAccessRemoval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
+    // The OdataType property
+    odataType *string
     // The removeAccessWhenTargetLeavesAllowedTargets property
     removeAccessWhenTargetLeavesAllowedTargets *bool
     // The requestAccessForAllowedTargets property
@@ -20,6 +22,8 @@ func NewAccessPackageAutomaticRequestSettings()(*AccessPackageAutomaticRequestSe
     m := &AccessPackageAutomaticRequestSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessPackageAutomaticRequestSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageAutomaticRequestSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *AccessPackageAutomaticRequestSettings) GetFieldDeserializers()(map[stri
         }
         if val != nil {
             m.SetGracePeriodBeforeAccessRemoval(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *AccessPackageAutomaticRequestSettings) GetGracePeriodBeforeAccessRemova
         return m.gracePeriodBeforeAccessRemoval
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAutomaticRequestSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRemoveAccessWhenTargetLeavesAllowedTargets gets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property
 func (m *AccessPackageAutomaticRequestSettings) GetRemoveAccessWhenTargetLeavesAllowedTargets()(*bool) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *AccessPackageAutomaticRequestSettings) GetRequestAccessForAllowedTarget
 func (m *AccessPackageAutomaticRequestSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteISODurationValue("gracePeriodBeforeAccessRemoval", m.GetGracePeriodBeforeAccessRemoval())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *AccessPackageAutomaticRequestSettings) SetAdditionalData(value map[stri
 func (m *AccessPackageAutomaticRequestSettings) SetGracePeriodBeforeAccessRemoval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     if m != nil {
         m.gracePeriodBeforeAccessRemoval = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAutomaticRequestSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRemoveAccessWhenTargetLeavesAllowedTargets sets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property

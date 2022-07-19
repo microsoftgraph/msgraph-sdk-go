@@ -12,6 +12,8 @@ type AuthenticationMethodsRegistrationCampaign struct {
     excludeTargets []ExcludeTargetable
     // Users and groups of users that are prompted to set up the authentication method.
     includeTargets []AuthenticationMethodsRegistrationCampaignIncludeTargetable
+    // The OdataType property
+    odataType *string
     // Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
     snoozeDurationInDays *int32
     // The state property
@@ -22,6 +24,8 @@ func NewAuthenticationMethodsRegistrationCampaign()(*AuthenticationMethodsRegist
     m := &AuthenticationMethodsRegistrationCampaign{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.authenticationMethodsRegistrationCampaign";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationMethodsRegistrationCampaignFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["snoozeDurationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -103,6 +117,14 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]Authen
         return nil
     } else {
         return m.includeTargets
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationMethodsRegistrationCampaign) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSnoozeDurationInDays gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
@@ -144,6 +166,12 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i878a80d233
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("snoozeDurationInDays", m.GetSnoozeDurationInDays())
         if err != nil {
             return err
@@ -180,6 +208,12 @@ func (m *AuthenticationMethodsRegistrationCampaign) SetExcludeTargets(value []Ex
 func (m *AuthenticationMethodsRegistrationCampaign) SetIncludeTargets(value []AuthenticationMethodsRegistrationCampaignIncludeTargetable)() {
     if m != nil {
         m.includeTargets = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationMethodsRegistrationCampaign) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSnoozeDurationInDays sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.

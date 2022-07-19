@@ -10,16 +10,16 @@ type Recipient struct {
     additionalData map[string]interface{}
     // The recipient's email address.
     emailAddress EmailAddressable
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewRecipient instantiates a new recipient and sets the default values.
 func NewRecipient()(*Recipient) {
     m := &Recipient{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.recipient";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.recipient";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,6 +37,8 @@ func CreateRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.attendee":
+                        return NewAttendee(), nil
                     case "#microsoft.graph.attendeeBase":
                         return NewAttendeeBase(), nil
                 }
@@ -80,18 +82,18 @@ func (m *Recipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *Recipient) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Recipient) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -103,7 +105,7 @@ func (m *Recipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -128,9 +130,9 @@ func (m *Recipient) SetEmailAddress(value EmailAddressable)() {
         m.emailAddress = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *Recipient) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Recipient) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

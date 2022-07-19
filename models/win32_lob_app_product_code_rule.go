@@ -19,6 +19,8 @@ func NewWin32LobAppProductCodeRule()(*Win32LobAppProductCodeRule) {
     m := &Win32LobAppProductCodeRule{
         Win32LobAppRule: *NewWin32LobAppRule(),
     }
+    odataTypeValue := "#microsoft.graph.win32LobAppProductCodeRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppProductCodeRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -74,8 +74,8 @@ func NewMessage()(*Message) {
     m := &Message{
         OutlookItem: *NewOutlookItem(),
     }
-    odatatypeValue := "#microsoft.graph.message";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.message";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +97,10 @@ func CreateMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
                         return NewCalendarSharingMessage(), nil
                     case "#microsoft.graph.eventMessage":
                         return NewEventMessage(), nil
+                    case "#microsoft.graph.eventMessageRequest":
+                        return NewEventMessageRequest(), nil
+                    case "#microsoft.graph.eventMessageResponse":
+                        return NewEventMessageResponse(), nil
                 }
             }
         }

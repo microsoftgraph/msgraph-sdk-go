@@ -12,6 +12,8 @@ type RecurrenceRange struct {
     endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of times to repeat the event. Required and must be positive if type is numbered.
     numberOfOccurrences *int32
+    // The OdataType property
+    odataType *string
     // Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
     recurrenceTimeZone *string
     // The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
@@ -24,6 +26,8 @@ func NewRecurrenceRange()(*RecurrenceRange) {
     m := &RecurrenceRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.recurrenceRange";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecurrenceRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +73,16 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recurrenceTimeZone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -109,6 +123,14 @@ func (m *RecurrenceRange) GetNumberOfOccurrences()(*int32) {
         return m.numberOfOccurrences
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RecurrenceRange) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecurrenceTimeZone gets the recurrenceTimeZone property value. Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
 func (m *RecurrenceRange) GetRecurrenceTimeZone()(*string) {
     if m == nil {
@@ -143,6 +165,12 @@ func (m *RecurrenceRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteInt32Value("numberOfOccurrences", m.GetNumberOfOccurrences())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -190,6 +218,12 @@ func (m *RecurrenceRange) SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b
 func (m *RecurrenceRange) SetNumberOfOccurrences(value *int32)() {
     if m != nil {
         m.numberOfOccurrences = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RecurrenceRange) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecurrenceTimeZone sets the recurrenceTimeZone property value. Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.

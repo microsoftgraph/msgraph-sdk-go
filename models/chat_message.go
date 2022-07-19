@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessage provides operations to manage the collection of agreement entities.
+// ChatMessage provides operations to manage the admin singleton.
 type ChatMessage struct {
     Entity
     // References to attached objects like files, tabs, meetings etc.
@@ -60,6 +60,8 @@ func NewChatMessage()(*ChatMessage) {
     m := &ChatMessage{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.chatMessage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -14,20 +14,20 @@ type WindowsInformationProtectionApp struct {
     description *string
     // App display name.
     displayName *string
+    // The OdataType property
+    odataType *string
     // The product name.
     productName *string
     // The publisher name
     publisherName *string
-    // The type property
-    type_escaped *string
 }
 // NewWindowsInformationProtectionApp instantiates a new windowsInformationProtectionApp and sets the default values.
 func NewWindowsInformationProtectionApp()(*WindowsInformationProtectionApp) {
     m := &WindowsInformationProtectionApp{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.windowsInformationProtectionApp";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -120,6 +120,16 @@ func (m *WindowsInformationProtectionApp) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["productName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -140,17 +150,15 @@ func (m *WindowsInformationProtectionApp) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionApp) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetProductName gets the productName property value. The product name.
 func (m *WindowsInformationProtectionApp) GetProductName()(*string) {
@@ -166,14 +174,6 @@ func (m *WindowsInformationProtectionApp) GetPublisherName()(*string) {
         return nil
     } else {
         return m.publisherName
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *WindowsInformationProtectionApp) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -197,6 +197,12 @@ func (m *WindowsInformationProtectionApp) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("productName", m.GetProductName())
         if err != nil {
             return err
@@ -204,12 +210,6 @@ func (m *WindowsInformationProtectionApp) Serialize(writer i878a80d2330e89d26896
     }
     {
         err := writer.WriteStringValue("publisherName", m.GetPublisherName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -246,6 +246,12 @@ func (m *WindowsInformationProtectionApp) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionApp) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetProductName sets the productName property value. The product name.
 func (m *WindowsInformationProtectionApp) SetProductName(value *string)() {
     if m != nil {
@@ -256,11 +262,5 @@ func (m *WindowsInformationProtectionApp) SetProductName(value *string)() {
 func (m *WindowsInformationProtectionApp) SetPublisherName(value *string)() {
     if m != nil {
         m.publisherName = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *WindowsInformationProtectionApp) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

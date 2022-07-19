@@ -13,6 +13,8 @@ func NewPlayPromptOperation()(*PlayPromptOperation) {
     m := &PlayPromptOperation{
         CommsOperation: *NewCommsOperation(),
     }
+    odataTypeValue := "#microsoft.graph.playPromptOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlayPromptOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

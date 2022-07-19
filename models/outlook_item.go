@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookItem provides operations to manage the collection of agreement entities.
+// OutlookItem provides operations to manage the admin singleton.
 type OutlookItem struct {
     Entity
     // The categories associated with the item
@@ -22,8 +22,8 @@ func NewOutlookItem()(*OutlookItem) {
     m := &OutlookItem{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.outlookItem";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.outlookItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOutlookItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,10 +41,18 @@ func CreateOutlookItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.calendarSharingMessage":
+                        return NewCalendarSharingMessage(), nil
                     case "#microsoft.graph.contact":
                         return NewContact(), nil
                     case "#microsoft.graph.event":
                         return NewEvent(), nil
+                    case "#microsoft.graph.eventMessage":
+                        return NewEventMessage(), nil
+                    case "#microsoft.graph.eventMessageRequest":
+                        return NewEventMessageRequest(), nil
+                    case "#microsoft.graph.eventMessageResponse":
+                        return NewEventMessageResponse(), nil
                     case "#microsoft.graph.message":
                         return NewMessage(), nil
                     case "#microsoft.graph.post":

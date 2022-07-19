@@ -37,6 +37,8 @@ type DirectRoutingLogRow struct {
     mediaBypassEnabled *bool
     // The datacenter used for media path in non-bypass call.
     mediaPathLocation *string
+    // The OdataType property
+    odataType *string
     // The datacenter used for signaling for both bypass and non-bypass calls.
     signalingLocation *string
     // Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
@@ -57,6 +59,8 @@ func NewDirectRoutingLogRow()(*DirectRoutingLogRow) {
     m := &DirectRoutingLogRow{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.callRecords.directRoutingLogRow";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDirectRoutingLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -278,6 +282,16 @@ func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["signalingLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -396,6 +410,14 @@ func (m *DirectRoutingLogRow) GetMediaPathLocation()(*string) {
         return nil
     } else {
         return m.mediaPathLocation
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DirectRoutingLogRow) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSignalingLocation gets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
@@ -541,6 +563,12 @@ func (m *DirectRoutingLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("signalingLocation", m.GetSignalingLocation())
         if err != nil {
             return err
@@ -678,6 +706,12 @@ func (m *DirectRoutingLogRow) SetMediaBypassEnabled(value *bool)() {
 func (m *DirectRoutingLogRow) SetMediaPathLocation(value *string)() {
     if m != nil {
         m.mediaPathLocation = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DirectRoutingLogRow) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSignalingLocation sets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.

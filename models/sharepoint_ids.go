@@ -14,6 +14,8 @@ type SharepointIds struct {
     listItemId *string
     // The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
     listItemUniqueId *string
+    // The OdataType property
+    odataType *string
     // The unique identifier (guid) for the item's site collection (SPSite).
     siteId *string
     // The SharePoint URL for the site that contains the item.
@@ -28,6 +30,8 @@ func NewSharepointIds()(*SharepointIds) {
     m := &SharepointIds{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.sharepointIds";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharepointIdsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +76,16 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetListItemUniqueId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -141,6 +155,14 @@ func (m *SharepointIds) GetListItemUniqueId()(*string) {
         return m.listItemUniqueId
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SharepointIds) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSiteId gets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
 func (m *SharepointIds) GetSiteId()(*string) {
     if m == nil {
@@ -189,6 +211,12 @@ func (m *SharepointIds) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("listItemUniqueId", m.GetListItemUniqueId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -247,6 +275,12 @@ func (m *SharepointIds) SetListItemId(value *string)() {
 func (m *SharepointIds) SetListItemUniqueId(value *string)() {
     if m != nil {
         m.listItemUniqueId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SharepointIds) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSiteId sets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).

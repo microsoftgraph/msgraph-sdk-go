@@ -12,10 +12,12 @@ type AppliedConditionalAccessPolicyable interface {
     GetEnforcedGrantControls()([]string)
     GetEnforcedSessionControls()([]string)
     GetId()(*string)
+    GetOdataType()(*string)
     GetResult()(*AppliedConditionalAccessPolicyResult)
     SetDisplayName(value *string)()
     SetEnforcedGrantControls(value []string)()
     SetEnforcedSessionControls(value []string)()
     SetId(value *string)()
+    SetOdataType(value *string)()
     SetResult(value *AppliedConditionalAccessPolicyResult)()
 }

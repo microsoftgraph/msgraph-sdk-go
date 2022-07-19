@@ -15,6 +15,8 @@ func NewSharePointIdentity()(*SharePointIdentity) {
     m := &SharePointIdentity{
         Identity: *NewIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.sharePointIdentity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharePointIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

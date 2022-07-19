@@ -10,12 +10,16 @@ type PasswordResetResponse struct {
     additionalData map[string]interface{}
     // The newPassword property
     newPassword *string
+    // The OdataType property
+    odataType *string
 }
 // NewPasswordResetResponse instantiates a new passwordResetResponse and sets the default values.
 func NewPasswordResetResponse()(*PasswordResetResponse) {
     m := &PasswordResetResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.passwordResetResponse";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordResetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *PasswordResetResponse) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetNewPassword gets the newPassword property value. The newPassword property
@@ -53,10 +67,24 @@ func (m *PasswordResetResponse) GetNewPassword()(*string) {
         return m.newPassword
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PasswordResetResponse) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *PasswordResetResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("newPassword", m.GetNewPassword())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *PasswordResetResponse) SetAdditionalData(value map[string]interface{})(
 func (m *PasswordResetResponse) SetNewPassword(value *string)() {
     if m != nil {
         m.newPassword = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PasswordResetResponse) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

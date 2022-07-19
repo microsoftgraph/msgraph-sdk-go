@@ -12,6 +12,8 @@ type Win32LobAppRestartSettings struct {
     countdownDisplayBeforeRestartInMinutes *int32
     // The number of minutes to wait before restarting the device after an app installation.
     gracePeriodInMinutes *int32
+    // The OdataType property
+    odataType *string
     // The number of minutes to snooze the restart notification dialog when the snooze button is selected.
     restartNotificationSnoozeDurationInMinutes *int32
 }
@@ -20,6 +22,8 @@ func NewWin32LobAppRestartSettings()(*Win32LobAppRestartSettings) {
     m := &Win32LobAppRestartSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.win32LobAppRestartSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppRestartSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *Win32LobAppRestartSettings) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["restartNotificationSnoozeDurationInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *Win32LobAppRestartSettings) GetGracePeriodInMinutes()(*int32) {
         return m.gracePeriodInMinutes
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Win32LobAppRestartSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRestartNotificationSnoozeDurationInMinutes gets the restartNotificationSnoozeDurationInMinutes property value. The number of minutes to snooze the restart notification dialog when the snooze button is selected.
 func (m *Win32LobAppRestartSettings) GetRestartNotificationSnoozeDurationInMinutes()(*int32) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *Win32LobAppRestartSettings) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err := writer.WriteInt32Value("gracePeriodInMinutes", m.GetGracePeriodInMinutes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *Win32LobAppRestartSettings) SetCountdownDisplayBeforeRestartInMinutes(v
 func (m *Win32LobAppRestartSettings) SetGracePeriodInMinutes(value *int32)() {
     if m != nil {
         m.gracePeriodInMinutes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Win32LobAppRestartSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRestartNotificationSnoozeDurationInMinutes sets the restartNotificationSnoozeDurationInMinutes property value. The number of minutes to snooze the restart notification dialog when the snooze button is selected.

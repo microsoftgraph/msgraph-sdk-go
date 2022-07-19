@@ -12,6 +12,8 @@ type WorkingHours struct {
     daysOfWeek []string
     // The time of the day that the user stops working.
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
+    // The OdataType property
+    odataType *string
     // The time of the day that the user starts working.
     startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The time zone to which the working hours apply.
@@ -22,6 +24,8 @@ func NewWorkingHours()(*WorkingHours) {
     m := &WorkingHours{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.workingHours";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkingHoursFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +83,16 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeOnlyValue()
         if err != nil {
@@ -100,6 +114,14 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkingHours) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStartTime gets the startTime property value. The time of the day that the user starts working.
 func (m *WorkingHours) GetStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
@@ -127,6 +149,12 @@ func (m *WorkingHours) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteTimeOnlyValue("endTime", m.GetEndTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -167,6 +195,12 @@ func (m *WorkingHours) SetDaysOfWeek(value []string)() {
 func (m *WorkingHours) SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
     if m != nil {
         m.endTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkingHours) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStartTime sets the startTime property value. The time of the day that the user starts working.

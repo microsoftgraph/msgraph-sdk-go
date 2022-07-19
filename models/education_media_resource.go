@@ -15,6 +15,8 @@ func NewEducationMediaResource()(*EducationMediaResource) {
     m := &EducationMediaResource{
         EducationResource: *NewEducationResource(),
     }
+    odataTypeValue := "#microsoft.graph.educationMediaResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationMediaResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

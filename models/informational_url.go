@@ -12,6 +12,8 @@ type InformationalUrl struct {
     logoUrl *string
     // Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
     marketingUrl *string
+    // The OdataType property
+    odataType *string
     // Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
     privacyStatementUrl *string
     // Link to the application's support page. For example, https://www.contoso.com/app/support
@@ -24,6 +26,8 @@ func NewInformationalUrl()(*InformationalUrl) {
     m := &InformationalUrl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.informationalUrl";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInformationalUrlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +62,16 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetMarketingUrl(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -109,6 +123,14 @@ func (m *InformationalUrl) GetMarketingUrl()(*string) {
         return m.marketingUrl
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InformationalUrl) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPrivacyStatementUrl gets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
 func (m *InformationalUrl) GetPrivacyStatementUrl()(*string) {
     if m == nil {
@@ -143,6 +165,12 @@ func (m *InformationalUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteStringValue("marketingUrl", m.GetMarketingUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -189,6 +217,12 @@ func (m *InformationalUrl) SetLogoUrl(value *string)() {
 func (m *InformationalUrl) SetMarketingUrl(value *string)() {
     if m != nil {
         m.marketingUrl = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InformationalUrl) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPrivacyStatementUrl sets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy

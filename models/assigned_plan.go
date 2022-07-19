@@ -13,6 +13,8 @@ type AssignedPlan struct {
     assignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
     capabilityStatus *string
+    // The OdataType property
+    odataType *string
     // The name of the service; for example, exchange.
     service *string
     // A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
@@ -23,6 +25,8 @@ func NewAssignedPlan()(*AssignedPlan) {
     m := &AssignedPlan{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.assignedPlan";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignedPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -76,6 +80,16 @@ func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["service"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -97,6 +111,14 @@ func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AssignedPlan) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetService gets the service property value. The name of the service; for example, exchange.
 func (m *AssignedPlan) GetService()(*string) {
@@ -124,6 +146,12 @@ func (m *AssignedPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteStringValue("capabilityStatus", m.GetCapabilityStatus())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -164,6 +192,12 @@ func (m *AssignedPlan) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad9
 func (m *AssignedPlan) SetCapabilityStatus(value *string)() {
     if m != nil {
         m.capabilityStatus = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AssignedPlan) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetService sets the service property value. The name of the service; for example, exchange.

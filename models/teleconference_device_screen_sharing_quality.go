@@ -13,6 +13,8 @@ func NewTeleconferenceDeviceScreenSharingQuality()(*TeleconferenceDeviceScreenSh
     m := &TeleconferenceDeviceScreenSharingQuality{
         TeleconferenceDeviceVideoQuality: *NewTeleconferenceDeviceVideoQuality(),
     }
+    odataTypeValue := "#microsoft.graph.teleconferenceDeviceScreenSharingQuality";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeleconferenceDeviceScreenSharingQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,6 +15,8 @@ func NewEducationLinkResource()(*EducationLinkResource) {
     m := &EducationLinkResource{
         EducationResource: *NewEducationResource(),
     }
+    odataTypeValue := "#microsoft.graph.educationLinkResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationLinkResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

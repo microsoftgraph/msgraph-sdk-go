@@ -70,7 +70,7 @@ func NewGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGroupLifecyclePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*if99ba5311b742c0d154371ac68ef38c26f86e6c29f463a9f338e9dd99410ccee.CountRequestBuilder) {
     return if99ba5311b742c0d154371ac68ef38c26f86e6c29f463a9f338e9dd99410ccee.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

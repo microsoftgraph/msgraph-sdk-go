@@ -8,6 +8,8 @@ import (
 type IosMinimumOperatingSystem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Version 10.0 or later.
     v10_0 *bool
     // Version 11.0 or later.
@@ -28,6 +30,8 @@ func NewIosMinimumOperatingSystem()(*IosMinimumOperatingSystem) {
     m := &IosMinimumOperatingSystem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosMinimumOperatingSystem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *IosMinimumOperatingSystem) GetAdditionalData()(map[string]interface{}) 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["v10_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -117,6 +131,14 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosMinimumOperatingSystem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetV10_0 gets the v10_0 property value. Version 10.0 or later.
 func (m *IosMinimumOperatingSystem) GetV10_0()(*bool) {
     if m == nil {
@@ -176,6 +198,12 @@ func (m *IosMinimumOperatingSystem) GetV9_0()(*bool) {
 // Serialize serializes information the current object
 func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("v10_0", m.GetV10_0())
         if err != nil {
             return err
@@ -229,6 +257,12 @@ func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *IosMinimumOperatingSystem) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosMinimumOperatingSystem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetV10_0 sets the v10_0 property value. Version 10.0 or later.

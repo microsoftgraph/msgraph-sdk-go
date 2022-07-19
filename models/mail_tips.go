@@ -26,6 +26,8 @@ type MailTips struct {
     mailboxFull *bool
     // The maximum message size that has been configured for the recipient's organization or mailbox.
     maxMessageSize *int32
+    // The OdataType property
+    odataType *string
     // The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
     recipientScope *RecipientScopeType
     // Recipients suggested based on previous contexts where they appear in the same message.
@@ -38,6 +40,8 @@ func NewMailTips()(*MailTips) {
     m := &MailTips{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.mailTips";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMailTipsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -193,6 +197,16 @@ func (m *MailTips) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recipientScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecipientScopeType)
         if err != nil {
@@ -251,6 +265,14 @@ func (m *MailTips) GetMaxMessageSize()(*int32) {
         return nil
     } else {
         return m.maxMessageSize
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MailTips) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRecipientScope gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
@@ -329,6 +351,12 @@ func (m *MailTips) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err := writer.WriteInt32Value("maxMessageSize", m.GetMaxMessageSize())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -422,6 +450,12 @@ func (m *MailTips) SetMailboxFull(value *bool)() {
 func (m *MailTips) SetMaxMessageSize(value *int32)() {
     if m != nil {
         m.maxMessageSize = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MailTips) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecipientScope sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.

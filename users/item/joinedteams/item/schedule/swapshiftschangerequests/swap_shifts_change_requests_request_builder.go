@@ -70,7 +70,7 @@ func NewSwapShiftsChangeRequestsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewSwapShiftsChangeRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SwapShiftsChangeRequestsRequestBuilder) Count()(*iea9c84d35ee92ca281e84054b060c7eb5a9b34849ef65c69425b95941543e8d1.CountRequestBuilder) {
     return iea9c84d35ee92ca281e84054b060c7eb5a9b34849ef65c69425b95941543e8d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

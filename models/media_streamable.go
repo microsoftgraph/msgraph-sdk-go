@@ -11,11 +11,13 @@ type MediaStreamable interface {
     GetDirection()(*MediaDirection)
     GetLabel()(*string)
     GetMediaType()(*Modality)
+    GetOdataType()(*string)
     GetServerMuted()(*bool)
     GetSourceId()(*string)
     SetDirection(value *MediaDirection)()
     SetLabel(value *string)()
     SetMediaType(value *Modality)()
+    SetOdataType(value *string)()
     SetServerMuted(value *bool)()
     SetSourceId(value *string)()
 }

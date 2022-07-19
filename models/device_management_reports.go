@@ -15,6 +15,8 @@ func NewDeviceManagementReports()(*DeviceManagementReports) {
     m := &DeviceManagementReports{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementReports";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementReportsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

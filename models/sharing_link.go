@@ -10,6 +10,8 @@ type SharingLink struct {
     additionalData map[string]interface{}
     // The app the link is associated with.
     application Identityable
+    // The OdataType property
+    odataType *string
     // If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
     preventsDownload *bool
     // The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
@@ -26,6 +28,8 @@ func NewSharingLink()(*SharingLink) {
     m := &SharingLink{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.sharingLink";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharingLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +62,16 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetApplication(val.(Identityable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -113,6 +127,14 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SharingLink) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPreventsDownload gets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
 func (m *SharingLink) GetPreventsDownload()(*bool) {
     if m == nil {
@@ -157,6 +179,12 @@ func (m *SharingLink) GetWebUrl()(*string) {
 func (m *SharingLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("application", m.GetApplication())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -209,6 +237,12 @@ func (m *SharingLink) SetAdditionalData(value map[string]interface{})() {
 func (m *SharingLink) SetApplication(value Identityable)() {
     if m != nil {
         m.application = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SharingLink) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPreventsDownload sets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.

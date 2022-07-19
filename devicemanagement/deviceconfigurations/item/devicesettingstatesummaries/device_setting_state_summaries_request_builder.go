@@ -70,7 +70,7 @@ func NewDeviceSettingStateSummariesRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceSettingStateSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DeviceSettingStateSummariesRequestBuilder) Count()(*i474df1f81113fee3265e16bcaee46c6d0383c4a2d6cf9a3bb9cf7efb50423ee0.CountRequestBuilder) {
     return i474df1f81113fee3265e16bcaee46c6d0383c4a2d6cf9a3bb9cf7efb50423ee0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

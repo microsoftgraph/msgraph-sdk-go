@@ -11,7 +11,9 @@ type ChatMessageMentionable interface {
     GetId()(*int32)
     GetMentioned()(ChatMessageMentionedIdentitySetable)
     GetMentionText()(*string)
+    GetOdataType()(*string)
     SetId(value *int32)()
     SetMentioned(value ChatMessageMentionedIdentitySetable)()
     SetMentionText(value *string)()
+    SetOdataType(value *string)()
 }

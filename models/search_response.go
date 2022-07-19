@@ -10,6 +10,8 @@ type SearchResponse struct {
     additionalData map[string]interface{}
     // A collection of search results.
     hitsContainers []SearchHitsContainerable
+    // The OdataType property
+    odataType *string
     // Provides details of query alteration response for spelling correction.
     queryAlterationResponse AlterationResponseable
     // A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
@@ -22,6 +24,8 @@ func NewSearchResponse()(*SearchResponse) {
     m := &SearchResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.searchResponse";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +54,16 @@ func (m *SearchResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89
                 res[i] = v.(SearchHitsContainerable)
             }
             m.SetHitsContainers(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -97,6 +111,14 @@ func (m *SearchResponse) GetHitsContainers()([]SearchHitsContainerable) {
         return m.hitsContainers
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SearchResponse) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetQueryAlterationResponse gets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.
 func (m *SearchResponse) GetQueryAlterationResponse()(AlterationResponseable) {
     if m == nil {
@@ -129,6 +151,12 @@ func (m *SearchResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("hitsContainers", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *SearchResponse) SetAdditionalData(value map[string]interface{})() {
 func (m *SearchResponse) SetHitsContainers(value []SearchHitsContainerable)() {
     if m != nil {
         m.hitsContainers = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SearchResponse) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQueryAlterationResponse sets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.

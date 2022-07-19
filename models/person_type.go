@@ -10,6 +10,8 @@ type PersonType struct {
     additionalData map[string]interface{}
     // The type of data source, such as Person.
     class *string
+    // The OdataType property
+    odataType *string
     // The secondary type of data source, such as OrganizationUser.
     subclass *string
 }
@@ -18,6 +20,8 @@ func NewPersonType()(*PersonType) {
     m := &PersonType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.personType";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *PersonType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["subclass"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *PersonType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PersonType) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSubclass gets the subclass property value. The secondary type of data source, such as OrganizationUser.
 func (m *PersonType) GetSubclass()(*string) {
@@ -77,6 +99,12 @@ func (m *PersonType) GetSubclass()(*string) {
 func (m *PersonType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("class", m.GetClass())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *PersonType) SetAdditionalData(value map[string]interface{})() {
 func (m *PersonType) SetClass(value *string)() {
     if m != nil {
         m.class = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PersonType) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSubclass sets the subclass property value. The secondary type of data source, such as OrganizationUser.

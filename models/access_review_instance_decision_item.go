@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewInstanceDecisionItem provides operations to manage the collection of agreement entities.
+// AccessReviewInstanceDecisionItem provides operations to manage the admin singleton.
 type AccessReviewInstanceDecisionItem struct {
     Entity
     // The identifier of the accessReviewInstance parent. Supports $select. Read-only.
@@ -40,6 +40,8 @@ func NewAccessReviewInstanceDecisionItem()(*AccessReviewInstanceDecisionItem) {
     m := &AccessReviewInstanceDecisionItem{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewInstanceDecisionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

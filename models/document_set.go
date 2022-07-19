@@ -12,6 +12,8 @@ type DocumentSet struct {
     allowedContentTypes []ContentTypeInfoable
     // Default contents of document set.
     defaultContents []DocumentSetContentable
+    // The OdataType property
+    odataType *string
     // Indicates whether to add the name of the document set to each file name.
     propagateWelcomePageChanges *bool
     // The sharedColumns property
@@ -28,6 +30,8 @@ func NewDocumentSet()(*DocumentSet) {
     m := &DocumentSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.documentSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDocumentSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -86,6 +90,16 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 res[i] = v.(DocumentSetContentable)
             }
             m.SetDefaultContents(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -149,6 +163,14 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DocumentSet) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPropagateWelcomePageChanges gets the propagateWelcomePageChanges property value. Indicates whether to add the name of the document set to each file name.
 func (m *DocumentSet) GetPropagateWelcomePageChanges()(*bool) {
     if m == nil {
@@ -207,6 +229,12 @@ func (m *DocumentSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("defaultContents", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -273,6 +301,12 @@ func (m *DocumentSet) SetAllowedContentTypes(value []ContentTypeInfoable)() {
 func (m *DocumentSet) SetDefaultContents(value []DocumentSetContentable)() {
     if m != nil {
         m.defaultContents = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DocumentSet) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPropagateWelcomePageChanges sets the propagateWelcomePageChanges property value. Indicates whether to add the name of the document set to each file name.

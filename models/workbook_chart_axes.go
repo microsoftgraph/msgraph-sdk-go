@@ -19,6 +19,8 @@ func NewWorkbookChartAxes()(*WorkbookChartAxes) {
     m := &WorkbookChartAxes{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartAxes";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartAxesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

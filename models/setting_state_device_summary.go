@@ -31,6 +31,8 @@ func NewSettingStateDeviceSummary()(*SettingStateDeviceSummary) {
     m := &SettingStateDeviceSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.settingStateDeviceSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSettingStateDeviceSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type Hashes struct {
     additionalData map[string]interface{}
     // The CRC32 value of the file (if available). Read-only.
     crc32Hash *string
+    // The OdataType property
+    odataType *string
     // A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
     quickXorHash *string
     // SHA1 hash for the contents of the file (if available). Read-only.
@@ -22,6 +24,8 @@ func NewHashes()(*Hashes) {
     m := &Hashes{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.hashes";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHashesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["quickXorHash"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -89,6 +103,14 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Hashes) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetQuickXorHash gets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
 func (m *Hashes) GetQuickXorHash()(*string) {
     if m == nil {
@@ -117,6 +139,12 @@ func (m *Hashes) GetSha256Hash()(*string) {
 func (m *Hashes) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("crc32Hash", m.GetCrc32Hash())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -157,6 +185,12 @@ func (m *Hashes) SetAdditionalData(value map[string]interface{})() {
 func (m *Hashes) SetCrc32Hash(value *string)() {
     if m != nil {
         m.crc32Hash = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Hashes) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQuickXorHash sets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.

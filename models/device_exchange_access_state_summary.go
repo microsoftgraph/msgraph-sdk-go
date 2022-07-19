@@ -12,6 +12,8 @@ type DeviceExchangeAccessStateSummary struct {
     allowedDeviceCount *int32
     // Total count of devices with Exchange Access State: Blocked.
     blockedDeviceCount *int32
+    // The OdataType property
+    odataType *string
     // Total count of devices with Exchange Access State: Quarantined.
     quarantinedDeviceCount *int32
     // Total count of devices for which no Exchange Access State could be found.
@@ -24,6 +26,8 @@ func NewDeviceExchangeAccessStateSummary()(*DeviceExchangeAccessStateSummary) {
     m := &DeviceExchangeAccessStateSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceExchangeAccessStateSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["quarantinedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -108,6 +122,14 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceExchangeAccessStateSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetQuarantinedDeviceCount gets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
 func (m *DeviceExchangeAccessStateSummary) GetQuarantinedDeviceCount()(*int32) {
@@ -143,6 +165,12 @@ func (m *DeviceExchangeAccessStateSummary) Serialize(writer i878a80d2330e89d2689
     }
     {
         err := writer.WriteInt32Value("blockedDeviceCount", m.GetBlockedDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -189,6 +217,12 @@ func (m *DeviceExchangeAccessStateSummary) SetAllowedDeviceCount(value *int32)()
 func (m *DeviceExchangeAccessStateSummary) SetBlockedDeviceCount(value *int32)() {
     if m != nil {
         m.blockedDeviceCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceExchangeAccessStateSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQuarantinedDeviceCount sets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.

@@ -10,12 +10,16 @@ type CurrencyColumn struct {
     additionalData map[string]interface{}
     // Specifies the locale from which to infer the currency symbol.
     locale *string
+    // The OdataType property
+    odataType *string
 }
 // NewCurrencyColumn instantiates a new currencyColumn and sets the default values.
 func NewCurrencyColumn()(*CurrencyColumn) {
     m := &CurrencyColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.currencyColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCurrencyColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *CurrencyColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLocale gets the locale property value. Specifies the locale from which to infer the currency symbol.
@@ -53,10 +67,24 @@ func (m *CurrencyColumn) GetLocale()(*string) {
         return m.locale
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CurrencyColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *CurrencyColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("locale", m.GetLocale())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *CurrencyColumn) SetAdditionalData(value map[string]interface{})() {
 func (m *CurrencyColumn) SetLocale(value *string)() {
     if m != nil {
         m.locale = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CurrencyColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

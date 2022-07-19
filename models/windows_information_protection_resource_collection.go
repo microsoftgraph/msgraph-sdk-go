@@ -10,6 +10,8 @@ type WindowsInformationProtectionResourceCollection struct {
     additionalData map[string]interface{}
     // Display name
     displayName *string
+    // The OdataType property
+    odataType *string
     // Collection of resources
     resources []string
 }
@@ -18,6 +20,8 @@ func NewWindowsInformationProtectionResourceCollection()(*WindowsInformationProt
     m := &WindowsInformationProtectionResourceCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionResourceCollection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *WindowsInformationProtectionResourceCollection) GetFieldDeserializers()
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -69,6 +83,14 @@ func (m *WindowsInformationProtectionResourceCollection) GetFieldDeserializers()
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionResourceCollection) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetResources gets the resources property value. Collection of resources
 func (m *WindowsInformationProtectionResourceCollection) GetResources()([]string) {
     if m == nil {
@@ -81,6 +103,12 @@ func (m *WindowsInformationProtectionResourceCollection) GetResources()([]string
 func (m *WindowsInformationProtectionResourceCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -109,6 +137,12 @@ func (m *WindowsInformationProtectionResourceCollection) SetAdditionalData(value
 func (m *WindowsInformationProtectionResourceCollection) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionResourceCollection) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetResources sets the resources property value. Collection of resources

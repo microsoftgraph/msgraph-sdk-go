@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Session provides operations to manage the collection of agreement entities.
+// Session provides operations to manage the admin singleton.
 type Session struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Endpoint that answered the session.
@@ -29,6 +29,8 @@ func NewSession()(*Session) {
     m := &Session{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.callRecords.session";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

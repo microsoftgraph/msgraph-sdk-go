@@ -16,6 +16,8 @@ type RelatedContact struct {
     emailAddress *string
     // Mobile phone number of the contact.
     mobilePhone *string
+    // The OdataType property
+    odataType *string
     // The relationship property
     relationship *ContactRelationship
 }
@@ -24,6 +26,8 @@ func NewRelatedContact()(*RelatedContact) {
     m := &RelatedContact{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.relatedContact";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRelatedContactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -105,6 +109,16 @@ func (m *RelatedContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["relationship"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseContactRelationship)
         if err != nil {
@@ -123,6 +137,14 @@ func (m *RelatedContact) GetMobilePhone()(*string) {
         return nil
     } else {
         return m.mobilePhone
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RelatedContact) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRelationship gets the relationship property value. The relationship property
@@ -155,6 +177,12 @@ func (m *RelatedContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("mobilePhone", m.GetMobilePhone())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -202,6 +230,12 @@ func (m *RelatedContact) SetEmailAddress(value *string)() {
 func (m *RelatedContact) SetMobilePhone(value *string)() {
     if m != nil {
         m.mobilePhone = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RelatedContact) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRelationship sets the relationship property value. The relationship property

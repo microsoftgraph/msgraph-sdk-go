@@ -17,6 +17,7 @@ type TeleconferenceDeviceQualityable interface {
     GetDeviceName()(*string)
     GetMediaLegId()(*string)
     GetMediaQualityList()([]TeleconferenceDeviceMediaQualityable)
+    GetOdataType()(*string)
     GetParticipantId()(*string)
     SetCallChainId(value *string)()
     SetCloudServiceDeploymentEnvironment(value *string)()
@@ -27,5 +28,6 @@ type TeleconferenceDeviceQualityable interface {
     SetDeviceName(value *string)()
     SetMediaLegId(value *string)()
     SetMediaQualityList(value []TeleconferenceDeviceMediaQualityable)()
+    SetOdataType(value *string)()
     SetParticipantId(value *string)()
 }

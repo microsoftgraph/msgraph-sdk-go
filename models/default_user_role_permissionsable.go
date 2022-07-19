@@ -11,9 +11,11 @@ type DefaultUserRolePermissionsable interface {
     GetAllowedToCreateApps()(*bool)
     GetAllowedToCreateSecurityGroups()(*bool)
     GetAllowedToReadOtherUsers()(*bool)
+    GetOdataType()(*string)
     GetPermissionGrantPoliciesAssigned()([]string)
     SetAllowedToCreateApps(value *bool)()
     SetAllowedToCreateSecurityGroups(value *bool)()
     SetAllowedToReadOtherUsers(value *bool)()
+    SetOdataType(value *string)()
     SetPermissionGrantPoliciesAssigned(value []string)()
 }

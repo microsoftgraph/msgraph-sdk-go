@@ -21,6 +21,8 @@ func NewAadUserConversationMember()(*AadUserConversationMember) {
     m := &AadUserConversationMember{
         ConversationMember: *NewConversationMember(),
     }
+    odataTypeValue := "#microsoft.graph.aadUserConversationMember";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAadUserConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

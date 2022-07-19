@@ -11,9 +11,11 @@ type RedundancyDetectionSettingsable interface {
     GetIsEnabled()(*bool)
     GetMaxWords()(*int32)
     GetMinWords()(*int32)
+    GetOdataType()(*string)
     GetSimilarityThreshold()(*int32)
     SetIsEnabled(value *bool)()
     SetMaxWords(value *int32)()
     SetMinWords(value *int32)()
+    SetOdataType(value *string)()
     SetSimilarityThreshold(value *int32)()
 }

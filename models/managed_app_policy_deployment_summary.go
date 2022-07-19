@@ -24,6 +24,8 @@ func NewManagedAppPolicyDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) 
     m := &ManagedAppPolicyDeploymentSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedAppPolicyDeploymentSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -27,6 +27,8 @@ func NewWorkbook()(*Workbook) {
     m := &Workbook{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbook";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

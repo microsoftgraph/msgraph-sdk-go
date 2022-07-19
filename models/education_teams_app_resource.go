@@ -21,6 +21,8 @@ func NewEducationTeamsAppResource()(*EducationTeamsAppResource) {
     m := &EducationTeamsAppResource{
         EducationResource: *NewEducationResource(),
     }
+    odataTypeValue := "#microsoft.graph.educationTeamsAppResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationTeamsAppResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,9 +11,11 @@ type SettingTemplateValueable interface {
     GetDefaultValue()(*string)
     GetDescription()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetType()(*string)
     SetDefaultValue(value *string)()
     SetDescription(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetType(value *string)()
 }

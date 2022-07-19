@@ -12,6 +12,8 @@ type ModifiedProperty struct {
     displayName *string
     // New property value.
     newValue *string
+    // The OdataType property
+    odataType *string
     // Old property value.
     oldValue *string
 }
@@ -20,6 +22,8 @@ func NewModifiedProperty()(*ModifiedProperty) {
     m := &ModifiedProperty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.modifiedProperty";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateModifiedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *ModifiedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["oldValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *ModifiedProperty) GetNewValue()(*string) {
         return m.newValue
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ModifiedProperty) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOldValue gets the oldValue property value. Old property value.
 func (m *ModifiedProperty) GetOldValue()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *ModifiedProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteStringValue("newValue", m.GetNewValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *ModifiedProperty) SetDisplayName(value *string)() {
 func (m *ModifiedProperty) SetNewValue(value *string)() {
     if m != nil {
         m.newValue = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ModifiedProperty) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOldValue sets the oldValue property value. Old property value.

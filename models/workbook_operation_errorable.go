@@ -11,7 +11,9 @@ type WorkbookOperationErrorable interface {
     GetCode()(*string)
     GetInnerError()(WorkbookOperationErrorable)
     GetMessage()(*string)
+    GetOdataType()(*string)
     SetCode(value *string)()
     SetInnerError(value WorkbookOperationErrorable)()
     SetMessage(value *string)()
+    SetOdataType(value *string)()
 }

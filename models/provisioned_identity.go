@@ -17,6 +17,8 @@ func NewProvisionedIdentity()(*ProvisionedIdentity) {
     m := &ProvisionedIdentity{
         Identity: *NewIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.provisionedIdentity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProvisionedIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

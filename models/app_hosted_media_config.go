@@ -15,6 +15,8 @@ func NewAppHostedMediaConfig()(*AppHostedMediaConfig) {
     m := &AppHostedMediaConfig{
         MediaConfig: *NewMediaConfig(),
     }
+    odataTypeValue := "#microsoft.graph.appHostedMediaConfig";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppHostedMediaConfigFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

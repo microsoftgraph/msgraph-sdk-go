@@ -12,6 +12,8 @@ type AccessReviewInstanceDecisionItemResource struct {
     displayName *string
     // Resource ID
     id *string
+    // The OdataType property
+    odataType *string
     // Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
     type_escaped *string
 }
@@ -20,6 +22,8 @@ func NewAccessReviewInstanceDecisionItemResource()(*AccessReviewInstanceDecision
     m := &AccessReviewInstanceDecisionItemResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItemResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +92,16 @@ func (m *AccessReviewInstanceDecisionItemResource) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -108,6 +122,14 @@ func (m *AccessReviewInstanceDecisionItemResource) GetId()(*string) {
         return m.id
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewInstanceDecisionItemResource) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetType gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
 func (m *AccessReviewInstanceDecisionItemResource) GetType()(*string) {
     if m == nil {
@@ -126,6 +148,12 @@ func (m *AccessReviewInstanceDecisionItemResource) Serialize(writer i878a80d2330
     }
     {
         err := writer.WriteStringValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -160,6 +188,12 @@ func (m *AccessReviewInstanceDecisionItemResource) SetDisplayName(value *string)
 func (m *AccessReviewInstanceDecisionItemResource) SetId(value *string)() {
     if m != nil {
         m.id = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewInstanceDecisionItemResource) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.

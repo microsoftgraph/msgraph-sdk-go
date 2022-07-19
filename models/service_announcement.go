@@ -14,11 +14,13 @@ type ServiceAnnouncement struct {
     // A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
     messages []ServiceUpdateMessageable
 }
-// NewServiceAnnouncement instantiates a new serviceAnnouncement and sets the default values.
+// NewServiceAnnouncement instantiates a new ServiceAnnouncement and sets the default values.
 func NewServiceAnnouncement()(*ServiceAnnouncement) {
     m := &ServiceAnnouncement{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.serviceAnnouncement";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceAnnouncementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,9 +11,11 @@ type OptionalClaimable interface {
     GetAdditionalProperties()([]string)
     GetEssential()(*bool)
     GetName()(*string)
+    GetOdataType()(*string)
     GetSource()(*string)
     SetAdditionalProperties(value []string)()
     SetEssential(value *bool)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetSource(value *string)()
 }

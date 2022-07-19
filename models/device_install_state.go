@@ -30,6 +30,8 @@ func NewDeviceInstallState()(*DeviceInstallState) {
     m := &DeviceInstallState{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceInstallState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceInstallStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

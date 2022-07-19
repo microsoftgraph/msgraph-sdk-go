@@ -13,9 +13,11 @@ type OutlookGeoCoordinatesable interface {
     GetAltitudeAccuracy()(*float64)
     GetLatitude()(*float64)
     GetLongitude()(*float64)
+    GetOdataType()(*string)
     SetAccuracy(value *float64)()
     SetAltitude(value *float64)()
     SetAltitudeAccuracy(value *float64)()
     SetLatitude(value *float64)()
     SetLongitude(value *float64)()
+    SetOdataType(value *string)()
 }

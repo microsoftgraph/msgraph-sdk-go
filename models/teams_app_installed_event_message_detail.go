@@ -19,6 +19,8 @@ func NewTeamsAppInstalledEventMessageDetail()(*TeamsAppInstalledEventMessageDeta
     m := &TeamsAppInstalledEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
+    odataTypeValue := "#microsoft.graph.teamsAppInstalledEventMessageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsAppInstalledEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -14,6 +14,8 @@ type DeviceOperatingSystemSummary struct {
     iosCount *int32
     // Number of Mac OS X device count.
     macOSCount *int32
+    // The OdataType property
+    odataType *string
     // Number of unknown device count.
     unknownCount *int32
     // Number of Windows device count.
@@ -26,6 +28,8 @@ func NewDeviceOperatingSystemSummary()(*DeviceOperatingSystemSummary) {
     m := &DeviceOperatingSystemSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceOperatingSystemSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceOperatingSystemSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -81,6 +85,16 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["unknownCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -129,6 +143,14 @@ func (m *DeviceOperatingSystemSummary) GetMacOSCount()(*int32) {
         return m.macOSCount
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceOperatingSystemSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUnknownCount gets the unknownCount property value. Number of unknown device count.
 func (m *DeviceOperatingSystemSummary) GetUnknownCount()(*int32) {
     if m == nil {
@@ -169,6 +191,12 @@ func (m *DeviceOperatingSystemSummary) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteInt32Value("macOSCount", m.GetMacOSCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -221,6 +249,12 @@ func (m *DeviceOperatingSystemSummary) SetIosCount(value *int32)() {
 func (m *DeviceOperatingSystemSummary) SetMacOSCount(value *int32)() {
     if m != nil {
         m.macOSCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceOperatingSystemSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUnknownCount sets the unknownCount property value. Number of unknown device count.

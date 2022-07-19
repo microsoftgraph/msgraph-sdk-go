@@ -10,12 +10,16 @@ type ExternalLink struct {
     additionalData map[string]interface{}
     // The url of the link.
     href *string
+    // The OdataType property
+    odataType *string
 }
 // NewExternalLink instantiates a new externalLink and sets the default values.
 func NewExternalLink()(*ExternalLink) {
     m := &ExternalLink{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.externalLink";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *ExternalLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHref gets the href property value. The url of the link.
@@ -53,10 +67,24 @@ func (m *ExternalLink) GetHref()(*string) {
         return m.href
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExternalLink) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ExternalLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("href", m.GetHref())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *ExternalLink) SetAdditionalData(value map[string]interface{})() {
 func (m *ExternalLink) SetHref(value *string)() {
     if m != nil {
         m.href = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExternalLink) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

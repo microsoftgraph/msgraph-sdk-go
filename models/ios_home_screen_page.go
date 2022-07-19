@@ -12,12 +12,16 @@ type IosHomeScreenPage struct {
     displayName *string
     // A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.
     icons []IosHomeScreenItemable
+    // The OdataType property
+    odataType *string
 }
 // NewIosHomeScreenPage instantiates a new iosHomeScreenPage and sets the default values.
 func NewIosHomeScreenPage()(*IosHomeScreenPage) {
     m := &IosHomeScreenPage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosHomeScreenPage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosHomeScreenPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *IosHomeScreenPage) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIcons gets the icons property value. A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.
@@ -75,6 +89,14 @@ func (m *IosHomeScreenPage) GetIcons()([]IosHomeScreenItemable) {
         return nil
     } else {
         return m.icons
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosHomeScreenPage) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -91,6 +113,12 @@ func (m *IosHomeScreenPage) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("icons", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -119,5 +147,11 @@ func (m *IosHomeScreenPage) SetDisplayName(value *string)() {
 func (m *IosHomeScreenPage) SetIcons(value []IosHomeScreenItemable)() {
     if m != nil {
         m.icons = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosHomeScreenPage) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

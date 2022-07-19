@@ -19,6 +19,8 @@ func NewCountryNamedLocation()(*CountryNamedLocation) {
     m := &CountryNamedLocation{
         NamedLocation: *NewNamedLocation(),
     }
+    odataTypeValue := "#microsoft.graph.countryNamedLocation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCountryNamedLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

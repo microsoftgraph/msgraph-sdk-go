@@ -13,6 +13,8 @@ func NewEdiscoveryIndexOperation()(*EdiscoveryIndexOperation) {
     m := &EdiscoveryIndexOperation{
         CaseOperation: *NewCaseOperation(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryIndexOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryIndexOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

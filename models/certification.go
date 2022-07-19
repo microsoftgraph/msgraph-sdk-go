@@ -19,12 +19,16 @@ type Certification struct {
     isPublisherAttested *bool
     // The timestamp when the certification for the application was most recently added or updated.
     lastCertificationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewCertification instantiates a new certification and sets the default values.
 func NewCertification()(*Certification) {
     m := &Certification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.certification";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCertificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -108,6 +112,16 @@ func (m *Certification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsCertifiedByMicrosoft gets the isCertifiedByMicrosoft property value. Indicates whether the application is certified by Microsoft.
@@ -132,6 +146,14 @@ func (m *Certification) GetLastCertificationDateTime()(*i336074805fc853987abe6f7
         return nil
     } else {
         return m.lastCertificationDateTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Certification) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -162,6 +184,12 @@ func (m *Certification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteTimeValue("lastCertificationDateTime", m.GetLastCertificationDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -208,5 +236,11 @@ func (m *Certification) SetIsPublisherAttested(value *bool)() {
 func (m *Certification) SetLastCertificationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastCertificationDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Certification) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -13,6 +13,8 @@ func NewWindowsInformationProtectionStoreApp()(*WindowsInformationProtectionStor
     m := &WindowsInformationProtectionStoreApp{
         WindowsInformationProtectionApp: *NewWindowsInformationProtectionApp(),
     }
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionStoreApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,6 +15,8 @@ func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
     m := &AppConsentApprovalRoute{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.appConsentApprovalRoute";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppConsentApprovalRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

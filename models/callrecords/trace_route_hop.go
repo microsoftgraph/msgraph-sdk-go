@@ -12,6 +12,8 @@ type TraceRouteHop struct {
     hopCount *int32
     // IP address used for this hop in the network trace.
     ipAddress *string
+    // The OdataType property
+    odataType *string
     // The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.
     roundTripTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
@@ -20,6 +22,8 @@ func NewTraceRouteHop()(*TraceRouteHop) {
     m := &TraceRouteHop{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.callRecords.traceRouteHop";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTraceRouteHopFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *TraceRouteHop) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roundTripTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *TraceRouteHop) GetIpAddress()(*string) {
         return m.ipAddress
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TraceRouteHop) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRoundTripTime gets the roundTripTime property value. The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.
 func (m *TraceRouteHop) GetRoundTripTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *TraceRouteHop) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("ipAddress", m.GetIpAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *TraceRouteHop) SetHopCount(value *int32)() {
 func (m *TraceRouteHop) SetIpAddress(value *string)() {
     if m != nil {
         m.ipAddress = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TraceRouteHop) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRoundTripTime sets the roundTripTime property value. The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.

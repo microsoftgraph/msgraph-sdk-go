@@ -11,9 +11,11 @@ type DataSubjectable interface {
     GetEmail()(*string)
     GetFirstName()(*string)
     GetLastName()(*string)
+    GetOdataType()(*string)
     GetResidency()(*string)
     SetEmail(value *string)()
     SetFirstName(value *string)()
     SetLastName(value *string)()
+    SetOdataType(value *string)()
     SetResidency(value *string)()
 }

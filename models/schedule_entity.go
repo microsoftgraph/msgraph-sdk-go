@@ -11,20 +11,20 @@ type ScheduleEntity struct {
     additionalData map[string]interface{}
     // The endDateTime property
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The startDateTime property
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The theme property
     theme *ScheduleEntityTheme
-    // The type property
-    type_escaped *string
 }
 // NewScheduleEntity instantiates a new scheduleEntity and sets the default values.
 func NewScheduleEntity()(*ScheduleEntity) {
     m := &ScheduleEntity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.scheduleEntity";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.scheduleEntity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateScheduleEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,6 +42,8 @@ func CreateScheduleEntityFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.openShiftItem":
+                        return NewOpenShiftItem(), nil
                     case "#microsoft.graph.shiftItem":
                         return NewShiftItem(), nil
                     case "#microsoft.graph.timeOffItem":
@@ -81,6 +83,16 @@ func (m *ScheduleEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -101,17 +113,15 @@ func (m *ScheduleEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ScheduleEntity) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *ScheduleEntity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -129,18 +139,16 @@ func (m *ScheduleEntity) GetTheme()(*ScheduleEntityTheme) {
         return m.theme
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *ScheduleEntity) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // Serialize serializes information the current object
 func (m *ScheduleEntity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -154,12 +162,6 @@ func (m *ScheduleEntity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetTheme() != nil {
         cast := (*m.GetTheme()).String()
         err := writer.WriteStringValue("theme", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -184,6 +186,12 @@ func (m *ScheduleEntity) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6
         m.endDateTime = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ScheduleEntity) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *ScheduleEntity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
@@ -194,11 +202,5 @@ func (m *ScheduleEntity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97
 func (m *ScheduleEntity) SetTheme(value *ScheduleEntityTheme)() {
     if m != nil {
         m.theme = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *ScheduleEntity) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

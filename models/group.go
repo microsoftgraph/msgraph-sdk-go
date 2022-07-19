@@ -144,6 +144,8 @@ func NewGroup()(*Group) {
     m := &Group{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.group";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

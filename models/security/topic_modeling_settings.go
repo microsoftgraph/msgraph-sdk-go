@@ -8,13 +8,15 @@ import (
 type TopicModelingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // To learn more, see Adjust maximum number of themes dynamically.
+    // Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.
     dynamicallyAdjustTopicCount *bool
-    // To learn more, see Include numbers in themes.
+    // Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.
     ignoreNumbers *bool
-    // Indicates whether themes is enabled for the case.
+    // Indicates whether themes model is enabled for the case.
     isEnabled *bool
-    // To learn more, see Maximum number of themes.
+    // The OdataType property
+    odataType *string
+    // The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.
     topicCount *int32
 }
 // NewTopicModelingSettings instantiates a new topicModelingSettings and sets the default values.
@@ -22,6 +24,8 @@ func NewTopicModelingSettings()(*TopicModelingSettings) {
     m := &TopicModelingSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.topicModelingSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTopicModelingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +40,7 @@ func (m *TopicModelingSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDynamicallyAdjustTopicCount gets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
+// GetDynamicallyAdjustTopicCount gets the dynamicallyAdjustTopicCount property value. Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.
 func (m *TopicModelingSettings) GetDynamicallyAdjustTopicCount()(*bool) {
     if m == nil {
         return nil
@@ -77,6 +81,16 @@ func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["topicCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -89,7 +103,7 @@ func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIgnoreNumbers gets the ignoreNumbers property value. To learn more, see Include numbers in themes.
+// GetIgnoreNumbers gets the ignoreNumbers property value. Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.
 func (m *TopicModelingSettings) GetIgnoreNumbers()(*bool) {
     if m == nil {
         return nil
@@ -97,7 +111,7 @@ func (m *TopicModelingSettings) GetIgnoreNumbers()(*bool) {
         return m.ignoreNumbers
     }
 }
-// GetIsEnabled gets the isEnabled property value. Indicates whether themes is enabled for the case.
+// GetIsEnabled gets the isEnabled property value. Indicates whether themes model is enabled for the case.
 func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -105,7 +119,15 @@ func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// GetTopicCount gets the topicCount property value. To learn more, see Maximum number of themes.
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TopicModelingSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
+// GetTopicCount gets the topicCount property value. The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.
 func (m *TopicModelingSettings) GetTopicCount()(*int32) {
     if m == nil {
         return nil
@@ -134,6 +156,12 @@ func (m *TopicModelingSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("topicCount", m.GetTopicCount())
         if err != nil {
             return err
@@ -153,25 +181,31 @@ func (m *TopicModelingSettings) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetDynamicallyAdjustTopicCount sets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
+// SetDynamicallyAdjustTopicCount sets the dynamicallyAdjustTopicCount property value. Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.
 func (m *TopicModelingSettings) SetDynamicallyAdjustTopicCount(value *bool)() {
     if m != nil {
         m.dynamicallyAdjustTopicCount = value
     }
 }
-// SetIgnoreNumbers sets the ignoreNumbers property value. To learn more, see Include numbers in themes.
+// SetIgnoreNumbers sets the ignoreNumbers property value. Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.
 func (m *TopicModelingSettings) SetIgnoreNumbers(value *bool)() {
     if m != nil {
         m.ignoreNumbers = value
     }
 }
-// SetIsEnabled sets the isEnabled property value. Indicates whether themes is enabled for the case.
+// SetIsEnabled sets the isEnabled property value. Indicates whether themes model is enabled for the case.
 func (m *TopicModelingSettings) SetIsEnabled(value *bool)() {
     if m != nil {
         m.isEnabled = value
     }
 }
-// SetTopicCount sets the topicCount property value. To learn more, see Maximum number of themes.
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TopicModelingSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
+// SetTopicCount sets the topicCount property value. The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.
 func (m *TopicModelingSettings) SetTopicCount(value *int32)() {
     if m != nil {
         m.topicCount = value

@@ -10,12 +10,16 @@ type SpecialFolder struct {
     additionalData map[string]interface{}
     // The unique identifier for this item in the /drive/special collection
     name *string
+    // The OdataType property
+    odataType *string
 }
 // NewSpecialFolder instantiates a new specialFolder and sets the default values.
 func NewSpecialFolder()(*SpecialFolder) {
     m := &SpecialFolder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.specialFolder";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSpecialFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *SpecialFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetName gets the name property value. The unique identifier for this item in the /drive/special collection
@@ -53,10 +67,24 @@ func (m *SpecialFolder) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SpecialFolder) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *SpecialFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *SpecialFolder) SetAdditionalData(value map[string]interface{})() {
 func (m *SpecialFolder) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SpecialFolder) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

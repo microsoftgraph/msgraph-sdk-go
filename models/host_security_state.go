@@ -18,6 +18,8 @@ type HostSecurityState struct {
     isHybridAzureDomainJoined *bool
     // The local host name, without the DNS domain name.
     netBiosName *string
+    // The OdataType property
+    odataType *string
     // Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
     os *string
     // Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
@@ -32,6 +34,8 @@ func NewHostSecurityState()(*HostSecurityState) {
     m := &HostSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.hostSecurityState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHostSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -96,6 +100,16 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetNetBiosName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -181,6 +195,14 @@ func (m *HostSecurityState) GetNetBiosName()(*string) {
         return m.netBiosName
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *HostSecurityState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOs gets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
 func (m *HostSecurityState) GetOs()(*string) {
     if m == nil {
@@ -241,6 +263,12 @@ func (m *HostSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("netBiosName", m.GetNetBiosName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -311,6 +339,12 @@ func (m *HostSecurityState) SetIsHybridAzureDomainJoined(value *bool)() {
 func (m *HostSecurityState) SetNetBiosName(value *string)() {
     if m != nil {
         m.netBiosName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *HostSecurityState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOs sets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).

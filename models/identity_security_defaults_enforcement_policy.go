@@ -15,6 +15,8 @@ func NewIdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnf
     m := &IdentitySecurityDefaultsEnforcementPolicy{
         PolicyBase: *NewPolicyBase(),
     }
+    odataTypeValue := "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentitySecurityDefaultsEnforcementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

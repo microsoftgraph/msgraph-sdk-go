@@ -19,6 +19,8 @@ func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProt
     m := &WindowsInformationProtectionAppLearningSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionAppLearningSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

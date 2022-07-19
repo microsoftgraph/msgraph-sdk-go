@@ -13,9 +13,11 @@ type TeamMessagingSettingsable interface {
     GetAllowTeamMentions()(*bool)
     GetAllowUserDeleteMessages()(*bool)
     GetAllowUserEditMessages()(*bool)
+    GetOdataType()(*string)
     SetAllowChannelMentions(value *bool)()
     SetAllowOwnerDeleteMessages(value *bool)()
     SetAllowTeamMentions(value *bool)()
     SetAllowUserDeleteMessages(value *bool)()
     SetAllowUserEditMessages(value *bool)()
+    SetOdataType(value *string)()
 }

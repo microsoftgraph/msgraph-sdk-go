@@ -10,6 +10,8 @@ type AuditActivityInitiator struct {
     additionalData map[string]interface{}
     // If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
     app AppIdentityable
+    // The OdataType property
+    odataType *string
     // If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
     user UserIdentityable
 }
@@ -18,6 +20,8 @@ func NewAuditActivityInitiator()(*AuditActivityInitiator) {
     m := &AuditActivityInitiator{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.auditActivityInitiator";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuditActivityInitiatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *AuditActivityInitiator) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
@@ -64,6 +78,14 @@ func (m *AuditActivityInitiator) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuditActivityInitiator) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUser gets the user property value. If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
 func (m *AuditActivityInitiator) GetUser()(UserIdentityable) {
@@ -77,6 +99,12 @@ func (m *AuditActivityInitiator) GetUser()(UserIdentityable) {
 func (m *AuditActivityInitiator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("app", m.GetApp())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *AuditActivityInitiator) SetAdditionalData(value map[string]interface{})
 func (m *AuditActivityInitiator) SetApp(value AppIdentityable)() {
     if m != nil {
         m.app = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuditActivityInitiator) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUser sets the user property value. If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.

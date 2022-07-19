@@ -14,6 +14,8 @@ type WebApplication struct {
     implicitGrantSettings ImplicitGrantSettingsable
     // Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
     logoutUrl *string
+    // The OdataType property
+    odataType *string
     // Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
     redirectUris []string
 }
@@ -22,6 +24,8 @@ func NewWebApplication()(*WebApplication) {
     m := &WebApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.webApplication";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWebApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +73,16 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["redirectUris"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -109,6 +123,14 @@ func (m *WebApplication) GetLogoutUrl()(*string) {
         return m.logoutUrl
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WebApplication) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRedirectUris gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 func (m *WebApplication) GetRedirectUris()([]string) {
     if m == nil {
@@ -133,6 +155,12 @@ func (m *WebApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("logoutUrl", m.GetLogoutUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -173,6 +201,12 @@ func (m *WebApplication) SetImplicitGrantSettings(value ImplicitGrantSettingsabl
 func (m *WebApplication) SetLogoutUrl(value *string)() {
     if m != nil {
         m.logoutUrl = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WebApplication) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRedirectUris sets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.

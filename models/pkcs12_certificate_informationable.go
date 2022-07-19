@@ -11,9 +11,11 @@ type Pkcs12CertificateInformationable interface {
     GetIsActive()(*bool)
     GetNotAfter()(*int64)
     GetNotBefore()(*int64)
+    GetOdataType()(*string)
     GetThumbprint()(*string)
     SetIsActive(value *bool)()
     SetNotAfter(value *int64)()
     SetNotBefore(value *int64)()
+    SetOdataType(value *string)()
     SetThumbprint(value *string)()
 }

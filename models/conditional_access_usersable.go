@@ -14,10 +14,12 @@ type ConditionalAccessUsersable interface {
     GetIncludeGroups()([]string)
     GetIncludeRoles()([]string)
     GetIncludeUsers()([]string)
+    GetOdataType()(*string)
     SetExcludeGroups(value []string)()
     SetExcludeRoles(value []string)()
     SetExcludeUsers(value []string)()
     SetIncludeGroups(value []string)()
     SetIncludeRoles(value []string)()
     SetIncludeUsers(value []string)()
+    SetOdataType(value *string)()
 }

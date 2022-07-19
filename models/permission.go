@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Permission provides operations to manage the collection of agreement entities.
+// Permission provides operations to manage the admin singleton.
 type Permission struct {
     Entity
     // A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -36,6 +36,8 @@ func NewPermission()(*Permission) {
     m := &Permission{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.permission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

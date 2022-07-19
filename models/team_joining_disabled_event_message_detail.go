@@ -17,6 +17,8 @@ func NewTeamJoiningDisabledEventMessageDetail()(*TeamJoiningDisabledEventMessage
     m := &TeamJoiningDisabledEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
+    odataTypeValue := "#microsoft.graph.teamJoiningDisabledEventMessageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamJoiningDisabledEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

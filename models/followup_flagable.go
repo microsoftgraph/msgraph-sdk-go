@@ -11,9 +11,11 @@ type FollowupFlagable interface {
     GetCompletedDateTime()(DateTimeTimeZoneable)
     GetDueDateTime()(DateTimeTimeZoneable)
     GetFlagStatus()(*FollowupFlagStatus)
+    GetOdataType()(*string)
     GetStartDateTime()(DateTimeTimeZoneable)
     SetCompletedDateTime(value DateTimeTimeZoneable)()
     SetDueDateTime(value DateTimeTimeZoneable)()
     SetFlagStatus(value *FollowupFlagStatus)()
+    SetOdataType(value *string)()
     SetStartDateTime(value DateTimeTimeZoneable)()
 }

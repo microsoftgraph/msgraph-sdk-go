@@ -15,6 +15,8 @@ func NewIPv6CidrRange()(*IPv6CidrRange) {
     m := &IPv6CidrRange{
         IpRange: *NewIpRange(),
     }
+    odataTypeValue := "#microsoft.graph.iPv6CidrRange";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIPv6CidrRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,7 +11,9 @@ type CalendarSharingMessageActionable interface {
     GetAction()(*CalendarSharingAction)
     GetActionType()(*CalendarSharingActionType)
     GetImportance()(*CalendarSharingActionImportance)
+    GetOdataType()(*string)
     SetAction(value *CalendarSharingAction)()
     SetActionType(value *CalendarSharingActionType)()
     SetImportance(value *CalendarSharingActionImportance)()
+    SetOdataType(value *string)()
 }

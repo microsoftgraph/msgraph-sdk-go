@@ -13,6 +13,8 @@ type VerifiedPublisher struct {
     additionalData map[string]interface{}
     // The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
     displayName *string
+    // The OdataType property
+    odataType *string
     // The ID of the verified publisher from the app publisher's Partner Center account.
     verifiedPublisherId *string
 }
@@ -21,6 +23,8 @@ func NewVerifiedPublisher()(*VerifiedPublisher) {
     m := &VerifiedPublisher{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.verifiedPublisher";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVerifiedPublisherFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -74,6 +78,16 @@ func (m *VerifiedPublisher) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["verifiedPublisherId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *VerifiedPublisher) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VerifiedPublisher) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetVerifiedPublisherId gets the verifiedPublisherId property value. The ID of the verified publisher from the app publisher's Partner Center account.
 func (m *VerifiedPublisher) GetVerifiedPublisherId()(*string) {
@@ -104,6 +126,12 @@ func (m *VerifiedPublisher) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,6 +166,12 @@ func (m *VerifiedPublisher) SetAdditionalData(value map[string]interface{})() {
 func (m *VerifiedPublisher) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VerifiedPublisher) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetVerifiedPublisherId sets the verifiedPublisherId property value. The ID of the verified publisher from the app publisher's Partner Center account.

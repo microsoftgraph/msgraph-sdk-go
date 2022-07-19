@@ -12,12 +12,16 @@ type PreAuthorizedApplication struct {
     appId *string
     // The unique identifier for the oauth2PermissionScopes the application requires.
     delegatedPermissionIds []string
+    // The OdataType property
+    odataType *string
 }
 // NewPreAuthorizedApplication instantiates a new preAuthorizedApplication and sets the default values.
 func NewPreAuthorizedApplication()(*PreAuthorizedApplication) {
     m := &PreAuthorizedApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.preAuthorizedApplication";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePreAuthorizedApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +79,25 @@ func (m *PreAuthorizedApplication) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PreAuthorizedApplication) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *PreAuthorizedApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -87,6 +109,12 @@ func (m *PreAuthorizedApplication) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     if m.GetDelegatedPermissionIds() != nil {
         err := writer.WriteCollectionOfStringValues("delegatedPermissionIds", m.GetDelegatedPermissionIds())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -115,5 +143,11 @@ func (m *PreAuthorizedApplication) SetAppId(value *string)() {
 func (m *PreAuthorizedApplication) SetDelegatedPermissionIds(value []string)() {
     if m != nil {
         m.delegatedPermissionIds = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PreAuthorizedApplication) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

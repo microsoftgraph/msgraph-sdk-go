@@ -33,7 +33,7 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *DirectoryObjectItemRequestBuilder) Ref()(*i7b0cc8903a69d6a07464aa146bb92c8e7de72a0ddf485107da9c52b3705998ad.RefRequestBuilder) {
     return i7b0cc8903a69d6a07464aa146bb92c8e7de72a0ddf485107da9c52b3705998ad.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

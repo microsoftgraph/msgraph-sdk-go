@@ -21,6 +21,8 @@ func NewMailSearchFolder()(*MailSearchFolder) {
     m := &MailSearchFolder{
         MailFolder: *NewMailFolder(),
     }
+    odataTypeValue := "#microsoft.graph.mailSearchFolder";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMailSearchFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

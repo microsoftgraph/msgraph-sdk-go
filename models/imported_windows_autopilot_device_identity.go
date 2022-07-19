@@ -27,6 +27,8 @@ func NewImportedWindowsAutopilotDeviceIdentity()(*ImportedWindowsAutopilotDevice
     m := &ImportedWindowsAutopilotDeviceIdentity{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.importedWindowsAutopilotDeviceIdentity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,6 +12,8 @@ type AppIdentity struct {
     appId *string
     // Refers to the Application Name displayed in the Azure Portal.
     displayName *string
+    // The OdataType property
+    odataType *string
     // Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
     servicePrincipalId *string
     // Refers to the Service Principal Name is the Application name in the tenant.
@@ -22,6 +24,8 @@ func NewAppIdentity()(*AppIdentity) {
     m := &AppIdentity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.appIdentity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *AppIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["servicePrincipalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -96,6 +110,14 @@ func (m *AppIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AppIdentity) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
 func (m *AppIdentity) GetServicePrincipalId()(*string) {
@@ -123,6 +145,12 @@ func (m *AppIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -163,6 +191,12 @@ func (m *AppIdentity) SetAppId(value *string)() {
 func (m *AppIdentity) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AppIdentity) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.

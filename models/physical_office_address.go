@@ -12,6 +12,8 @@ type PhysicalOfficeAddress struct {
     city *string
     // The country or region. It's a free-format string value, for example, 'United States'.
     countryOrRegion *string
+    // The OdataType property
+    odataType *string
     // Office location such as building and office number for an organizational contact.
     officeLocation *string
     // The postal code.
@@ -26,6 +28,8 @@ func NewPhysicalOfficeAddress()(*PhysicalOfficeAddress) {
     m := &PhysicalOfficeAddress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.physicalOfficeAddress";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePhysicalOfficeAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +83,16 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["officeLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -120,6 +134,14 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PhysicalOfficeAddress) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOfficeLocation gets the officeLocation property value. Office location such as building and office number for an organizational contact.
 func (m *PhysicalOfficeAddress) GetOfficeLocation()(*string) {
@@ -163,6 +185,12 @@ func (m *PhysicalOfficeAddress) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteStringValue("countryOrRegion", m.GetCountryOrRegion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -215,6 +243,12 @@ func (m *PhysicalOfficeAddress) SetCity(value *string)() {
 func (m *PhysicalOfficeAddress) SetCountryOrRegion(value *string)() {
     if m != nil {
         m.countryOrRegion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PhysicalOfficeAddress) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOfficeLocation sets the officeLocation property value. Office location such as building and office number for an organizational contact.

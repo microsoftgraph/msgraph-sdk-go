@@ -17,6 +17,7 @@ type EventMessageable interface {
     GetMeetingMessageType()(*MeetingMessageType)
     GetRecurrence()(PatternedRecurrenceable)
     GetStartDateTime()(DateTimeTimeZoneable)
+    GetType()(*EventType)
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetEvent(value Eventable)()
     SetIsAllDay(value *bool)()
@@ -26,4 +27,5 @@ type EventMessageable interface {
     SetMeetingMessageType(value *MeetingMessageType)()
     SetRecurrence(value PatternedRecurrenceable)()
     SetStartDateTime(value DateTimeTimeZoneable)()
+    SetType(value *EventType)()
 }

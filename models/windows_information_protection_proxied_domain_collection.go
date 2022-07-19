@@ -10,6 +10,8 @@ type WindowsInformationProtectionProxiedDomainCollection struct {
     additionalData map[string]interface{}
     // Display name
     displayName *string
+    // The OdataType property
+    odataType *string
     // Collection of proxied domains
     proxiedDomains []ProxiedDomainable
 }
@@ -18,6 +20,8 @@ func NewWindowsInformationProtectionProxiedDomainCollection()(*WindowsInformatio
     m := &WindowsInformationProtectionProxiedDomainCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionProxiedDomainCollection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetFieldDeserializ
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["proxiedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProxiedDomainFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetFieldDeserializ
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionProxiedDomainCollection) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProxiedDomains gets the proxiedDomains property value. Collection of proxied domains
 func (m *WindowsInformationProtectionProxiedDomainCollection) GetProxiedDomains()([]ProxiedDomainable) {
     if m == nil {
@@ -81,6 +103,12 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetProxiedDomains(
 func (m *WindowsInformationProtectionProxiedDomainCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) SetAdditionalData(
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionProxiedDomainCollection) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProxiedDomains sets the proxiedDomains property value. Collection of proxied domains

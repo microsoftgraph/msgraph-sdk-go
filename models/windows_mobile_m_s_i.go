@@ -21,6 +21,8 @@ func NewWindowsMobileMSI()(*WindowsMobileMSI) {
     m := &WindowsMobileMSI{
         MobileLobApp: *NewMobileLobApp(),
     }
+    odataTypeValue := "#microsoft.graph.windowsMobileMSI";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsMobileMSIFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

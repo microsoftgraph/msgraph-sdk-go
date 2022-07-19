@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSubmission provides operations to manage the collection of agreement entities.
+// EducationSubmission provides operations to manage the admin singleton.
 type EducationSubmission struct {
     Entity
     // The outcomes property
@@ -42,6 +42,8 @@ func NewEducationSubmission()(*EducationSubmission) {
     m := &EducationSubmission{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.educationSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

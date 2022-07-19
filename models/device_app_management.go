@@ -50,6 +50,8 @@ func NewDeviceAppManagement()(*DeviceAppManagement) {
     m := &DeviceAppManagement{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceAppManagement";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceAppManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

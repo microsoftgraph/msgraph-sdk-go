@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LinkedResource provides operations to manage the collection of agreement entities.
+// LinkedResource provides operations to manage the admin singleton.
 type LinkedResource struct {
     Entity
     // Field indicating the app name of the source that is sending the linkedResource.
@@ -21,6 +21,8 @@ func NewLinkedResource()(*LinkedResource) {
     m := &LinkedResource{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.linkedResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLinkedResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

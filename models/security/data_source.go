@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// DataSource provides operations to manage the collection of agreement entities.
+// DataSource provides operations to manage the admin singleton.
 type DataSource struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The user who created the dataSource.
@@ -23,8 +23,8 @@ func NewDataSource()(*DataSource) {
     m := &DataSource{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.security.dataSource";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.security.dataSource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

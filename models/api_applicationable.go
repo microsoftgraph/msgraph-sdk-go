@@ -11,11 +11,13 @@ type ApiApplicationable interface {
     GetAcceptMappedClaims()(*bool)
     GetKnownClientApplications()([]string)
     GetOauth2PermissionScopes()([]PermissionScopeable)
+    GetOdataType()(*string)
     GetPreAuthorizedApplications()([]PreAuthorizedApplicationable)
     GetRequestedAccessTokenVersion()(*int32)
     SetAcceptMappedClaims(value *bool)()
     SetKnownClientApplications(value []string)()
     SetOauth2PermissionScopes(value []PermissionScopeable)()
+    SetOdataType(value *string)()
     SetPreAuthorizedApplications(value []PreAuthorizedApplicationable)()
     SetRequestedAccessTokenVersion(value *int32)()
 }

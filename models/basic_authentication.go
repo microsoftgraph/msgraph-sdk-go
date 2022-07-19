@@ -17,6 +17,8 @@ func NewBasicAuthentication()(*BasicAuthentication) {
     m := &BasicAuthentication{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),
     }
+    odataTypeValue := "#microsoft.graph.basicAuthentication";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBasicAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

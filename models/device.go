@@ -62,6 +62,8 @@ func NewDevice()(*Device) {
     m := &Device{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.device";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

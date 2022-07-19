@@ -17,6 +17,8 @@ func NewPkcs12Certificate()(*Pkcs12Certificate) {
     m := &Pkcs12Certificate{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),
     }
+    odataTypeValue := "#microsoft.graph.pkcs12Certificate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePkcs12CertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

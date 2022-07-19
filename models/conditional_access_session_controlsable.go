@@ -11,11 +11,13 @@ type ConditionalAccessSessionControlsable interface {
     GetApplicationEnforcedRestrictions()(ApplicationEnforcedRestrictionsSessionControlable)
     GetCloudAppSecurity()(CloudAppSecuritySessionControlable)
     GetDisableResilienceDefaults()(*bool)
+    GetOdataType()(*string)
     GetPersistentBrowser()(PersistentBrowserSessionControlable)
     GetSignInFrequency()(SignInFrequencySessionControlable)
     SetApplicationEnforcedRestrictions(value ApplicationEnforcedRestrictionsSessionControlable)()
     SetCloudAppSecurity(value CloudAppSecuritySessionControlable)()
     SetDisableResilienceDefaults(value *bool)()
+    SetOdataType(value *string)()
     SetPersistentBrowser(value PersistentBrowserSessionControlable)()
     SetSignInFrequency(value SignInFrequencySessionControlable)()
 }

@@ -22,6 +22,8 @@ type WindowsFirewallNetworkProfile struct {
     inboundNotificationsBlocked *bool
     // Configures the firewall to block all incoming traffic regardless of other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.
     incomingTrafficBlocked *bool
+    // The OdataType property
+    odataType *string
     // Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
     outboundConnectionsBlocked *bool
     // Configures the firewall to merge Firewall Rule policies from group policy with those from local store instead of ignoring the local store rules. When PolicyRulesFromGroupPolicyNotMerged and PolicyRulesFromGroupPolicyMerged are both true, PolicyRulesFromGroupPolicyMerged takes priority.
@@ -38,6 +40,8 @@ func NewWindowsFirewallNetworkProfile()(*WindowsFirewallNetworkProfile) {
     m := &WindowsFirewallNetworkProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsFirewallNetworkProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsFirewallNetworkProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -141,6 +145,16 @@ func (m *WindowsFirewallNetworkProfile) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["outboundConnectionsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -233,6 +247,14 @@ func (m *WindowsFirewallNetworkProfile) GetIncomingTrafficBlocked()(*bool) {
         return m.incomingTrafficBlocked
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsFirewallNetworkProfile) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOutboundConnectionsBlocked gets the outboundConnectionsBlocked property value. Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
 func (m *WindowsFirewallNetworkProfile) GetOutboundConnectionsBlocked()(*bool) {
     if m == nil {
@@ -314,6 +336,12 @@ func (m *WindowsFirewallNetworkProfile) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteBoolValue("incomingTrafficBlocked", m.GetIncomingTrafficBlocked())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -402,6 +430,12 @@ func (m *WindowsFirewallNetworkProfile) SetInboundNotificationsBlocked(value *bo
 func (m *WindowsFirewallNetworkProfile) SetIncomingTrafficBlocked(value *bool)() {
     if m != nil {
         m.incomingTrafficBlocked = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsFirewallNetworkProfile) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOutboundConnectionsBlocked sets the outboundConnectionsBlocked property value. Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.

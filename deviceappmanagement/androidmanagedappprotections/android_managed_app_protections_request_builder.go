@@ -70,7 +70,7 @@ func NewAndroidManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedAppProtectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AndroidManagedAppProtectionsRequestBuilder) Count()(*i62ae96d1c3a9dafa231537f0505bda2e4d4956dafd9f78142d978157e110a8e2.CountRequestBuilder) {
     return i62ae96d1c3a9dafa231537f0505bda2e4d4956dafd9f78142d978157e110a8e2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

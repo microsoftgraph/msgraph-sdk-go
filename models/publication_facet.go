@@ -10,6 +10,8 @@ type PublicationFacet struct {
     additionalData map[string]interface{}
     // The state of publication for this document. Either published or checkout. Read-only.
     level *string
+    // The OdataType property
+    odataType *string
     // The unique identifier for the version that is visible to the current caller. Read-only.
     versionId *string
 }
@@ -18,6 +20,8 @@ func NewPublicationFacet()(*PublicationFacet) {
     m := &PublicationFacet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.publicationFacet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePublicationFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *PublicationFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["versionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *PublicationFacet) GetLevel()(*string) {
         return m.level
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PublicationFacet) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetVersionId gets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.
 func (m *PublicationFacet) GetVersionId()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *PublicationFacet) GetVersionId()(*string) {
 func (m *PublicationFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("level", m.GetLevel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *PublicationFacet) SetAdditionalData(value map[string]interface{})() {
 func (m *PublicationFacet) SetLevel(value *string)() {
     if m != nil {
         m.level = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PublicationFacet) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetVersionId sets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.

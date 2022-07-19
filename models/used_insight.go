@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UsedInsight provides operations to manage the collection of agreement entities.
+// UsedInsight provides operations to manage the admin singleton.
 type UsedInsight struct {
     Entity
     // Information about when the item was last viewed or modified by the user. Read only.
@@ -21,6 +21,8 @@ func NewUsedInsight()(*UsedInsight) {
     m := &UsedInsight{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.usedInsight";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUsedInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

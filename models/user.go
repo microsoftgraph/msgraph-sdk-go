@@ -166,7 +166,7 @@ type User struct {
     onPremisesSamAccountName *string
     // Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
     onPremisesSecurityIdentifier *string
-    // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+    // true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
     onPremisesSyncEnabled *bool
     // Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     onPremisesUserPrincipalName *string
@@ -198,7 +198,7 @@ type User struct {
     preferredDataLocation *string
     // The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     preferredLanguage *string
-    // The preferred name for the user. Returned only on $select.
+    // The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
     preferredName *string
     // The presence property
     presence Presenceable
@@ -246,6 +246,8 @@ func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.user";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -2237,7 +2239,7 @@ func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
         return m.onPremisesSecurityIdentifier
     }
 }
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) GetOnPremisesSyncEnabled()(*bool) {
     if m == nil {
         return nil
@@ -2365,7 +2367,7 @@ func (m *User) GetPreferredLanguage()(*string) {
         return m.preferredLanguage
     }
 }
-// GetPreferredName gets the preferredName property value. The preferred name for the user. Returned only on $select.
+// GetPreferredName gets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
 func (m *User) GetPreferredName()(*string) {
     if m == nil {
         return nil
@@ -3863,7 +3865,7 @@ func (m *User) SetOnPremisesSecurityIdentifier(value *string)() {
         m.onPremisesSecurityIdentifier = value
     }
 }
-// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
     if m != nil {
         m.onPremisesSyncEnabled = value
@@ -3959,7 +3961,7 @@ func (m *User) SetPreferredLanguage(value *string)() {
         m.preferredLanguage = value
     }
 }
-// SetPreferredName sets the preferredName property value. The preferred name for the user. Returned only on $select.
+// SetPreferredName sets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
 func (m *User) SetPreferredName(value *string)() {
     if m != nil {
         m.preferredName = value

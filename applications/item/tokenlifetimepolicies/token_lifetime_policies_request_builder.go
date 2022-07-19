@@ -64,7 +64,7 @@ func NewTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TokenLifetimePoliciesRequestBuilder) Count()(*i7d6a2fb75b39419afbedb635c76349a1a51d1d5700403c8ff841675329881daa.CountRequestBuilder) {
     return i7d6a2fb75b39419afbedb635c76349a1a51d1d5700403c8ff841675329881daa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -108,7 +108,7 @@ func (m *TokenLifetimePoliciesRequestBuilder) GetWithRequestConfigurationAndResp
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyCollectionResponseable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *TokenLifetimePoliciesRequestBuilder) Ref()(*i2de0ad36b23b2ab3c0df45c69cfbf292f5bd5c823098b73b381d75abdf91cd30.RefRequestBuilder) {
     return i2de0ad36b23b2ab3c0df45c69cfbf292f5bd5c823098b73b381d75abdf91cd30.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

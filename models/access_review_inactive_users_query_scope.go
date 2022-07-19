@@ -15,6 +15,8 @@ func NewAccessReviewInactiveUsersQueryScope()(*AccessReviewInactiveUsersQuerySco
     m := &AccessReviewInactiveUsersQueryScope{
         AccessReviewQueryScope: *NewAccessReviewQueryScope(),
     }
+    odataTypeValue := "#microsoft.graph.accessReviewInactiveUsersQueryScope";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewInactiveUsersQueryScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

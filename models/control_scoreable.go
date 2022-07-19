@@ -11,9 +11,11 @@ type ControlScoreable interface {
     GetControlCategory()(*string)
     GetControlName()(*string)
     GetDescription()(*string)
+    GetOdataType()(*string)
     GetScore()(*float64)
     SetControlCategory(value *string)()
     SetControlName(value *string)()
     SetDescription(value *string)()
+    SetOdataType(value *string)()
     SetScore(value *float64)()
 }

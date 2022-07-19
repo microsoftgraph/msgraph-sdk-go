@@ -24,6 +24,8 @@ func NewTelecomExpenseManagementPartner()(*TelecomExpenseManagementPartner) {
     m := &TelecomExpenseManagementPartner{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.telecomExpenseManagementPartner";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTelecomExpenseManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

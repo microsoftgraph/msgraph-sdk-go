@@ -15,6 +15,8 @@ func NewPlannerGroup()(*PlannerGroup) {
     m := &PlannerGroup{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.plannerGroup";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

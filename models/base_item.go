@@ -36,8 +36,8 @@ func NewBaseItem()(*BaseItem) {
     m := &BaseItem{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.baseItem";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.baseItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBaseItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

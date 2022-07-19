@@ -16,6 +16,8 @@ type EducationCourse struct {
     displayName *string
     // ID of the course from the syncing system.
     externalId *string
+    // The OdataType property
+    odataType *string
     // Subject of the course.
     subject *string
 }
@@ -24,6 +26,8 @@ func NewEducationCourse()(*EducationCourse) {
     m := &EducationCourse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.educationCourse";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationCourseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -113,6 +117,16 @@ func (m *EducationCourse) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -124,6 +138,14 @@ func (m *EducationCourse) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationCourse) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSubject gets the subject property value. Subject of the course.
 func (m *EducationCourse) GetSubject()(*string) {
@@ -155,6 +177,12 @@ func (m *EducationCourse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteStringValue("externalId", m.GetExternalId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -201,6 +229,12 @@ func (m *EducationCourse) SetDisplayName(value *string)() {
 func (m *EducationCourse) SetExternalId(value *string)() {
     if m != nil {
         m.externalId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationCourse) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSubject sets the subject property value. Subject of the course.

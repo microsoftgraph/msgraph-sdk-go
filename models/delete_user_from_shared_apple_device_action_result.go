@@ -15,6 +15,8 @@ func NewDeleteUserFromSharedAppleDeviceActionResult()(*DeleteUserFromSharedApple
     m := &DeleteUserFromSharedAppleDeviceActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
     }
+    odataTypeValue := "#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeleteUserFromSharedAppleDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

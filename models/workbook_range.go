@@ -53,6 +53,8 @@ func NewWorkbookRange()(*WorkbookRange) {
     m := &WorkbookRange{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookRange";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

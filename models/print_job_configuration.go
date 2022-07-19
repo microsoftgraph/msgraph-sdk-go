@@ -34,6 +34,8 @@ type PrintJobConfiguration struct {
     mediaType *string
     // The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
     multipageLayout *PrintMultipageLayout
+    // The OdataType property
+    odataType *string
     // The orientation setting the printer should use when printing the job. Valid values are described in the following table.
     orientation *PrintOrientation
     // The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
@@ -52,6 +54,8 @@ func NewPrintJobConfiguration()(*PrintJobConfiguration) {
     m := &PrintJobConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.printJobConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintJobConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -251,6 +255,16 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["orientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePrintOrientation)
         if err != nil {
@@ -371,6 +385,14 @@ func (m *PrintJobConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
         return nil
     } else {
         return m.multipageLayout
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrintJobConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOrientation gets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
@@ -501,6 +523,12 @@ func (m *PrintJobConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetMultipageLayout() != nil {
         cast := (*m.GetMultipageLayout()).String()
         err := writer.WriteStringValue("multipageLayout", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -638,6 +666,12 @@ func (m *PrintJobConfiguration) SetMediaType(value *string)() {
 func (m *PrintJobConfiguration) SetMultipageLayout(value *PrintMultipageLayout)() {
     if m != nil {
         m.multipageLayout = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrintJobConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrientation sets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.

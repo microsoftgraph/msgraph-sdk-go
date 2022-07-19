@@ -11,9 +11,11 @@ type SignInLocationable interface {
     GetCity()(*string)
     GetCountryOrRegion()(*string)
     GetGeoCoordinates()(GeoCoordinatesable)
+    GetOdataType()(*string)
     GetState()(*string)
     SetCity(value *string)()
     SetCountryOrRegion(value *string)()
     SetGeoCoordinates(value GeoCoordinatesable)()
+    SetOdataType(value *string)()
     SetState(value *string)()
 }

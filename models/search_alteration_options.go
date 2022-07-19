@@ -12,12 +12,16 @@ type SearchAlterationOptions struct {
     enableModification *bool
     // Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
     enableSuggestion *bool
+    // The OdataType property
+    odataType *string
 }
 // NewSearchAlterationOptions instantiates a new searchAlterationOptions and sets the default values.
 func NewSearchAlterationOptions()(*SearchAlterationOptions) {
     m := &SearchAlterationOptions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.searchAlterationOptions";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchAlterationOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *SearchAlterationOptions) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SearchAlterationOptions) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *SearchAlterationOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *SearchAlterationOptions) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteBoolValue("enableSuggestion", m.GetEnableSuggestion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *SearchAlterationOptions) SetEnableModification(value *bool)() {
 func (m *SearchAlterationOptions) SetEnableSuggestion(value *bool)() {
     if m != nil {
         m.enableSuggestion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SearchAlterationOptions) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -14,10 +14,10 @@ type StandardTimeZoneOffset struct {
     dayOfWeek *DayOfWeek
     // Represents the month of the year when the transition from daylight saving time to standard time occurs.
     month *int32
+    // The OdataType property
+    odataType *string
     // Represents the time of day when the transition from daylight saving time to standard time occurs.
     time *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // The type property
-    type_escaped *string
     // Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.
     year *int32
 }
@@ -26,8 +26,8 @@ func NewStandardTimeZoneOffset()(*StandardTimeZoneOffset) {
     m := &StandardTimeZoneOffset{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.standardTimeZoneOffset";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.standardTimeZoneOffset";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStandardTimeZoneOffsetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -110,6 +110,16 @@ func (m *StandardTimeZoneOffset) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["time"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeOnlyValue()
         if err != nil {
@@ -117,16 +127,6 @@ func (m *StandardTimeZoneOffset) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetTime(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
         }
         return nil
     }
@@ -150,20 +150,20 @@ func (m *StandardTimeZoneOffset) GetMonth()(*int32) {
         return m.month
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *StandardTimeZoneOffset) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTime gets the time property value. Represents the time of day when the transition from daylight saving time to standard time occurs.
 func (m *StandardTimeZoneOffset) GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     if m == nil {
         return nil
     } else {
         return m.time
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *StandardTimeZoneOffset) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetYear gets the year property value. Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.
@@ -196,13 +196,13 @@ func (m *StandardTimeZoneOffset) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err := writer.WriteTimeOnlyValue("time", m.GetTime())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteTimeOnlyValue("time", m.GetTime())
         if err != nil {
             return err
         }
@@ -245,16 +245,16 @@ func (m *StandardTimeZoneOffset) SetMonth(value *int32)() {
         m.month = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *StandardTimeZoneOffset) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetTime sets the time property value. Represents the time of day when the transition from daylight saving time to standard time occurs.
 func (m *StandardTimeZoneOffset) SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
     if m != nil {
         m.time = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *StandardTimeZoneOffset) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }
 // SetYear sets the year property value. Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.

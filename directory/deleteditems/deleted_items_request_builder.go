@@ -80,7 +80,7 @@ func NewDeletedItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DeletedItemsRequestBuilder) Count()(*id64a33d4a1456f0a7c3b2dc31e4984ae757e62be968137695545f0dd4f5be2c2.CountRequestBuilder) {
     return id64a33d4a1456f0a7c3b2dc31e4984ae757e62be968137695545f0dd4f5be2c2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

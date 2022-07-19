@@ -14,6 +14,8 @@ type SignInLocation struct {
     countryOrRegion *string
     // Provides the latitude, longitude and altitude where the sign-in originated.
     geoCoordinates GeoCoordinatesable
+    // The OdataType property
+    odataType *string
     // Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
     state *string
 }
@@ -22,6 +24,8 @@ func NewSignInLocation()(*SignInLocation) {
     m := &SignInLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.signInLocation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSignInLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +89,16 @@ func (m *SignInLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -103,6 +117,14 @@ func (m *SignInLocation) GetGeoCoordinates()(GeoCoordinatesable) {
         return nil
     } else {
         return m.geoCoordinates
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SignInLocation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetState gets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
@@ -129,6 +151,12 @@ func (m *SignInLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteObjectValue("geoCoordinates", m.GetGeoCoordinates())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *SignInLocation) SetCountryOrRegion(value *string)() {
 func (m *SignInLocation) SetGeoCoordinates(value GeoCoordinatesable)() {
     if m != nil {
         m.geoCoordinates = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SignInLocation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetState sets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.

@@ -12,12 +12,16 @@ type SizeRange struct {
     maximumSize *int32
     // The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
     minimumSize *int32
+    // The OdataType property
+    odataType *string
 }
 // NewSizeRange instantiates a new sizeRange and sets the default values.
 func NewSizeRange()(*SizeRange) {
     m := &SizeRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.sizeRange";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSizeRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *SizeRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMaximumSize gets the maximumSize property value. The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
@@ -73,6 +87,14 @@ func (m *SizeRange) GetMinimumSize()(*int32) {
         return m.minimumSize
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SizeRange) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *SizeRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -83,6 +105,12 @@ func (m *SizeRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err := writer.WriteInt32Value("minimumSize", m.GetMinimumSize())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *SizeRange) SetMaximumSize(value *int32)() {
 func (m *SizeRange) SetMinimumSize(value *int32)() {
     if m != nil {
         m.minimumSize = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SizeRange) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

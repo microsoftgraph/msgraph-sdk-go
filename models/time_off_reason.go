@@ -19,6 +19,8 @@ func NewTimeOffReason()(*TimeOffReason) {
     m := &TimeOffReason{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    odataTypeValue := "#microsoft.graph.timeOffReason";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeOffReasonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

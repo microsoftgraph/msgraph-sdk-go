@@ -14,12 +14,16 @@ type GeoCoordinates struct {
     latitude *float64
     // Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
     longitude *float64
+    // The OdataType property
+    odataType *string
 }
 // NewGeoCoordinates instantiates a new geoCoordinates and sets the default values.
 func NewGeoCoordinates()(*GeoCoordinates) {
     m := &GeoCoordinates{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.geoCoordinates";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGeoCoordinatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *GeoCoordinates) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLatitude gets the latitude property value. Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
@@ -93,6 +107,14 @@ func (m *GeoCoordinates) GetLongitude()(*float64) {
         return m.longitude
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GeoCoordinates) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *GeoCoordinates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *GeoCoordinates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteFloat64Value("longitude", m.GetLongitude())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *GeoCoordinates) SetLatitude(value *float64)() {
 func (m *GeoCoordinates) SetLongitude(value *float64)() {
     if m != nil {
         m.longitude = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GeoCoordinates) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

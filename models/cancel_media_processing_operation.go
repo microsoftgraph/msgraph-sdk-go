@@ -13,6 +13,8 @@ func NewCancelMediaProcessingOperation()(*CancelMediaProcessingOperation) {
     m := &CancelMediaProcessingOperation{
         CommsOperation: *NewCommsOperation(),
     }
+    odataTypeValue := "#microsoft.graph.cancelMediaProcessingOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCancelMediaProcessingOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

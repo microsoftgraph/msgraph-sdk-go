@@ -10,6 +10,8 @@ type BookingQuestionAssignment struct {
     additionalData map[string]interface{}
     // Indicates whether it is mandatory to answer the custom question.
     isRequired *bool
+    // The OdataType property
+    odataType *string
     // If it is mandatory to answer the custom question.
     questionId *string
 }
@@ -18,6 +20,8 @@ func NewBookingQuestionAssignment()(*BookingQuestionAssignment) {
     m := &BookingQuestionAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bookingQuestionAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingQuestionAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *BookingQuestionAssignment) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["questionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *BookingQuestionAssignment) GetIsRequired()(*bool) {
         return m.isRequired
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingQuestionAssignment) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetQuestionId gets the questionId property value. If it is mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) GetQuestionId()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *BookingQuestionAssignment) GetQuestionId()(*string) {
 func (m *BookingQuestionAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isRequired", m.GetIsRequired())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *BookingQuestionAssignment) SetAdditionalData(value map[string]interface
 func (m *BookingQuestionAssignment) SetIsRequired(value *bool)() {
     if m != nil {
         m.isRequired = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingQuestionAssignment) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQuestionId sets the questionId property value. If it is mandatory to answer the custom question.

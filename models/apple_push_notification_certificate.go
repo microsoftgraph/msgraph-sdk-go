@@ -26,6 +26,8 @@ func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
     m := &ApplePushNotificationCertificate{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.applePushNotificationCertificate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApplePushNotificationCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

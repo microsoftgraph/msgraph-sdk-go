@@ -17,6 +17,8 @@ func NewWorkbookWorksheetProtection()(*WorkbookWorksheetProtection) {
     m := &WorkbookWorksheetProtection{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookWorksheetProtection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookWorksheetProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

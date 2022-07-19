@@ -12,12 +12,16 @@ type LocaleInfo struct {
     displayName *string
     // A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
     locale *string
+    // The OdataType property
+    odataType *string
 }
 // NewLocaleInfo instantiates a new localeInfo and sets the default values.
 func NewLocaleInfo()(*LocaleInfo) {
     m := &LocaleInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.localeInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocaleInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *LocaleInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLocale gets the locale property value. A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
@@ -71,6 +85,14 @@ func (m *LocaleInfo) GetLocale()(*string) {
         return nil
     } else {
         return m.locale
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LocaleInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *LocaleInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err := writer.WriteStringValue("locale", m.GetLocale())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *LocaleInfo) SetDisplayName(value *string)() {
 func (m *LocaleInfo) SetLocale(value *string)() {
     if m != nil {
         m.locale = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LocaleInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

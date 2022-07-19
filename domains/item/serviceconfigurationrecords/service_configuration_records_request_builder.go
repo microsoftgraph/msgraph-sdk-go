@@ -70,7 +70,7 @@ func NewServiceConfigurationRecordsRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewServiceConfigurationRecordsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ServiceConfigurationRecordsRequestBuilder) Count()(*i682885697307cd8f90b5e51de9e845bc5694116c3fb9aa710be8abcd577ac370.CountRequestBuilder) {
     return i682885697307cd8f90b5e51de9e845bc5694116c3fb9aa710be8abcd577ac370.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -8,6 +8,8 @@ import (
 type FailureInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Classification of why a call or portion of a call failed.
     reason *string
     // The stage property
@@ -18,6 +20,8 @@ func NewFailureInfo()(*FailureInfo) {
     m := &FailureInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.callRecords.failureInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFailureInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *FailureInfo) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FailureInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -57,6 +71,14 @@ func (m *FailureInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *FailureInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetReason gets the reason property value. Classification of why a call or portion of a call failed.
 func (m *FailureInfo) GetReason()(*string) {
     if m == nil {
@@ -75,6 +97,12 @@ func (m *FailureInfo) GetStage()(*FailureStage) {
 }
 // Serialize serializes information the current object
 func (m *FailureInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("reason", m.GetReason())
         if err != nil {
@@ -100,6 +128,12 @@ func (m *FailureInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *FailureInfo) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *FailureInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReason sets the reason property value. Classification of why a call or portion of a call failed.

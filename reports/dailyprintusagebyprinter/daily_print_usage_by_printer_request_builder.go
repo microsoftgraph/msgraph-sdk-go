@@ -70,7 +70,7 @@ func NewDailyPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewDailyPrintUsageByPrinterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DailyPrintUsageByPrinterRequestBuilder) Count()(*i399cdcb69a2f283f44a11abf8f2d60df034d20b0c95dcd87273c567582e52f41.CountRequestBuilder) {
     return i399cdcb69a2f283f44a11abf8f2d60df034d20b0c95dcd87273c567582e52f41.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

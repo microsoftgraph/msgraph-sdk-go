@@ -13,6 +13,8 @@ func NewTargetApplicationOwners()(*TargetApplicationOwners) {
     m := &TargetApplicationOwners{
         SubjectSet: *NewSubjectSet(),
     }
+    odataTypeValue := "#microsoft.graph.targetApplicationOwners";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTargetApplicationOwnersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type ResourceReference struct {
     additionalData map[string]interface{}
     // The item's unique identifier.
     id *string
+    // The OdataType property
+    odataType *string
     // A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
     type_escaped *string
     // A URL leading to the referenced item.
@@ -20,6 +22,8 @@ func NewResourceReference()(*ResourceReference) {
     m := &ResourceReference{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.resourceReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResourceReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *ResourceReference) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *ResourceReference) GetId()(*string) {
         return m.id
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ResourceReference) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetType gets the type property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
 func (m *ResourceReference) GetType()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *ResourceReference) GetWebUrl()(*string) {
 func (m *ResourceReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *ResourceReference) SetAdditionalData(value map[string]interface{})() {
 func (m *ResourceReference) SetId(value *string)() {
     if m != nil {
         m.id = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ResourceReference) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'

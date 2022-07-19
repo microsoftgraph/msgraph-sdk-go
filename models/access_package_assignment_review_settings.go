@@ -20,6 +20,8 @@ type AccessPackageAssignmentReviewSettings struct {
     isReviewerJustificationRequired *bool
     // Specifies whether the principals can review their own assignments.
     isSelfReview *bool
+    // The OdataType property
+    odataType *string
     // This collection specifies the users or group of users who will review the access package assignments.
     primaryReviewers []SubjectSetable
     // When the first review should start and how often it should recur.
@@ -30,6 +32,8 @@ func NewAccessPackageAssignmentReviewSettings()(*AccessPackageAssignmentReviewSe
     m := &AccessPackageAssignmentReviewSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessPackageAssignmentReviewSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageAssignmentReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -127,6 +131,16 @@ func (m *AccessPackageAssignmentReviewSettings) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["primaryReviewers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSubjectSetFromDiscriminatorValue)
         if err != nil {
@@ -185,6 +199,14 @@ func (m *AccessPackageAssignmentReviewSettings) GetIsSelfReview()(*bool) {
         return m.isSelfReview
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentReviewSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPrimaryReviewers gets the primaryReviewers property value. This collection specifies the users or group of users who will review the access package assignments.
 func (m *AccessPackageAssignmentReviewSettings) GetPrimaryReviewers()([]SubjectSetable) {
     if m == nil {
@@ -240,6 +262,12 @@ func (m *AccessPackageAssignmentReviewSettings) Serialize(writer i878a80d2330e89
     }
     {
         err := writer.WriteBoolValue("isSelfReview", m.GetIsSelfReview())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -308,6 +336,12 @@ func (m *AccessPackageAssignmentReviewSettings) SetIsReviewerJustificationRequir
 func (m *AccessPackageAssignmentReviewSettings) SetIsSelfReview(value *bool)() {
     if m != nil {
         m.isSelfReview = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentReviewSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPrimaryReviewers sets the primaryReviewers property value. This collection specifies the users or group of users who will review the access package assignments.

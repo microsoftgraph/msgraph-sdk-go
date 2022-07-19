@@ -15,6 +15,8 @@ func NewTokenMeetingInfo()(*TokenMeetingInfo) {
     m := &TokenMeetingInfo{
         MeetingInfo: *NewMeetingInfo(),
     }
+    odataTypeValue := "#microsoft.graph.tokenMeetingInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTokenMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,7 +11,9 @@ type AlertDetectionable interface {
     GetDetectionType()(*string)
     GetMethod()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     SetDetectionType(value *string)()
     SetMethod(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
 }

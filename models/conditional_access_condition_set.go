@@ -18,6 +18,8 @@ type ConditionalAccessConditionSet struct {
     devices ConditionalAccessDevicesable
     // Locations included in and excluded from the policy.
     locations ConditionalAccessLocationsable
+    // The OdataType property
+    odataType *string
     // Platforms included in and excluded from the policy.
     platforms ConditionalAccessPlatformsable
     // Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
@@ -32,6 +34,8 @@ func NewConditionalAccessConditionSet()(*ConditionalAccessConditionSet) {
     m := &ConditionalAccessConditionSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.conditionalAccessConditionSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessConditionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -135,6 +139,16 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessPlatformsFromDiscriminatorValue)
         if err != nil {
@@ -191,6 +205,14 @@ func (m *ConditionalAccessConditionSet) GetLocations()(ConditionalAccessLocation
         return nil
     } else {
         return m.locations
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessConditionSet) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPlatforms gets the platforms property value. Platforms included in and excluded from the policy.
@@ -253,6 +275,12 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteObjectValue("locations", m.GetLocations())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -323,6 +351,12 @@ func (m *ConditionalAccessConditionSet) SetDevices(value ConditionalAccessDevice
 func (m *ConditionalAccessConditionSet) SetLocations(value ConditionalAccessLocationsable)() {
     if m != nil {
         m.locations = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessConditionSet) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPlatforms sets the platforms property value. Platforms included in and excluded from the policy.

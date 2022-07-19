@@ -9,12 +9,16 @@ type AppScope struct {
     Entity
     // Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.
     displayName *string
+    // Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+    type_escaped *string
 }
 // NewAppScope instantiates a new AppScope and sets the default values.
 func NewAppScope()(*AppScope) {
     m := &AppScope{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.appScope";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +46,25 @@ func (m *AppScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+func (m *AppScope) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *AppScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,11 +78,23 @@ func (m *AppScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.
 func (m *AppScope) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetType sets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+func (m *AppScope) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

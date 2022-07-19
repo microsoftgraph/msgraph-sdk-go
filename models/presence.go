@@ -17,6 +17,8 @@ func NewPresence()(*Presence) {
     m := &Presence{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.presence";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePresenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

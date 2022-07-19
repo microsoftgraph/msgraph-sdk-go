@@ -13,6 +13,8 @@ func NewAgreementFileVersion()(*AgreementFileVersion) {
     m := &AgreementFileVersion{
         AgreementFileProperties: *NewAgreementFileProperties(),
     }
+    odataTypeValue := "#microsoft.graph.agreementFileVersion";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAgreementFileVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,6 +12,8 @@ type SettingSource struct {
     displayName *string
     // Not yet documented
     id *string
+    // The OdataType property
+    odataType *string
     // The sourceType property
     sourceType *SettingSourceType
 }
@@ -20,6 +22,8 @@ func NewSettingSource()(*SettingSource) {
     m := &SettingSource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.settingSource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSettingSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *SettingSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSettingSourceType)
         if err != nil {
@@ -85,6 +99,14 @@ func (m *SettingSource) GetId()(*string) {
         return m.id
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SettingSource) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSourceType gets the sourceType property value. The sourceType property
 func (m *SettingSource) GetSourceType()(*SettingSourceType) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *SettingSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,6 +166,12 @@ func (m *SettingSource) SetDisplayName(value *string)() {
 func (m *SettingSource) SetId(value *string)() {
     if m != nil {
         m.id = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SettingSource) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSourceType sets the sourceType property value. The sourceType property

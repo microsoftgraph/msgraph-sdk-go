@@ -12,8 +12,10 @@ type RubricLevelable interface {
     GetDisplayName()(*string)
     GetGrading()(EducationAssignmentGradeTypeable)
     GetLevelId()(*string)
+    GetOdataType()(*string)
     SetDescription(value EducationItemBodyable)()
     SetDisplayName(value *string)()
     SetGrading(value EducationAssignmentGradeTypeable)()
     SetLevelId(value *string)()
+    SetOdataType(value *string)()
 }

@@ -55,7 +55,7 @@ func (m *DirectoryObjectItemRequestBuilder) Group()(*i83f7743adfd8c81de6ad254bb2
 func (m *DirectoryObjectItemRequestBuilder) OrgContact()(*i1597afe854aa773a29f976b59e316338efbe03c7e646ded0ae8fc8ceca5db37d.OrgContactRequestBuilder) {
     return i1597afe854aa773a29f976b59e316338efbe03c7e646ded0ae8fc8ceca5db37d.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *DirectoryObjectItemRequestBuilder) Ref()(*ibff336f36c3e7565bbfc28782a6891d97d35883a605a9647190505947733ea02.RefRequestBuilder) {
     return ibff336f36c3e7565bbfc28782a6891d97d35883a605a9647190505947733ea02.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

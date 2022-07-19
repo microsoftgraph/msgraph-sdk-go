@@ -17,6 +17,8 @@ func NewSingleUser()(*SingleUser) {
     m := &SingleUser{
         SubjectSet: *NewSubjectSet(),
     }
+    odataTypeValue := "#microsoft.graph.singleUser";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSingleUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

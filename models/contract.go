@@ -21,6 +21,8 @@ func NewContract()(*Contract) {
     m := &Contract{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.contract";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContractFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

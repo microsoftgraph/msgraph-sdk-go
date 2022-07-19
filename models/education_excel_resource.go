@@ -15,6 +15,8 @@ func NewEducationExcelResource()(*EducationExcelResource) {
     m := &EducationExcelResource{
         EducationResource: *NewEducationResource(),
     }
+    odataTypeValue := "#microsoft.graph.educationExcelResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationExcelResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

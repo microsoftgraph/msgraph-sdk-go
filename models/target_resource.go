@@ -16,6 +16,8 @@ type TargetResource struct {
     id *string
     // Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
     modifiedProperties []ModifiedPropertyable
+    // The OdataType property
+    odataType *string
     // Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
     type_escaped *string
     // When type is set to User, this includes the user name that initiated the action; null for other types.
@@ -26,6 +28,8 @@ func NewTargetResource()(*TargetResource) {
     m := &TargetResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.targetResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTargetResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +99,16 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -141,6 +155,14 @@ func (m *TargetResource) GetModifiedProperties()([]ModifiedPropertyable) {
         return m.modifiedProperties
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TargetResource) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetType gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
 func (m *TargetResource) GetType()(*string) {
     if m == nil {
@@ -184,6 +206,12 @@ func (m *TargetResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -236,6 +264,12 @@ func (m *TargetResource) SetId(value *string)() {
 func (m *TargetResource) SetModifiedProperties(value []ModifiedPropertyable)() {
     if m != nil {
         m.modifiedProperties = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TargetResource) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.

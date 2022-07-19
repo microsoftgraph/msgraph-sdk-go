@@ -27,6 +27,8 @@ func NewIosManagedAppProtection()(*IosManagedAppProtection) {
     m := &IosManagedAppProtection{
         TargetedManagedAppProtection: *NewTargetedManagedAppProtection(),
     }
+    odataTypeValue := "#microsoft.graph.iosManagedAppProtection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

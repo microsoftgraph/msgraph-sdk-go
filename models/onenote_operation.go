@@ -21,6 +21,8 @@ func NewOnenoteOperation()(*OnenoteOperation) {
     m := &OnenoteOperation{
         Operation: *NewOperation(),
     }
+    odataTypeValue := "#microsoft.graph.onenoteOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnenoteOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -30,6 +30,8 @@ type DeviceInfo struct {
     lowSpeechToNoiseEventRatio *float32
     // Glitches per 5 minute interval for the media endpoint's microphone.
     micGlitchRate *float32
+    // The OdataType property
+    odataType *string
     // Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
     receivedNoiseLevel *int32
     // Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
@@ -56,6 +58,8 @@ func NewDeviceInfo()(*DeviceInfo) {
     m := &DeviceInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.callRecords.deviceInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -231,6 +235,16 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["receivedNoiseLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -371,6 +385,14 @@ func (m *DeviceInfo) GetMicGlitchRate()(*float32) {
         return nil
     } else {
         return m.micGlitchRate
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetReceivedNoiseLevel gets the receivedNoiseLevel property value. Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
@@ -522,6 +544,12 @@ func (m *DeviceInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("receivedNoiseLevel", m.GetReceivedNoiseLevel())
         if err != nil {
             return err
@@ -659,6 +687,12 @@ func (m *DeviceInfo) SetLowSpeechToNoiseEventRatio(value *float32)() {
 func (m *DeviceInfo) SetMicGlitchRate(value *float32)() {
     if m != nil {
         m.micGlitchRate = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReceivedNoiseLevel sets the receivedNoiseLevel property value. Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.

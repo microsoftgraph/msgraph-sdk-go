@@ -12,6 +12,8 @@ type LocationConstraint struct {
     isRequired *bool
     // Constraint information for one or more locations that the client requests for the meeting.
     locations []LocationConstraintItemable
+    // The OdataType property
+    odataType *string
     // The client requests the service to suggest one or more meeting locations.
     suggestLocation *bool
 }
@@ -20,6 +22,8 @@ func NewLocationConstraint()(*LocationConstraint) {
     m := &LocationConstraint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.locationConstraint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocationConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +65,16 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["suggestLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -89,6 +103,14 @@ func (m *LocationConstraint) GetLocations()([]LocationConstraintItemable) {
         return m.locations
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LocationConstraint) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSuggestLocation gets the suggestLocation property value. The client requests the service to suggest one or more meeting locations.
 func (m *LocationConstraint) GetSuggestLocation()(*bool) {
     if m == nil {
@@ -111,6 +133,12 @@ func (m *LocationConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("locations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -145,6 +173,12 @@ func (m *LocationConstraint) SetIsRequired(value *bool)() {
 func (m *LocationConstraint) SetLocations(value []LocationConstraintItemable)() {
     if m != nil {
         m.locations = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LocationConstraint) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSuggestLocation sets the suggestLocation property value. The client requests the service to suggest one or more meeting locations.

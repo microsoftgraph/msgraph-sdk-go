@@ -30,12 +30,16 @@ type WorkbookWorksheetProtectionOptions struct {
     allowPivotTables *bool
     // Represents the worksheet protection option of allowing using sort feature.
     allowSort *bool
+    // The OdataType property
+    odataType *string
 }
 // NewWorkbookWorksheetProtectionOptions instantiates a new workbookWorksheetProtectionOptions and sets the default values.
 func NewWorkbookWorksheetProtectionOptions()(*WorkbookWorksheetProtectionOptions) {
     m := &WorkbookWorksheetProtectionOptions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.workbookWorksheetProtectionOptions";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookWorksheetProtectionOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -251,7 +255,25 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookWorksheetProtectionOptions) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *WorkbookWorksheetProtectionOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -317,6 +339,12 @@ func (m *WorkbookWorksheetProtectionOptions) Serialize(writer i878a80d2330e89d26
     }
     {
         err := writer.WriteBoolValue("allowSort", m.GetAllowSort())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -399,5 +427,11 @@ func (m *WorkbookWorksheetProtectionOptions) SetAllowPivotTables(value *bool)() 
 func (m *WorkbookWorksheetProtectionOptions) SetAllowSort(value *bool)() {
     if m != nil {
         m.allowSort = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookWorksheetProtectionOptions) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

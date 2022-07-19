@@ -12,6 +12,8 @@ type BitLockerRemovableDrivePolicy struct {
     blockCrossOrganizationWriteAccess *bool
     // Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
     encryptionMethod *BitLockerEncryptionMethod
+    // The OdataType property
+    odataType *string
     // Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.
     requireEncryptionForWriteAccess *bool
 }
@@ -20,6 +22,8 @@ func NewBitLockerRemovableDrivePolicy()(*BitLockerRemovableDrivePolicy) {
     m := &BitLockerRemovableDrivePolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bitLockerRemovableDrivePolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBitLockerRemovableDrivePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *BitLockerRemovableDrivePolicy) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["requireEncryptionForWriteAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -84,6 +98,14 @@ func (m *BitLockerRemovableDrivePolicy) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BitLockerRemovableDrivePolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRequireEncryptionForWriteAccess gets the requireEncryptionForWriteAccess property value. Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.
 func (m *BitLockerRemovableDrivePolicy) GetRequireEncryptionForWriteAccess()(*bool) {
@@ -104,6 +126,12 @@ func (m *BitLockerRemovableDrivePolicy) Serialize(writer i878a80d2330e89d2689638
     if m.GetEncryptionMethod() != nil {
         cast := (*m.GetEncryptionMethod()).String()
         err := writer.WriteStringValue("encryptionMethod", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,6 +166,12 @@ func (m *BitLockerRemovableDrivePolicy) SetBlockCrossOrganizationWriteAccess(val
 func (m *BitLockerRemovableDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
     if m != nil {
         m.encryptionMethod = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BitLockerRemovableDrivePolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRequireEncryptionForWriteAccess sets the requireEncryptionForWriteAccess property value. Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.

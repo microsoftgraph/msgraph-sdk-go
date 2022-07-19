@@ -8,6 +8,8 @@ import (
 type AccessReviewHistoryScheduleSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The recurrence property
     recurrence PatternedRecurrenceable
     // A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
@@ -18,6 +20,8 @@ func NewAccessReviewHistoryScheduleSettings()(*AccessReviewHistoryScheduleSettin
     m := &AccessReviewHistoryScheduleSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessReviewHistoryScheduleSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewHistoryScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *AccessReviewHistoryScheduleSettings) GetAdditionalData()(map[string]int
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewHistoryScheduleSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
@@ -57,6 +71,14 @@ func (m *AccessReviewHistoryScheduleSettings) GetFieldDeserializers()(map[string
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewHistoryScheduleSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecurrence gets the recurrence property value. The recurrence property
 func (m *AccessReviewHistoryScheduleSettings) GetRecurrence()(PatternedRecurrenceable) {
     if m == nil {
@@ -75,6 +97,12 @@ func (m *AccessReviewHistoryScheduleSettings) GetReportRange()(*string) {
 }
 // Serialize serializes information the current object
 func (m *AccessReviewHistoryScheduleSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("recurrence", m.GetRecurrence())
         if err != nil {
@@ -99,6 +127,12 @@ func (m *AccessReviewHistoryScheduleSettings) Serialize(writer i878a80d2330e89d2
 func (m *AccessReviewHistoryScheduleSettings) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewHistoryScheduleSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecurrence sets the recurrence property value. The recurrence property

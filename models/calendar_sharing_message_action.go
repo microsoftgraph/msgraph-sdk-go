@@ -14,12 +14,16 @@ type CalendarSharingMessageAction struct {
     additionalData map[string]interface{}
     // The importance property
     importance *CalendarSharingActionImportance
+    // The OdataType property
+    odataType *string
 }
 // NewCalendarSharingMessageAction instantiates a new calendarSharingMessageAction and sets the default values.
 func NewCalendarSharingMessageAction()(*CalendarSharingMessageAction) {
     m := &CalendarSharingMessageAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.calendarSharingMessageAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCalendarSharingMessageActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +87,16 @@ func (m *CalendarSharingMessageAction) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetImportance gets the importance property value. The importance property
@@ -91,6 +105,14 @@ func (m *CalendarSharingMessageAction) GetImportance()(*CalendarSharingActionImp
         return nil
     } else {
         return m.importance
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CalendarSharingMessageAction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -112,6 +134,12 @@ func (m *CalendarSharingMessageAction) Serialize(writer i878a80d2330e89d26896388
     if m.GetImportance() != nil {
         cast := (*m.GetImportance()).String()
         err := writer.WriteStringValue("importance", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -146,5 +174,11 @@ func (m *CalendarSharingMessageAction) SetAdditionalData(value map[string]interf
 func (m *CalendarSharingMessageAction) SetImportance(value *CalendarSharingActionImportance)() {
     if m != nil {
         m.importance = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CalendarSharingMessageAction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

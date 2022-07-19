@@ -14,6 +14,8 @@ type BookingSchedulingPolicy struct {
     maximumAdvance *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
     minimumLeadTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
+    // The OdataType property
+    odataType *string
     // True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
     sendConfirmationsToOwner *bool
     // Duration of each time slot, denoted in ISO 8601 format.
@@ -24,6 +26,8 @@ func NewBookingSchedulingPolicy()(*BookingSchedulingPolicy) {
     m := &BookingSchedulingPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bookingSchedulingPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingSchedulingPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +83,16 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sendConfirmationsToOwner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -117,6 +131,14 @@ func (m *BookingSchedulingPolicy) GetMinimumLeadTime()(*i878a80d2330e89d26896388
         return m.minimumLeadTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingSchedulingPolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSendConfirmationsToOwner gets the sendConfirmationsToOwner property value. True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
 func (m *BookingSchedulingPolicy) GetSendConfirmationsToOwner()(*bool) {
     if m == nil {
@@ -149,6 +171,12 @@ func (m *BookingSchedulingPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteISODurationValue("minimumLeadTime", m.GetMinimumLeadTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -195,6 +223,12 @@ func (m *BookingSchedulingPolicy) SetMaximumAdvance(value *i878a80d2330e89d26896
 func (m *BookingSchedulingPolicy) SetMinimumLeadTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     if m != nil {
         m.minimumLeadTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingSchedulingPolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSendConfirmationsToOwner sets the sendConfirmationsToOwner property value. True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.

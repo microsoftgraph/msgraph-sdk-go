@@ -13,6 +13,8 @@ type SubjectRightsRequestHistory struct {
     changedBy IdentitySetable
     // Data and time when the entity was changed.
     eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
     stage *SubjectRightsRequestStage
     // The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
@@ -25,6 +27,8 @@ func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     m := &SubjectRightsRequestHistory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.subjectRightsRequestHistory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +82,16 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSubjectRightsRequestStage)
         if err != nil {
@@ -109,6 +123,14 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SubjectRightsRequestHistory) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
@@ -144,6 +166,12 @@ func (m *SubjectRightsRequestHistory) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteTimeValue("eventDateTime", m.GetEventDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -192,6 +220,12 @@ func (m *SubjectRightsRequestHistory) SetChangedBy(value IdentitySetable)() {
 func (m *SubjectRightsRequestHistory) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.eventDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SubjectRightsRequestHistory) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStage sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.

@@ -14,6 +14,8 @@ type RubricQuality struct {
     description EducationItemBodyable
     // The name of this rubric quality.
     displayName *string
+    // The OdataType property
+    odataType *string
     // The ID of this resource.
     qualityId *string
     // If present, a numerical weight for this quality.  Weights must add up to 100.
@@ -24,6 +26,8 @@ func NewRubricQuality()(*RubricQuality) {
     m := &RubricQuality{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.rubricQuality";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRubricQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -99,6 +103,16 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["qualityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -120,6 +134,14 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RubricQuality) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetQualityId gets the qualityId property value. The ID of this resource.
 func (m *RubricQuality) GetQualityId()(*string) {
@@ -157,6 +179,12 @@ func (m *RubricQuality) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -203,6 +231,12 @@ func (m *RubricQuality) SetDescription(value EducationItemBodyable)() {
 func (m *RubricQuality) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RubricQuality) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQualityId sets the qualityId property value. The ID of this resource.

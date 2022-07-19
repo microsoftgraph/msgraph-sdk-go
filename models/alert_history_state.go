@@ -17,6 +17,8 @@ type AlertHistoryState struct {
     comments []string
     // Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
     feedback *AlertFeedback
+    // The OdataType property
+    odataType *string
     // Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
     status *AlertStatus
     // Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -29,6 +31,8 @@ func NewAlertHistoryState()(*AlertHistoryState) {
     m := &AlertHistoryState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.alertHistoryState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertHistoryStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -122,6 +126,16 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAlertStatus)
         if err != nil {
@@ -153,6 +167,14 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AlertHistoryState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStatus gets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
 func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
@@ -201,6 +223,12 @@ func (m *AlertHistoryState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetFeedback() != nil {
         cast := (*m.GetFeedback()).String()
         err := writer.WriteStringValue("feedback", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -260,6 +288,12 @@ func (m *AlertHistoryState) SetComments(value []string)() {
 func (m *AlertHistoryState) SetFeedback(value *AlertFeedback)() {
     if m != nil {
         m.feedback = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AlertHistoryState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStatus sets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.

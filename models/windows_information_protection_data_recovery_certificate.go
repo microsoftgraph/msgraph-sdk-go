@@ -15,6 +15,8 @@ type WindowsInformationProtectionDataRecoveryCertificate struct {
     description *string
     // Data recovery Certificate expiration datetime
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // Data recovery Certificate subject name
     subjectName *string
 }
@@ -23,6 +25,8 @@ func NewWindowsInformationProtectionDataRecoveryCertificate()(*WindowsInformatio
     m := &WindowsInformationProtectionDataRecoveryCertificate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionDataRecoveryCertificate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -94,6 +98,16 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetFieldDeserializ
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["subjectName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -105,6 +119,14 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetFieldDeserializ
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionDataRecoveryCertificate) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSubjectName gets the subjectName property value. Data recovery Certificate subject name
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetSubjectName()(*string) {
@@ -130,6 +152,12 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) Serialize(writer i
     }
     {
         err := writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -170,6 +198,12 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) SetDescription(val
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.expirationDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionDataRecoveryCertificate) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSubjectName sets the subjectName property value. Data recovery Certificate subject name

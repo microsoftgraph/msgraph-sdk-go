@@ -14,6 +14,7 @@ type WorkbookFilterCriteriaable interface {
     GetDynamicCriteria()(*string)
     GetFilterOn()(*string)
     GetIcon()(WorkbookIconable)
+    GetOdataType()(*string)
     GetOperator()(*string)
     GetValues()(Jsonable)
     SetColor(value *string)()
@@ -22,6 +23,7 @@ type WorkbookFilterCriteriaable interface {
     SetDynamicCriteria(value *string)()
     SetFilterOn(value *string)()
     SetIcon(value WorkbookIconable)()
+    SetOdataType(value *string)()
     SetOperator(value *string)()
     SetValues(value Jsonable)()
 }

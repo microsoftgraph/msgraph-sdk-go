@@ -14,12 +14,16 @@ type ServiceUpdateMessageViewpoint struct {
     isFavorited *bool
     // Indicates whether the user read the message.
     isRead *bool
+    // The OdataType property
+    odataType *string
 }
 // NewServiceUpdateMessageViewpoint instantiates a new serviceUpdateMessageViewpoint and sets the default values.
 func NewServiceUpdateMessageViewpoint()(*ServiceUpdateMessageViewpoint) {
     m := &ServiceUpdateMessageViewpoint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.serviceUpdateMessageViewpoint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceUpdateMessageViewpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *ServiceUpdateMessageViewpoint) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsArchived gets the isArchived property value. Indicates whether the user archived the message.
@@ -93,6 +107,14 @@ func (m *ServiceUpdateMessageViewpoint) GetIsRead()(*bool) {
         return m.isRead
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServiceUpdateMessageViewpoint) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ServiceUpdateMessageViewpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *ServiceUpdateMessageViewpoint) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteBoolValue("isRead", m.GetIsRead())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *ServiceUpdateMessageViewpoint) SetIsFavorited(value *bool)() {
 func (m *ServiceUpdateMessageViewpoint) SetIsRead(value *bool)() {
     if m != nil {
         m.isRead = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServiceUpdateMessageViewpoint) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

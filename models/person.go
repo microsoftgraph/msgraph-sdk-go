@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Person provides operations to manage the collection of agreement entities.
+// Person provides operations to manage the admin singleton.
 type Person struct {
     Entity
     // The person's birthday.
@@ -51,6 +51,8 @@ func NewPerson()(*Person) {
     m := &Person{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.person";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

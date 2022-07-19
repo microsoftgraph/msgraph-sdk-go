@@ -18,6 +18,8 @@ type EducationStudent struct {
     grade *string
     // Year the student is graduating from the school.
     graduationYear *string
+    // The OdataType property
+    odataType *string
     // Student Number.
     studentNumber *string
 }
@@ -26,6 +28,8 @@ func NewEducationStudent()(*EducationStudent) {
     m := &EducationStudent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.educationStudent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationStudentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -109,6 +113,16 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["studentNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -143,6 +157,14 @@ func (m *EducationStudent) GetGraduationYear()(*string) {
         return nil
     } else {
         return m.graduationYear
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationStudent) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetStudentNumber gets the studentNumber property value. Student Number.
@@ -182,6 +204,12 @@ func (m *EducationStudent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteStringValue("graduationYear", m.GetGraduationYear())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -234,6 +262,12 @@ func (m *EducationStudent) SetGrade(value *string)() {
 func (m *EducationStudent) SetGraduationYear(value *string)() {
     if m != nil {
         m.graduationYear = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationStudent) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStudentNumber sets the studentNumber property value. Student Number.

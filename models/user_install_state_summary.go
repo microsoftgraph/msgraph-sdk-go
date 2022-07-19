@@ -23,6 +23,8 @@ func NewUserInstallStateSummary()(*UserInstallStateSummary) {
     m := &UserInstallStateSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userInstallStateSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserInstallStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

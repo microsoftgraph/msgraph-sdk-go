@@ -71,7 +71,7 @@ func NewUserConsentRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewUserConsentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserConsentRequestsRequestBuilder) Count()(*ibc63443549586cced5c1863a1080453aab822df8477c6349aa941db7a915c6a2.CountRequestBuilder) {
     return ibc63443549586cced5c1863a1080453aab822df8477c6349aa941db7a915c6a2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

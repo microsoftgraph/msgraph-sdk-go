@@ -15,6 +15,8 @@ func NewParticipantJoiningNotification()(*ParticipantJoiningNotification) {
     m := &ParticipantJoiningNotification{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.participantJoiningNotification";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParticipantJoiningNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

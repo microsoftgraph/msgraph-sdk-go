@@ -12,12 +12,16 @@ type DateTimeColumn struct {
     displayAs *string
     // Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
     format *string
+    // The OdataType property
+    odataType *string
 }
 // NewDateTimeColumn instantiates a new dateTimeColumn and sets the default values.
 func NewDateTimeColumn()(*DateTimeColumn) {
     m := &DateTimeColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.dateTimeColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDateTimeColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFormat gets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
@@ -71,6 +85,14 @@ func (m *DateTimeColumn) GetFormat()(*string) {
         return nil
     } else {
         return m.format
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DateTimeColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *DateTimeColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("format", m.GetFormat())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *DateTimeColumn) SetDisplayAs(value *string)() {
 func (m *DateTimeColumn) SetFormat(value *string)() {
     if m != nil {
         m.format = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DateTimeColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

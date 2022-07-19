@@ -20,8 +20,8 @@ type Location struct {
     locationType *LocationType
     // Optional URI representing the location.
     locationUri *string
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
     // For internal use only.
     uniqueId *string
     // For internal use only.
@@ -32,8 +32,8 @@ func NewLocation()(*Location) {
     m := &Location{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.location";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.location";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -160,7 +160,7 @@ func (m *Location) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -210,12 +210,12 @@ func (m *Location) GetLocationUri()(*string) {
         return m.locationUri
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *Location) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Location) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // GetUniqueId gets the uniqueId property value. For internal use only.
@@ -274,7 +274,7 @@ func (m *Location) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -342,10 +342,10 @@ func (m *Location) SetLocationUri(value *string)() {
         m.locationUri = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *Location) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Location) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }
 // SetUniqueId sets the uniqueId property value. For internal use only.

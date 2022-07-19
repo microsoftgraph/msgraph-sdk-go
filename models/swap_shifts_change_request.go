@@ -15,6 +15,8 @@ func NewSwapShiftsChangeRequest()(*SwapShiftsChangeRequest) {
     m := &SwapShiftsChangeRequest{
         OfferShiftRequest: *NewOfferShiftRequest(),
     }
+    odataTypeValue := "#microsoft.graph.swapShiftsChangeRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSwapShiftsChangeRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

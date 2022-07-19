@@ -16,12 +16,16 @@ type ImageInfo struct {
     alternativeText *string
     // Optional; URI that points to an icon which represents the application used to generate the activity
     iconUrl *string
+    // The OdataType property
+    odataType *string
 }
 // NewImageInfo instantiates a new imageInfo and sets the default values.
 func NewImageInfo()(*ImageInfo) {
     m := &ImageInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.imageInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateImageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -103,6 +107,16 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIconUrl gets the iconUrl property value. Optional; URI that points to an icon which represents the application used to generate the activity
@@ -111,6 +125,14 @@ func (m *ImageInfo) GetIconUrl()(*string) {
         return nil
     } else {
         return m.iconUrl
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ImageInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -135,6 +157,12 @@ func (m *ImageInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err := writer.WriteStringValue("iconUrl", m.GetIconUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -175,5 +203,11 @@ func (m *ImageInfo) SetAlternativeText(value *string)() {
 func (m *ImageInfo) SetIconUrl(value *string)() {
     if m != nil {
         m.iconUrl = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ImageInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

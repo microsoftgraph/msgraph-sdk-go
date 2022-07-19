@@ -19,8 +19,8 @@ func NewShiftItem()(*ShiftItem) {
     m := &ShiftItem{
         ScheduleEntity: *NewScheduleEntity(),
     }
-    odatatypeValue := "#microsoft.graph.shiftItem";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.shiftItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateShiftItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

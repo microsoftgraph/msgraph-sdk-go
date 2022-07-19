@@ -15,6 +15,8 @@ func NewItemAttachment()(*ItemAttachment) {
     m := &ItemAttachment{
         Attachment: *NewAttachment(),
     }
+    odataTypeValue := "#microsoft.graph.itemAttachment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

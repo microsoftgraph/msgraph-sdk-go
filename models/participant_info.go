@@ -16,6 +16,8 @@ type ParticipantInfo struct {
     identity IdentitySetable
     // The language culture string. Read-only.
     languageId *string
+    // The OdataType property
+    odataType *string
     // The participant ID of the participant. Read-only.
     participantId *string
     // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
@@ -26,6 +28,8 @@ func NewParticipantInfo()(*ParticipantInfo) {
     m := &ParticipantInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.participantInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -99,6 +103,16 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["participantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -135,6 +149,14 @@ func (m *ParticipantInfo) GetLanguageId()(*string) {
         return nil
     } else {
         return m.languageId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ParticipantInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetParticipantId gets the participantId property value. The participant ID of the participant. Read-only.
@@ -176,6 +198,12 @@ func (m *ParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteStringValue("languageId", m.GetLanguageId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -228,6 +256,12 @@ func (m *ParticipantInfo) SetIdentity(value IdentitySetable)() {
 func (m *ParticipantInfo) SetLanguageId(value *string)() {
     if m != nil {
         m.languageId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ParticipantInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetParticipantId sets the participantId property value. The participant ID of the participant. Read-only.

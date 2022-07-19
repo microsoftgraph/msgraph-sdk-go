@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntityBaseModel provides operations to manage the collection of agreement entities.
+// OnenoteEntityBaseModel provides operations to manage the admin singleton.
 type OnenoteEntityBaseModel struct {
     Entity
     // The endpoint where you can get details about the page. Read-only.
@@ -15,8 +15,8 @@ func NewOnenoteEntityBaseModel()(*OnenoteEntityBaseModel) {
     m := &OnenoteEntityBaseModel{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.onenoteEntityBaseModel";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.onenoteEntityBaseModel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnenoteEntityBaseModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,10 +34,20 @@ func CreateOnenoteEntityBaseModelFromDiscriminatorValue(parseNode i878a80d2330e8
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.notebook":
+                        return NewNotebook(), nil
+                    case "#microsoft.graph.onenoteEntityHierarchyModel":
+                        return NewOnenoteEntityHierarchyModel(), nil
                     case "#microsoft.graph.onenoteEntitySchemaObjectModel":
                         return NewOnenoteEntitySchemaObjectModel(), nil
+                    case "#microsoft.graph.onenotePage":
+                        return NewOnenotePage(), nil
                     case "#microsoft.graph.onenoteResource":
                         return NewOnenoteResource(), nil
+                    case "#microsoft.graph.onenoteSection":
+                        return NewOnenoteSection(), nil
+                    case "#microsoft.graph.sectionGroup":
+                        return NewSectionGroup(), nil
                 }
             }
         }

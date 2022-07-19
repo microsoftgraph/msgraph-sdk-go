@@ -16,12 +16,16 @@ type RubricLevel struct {
     grading EducationAssignmentGradeTypeable
     // The ID of this resource.
     levelId *string
+    // The OdataType property
+    odataType *string
 }
 // NewRubricLevel instantiates a new rubricLevel and sets the default values.
 func NewRubricLevel()(*RubricLevel) {
     m := &RubricLevel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.rubricLevel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRubricLevelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +99,16 @@ func (m *RubricLevel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGrading gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
@@ -111,6 +125,14 @@ func (m *RubricLevel) GetLevelId()(*string) {
         return nil
     } else {
         return m.levelId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RubricLevel) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -135,6 +157,12 @@ func (m *RubricLevel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("levelId", m.GetLevelId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -175,5 +203,11 @@ func (m *RubricLevel) SetGrading(value EducationAssignmentGradeTypeable)() {
 func (m *RubricLevel) SetLevelId(value *string)() {
     if m != nil {
         m.levelId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RubricLevel) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

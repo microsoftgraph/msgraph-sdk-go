@@ -15,6 +15,8 @@ func NewAgreementFile()(*AgreementFile) {
     m := &AgreementFile{
         AgreementFileProperties: *NewAgreementFileProperties(),
     }
+    odataTypeValue := "#microsoft.graph.agreementFile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAgreementFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

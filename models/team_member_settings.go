@@ -20,12 +20,16 @@ type TeamMemberSettings struct {
     allowCreateUpdateRemoveTabs *bool
     // If set to true, members can delete channels.
     allowDeleteChannels *bool
+    // The OdataType property
+    odataType *string
 }
 // NewTeamMemberSettings instantiates a new teamMemberSettings and sets the default values.
 func NewTeamMemberSettings()(*TeamMemberSettings) {
     m := &TeamMemberSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamMemberSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamMemberSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -151,7 +155,25 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamMemberSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *TeamMemberSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -187,6 +209,12 @@ func (m *TeamMemberSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteBoolValue("allowDeleteChannels", m.GetAllowDeleteChannels())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -239,5 +267,11 @@ func (m *TeamMemberSettings) SetAllowCreateUpdateRemoveTabs(value *bool)() {
 func (m *TeamMemberSettings) SetAllowDeleteChannels(value *bool)() {
     if m != nil {
         m.allowDeleteChannels = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamMemberSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

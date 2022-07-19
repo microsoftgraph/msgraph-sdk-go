@@ -17,6 +17,8 @@ func NewPrinterCreateOperation()(*PrinterCreateOperation) {
     m := &PrinterCreateOperation{
         PrintOperation: *NewPrintOperation(),
     }
+    odataTypeValue := "#microsoft.graph.printerCreateOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterCreateOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

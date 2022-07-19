@@ -15,6 +15,8 @@ func NewApproval()(*Approval) {
     m := &Approval{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.approval";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApprovalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

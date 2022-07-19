@@ -13,6 +13,8 @@ func NewStopHoldMusicOperation()(*StopHoldMusicOperation) {
     m := &StopHoldMusicOperation{
         CommsOperation: *NewCommsOperation(),
     }
+    odataTypeValue := "#microsoft.graph.stopHoldMusicOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStopHoldMusicOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

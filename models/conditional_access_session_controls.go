@@ -14,6 +14,8 @@ type ConditionalAccessSessionControls struct {
     cloudAppSecurity CloudAppSecuritySessionControlable
     // Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
     disableResilienceDefaults *bool
+    // The OdataType property
+    odataType *string
     // Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
     persistentBrowser PersistentBrowserSessionControlable
     // Session control to enforce signin frequency.
@@ -24,6 +26,8 @@ func NewConditionalAccessSessionControls()(*ConditionalAccessSessionControls) {
     m := &ConditionalAccessSessionControls{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.conditionalAccessSessionControls";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessSessionControlsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +99,16 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["persistentBrowser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePersistentBrowserSessionControlFromDiscriminatorValue)
         if err != nil {
@@ -116,6 +130,14 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessSessionControls) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPersistentBrowser gets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
 func (m *ConditionalAccessSessionControls) GetPersistentBrowser()(PersistentBrowserSessionControlable) {
@@ -149,6 +171,12 @@ func (m *ConditionalAccessSessionControls) Serialize(writer i878a80d2330e89d2689
     }
     {
         err := writer.WriteBoolValue("disableResilienceDefaults", m.GetDisableResilienceDefaults())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -195,6 +223,12 @@ func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value CloudAppSec
 func (m *ConditionalAccessSessionControls) SetDisableResilienceDefaults(value *bool)() {
     if m != nil {
         m.disableResilienceDefaults = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessSessionControls) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPersistentBrowser sets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.

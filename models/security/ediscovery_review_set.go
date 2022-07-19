@@ -15,6 +15,8 @@ func NewEdiscoveryReviewSet()(*EdiscoveryReviewSet) {
     m := &EdiscoveryReviewSet{
         DataSet: *NewDataSet(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryReviewSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryReviewSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

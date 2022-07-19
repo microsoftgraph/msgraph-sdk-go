@@ -12,8 +12,10 @@ type NumberColumnable interface {
     GetDisplayAs()(*string)
     GetMaximum()(*float64)
     GetMinimum()(*float64)
+    GetOdataType()(*string)
     SetDecimalPlaces(value *string)()
     SetDisplayAs(value *string)()
     SetMaximum(value *float64)()
     SetMinimum(value *float64)()
+    SetOdataType(value *string)()
 }

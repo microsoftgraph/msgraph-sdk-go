@@ -17,6 +17,8 @@ func NewAttendee()(*Attendee) {
     m := &Attendee{
         AttendeeBase: *NewAttendeeBase(),
     }
+    odataTypeValue := "#microsoft.graph.attendee";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttendeeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

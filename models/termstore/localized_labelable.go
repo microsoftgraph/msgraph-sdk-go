@@ -11,7 +11,9 @@ type LocalizedLabelable interface {
     GetIsDefault()(*bool)
     GetLanguageTag()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     SetIsDefault(value *bool)()
     SetLanguageTag(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
 }

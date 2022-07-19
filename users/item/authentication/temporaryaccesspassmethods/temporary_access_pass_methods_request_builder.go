@@ -70,7 +70,7 @@ func NewTemporaryAccessPassMethodsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewTemporaryAccessPassMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TemporaryAccessPassMethodsRequestBuilder) Count()(*ic3f136e76f502c415644f95a8addcccecab01ee1053bca01de971d5a91b103e0.CountRequestBuilder) {
     return ic3f136e76f502c415644f95a8addcccecab01ee1053bca01de971d5a91b103e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

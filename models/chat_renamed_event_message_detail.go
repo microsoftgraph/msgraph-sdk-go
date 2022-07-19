@@ -19,6 +19,8 @@ func NewChatRenamedEventMessageDetail()(*ChatRenamedEventMessageDetail) {
     m := &ChatRenamedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
+    odataTypeValue := "#microsoft.graph.chatRenamedEventMessageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatRenamedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

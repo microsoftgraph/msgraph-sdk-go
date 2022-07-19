@@ -17,6 +17,8 @@ type LicenseAssignmentState struct {
     error *string
     // The timestamp when the state of the license assignment was last updated.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The unique identifier for the SKU. Read-Only.
     skuId *string
     // Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
@@ -27,6 +29,8 @@ func NewLicenseAssignmentState()(*LicenseAssignmentState) {
     m := &LicenseAssignmentState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.licenseAssignmentState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLicenseAssignmentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -112,6 +116,16 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["skuId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -140,6 +154,14 @@ func (m *LicenseAssignmentState) GetLastUpdatedDateTime()(*i336074805fc853987abe
         return nil
     } else {
         return m.lastUpdatedDateTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LicenseAssignmentState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSkuId gets the skuId property value. The unique identifier for the SKU. Read-Only.
@@ -180,6 +202,12 @@ func (m *LicenseAssignmentState) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -232,6 +260,12 @@ func (m *LicenseAssignmentState) SetError(value *string)() {
 func (m *LicenseAssignmentState) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastUpdatedDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LicenseAssignmentState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSkuId sets the skuId property value. The unique identifier for the SKU. Read-Only.

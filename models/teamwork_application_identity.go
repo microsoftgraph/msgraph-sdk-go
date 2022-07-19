@@ -15,6 +15,8 @@ func NewTeamworkApplicationIdentity()(*TeamworkApplicationIdentity) {
     m := &TeamworkApplicationIdentity{
         Identity: *NewIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.teamworkApplicationIdentity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkApplicationIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
