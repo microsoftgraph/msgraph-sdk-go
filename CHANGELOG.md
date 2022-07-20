@@ -11,13 +11,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-## [0.30.0] - 2022-06-13
+## [0.31.0] - 2022-07-20
+
+### Changed
+
+- Weekly generation
+
+## [0.30.0] - 2022-07-13
 
 ### Changed
 
 - Fixed an issue where the odata type property would not serialize properly and make most POST/PUT/PATCH operations fail.
 
-## [0.29.0] - 2022-06-12
+## [0.29.0] - 2022-07-12
 
 ### Changed
 
