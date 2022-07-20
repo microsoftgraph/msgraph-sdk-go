@@ -10,6 +10,8 @@ type ChatInfo struct {
     additionalData map[string]interface{}
     // The unique identifier for a message in a Microsoft Teams channel.
     messageId *string
+    // The OdataType property
+    odataType *string
     // The ID of the reply message.
     replyChainMessageId *string
     // The unique identifier for a thread in Microsoft Teams.
@@ -20,6 +22,8 @@ func NewChatInfo()(*ChatInfo) {
     m := &ChatInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.chatInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *ChatInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetMessageId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *ChatInfo) GetMessageId()(*string) {
         return m.messageId
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChatInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetReplyChainMessageId gets the replyChainMessageId property value. The ID of the reply message.
 func (m *ChatInfo) GetReplyChainMessageId()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *ChatInfo) GetThreadId()(*string) {
 func (m *ChatInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("messageId", m.GetMessageId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *ChatInfo) SetAdditionalData(value map[string]interface{})() {
 func (m *ChatInfo) SetMessageId(value *string)() {
     if m != nil {
         m.messageId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChatInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReplyChainMessageId sets the replyChainMessageId property value. The ID of the reply message.

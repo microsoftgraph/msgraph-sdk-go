@@ -10,6 +10,8 @@ type Acl struct {
     accessType *AccessType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The type property
     type_escaped *AclType
     // The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
@@ -20,6 +22,8 @@ func NewAcl()(*Acl) {
     m := &Acl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.externalConnectors.acl";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAclFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAclType)
         if err != nil {
@@ -77,6 +91,14 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Acl) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetType gets the type property value. The type property
 func (m *Acl) GetType()(*AclType) {
     if m == nil {
@@ -98,6 +120,12 @@ func (m *Acl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     if m.GetAccessType() != nil {
         cast := (*m.GetAccessType()).String()
         err := writer.WriteStringValue("accessType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -133,6 +161,12 @@ func (m *Acl) SetAccessType(value *AccessType)() {
 func (m *Acl) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Acl) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. The type property

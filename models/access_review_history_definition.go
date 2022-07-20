@@ -34,6 +34,8 @@ func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
     m := &AccessReviewHistoryDefinition{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.accessReviewHistoryDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewHistoryDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

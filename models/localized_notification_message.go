@@ -24,6 +24,8 @@ func NewLocalizedNotificationMessage()(*LocalizedNotificationMessage) {
     m := &LocalizedNotificationMessage{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.localizedNotificationMessage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocalizedNotificationMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

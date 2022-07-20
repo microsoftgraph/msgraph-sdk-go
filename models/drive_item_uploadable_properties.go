@@ -16,12 +16,16 @@ type DriveItemUploadableProperties struct {
     fileSystemInfo FileSystemInfoable
     // The name of the item (filename and extension). Read-write.
     name *string
+    // The OdataType property
+    odataType *string
 }
 // NewDriveItemUploadableProperties instantiates a new driveItemUploadableProperties and sets the default values.
 func NewDriveItemUploadableProperties()(*DriveItemUploadableProperties) {
     m := &DriveItemUploadableProperties{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.driveItemUploadableProperties";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDriveItemUploadablePropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFileSize gets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
@@ -113,6 +127,14 @@ func (m *DriveItemUploadableProperties) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DriveItemUploadableProperties) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *DriveItemUploadableProperties) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -135,6 +157,12 @@ func (m *DriveItemUploadableProperties) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -175,5 +203,11 @@ func (m *DriveItemUploadableProperties) SetFileSystemInfo(value FileSystemInfoab
 func (m *DriveItemUploadableProperties) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DriveItemUploadableProperties) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

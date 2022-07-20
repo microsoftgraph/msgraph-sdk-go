@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SectionGroup provides operations to manage the collection of agreement entities.
+// SectionGroup provides operations to manage the admin singleton.
 type SectionGroup struct {
     OnenoteEntityHierarchyModel
     // The notebook that contains the section group. Read-only.
@@ -25,6 +25,8 @@ func NewSectionGroup()(*SectionGroup) {
     m := &SectionGroup{
         OnenoteEntityHierarchyModel: *NewOnenoteEntityHierarchyModel(),
     }
+    odataTypeValue := "#microsoft.graph.sectionGroup";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSectionGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,7 +11,9 @@ type SignInStatusable interface {
     GetAdditionalDetails()(*string)
     GetErrorCode()(*int32)
     GetFailureReason()(*string)
+    GetOdataType()(*string)
     SetAdditionalDetails(value *string)()
     SetErrorCode(value *int32)()
     SetFailureReason(value *string)()
+    SetOdataType(value *string)()
 }

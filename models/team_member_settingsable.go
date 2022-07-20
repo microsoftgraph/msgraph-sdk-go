@@ -14,10 +14,12 @@ type TeamMemberSettingsable interface {
     GetAllowCreateUpdateRemoveConnectors()(*bool)
     GetAllowCreateUpdateRemoveTabs()(*bool)
     GetAllowDeleteChannels()(*bool)
+    GetOdataType()(*string)
     SetAllowAddRemoveApps(value *bool)()
     SetAllowCreatePrivateChannels(value *bool)()
     SetAllowCreateUpdateChannels(value *bool)()
     SetAllowCreateUpdateRemoveConnectors(value *bool)()
     SetAllowCreateUpdateRemoveTabs(value *bool)()
     SetAllowDeleteChannels(value *bool)()
+    SetOdataType(value *string)()
 }

@@ -68,7 +68,7 @@ func NewTimesOffRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewTimesOffRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TimesOffRequestBuilder) Count()(*i163c45e5e44ec774eb89598d3a6a073b3db87ac1da11e04a0f54fc9483699220.CountRequestBuilder) {
     return i163c45e5e44ec774eb89598d3a6a073b3db87ac1da11e04a0f54fc9483699220.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

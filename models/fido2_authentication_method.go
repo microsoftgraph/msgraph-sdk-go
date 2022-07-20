@@ -26,6 +26,8 @@ func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
     m := &Fido2AuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
+    odataTypeValue := "#microsoft.graph.fido2AuthenticationMethod";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFido2AuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

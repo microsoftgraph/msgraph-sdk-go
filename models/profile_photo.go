@@ -17,6 +17,8 @@ func NewProfilePhoto()(*ProfilePhoto) {
     m := &ProfilePhoto{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.profilePhoto";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProfilePhotoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,12 +12,16 @@ type ConditionalAccessClientApplications struct {
     excludeServicePrincipals []string
     // Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
     includeServicePrincipals []string
+    // The OdataType property
+    odataType *string
 }
 // NewConditionalAccessClientApplications instantiates a new conditionalAccessClientApplications and sets the default values.
 func NewConditionalAccessClientApplications()(*ConditionalAccessClientApplications) {
     m := &ConditionalAccessClientApplications{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.conditionalAccessClientApplications";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessClientApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +75,16 @@ func (m *ConditionalAccessClientApplications) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeServicePrincipals gets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
@@ -79,6 +93,14 @@ func (m *ConditionalAccessClientApplications) GetIncludeServicePrincipals()([]st
         return nil
     } else {
         return m.includeServicePrincipals
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessClientApplications) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -91,6 +113,12 @@ func (m *ConditionalAccessClientApplications) Serialize(writer i878a80d2330e89d2
     }
     if m.GetIncludeServicePrincipals() != nil {
         err := writer.WriteCollectionOfStringValues("includeServicePrincipals", m.GetIncludeServicePrincipals())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -119,5 +147,11 @@ func (m *ConditionalAccessClientApplications) SetExcludeServicePrincipals(value 
 func (m *ConditionalAccessClientApplications) SetIncludeServicePrincipals(value []string)() {
     if m != nil {
         m.includeServicePrincipals = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessClientApplications) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

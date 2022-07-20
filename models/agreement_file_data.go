@@ -10,12 +10,16 @@ type AgreementFileData struct {
     additionalData map[string]interface{}
     // Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path 'your_file_path' -Encoding byte)).
     data []byte
+    // The OdataType property
+    odataType *string
 }
 // NewAgreementFileData instantiates a new agreementFileData and sets the default values.
 func NewAgreementFileData()(*AgreementFileData) {
     m := &AgreementFileData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.agreementFileData";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAgreementFileDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,12 +55,36 @@ func (m *AgreementFileData) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AgreementFileData) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *AgreementFileData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteByteArrayValue("data", m.GetData())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *AgreementFileData) SetAdditionalData(value map[string]interface{})() {
 func (m *AgreementFileData) SetData(value []byte)() {
     if m != nil {
         m.data = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AgreementFileData) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

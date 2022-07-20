@@ -12,6 +12,8 @@ type OptionalClaims struct {
     additionalData map[string]interface{}
     // The optional claims returned in the JWT ID token.
     idToken []OptionalClaimable
+    // The OdataType property
+    odataType *string
     // The optional claims returned in the SAML token.
     saml2Token []OptionalClaimable
 }
@@ -20,6 +22,8 @@ func NewOptionalClaims()(*OptionalClaims) {
     m := &OptionalClaims{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.optionalClaims";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOptionalClaimsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["saml2Token"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOptionalClaimFromDiscriminatorValue)
         if err != nil {
@@ -95,6 +109,14 @@ func (m *OptionalClaims) GetIdToken()([]OptionalClaimable) {
         return nil
     } else {
         return m.idToken
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OptionalClaims) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSaml2Token gets the saml2Token property value. The optional claims returned in the SAML token.
@@ -123,6 +145,12 @@ func (m *OptionalClaims) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("idToken", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -161,6 +189,12 @@ func (m *OptionalClaims) SetAdditionalData(value map[string]interface{})() {
 func (m *OptionalClaims) SetIdToken(value []OptionalClaimable)() {
     if m != nil {
         m.idToken = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OptionalClaims) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSaml2Token sets the saml2Token property value. The optional claims returned in the SAML token.

@@ -11,7 +11,9 @@ type ColumnValidationable interface {
     GetDefaultLanguage()(*string)
     GetDescriptions()([]DisplayNameLocalizationable)
     GetFormula()(*string)
+    GetOdataType()(*string)
     SetDefaultLanguage(value *string)()
     SetDescriptions(value []DisplayNameLocalizationable)()
     SetFormula(value *string)()
+    SetOdataType(value *string)()
 }

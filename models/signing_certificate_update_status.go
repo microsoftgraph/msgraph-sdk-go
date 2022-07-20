@@ -13,12 +13,16 @@ type SigningCertificateUpdateStatus struct {
     certificateUpdateResult *string
     // Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
     lastRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewSigningCertificateUpdateStatus instantiates a new signingCertificateUpdateStatus and sets the default values.
 func NewSigningCertificateUpdateStatus()(*SigningCertificateUpdateStatus) {
     m := &SigningCertificateUpdateStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.signingCertificateUpdateStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSigningCertificateUpdateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +68,16 @@ func (m *SigningCertificateUpdateStatus) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastRunDateTime gets the lastRunDateTime property value. Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
@@ -72,6 +86,14 @@ func (m *SigningCertificateUpdateStatus) GetLastRunDateTime()(*i336074805fc85398
         return nil
     } else {
         return m.lastRunDateTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SigningCertificateUpdateStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -84,6 +106,12 @@ func (m *SigningCertificateUpdateStatus) Serialize(writer i878a80d2330e89d268963
     }
     {
         err := writer.WriteTimeValue("lastRunDateTime", m.GetLastRunDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -112,5 +140,11 @@ func (m *SigningCertificateUpdateStatus) SetCertificateUpdateResult(value *strin
 func (m *SigningCertificateUpdateStatus) SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastRunDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SigningCertificateUpdateStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

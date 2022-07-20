@@ -10,16 +10,16 @@ type IosHomeScreenItem struct {
     additionalData map[string]interface{}
     // Name of the app
     displayName *string
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewIosHomeScreenItem instantiates a new iosHomeScreenItem and sets the default values.
 func NewIosHomeScreenItem()(*IosHomeScreenItem) {
     m := &IosHomeScreenItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.iosHomeScreenItem";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.iosHomeScreenItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosHomeScreenItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -82,18 +82,18 @@ func (m *IosHomeScreenItem) GetFieldDeserializers()(map[string]func(i878a80d2330
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *IosHomeScreenItem) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosHomeScreenItem) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -105,7 +105,7 @@ func (m *IosHomeScreenItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -130,9 +130,9 @@ func (m *IosHomeScreenItem) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *IosHomeScreenItem) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosHomeScreenItem) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

@@ -20,6 +20,8 @@ type CrossTenantAccessPolicyConfigurationPartner struct {
     inboundTrust CrossTenantAccessPolicyInboundTrustable
     // Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
     isServiceProvider *bool
+    // The OdataType property
+    odataType *string
     // The tenant identifier for the partner Azure AD organization. Read-only. Key.
     tenantId *string
 }
@@ -28,6 +30,8 @@ func NewCrossTenantAccessPolicyConfigurationPartner()(*CrossTenantAccessPolicyCo
     m := &CrossTenantAccessPolicyConfigurationPartner{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyConfigurationPartner";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -137,6 +141,16 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -163,6 +177,14 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsServiceProvider()(*bo
         return nil
     } else {
         return m.isServiceProvider
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetTenantId gets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
@@ -207,6 +229,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
     }
     {
         err := writer.WriteBoolValue("isServiceProvider", m.GetIsServiceProvider())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -265,6 +293,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetInboundTrust(value Cros
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsServiceProvider(value *bool)() {
     if m != nil {
         m.isServiceProvider = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTenantId sets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.

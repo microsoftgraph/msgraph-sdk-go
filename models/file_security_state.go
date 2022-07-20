@@ -12,6 +12,8 @@ type FileSecurityState struct {
     fileHash FileHashable
     // File name (without path).
     name *string
+    // The OdataType property
+    odataType *string
     // Full file path of the file/imageFile.
     path *string
     // Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
@@ -22,6 +24,8 @@ func NewFileSecurityState()(*FileSecurityState) {
     m := &FileSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.fileSecurityState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +60,16 @@ func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -97,6 +111,14 @@ func (m *FileSecurityState) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *FileSecurityState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPath gets the path property value. Full file path of the file/imageFile.
 func (m *FileSecurityState) GetPath()(*string) {
     if m == nil {
@@ -123,6 +145,12 @@ func (m *FileSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -163,6 +191,12 @@ func (m *FileSecurityState) SetFileHash(value FileHashable)() {
 func (m *FileSecurityState) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *FileSecurityState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPath sets the path property value. Full file path of the file/imageFile.

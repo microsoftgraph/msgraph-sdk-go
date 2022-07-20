@@ -23,6 +23,8 @@ func NewExtensionProperty()(*ExtensionProperty) {
     m := &ExtensionProperty{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.extensionProperty";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExtensionPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

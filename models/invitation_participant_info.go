@@ -12,6 +12,8 @@ type InvitationParticipantInfo struct {
     hidden *bool
     // The identity property
     identity IdentitySetable
+    // The OdataType property
+    odataType *string
     // Optional. The ID of the target participant.
     participantId *string
     // The removeFromDefaultAudioRoutingGroup property
@@ -24,6 +26,8 @@ func NewInvitationParticipantInfo()(*InvitationParticipantInfo) {
     m := &InvitationParticipantInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.invitationParticipantInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInvitationParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +62,16 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetIdentity(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -109,6 +123,14 @@ func (m *InvitationParticipantInfo) GetIdentity()(IdentitySetable) {
         return m.identity
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InvitationParticipantInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetParticipantId gets the participantId property value. Optional. The ID of the target participant.
 func (m *InvitationParticipantInfo) GetParticipantId()(*string) {
     if m == nil {
@@ -143,6 +165,12 @@ func (m *InvitationParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteObjectValue("identity", m.GetIdentity())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -189,6 +217,12 @@ func (m *InvitationParticipantInfo) SetHidden(value *bool)() {
 func (m *InvitationParticipantInfo) SetIdentity(value IdentitySetable)() {
     if m != nil {
         m.identity = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InvitationParticipantInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetParticipantId sets the participantId property value. Optional. The ID of the target participant.

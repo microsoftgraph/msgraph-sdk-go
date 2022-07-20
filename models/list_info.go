@@ -12,6 +12,8 @@ type ListInfo struct {
     contentTypesEnabled *bool
     // If true, indicates that the list is not normally visible in the SharePoint user experience.
     hidden *bool
+    // The OdataType property
+    odataType *string
     // An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
     template *string
 }
@@ -20,6 +22,8 @@ func NewListInfo()(*ListInfo) {
     m := &ListInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.listInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateListInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["template"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *ListInfo) GetHidden()(*bool) {
         return m.hidden
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ListInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTemplate gets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
 func (m *ListInfo) GetTemplate()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *ListInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err := writer.WriteBoolValue("hidden", m.GetHidden())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *ListInfo) SetContentTypesEnabled(value *bool)() {
 func (m *ListInfo) SetHidden(value *bool)() {
     if m != nil {
         m.hidden = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ListInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTemplate sets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.

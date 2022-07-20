@@ -18,12 +18,16 @@ type ApprovalSettings struct {
     isApprovalRequiredForExtension *bool
     // Indicates whether the requestor is required to supply a justification in their request.
     isRequestorJustificationRequired *bool
+    // The OdataType property
+    odataType *string
 }
 // NewApprovalSettings instantiates a new approvalSettings and sets the default values.
 func NewApprovalSettings()(*ApprovalSettings) {
     m := &ApprovalSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.approvalSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApprovalSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,6 +115,16 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsApprovalRequired gets the isApprovalRequired property value. Indicates whether approval is required for requests in this policy.
@@ -135,6 +149,14 @@ func (m *ApprovalSettings) GetIsRequestorJustificationRequired()(*bool) {
         return nil
     } else {
         return m.isRequestorJustificationRequired
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ApprovalSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -169,6 +191,12 @@ func (m *ApprovalSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteBoolValue("isRequestorJustificationRequired", m.GetIsRequestorJustificationRequired())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -215,5 +243,11 @@ func (m *ApprovalSettings) SetIsApprovalRequiredForExtension(value *bool)() {
 func (m *ApprovalSettings) SetIsRequestorJustificationRequired(value *bool)() {
     if m != nil {
         m.isRequestorJustificationRequired = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ApprovalSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

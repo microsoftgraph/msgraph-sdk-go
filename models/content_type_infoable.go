@@ -10,6 +10,8 @@ type ContentTypeInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetId()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     SetId(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
 }

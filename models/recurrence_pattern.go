@@ -20,6 +20,8 @@ type RecurrencePattern struct {
     interval *int32
     // The month in which the event occurs.  This is a number from 1 to 12.
     month *int32
+    // The OdataType property
+    odataType *string
     // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
     type_escaped *RecurrencePatternType
 }
@@ -28,6 +30,8 @@ func NewRecurrencePattern()(*RecurrencePattern) {
     m := &RecurrencePattern{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.recurrencePattern";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecurrencePatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -125,6 +129,16 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecurrencePatternType)
         if err != nil {
@@ -167,6 +181,14 @@ func (m *RecurrencePattern) GetMonth()(*int32) {
         return nil
     } else {
         return m.month
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RecurrencePattern) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetType gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
@@ -213,6 +235,12 @@ func (m *RecurrencePattern) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteInt32Value("month", m.GetMonth())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -272,6 +300,12 @@ func (m *RecurrencePattern) SetInterval(value *int32)() {
 func (m *RecurrencePattern) SetMonth(value *int32)() {
     if m != nil {
         m.month = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RecurrencePattern) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.

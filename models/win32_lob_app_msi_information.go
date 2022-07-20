@@ -8,6 +8,8 @@ import (
 type Win32LobAppMsiInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Indicates the package type of an MSI Win32LobApp.
     packageType *Win32LobAppMsiPackageType
     // The MSI product code.
@@ -28,6 +30,8 @@ func NewWin32LobAppMsiInformation()(*Win32LobAppMsiInformation) {
     m := &Win32LobAppMsiInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.win32LobAppMsiInformation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppMsiInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *Win32LobAppMsiInformation) GetAdditionalData()(map[string]interface{}) 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppMsiInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["packageType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWin32LobAppMsiPackageType)
         if err != nil {
@@ -117,6 +131,14 @@ func (m *Win32LobAppMsiInformation) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Win32LobAppMsiInformation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPackageType gets the packageType property value. Indicates the package type of an MSI Win32LobApp.
 func (m *Win32LobAppMsiInformation) GetPackageType()(*Win32LobAppMsiPackageType) {
     if m == nil {
@@ -175,6 +197,12 @@ func (m *Win32LobAppMsiInformation) GetUpgradeCode()(*string) {
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppMsiInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPackageType() != nil {
         cast := (*m.GetPackageType()).String()
         err := writer.WriteStringValue("packageType", &cast)
@@ -230,6 +258,12 @@ func (m *Win32LobAppMsiInformation) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *Win32LobAppMsiInformation) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Win32LobAppMsiInformation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPackageType sets the packageType property value. Indicates the package type of an MSI Win32LobApp.

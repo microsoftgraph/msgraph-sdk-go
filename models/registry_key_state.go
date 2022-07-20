@@ -12,6 +12,8 @@ type RegistryKeyState struct {
     hive *RegistryHive
     // Current (i.e. changed) registry key (excludes HIVE).
     key *string
+    // The OdataType property
+    odataType *string
     // Previous (i.e. before changed) registry key (excludes HIVE).
     oldKey *string
     // Previous (i.e. before changed) registry key value data (contents).
@@ -34,6 +36,8 @@ func NewRegistryKeyState()(*RegistryKeyState) {
     m := &RegistryKeyState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.registryKeyState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRegistryKeyStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +72,16 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetKey(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -169,6 +183,14 @@ func (m *RegistryKeyState) GetKey()(*string) {
         return m.key
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RegistryKeyState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOldKey gets the oldKey property value. Previous (i.e. before changed) registry key (excludes HIVE).
 func (m *RegistryKeyState) GetOldKey()(*string) {
     if m == nil {
@@ -249,6 +271,12 @@ func (m *RegistryKeyState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("oldKey", m.GetOldKey())
         if err != nil {
             return err
@@ -322,6 +350,12 @@ func (m *RegistryKeyState) SetHive(value *RegistryHive)() {
 func (m *RegistryKeyState) SetKey(value *string)() {
     if m != nil {
         m.key = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RegistryKeyState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOldKey sets the oldKey property value. Previous (i.e. before changed) registry key (excludes HIVE).

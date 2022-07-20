@@ -15,6 +15,8 @@ func NewAndroidMobileAppIdentifier()(*AndroidMobileAppIdentifier) {
     m := &AndroidMobileAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),
     }
+    odataTypeValue := "#microsoft.graph.androidMobileAppIdentifier";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidMobileAppIdentifierFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

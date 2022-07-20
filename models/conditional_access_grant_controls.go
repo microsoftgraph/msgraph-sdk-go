@@ -12,6 +12,8 @@ type ConditionalAccessGrantControls struct {
     builtInControls []string
     // List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
     customAuthenticationFactors []string
+    // The OdataType property
+    odataType *string
     // Defines the relationship of the grant controls. Possible values: AND, OR.
     operator *string
     // List of terms of use IDs required by the policy.
@@ -22,6 +24,8 @@ func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {
     m := &ConditionalAccessGrantControls{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.conditionalAccessGrantControls";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessGrantControlsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +87,16 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -108,6 +122,14 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessGrantControls) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOperator gets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
 func (m *ConditionalAccessGrantControls) GetOperator()(*string) {
@@ -135,6 +157,12 @@ func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d268963
     }
     if m.GetCustomAuthenticationFactors() != nil {
         err := writer.WriteCollectionOfStringValues("customAuthenticationFactors", m.GetCustomAuthenticationFactors())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -175,6 +203,12 @@ func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []string)() {
 func (m *ConditionalAccessGrantControls) SetCustomAuthenticationFactors(value []string)() {
     if m != nil {
         m.customAuthenticationFactors = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessGrantControls) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperator sets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.

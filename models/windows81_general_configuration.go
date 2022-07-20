@@ -79,6 +79,8 @@ func NewWindows81GeneralConfiguration()(*Windows81GeneralConfiguration) {
     m := &Windows81GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windows81GeneralConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows81GeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -31,6 +31,8 @@ func NewUnifiedRoleDefinition()(*UnifiedRoleDefinition) {
     m := &UnifiedRoleDefinition{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.unifiedRoleDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

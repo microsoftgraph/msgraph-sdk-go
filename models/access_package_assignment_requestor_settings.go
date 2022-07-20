@@ -22,6 +22,8 @@ type AccessPackageAssignmentRequestorSettings struct {
     enableTargetsToSelfRemoveAccess *bool
     // If true, allows requestors to create a request to update their access.
     enableTargetsToSelfUpdateAccess *bool
+    // The OdataType property
+    odataType *string
     // The principals who can request on-behalf-of others.
     onBehalfRequestors []SubjectSetable
 }
@@ -30,6 +32,8 @@ func NewAccessPackageAssignmentRequestorSettings()(*AccessPackageAssignmentReque
     m := &AccessPackageAssignmentRequestorSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessPackageAssignmentRequestorSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageAssignmentRequestorSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -173,6 +177,16 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["onBehalfRequestors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSubjectSetFromDiscriminatorValue)
         if err != nil {
@@ -188,6 +202,14 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentRequestorSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOnBehalfRequestors gets the onBehalfRequestors property value. The principals who can request on-behalf-of others.
 func (m *AccessPackageAssignmentRequestorSettings) GetOnBehalfRequestors()([]SubjectSetable) {
@@ -237,6 +259,12 @@ func (m *AccessPackageAssignmentRequestorSettings) Serialize(writer i878a80d2330
     }
     {
         err := writer.WriteBoolValue("enableTargetsToSelfUpdateAccess", m.GetEnableTargetsToSelfUpdateAccess())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -305,6 +333,12 @@ func (m *AccessPackageAssignmentRequestorSettings) SetEnableTargetsToSelfRemoveA
 func (m *AccessPackageAssignmentRequestorSettings) SetEnableTargetsToSelfUpdateAccess(value *bool)() {
     if m != nil {
         m.enableTargetsToSelfUpdateAccess = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentRequestorSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOnBehalfRequestors sets the onBehalfRequestors property value. The principals who can request on-behalf-of others.

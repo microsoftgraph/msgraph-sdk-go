@@ -11,7 +11,9 @@ type GeoCoordinatesable interface {
     GetAltitude()(*float64)
     GetLatitude()(*float64)
     GetLongitude()(*float64)
+    GetOdataType()(*string)
     SetAltitude(value *float64)()
     SetLatitude(value *float64)()
     SetLongitude(value *float64)()
+    SetOdataType(value *string)()
 }

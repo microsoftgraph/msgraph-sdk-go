@@ -11,7 +11,9 @@ type UnifiedRolePermissionable interface {
     GetAllowedResourceActions()([]string)
     GetCondition()(*string)
     GetExcludedResourceActions()([]string)
+    GetOdataType()(*string)
     SetAllowedResourceActions(value []string)()
     SetCondition(value *string)()
     SetExcludedResourceActions(value []string)()
+    SetOdataType(value *string)()
 }

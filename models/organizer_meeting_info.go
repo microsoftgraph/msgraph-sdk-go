@@ -15,6 +15,8 @@ func NewOrganizerMeetingInfo()(*OrganizerMeetingInfo) {
     m := &OrganizerMeetingInfo{
         MeetingInfo: *NewMeetingInfo(),
     }
+    odataTypeValue := "#microsoft.graph.organizerMeetingInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOrganizerMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

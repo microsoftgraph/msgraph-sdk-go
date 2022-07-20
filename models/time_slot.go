@@ -10,6 +10,8 @@ type TimeSlot struct {
     additionalData map[string]interface{}
     // The end property
     end DateTimeTimeZoneable
+    // The OdataType property
+    odataType *string
     // The start property
     start DateTimeTimeZoneable
 }
@@ -18,6 +20,8 @@ func NewTimeSlot()(*TimeSlot) {
     m := &TimeSlot{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.timeSlot";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeSlotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *TimeSlot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["start"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
@@ -64,6 +78,14 @@ func (m *TimeSlot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeSlot) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStart gets the start property value. The start property
 func (m *TimeSlot) GetStart()(DateTimeTimeZoneable) {
@@ -77,6 +99,12 @@ func (m *TimeSlot) GetStart()(DateTimeTimeZoneable) {
 func (m *TimeSlot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("end", m.GetEnd())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *TimeSlot) SetAdditionalData(value map[string]interface{})() {
 func (m *TimeSlot) SetEnd(value DateTimeTimeZoneable)() {
     if m != nil {
         m.end = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeSlot) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStart sets the start property value. The start property

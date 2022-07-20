@@ -10,6 +10,8 @@ type WindowsInformationProtectionIPRangeCollection struct {
     additionalData map[string]interface{}
     // Display name
     displayName *string
+    // The OdataType property
+    odataType *string
     // Collection of ip ranges
     ranges []IpRangeable
 }
@@ -18,6 +20,8 @@ func NewWindowsInformationProtectionIPRangeCollection()(*WindowsInformationProte
     m := &WindowsInformationProtectionIPRangeCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionIPRangeCollection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionIPRangeCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ranges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionIPRangeCollection) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRanges gets the ranges property value. Collection of ip ranges
 func (m *WindowsInformationProtectionIPRangeCollection) GetRanges()([]IpRangeable) {
     if m == nil {
@@ -81,6 +103,12 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetRanges()([]IpRangeabl
 func (m *WindowsInformationProtectionIPRangeCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *WindowsInformationProtectionIPRangeCollection) SetAdditionalData(value 
 func (m *WindowsInformationProtectionIPRangeCollection) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionIPRangeCollection) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRanges sets the ranges property value. Collection of ip ranges

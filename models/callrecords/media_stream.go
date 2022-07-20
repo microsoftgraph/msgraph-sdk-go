@@ -49,6 +49,8 @@ type MediaStream struct {
     maxRatioOfConcealedSamples *float32
     // Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
     maxRoundTripTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
+    // The OdataType property
+    odataType *string
     // Packet count for the stream.
     packetUtilization *int64
     // Packet loss rate after FEC has been applied aggregated across all video streams and codecs.
@@ -69,6 +71,8 @@ func NewMediaStream()(*MediaStream) {
     m := &MediaStream{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.callRecords.mediaStream";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMediaStreamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -390,6 +394,16 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["packetUtilization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -516,6 +530,14 @@ func (m *MediaStream) GetMaxRoundTripTime()(*i878a80d2330e89d26896388a3f487eef27
         return nil
     } else {
         return m.maxRoundTripTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MediaStream) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPacketUtilization gets the packetUtilization property value. Packet count for the stream.
@@ -698,6 +720,12 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt64Value("packetUtilization", m.GetPacketUtilization())
         if err != nil {
             return err
@@ -873,6 +901,12 @@ func (m *MediaStream) SetMaxRatioOfConcealedSamples(value *float32)() {
 func (m *MediaStream) SetMaxRoundTripTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     if m != nil {
         m.maxRoundTripTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MediaStream) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPacketUtilization sets the packetUtilization property value. Packet count for the stream.

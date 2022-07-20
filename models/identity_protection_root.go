@@ -8,6 +8,8 @@ import (
 type IdentityProtectionRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Risk detection in Azure AD Identity Protection and the associated information about the detection.
     riskDetections []RiskDetectionable
     // Users that are flagged as at-risk by Azure AD Identity Protection.
@@ -18,6 +20,8 @@ func NewIdentityProtectionRoot()(*IdentityProtectionRoot) {
     m := &IdentityProtectionRoot{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.identityProtectionRoot";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityProtectionRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *IdentityProtectionRoot) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["riskDetections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRiskDetectionFromDiscriminatorValue)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IdentityProtectionRoot) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRiskDetections gets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *IdentityProtectionRoot) GetRiskDetections()([]RiskDetectionable) {
     if m == nil {
@@ -83,6 +105,12 @@ func (m *IdentityProtectionRoot) GetRiskyUsers()([]RiskyUserable) {
 }
 // Serialize serializes information the current object
 func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRiskDetections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRiskDetections()))
         for i, v := range m.GetRiskDetections() {
@@ -115,6 +143,12 @@ func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *IdentityProtectionRoot) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IdentityProtectionRoot) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRiskDetections sets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.

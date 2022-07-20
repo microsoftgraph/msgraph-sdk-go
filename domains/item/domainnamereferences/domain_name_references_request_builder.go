@@ -63,7 +63,7 @@ func NewDomainNameReferencesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewDomainNameReferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DomainNameReferencesRequestBuilder) Count()(*i1920ecb2aeba8dd27b7f3431dfba4f3c44ae1de0f9ff7511f49d1e3ae0eb7952.CountRequestBuilder) {
     return i1920ecb2aeba8dd27b7f3431dfba4f3c44ae1de0f9ff7511f49d1e3ae0eb7952.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

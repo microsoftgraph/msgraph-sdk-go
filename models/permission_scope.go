@@ -16,6 +16,8 @@ type PermissionScope struct {
     id *string
     // When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
     isEnabled *bool
+    // The OdataType property
+    odataType *string
     // The origin property
     origin *string
     // The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
@@ -32,6 +34,8 @@ func NewPermissionScope()(*PermissionScope) {
     m := &PermissionScope{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.permissionScope";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePermissionScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -105,6 +109,16 @@ func (m *PermissionScope) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["origin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -173,6 +187,14 @@ func (m *PermissionScope) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PermissionScope) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOrigin gets the origin property value. The origin property
 func (m *PermissionScope) GetOrigin()(*string) {
     if m == nil {
@@ -235,6 +257,12 @@ func (m *PermissionScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -305,6 +333,12 @@ func (m *PermissionScope) SetId(value *string)() {
 func (m *PermissionScope) SetIsEnabled(value *bool)() {
     if m != nil {
         m.isEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PermissionScope) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrigin sets the origin property value. The origin property

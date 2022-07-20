@@ -10,6 +10,8 @@ type TimeRange struct {
     additionalData map[string]interface{}
     // End time for the time range.
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
+    // The OdataType property
+    odataType *string
     // Start time for the time range.
     startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
 }
@@ -18,6 +20,8 @@ func NewTimeRange()(*TimeRange) {
     m := &TimeRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.timeRange";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *TimeRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeOnlyValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *TimeRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeRange) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStartTime gets the startTime property value. Start time for the time range.
 func (m *TimeRange) GetStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
@@ -77,6 +99,12 @@ func (m *TimeRange) GetStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *TimeRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeOnlyValue("endTime", m.GetEndTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *TimeRange) SetAdditionalData(value map[string]interface{})() {
 func (m *TimeRange) SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
     if m != nil {
         m.endTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeRange) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStartTime sets the startTime property value. Start time for the time range.

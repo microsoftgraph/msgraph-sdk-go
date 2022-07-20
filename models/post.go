@@ -40,6 +40,8 @@ func NewPost()(*Post) {
     m := &Post{
         OutlookItem: *NewOutlookItem(),
     }
+    odataTypeValue := "#microsoft.graph.post";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePostFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

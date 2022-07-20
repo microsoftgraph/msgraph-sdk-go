@@ -44,8 +44,8 @@ func NewMobileApp()(*MobileApp) {
     m := &MobileApp{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.mobileApp";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.mobileApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,22 +63,42 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.androidLobApp":
+                        return NewAndroidLobApp(), nil
                     case "#microsoft.graph.androidStoreApp":
                         return NewAndroidStoreApp(), nil
+                    case "#microsoft.graph.iosLobApp":
+                        return NewIosLobApp(), nil
                     case "#microsoft.graph.iosStoreApp":
                         return NewIosStoreApp(), nil
                     case "#microsoft.graph.iosVppApp":
                         return NewIosVppApp(), nil
                     case "#microsoft.graph.macOSOfficeSuiteApp":
                         return NewMacOSOfficeSuiteApp(), nil
+                    case "#microsoft.graph.managedAndroidLobApp":
+                        return NewManagedAndroidLobApp(), nil
+                    case "#microsoft.graph.managedAndroidStoreApp":
+                        return NewManagedAndroidStoreApp(), nil
                     case "#microsoft.graph.managedApp":
                         return NewManagedApp(), nil
+                    case "#microsoft.graph.managedIOSLobApp":
+                        return NewManagedIOSLobApp(), nil
+                    case "#microsoft.graph.managedIOSStoreApp":
+                        return NewManagedIOSStoreApp(), nil
+                    case "#microsoft.graph.managedMobileLobApp":
+                        return NewManagedMobileLobApp(), nil
                     case "#microsoft.graph.microsoftStoreForBusinessApp":
                         return NewMicrosoftStoreForBusinessApp(), nil
                     case "#microsoft.graph.mobileLobApp":
                         return NewMobileLobApp(), nil
                     case "#microsoft.graph.webApp":
                         return NewWebApp(), nil
+                    case "#microsoft.graph.win32LobApp":
+                        return NewWin32LobApp(), nil
+                    case "#microsoft.graph.windowsMobileMSI":
+                        return NewWindowsMobileMSI(), nil
+                    case "#microsoft.graph.windowsUniversalAppX":
+                        return NewWindowsUniversalAppX(), nil
                 }
             }
         }

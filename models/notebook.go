@@ -29,6 +29,8 @@ func NewNotebook()(*Notebook) {
     m := &Notebook{
         OnenoteEntityHierarchyModel: *NewOnenoteEntityHierarchyModel(),
     }
+    odataTypeValue := "#microsoft.graph.notebook";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNotebookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

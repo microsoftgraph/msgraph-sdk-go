@@ -24,6 +24,8 @@ type PrinterLocation struct {
     latitude *float64
     // The longitude that the printer is located at.
     longitude *float64
+    // The OdataType property
+    odataType *string
     // The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
     organization []string
     // The postal code that the printer is located in.
@@ -48,6 +50,8 @@ func NewPrinterLocation()(*PrinterLocation) {
     m := &PrinterLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.printerLocation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -174,6 +178,16 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetLongitude(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -313,6 +327,14 @@ func (m *PrinterLocation) GetLongitude()(*float64) {
         return m.longitude
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrinterLocation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOrganization gets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
 func (m *PrinterLocation) GetOrganization()([]string) {
     if m == nil {
@@ -435,6 +457,12 @@ func (m *PrinterLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOrganization() != nil {
         err := writer.WriteCollectionOfStringValues("organization", m.GetOrganization())
         if err != nil {
@@ -549,6 +577,12 @@ func (m *PrinterLocation) SetLatitude(value *float64)() {
 func (m *PrinterLocation) SetLongitude(value *float64)() {
     if m != nil {
         m.longitude = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrinterLocation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrganization sets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.

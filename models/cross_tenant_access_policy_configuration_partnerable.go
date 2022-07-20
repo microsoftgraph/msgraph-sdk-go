@@ -14,6 +14,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetIsServiceProvider()(*bool)
+    GetOdataType()(*string)
     GetTenantId()(*string)
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)()
@@ -21,5 +22,6 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     SetB2bDirectConnectOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
     SetIsServiceProvider(value *bool)()
+    SetOdataType(value *string)()
     SetTenantId(value *string)()
 }

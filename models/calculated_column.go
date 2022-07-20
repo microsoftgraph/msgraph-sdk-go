@@ -12,6 +12,8 @@ type CalculatedColumn struct {
     format *string
     // The formula used to compute the value for this column.
     formula *string
+    // The OdataType property
+    odataType *string
     // The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
     outputType *string
 }
@@ -20,6 +22,8 @@ func NewCalculatedColumn()(*CalculatedColumn) {
     m := &CalculatedColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.calculatedColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCalculatedColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *CalculatedColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["outputType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *CalculatedColumn) GetFormula()(*string) {
         return m.formula
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CalculatedColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOutputType gets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
 func (m *CalculatedColumn) GetOutputType()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *CalculatedColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteStringValue("formula", m.GetFormula())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *CalculatedColumn) SetFormat(value *string)() {
 func (m *CalculatedColumn) SetFormula(value *string)() {
     if m != nil {
         m.formula = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CalculatedColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOutputType sets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.

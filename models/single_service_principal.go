@@ -17,6 +17,8 @@ func NewSingleServicePrincipal()(*SingleServicePrincipal) {
     m := &SingleServicePrincipal{
         SubjectSet: *NewSubjectSet(),
     }
+    odataTypeValue := "#microsoft.graph.singleServicePrincipal";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSingleServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

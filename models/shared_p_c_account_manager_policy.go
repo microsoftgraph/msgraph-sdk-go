@@ -14,6 +14,8 @@ type SharedPCAccountManagerPolicy struct {
     cacheAccountsAboveDiskFreePercentage *int32
     // Specifies when the accounts will start being deleted when they have not been logged on during the specified period, given as number of days. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold.
     inactiveThresholdDays *int32
+    // The OdataType property
+    odataType *string
     // Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
     removeAccountsBelowDiskFreePercentage *int32
 }
@@ -22,6 +24,8 @@ func NewSharedPCAccountManagerPolicy()(*SharedPCAccountManagerPolicy) {
     m := &SharedPCAccountManagerPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.sharedPCAccountManagerPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharedPCAccountManagerPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +89,16 @@ func (m *SharedPCAccountManagerPolicy) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["removeAccountsBelowDiskFreePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -103,6 +117,14 @@ func (m *SharedPCAccountManagerPolicy) GetInactiveThresholdDays()(*int32) {
         return nil
     } else {
         return m.inactiveThresholdDays
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SharedPCAccountManagerPolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRemoveAccountsBelowDiskFreePercentage gets the removeAccountsBelowDiskFreePercentage property value. Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
@@ -130,6 +152,12 @@ func (m *SharedPCAccountManagerPolicy) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteInt32Value("inactiveThresholdDays", m.GetInactiveThresholdDays())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -170,6 +198,12 @@ func (m *SharedPCAccountManagerPolicy) SetCacheAccountsAboveDiskFreePercentage(v
 func (m *SharedPCAccountManagerPolicy) SetInactiveThresholdDays(value *int32)() {
     if m != nil {
         m.inactiveThresholdDays = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SharedPCAccountManagerPolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRemoveAccountsBelowDiskFreePercentage sets the removeAccountsBelowDiskFreePercentage property value. Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100

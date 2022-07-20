@@ -15,6 +15,7 @@ type Propertyable interface {
     GetIsSearchable()(*bool)
     GetLabels()([]string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetType()(*PropertyType)
     SetAliases(value []string)()
     SetIsQueryable(value *bool)()
@@ -23,5 +24,6 @@ type Propertyable interface {
     SetIsSearchable(value *bool)()
     SetLabels(value []string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetType(value *PropertyType)()
 }

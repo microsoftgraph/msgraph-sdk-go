@@ -14,7 +14,7 @@ type Locationable interface {
     GetLocationEmailAddress()(*string)
     GetLocationType()(*LocationType)
     GetLocationUri()(*string)
-    GetType()(*string)
+    GetOdataType()(*string)
     GetUniqueId()(*string)
     GetUniqueIdType()(*LocationUniqueIdType)
     SetAddress(value PhysicalAddressable)()
@@ -23,7 +23,7 @@ type Locationable interface {
     SetLocationEmailAddress(value *string)()
     SetLocationType(value *LocationType)()
     SetLocationUri(value *string)()
-    SetType(value *string)()
+    SetOdataType(value *string)()
     SetUniqueId(value *string)()
     SetUniqueIdType(value *LocationUniqueIdType)()
 }

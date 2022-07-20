@@ -15,6 +15,8 @@ func NewIosStoreAppAssignmentSettings()(*IosStoreAppAssignmentSettings) {
     m := &IosStoreAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
+    odataTypeValue := "#microsoft.graph.iosStoreAppAssignmentSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosStoreAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

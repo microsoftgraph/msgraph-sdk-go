@@ -17,6 +17,8 @@ func NewPlannerAssignedToTaskBoardTaskFormat()(*PlannerAssignedToTaskBoardTaskFo
     m := &PlannerAssignedToTaskBoardTaskFormat{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerAssignedToTaskBoardTaskFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

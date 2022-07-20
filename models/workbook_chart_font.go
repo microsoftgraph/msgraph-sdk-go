@@ -25,6 +25,8 @@ func NewWorkbookChartFont()(*WorkbookChartFont) {
     m := &WorkbookChartFont{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartFont";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartFontFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

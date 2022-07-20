@@ -44,8 +44,8 @@ func NewManagedAppRegistration()(*ManagedAppRegistration) {
     m := &ManagedAppRegistration{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.managedAppRegistration";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.managedAppRegistration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedAppRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

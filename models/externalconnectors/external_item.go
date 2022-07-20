@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ExternalItem provides operations to manage the collection of externalConnection entities.
+// ExternalItem provides operations to manage the admin singleton.
 type ExternalItem struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // An array of access control entries. Each entry specifies the access granted to a user or group. Required.
@@ -20,6 +20,8 @@ func NewExternalItem()(*ExternalItem) {
     m := &ExternalItem{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.externalConnectors.externalItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type AssignedLicense struct {
     additionalData map[string]interface{}
     // A collection of the unique identifiers for plans that have been disabled.
     disabledPlans []string
+    // The OdataType property
+    odataType *string
     // The unique identifier for the SKU.
     skuId *string
 }
@@ -18,6 +20,8 @@ func NewAssignedLicense()(*AssignedLicense) {
     m := &AssignedLicense{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.assignedLicense";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignedLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *AssignedLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["skuId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -68,6 +82,14 @@ func (m *AssignedLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AssignedLicense) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSkuId gets the skuId property value. The unique identifier for the SKU.
 func (m *AssignedLicense) GetSkuId()(*string) {
@@ -81,6 +103,12 @@ func (m *AssignedLicense) GetSkuId()(*string) {
 func (m *AssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetDisabledPlans() != nil {
         err := writer.WriteCollectionOfStringValues("disabledPlans", m.GetDisabledPlans())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -109,6 +137,12 @@ func (m *AssignedLicense) SetAdditionalData(value map[string]interface{})() {
 func (m *AssignedLicense) SetDisabledPlans(value []string)() {
     if m != nil {
         m.disabledPlans = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AssignedLicense) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSkuId sets the skuId property value. The unique identifier for the SKU.

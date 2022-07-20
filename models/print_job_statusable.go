@@ -11,9 +11,11 @@ type PrintJobStatusable interface {
     GetDescription()(*string)
     GetDetails()([]string)
     GetIsAcquiredByPrinter()(*bool)
+    GetOdataType()(*string)
     GetState()(*PrintJobProcessingState)
     SetDescription(value *string)()
     SetDetails(value []string)()
     SetIsAcquiredByPrinter(value *bool)()
+    SetOdataType(value *string)()
     SetState(value *PrintJobProcessingState)()
 }

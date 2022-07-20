@@ -12,12 +12,16 @@ type MailTipsError struct {
     code *string
     // The error message.
     message *string
+    // The OdataType property
+    odataType *string
 }
 // NewMailTipsError instantiates a new mailTipsError and sets the default values.
 func NewMailTipsError()(*MailTipsError) {
     m := &MailTipsError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.mailTipsError";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMailTipsErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *MailTipsError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMessage gets the message property value. The error message.
@@ -71,6 +85,14 @@ func (m *MailTipsError) GetMessage()(*string) {
         return nil
     } else {
         return m.message
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MailTipsError) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *MailTipsError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *MailTipsError) SetCode(value *string)() {
 func (m *MailTipsError) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MailTipsError) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

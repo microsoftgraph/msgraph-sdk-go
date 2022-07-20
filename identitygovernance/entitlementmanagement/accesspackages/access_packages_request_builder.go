@@ -71,7 +71,7 @@ func NewAccessPackagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AccessPackagesRequestBuilder) Count()(*if2c87f0cb84c49ad66239bac5ecb558a20b38ee3160042fcf88158d1e49ee8a0.CountRequestBuilder) {
     return if2c87f0cb84c49ad66239bac5ecb558a20b38ee3160042fcf88158d1e49ee8a0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

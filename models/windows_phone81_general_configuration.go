@@ -71,6 +71,8 @@ func NewWindowsPhone81GeneralConfiguration()(*WindowsPhone81GeneralConfiguration
     m := &WindowsPhone81GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsPhone81GeneralConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsPhone81GeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

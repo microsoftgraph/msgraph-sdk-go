@@ -12,6 +12,8 @@ type UserAttributeValuesItem struct {
     isDefault *bool
     // The display name of the property displayed to the end user in the user flow.
     name *string
+    // The OdataType property
+    odataType *string
     // The value that is set when this item is selected.
     value *string
 }
@@ -20,6 +22,8 @@ func NewUserAttributeValuesItem()(*UserAttributeValuesItem) {
     m := &UserAttributeValuesItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userAttributeValuesItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserAttributeValuesItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *UserAttributeValuesItem) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *UserAttributeValuesItem) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserAttributeValuesItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetValue gets the value property value. The value that is set when this item is selected.
 func (m *UserAttributeValuesItem) GetValue()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *UserAttributeValuesItem) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *UserAttributeValuesItem) SetIsDefault(value *bool)() {
 func (m *UserAttributeValuesItem) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserAttributeValuesItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValue sets the value property value. The value that is set when this item is selected.

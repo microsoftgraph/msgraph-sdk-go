@@ -11,7 +11,9 @@ type ServiceUpdateMessageViewpointable interface {
     GetIsArchived()(*bool)
     GetIsFavorited()(*bool)
     GetIsRead()(*bool)
+    GetOdataType()(*string)
     SetIsArchived(value *bool)()
     SetIsFavorited(value *bool)()
     SetIsRead(value *bool)()
+    SetOdataType(value *string)()
 }

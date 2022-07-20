@@ -10,6 +10,8 @@ type StaffAvailabilityItem struct {
     additionalData map[string]interface{}
     // Each item in this collection indicates a slot and the status of the staff member.
     availabilityItems []AvailabilityItemable
+    // The OdataType property
+    odataType *string
     // The ID of the staff member.
     staffId *string
 }
@@ -18,6 +20,8 @@ func NewStaffAvailabilityItem()(*StaffAvailabilityItem) {
     m := &StaffAvailabilityItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.staffAvailabilityItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStaffAvailabilityItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["staffId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -68,6 +82,14 @@ func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *StaffAvailabilityItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStaffId gets the staffId property value. The ID of the staff member.
 func (m *StaffAvailabilityItem) GetStaffId()(*string) {
@@ -85,6 +107,12 @@ func (m *StaffAvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487e
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("availabilityItems", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *StaffAvailabilityItem) SetAdditionalData(value map[string]interface{})(
 func (m *StaffAvailabilityItem) SetAvailabilityItems(value []AvailabilityItemable)() {
     if m != nil {
         m.availabilityItems = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *StaffAvailabilityItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStaffId sets the staffId property value. The ID of the staff member.

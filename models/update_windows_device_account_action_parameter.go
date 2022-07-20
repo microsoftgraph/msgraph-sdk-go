@@ -16,6 +16,8 @@ type UpdateWindowsDeviceAccountActionParameter struct {
     deviceAccountEmail *string
     // Not yet documented
     exchangeServer *string
+    // The OdataType property
+    odataType *string
     // Not yet documented
     passwordRotationEnabled *bool
     // Not yet documented
@@ -26,6 +28,8 @@ func NewUpdateWindowsDeviceAccountActionParameter()(*UpdateWindowsDeviceAccountA
     m := &UpdateWindowsDeviceAccountActionParameter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.updateWindowsDeviceAccountActionParameter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -115,6 +119,16 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passwordRotationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -136,6 +150,14 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UpdateWindowsDeviceAccountActionParameter) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPasswordRotationEnabled gets the passwordRotationEnabled property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) GetPasswordRotationEnabled()(*bool) {
@@ -175,6 +197,12 @@ func (m *UpdateWindowsDeviceAccountActionParameter) Serialize(writer i878a80d233
     }
     {
         err := writer.WriteStringValue("exchangeServer", m.GetExchangeServer())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -227,6 +255,12 @@ func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccountEmail(value 
 func (m *UpdateWindowsDeviceAccountActionParameter) SetExchangeServer(value *string)() {
     if m != nil {
         m.exchangeServer = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UpdateWindowsDeviceAccountActionParameter) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPasswordRotationEnabled sets the passwordRotationEnabled property value. Not yet documented

@@ -26,6 +26,8 @@ type NetworkInfo struct {
     macAddress *string
     // The networkTransportProtocol property
     networkTransportProtocol *NetworkTransportProtocol
+    // The OdataType property
+    odataType *string
     // Network port number used by media endpoint.
     port *int32
     // Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
@@ -66,6 +68,8 @@ func NewNetworkInfo()(*NetworkInfo) {
     m := &NetworkInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.callRecords.networkInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNetworkInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -210,6 +214,16 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetNetworkTransportProtocol(val.(*NetworkTransportProtocol))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -421,6 +435,14 @@ func (m *NetworkInfo) GetNetworkTransportProtocol()(*NetworkTransportProtocol) {
         return m.networkTransportProtocol
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *NetworkInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPort gets the port property value. Network port number used by media endpoint.
 func (m *NetworkInfo) GetPort()(*int32) {
     if m == nil {
@@ -616,6 +638,12 @@ func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("port", m.GetPort())
         if err != nil {
             return err
@@ -789,6 +817,12 @@ func (m *NetworkInfo) SetMacAddress(value *string)() {
 func (m *NetworkInfo) SetNetworkTransportProtocol(value *NetworkTransportProtocol)() {
     if m != nil {
         m.networkTransportProtocol = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *NetworkInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPort sets the port property value. Network port number used by media endpoint.

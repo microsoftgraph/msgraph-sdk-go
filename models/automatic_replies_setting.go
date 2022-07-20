@@ -14,6 +14,8 @@ type AutomaticRepliesSetting struct {
     externalReplyMessage *string
     // The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
     internalReplyMessage *string
+    // The OdataType property
+    odataType *string
     // The date and time that automatic replies are set to end, if Status is set to Scheduled.
     scheduledEndDateTime DateTimeTimeZoneable
     // The date and time that automatic replies are set to begin, if Status is set to Scheduled.
@@ -26,6 +28,8 @@ func NewAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
     m := &AutomaticRepliesSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.automaticRepliesSetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAutomaticRepliesSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +93,16 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scheduledEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
@@ -127,6 +141,14 @@ func (m *AutomaticRepliesSetting) GetInternalReplyMessage()(*string) {
         return nil
     } else {
         return m.internalReplyMessage
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AutomaticRepliesSetting) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetScheduledEndDateTime gets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
@@ -170,6 +192,12 @@ func (m *AutomaticRepliesSetting) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteStringValue("internalReplyMessage", m.GetInternalReplyMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -223,6 +251,12 @@ func (m *AutomaticRepliesSetting) SetExternalReplyMessage(value *string)() {
 func (m *AutomaticRepliesSetting) SetInternalReplyMessage(value *string)() {
     if m != nil {
         m.internalReplyMessage = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AutomaticRepliesSetting) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetScheduledEndDateTime sets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.

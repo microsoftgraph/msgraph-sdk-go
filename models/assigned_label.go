@@ -12,12 +12,16 @@ type AssignedLabel struct {
     displayName *string
     // The unique identifier of the label.
     labelId *string
+    // The OdataType property
+    odataType *string
 }
 // NewAssignedLabel instantiates a new assignedLabel and sets the default values.
 func NewAssignedLabel()(*AssignedLabel) {
     m := &AssignedLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.assignedLabel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignedLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *AssignedLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLabelId gets the labelId property value. The unique identifier of the label.
@@ -71,6 +85,14 @@ func (m *AssignedLabel) GetLabelId()(*string) {
         return nil
     } else {
         return m.labelId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AssignedLabel) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *AssignedLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("labelId", m.GetLabelId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *AssignedLabel) SetDisplayName(value *string)() {
 func (m *AssignedLabel) SetLabelId(value *string)() {
     if m != nil {
         m.labelId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AssignedLabel) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

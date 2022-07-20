@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the admin singleton.
 type Win32LobAppDeliveryOptimizationPriority int
 
 const (

@@ -17,6 +17,8 @@ func NewTabUpdatedEventMessageDetail()(*TabUpdatedEventMessageDetail) {
     m := &TabUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
+    odataTypeValue := "#microsoft.graph.tabUpdatedEventMessageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTabUpdatedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

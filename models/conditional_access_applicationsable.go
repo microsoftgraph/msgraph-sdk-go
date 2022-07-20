@@ -12,8 +12,10 @@ type ConditionalAccessApplicationsable interface {
     GetIncludeApplications()([]string)
     GetIncludeAuthenticationContextClassReferences()([]string)
     GetIncludeUserActions()([]string)
+    GetOdataType()(*string)
     SetExcludeApplications(value []string)()
     SetIncludeApplications(value []string)()
     SetIncludeAuthenticationContextClassReferences(value []string)()
     SetIncludeUserActions(value []string)()
+    SetOdataType(value *string)()
 }

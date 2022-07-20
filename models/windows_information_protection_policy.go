@@ -37,6 +37,8 @@ func NewWindowsInformationProtectionPolicy()(*WindowsInformationProtectionPolicy
     m := &WindowsInformationProtectionPolicy{
         WindowsInformationProtection: *NewWindowsInformationProtection(),
     }
+    odataTypeValue := "#microsoft.graph.windowsInformationProtectionPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

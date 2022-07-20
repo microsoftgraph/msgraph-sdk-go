@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackage provides operations to manage the collection of agreement entities.
+// AccessPackage provides operations to manage the admin singleton.
 type AccessPackage struct {
     Entity
     // The assignmentPolicies property
@@ -28,6 +28,8 @@ func NewAccessPackage()(*AccessPackage) {
     m := &AccessPackage{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.accessPackage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

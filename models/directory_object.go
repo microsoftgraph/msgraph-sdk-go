@@ -16,8 +16,8 @@ func NewDirectoryObject()(*DirectoryObject) {
     m := &DirectoryObject{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.directoryObject";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.directoryObject";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDirectoryObjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,14 +35,22 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.activityBasedTimeoutPolicy":
+                        return NewActivityBasedTimeoutPolicy(), nil
                     case "#microsoft.graph.administrativeUnit":
                         return NewAdministrativeUnit(), nil
                     case "#microsoft.graph.application":
                         return NewApplication(), nil
                     case "#microsoft.graph.appRoleAssignment":
                         return NewAppRoleAssignment(), nil
+                    case "#microsoft.graph.authorizationPolicy":
+                        return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.claimsMappingPolicy":
+                        return NewClaimsMappingPolicy(), nil
                     case "#microsoft.graph.contract":
                         return NewContract(), nil
+                    case "#microsoft.graph.crossTenantAccessPolicy":
+                        return NewCrossTenantAccessPolicy(), nil
                     case "#microsoft.graph.device":
                         return NewDevice(), nil
                     case "#microsoft.graph.directoryObjectPartnerReference":
@@ -59,16 +67,28 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewGroup(), nil
                     case "#microsoft.graph.groupSettingTemplate":
                         return NewGroupSettingTemplate(), nil
+                    case "#microsoft.graph.homeRealmDiscoveryPolicy":
+                        return NewHomeRealmDiscoveryPolicy(), nil
+                    case "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy":
+                        return NewIdentitySecurityDefaultsEnforcementPolicy(), nil
                     case "#microsoft.graph.organization":
                         return NewOrganization(), nil
                     case "#microsoft.graph.orgContact":
                         return NewOrgContact(), nil
+                    case "#microsoft.graph.permissionGrantPolicy":
+                        return NewPermissionGrantPolicy(), nil
                     case "#microsoft.graph.policyBase":
                         return NewPolicyBase(), nil
                     case "#microsoft.graph.resourceSpecificPermissionGrant":
                         return NewResourceSpecificPermissionGrant(), nil
                     case "#microsoft.graph.servicePrincipal":
                         return NewServicePrincipal(), nil
+                    case "#microsoft.graph.stsPolicy":
+                        return NewStsPolicy(), nil
+                    case "#microsoft.graph.tokenIssuancePolicy":
+                        return NewTokenIssuancePolicy(), nil
+                    case "#microsoft.graph.tokenLifetimePolicy":
+                        return NewTokenLifetimePolicy(), nil
                     case "#microsoft.graph.user":
                         return NewUser(), nil
                 }

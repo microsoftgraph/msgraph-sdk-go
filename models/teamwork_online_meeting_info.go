@@ -12,6 +12,8 @@ type TeamworkOnlineMeetingInfo struct {
     calendarEventId *string
     // The URL which can be clicked on to join or uniquely identify the meeting.
     joinWebUrl *string
+    // The OdataType property
+    odataType *string
     // The organizer of the meeting.
     organizer TeamworkUserIdentityable
 }
@@ -20,6 +22,8 @@ func NewTeamworkOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
     m := &TeamworkOnlineMeetingInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkOnlineMeetingInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["organizer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkUserIdentityFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +99,14 @@ func (m *TeamworkOnlineMeetingInfo) GetJoinWebUrl()(*string) {
         return m.joinWebUrl
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkOnlineMeetingInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOrganizer gets the organizer property value. The organizer of the meeting.
 func (m *TeamworkOnlineMeetingInfo) GetOrganizer()(TeamworkUserIdentityable) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *TeamworkOnlineMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("joinWebUrl", m.GetJoinWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *TeamworkOnlineMeetingInfo) SetCalendarEventId(value *string)() {
 func (m *TeamworkOnlineMeetingInfo) SetJoinWebUrl(value *string)() {
     if m != nil {
         m.joinWebUrl = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkOnlineMeetingInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrganizer sets the organizer property value. The organizer of the meeting.

@@ -32,6 +32,8 @@ func NewEducationRubric()(*EducationRubric) {
     m := &EducationRubric{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.educationRubric";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationRubricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

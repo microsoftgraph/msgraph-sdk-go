@@ -32,6 +32,8 @@ func NewTeamsAppDefinition()(*TeamsAppDefinition) {
     m := &TeamsAppDefinition{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.teamsAppDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsAppDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

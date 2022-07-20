@@ -17,6 +17,8 @@ func NewRoomList()(*RoomList) {
     m := &RoomList{
         Place: *NewPlace(),
     }
+    odataTypeValue := "#microsoft.graph.roomList";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoomListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

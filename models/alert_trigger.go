@@ -10,6 +10,8 @@ type AlertTrigger struct {
     additionalData map[string]interface{}
     // Name of the property serving as a detection trigger.
     name *string
+    // The OdataType property
+    odataType *string
     // Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
     type_escaped *string
     // Value of the property serving as a detection trigger.
@@ -20,6 +22,8 @@ func NewAlertTrigger()(*AlertTrigger) {
     m := &AlertTrigger{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.alertTrigger";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *AlertTrigger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *AlertTrigger) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AlertTrigger) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetType gets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
 func (m *AlertTrigger) GetType()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *AlertTrigger) GetValue()(*string) {
 func (m *AlertTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *AlertTrigger) SetAdditionalData(value map[string]interface{})() {
 func (m *AlertTrigger) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AlertTrigger) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.

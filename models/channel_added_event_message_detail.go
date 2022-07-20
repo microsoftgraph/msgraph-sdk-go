@@ -19,6 +19,8 @@ func NewChannelAddedEventMessageDetail()(*ChannelAddedEventMessageDetail) {
     m := &ChannelAddedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
+    odataTypeValue := "#microsoft.graph.channelAddedEventMessageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChannelAddedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

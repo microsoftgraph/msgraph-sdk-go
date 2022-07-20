@@ -13,6 +13,8 @@ func NewDisableAndDeleteUserApplyAction()(*DisableAndDeleteUserApplyAction) {
     m := &DisableAndDeleteUserApplyAction{
         AccessReviewApplyAction: *NewAccessReviewApplyAction(),
     }
+    odataTypeValue := "#microsoft.graph.disableAndDeleteUserApplyAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDisableAndDeleteUserApplyActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

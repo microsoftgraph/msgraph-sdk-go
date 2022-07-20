@@ -28,6 +28,8 @@ func NewDeviceComplianceDeviceOverview()(*DeviceComplianceDeviceOverview) {
     m := &DeviceComplianceDeviceOverview{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceComplianceDeviceOverview";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComplianceDeviceOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

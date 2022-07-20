@@ -29,6 +29,8 @@ func NewIosVppEBook()(*IosVppEBook) {
     m := &IosVppEBook{
         ManagedEBook: *NewManagedEBook(),
     }
+    odataTypeValue := "#microsoft.graph.iosVppEBook";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosVppEBookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,12 +13,16 @@ type RichLongRunningOperation struct {
     percentageComplete *int32
     // A unique identifier for the result.
     resourceId *string
+    // Type of the operation.
+    type_escaped *string
 }
 // NewRichLongRunningOperation instantiates a new RichLongRunningOperation and sets the default values.
 func NewRichLongRunningOperation()(*RichLongRunningOperation) {
     m := &RichLongRunningOperation{
         LongRunningOperation: *NewLongRunningOperation(),
     }
+    odataTypeValue := "#microsoft.graph.richLongRunningOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRichLongRunningOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +70,16 @@ func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetPercentageComplete gets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
@@ -82,6 +96,14 @@ func (m *RichLongRunningOperation) GetResourceId()(*string) {
         return nil
     } else {
         return m.resourceId
+    }
+}
+// GetType gets the type property value. Type of the operation.
+func (m *RichLongRunningOperation) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -108,6 +130,12 @@ func (m *RichLongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetError sets the error property value. Error due to which the operation failed.
@@ -126,5 +154,11 @@ func (m *RichLongRunningOperation) SetPercentageComplete(value *int32)() {
 func (m *RichLongRunningOperation) SetResourceId(value *string)() {
     if m != nil {
         m.resourceId = value
+    }
+}
+// SetType sets the type property value. Type of the operation.
+func (m *RichLongRunningOperation) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

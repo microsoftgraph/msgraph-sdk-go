@@ -10,6 +10,8 @@ type MediaContentRatingCanada struct {
     additionalData map[string]interface{}
     // Movies rating labels in Canada
     movieRating *RatingCanadaMoviesType
+    // The OdataType property
+    odataType *string
     // TV content rating labels in Canada
     tvRating *RatingCanadaTelevisionType
 }
@@ -18,6 +20,8 @@ func NewMediaContentRatingCanada()(*MediaContentRatingCanada) {
     m := &MediaContentRatingCanada{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.mediaContentRatingCanada";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMediaContentRatingCanadaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *MediaContentRatingCanada) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tvRating"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRatingCanadaTelevisionType)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *MediaContentRatingCanada) GetMovieRating()(*RatingCanadaMoviesType) {
         return m.movieRating
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MediaContentRatingCanada) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTvRating gets the tvRating property value. TV content rating labels in Canada
 func (m *MediaContentRatingCanada) GetTvRating()(*RatingCanadaTelevisionType) {
     if m == nil {
@@ -78,6 +100,12 @@ func (m *MediaContentRatingCanada) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetMovieRating() != nil {
         cast := (*m.GetMovieRating()).String()
         err := writer.WriteStringValue("movieRating", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -107,6 +135,12 @@ func (m *MediaContentRatingCanada) SetAdditionalData(value map[string]interface{
 func (m *MediaContentRatingCanada) SetMovieRating(value *RatingCanadaMoviesType)() {
     if m != nil {
         m.movieRating = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MediaContentRatingCanada) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTvRating sets the tvRating property value. TV content rating labels in Canada

@@ -10,8 +10,10 @@ type ObjectIdentityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIssuer()(*string)
     GetIssuerAssignedId()(*string)
+    GetOdataType()(*string)
     GetSignInType()(*string)
     SetIssuer(value *string)()
     SetIssuerAssignedId(value *string)()
+    SetOdataType(value *string)()
     SetSignInType(value *string)()
 }

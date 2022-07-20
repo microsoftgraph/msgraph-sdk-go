@@ -70,7 +70,7 @@ func NewRoleManagementPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RoleManagementPoliciesRequestBuilder) Count()(*iaab599cb637e2b727288f4122f4ea0133347398b4f687765549735d96965abc9.CountRequestBuilder) {
     return iaab599cb637e2b727288f4122f4ea0133347398b4f687765549735d96965abc9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

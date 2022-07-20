@@ -70,7 +70,7 @@ func NewAppointmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewAppointmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AppointmentsRequestBuilder) Count()(*i598a1ced32e60d7d08afd66e481848b6d4999f799bb7c32d15d17092a83be969.CountRequestBuilder) {
     return i598a1ced32e60d7d08afd66e481848b6d4999f799bb7c32d15d17092a83be969.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

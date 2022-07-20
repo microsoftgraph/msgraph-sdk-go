@@ -23,6 +23,7 @@ type OnPremisesExtensionAttributesable interface {
     GetExtensionAttribute7()(*string)
     GetExtensionAttribute8()(*string)
     GetExtensionAttribute9()(*string)
+    GetOdataType()(*string)
     SetExtensionAttribute1(value *string)()
     SetExtensionAttribute10(value *string)()
     SetExtensionAttribute11(value *string)()
@@ -38,4 +39,5 @@ type OnPremisesExtensionAttributesable interface {
     SetExtensionAttribute7(value *string)()
     SetExtensionAttribute8(value *string)()
     SetExtensionAttribute9(value *string)()
+    SetOdataType(value *string)()
 }

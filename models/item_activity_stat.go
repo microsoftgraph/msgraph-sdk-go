@@ -34,6 +34,8 @@ func NewItemActivityStat()(*ItemActivityStat) {
     m := &ItemActivityStat{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.itemActivityStat";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemActivityStatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

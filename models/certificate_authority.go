@@ -20,12 +20,16 @@ type CertificateAuthority struct {
     issuer *string
     // The subject key identifier of the certificate, calculated from the certificate value. Read-only.
     issuerSki *string
+    // The OdataType property
+    odataType *string
 }
 // NewCertificateAuthority instantiates a new certificateAuthority and sets the default values.
 func NewCertificateAuthority()(*CertificateAuthority) {
     m := &CertificateAuthority{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.certificateAuthority";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCertificateAuthorityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -127,6 +131,16 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsRootAuthority gets the isRootAuthority property value. Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
@@ -151,6 +165,14 @@ func (m *CertificateAuthority) GetIssuerSki()(*string) {
         return nil
     } else {
         return m.issuerSki
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CertificateAuthority) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -187,6 +209,12 @@ func (m *CertificateAuthority) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("issuerSki", m.GetIssuerSki())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -239,5 +267,11 @@ func (m *CertificateAuthority) SetIssuer(value *string)() {
 func (m *CertificateAuthority) SetIssuerSki(value *string)() {
     if m != nil {
         m.issuerSki = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CertificateAuthority) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

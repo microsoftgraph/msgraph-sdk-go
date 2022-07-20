@@ -26,6 +26,8 @@ func NewManagedIOSLobApp()(*ManagedIOSLobApp) {
     m := &ManagedIOSLobApp{
         ManagedMobileLobApp: *NewManagedMobileLobApp(),
     }
+    odataTypeValue := "#microsoft.graph.managedIOSLobApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedIOSLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

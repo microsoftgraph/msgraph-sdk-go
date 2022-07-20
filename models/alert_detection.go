@@ -14,12 +14,16 @@ type AlertDetection struct {
     method *string
     // The name property
     name *string
+    // The OdataType property
+    odataType *string
 }
 // NewAlertDetection instantiates a new alertDetection and sets the default values.
 func NewAlertDetection()(*AlertDetection) {
     m := &AlertDetection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.alertDetection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *AlertDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMethod gets the method property value. The method property
@@ -93,6 +107,14 @@ func (m *AlertDetection) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AlertDetection) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *AlertDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *AlertDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *AlertDetection) SetMethod(value *string)() {
 func (m *AlertDetection) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AlertDetection) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

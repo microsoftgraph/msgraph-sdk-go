@@ -70,7 +70,7 @@ func NewAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAudioRoutingGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AudioRoutingGroupsRequestBuilder) Count()(*i3d87c48e9298b0b06b1ac5f184fdf28ca5b53b8790056e5087e4f07dc04a76eb.CountRequestBuilder) {
     return i3d87c48e9298b0b06b1ac5f184fdf28ca5b53b8790056e5087e4f07dc04a76eb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

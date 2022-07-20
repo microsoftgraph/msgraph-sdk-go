@@ -11,7 +11,9 @@ type PersonOrGroupColumnable interface {
     GetAllowMultipleSelection()(*bool)
     GetChooseFromType()(*string)
     GetDisplayAs()(*string)
+    GetOdataType()(*string)
     SetAllowMultipleSelection(value *bool)()
     SetChooseFromType(value *string)()
     SetDisplayAs(value *string)()
+    SetOdataType(value *string)()
 }

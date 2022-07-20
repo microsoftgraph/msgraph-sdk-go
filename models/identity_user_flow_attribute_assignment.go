@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttributeAssignment provides operations to manage the collection of agreement entities.
+// IdentityUserFlowAttributeAssignment provides operations to manage the admin singleton.
 type IdentityUserFlowAttributeAssignment struct {
     Entity
     // The display name of the identityUserFlowAttribute within a user flow.
@@ -25,6 +25,8 @@ func NewIdentityUserFlowAttributeAssignment()(*IdentityUserFlowAttributeAssignme
     m := &IdentityUserFlowAttributeAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.identityUserFlowAttributeAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

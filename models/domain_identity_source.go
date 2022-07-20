@@ -17,6 +17,8 @@ func NewDomainIdentitySource()(*DomainIdentitySource) {
     m := &DomainIdentitySource{
         IdentitySource: *NewIdentitySource(),
     }
+    odataTypeValue := "#microsoft.graph.domainIdentitySource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDomainIdentitySourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

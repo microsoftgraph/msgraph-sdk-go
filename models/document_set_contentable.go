@@ -11,7 +11,9 @@ type DocumentSetContentable interface {
     GetContentType()(ContentTypeInfoable)
     GetFileName()(*string)
     GetFolderName()(*string)
+    GetOdataType()(*string)
     SetContentType(value ContentTypeInfoable)()
     SetFileName(value *string)()
     SetFolderName(value *string)()
+    SetOdataType(value *string)()
 }

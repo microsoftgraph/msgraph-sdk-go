@@ -70,7 +70,7 @@ func NewLocalizedNotificationMessagesRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewLocalizedNotificationMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *LocalizedNotificationMessagesRequestBuilder) Count()(*if1bf04121ebaf348fe619bfafacb64fa65f1488967ba86dbc2db44dfb29f6b16.CountRequestBuilder) {
     return if1bf04121ebaf348fe619bfafacb64fa65f1488967ba86dbc2db44dfb29f6b16.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

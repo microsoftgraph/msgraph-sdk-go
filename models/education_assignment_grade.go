@@ -13,16 +13,16 @@ type EducationAssignmentGrade struct {
     gradedBy IdentitySetable
     // Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     gradedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewEducationAssignmentGrade instantiates a new educationAssignmentGrade and sets the default values.
 func NewEducationAssignmentGrade()(*EducationAssignmentGrade) {
     m := &EducationAssignmentGrade{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.educationAssignmentGrade";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.educationAssignmentGrade";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationAssignmentGradeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,7 +85,7 @@ func (m *EducationAssignmentGrade) GetFieldDeserializers()(map[string]func(i878a
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -107,12 +107,12 @@ func (m *EducationAssignmentGrade) GetGradedDateTime()(*i336074805fc853987abe6f7
         return m.gradedDateTime
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *EducationAssignmentGrade) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationAssignmentGrade) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -130,7 +130,7 @@ func (m *EducationAssignmentGrade) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -161,9 +161,9 @@ func (m *EducationAssignmentGrade) SetGradedDateTime(value *i336074805fc853987ab
         m.gradedDateTime = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *EducationAssignmentGrade) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationAssignmentGrade) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

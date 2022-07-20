@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintServiceEndpoint provides operations to manage the collection of agreement entities.
+// PrintServiceEndpoint provides operations to manage the admin singleton.
 type PrintServiceEndpoint struct {
     Entity
     // A human-readable display name for the endpoint.
@@ -17,6 +17,8 @@ func NewPrintServiceEndpoint()(*PrintServiceEndpoint) {
     m := &PrintServiceEndpoint{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.printServiceEndpoint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintServiceEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

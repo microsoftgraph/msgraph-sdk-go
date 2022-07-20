@@ -18,6 +18,8 @@ type AttachmentItem struct {
     isInline *bool
     // The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
     name *string
+    // The OdataType property
+    odataType *string
     // The length of the attachment in bytes. Required.
     size *int64
 }
@@ -26,6 +28,8 @@ func NewAttachmentItem()(*AttachmentItem) {
     m := &AttachmentItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.attachmentItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttachmentItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -117,6 +121,16 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -143,6 +157,14 @@ func (m *AttachmentItem) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttachmentItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSize gets the size property value. The length of the attachment in bytes. Required.
@@ -182,6 +204,12 @@ func (m *AttachmentItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -234,6 +262,12 @@ func (m *AttachmentItem) SetIsInline(value *bool)() {
 func (m *AttachmentItem) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttachmentItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSize sets the size property value. The length of the attachment in bytes. Required.

@@ -16,6 +16,8 @@ type VerifiedDomain struct {
     isInitial *bool
     // The domain name; for example, contoso.onmicrosoft.com.
     name *string
+    // The OdataType property
+    odataType *string
     // For example, Managed.
     type_escaped *string
 }
@@ -24,6 +26,8 @@ func NewVerifiedDomain()(*VerifiedDomain) {
     m := &VerifiedDomain{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.verifiedDomain";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVerifiedDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +93,16 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -125,6 +139,14 @@ func (m *VerifiedDomain) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VerifiedDomain) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetType gets the type property value. For example, Managed.
 func (m *VerifiedDomain) GetType()(*string) {
     if m == nil {
@@ -155,6 +177,12 @@ func (m *VerifiedDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -201,6 +229,12 @@ func (m *VerifiedDomain) SetIsInitial(value *bool)() {
 func (m *VerifiedDomain) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VerifiedDomain) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. For example, Managed.

@@ -21,6 +21,8 @@ func NewOnPremisesConditionalAccessSettings()(*OnPremisesConditionalAccessSettin
     m := &OnPremisesConditionalAccessSettings{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.onPremisesConditionalAccessSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

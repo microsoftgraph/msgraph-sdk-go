@@ -21,6 +21,8 @@ func NewIosStoreApp()(*IosStoreApp) {
     m := &IosStoreApp{
         MobileApp: *NewMobileApp(),
     }
+    odataTypeValue := "#microsoft.graph.iosStoreApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

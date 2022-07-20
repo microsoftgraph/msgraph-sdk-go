@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartPoint provides operations to manage the collection of agreement entities.
+// WorkbookChartPoint provides operations to manage the admin singleton.
 type WorkbookChartPoint struct {
     Entity
     // Encapsulates the format properties chart point. Read-only.
@@ -17,6 +17,8 @@ func NewWorkbookChartPoint()(*WorkbookChartPoint) {
     m := &WorkbookChartPoint{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartPoint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartPointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

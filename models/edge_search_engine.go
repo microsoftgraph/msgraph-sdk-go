@@ -15,6 +15,8 @@ func NewEdgeSearchEngine()(*EdgeSearchEngine) {
     m := &EdgeSearchEngine{
         EdgeSearchEngineBase: *NewEdgeSearchEngineBase(),
     }
+    odataTypeValue := "#microsoft.graph.edgeSearchEngine";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdgeSearchEngineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

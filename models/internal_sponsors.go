@@ -13,6 +13,8 @@ func NewInternalSponsors()(*InternalSponsors) {
     m := &InternalSponsors{
         SubjectSet: *NewSubjectSet(),
     }
+    odataTypeValue := "#microsoft.graph.internalSponsors";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInternalSponsorsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

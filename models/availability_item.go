@@ -10,6 +10,8 @@ type AvailabilityItem struct {
     additionalData map[string]interface{}
     // The endTime property
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
+    // The OdataType property
+    odataType *string
     // Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
     serviceId *string
     // The startTime property
@@ -22,6 +24,8 @@ func NewAvailabilityItem()(*AvailabilityItem) {
     m := &AvailabilityItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.availabilityItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAvailabilityItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["serviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -89,6 +103,14 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AvailabilityItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetServiceId gets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
 func (m *AvailabilityItem) GetServiceId()(*string) {
     if m == nil {
@@ -117,6 +139,12 @@ func (m *AvailabilityItem) GetStatus()(*BookingsAvailabilityStatus) {
 func (m *AvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeOnlyValue("endTime", m.GetEndTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -158,6 +186,12 @@ func (m *AvailabilityItem) SetAdditionalData(value map[string]interface{})() {
 func (m *AvailabilityItem) SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
     if m != nil {
         m.endTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AvailabilityItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetServiceId sets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationUserStatus provides operations to manage the collection of agreement entities.
+// DeviceConfigurationUserStatus provides operations to manage the admin singleton.
 type DeviceConfigurationUserStatus struct {
     Entity
     // Devices count for that user.
@@ -24,6 +24,8 @@ func NewDeviceConfigurationUserStatus()(*DeviceConfigurationUserStatus) {
     m := &DeviceConfigurationUserStatus{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceConfigurationUserStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationUserStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

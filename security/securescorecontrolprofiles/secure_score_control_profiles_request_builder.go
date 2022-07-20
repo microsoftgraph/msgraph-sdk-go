@@ -70,7 +70,7 @@ func NewSecureScoreControlProfilesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewSecureScoreControlProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SecureScoreControlProfilesRequestBuilder) Count()(*i6da217f9c287c62e98e76eda4ee3e6923a69ba8b4978a63a1d243d286b7ebaea.CountRequestBuilder) {
     return i6da217f9c287c62e98e76eda4ee3e6923a69ba8b4978a63a1d243d286b7ebaea.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

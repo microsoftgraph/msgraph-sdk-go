@@ -10,12 +10,16 @@ type ProvisionChannelEmailResult struct {
     additionalData map[string]interface{}
     // Represents the provisioned email address.
     email *string
+    // The OdataType property
+    odataType *string
 }
 // NewProvisionChannelEmailResult instantiates a new provisionChannelEmailResult and sets the default values.
 func NewProvisionChannelEmailResult()(*ProvisionChannelEmailResult) {
     m := &ProvisionChannelEmailResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.provisionChannelEmailResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProvisionChannelEmailResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,12 +55,36 @@ func (m *ProvisionChannelEmailResult) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ProvisionChannelEmailResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *ProvisionChannelEmailResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("email", m.GetEmail())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *ProvisionChannelEmailResult) SetAdditionalData(value map[string]interfa
 func (m *ProvisionChannelEmailResult) SetEmail(value *string)() {
     if m != nil {
         m.email = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ProvisionChannelEmailResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

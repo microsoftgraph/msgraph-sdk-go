@@ -7,6 +7,8 @@ import (
 // Authentication 
 type Authentication struct {
     Entity
+    // Represents the email addresses registered to a user for authentication.
+    emailMethods []EmailAuthenticationMethodable
     // Represents the FIDO2 security keys registered to a user for authentication.
     fido2Methods []Fido2AuthenticationMethodable
     // Represents all authentication methods registered to a user.
@@ -17,6 +19,10 @@ type Authentication struct {
     operations []LongRunningOperationable
     // Represents the details of the password authentication method registered to a user for authentication.
     passwordMethods []PasswordAuthenticationMethodable
+    // Represents the phone registered to a user for authentication.
+    phoneMethods []PhoneAuthenticationMethodable
+    // The softwareOathMethods property
+    softwareOathMethods []SoftwareOathAuthenticationMethodable
     // Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
     temporaryAccessPassMethods []TemporaryAccessPassAuthenticationMethodable
     // Represents the Windows Hello for Business authentication method registered to a user for authentication.
@@ -27,11 +33,21 @@ func NewAuthentication()(*Authentication) {
     m := &Authentication{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.authentication";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAuthenticationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthentication(), nil
+}
+// GetEmailMethods gets the emailMethods property value. Represents the email addresses registered to a user for authentication.
+func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.emailMethods
+    }
 }
 // GetFido2Methods gets the fido2Methods property value. Represents the FIDO2 security keys registered to a user for authentication.
 func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
@@ -44,6 +60,20 @@ func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["emailMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEmailAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EmailAuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(EmailAuthenticationMethodable)
+            }
+            m.SetEmailMethods(res)
+        }
+        return nil
+    }
     res["fido2Methods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFido2AuthenticationMethodFromDiscriminatorValue)
         if err != nil {
@@ -114,6 +144,34 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["phoneMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePhoneAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PhoneAuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(PhoneAuthenticationMethodable)
+            }
+            m.SetPhoneMethods(res)
+        }
+        return nil
+    }
+    res["softwareOathMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SoftwareOathAuthenticationMethodable, len(val))
+            for i, v := range val {
+                res[i] = v.(SoftwareOathAuthenticationMethodable)
+            }
+            m.SetSoftwareOathMethods(res)
+        }
+        return nil
+    }
     res["temporaryAccessPassMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
@@ -176,6 +234,22 @@ func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethodable
         return m.passwordMethods
     }
 }
+// GetPhoneMethods gets the phoneMethods property value. Represents the phone registered to a user for authentication.
+func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneMethods
+    }
+}
+// GetSoftwareOathMethods gets the softwareOathMethods property value. The softwareOathMethods property
+func (m *Authentication) GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.softwareOathMethods
+    }
+}
 // GetTemporaryAccessPassMethods gets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 func (m *Authentication) GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable) {
     if m == nil {
@@ -197,6 +271,16 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetEmailMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailMethods()))
+        for i, v := range m.GetEmailMethods() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("emailMethods", cast)
+        if err != nil {
+            return err
+        }
     }
     if m.GetFido2Methods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFido2Methods()))
@@ -248,6 +332,26 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetPhoneMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPhoneMethods()))
+        for i, v := range m.GetPhoneMethods() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("phoneMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSoftwareOathMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSoftwareOathMethods()))
+        for i, v := range m.GetSoftwareOathMethods() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("softwareOathMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTemporaryAccessPassMethods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemporaryAccessPassMethods()))
         for i, v := range m.GetTemporaryAccessPassMethods() {
@@ -269,6 +373,12 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     return nil
+}
+// SetEmailMethods sets the emailMethods property value. Represents the email addresses registered to a user for authentication.
+func (m *Authentication) SetEmailMethods(value []EmailAuthenticationMethodable)() {
+    if m != nil {
+        m.emailMethods = value
+    }
 }
 // SetFido2Methods sets the fido2Methods property value. Represents the FIDO2 security keys registered to a user for authentication.
 func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethodable)() {
@@ -298,6 +408,18 @@ func (m *Authentication) SetOperations(value []LongRunningOperationable)() {
 func (m *Authentication) SetPasswordMethods(value []PasswordAuthenticationMethodable)() {
     if m != nil {
         m.passwordMethods = value
+    }
+}
+// SetPhoneMethods sets the phoneMethods property value. Represents the phone registered to a user for authentication.
+func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethodable)() {
+    if m != nil {
+        m.phoneMethods = value
+    }
+}
+// SetSoftwareOathMethods sets the softwareOathMethods property value. The softwareOathMethods property
+func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)() {
+    if m != nil {
+        m.softwareOathMethods = value
     }
 }
 // SetTemporaryAccessPassMethods sets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryNoncustodialDataSource provides operations to manage the collection of agreement entities.
+// EdiscoveryNoncustodialDataSource provides operations to manage the admin singleton.
 type EdiscoveryNoncustodialDataSource struct {
     DataSourceContainer
     // User source or SharePoint site data source as non-custodial data source.
@@ -17,6 +17,8 @@ func NewEdiscoveryNoncustodialDataSource()(*EdiscoveryNoncustodialDataSource) {
     m := &EdiscoveryNoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryNoncustodialDataSource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

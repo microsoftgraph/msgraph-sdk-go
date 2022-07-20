@@ -13,9 +13,11 @@ type ApprovalSettingsable interface {
     GetIsApprovalRequired()(*bool)
     GetIsApprovalRequiredForExtension()(*bool)
     GetIsRequestorJustificationRequired()(*bool)
+    GetOdataType()(*string)
     SetApprovalMode(value *string)()
     SetApprovalStages(value []UnifiedApprovalStageable)()
     SetIsApprovalRequired(value *bool)()
     SetIsApprovalRequiredForExtension(value *bool)()
     SetIsRequestorJustificationRequired(value *bool)()
+    SetOdataType(value *string)()
 }

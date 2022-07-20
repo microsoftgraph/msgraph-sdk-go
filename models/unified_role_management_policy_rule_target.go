@@ -16,6 +16,8 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
     inheritableSettings []string
     // The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
     level *string
+    // The OdataType property
+    odataType *string
     // The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
     operations []string
     // The targetObjects property
@@ -26,6 +28,8 @@ func NewUnifiedRoleManagementPolicyRuleTarget()(*UnifiedRoleManagementPolicyRule
     m := &UnifiedRoleManagementPolicyRuleTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.unifiedRoleManagementPolicyRuleTarget";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -107,6 +111,16 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -153,6 +167,14 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
         return m.level
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementPolicyRuleTarget) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOperations gets the operations property value. The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]string) {
     if m == nil {
@@ -191,6 +213,12 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i878a80d2330e89
     }
     {
         err := writer.WriteStringValue("level", m.GetLevel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -247,6 +275,12 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) SetInheritableSettings(value []s
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetLevel(value *string)() {
     if m != nil {
         m.level = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementPolicyRuleTarget) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperations sets the operations property value. The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.

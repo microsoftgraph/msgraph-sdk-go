@@ -32,6 +32,8 @@ type PrinterDefaults struct {
     mediaType *string
     // The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
     multipageLayout *PrintMultipageLayout
+    // The OdataType property
+    odataType *string
     // The default orientation to use when printing the document. Valid values are described in the following table.
     orientation *PrintOrientation
     // The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
@@ -48,6 +50,8 @@ func NewPrinterDefaults()(*PrinterDefaults) {
     m := &PrinterDefaults{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.printerDefaults";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterDefaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -229,6 +233,16 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["orientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePrintOrientation)
         if err != nil {
@@ -335,6 +349,14 @@ func (m *PrinterDefaults) GetMultipageLayout()(*PrintMultipageLayout) {
         return nil
     } else {
         return m.multipageLayout
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrinterDefaults) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOrientation gets the orientation property value. The default orientation to use when printing the document. Valid values are described in the following table.
@@ -450,6 +472,12 @@ func (m *PrinterDefaults) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetMultipageLayout() != nil {
         cast := (*m.GetMultipageLayout()).String()
         err := writer.WriteStringValue("multipageLayout", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -571,6 +599,12 @@ func (m *PrinterDefaults) SetMediaType(value *string)() {
 func (m *PrinterDefaults) SetMultipageLayout(value *PrintMultipageLayout)() {
     if m != nil {
         m.multipageLayout = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrinterDefaults) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrientation sets the orientation property value. The default orientation to use when printing the document. Valid values are described in the following table.

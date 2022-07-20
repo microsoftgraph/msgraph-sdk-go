@@ -12,6 +12,8 @@ type AggregationOption struct {
     bucketDefinition BucketAggregationDefinitionable
     // Computes aggregation on the field while the field exists in current entity type. Required.
     field *string
+    // The OdataType property
+    odataType *string
     // The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
     size *int32
 }
@@ -20,6 +22,8 @@ func NewAggregationOption()(*AggregationOption) {
     m := &AggregationOption{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.aggregationOption";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAggregationOptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *AggregationOption) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -84,6 +98,14 @@ func (m *AggregationOption) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AggregationOption) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSize gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
 func (m *AggregationOption) GetSize()(*int32) {
@@ -103,6 +125,12 @@ func (m *AggregationOption) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("field", m.GetField())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *AggregationOption) SetBucketDefinition(value BucketAggregationDefinitio
 func (m *AggregationOption) SetField(value *string)() {
     if m != nil {
         m.field = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AggregationOption) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSize sets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.

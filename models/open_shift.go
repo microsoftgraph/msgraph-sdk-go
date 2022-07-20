@@ -19,6 +19,8 @@ func NewOpenShift()(*OpenShift) {
     m := &OpenShift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    odataTypeValue := "#microsoft.graph.openShift";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOpenShiftFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,6 +19,8 @@ func NewUserSource()(*UserSource) {
     m := &UserSource{
         DataSource: *NewDataSource(),
     }
+    odataTypeValue := "#microsoft.graph.security.userSource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

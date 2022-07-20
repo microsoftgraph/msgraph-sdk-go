@@ -12,8 +12,10 @@ type ImportedWindowsAutopilotDeviceIdentityStateable interface {
     GetDeviceErrorName()(*string)
     GetDeviceImportStatus()(*ImportedWindowsAutopilotDeviceIdentityImportStatus)
     GetDeviceRegistrationId()(*string)
+    GetOdataType()(*string)
     SetDeviceErrorCode(value *int32)()
     SetDeviceErrorName(value *string)()
     SetDeviceImportStatus(value *ImportedWindowsAutopilotDeviceIdentityImportStatus)()
     SetDeviceRegistrationId(value *string)()
+    SetOdataType(value *string)()
 }

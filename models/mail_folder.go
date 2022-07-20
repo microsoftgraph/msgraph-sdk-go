@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MailFolder provides operations to manage the collection of agreement entities.
+// MailFolder provides operations to manage the admin singleton.
 type MailFolder struct {
     Entity
     // The number of immediate child mailFolders in the current mailFolder.
@@ -35,8 +35,8 @@ func NewMailFolder()(*MailFolder) {
     m := &MailFolder{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.mailFolder";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.mailFolder";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMailFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

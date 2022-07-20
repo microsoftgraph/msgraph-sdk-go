@@ -21,6 +21,8 @@ func NewDeviceComplianceActionItem()(*DeviceComplianceActionItem) {
     m := &DeviceComplianceActionItem{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceComplianceActionItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComplianceActionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

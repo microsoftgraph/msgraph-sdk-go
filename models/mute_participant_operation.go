@@ -13,6 +13,8 @@ func NewMuteParticipantOperation()(*MuteParticipantOperation) {
     m := &MuteParticipantOperation{
         CommsOperation: *NewCommsOperation(),
     }
+    odataTypeValue := "#microsoft.graph.muteParticipantOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMuteParticipantOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

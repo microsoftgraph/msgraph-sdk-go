@@ -10,6 +10,8 @@ type LobbyBypassSettings struct {
     additionalData map[string]interface{}
     // Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
     isDialInBypassEnabled *bool
+    // The OdataType property
+    odataType *string
     // Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
     scope *LobbyBypassScope
 }
@@ -18,6 +20,8 @@ func NewLobbyBypassSettings()(*LobbyBypassSettings) {
     m := &LobbyBypassSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.lobbyBypassSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLobbyBypassSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLobbyBypassScope)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *LobbyBypassSettings) GetIsDialInBypassEnabled()(*bool) {
         return m.isDialInBypassEnabled
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LobbyBypassSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetScope gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
 func (m *LobbyBypassSettings) GetScope()(*LobbyBypassScope) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *LobbyBypassSettings) GetScope()(*LobbyBypassScope) {
 func (m *LobbyBypassSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isDialInBypassEnabled", m.GetIsDialInBypassEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *LobbyBypassSettings) SetAdditionalData(value map[string]interface{})() 
 func (m *LobbyBypassSettings) SetIsDialInBypassEnabled(value *bool)() {
     if m != nil {
         m.isDialInBypassEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LobbyBypassSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetScope sets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.

@@ -10,12 +10,16 @@ type EducationOnPremisesInfo struct {
     additionalData map[string]interface{}
     // Unique identifier for the user object in Active Directory.
     immutableId *string
+    // The OdataType property
+    odataType *string
 }
 // NewEducationOnPremisesInfo instantiates a new educationOnPremisesInfo and sets the default values.
 func NewEducationOnPremisesInfo()(*EducationOnPremisesInfo) {
     m := &EducationOnPremisesInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.educationOnPremisesInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationOnPremisesInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *EducationOnPremisesInfo) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetImmutableId gets the immutableId property value. Unique identifier for the user object in Active Directory.
@@ -53,10 +67,24 @@ func (m *EducationOnPremisesInfo) GetImmutableId()(*string) {
         return m.immutableId
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationOnPremisesInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *EducationOnPremisesInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("immutableId", m.GetImmutableId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *EducationOnPremisesInfo) SetAdditionalData(value map[string]interface{}
 func (m *EducationOnPremisesInfo) SetImmutableId(value *string)() {
     if m != nil {
         m.immutableId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationOnPremisesInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

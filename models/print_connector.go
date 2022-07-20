@@ -26,6 +26,8 @@ func NewPrintConnector()(*PrintConnector) {
     m := &PrintConnector{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.printConnector";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -71,7 +71,7 @@ func NewRoleAssignmentScheduleInstancesRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewRoleAssignmentScheduleInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RoleAssignmentScheduleInstancesRequestBuilder) Count()(*if3c23d730af7b353264679f71114ed38a4858e8f73b2879ab662bf6ba209a92e.CountRequestBuilder) {
     return if3c23d730af7b353264679f71114ed38a4858e8f73b2879ab662bf6ba209a92e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

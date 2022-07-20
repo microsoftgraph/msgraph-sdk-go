@@ -10,6 +10,8 @@ type SubjectRightsRequestStageDetail struct {
     additionalData map[string]interface{}
     // Describes the error, if any, for the current stage.
     error PublicErrorable
+    // The OdataType property
+    odataType *string
     // The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
     stage *SubjectRightsRequestStage
     // Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
@@ -20,6 +22,8 @@ func NewSubjectRightsRequestStageDetail()(*SubjectRightsRequestStageDetail) {
     m := &SubjectRightsRequestStageDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.subjectRightsRequestStageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestStageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSubjectRightsRequestStage)
         if err != nil {
@@ -77,6 +91,14 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SubjectRightsRequestStageDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetStage gets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStage) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *SubjectRightsRequestStageDetail) GetStatus()(*SubjectRightsRequestStage
 func (m *SubjectRightsRequestStageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("error", m.GetError())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -133,6 +161,12 @@ func (m *SubjectRightsRequestStageDetail) SetAdditionalData(value map[string]int
 func (m *SubjectRightsRequestStageDetail) SetError(value PublicErrorable)() {
     if m != nil {
         m.error = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SubjectRightsRequestStageDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStage sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.

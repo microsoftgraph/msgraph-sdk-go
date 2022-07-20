@@ -10,12 +10,16 @@ type AppConsentRequestScope struct {
     additionalData map[string]interface{}
     // The name of the scope.
     displayName *string
+    // The OdataType property
+    odataType *string
 }
 // NewAppConsentRequestScope instantiates a new appConsentRequestScope and sets the default values.
 func NewAppConsentRequestScope()(*AppConsentRequestScope) {
     m := &AppConsentRequestScope{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.appConsentRequestScope";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppConsentRequestScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,12 +55,36 @@ func (m *AppConsentRequestScope) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AppConsentRequestScope) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *AppConsentRequestScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *AppConsentRequestScope) SetAdditionalData(value map[string]interface{})
 func (m *AppConsentRequestScope) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AppConsentRequestScope) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

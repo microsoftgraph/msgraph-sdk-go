@@ -70,7 +70,7 @@ func NewVerificationDnsRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewVerificationDnsRecordsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *VerificationDnsRecordsRequestBuilder) Count()(*ife48def7de4472dd48d7993ba7948fb67174c770a5421142e85fba395e565f6f.CountRequestBuilder) {
     return ife48def7de4472dd48d7993ba7948fb67174c770a5421142e85fba395e565f6f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

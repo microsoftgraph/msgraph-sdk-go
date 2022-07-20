@@ -70,7 +70,7 @@ func NewOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewOwnedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *OwnedObjectsRequestBuilder) Count()(*ib2a122a45f2f9ecdd4dec70c33255e57920c1fe41fe02b4b01be0195ffea3106.CountRequestBuilder) {
     return ib2a122a45f2f9ecdd4dec70c33255e57920c1fe41fe02b4b01be0195ffea3106.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

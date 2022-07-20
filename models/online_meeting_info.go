@@ -12,6 +12,8 @@ type OnlineMeetingInfo struct {
     conferenceId *string
     // The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
     joinUrl *string
+    // The OdataType property
+    odataType *string
     // All of the phone numbers associated with this conference.
     phones []Phoneable
     // The pre-formatted quickdial for this call.
@@ -26,6 +28,8 @@ func NewOnlineMeetingInfo()(*OnlineMeetingInfo) {
     m := &OnlineMeetingInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.onlineMeetingInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnlineMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +72,16 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetJoinUrl(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -129,6 +143,14 @@ func (m *OnlineMeetingInfo) GetJoinUrl()(*string) {
         return m.joinUrl
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OnlineMeetingInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPhones gets the phones property value. All of the phone numbers associated with this conference.
 func (m *OnlineMeetingInfo) GetPhones()([]Phoneable) {
     if m == nil {
@@ -171,6 +193,12 @@ func (m *OnlineMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("joinUrl", m.GetJoinUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -227,6 +255,12 @@ func (m *OnlineMeetingInfo) SetConferenceId(value *string)() {
 func (m *OnlineMeetingInfo) SetJoinUrl(value *string)() {
     if m != nil {
         m.joinUrl = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OnlineMeetingInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPhones sets the phones property value. All of the phone numbers associated with this conference.

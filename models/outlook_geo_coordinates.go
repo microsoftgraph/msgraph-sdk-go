@@ -18,12 +18,16 @@ type OutlookGeoCoordinates struct {
     latitude *float64
     // The longitude of the location.
     longitude *float64
+    // The OdataType property
+    odataType *string
 }
 // NewOutlookGeoCoordinates instantiates a new outlookGeoCoordinates and sets the default values.
 func NewOutlookGeoCoordinates()(*OutlookGeoCoordinates) {
     m := &OutlookGeoCoordinates{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.outlookGeoCoordinates";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOutlookGeoCoordinatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -115,6 +119,16 @@ func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLatitude gets the latitude property value. The latitude of the location.
@@ -131,6 +145,14 @@ func (m *OutlookGeoCoordinates) GetLongitude()(*float64) {
         return nil
     } else {
         return m.longitude
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OutlookGeoCoordinates) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -161,6 +183,12 @@ func (m *OutlookGeoCoordinates) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteFloat64Value("longitude", m.GetLongitude())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -207,5 +235,11 @@ func (m *OutlookGeoCoordinates) SetLatitude(value *float64)() {
 func (m *OutlookGeoCoordinates) SetLongitude(value *float64)() {
     if m != nil {
         m.longitude = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OutlookGeoCoordinates) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

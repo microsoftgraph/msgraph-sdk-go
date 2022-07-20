@@ -10,6 +10,8 @@ type CertificationControl struct {
     additionalData map[string]interface{}
     // Certification control name
     name *string
+    // The OdataType property
+    odataType *string
     // URL for the Microsoft Service Trust Portal
     url *string
 }
@@ -18,6 +20,8 @@ func NewCertificationControl()(*CertificationControl) {
     m := &CertificationControl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.certificationControl";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCertificationControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *CertificationControl) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *CertificationControl) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CertificationControl) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUrl gets the url property value. URL for the Microsoft Service Trust Portal
 func (m *CertificationControl) GetUrl()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *CertificationControl) GetUrl()(*string) {
 func (m *CertificationControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *CertificationControl) SetAdditionalData(value map[string]interface{})()
 func (m *CertificationControl) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CertificationControl) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUrl sets the url property value. URL for the Microsoft Service Trust Portal

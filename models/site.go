@@ -47,6 +47,8 @@ func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),
     }
+    odataTypeValue := "#microsoft.graph.site";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

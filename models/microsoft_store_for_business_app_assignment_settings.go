@@ -15,6 +15,8 @@ func NewMicrosoftStoreForBusinessAppAssignmentSettings()(*MicrosoftStoreForBusin
     m := &MicrosoftStoreForBusinessAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
+    odataTypeValue := "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftStoreForBusinessAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

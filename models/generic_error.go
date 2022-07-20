@@ -12,12 +12,16 @@ type GenericError struct {
     code *string
     // The error message.
     message *string
+    // The OdataType property
+    odataType *string
 }
 // NewGenericError instantiates a new genericError and sets the default values.
 func NewGenericError()(*GenericError) {
     m := &GenericError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.genericError";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGenericErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *GenericError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMessage gets the message property value. The error message.
@@ -71,6 +85,14 @@ func (m *GenericError) GetMessage()(*string) {
         return nil
     } else {
         return m.message
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GenericError) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *GenericError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *GenericError) SetCode(value *string)() {
 func (m *GenericError) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GenericError) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

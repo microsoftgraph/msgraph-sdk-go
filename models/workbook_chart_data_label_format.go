@@ -17,6 +17,8 @@ func NewWorkbookChartDataLabelFormat()(*WorkbookChartDataLabelFormat) {
     m := &WorkbookChartDataLabelFormat{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartDataLabelFormat";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartDataLabelFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

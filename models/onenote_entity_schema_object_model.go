@@ -16,8 +16,8 @@ func NewOnenoteEntitySchemaObjectModel()(*OnenoteEntitySchemaObjectModel) {
     m := &OnenoteEntitySchemaObjectModel{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),
     }
-    odatatypeValue := "#microsoft.graph.onenoteEntitySchemaObjectModel";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.onenoteEntitySchemaObjectModel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnenoteEntitySchemaObjectModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,10 +35,16 @@ func CreateOnenoteEntitySchemaObjectModelFromDiscriminatorValue(parseNode i878a8
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.notebook":
+                        return NewNotebook(), nil
                     case "#microsoft.graph.onenoteEntityHierarchyModel":
                         return NewOnenoteEntityHierarchyModel(), nil
                     case "#microsoft.graph.onenotePage":
                         return NewOnenotePage(), nil
+                    case "#microsoft.graph.onenoteSection":
+                        return NewOnenoteSection(), nil
+                    case "#microsoft.graph.sectionGroup":
+                        return NewSectionGroup(), nil
                 }
             }
         }

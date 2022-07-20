@@ -15,6 +15,8 @@ func NewRequestorManager()(*RequestorManager) {
     m := &RequestorManager{
         SubjectSet: *NewSubjectSet(),
     }
+    odataTypeValue := "#microsoft.graph.requestorManager";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRequestorManagerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

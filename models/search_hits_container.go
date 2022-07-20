@@ -14,6 +14,8 @@ type SearchHitsContainer struct {
     hits []SearchHitable
     // Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
     moreResultsAvailable *bool
+    // The OdataType property
+    odataType *string
     // The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
     total *int32
 }
@@ -22,6 +24,8 @@ func NewSearchHitsContainer()(*SearchHitsContainer) {
     m := &SearchHitsContainer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.searchHitsContainer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchHitsContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +89,16 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["total"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -111,6 +125,14 @@ func (m *SearchHitsContainer) GetMoreResultsAvailable()(*bool) {
         return nil
     } else {
         return m.moreResultsAvailable
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SearchHitsContainer) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetTotal gets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
@@ -145,6 +167,12 @@ func (m *SearchHitsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteBoolValue("moreResultsAvailable", m.GetMoreResultsAvailable())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -185,6 +213,12 @@ func (m *SearchHitsContainer) SetHits(value []SearchHitable)() {
 func (m *SearchHitsContainer) SetMoreResultsAvailable(value *bool)() {
     if m != nil {
         m.moreResultsAvailable = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SearchHitsContainer) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTotal sets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.

@@ -14,6 +14,8 @@ type MediaStream struct {
     label *string
     // The mediaType property
     mediaType *Modality
+    // The OdataType property
+    odataType *string
     // Indicates whether the media is muted by the server.
     serverMuted *bool
     // The source ID.
@@ -24,6 +26,8 @@ func NewMediaStream()(*MediaStream) {
     m := &MediaStream{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.mediaStream";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMediaStreamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +83,16 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["serverMuted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -117,6 +131,14 @@ func (m *MediaStream) GetMediaType()(*Modality) {
         return m.mediaType
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MediaStream) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetServerMuted gets the serverMuted property value. Indicates whether the media is muted by the server.
 func (m *MediaStream) GetServerMuted()(*bool) {
     if m == nil {
@@ -151,6 +173,12 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetMediaType() != nil {
         cast := (*m.GetMediaType()).String()
         err := writer.WriteStringValue("mediaType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -197,6 +225,12 @@ func (m *MediaStream) SetLabel(value *string)() {
 func (m *MediaStream) SetMediaType(value *Modality)() {
     if m != nil {
         m.mediaType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MediaStream) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetServerMuted sets the serverMuted property value. Indicates whether the media is muted by the server.

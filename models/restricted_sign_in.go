@@ -15,6 +15,8 @@ func NewRestrictedSignIn()(*RestrictedSignIn) {
     m := &RestrictedSignIn{
         SignIn: *NewSignIn(),
     }
+    odataTypeValue := "#microsoft.graph.restrictedSignIn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRestrictedSignInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

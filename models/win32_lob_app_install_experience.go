@@ -10,6 +10,8 @@ type Win32LobAppInstallExperience struct {
     additionalData map[string]interface{}
     // Indicates the type of restart action.
     deviceRestartBehavior *Win32LobAppRestartBehavior
+    // The OdataType property
+    odataType *string
     // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
 }
@@ -18,6 +20,8 @@ func NewWin32LobAppInstallExperience()(*Win32LobAppInstallExperience) {
     m := &Win32LobAppInstallExperience{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.win32LobAppInstallExperience";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppInstallExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["runAsAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRunAsAccountType)
         if err != nil {
@@ -64,6 +78,14 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Win32LobAppInstallExperience) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *Win32LobAppInstallExperience) GetRunAsAccount()(*RunAsAccountType) {
@@ -78,6 +100,12 @@ func (m *Win32LobAppInstallExperience) Serialize(writer i878a80d2330e89d26896388
     if m.GetDeviceRestartBehavior() != nil {
         cast := (*m.GetDeviceRestartBehavior()).String()
         err := writer.WriteStringValue("deviceRestartBehavior", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -107,6 +135,12 @@ func (m *Win32LobAppInstallExperience) SetAdditionalData(value map[string]interf
 func (m *Win32LobAppInstallExperience) SetDeviceRestartBehavior(value *Win32LobAppRestartBehavior)() {
     if m != nil {
         m.deviceRestartBehavior = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Win32LobAppInstallExperience) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.

@@ -36,6 +36,8 @@ func NewVppToken()(*VppToken) {
     m := &VppToken{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.vppToken";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVppTokenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

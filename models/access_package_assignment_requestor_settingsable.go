@@ -15,6 +15,7 @@ type AccessPackageAssignmentRequestorSettingsable interface {
     GetEnableTargetsToSelfAddAccess()(*bool)
     GetEnableTargetsToSelfRemoveAccess()(*bool)
     GetEnableTargetsToSelfUpdateAccess()(*bool)
+    GetOdataType()(*string)
     GetOnBehalfRequestors()([]SubjectSetable)
     SetAllowCustomAssignmentSchedule(value *bool)()
     SetEnableOnBehalfRequestorsToAddAccess(value *bool)()
@@ -23,5 +24,6 @@ type AccessPackageAssignmentRequestorSettingsable interface {
     SetEnableTargetsToSelfAddAccess(value *bool)()
     SetEnableTargetsToSelfRemoveAccess(value *bool)()
     SetEnableTargetsToSelfUpdateAccess(value *bool)()
+    SetOdataType(value *string)()
     SetOnBehalfRequestors(value []SubjectSetable)()
 }

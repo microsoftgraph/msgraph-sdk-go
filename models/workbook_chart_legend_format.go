@@ -17,6 +17,8 @@ func NewWorkbookChartLegendFormat()(*WorkbookChartLegendFormat) {
     m := &WorkbookChartLegendFormat{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartLegendFormat";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartLegendFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

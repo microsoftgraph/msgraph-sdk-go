@@ -14,12 +14,16 @@ type DocumentSetContent struct {
     fileName *string
     // Folder name in which the file will be placed when a new document set is created in the library.
     folderName *string
+    // The OdataType property
+    odataType *string
 }
 // NewDocumentSetContent instantiates a new documentSetContent and sets the default values.
 func NewDocumentSetContent()(*DocumentSetContent) {
     m := &DocumentSetContent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.documentSetContent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDocumentSetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFileName gets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set
@@ -93,6 +107,14 @@ func (m *DocumentSetContent) GetFolderName()(*string) {
         return m.folderName
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DocumentSetContent) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *DocumentSetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *DocumentSetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteStringValue("folderName", m.GetFolderName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *DocumentSetContent) SetFileName(value *string)() {
 func (m *DocumentSetContent) SetFolderName(value *string)() {
     if m != nil {
         m.folderName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DocumentSetContent) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

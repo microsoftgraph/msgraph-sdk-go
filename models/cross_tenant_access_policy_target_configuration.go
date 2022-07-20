@@ -10,6 +10,8 @@ type CrossTenantAccessPolicyTargetConfiguration struct {
     accessType *CrossTenantAccessPolicyTargetConfigurationAccessType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Specifies whether to target users, groups, or applications with this rule.
     targets []CrossTenantAccessPolicyTargetable
 }
@@ -18,6 +20,8 @@ func NewCrossTenantAccessPolicyTargetConfiguration()(*CrossTenantAccessPolicyTar
     m := &CrossTenantAccessPolicyTargetConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyTargetConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCrossTenantAccessPolicyTargetConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["targets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCrossTenantAccessPolicyTargetFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) GetFieldDeserializers()(map
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CrossTenantAccessPolicyTargetConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTargets gets the targets property value. Specifies whether to target users, groups, or applications with this rule.
 func (m *CrossTenantAccessPolicyTargetConfiguration) GetTargets()([]CrossTenantAccessPolicyTargetable) {
     if m == nil {
@@ -82,6 +104,12 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) Serialize(writer i878a80d23
     if m.GetAccessType() != nil {
         cast := (*m.GetAccessType()).String()
         err := writer.WriteStringValue("accessType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -114,6 +142,12 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) SetAccessType(value *CrossT
 func (m *CrossTenantAccessPolicyTargetConfiguration) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CrossTenantAccessPolicyTargetConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTargets sets the targets property value. Specifies whether to target users, groups, or applications with this rule.

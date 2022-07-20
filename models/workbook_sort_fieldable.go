@@ -13,11 +13,13 @@ type WorkbookSortFieldable interface {
     GetDataOption()(*string)
     GetIcon()(WorkbookIconable)
     GetKey()(*int32)
+    GetOdataType()(*string)
     GetSortOn()(*string)
     SetAscending(value *bool)()
     SetColor(value *string)()
     SetDataOption(value *string)()
     SetIcon(value WorkbookIconable)()
     SetKey(value *int32)()
+    SetOdataType(value *string)()
     SetSortOn(value *string)()
 }

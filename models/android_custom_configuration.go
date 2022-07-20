@@ -15,6 +15,8 @@ func NewAndroidCustomConfiguration()(*AndroidCustomConfiguration) {
     m := &AndroidCustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.androidCustomConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidCustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

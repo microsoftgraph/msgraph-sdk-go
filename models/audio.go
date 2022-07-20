@@ -32,6 +32,8 @@ type Audio struct {
     hasDrm *bool
     // Indicates if the file is encoded with a variable bitrate.
     isVariableBitrate *bool
+    // The OdataType property
+    odataType *string
     // The title of the audio file.
     title *string
     // The number of the track on the original disc for this audio file.
@@ -46,6 +48,8 @@ func NewAudio()(*Audio) {
     m := &Audio{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.audio";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAudioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -255,6 +259,16 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -319,6 +333,14 @@ func (m *Audio) GetIsVariableBitrate()(*bool) {
         return nil
     } else {
         return m.isVariableBitrate
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Audio) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetTitle gets the title property value. The title of the audio file.
@@ -423,6 +445,12 @@ func (m *Audio) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err := writer.WriteBoolValue("isVariableBitrate", m.GetIsVariableBitrate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -535,6 +563,12 @@ func (m *Audio) SetHasDrm(value *bool)() {
 func (m *Audio) SetIsVariableBitrate(value *bool)() {
     if m != nil {
         m.isVariableBitrate = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Audio) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTitle sets the title property value. The title of the audio file.

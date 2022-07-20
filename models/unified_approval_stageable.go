@@ -13,11 +13,13 @@ type UnifiedApprovalStageable interface {
     GetEscalationTimeInMinutes()(*int32)
     GetIsApproverJustificationRequired()(*bool)
     GetIsEscalationEnabled()(*bool)
+    GetOdataType()(*string)
     GetPrimaryApprovers()([]SubjectSetable)
     SetApprovalStageTimeOutInDays(value *int32)()
     SetEscalationApprovers(value []SubjectSetable)()
     SetEscalationTimeInMinutes(value *int32)()
     SetIsApproverJustificationRequired(value *bool)()
     SetIsEscalationEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetPrimaryApprovers(value []SubjectSetable)()
 }

@@ -17,6 +17,7 @@ type Videoable interface {
     GetFourCC()(*string)
     GetFrameRate()(*float64)
     GetHeight()(*int32)
+    GetOdataType()(*string)
     GetWidth()(*int32)
     SetAudioBitsPerSample(value *int32)()
     SetAudioChannels(value *int32)()
@@ -27,5 +28,6 @@ type Videoable interface {
     SetFourCC(value *string)()
     SetFrameRate(value *float64)()
     SetHeight(value *int32)()
+    SetOdataType(value *string)()
     SetWidth(value *int32)()
 }

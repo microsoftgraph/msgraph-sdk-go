@@ -12,12 +12,16 @@ type MeetingTimeSuggestionsResult struct {
     emptySuggestionsReason *string
     // An array of meeting suggestions.
     meetingTimeSuggestions []MeetingTimeSuggestionable
+    // The OdataType property
+    odataType *string
 }
 // NewMeetingTimeSuggestionsResult instantiates a new meetingTimeSuggestionsResult and sets the default values.
 func NewMeetingTimeSuggestionsResult()(*MeetingTimeSuggestionsResult) {
     m := &MeetingTimeSuggestionsResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.meetingTimeSuggestionsResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMeetingTimeSuggestionsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *MeetingTimeSuggestionsResult) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMeetingTimeSuggestions gets the meetingTimeSuggestions property value. An array of meeting suggestions.
@@ -75,6 +89,14 @@ func (m *MeetingTimeSuggestionsResult) GetMeetingTimeSuggestions()([]MeetingTime
         return nil
     } else {
         return m.meetingTimeSuggestions
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MeetingTimeSuggestionsResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -91,6 +113,12 @@ func (m *MeetingTimeSuggestionsResult) Serialize(writer i878a80d2330e89d26896388
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("meetingTimeSuggestions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -119,5 +147,11 @@ func (m *MeetingTimeSuggestionsResult) SetEmptySuggestionsReason(value *string)(
 func (m *MeetingTimeSuggestionsResult) SetMeetingTimeSuggestions(value []MeetingTimeSuggestionable)() {
     if m != nil {
         m.meetingTimeSuggestions = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MeetingTimeSuggestionsResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

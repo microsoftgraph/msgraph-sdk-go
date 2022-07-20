@@ -12,6 +12,8 @@ type TeamSummary struct {
     guestsCount *int32
     // Count of members in a team.
     membersCount *int32
+    // The OdataType property
+    odataType *string
     // Count of owners in a team.
     ownersCount *int32
 }
@@ -20,6 +22,8 @@ func NewTeamSummary()(*TeamSummary) {
     m := &TeamSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *TeamSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ownersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *TeamSummary) GetMembersCount()(*int32) {
         return m.membersCount
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOwnersCount gets the ownersCount property value. Count of owners in a team.
 func (m *TeamSummary) GetOwnersCount()(*int32) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *TeamSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteInt32Value("membersCount", m.GetMembersCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *TeamSummary) SetGuestsCount(value *int32)() {
 func (m *TeamSummary) SetMembersCount(value *int32)() {
     if m != nil {
         m.membersCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOwnersCount sets the ownersCount property value. Count of owners in a team.

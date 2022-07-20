@@ -16,6 +16,8 @@ type TextColumn struct {
     linesForEditing *int32
     // The maximum number of characters for the value.
     maxLength *int32
+    // The OdataType property
+    odataType *string
     // The type of text being stored. Must be one of plain or richText
     textType *string
 }
@@ -24,6 +26,8 @@ func NewTextColumn()(*TextColumn) {
     m := &TextColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.textColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTextColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +101,16 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["textType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -123,6 +137,14 @@ func (m *TextColumn) GetMaxLength()(*int32) {
         return nil
     } else {
         return m.maxLength
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TextColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetTextType gets the textType property value. The type of text being stored. Must be one of plain or richText
@@ -155,6 +177,12 @@ func (m *TextColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err := writer.WriteInt32Value("maxLength", m.GetMaxLength())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -201,6 +229,12 @@ func (m *TextColumn) SetLinesForEditing(value *int32)() {
 func (m *TextColumn) SetMaxLength(value *int32)() {
     if m != nil {
         m.maxLength = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TextColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTextType sets the textType property value. The type of text being stored. Must be one of plain or richText

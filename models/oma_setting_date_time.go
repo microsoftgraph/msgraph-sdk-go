@@ -16,6 +16,8 @@ func NewOmaSettingDateTime()(*OmaSettingDateTime) {
     m := &OmaSettingDateTime{
         OmaSetting: *NewOmaSetting(),
     }
+    odataTypeValue := "#microsoft.graph.omaSettingDateTime";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOmaSettingDateTimeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

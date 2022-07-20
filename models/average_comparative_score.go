@@ -12,12 +12,16 @@ type AverageComparativeScore struct {
     averageScore *float64
     // Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
     basis *string
+    // The OdataType property
+    odataType *string
 }
 // NewAverageComparativeScore instantiates a new averageComparativeScore and sets the default values.
 func NewAverageComparativeScore()(*AverageComparativeScore) {
     m := &AverageComparativeScore{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.averageComparativeScore";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAverageComparativeScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AverageComparativeScore) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *AverageComparativeScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *AverageComparativeScore) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteStringValue("basis", m.GetBasis())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *AverageComparativeScore) SetAverageScore(value *float64)() {
 func (m *AverageComparativeScore) SetBasis(value *string)() {
     if m != nil {
         m.basis = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AverageComparativeScore) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

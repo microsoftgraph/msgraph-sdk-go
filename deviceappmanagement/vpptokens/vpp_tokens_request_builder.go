@@ -70,7 +70,7 @@ func NewVppTokensRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewVppTokensRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *VppTokensRequestBuilder) Count()(*i0f2468a65d762b3362cb6887fe9209d0b5d30be45d5406f97f61439ecf78344f.CountRequestBuilder) {
     return i0f2468a65d762b3362cb6887fe9209d0b5d30be45d5406f97f61439ecf78344f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

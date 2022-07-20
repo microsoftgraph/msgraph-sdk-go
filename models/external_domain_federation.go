@@ -19,6 +19,8 @@ func NewExternalDomainFederation()(*ExternalDomainFederation) {
     m := &ExternalDomainFederation{
         IdentitySource: *NewIdentitySource(),
     }
+    odataTypeValue := "#microsoft.graph.externalDomainFederation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalDomainFederationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

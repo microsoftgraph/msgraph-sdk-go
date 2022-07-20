@@ -50,6 +50,8 @@ func NewOrgContact()(*OrgContact) {
     m := &OrgContact{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.orgContact";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOrgContactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

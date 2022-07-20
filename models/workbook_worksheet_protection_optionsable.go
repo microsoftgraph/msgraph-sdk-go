@@ -19,6 +19,7 @@ type WorkbookWorksheetProtectionOptionsable interface {
     GetAllowInsertRows()(*bool)
     GetAllowPivotTables()(*bool)
     GetAllowSort()(*bool)
+    GetOdataType()(*string)
     SetAllowAutoFilter(value *bool)()
     SetAllowDeleteColumns(value *bool)()
     SetAllowDeleteRows(value *bool)()
@@ -30,4 +31,5 @@ type WorkbookWorksheetProtectionOptionsable interface {
     SetAllowInsertRows(value *bool)()
     SetAllowPivotTables(value *bool)()
     SetAllowSort(value *bool)()
+    SetOdataType(value *string)()
 }

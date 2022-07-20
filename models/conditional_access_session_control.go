@@ -10,16 +10,16 @@ type ConditionalAccessSessionControl struct {
     additionalData map[string]interface{}
     // Specifies whether the session control is enabled.
     isEnabled *bool
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewConditionalAccessSessionControl instantiates a new conditionalAccessSessionControl and sets the default values.
 func NewConditionalAccessSessionControl()(*ConditionalAccessSessionControl) {
     m := &ConditionalAccessSessionControl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.conditionalAccessSessionControl";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.conditionalAccessSessionControl";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,7 +78,7 @@ func (m *ConditionalAccessSessionControl) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -92,12 +92,12 @@ func (m *ConditionalAccessSessionControl) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *ConditionalAccessSessionControl) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessSessionControl) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -109,7 +109,7 @@ func (m *ConditionalAccessSessionControl) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -134,9 +134,9 @@ func (m *ConditionalAccessSessionControl) SetIsEnabled(value *bool)() {
         m.isEnabled = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *ConditionalAccessSessionControl) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessSessionControl) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

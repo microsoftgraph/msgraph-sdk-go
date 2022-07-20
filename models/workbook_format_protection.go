@@ -17,6 +17,8 @@ func NewWorkbookFormatProtection()(*WorkbookFormatProtection) {
     m := &WorkbookFormatProtection{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookFormatProtection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookFormatProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

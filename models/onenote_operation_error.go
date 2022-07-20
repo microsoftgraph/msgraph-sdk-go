@@ -12,12 +12,16 @@ type OnenoteOperationError struct {
     code *string
     // The error message.
     message *string
+    // The OdataType property
+    odataType *string
 }
 // NewOnenoteOperationError instantiates a new onenoteOperationError and sets the default values.
 func NewOnenoteOperationError()(*OnenoteOperationError) {
     m := &OnenoteOperationError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.onenoteOperationError";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnenoteOperationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *OnenoteOperationError) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMessage gets the message property value. The error message.
@@ -71,6 +85,14 @@ func (m *OnenoteOperationError) GetMessage()(*string) {
         return nil
     } else {
         return m.message
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OnenoteOperationError) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *OnenoteOperationError) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *OnenoteOperationError) SetCode(value *string)() {
 func (m *OnenoteOperationError) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OnenoteOperationError) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

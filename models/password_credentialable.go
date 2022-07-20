@@ -14,6 +14,7 @@ type PasswordCredentialable interface {
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetHint()(*string)
     GetKeyId()(*string)
+    GetOdataType()(*string)
     GetSecretText()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetCustomKeyIdentifier(value []byte)()
@@ -21,6 +22,7 @@ type PasswordCredentialable interface {
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHint(value *string)()
     SetKeyId(value *string)()
+    SetOdataType(value *string)()
     SetSecretText(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

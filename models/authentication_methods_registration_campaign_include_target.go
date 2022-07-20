@@ -10,6 +10,8 @@ type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
     additionalData map[string]interface{}
     // The object identifier of an Azure AD user or group.
     id *string
+    // The OdataType property
+    odataType *string
     // The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
     targetedAuthenticationMethod *string
     // The targetType property
@@ -20,6 +22,8 @@ func NewAuthenticationMethodsRegistrationCampaignIncludeTarget()(*Authentication
     m := &AuthenticationMethodsRegistrationCampaignIncludeTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationMethodsRegistrationCampaignIncludeTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
         }
         if val != nil {
             m.SetId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetId()(*string
         return m.id
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTargetedAuthenticationMethod gets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetedAuthenticationMethod()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetType()
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -132,6 +160,12 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetAdditionalDa
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetId(value *string)() {
     if m != nil {
         m.id = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTargetedAuthenticationMethod sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.

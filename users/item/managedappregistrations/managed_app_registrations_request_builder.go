@@ -63,7 +63,7 @@ func NewManagedAppRegistrationsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ManagedAppRegistrationsRequestBuilder) Count()(*i49699f4ed3cc6657da24dd711cba4b3ea025d69d7e79fb66f9d9bce8536a4909.CountRequestBuilder) {
     return i49699f4ed3cc6657da24dd711cba4b3ea025d69d7e79fb66f9d9bce8536a4909.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

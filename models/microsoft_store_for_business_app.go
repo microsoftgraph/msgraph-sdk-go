@@ -23,6 +23,8 @@ func NewMicrosoftStoreForBusinessApp()(*MicrosoftStoreForBusinessApp) {
     m := &MicrosoftStoreForBusinessApp{
         MobileApp: *NewMobileApp(),
     }
+    odataTypeValue := "#microsoft.graph.microsoftStoreForBusinessApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftStoreForBusinessAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

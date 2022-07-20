@@ -11,7 +11,9 @@ type InsightIdentityable interface {
     GetAddress()(*string)
     GetDisplayName()(*string)
     GetId()(*string)
+    GetOdataType()(*string)
     SetAddress(value *string)()
     SetDisplayName(value *string)()
     SetId(value *string)()
+    SetOdataType(value *string)()
 }

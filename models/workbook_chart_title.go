@@ -21,6 +21,8 @@ func NewWorkbookChartTitle()(*WorkbookChartTitle) {
     m := &WorkbookChartTitle{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartTitle";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartTitleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

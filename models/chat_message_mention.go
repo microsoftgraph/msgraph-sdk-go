@@ -14,12 +14,16 @@ type ChatMessageMention struct {
     mentioned ChatMessageMentionedIdentitySetable
     // String used to represent the mention. For example, a user's display name, a team name.
     mentionText *string
+    // The OdataType property
+    odataType *string
 }
 // NewChatMessageMention instantiates a new chatMessageMention and sets the default values.
 func NewChatMessageMention()(*ChatMessageMention) {
     m := &ChatMessageMention{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.chatMessageMention";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessageMentionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetId gets the id property value. Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
@@ -93,6 +107,14 @@ func (m *ChatMessageMention) GetMentionText()(*string) {
         return m.mentionText
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChatMessageMention) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ChatMessageMention) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *ChatMessageMention) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteStringValue("mentionText", m.GetMentionText())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *ChatMessageMention) SetMentioned(value ChatMessageMentionedIdentitySeta
 func (m *ChatMessageMention) SetMentionText(value *string)() {
     if m != nil {
         m.mentionText = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChatMessageMention) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

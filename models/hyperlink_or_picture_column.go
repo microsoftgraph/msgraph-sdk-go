@@ -10,12 +10,16 @@ type HyperlinkOrPictureColumn struct {
     additionalData map[string]interface{}
     // Specifies whether the display format used for URL columns is an image or a hyperlink.
     isPicture *bool
+    // The OdataType property
+    odataType *string
 }
 // NewHyperlinkOrPictureColumn instantiates a new hyperlinkOrPictureColumn and sets the default values.
 func NewHyperlinkOrPictureColumn()(*HyperlinkOrPictureColumn) {
     m := &HyperlinkOrPictureColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.hyperlinkOrPictureColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHyperlinkOrPictureColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *HyperlinkOrPictureColumn) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsPicture gets the isPicture property value. Specifies whether the display format used for URL columns is an image or a hyperlink.
@@ -53,10 +67,24 @@ func (m *HyperlinkOrPictureColumn) GetIsPicture()(*bool) {
         return m.isPicture
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *HyperlinkOrPictureColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *HyperlinkOrPictureColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isPicture", m.GetIsPicture())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *HyperlinkOrPictureColumn) SetAdditionalData(value map[string]interface{
 func (m *HyperlinkOrPictureColumn) SetIsPicture(value *bool)() {
     if m != nil {
         m.isPicture = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *HyperlinkOrPictureColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

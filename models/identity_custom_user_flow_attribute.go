@@ -13,6 +13,8 @@ func NewIdentityCustomUserFlowAttribute()(*IdentityCustomUserFlowAttribute) {
     m := &IdentityCustomUserFlowAttribute{
         IdentityUserFlowAttribute: *NewIdentityUserFlowAttribute(),
     }
+    odataTypeValue := "#microsoft.graph.identityCustomUserFlowAttribute";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityCustomUserFlowAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

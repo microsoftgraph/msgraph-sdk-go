@@ -14,12 +14,16 @@ type Fido2KeyRestrictions struct {
     enforcementType *Fido2RestrictionEnforcementType
     // Determines if the configured key enforcement is enabled.
     isEnforced *bool
+    // The OdataType property
+    odataType *string
 }
 // NewFido2KeyRestrictions instantiates a new fido2KeyRestrictions and sets the default values.
 func NewFido2KeyRestrictions()(*Fido2KeyRestrictions) {
     m := &Fido2KeyRestrictions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.fido2KeyRestrictions";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFido2KeyRestrictionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *Fido2KeyRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsEnforced gets the isEnforced property value. Determines if the configured key enforcement is enabled.
@@ -95,6 +109,14 @@ func (m *Fido2KeyRestrictions) GetIsEnforced()(*bool) {
         return nil
     } else {
         return m.isEnforced
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Fido2KeyRestrictions) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -114,6 +136,12 @@ func (m *Fido2KeyRestrictions) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteBoolValue("isEnforced", m.GetIsEnforced())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -148,5 +176,11 @@ func (m *Fido2KeyRestrictions) SetEnforcementType(value *Fido2RestrictionEnforce
 func (m *Fido2KeyRestrictions) SetIsEnforced(value *bool)() {
     if m != nil {
         m.isEnforced = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Fido2KeyRestrictions) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

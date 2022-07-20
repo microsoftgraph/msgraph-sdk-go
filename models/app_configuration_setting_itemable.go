@@ -11,7 +11,9 @@ type AppConfigurationSettingItemable interface {
     GetAppConfigKey()(*string)
     GetAppConfigKeyType()(*MdmAppConfigKeyType)
     GetAppConfigKeyValue()(*string)
+    GetOdataType()(*string)
     SetAppConfigKey(value *string)()
     SetAppConfigKeyType(value *MdmAppConfigKeyType)()
     SetAppConfigKeyValue(value *string)()
+    SetOdataType(value *string)()
 }

@@ -25,6 +25,8 @@ func NewCrossTenantAccessPolicyConfigurationDefault()(*CrossTenantAccessPolicyCo
     m := &CrossTenantAccessPolicyConfigurationDefault{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCrossTenantAccessPolicyConfigurationDefaultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

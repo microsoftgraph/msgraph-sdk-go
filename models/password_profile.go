@@ -12,6 +12,8 @@ type PasswordProfile struct {
     forceChangePasswordNextSignIn *bool
     // If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
     forceChangePasswordNextSignInWithMfa *bool
+    // The OdataType property
+    odataType *string
     // The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
     password *string
 }
@@ -20,6 +22,8 @@ func NewPasswordProfile()(*PasswordProfile) {
     m := &PasswordProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.passwordProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["password"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *PasswordProfile) GetForceChangePasswordNextSignInWithMfa()(*bool) {
         return m.forceChangePasswordNextSignInWithMfa
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PasswordProfile) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPassword gets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
 func (m *PasswordProfile) GetPassword()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *PasswordProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteBoolValue("forceChangePasswordNextSignInWithMfa", m.GetForceChangePasswordNextSignInWithMfa())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *PasswordProfile) SetForceChangePasswordNextSignIn(value *bool)() {
 func (m *PasswordProfile) SetForceChangePasswordNextSignInWithMfa(value *bool)() {
     if m != nil {
         m.forceChangePasswordNextSignInWithMfa = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PasswordProfile) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPassword sets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.

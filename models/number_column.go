@@ -16,12 +16,16 @@ type NumberColumn struct {
     maximum *float64
     // The minimum permitted value.
     minimum *float64
+    // The OdataType property
+    odataType *string
 }
 // NewNumberColumn instantiates a new numberColumn and sets the default values.
 func NewNumberColumn()(*NumberColumn) {
     m := &NumberColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.numberColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNumberColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +99,16 @@ func (m *NumberColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMaximum gets the maximum property value. The maximum permitted value.
@@ -111,6 +125,14 @@ func (m *NumberColumn) GetMinimum()(*float64) {
         return nil
     } else {
         return m.minimum
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *NumberColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -135,6 +157,12 @@ func (m *NumberColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteFloat64Value("minimum", m.GetMinimum())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -175,5 +203,11 @@ func (m *NumberColumn) SetMaximum(value *float64)() {
 func (m *NumberColumn) SetMinimum(value *float64)() {
     if m != nil {
         m.minimum = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *NumberColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

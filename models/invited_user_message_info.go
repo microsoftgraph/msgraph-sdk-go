@@ -14,12 +14,16 @@ type InvitedUserMessageInfo struct {
     customizedMessageBody *string
     // The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
     messageLanguage *string
+    // The OdataType property
+    odataType *string
 }
 // NewInvitedUserMessageInfo instantiates a new invitedUserMessageInfo and sets the default values.
 func NewInvitedUserMessageInfo()(*InvitedUserMessageInfo) {
     m := &InvitedUserMessageInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.invitedUserMessageInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInvitedUserMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMessageLanguage gets the messageLanguage property value. The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
@@ -95,6 +109,14 @@ func (m *InvitedUserMessageInfo) GetMessageLanguage()(*string) {
         return nil
     } else {
         return m.messageLanguage
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InvitedUserMessageInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -117,6 +139,12 @@ func (m *InvitedUserMessageInfo) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteStringValue("messageLanguage", m.GetMessageLanguage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -151,5 +179,11 @@ func (m *InvitedUserMessageInfo) SetCustomizedMessageBody(value *string)() {
 func (m *InvitedUserMessageInfo) SetMessageLanguage(value *string)() {
     if m != nil {
         m.messageLanguage = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InvitedUserMessageInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

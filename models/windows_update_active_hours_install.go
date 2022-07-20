@@ -17,6 +17,8 @@ func NewWindowsUpdateActiveHoursInstall()(*WindowsUpdateActiveHoursInstall) {
     m := &WindowsUpdateActiveHoursInstall{
         WindowsUpdateInstallScheduleType: *NewWindowsUpdateInstallScheduleType(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdateActiveHoursInstall";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsUpdateActiveHoursInstallFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

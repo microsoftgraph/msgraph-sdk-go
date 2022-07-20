@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookTableColumn provides operations to manage the collection of agreement entities.
+// WorkbookTableColumn provides operations to manage the admin singleton.
 type WorkbookTableColumn struct {
     Entity
     // Retrieve the filter applied to the column. Read-only.
@@ -21,6 +21,8 @@ func NewWorkbookTableColumn()(*WorkbookTableColumn) {
     m := &WorkbookTableColumn{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookTableColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookTableColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

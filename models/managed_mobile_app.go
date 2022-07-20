@@ -17,6 +17,8 @@ func NewManagedMobileApp()(*ManagedMobileApp) {
     m := &ManagedMobileApp{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedMobileApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedMobileAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

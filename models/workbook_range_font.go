@@ -25,6 +25,8 @@ func NewWorkbookRangeFont()(*WorkbookRangeFont) {
     m := &WorkbookRangeFont{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookRangeFont";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookRangeFontFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,6 +17,8 @@ func NewParticipantLeftNotification()(*ParticipantLeftNotification) {
     m := &ParticipantLeftNotification{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.participantLeftNotification";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParticipantLeftNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

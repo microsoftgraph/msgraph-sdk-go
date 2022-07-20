@@ -19,6 +19,8 @@ func NewEdiscoveryReviewTag()(*EdiscoveryReviewTag) {
     m := &EdiscoveryReviewTag{
         Tag: *NewTag(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryReviewTag";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryReviewTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

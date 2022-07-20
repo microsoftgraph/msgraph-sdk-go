@@ -17,6 +17,8 @@ func NewWindowsDeviceADAccount()(*WindowsDeviceADAccount) {
     m := &WindowsDeviceADAccount{
         WindowsDeviceAccount: *NewWindowsDeviceAccount(),
     }
+    odataTypeValue := "#microsoft.graph.windowsDeviceADAccount";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDeviceADAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

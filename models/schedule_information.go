@@ -12,6 +12,8 @@ type ScheduleInformation struct {
     availabilityView *string
     // Error information from attempting to get the availability of the user, distribution list, or resource.
     error FreeBusyErrorable
+    // The OdataType property
+    odataType *string
     // An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
     scheduleId *string
     // Contains the items that describe the availability of the user or resource.
@@ -24,6 +26,8 @@ func NewScheduleInformation()(*ScheduleInformation) {
     m := &ScheduleInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.scheduleInformation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateScheduleInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *ScheduleInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scheduleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -113,6 +127,14 @@ func (m *ScheduleInformation) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ScheduleInformation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetScheduleId gets the scheduleId property value. An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
 func (m *ScheduleInformation) GetScheduleId()(*string) {
     if m == nil {
@@ -147,6 +169,12 @@ func (m *ScheduleInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteObjectValue("error", m.GetError())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -197,6 +225,12 @@ func (m *ScheduleInformation) SetAvailabilityView(value *string)() {
 func (m *ScheduleInformation) SetError(value FreeBusyErrorable)() {
     if m != nil {
         m.error = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ScheduleInformation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetScheduleId sets the scheduleId property value. An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.

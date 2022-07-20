@@ -15,6 +15,8 @@ func NewLocateDeviceActionResult()(*LocateDeviceActionResult) {
     m := &LocateDeviceActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
     }
+    odataTypeValue := "#microsoft.graph.locateDeviceActionResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocateDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

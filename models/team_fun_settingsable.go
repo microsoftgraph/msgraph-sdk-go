@@ -12,8 +12,10 @@ type TeamFunSettingsable interface {
     GetAllowGiphy()(*bool)
     GetAllowStickersAndMemes()(*bool)
     GetGiphyContentRating()(*GiphyRatingType)
+    GetOdataType()(*string)
     SetAllowCustomMemes(value *bool)()
     SetAllowGiphy(value *bool)()
     SetAllowStickersAndMemes(value *bool)()
     SetGiphyContentRating(value *GiphyRatingType)()
+    SetOdataType(value *string)()
 }

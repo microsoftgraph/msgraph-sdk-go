@@ -10,6 +10,8 @@ type RubricQualityFeedbackModel struct {
     additionalData map[string]interface{}
     // Specific feedback for one quality of this rubric.
     feedback EducationItemBodyable
+    // The OdataType property
+    odataType *string
     // The ID of the rubricQuality that this feedback is related to.
     qualityId *string
 }
@@ -18,6 +20,8 @@ func NewRubricQualityFeedbackModel()(*RubricQualityFeedbackModel) {
     m := &RubricQualityFeedbackModel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.rubricQualityFeedbackModel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRubricQualityFeedbackModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *RubricQualityFeedbackModel) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["qualityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *RubricQualityFeedbackModel) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RubricQualityFeedbackModel) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetQualityId gets the qualityId property value. The ID of the rubricQuality that this feedback is related to.
 func (m *RubricQualityFeedbackModel) GetQualityId()(*string) {
@@ -77,6 +99,12 @@ func (m *RubricQualityFeedbackModel) GetQualityId()(*string) {
 func (m *RubricQualityFeedbackModel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("feedback", m.GetFeedback())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *RubricQualityFeedbackModel) SetAdditionalData(value map[string]interfac
 func (m *RubricQualityFeedbackModel) SetFeedback(value EducationItemBodyable)() {
     if m != nil {
         m.feedback = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RubricQualityFeedbackModel) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQualityId sets the qualityId property value. The ID of the rubricQuality that this feedback is related to.

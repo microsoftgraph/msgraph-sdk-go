@@ -21,6 +21,8 @@ type DeviceGeoLocation struct {
     latitude *float64
     // Longitude coordinate of the device's location
     longitude *float64
+    // The OdataType property
+    odataType *string
     // Speed the device is traveling in meters per second
     speed *float64
     // Accuracy of altitude in meters
@@ -31,6 +33,8 @@ func NewDeviceGeoLocation()(*DeviceGeoLocation) {
     m := &DeviceGeoLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceGeoLocation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceGeoLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -116,6 +120,16 @@ func (m *DeviceGeoLocation) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["speed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -178,6 +192,14 @@ func (m *DeviceGeoLocation) GetLongitude()(*float64) {
         return m.longitude
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceGeoLocation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSpeed gets the speed property value. Speed the device is traveling in meters per second
 func (m *DeviceGeoLocation) GetSpeed()(*float64) {
     if m == nil {
@@ -228,6 +250,12 @@ func (m *DeviceGeoLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteFloat64Value("longitude", m.GetLongitude())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -292,6 +320,12 @@ func (m *DeviceGeoLocation) SetLatitude(value *float64)() {
 func (m *DeviceGeoLocation) SetLongitude(value *float64)() {
     if m != nil {
         m.longitude = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceGeoLocation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSpeed sets the speed property value. Speed the device is traveling in meters per second

@@ -12,6 +12,8 @@ type PrintMargin struct {
     bottom *int32
     // The margin in microns from the left edge.
     left *int32
+    // The OdataType property
+    odataType *string
     // The margin in microns from the right edge.
     right *int32
     // The margin in microns from the top edge.
@@ -22,6 +24,8 @@ func NewPrintMargin()(*PrintMargin) {
     m := &PrintMargin{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.printMargin";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintMarginFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *PrintMargin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["right"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -97,6 +111,14 @@ func (m *PrintMargin) GetLeft()(*int32) {
         return m.left
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrintMargin) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRight gets the right property value. The margin in microns from the right edge.
 func (m *PrintMargin) GetRight()(*int32) {
     if m == nil {
@@ -123,6 +145,12 @@ func (m *PrintMargin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteInt32Value("left", m.GetLeft())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -163,6 +191,12 @@ func (m *PrintMargin) SetBottom(value *int32)() {
 func (m *PrintMargin) SetLeft(value *int32)() {
     if m != nil {
         m.left = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrintMargin) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRight sets the right property value. The margin in microns from the right edge.

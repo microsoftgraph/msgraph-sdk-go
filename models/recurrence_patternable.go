@@ -14,6 +14,7 @@ type RecurrencePatternable interface {
     GetIndex()(*WeekIndex)
     GetInterval()(*int32)
     GetMonth()(*int32)
+    GetOdataType()(*string)
     GetType()(*RecurrencePatternType)
     SetDayOfMonth(value *int32)()
     SetDaysOfWeek(value []string)()
@@ -21,5 +22,6 @@ type RecurrencePatternable interface {
     SetIndex(value *WeekIndex)()
     SetInterval(value *int32)()
     SetMonth(value *int32)()
+    SetOdataType(value *string)()
     SetType(value *RecurrencePatternType)()
 }

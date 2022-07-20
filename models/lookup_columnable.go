@@ -12,10 +12,12 @@ type LookupColumnable interface {
     GetAllowUnlimitedLength()(*bool)
     GetColumnName()(*string)
     GetListId()(*string)
+    GetOdataType()(*string)
     GetPrimaryLookupColumnId()(*string)
     SetAllowMultipleValues(value *bool)()
     SetAllowUnlimitedLength(value *bool)()
     SetColumnName(value *string)()
     SetListId(value *string)()
+    SetOdataType(value *string)()
     SetPrimaryLookupColumnId(value *string)()
 }

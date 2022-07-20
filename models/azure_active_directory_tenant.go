@@ -17,6 +17,8 @@ func NewAzureActiveDirectoryTenant()(*AzureActiveDirectoryTenant) {
     m := &AzureActiveDirectoryTenant{
         IdentitySource: *NewIdentitySource(),
     }
+    odataTypeValue := "#microsoft.graph.azureActiveDirectoryTenant";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAzureActiveDirectoryTenantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

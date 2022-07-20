@@ -8,6 +8,8 @@ import (
 type WorkforceIntegrationEncryption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Possible values are: sharedSecret, unknownFutureValue.
     protocol *WorkforceIntegrationEncryptionProtocol
     // Encryption shared secret.
@@ -18,6 +20,8 @@ func NewWorkforceIntegrationEncryption()(*WorkforceIntegrationEncryption) {
     m := &WorkforceIntegrationEncryption{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.workforceIntegrationEncryption";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkforceIntegrationEncryptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *WorkforceIntegrationEncryption) GetAdditionalData()(map[string]interfac
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWorkforceIntegrationEncryptionProtocol)
         if err != nil {
@@ -57,6 +71,14 @@ func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkforceIntegrationEncryption) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProtocol gets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
 func (m *WorkforceIntegrationEncryption) GetProtocol()(*WorkforceIntegrationEncryptionProtocol) {
     if m == nil {
@@ -75,6 +97,12 @@ func (m *WorkforceIntegrationEncryption) GetSecret()(*string) {
 }
 // Serialize serializes information the current object
 func (m *WorkforceIntegrationEncryption) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProtocol() != nil {
         cast := (*m.GetProtocol()).String()
         err := writer.WriteStringValue("protocol", &cast)
@@ -100,6 +128,12 @@ func (m *WorkforceIntegrationEncryption) Serialize(writer i878a80d2330e89d268963
 func (m *WorkforceIntegrationEncryption) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkforceIntegrationEncryption) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProtocol sets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.

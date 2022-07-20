@@ -275,6 +275,8 @@ func NewIosGeneralDeviceConfiguration()(*IosGeneralDeviceConfiguration) {
     m := &IosGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.iosGeneralDeviceConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

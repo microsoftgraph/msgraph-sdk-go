@@ -10,6 +10,8 @@ type CallRoute struct {
     additionalData map[string]interface{}
     // The final property
     final IdentitySetable
+    // The OdataType property
+    odataType *string
     // The original property
     original IdentitySetable
     // The routingType property
@@ -20,6 +22,8 @@ func NewCallRoute()(*CallRoute) {
     m := &CallRoute{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.callRoute";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCallRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *CallRoute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetFinal(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *CallRoute) GetFinal()(IdentitySetable) {
         return m.final
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CallRoute) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOriginal gets the original property value. The original property
 func (m *CallRoute) GetOriginal()(IdentitySetable) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *CallRoute) GetRoutingType()(*RoutingType) {
 func (m *CallRoute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("final", m.GetFinal())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -132,6 +160,12 @@ func (m *CallRoute) SetAdditionalData(value map[string]interface{})() {
 func (m *CallRoute) SetFinal(value IdentitySetable)() {
     if m != nil {
         m.final = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CallRoute) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOriginal sets the original property value. The original property

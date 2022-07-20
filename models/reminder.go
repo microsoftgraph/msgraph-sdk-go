@@ -22,6 +22,8 @@ type Reminder struct {
     eventSubject *string
     // The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
     eventWebLink *string
+    // The OdataType property
+    odataType *string
     // The date, time, and time zone that the reminder is set to occur.
     reminderFireTime DateTimeTimeZoneable
 }
@@ -30,6 +32,8 @@ func NewReminder()(*Reminder) {
     m := &Reminder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.reminder";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateReminderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -173,6 +177,16 @@ func (m *Reminder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reminderFireTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
@@ -184,6 +198,14 @@ func (m *Reminder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Reminder) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetReminderFireTime gets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
 func (m *Reminder) GetReminderFireTime()(DateTimeTimeZoneable) {
@@ -233,6 +255,12 @@ func (m *Reminder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err := writer.WriteStringValue("eventWebLink", m.GetEventWebLink())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -297,6 +325,12 @@ func (m *Reminder) SetEventSubject(value *string)() {
 func (m *Reminder) SetEventWebLink(value *string)() {
     if m != nil {
         m.eventWebLink = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Reminder) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReminderFireTime sets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.

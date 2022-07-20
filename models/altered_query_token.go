@@ -10,6 +10,8 @@ type AlteredQueryToken struct {
     additionalData map[string]interface{}
     // Defines the length of a changed segment.
     length *int32
+    // The OdataType property
+    odataType *string
     // Defines the offset of a changed segment.
     offset *int32
     // Represents the corrected segment string.
@@ -20,6 +22,8 @@ func NewAlteredQueryToken()(*AlteredQueryToken) {
     m := &AlteredQueryToken{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.alteredQueryToken";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlteredQueryTokenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *AlteredQueryToken) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetLength(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *AlteredQueryToken) GetLength()(*int32) {
         return m.length
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AlteredQueryToken) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOffset gets the offset property value. Defines the offset of a changed segment.
 func (m *AlteredQueryToken) GetOffset()(*int32) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *AlteredQueryToken) GetSuggestion()(*string) {
 func (m *AlteredQueryToken) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("length", m.GetLength())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *AlteredQueryToken) SetAdditionalData(value map[string]interface{})() {
 func (m *AlteredQueryToken) SetLength(value *int32)() {
     if m != nil {
         m.length = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AlteredQueryToken) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOffset sets the offset property value. Defines the offset of a changed segment.

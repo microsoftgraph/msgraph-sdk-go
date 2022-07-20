@@ -11,11 +11,13 @@ type ProvisioningErrorInfoable interface {
     GetAdditionalDetails()(*string)
     GetErrorCategory()(*ProvisioningStatusErrorCategory)
     GetErrorCode()(*string)
+    GetOdataType()(*string)
     GetReason()(*string)
     GetRecommendedAction()(*string)
     SetAdditionalDetails(value *string)()
     SetErrorCategory(value *ProvisioningStatusErrorCategory)()
     SetErrorCode(value *string)()
+    SetOdataType(value *string)()
     SetReason(value *string)()
     SetRecommendedAction(value *string)()
 }

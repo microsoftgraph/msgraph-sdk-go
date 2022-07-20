@@ -12,6 +12,8 @@ type DeviceManagementSettings struct {
     deviceComplianceCheckinThresholdDays *int32
     // Is feature enabled or not for scheduled action for rule.
     isScheduledActionEnabled *bool
+    // The OdataType property
+    odataType *string
     // Device should be noncompliant when there is no compliance policy targeted when this is true
     secureByDefault *bool
 }
@@ -20,6 +22,8 @@ func NewDeviceManagementSettings()(*DeviceManagementSettings) {
     m := &DeviceManagementSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["secureByDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
         return m.isScheduledActionEnabled
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSecureByDefault gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
 func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *DeviceManagementSettings) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteBoolValue("isScheduledActionEnabled", m.GetIsScheduledActionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *DeviceManagementSettings) SetDeviceComplianceCheckinThresholdDays(value
 func (m *DeviceManagementSettings) SetIsScheduledActionEnabled(value *bool)() {
     if m != nil {
         m.isScheduledActionEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSecureByDefault sets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true

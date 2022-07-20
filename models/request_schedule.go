@@ -11,6 +11,8 @@ type RequestSchedule struct {
     additionalData map[string]interface{}
     // In entitlement management, when the access should expire.
     expiration ExpirationPatternable
+    // The OdataType property
+    odataType *string
     // For recurring access, or eligible or active assignment. This property is currently unsupported in both PIM and entitlement management.
     recurrence PatternedRecurrenceable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.
@@ -21,6 +23,8 @@ func NewRequestSchedule()(*RequestSchedule) {
     m := &RequestSchedule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.requestSchedule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRequestScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +60,16 @@ func (m *RequestSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
@@ -78,6 +92,14 @@ func (m *RequestSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RequestSchedule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecurrence gets the recurrence property value. For recurring access, or eligible or active assignment. This property is currently unsupported in both PIM and entitlement management.
 func (m *RequestSchedule) GetRecurrence()(PatternedRecurrenceable) {
     if m == nil {
@@ -98,6 +120,12 @@ func (m *RequestSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
 func (m *RequestSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("expiration", m.GetExpiration())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -132,6 +160,12 @@ func (m *RequestSchedule) SetAdditionalData(value map[string]interface{})() {
 func (m *RequestSchedule) SetExpiration(value ExpirationPatternable)() {
     if m != nil {
         m.expiration = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RequestSchedule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecurrence sets the recurrence property value. For recurring access, or eligible or active assignment. This property is currently unsupported in both PIM and entitlement management.

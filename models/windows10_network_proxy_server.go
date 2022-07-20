@@ -12,6 +12,8 @@ type Windows10NetworkProxyServer struct {
     address *string
     // Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
     exceptions []string
+    // The OdataType property
+    odataType *string
     // Specifies whether the proxy server should be used for local (intranet) addresses.
     useForLocalAddresses *bool
 }
@@ -20,6 +22,8 @@ func NewWindows10NetworkProxyServer()(*Windows10NetworkProxyServer) {
     m := &Windows10NetworkProxyServer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windows10NetworkProxyServer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10NetworkProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *Windows10NetworkProxyServer) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["useForLocalAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -88,6 +102,14 @@ func (m *Windows10NetworkProxyServer) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Windows10NetworkProxyServer) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUseForLocalAddresses gets the useForLocalAddresses property value. Specifies whether the proxy server should be used for local (intranet) addresses.
 func (m *Windows10NetworkProxyServer) GetUseForLocalAddresses()(*bool) {
@@ -107,6 +129,12 @@ func (m *Windows10NetworkProxyServer) Serialize(writer i878a80d2330e89d26896388a
     }
     if m.GetExceptions() != nil {
         err := writer.WriteCollectionOfStringValues("exceptions", m.GetExceptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -141,6 +169,12 @@ func (m *Windows10NetworkProxyServer) SetAddress(value *string)() {
 func (m *Windows10NetworkProxyServer) SetExceptions(value []string)() {
     if m != nil {
         m.exceptions = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Windows10NetworkProxyServer) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUseForLocalAddresses sets the useForLocalAddresses property value. Specifies whether the proxy server should be used for local (intranet) addresses.

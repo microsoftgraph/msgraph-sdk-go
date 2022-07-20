@@ -15,6 +15,8 @@ func NewDomainDnsTxtRecord()(*DomainDnsTxtRecord) {
     m := &DomainDnsTxtRecord{
         DomainDnsRecord: *NewDomainDnsRecord(),
     }
+    odataTypeValue := "#microsoft.graph.domainDnsTxtRecord";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDomainDnsTxtRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

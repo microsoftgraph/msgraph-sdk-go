@@ -13,6 +13,8 @@ func NewApplicationEnforcedRestrictionsSessionControl()(*ApplicationEnforcedRest
     m := &ApplicationEnforcedRestrictionsSessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
     }
+    odataTypeValue := "#microsoft.graph.applicationEnforcedRestrictionsSessionControl";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApplicationEnforcedRestrictionsSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

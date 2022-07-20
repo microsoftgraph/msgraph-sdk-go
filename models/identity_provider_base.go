@@ -15,8 +15,8 @@ func NewIdentityProviderBase()(*IdentityProviderBase) {
     m := &IdentityProviderBase{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.identityProviderBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.identityProviderBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityProviderBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,6 +38,10 @@ func CreateIdentityProviderBaseFromDiscriminatorValue(parseNode i878a80d2330e89d
                         return NewAppleManagedIdentityProvider(), nil
                     case "#microsoft.graph.builtInIdentityProvider":
                         return NewBuiltInIdentityProvider(), nil
+                    case "#microsoft.graph.internalDomainFederation":
+                        return NewInternalDomainFederation(), nil
+                    case "#microsoft.graph.samlOrWsFedExternalDomainFederation":
+                        return NewSamlOrWsFedExternalDomainFederation(), nil
                     case "#microsoft.graph.samlOrWsFedProvider":
                         return NewSamlOrWsFedProvider(), nil
                     case "#microsoft.graph.socialIdentityProvider":

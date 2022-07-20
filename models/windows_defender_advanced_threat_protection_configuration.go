@@ -17,6 +17,8 @@ func NewWindowsDefenderAdvancedThreatProtectionConfiguration()(*WindowsDefenderA
     m := &WindowsDefenderAdvancedThreatProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

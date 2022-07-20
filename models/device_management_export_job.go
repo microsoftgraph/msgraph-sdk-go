@@ -34,6 +34,8 @@ func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {
     m := &DeviceManagementExportJob{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementExportJob";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementExportJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

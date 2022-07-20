@@ -18,6 +18,8 @@ type DeviceDetail struct {
     isCompliant *bool
     // Indicates if the device is managed or not.
     isManaged *bool
+    // The OdataType property
+    odataType *string
     // Indicates the OS name and version used for signing-in.
     operatingSystem *string
     // Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
@@ -28,6 +30,8 @@ func NewDeviceDetail()(*DeviceDetail) {
     m := &DeviceDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -119,6 +123,16 @@ func (m *DeviceDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operatingSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -155,6 +169,14 @@ func (m *DeviceDetail) GetIsManaged()(*bool) {
         return nil
     } else {
         return m.isManaged
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOperatingSystem gets the operatingSystem property value. Indicates the OS name and version used for signing-in.
@@ -201,6 +223,12 @@ func (m *DeviceDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteBoolValue("isManaged", m.GetIsManaged())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -259,6 +287,12 @@ func (m *DeviceDetail) SetIsCompliant(value *bool)() {
 func (m *DeviceDetail) SetIsManaged(value *bool)() {
     if m != nil {
         m.isManaged = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperatingSystem sets the operatingSystem property value. Indicates the OS name and version used for signing-in.

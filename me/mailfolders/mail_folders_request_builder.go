@@ -67,7 +67,7 @@ func NewMailFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewMailFoldersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MailFoldersRequestBuilder) Count()(*i156ada2f736ad1b4928139ead92f91c945aa95adb8cb0bfa591cf79f1ebe3bd8.CountRequestBuilder) {
     return i156ada2f736ad1b4928139ead92f91c945aa95adb8cb0bfa591cf79f1ebe3bd8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAppInstallation provides operations to manage the collection of agreement entities.
+// TeamsAppInstallation provides operations to manage the admin singleton.
 type TeamsAppInstallation struct {
     Entity
     // The app that is installed.
@@ -17,8 +17,8 @@ func NewTeamsAppInstallation()(*TeamsAppInstallation) {
     m := &TeamsAppInstallation{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.teamsAppInstallation";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.teamsAppInstallation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsAppInstallationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

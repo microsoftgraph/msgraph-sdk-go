@@ -15,6 +15,8 @@ func NewProvisioningSystem()(*ProvisioningSystem) {
     m := &ProvisioningSystem{
         Identity: *NewIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.provisioningSystem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProvisioningSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

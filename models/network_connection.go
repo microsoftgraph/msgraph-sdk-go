@@ -35,6 +35,8 @@ type NetworkConnection struct {
     natSourceAddress *string
     // Network Address Translation source port.
     natSourcePort *string
+    // The OdataType property
+    odataType *string
     // Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
     protocol *SecurityNetworkProtocol
     // Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.
@@ -55,6 +57,8 @@ func NewNetworkConnection()(*NetworkConnection) {
     m := &NetworkConnection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.networkConnection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNetworkConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -266,6 +270,16 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSecurityNetworkProtocol)
         if err != nil {
@@ -376,6 +390,14 @@ func (m *NetworkConnection) GetNatSourcePort()(*string) {
         return nil
     } else {
         return m.natSourcePort
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *NetworkConnection) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetProtocol gets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
@@ -515,6 +537,12 @@ func (m *NetworkConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProtocol() != nil {
         cast := (*m.GetProtocol()).String()
         err := writer.WriteStringValue("protocol", &cast)
@@ -649,6 +677,12 @@ func (m *NetworkConnection) SetNatSourceAddress(value *string)() {
 func (m *NetworkConnection) SetNatSourcePort(value *string)() {
     if m != nil {
         m.natSourcePort = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *NetworkConnection) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProtocol sets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.

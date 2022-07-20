@@ -13,6 +13,8 @@ type ServiceHealthIssuePost struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The content of the service issue post.
     description ItemBodyable
+    // The OdataType property
+    odataType *string
     // The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
     postType *PostType
 }
@@ -21,6 +23,8 @@ func NewServiceHealthIssuePost()(*ServiceHealthIssuePost) {
     m := &ServiceHealthIssuePost{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.serviceHealthIssuePost";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceHealthIssuePostFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -74,6 +78,16 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["postType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePostType)
         if err != nil {
@@ -85,6 +99,14 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServiceHealthIssuePost) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPostType gets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
 func (m *ServiceHealthIssuePost) GetPostType()(*PostType) {
@@ -104,6 +126,12 @@ func (m *ServiceHealthIssuePost) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteObjectValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -139,6 +167,12 @@ func (m *ServiceHealthIssuePost) SetCreatedDateTime(value *i336074805fc853987abe
 func (m *ServiceHealthIssuePost) SetDescription(value ItemBodyable)() {
     if m != nil {
         m.description = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServiceHealthIssuePost) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPostType sets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.

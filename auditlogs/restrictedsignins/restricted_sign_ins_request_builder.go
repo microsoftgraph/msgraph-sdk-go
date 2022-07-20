@@ -70,7 +70,7 @@ func NewRestrictedSignInsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewRestrictedSignInsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RestrictedSignInsRequestBuilder) Count()(*i7a6f3ac818a46099fa064daf1ec919cb5f1fc4d9803b0ea32dc200e8e5e97f64.CountRequestBuilder) {
     return i7a6f3ac818a46099fa064daf1ec919cb5f1fc4d9803b0ea32dc200e8e5e97f64.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

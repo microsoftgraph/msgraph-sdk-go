@@ -12,6 +12,8 @@ type SharingInvitation struct {
     email *string
     // Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
     invitedBy IdentitySetable
+    // The OdataType property
+    odataType *string
     // The redeemedBy property
     redeemedBy *string
     // If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
@@ -22,6 +24,8 @@ func NewSharingInvitation()(*SharingInvitation) {
     m := &SharingInvitation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.sharingInvitation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharingInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["redeemedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -97,6 +111,14 @@ func (m *SharingInvitation) GetInvitedBy()(IdentitySetable) {
         return m.invitedBy
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SharingInvitation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRedeemedBy gets the redeemedBy property value. The redeemedBy property
 func (m *SharingInvitation) GetRedeemedBy()(*string) {
     if m == nil {
@@ -123,6 +145,12 @@ func (m *SharingInvitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteObjectValue("invitedBy", m.GetInvitedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -163,6 +191,12 @@ func (m *SharingInvitation) SetEmail(value *string)() {
 func (m *SharingInvitation) SetInvitedBy(value IdentitySetable)() {
     if m != nil {
         m.invitedBy = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SharingInvitation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRedeemedBy sets the redeemedBy property value. The redeemedBy property

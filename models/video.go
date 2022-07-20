@@ -26,6 +26,8 @@ type Video struct {
     frameRate *float64
     // Height of the video, in pixels.
     height *int32
+    // The OdataType property
+    odataType *string
     // Width of the video, in pixels.
     width *int32
 }
@@ -34,6 +36,8 @@ func NewVideo()(*Video) {
     m := &Video{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.video";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVideoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -189,6 +193,16 @@ func (m *Video) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["width"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -223,6 +237,14 @@ func (m *Video) GetHeight()(*int32) {
         return nil
     } else {
         return m.height
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Video) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetWidth gets the width property value. Width of the video, in pixels.
@@ -285,6 +307,12 @@ func (m *Video) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err := writer.WriteInt32Value("height", m.GetHeight())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -361,6 +389,12 @@ func (m *Video) SetFrameRate(value *float64)() {
 func (m *Video) SetHeight(value *int32)() {
     if m != nil {
         m.height = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Video) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetWidth sets the width property value. Width of the video, in pixels.

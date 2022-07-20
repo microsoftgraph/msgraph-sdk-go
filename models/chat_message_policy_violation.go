@@ -12,6 +12,8 @@ type ChatMessagePolicyViolation struct {
     dlpAction *ChatMessagePolicyViolationDlpActionTypes
     // Justification text provided by the sender of the message when overriding a policy violation.
     justificationText *string
+    // The OdataType property
+    odataType *string
     // Information to display to the message sender about why the message was flagged as a violation.
     policyTip ChatMessagePolicyViolationPolicyTipable
     // Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction is not required.
@@ -24,6 +26,8 @@ func NewChatMessagePolicyViolation()(*ChatMessagePolicyViolation) {
     m := &ChatMessagePolicyViolation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.chatMessagePolicyViolation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessagePolicyViolationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +73,16 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policyTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue)
         if err != nil {
@@ -109,6 +123,14 @@ func (m *ChatMessagePolicyViolation) GetJustificationText()(*string) {
         return m.justificationText
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChatMessagePolicyViolation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPolicyTip gets the policyTip property value. Information to display to the message sender about why the message was flagged as a violation.
 func (m *ChatMessagePolicyViolation) GetPolicyTip()(ChatMessagePolicyViolationPolicyTipable) {
     if m == nil {
@@ -144,6 +166,12 @@ func (m *ChatMessagePolicyViolation) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err := writer.WriteStringValue("justificationText", m.GetJustificationText())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -192,6 +220,12 @@ func (m *ChatMessagePolicyViolation) SetDlpAction(value *ChatMessagePolicyViolat
 func (m *ChatMessagePolicyViolation) SetJustificationText(value *string)() {
     if m != nil {
         m.justificationText = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChatMessagePolicyViolation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPolicyTip sets the policyTip property value. Information to display to the message sender about why the message was flagged as a violation.

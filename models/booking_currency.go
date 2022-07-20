@@ -15,6 +15,8 @@ func NewBookingCurrency()(*BookingCurrency) {
     m := &BookingCurrency{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.bookingCurrency";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingCurrencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

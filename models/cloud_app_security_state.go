@@ -12,6 +12,8 @@ type CloudAppSecurityState struct {
     destinationServiceIp *string
     // Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
     destinationServiceName *string
+    // The OdataType property
+    odataType *string
     // Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
     riskScore *string
 }
@@ -20,6 +22,8 @@ func NewCloudAppSecurityState()(*CloudAppSecurityState) {
     m := &CloudAppSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudAppSecurityState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudAppSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,6 +98,14 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudAppSecurityState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 func (m *CloudAppSecurityState) GetRiskScore()(*string) {
@@ -103,6 +125,12 @@ func (m *CloudAppSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteStringValue("destinationServiceName", m.GetDestinationServiceName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *CloudAppSecurityState) SetDestinationServiceIp(value *string)() {
 func (m *CloudAppSecurityState) SetDestinationServiceName(value *string)() {
     if m != nil {
         m.destinationServiceName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudAppSecurityState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRiskScore sets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.

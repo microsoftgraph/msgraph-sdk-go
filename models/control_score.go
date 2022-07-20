@@ -14,6 +14,8 @@ type ControlScore struct {
     controlName *string
     // Description of the control.
     description *string
+    // The OdataType property
+    odataType *string
     // Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
     score *float64
 }
@@ -22,6 +24,8 @@ func NewControlScore()(*ControlScore) {
     m := &ControlScore{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.controlScore";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateControlScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -93,6 +97,16 @@ func (m *ControlScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["score"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -104,6 +118,14 @@ func (m *ControlScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ControlScore) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetScore gets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
 func (m *ControlScore) GetScore()(*float64) {
@@ -129,6 +151,12 @@ func (m *ControlScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *ControlScore) SetControlName(value *string)() {
 func (m *ControlScore) SetDescription(value *string)() {
     if m != nil {
         m.description = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ControlScore) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetScore sets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).

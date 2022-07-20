@@ -70,7 +70,7 @@ func NewScopedRoleMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewScopedRoleMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ScopedRoleMemberOfRequestBuilder) Count()(*i38618d222b15c0d2855b6a2b24bbf7bfb8d445fc9620389b1f89a7b7876cd7cb.CountRequestBuilder) {
     return i38618d222b15c0d2855b6a2b24bbf7bfb8d445fc9620389b1f89a7b7876cd7cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

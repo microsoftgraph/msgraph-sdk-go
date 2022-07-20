@@ -10,6 +10,8 @@ type TermColumn struct {
     additionalData map[string]interface{}
     // Specifies whether the column will allow more than one value
     allowMultipleValues *bool
+    // The OdataType property
+    odataType *string
     // Specifies whether to display the entire term path or only the term label.
     showFullyQualifiedName *bool
 }
@@ -18,6 +20,8 @@ func NewTermColumn()(*TermColumn) {
     m := &TermColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.termColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTermColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *TermColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["showFullyQualifiedName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *TermColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TermColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetShowFullyQualifiedName gets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
 func (m *TermColumn) GetShowFullyQualifiedName()(*bool) {
@@ -77,6 +99,12 @@ func (m *TermColumn) GetShowFullyQualifiedName()(*bool) {
 func (m *TermColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("allowMultipleValues", m.GetAllowMultipleValues())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *TermColumn) SetAdditionalData(value map[string]interface{})() {
 func (m *TermColumn) SetAllowMultipleValues(value *bool)() {
     if m != nil {
         m.allowMultipleValues = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TermColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetShowFullyQualifiedName sets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.

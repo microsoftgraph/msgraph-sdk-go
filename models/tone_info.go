@@ -8,6 +8,8 @@ import (
 type ToneInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // An incremental identifier used for ordering DTMF events.
     sequenceId *int64
     // The tone property
@@ -18,6 +20,8 @@ func NewToneInfo()(*ToneInfo) {
     m := &ToneInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.toneInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateToneInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *ToneInfo) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ToneInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sequenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -57,6 +71,14 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ToneInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSequenceId gets the sequenceId property value. An incremental identifier used for ordering DTMF events.
 func (m *ToneInfo) GetSequenceId()(*int64) {
     if m == nil {
@@ -75,6 +97,12 @@ func (m *ToneInfo) GetTone()(*Tone) {
 }
 // Serialize serializes information the current object
 func (m *ToneInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteInt64Value("sequenceId", m.GetSequenceId())
         if err != nil {
@@ -100,6 +128,12 @@ func (m *ToneInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *ToneInfo) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ToneInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSequenceId sets the sequenceId property value. An incremental identifier used for ordering DTMF events.

@@ -8,6 +8,7 @@ import (
 type AndroidMinimumOperatingSystemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetV10_0()(*bool)
     GetV11_0()(*bool)
     GetV4_0()(*bool)
@@ -18,6 +19,7 @@ type AndroidMinimumOperatingSystemable interface {
     GetV4_4()(*bool)
     GetV5_0()(*bool)
     GetV5_1()(*bool)
+    SetOdataType(value *string)()
     SetV10_0(value *bool)()
     SetV11_0(value *bool)()
     SetV4_0(value *bool)()

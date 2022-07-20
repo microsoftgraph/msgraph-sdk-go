@@ -12,6 +12,8 @@ type PrinterStatus struct {
     description *string
     // The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
     details []string
+    // The OdataType property
+    odataType *string
     // The state property
     state *PrinterProcessingState
 }
@@ -20,6 +22,8 @@ func NewPrinterStatus()(*PrinterStatus) {
     m := &PrinterStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.printerStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePrinterProcessingState)
         if err != nil {
@@ -88,6 +102,14 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrinterStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetState gets the state property value. The state property
 func (m *PrinterStatus) GetState()(*PrinterProcessingState) {
@@ -107,6 +129,12 @@ func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     if m.GetDetails() != nil {
         err := writer.WriteCollectionOfStringValues("details", m.GetDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -142,6 +170,12 @@ func (m *PrinterStatus) SetDescription(value *string)() {
 func (m *PrinterStatus) SetDetails(value []string)() {
     if m != nil {
         m.details = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrinterStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetState sets the state property value. The state property

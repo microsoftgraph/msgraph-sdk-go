@@ -22,6 +22,8 @@ type SearchRequest struct {
     fields []string
     // Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
     from *int32
+    // The OdataType property
+    odataType *string
     // The query property
     query SearchQueryable
     // Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.
@@ -38,6 +40,8 @@ func NewSearchRequest()(*SearchRequest) {
     m := &SearchRequest{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.searchRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -185,6 +189,16 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["query"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSearchQueryFromDiscriminatorValue)
         if err != nil {
@@ -255,6 +269,14 @@ func (m *SearchRequest) GetFrom()(*int32) {
         return nil
     } else {
         return m.from
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SearchRequest) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetQuery gets the query property value. The query property
@@ -341,6 +363,12 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteInt32Value("from", m.GetFrom())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -433,6 +461,12 @@ func (m *SearchRequest) SetFields(value []string)() {
 func (m *SearchRequest) SetFrom(value *int32)() {
     if m != nil {
         m.from = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SearchRequest) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQuery sets the query property value. The query property

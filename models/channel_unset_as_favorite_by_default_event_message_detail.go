@@ -17,6 +17,8 @@ func NewChannelUnsetAsFavoriteByDefaultEventMessageDetail()(*ChannelUnsetAsFavor
     m := &ChannelUnsetAsFavoriteByDefaultEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
+    odataTypeValue := "#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChannelUnsetAsFavoriteByDefaultEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,6 +19,8 @@ func NewSchedulingGroup()(*SchedulingGroup) {
     m := &SchedulingGroup{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    odataTypeValue := "#microsoft.graph.schedulingGroup";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSchedulingGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

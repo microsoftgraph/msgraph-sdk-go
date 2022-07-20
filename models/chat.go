@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Chat provides operations to manage the collection of agreement entities.
+// Chat provides operations to manage the admin singleton.
 type Chat struct {
     Entity
     // The chatType property
@@ -36,6 +36,8 @@ func NewChat()(*Chat) {
     m := &Chat{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.chat";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

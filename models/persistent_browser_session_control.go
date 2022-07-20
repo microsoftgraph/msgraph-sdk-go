@@ -15,6 +15,8 @@ func NewPersistentBrowserSessionControl()(*PersistentBrowserSessionControl) {
     m := &PersistentBrowserSessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
     }
+    odataTypeValue := "#microsoft.graph.persistentBrowserSessionControl";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersistentBrowserSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -178,7 +178,7 @@ func (m *RubricRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(b
     }
     return nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *RubricRequestBuilder) Ref()(*i8aec143cb4dda0d315dbf97ae3520ef47a6688a5bab45062cdc6232fc0fed968.RefRequestBuilder) {
     return i8aec143cb4dda0d315dbf97ae3520ef47a6688a5bab45062cdc6232fc0fed968.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

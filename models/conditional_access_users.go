@@ -20,12 +20,16 @@ type ConditionalAccessUsers struct {
     includeRoles []string
     // User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
     includeUsers []string
+    // The OdataType property
+    odataType *string
 }
 // NewConditionalAccessUsers instantiates a new conditionalAccessUsers and sets the default values.
 func NewConditionalAccessUsers()(*ConditionalAccessUsers) {
     m := &ConditionalAccessUsers{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.conditionalAccessUsers";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessUsersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -151,6 +155,16 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeGroups gets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded, or All.
@@ -175,6 +189,14 @@ func (m *ConditionalAccessUsers) GetIncludeUsers()([]string) {
         return nil
     } else {
         return m.includeUsers
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessUsers) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -211,6 +233,12 @@ func (m *ConditionalAccessUsers) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     if m.GetIncludeUsers() != nil {
         err := writer.WriteCollectionOfStringValues("includeUsers", m.GetIncludeUsers())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -263,5 +291,11 @@ func (m *ConditionalAccessUsers) SetIncludeRoles(value []string)() {
 func (m *ConditionalAccessUsers) SetIncludeUsers(value []string)() {
     if m != nil {
         m.includeUsers = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessUsers) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

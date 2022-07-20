@@ -8,20 +8,20 @@ import (
 type Identity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    // The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     displayName *string
     // Unique identifier for the identity.
     id *string
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewIdentity instantiates a new identity and sets the default values.
 func NewIdentity()(*Identity) {
     m := &Identity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.identity";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.identity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +75,7 @@ func (m *Identity) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDisplayName gets the displayName property value. The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+// GetDisplayName gets the displayName property value. The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
 func (m *Identity) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -126,12 +126,12 @@ func (m *Identity) GetId()(*string) {
         return m.id
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *Identity) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Identity) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -149,7 +149,7 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -168,7 +168,7 @@ func (m *Identity) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetDisplayName sets the displayName property value. The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+// SetDisplayName sets the displayName property value. The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
 func (m *Identity) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -180,9 +180,9 @@ func (m *Identity) SetId(value *string)() {
         m.id = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *Identity) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Identity) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

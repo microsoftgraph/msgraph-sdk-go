@@ -11,7 +11,9 @@ type DriveRecipientable interface {
     GetAlias()(*string)
     GetEmail()(*string)
     GetObjectId()(*string)
+    GetOdataType()(*string)
     SetAlias(value *string)()
     SetEmail(value *string)()
     SetObjectId(value *string)()
+    SetOdataType(value *string)()
 }

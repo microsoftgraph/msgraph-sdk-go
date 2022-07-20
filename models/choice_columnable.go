@@ -11,7 +11,9 @@ type ChoiceColumnable interface {
     GetAllowTextEntry()(*bool)
     GetChoices()([]string)
     GetDisplayAs()(*string)
+    GetOdataType()(*string)
     SetAllowTextEntry(value *bool)()
     SetChoices(value []string)()
     SetDisplayAs(value *string)()
+    SetOdataType(value *string)()
 }

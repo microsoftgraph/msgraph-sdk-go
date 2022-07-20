@@ -10,12 +10,16 @@ type ResultTemplateOption struct {
     additionalData map[string]interface{}
     // Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.
     enableResultTemplate *bool
+    // The OdataType property
+    odataType *string
 }
 // NewResultTemplateOption instantiates a new resultTemplateOption and sets the default values.
 func NewResultTemplateOption()(*ResultTemplateOption) {
     m := &ResultTemplateOption{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.resultTemplateOption";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResultTemplateOptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,12 +55,36 @@ func (m *ResultTemplateOption) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ResultTemplateOption) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *ResultTemplateOption) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("enableResultTemplate", m.GetEnableResultTemplate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *ResultTemplateOption) SetAdditionalData(value map[string]interface{})()
 func (m *ResultTemplateOption) SetEnableResultTemplate(value *bool)() {
     if m != nil {
         m.enableResultTemplate = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ResultTemplateOption) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

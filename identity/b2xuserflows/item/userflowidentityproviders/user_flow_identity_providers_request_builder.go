@@ -64,7 +64,7 @@ func NewUserFlowIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserFlowIdentityProvidersRequestBuilder) Count()(*i924f0760c651935ce26afba3cf1348d7af935115110567c070f46d26dd7488a6.CountRequestBuilder) {
     return i924f0760c651935ce26afba3cf1348d7af935115110567c070f46d26dd7488a6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -108,7 +108,7 @@ func (m *UserFlowIdentityProvidersRequestBuilder) GetWithRequestConfigurationAnd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseCollectionResponseable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *UserFlowIdentityProvidersRequestBuilder) Ref()(*id1418e897ecd09b3d256be063da8c4b869278ce8ee0614463dc6dedaeca5afc0.RefRequestBuilder) {
     return id1418e897ecd09b3d256be063da8c4b869278ce8ee0614463dc6dedaeca5afc0.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

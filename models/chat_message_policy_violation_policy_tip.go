@@ -14,12 +14,16 @@ type ChatMessagePolicyViolationPolicyTip struct {
     generalText *string
     // The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
     matchedConditionDescriptions []string
+    // The OdataType property
+    odataType *string
 }
 // NewChatMessagePolicyViolationPolicyTip instantiates a new chatMessagePolicyViolationPolicyTip and sets the default values.
 func NewChatMessagePolicyViolationPolicyTip()(*ChatMessagePolicyViolationPolicyTip) {
     m := &ChatMessagePolicyViolationPolicyTip{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.chatMessagePolicyViolationPolicyTip";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +83,16 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGeneralText gets the generalText property value. Explanatory text shown to the sender of the message.
@@ -97,6 +111,14 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetMatchedConditionDescriptions()(
         return m.matchedConditionDescriptions
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChatMessagePolicyViolationPolicyTip) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ChatMessagePolicyViolationPolicyTip) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -113,6 +135,12 @@ func (m *ChatMessagePolicyViolationPolicyTip) Serialize(writer i878a80d2330e89d2
     }
     if m.GetMatchedConditionDescriptions() != nil {
         err := writer.WriteCollectionOfStringValues("matchedConditionDescriptions", m.GetMatchedConditionDescriptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -147,5 +175,11 @@ func (m *ChatMessagePolicyViolationPolicyTip) SetGeneralText(value *string)() {
 func (m *ChatMessagePolicyViolationPolicyTip) SetMatchedConditionDescriptions(value []string)() {
     if m != nil {
         m.matchedConditionDescriptions = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChatMessagePolicyViolationPolicyTip) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

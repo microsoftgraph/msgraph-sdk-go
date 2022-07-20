@@ -17,6 +17,8 @@ func NewUnifiedRoleManagementPolicyExpirationRule()(*UnifiedRoleManagementPolicy
     m := &UnifiedRoleManagementPolicyExpirationRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
     }
+    odataTypeValue := "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleManagementPolicyExpirationRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

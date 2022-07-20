@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LicenseDetails provides operations to manage the collection of agreement entities.
+// LicenseDetails provides operations to manage the admin singleton.
 type LicenseDetails struct {
     Entity
     // Information about the service plans assigned with the license. Read-only, Not nullable
@@ -19,6 +19,8 @@ func NewLicenseDetails()(*LicenseDetails) {
     m := &LicenseDetails{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.licenseDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLicenseDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

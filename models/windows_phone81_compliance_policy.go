@@ -35,6 +35,8 @@ func NewWindowsPhone81CompliancePolicy()(*WindowsPhone81CompliancePolicy) {
     m := &WindowsPhone81CompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
+    odataTypeValue := "#microsoft.graph.windowsPhone81CompliancePolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsPhone81CompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

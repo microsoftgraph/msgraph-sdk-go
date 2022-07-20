@@ -13,6 +13,8 @@ func NewEdiscoveryHoldOperation()(*EdiscoveryHoldOperation) {
     m := &EdiscoveryHoldOperation{
         CaseOperation: *NewCaseOperation(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryHoldOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryHoldOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

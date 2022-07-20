@@ -35,6 +35,8 @@ func NewEdiscoveryCase()(*EdiscoveryCase) {
     m := &EdiscoveryCase{
         Case_escaped: *NewCase_escaped(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryCase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryCaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

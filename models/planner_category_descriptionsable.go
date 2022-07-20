@@ -33,6 +33,7 @@ type PlannerCategoryDescriptionsable interface {
     GetCategory7()(*string)
     GetCategory8()(*string)
     GetCategory9()(*string)
+    GetOdataType()(*string)
     SetCategory1(value *string)()
     SetCategory10(value *string)()
     SetCategory11(value *string)()
@@ -58,4 +59,5 @@ type PlannerCategoryDescriptionsable interface {
     SetCategory7(value *string)()
     SetCategory8(value *string)()
     SetCategory9(value *string)()
+    SetOdataType(value *string)()
 }

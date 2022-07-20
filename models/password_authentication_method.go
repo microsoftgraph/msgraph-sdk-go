@@ -18,6 +18,8 @@ func NewPasswordAuthenticationMethod()(*PasswordAuthenticationMethod) {
     m := &PasswordAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
+    odataTypeValue := "#microsoft.graph.passwordAuthenticationMethod";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

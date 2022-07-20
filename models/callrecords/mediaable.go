@@ -13,11 +13,13 @@ type Mediaable interface {
     GetCallerDevice()(DeviceInfoable)
     GetCallerNetwork()(NetworkInfoable)
     GetLabel()(*string)
+    GetOdataType()(*string)
     GetStreams()([]MediaStreamable)
     SetCalleeDevice(value DeviceInfoable)()
     SetCalleeNetwork(value NetworkInfoable)()
     SetCallerDevice(value DeviceInfoable)()
     SetCallerNetwork(value NetworkInfoable)()
     SetLabel(value *string)()
+    SetOdataType(value *string)()
     SetStreams(value []MediaStreamable)()
 }

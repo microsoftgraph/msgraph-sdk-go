@@ -15,6 +15,8 @@ func NewWindowsDefenderScanActionResult()(*WindowsDefenderScanActionResult) {
     m := &WindowsDefenderScanActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
     }
+    odataTypeValue := "#microsoft.graph.windowsDefenderScanActionResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDefenderScanActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

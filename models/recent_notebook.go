@@ -15,6 +15,8 @@ type RecentNotebook struct {
     lastAccessedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote client, if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
     links RecentNotebookLinksable
+    // The OdataType property
+    odataType *string
     // The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
     sourceService *OnenoteSourceService
 }
@@ -23,6 +25,8 @@ func NewRecentNotebook()(*RecentNotebook) {
     m := &RecentNotebook{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.recentNotebook";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecentNotebookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +82,16 @@ func (m *RecentNotebook) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sourceService"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOnenoteSourceService)
         if err != nil {
@@ -106,6 +120,14 @@ func (m *RecentNotebook) GetLinks()(RecentNotebookLinksable) {
         return m.links
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RecentNotebook) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSourceService gets the sourceService property value. The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
 func (m *RecentNotebook) GetSourceService()(*OnenoteSourceService) {
     if m == nil {
@@ -130,6 +152,12 @@ func (m *RecentNotebook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteObjectValue("links", m.GetLinks())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -171,6 +199,12 @@ func (m *RecentNotebook) SetLastAccessedTime(value *i336074805fc853987abe6f7fe3a
 func (m *RecentNotebook) SetLinks(value RecentNotebookLinksable)() {
     if m != nil {
         m.links = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RecentNotebook) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSourceService sets the sourceService property value. The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.

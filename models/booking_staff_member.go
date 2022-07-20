@@ -27,6 +27,8 @@ func NewBookingStaffMember()(*BookingStaffMember) {
     m := &BookingStaffMember{
         BookingStaffMemberBase: *NewBookingStaffMemberBase(),
     }
+    odataTypeValue := "#microsoft.graph.bookingStaffMember";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingStaffMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

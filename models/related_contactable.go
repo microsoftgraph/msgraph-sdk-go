@@ -12,10 +12,12 @@ type RelatedContactable interface {
     GetDisplayName()(*string)
     GetEmailAddress()(*string)
     GetMobilePhone()(*string)
+    GetOdataType()(*string)
     GetRelationship()(*ContactRelationship)
     SetAccessConsent(value *bool)()
     SetDisplayName(value *string)()
     SetEmailAddress(value *string)()
     SetMobilePhone(value *string)()
+    SetOdataType(value *string)()
     SetRelationship(value *ContactRelationship)()
 }

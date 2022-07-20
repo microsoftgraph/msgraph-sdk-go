@@ -14,10 +14,12 @@ type CertificateAuthorityable interface {
     GetIsRootAuthority()(*bool)
     GetIssuer()(*string)
     GetIssuerSki()(*string)
+    GetOdataType()(*string)
     SetCertificate(value []byte)()
     SetCertificateRevocationListUrl(value *string)()
     SetDeltaCertificateRevocationListUrl(value *string)()
     SetIsRootAuthority(value *bool)()
     SetIssuer(value *string)()
     SetIssuerSki(value *string)()
+    SetOdataType(value *string)()
 }

@@ -14,12 +14,16 @@ type IosNetworkUsageRule struct {
     cellularDataBlockWhenRoaming *bool
     // Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
     managedApps []AppListItemable
+    // The OdataType property
+    odataType *string
 }
 // NewIosNetworkUsageRule instantiates a new iosNetworkUsageRule and sets the default values.
 func NewIosNetworkUsageRule()(*IosNetworkUsageRule) {
     m := &IosNetworkUsageRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosNetworkUsageRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosNetworkUsageRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *IosNetworkUsageRule) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetManagedApps gets the managedApps property value. Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
@@ -95,6 +109,14 @@ func (m *IosNetworkUsageRule) GetManagedApps()([]AppListItemable) {
         return nil
     } else {
         return m.managedApps
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosNetworkUsageRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -117,6 +139,12 @@ func (m *IosNetworkUsageRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("managedApps", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -151,5 +179,11 @@ func (m *IosNetworkUsageRule) SetCellularDataBlockWhenRoaming(value *bool)() {
 func (m *IosNetworkUsageRule) SetManagedApps(value []AppListItemable)() {
     if m != nil {
         m.managedApps = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosNetworkUsageRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

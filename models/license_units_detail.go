@@ -10,6 +10,8 @@ type LicenseUnitsDetail struct {
     additionalData map[string]interface{}
     // The number of units that are enabled for the active subscription of the service SKU.
     enabled *int32
+    // The OdataType property
+    odataType *string
     // The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
     suspended *int32
     // The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
@@ -20,6 +22,8 @@ func NewLicenseUnitsDetail()(*LicenseUnitsDetail) {
     m := &LicenseUnitsDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.licenseUnitsDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLicenseUnitsDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["suspended"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -77,6 +91,14 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LicenseUnitsDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSuspended gets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
 func (m *LicenseUnitsDetail) GetSuspended()(*int32) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *LicenseUnitsDetail) GetWarning()(*int32) {
 func (m *LicenseUnitsDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("enabled", m.GetEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *LicenseUnitsDetail) SetAdditionalData(value map[string]interface{})() {
 func (m *LicenseUnitsDetail) SetEnabled(value *int32)() {
     if m != nil {
         m.enabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LicenseUnitsDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSuspended sets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.

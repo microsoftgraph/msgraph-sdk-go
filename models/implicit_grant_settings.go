@@ -12,12 +12,16 @@ type ImplicitGrantSettings struct {
     enableAccessTokenIssuance *bool
     // Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
     enableIdTokenIssuance *bool
+    // The OdataType property
+    odataType *string
 }
 // NewImplicitGrantSettings instantiates a new implicitGrantSettings and sets the default values.
 func NewImplicitGrantSettings()(*ImplicitGrantSettings) {
     m := &ImplicitGrantSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.implicitGrantSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateImplicitGrantSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *ImplicitGrantSettings) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ImplicitGrantSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *ImplicitGrantSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *ImplicitGrantSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteBoolValue("enableIdTokenIssuance", m.GetEnableIdTokenIssuance())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *ImplicitGrantSettings) SetEnableAccessTokenIssuance(value *bool)() {
 func (m *ImplicitGrantSettings) SetEnableIdTokenIssuance(value *bool)() {
     if m != nil {
         m.enableIdTokenIssuance = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ImplicitGrantSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

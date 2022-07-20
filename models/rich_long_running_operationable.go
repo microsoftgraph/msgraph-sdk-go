@@ -11,7 +11,9 @@ type RichLongRunningOperationable interface {
     GetError()(PublicErrorable)
     GetPercentageComplete()(*int32)
     GetResourceId()(*string)
+    GetType()(*string)
     SetError(value PublicErrorable)()
     SetPercentageComplete(value *int32)()
     SetResourceId(value *string)()
+    SetType(value *string)()
 }

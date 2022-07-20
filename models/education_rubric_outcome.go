@@ -21,6 +21,8 @@ func NewEducationRubricOutcome()(*EducationRubricOutcome) {
     m := &EducationRubricOutcome{
         EducationOutcome: *NewEducationOutcome(),
     }
+    odataTypeValue := "#microsoft.graph.educationRubricOutcome";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationRubricOutcomeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

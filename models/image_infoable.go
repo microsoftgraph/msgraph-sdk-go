@@ -12,8 +12,10 @@ type ImageInfoable interface {
     GetAlternateText()(*string)
     GetAlternativeText()(*string)
     GetIconUrl()(*string)
+    GetOdataType()(*string)
     SetAddImageQuery(value *bool)()
     SetAlternateText(value *string)()
     SetAlternativeText(value *string)()
     SetIconUrl(value *string)()
+    SetOdataType(value *string)()
 }

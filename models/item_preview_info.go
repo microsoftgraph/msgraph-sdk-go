@@ -10,6 +10,8 @@ type ItemPreviewInfo struct {
     additionalData map[string]interface{}
     // The getUrl property
     getUrl *string
+    // The OdataType property
+    odataType *string
     // The postParameters property
     postParameters *string
     // The postUrl property
@@ -20,6 +22,8 @@ func NewItemPreviewInfo()(*ItemPreviewInfo) {
     m := &ItemPreviewInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.itemPreviewInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemPreviewInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *ItemPreviewInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetGetUrl(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *ItemPreviewInfo) GetGetUrl()(*string) {
         return m.getUrl
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ItemPreviewInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPostParameters gets the postParameters property value. The postParameters property
 func (m *ItemPreviewInfo) GetPostParameters()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *ItemPreviewInfo) GetPostUrl()(*string) {
 func (m *ItemPreviewInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("getUrl", m.GetGetUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *ItemPreviewInfo) SetAdditionalData(value map[string]interface{})() {
 func (m *ItemPreviewInfo) SetGetUrl(value *string)() {
     if m != nil {
         m.getUrl = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ItemPreviewInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPostParameters sets the postParameters property value. The postParameters property

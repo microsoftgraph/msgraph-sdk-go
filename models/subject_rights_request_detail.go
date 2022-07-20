@@ -16,6 +16,8 @@ type SubjectRightsRequestDetail struct {
     itemCount *int64
     // Count of item that need review.
     itemNeedReview *int64
+    // The OdataType property
+    odataType *string
     // Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
     productItemCounts []KeyValuePairable
     // Count of items signed off by the administrator.
@@ -28,6 +30,8 @@ func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {
     m := &SubjectRightsRequestDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.subjectRightsRequestDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +101,16 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["productItemCounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
@@ -157,6 +171,14 @@ func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
         return m.itemNeedReview
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SubjectRightsRequestDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProductItemCounts gets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
 func (m *SubjectRightsRequestDetail) GetProductItemCounts()([]KeyValuePairable) {
     if m == nil {
@@ -207,6 +229,12 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err := writer.WriteInt64Value("itemNeedReview", m.GetItemNeedReview())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -269,6 +297,12 @@ func (m *SubjectRightsRequestDetail) SetItemCount(value *int64)() {
 func (m *SubjectRightsRequestDetail) SetItemNeedReview(value *int64)() {
     if m != nil {
         m.itemNeedReview = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SubjectRightsRequestDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProductItemCounts sets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.

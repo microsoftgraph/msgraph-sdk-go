@@ -13,6 +13,8 @@ func NewProvisioningServicePrincipal()(*ProvisioningServicePrincipal) {
     m := &ProvisioningServicePrincipal{
         Identity: *NewIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.provisioningServicePrincipal";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProvisioningServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

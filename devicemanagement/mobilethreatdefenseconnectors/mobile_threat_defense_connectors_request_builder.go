@@ -70,7 +70,7 @@ func NewMobileThreatDefenseConnectorsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewMobileThreatDefenseConnectorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MobileThreatDefenseConnectorsRequestBuilder) Count()(*ibf3dfd9f1c9133780ec311da306de5fd1d98fd438b461bdcc21d1629c102342b.CountRequestBuilder) {
     return ibf3dfd9f1c9133780ec311da306de5fd1d98fd438b461bdcc21d1629c102342b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

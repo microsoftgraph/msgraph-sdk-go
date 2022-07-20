@@ -33,7 +33,7 @@ func NewEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *EducationUserItemRequestBuilder) Ref()(*i4f3a0cec90a1c28305039d7d4b385fc59fc5971faee66f41c7a1ae8303362824.RefRequestBuilder) {
     return i4f3a0cec90a1c28305039d7d4b385fc59fc5971faee66f41c7a1ae8303362824.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -14,6 +14,8 @@ type DataSubject struct {
     firstName *string
     // Last Name of the data subject.
     lastName *string
+    // The OdataType property
+    odataType *string
     // The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
     residency *string
 }
@@ -22,6 +24,8 @@ func NewDataSubject()(*DataSubject) {
     m := &DataSubject{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.dataSubject";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDataSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *DataSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["residency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -105,6 +119,14 @@ func (m *DataSubject) GetLastName()(*string) {
         return m.lastName
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DataSubject) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetResidency gets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
 func (m *DataSubject) GetResidency()(*string) {
     if m == nil {
@@ -129,6 +151,12 @@ func (m *DataSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("lastName", m.GetLastName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *DataSubject) SetFirstName(value *string)() {
 func (m *DataSubject) SetLastName(value *string)() {
     if m != nil {
         m.lastName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DataSubject) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetResidency sets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.

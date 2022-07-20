@@ -30,6 +30,8 @@ func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     m := &AccessPackageCatalog{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.accessPackageCatalog";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageCatalogFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -76,7 +76,7 @@ func NewNoncustodialDataSourcesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewNoncustodialDataSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *NoncustodialDataSourcesRequestBuilder) Count()(*ieff0321f7f17067dc276418ca5941baa8e407391b3f6ad03b72a90547a4a8987.CountRequestBuilder) {
     return ieff0321f7f17067dc276418ca5941baa8e407391b3f6ad03b72a90547a4a8987.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

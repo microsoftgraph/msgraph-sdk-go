@@ -13,6 +13,8 @@ func NewEducationAssignmentGroupRecipient()(*EducationAssignmentGroupRecipient) 
     m := &EducationAssignmentGroupRecipient{
         EducationAssignmentRecipient: *NewEducationAssignmentRecipient(),
     }
+    odataTypeValue := "#microsoft.graph.educationAssignmentGroupRecipient";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationAssignmentGroupRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

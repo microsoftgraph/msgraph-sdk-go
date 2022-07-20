@@ -14,6 +14,8 @@ type RedundancyDetectionSettings struct {
     maxWords *int32
     // Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
     minWords *int32
+    // The OdataType property
+    odataType *string
     // Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
     similarityThreshold *int32
 }
@@ -22,6 +24,8 @@ func NewRedundancyDetectionSettings()(*RedundancyDetectionSettings) {
     m := &RedundancyDetectionSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.redundancyDetectionSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRedundancyDetectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +73,16 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["similarityThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -105,6 +119,14 @@ func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
         return m.minWords
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RedundancyDetectionSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSimilarityThreshold gets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
 func (m *RedundancyDetectionSettings) GetSimilarityThreshold()(*int32) {
     if m == nil {
@@ -129,6 +151,12 @@ func (m *RedundancyDetectionSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteInt32Value("minWords", m.GetMinWords())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *RedundancyDetectionSettings) SetMaxWords(value *int32)() {
 func (m *RedundancyDetectionSettings) SetMinWords(value *int32)() {
     if m != nil {
         m.minWords = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RedundancyDetectionSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSimilarityThreshold sets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.

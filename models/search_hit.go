@@ -10,8 +10,10 @@ type SearchHit struct {
     additionalData map[string]interface{}
     // The name of the content source which the externalItem is part of .
     contentSource *string
-    // The internal identifier for the item.
+    // The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
     hitId *string
+    // The OdataType property
+    odataType *string
     // The rank or the order of the result.
     rank *int32
     // The resource property
@@ -26,6 +28,8 @@ func NewSearchHit()(*SearchHit) {
     m := &SearchHit{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.searchHit";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchHitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +75,16 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rank"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -113,12 +127,20 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetHitId gets the hitId property value. The internal identifier for the item.
+// GetHitId gets the hitId property value. The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
 func (m *SearchHit) GetHitId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.hitId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SearchHit) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRank gets the rank property value. The rank or the order of the result.
@@ -168,6 +190,12 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("rank", m.GetRank())
         if err != nil {
             return err
@@ -211,10 +239,16 @@ func (m *SearchHit) SetContentSource(value *string)() {
         m.contentSource = value
     }
 }
-// SetHitId sets the hitId property value. The internal identifier for the item.
+// SetHitId sets the hitId property value. The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
 func (m *SearchHit) SetHitId(value *string)() {
     if m != nil {
         m.hitId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SearchHit) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRank sets the rank property value. The rank or the order of the result.

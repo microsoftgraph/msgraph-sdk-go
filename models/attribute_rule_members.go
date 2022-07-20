@@ -17,6 +17,8 @@ func NewAttributeRuleMembers()(*AttributeRuleMembers) {
     m := &AttributeRuleMembers{
         SubjectSet: *NewSubjectSet(),
     }
+    odataTypeValue := "#microsoft.graph.attributeRuleMembers";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttributeRuleMembersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,8 @@ func NewManagedAppStatus()(*ManagedAppStatus) {
     m := &ManagedAppStatus{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.managedAppStatus";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.managedAppStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedAppStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

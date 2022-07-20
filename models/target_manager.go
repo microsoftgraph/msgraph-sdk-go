@@ -15,6 +15,8 @@ func NewTargetManager()(*TargetManager) {
     m := &TargetManager{
         SubjectSet: *NewSubjectSet(),
     }
+    odataTypeValue := "#microsoft.graph.targetManager";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTargetManagerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

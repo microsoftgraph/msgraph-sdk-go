@@ -23,6 +23,8 @@ type Photo struct {
     focalLength *float64
     // The ISO value from the camera. Read-only.
     iso *int32
+    // The OdataType property
+    odataType *string
     // The orientation value from the camera. Writable on OneDrive Personal.
     orientation *int32
     // The date and time the photo was taken in UTC time. Read-only.
@@ -33,6 +35,8 @@ func NewPhoto()(*Photo) {
     m := &Photo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.photo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePhotoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -152,6 +156,16 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["orientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -196,6 +210,14 @@ func (m *Photo) GetIso()(*int32) {
         return nil
     } else {
         return m.iso
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Photo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOrientation gets the orientation property value. The orientation value from the camera. Writable on OneDrive Personal.
@@ -254,6 +276,12 @@ func (m *Photo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err := writer.WriteInt32Value("iso", m.GetIso())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -324,6 +352,12 @@ func (m *Photo) SetFocalLength(value *float64)() {
 func (m *Photo) SetIso(value *int32)() {
     if m != nil {
         m.iso = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Photo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrientation sets the orientation property value. The orientation value from the camera. Writable on OneDrive Personal.

@@ -17,6 +17,8 @@ func NewFileAssessmentRequest()(*FileAssessmentRequest) {
     m := &FileAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
     }
+    odataTypeValue := "#microsoft.graph.fileAssessmentRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

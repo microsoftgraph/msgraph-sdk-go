@@ -8,10 +8,10 @@ import (
 type ReferenceUpdate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The id property
-    id *string
-    // The type property
-    type_escaped *string
+    // The OdataId property
+    odataId *string
+    // The OdataType property
+    odataType *string
 }
 // NewReferenceUpdate instantiates a new ReferenceUpdate and sets the default values.
 func NewReferenceUpdate()(*ReferenceUpdate) {
@@ -41,7 +41,7 @@ func (m *ReferenceUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
             return err
         }
         if val != nil {
-            m.SetId(val)
+            m.SetOdataId(val)
         }
         return nil
     }
@@ -51,38 +51,38 @@ func (m *ReferenceUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetId gets the @odata.id property value. The id property
-func (m *ReferenceUpdate) GetId()(*string) {
+// GetOdataId gets the @odata.id property value. The OdataId property
+func (m *ReferenceUpdate) GetOdataId()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.id
+        return m.odataId
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *ReferenceUpdate) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ReferenceUpdate) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
 func (m *ReferenceUpdate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.id", m.GetId())
+        err := writer.WriteStringValue("@odata.id", m.GetOdataId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -101,15 +101,15 @@ func (m *ReferenceUpdate) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetId sets the @odata.id property value. The id property
-func (m *ReferenceUpdate) SetId(value *string)() {
+// SetOdataId sets the @odata.id property value. The OdataId property
+func (m *ReferenceUpdate) SetOdataId(value *string)() {
     if m != nil {
-        m.id = value
+        m.odataId = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *ReferenceUpdate) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ReferenceUpdate) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

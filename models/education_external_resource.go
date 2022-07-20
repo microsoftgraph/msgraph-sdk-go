@@ -15,6 +15,8 @@ func NewEducationExternalResource()(*EducationExternalResource) {
     m := &EducationExternalResource{
         EducationResource: *NewEducationResource(),
     }
+    odataTypeValue := "#microsoft.graph.educationExternalResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationExternalResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

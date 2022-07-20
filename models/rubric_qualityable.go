@@ -11,11 +11,13 @@ type RubricQualityable interface {
     GetCriteria()([]RubricCriterionable)
     GetDescription()(EducationItemBodyable)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetQualityId()(*string)
     GetWeight()(*float32)
     SetCriteria(value []RubricCriterionable)()
     SetDescription(value EducationItemBodyable)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetQualityId(value *string)()
     SetWeight(value *float32)()
 }

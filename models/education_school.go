@@ -41,6 +41,8 @@ func NewEducationSchool()(*EducationSchool) {
     m := &EducationSchool{
         EducationOrganization: *NewEducationOrganization(),
     }
+    odataTypeValue := "#microsoft.graph.educationSchool";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSchoolFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

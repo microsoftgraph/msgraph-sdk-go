@@ -12,6 +12,8 @@ type File struct {
     hashes Hashesable
     // The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
     mimeType *string
+    // The OdataType property
+    odataType *string
     // The processingMetadata property
     processingMetadata *bool
 }
@@ -20,6 +22,8 @@ func NewFile()(*File) {
     m := &File{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.file";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["processingMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *File) GetMimeType()(*string) {
         return m.mimeType
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *File) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProcessingMetadata gets the processingMetadata property value. The processingMetadata property
 func (m *File) GetProcessingMetadata()(*bool) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     {
         err := writer.WriteStringValue("mimeType", m.GetMimeType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *File) SetHashes(value Hashesable)() {
 func (m *File) SetMimeType(value *string)() {
     if m != nil {
         m.mimeType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *File) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProcessingMetadata sets the processingMetadata property value. The processingMetadata property

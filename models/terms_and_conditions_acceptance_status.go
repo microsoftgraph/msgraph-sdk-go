@@ -24,6 +24,8 @@ func NewTermsAndConditionsAcceptanceStatus()(*TermsAndConditionsAcceptanceStatus
     m := &TermsAndConditionsAcceptanceStatus{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.termsAndConditionsAcceptanceStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTermsAndConditionsAcceptanceStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

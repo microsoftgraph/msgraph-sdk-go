@@ -19,16 +19,16 @@ type EducationResource struct {
     lastModifiedBy IdentitySetable
     // Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewEducationResource instantiates a new educationResource and sets the default values.
 func NewEducationResource()(*EducationResource) {
     m := &EducationResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.educationResource";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.educationResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -159,7 +159,7 @@ func (m *EducationResource) GetFieldDeserializers()(map[string]func(i878a80d2330
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -181,12 +181,12 @@ func (m *EducationResource) GetLastModifiedDateTime()(*i336074805fc853987abe6f7f
         return m.lastModifiedDateTime
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *EducationResource) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationResource) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -222,7 +222,7 @@ func (m *EducationResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -271,9 +271,9 @@ func (m *EducationResource) SetLastModifiedDateTime(value *i336074805fc853987abe
         m.lastModifiedDateTime = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *EducationResource) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationResource) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

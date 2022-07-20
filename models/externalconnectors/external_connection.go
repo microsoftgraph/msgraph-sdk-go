@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ExternalConnection provides operations to manage the collection of externalConnection entities.
+// ExternalConnection 
 type ExternalConnection struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
@@ -25,11 +25,13 @@ type ExternalConnection struct {
     // Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
     state *ConnectionState
 }
-// NewExternalConnection instantiates a new externalConnection and sets the default values.
+// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.externalConnectors.externalConnection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

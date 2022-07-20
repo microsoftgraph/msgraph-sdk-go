@@ -71,7 +71,7 @@ func NewPrintersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PrintersRequestBuilder) Count()(*i9936079e2c78f214a1dc9addc17c04d9197ebe4b0d8aa55080dc7a58464c7e6c.CountRequestBuilder) {
     return i9936079e2c78f214a1dc9addc17c04d9197ebe4b0d8aa55080dc7a58464c7e6c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

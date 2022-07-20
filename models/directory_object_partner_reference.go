@@ -21,6 +21,8 @@ func NewDirectoryObjectPartnerReference()(*DirectoryObjectPartnerReference) {
     m := &DirectoryObjectPartnerReference{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.directoryObjectPartnerReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDirectoryObjectPartnerReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

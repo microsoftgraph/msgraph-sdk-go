@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentResource provides operations to manage the collection of agreement entities.
+// EducationAssignmentResource provides operations to manage the admin singleton.
 type EducationAssignmentResource struct {
     Entity
     // Indicates whether this resource should be copied to each student submission for modification and submission. Required
@@ -17,6 +17,8 @@ func NewEducationAssignmentResource()(*EducationAssignmentResource) {
     m := &EducationAssignmentResource{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.educationAssignmentResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationAssignmentResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

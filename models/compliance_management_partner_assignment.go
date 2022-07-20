@@ -8,6 +8,8 @@ import (
 type ComplianceManagementPartnerAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Group assignment target.
     target DeviceAndAppManagementAssignmentTargetable
 }
@@ -16,6 +18,8 @@ func NewComplianceManagementPartnerAssignment()(*ComplianceManagementPartnerAssi
     m := &ComplianceManagementPartnerAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.complianceManagementPartnerAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +37,16 @@ func (m *ComplianceManagementPartnerAssignment) GetAdditionalData()(map[string]i
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComplianceManagementPartnerAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
@@ -45,6 +59,14 @@ func (m *ComplianceManagementPartnerAssignment) GetFieldDeserializers()(map[stri
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ComplianceManagementPartnerAssignment) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTarget gets the target property value. Group assignment target.
 func (m *ComplianceManagementPartnerAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     if m == nil {
@@ -55,6 +77,12 @@ func (m *ComplianceManagementPartnerAssignment) GetTarget()(DeviceAndAppManageme
 }
 // Serialize serializes information the current object
 func (m *ComplianceManagementPartnerAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("target", m.GetTarget())
         if err != nil {
@@ -73,6 +101,12 @@ func (m *ComplianceManagementPartnerAssignment) Serialize(writer i878a80d2330e89
 func (m *ComplianceManagementPartnerAssignment) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ComplianceManagementPartnerAssignment) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTarget sets the target property value. Group assignment target.

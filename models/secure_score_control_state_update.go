@@ -13,6 +13,8 @@ type SecureScoreControlStateUpdate struct {
     assignedTo *string
     // Provides optional comment about the control.
     comment *string
+    // The OdataType property
+    odataType *string
     // State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
     state *string
     // ID of the user who updated tenant state.
@@ -25,6 +27,8 @@ func NewSecureScoreControlStateUpdate()(*SecureScoreControlStateUpdate) {
     m := &SecureScoreControlStateUpdate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.secureScoreControlStateUpdate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecureScoreControlStateUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +82,16 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -109,6 +123,14 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SecureScoreControlStateUpdate) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetState gets the state property value. State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
 func (m *SecureScoreControlStateUpdate) GetState()(*string) {
@@ -144,6 +166,12 @@ func (m *SecureScoreControlStateUpdate) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteStringValue("comment", m.GetComment())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -190,6 +218,12 @@ func (m *SecureScoreControlStateUpdate) SetAssignedTo(value *string)() {
 func (m *SecureScoreControlStateUpdate) SetComment(value *string)() {
     if m != nil {
         m.comment = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SecureScoreControlStateUpdate) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetState sets the state property value. State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).

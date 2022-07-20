@@ -12,10 +12,12 @@ type ResourceSpecificPermissionable interface {
     GetDisplayName()(*string)
     GetId()(*string)
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     GetValue()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetId(value *string)()
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetValue(value *string)()
 }

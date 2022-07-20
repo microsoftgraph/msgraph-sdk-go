@@ -17,6 +17,8 @@ func NewDriveItemVersion()(*DriveItemVersion) {
     m := &DriveItemVersion{
         BaseItemVersion: *NewBaseItemVersion(),
     }
+    odataTypeValue := "#microsoft.graph.driveItemVersion";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDriveItemVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

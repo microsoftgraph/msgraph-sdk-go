@@ -12,6 +12,8 @@ type PublicErrorDetail struct {
     code *string
     // The error message.
     message *string
+    // The OdataType property
+    odataType *string
     // The target of the error.
     target *string
 }
@@ -20,6 +22,8 @@ func NewPublicErrorDetail()(*PublicErrorDetail) {
     m := &PublicErrorDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.publicErrorDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePublicErrorDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *PublicErrorDetail) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *PublicErrorDetail) GetMessage()(*string) {
         return m.message
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PublicErrorDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTarget gets the target property value. The target of the error.
 func (m *PublicErrorDetail) GetTarget()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *PublicErrorDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *PublicErrorDetail) SetCode(value *string)() {
 func (m *PublicErrorDetail) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PublicErrorDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTarget sets the target property value. The target of the error.
