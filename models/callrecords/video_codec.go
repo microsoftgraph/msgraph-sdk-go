@@ -2,7 +2,7 @@ package callrecords
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the cloudCommunications singleton.
 type VideoCodec int
 
 const (

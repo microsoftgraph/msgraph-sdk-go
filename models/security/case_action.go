@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the collection of agreement entities.
 type CaseAction int
 
 const (
