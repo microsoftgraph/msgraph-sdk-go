@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the cloudCommunications singleton.
 type RoutingType int
 
 const (
