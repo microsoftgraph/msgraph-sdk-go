@@ -22,6 +22,8 @@ type ConditionalAccessConditionSet struct {
     odataType *string
     // Platforms included in and excluded from the policy.
     platforms ConditionalAccessPlatformsable
+    // Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
+    servicePrincipalRiskLevels []string
     // Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     signInRiskLevels []string
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
@@ -159,6 +161,20 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["servicePrincipalRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetServicePrincipalRiskLevels(res)
+        }
+        return nil
+    }
     res["signInRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -221,6 +237,14 @@ func (m *ConditionalAccessConditionSet) GetPlatforms()(ConditionalAccessPlatform
         return nil
     } else {
         return m.platforms
+    }
+}
+// GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
+func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePrincipalRiskLevels
     }
 }
 // GetSignInRiskLevels gets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
@@ -287,6 +311,12 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteObjectValue("platforms", m.GetPlatforms())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetServicePrincipalRiskLevels() != nil {
+        err := writer.WriteCollectionOfStringValues("servicePrincipalRiskLevels", m.GetServicePrincipalRiskLevels())
         if err != nil {
             return err
         }
@@ -363,6 +393,12 @@ func (m *ConditionalAccessConditionSet) SetOdataType(value *string)() {
 func (m *ConditionalAccessConditionSet) SetPlatforms(value ConditionalAccessPlatformsable)() {
     if m != nil {
         m.platforms = value
+    }
+}
+// SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
+func (m *ConditionalAccessConditionSet) SetServicePrincipalRiskLevels(value []string)() {
+    if m != nil {
+        m.servicePrincipalRiskLevels = value
     }
 }
 // SetSignInRiskLevels sets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.

@@ -10,6 +10,8 @@ import (
     i5630342e1a72a9662ae9c132a0760a77cb6780f060891c81feb762af29c971a3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/items/item/listitem/getactivitiesbyintervalwithstartdatetimewithenddatetimewithinterval"
     i58742d712880cc3cc8269ab53383134bac7ea8b7ca7d3577d84010e20beb0334 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/items/item/listitem/fields"
     i6cd0059328d76354877ec1575e805ede9bd8071c8f04e2e71c5168e2f2e0699a "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/items/item/listitem/versions"
+    ib983358adf78faafc337fdd91ca6490a1bdf2da561d4eb65a5c22b04e554ce70 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/items/item/listitem/documentsetversions"
+    i64dc2714f71942d7cb763148c7bb38ef9ec3d5316c67ba82827db01689e18dd6 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/items/item/listitem/documentsetversions/item"
     icdcb8aa5acaf15b3de7913e7db70cb73ffba6743e3a34e3e1c1fff77a3a52646 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/items/item/listitem/versions/item"
 )
 
@@ -147,6 +149,21 @@ func (m *ListItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandle
         return err
     }
     return nil
+}
+// DocumentSetVersions the documentSetVersions property
+func (m *ListItemRequestBuilder) DocumentSetVersions()(*ib983358adf78faafc337fdd91ca6490a1bdf2da561d4eb65a5c22b04e554ce70.DocumentSetVersionsRequestBuilder) {
+    return ib983358adf78faafc337fdd91ca6490a1bdf2da561d4eb65a5c22b04e554ce70.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.drives.item.items.item.listItem.documentSetVersions.item collection
+func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*i64dc2714f71942d7cb763148c7bb38ef9ec3d5316c67ba82827db01689e18dd6.DocumentSetVersionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["documentSetVersion%2Did"] = id
+    }
+    return i64dc2714f71942d7cb763148c7bb38ef9ec3d5316c67ba82827db01689e18dd6.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DriveItem the driveItem property
 func (m *ListItemRequestBuilder) DriveItem()(*i391e51d33199de962b6b48bc57da31cbac69fb4e7d73ade3e7eba00b1890ec3a.DriveItemRequestBuilder) {

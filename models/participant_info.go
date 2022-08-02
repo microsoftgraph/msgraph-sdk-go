@@ -10,7 +10,7 @@ type ParticipantInfo struct {
     additionalData map[string]interface{}
     // The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
     countryCode *string
-    // The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
+    // The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
     endpointType *EndpointType
     // The identity property
     identity IdentitySetable
@@ -52,7 +52,7 @@ func (m *ParticipantInfo) GetCountryCode()(*string) {
         return m.countryCode
     }
 }
-// GetEndpointType gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
+// GetEndpointType gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
 func (m *ParticipantInfo) GetEndpointType()(*EndpointType) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *ParticipantInfo) SetCountryCode(value *string)() {
         m.countryCode = value
     }
 }
-// SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
+// SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
 func (m *ParticipantInfo) SetEndpointType(value *EndpointType)() {
     if m != nil {
         m.endpointType = value

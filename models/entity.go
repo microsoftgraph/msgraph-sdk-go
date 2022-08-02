@@ -345,6 +345,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDirectoryRole(), nil
                     case "#microsoft.graph.directoryRoleTemplate":
                         return NewDirectoryRoleTemplate(), nil
+                    case "#microsoft.graph.documentSetVersion":
+                        return NewDocumentSetVersion(), nil
                     case "#microsoft.graph.domain":
                         return NewDomain(), nil
                     case "#microsoft.graph.domainDnsCnameRecord":
@@ -1019,6 +1021,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserActivity(), nil
                     case "#microsoft.graph.userConsentRequest":
                         return NewUserConsentRequest(), nil
+                    case "#microsoft.graph.userExperienceAnalyticsDevicePerformance":
+                        return NewUserExperienceAnalyticsDevicePerformance(), nil
                     case "#microsoft.graph.userFlowLanguageConfiguration":
                         return NewUserFlowLanguageConfiguration(), nil
                     case "#microsoft.graph.userFlowLanguagePage":

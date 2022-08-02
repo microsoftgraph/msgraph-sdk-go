@@ -15,7 +15,7 @@ type ExtensionProperty struct {
     isSyncedFromOnPremises *bool
     // Name of the extension property. Not nullable.
     name *string
-    // Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+    // Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
     targetObjects []string
 }
 // NewExtensionProperty instantiates a new extensionProperty and sets the default values.
@@ -122,7 +122,7 @@ func (m *ExtensionProperty) GetName()(*string) {
         return m.name
     }
 }
-// GetTargetObjects gets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+// GetTargetObjects gets the targetObjects property value. Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
 func (m *ExtensionProperty) GetTargetObjects()([]string) {
     if m == nil {
         return nil
@@ -192,7 +192,7 @@ func (m *ExtensionProperty) SetName(value *string)() {
         m.name = value
     }
 }
-// SetTargetObjects sets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+// SetTargetObjects sets the targetObjects property value. Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
 func (m *ExtensionProperty) SetTargetObjects(value []string)() {
     if m != nil {
         m.targetObjects = value

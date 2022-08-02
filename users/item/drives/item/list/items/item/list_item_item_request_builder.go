@@ -5,11 +5,13 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i0a931397053f74da3fa6fb22475720ec25f3653fa7ab5999f553f32888e931cd "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/getactivitiesbyinterval"
+    i3f85d26bb7cd0edf522c164688f29c5a7cab05018d66cafb6cfe56e1b2f9f203 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/documentsetversions"
     i56b166ca4a8404e179e24c3d2c5b332aeae54c780706cf5c6f6cd1fafee3bbee "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/getactivitiesbyintervalwithstartdatetimewithenddatetimewithinterval"
     i6443b6e6d8717edfe08ccfb14a0a6c12fa74598df4c82f3b4e26e232ef5ef70b "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/fields"
     ibef1f085ab566482085ece7bdc5535452131a3838c6fd7920668b97bbcba5f90 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/driveitem"
     ic3eb459b5eb8b54e09cda16b0a4bf145a7a1f4cccf11e3ad41a76f09217a03dc "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/versions"
     icd9207f1373a36fc00c1673649a73ea0dff9908fc0ca926074f4bd09f6749b20 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/analytics"
+    i1ad014b452dd50095eb1b6939d8474acaead251ccb945cc50a098c960f4a4de2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/documentsetversions/item"
     i99acd78f4c424a70deeeadc6a509217ca81ceb5937db78618362bc6f633e448d "github.com/microsoftgraph/msgraph-sdk-go/users/item/drives/item/list/items/item/versions/item"
 )
 
@@ -147,6 +149,21 @@ func (m *ListItemItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHa
         return err
     }
     return nil
+}
+// DocumentSetVersions the documentSetVersions property
+func (m *ListItemItemRequestBuilder) DocumentSetVersions()(*i3f85d26bb7cd0edf522c164688f29c5a7cab05018d66cafb6cfe56e1b2f9f203.DocumentSetVersionsRequestBuilder) {
+    return i3f85d26bb7cd0edf522c164688f29c5a7cab05018d66cafb6cfe56e1b2f9f203.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.drives.item.list.items.item.documentSetVersions.item collection
+func (m *ListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*i1ad014b452dd50095eb1b6939d8474acaead251ccb945cc50a098c960f4a4de2.DocumentSetVersionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["documentSetVersion%2Did"] = id
+    }
+    return i1ad014b452dd50095eb1b6939d8474acaead251ccb945cc50a098c960f4a4de2.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DriveItem the driveItem property
 func (m *ListItemItemRequestBuilder) DriveItem()(*ibef1f085ab566482085ece7bdc5535452131a3838c6fd7920668b97bbcba5f90.DriveItemRequestBuilder) {

@@ -2,7 +2,7 @@ package callrecords
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
 type VideoCodec int
 
 const (

@@ -2,7 +2,7 @@ package externalconnectors
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the collection of externalConnection entities.
 type ExternalItemContentType int
 
 const (

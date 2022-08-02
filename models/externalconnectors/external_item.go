@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ExternalItem provides operations to manage the admin singleton.
+// ExternalItem provides operations to manage the collection of externalConnection entities.
 type ExternalItem struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // An array of access control entries. Each entry specifies the access granted to a user or group. Required.

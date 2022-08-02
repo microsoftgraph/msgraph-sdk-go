@@ -12,7 +12,7 @@ type Application struct {
     addIns []AddInable
     // Specifies settings for an application that implements a web API.
     api ApiApplicationable
-    // The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
+    // The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
     appId *string
     // Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
     applicationTemplateId *string
@@ -30,7 +30,7 @@ type Application struct {
     disabledByMicrosoftStatus *string
     // The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string
-    // Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+    // Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
     extensionProperties []ExtensionPropertyable
     // Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
     federatedIdentityCredentials []FederatedIdentityCredentialable
@@ -118,7 +118,7 @@ func (m *Application) GetApi()(ApiApplicationable) {
         return m.api
     }
 }
-// GetAppId gets the appId property value. The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
+// GetAppId gets the appId property value. The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
 func (m *Application) GetAppId()(*string) {
     if m == nil {
         return nil
@@ -190,7 +190,7 @@ func (m *Application) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     if m == nil {
         return nil
@@ -1183,7 +1183,7 @@ func (m *Application) SetApi(value ApiApplicationable)() {
         m.api = value
     }
 }
-// SetAppId sets the appId property value. The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
+// SetAppId sets the appId property value. The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
 func (m *Application) SetAppId(value *string)() {
     if m != nil {
         m.appId = value
@@ -1237,7 +1237,7 @@ func (m *Application) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 func (m *Application) SetExtensionProperties(value []ExtensionPropertyable)() {
     if m != nil {
         m.extensionProperties = value
