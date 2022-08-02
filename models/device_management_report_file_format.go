@@ -6,7 +6,7 @@ import (
 type DeviceManagementReportFileFormat int
 
 const (
-    // Comma-separated values
+    // CSV Format
     CSV_DEVICEMANAGEMENTREPORTFILEFORMAT DeviceManagementReportFileFormat = iota
     // Portable Document Format
     PDF_DEVICEMANAGEMENTREPORTFILEFORMAT

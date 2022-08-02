@@ -11,6 +11,8 @@ type ListItem struct {
     analytics ItemAnalyticsable
     // The content type of this list item
     contentType ContentTypeInfoable
+    // Version information for a document set version created by a user.
+    documentSetVersions []DocumentSetVersionable
     // For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
     driveItem DriveItemable
     // The values of the columns set on this list item.
@@ -49,6 +51,14 @@ func (m *ListItem) GetContentType()(ContentTypeInfoable) {
         return m.contentType
     }
 }
+// GetDocumentSetVersions gets the documentSetVersions property value. Version information for a document set version created by a user.
+func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.documentSetVersions
+    }
+}
 // GetDriveItem gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *ListItem) GetDriveItem()(DriveItemable) {
     if m == nil {
@@ -77,6 +87,20 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetContentType(val.(ContentTypeInfoable))
+        }
+        return nil
+    }
+    res["documentSetVersions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDocumentSetVersionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DocumentSetVersionable, len(val))
+            for i, v := range val {
+                res[i] = v.(DocumentSetVersionable)
+            }
+            m.SetDocumentSetVersions(res)
         }
         return nil
     }
@@ -168,6 +192,16 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetDocumentSetVersions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDocumentSetVersions()))
+        for i, v := range m.GetDocumentSetVersions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("documentSetVersions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("driveItem", m.GetDriveItem())
         if err != nil {
@@ -208,6 +242,12 @@ func (m *ListItem) SetAnalytics(value ItemAnalyticsable)() {
 func (m *ListItem) SetContentType(value ContentTypeInfoable)() {
     if m != nil {
         m.contentType = value
+    }
+}
+// SetDocumentSetVersions sets the documentSetVersions property value. Version information for a document set version created by a user.
+func (m *ListItem) SetDocumentSetVersions(value []DocumentSetVersionable)() {
+    if m != nil {
+        m.documentSetVersions = value
     }
 }
 // SetDriveItem sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]

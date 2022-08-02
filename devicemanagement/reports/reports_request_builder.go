@@ -7,6 +7,7 @@ import (
     i062d4a86380aad1b2a18fcdf2ae3039afe4fb3340e8c61cd8a0118f64e2961f4 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/reports/exportjobs"
     i0a839f3beac17f684c85ef687fb80c09048b3dcae7c1ecbde1af40e48df57f93 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/reports/getdevicemanagementintentsettingsreport"
     i2f4861dbc7fdcc004c73b6f3a193e531630645ae4e3dba4a06598c5ac995763e "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/reports/getcompliancepolicynoncompliancereport"
+    i3472d4fd9599a18b9522ece83696f0b21985db9b3e0bfea8e80a93d58aafd21c "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/reports/getnoncompliantdevicesandsettingsreport"
     i412da535edde14d19b0f7a70e3391905918a35901cecec9071168452048c7acc "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/reports/getpolicynoncompliancereport"
     i53f2ba02a8f5254d99ef3d211f9756166f93939a36f554a78d1688617cbe7a5f "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/reports/getreportfilters"
     i63f7c0aabdb80575f559f70509dbec8f47b990899881ff53424a1b846dd52597 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/reports/gethistoricalreport"
@@ -217,6 +218,10 @@ func (m *ReportsRequestBuilder) GetDeviceNonComplianceReport()(*idf9e4ac66c87266
 // GetHistoricalReport the getHistoricalReport property
 func (m *ReportsRequestBuilder) GetHistoricalReport()(*i63f7c0aabdb80575f559f70509dbec8f47b990899881ff53424a1b846dd52597.GetHistoricalReportRequestBuilder) {
     return i63f7c0aabdb80575f559f70509dbec8f47b990899881ff53424a1b846dd52597.NewGetHistoricalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetNoncompliantDevicesAndSettingsReport the getNoncompliantDevicesAndSettingsReport property
+func (m *ReportsRequestBuilder) GetNoncompliantDevicesAndSettingsReport()(*i3472d4fd9599a18b9522ece83696f0b21985db9b3e0bfea8e80a93d58aafd21c.GetNoncompliantDevicesAndSettingsReportRequestBuilder) {
+    return i3472d4fd9599a18b9522ece83696f0b21985db9b3e0bfea8e80a93d58aafd21c.NewGetNoncompliantDevicesAndSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetPolicyNonComplianceMetadata the getPolicyNonComplianceMetadata property
 func (m *ReportsRequestBuilder) GetPolicyNonComplianceMetadata()(*ib8a4803ec3b35355bac5ee1f09413f3cedea9e96c350c5a3b7a72a1ce2329cd8.GetPolicyNonComplianceMetadataRequestBuilder) {
