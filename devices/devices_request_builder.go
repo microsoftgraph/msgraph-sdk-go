@@ -3,6 +3,7 @@ package devices
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    i3e76a928d3afbb4d2a627e7f7a85b5ecb9fd53ddfc7efdf4243dbe5e914e9f4d "github.com/microsoftgraph/msgraph-sdk-go/devices/delta"
     i742c8e0d8d6234a1437ecac7bece5e41c37a0b90711fd8686ffa8e4c4701d565 "github.com/microsoftgraph/msgraph-sdk-go/devices/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     ib63da5a65fdfd203af5d2c9134af33fb8d9bc972e5c013dceddc50fa91cd68af "github.com/microsoftgraph/msgraph-sdk-go/devices/validateproperties"
@@ -114,6 +115,10 @@ func (m *DevicesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Delta provides operations to call the delta method.
+func (m *DevicesRequestBuilder) Delta()(*i3e76a928d3afbb4d2a627e7f7a85b5ecb9fd53ddfc7efdf4243dbe5e914e9f4d.DeltaRequestBuilder) {
+    return i3e76a928d3afbb4d2a627e7f7a85b5ecb9fd53ddfc7efdf4243dbe5e914e9f4d.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get retrieve a list of devices registered in the directory. 
 func (m *DevicesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCollectionResponseable, error) {

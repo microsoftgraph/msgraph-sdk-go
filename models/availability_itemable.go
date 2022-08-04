@@ -8,14 +8,14 @@ import (
 type AvailabilityItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetEndDateTime()(DateTimeTimeZoneable)
     GetOdataType()(*string)
     GetServiceId()(*string)
-    GetStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetStartDateTime()(DateTimeTimeZoneable)
     GetStatus()(*BookingsAvailabilityStatus)
-    SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetEndDateTime(value DateTimeTimeZoneable)()
     SetOdataType(value *string)()
     SetServiceId(value *string)()
-    SetStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetStartDateTime(value DateTimeTimeZoneable)()
     SetStatus(value *BookingsAvailabilityStatus)()
 }

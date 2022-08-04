@@ -39,6 +39,8 @@ func CreateBaseItemVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.documentSetVersion":
+                        return NewDocumentSetVersion(), nil
                     case "#microsoft.graph.driveItemVersion":
                         return NewDriveItemVersion(), nil
                     case "#microsoft.graph.listItemVersion":

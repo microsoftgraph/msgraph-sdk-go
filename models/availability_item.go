@@ -8,14 +8,14 @@ import (
 type AvailabilityItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The endTime property
-    endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
+    // The endDateTime property
+    endDateTime DateTimeTimeZoneable
     // The OdataType property
     odataType *string
     // Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
     serviceId *string
-    // The startTime property
-    startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
+    // The startDateTime property
+    startDateTime DateTimeTimeZoneable
     // The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
     status *BookingsAvailabilityStatus
 }
@@ -40,24 +40,24 @@ func (m *AvailabilityItem) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetEndTime gets the endTime property value. The endTime property
-func (m *AvailabilityItem) GetEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
+// GetEndDateTime gets the endDateTime property value. The endDateTime property
+func (m *AvailabilityItem) GetEndDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
-        return m.endTime
+        return m.endDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["endTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeOnlyValue()
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEndTime(val)
+            m.SetEndDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -81,13 +81,13 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["startTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeOnlyValue()
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStartTime(val)
+            m.SetStartDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -119,12 +119,12 @@ func (m *AvailabilityItem) GetServiceId()(*string) {
         return m.serviceId
     }
 }
-// GetStartTime gets the startTime property value. The startTime property
-func (m *AvailabilityItem) GetStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
+// GetStartDateTime gets the startDateTime property value. The startDateTime property
+func (m *AvailabilityItem) GetStartDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
-        return m.startTime
+        return m.startDateTime
     }
 }
 // GetStatus gets the status property value. The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
@@ -138,7 +138,7 @@ func (m *AvailabilityItem) GetStatus()(*BookingsAvailabilityStatus) {
 // Serialize serializes information the current object
 func (m *AvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteTimeOnlyValue("endTime", m.GetEndTime())
+        err := writer.WriteObjectValue("endDateTime", m.GetEndDateTime())
         if err != nil {
             return err
         }
@@ -156,7 +156,7 @@ func (m *AvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteTimeOnlyValue("startTime", m.GetStartTime())
+        err := writer.WriteObjectValue("startDateTime", m.GetStartDateTime())
         if err != nil {
             return err
         }
@@ -182,10 +182,10 @@ func (m *AvailabilityItem) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetEndTime sets the endTime property value. The endTime property
-func (m *AvailabilityItem) SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
+// SetEndDateTime sets the endDateTime property value. The endDateTime property
+func (m *AvailabilityItem) SetEndDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
-        m.endTime = value
+        m.endDateTime = value
     }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
@@ -200,10 +200,10 @@ func (m *AvailabilityItem) SetServiceId(value *string)() {
         m.serviceId = value
     }
 }
-// SetStartTime sets the startTime property value. The startTime property
-func (m *AvailabilityItem) SetStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
+// SetStartDateTime sets the startDateTime property value. The startDateTime property
+func (m *AvailabilityItem) SetStartDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
-        m.startTime = value
+        m.startDateTime = value
     }
 }
 // SetStatus sets the status property value. The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
