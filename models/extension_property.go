@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExtensionProperty provides operations to manage the collection of application entities.
+// ExtensionProperty provides operations to manage the admin singleton.
 type ExtensionProperty struct {
     DirectoryObject
     // Display name of the application object on which this extension property is defined. Read-only.
@@ -13,7 +13,7 @@ type ExtensionProperty struct {
     dataType *string
     // Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
     isSyncedFromOnPremises *bool
-    // Name of the extension property. Not nullable.
+    // Name of the extension property. Not nullable. Supports $filter (eq).
     name *string
     // Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
     targetObjects []string
@@ -114,7 +114,7 @@ func (m *ExtensionProperty) GetIsSyncedFromOnPremises()(*bool) {
         return m.isSyncedFromOnPremises
     }
 }
-// GetName gets the name property value. Name of the extension property. Not nullable.
+// GetName gets the name property value. Name of the extension property. Not nullable. Supports $filter (eq).
 func (m *ExtensionProperty) GetName()(*string) {
     if m == nil {
         return nil
@@ -186,7 +186,7 @@ func (m *ExtensionProperty) SetIsSyncedFromOnPremises(value *bool)() {
         m.isSyncedFromOnPremises = value
     }
 }
-// SetName sets the name property value. Name of the extension property. Not nullable.
+// SetName sets the name property value. Name of the extension property. Not nullable. Supports $filter (eq).
 func (m *ExtensionProperty) SetName(value *string)() {
     if m != nil {
         m.name = value

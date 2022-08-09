@@ -5,9 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask provides operations to manage the admin singleton.
+// TodoTask provides operations to manage the collection of application entities.
 type TodoTask struct {
     Entity
+    // A collection of file attachments for the task.
+    attachments []AttachmentBaseable
+    // The attachmentSessions property
+    attachmentSessions []AttachmentSessionable
     // The task body that typically contains information about the task.
     body ItemBodyable
     // The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -16,14 +20,16 @@ type TodoTask struct {
     categories []string
     // A collection of smaller subtasks linked to the more complex parent task.
     checklistItems []ChecklistItemable
-    // The date in the specified time zone that the task was finished.
+    // The date and time in the specified time zone that the task was finished.
     completedDateTime DateTimeTimeZoneable
     // The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The date in the specified time zone that the task is to be finished.
+    // The date and time in the specified time zone that the task is to be finished.
     dueDateTime DateTimeTimeZoneable
     // The collection of open extensions defined for the task. Nullable.
     extensions []Extensionable
+    // Indicates whether the task has attachments.
+    hasAttachments *bool
     // The importance property
     importance *Importance
     // Set to true if an alert is set to remind the user of the task.
@@ -34,8 +40,10 @@ type TodoTask struct {
     linkedResources []LinkedResourceable
     // The recurrence pattern for the task.
     recurrence PatternedRecurrenceable
-    // The date and time for a reminder alert of the task to occur.
+    // The date and time in the specified time zone for a reminder alert of the task to occur.
     reminderDateTime DateTimeTimeZoneable
+    // The date and time in the specified time zone at which the task is scheduled to start.
+    startDateTime DateTimeTimeZoneable
     // The status property
     status *TaskStatus
     // A brief description of the task.
@@ -53,6 +61,22 @@ func NewTodoTask()(*TodoTask) {
 // CreateTodoTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTodoTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTodoTask(), nil
+}
+// GetAttachments gets the attachments property value. A collection of file attachments for the task.
+func (m *TodoTask) GetAttachments()([]AttachmentBaseable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attachments
+    }
+}
+// GetAttachmentSessions gets the attachmentSessions property value. The attachmentSessions property
+func (m *TodoTask) GetAttachmentSessions()([]AttachmentSessionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attachmentSessions
+    }
 }
 // GetBody gets the body property value. The task body that typically contains information about the task.
 func (m *TodoTask) GetBody()(ItemBodyable) {
@@ -86,7 +110,7 @@ func (m *TodoTask) GetChecklistItems()([]ChecklistItemable) {
         return m.checklistItems
     }
 }
-// GetCompletedDateTime gets the completedDateTime property value. The date in the specified time zone that the task was finished.
+// GetCompletedDateTime gets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
 func (m *TodoTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
@@ -102,7 +126,7 @@ func (m *TodoTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.createdDateTime
     }
 }
-// GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
+// GetDueDateTime gets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
 func (m *TodoTask) GetDueDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
@@ -121,6 +145,34 @@ func (m *TodoTask) GetExtensions()([]Extensionable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAttachmentBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AttachmentBaseable, len(val))
+            for i, v := range val {
+                res[i] = v.(AttachmentBaseable)
+            }
+            m.SetAttachments(res)
+        }
+        return nil
+    }
+    res["attachmentSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAttachmentSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AttachmentSessionable, len(val))
+            for i, v := range val {
+                res[i] = v.(AttachmentSessionable)
+            }
+            m.SetAttachmentSessions(res)
+        }
+        return nil
+    }
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
@@ -213,6 +265,16 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHasAttachments(val)
+        }
+        return nil
+    }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImportance)
         if err != nil {
@@ -277,6 +339,16 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStartDateTime(val.(DateTimeTimeZoneable))
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTaskStatus)
         if err != nil {
@@ -298,6 +370,14 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetHasAttachments gets the hasAttachments property value. Indicates whether the task has attachments.
+func (m *TodoTask) GetHasAttachments()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasAttachments
+    }
 }
 // GetImportance gets the importance property value. The importance property
 func (m *TodoTask) GetImportance()(*Importance) {
@@ -339,12 +419,20 @@ func (m *TodoTask) GetRecurrence()(PatternedRecurrenceable) {
         return m.recurrence
     }
 }
-// GetReminderDateTime gets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
+// GetReminderDateTime gets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
 func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
         return m.reminderDateTime
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
+func (m *TodoTask) GetStartDateTime()(DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
     }
 }
 // GetStatus gets the status property value. The status property
@@ -368,6 +456,26 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetAttachments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachments()))
+        for i, v := range m.GetAttachments() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("attachments", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAttachmentSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachmentSessions()))
+        for i, v := range m.GetAttachmentSessions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("attachmentSessions", cast)
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteObjectValue("body", m.GetBody())
@@ -425,6 +533,12 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("hasAttachments", m.GetHasAttachments())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetImportance() != nil {
         cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
@@ -466,6 +580,12 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("startDateTime", m.GetStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -480,6 +600,18 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     return nil
+}
+// SetAttachments sets the attachments property value. A collection of file attachments for the task.
+func (m *TodoTask) SetAttachments(value []AttachmentBaseable)() {
+    if m != nil {
+        m.attachments = value
+    }
+}
+// SetAttachmentSessions sets the attachmentSessions property value. The attachmentSessions property
+func (m *TodoTask) SetAttachmentSessions(value []AttachmentSessionable)() {
+    if m != nil {
+        m.attachmentSessions = value
+    }
 }
 // SetBody sets the body property value. The task body that typically contains information about the task.
 func (m *TodoTask) SetBody(value ItemBodyable)() {
@@ -505,7 +637,7 @@ func (m *TodoTask) SetChecklistItems(value []ChecklistItemable)() {
         m.checklistItems = value
     }
 }
-// SetCompletedDateTime sets the completedDateTime property value. The date in the specified time zone that the task was finished.
+// SetCompletedDateTime sets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
 func (m *TodoTask) SetCompletedDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.completedDateTime = value
@@ -517,7 +649,7 @@ func (m *TodoTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         m.createdDateTime = value
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
+// SetDueDateTime sets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
 func (m *TodoTask) SetDueDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.dueDateTime = value
@@ -527,6 +659,12 @@ func (m *TodoTask) SetDueDateTime(value DateTimeTimeZoneable)() {
 func (m *TodoTask) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
+    }
+}
+// SetHasAttachments sets the hasAttachments property value. Indicates whether the task has attachments.
+func (m *TodoTask) SetHasAttachments(value *bool)() {
+    if m != nil {
+        m.hasAttachments = value
     }
 }
 // SetImportance sets the importance property value. The importance property
@@ -559,10 +697,16 @@ func (m *TodoTask) SetRecurrence(value PatternedRecurrenceable)() {
         m.recurrence = value
     }
 }
-// SetReminderDateTime sets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
+// SetReminderDateTime sets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
 func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.reminderDateTime = value
+    }
+}
+// SetStartDateTime sets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
+func (m *TodoTask) SetStartDateTime(value DateTimeTimeZoneable)() {
+    if m != nil {
+        m.startDateTime = value
     }
 }
 // SetStatus sets the status property value. The status property

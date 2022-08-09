@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application provides operations to manage the collection of application entities.
+// Application 
 type Application struct {
     DirectoryObject
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
@@ -22,7 +22,7 @@ type Application struct {
     certification Certificationable
     // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The createdOnBehalfOf property
+    // Supports $filter (eq when counting empty collections). Read-only.
     createdOnBehalfOf DirectoryObjectable
     // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string
@@ -56,7 +56,7 @@ type Application struct {
     oauth2RequirePostResponse *bool
     // Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
     optionalClaims OptionalClaimsable
-    // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+    // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
     owners []DirectoryObjectable
     // Specifies parental control settings for an application.
     parentalControlSettings ParentalControlSettingsable
@@ -89,7 +89,7 @@ type Application struct {
     // Specifies settings for a web application.
     web WebApplicationable
 }
-// NewApplication instantiates a new application and sets the default values.
+// NewApplication instantiates a new Application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
@@ -158,7 +158,7 @@ func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.createdDateTime
     }
 }
-// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. The createdOnBehalfOf property
+// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. Supports $filter (eq when counting empty collections). Read-only.
 func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     if m == nil {
         return nil
@@ -751,7 +751,7 @@ func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
         return m.optionalClaims
     }
 }
-// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) GetOwners()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -1213,7 +1213,7 @@ func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
         m.createdDateTime = value
     }
 }
-// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The createdOnBehalfOf property
+// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. Supports $filter (eq when counting empty collections). Read-only.
 func (m *Application) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
     if m != nil {
         m.createdOnBehalfOf = value
@@ -1315,7 +1315,7 @@ func (m *Application) SetOptionalClaims(value OptionalClaimsable)() {
         m.optionalClaims = value
     }
 }
-// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) SetOwners(value []DirectoryObjectable)() {
     if m != nil {
         m.owners = value
