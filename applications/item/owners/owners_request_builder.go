@@ -21,7 +21,7 @@ type OwnersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OwnersRequestBuilderGetQueryParameters directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// OwnersRequestBuilderGetQueryParameters directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 type OwnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,11 +76,11 @@ func NewOwnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *OwnersRequestBuilder) Count()(*i060d05043ef21a20bca5bba0cf1bf9d4437b1d91d3a0d0ae6c97389d4d00694e.CountRequestBuilder) {
     return i060d05043ef21a20bca5bba0cf1bf9d4437b1d91d3a0d0ae6c97389d4d00694e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *OwnersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *OwnersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,11 +100,11 @@ func (m *OwnersRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
 func (m *OwnersRequestBuilder) Endpoint()(*i4481ae29272b90e51b803d7ad16e7fa37075d7b4688b9c3d4f259f1c3b71d79b.EndpointRequestBuilder) {
     return i4481ae29272b90e51b803d7ad16e7fa37075d7b4688b9c3d4f259f1c3b71d79b.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// Get directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *OwnersRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *OwnersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OwnersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

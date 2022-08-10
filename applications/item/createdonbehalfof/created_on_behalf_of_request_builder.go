@@ -15,7 +15,7 @@ type CreatedOnBehalfOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CreatedOnBehalfOfRequestBuilderGetQueryParameters get createdOnBehalfOf from applications
+// CreatedOnBehalfOfRequestBuilderGetQueryParameters supports $filter (eq when counting empty collections). Read-only.
 type CreatedOnBehalfOfRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewCreatedOnBehalfOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCreatedOnBehalfOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get createdOnBehalfOf from applications
+// CreateGetRequestInformation supports $filter (eq when counting empty collections). Read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get createdOnBehalfOf from applications
+// CreateGetRequestInformationWithRequestConfiguration supports $filter (eq when counting empty collections). Read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get get createdOnBehalfOf from applications
+// Get supports $filter (eq when counting empty collections). Read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get createdOnBehalfOf from applications
+// GetWithRequestConfigurationAndResponseHandler supports $filter (eq when counting empty collections). Read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

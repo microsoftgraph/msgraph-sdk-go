@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the deviceAppManagement singleton.
 type Win32LobAppDeliveryOptimizationPriority int
 
 const (

@@ -2,7 +2,7 @@ package callrecords
 import (
     "errors"
 )
-// Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
+// Provides operations to manage the cloudCommunications singleton.
 type AudioCodec int
 
 const (

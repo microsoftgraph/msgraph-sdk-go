@@ -137,6 +137,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAssociatedTeamInfo(), nil
                     case "#microsoft.graph.attachment":
                         return NewAttachment(), nil
+                    case "#microsoft.graph.attachmentBase":
+                        return NewAttachmentBase(), nil
+                    case "#microsoft.graph.attachmentSession":
+                        return NewAttachmentSession(), nil
                     case "#microsoft.graph.attendanceRecord":
                         return NewAttendanceRecord(), nil
                     case "#microsoft.graph.audioRoutingGroup":
@@ -911,6 +915,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTargetedManagedAppPolicyAssignment(), nil
                     case "#microsoft.graph.targetedManagedAppProtection":
                         return NewTargetedManagedAppProtection(), nil
+                    case "#microsoft.graph.taskFileAttachment":
+                        return NewTaskFileAttachment(), nil
                     case "#microsoft.graph.team":
                         return NewTeam(), nil
                     case "#microsoft.graph.teamInfo":
