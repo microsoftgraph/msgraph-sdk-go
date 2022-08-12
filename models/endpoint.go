@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Endpoint 
+// Endpoint provides operations to call the instantiate method.
 type Endpoint struct {
     DirectoryObject
     // Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
@@ -18,7 +18,7 @@ type Endpoint struct {
     // URL of the published resource. Not nullable. Read-only.
     uri *string
 }
-// NewEndpoint instantiates a new Endpoint and sets the default values.
+// NewEndpoint instantiates a new endpoint and sets the default values.
 func NewEndpoint()(*Endpoint) {
     m := &Endpoint{
         DirectoryObject: *NewDirectoryObject(),

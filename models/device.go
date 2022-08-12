@@ -57,7 +57,7 @@ type Device struct {
     // Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
     trustType *string
 }
-// NewDevice instantiates a new Device and sets the default values.
+// NewDevice instantiates a new device and sets the default values.
 func NewDevice()(*Device) {
     m := &Device{
         DirectoryObject: *NewDirectoryObject(),

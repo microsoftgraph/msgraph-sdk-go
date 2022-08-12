@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserActivity provides operations to manage the collection of application entities.
+// UserActivity provides operations to manage the admin singleton.
 type UserActivity struct {
     Entity
     // Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.

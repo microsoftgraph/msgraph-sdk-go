@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application 
+// Application provides operations to manage the collection of application entities.
 type Application struct {
     DirectoryObject
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
@@ -89,7 +89,7 @@ type Application struct {
     // Specifies settings for a web application.
     web WebApplicationable
 }
-// NewApplication instantiates a new Application and sets the default values.
+// NewApplication instantiates a new application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
